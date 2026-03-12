@@ -1,0 +1,38 @@
+{
+  "green": [
+    "summarize_documents",
+    "analyze_code",
+    "organize_approved_files",
+    "generate_internal_notes",
+    "prepare_internal_drafts",
+    "collect_job_listings",
+    "collect_public_research",
+    "update_dashboard_files",
+    "prepare_market_memos",
+    "prepare_growth_experiments"
+  ],
+  "yellow": [
+    "prepare_email_draft",
+    "prepare_social_draft",
+    "prepare_job_application_materials",
+    "prepare_outreach_message",
+    "prepare_public_copy",
+    "prepare_pricing_proposal",
+    "prepare_landing_page_copy",
+    "prepare_submission_packet"
+  ],
+  "red": [
+    "send_email",
+    "post_social_content",
+    "submit_job_application",
+    "submit_web_form",
+    "purchase_item",
+    "trade_financial_asset",
+    "delete_files",
+    "grant_new_permissions",
+    "connect_new_data_source",
+    "contact_real_person",
+    "publish_external_content",
+    "modify_production_system"
+  ]
+}
