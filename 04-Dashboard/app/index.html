@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RPGPO Dashboard</title>
   <style>
     body {
@@ -16,7 +16,7 @@
       margin: 0 auto;
       padding: 24px;
     }
-    h1, h2 {
+    h1, h2, h3 {
       margin-top: 0;
     }
     .grid {
@@ -40,98 +40,94 @@
     .section {
       margin-top: 24px;
     }
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #222735;
+      color: #cfd8e6;
+      font-size: 12px;
+      margin-top: 6px;
+    }
+    code {
+      color: #c3e88d;
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>RPGPO Dashboard</h1>
-    <p class="muted">Rahul Pitta Governed Private Office</p>
+    <h1 id="systemName">RPGPO Dashboard</h1>
+    <p class="muted" id="systemMeta">Loading system state...</p>
 
-    <div class="section grid">
-      <div class="card">
-        <h2>Top Priorities</h2>
-        <ul>
-          <li>Ship TopRanker forward</li>
-          <li>Review highest-quality job opportunities</li>
-          <li>Run one growth experiment</li>
-        </ul>
-      </div>
+    <div class="section grid" id="topCards"></div>
 
-      <div class="card">
-        <h2>Pending Approvals</h2>
-        <ul>
-          <li>No pending approvals yet</li>
-        </ul>
-      </div>
+    <div class="section">
+      <h2>Missions</h2>
+      <div class="grid" id="missions"></div>
+    </div>
 
+    <div class="section">
+      <h2>Research Queue</h2>
       <div class="card">
-        <h2>Recent Wins</h2>
-        <ul>
-          <li>RPGPO base setup complete</li>
-          <li>Governance docs live</li>
-          <li>Repo connected and synced</li>
-        </ul>
+        <ul id="researchQueue"></ul>
       </div>
     </div>
 
-    <div class="section grid">
+    <div class="section">
+      <h2>Recent Wins</h2>
       <div class="card">
-        <h2>TopRanker</h2>
-        <p class="muted">Flagship mission</p>
-        <ul>
-          <li>Status: active</li>
-          <li>Focus: product + growth</li>
-          <li>Next: refine backlog and growth tests</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>Career Engine</h2>
-        <p class="muted">Income and opportunity</p>
-        <ul>
-          <li>Status: active</li>
-          <li>Focus: role targeting</li>
-          <li>Next: build shortlist</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>Founder2Founder</h2>
-        <p class="muted">Research and growth intelligence</p>
-        <ul>
-          <li>Status: active</li>
-          <li>Focus: market insight</li>
-          <li>Next: define first offer</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="section grid">
-      <div class="card">
-        <h2>Logs</h2>
-        <ul>
-          <li>No agent run logs loaded yet</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>Research Queue</h2>
-        <ul>
-          <li>Growth channels for TopRanker</li>
-          <li>High-fit senior data engineer roles</li>
-          <li>Founder research product angles</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>Next Actions</h2>
-        <ul>
-          <li>Create first daily brief</li>
-          <li>Define TopRanker mission status</li>
-          <li>Populate approval and log files</li>
-        </ul>
+        <ul id="recentWins"></ul>
       </div>
     </div>
   </div>
+
+  <script>
+    async function loadState() {
+      const res = await fetch('../state/dashboard-state.json');
+      const state = await res.json();
+
+      document.getElementById('systemName').textContent = state.system_name + ' Dashboard';
+      document.getElementById('systemMeta').textContent =
+        'Primary inbox: ' + state.primary_inbox + ' | Workspace: ' + state.workspace_root;
+
+      const topCards = document.getElementById('topCards');
+      topCards.innerHTML = `
+        <div class="card">
+          <h2>Top Priorities</h2>
+          <ul>${state.top_priorities.map(x => `<li>${x}</li>`).join('')}</ul>
+        </div>
+        <div class="card">
+          <h2>Pending Approvals</h2>
+          <ul>${state.pending_approvals.map(x => `<li>${x}</li>`).join('')}</ul>
+        </div>
+        <div class="card">
+          <h2>System</h2>
+          <p class="muted">Governed private office is active.</p>
+          <div class="pill">Flagship: TopRanker</div>
+        </div>
+      `;
+
+      const missions = document.getElementById('missions');
+      missions.innerHTML = state.missions.map(m => `
+        <div class="card">
+          <h3>${m.name}</h3>
+          <p class="muted">Focus: ${m.focus}</p>
+          <div class="pill">Status: ${m.status}</div>
+          <p style="margin-top: 12px;"><strong>Next:</strong> ${m.next}</p>
+        </div>
+      `).join('');
+
+      const researchQueue = document.getElementById('researchQueue');
+      researchQueue.innerHTML = state.research_queue.map(x => `<li>${x}</li>`).join('');
+
+      const recentWins = document.getElementById('recentWins');
+      recentWins.innerHTML = state.recent_wins.map(x => `<li>${x}</li>`).join('');
+    }
+
+    loadState().catch(err => {
+      document.getElementById('systemMeta').textContent = 'Failed to load dashboard-state.json';
+      console.error(err);
+    });
+  </script>
 </body>
 </html>
