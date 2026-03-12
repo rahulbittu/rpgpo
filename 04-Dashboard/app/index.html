@@ -3,131 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RPGPO Dashboard</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 0;
-      background: #0f1115;
-      color: #e9edf1;
-    }
-    .wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-    h1, h2, h3 {
-      margin-top: 0;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-    }
-    .card {
-      background: #171a21;
-      border: 1px solid #262b36;
-      border-radius: 16px;
-      padding: 16px;
-    }
-    .muted {
-      color: #aab3c2;
-      font-size: 14px;
-    }
-    ul {
-      padding-left: 18px;
-    }
-    .section {
-      margin-top: 24px;
-    }
-    .pill {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: #222735;
-      color: #cfd8e6;
-      font-size: 12px;
-      margin-top: 6px;
-    }
-    code {
-      color: #c3e88d;
-    }
-  </style>
+  <title>RPGPO Command Center</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="wrap">
-    <h1 id="systemName">RPGPO Dashboard</h1>
-    <p class="muted" id="systemMeta">Loading system state...</p>
-
-    <div class="section grid" id="topCards"></div>
-
-    <div class="section">
-      <h2>Missions</h2>
-      <div class="grid" id="missions"></div>
-    </div>
-
-    <div class="section">
-      <h2>Research Queue</h2>
-      <div class="card">
-        <ul id="researchQueue"></ul>
+  <div class="shell">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="logo">RPGPO</div>
+      <div class="nav-links">
+        <a href="#" class="nav-link active" data-tab="home">Home</a>
+        <a href="#" class="nav-link" data-tab="missions">Missions</a>
+        <a href="#" class="nav-link" data-tab="brief">Daily Brief</a>
+        <a href="#" class="nav-link" data-tab="approvals">Approvals</a>
+        <a href="#" class="nav-link" data-tab="logs">Logs</a>
+        <a href="#" class="nav-link flagship" data-tab="topranker">TopRanker</a>
+        <a href="#" class="nav-link" data-tab="controls">Controls</a>
       </div>
-    </div>
-
-    <div class="section">
-      <h2>Recent Wins</h2>
-      <div class="card">
-        <ul id="recentWins"></ul>
+      <div class="sidebar-footer">
+        <div class="sys-status" id="sysStatus">Loading...</div>
       </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="content">
+
+      <!-- HOME -->
+      <section class="tab-panel active" id="tab-home">
+        <h1>Command Center</h1>
+        <p class="subtitle" id="homeDate"></p>
+
+        <div class="grid-3">
+          <div class="card accent">
+            <h3>Top Priorities</h3>
+            <ul id="homePriorities"></ul>
+          </div>
+          <div class="card">
+            <h3>Pending Approvals</h3>
+            <div id="homeApprovals"></div>
+          </div>
+          <div class="card">
+            <h3>Research Queue</h3>
+            <ul id="homeResearch"></ul>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:16px;">
+          <div class="card">
+            <h3>Mission Overview</h3>
+            <div id="homeMissions"></div>
+          </div>
+          <div class="card">
+            <h3>Recent Wins</h3>
+            <ul id="homeWins"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- MISSIONS -->
+      <section class="tab-panel" id="tab-missions">
+        <h1>Missions</h1>
+        <p class="subtitle">All active RPGPO mission domains</p>
+        <div id="missionCards" class="grid-2"></div>
+      </section>
+
+      <!-- DAILY BRIEF -->
+      <section class="tab-panel" id="tab-brief">
+        <h1>Daily Brief</h1>
+        <p class="subtitle">Latest operational briefing</p>
+        <div id="briefContent" class="card md-content"></div>
+      </section>
+
+      <!-- APPROVALS -->
+      <section class="tab-panel" id="tab-approvals">
+        <h1>Approvals</h1>
+        <p class="subtitle">Pending approval packets requiring Rahul's decision</p>
+        <div id="approvalsList"></div>
+      </section>
+
+      <!-- LOGS -->
+      <section class="tab-panel" id="tab-logs">
+        <h1>Agent Logs</h1>
+        <p class="subtitle">Recorded agent runs and operations</p>
+        <div id="logsList"></div>
+      </section>
+
+      <!-- TOPRANKER -->
+      <section class="tab-panel" id="tab-topranker">
+        <h1>TopRanker <span class="badge-flagship">Flagship Mission</span></h1>
+        <p class="subtitle">Community-ranked local business leaderboard</p>
+
+        <div class="grid-2">
+          <div class="card" id="trStatus"></div>
+          <div class="card" id="trQuickFacts"></div>
+        </div>
+
+        <div class="card md-content" style="margin-top:16px;" id="trSummary"></div>
+      </section>
+
+      <!-- CONTROLS -->
+      <section class="tab-panel" id="tab-controls">
+        <h1>Controls</h1>
+        <p class="subtitle">RPGPO operational controls. These run local scripts only.</p>
+
+        <div class="grid-3">
+          <button class="ctrl-btn" onclick="runAction('morning-loop')">
+            <span class="ctrl-icon">&#9728;</span>
+            Run Morning Loop
+            <span class="ctrl-desc">Refresh state, generate daily brief</span>
+          </button>
+          <button class="ctrl-btn" onclick="runAction('evening-loop')">
+            <span class="ctrl-icon">&#9790;</span>
+            Run Evening Loop
+            <span class="ctrl-desc">Log day summary, update state</span>
+          </button>
+          <button class="ctrl-btn" onclick="runAction('refresh-state')">
+            <span class="ctrl-icon">&#8635;</span>
+            Refresh Dashboard State
+            <span class="ctrl-desc">Re-scan files and rebuild state JSON</span>
+          </button>
+          <button class="ctrl-btn" onclick="openFile('03-Operations/Reports/TopRanker-Operating-Summary.md')">
+            <span class="ctrl-icon">&#9733;</span>
+            Open TopRanker Summary
+            <span class="ctrl-desc">View the full operating summary</span>
+          </button>
+          <button class="ctrl-btn" onclick="switchTab('approvals')">
+            <span class="ctrl-icon">&#9888;</span>
+            Open Pending Approvals
+            <span class="ctrl-desc">Review items needing your decision</span>
+          </button>
+        </div>
+
+        <div class="card" style="margin-top:20px;" id="controlOutput">
+          <h3>Output</h3>
+          <pre id="controlLog">Ready. No scripts have been run this session.</pre>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- File viewer modal -->
+  <div class="modal-overlay" id="modal" onclick="closeModal(event)">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span id="modalTitle">File Viewer</span>
+        <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">&times;</button>
+      </div>
+      <pre class="modal-body" id="modalBody"></pre>
     </div>
   </div>
 
-  <script>
-    async function loadState() {
-      const res = await fetch('../state/dashboard-state.json');
-      const state = await res.json();
-
-      document.getElementById('systemName').textContent = state.system_name + ' Dashboard';
-      document.getElementById('systemMeta').textContent =
-        'Primary inbox: ' + state.primary_inbox + ' | Workspace: ' + state.workspace_root;
-
-      const topCards = document.getElementById('topCards');
-      topCards.innerHTML = `
-        <div class="card">
-          <h2>Top Priorities</h2>
-          <ul>${state.top_priorities.map(x => `<li>${x}</li>`).join('')}</ul>
-        </div>
-        <div class="card">
-          <h2>Pending Approvals</h2>
-          <ul>${state.pending_approvals.map(x => `<li>${x}</li>`).join('')}</ul>
-        </div>
-        <div class="card">
-          <h2>System</h2>
-          <p class="muted">Governed private office is active.</p>
-          <div class="pill">Flagship: TopRanker</div>
-        </div>
-      `;
-
-      const missions = document.getElementById('missions');
-      missions.innerHTML = state.missions.map(m => `
-        <div class="card">
-          <h3>${m.name}</h3>
-          <p class="muted">Focus: ${m.focus}</p>
-          <div class="pill">Status: ${m.status}</div>
-          <p style="margin-top: 12px;"><strong>Next:</strong> ${m.next}</p>
-        </div>
-      `).join('');
-
-      const researchQueue = document.getElementById('researchQueue');
-      researchQueue.innerHTML = state.research_queue.map(x => `<li>${x}</li>`).join('');
-
-      const recentWins = document.getElementById('recentWins');
-      recentWins.innerHTML = state.recent_wins.map(x => `<li>${x}</li>`).join('');
-    }
-
-    loadState().catch(err => {
-      document.getElementById('systemMeta').textContent = 'Failed to load dashboard-state.json';
-      console.error(err);
-    });
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>

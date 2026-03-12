@@ -2,44 +2,44 @@
   "system_name": "RPGPO",
   "primary_inbox": "toprankerapp@gmail.com",
   "workspace_root": "/Users/rpgpo/Projects/RPGPO",
+  "last_refreshed": "2026-03-12T23:33:51.330Z",
   "top_priorities": [
-    "Ingest and honor TopRanker child-office documentation",
-    "Define the first real TopRanker weekly target",
-    "Use RPGPO to drive flagship execution visibly"
+    "Define and maintain TopRanker mission status"
   ],
   "missions": [
     {
-      "name": "TopRanker",
-      "status": "active",
-      "focus": "repo imported + docs ingested",
-      "next": "review synthesis and choose weekly target"
-    },
-    {
       "name": "Career Engine",
-      "status": "needs decision",
-      "focus": "target role profile",
-      "next": "define filters and shortlist"
+      "status": "Needs decision",
+      "focus": "Increase Rahul's earnings potential by identifying high-quality senior data engineering and adjacent",
+      "next": "define target job profile"
     },
     {
       "name": "Founder2Founder",
-      "status": "active",
-      "focus": "first monetizable offer",
-      "next": "choose first offer and sample output"
+      "status": "Active",
+      "focus": "Develop a founder-focused research and growth intelligence capability that can create strategic valu",
+      "next": "define first offer"
+    },
+    {
+      "name": "TopRanker",
+      "status": "Active",
+      "focus": "Convert TopRanker's existing product depth and infrastructure into focused weekly execution, tracked",
+      "next": "define one explicit weekly execution target"
     },
     {
       "name": "Wealth Research",
-      "status": "research-only",
-      "focus": "tracked categories",
-      "next": "define first watchlist"
+      "status": "Research-only",
+      "focus": "Support Rahul's economic decision-making through disciplined research, opportunity evaluation, and c",
+      "next": "define tracked opportunity categories"
     }
   ],
   "pending_approvals": [
-    "Example-TopRanker-Growth-Experiment.md"
+    "Example-TopRanker-Growth-Experiment.md",
+    "TopRanker-Weekly-Execution-Target.md"
   ],
   "recent_wins": [
-    "TopRanker public repo cloned into RPGPO",
-    "TopRanker docs imported into child-office memory",
-    "TopRanker synthesis seed created"
+    "Claude produced the first TopRanker operating summary",
+    "TopRanker confirmed as flagship mission with deep product maturity",
+    "RPGPO promoted Claude's output into live mission state"
   ],
   "research_queue": [
     "TopRanker-Growth",
