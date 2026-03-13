@@ -6,6 +6,26 @@ const { execSync } = require('child_process');
 const RPGPO_ROOT = path.resolve(__dirname, '../..');
 const PORT = 3200;
 
+// --- Action logger ---
+// Every dashboard-triggered action appends a log entry
+
+function logAction(action, result, fileAffected) {
+  const logDir = path.join(RPGPO_ROOT, '03-Operations/Logs/Decisions');
+  fs.mkdirSync(logDir, { recursive: true });
+  const now = new Date();
+  const ts = now.toISOString();
+  const dateStr = ts.slice(0, 10);
+  const logFile = path.join(logDir, `${dateStr}-DashboardActions.md`);
+
+  const entry = `\n## ${ts}\n- **Action:** ${action}\n- **Result:** ${result}\n- **File:** ${fileAffected || 'n/a'}\n`;
+
+  if (fs.existsSync(logFile)) {
+    fs.appendFileSync(logFile, entry);
+  } else {
+    fs.writeFileSync(logFile, `# RPGPO Dashboard Action Log\n## Date: ${dateStr}\n${entry}`);
+  }
+}
+
 // --- File readers ---
 
 function readFile(relPath) {
@@ -101,7 +121,10 @@ function buildApiData() {
   const toprankerSummary = readFile('03-Operations/Reports/TopRanker-Operating-Summary.md');
   const toprankerSynthesis = readFile('02-Projects/TopRanker/Notes/TopRanker-Synthesis.md');
 
-  return { state, missions, briefs, approvals, logs, toprankerSummary, toprankerSynthesis };
+  // Decision logs
+  const decisionLogs = readAllInDir('03-Operations/Logs/Decisions');
+
+  return { state, missions, briefs, approvals, logs, decisionLogs, toprankerSummary, toprankerSynthesis };
 }
 
 // --- Script runner (safe, read-only operations) ---
@@ -116,8 +139,10 @@ function runScript(name) {
   if (!script) return { ok: false, error: 'Unknown script' };
   try {
     const out = execSync(`node "${script}"`, { timeout: 30000, cwd: RPGPO_ROOT }).toString();
+    logAction(`Run script: ${name}`, 'Success', script);
     return { ok: true, output: out };
   } catch (e) {
+    logAction(`Run script: ${name}`, 'Failed: ' + (e.stderr ? e.stderr.toString().slice(0, 200) : e.message.slice(0, 200)), script);
     return { ok: false, error: e.stderr ? e.stderr.toString() : e.message };
   }
 }
@@ -138,6 +163,178 @@ const server = http.createServer((req, res) => {
   if (req.url?.startsWith('/api/run/') && req.method === 'POST') {
     const scriptName = req.url.replace('/api/run/', '');
     const result = runScript(scriptName);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(result));
+    return;
+  }
+
+  // --- Approval actions ---
+  if (req.url?.startsWith('/api/approval/') && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', () => {
+      try {
+        const data = JSON.parse(body);
+        const filename = data.filename;
+        const decision = req.url.includes('/approve') ? 'Approved' : 'Rejected';
+
+        if (!filename || !/^[\w\-.]+\.md$/.test(filename)) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ ok: false, error: 'Invalid filename' }));
+          return;
+        }
+
+        const src = path.join(RPGPO_ROOT, '03-Operations/Approvals/Pending', filename);
+        const destDir = path.join(RPGPO_ROOT, `03-Operations/Approvals/${decision}`);
+        const dest = path.join(destDir, filename);
+
+        if (!fs.existsSync(src)) {
+          res.writeHead(404, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ ok: false, error: 'File not found in Pending' }));
+          return;
+        }
+
+        fs.mkdirSync(destDir, { recursive: true });
+
+        // Append decision stamp to the file
+        const stamp = `\n\n---\n## Decision\n- **${decision}** by Rahul via RPGPO Dashboard\n- **Timestamp:** ${new Date().toISOString()}\n`;
+        fs.appendFileSync(src, stamp);
+
+        // Move
+        fs.renameSync(src, dest);
+
+        logAction(`Approval ${decision}`, `Moved ${filename} to ${decision}/`, filename);
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true, decision, filename }));
+      } catch (e) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: false, error: e.message }));
+      }
+    });
+    return;
+  }
+
+  // --- Settings / integrations status ---
+  if (req.url === '/api/settings') {
+    const settings = {
+      keys: {
+        OPENAI_API_KEY: process.env.OPENAI_API_KEY ? 'configured' : 'missing',
+        PERPLEXITY_API_KEY: process.env.PERPLEXITY_API_KEY ? 'configured' : 'missing',
+      },
+      workspace: RPGPO_ROOT,
+      node: process.version,
+      platform: process.platform,
+    };
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(settings));
+    return;
+  }
+
+  // --- Launch Claude session (returns the command, macOS opens Terminal) ---
+  if (req.url === '/api/launch-claude' && req.method === 'POST') {
+    try {
+      execSync(`osascript -e 'tell application "Terminal" to do script "cd \\"${RPGPO_ROOT}\\" && claude"'`, { timeout: 5000 });
+      logAction('Launch Claude Session', 'Opened Terminal with claude', null);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true, output: 'Claude session launched in Terminal.' }));
+    } catch (e) {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: false, error: 'Could not open Terminal: ' + e.message }));
+    }
+    return;
+  }
+
+  // --- Board of AI runner ---
+  if (req.url === '/api/board-run' && req.method === 'POST') {
+    const boardScript = path.join(__dirname, 'scripts', 'board-runner.js');
+    // Build env with current keys passed through
+    const env = { ...process.env };
+
+    logAction('Board of AI Run', 'Started', null);
+
+    const { spawn } = require('child_process');
+    const child = spawn('node', [boardScript], {
+      cwd: RPGPO_ROOT,
+      env,
+      timeout: 120000,
+    });
+
+    let stdout = '';
+    let stderr = '';
+    child.stdout.on('data', d => stdout += d.toString());
+    child.stderr.on('data', d => stderr += d.toString());
+
+    child.on('close', (code) => {
+      // Extract structured result if present
+      const resultMarker = '__BOARD_RESULT__';
+      let boardResult = null;
+      const markerIdx = stdout.indexOf(resultMarker);
+      if (markerIdx !== -1) {
+        try {
+          boardResult = JSON.parse(stdout.slice(markerIdx + resultMarker.length).trim());
+        } catch {}
+      }
+
+      const consoleOutput = markerIdx !== -1 ? stdout.slice(0, markerIdx) : stdout;
+      const ok = code === 0;
+      const filesWritten = boardResult ? boardResult.filesWritten : [];
+
+      logAction(
+        'Board of AI Run',
+        ok ? `Completed — ${boardResult ? boardResult.steps.filter(s=>s.status==='success').length : '?'}/3 succeeded` : 'Failed',
+        filesWritten.join(', ') || null
+      );
+
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({
+        ok,
+        output: consoleOutput + (stderr ? '\n\nStderr:\n' + stderr : ''),
+        result: boardResult,
+      }));
+    });
+
+    child.on('error', (e) => {
+      logAction('Board of AI Run', 'Failed: ' + e.message, null);
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: false, error: e.message }));
+    });
+    return;
+  }
+
+  // --- AI task handlers ---
+  if (req.url?.startsWith('/api/ai/') && req.method === 'POST') {
+    const task = req.url.replace('/api/ai/', '');
+    const handlers = {
+      'claude-topranker-review': () => {
+        // Safe: just reads the starter prompt and shows it
+        const prompt = readFile('03-Operations/Reports/Claude-TopRanker-Starter-Prompt.md');
+        if (!prompt) return { ok: false, error: 'Starter prompt not found at 03-Operations/Reports/Claude-TopRanker-Starter-Prompt.md' };
+        logAction('Claude TopRanker Review', 'Displayed starter prompt', 'Claude-TopRanker-Starter-Prompt.md');
+        return { ok: true, output: 'TopRanker Review Prompt:\n\n' + prompt, type: 'prompt' };
+      },
+      'openai-daily-brief': () => {
+        if (!process.env.OPENAI_API_KEY) {
+          return { ok: false, error: 'OPENAI_API_KEY is not set.\n\nTo configure:\n  export OPENAI_API_KEY=sk-...\nthen restart the dashboard.' };
+        }
+        // Redirect to board runner for the full implementation
+        return { ok: true, output: 'Use "Run Board of AI" to generate the OpenAI daily brief.\nThe board runner calls OpenAI as the Chief of Staff role.' };
+      },
+      'perplexity-research': () => {
+        if (!process.env.PERPLEXITY_API_KEY) {
+          return { ok: false, error: 'PERPLEXITY_API_KEY is not set.\n\nTo configure:\n  export PERPLEXITY_API_KEY=pplx-...\nthen restart the dashboard.' };
+        }
+        return { ok: true, output: 'Use "Run Board of AI" to run the Perplexity research scan.\nThe board runner calls Perplexity as the Research Director role.' };
+      },
+    };
+
+    const handler = handlers[task];
+    if (!handler) {
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: false, error: 'Unknown AI task' }));
+      return;
+    }
+    const result = handler();
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify(result));
     return;

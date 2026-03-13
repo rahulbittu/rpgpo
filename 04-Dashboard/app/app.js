@@ -42,6 +42,7 @@ function render() {
   renderApprovals();
   renderLogs();
   renderTopRanker();
+  renderSettings();
 }
 
 // --- HOME ---
@@ -140,7 +141,7 @@ function renderBrief() {
 function renderApprovals() {
   const container = document.getElementById('approvalsList');
   if (DATA.approvals.length === 0) {
-    container.innerHTML = '<div class="card"><p style="color:var(--text-muted)">No pending approvals.</p></div>';
+    container.innerHTML = '<div class="card"><p style="color:var(--text-muted)">No pending approvals. All clear.</p></div>';
     return;
   }
   container.innerHTML = DATA.approvals.map(a => {
@@ -148,12 +149,17 @@ function renderApprovals() {
     const risk = riskMatch ? riskMatch[1].toLowerCase() : 'yellow';
     const actionMatch = a.content.match(/## Proposed Action\s*\n(.+)/);
     const action = actionMatch ? actionMatch[1] : a.name;
-    return `<div class="approval-card">
+    const safeId = a.name.replace(/[^a-zA-Z0-9]/g, '_');
+    return `<div class="approval-card" id="approval-${safeId}">
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <h4>${action}</h4>
+        <h4>${escapeHtml(action)}</h4>
         <span class="risk-badge risk-${risk}">${risk} risk</span>
       </div>
       <div class="md-content" style="margin-top:8px;">${md2html(a.content)}</div>
+      <div class="approval-actions" id="actions-${safeId}">
+        <button class="btn-approve" onclick="handleApproval('${a.name}', 'approve', '${safeId}')">Approve</button>
+        <button class="btn-reject" onclick="handleApproval('${a.name}', 'reject', '${safeId}')">Reject</button>
+      </div>
     </div>`;
   }).join('');
 }
@@ -161,13 +167,28 @@ function renderApprovals() {
 // --- LOGS ---
 function renderLogs() {
   const container = document.getElementById('logsList');
-  if (DATA.logs.length === 0) {
-    container.innerHTML = '<div class="card"><p style="color:var(--text-muted)">No agent logs found.</p></div>';
+  const allLogs = [];
+
+  // Agent run logs
+  (DATA.logs || []).forEach(l => allLogs.push({ name: l.name, content: l.content, type: 'Agent Run' }));
+
+  // Decision logs
+  (DATA.decisionLogs || []).forEach(l => allLogs.push({ name: l.name, content: l.content, type: 'Decision' }));
+
+  if (allLogs.length === 0) {
+    container.innerHTML = '<div class="card"><p style="color:var(--text-muted)">No logs found.</p></div>';
     return;
   }
-  container.innerHTML = DATA.logs.map(l =>
+
+  // Sort by name (date-prefixed) descending
+  allLogs.sort((a, b) => b.name.localeCompare(a.name));
+
+  container.innerHTML = allLogs.map(l =>
     `<div class="log-entry">
-      <h4>${l.name}</h4>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <h4>${escapeHtml(l.name)}</h4>
+        <span class="risk-badge risk-${l.type === 'Decision' ? 'yellow' : 'green'}" style="font-size:10px">${l.type}</span>
+      </div>
       <pre>${escapeHtml(l.content)}</pre>
     </div>`
   ).join('');
@@ -292,6 +313,159 @@ function md2html(md) {
     .replace(/^(?!<[htul1]|<!)((?!<li|<td).+)$/gm, '<p>$1</p>')
     .replace(/<p>---<\/p>/g, '<hr>')
     .replace(/<p>\s*<\/p>/g, '');
+}
+
+// --- SETTINGS ---
+async function renderSettings() {
+  try {
+    const res = await fetch('/api/settings');
+    const settings = await res.json();
+
+    const keysDiv = document.getElementById('settingsKeys');
+    if (keysDiv) {
+      keysDiv.innerHTML = Object.entries(settings.keys).map(([key, status]) => {
+        const cls = status === 'configured' ? 'key-configured' : 'key-missing';
+        return `<div class="settings-row">
+          <span class="settings-label">${escapeHtml(key)}</span>
+          <span class="key-status ${cls}">${status}</span>
+        </div>`;
+      }).join('');
+    }
+
+    const sysDiv = document.getElementById('settingsSystem');
+    if (sysDiv) {
+      sysDiv.innerHTML = `
+        <div class="settings-row"><span class="settings-label">Workspace</span> ${escapeHtml(settings.workspace)}</div>
+        <div class="settings-row"><span class="settings-label">Node</span> ${escapeHtml(settings.node)}</div>
+        <div class="settings-row"><span class="settings-label">Platform</span> ${escapeHtml(settings.platform)}</div>
+      `;
+    }
+  } catch (e) {
+    console.error('Failed to load settings:', e);
+  }
+}
+
+// --- Approval actions ---
+async function handleApproval(filename, decision, safeId) {
+  const actionsDiv = document.getElementById('actions-' + safeId);
+  if (!actionsDiv) return;
+
+  // Disable buttons immediately
+  actionsDiv.querySelectorAll('button').forEach(b => b.disabled = true);
+
+  const endpoint = decision === 'approve' ? '/api/approval/approve' : '/api/approval/reject';
+
+  try {
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ filename })
+    });
+    const result = await res.json();
+
+    if (result.ok) {
+      const color = result.decision === 'Approved' ? 'var(--green)' : 'var(--red)';
+      actionsDiv.innerHTML = `<span class="approval-decided" style="color:${color}">${result.decision}</span>`;
+      // Reload data after a moment
+      setTimeout(() => loadData(), 800);
+    } else {
+      actionsDiv.innerHTML = `<span style="color:var(--red);font-size:13px;">Error: ${escapeHtml(result.error)}</span>`;
+    }
+  } catch (e) {
+    actionsDiv.innerHTML = `<span style="color:var(--red);font-size:13px;">Failed: ${escapeHtml(e.message)}</span>`;
+  }
+}
+
+// --- Launch Claude session ---
+async function launchClaude() {
+  const log = document.getElementById('controlLog');
+  log.textContent = 'Launching Claude session in Terminal...\n';
+  try {
+    const res = await fetch('/api/launch-claude', { method: 'POST' });
+    const result = await res.json();
+    if (result.ok) {
+      log.textContent += result.output;
+    } else {
+      log.textContent += 'Error: ' + result.error;
+    }
+  } catch (e) {
+    log.textContent += 'Failed: ' + e.message;
+  }
+}
+
+// --- AI task runner ---
+async function runAiTask(task) {
+  const log = document.getElementById('controlLog');
+  log.textContent = `Running AI task: ${task}...\n`;
+  try {
+    const res = await fetch('/api/ai/' + task, { method: 'POST' });
+    const result = await res.json();
+    if (result.ok) {
+      log.textContent += result.output;
+    } else {
+      log.textContent += 'Error:\n' + result.error;
+    }
+  } catch (e) {
+    log.textContent += 'Failed: ' + e.message;
+  }
+}
+
+// --- Board of AI runner ---
+async function runBoard() {
+  const log = document.getElementById('controlLog');
+  const btn = document.getElementById('boardRunBtn');
+
+  btn.classList.add('running');
+  btn.disabled = true;
+  log.textContent = '=== RPGPO Board of AI ===\nStarting orchestration...\n\n';
+  log.textContent += 'Roles:\n';
+  log.textContent += '  [1] Claude Builder — TopRanker review prompt\n';
+  log.textContent += '  [2] OpenAI Chief of Staff — executive briefing\n';
+  log.textContent += '  [3] Perplexity Research Director — research scan\n\n';
+  log.textContent += 'Running... (this may take 30-60 seconds if API calls are made)\n\n';
+
+  try {
+    const res = await fetch('/api/board-run', { method: 'POST' });
+    const data = await res.json();
+
+    log.textContent = '';
+
+    if (data.output) {
+      log.textContent += data.output + '\n';
+    }
+
+    // Show structured result if available
+    if (data.result) {
+      const r = data.result;
+      log.textContent += '\n--- Board Run Summary ---\n\n';
+      for (const step of r.steps) {
+        const icon = step.status === 'success' ? '[OK]' : step.status === 'skipped' ? '[--]' : '[!!]';
+        log.textContent += `${icon} ${step.role}: ${step.status}`;
+        if (step.model) log.textContent += ` (${step.model})`;
+        if (step.error) log.textContent += ` — ${step.error}`;
+        log.textContent += '\n';
+      }
+
+      if (r.filesWritten.length > 0) {
+        log.textContent += '\nFiles written:\n';
+        for (const f of r.filesWritten) {
+          log.textContent += `  ${f}\n`;
+        }
+      }
+    }
+
+    if (!data.ok && !data.result) {
+      log.textContent += '\nError: ' + (data.error || 'Unknown error');
+    }
+
+    // Reload dashboard data
+    await loadData();
+  } catch (e) {
+    log.textContent += '\nFailed: ' + e.message;
+  } finally {
+    btn.classList.remove('running');
+    btn.disabled = false;
+  }
 }
 
 // --- Init ---

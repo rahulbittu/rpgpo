@@ -19,6 +19,7 @@
         <a href="#" class="nav-link" data-tab="logs">Logs</a>
         <a href="#" class="nav-link flagship" data-tab="topranker">TopRanker</a>
         <a href="#" class="nav-link" data-tab="controls">Controls</a>
+        <a href="#" class="nav-link" data-tab="settings">Settings</a>
       </div>
       <div class="sidebar-footer">
         <div class="sys-status" id="sysStatus">Loading...</div>
@@ -106,6 +107,15 @@
         <h1>Controls</h1>
         <p class="subtitle">RPGPO operational controls. These run local scripts only.</p>
 
+        <div class="board-run-section">
+          <button class="ctrl-btn board-btn" onclick="runBoard()" id="boardRunBtn">
+            <span class="ctrl-icon">&#9670;&#9670;&#9670;</span>
+            Run Board of AI
+            <span class="ctrl-desc">Orchestrate Claude + OpenAI + Perplexity against live RPGPO data</span>
+          </button>
+        </div>
+
+        <h3 style="margin-top:20px;">Operating Loops</h3>
         <div class="grid-3">
           <button class="ctrl-btn" onclick="runAction('morning-loop')">
             <span class="ctrl-icon">&#9728;</span>
@@ -122,10 +132,19 @@
             Refresh Dashboard State
             <span class="ctrl-desc">Re-scan files and rebuild state JSON</span>
           </button>
-          <button class="ctrl-btn" onclick="openFile('03-Operations/Reports/TopRanker-Operating-Summary.md')">
+        </div>
+
+        <h3 style="margin-top:20px;">Claude Controls</h3>
+        <div class="grid-3">
+          <button class="ctrl-btn" onclick="launchClaude()">
+            <span class="ctrl-icon">&#9654;</span>
+            Launch Claude Session
+            <span class="ctrl-desc">Open Terminal in RPGPO with claude</span>
+          </button>
+          <button class="ctrl-btn" onclick="runAiTask('claude-topranker-review')">
             <span class="ctrl-icon">&#9733;</span>
-            Open TopRanker Summary
-            <span class="ctrl-desc">View the full operating summary</span>
+            Run TopRanker Review Prompt
+            <span class="ctrl-desc">Display the starter prompt for Claude</span>
           </button>
           <button class="ctrl-btn" onclick="switchTab('approvals')">
             <span class="ctrl-icon">&#9888;</span>
@@ -134,9 +153,55 @@
           </button>
         </div>
 
+        <h3 style="margin-top:20px;">AI Tasks</h3>
+        <div class="grid-3">
+          <button class="ctrl-btn" onclick="runAiTask('claude-topranker-review')">
+            <span class="ctrl-icon">&#9670;</span>
+            Claude TopRanker Review
+            <span class="ctrl-desc">Load the review prompt for Claude</span>
+          </button>
+          <button class="ctrl-btn" onclick="runAiTask('openai-daily-brief')">
+            <span class="ctrl-icon">&#9673;</span>
+            OpenAI Daily Brief
+            <span class="ctrl-desc">Generate brief via OpenAI</span>
+          </button>
+          <button class="ctrl-btn" onclick="runAiTask('perplexity-research')">
+            <span class="ctrl-icon">&#8853;</span>
+            Perplexity Research Scan
+            <span class="ctrl-desc">Run research via Perplexity</span>
+          </button>
+        </div>
+
         <div class="card" style="margin-top:20px;" id="controlOutput">
           <h3>Output</h3>
           <pre id="controlLog">Ready. No scripts have been run this session.</pre>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="tab-panel" id="tab-settings">
+        <h1>Settings</h1>
+        <p class="subtitle">Integrations status and system configuration</p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>API Keys</h3>
+            <div id="settingsKeys"></div>
+          </div>
+          <div class="card">
+            <h3>System Info</h3>
+            <div id="settingsSystem"></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px;">
+          <h3>Access Classes</h3>
+          <div style="font-size:13px;">
+            <div class="settings-row"><span class="settings-label">Class A</span> Core Safe Access — governance docs, repos, dashboards, public research</div>
+            <div class="settings-row"><span class="settings-label">Class B</span> Controlled Operational — toprankerapp@gmail.com, approved tools</div>
+            <div class="settings-row"><span class="settings-label">Class C</span> Sensitive Scoped — selected threads, private docs (narrow, deliberate)</div>
+            <div class="settings-row"><span class="settings-label">Class D</span> Forbidden — anything not explicitly approved</div>
+          </div>
         </div>
       </section>
 

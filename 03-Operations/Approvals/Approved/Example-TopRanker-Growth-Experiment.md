@@ -35,3 +35,9 @@ Stop the experiment, revise targeting, or switch channel.
 
 ## Approval Requested
 Approve / Reject / Revise
+
+
+---
+## Decision
+- **Approved** by Rahul via RPGPO Dashboard
+- **Timestamp:** 2026-03-12T23:46:12.309Z
