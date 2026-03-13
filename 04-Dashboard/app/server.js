@@ -11,6 +11,56 @@ const events = require('./lib/events');
 const PORT = process.env.PORT || 3200;
 const startTime = Date.now();
 
+// --- Watch tasks.json for cross-process changes (worker writes here) ---
+
+let lastTasksJson = '';
+const TASKS_FILE = path.resolve(__dirname, '..', 'state', 'tasks.json');
+
+function watchTaskFile() {
+  // Poll the tasks file for changes made by the worker process.
+  // fs.watch is unreliable across platforms; polling is robust.
+  setInterval(() => {
+    try {
+      const raw = fs.readFileSync(TASKS_FILE, 'utf-8');
+      if (raw !== lastTasksJson) {
+        const oldTasks = lastTasksJson ? JSON.parse(lastTasksJson) : [];
+        const newTasks = JSON.parse(raw);
+        lastTasksJson = raw;
+
+        // Find tasks whose status changed
+        for (const nt of newTasks) {
+          const ot = oldTasks.find(t => t.id === nt.id);
+          if (!ot || ot.status !== nt.status || ot.updatedAt !== nt.updatedAt) {
+            const evt = { event: 'task_updated', task: nt };
+            console.log(`[server] Task ${nt.id} → ${nt.status} (file-watch broadcast)`);
+            events.broadcast('task', evt);
+            // Also broadcast as activity for the live feed
+            if (nt.status === 'running') {
+              events.broadcast('activity', { action: `Task running: ${nt.label}`, ts: new Date().toISOString() });
+            } else if (nt.status === 'done') {
+              events.broadcast('activity', { action: `Task done: ${nt.label}`, ts: new Date().toISOString() });
+            } else if (nt.status === 'failed') {
+              events.broadcast('activity', { action: `Task failed: ${nt.label}`, ts: new Date().toISOString() });
+            }
+          }
+        }
+      }
+    } catch (e) {
+      console.error('[server] file-watch error:', e.message);
+    }
+  }, 1000); // Check every 1s for responsive task lifecycle
+
+  // Initialize lastTasksJson
+  try {
+    lastTasksJson = fs.readFileSync(TASKS_FILE, 'utf-8');
+    console.log(`[server] Task file watcher initialized. File: ${TASKS_FILE}`);
+  } catch (e) {
+    console.log(`[server] Task file not found yet: ${TASKS_FILE}`);
+  }
+}
+
+watchTaskFile();
+
 // --- Helpers ---
 
 function parseBody(req) {
@@ -81,8 +131,9 @@ const server = http.createServer(async (req, res) => {
     res.write(`event: connected\ndata: ${JSON.stringify({ ts: new Date().toISOString() })}\n\n`);
     events.addClient(res);
 
-    // Forward task queue events to SSE
+    // Forward in-process task queue events to SSE (for tasks added by the server itself)
     const onTask = (data) => {
+      console.log(`[server] SSE → task event: ${data.event} ${data.task?.id} ${data.task?.status}`);
       try { res.write(`event: task\ndata: ${JSON.stringify(data)}\n\n`); } catch {}
     };
     queue.bus.on('task', onTask);

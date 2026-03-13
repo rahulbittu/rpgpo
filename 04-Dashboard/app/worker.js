@@ -98,8 +98,9 @@ async function processNext() {
   }
 
   running = true;
-  console.log(`[worker] Running task ${task.id}: ${task.type} — ${task.label}`);
+  console.log(`[worker] Task ${task.id} → running: ${task.type} — ${task.label}`);
   queue.updateTask(task.id, { status: 'running' });
+  console.log(`[worker] Task ${task.id} status written to tasks.json as 'running'`);
 
   try {
     const result = await handler(task);
@@ -109,7 +110,7 @@ async function processNext() {
       filesWritten: result.filesWritten || [],
     });
     logAction(`Worker: ${task.type}`, 'Done', (result.filesWritten || []).join(', ') || null);
-    console.log(`[worker] Task ${task.id} done.`);
+    console.log(`[worker] Task ${task.id} → done. Output: ${(result.output || '').slice(0, 100)}`);
   } catch (e) {
     queue.updateTask(task.id, {
       status: 'failed',

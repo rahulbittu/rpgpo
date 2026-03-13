@@ -2,22 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RPGPO Command Center</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#06080c" />
+  <title>RPGPO</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="shell">
+
     <!-- Sidebar -->
     <nav class="sidebar">
       <div class="logo">
         <span class="logo-text">RPGPO</span>
-        <span class="logo-live" id="liveDot" title="SSE connected"></span>
+        <span class="logo-live" id="liveDot"></span>
       </div>
       <div class="nav-links">
         <a href="#" class="nav-link active" data-tab="home">Home</a>
         <a href="#" class="nav-link" data-tab="missions">Missions</a>
-        <a href="#" class="nav-link" data-tab="brief">Daily Brief</a>
+        <a href="#" class="nav-link" data-tab="brief">Brief</a>
         <a href="#" class="nav-link" data-tab="approvals">Approvals</a>
         <a href="#" class="nav-link" data-tab="logs">Logs</a>
         <a href="#" class="nav-link flagship" data-tab="topranker">TopRanker</a>
@@ -26,62 +29,83 @@
       </div>
       <div class="sidebar-footer">
         <div class="status-pills">
-          <span class="pill" id="serverPill" title="Server">SRV</span>
-          <span class="pill" id="workerPill" title="Worker">WKR</span>
+          <span class="pill" id="serverPill">SRV</span>
+          <span class="pill" id="workerPill">WKR</span>
+          <span class="pill" id="ssePill">SSE</span>
         </div>
-        <div class="sys-status" id="sysStatus">Connecting...</div>
+        <div class="sys-status" id="sysStatus">--</div>
       </div>
     </nav>
 
-    <!-- Main content -->
+    <!-- Main -->
     <main class="content">
 
-      <!-- HOME -->
+      <!-- ════ HOME ════ -->
       <section class="tab-panel active" id="tab-home">
         <div class="page-header">
           <h1>Command Center</h1>
           <p class="subtitle" id="homeDate"></p>
         </div>
 
-        <!-- Status bar -->
         <div class="status-bar">
           <div class="status-item">
             <span class="status-label">Server</span>
-            <span class="status-value" id="homeServerStatus">--</span>
+            <span class="status-value" id="hsServer">--</span>
           </div>
           <div class="status-item">
             <span class="status-label">Worker</span>
-            <span class="status-value" id="homeWorkerStatus">--</span>
+            <span class="status-value" id="hsWorker">--</span>
           </div>
           <div class="status-item">
-            <span class="status-label">Tasks</span>
-            <span class="status-value" id="homeTaskCount">--</span>
+            <span class="status-label">Queue</span>
+            <span class="status-value" id="hsQueue">--</span>
           </div>
           <div class="status-item">
             <span class="status-label">Models</span>
-            <span class="status-value" id="homeModelStatus">--</span>
+            <span class="status-value" id="hsModels">--</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Approvals</span>
+            <span class="status-value" id="hsApprovals">--</span>
           </div>
         </div>
 
-        <div class="grid-3">
+        <!-- Quick actions row -->
+        <div class="g4 mt" id="homeQuickActions">
+          <button class="qa-btn" onclick="submitTask('refresh-state','Refresh State')"><span class="qa-icon">&#8635;</span>Refresh</button>
+          <button class="qa-btn" onclick="submitTask('board-run','Board of AI')"><span class="qa-icon">&#9670;</span>Board Run</button>
+          <button class="qa-btn" onclick="switchTab('approvals')"><span class="qa-icon">&#9888;</span>Approvals</button>
+          <button class="qa-btn" onclick="switchTab('topranker')"><span class="qa-icon">&#9733;</span>TopRanker</button>
+        </div>
+
+        <div class="g3 mt">
           <div class="card accent">
-            <h3>Top Priorities</h3>
+            <h3>Priorities</h3>
             <ul id="homePriorities"></ul>
-          </div>
-          <div class="card">
-            <h3>Pending Approvals</h3>
-            <div id="homeApprovals"></div>
           </div>
           <div class="card">
             <h3>Mission Health</h3>
             <div id="homeMissions"></div>
           </div>
+          <div class="card">
+            <h3>Pending Approvals</h3>
+            <div id="homeApprovals"></div>
+          </div>
         </div>
 
-        <div class="grid-2" style="margin-top:14px;">
+        <!-- Latest completed task -->
+        <div class="card mt" style="border-color:var(--border-bright)">
+          <h3>Latest Completed Task</h3>
+          <div id="homeLatestTask"><div class="task-empty">No completed tasks yet</div></div>
+        </div>
+
+        <div class="g2 mt">
           <div class="card">
-            <h3>Recent Tasks</h3>
-            <div id="homeRecentTasks"></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+              <h3 style="margin:0">Recent Tasks</h3>
+              <button class="refresh-btn" onclick="loadTasks()">&#8635;</button>
+            </div>
+            <div id="homeRecentTasks" class="task-queue-list" style="max-height:180px"></div>
           </div>
           <div class="card">
             <h3>Live Activity</h3>
@@ -92,16 +116,16 @@
         </div>
       </section>
 
-      <!-- MISSIONS -->
+      <!-- ════ MISSIONS ════ -->
       <section class="tab-panel" id="tab-missions">
         <div class="page-header">
           <h1>Missions</h1>
-          <p class="subtitle">All active RPGPO mission domains</p>
+          <p class="subtitle">All RPGPO mission domains</p>
         </div>
-        <div id="missionCards" class="grid-2"></div>
+        <div id="missionCards" class="g2"></div>
       </section>
 
-      <!-- DAILY BRIEF -->
+      <!-- ════ BRIEF ════ -->
       <section class="tab-panel" id="tab-brief">
         <div class="page-header">
           <h1>Daily Brief</h1>
@@ -110,155 +134,162 @@
         <div id="briefContent" class="card md-content"></div>
       </section>
 
-      <!-- APPROVALS -->
+      <!-- ════ APPROVALS ════ -->
       <section class="tab-panel" id="tab-approvals">
         <div class="page-header">
           <h1>Approvals</h1>
-          <p class="subtitle">Pending approval packets requiring Rahul's decision</p>
+          <p class="subtitle">Packets requiring Rahul's decision</p>
         </div>
         <div id="approvalsList"></div>
       </section>
 
-      <!-- LOGS -->
+      <!-- ════ LOGS ════ -->
       <section class="tab-panel" id="tab-logs">
         <div class="page-header">
-          <h1>Agent Logs</h1>
-          <p class="subtitle">Recorded agent runs and operations</p>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <h1>Logs</h1>
+              <p class="subtitle">Agent runs and decision logs</p>
+            </div>
+            <div style="display:flex;gap:4px" id="logFilters">
+              <button class="qa-btn" data-filter="all" onclick="filterLogs('all')">All</button>
+              <button class="qa-btn" data-filter="agent" onclick="filterLogs('agent')">Agent</button>
+              <button class="qa-btn" data-filter="decision" onclick="filterLogs('decision')">Decision</button>
+            </div>
+          </div>
         </div>
         <div id="logsList"></div>
       </section>
 
-      <!-- TOPRANKER -->
+      <!-- ════ TOPRANKER ════ -->
       <section class="tab-panel" id="tab-topranker">
         <div class="page-header">
-          <h1>TopRanker <span class="badge-flagship">Flagship Mission</span></h1>
+          <h1>TopRanker <span class="badge-flagship">Flagship</span></h1>
           <p class="subtitle">Community-ranked local business leaderboard</p>
         </div>
 
-        <div class="grid-2">
+        <div class="g2">
           <div class="card" id="trStatus"></div>
-          <div class="card" id="trQuickFacts"></div>
+          <div class="card" id="trFacts"></div>
         </div>
 
-        <div class="card md-content" style="margin-top:14px;" id="trSummary"></div>
+        <div class="g3 mt">
+          <button class="qa-btn" onclick="runAiTask('claude-topranker-review')"><span class="qa-icon">&#9733;</span>Review Prompt</button>
+          <button class="qa-btn" onclick="submitTask('board-run','Board of AI')"><span class="qa-icon">&#9670;</span>Run Board</button>
+          <button class="qa-btn" onclick="switchTab('controls')"><span class="qa-icon">&#9654;</span>Open Controls</button>
+        </div>
+
+        <div class="card md-content mt" id="trSummary"></div>
       </section>
 
-      <!-- CONTROLS -->
+      <!-- ════ CONTROLS ════ -->
       <section class="tab-panel" id="tab-controls">
         <div class="page-header">
           <h1>Controls</h1>
-          <p class="subtitle">RPGPO operational controls and task queue</p>
+          <p class="subtitle">Operations surface and task queue</p>
         </div>
 
         <!-- Task Queue -->
-        <div class="card task-queue-card">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <div class="card" style="border-color:var(--border-bright)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
             <h3 style="margin:0">Task Queue</h3>
-            <span class="task-count-badge" id="taskQueueCount">0 tasks</span>
+            <div style="display:flex;gap:6px;align-items:center">
+              <button class="refresh-btn" onclick="loadTasks()">&#8635;</button>
+              <span class="task-count" id="taskQueueCount">0</span>
+            </div>
           </div>
           <div id="taskQueueList" class="task-queue-list">
-            <div class="task-empty">No tasks in queue.</div>
+            <div class="task-empty">No tasks in queue</div>
           </div>
         </div>
 
-        <div class="board-run-section" style="margin-top:14px;">
-          <button class="ctrl-btn board-btn" onclick="submitTask('board-run', 'Board of AI Run')" id="boardRunBtn">
+        <!-- Board of AI -->
+        <div style="margin-top:10px">
+          <button class="ctrl-btn board-btn" onclick="submitTask('board-run','Board of AI Run')" id="boardRunBtn">
             <span class="ctrl-icon">&#9670;&#9670;&#9670;</span>
             Run Board of AI
-            <span class="ctrl-desc">Orchestrate Claude + OpenAI + Perplexity against live RPGPO data</span>
+            <span class="ctrl-desc">Claude + OpenAI + Perplexity orchestration</span>
           </button>
         </div>
 
-        <h3 style="margin-top:20px;">Operating Loops</h3>
-        <div class="grid-3">
-          <button class="ctrl-btn" onclick="submitTask('morning-loop', 'Morning Loop')">
-            <span class="ctrl-icon">&#9728;</span>
-            Morning Loop
-            <span class="ctrl-desc">Refresh state, generate daily brief</span>
+        <h3 class="mt" style="margin-top:14px">Operating Loops</h3>
+        <div class="g3">
+          <button class="ctrl-btn" onclick="submitTask('morning-loop','Morning Loop')">
+            <span class="ctrl-icon">&#9728;</span>Morning Loop
+            <span class="ctrl-desc">Refresh + daily brief</span>
           </button>
-          <button class="ctrl-btn" onclick="submitTask('evening-loop', 'Evening Loop')">
-            <span class="ctrl-icon">&#9790;</span>
-            Evening Loop
-            <span class="ctrl-desc">Log day summary, update state</span>
+          <button class="ctrl-btn" onclick="submitTask('evening-loop','Evening Loop')">
+            <span class="ctrl-icon">&#9790;</span>Evening Loop
+            <span class="ctrl-desc">Day summary + state</span>
           </button>
-          <button class="ctrl-btn" onclick="submitTask('refresh-state', 'Refresh State')">
-            <span class="ctrl-icon">&#8635;</span>
-            Refresh State
-            <span class="ctrl-desc">Re-scan files and rebuild state JSON</span>
+          <button class="ctrl-btn" onclick="submitTask('refresh-state','Refresh State')">
+            <span class="ctrl-icon">&#8635;</span>Refresh State
+            <span class="ctrl-desc">Rebuild state JSON</span>
           </button>
         </div>
 
-        <h3 style="margin-top:20px;">Claude Controls</h3>
-        <div class="grid-3">
+        <h3 style="margin-top:14px">Claude + AI</h3>
+        <div class="g4">
           <button class="ctrl-btn" onclick="launchClaude()">
-            <span class="ctrl-icon">&#9654;</span>
-            Launch Claude Session
-            <span class="ctrl-desc">Open Terminal in RPGPO with claude</span>
+            <span class="ctrl-icon">&#9654;</span>Launch Claude
           </button>
           <button class="ctrl-btn" onclick="runAiTask('claude-topranker-review')">
-            <span class="ctrl-icon">&#9733;</span>
-            TopRanker Review Prompt
-            <span class="ctrl-desc">Display the starter prompt for Claude</span>
+            <span class="ctrl-icon">&#9733;</span>TR Review
           </button>
-          <button class="ctrl-btn" onclick="switchTab('approvals')">
-            <span class="ctrl-icon">&#9888;</span>
-            Open Pending Approvals
-            <span class="ctrl-desc">Review items needing your decision</span>
+          <button class="ctrl-btn" onclick="runAiTask('openai-daily-brief')">
+            <span class="ctrl-icon">&#9673;</span>OpenAI Brief
+          </button>
+          <button class="ctrl-btn" onclick="runAiTask('perplexity-research')">
+            <span class="ctrl-icon">&#8853;</span>PPX Research
           </button>
         </div>
 
-        <div class="card" style="margin-top:20px;" id="controlOutput">
+        <h3 style="margin-top:14px">Navigation</h3>
+        <div class="g4">
+          <button class="qa-btn" onclick="switchTab('approvals')"><span class="qa-icon">&#9888;</span>Approvals</button>
+          <button class="qa-btn" onclick="switchTab('topranker')"><span class="qa-icon">&#9733;</span>TopRanker</button>
+          <button class="qa-btn" onclick="switchTab('brief')"><span class="qa-icon">&#9998;</span>Brief</button>
+          <button class="qa-btn" onclick="switchTab('logs')"><span class="qa-icon">&#9776;</span>Logs</button>
+        </div>
+
+        <div class="card mt">
           <h3>Output</h3>
-          <pre id="controlLog">Ready. No scripts have been run this session.</pre>
+          <pre id="controlLog">Ready.</pre>
         </div>
       </section>
 
-      <!-- SETTINGS -->
+      <!-- ════ SETTINGS ════ -->
       <section class="tab-panel" id="tab-settings">
         <div class="page-header">
           <h1>Settings</h1>
-          <p class="subtitle">Integrations status and system configuration</p>
+          <p class="subtitle">Integrations and system status</p>
         </div>
 
-        <div class="grid-3">
+        <div class="g3">
           <div class="card">
-            <h3>API Keys</h3>
-            <div id="settingsKeys"></div>
+            <h3>Models</h3>
+            <div id="settingsModels">
+              <div class="model-row"><span class="model-name">Claude</span><span class="model-tag local">Local</span></div>
+              <div class="model-row"><span class="model-name">OpenAI</span><span class="model-tag" id="mOpenAI">--</span></div>
+              <div class="model-row"><span class="model-name">Perplexity</span><span class="model-tag" id="mPerplexity">--</span></div>
+            </div>
           </div>
           <div class="card">
-            <h3>System Info</h3>
-            <div id="settingsSystem"></div>
-          </div>
-          <div class="card">
-            <h3>Server Status</h3>
+            <h3>Server</h3>
             <div id="settingsServer"></div>
           </div>
-        </div>
-
-        <div class="card" style="margin-top:14px;">
-          <h3>Model Status</h3>
-          <div class="model-status-grid" id="modelStatusGrid">
-            <div class="model-badge">
-              <span class="model-name">Claude</span>
-              <span class="model-tag local">Local Prompt</span>
-            </div>
-            <div class="model-badge">
-              <span class="model-name">OpenAI</span>
-              <span class="model-tag" id="modelOpenAI">--</span>
-            </div>
-            <div class="model-badge">
-              <span class="model-name">Perplexity</span>
-              <span class="model-tag" id="modelPerplexity">--</span>
-            </div>
+          <div class="card">
+            <h3>System</h3>
+            <div id="settingsSystem"></div>
           </div>
         </div>
 
-        <div class="card" style="margin-top:14px;">
-          <h3>Access Classes</h3>
-          <div style="font-size:13px;">
-            <div class="settings-row"><span class="settings-label">Class A</span> Core Safe Access — governance docs, repos, dashboards, public research</div>
-            <div class="settings-row"><span class="settings-label">Class B</span> Controlled Operational — toprankerapp@gmail.com, approved tools</div>
-            <div class="settings-row"><span class="settings-label">Class C</span> Sensitive Scoped — selected threads, private docs (narrow, deliberate)</div>
+        <div class="card mt">
+          <h3>RPGPO Access Classes</h3>
+          <div style="font-size:11px">
+            <div class="settings-row"><span class="settings-label">Class A</span> Core Safe — governance, repos, dashboards, public research</div>
+            <div class="settings-row"><span class="settings-label">Class B</span> Controlled — toprankerapp@gmail.com, approved tools</div>
+            <div class="settings-row"><span class="settings-label">Class C</span> Sensitive — selected threads, private docs (narrow)</div>
             <div class="settings-row"><span class="settings-label">Class D</span> Forbidden — anything not explicitly approved</div>
           </div>
         </div>
@@ -267,22 +298,22 @@
     </main>
   </div>
 
-  <!-- File viewer modal -->
+  <!-- Modal: file viewer -->
   <div class="modal-overlay" id="modal" onclick="closeModal(event)">
     <div class="modal-content">
       <div class="modal-header">
-        <span id="modalTitle">File Viewer</span>
+        <span id="modalTitle">File</span>
         <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">&times;</button>
       </div>
       <pre class="modal-body" id="modalBody"></pre>
     </div>
   </div>
 
-  <!-- Task detail modal -->
+  <!-- Modal: task detail -->
   <div class="modal-overlay" id="taskModal" onclick="closeTaskModal(event)">
     <div class="modal-content">
       <div class="modal-header">
-        <span id="taskModalTitle">Task Detail</span>
+        <span id="taskModalTitle">Task</span>
         <button class="modal-close" onclick="document.getElementById('taskModal').classList.remove('open')">&times;</button>
       </div>
       <pre class="modal-body" id="taskModalBody"></pre>
