@@ -593,6 +593,20 @@
             </div>
           </div>
           <div class="card">
+            <h3>Builder Settings</h3>
+            <div id="builderSettings">
+              <div class="settings-row">
+                <span class="settings-label">Timeout (min)</span>
+                <input type="number" id="settBuilderTimeout" class="settings-input" placeholder="10" step="1" min="1" max="30" onchange="saveBudgetSettings()" />
+              </div>
+              <div style="font-size:11px;color:var(--muted);margin-top:4px;padding:0 4px">
+                Hard limit for Claude CLI. Active tasks extend via inactivity detection (3min idle = kill).
+                Default: 10 min. Increase for large code tasks.
+              </div>
+            </div>
+            <div id="builderDiagnostics" style="margin-top:10px"></div>
+          </div>
+          <div class="card">
             <h3>System</h3>
             <div id="settingsSystem"></div>
           </div>

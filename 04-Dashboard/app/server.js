@@ -314,16 +314,84 @@ const server = http.createServer(async (req, res) => {
     });
   }
 
-  // Launch Claude
+  // Launch Claude Builder — creates a real tracked queue task
   if (req.url === '/api/launch-claude' && req.method === 'POST') {
-    try {
-      execSync(`osascript -e 'tell application "Terminal" to do script "cd \\"${RPGPO_ROOT}\\" && claude"'`, { timeout: 5000 });
-      logAction('Launch Claude', 'OK', null);
-      events.broadcast('activity', { action: 'Launched Claude session', ts: new Date().toISOString() });
-      return json(res, { ok: true, output: 'Claude session launched in Terminal.' });
-    } catch (e) {
-      return json(res, { ok: false, error: e.message });
+    const body = await parseBody(req);
+    const subtaskId = body.subtaskId || null;
+    console.log(`[server][launch-claude] Re-run requested. subtaskId=${subtaskId || 'none (standalone)'}`);
+
+    if (subtaskId) {
+      // Re-queue a builder_fallback subtask for another real attempt
+      const st = intake.getSubtask(subtaskId);
+      if (!st) {
+        console.log(`[server][launch-claude] FAILED: subtask not found: ${subtaskId}`);
+        return json(res, { ok: false, error: 'Subtask not found: ' + subtaskId }, 404);
+      }
+      console.log(`[server][launch-claude] Subtask found: "${st.title}" (status=${st.status})`);
+
+      // Reset subtask state so the worker re-runs the builder
+      intake.updateSubtask(subtaskId, {
+        status: 'queued',
+        builder_outcome: null,
+        builder_phase: null,
+        error: null,
+      });
+
+      let task;
+      try {
+        task = queue.addTask('execute-builder', `Builder re-run: ${st.title}`, { subtaskId });
+      } catch (e) {
+        console.error(`[server][launch-claude] FAILED to write queue task: ${e.message}`);
+        return json(res, { ok: false, error: 'Failed to create queue task: ' + e.message }, 500);
+      }
+
+      // Verify the task was actually persisted
+      const verified = queue.getTask(task.id);
+      if (!verified) {
+        console.error(`[server][launch-claude] FAILED: task ${task.id} not found after write — queue persistence failure`);
+        return json(res, { ok: false, error: 'Queue write failed — task not found after creation' }, 500);
+      }
+
+      console.log(`[server][launch-claude] SUCCESS: queue task ${task.id} created (type=execute-builder, status=${verified.status})`);
+      events.broadcast('activity', { action: `Builder re-queued for subtask: ${st.title}`, ts: new Date().toISOString() });
+      logAction('Launch Claude Builder', `Queued as ${task.id}`, `subtask=${subtaskId}`);
+      return json(res, {
+        ok: true,
+        task: verified,
+        subtaskId,
+        taskId: verified.id,
+        taskType: verified.type,
+        taskStatus: verified.status,
+        output: `Builder queued as task ${task.id} (type=${verified.type}). Worker will execute and track progress.`,
+      });
     }
+
+    // Standalone launch — create a launch_builder queue task
+    let task;
+    try {
+      task = queue.addTask('launch_builder', 'Standalone Claude Builder Session');
+    } catch (e) {
+      console.error(`[server][launch-claude] FAILED to write standalone queue task: ${e.message}`);
+      return json(res, { ok: false, error: 'Failed to create queue task: ' + e.message }, 500);
+    }
+
+    const verified = queue.getTask(task.id);
+    if (!verified) {
+      console.error(`[server][launch-claude] FAILED: standalone task ${task.id} not found after write`);
+      return json(res, { ok: false, error: 'Queue write failed — task not found after creation' }, 500);
+    }
+
+    console.log(`[server][launch-claude] SUCCESS: standalone task ${verified.id} created (type=launch_builder, status=${verified.status})`);
+    events.broadcast('activity', { action: 'Claude Builder session queued', ts: new Date().toISOString() });
+    logAction('Launch Claude Builder', `Queued as ${task.id}`, 'standalone');
+    return json(res, {
+      ok: true,
+      task: verified,
+      taskId: verified.id,
+      taskType: verified.type,
+      taskStatus: verified.status,
+      output: `Builder session queued as task ${task.id} (type=${verified.type}). Worker will spawn and track the process.`,
+    });
   }
 
   // Board run (queue-based)
@@ -423,27 +491,79 @@ const server = http.createServer(async (req, res) => {
 
     const body = await parseBody(req);
 
-    // If builder_fallback, user is confirming manual execution is complete — mark done
-    if (st.status === 'builder_fallback') {
+    // ── Completed-work approval: subtask already ran and produced results ──
+    // builder_outcome present means the builder/executor already finished;
+    // approval = "accept results, mark done, continue workflow"
+    const isCompletedWork = st.status === 'builder_fallback'
+      || (st.status === 'waiting_approval' && st.builder_outcome)
+      || (st.status === 'waiting_human' && st.builder_outcome);
+
+    if (isCompletedWork) {
+      const outcomeLabel = st.status === 'builder_fallback'
+        ? 'manual_execution_confirmed'
+        : `${st.builder_outcome}_approved`;
+
+      console.log(`[server][approve] Completed-work approval: subtask=${subtaskId}, status=${st.status}, builder_outcome=${st.builder_outcome}, marking done`);
+
       intake.updateSubtask(subtaskId, {
         status: 'done',
-        builder_outcome: 'manual_execution_confirmed',
-        output: (st.output || '') + '\n\n[Manual execution confirmed by Rahul]',
+        builder_outcome: outcomeLabel,
+        output: (st.output || '') + `\n\n[Approved by Rahul at ${new Date().toISOString()}]`,
       });
-      // Continue workflow from this point
+
+      // Re-run dependency resolution and queue next eligible subtasks
+      console.log(`[server][approve] Running workflow.onSubtaskComplete for ${subtaskId}`);
       const wfResult = workflow.onSubtaskComplete(subtaskId);
+      console.log(`[server][approve] Workflow result: action=${wfResult.action}, next=${(wfResult.next_subtask_ids || []).length}, approval_needed=${(wfResult.approval_needed || []).length}, msg=${wfResult.message}`);
+
+      const queuedNext = [];
       if (wfResult.next_subtask_ids) {
         for (const nextId of wfResult.next_subtask_ids) {
           const nextSt = intake.getSubtask(nextId);
-          if (nextSt) queue.addTask('execute-subtask', `Subtask: ${nextSt.title}`, { subtaskId: nextId });
+          if (nextSt) {
+            queue.addTask('execute-subtask', `Subtask: ${nextSt.title}`, { subtaskId: nextId });
+            queuedNext.push({ id: nextId, title: nextSt.title });
+            console.log(`[server][approve] Queued next subtask: ${nextId} "${nextSt.title}"`);
+          }
         }
       }
-      events.broadcast('activity', { action: `Builder fallback confirmed: ${st.title}`, ts: new Date().toISOString() });
-      events.broadcast('intake-update', { taskId: st.parent_task_id, subtaskId, action: 'builder_confirmed' });
-      return json(res, { ok: true, resumed: st.title, action: 'builder_confirmed' });
+
+      // Update parent task status
+      const parentTask = intake.getTask(st.parent_task_id);
+      if (parentTask && parentTask.status === 'waiting_approval') {
+        if (queuedNext.length > 0 || (wfResult.approval_needed && wfResult.approval_needed.length > 0)) {
+          intake.updateTask(st.parent_task_id, { status: 'executing' });
+          console.log(`[server][approve] Parent task ${st.parent_task_id} moved to executing`);
+        }
+      }
+
+      // Broadcast activity and SSE updates
+      const nextLabel = queuedNext.length > 0
+        ? `Queued next: ${queuedNext.map(n => n.title).join(', ')}`
+        : wfResult.action === 'complete' ? 'All subtasks complete' : wfResult.message;
+      events.broadcast('activity', {
+        action: `Approved "${st.title}" — ${nextLabel}`,
+        ts: new Date().toISOString(),
+      });
+      events.broadcast('intake-update', {
+        taskId: st.parent_task_id,
+        subtaskId,
+        action: 'approved_and_continued',
+        nextQueued: queuedNext,
+      });
+
+      return json(res, {
+        ok: true,
+        resumed: st.title,
+        action: 'approved_and_continued',
+        nextQueued: queuedNext,
+        workflowAction: wfResult.action,
+        message: nextLabel,
+      });
     }
 
-    // Normal approval — re-queue for execution
+    // ── Pre-execution approval: yellow/red subtask hasn't run yet — queue it ──
+    console.log(`[server][approve] Pre-execution approval: subtask=${subtaskId}, status=${st.status}, queuing for execution`);
     intake.updateSubtask(subtaskId, { status: 'queued' });
     queue.addTask('execute-subtask', `Subtask: ${st.title}`, { subtaskId });
 

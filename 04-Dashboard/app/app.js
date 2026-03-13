@@ -172,6 +172,11 @@ async function loadCostSettings() {
   try {
     const r = await fetch('/api/costs/settings');
     COST_SETTINGS = await r.json();
+    // Fetch subtasks for builder diagnostics display
+    try {
+      const sr = await fetch('/api/subtasks');
+      window._lastSubtasks = await sr.json();
+    } catch {}
     renderBudgetSettings();
   } catch {}
 }
@@ -688,10 +693,38 @@ function renderBudgetSettings() {
   const bl = document.getElementById('settBudgetLimit');
   const wt = document.getElementById('settWarnThreshold');
   const da = document.getElementById('settDisableAfter');
+  const bt = document.getElementById('settBuilderTimeout');
   if (gm) gm.value = COST_SETTINGS.geminiModel || 'gemini-2.5-flash-lite';
   if (bl) bl.value = COST_SETTINGS.geminibudgetLimit || '';
   if (wt) wt.value = COST_SETTINGS.warningThreshold || '';
   if (da) da.checked = !!COST_SETTINGS.disableAfterThreshold;
+  if (bt) bt.value = COST_SETTINGS.builderTimeoutMinutes || 10;
+
+  // Render builder diagnostics if available
+  renderBuilderDiagnostics();
+}
+
+function renderBuilderDiagnostics() {
+  const el = document.getElementById('builderDiagnostics');
+  if (!el) return;
+  // Pull diagnostics from most recent builder subtask
+  try {
+    const allSubs = window._lastSubtasks || [];
+    const builderSubs = allSubs.filter(s => s.builder_diagnostics || s.builder_outcome);
+    if (!builderSubs.length) { el.innerHTML = '<div style="font-size:11px;color:var(--muted)">No builder runs yet</div>'; return; }
+    const last = builderSubs[0];
+    const d = last.builder_diagnostics || {};
+    el.innerHTML = `
+      <div style="font-size:11px;border-top:1px solid var(--border);padding-top:6px">
+        <strong>Last Builder Run</strong>
+        <div class="settings-row"><span class="settings-label">Subtask</span>${esc(last.title || last.subtask_id)}</div>
+        <div class="settings-row"><span class="settings-label">Outcome</span><span class="builder-outcome-tag ${last.builder_outcome || ''}">${last.builder_outcome || '?'}</span></div>
+        ${d.durationMs ? `<div class="settings-row"><span class="settings-label">Duration</span>${Math.round(d.durationMs/1000)}s</div>` : ''}
+        ${d.totalOutputBytes != null ? `<div class="settings-row"><span class="settings-label">Output</span>${d.totalLines || 0} lines, ${Math.round((d.totalOutputBytes||0)/1024)}KB</div>` : ''}
+        ${d.killedReason ? `<div class="settings-row"><span class="settings-label">Killed</span><span style="color:var(--red)">${d.killedReason}</span></div>` : ''}
+        ${d.cwd ? `<div class="settings-row"><span class="settings-label">CWD</span><span style="font-size:10px;font-family:var(--mono)">${esc(d.cwd.split('/').slice(-3).join('/'))}</span></div>` : ''}
+      </div>`;
+  } catch { el.innerHTML = ''; }
 }
 
 async function saveBudgetSettings() {
@@ -700,6 +733,7 @@ async function saveBudgetSettings() {
     geminibudgetLimit: parseFloat(document.getElementById('settBudgetLimit').value) || null,
     warningThreshold: parseFloat(document.getElementById('settWarnThreshold').value) || null,
     disableAfterThreshold: document.getElementById('settDisableAfter').checked,
+    builderTimeoutMinutes: parseInt(document.getElementById('settBuilderTimeout')?.value) || 10,
   };
   try {
     await fetch('/api/costs/settings', {
@@ -707,7 +741,7 @@ async function saveBudgetSettings() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(settings),
     });
-    showToast('Budget settings saved', 'success');
+    showToast('Settings saved', 'success');
     loadStatus();
   } catch { showToast('Failed to save settings', 'error'); }
 }
@@ -1015,15 +1049,59 @@ async function submitTask(type, label, meta = {}) {
   }
 }
 
-async function launchClaude() {
+async function launchClaude(subtaskId) {
   const log = document.getElementById('controlLog');
-  if (log) log.textContent = 'Launching Claude...\n';
+  if (log) log.textContent = 'Queuing Claude Builder task...\n';
   try {
-    const r = await fetch('/api/launch-claude', { method: 'POST' });
+    const body = subtaskId ? { subtaskId } : {};
+    const r = await fetch('/api/launch-claude', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
     const d = await r.json();
-    if (log) log.textContent += d.ok ? d.output : 'Error: ' + d.error;
-    if (d.ok) showToast('Claude session launched', 'success');
-  } catch (e) { if (log) log.textContent += 'Failed: ' + e.message; }
+
+    if (!d.ok) {
+      const errMsg = d.error || 'Unknown error — server did not confirm task creation';
+      if (log) log.textContent += 'FAILED: ' + errMsg;
+      showToast('Re-run Builder failed: ' + errMsg, 'error');
+      return;
+    }
+
+    // Server confirmed the task was created and verified in tasks.json
+    const taskId = d.taskId || d.task?.id;
+    const taskType = d.taskType || d.task?.type;
+    if (log) log.textContent += `Queue task created: ${taskId} (type=${taskType})\n${d.output || ''}`;
+
+    // Verify the task exists by fetching the tasks list
+    try {
+      const tasksResp = await fetch('/api/tasks');
+      const tasks = await tasksResp.json();
+      const found = tasks.find(t => t.id === taskId);
+      if (found) {
+        if (log) log.textContent += `\nVerified: task ${taskId} exists in queue (status=${found.status})`;
+        showToast(`Builder queued as ${taskId} (verified in queue). Worker will pick it up.`, 'success');
+      } else {
+        if (log) log.textContent += `\nWARNING: task ${taskId} not found in tasks list after creation`;
+        showToast(`Builder task ${taskId} created but not found in queue — check server logs`, 'warning');
+      }
+    } catch (verifyErr) {
+      // Verification fetch failed, but the creation succeeded
+      if (log) log.textContent += `\nCould not verify task (${verifyErr.message}), but server confirmed creation`;
+      showToast(`Builder queued as ${taskId}. Could not verify — check Tasks tab.`, 'success');
+    }
+
+    // Refresh all relevant UI sections so the new task is visible
+    pushActivity(`Builder re-run queued: ${taskId}`);
+    if (typeof loadTasks === 'function') loadTasks();
+    if (typeof loadCurrentTaskFocus === 'function') loadCurrentTaskFocus();
+    if (typeof loadPendingApprovals === 'function') loadPendingApprovals();
+    if (typeof loadIntakeTasks === 'function') loadIntakeTasks();
+    if (selectedIntakeTaskId && typeof showIntakeDetail === 'function') showIntakeDetail(selectedIntakeTaskId);
+  } catch (e) {
+    if (log) log.textContent += 'Network error: ' + e.message;
+    showToast('Network error queuing builder — server may be down', 'error');
+  }
 }
 
 async function runAiTask(task) {
@@ -1549,8 +1627,13 @@ async function approveSubtask(subtaskId) {
     const r = await fetch('/api/subtask/' + subtaskId + '/approve', { method: 'POST' });
     const d = await r.json();
     if (d.ok) {
-      showToast(`Approved & resumed: ${d.resumed || 'subtask'}`, 'success');
-      pushActivity(`Approved: ${d.resumed}`);
+      const msg = d.action === 'approved_and_continued'
+        ? (d.nextQueued && d.nextQueued.length > 0
+          ? `Approved — resuming workflow: ${d.nextQueued.map(n => n.title).join(', ')}`
+          : `Approved "${d.resumed}" — ${d.message || 'workflow continuing'}`)
+        : `Approved & queued: ${d.resumed || 'subtask'}`;
+      showToast(msg, 'success');
+      pushActivity(msg);
       // Instant refresh everywhere
       loadPendingApprovals();
       loadCurrentTaskFocus();
@@ -1682,8 +1765,8 @@ function renderGlobalApprovalInbox() {
       </div>
       <div class="approval-inbox-actions">
         ${isFallback ? `
-          <button class="btn-launch-builder" onclick="event.stopPropagation();launchClaude()">
-            <span>&#9654;</span> Launch Claude Builder
+          <button class="btn-launch-builder" onclick="event.stopPropagation();launchClaude('${s.subtask_id}')">
+            <span>&#9654;</span> Re-run Builder
           </button>
           <button class="btn-approve-global" onclick="event.stopPropagation();approveSubtaskGlobal('${s.subtask_id}', this)">
             <span>&#10003;</span> Manual Execution Done
@@ -1717,8 +1800,13 @@ async function approveSubtaskGlobal(subtaskId, btnEl) {
     const r = await fetch('/api/subtask/' + subtaskId + '/approve', { method: 'POST' });
     const d = await r.json();
     if (d.ok) {
-      showToast(`Approved & resumed: ${d.resumed || 'subtask'}`, 'success');
-      pushActivity(`Approved: ${d.resumed}`);
+      const msg = d.action === 'approved_and_continued'
+        ? (d.nextQueued && d.nextQueued.length > 0
+          ? `Approved — resuming workflow: ${d.nextQueued.map(n => n.title).join(', ')}`
+          : `Approved "${d.resumed}" — ${d.message || 'workflow continuing'}`)
+        : `Approved & queued: ${d.resumed || 'subtask'}`;
+      showToast(msg, 'success');
+      pushActivity(msg);
       // Instant refresh
       loadPendingApprovals();
       loadCurrentTaskFocus();
@@ -2111,8 +2199,8 @@ function renderTaskTimeline(task, subtasks) {
     // Action buttons based on status
     if (ev.status === 'builder_fallback') {
       html += `<div class="tl-actions" style="margin-top:6px;display:flex;gap:6px">
-        <button class="btn-launch-builder" onclick="event.stopPropagation();launchClaude()">
-          <span>&#9654;</span> Launch Claude Builder
+        <button class="btn-launch-builder" onclick="event.stopPropagation();launchClaude('${ev.subtask_id}')">
+          <span>&#9654;</span> Re-run Builder
         </button>
         <button class="btn-approve-inline" onclick="event.stopPropagation();approveSubtaskGlobal('${ev.subtask_id}', this)">
           <span>&#10003;</span> Manual Execution Done

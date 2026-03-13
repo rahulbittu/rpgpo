@@ -54,8 +54,20 @@ console.log(`[worker] Polling every ${POLL_INTERVAL}ms`);
 // Non-blocking, progress-aware, honest about outcomes.
 // ═══════════════════════════════════════════
 
-const BUILDER_TIMEOUT_MS = 180000; // 3 minutes
-const BUILDER_PROGRESS_INTERVAL = 2000;
+// Builder timeout defaults — overridable via cost-settings.json
+const BUILDER_DEFAULT_TIMEOUT_MS = 600000; // 10 minutes (was 3min — too short for real code tasks)
+const BUILDER_INACTIVITY_TIMEOUT_MS = 180000; // 3 minutes of no output = hung (Claude code tasks take 60-90s before first output)
+const BUILDER_PROGRESS_INTERVAL = 3000;
+
+function getBuilderTimeoutMs() {
+  try {
+    const settings = costs.getSettings();
+    if (settings.builderTimeoutMinutes && Number(settings.builderTimeoutMinutes) > 0) {
+      return Number(settings.builderTimeoutMinutes) * 60000;
+    }
+  } catch {}
+  return BUILDER_DEFAULT_TIMEOUT_MS;
+}
 
 // Classify changed files by project scope
 function classifyFiles(files) {
@@ -138,47 +150,170 @@ async function runBuilder(task, subtaskId, st, userPrompt) {
   }
 
   // ── Phase 2: LAUNCHING — Async Claude CLI execution ──
-  broadcastBuilderPhase(task.id, subtaskId, 'launching', 'Starting Claude CLI...');
+  // Determine working directory: use TopRanker source repo for TopRanker tasks
+  let builderCwd = RPGPO_ROOT;
+  const isTopRankerTask = (st.domain === 'topranker') ||
+    (targetFiles.some(f => f.toLowerCase().includes('topranker') || f.startsWith('02-Projects/TopRanker')));
+  const topRankerRepo = path.join(RPGPO_ROOT, '02-Projects/TopRanker/source-repo');
+  if (isTopRankerTask && fs.existsSync(topRankerRepo)) {
+    builderCwd = topRankerRepo;
+    console.log(`[worker][builder] TopRanker task — using cwd: ${builderCwd}`);
+  }
+
+  const hardTimeoutMs = getBuilderTimeoutMs();
+  const inactivityTimeoutMs = BUILDER_INACTIVITY_TIMEOUT_MS;
+  console.log(`[worker][builder] Timeout config: hard=${Math.round(hardTimeoutMs/60000)}min, inactivity=${Math.round(inactivityTimeoutMs/1000)}s`);
+  broadcastBuilderPhase(task.id, subtaskId, 'launching',
+    `Starting Claude CLI (timeout: ${Math.round(hardTimeoutMs/60000)}min, cwd: ${builderCwd.split('/').slice(-2).join('/')})...`);
   intake.updateSubtask(subtaskId, { builder_phase: 'launching' });
 
   let claudeResult = null;
   let filesChanged = [];
   let builderOutcome = null;
 
+  // Builder runtime diagnostics
+  const builderDiag = {
+    startedAt: new Date().toISOString(),
+    cwd: builderCwd,
+    hardTimeoutMs,
+    inactivityTimeoutMs,
+    targetFiles: realFiles,
+    totalOutputBytes: 0,
+    totalLines: 0,
+    lastOutputAt: null,
+    killedReason: null,
+    exitCode: null,
+    durationMs: 0,
+  };
+
+  // ── Builder preflight — verify Claude CLI responds using the exact same
+  //    spawn path (env, stdio, flags) that the real builder will use ──
+  const builderEnv = { ...process.env };
+  // Remove Claude Code nesting markers — these cause "cannot launch inside
+  // another Claude Code session" when the PM2 worker inherits them.
+  Object.keys(builderEnv).filter(k => k.startsWith('CLAUDE')).forEach(k => delete builderEnv[k]);
+
+  const builderStdio = ['ignore', 'pipe', 'pipe']; // stdin must be closed, not piped
+
+  try {
+    broadcastBuilderPhase(task.id, subtaskId, 'preflight', 'Verifying Claude CLI can respond...');
+    const preflightOut = await new Promise((pfResolve, pfReject) => {
+      const pf = spawn('claude', ['--dangerously-skip-permissions', '-p', 'Reply with exactly: PREFLIGHT_OK'], {
+        cwd: builderCwd,
+        env: builderEnv,
+        stdio: builderStdio,
+      });
+      let pfStdout = '', pfStderr = '';
+      pf.stdout.on('data', d => { pfStdout += d.toString(); });
+      pf.stderr.on('data', d => { pfStderr += d.toString(); });
+      pf.on('close', code => {
+        if (pfStdout.includes('PREFLIGHT_OK')) pfResolve(pfStdout);
+        else pfReject(new Error(`Preflight failed: exit=${code} stdout="${pfStdout.slice(0,100)}" stderr="${pfStderr.slice(0,200)}"`));
+      });
+      pf.on('error', pfReject);
+      setTimeout(() => { try { pf.kill('SIGTERM'); } catch {} pfReject(new Error('Preflight timed out after 30s')); }, 30000);
+    });
+    console.log(`[worker][builder] Preflight OK — Claude CLI is responsive`);
+    builderDiag.preflightOk = true;
+  } catch (pfErr) {
+    console.error(`[worker][builder] Preflight FAILED: ${pfErr.message.slice(0, 200)}`);
+    builderDiag.preflightOk = false;
+    builderDiag.preflightError = pfErr.message.slice(0, 300);
+    broadcastBuilderPhase(task.id, subtaskId, 'fallback', `Claude CLI preflight failed: ${pfErr.message.slice(0, 100)}`);
+
+    const promptFile = writeFile(
+      `03-Operations/Reports/Subtask-Claude-${today}-${subtaskId}.md`,
+      `# RPGPO Builder Prompt — Manual Execution Required\n## ${st.title}\n## Stage: ${st.stage}\n## Reason: Claude CLI preflight failed: ${pfErr.message.slice(0,200)}\n## Working Directory: ${builderCwd}\n## Target Files: ${realFiles.join(', ') || 'none'}\n\n${userPrompt}\n`
+    );
+    intake.updateSubtask(subtaskId, {
+      status: 'builder_fallback',
+      builder_outcome: 'builder_fallback_prompt_created',
+      builder_phase: 'fallback',
+      outcome_type: 'builder_fallback_prompt_created',
+      code_modified: false,
+      output: `Claude CLI preflight failed: ${pfErr.message.slice(0,200)}\nPrompt saved to ${promptFile}.`,
+      prompt_file: promptFile,
+      files_changed: [],
+      target_files: { real: realFiles, missing: missingFiles },
+      what_done: `Builder preflight failed — prompt saved for manual execution`,
+      builder_diagnostics: builderDiag,
+    });
+    intake.updateTask(st.parent_task_id, { status: 'waiting_approval' });
+    return { output: `Preflight failed: ${pfErr.message.slice(0,120)}`, builderOutcome: 'builder_fallback_prompt_created', filesWritten: [promptFile], diagnostics: builderDiag };
+  }
+
   // Snapshot git state before
   let gitBefore = '';
-  try { gitBefore = execSync('git diff --name-only', { cwd: RPGPO_ROOT, timeout: 5000 }).toString().trim(); } catch {}
+  try { gitBefore = execSync('git diff --name-only', { cwd: builderCwd, timeout: 5000 }).toString().trim(); } catch {}
 
   try {
     const startTime = Date.now();
 
     claudeResult = await new Promise((resolve, reject) => {
-      const args = ['-p', userPrompt.slice(0, 12000)];
+      const args = ['--dangerously-skip-permissions', '-p', userPrompt.slice(0, 16000)];
       const child = spawn('claude', args, {
-        cwd: RPGPO_ROOT,
-        env: { ...process.env },
-        stdio: ['pipe', 'pipe', 'pipe'],
+        cwd: builderCwd,
+        env: builderEnv,
+        stdio: builderStdio,
       });
 
       let stdout = '';
       let stderr = '';
+      let lastOutputTime = Date.now();
       let lastLineCount = 0;
+      let lastOutputBytes = 0;
+      let resolved = false;
 
+      function cleanup() {
+        clearInterval(progressInterval);
+        clearTimeout(hardTimer);
+        clearInterval(inactivityChecker);
+      }
+
+      // Track stdout — reset inactivity on real output
+      child.stdout.on('data', d => {
+        const chunk = d.toString();
+        stdout += chunk;
+        lastOutputTime = Date.now();
+        builderDiag.totalOutputBytes += chunk.length;
+        builderDiag.lastOutputAt = new Date().toISOString();
+      });
+      child.stderr.on('data', d => {
+        const chunk = d.toString();
+        stderr += chunk;
+        lastOutputTime = Date.now(); // stderr counts as activity too
+        // Log stderr so errors aren't silently swallowed
+        console.log(`[worker][builder] stderr: ${chunk.trim().slice(0, 200)}`);
+      });
+
+      // Progress broadcast
       const progressInterval = setInterval(() => {
         const lines = stdout.split('\n').length;
         const elapsed = Math.round((Date.now() - startTime) / 1000);
         const newLines = lines - lastLineCount;
+        const newBytes = stdout.length - lastOutputBytes;
+        const sinceLastOutput = Math.round((Date.now() - lastOutputTime) / 1000);
         lastLineCount = lines;
+        lastOutputBytes = stdout.length;
+        builderDiag.totalLines = lines;
+
+        const activeLabel = sinceLastOutput < 5 ? 'active' : sinceLastOutput < 30 ? 'thinking' : 'waiting';
         broadcastBuilderPhase(task.id, subtaskId, 'running',
-          `Claude working... ${lines} lines, ${elapsed}s elapsed${newLines > 0 ? ` (+${newLines} new)` : ''}`);
+          `Claude ${activeLabel}... ${lines} lines, ${Math.round(stdout.length/1024)}KB, ${elapsed}s elapsed` +
+          (newLines > 0 ? ` (+${newLines} new)` : '') +
+          (sinceLastOutput > 10 ? ` [${sinceLastOutput}s since last output]` : ''));
         intake.updateSubtask(subtaskId, { builder_phase: 'running' });
+
+        console.log(`[worker][builder] progress: ${lines} lines, ${Math.round(stdout.length/1024)}KB, ${elapsed}s, last_output=${sinceLastOutput}s ago [${activeLabel}]`);
       }, BUILDER_PROGRESS_INTERVAL);
 
-      child.stdout.on('data', d => { stdout += d.toString(); });
-      child.stderr.on('data', d => { stderr += d.toString(); });
-
       child.on('close', (code) => {
-        clearInterval(progressInterval);
+        if (resolved) return;
+        resolved = true;
+        cleanup();
+        builderDiag.exitCode = code;
+        builderDiag.durationMs = Date.now() - startTime;
+        console.log(`[worker][builder] Process exited: code=${code}, duration=${Math.round(builderDiag.durationMs/1000)}s, output=${Math.round(stdout.length/1024)}KB`);
         if (code === 0 || stdout.length > 0) {
           resolve(stdout);
         } else {
@@ -187,16 +322,55 @@ async function runBuilder(task, subtaskId, st, userPrompt) {
       });
 
       child.on('error', (err) => {
-        clearInterval(progressInterval);
+        if (resolved) return;
+        resolved = true;
+        cleanup();
+        builderDiag.killedReason = 'spawn_error';
         reject(err);
       });
 
-      // Hard timeout
-      setTimeout(() => {
-        clearInterval(progressInterval);
-        try { child.kill('SIGTERM'); } catch {}
-        reject(new Error('BUILDER_TIMEOUT'));
-      }, BUILDER_TIMEOUT_MS);
+      // Hard timeout — absolute maximum regardless of activity
+      const hardTimer = setTimeout(() => {
+        if (resolved) return;
+        resolved = true;
+        cleanup();
+        builderDiag.killedReason = 'hard_timeout';
+        builderDiag.durationMs = Date.now() - startTime;
+        console.log(`[worker][builder] HARD TIMEOUT after ${Math.round(builderDiag.durationMs/1000)}s (limit=${Math.round(hardTimeoutMs/60000)}min). Output so far: ${Math.round(stdout.length/1024)}KB`);
+
+        // If we have substantial output, save it and resolve instead of rejecting
+        if (stdout.length > 500) {
+          console.log(`[worker][builder] Had ${Math.round(stdout.length/1024)}KB of output — treating as partial success`);
+          try { child.kill('SIGTERM'); } catch {}
+          resolve(stdout);
+        } else {
+          try { child.kill('SIGTERM'); } catch {}
+          reject(new Error('BUILDER_TIMEOUT'));
+        }
+      }, hardTimeoutMs);
+
+      // Inactivity checker — kills only if NO output for inactivityTimeoutMs
+      const inactivityChecker = setInterval(() => {
+        if (resolved) return;
+        const idle = Date.now() - lastOutputTime;
+        if (idle > inactivityTimeoutMs) {
+          resolved = true;
+          cleanup();
+          builderDiag.killedReason = 'inactivity_timeout';
+          builderDiag.durationMs = Date.now() - startTime;
+          console.log(`[worker][builder] INACTIVITY TIMEOUT: no output for ${Math.round(idle/1000)}s (limit=${Math.round(inactivityTimeoutMs/1000)}s). Total output: ${Math.round(stdout.length/1024)}KB`);
+
+          // If we have substantial output, treat as partial success
+          if (stdout.length > 500) {
+            console.log(`[worker][builder] Had ${Math.round(stdout.length/1024)}KB — treating as partial success`);
+            try { child.kill('SIGTERM'); } catch {}
+            resolve(stdout);
+          } else {
+            try { child.kill('SIGTERM'); } catch {}
+            reject(new Error('BUILDER_INACTIVITY_TIMEOUT'));
+          }
+        }
+      }, 10000); // check every 10s
     });
 
     // ── Phase 3: DIFFING — Detect file changes via git diff ──
@@ -204,32 +378,56 @@ async function runBuilder(task, subtaskId, st, userPrompt) {
     intake.updateSubtask(subtaskId, { builder_phase: 'diffing' });
 
     try {
-      const gitAfter = execSync('git diff --name-only', { cwd: RPGPO_ROOT, timeout: 5000 }).toString().trim();
+      const gitAfter = execSync('git diff --name-only', { cwd: builderCwd, timeout: 5000 }).toString().trim();
       const beforeSet = new Set(gitBefore.split('\n').filter(Boolean));
       filesChanged = gitAfter.split('\n').filter(Boolean).filter(f => !beforeSet.has(f));
-      const untracked = execSync('git ls-files --others --exclude-standard', { cwd: RPGPO_ROOT, timeout: 5000 }).toString().trim();
+      const untracked = execSync('git ls-files --others --exclude-standard', { cwd: builderCwd, timeout: 5000 }).toString().trim();
       if (untracked) filesChanged.push(...untracked.split('\n').filter(Boolean));
     } catch {}
 
+    // Also check RPGPO_ROOT if cwd was different
+    if (builderCwd !== RPGPO_ROOT) {
+      try {
+        const rpgpoAfter = execSync('git diff --name-only', { cwd: RPGPO_ROOT, timeout: 5000 }).toString().trim();
+        const beforeSet = new Set(gitBefore.split('\n').filter(Boolean));
+        const rpgpoChanged = rpgpoAfter.split('\n').filter(Boolean).filter(f => !beforeSet.has(f) && !filesChanged.includes(f));
+        filesChanged.push(...rpgpoChanged);
+      } catch {}
+    }
+
     // ── Phase 4: CLASSIFYING — Determine honest outcome ──
+    builderDiag.filesChanged = filesChanged.length;
     broadcastBuilderPhase(task.id, subtaskId, 'classifying',
       filesChanged.length > 0 ? `${filesChanged.length} file(s) changed` : 'No file changes detected');
 
     builderOutcome = filesChanged.length > 0 ? 'code_applied' : 'no_changes';
 
+    // If hard/inactivity timeout but we still got output — note it
+    if (builderDiag.killedReason) {
+      console.log(`[worker][builder] Completed via ${builderDiag.killedReason} with ${filesChanged.length} file changes and ${builderDiag.totalLines} lines output`);
+    }
+
   } catch (claudeErr) {
     const errMsg = claudeErr.message || '';
-    const isTimeout = errMsg.includes('ETIMEDOUT') || errMsg.includes('BUILDER_TIMEOUT');
-    console.log(`[worker] Claude Builder failed: ${errMsg.slice(0, 120)}`);
+    const isTimeout = errMsg.includes('ETIMEDOUT') || errMsg.includes('BUILDER_TIMEOUT') || errMsg.includes('BUILDER_INACTIVITY_TIMEOUT');
+    const isInactivity = errMsg.includes('BUILDER_INACTIVITY_TIMEOUT');
+    builderDiag.durationMs = builderDiag.durationMs || (Date.now() - new Date(builderDiag.startedAt).getTime());
+    const durationSec = Math.round(builderDiag.durationMs / 1000);
+    console.log(`[worker][builder] FAILED: ${errMsg.slice(0, 120)} (duration=${durationSec}s, output=${builderDiag.totalOutputBytes}B, reason=${builderDiag.killedReason || 'error'})`);
 
     builderOutcome = isTimeout ? 'builder_timeout' : 'builder_fallback_prompt_created';
-    broadcastBuilderPhase(task.id, subtaskId, 'fallback',
-      isTimeout ? 'Claude CLI timed out' : 'Claude CLI unavailable');
+    const timeoutDetail = isInactivity
+      ? `Claude CLI had no output for ${Math.round(BUILDER_INACTIVITY_TIMEOUT_MS/1000)}s (hung)`
+      : isTimeout
+        ? `Claude CLI exceeded ${Math.round(getBuilderTimeoutMs()/60000)}-minute hard timeout`
+        : 'Claude CLI unavailable';
+
+    broadcastBuilderPhase(task.id, subtaskId, 'fallback', timeoutDetail);
 
     // Write prompt file for manual execution
     const promptFile = writeFile(
       `03-Operations/Reports/Subtask-Claude-${today}-${subtaskId}.md`,
-      `# RPGPO Builder Prompt — Manual Execution Required\n## ${st.title}\n## Stage: ${st.stage}\n## Reason: ${isTimeout ? 'Claude CLI timed out' : 'Claude CLI unavailable'}\n## Target Files: ${realFiles.join(', ') || 'none'}\n\n${userPrompt}\n`
+      `# RPGPO Builder Prompt — Manual Execution Required\n## ${st.title}\n## Stage: ${st.stage}\n## Reason: ${timeoutDetail}\n## Duration: ${durationSec}s\n## Output received: ${builderDiag.totalOutputBytes} bytes, ${builderDiag.totalLines} lines\n## Working Directory: ${builderCwd}\n## Target Files: ${realFiles.join(', ') || 'none'}\n\n${userPrompt}\n`
     );
 
     intake.updateSubtask(subtaskId, {
@@ -238,34 +436,38 @@ async function runBuilder(task, subtaskId, st, userPrompt) {
       builder_phase: 'fallback',
       outcome_type: builderOutcome,
       code_modified: false,
-      output: `Claude CLI ${isTimeout ? 'timed out' : 'unavailable'}. Prompt saved to ${promptFile}.\nManual execution required — launch Claude Builder and run this prompt.`,
+      output: `${timeoutDetail}.\nDuration: ${durationSec}s | Output: ${builderDiag.totalOutputBytes} bytes\nPrompt saved to ${promptFile}.\nManual execution required — launch Claude Builder and run this prompt.`,
       prompt_file: promptFile,
       files_changed: [],
       target_files: { real: realFiles, missing: missingFiles },
-      what_done: `Builder ${isTimeout ? 'timed out' : 'unavailable'} — prompt saved for manual execution`,
+      what_done: `Builder ${isInactivity ? 'hung (no output)' : isTimeout ? 'timed out' : 'unavailable'} after ${durationSec}s — prompt saved for manual execution`,
+      builder_diagnostics: builderDiag,
     });
     intake.updateTask(st.parent_task_id, { status: 'waiting_approval' });
 
     return {
-      output: `Builder ${isTimeout ? 'timeout' : 'fallback'}: ${promptFile}`,
+      output: `Builder ${isTimeout ? 'timeout' : 'fallback'}: ${promptFile} (${durationSec}s, ${builderDiag.totalOutputBytes}B output)`,
       builderOutcome,
       filesWritten: [promptFile],
+      diagnostics: builderDiag,
     };
   }
 
   // ── Phase 5: REPORTING — Save report and generate diff summary ──
-  broadcastBuilderPhase(task.id, subtaskId, 'reporting', 'Generating report...');
+  builderDiag.durationMs = builderDiag.durationMs || (Date.now() - new Date(builderDiag.startedAt).getTime());
+  const durationSec = Math.round(builderDiag.durationMs / 1000);
+  broadcastBuilderPhase(task.id, subtaskId, 'reporting', `Generating report (${durationSec}s, ${filesChanged.length} files)...`);
 
   let diffSummary = '';
   let diffDetail = '';
   if (filesChanged.length > 0) {
-    try { diffSummary = execSync('git diff --stat', { cwd: RPGPO_ROOT, timeout: 5000 }).toString().trim(); } catch {}
-    try { diffDetail = execSync('git diff', { cwd: RPGPO_ROOT, timeout: 10000 }).toString().trim(); } catch {}
+    try { diffSummary = execSync('git diff --stat', { cwd: builderCwd, timeout: 5000 }).toString().trim(); } catch {}
+    try { diffDetail = execSync('git diff', { cwd: builderCwd, timeout: 10000 }).toString().trim(); } catch {}
   }
 
   const reportFile = writeFile(
     `03-Operations/Reports/Builder-Claude-${today}-${subtaskId}.md`,
-    `# Claude Builder Output\n## ${st.title}\n## Stage: ${st.stage}\n## Outcome: ${builderOutcome}\n## Date: ${today}\n## Target Files: ${realFiles.join(', ') || 'none'}\n\n### Builder Output\n${(claudeResult || '').slice(0, 10000)}\n\n### Files Changed\n${filesChanged.map(f => '- ' + f).join('\n') || 'None detected'}\n\n### Diff Summary\n\`\`\`\n${diffSummary || 'No changes'}\n\`\`\`\n`
+    `# Claude Builder Output\n## ${st.title}\n## Stage: ${st.stage}\n## Outcome: ${builderOutcome}\n## Date: ${today}\n## Duration: ${durationSec}s\n## Working Directory: ${builderCwd}\n## Target Files: ${realFiles.join(', ') || 'none'}\n## Output: ${builderDiag.totalLines} lines, ${builderDiag.totalOutputBytes} bytes\n${builderDiag.killedReason ? `## Killed: ${builderDiag.killedReason}\n` : ''}\n### Builder Output\n${(claudeResult || '').slice(0, 10000)}\n\n### Files Changed\n${filesChanged.map(f => '- ' + f).join('\n') || 'None detected'}\n\n### Diff Summary\n\`\`\`\n${diffSummary || 'No changes'}\n\`\`\`\n`
   );
 
   // ── Phase 6: STATE TRANSITION — Based on honest outcome ──
@@ -292,13 +494,16 @@ async function runBuilder(task, subtaskId, st, userPrompt) {
       target_files: { real: realFiles, missing: missingFiles },
       report_file: reportFile,
       what_done: whatDone,
+      builder_diagnostics: builderDiag,
     });
     intake.updateTask(st.parent_task_id, { status: 'waiting_approval' });
 
+    console.log(`[worker][builder] SUCCESS: code_applied, ${filesChanged.length} files, ${durationSec}s`);
     return {
-      output: `Builder: code_applied. ${filesChanged.length} file(s) changed. Awaiting approval.`,
+      output: `Builder: code_applied. ${filesChanged.length} file(s) changed in ${durationSec}s. Awaiting approval.`,
       builderOutcome: 'code_applied',
       filesWritten: [reportFile, ...filesChanged],
+      diagnostics: builderDiag,
     };
   }
 
@@ -581,12 +786,21 @@ const handlers = {
 
   // Dedicated builder execution — can be queued directly for re-runs/revisions
   'execute-builder': async (task) => {
+    console.log(`[worker][execute-builder] Picked up task ${task.id} — starting builder execution`);
     const subtaskId = task.meta?.subtaskId;
     const revisionNotes = task.meta?.revisionNotes || '';
-    if (!subtaskId) throw new Error('No subtaskId in meta');
+    if (!subtaskId) {
+      console.error(`[worker][execute-builder] FAILED: no subtaskId in task ${task.id} meta`);
+      throw new Error('No subtaskId in meta');
+    }
+    console.log(`[worker][execute-builder] subtaskId=${subtaskId}, revisionNotes=${revisionNotes ? 'yes' : 'none'}`);
 
     const st = intake.getSubtask(subtaskId);
-    if (!st) throw new Error('Subtask not found: ' + subtaskId);
+    if (!st) {
+      console.error(`[worker][execute-builder] FAILED: subtask ${subtaskId} not found`);
+      throw new Error('Subtask not found: ' + subtaskId);
+    }
+    console.log(`[worker][execute-builder] Subtask found: "${st.title}" (model=${st.assigned_model}, stage=${st.stage})`);
 
     // Gather file context
     let fileContext = '';
@@ -601,6 +815,112 @@ const handlers = {
     }
 
     return await runBuilder(task, subtaskId, st, userPrompt);
+  },
+
+  // Standalone builder launch — spawns Claude CLI, tracks process, reports honestly
+  'launch_builder': async (task) => {
+    const startTime = Date.now();
+    queue.updateTask(task.id, { output: '[launch_builder] Verifying Claude CLI availability...' });
+
+    // Phase 1: Verify Claude CLI exists
+    let claudePath = null;
+    try {
+      claudePath = execSync('which claude', { timeout: 5000 }).toString().trim();
+    } catch {
+      queue.updateTask(task.id, {
+        output: '[launch_builder] launch_failed — Claude CLI not found in PATH',
+        error: 'Claude CLI not found. Install with: npm install -g @anthropic-ai/claude-code',
+      });
+      return {
+        output: 'launch_failed: Claude CLI not found in PATH',
+        launch_verified: false,
+        reason: 'claude_cli_not_found',
+      };
+    }
+
+    queue.updateTask(task.id, { output: `[launch_builder] Claude CLI found at ${claudePath}. Spawning process...` });
+
+    // Phase 2: Spawn Claude with a project status prompt
+    const statusPrompt = 'Review the current RPGPO project state. Check git status, recent changes, and any pending work. Provide a brief status summary of what needs attention.';
+
+    try {
+      const result = await new Promise((resolve, reject) => {
+        // Use same clean spawn path as runBuilder
+        const standaloneEnv = { ...process.env };
+        Object.keys(standaloneEnv).filter(k => k.startsWith('CLAUDE')).forEach(k => delete standaloneEnv[k]);
+        const child = spawn('claude', ['--dangerously-skip-permissions', '-p', statusPrompt], {
+          cwd: RPGPO_ROOT,
+          env: standaloneEnv,
+          stdio: ['ignore', 'pipe', 'pipe'],
+        });
+
+        let stdout = '';
+        let stderr = '';
+        let pid = child.pid;
+
+        queue.updateTask(task.id, {
+          output: `[launch_builder] Process spawned (PID: ${pid}). Claude is working...`,
+        });
+
+        const progressInterval = setInterval(() => {
+          const elapsed = Math.round((Date.now() - startTime) / 1000);
+          const lines = stdout.split('\n').length;
+          queue.updateTask(task.id, {
+            output: `[launch_builder] Running (PID: ${pid}) — ${lines} lines, ${elapsed}s elapsed`,
+          });
+        }, BUILDER_PROGRESS_INTERVAL);
+
+        child.stdout.on('data', d => { stdout += d.toString(); });
+        child.stderr.on('data', d => { stderr += d.toString(); });
+
+        child.on('close', (code) => {
+          clearInterval(progressInterval);
+          if (code === 0 || stdout.length > 0) {
+            resolve({ stdout, pid, exitCode: code });
+          } else {
+            reject(new Error(stderr || `Claude CLI exit code ${code}`));
+          }
+        });
+
+        child.on('error', (err) => {
+          clearInterval(progressInterval);
+          reject(err);
+        });
+
+        // Timeout — use configurable timeout
+        setTimeout(() => {
+          clearInterval(progressInterval);
+          try { child.kill('SIGTERM'); } catch {}
+          reject(new Error('BUILDER_TIMEOUT'));
+        }, getBuilderTimeoutMs());
+      });
+
+      const elapsed = Math.round((Date.now() - startTime) / 1000);
+      const today = new Date().toISOString().slice(0, 10);
+      const reportFile = writeFile(
+        `03-Operations/Reports/Builder-Standalone-${today}-${task.id}.md`,
+        `# Standalone Claude Builder Session\n## Date: ${today}\n## PID: ${result.pid}\n## Duration: ${elapsed}s\n## Exit Code: ${result.exitCode}\n\n${result.stdout.slice(0, 10000)}\n`
+      );
+
+      return {
+        output: `Builder session completed (PID: ${result.pid}, ${elapsed}s).\n\n${result.stdout.slice(0, 3000)}`,
+        launch_verified: true,
+        pid: result.pid,
+        duration_seconds: elapsed,
+        filesWritten: reportFile ? [reportFile] : [],
+      };
+    } catch (err) {
+      const errMsg = err.message || '';
+      const isTimeout = errMsg.includes('BUILDER_TIMEOUT');
+      const reason = isTimeout ? 'timeout' : 'spawn_failed';
+
+      return {
+        output: `launch_failed: ${isTimeout ? 'Claude CLI timed out after 3 minutes' : errMsg}`,
+        launch_verified: false,
+        reason,
+        error: errMsg.slice(0, 500),
+      };
+    }
   },
 
   // AI Channel tasks — direct model interaction from the Channels tab
@@ -713,7 +1033,7 @@ async function processNext() {
   }
 
   running = true;
-  console.log(`[worker] Task ${task.id} → running: ${task.type} — ${task.label}`);
+  console.log(`[worker] ── Task pickup ── ${task.id} → type=${task.type} label="${task.label}" meta=${JSON.stringify(task.meta || {})}`);
   queue.updateTask(task.id, { status: 'running' });
 
   try {
