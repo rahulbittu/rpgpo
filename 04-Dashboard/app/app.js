@@ -1,4 +1,4 @@
-// RPGPO Command Center v4 — World-Class Private Operations Console
+// RPGPO Command Center v5 — Premium Private Operations Console
 
 let DATA = null, TASKS = [], STATUS = null;
 const activity = [];
@@ -6,14 +6,15 @@ const MAX_ACT = 50;
 let trackedTaskId = null;
 let logFilter = 'all';
 let taskFilter = 'all';
+let activeChannel = 'claude';
 let evtSource = null;
 let sseReconnectTimer = null;
 let workerLastSeen = null;
 let currentlyRunningTask = null;
 
-// ══════════════════════════════════════════════
-// SSE — Live event stream with auto-reconnect
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
+// SSE
+// ═══════════════════════════════════════════
 
 function connectSSE() {
   if (evtSource) try { evtSource.close(); } catch {}
@@ -21,17 +22,13 @@ function connectSSE() {
   evtSource = new EventSource('/api/events');
 
   evtSource.addEventListener('connected', () => {
-    console.log('[SSE] connected');
     document.getElementById('liveDot').classList.add('connected');
     document.getElementById('ssePill').classList.add('online');
     pushActivity('SSE connected');
   });
 
   evtSource.addEventListener('activity', (e) => {
-    try {
-      const d = JSON.parse(e.data);
-      pushActivity(d.action);
-    } catch {}
+    try { const d = JSON.parse(e.data); pushActivity(d.action); } catch {}
   });
 
   evtSource.addEventListener('task', (e) => {
@@ -43,38 +40,33 @@ function connectSSE() {
         renderAllTasks();
         if (trackedTaskId === d.task.id) updateOutput(d.task);
 
-        // Toast for important transitions
         if (d.task.status === 'done') {
-          showToast(`Task completed: ${d.task.label}`, 'success');
+          showToast(`Done: ${d.task.label}`, 'success');
           workerLastSeen = new Date();
         } else if (d.task.status === 'failed') {
-          showToast(`Task failed: ${d.task.label}`, 'error');
+          showToast(`Failed: ${d.task.label}`, 'error');
           workerLastSeen = new Date();
         } else if (d.task.status === 'running') {
           workerLastSeen = new Date();
         }
         renderHeartbeat();
       }
-      loadTasks(); // full refresh for consistency
-    } catch (err) { console.error('[SSE] parse err:', err); }
+      loadTasks();
+    } catch (err) { console.error('[SSE]', err); }
   });
 
   evtSource.onerror = () => {
     document.getElementById('liveDot').classList.remove('connected');
     document.getElementById('ssePill').classList.remove('online');
-    // Auto-reconnect after 3s
     if (!sseReconnectTimer) {
-      sseReconnectTimer = setTimeout(() => {
-        console.log('[SSE] reconnecting...');
-        connectSSE();
-      }, 3000);
+      sseReconnectTimer = setTimeout(connectSSE, 3000);
     }
   };
 }
 
-// ══════════════════════════════════════════════
-// ACTIVITY FEED
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
+// ACTIVITY
+// ═══════════════════════════════════════════
 
 function pushActivity(text) {
   const t = new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
@@ -92,24 +84,24 @@ function renderActivity() {
   ).join('');
 }
 
-// ══════════════════════════════════════════════
-// TOAST NOTIFICATIONS
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
+// TOASTS
+// ═══════════════════════════════════════════
 
 function showToast(message, type = 'info') {
-  const container = document.getElementById('toastContainer');
-  if (!container) return;
+  const c = document.getElementById('toastContainer');
+  if (!c) return;
   const icons = { success: '&#10003;', error: '&#10007;', info: '&#8505;' };
   const toast = document.createElement('div');
   toast.className = `toast toast-${type}`;
   toast.innerHTML = `<span class="toast-icon">${icons[type] || icons.info}</span><span>${esc(message)}</span>`;
-  container.appendChild(toast);
+  c.appendChild(toast);
   setTimeout(() => { if (toast.parentNode) toast.parentNode.removeChild(toast); }, 4200);
 }
 
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
 // NAVIGATION
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
 
 document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', e => { e.preventDefault(); switchTab(l.dataset.tab); }));
 
@@ -122,9 +114,9 @@ function switchTab(tab) {
   if (panel) panel.classList.add('active');
 }
 
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
 // DATA LOADING
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
 
 async function loadData() {
   try {
@@ -155,9 +147,9 @@ async function loadTasks() {
   } catch {}
 }
 
-// ══════════════════════════════════════════════
-// RENDER STATUS
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
+// STATUS
+// ═══════════════════════════════════════════
 
 function renderStatus() {
   if (!STATUS) return;
@@ -167,7 +159,6 @@ function renderStatus() {
   document.getElementById('serverPill').classList.add('online');
   document.getElementById('workerPill').classList.toggle('online', s.worker.running);
 
-  // Sidebar text
   const up = s.server.uptime ? fmtUp(s.server.uptime) : '--';
   document.getElementById('sysStatus').textContent = `${up} | :${s.server.port}`;
 
@@ -177,8 +168,9 @@ function renderStatus() {
 
   const oai = s.keys.OPENAI_API_KEY === 'configured';
   const ppx = s.keys.PERPLEXITY_API_KEY === 'configured';
-  const mc = 1 + (oai ? 1 : 0) + (ppx ? 1 : 0);
-  setStatus('hsModels', `${mc}/3`, mc === 3 ? 'ok' : 'warn');
+  const gem = s.keys.GEMINI_API_KEY === 'configured';
+  const mc = 1 + (oai ? 1 : 0) + (ppx ? 1 : 0) + (gem ? 1 : 0);
+  setStatus('hsModels', `${mc}/4`, mc === 4 ? 'ok' : 'warn');
 
   if (DATA) {
     const ac = DATA.approvals.length;
@@ -186,12 +178,22 @@ function renderStatus() {
   }
 
   // Settings model tags
-  const oTag = document.getElementById('mOpenAI');
-  oTag.textContent = oai ? 'Ready' : 'No Key';
-  oTag.className = 'model-tag ' + (oai ? 'ready' : '');
-  const pTag = document.getElementById('mPerplexity');
-  pTag.textContent = ppx ? 'Ready' : 'No Key';
-  pTag.className = 'model-tag ' + (ppx ? 'ready' : '');
+  updateModelTag('mOpenAI', oai);
+  updateModelTag('mPerplexity', ppx);
+  updateModelTag('mGemini', gem);
+
+  // Channel status indicators
+  const cs = (id, isReady, isLocal) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (isLocal) { el.textContent = 'Local'; el.className = 'ch-status local'; }
+    else if (isReady) { el.textContent = 'Ready'; el.className = 'ch-status ready'; }
+    else { el.textContent = 'No Key'; el.className = 'ch-status missing'; }
+  };
+  cs('chStatusClaude', true, true);
+  cs('chStatusOpenAI', oai, false);
+  cs('chStatusPerplexity', ppx, false);
+  cs('chStatusGemini', gem, false);
 
   // Settings server
   const ss = document.getElementById('settingsServer');
@@ -209,7 +211,15 @@ function renderStatus() {
     <div class="settings-row"><span class="settings-label">Workspace</span><span style="font-family:var(--mono);font-size:11px">${esc(s.workspace)}</span></div>
     <div class="settings-row"><span class="settings-label">OPENAI</span><span class="key-status ${oai ? 'key-ok' : 'key-miss'}">${oai ? 'configured' : 'missing'}</span></div>
     <div class="settings-row"><span class="settings-label">PERPLEXITY</span><span class="key-status ${ppx ? 'key-ok' : 'key-miss'}">${ppx ? 'configured' : 'missing'}</span></div>
+    <div class="settings-row"><span class="settings-label">GEMINI</span><span class="key-status ${gem ? 'key-ok' : 'key-miss'}">${gem ? 'configured' : 'missing'}</span></div>
   `;
+}
+
+function updateModelTag(id, ready) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = ready ? 'Ready' : 'No Key';
+  el.className = 'model-tag ' + (ready ? 'ready' : '');
 }
 
 function setStatus(id, text, cls) {
@@ -217,9 +227,9 @@ function setStatus(id, text, cls) {
   if (el) { el.textContent = text; el.className = 'status-cell-value ' + cls; }
 }
 
-// ══════════════════════════════════════════════
-// WORKER HEARTBEAT
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
+// HEARTBEAT
+// ═══════════════════════════════════════════
 
 function renderHeartbeat() {
   const dot = document.getElementById('heartbeatDot');
@@ -239,8 +249,7 @@ function renderHeartbeat() {
     dot.className = 'heartbeat-dot idle';
     label.textContent = 'Worker idle';
     label.style.color = 'var(--text-dim)';
-    const lastSeen = workerLastSeen ? timeAgo(workerLastSeen) : '--';
-    detail.textContent = workerLastSeen ? `last active ${lastSeen}` : 'waiting for task';
+    detail.textContent = workerLastSeen ? `last active ${timeAgo(workerLastSeen)}` : 'waiting for task';
   } else {
     dot.className = 'heartbeat-dot';
     label.textContent = 'Worker stopped';
@@ -249,9 +258,9 @@ function renderHeartbeat() {
   }
 }
 
-// ══════════════════════════════════════════════
-// RENDER TASKS — Rich task cards
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
+// TASKS
+// ═══════════════════════════════════════════
 
 function renderAllTasks() {
   renderTaskQueue();
@@ -259,6 +268,7 @@ function renderAllTasks() {
   renderLatest();
   renderHomeRecent();
   renderNavBadges();
+  renderChannelTasks();
 }
 
 function renderTaskQueue() {
@@ -267,7 +277,6 @@ function renderTaskQueue() {
   if (!list) return;
   badge.textContent = TASKS.length + ' task' + (TASKS.length !== 1 ? 's' : '');
 
-  // Home queue count
   const running = TASKS.filter(t => t.status === 'running').length;
   const queued = TASKS.filter(t => t.status === 'queued').length;
   if (running > 0) setStatus('hsQueue', running + ' running', 'warn');
@@ -277,13 +286,7 @@ function renderTaskQueue() {
   // Running hero in tasks tab
   const runHero = document.getElementById('tasksRunningHero');
   const rt = TASKS.find(t => t.status === 'running');
-  if (runHero) {
-    if (rt) {
-      runHero.innerHTML = renderRunningHero(rt);
-    } else {
-      runHero.innerHTML = '';
-    }
-  }
+  if (runHero) runHero.innerHTML = rt ? renderRunningHero(rt) : '';
 
   // Filtered task list
   const filtered = taskFilter === 'all' ? TASKS : TASKS.filter(t => t.status === taskFilter);
@@ -295,35 +298,35 @@ function renderHomeRunning() {
   const el = document.getElementById('homeRunningTask');
   if (!el) return;
   const rt = TASKS.find(t => t.status === 'running');
-  if (rt) {
-    el.innerHTML = renderRunningHero(rt);
-  } else {
-    el.innerHTML = '';
-  }
+  el.innerHTML = rt ? renderRunningHero(rt) : '';
 }
 
 function renderRunningHero(t) {
+  const modelTag = getModelTag(t);
   return `<div class="running-task-hero" onclick="showTask('${t.id}')">
     <div class="running-label">Currently Running</div>
     <div style="display:flex;align-items:center;gap:8px">
       <span class="task-title">${esc(t.label)}</span>
       <span class="task-type-tag">${esc(t.type)}</span>
+      ${modelTag}
     </div>
-    ${t.output ? '<pre>' + esc(t.output.slice(-200)) + '</pre>' : '<pre style="color:var(--text-faint)">Executing...</pre>'}
+    ${t.output ? '<pre>' + esc(t.output.slice(-300)) + '</pre>' : '<pre style="color:var(--text-faint)">Executing...</pre>'}
   </div>`;
 }
 
 function taskCard(t) {
   const tm = fmtTime(t.updatedAt || t.createdAt);
   const extra = t.status === 'running' ? ' is-running' : t.status === 'failed' ? ' is-failed' : '';
+  const modelTag = getModelTag(t);
+
   let summaryHtml = '';
   if (t.output && t.status === 'done') {
     const lines = t.output.trim().split('\n').filter(l => l.trim());
-    const summary = lines.slice(-2).join(' ').slice(0, 120);
+    const summary = lines.slice(-2).join(' ').slice(0, 140);
     if (summary) summaryHtml = `<div class="task-summary">${esc(summary)}</div>`;
   }
   if (t.error && t.status === 'failed') {
-    summaryHtml = `<div class="task-summary" style="color:var(--red)">${esc(t.error.slice(0, 120))}</div>`;
+    summaryHtml = `<div class="task-summary" style="color:var(--red)">${esc(t.error.slice(0, 140))}</div>`;
   }
 
   let filesHtml = '';
@@ -337,6 +340,7 @@ function taskCard(t) {
       <div class="task-title">${esc(t.label)}</div>
       <div class="task-meta">
         <span class="task-type-tag">${esc(t.type)}</span>
+        ${modelTag}
       </div>
       ${summaryHtml}
       ${filesHtml}
@@ -346,6 +350,16 @@ function taskCard(t) {
       <span class="task-time">${tm}</span>
     </div>
   </div>`;
+}
+
+function getModelTag(t) {
+  const m = t.meta?.model;
+  if (!m) {
+    if (t.type === 'board-run') return '<span class="task-model-tag claude">Board</span>';
+    return '';
+  }
+  const cls = m === 'claude' ? 'claude' : m === 'openai' ? 'openai' : m === 'perplexity' ? 'perplexity' : m === 'gemini' ? 'gemini' : '';
+  return `<span class="task-model-tag ${cls}">${esc(m)}</span>`;
 }
 
 function renderHomeRecent() {
@@ -374,10 +388,8 @@ function renderLatest() {
   if (!done.length) { el.innerHTML = '<div class="task-empty">No completed tasks yet</div>'; return; }
   const t = done[0];
   const tm = fmtTime(t.updatedAt);
-  const borderClass = t.status === 'done' ? 'latest-task-card' : 'latest-task-card';
-  const labelClass = t.status === 'done' ? 'completed-label' : 'completed-label';
-  el.innerHTML = `<div class="${borderClass}" onclick="showTask('${t.id}')" style="cursor:pointer${t.status === 'failed' ? ';border-color:var(--red-border)' : ''}">
-    <div class="${labelClass}" style="${t.status === 'failed' ? 'color:var(--red)' : ''}">
+  el.innerHTML = `<div class="latest-task-card" onclick="showTask('${t.id}')" style="${t.status === 'failed' ? 'border-color:var(--red-border)' : ''}">
+    <div class="completed-label" style="${t.status === 'failed' ? 'color:var(--red)' : ''}">
       ${t.status === 'failed' ? 'Failed' : 'Completed'} at ${tm}
     </div>
     <div style="display:flex;align-items:center;gap:8px">
@@ -391,27 +403,19 @@ function renderLatest() {
 }
 
 function renderNavBadges() {
-  // Active tasks badge
   const active = TASKS.filter(t => t.status === 'queued' || t.status === 'running').length;
   const tb = document.getElementById('navTaskBadge');
-  if (tb) {
-    if (active > 0) { tb.textContent = active; tb.style.display = ''; }
-    else { tb.style.display = 'none'; }
-  }
+  if (tb) { tb.textContent = active; tb.style.display = active > 0 ? '' : 'none'; }
 
-  // Approval badge
   if (DATA) {
     const ab = document.getElementById('navApprovalBadge');
-    if (ab) {
-      if (DATA.approvals.length > 0) { ab.textContent = DATA.approvals.length; ab.style.display = ''; }
-      else { ab.style.display = 'none'; }
-    }
+    if (ab) { ab.textContent = DATA.approvals.length; ab.style.display = DATA.approvals.length > 0 ? '' : 'none'; }
   }
 }
 
 function filterTasks(f) {
   taskFilter = f;
-  document.querySelectorAll('#taskFilters .qa-btn').forEach(b => {
+  document.querySelectorAll('#taskFilters .filter-btn').forEach(b => {
     b.classList.toggle('active-filter', b.dataset.filter === f);
   });
   renderTaskQueue();
@@ -424,11 +428,11 @@ function showTask(id) {
   b += `Task:      ${t.label}\n`;
   b += `Type:      ${t.type}\n`;
   b += `Status:    ${t.status.toUpperCase()}\n`;
+  if (t.meta?.model) b += `Model:     ${t.meta.model}\n`;
+  if (t.meta?.role) b += `Role:      ${t.meta.role}\n`;
   b += `Created:   ${t.createdAt}\n`;
   b += `Updated:   ${t.updatedAt}\n`;
-  if (t.filesWritten?.length) {
-    b += `\n--- Files Written ---\n${t.filesWritten.join('\n')}\n`;
-  }
+  if (t.filesWritten?.length) b += `\n--- Files Written ---\n${t.filesWritten.join('\n')}\n`;
   if (t.error) b += `\n--- Error ---\n${t.error}\n`;
   if (t.output) b += `\n--- Output ---\n${t.output}\n`;
   document.getElementById('taskModalTitle').textContent = `${t.label} [${t.status.toUpperCase()}]`;
@@ -438,50 +442,38 @@ function showTask(id) {
 
 function closeTaskModal(e) { if (e.target === e.currentTarget) document.getElementById('taskModal').classList.remove('open'); }
 
-// ══════════════════════════════════════════════
-// OUTPUT PANEL (Controls tab)
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
+// OUTPUT PANEL
+// ═══════════════════════════════════════════
 
 function updateOutput(task) {
   const log = document.getElementById('controlLog');
   if (!log) return;
   const icon = { done: 'DONE', failed: 'FAIL', running: 'RUN', queued: 'WAIT' }[task.status] || '??';
   let t = `[${icon}] ${task.label} (${task.type})\nStatus: ${task.status} | ${task.updatedAt}\n`;
-  if (task.status === 'running') {
-    t += '\nExecuting...\n';
-    if (task.output) t += '\n' + task.output;
-  }
-  if (task.status === 'done') {
-    if (task.output) t += '\n' + task.output;
-    if (task.filesWritten?.length) t += '\n\nFiles:\n' + task.filesWritten.map(f => '  ' + f).join('\n');
-    t += '\n\nCompleted.';
-    trackedTaskId = null;
-  }
-  if (task.status === 'failed') {
-    t += '\nError: ' + (task.error || 'Unknown');
-    trackedTaskId = null;
-  }
+  if (task.status === 'running') { t += '\nExecuting...\n'; if (task.output) t += '\n' + task.output; }
+  if (task.status === 'done') { if (task.output) t += '\n' + task.output; if (task.filesWritten?.length) t += '\n\nFiles:\n' + task.filesWritten.map(f => '  ' + f).join('\n'); t += '\n\nCompleted.'; trackedTaskId = null; }
+  if (task.status === 'failed') { t += '\nError: ' + (task.error || 'Unknown'); trackedTaskId = null; }
   log.textContent = t;
 }
 
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
 // RENDER ALL
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
 
 function render() {
   if (!DATA) return;
   renderHome();
   renderMissions();
-  renderBrief();
   renderApprovals();
   renderLogs();
   renderTopRanker();
   renderNavBadges();
 }
 
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
 // HOME
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
 
 function renderHome() {
   const s = DATA.state;
@@ -517,7 +509,8 @@ function renderHome() {
 
   // Mission health
   const md = document.getElementById('homeMissions');
-  md.innerHTML = DATA.missions.map(m => {
+  const activeMissions = DATA.missions.filter(m => (m.status || '').toLowerCase() !== 'planned');
+  md.innerHTML = activeMissions.map(m => {
     const bc = badgeClass(m.status);
     const isTR = m.mission === 'TopRanker';
     return `<div class="home-mission">
@@ -525,44 +518,48 @@ function renderHome() {
       <span class="mission-badge ${bc}">${esc(m.status)}</span>
     </div>`;
   }).join('');
+
+  // Brief excerpt
+  const briefDiv = document.getElementById('homeBriefExcerpt');
+  if (briefDiv) {
+    if (DATA.briefs.length) {
+      const excerpt = DATA.briefs[0].content.slice(0, 500);
+      briefDiv.innerHTML = md2html(excerpt);
+    } else {
+      briefDiv.innerHTML = '<p style="color:var(--text-faint)">No briefs available</p>';
+    }
+  }
 }
 
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
 // MISSIONS
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
 
 function renderMissions() {
   document.getElementById('missionCards').innerHTML = DATA.missions.map(m => {
     const flag = m.mission === 'TopRanker';
     const bc = badgeClass(m.status);
-    return `<div class="mission-card ${flag ? 'flagship' : ''}">
+    const isPlanned = (m.status || '').toLowerCase() === 'planned';
+    return `<div class="mission-card ${flag ? 'flagship' : ''} ${isPlanned ? 'planned' : ''}">
       <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
         <span class="mission-name">${esc(m.mission)}</span>
         ${flag ? '<span class="badge-flagship">Flagship</span>' : ''}
       </div>
       <span class="mission-badge ${bc}">${esc(m.status)}</span>
       <div class="mission-section"><strong>Objective</strong>${esc(m.objective)}</div>
-      <div class="mission-section"><strong>Progress</strong>${fmtList(m.progress)}</div>
-      <div class="mission-section"><strong>Blockers</strong>${fmtList(m.blockers)}</div>
-      <div class="mission-section"><strong>Next</strong>${fmtList(m.nextActions)}</div>
+      ${!isPlanned ? `
+        <div class="mission-section"><strong>Progress</strong>${fmtList(m.progress)}</div>
+        <div class="mission-section"><strong>Blockers</strong>${fmtList(m.blockers)}</div>
+        <div class="mission-section"><strong>Next</strong>${fmtList(m.nextActions)}</div>
+      ` : ''}
       <div class="mission-section"><strong>Owner</strong>${esc(m.owner)}</div>
     </div>`;
   }).join('');
 }
 
-// ══════════════════════════════════════════════
-// BRIEF
-// ══════════════════════════════════════════════
-
-function renderBrief() {
-  const c = document.getElementById('briefContent');
-  if (!DATA.briefs.length) { c.innerHTML = '<p style="color:var(--text-faint)">No briefs found</p>'; return; }
-  c.innerHTML = md2html(DATA.briefs[0].content);
-}
-
-// ══════════════════════════════════════════════
-// APPROVALS — Compact, frictionless
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
+// APPROVALS
+// ═══════════════════════════════════════════
 
 function renderApprovals() {
   const c = document.getElementById('approvalsList');
@@ -591,12 +588,12 @@ function renderApprovals() {
         </div>
         <span class="risk-badge risk-${risk}">${risk}</span>
       </div>
-      ${reason ? '<div class="approval-summary"><strong style="color:var(--text-faint);font-size:9px;text-transform:uppercase">Reason:</strong> ' + esc(reason) + '</div>' : ''}
+      ${reason ? '<div class="approval-summary"><strong style="color:var(--text-faint);font-size:9px;text-transform:uppercase">Why:</strong> ' + esc(reason) + '</div>' : ''}
       ${upside ? '<div class="approval-summary"><strong style="color:var(--text-faint);font-size:9px;text-transform:uppercase">Upside:</strong> ' + esc(upside) + '</div>' : ''}
       <div class="approval-actions" id="act-${sid}">
         <button class="btn-approve" onclick="doApproval('${a.name}','approve','${sid}')">Approve</button>
         <button class="btn-reject" onclick="doApproval('${a.name}','reject','${sid}')">Reject</button>
-        <button class="btn-detail" onclick="showApprovalDetail('${sid}')">View Details</button>
+        <button class="btn-detail" onclick="showApprovalDetail('${sid}')">Details</button>
       </div>
       <div class="md-content" id="detail-${sid}" style="display:none;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);max-height:200px;overflow-y:auto">${md2html(a.content)}</div>
     </div>`;
@@ -608,59 +605,91 @@ function showApprovalDetail(sid) {
   if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none';
 }
 
-// ══════════════════════════════════════════════
-// LOGS — Scannable, badged
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
+// LOGS — Sub-feeds: agent, decision, brief
+// ═══════════════════════════════════════════
 
 function renderLogs() {
   const c = document.getElementById('logsList');
   const all = [];
   (DATA.logs || []).forEach(l => all.push({ name: l.name, content: l.content, type: 'agent' }));
   (DATA.decisionLogs || []).forEach(l => all.push({ name: l.name, content: l.content, type: 'decision' }));
+  (DATA.briefs || []).forEach(l => all.push({ name: l.name, content: l.content, type: 'brief' }));
+
   if (!all.length) { c.innerHTML = '<div class="card"><p style="color:var(--text-faint)">No logs found</p></div>'; return; }
   all.sort((a, b) => b.name.localeCompare(a.name));
   const filtered = logFilter === 'all' ? all : all.filter(l => l.type === logFilter);
 
   c.innerHTML = filtered.map(l => {
-    // Detect model from content
-    let modelBadge = '';
+    let modelBadges = '';
     const lc = l.content.toLowerCase();
-    if (lc.includes('claude')) modelBadge = '<span class="log-badge model-claude">Claude</span>';
-    else if (lc.includes('openai') || lc.includes('gpt')) modelBadge = '<span class="log-badge model-openai">OpenAI</span>';
-    else if (lc.includes('perplexity')) modelBadge = '<span class="log-badge model-ppx">Perplexity</span>';
+    if (lc.includes('claude')) modelBadges += '<span class="log-badge model-claude">Claude</span>';
+    if (lc.includes('openai') || lc.includes('gpt')) modelBadges += '<span class="log-badge model-openai">OpenAI</span>';
+    if (lc.includes('perplexity')) modelBadges += '<span class="log-badge model-ppx">Perplexity</span>';
+    if (lc.includes('gemini')) modelBadges += '<span class="log-badge model-gemini">Gemini</span>';
+
+    // Detect mission badges
+    let missionBadges = '';
+    if (lc.includes('topranker')) missionBadges += '<span class="badge-flagship" style="font-size:8px;padding:1px 5px">TopRanker</span>';
+
+    // Detect outcome
+    let outcomeBadge = '';
+    if (lc.includes('success') || lc.includes('done') || lc.includes('completed')) outcomeBadge = '<span class="log-badge" style="background:var(--green-soft);color:var(--green)">Success</span>';
+    else if (lc.includes('failed') || lc.includes('error')) outcomeBadge = '<span class="log-badge" style="background:var(--red-soft);color:var(--red)">Failed</span>';
+
+    const typeBadge = l.type === 'brief' ? '<span class="log-badge brief">Brief</span>' :
+                      l.type === 'decision' ? '<span class="log-badge decision">Decision</span>' :
+                      '<span class="log-badge agent">Agent</span>';
 
     return `<div class="log-entry">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:6px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;flex-wrap:wrap">
         <h4>${esc(l.name)}</h4>
-        <div style="display:flex;gap:4px">
-          ${modelBadge}
-          <span class="log-badge ${l.type}">${l.type === 'decision' ? 'Decision' : 'Agent'}</span>
+        <div style="display:flex;gap:3px;flex-wrap:wrap">
+          ${missionBadges}${modelBadges}${outcomeBadge}${typeBadge}
         </div>
       </div>
-      <pre>${esc(l.content)}</pre>
+      <pre>${esc(l.content.slice(0, 1500))}</pre>
     </div>`;
   }).join('');
 }
 
 function filterLogs(f) {
   logFilter = f;
-  document.querySelectorAll('#logFilters .qa-btn').forEach(b => {
+  document.querySelectorAll('#logFilters .filter-btn').forEach(b => {
     b.classList.toggle('active-filter', b.dataset.filter === f);
   });
   if (DATA) renderLogs();
 }
 
-// ══════════════════════════════════════════════
-// TOPRANKER — Flagship treatment
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
+// TOPRANKER — Flagship
+// ═══════════════════════════════════════════
 
 function renderTopRanker() {
   const m = DATA.missions.find(x => x.mission === 'TopRanker');
 
-  // Objective under hero stats
   const objEl = document.getElementById('trObjective');
   if (objEl && m) {
     objEl.innerHTML = `<strong style="color:var(--text-faint);font-size:9px;text-transform:uppercase;letter-spacing:.4px;display:block;margin-bottom:2px">Current Objective</strong>${esc(m.objective)}`;
+  }
+
+  // Next recommended action highlight
+  const naEl = document.getElementById('trNextAction');
+  if (naEl && m && m.nextActions) {
+    const firstAction = m.nextActions.split('\n').find(l => l.startsWith('- ') || l.startsWith('1.'));
+    if (firstAction) {
+      naEl.innerHTML = `<strong style="font-size:9px;text-transform:uppercase;letter-spacing:.4px">Recommended Next:</strong> ${esc(firstAction.replace(/^[-\d.]+\s*/, ''))}`;
+      naEl.style.display = '';
+    } else {
+      naEl.style.display = 'none';
+    }
+  }
+
+  // Loop stage
+  const ls = document.getElementById('trLoopStage');
+  if (ls && m) {
+    const stage = (m.status || '').toLowerCase().includes('active') ? 'Active Execution' : m.status;
+    ls.textContent = stage;
   }
 
   // Status card
@@ -688,11 +717,63 @@ function renderTopRanker() {
   }
 }
 
-// ══════════════════════════════════════════════
-// ACTIONS
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
+// CHANNELS — AI Model Interaction
+// ═══════════════════════════════════════════
 
-async function submitTask(type, label) {
+function switchChannel(ch) {
+  activeChannel = ch;
+  document.querySelectorAll('.channel-tab').forEach(t => {
+    t.classList.toggle('active', t.dataset.ch === ch);
+  });
+  renderChannelTasks();
+}
+
+function renderChannelTasks() {
+  const ct = document.getElementById('channelTasks');
+  const co = document.getElementById('channelOutput');
+  if (!ct) return;
+
+  // Filter tasks for active channel
+  const chTasks = TASKS.filter(t => {
+    if (t.type === 'ai-channel' && t.meta?.model === activeChannel) return true;
+    if (activeChannel === 'claude' && t.type === 'board-run') return true;
+    return false;
+  });
+
+  if (!chTasks.length) {
+    ct.innerHTML = '<div class="task-empty">No tasks for this channel yet</div>';
+  } else {
+    ct.innerHTML = chTasks.slice(0, 10).map(taskCard).join('');
+  }
+
+  // Show latest completed output
+  if (co) {
+    const done = chTasks.find(t => t.status === 'done' && t.output);
+    if (done) {
+      co.textContent = done.output.slice(0, 3000);
+    } else {
+      co.innerHTML = '<div class="task-empty">Send a task to see output</div>';
+    }
+  }
+}
+
+function sendChannelTask() {
+  const prompt = document.getElementById('channelPrompt').value.trim();
+  if (!prompt) { showToast('Enter a prompt first', 'info'); return; }
+
+  const role = document.getElementById('channelRole').value;
+  const label = `${activeChannel.charAt(0).toUpperCase() + activeChannel.slice(1)}: ${prompt.slice(0, 50)}${prompt.length > 50 ? '...' : ''}`;
+
+  submitTask('ai-channel', label, { model: activeChannel, prompt, role });
+  document.getElementById('channelPrompt').value = '';
+}
+
+// ═══════════════════════════════════════════
+// ACTIONS
+// ═══════════════════════════════════════════
+
+async function submitTask(type, label, meta = {}) {
   const log = document.getElementById('controlLog');
   if (log) log.textContent = `Submitting: ${label}...\n`;
   pushActivity(`Submitted: ${label}`);
@@ -700,7 +781,7 @@ async function submitTask(type, label) {
     const r = await fetch('/api/tasks/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ type, label })
+      body: JSON.stringify({ type, label, meta })
     });
     const d = await r.json();
     if (d.ok) {
@@ -761,21 +842,22 @@ async function doApproval(filename, decision, sid) {
   }
 }
 
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
 // HELPERS
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
 
 function badgeClass(status) {
   const s = (status || '').toLowerCase().replace(/\s+/g, '-');
   if (s === 'active') return 'active';
   if (s === 'needs-decision') return 'needs-decision';
   if (s === 'research-only') return 'research-only';
+  if (s === 'planned') return 'planned';
   return 'active';
 }
 
 function fmtList(text) {
   if (!text) return '<span style="color:var(--text-faint)">None</span>';
-  const items = text.split('\n').filter(l => l.startsWith('- ')).map(l => l.slice(2));
+  const items = text.split('\n').filter(l => l.startsWith('- ') || /^\d+\./.test(l)).map(l => l.replace(/^[-\d.]+\s*/, ''));
   if (!items.length) return `<span style="font-size:12px">${esc(text)}</span>`;
   return '<ul style="list-style:disc;padding-left:14px;margin:2px 0">' +
     items.map(i => `<li style="font-size:12px;padding:2px 0;border:none;color:var(--text-secondary)">${esc(i)}</li>`).join('') + '</ul>';
@@ -829,31 +911,25 @@ function md2html(md) {
     .replace(/<p>\s*<\/p>/g, '');
 }
 
-// ══════════════════════════════════════════════
-// INIT + POLLING
-// ══════════════════════════════════════════════
+// ═══════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════
 
 connectSSE();
 loadData();
 loadStatus();
 loadTasks();
 
-// Polling intervals
-setInterval(loadStatus, 10000);  // 10s — responsive system status
-setInterval(loadTasks, 3000);    // 3s — snappy task updates
-setInterval(loadData, 45000);    // 45s — full data refresh
-setInterval(renderHeartbeat, 5000); // 5s — update heartbeat time display
+setInterval(loadStatus, 10000);
+setInterval(loadTasks, 3000);
+setInterval(loadData, 45000);
+setInterval(renderHeartbeat, 5000);
 
 // Keyboard shortcuts
 document.addEventListener('keydown', (e) => {
-  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-  if (e.key === 'Escape') {
-    document.getElementById('taskModal').classList.remove('open');
-  }
-  // Number keys switch tabs
-  const tabs = ['home', 'tasks', 'missions', 'topranker', 'approvals', 'brief', 'logs', 'controls', 'settings'];
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
+  if (e.key === 'Escape') document.getElementById('taskModal').classList.remove('open');
+  const tabs = ['home', 'tasks', 'channels', 'missions', 'topranker', 'approvals', 'logs', 'controls', 'settings'];
   const n = parseInt(e.key);
-  if (n >= 1 && n <= 9 && !e.metaKey && !e.ctrlKey && !e.altKey) {
-    switchTab(tabs[n - 1]);
-  }
+  if (n >= 1 && n <= 9 && !e.metaKey && !e.ctrlKey && !e.altKey) switchTab(tabs[n - 1]);
 });

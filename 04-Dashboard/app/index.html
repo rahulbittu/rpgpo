@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="theme-color" content="#060810" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <title>RPGPO</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +15,7 @@
 <body>
   <div class="shell">
 
-    <!-- ══════════ SIDEBAR ══════════ -->
+    <!-- SIDEBAR -->
     <nav class="sidebar">
       <div class="logo">
         <div class="logo-mark">R</div>
@@ -23,33 +24,33 @@
       </div>
       <div class="nav-links">
         <a href="#" class="nav-link active" data-tab="home">
-          <span class="nav-icon">&#9670;</span><span>Home</span>
+          <span class="nav-icon">&#9670;</span><span class="nav-label">Home</span>
         </a>
         <a href="#" class="nav-link" data-tab="tasks">
-          <span class="nav-icon">&#9654;</span><span>Tasks</span>
+          <span class="nav-icon">&#9654;</span><span class="nav-label">Tasks</span>
           <span class="nav-badge" id="navTaskBadge" style="display:none">0</span>
         </a>
+        <a href="#" class="nav-link" data-tab="channels">
+          <span class="nav-icon">&#9881;</span><span class="nav-label">Channels</span>
+        </a>
         <a href="#" class="nav-link" data-tab="missions">
-          <span class="nav-icon">&#9673;</span><span>Missions</span>
+          <span class="nav-icon">&#9673;</span><span class="nav-label">Missions</span>
         </a>
         <a href="#" class="nav-link flagship" data-tab="topranker">
-          <span class="nav-icon">&#9733;</span><span>TopRanker</span>
+          <span class="nav-icon">&#9733;</span><span class="nav-label">TopRanker</span>
         </a>
         <a href="#" class="nav-link" data-tab="approvals">
-          <span class="nav-icon">&#9888;</span><span>Approvals</span>
+          <span class="nav-icon">&#9888;</span><span class="nav-label">Approvals</span>
           <span class="nav-badge" id="navApprovalBadge" style="display:none">0</span>
         </a>
-        <a href="#" class="nav-link" data-tab="brief">
-          <span class="nav-icon">&#9998;</span><span>Brief</span>
-        </a>
         <a href="#" class="nav-link" data-tab="logs">
-          <span class="nav-icon">&#9776;</span><span>Logs</span>
+          <span class="nav-icon">&#9776;</span><span class="nav-label">Logs</span>
         </a>
         <a href="#" class="nav-link" data-tab="controls">
-          <span class="nav-icon">&#9881;</span><span>Controls</span>
+          <span class="nav-icon">&#9654;</span><span class="nav-label">Controls</span>
         </a>
         <a href="#" class="nav-link" data-tab="settings">
-          <span class="nav-icon">&#8943;</span><span>Settings</span>
+          <span class="nav-icon">&#8943;</span><span class="nav-label">Settings</span>
         </a>
       </div>
       <div class="sidebar-footer">
@@ -62,76 +63,56 @@
       </div>
     </nav>
 
-    <!-- ══════════ MAIN CONTENT ══════════ -->
+    <!-- MAIN CONTENT -->
     <main class="content">
 
-      <!-- ════════════════════════════════════
-           HOME — Command Center
-           ════════════════════════════════════ -->
+      <!-- HOME -->
       <section class="tab-panel active" id="tab-home">
         <div class="page-header">
           <h1>Command Center</h1>
           <p class="subtitle" id="homeDate"></p>
         </div>
 
-        <!-- System Status Strip -->
         <div class="status-strip">
-          <div class="status-cell">
-            <span class="status-cell-label">Server</span>
-            <span class="status-cell-value" id="hsServer">--</span>
-          </div>
-          <div class="status-cell">
-            <span class="status-cell-label">Worker</span>
-            <span class="status-cell-value" id="hsWorker">--</span>
-          </div>
-          <div class="status-cell">
-            <span class="status-cell-label">Queue</span>
-            <span class="status-cell-value" id="hsQueue">--</span>
-          </div>
-          <div class="status-cell">
-            <span class="status-cell-label">Models</span>
-            <span class="status-cell-value" id="hsModels">--</span>
-          </div>
-          <div class="status-cell">
-            <span class="status-cell-label">Approvals</span>
-            <span class="status-cell-value" id="hsApprovals">--</span>
-          </div>
+          <div class="status-cell"><span class="status-cell-label">Server</span><span class="status-cell-value" id="hsServer">--</span></div>
+          <div class="status-cell"><span class="status-cell-label">Worker</span><span class="status-cell-value" id="hsWorker">--</span></div>
+          <div class="status-cell"><span class="status-cell-label">Queue</span><span class="status-cell-value" id="hsQueue">--</span></div>
+          <div class="status-cell"><span class="status-cell-label">Models</span><span class="status-cell-value" id="hsModels">--</span></div>
+          <div class="status-cell"><span class="status-cell-label">Approvals</span><span class="status-cell-value" id="hsApprovals">--</span></div>
         </div>
 
-        <!-- Worker Heartbeat -->
         <div class="heartbeat-bar" id="heartbeatBar">
           <span class="heartbeat-dot" id="heartbeatDot"></span>
           <span class="heartbeat-label" id="heartbeatLabel">Worker idle</span>
           <span class="heartbeat-detail" id="heartbeatDetail">--</span>
         </div>
 
-        <!-- Currently Running Task -->
         <div id="homeRunningTask"></div>
 
-        <!-- Quick Actions -->
         <div class="g4 mt-sm">
           <button class="action-btn" onclick="submitTask('refresh-state','Refresh State')"><span class="btn-icon">&#8635;</span>Refresh</button>
           <button class="action-btn" onclick="submitTask('board-run','Board of AI')"><span class="btn-icon">&#9670;</span>Board Run</button>
           <button class="action-btn" onclick="switchTab('approvals')"><span class="btn-icon">&#9888;</span>Approvals</button>
-          <button class="action-btn" onclick="switchTab('topranker')"><span class="btn-icon">&#9733;</span>TopRanker</button>
+          <button class="action-btn" onclick="switchTab('channels')"><span class="btn-icon">&#9881;</span>Channels</button>
         </div>
 
-        <!-- TopRanker Flagship Card + Priorities -->
+        <!-- TopRanker Flagship + Priorities -->
         <div class="g-2-1 mt">
           <div class="card flagship-card">
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+            <div class="card-top-row">
               <span class="badge-flagship">Flagship</span>
-              <span style="font-size:14px;font-weight:700;color:var(--accent-text)">TopRanker</span>
+              <span class="flagship-name">TopRanker</span>
+              <button class="link-btn" onclick="switchTab('topranker')">View</button>
             </div>
-            <div id="homeTRStatus" style="font-size:12px;color:var(--text-secondary)"></div>
+            <div id="homeTRStatus" class="card-body-text"></div>
           </div>
           <div class="card accent">
-            <h3>Priorities</h3>
+            <h3>Top Priorities</h3>
             <ul id="homePriorities"></ul>
           </div>
         </div>
 
-        <!-- Mission Health + Pending Approvals -->
+        <!-- Mission Health + Approvals -->
         <div class="g2 mt">
           <div class="card">
             <h3>Mission Health</h3>
@@ -143,17 +124,23 @@
           </div>
         </div>
 
-        <!-- Latest Completed + Recent Tasks + Activity -->
+        <!-- Latest Brief Excerpt -->
+        <div class="card mt" id="homeBriefCard">
+          <div class="card-top-row">
+            <h3 style="margin-bottom:0">Latest Brief</h3>
+            <button class="link-btn" onclick="switchTab('logs');filterLogs('brief')">Full Brief</button>
+          </div>
+          <div id="homeBriefExcerpt" class="brief-excerpt md-content"></div>
+        </div>
+
+        <!-- Latest Completed + Queue + Activity -->
         <div class="g3 mt">
           <div>
             <h3>Latest Completed</h3>
             <div id="homeLatestTask"><div class="task-empty">No completed tasks yet</div></div>
           </div>
           <div>
-            <div class="card-header">
-              <h3>Task Queue</h3>
-              <button class="refresh-btn" onclick="loadTasks()">&#8635;</button>
-            </div>
+            <div class="card-header"><h3>Task Queue</h3><button class="refresh-btn" onclick="loadTasks()">&#8635;</button></div>
             <div id="homeRecentTasks" class="task-queue-list" style="max-height:200px"></div>
           </div>
           <div>
@@ -165,44 +152,98 @@
         </div>
       </section>
 
-      <!-- ════════════════════════════════════
-           TASKS — First-class task surface
-           ════════════════════════════════════ -->
+      <!-- TASKS -->
       <section class="tab-panel" id="tab-tasks">
         <div class="page-header">
-          <div style="display:flex;justify-content:space-between;align-items:center">
+          <div class="header-row">
             <div>
-              <h1>Task Queue</h1>
+              <h1>Task Stream</h1>
               <p class="subtitle">All queued, running, and completed tasks</p>
             </div>
-            <div style="display:flex;gap:6px;align-items:center">
+            <div class="header-actions">
               <button class="refresh-btn" onclick="loadTasks()">&#8635;</button>
               <span class="task-count" id="taskQueueCount">0 tasks</span>
             </div>
           </div>
         </div>
 
-        <!-- Currently running -->
         <div id="tasksRunningHero"></div>
 
-        <!-- Task filters -->
-        <div style="display:flex;gap:4px;margin-bottom:10px" id="taskFilters">
-          <button class="qa-btn active-filter" data-filter="all" onclick="filterTasks('all')">All</button>
-          <button class="qa-btn" data-filter="running" onclick="filterTasks('running')">Running</button>
-          <button class="qa-btn" data-filter="queued" onclick="filterTasks('queued')">Queued</button>
-          <button class="qa-btn" data-filter="done" onclick="filterTasks('done')">Done</button>
-          <button class="qa-btn" data-filter="failed" onclick="filterTasks('failed')">Failed</button>
+        <div class="filter-row" id="taskFilters">
+          <button class="filter-btn active-filter" data-filter="all" onclick="filterTasks('all')">All</button>
+          <button class="filter-btn" data-filter="running" onclick="filterTasks('running')">Running</button>
+          <button class="filter-btn" data-filter="queued" onclick="filterTasks('queued')">Queued</button>
+          <button class="filter-btn" data-filter="done" onclick="filterTasks('done')">Done</button>
+          <button class="filter-btn" data-filter="failed" onclick="filterTasks('failed')">Failed</button>
         </div>
 
-        <!-- Task list -->
         <div id="taskQueueList" class="task-queue-list" style="max-height:none">
           <div class="task-empty">No tasks in queue</div>
         </div>
       </section>
 
-      <!-- ════════════════════════════════════
-           MISSIONS
-           ════════════════════════════════════ -->
+      <!-- CHANNELS — AI Model Interaction Surface -->
+      <section class="tab-panel" id="tab-channels">
+        <div class="page-header">
+          <h1>AI Channels</h1>
+          <p class="subtitle">Direct model interaction and task dispatch</p>
+        </div>
+
+        <div class="channel-selector" id="channelSelector">
+          <button class="channel-tab active" data-ch="claude" onclick="switchChannel('claude')">
+            <span class="ch-dot ch-claude"></span>Claude
+            <span class="ch-status" id="chStatusClaude">Local</span>
+          </button>
+          <button class="channel-tab" data-ch="openai" onclick="switchChannel('openai')">
+            <span class="ch-dot ch-openai"></span>OpenAI
+            <span class="ch-status" id="chStatusOpenAI">--</span>
+          </button>
+          <button class="channel-tab" data-ch="perplexity" onclick="switchChannel('perplexity')">
+            <span class="ch-dot ch-perplexity"></span>Perplexity
+            <span class="ch-status" id="chStatusPerplexity">--</span>
+          </button>
+          <button class="channel-tab" data-ch="gemini" onclick="switchChannel('gemini')">
+            <span class="ch-dot ch-gemini"></span>Gemini
+            <span class="ch-status" id="chStatusGemini">--</span>
+          </button>
+        </div>
+
+        <div class="channel-panel">
+          <div class="channel-input-area">
+            <textarea id="channelPrompt" class="channel-textarea" placeholder="Enter your prompt..." rows="4"></textarea>
+            <div class="channel-input-bar">
+              <select id="channelRole" class="channel-select">
+                <option value="general">General</option>
+                <option value="research">Research Director</option>
+                <option value="builder">Builder / CTO</option>
+                <option value="strategy">Growth Strategist</option>
+                <option value="chief">Chief of Staff</option>
+                <option value="creative">Creative Director</option>
+              </select>
+              <button class="send-btn" onclick="sendChannelTask()" id="channelSendBtn">
+                <span>&#9654;</span> Send Task
+              </button>
+            </div>
+          </div>
+
+          <div class="channel-body">
+            <div class="channel-section">
+              <h3>Recent Tasks</h3>
+              <div id="channelTasks" class="task-queue-list" style="max-height:220px">
+                <div class="task-empty">No tasks for this channel yet</div>
+              </div>
+            </div>
+            <div class="channel-section">
+              <h3>Latest Output</h3>
+              <div id="channelOutput" class="channel-output-area">
+                <div class="task-empty">Send a task to see output</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MISSIONS -->
       <section class="tab-panel" id="tab-missions">
         <div class="page-header">
           <h1>Missions</h1>
@@ -211,22 +252,22 @@
         <div id="missionCards" class="g2"></div>
       </section>
 
-      <!-- ════════════════════════════════════
-           TOPRANKER — Flagship
-           ════════════════════════════════════ -->
+      <!-- TOPRANKER -->
       <section class="tab-panel" id="tab-topranker">
         <div class="page-header">
-          <div style="display:flex;align-items:center;gap:10px">
-            <h1>TopRanker</h1>
-            <span class="badge-flagship">Flagship Mission</span>
+          <div class="header-row">
+            <div style="display:flex;align-items:center;gap:10px">
+              <h1>TopRanker</h1>
+              <span class="badge-flagship">Flagship Mission</span>
+            </div>
           </div>
           <p class="subtitle">Community-ranked local business leaderboard</p>
         </div>
 
-        <!-- TR Hero -->
         <div class="tr-hero">
           <div class="tr-hero-header">
-            <span class="tr-hero-title">TopRanker Status</span>
+            <span class="tr-hero-title">TopRanker Command</span>
+            <span class="tr-loop-stage" id="trLoopStage"></span>
           </div>
           <div class="tr-stat" id="trHeroStats">
             <div class="tr-stat-item"><span class="tr-stat-label">Stack</span><span class="tr-stat-value">Expo/RN + Express + PG</span></div>
@@ -234,30 +275,26 @@
             <div class="tr-stat-item"><span class="tr-stat-label">Source</span><span class="tr-stat-value">1,054 files</span></div>
             <div class="tr-stat-item"><span class="tr-stat-label">Cities</span><span class="tr-stat-value">5 + 6 beta</span></div>
           </div>
-          <div id="trObjective" style="font-size:12px;color:var(--text-secondary)"></div>
+          <div id="trObjective" class="tr-objective"></div>
+          <div id="trNextAction" class="tr-next-action"></div>
         </div>
 
-        <!-- TR Actions -->
-        <div class="g4">
+        <div class="g4 mt-sm">
           <button class="action-btn" onclick="runAiTask('claude-topranker-review')"><span class="btn-icon">&#9733;</span>Review Prompt</button>
           <button class="action-btn" onclick="submitTask('board-run','Board of AI')"><span class="btn-icon">&#9670;</span>Run Board</button>
-          <button class="action-btn" onclick="switchTab('controls')"><span class="btn-icon">&#9654;</span>Controls</button>
+          <button class="action-btn" onclick="switchTab('channels');switchChannel('openai')"><span class="btn-icon">&#9881;</span>Ask AI</button>
           <button class="action-btn" onclick="switchTab('tasks')"><span class="btn-icon">&#9776;</span>Tasks</button>
         </div>
 
-        <!-- TR Details -->
         <div class="g2 mt">
           <div class="card" id="trStatus"></div>
           <div class="card" id="trProgress"></div>
         </div>
 
-        <!-- TR Operating Summary -->
         <div class="card md-content mt" id="trSummary"></div>
       </section>
 
-      <!-- ════════════════════════════════════
-           APPROVALS
-           ════════════════════════════════════ -->
+      <!-- APPROVALS -->
       <section class="tab-panel" id="tab-approvals">
         <div class="page-header">
           <h1>Approvals</h1>
@@ -266,52 +303,37 @@
         <div id="approvalsList"></div>
       </section>
 
-      <!-- ════════════════════════════════════
-           BRIEF
-           ════════════════════════════════════ -->
-      <section class="tab-panel" id="tab-brief">
-        <div class="page-header">
-          <h1>Daily Brief</h1>
-          <p class="subtitle">Latest operational briefing</p>
-        </div>
-        <div id="briefContent" class="card md-content"></div>
-      </section>
-
-      <!-- ════════════════════════════════════
-           LOGS
-           ════════════════════════════════════ -->
+      <!-- LOGS -->
       <section class="tab-panel" id="tab-logs">
         <div class="page-header">
-          <div style="display:flex;justify-content:space-between;align-items:center">
+          <div class="header-row">
             <div>
               <h1>Logs</h1>
-              <p class="subtitle">Agent runs and decision logs</p>
+              <p class="subtitle">System events, agent runs, decisions, and briefs</p>
             </div>
-            <div style="display:flex;gap:4px" id="logFilters">
-              <button class="qa-btn active-filter" data-filter="all" onclick="filterLogs('all')">All</button>
-              <button class="qa-btn" data-filter="agent" onclick="filterLogs('agent')">Agent</button>
-              <button class="qa-btn" data-filter="decision" onclick="filterLogs('decision')">Decision</button>
+            <div class="filter-row" id="logFilters">
+              <button class="filter-btn active-filter" data-filter="all" onclick="filterLogs('all')">All</button>
+              <button class="filter-btn" data-filter="agent" onclick="filterLogs('agent')">Agent Runs</button>
+              <button class="filter-btn" data-filter="decision" onclick="filterLogs('decision')">Decisions</button>
+              <button class="filter-btn" data-filter="brief" onclick="filterLogs('brief')">Briefs</button>
             </div>
           </div>
         </div>
         <div id="logsList"></div>
       </section>
 
-      <!-- ════════════════════════════════════
-           CONTROLS
-           ════════════════════════════════════ -->
+      <!-- CONTROLS -->
       <section class="tab-panel" id="tab-controls">
         <div class="page-header">
           <h1>Controls</h1>
           <p class="subtitle">Operations surface and task dispatch</p>
         </div>
 
-        <!-- Board of AI -->
         <div style="margin-bottom:14px">
           <button class="ctrl-btn board-btn" onclick="submitTask('board-run','Board of AI Run')" id="boardRunBtn">
-            <span class="ctrl-icon">&#9670;&#9670;&#9670;</span>
+            <span class="ctrl-icon">&#9670;&#9670;&#9670;&#9670;</span>
             Run Board of AI
-            <span class="ctrl-desc">Claude + OpenAI + Perplexity orchestration</span>
+            <span class="ctrl-desc">Claude + OpenAI + Perplexity + Gemini orchestration</span>
           </button>
         </div>
 
@@ -333,26 +355,18 @@
 
         <h3 class="mt">Claude + AI</h3>
         <div class="g4">
-          <button class="ctrl-btn" onclick="launchClaude()">
-            <span class="ctrl-icon">&#9654;</span>Launch Claude
-          </button>
-          <button class="ctrl-btn" onclick="runAiTask('claude-topranker-review')">
-            <span class="ctrl-icon">&#9733;</span>TR Review
-          </button>
-          <button class="ctrl-btn" onclick="runAiTask('openai-daily-brief')">
-            <span class="ctrl-icon">&#9673;</span>OpenAI Brief
-          </button>
-          <button class="ctrl-btn" onclick="runAiTask('perplexity-research')">
-            <span class="ctrl-icon">&#8853;</span>PPX Research
-          </button>
+          <button class="ctrl-btn" onclick="launchClaude()"><span class="ctrl-icon">&#9654;</span>Launch Claude</button>
+          <button class="ctrl-btn" onclick="runAiTask('claude-topranker-review')"><span class="ctrl-icon">&#9733;</span>TR Review</button>
+          <button class="ctrl-btn" onclick="runAiTask('openai-daily-brief')"><span class="ctrl-icon">&#9673;</span>OpenAI Brief</button>
+          <button class="ctrl-btn" onclick="runAiTask('perplexity-research')"><span class="ctrl-icon">&#8853;</span>PPX Research</button>
         </div>
 
-        <h3 class="mt">Navigation</h3>
+        <h3 class="mt">Quick Nav</h3>
         <div class="g4">
-          <button class="qa-btn" onclick="switchTab('tasks')"><span class="qa-icon">&#9654;</span>Tasks</button>
-          <button class="qa-btn" onclick="switchTab('approvals')"><span class="qa-icon">&#9888;</span>Approvals</button>
-          <button class="qa-btn" onclick="switchTab('topranker')"><span class="qa-icon">&#9733;</span>TopRanker</button>
-          <button class="qa-btn" onclick="switchTab('logs')"><span class="qa-icon">&#9776;</span>Logs</button>
+          <button class="filter-btn" onclick="switchTab('tasks')">Tasks</button>
+          <button class="filter-btn" onclick="switchTab('approvals')">Approvals</button>
+          <button class="filter-btn" onclick="switchTab('topranker')">TopRanker</button>
+          <button class="filter-btn" onclick="switchTab('channels')">Channels</button>
         </div>
 
         <div class="card mt">
@@ -361,41 +375,42 @@
         </div>
       </section>
 
-      <!-- ════════════════════════════════════
-           SETTINGS
-           ════════════════════════════════════ -->
+      <!-- SETTINGS -->
       <section class="tab-panel" id="tab-settings">
         <div class="page-header">
           <h1>Settings</h1>
-          <p class="subtitle">Integrations and system status</p>
+          <p class="subtitle">Integrations, model status, and system info</p>
         </div>
 
-        <div class="g3">
+        <div class="g2">
           <div class="card">
-            <h3>Models</h3>
+            <h3>AI Models</h3>
             <div id="settingsModels">
               <div class="model-row"><span class="model-name">Claude</span><span class="model-tag local">Local</span></div>
               <div class="model-row"><span class="model-name">OpenAI</span><span class="model-tag" id="mOpenAI">--</span></div>
               <div class="model-row"><span class="model-name">Perplexity</span><span class="model-tag" id="mPerplexity">--</span></div>
+              <div class="model-row"><span class="model-name">Gemini</span><span class="model-tag" id="mGemini">--</span></div>
             </div>
           </div>
           <div class="card">
             <h3>Server</h3>
             <div id="settingsServer"></div>
           </div>
+        </div>
+
+        <div class="g2 mt">
           <div class="card">
             <h3>System</h3>
             <div id="settingsSystem"></div>
           </div>
-        </div>
-
-        <div class="card mt">
-          <h3>RPGPO Access Classes</h3>
-          <div style="font-size:12px">
-            <div class="settings-row"><span class="settings-label">Class A</span> Core Safe -- governance, repos, dashboards, public research</div>
-            <div class="settings-row"><span class="settings-label">Class B</span> Controlled -- toprankerapp@gmail.com, approved tools</div>
-            <div class="settings-row"><span class="settings-label">Class C</span> Sensitive -- selected threads, private docs (narrow)</div>
-            <div class="settings-row"><span class="settings-label">Class D</span> Forbidden -- anything not explicitly approved</div>
+          <div class="card">
+            <h3>RPGPO Access Classes</h3>
+            <div style="font-size:12px">
+              <div class="settings-row"><span class="settings-label">Class A</span> Core Safe — governance, repos, dashboards</div>
+              <div class="settings-row"><span class="settings-label">Class B</span> Controlled — toprankerapp@gmail, approved tools</div>
+              <div class="settings-row"><span class="settings-label">Class C</span> Sensitive — selected threads, private docs</div>
+              <div class="settings-row"><span class="settings-label">Class D</span> Forbidden — anything not explicitly approved</div>
+            </div>
           </div>
         </div>
       </section>
@@ -403,17 +418,17 @@
     </main>
   </div>
 
-  <!-- Toast container -->
+  <!-- Toast -->
   <div class="toast-container" id="toastContainer"></div>
 
-  <!-- Modal: task detail -->
+  <!-- Modal -->
   <div class="modal-overlay" id="taskModal" onclick="closeTaskModal(event)">
     <div class="modal-content">
       <div class="modal-header">
         <span id="taskModalTitle">Task</span>
         <button class="modal-close" onclick="document.getElementById('taskModal').classList.remove('open')">&times;</button>
       </div>
-      <pre class="modal-body" id="taskModalBody"></pre>
+      <div class="modal-body" id="taskModalBody"></div>
     </div>
   </div>
 

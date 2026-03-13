@@ -1,5 +1,20 @@
 [
   {
+    "id": "mmo9c706keum",
+    "type": "board-run",
+    "label": "Board of AI Run",
+    "status": "done",
+    "meta": {},
+    "createdAt": "2026-03-13T02:08:15.222Z",
+    "updatedAt": "2026-03-13T02:08:15.730Z",
+    "output": "=== RPGPO Board of AI ===\nRun started: 2026-03-13T02:08:15.726Z\n\nGathering RPGPO context...\n  Missions: 4\n  Research queue: 3 items\n  Pending approvals: 0\n\n[1/3] Claude Builder — generating TopRanker review prompt...\n  Prompt written to: 03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md\n  Use \"Launch Claude Session\" to run this prompt.\n\n[2/3] OpenAI Chief of Staff — generating executive briefing...\n  OPENAI_API_KEY not set. Skipping Chief of Staff briefing.\n\n[3/3] Perplexity Research Director — running research scan...\n  PERPLEXITY_API_KEY not set. Skipping research scan.\n\n=== Board Run Complete ===\n  Succeeded: 1/3\n  Skipped:   2/3\n  Errors:    0/3\n  Files:     03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md, 03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md\n\nMissing keys? Set them and restart:\n  export OPENAI_API_KEY=sk-...\n  export PERPLEXITY_API_KEY=pplx-...\n\n",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md",
+      "03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md"
+    ]
+  },
+  {
     "id": "mmo97kp9hu2x",
     "type": "refresh-state",
     "label": "Refresh State",

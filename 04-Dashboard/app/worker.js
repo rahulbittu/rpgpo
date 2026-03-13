@@ -1,19 +1,38 @@
 #!/usr/bin/env node
-// RPGPO Background Task Worker
+// RPGPO Background Task Worker v5
 // Polls the task queue and executes tasks sequentially.
 // Safe: no auto-send, no auto-post, no financial execution.
 
 const { execSync, spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
-const queue = require('./lib/queue');
-const { RPGPO_ROOT, logAction } = require('./lib/files');
 
-const POLL_INTERVAL = 2000; // 2 seconds
+// Load .env if it exists
+(function loadEnv() {
+  try {
+    const lines = fs.readFileSync(path.join(__dirname, '.env'), 'utf-8').split('\n');
+    for (const line of lines) {
+      const t = line.trim();
+      if (!t || t.startsWith('#')) continue;
+      const eq = t.indexOf('=');
+      if (eq === -1) continue;
+      const key = t.slice(0, eq).trim();
+      const val = t.slice(eq + 1).trim().replace(/^["']|["']$/g, '');
+      if (!process.env[key]) process.env[key] = val;
+    }
+  } catch {}
+})();
+
+const queue = require('./lib/queue');
+const { RPGPO_ROOT, logAction, writeFile } = require('./lib/files');
+const { callOpenAI, callPerplexity, callGemini } = require('./lib/ai');
+
+const POLL_INTERVAL = 2000;
 let running = false;
 
-console.log(`[worker] RPGPO Task Worker started at ${new Date().toISOString()}`);
+console.log(`[worker] RPGPO Task Worker v5 started at ${new Date().toISOString()}`);
 console.log(`[worker] Root: ${RPGPO_ROOT}`);
+console.log(`[worker] Models: OpenAI=${process.env.OPENAI_API_KEY ? 'OK' : 'missing'} Perplexity=${process.env.PERPLEXITY_API_KEY ? 'OK' : 'missing'} Gemini=${process.env.GEMINI_API_KEY ? 'OK' : 'missing'}`);
 console.log(`[worker] Polling every ${POLL_INTERVAL}ms`);
 
 // --- Task handlers ---
@@ -43,7 +62,7 @@ const handlers = {
       const child = spawn('node', [script], {
         cwd: RPGPO_ROOT,
         env: { ...process.env },
-        timeout: 120000,
+        timeout: 180000,
       });
 
       let stdout = '';
@@ -51,8 +70,7 @@ const handlers = {
       child.stdout.on('data', d => {
         const chunk = d.toString();
         stdout += chunk;
-        // Live update task output
-        queue.updateTask(task.id, { output: stdout.slice(0, 5000) });
+        queue.updateTask(task.id, { output: stdout.slice(0, 8000) });
       });
       child.stderr.on('data', d => stderr += d.toString());
 
@@ -78,6 +96,72 @@ const handlers = {
       child.on('error', reject);
     });
   },
+
+  // AI Channel tasks — direct model interaction from the Channels tab
+  'ai-channel': async (task) => {
+    const { model, prompt, role } = task.meta || {};
+    if (!prompt) throw new Error('No prompt provided');
+    if (!model) throw new Error('No model specified');
+
+    const today = new Date().toISOString().slice(0, 10);
+    const ts = new Date().toISOString();
+    const shortId = task.id.slice(-6);
+
+    // Build system prompt based on role
+    const rolePrompts = {
+      general: 'You are operating inside RPGPO (Rahul Pitta Governed Private Office). Be direct, concise, evidence-based, and actionable.',
+      research: 'You are the RPGPO Research Director. Provide evidence-based research with specific facts, numbers, and sources. Be concise and actionable.',
+      builder: 'You are the RPGPO Builder / CTO. Focus on technical analysis, implementation priorities, and practical engineering advice. Be specific and direct.',
+      strategy: 'You are the RPGPO Growth Strategist. Focus on business strategy, market positioning, growth channels, and actionable opportunities.',
+      creative: 'You are the RPGPO Creative Director. Support storytelling, ideation, and creative development with structured, imaginative, and practical output.',
+      chief: 'You are the RPGPO Chief of Staff. Synthesize information, identify priorities, surface blockers, and produce executive-quality briefings.',
+    };
+    const systemPrompt = rolePrompts[role] || rolePrompts.general;
+
+    let output = '';
+    let filesWritten = [];
+
+    if (model === 'claude') {
+      // Claude runs locally — generate a prompt file for manual execution
+      const promptFile = writeFile(
+        `03-Operations/Reports/Channel-Claude-${today}-${shortId}.md`,
+        `# RPGPO Channel Task — Claude\n## Generated: ${ts}\n## Role: ${role || 'general'}\n\n## Prompt\n${prompt}\n\n## Instructions\nRun this in a Claude session. Output your response to:\n03-Operations/Reports/Channel-Claude-Response-${today}-${shortId}.md\n`
+      );
+      filesWritten.push(promptFile);
+      output = `Claude prompt saved to ${promptFile}\nUse "Launch Claude" to execute this prompt in a terminal session.`;
+    } else if (model === 'openai') {
+      queue.updateTask(task.id, { output: 'Calling OpenAI...' });
+      const response = await callOpenAI(systemPrompt, prompt);
+      const outFile = writeFile(
+        `03-Operations/Reports/Channel-OpenAI-${today}-${shortId}.md`,
+        `# RPGPO Channel Response — OpenAI\n## Generated: ${ts}\n## Role: ${role || 'general'}\n## Model: gpt-4o\n\n${response}\n`
+      );
+      filesWritten.push(outFile);
+      output = response;
+    } else if (model === 'perplexity') {
+      queue.updateTask(task.id, { output: 'Calling Perplexity...' });
+      const response = await callPerplexity(systemPrompt, prompt);
+      const outFile = writeFile(
+        `03-Operations/Reports/Channel-Perplexity-${today}-${shortId}.md`,
+        `# RPGPO Channel Response — Perplexity\n## Generated: ${ts}\n## Role: ${role || 'general'}\n## Model: sonar\n\n${response}\n`
+      );
+      filesWritten.push(outFile);
+      output = response;
+    } else if (model === 'gemini') {
+      queue.updateTask(task.id, { output: 'Calling Gemini...' });
+      const response = await callGemini(systemPrompt, prompt);
+      const outFile = writeFile(
+        `03-Operations/Reports/Channel-Gemini-${today}-${shortId}.md`,
+        `# RPGPO Channel Response — Gemini\n## Generated: ${ts}\n## Role: ${role || 'general'}\n## Model: gemini-2.0-flash\n\n${response}\n`
+      );
+      filesWritten.push(outFile);
+      output = response;
+    } else {
+      throw new Error(`Unknown model: ${model}`);
+    }
+
+    return { output, filesWritten };
+  },
 };
 
 // --- Main poll loop ---
@@ -100,7 +184,6 @@ async function processNext() {
   running = true;
   console.log(`[worker] Task ${task.id} → running: ${task.type} — ${task.label}`);
   queue.updateTask(task.id, { status: 'running' });
-  console.log(`[worker] Task ${task.id} status written to tasks.json as 'running'`);
 
   try {
     const result = await handler(task);
@@ -110,7 +193,7 @@ async function processNext() {
       filesWritten: result.filesWritten || [],
     });
     logAction(`Worker: ${task.type}`, 'Done', (result.filesWritten || []).join(', ') || null);
-    console.log(`[worker] Task ${task.id} → done. Output: ${(result.output || '').slice(0, 100)}`);
+    console.log(`[worker] Task ${task.id} → done.`);
   } catch (e) {
     queue.updateTask(task.id, {
       status: 'failed',
@@ -123,16 +206,8 @@ async function processNext() {
   }
 }
 
-// Poll
 setInterval(processNext, POLL_INTERVAL);
 processNext();
 
-// Graceful shutdown
-process.on('SIGTERM', () => {
-  console.log('[worker] Shutting down...');
-  process.exit(0);
-});
-process.on('SIGINT', () => {
-  console.log('[worker] Interrupted.');
-  process.exit(0);
-});
+process.on('SIGTERM', () => { console.log('[worker] Shutting down...'); process.exit(0); });
+process.on('SIGINT', () => { console.log('[worker] Interrupted.'); process.exit(0); });

@@ -1,21 +1,39 @@
 #!/usr/bin/env node
-// RPGPO Board of AI Runner
+// RPGPO Board of AI Runner v5
 //
-// Orchestrates three AI roles against live RPGPO data:
-//   1. Claude   = Builder / TopRanker reviewer (prompt generation)
-//   2. OpenAI   = Chief of Staff / synthesis / daily briefing
+// Orchestrates four AI roles against live RPGPO data:
+//   1. Claude    = Builder / TopRanker reviewer (prompt generation)
+//   2. OpenAI    = Chief of Staff / synthesis / daily briefing
 //   3. Perplexity = Research Director / quick research scan
+//   4. Gemini    = Growth Strategist / market analysis
 //
 // Safe: reads local files, calls APIs, writes reports.
 // Does NOT send emails, post, trade, or make external submissions.
 
 const fs = require('fs');
 const path = require('path');
-const https = require('https');
 
 const RPGPO_ROOT = path.resolve(__dirname, '..', '..', '..');
 const today = new Date().toISOString().slice(0, 10);
 const runTs = new Date().toISOString();
+
+// Load .env from app dir
+(function loadEnv() {
+  try {
+    const lines = fs.readFileSync(path.join(__dirname, '..', '.env'), 'utf-8').split('\n');
+    for (const line of lines) {
+      const t = line.trim();
+      if (!t || t.startsWith('#')) continue;
+      const eq = t.indexOf('=');
+      if (eq === -1) continue;
+      const key = t.slice(0, eq).trim();
+      const val = t.slice(eq + 1).trim().replace(/^["']|["']$/g, '');
+      if (!process.env[key]) process.env[key] = val;
+    }
+  } catch {}
+})();
+
+const { callOpenAI, callPerplexity, callGemini } = require('../lib/ai');
 
 // --- Helpers ---
 
@@ -43,7 +61,6 @@ function extractField(md, field) {
 // --- Collect RPGPO context ---
 
 function gatherContext() {
-  // Missions
   const missionFiles = listDir('03-Operations/MissionStatus');
   const missions = missionFiles.map(f => {
     const md = readFile('03-Operations/MissionStatus/' + f);
@@ -57,18 +74,11 @@ function gatherContext() {
     };
   }).filter(Boolean);
 
-  // Research queue
   const state = JSON.parse(readFile('04-Dashboard/state/dashboard-state.json') || '{}');
   const researchQueue = state.research_queue || [];
-
-  // TopRanker summary
   const toprankerSummary = readFile('03-Operations/Reports/TopRanker-Operating-Summary.md') || 'Not available.';
-
-  // Latest daily brief
   const briefs = listDir('03-Operations/DailyBriefs').sort().reverse();
   const latestBrief = briefs.length > 0 ? readFile('03-Operations/DailyBriefs/' + briefs[0]) : 'No daily brief available.';
-
-  // Pending approvals
   const pendingApprovals = listDir('03-Operations/Approvals/Pending');
 
   return { missions, researchQueue, toprankerSummary, latestBrief, pendingApprovals };
@@ -91,100 +101,9 @@ function contextToText(ctx) {
   text += '## Latest Daily Brief\n' + ctx.latestBrief + '\n\n';
 
   text += '## TopRanker Operating Summary (excerpt)\n';
-  // Include first 2000 chars to stay within token limits
   text += ctx.toprankerSummary.slice(0, 2000) + '\n';
 
   return text;
-}
-
-// --- API callers ---
-
-function callOpenAI(systemPrompt, userPrompt) {
-  return new Promise((resolve, reject) => {
-    const key = process.env.OPENAI_API_KEY;
-    if (!key) return reject(new Error('OPENAI_API_KEY not set'));
-
-    const body = JSON.stringify({
-      model: 'gpt-4o',
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userPrompt },
-      ],
-      max_tokens: 2000,
-      temperature: 0.4,
-    });
-
-    const req = https.request({
-      hostname: 'api.openai.com',
-      path: '/v1/chat/completions',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${key}`,
-      },
-    }, (res) => {
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => {
-        try {
-          const parsed = JSON.parse(data);
-          if (parsed.error) return reject(new Error(parsed.error.message));
-          resolve(parsed.choices[0].message.content);
-        } catch (e) {
-          reject(new Error('OpenAI parse error: ' + data.slice(0, 300)));
-        }
-      });
-    });
-
-    req.on('error', reject);
-    req.setTimeout(60000, () => { req.destroy(); reject(new Error('OpenAI timeout')); });
-    req.write(body);
-    req.end();
-  });
-}
-
-function callPerplexity(systemPrompt, userPrompt) {
-  return new Promise((resolve, reject) => {
-    const key = process.env.PERPLEXITY_API_KEY;
-    if (!key) return reject(new Error('PERPLEXITY_API_KEY not set'));
-
-    const body = JSON.stringify({
-      model: 'sonar',
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userPrompt },
-      ],
-      max_tokens: 1500,
-      temperature: 0.3,
-    });
-
-    const req = https.request({
-      hostname: 'api.perplexity.ai',
-      path: '/chat/completions',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${key}`,
-      },
-    }, (res) => {
-      let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => {
-        try {
-          const parsed = JSON.parse(data);
-          if (parsed.error) return reject(new Error(parsed.error.message || JSON.stringify(parsed.error)));
-          resolve(parsed.choices[0].message.content);
-        } catch (e) {
-          reject(new Error('Perplexity parse error: ' + data.slice(0, 300)));
-        }
-      });
-    });
-
-    req.on('error', reject);
-    req.setTimeout(60000, () => { req.destroy(); reject(new Error('Perplexity timeout')); });
-    req.write(body);
-    req.end();
-  });
 }
 
 // --- Board roles ---
@@ -239,12 +158,28 @@ Keep the total response concise and scannable.`;
   return callPerplexity(systemPrompt, userPrompt);
 }
 
+async function runGrowthStrategist(contextText) {
+  const systemPrompt = `You are the RPGPO Growth Strategist. Your role is to analyze the current state of missions and propose specific, actionable growth strategies.
+
+Rules:
+- Focus on TopRanker as the flagship
+- Propose concrete, testable ideas — not vague advice
+- Consider cold start, distribution, positioning, and monetization
+- Be brief and structured
+- Output in clean markdown`;
+
+  const userPrompt = `Here is the current RPGPO state. Analyze and produce:
+1. Top growth opportunity for TopRanker right now (specific, actionable)
+2. One positioning insight that could improve traction
+3. One monetization experiment worth testing this week
+4. Brief competitive landscape observation
+
+${contextText}`;
+
+  return callGemini(systemPrompt, userPrompt);
+}
+
 function runBuilder(contextText) {
-  // Claude step: generate the review prompt that can be used in a Claude session.
-  // This runs locally — no API call needed. Claude is invoked by the user separately.
-
-  const toprankerSection = contextText.split('## TopRanker Operating Summary')[1] || '';
-
   const prompt = `You are operating inside Rahul Pitta Governed Private Office (RPGPO) as the Builder / CTO.
 
 Today's date: ${today}
@@ -273,6 +208,7 @@ Be concise, specific, and action-oriented. Do not make destructive changes.`;
 // --- Main orchestrator ---
 
 async function runBoard() {
+  const totalSteps = 4;
   const results = {
     timestamp: runTs,
     steps: [],
@@ -280,7 +216,7 @@ async function runBoard() {
     errors: [],
   };
 
-  console.log('=== RPGPO Board of AI ===');
+  console.log('=== RPGPO Board of AI v5 ===');
   console.log(`Run started: ${runTs}`);
   console.log('');
 
@@ -293,8 +229,8 @@ async function runBoard() {
   console.log(`  Pending approvals: ${ctx.pendingApprovals.length}`);
   console.log('');
 
-  // Step 1: Claude Builder — prompt generation (always available)
-  console.log('[1/3] Claude Builder — generating TopRanker review prompt...');
+  // Step 1: Claude Builder
+  console.log(`[1/${totalSteps}] Claude Builder — generating TopRanker review prompt...`);
   try {
     const claudePrompt = runBuilder(contextText);
     const claudeFile = writeOutput(
@@ -304,7 +240,6 @@ async function runBoard() {
     results.steps.push({ role: 'Claude Builder', status: 'success', model: 'prompt-generation' });
     results.filesWritten.push(claudeFile);
     console.log(`  Prompt written to: ${claudeFile}`);
-    console.log('  Use "Launch Claude Session" to run this prompt.');
   } catch (e) {
     results.steps.push({ role: 'Claude Builder', status: 'error', error: e.message });
     results.errors.push('Claude Builder: ' + e.message);
@@ -312,8 +247,8 @@ async function runBoard() {
   }
   console.log('');
 
-  // Step 2: OpenAI Chief of Staff — executive briefing
-  console.log('[2/3] OpenAI Chief of Staff — generating executive briefing...');
+  // Step 2: OpenAI Chief of Staff
+  console.log(`[2/${totalSteps}] OpenAI Chief of Staff — generating executive briefing...`);
   if (!process.env.OPENAI_API_KEY) {
     const msg = 'OPENAI_API_KEY not set. Skipping Chief of Staff briefing.';
     results.steps.push({ role: 'OpenAI Chief of Staff', status: 'skipped', error: msg });
@@ -337,8 +272,8 @@ async function runBoard() {
   }
   console.log('');
 
-  // Step 3: Perplexity Research Director — research scan
-  console.log('[3/3] Perplexity Research Director — running research scan...');
+  // Step 3: Perplexity Research Director
+  console.log(`[3/${totalSteps}] Perplexity Research Director — running research scan...`);
   if (!process.env.PERPLEXITY_API_KEY) {
     const msg = 'PERPLEXITY_API_KEY not set. Skipping research scan.';
     results.steps.push({ role: 'Perplexity Research Director', status: 'skipped', error: msg });
@@ -362,7 +297,32 @@ async function runBoard() {
   }
   console.log('');
 
-  // Step 4: Write board run log
+  // Step 4: Gemini Growth Strategist
+  console.log(`[4/${totalSteps}] Gemini Growth Strategist — generating growth analysis...`);
+  if (!process.env.GEMINI_API_KEY) {
+    const msg = 'GEMINI_API_KEY not set. Skipping growth analysis.';
+    results.steps.push({ role: 'Gemini Growth Strategist', status: 'skipped', error: msg });
+    results.errors.push(msg);
+    console.log('  ' + msg);
+  } else {
+    try {
+      const growth = await runGrowthStrategist(contextText);
+      const growthFile = writeOutput(
+        `03-Operations/Reports/Growth-Strategy-${today}.md`,
+        `# RPGPO Growth Strategy\n## Generated: ${runTs}\n## Source: Gemini Growth Strategist\n\n${growth}\n`
+      );
+      results.steps.push({ role: 'Gemini Growth Strategist', status: 'success', model: 'gemini-2.0-flash' });
+      results.filesWritten.push(growthFile);
+      console.log(`  Growth strategy written to: ${growthFile}`);
+    } catch (e) {
+      results.steps.push({ role: 'Gemini Growth Strategist', status: 'error', error: e.message });
+      results.errors.push('Gemini: ' + e.message);
+      console.log('  Error: ' + e.message);
+    }
+  }
+  console.log('');
+
+  // Step 5: Write board run log
   const successCount = results.steps.filter(s => s.status === 'success').length;
   const skipCount = results.steps.filter(s => s.status === 'skipped').length;
   const errorCount = results.steps.filter(s => s.status === 'error').length;
@@ -373,7 +333,7 @@ async function runBoard() {
 ${runTs}
 
 ## Summary
-Board run completed. ${successCount} succeeded, ${skipCount} skipped, ${errorCount} failed.
+Board run completed. ${successCount} succeeded, ${skipCount} skipped, ${errorCount} failed out of ${totalSteps} steps.
 
 ## Steps
 ${results.steps.map(s => `- **${s.role}**: ${s.status}${s.model ? ` (${s.model})` : ''}${s.error ? ` — ${s.error}` : ''}`).join('\n')}
@@ -395,18 +355,19 @@ Green (read + write reports only, no external actions)
   results.filesWritten.push(logFile);
 
   console.log('=== Board Run Complete ===');
-  console.log(`  Succeeded: ${successCount}/3`);
-  console.log(`  Skipped:   ${skipCount}/3`);
-  console.log(`  Errors:    ${errorCount}/3`);
+  console.log(`  Succeeded: ${successCount}/${totalSteps}`);
+  console.log(`  Skipped:   ${skipCount}/${totalSteps}`);
+  console.log(`  Errors:    ${errorCount}/${totalSteps}`);
   console.log(`  Files:     ${results.filesWritten.join(', ')}`);
   if (results.errors.length > 0) {
     console.log('');
-    console.log('Missing keys? Set them and restart:');
-    if (!process.env.OPENAI_API_KEY) console.log('  export OPENAI_API_KEY=sk-...');
-    if (!process.env.PERPLEXITY_API_KEY) console.log('  export PERPLEXITY_API_KEY=pplx-...');
+    console.log('Missing keys? Set them in .env or shell and restart:');
+    if (!process.env.OPENAI_API_KEY) console.log('  OPENAI_API_KEY=sk-...');
+    if (!process.env.PERPLEXITY_API_KEY) console.log('  PERPLEXITY_API_KEY=pplx-...');
+    if (!process.env.GEMINI_API_KEY) console.log('  GEMINI_API_KEY=AIza...');
   }
 
-  // Output JSON for the server to parse
+  // Output JSON for the worker to parse
   console.log('\n__BOARD_RESULT__' + JSON.stringify(results));
 }
 

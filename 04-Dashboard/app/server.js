@@ -1,8 +1,24 @@
-// RPGPO Dashboard Server v4 — World-class command center
+// RPGPO Dashboard Server v5 — Premium Command Center
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+
+// Load .env if it exists (no dependencies needed)
+(function loadEnv() {
+  try {
+    const lines = fs.readFileSync(path.join(__dirname, '.env'), 'utf-8').split('\n');
+    for (const line of lines) {
+      const t = line.trim();
+      if (!t || t.startsWith('#')) continue;
+      const eq = t.indexOf('=');
+      if (eq === -1) continue;
+      const key = t.slice(0, eq).trim();
+      const val = t.slice(eq + 1).trim().replace(/^["']|["']$/g, '');
+      if (!process.env[key]) process.env[key] = val;
+    }
+  } catch {}
+})();
 
 const { RPGPO_ROOT, readFile, readJson, listFiles, readAllInDir, parseMission, logAction } = require('./lib/files');
 const queue = require('./lib/queue');
@@ -17,8 +33,6 @@ let lastTasksJson = '';
 const TASKS_FILE = path.resolve(__dirname, '..', 'state', 'tasks.json');
 
 function watchTaskFile() {
-  // Poll the tasks file for changes made by the worker process.
-  // fs.watch is unreliable across platforms; polling is robust.
   setInterval(() => {
     try {
       const raw = fs.readFileSync(TASKS_FILE, 'utf-8');
@@ -27,14 +41,11 @@ function watchTaskFile() {
         const newTasks = JSON.parse(raw);
         lastTasksJson = raw;
 
-        // Find tasks whose status changed
         for (const nt of newTasks) {
           const ot = oldTasks.find(t => t.id === nt.id);
           if (!ot || ot.status !== nt.status || ot.updatedAt !== nt.updatedAt) {
             const evt = { event: 'task_updated', task: nt };
-            console.log(`[server] Task ${nt.id} → ${nt.status} (file-watch broadcast)`);
             events.broadcast('task', evt);
-            // Also broadcast as activity for the live feed
             if (nt.status === 'running') {
               events.broadcast('activity', { action: `Task running: ${nt.label}`, ts: new Date().toISOString() });
             } else if (nt.status === 'done') {
@@ -46,17 +57,14 @@ function watchTaskFile() {
         }
       }
     } catch (e) {
-      console.error('[server] file-watch error:', e.message);
+      // Silently retry on next poll
     }
-  }, 1000); // Check every 1s for responsive task lifecycle
+  }, 1000);
 
-  // Initialize lastTasksJson
   try {
     lastTasksJson = fs.readFileSync(TASKS_FILE, 'utf-8');
-    console.log(`[server] Task file watcher initialized. File: ${TASKS_FILE}`);
-  } catch (e) {
-    console.log(`[server] Task file not found yet: ${TASKS_FILE}`);
-  }
+    console.log(`[server] Task file watcher initialized.`);
+  } catch {}
 }
 
 watchTaskFile();
@@ -82,11 +90,26 @@ function json(res, data, status = 200) {
 
 function buildApiData() {
   const state = readJson('04-Dashboard/state/dashboard-state.json') || {};
-  const missionFiles = ['TopRanker', 'CareerEngine', 'Founder2Founder', 'WealthResearch'];
-  const missions = missionFiles.map(f => {
-    const md = readFile(`03-Operations/MissionStatus/${f}.md`);
+
+  // Dynamic mission discovery: read all .md files in MissionStatus
+  const missionDir = '03-Operations/MissionStatus';
+  const missionFileNames = listFiles(missionDir).filter(f => f.endsWith('.md'));
+  const missions = missionFileNames.map(f => {
+    const md = readFile(path.join(missionDir, f));
     return parseMission(md);
   }).filter(Boolean);
+
+  // Sort: active first, then needs-decision, then research-only, then planned
+  const statusOrder = { active: 0, 'needs-decision': 1, 'needs decision': 1, 'research-only': 2, planned: 3 };
+  missions.sort((a, b) => {
+    const aOrd = statusOrder[(a.status || '').toLowerCase().replace(/\s+/g, '-')] ?? 4;
+    const bOrd = statusOrder[(b.status || '').toLowerCase().replace(/\s+/g, '-')] ?? 4;
+    if (aOrd !== bOrd) return aOrd - bOrd;
+    // TopRanker always first within same status
+    if (a.mission === 'TopRanker') return -1;
+    if (b.mission === 'TopRanker') return 1;
+    return 0;
+  });
 
   const briefs = readAllInDir('03-Operations/DailyBriefs');
   const approvals = readAllInDir('03-Operations/Approvals/Pending');
@@ -106,7 +129,6 @@ function getWorkerStatus() {
     const worker = procs.find(p => p.name === 'rpgpo-worker');
     if (worker) return { running: worker.pm2_env.status === 'online', pid: worker.pid, uptime: worker.pm2_env.pm_uptime };
   } catch {}
-  // Fallback: check if worker.js is running
   try {
     execSync('pgrep -f "node.*worker.js"', { timeout: 2000 });
     return { running: true, pid: null, uptime: null };
@@ -118,10 +140,12 @@ function getWorkerStatus() {
 
 const server = http.createServer(async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  // SSE endpoint — live event stream
+  if (req.method === 'OPTIONS') { res.writeHead(204); res.end(); return; }
+
+  // SSE endpoint
   if (req.url === '/api/events') {
     res.writeHead(200, {
       'Content-Type': 'text/event-stream',
@@ -131,15 +155,12 @@ const server = http.createServer(async (req, res) => {
     res.write(`event: connected\ndata: ${JSON.stringify({ ts: new Date().toISOString() })}\n\n`);
     events.addClient(res);
 
-    // SSE keepalive every 15s to prevent proxy/Tailscale timeouts
     const keepalive = setInterval(() => {
       try { res.write(': keepalive\n\n'); } catch { clearInterval(keepalive); }
     }, 15000);
     res.on('close', () => clearInterval(keepalive));
 
-    // Forward in-process task queue events to SSE (for tasks added by the server itself)
     const onTask = (data) => {
-      console.log(`[server] SSE → task event: ${data.event} ${data.task?.id} ${data.task?.status}`);
       try { res.write(`event: task\ndata: ${JSON.stringify(data)}\n\n`); } catch {}
     };
     queue.bus.on('task', onTask);
@@ -152,7 +173,7 @@ const server = http.createServer(async (req, res) => {
     return json(res, buildApiData());
   }
 
-  // System status (server uptime, worker, models)
+  // System status
   if (req.url === '/api/status') {
     return json(res, {
       server: { uptime: Date.now() - startTime, port: PORT },
@@ -160,13 +181,14 @@ const server = http.createServer(async (req, res) => {
       keys: {
         OPENAI_API_KEY: process.env.OPENAI_API_KEY ? 'configured' : 'missing',
         PERPLEXITY_API_KEY: process.env.PERPLEXITY_API_KEY ? 'configured' : 'missing',
+        GEMINI_API_KEY: process.env.GEMINI_API_KEY ? 'configured' : 'missing',
       },
       workspace: RPGPO_ROOT,
       node: process.version,
     });
   }
 
-  // --- Task queue ---
+  // Task queue
   if (req.url === '/api/tasks') {
     return json(res, queue.getAll());
   }
@@ -180,7 +202,7 @@ const server = http.createServer(async (req, res) => {
     return json(res, { ok: true, task });
   }
 
-  // --- Direct script execution (for quick actions) ---
+  // Direct script execution
   if (req.url?.startsWith('/api/run/') && req.method === 'POST') {
     const scriptName = req.url.replace('/api/run/', '');
     const scripts = {
@@ -201,7 +223,7 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
-  // --- Approval actions ---
+  // Approval actions
   if (req.url?.startsWith('/api/approval/') && req.method === 'POST') {
     const body = await parseBody(req);
     const filename = body.filename;
@@ -231,6 +253,7 @@ const server = http.createServer(async (req, res) => {
       keys: {
         OPENAI_API_KEY: process.env.OPENAI_API_KEY ? 'configured' : 'missing',
         PERPLEXITY_API_KEY: process.env.PERPLEXITY_API_KEY ? 'configured' : 'missing',
+        GEMINI_API_KEY: process.env.GEMINI_API_KEY ? 'configured' : 'missing',
       },
       workspace: RPGPO_ROOT,
       node: process.version,
@@ -272,10 +295,13 @@ const server = http.createServer(async (req, res) => {
     if (taskType === 'perplexity-research' && !process.env.PERPLEXITY_API_KEY) {
       return json(res, { ok: false, error: 'PERPLEXITY_API_KEY not set. Configure it and restart.' });
     }
-    return json(res, { ok: true, output: 'Use "Run Board of AI" to execute this via the task queue.' });
+    if (taskType === 'gemini-strategy' && !process.env.GEMINI_API_KEY) {
+      return json(res, { ok: false, error: 'GEMINI_API_KEY not set. Configure it and restart.' });
+    }
+    return json(res, { ok: true, output: 'Use "Run Board of AI" or the Channels tab to execute via the task queue.' });
   }
 
-  // File reader
+  // File reader (sandbox-safe)
   if (req.url?.startsWith('/api/file/')) {
     const relPath = decodeURIComponent(req.url.replace('/api/file/', ''));
     const fullPath = path.resolve(RPGPO_ROOT, relPath);
@@ -290,7 +316,7 @@ const server = http.createServer(async (req, res) => {
   // Static files
   let filePath = req.url === '/' ? '/index.html' : req.url.split('?')[0];
   const ext = path.extname(filePath);
-  const mimeTypes = { '.html': 'text/html', '.js': 'application/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml' };
+  const mimeTypes = { '.html': 'text/html', '.js': 'application/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png' };
   const fullPath = path.join(__dirname, filePath);
 
   if (!fullPath.startsWith(__dirname)) { res.writeHead(403); res.end('Forbidden'); return; }
@@ -303,6 +329,7 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, '0.0.0.0', () => {
-  console.log(`\n  RPGPO Command Center v4 running at http://localhost:${PORT}`);
-  console.log(`  Binding 0.0.0.0 for remote access\n`);
+  console.log(`\n  RPGPO Command Center v5 running at http://localhost:${PORT}`);
+  console.log(`  Binding 0.0.0.0 for remote access`);
+  console.log(`  Models: OpenAI=${process.env.OPENAI_API_KEY ? 'OK' : 'missing'} Perplexity=${process.env.PERPLEXITY_API_KEY ? 'OK' : 'missing'} Gemini=${process.env.GEMINI_API_KEY ? 'OK' : 'missing'}\n`);
 });
