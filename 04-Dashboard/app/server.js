@@ -417,13 +417,49 @@ const server = http.createServer(async (req, res) => {
 
     intake.updateSubtask(subtaskId, { status: 'queued' });
     queue.addTask('execute-subtask', `Subtask: ${st.title}`, { subtaskId });
-    events.broadcast('activity', { action: `Subtask approved: ${st.title}`, ts: new Date().toISOString() });
-    return json(res, { ok: true });
+
+    // Check if parent task should move from waiting_approval back to executing
+    const parentTask = intake.getTask(st.parent_task_id);
+    if (parentTask && parentTask.status === 'waiting_approval') {
+      const siblings = intake.getSubtasksForTask(st.parent_task_id);
+      const stillWaiting = siblings.filter(s => s.status === 'waiting_approval' && s.subtask_id !== subtaskId);
+      if (!stillWaiting.length) {
+        intake.updateTask(st.parent_task_id, { status: 'executing' });
+      }
+    }
+
+    events.broadcast('activity', { action: `Subtask approved & queued: ${st.title}`, ts: new Date().toISOString() });
+    events.broadcast('intake-update', { taskId: st.parent_task_id, subtaskId, action: 'approved' });
+    return json(res, { ok: true, resumed: st.title, parentTask: parentTask?.title });
   }
 
   // Get all subtasks
   if (req.url === '/api/subtasks') {
     return json(res, intake.getAllSubtasks());
+  }
+
+  // Global pending approvals — subtasks + tasks waiting approval
+  if (req.url === '/api/intake/pending-approvals') {
+    const allSubs = intake.getAllSubtasks();
+    const pending = allSubs.filter(s => s.status === 'waiting_approval').map(s => {
+      const parent = intake.getTask(s.parent_task_id);
+      return { ...s, parent_title: parent ? parent.title : 'Unknown', parent_domain: parent ? parent.domain : 'general' };
+    });
+    return json(res, pending);
+  }
+
+  // Current task focus — the most active intake task with its subtasks
+  if (req.url === '/api/intake/current') {
+    const allTasks = intake.getAllTasks();
+    const terminal = ['done', 'failed', 'canceled'];
+    const current = allTasks.find(t => !terminal.includes(t.status));
+    if (!current) return json(res, { task: null, subtasks: [], progress: null, pendingApprovals: [] });
+    const subtasks = intake.getSubtasksForTask(current.task_id);
+    const progress = intake.getTaskProgress(current.task_id);
+    const pendingApprovals = subtasks.filter(s => s.status === 'waiting_approval');
+    const activeSubtask = subtasks.find(s => s.status === 'running') || subtasks.find(s => s.status === 'queued') || null;
+    const nextBlocking = subtasks.find(s => s.status === 'waiting_approval') || null;
+    return json(res, { task: current, subtasks, progress, pendingApprovals, activeSubtask, nextBlocking });
   }
 
   // File reader (sandbox-safe)

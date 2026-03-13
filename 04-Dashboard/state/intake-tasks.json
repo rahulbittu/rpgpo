@@ -1,5 +1,218 @@
 [
   {
+    "task_id": "t_mmofzx2zz5xa",
+    "title": "Check TopRanker user growth metrics and recommend next marketing action",
+    "raw_request": "Check TopRanker user growth metrics and recommend next marketing action",
+    "domain": "topranker",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-13T05:14:39.803Z",
+    "updated_at": "2026-03-13T05:16:46.725Z",
+    "status": "waiting_approval",
+    "board_deliberation": {
+      "timestamp": "2026-03-13T05:16:10.834Z",
+      "interpreted_objective": "Analyze user growth metrics and recommend a marketing action to boost TopRanker growth.",
+      "expected_outcome": "A clear, actionable marketing strategy based on current user growth metrics.",
+      "key_unknowns": [
+        "Current user growth metrics",
+        "Current marketing strategies in place",
+        "User demographics and engagement patterns"
+      ],
+      "recommended_strategy": "First, gather and analyze current user growth metrics to understand trends and patterns. Then, identify potential marketing strategies that align with these insights. Finally, recommend a specific marketing action to enhance user growth.",
+      "risk_level": "yellow",
+      "approval_points": [
+        "Approval of the recommended marketing action"
+      ],
+      "subtasks": [
+        {
+          "title": "Audit Current User Growth Metrics",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "openai",
+          "expected_output": "A summary of current user growth metrics and trends.",
+          "prompt": "Analyze the current user growth metrics for TopRanker. Identify trends and patterns in user acquisition, retention, and engagement.",
+          "files_to_read": [
+            "03-Operations/MissionStatus/TopRanker.md",
+            "03-Operations/Reports/TopRanker-Operating-Summary.md"
+          ],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Identify Potential Marketing Strategies",
+          "stage": "decide",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "A list of potential marketing strategies based on user growth analysis.",
+          "prompt": "Based on the analyzed user growth metrics, identify potential marketing strategies that could enhance user growth for TopRanker.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Recommend Specific Marketing Action",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A recommended marketing action to boost user growth.",
+          "prompt": "Recommend a specific marketing action to boost user growth for TopRanker, based on the identified strategies.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/TopRanker-Marketing-Action-Recommendation.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": true,
+          "depends_on": [
+            1
+          ]
+        }
+      ],
+      "model_used": "gpt-4o",
+      "tokens_used": 1790
+    },
+    "execution_plan": null
+  },
+  {
+    "task_id": "t_mmofq6ilo6jf",
+    "title": "Audit TopRanker API endpoints for performance issues and produce the first prior",
+    "raw_request": "Audit TopRanker API endpoints for performance issues and produce the first prioritized fix plan",
+    "domain": "topranker",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-13T05:07:05.469Z",
+    "updated_at": "2026-03-13T05:07:05.469Z",
+    "status": "intake",
+    "board_deliberation": null,
+    "execution_plan": null
+  },
+  {
+    "task_id": "t_mmofnvasdeog",
+    "title": "Audit TopRanker API endpoints for performance issues and produce the first prior",
+    "raw_request": "Audit TopRanker API endpoints for performance issues and produce the first prioritized fix plan",
+    "domain": "topranker",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-13T05:05:17.620Z",
+    "updated_at": "2026-03-13T05:06:45.632Z",
+    "status": "planned",
+    "board_deliberation": {
+      "timestamp": "2026-03-13T05:06:45.632Z",
+      "interpreted_objective": "Identify and prioritize performance issues in TopRanker's API endpoints.",
+      "expected_outcome": "A prioritized plan for fixing performance issues in the API, improving response times and overall system efficiency.",
+      "key_unknowns": [
+        "Current performance metrics of each API endpoint",
+        "Specific performance bottlenecks in the API",
+        "Impact of each bottleneck on user experience"
+      ],
+      "recommended_strategy": "Conduct a thorough audit of the API endpoints to gather performance metrics and identify bottlenecks. Prioritize these issues based on their impact on user experience and system performance. Develop a plan to address the most critical issues first, ensuring improvements are measurable and aligned with TopRanker's objectives.",
+      "risk_level": "yellow",
+      "approval_points": [
+        "Approval for implementing changes that may affect live API performance"
+      ],
+      "subtasks": [
+        {
+          "title": "Audit API Performance Metrics",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "openai",
+          "expected_output": "A list of current performance metrics for each API endpoint.",
+          "prompt": "Analyze TopRanker's API endpoints and gather current performance metrics, including response times, error rates, and throughput.",
+          "files_to_read": [
+            "03-Operations/Reports/TopRanker-Operating-Summary.md"
+          ],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Identify API Bottlenecks",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "openai",
+          "expected_output": "A list of identified performance bottlenecks in the API.",
+          "prompt": "Identify performance bottlenecks in TopRanker's API based on the gathered metrics and any known issues.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Prioritize API Performance Issues",
+          "stage": "decide",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "A prioritized list of performance issues to address.",
+          "prompt": "Prioritize the identified API performance issues based on their impact on user experience and system performance.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "yellow",
+          "approval_required": true,
+          "depends_on": [
+            1
+          ]
+        },
+        {
+          "title": "Develop Fix Plan",
+          "stage": "implement",
+          "assigned_role": "builder",
+          "assigned_model": "claude",
+          "expected_output": "A detailed plan for fixing the prioritized API performance issues.",
+          "prompt": "Create a detailed plan to address the prioritized API performance issues, including specific actions and timelines.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Plans/API-Fix-Plan.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": true,
+          "depends_on": [
+            2
+          ]
+        },
+        {
+          "title": "Report Findings and Plan",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "A report summarizing the findings and the fix plan.",
+          "prompt": "Summarize the audit findings and the fix plan for TopRanker's API performance issues.",
+          "files_to_read": [
+            "03-Operations/Plans/API-Fix-Plan.md"
+          ],
+          "files_to_write": [
+            "03-Operations/Reports/API-Performance-Report.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            3
+          ]
+        }
+      ],
+      "model_used": "gpt-4o",
+      "tokens_used": 2066
+    },
+    "execution_plan": null
+  },
+  {
     "task_id": "t_mmofia4tezn9",
     "title": "Audit TopRanker API endpoints for performance issues and identify any N+1 querie",
     "raw_request": "Audit TopRanker API endpoints for performance issues and identify any N+1 queries or missing indexes",

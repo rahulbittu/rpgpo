@@ -34,6 +34,13 @@ function connectSSE() {
     try { const d = JSON.parse(e.data); pushActivity(d.action); } catch {}
   });
 
+  evtSource.addEventListener('intake-update', (e) => {
+    // Instant refresh when intake state changes
+    loadPendingApprovals();
+    loadCurrentTaskFocus();
+    loadIntakeTasks();
+  });
+
   evtSource.addEventListener('task', (e) => {
     try {
       const d = JSON.parse(e.data);
@@ -538,7 +545,8 @@ function renderHome() {
       `<div class="approval-pill" onclick="switchTab('approvals')">&#9888; ${esc(a.name)}</div>`
     ).join('');
   }
-  setStatus('hsApprovals', DATA.approvals.length === 0 ? 'Clear' : DATA.approvals.length + ' pending', DATA.approvals.length === 0 ? 'ok' : 'warn');
+  const totalApprovals = DATA.approvals.length + PENDING_APPROVALS.length;
+  setStatus('hsApprovals', totalApprovals === 0 ? 'Clear' : totalApprovals + ' pending', totalApprovals === 0 ? 'ok' : 'warn');
 
   // Mission health
   const md = document.getElementById('homeMissions');
@@ -736,10 +744,44 @@ function renderMissions() {
 
 function renderApprovals() {
   const c = document.getElementById('approvalsList');
-  if (!DATA.approvals.length) {
+
+  // Show intake subtask approvals at top
+  let intakeHtml = '';
+  if (PENDING_APPROVALS.length) {
+    intakeHtml = `<div class="card" style="margin-bottom:14px;border:1px solid var(--yellow-border);background:var(--yellow-soft)">
+      <h3 style="color:var(--yellow);margin-bottom:8px">&#9888; Subtask Approvals (${PENDING_APPROVALS.length})</h3>`;
+    for (const s of PENDING_APPROVALS) {
+      const typeIcon = getSubtaskTypeIcon(s.stage);
+      intakeHtml += `<div class="approval-inbox-item" style="margin-bottom:6px">
+        <div class="approval-inbox-item-info">
+          <span class="subtask-type-icon ${s.stage}">${typeIcon}</span>
+          <div>
+            <div class="approval-inbox-item-title">${esc(s.title)}</div>
+            <div class="approval-inbox-item-meta">
+              <span class="stage-tag ${s.stage}">${esc(s.stage)}</span>
+              <span class="task-model-tag ${s.assigned_model}">${esc(s.assigned_model)}</span>
+              <span style="color:var(--text-faint);font-size:9px">from: ${esc(s.parent_title)}</span>
+            </div>
+            ${s.files_changed && s.files_changed.length ? `<div class="approval-files-changed">${s.files_changed.map(f => '<span class="file-badge">' + esc(f) + '</span>').join('')}</div>` : ''}
+          </div>
+        </div>
+        <button class="btn-approve-global" onclick="event.stopPropagation();approveSubtaskGlobal('${s.subtask_id}', this)">
+          <span>&#10003;</span> Approve & Continue
+        </button>
+      </div>`;
+    }
+    intakeHtml += '</div>';
+  }
+
+  if (!DATA.approvals.length && !PENDING_APPROVALS.length) {
     c.innerHTML = '<div class="card"><p style="color:var(--text-faint)">No pending approvals</p></div>';
     return;
   }
+  if (!DATA.approvals.length) {
+    c.innerHTML = intakeHtml;
+    return;
+  }
+  // Prepend intake approvals before file-based approvals
   c.innerHTML = DATA.approvals.map(a => {
     const rm = a.content.match(/## Risk Level\s*\n(\w+)/);
     const risk = rm ? rm[1].toLowerCase() : 'yellow';
@@ -771,6 +813,7 @@ function renderApprovals() {
       <div class="md-content" id="detail-${sid}" style="display:none;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);max-height:200px;overflow-y:auto">${md2html(a.content)}</div>
     </div>`;
   }).join('');
+  c.innerHTML = intakeHtml + c.innerHTML;
 }
 
 function showApprovalDetail(sid) {
@@ -1088,12 +1131,26 @@ function md2html(md) {
 // INTAKE — Unified Task Intake + Deliberation
 // ═══════════════════════════════════════════
 
+let _intakeDetailPollTimer = null;
+let _lastKnownIntakeStatus = null;
+
 async function loadIntakeTasks() {
   try {
     const r = await fetch('/api/intake/tasks');
     INTAKE_TASKS = await r.json();
+    renderIntakeCurrentHero();
     renderIntakeTasks();
     renderIntakeBadge();
+    updateFlowExplainer();
+
+    // Auto-refresh detail panel if selected task changed state
+    if (selectedIntakeTaskId) {
+      const t = INTAKE_TASKS.find(x => x.task_id === selectedIntakeTaskId);
+      if (t && t.status !== _lastKnownIntakeStatus) {
+        _lastKnownIntakeStatus = t.status;
+        showIntakeDetail(selectedIntakeTaskId);
+      }
+    }
   } catch {}
 }
 
@@ -1103,17 +1160,136 @@ function renderIntakeBadge() {
   if (badge) { badge.textContent = active; badge.style.display = active > 0 ? '' : 'none'; }
 }
 
-function renderIntakeTasks() {
-  const list = document.getElementById('intakeTaskList');
-  if (!list) return;
-  const filtered = intakeFilter === 'all' ? INTAKE_TASKS : INTAKE_TASKS.filter(t => t.status === intakeFilter);
-
-  if (!filtered.length) {
-    list.innerHTML = '<div class="task-empty" style="padding:12px">No tasks match filter. Submit a task above to get started.</div>';
+function updateFlowExplainer() {
+  const t = selectedIntakeTaskId
+    ? INTAKE_TASKS.find(x => x.task_id === selectedIntakeTaskId)
+    : getActiveIntakeTask();
+  if (!t) {
+    document.querySelectorAll('.flow-step').forEach(s => { s.classList.remove('flow-active', 'flow-done'); });
     return;
   }
 
-  list.innerHTML = filtered.map(t => {
+  const stageOrder = ['intake', 'deliberating', 'planned', 'executing', 'done'];
+  const statusMap = { waiting_approval: 'executing', failed: 'done', canceled: 'done' };
+  const current = statusMap[t.status] || t.status;
+  const currentIdx = stageOrder.indexOf(current);
+
+  document.querySelectorAll('.flow-step').forEach(s => {
+    const step = s.dataset.step;
+    const stepIdx = stageOrder.indexOf(step);
+    s.classList.remove('flow-active', 'flow-done');
+    if (stepIdx < currentIdx) s.classList.add('flow-done');
+    else if (stepIdx === currentIdx) s.classList.add('flow-active');
+  });
+}
+
+function getActiveIntakeTask() {
+  const terminal = ['done', 'failed', 'canceled'];
+  return INTAKE_TASKS.find(t => !terminal.includes(t.status)) || null;
+}
+
+function getStatusBanner(status) {
+  const configs = {
+    intake:            { dot: 'var(--text-dim)',  text: 'Task submitted — ready for Board deliberation', pulse: false },
+    deliberating:      { dot: 'var(--purple)',     text: 'Board is deliberating — analyzing your request...', pulse: true },
+    planned:           { dot: 'var(--blue)',       text: 'Plan ready — review the Board\'s recommendation and approve', pulse: false },
+    waiting_approval:  { dot: 'var(--yellow)',     text: 'Waiting for your approval on one or more subtasks', pulse: true },
+    executing:         { dot: 'var(--yellow)',     text: 'Executing subtasks...', pulse: true },
+    done:              { dot: 'var(--green)',      text: 'All subtasks completed', pulse: false },
+    failed:            { dot: 'var(--red)',        text: 'One or more subtasks failed', pulse: false },
+  };
+  const c = configs[status] || configs.intake;
+  return `<div class="status-banner banner-${status}">
+    <span class="status-banner-dot" style="background:${c.dot}${c.pulse ? ';animation:livePulse 1.2s ease-in-out infinite;box-shadow:0 0 6px ${c.dot}' : ''}"></span>
+    ${c.text}
+  </div>`;
+}
+
+function renderIntakeCurrentHero() {
+  const hero = document.getElementById('intakeCurrentHero');
+  if (!hero) return;
+
+  const t = getActiveIntakeTask();
+  if (!t) { hero.innerHTML = ''; return; }
+
+  const delib = t.board_deliberation;
+  const objective = delib ? delib.interpreted_objective : '';
+
+  // Determine hero action button
+  let actionHtml = '';
+  if (t.status === 'intake') {
+    actionHtml = `<div class="intake-hero-action">
+      <button class="intake-hero-btn btn-deliberate" onclick="deliberateTask('${t.task_id}')">
+        <span class="btn-icon">&#9670;</span> Send to Board for Deliberation
+      </button>
+    </div>`;
+  } else if (t.status === 'planned') {
+    actionHtml = `<div class="intake-hero-action">
+      <button class="intake-hero-btn btn-approve-exec" onclick="approvePlan('${t.task_id}')">
+        <span class="btn-icon">&#9654;</span> Approve &amp; Execute Plan
+      </button>
+    </div>`;
+  } else if (t.status === 'waiting_approval') {
+    actionHtml = `<div class="intake-hero-action">
+      <button class="intake-hero-btn btn-approve-exec" onclick="showIntakeDetail('${t.task_id}')" style="background:linear-gradient(135deg,var(--yellow),#e0a020);color:#0a0d15">
+        <span class="btn-icon">&#9888;</span> Review Subtasks Awaiting Approval
+      </button>
+    </div>`;
+  }
+
+  // Status dot color + pulse
+  const dotColors = {
+    intake: 'var(--text-dim)', deliberating: 'var(--purple)', planned: 'var(--blue)',
+    executing: 'var(--yellow)', waiting_approval: 'var(--yellow)', done: 'var(--green)', failed: 'var(--red)',
+  };
+  const isPulse = ['deliberating', 'executing'].includes(t.status);
+  const dotColor = dotColors[t.status] || 'var(--text-faint)';
+
+  const statusLabels = {
+    intake: 'Task Submitted', deliberating: 'Deliberation Running', planned: 'Plan Ready',
+    executing: 'Executing', waiting_approval: 'Waiting for Approval', done: 'Completed', failed: 'Failed',
+  };
+
+  hero.innerHTML = `<div class="intake-hero" onclick="showIntakeDetail('${t.task_id}')" style="cursor:pointer">
+    <div class="intake-hero-status">
+      <span class="intake-hero-dot ${isPulse ? 'pulse' : ''}" style="background:${dotColor}"></span>
+      <span class="intake-hero-status-text" style="color:${dotColor}">${statusLabels[t.status] || t.status}</span>
+      <span class="domain-tag" style="margin-left:auto">${esc(t.domain)}</span>
+    </div>
+    <div class="intake-hero-title">${esc(t.title)}</div>
+    ${objective ? `<div class="intake-hero-objective">${esc(objective)}</div>` : ''}
+    ${actionHtml}
+  </div>`;
+}
+
+function renderIntakeTasks() {
+  const list = document.getElementById('intakeTaskList');
+  if (!list) return;
+
+  // Exclude the current active task from the list (it's in the hero)
+  const activeTask = getActiveIntakeTask();
+  const activeId = activeTask ? activeTask.task_id : null;
+  let tasks = INTAKE_TASKS.filter(t => t.task_id !== activeId);
+
+  // Apply filter
+  if (intakeFilter !== 'all') {
+    tasks = tasks.filter(t => t.status === intakeFilter);
+  }
+
+  if (!tasks.length && !activeTask) {
+    list.innerHTML = '<div class="task-empty" style="padding:12px">No tasks yet. Submit one above to get started.</div>';
+    return;
+  }
+
+  if (!tasks.length) {
+    list.innerHTML = '';
+    return;
+  }
+
+  // Section header
+  let html = '<h3 style="margin-top:8px;margin-bottom:6px">Previous Tasks</h3>';
+
+  html += tasks.map(t => {
     const urgTag = (t.urgency === 'high' || t.urgency === 'critical')
       ? `<span class="urgency-tag ${t.urgency}">${t.urgency}</span>` : '';
     const riskTag = t.risk_level && t.risk_level !== 'green'
@@ -1121,7 +1297,11 @@ function renderIntakeTasks() {
     const delib = t.board_deliberation;
     const objective = delib ? delib.interpreted_objective : '';
 
-    return `<div class="intake-card status-${t.status}" onclick="showIntakeDetail('${t.task_id}')">
+    const isCompleted = ['done', 'failed', 'canceled'].includes(t.status);
+    const isActive = !isCompleted && t.task_id === selectedIntakeTaskId;
+    const extraCls = isCompleted ? ' is-completed' : isActive ? ' is-active' : '';
+
+    return `<div class="intake-card status-${t.status}${extraCls}" onclick="showIntakeDetail('${t.task_id}')">
       <div class="intake-card-header">
         <div>
           <div class="intake-card-title">${esc(t.title)}</div>
@@ -1136,6 +1316,8 @@ function renderIntakeTasks() {
       </div>
     </div>`;
   }).join('');
+
+  list.innerHTML = html;
 }
 
 function filterIntake(f) {
@@ -1165,28 +1347,63 @@ async function submitIntakeTask() {
       showToast('Task submitted: ' + d.task.title, 'success');
       document.getElementById('intakeRequest').value = '';
       document.getElementById('intakeOutcome').value = '';
-      loadIntakeTasks();
+      // Auto-focus the new task
+      selectedIntakeTaskId = d.task.task_id;
+      _lastKnownIntakeStatus = 'intake';
+      await loadIntakeTasks();
+      showIntakeDetail(d.task.task_id);
+      startIntakeDetailPoll();
     } else {
       showToast('Error: ' + d.error, 'error');
     }
   } catch (e) { showToast('Network error', 'error'); }
 }
 
+function startIntakeDetailPoll() {
+  stopIntakeDetailPoll();
+  _intakeDetailPollTimer = setInterval(() => {
+    if (selectedIntakeTaskId) {
+      loadIntakeTasks();
+    } else {
+      stopIntakeDetailPoll();
+    }
+  }, 3000);
+}
+
+function stopIntakeDetailPoll() {
+  if (_intakeDetailPollTimer) { clearInterval(_intakeDetailPollTimer); _intakeDetailPollTimer = null; }
+}
+
 async function showIntakeDetail(taskId) {
   selectedIntakeTaskId = taskId;
+  updateFlowExplainer();
   const panel = document.getElementById('intakeDetailPanel');
   if (!panel) return;
 
   panel.style.display = 'block';
   panel.innerHTML = '<div class="delib-panel"><div style="color:var(--text-dim)">Loading...</div></div>';
 
+  // Scroll detail into view
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
   try {
     const r = await fetch('/api/intake/task/' + taskId);
     const data = await r.json();
+    _lastKnownIntakeStatus = data.task.status;
     renderIntakeDetail(data);
+    startIntakeDetailPoll();
   } catch (e) {
     panel.innerHTML = '<div class="delib-panel"><div style="color:var(--red)">Failed to load task</div></div>';
   }
+}
+
+function closeIntakeDetail() {
+  selectedIntakeTaskId = null;
+  _lastKnownIntakeStatus = null;
+  stopIntakeDetailPoll();
+  const panel = document.getElementById('intakeDetailPanel');
+  if (panel) { panel.style.display = 'none'; panel.innerHTML = ''; }
+  updateFlowExplainer();
 }
 
 function renderIntakeDetail(data) {
@@ -1197,25 +1414,35 @@ function renderIntakeDetail(data) {
 
   let html = '<div class="delib-panel">';
 
-  // Header
-  html += `<div class="delib-header">
-    <div>
-      <div style="font-size:14px;font-weight:700">${esc(task.title)}</div>
-      <div class="intake-card-meta" style="margin-top:4px">
-        <span class="domain-tag">${esc(task.domain)}</span>
-        <span class="intake-status-badge ${task.status}">${task.status.replace('_', ' ')}</span>
-        ${task.risk_level !== 'green' ? `<span class="risk-badge risk-${task.risk_level}">${task.risk_level}</span>` : ''}
-      </div>
-    </div>
-    <div style="display:flex;gap:6px">`;
+  // Close button
+  html += `<div style="display:flex;justify-content:flex-end;margin-bottom:-8px">
+    <button class="modal-close" onclick="closeIntakeDetail()" style="background:none;border:none;color:var(--text-faint);font-size:18px;cursor:pointer">&times;</button>
+  </div>`;
 
-  // Action buttons based on status
+  // Status banner
+  html += getStatusBanner(task.status);
+
+  // Header
+  html += `<div style="margin-bottom:12px">
+    <div style="font-size:15px;font-weight:700;margin-bottom:4px">${esc(task.title)}</div>
+    <div class="intake-card-meta">
+      <span class="domain-tag">${esc(task.domain)}</span>
+      <span class="intake-status-badge ${task.status}">${task.status.replace('_', ' ')}</span>
+      ${task.risk_level !== 'green' ? `<span class="risk-badge risk-${task.risk_level}">${task.risk_level}</span>` : ''}
+      <span style="font-size:9px;color:var(--text-faint);font-family:var(--mono);margin-left:auto">${fmtTime(task.created_at)}</span>
+    </div>
+  </div>`;
+
+  // Primary action button (large, full-width, unmistakable)
   if (task.status === 'intake') {
-    html += `<button class="send-btn" onclick="deliberateTask('${task.task_id}')" style="font-size:11px;padding:5px 14px">Deliberate</button>`;
+    html += `<button class="intake-hero-btn btn-deliberate" onclick="deliberateTask('${task.task_id}')" style="margin-bottom:14px">
+      <span class="btn-icon">&#9670;</span> Send to Board for Deliberation
+    </button>`;
   } else if (task.status === 'planned') {
-    html += `<button class="send-btn" onclick="approvePlan('${task.task_id}')" style="font-size:11px;padding:5px 14px">Approve &amp; Execute</button>`;
+    html += `<button class="intake-hero-btn btn-approve-exec" onclick="approvePlan('${task.task_id}')" style="margin-bottom:14px">
+      <span class="btn-icon">&#9654;</span> Approve &amp; Execute Plan
+    </button>`;
   }
-  html += '</div></div>';
 
   // Raw request
   html += `<div class="delib-section">
@@ -1263,35 +1490,12 @@ function renderIntakeDetail(data) {
     </div>`;
   }
 
-  // Subtasks
+  // Task Timeline — coherent vertical view
   if (subtasks && subtasks.length) {
     html += `<div class="delib-section">
-      <div class="delib-section-title">Subtask Plan (${progress.done}/${progress.total} done)</div>`;
-
-    for (let i = 0; i < subtasks.length; i++) {
-      const st = subtasks[i];
-      const approveBtn = st.status === 'waiting_approval'
-        ? `<button class="btn-approve" style="font-size:9px;padding:2px 8px;min-height:auto" onclick="event.stopPropagation();approveSubtask('${st.subtask_id}')">Approve</button>`
-        : '';
-
-      html += `<div class="delib-subtask">
-        <div class="delib-subtask-order">${i + 1}</div>
-        <span class="subtask-status-dot ${st.status}" style="margin-top:6px"></span>
-        <div class="delib-subtask-body">
-          <div class="delib-subtask-title">${esc(st.title)}</div>
-          <div class="delib-subtask-meta">
-            <span class="stage-tag ${st.stage}">${esc(st.stage)}</span>
-            <span class="task-model-tag ${st.assigned_model}">${esc(st.assigned_model)}</span>
-            <span class="intake-status-badge ${st.status}" style="font-size:8px">${st.status.replace('_', ' ')}</span>
-            ${approveBtn}
-          </div>
-          ${st.expected_output ? `<div style="font-size:10px;color:var(--text-faint);margin-top:2px">${esc(st.expected_output)}</div>` : ''}
-          ${st.output ? `<div style="font-size:10px;color:var(--text-dim);margin-top:4px;max-height:60px;overflow:hidden;font-family:var(--mono)">${esc(st.output.slice(0, 200))}</div>` : ''}
-          ${st.error ? `<div style="font-size:10px;color:var(--red);margin-top:2px">${esc(st.error.slice(0, 150))}</div>` : ''}
-        </div>
-      </div>`;
-    }
-    html += '</div>';
+      <div class="delib-section-title">Task Timeline (${progress.done}/${progress.total} complete)</div>
+      ${renderTaskTimeline(task, subtasks)}
+    </div>`;
   }
 
   html += '</div>';
@@ -1303,9 +1507,13 @@ async function deliberateTask(taskId) {
     const r = await fetch('/api/intake/task/' + taskId + '/deliberate', { method: 'POST' });
     const d = await r.json();
     if (d.ok) {
-      showToast('Deliberation queued', 'success');
-      pushActivity('Deliberation queued for ' + taskId);
-      setTimeout(() => { loadIntakeTasks(); showIntakeDetail(taskId); }, 2000);
+      showToast('Deliberation queued — Board is working on it', 'success');
+      pushActivity('Deliberation queued');
+      selectedIntakeTaskId = taskId;
+      _lastKnownIntakeStatus = 'deliberating';
+      loadIntakeTasks();
+      showIntakeDetail(taskId);
+      startIntakeDetailPoll();
     } else {
       showToast('Error: ' + (d.error || 'Unknown'), 'error');
     }
@@ -1317,9 +1525,11 @@ async function approvePlan(taskId) {
     const r = await fetch('/api/intake/task/' + taskId + '/approve-plan', { method: 'POST' });
     const d = await r.json();
     if (d.ok) {
-      showToast(`Plan approved, ${d.queued} subtasks queued`, 'success');
-      pushActivity('Plan approved: ' + taskId);
-      setTimeout(() => { loadIntakeTasks(); showIntakeDetail(taskId); }, 2000);
+      showToast(`Plan approved — ${d.queued} subtasks queued for execution`, 'success');
+      pushActivity('Plan approved, execution started');
+      loadIntakeTasks();
+      showIntakeDetail(taskId);
+      startIntakeDetailPoll();
     } else {
       showToast('Error: ' + (d.error || 'Unknown'), 'error');
     }
@@ -1331,12 +1541,280 @@ async function approveSubtask(subtaskId) {
     const r = await fetch('/api/subtask/' + subtaskId + '/approve', { method: 'POST' });
     const d = await r.json();
     if (d.ok) {
-      showToast('Subtask approved and queued', 'success');
-      if (selectedIntakeTaskId) setTimeout(() => showIntakeDetail(selectedIntakeTaskId), 1500);
+      showToast(`Approved & resumed: ${d.resumed || 'subtask'}`, 'success');
+      pushActivity(`Approved: ${d.resumed}`);
+      // Instant refresh everywhere
+      loadPendingApprovals();
+      loadCurrentTaskFocus();
+      if (selectedIntakeTaskId) showIntakeDetail(selectedIntakeTaskId);
+      loadIntakeTasks();
     } else {
       showToast('Error: ' + (d.error || 'Unknown'), 'error');
     }
   } catch (e) { showToast('Network error', 'error'); }
+}
+
+// ═══════════════════════════════════════════
+// GLOBAL APPROVAL INBOX + CURRENT TASK FOCUS
+// ═══════════════════════════════════════════
+
+let PENDING_APPROVALS = [];
+
+async function loadPendingApprovals() {
+  try {
+    const r = await fetch('/api/intake/pending-approvals');
+    PENDING_APPROVALS = await r.json();
+    renderGlobalApprovalInbox();
+    renderApprovalBadge();
+  } catch {}
+}
+
+function renderApprovalBadge() {
+  const badge = document.getElementById('navApprovalBadge');
+  if (badge) {
+    badge.textContent = PENDING_APPROVALS.length;
+    badge.style.display = PENDING_APPROVALS.length > 0 ? '' : 'none';
+  }
+}
+
+function renderGlobalApprovalInbox() {
+  const el = document.getElementById('globalApprovalInbox');
+  if (!el) return;
+
+  if (!PENDING_APPROVALS.length) { el.innerHTML = ''; return; }
+
+  let html = `<div class="approval-inbox">
+    <div class="approval-inbox-header">
+      <span class="approval-inbox-icon">&#9888;</span>
+      <span class="approval-inbox-title">${PENDING_APPROVALS.length} subtask${PENDING_APPROVALS.length > 1 ? 's' : ''} awaiting your approval</span>
+    </div>
+    <div class="approval-inbox-items">`;
+
+  for (const s of PENDING_APPROVALS) {
+    const typeIcon = getSubtaskTypeIcon(s.stage);
+    html += `<div class="approval-inbox-item">
+      <div class="approval-inbox-item-info">
+        <span class="subtask-type-icon ${s.stage}">${typeIcon}</span>
+        <div>
+          <div class="approval-inbox-item-title">${esc(s.title)}</div>
+          <div class="approval-inbox-item-meta">
+            <span class="stage-tag ${s.stage}">${esc(s.stage)}</span>
+            <span class="task-model-tag ${s.assigned_model}">${esc(s.assigned_model)}</span>
+            <span style="color:var(--text-faint);font-size:9px">from: ${esc(s.parent_title)}</span>
+          </div>
+          ${s.files_changed && s.files_changed.length ? `<div class="approval-files-changed">${s.files_changed.map(f => '<span class="file-badge">' + esc(f) + '</span>').join('')}</div>` : ''}
+        </div>
+      </div>
+      <button class="btn-approve-global" onclick="event.stopPropagation();approveSubtaskGlobal('${s.subtask_id}', this)">
+        <span>&#10003;</span> Approve & Continue
+      </button>
+    </div>`;
+  }
+
+  html += '</div></div>';
+  el.innerHTML = html;
+}
+
+async function approveSubtaskGlobal(subtaskId, btnEl) {
+  if (btnEl) { btnEl.disabled = true; btnEl.textContent = 'Approving...'; }
+  try {
+    const r = await fetch('/api/subtask/' + subtaskId + '/approve', { method: 'POST' });
+    const d = await r.json();
+    if (d.ok) {
+      showToast(`Approved & resumed: ${d.resumed || 'subtask'}`, 'success');
+      pushActivity(`Approved: ${d.resumed}`);
+      // Instant refresh
+      loadPendingApprovals();
+      loadCurrentTaskFocus();
+      if (selectedIntakeTaskId) showIntakeDetail(selectedIntakeTaskId);
+      loadIntakeTasks();
+    } else {
+      showToast('Error: ' + (d.error || 'Unknown'), 'error');
+      if (btnEl) { btnEl.disabled = false; btnEl.innerHTML = '<span>&#10003;</span> Approve & Continue'; }
+    }
+  } catch (e) {
+    showToast('Network error', 'error');
+    if (btnEl) { btnEl.disabled = false; btnEl.innerHTML = '<span>&#10003;</span> Approve & Continue'; }
+  }
+}
+
+async function loadCurrentTaskFocus() {
+  try {
+    const r = await fetch('/api/intake/current');
+    const data = await r.json();
+    renderCurrentTaskFocus(data);
+  } catch {}
+}
+
+function renderCurrentTaskFocus(data) {
+  const el = document.getElementById('currentTaskFocus');
+  if (!el) return;
+
+  if (!data.task) { el.innerHTML = ''; return; }
+  const t = data.task;
+  const p = data.progress || {};
+  const active = data.activeSubtask;
+  const blocking = data.nextBlocking;
+
+  const dotColors = {
+    intake: 'var(--text-dim)', deliberating: 'var(--purple)', planned: 'var(--blue)',
+    executing: 'var(--green)', waiting_approval: 'var(--yellow)', done: 'var(--green)', failed: 'var(--red)',
+  };
+  const dot = dotColors[t.status] || 'var(--text-faint)';
+  const isPulse = ['deliberating', 'executing'].includes(t.status);
+
+  const statusLabels = {
+    intake: 'Submitted', deliberating: 'Board Deliberating', planned: 'Plan Ready',
+    executing: 'Executing', waiting_approval: 'Needs Approval', done: 'Done', failed: 'Failed',
+  };
+
+  let html = `<div class="current-task-focus" onclick="switchTab('intake');showIntakeDetail('${t.task_id}')" style="cursor:pointer">
+    <div class="ctf-header">
+      <span class="ctf-label">CURRENT TASK</span>
+      <span class="ctf-status-dot ${isPulse ? 'pulse' : ''}" style="background:${dot}"></span>
+      <span class="ctf-status-text" style="color:${dot}">${statusLabels[t.status] || t.status}</span>
+      <span class="domain-tag" style="margin-left:auto">${esc(t.domain)}</span>
+    </div>
+    <div class="ctf-title">${esc(t.title)}</div>`;
+
+  // Progress bar
+  if (p.total > 0) {
+    const pct = Math.round((p.done / p.total) * 100);
+    html += `<div class="ctf-progress">
+      <div class="ctf-progress-bar"><div class="ctf-progress-fill" style="width:${pct}%"></div></div>
+      <span class="ctf-progress-text">${p.done}/${p.total} subtasks</span>
+    </div>`;
+  }
+
+  // Active subtask
+  if (active) {
+    const typeIcon = getSubtaskTypeIcon(active.stage);
+    html += `<div class="ctf-active-subtask">
+      <span class="ctf-mini-label">NOW:</span>
+      <span class="subtask-type-icon ${active.stage}" style="font-size:10px">${typeIcon}</span>
+      <span>${esc(active.title)}</span>
+      <span class="task-model-tag ${active.assigned_model}" style="font-size:8px">${esc(active.assigned_model)}</span>
+    </div>`;
+  }
+
+  // Blocking item
+  if (blocking && !active) {
+    html += `<div class="ctf-blocking">
+      <span class="ctf-mini-label" style="color:var(--yellow)">BLOCKED:</span>
+      <span>${esc(blocking.title)}</span>
+      <button class="btn-approve-inline" onclick="event.stopPropagation();approveSubtaskGlobal('${blocking.subtask_id}', this)">Approve</button>
+    </div>`;
+  }
+
+  // Next action from Rahul
+  if (t.status === 'intake') {
+    html += `<div class="ctf-next-action">Your action: Send to Board for Deliberation</div>`;
+  } else if (t.status === 'planned') {
+    html += `<div class="ctf-next-action">Your action: Review plan and Approve & Execute</div>`;
+  } else if (t.status === 'waiting_approval') {
+    html += `<div class="ctf-next-action">Your action: Approve ${data.pendingApprovals.length} pending subtask(s)</div>`;
+  }
+
+  html += '</div>';
+  el.innerHTML = html;
+}
+
+function getSubtaskTypeIcon(stage) {
+  const icons = {
+    audit: '&#128269;',     // magnifying glass
+    decide: '&#9878;',      // scales
+    implement: '&#128736;', // hammer wrench
+    build: '&#128736;',
+    code: '&#128187;',      // laptop
+    report: '&#128196;',    // document
+    research: '&#128218;',  // book
+    review: '&#128065;',    // eye
+    strategy: '&#9813;',    // chess queen
+    approve: '&#9989;',     // checkmark
+  };
+  return icons[stage] || '&#9654;';
+}
+
+// ═══════════════════════════════════════════
+// TASK TIMELINE — Vertical timeline per task
+// ═══════════════════════════════════════════
+
+function renderTaskTimeline(task, subtasks) {
+  if (!subtasks || !subtasks.length) return '';
+
+  // Build timeline events: intake → deliberation → plan → subtasks → done
+  const events = [];
+
+  // Task created
+  events.push({
+    type: 'milestone', label: 'Task Created', stage: 'intake',
+    detail: task.raw_request.slice(0, 80), time: task.created_at, status: 'done',
+  });
+
+  // Deliberation (if happened)
+  if (task.board_deliberation) {
+    events.push({
+      type: 'milestone', label: 'Board Deliberation', stage: 'deliberating',
+      detail: task.board_deliberation.recommended_strategy?.slice(0, 80) || 'Plan produced',
+      time: task.updated_at, status: 'done', model: task.board_deliberation.model_used,
+    });
+
+    events.push({
+      type: 'milestone', label: 'Plan Ready', stage: 'planned',
+      detail: `${subtasks.length} subtasks planned`, time: task.updated_at, status: 'done',
+    });
+  }
+
+  // Subtasks
+  for (let i = 0; i < subtasks.length; i++) {
+    const st = subtasks[i];
+    events.push({
+      type: 'subtask', label: st.title, stage: st.stage,
+      role: st.assigned_role, model: st.assigned_model, status: st.status,
+      output: st.output?.slice(0, 120), files: st.files_changed || st.files_to_write || [],
+      error: st.error, subtask_id: st.subtask_id, order: i + 1,
+    });
+  }
+
+  // Render
+  let html = '<div class="task-timeline">';
+  for (const ev of events) {
+    const statusCls = ev.status === 'done' ? 'tl-done' :
+                      ev.status === 'running' ? 'tl-running' :
+                      ev.status === 'waiting_approval' ? 'tl-waiting' :
+                      ev.status === 'failed' ? 'tl-failed' :
+                      ev.status === 'blocked' ? 'tl-blocked' :
+                      ev.status === 'queued' ? 'tl-queued' : 'tl-proposed';
+
+    const typeIcon = getSubtaskTypeIcon(ev.stage);
+
+    html += `<div class="tl-event ${statusCls} ${ev.type === 'milestone' ? 'tl-milestone' : 'tl-subtask-event'}">
+      <div class="tl-line"><div class="tl-dot ${statusCls}"></div></div>
+      <div class="tl-content">
+        <div class="tl-header">
+          <span class="subtask-type-icon ${ev.stage}">${typeIcon}</span>
+          <span class="tl-label">${ev.order ? ev.order + '. ' : ''}${esc(ev.label)}</span>
+          ${ev.model ? `<span class="task-model-tag ${ev.model}" style="font-size:8px">${esc(ev.model)}</span>` : ''}
+          ${ev.role ? `<span class="tl-role">${esc(ev.role)}</span>` : ''}
+          <span class="intake-status-badge ${ev.status}" style="font-size:8px;margin-left:auto">${(ev.status || '').replace('_', ' ')}</span>
+        </div>`;
+
+    if (ev.detail) html += `<div class="tl-detail">${esc(ev.detail)}</div>`;
+    if (ev.output) html += `<div class="tl-output">${esc(ev.output)}</div>`;
+    if (ev.error) html += `<div class="tl-error">${esc(ev.error)}</div>`;
+    if (ev.files && ev.files.length) {
+      html += `<div class="tl-files">${ev.files.map(f => '<span class="file-badge">' + esc(f) + '</span>').join('')}</div>`;
+    }
+    if (ev.status === 'waiting_approval') {
+      html += `<button class="btn-approve-inline" onclick="event.stopPropagation();approveSubtaskGlobal('${ev.subtask_id}', this)" style="margin-top:4px">
+        <span>&#10003;</span> Approve & Continue
+      </button>`;
+    }
+
+    html += '</div></div>';
+  }
+  html += '</div>';
+  return html;
 }
 
 // ═══════════════════════════════════════════
@@ -1347,11 +1825,15 @@ connectSSE();
 loadData();
 loadStatus();
 loadTasks();
+loadPendingApprovals();
+loadCurrentTaskFocus();
 
 setInterval(loadStatus, 10000);
 setInterval(loadTasks, 3000);
 setInterval(loadData, 45000);
 setInterval(renderHeartbeat, 5000);
+setInterval(loadPendingApprovals, 4000);
+setInterval(loadCurrentTaskFocus, 4000);
 
 // Keyboard shortcuts
 document.addEventListener('keydown', (e) => {

@@ -114,6 +114,12 @@
           <span class="heartbeat-detail" id="heartbeatDetail">--</span>
         </div>
 
+        <!-- Global Approval Inbox — impossible to miss -->
+        <div id="globalApprovalInbox"></div>
+
+        <!-- Current Task Focus — always shows what's happening -->
+        <div id="currentTaskFocus"></div>
+
         <div id="homeRunningTask"></div>
 
         <div class="g4 mt-sm">
@@ -221,8 +227,27 @@
           </div>
         </div>
 
+        <!-- Flow Explainer -->
+        <div class="flow-explainer" id="flowExplainer">
+          <div class="flow-step" data-step="intake"><span class="flow-step-num">1</span><span class="flow-step-label">Submit</span></div>
+          <div class="flow-arrow">&#8594;</div>
+          <div class="flow-step" data-step="deliberating"><span class="flow-step-num">2</span><span class="flow-step-label">Deliberate</span></div>
+          <div class="flow-arrow">&#8594;</div>
+          <div class="flow-step" data-step="planned"><span class="flow-step-num">3</span><span class="flow-step-label">Plan Ready</span></div>
+          <div class="flow-arrow">&#8594;</div>
+          <div class="flow-step" data-step="executing"><span class="flow-step-num">4</span><span class="flow-step-label">Execute</span></div>
+          <div class="flow-arrow">&#8594;</div>
+          <div class="flow-step" data-step="done"><span class="flow-step-num">5</span><span class="flow-step-label">Done</span></div>
+        </div>
+
+        <!-- Current Task Hero (active task at top) -->
+        <div id="intakeCurrentHero"></div>
+
+        <!-- Deliberation Detail Panel (shown when a task is selected) -->
+        <div id="intakeDetailPanel" style="display:none"></div>
+
         <!-- Quick Submit Form -->
-        <div class="card" style="margin-bottom:14px">
+        <div class="card" style="margin-bottom:14px" id="intakeFormCard">
           <h3>New Task</h3>
           <div class="intake-form">
             <textarea id="intakeRequest" class="channel-textarea" placeholder="Describe the task... (e.g., 'Audit TopRanker API endpoints for performance issues')" rows="3"></textarea>
@@ -264,11 +289,8 @@
           <button class="filter-btn" data-filter="done" onclick="filterIntake('done')">Done</button>
         </div>
 
-        <!-- Task List -->
+        <!-- Task List (past tasks) -->
         <div id="intakeTaskList"></div>
-
-        <!-- Deliberation Detail Panel (shown when a task is selected) -->
-        <div id="intakeDetailPanel" style="display:none"></div>
       </section>
 
       <!-- CHANNELS — AI Model Interaction Surface -->

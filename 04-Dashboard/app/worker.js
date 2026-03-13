@@ -168,18 +168,92 @@ const handlers = {
         const geminiModel = costSettings.geminiModel || 'gemini-2.5-flash-lite';
         result = await callGemini(systemPrompt, userPrompt, { model: geminiModel });
       } else if (model === 'claude') {
-        // Claude runs locally — save prompt file for manual execution
+        // Claude Builder — real execution path
         const today = new Date().toISOString().slice(0, 10);
-        const promptFile = writeFile(
-          `03-Operations/Reports/Subtask-Claude-${today}-${subtaskId}.md`,
-          `# RPGPO Subtask — Claude\n## ${st.title}\n## Stage: ${st.stage}\n\n${userPrompt}\n`
+        const isBuildTask = ['implement', 'build', 'code'].includes(st.stage);
+
+        // Try to execute Claude CLI in print mode
+        let claudeResult = null;
+        let filesChanged = [];
+        try {
+          // Snapshot git status before
+          let gitBefore = '';
+          try { gitBefore = execSync('git diff --name-only', { cwd: RPGPO_ROOT, timeout: 5000 }).toString().trim(); } catch {}
+
+          // Run claude -p (non-interactive, print mode)
+          queue.updateTask(task.id, { output: `Claude Builder executing: ${st.title}...` });
+          const claudeOut = execSync(
+            `claude -p ${JSON.stringify(userPrompt.slice(0, 8000))}`,
+            { cwd: RPGPO_ROOT, timeout: 120000, maxBuffer: 1024 * 1024 }
+          ).toString();
+
+          claudeResult = claudeOut;
+
+          // Snapshot git status after to detect file changes
+          try {
+            const gitAfter = execSync('git diff --name-only', { cwd: RPGPO_ROOT, timeout: 5000 }).toString().trim();
+            const beforeSet = new Set(gitBefore.split('\n').filter(Boolean));
+            const afterFiles = gitAfter.split('\n').filter(Boolean);
+            filesChanged = afterFiles.filter(f => !beforeSet.has(f));
+            // Also check untracked files
+            const untracked = execSync('git ls-files --others --exclude-standard', { cwd: RPGPO_ROOT, timeout: 5000 }).toString().trim();
+            if (untracked) filesChanged.push(...untracked.split('\n').filter(Boolean));
+          } catch {}
+
+        } catch (claudeErr) {
+          // Claude CLI not available or failed — fallback to prompt file
+          console.log(`[worker] Claude CLI failed, falling back to prompt file: ${claudeErr.message.slice(0, 100)}`);
+          const promptFile = writeFile(
+            `03-Operations/Reports/Subtask-Claude-${today}-${subtaskId}.md`,
+            `# RPGPO Subtask — Claude Builder\n## ${st.title}\n## Stage: ${st.stage}\n\n${userPrompt}\n`
+          );
+          intake.updateSubtask(subtaskId, {
+            status: 'waiting_approval',
+            output: `Claude CLI unavailable. Prompt saved to ${promptFile}. Execute manually and approve when done.`,
+            files_changed: [],
+          });
+          return { output: `Claude prompt saved: ${promptFile} (execute manually)`, filesWritten: [promptFile] };
+        }
+
+        // Save output report
+        const reportFile = writeFile(
+          `03-Operations/Reports/Builder-Claude-${today}-${subtaskId}.md`,
+          `# Claude Builder Output\n## ${st.title}\n## Stage: ${st.stage}\n## Date: ${today}\n\n${claudeResult.slice(0, 10000)}\n\n## Files Changed\n${filesChanged.map(f => '- ' + f).join('\n') || 'None detected'}\n`
         );
+
+        // For build tasks with file changes, require approval before continuing
+        if (isBuildTask && filesChanged.length > 0) {
+          intake.updateSubtask(subtaskId, {
+            status: 'waiting_approval',
+            output: claudeResult.slice(0, 5000),
+            files_changed: filesChanged,
+          });
+          intake.updateTask(st.parent_task_id, { status: 'waiting_approval' });
+          return {
+            output: `Claude Builder completed: ${st.title}\nFiles changed: ${filesChanged.join(', ')}\nAwaiting approval before continuing.`,
+            filesWritten: [reportFile, ...filesChanged],
+          };
+        }
+
+        // Non-build or no file changes — mark done
         intake.updateSubtask(subtaskId, {
           status: 'done',
-          output: `Claude prompt saved to ${promptFile}. Execute manually.`,
+          output: claudeResult.slice(0, 5000),
+          files_changed: filesChanged,
         });
         const wfResult = workflow.onSubtaskComplete(subtaskId);
-        return { output: `Claude prompt saved: ${promptFile}\n${wfResult.message}`, filesWritten: [promptFile] };
+
+        if (wfResult.next_subtask_ids) {
+          for (const nextId of wfResult.next_subtask_ids) {
+            const nextSt = intake.getSubtask(nextId);
+            if (nextSt) queue.addTask('execute-subtask', `Subtask: ${nextSt.title}`, { subtaskId: nextId });
+          }
+        }
+
+        return {
+          output: `Claude Builder: ${claudeResult.slice(0, 500)}\nFiles: ${filesChanged.join(', ') || 'none'}\n${wfResult.message}`,
+          filesWritten: [reportFile, ...filesChanged],
+        };
       } else {
         throw new Error('Unknown model: ' + model);
       }
