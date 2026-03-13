@@ -1,4 +1,4 @@
-// RPGPO Dashboard Server v2 — Always-on command center
+// RPGPO Dashboard Server v4 — World-class command center
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -130,6 +130,12 @@ const server = http.createServer(async (req, res) => {
     });
     res.write(`event: connected\ndata: ${JSON.stringify({ ts: new Date().toISOString() })}\n\n`);
     events.addClient(res);
+
+    // SSE keepalive every 15s to prevent proxy/Tailscale timeouts
+    const keepalive = setInterval(() => {
+      try { res.write(': keepalive\n\n'); } catch { clearInterval(keepalive); }
+    }, 15000);
+    res.on('close', () => clearInterval(keepalive));
 
     // Forward in-process task queue events to SSE (for tasks added by the server itself)
     const onTask = (data) => {
@@ -297,6 +303,6 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, '0.0.0.0', () => {
-  console.log(`\n  RPGPO Dashboard v2 running at http://localhost:${PORT}`);
+  console.log(`\n  RPGPO Command Center v4 running at http://localhost:${PORT}`);
   console.log(`  Binding 0.0.0.0 for remote access\n`);
 });
