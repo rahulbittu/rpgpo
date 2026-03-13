@@ -35,3 +35,9 @@ Revise the weekly target within 24 hours if it proves low leverage.
 
 ## Approval Requested
 Approve / Reject / Revise
+
+
+---
+## Decision
+- **Approved** by Rahul via RPGPO Dashboard
+- **Timestamp:** 2026-03-13T00:13:42.670Z
