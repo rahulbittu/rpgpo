@@ -1,5 +1,53 @@
 [
   {
+    "id": "mmof36q88r91",
+    "type": "board-run",
+    "label": "Board of AI Run",
+    "status": "done",
+    "meta": {},
+    "createdAt": "2026-03-13T04:49:12.656Z",
+    "updatedAt": "2026-03-13T04:49:27.751Z",
+    "output": "=== RPGPO Board of AI v6 ===\nRun started: 2026-03-13T04:49:14.684Z\nBoard run ID: mmof38akifsp\n\nGathering RPGPO context...\n  Missions: 8\n  Research queue: 3 items\n  Pending approvals: 0\n\n[1/4] Claude Builder — generating TopRanker review prompt...\n  Prompt written to: 03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md\n\n[2/4] OpenAI Chief of Staff — generating executive briefing...\n  Briefing written to: 03-Operations/DailyBriefs/2026-03-13-BoardBrief.md\n  Tokens: 1996 | Est cost: $0.0081\n\n[3/4] Perplexity Research Director — running research scan...\n  Research written to: 03-Operations/Reports/Research-Scan-2026-03-13.md\n  Tokens: 767 | Est cost: $0.0000\n\n[4/4] Gemini Growth Strategist — generating growth analysis...\n  Growth strategy written to: 03-Operations/Reports/Growth-Strategy-2026-03-13.md\n  Tokens: 2233 | Est cost: $0.0000\n\n=== Board Run Complete ===\n  Succeeded: 4/4\n  Skipped:   0/4\n  Errors:    0/4\n  Cost:      $0.0081\n  Files:     03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md, 03-Operations/DailyBriefs/2026-03-13-BoardBrief.md, 03-Operations/Reports/Research-Scan-2026-03-13.md, 03-Operations/Reports/Growth-Strategy-2026-03-13.md, 03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md\n\n",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md",
+      "03-Operations/DailyBriefs/2026-03-13-BoardBrief.md",
+      "03-Operations/Reports/Research-Scan-2026-03-13.md",
+      "03-Operations/Reports/Growth-Strategy-2026-03-13.md",
+      "03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md"
+    ]
+  },
+  {
+    "id": "mmoev5w9ns4x",
+    "type": "board-run",
+    "label": "Board of AI Run",
+    "status": "done",
+    "meta": {},
+    "createdAt": "2026-03-13T04:42:58.329Z",
+    "updatedAt": "2026-03-13T04:43:17.422Z",
+    "output": "=== RPGPO Board of AI v6 ===\nRun started: 2026-03-13T04:42:58.423Z\nBoard run ID: mmoev5yvtrm1\n\nGathering RPGPO context...\n  Missions: 8\n  Research queue: 3 items\n  Pending approvals: 0\n\n[1/4] Claude Builder — generating TopRanker review prompt...\n  Prompt written to: 03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md\n\n[2/4] OpenAI Chief of Staff — generating executive briefing...\n  Briefing written to: 03-Operations/DailyBriefs/2026-03-13-BoardBrief.md\n  Tokens: 2003 | Est cost: $0.0082\n\n[3/4] Perplexity Research Director — running research scan...\n  Research written to: 03-Operations/Reports/Research-Scan-2026-03-13.md\n  Tokens: 751 | Est cost: $0.0000\n\n[4/4] Gemini Growth Strategist — generating growth analysis...\n  Growth strategy written to: 03-Operations/Reports/Growth-Strategy-2026-03-13.md\n  Tokens: 2062 | Est cost: $0.0000\n\n=== Board Run Complete ===\n  Succeeded: 4/4\n  Skipped:   0/4\n  Errors:    0/4\n  Cost:      $0.0082\n  Files:     03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md, 03-Operations/DailyBriefs/2026-03-13-BoardBrief.md, 03-Operations/Reports/Research-Scan-2026-03-13.md, 03-Operations/Reports/Growth-Strategy-2026-03-13.md, 03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md\n\n",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md",
+      "03-Operations/DailyBriefs/2026-03-13-BoardBrief.md",
+      "03-Operations/Reports/Research-Scan-2026-03-13.md",
+      "03-Operations/Reports/Growth-Strategy-2026-03-13.md",
+      "03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md"
+    ]
+  },
+  {
+    "id": "mmoepp8lrpub",
+    "type": "board-run",
+    "label": "Board of AI Run",
+    "status": "failed",
+    "meta": {},
+    "createdAt": "2026-03-13T04:38:43.461Z",
+    "updatedAt": "2026-03-13T04:38:58.609Z",
+    "output": "=== RPGPO Board of AI v6 ===\nRun started: 2026-03-13T04:38:43.649Z\nBoard run ID: mmoeppdtzszu\n\nGathering RPGPO context...\n  Missions: 8\n  Research queue: 3 items\n  Pending approvals: 0\n\n[1/4] Claude Builder — generating TopRanker review prompt...\n  Prompt written to: 03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md\n\n[2/4] OpenAI Chief of Staff — generating executive briefing...\n  Briefing written to: 03-Operations/DailyBriefs/2026-03-13-BoardBrief.md\n  Tokens: 2005 | Est cost: $0.0082\n\n[3/4] Perplexity Research Director — running research scan...\n  Research written to: 03-Operations/Reports/Research-Scan-2026-03-13.md\n  Error: costEntry.cost.toFixed is not a function\n\n[4/4] Gemini Growth Strategist — generating growth analysis...\n  Growth strategy written to: 03-Operations/Reports/Growth-Strategy-2026-03-13.md\n  Tokens: 2077 | Est cost: $0.0000\n\n",
+    "error": "Board runner fatal error: totalCost.toFixed is not a function\n",
+    "filesWritten": []
+  },
+  {
     "id": "mmody22ar0ip",
     "type": "board-run",
     "label": "Board of AI Run",

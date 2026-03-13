@@ -19,6 +19,12 @@ const PRICING = {
   'gemini-2.0-flash':     { input: 0.10,  output: 0.40 },
 };
 
+// Normalize any value to a finite number, or 0
+function toNum(v) {
+  const n = Number(v);
+  return Number.isFinite(n) ? n : 0;
+}
+
 function ensureFile(file, defaultVal) {
   const dir = path.dirname(file);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -60,10 +66,10 @@ function recordCost(entry) {
     date: new Date().toISOString().slice(0, 10),
     provider: entry.provider || 'unknown',
     model: entry.model || 'unknown',
-    inputTokens: entry.inputTokens || 0,
-    outputTokens: entry.outputTokens || 0,
-    totalTokens: entry.totalTokens || 0,
-    cost: entry.cost != null ? entry.cost : estimateCost(entry.model, entry.inputTokens, entry.outputTokens),
+    inputTokens: toNum(entry.inputTokens),
+    outputTokens: toNum(entry.outputTokens),
+    totalTokens: toNum(entry.totalTokens),
+    cost: toNum(entry.cost != null ? entry.cost : estimateCost(entry.model, entry.inputTokens, entry.outputTokens)),
     taskId: entry.taskId || null,
     taskType: entry.taskType || null,
     role: entry.role || null,
@@ -100,15 +106,15 @@ function getSummary() {
   const todayEntries = all.filter(e => e.date === today);
   const weekEntries = all.filter(e => e.ts >= weekAgo);
 
-  const sumCost = (arr) => arr.reduce((s, e) => s + (e.cost || 0), 0);
-  const sumTokens = (arr) => arr.reduce((s, e) => s + (e.totalTokens || 0), 0);
+  const sumCost = (arr) => arr.reduce((s, e) => s + toNum(e.cost), 0);
+  const sumTokens = (arr) => arr.reduce((s, e) => s + toNum(e.totalTokens), 0);
 
   // By provider
   const byProvider = {};
   for (const e of weekEntries) {
     if (!byProvider[e.provider]) byProvider[e.provider] = { cost: 0, tokens: 0, calls: 0 };
-    byProvider[e.provider].cost += e.cost || 0;
-    byProvider[e.provider].tokens += e.totalTokens || 0;
+    byProvider[e.provider].cost += toNum(e.cost);
+    byProvider[e.provider].tokens += toNum(e.totalTokens);
     byProvider[e.provider].calls += 1;
   }
 
@@ -116,8 +122,8 @@ function getSummary() {
   const byModel = {};
   for (const e of weekEntries) {
     if (!byModel[e.model]) byModel[e.model] = { cost: 0, tokens: 0, calls: 0 };
-    byModel[e.model].cost += e.cost || 0;
-    byModel[e.model].tokens += e.totalTokens || 0;
+    byModel[e.model].cost += toNum(e.cost);
+    byModel[e.model].tokens += toNum(e.totalTokens);
     byModel[e.model].calls += 1;
   }
 
@@ -125,8 +131,8 @@ function getSummary() {
   const byDay = {};
   for (const e of weekEntries) {
     if (!byDay[e.date]) byDay[e.date] = { cost: 0, tokens: 0, calls: 0 };
-    byDay[e.date].cost += e.cost || 0;
-    byDay[e.date].tokens += e.totalTokens || 0;
+    byDay[e.date].cost += toNum(e.cost);
+    byDay[e.date].tokens += toNum(e.totalTokens);
     byDay[e.date].calls += 1;
   }
 
@@ -180,7 +186,7 @@ function checkBudget(provider) {
 
   const today = new Date().toISOString().slice(0, 10);
   const todayEntries = readLedger().filter(e => e.date === today && e.provider === 'gemini');
-  const todayCost = todayEntries.reduce((s, e) => s + (e.cost || 0), 0);
+  const todayCost = todayEntries.reduce((s, e) => s + toNum(e.cost), 0);
 
   const warn = settings.warningThreshold && todayCost >= settings.warningThreshold;
   const over = todayCost >= settings.geminibudgetLimit;
@@ -193,6 +199,7 @@ function checkBudget(provider) {
 
 module.exports = {
   PRICING,
+  toNum,
   recordCost,
   estimateCost,
   getCosts,

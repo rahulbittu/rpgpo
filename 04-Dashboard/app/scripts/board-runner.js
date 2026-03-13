@@ -37,6 +37,15 @@ const boardRunId = Date.now().toString(36) + Math.random().toString(36).slice(2,
 const { callOpenAI, callPerplexity, callGemini, PROVIDER_STATES } = require('../lib/ai');
 const costs = require('../lib/costs');
 
+// Safe money helpers — never let formatting crash the board run
+function toMoneyNumber(v) {
+  const n = Number(v);
+  return Number.isFinite(n) ? n : 0;
+}
+function formatMoney(v) {
+  return toMoneyNumber(v).toFixed(4);
+}
+
 // --- Helpers ---
 
 function readFile(rel) {
@@ -280,7 +289,7 @@ async function runBoard() {
         taskType: 'board-run', role: 'chief', boardRunId,
       });
       results.costs.push(costEntry);
-      console.log(`  Tokens: ${result.usage.totalTokens} | Est cost: $${costEntry.cost.toFixed(4)}`);
+      console.log(`  Tokens: ${result.usage.totalTokens} | Est cost: $${formatMoney(costEntry.cost)}`);
     } catch (e) {
       const state = e.providerState || 'error';
       results.steps.push({ role: 'OpenAI Chief of Staff', status: 'error', error: e.message, providerState: state });
@@ -314,7 +323,7 @@ async function runBoard() {
         taskType: 'board-run', role: 'research', boardRunId,
       });
       results.costs.push(costEntry);
-      console.log(`  Tokens: ${result.usage.totalTokens} | Est cost: $${costEntry.cost.toFixed(4)}`);
+      console.log(`  Tokens: ${result.usage.totalTokens} | Est cost: $${formatMoney(costEntry.cost)}`);
     } catch (e) {
       const state = e.providerState || 'error';
       results.steps.push({ role: 'Perplexity Research Director', status: 'error', error: e.message, providerState: state });
@@ -334,11 +343,11 @@ async function runBoard() {
     const budgetCheck = costs.checkBudget('gemini');
     if (!budgetCheck.ok) {
       results.steps.push({ role: 'Gemini Growth Strategist', status: 'skipped', providerState: 'budget_exceeded',
-        error: `Daily budget exceeded ($${budgetCheck.todayCost.toFixed(4)} / $${budgetCheck.limit})` });
-      console.log(`  Skipped: Daily budget exceeded ($${budgetCheck.todayCost.toFixed(4)} / $${budgetCheck.limit})`);
+        error: `Daily budget exceeded ($${formatMoney(budgetCheck.todayCost)} / $${budgetCheck.limit})` });
+      console.log(`  Skipped: Daily budget exceeded ($${formatMoney(budgetCheck.todayCost)} / $${budgetCheck.limit})`);
     } else {
       if (budgetCheck.warning) {
-        console.log(`  Warning: Approaching daily budget ($${budgetCheck.todayCost.toFixed(4)} / $${budgetCheck.limit})`);
+        console.log(`  Warning: Approaching daily budget ($${formatMoney(budgetCheck.todayCost)} / $${budgetCheck.limit})`);
       }
       try {
         const result = await runGrowthStrategist(contextText);
@@ -357,7 +366,7 @@ async function runBoard() {
           taskType: 'board-run', role: 'strategy', boardRunId,
         });
         results.costs.push(costEntry);
-        console.log(`  Tokens: ${result.usage.totalTokens} | Est cost: $${costEntry.cost.toFixed(4)}`);
+        console.log(`  Tokens: ${result.usage.totalTokens} | Est cost: $${formatMoney(costEntry.cost)}`);
       } catch (e) {
         const state = e.providerState || 'error';
         // Classify and continue in 3-model mode
@@ -378,7 +387,7 @@ async function runBoard() {
   const successCount = results.steps.filter(s => s.status === 'success').length;
   const skipCount = results.steps.filter(s => s.status === 'skipped').length;
   const errorCount = results.steps.filter(s => s.status === 'error').length;
-  const totalCost = results.costs.reduce((s, c) => s + (c.cost || 0), 0);
+  const totalCost = results.costs.reduce((s, c) => s + toMoneyNumber(c.cost), 0);
 
   const logContent = `# RPGPO Board of AI Run Log
 
@@ -392,8 +401,8 @@ ${boardRunId}
 Board run completed. ${successCount} succeeded, ${skipCount} skipped, ${errorCount} failed out of ${totalSteps} steps.
 
 ## Cost
-Total estimated: $${totalCost.toFixed(4)}
-${results.costs.map(c => `- ${c.provider}/${c.model}: ${c.totalTokens} tokens, $${c.cost.toFixed(4)}`).join('\n') || '- No API calls with cost data'}
+Total estimated: $${formatMoney(totalCost)}
+${results.costs.map(c => `- ${c.provider}/${c.model}: ${c.totalTokens} tokens, $${formatMoney(c.cost)}`).join('\n') || '- No API calls with cost data'}
 
 ## Steps
 ${results.steps.map(s => `- **${s.role}**: ${s.status}${s.model ? ` (${s.model})` : ''}${s.providerState ? ` [${s.providerState}]` : ''}${s.error ? ` — ${s.error}` : ''}`).join('\n')}
@@ -418,7 +427,7 @@ Green (read + write reports only, no external actions)
   console.log(`  Succeeded: ${successCount}/${totalSteps}`);
   console.log(`  Skipped:   ${skipCount}/${totalSteps}`);
   console.log(`  Errors:    ${errorCount}/${totalSteps}`);
-  console.log(`  Cost:      $${totalCost.toFixed(4)}`);
+  console.log(`  Cost:      $${formatMoney(totalCost)}`);
   console.log(`  Files:     ${results.filesWritten.join(', ')}`);
 
   // Output JSON for the worker to parse
