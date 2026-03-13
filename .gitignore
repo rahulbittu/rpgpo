@@ -10,3 +10,8 @@ build/
 coverage/
 .vscode/
 .idea/
+
+# Local secrets
+04-Dashboard/app/.env
+.env
+.env.*
