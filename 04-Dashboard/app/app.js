@@ -1,6 +1,6 @@
-// RPGPO Command Center v5 — Premium Private Operations Console
+// RPGPO Command Center v6 — Premium Private Operations Console
 
-let DATA = null, TASKS = [], STATUS = null;
+let DATA = null, TASKS = [], STATUS = null, COSTS = null, COST_SETTINGS = null;
 const activity = [];
 const MAX_ACT = 50;
 let trackedTaskId = null;
@@ -112,6 +112,8 @@ function switchTab(tab) {
   if (link) link.classList.add('active');
   const panel = document.getElementById('tab-' + tab);
   if (panel) panel.classList.add('active');
+  if (tab === 'costs') loadCosts();
+  if (tab === 'settings') loadCostSettings();
 }
 
 // ═══════════════════════════════════════════
@@ -144,6 +146,22 @@ async function loadTasks() {
       const t = TASKS.find(x => x.id === trackedTaskId);
       if (t) updateOutput(t);
     }
+  } catch {}
+}
+
+async function loadCosts() {
+  try {
+    const r = await fetch('/api/costs');
+    COSTS = await r.json();
+    renderCostCenter();
+  } catch {}
+}
+
+async function loadCostSettings() {
+  try {
+    const r = await fetch('/api/costs/settings');
+    COST_SETTINGS = await r.json();
+    renderBudgetSettings();
   } catch {}
 }
 
@@ -182,18 +200,28 @@ function renderStatus() {
   updateModelTag('mPerplexity', ppx);
   updateModelTag('mGemini', gem);
 
-  // Channel status indicators
-  const cs = (id, isReady, isLocal) => {
+  // Gemini model display
+  if (s.providers && s.providers.gemini) {
+    const gm = document.getElementById('mGeminiModel');
+    if (gm) gm.textContent = s.providers.gemini.model || 'gemini-2.5-flash-lite';
+  }
+
+  // Channel status indicators with provider state
+  const providers = s.providers || {};
+  const cs = (id, provider) => {
     const el = document.getElementById(id);
     if (!el) return;
-    if (isLocal) { el.textContent = 'Local'; el.className = 'ch-status local'; }
-    else if (isReady) { el.textContent = 'Ready'; el.className = 'ch-status ready'; }
+    if (provider.type === 'local') { el.textContent = 'Local'; el.className = 'ch-status local'; }
+    else if (provider.state === 'ready') { el.textContent = 'Ready'; el.className = 'ch-status ready'; }
+    else if (provider.state === 'auth_failed') { el.textContent = 'Auth Fail'; el.className = 'ch-status missing'; }
+    else if (provider.state === 'quota_unavailable') { el.textContent = 'Quota'; el.className = 'ch-status missing'; }
+    else if (provider.state === 'model_unavailable') { el.textContent = 'No Model'; el.className = 'ch-status missing'; }
     else { el.textContent = 'No Key'; el.className = 'ch-status missing'; }
   };
-  cs('chStatusClaude', true, true);
-  cs('chStatusOpenAI', oai, false);
-  cs('chStatusPerplexity', ppx, false);
-  cs('chStatusGemini', gem, false);
+  cs('chStatusClaude', providers.claude || { type: 'local' });
+  cs('chStatusOpenAI', providers.openai || { state: oai ? 'ready' : 'missing' });
+  cs('chStatusPerplexity', providers.perplexity || { state: ppx ? 'ready' : 'missing' });
+  cs('chStatusGemini', providers.gemini || { state: gem ? 'ready' : 'missing' });
 
   // Settings server
   const ss = document.getElementById('settingsServer');
@@ -469,6 +497,7 @@ function render() {
   renderLogs();
   renderTopRanker();
   renderNavBadges();
+  renderHomeCosts();
 }
 
 // ═══════════════════════════════════════════
@@ -529,6 +558,146 @@ function renderHome() {
       briefDiv.innerHTML = '<p style="color:var(--text-faint)">No briefs available</p>';
     }
   }
+}
+
+function renderHomeCosts() {
+  const cs = DATA && DATA.costSummary;
+  if (!cs) return;
+
+  const ct = document.getElementById('costToday');
+  const cw = document.getElementById('costWeek');
+  const cb = document.getElementById('costLastBoard');
+  const cc = document.getElementById('costCallsToday');
+
+  if (ct) ct.textContent = '$' + cs.today.cost.toFixed(4);
+  if (cw) cw.textContent = '$' + cs.week.cost.toFixed(4);
+  if (cb) cb.textContent = cs.lastBoardRun ? '$' + cs.lastBoardRun.cost.toFixed(4) : '--';
+  if (cc) cc.textContent = cs.today.calls.toString();
+}
+
+// ═══════════════════════════════════════════
+// COST CENTER
+// ═══════════════════════════════════════════
+
+function renderCostCenter() {
+  if (!COSTS) return;
+
+  // Summary cards
+  document.getElementById('ccToday').textContent = '$' + COSTS.today.cost.toFixed(4);
+  document.getElementById('ccTodayCalls').textContent = COSTS.today.calls + ' calls, ' + fmtTokens(COSTS.today.tokens);
+  document.getElementById('ccWeek').textContent = '$' + COSTS.week.cost.toFixed(4);
+  document.getElementById('ccWeekCalls').textContent = COSTS.week.calls + ' calls, ' + fmtTokens(COSTS.week.tokens);
+
+  if (COSTS.lastBoardRun) {
+    document.getElementById('ccLastBoard').textContent = '$' + COSTS.lastBoardRun.cost.toFixed(4);
+    document.getElementById('ccLastBoardCalls').textContent = COSTS.lastBoardRun.calls + ' calls';
+  } else {
+    document.getElementById('ccLastBoard').textContent = '--';
+    document.getElementById('ccLastBoardCalls').textContent = 'no data';
+  }
+  document.getElementById('ccTotalEntries').textContent = COSTS.totalEntries.toString();
+
+  // By provider
+  const bp = document.getElementById('ccByProvider');
+  const providers = COSTS.byProvider;
+  const provNames = Object.keys(providers);
+  if (!provNames.length) {
+    bp.innerHTML = '<div class="task-empty">No cost data yet</div>';
+  } else {
+    const maxCost = Math.max(...provNames.map(p => providers[p].cost), 0.001);
+    bp.innerHTML = provNames.map(p => {
+      const d = providers[p];
+      const pct = Math.max((d.cost / maxCost) * 100, 4);
+      return `<div class="cost-row">
+        <span class="cost-row-name">${esc(p)}</span>
+        <div class="cost-bar-container" style="flex:1;margin:0 12px">
+          <div class="cost-bar ${p}" style="width:${pct}%"></div>
+        </div>
+        <span class="cost-row-value">$${d.cost.toFixed(4)}</span>
+        <span class="cost-row-detail" style="margin-left:8px">${d.calls} calls</span>
+      </div>`;
+    }).join('');
+  }
+
+  // By model
+  const bm = document.getElementById('ccByModel');
+  const models = COSTS.byModel;
+  const modNames = Object.keys(models);
+  if (!modNames.length) {
+    bm.innerHTML = '<div class="task-empty">No cost data yet</div>';
+  } else {
+    bm.innerHTML = modNames.map(m => {
+      const d = models[m];
+      return `<div class="cost-row">
+        <span class="cost-row-name" style="font-family:var(--mono);font-size:11px">${esc(m)}</span>
+        <span class="cost-row-value">$${d.cost.toFixed(4)}</span>
+        <span class="cost-row-detail" style="margin-left:8px">${fmtTokens(d.tokens)}</span>
+      </div>`;
+    }).join('');
+  }
+
+  // By day
+  const bd = document.getElementById('ccByDay');
+  const days = COSTS.byDay;
+  const dayNames = Object.keys(days).sort().reverse();
+  if (!dayNames.length) {
+    bd.innerHTML = '<div class="task-empty">No cost data yet</div>';
+  } else {
+    const maxDayCost = Math.max(...dayNames.map(d => days[d].cost), 0.001);
+    bd.innerHTML = dayNames.map(d => {
+      const data = days[d];
+      const pct = Math.max((data.cost / maxDayCost) * 100, 4);
+      return `<div class="cost-row">
+        <span class="cost-row-name" style="font-family:var(--mono)">${d}</span>
+        <div class="cost-bar-container" style="flex:1;margin:0 12px">
+          <div class="cost-bar openai" style="width:${pct}%"></div>
+        </div>
+        <span class="cost-row-value">$${data.cost.toFixed(4)}</span>
+        <span class="cost-row-detail" style="margin-left:8px">${data.calls} calls</span>
+      </div>`;
+    }).join('');
+  }
+}
+
+function fmtTokens(n) {
+  if (!n) return '0 tok';
+  if (n < 1000) return n + ' tok';
+  if (n < 1000000) return (n / 1000).toFixed(1) + 'k tok';
+  return (n / 1000000).toFixed(2) + 'M tok';
+}
+
+// ═══════════════════════════════════════════
+// BUDGET SETTINGS
+// ═══════════════════════════════════════════
+
+function renderBudgetSettings() {
+  if (!COST_SETTINGS) return;
+  const gm = document.getElementById('settGeminiModel');
+  const bl = document.getElementById('settBudgetLimit');
+  const wt = document.getElementById('settWarnThreshold');
+  const da = document.getElementById('settDisableAfter');
+  if (gm) gm.value = COST_SETTINGS.geminiModel || 'gemini-2.5-flash-lite';
+  if (bl) bl.value = COST_SETTINGS.geminibudgetLimit || '';
+  if (wt) wt.value = COST_SETTINGS.warningThreshold || '';
+  if (da) da.checked = !!COST_SETTINGS.disableAfterThreshold;
+}
+
+async function saveBudgetSettings() {
+  const settings = {
+    geminiModel: document.getElementById('settGeminiModel').value,
+    geminibudgetLimit: parseFloat(document.getElementById('settBudgetLimit').value) || null,
+    warningThreshold: parseFloat(document.getElementById('settWarnThreshold').value) || null,
+    disableAfterThreshold: document.getElementById('settDisableAfter').checked,
+  };
+  try {
+    await fetch('/api/costs/settings', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(settings),
+    });
+    showToast('Budget settings saved', 'success');
+    loadStatus();
+  } catch { showToast('Failed to save settings', 'error'); }
 }
 
 // ═══════════════════════════════════════════
@@ -929,7 +1098,8 @@ setInterval(renderHeartbeat, 5000);
 document.addEventListener('keydown', (e) => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
   if (e.key === 'Escape') document.getElementById('taskModal').classList.remove('open');
-  const tabs = ['home', 'tasks', 'channels', 'missions', 'topranker', 'approvals', 'logs', 'controls', 'settings'];
+  const tabs = ['home', 'tasks', 'channels', 'missions', 'topranker', 'approvals', 'costs', 'logs', 'controls', 'settings'];
   const n = parseInt(e.key);
   if (n >= 1 && n <= 9 && !e.metaKey && !e.ctrlKey && !e.altKey) switchTab(tabs[n - 1]);
+  if (e.key === '0' && !e.metaKey && !e.ctrlKey && !e.altKey) switchTab(tabs[9]);
 });

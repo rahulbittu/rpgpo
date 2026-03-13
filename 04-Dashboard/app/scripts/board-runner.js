@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// RPGPO Board of AI Runner v5
+// RPGPO Board of AI Runner v6
 //
 // Orchestrates four AI roles against live RPGPO data:
 //   1. Claude    = Builder / TopRanker reviewer (prompt generation)
@@ -16,6 +16,7 @@ const path = require('path');
 const RPGPO_ROOT = path.resolve(__dirname, '..', '..', '..');
 const today = new Date().toISOString().slice(0, 10);
 const runTs = new Date().toISOString();
+const boardRunId = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 
 // Load .env from app dir
 (function loadEnv() {
@@ -33,7 +34,8 @@ const runTs = new Date().toISOString();
   } catch {}
 })();
 
-const { callOpenAI, callPerplexity, callGemini } = require('../lib/ai');
+const { callOpenAI, callPerplexity, callGemini, PROVIDER_STATES } = require('../lib/ai');
+const costs = require('../lib/costs');
 
 // --- Helpers ---
 
@@ -176,7 +178,11 @@ Rules:
 
 ${contextText}`;
 
-  return callGemini(systemPrompt, userPrompt);
+  // Use cost settings for model selection
+  const costSettings = costs.getSettings();
+  const geminiModel = costSettings.geminiModel || 'gemini-2.5-flash-lite';
+
+  return callGemini(systemPrompt, userPrompt, { model: geminiModel });
 }
 
 function runBuilder(contextText) {
@@ -211,13 +217,16 @@ async function runBoard() {
   const totalSteps = 4;
   const results = {
     timestamp: runTs,
+    boardRunId,
     steps: [],
     filesWritten: [],
     errors: [],
+    costs: [],
   };
 
-  console.log('=== RPGPO Board of AI v5 ===');
+  console.log('=== RPGPO Board of AI v6 ===');
   console.log(`Run started: ${runTs}`);
+  console.log(`Board run ID: ${boardRunId}`);
   console.log('');
 
   // Step 0: Gather context
@@ -250,22 +259,31 @@ async function runBoard() {
   // Step 2: OpenAI Chief of Staff
   console.log(`[2/${totalSteps}] OpenAI Chief of Staff — generating executive briefing...`);
   if (!process.env.OPENAI_API_KEY) {
-    const msg = 'OPENAI_API_KEY not set. Skipping Chief of Staff briefing.';
-    results.steps.push({ role: 'OpenAI Chief of Staff', status: 'skipped', error: msg });
-    results.errors.push(msg);
-    console.log('  ' + msg);
+    results.steps.push({ role: 'OpenAI Chief of Staff', status: 'skipped', providerState: PROVIDER_STATES.MISSING });
+    console.log('  Skipped: OPENAI_API_KEY not configured.');
   } else {
     try {
-      const briefing = await runChiefOfStaff(contextText);
+      const result = await runChiefOfStaff(contextText);
       const briefFile = writeOutput(
         `03-Operations/DailyBriefs/${today}-BoardBrief.md`,
-        `# RPGPO Board Brief\n## Generated: ${runTs}\n## Source: OpenAI Chief of Staff\n\n${briefing}\n`
+        `# RPGPO Board Brief\n## Generated: ${runTs}\n## Source: OpenAI Chief of Staff\n\n${result.text}\n`
       );
-      results.steps.push({ role: 'OpenAI Chief of Staff', status: 'success', model: 'gpt-4o' });
+      results.steps.push({ role: 'OpenAI Chief of Staff', status: 'success', model: result.model });
       results.filesWritten.push(briefFile);
       console.log(`  Briefing written to: ${briefFile}`);
+
+      // Record cost
+      const costEntry = costs.recordCost({
+        provider: 'openai', model: result.model,
+        inputTokens: result.usage.inputTokens, outputTokens: result.usage.outputTokens,
+        totalTokens: result.usage.totalTokens,
+        taskType: 'board-run', role: 'chief', boardRunId,
+      });
+      results.costs.push(costEntry);
+      console.log(`  Tokens: ${result.usage.totalTokens} | Est cost: $${costEntry.cost.toFixed(4)}`);
     } catch (e) {
-      results.steps.push({ role: 'OpenAI Chief of Staff', status: 'error', error: e.message });
+      const state = e.providerState || 'error';
+      results.steps.push({ role: 'OpenAI Chief of Staff', status: 'error', error: e.message, providerState: state });
       results.errors.push('OpenAI: ' + e.message);
       console.log('  Error: ' + e.message);
     }
@@ -275,22 +293,31 @@ async function runBoard() {
   // Step 3: Perplexity Research Director
   console.log(`[3/${totalSteps}] Perplexity Research Director — running research scan...`);
   if (!process.env.PERPLEXITY_API_KEY) {
-    const msg = 'PERPLEXITY_API_KEY not set. Skipping research scan.';
-    results.steps.push({ role: 'Perplexity Research Director', status: 'skipped', error: msg });
-    results.errors.push(msg);
-    console.log('  ' + msg);
+    results.steps.push({ role: 'Perplexity Research Director', status: 'skipped', providerState: PROVIDER_STATES.MISSING });
+    console.log('  Skipped: PERPLEXITY_API_KEY not configured.');
   } else {
     try {
-      const research = await runResearchDirector(contextText, ctx.researchQueue);
+      const result = await runResearchDirector(contextText, ctx.researchQueue);
       const researchFile = writeOutput(
         `03-Operations/Reports/Research-Scan-${today}.md`,
-        `# RPGPO Research Scan\n## Generated: ${runTs}\n## Source: Perplexity Research Director\n\n${research}\n`
+        `# RPGPO Research Scan\n## Generated: ${runTs}\n## Source: Perplexity Research Director\n\n${result.text}\n`
       );
-      results.steps.push({ role: 'Perplexity Research Director', status: 'success', model: 'sonar' });
+      results.steps.push({ role: 'Perplexity Research Director', status: 'success', model: result.model });
       results.filesWritten.push(researchFile);
       console.log(`  Research written to: ${researchFile}`);
+
+      const costEntry = costs.recordCost({
+        provider: 'perplexity', model: result.model,
+        inputTokens: result.usage.inputTokens, outputTokens: result.usage.outputTokens,
+        totalTokens: result.usage.totalTokens,
+        cost: result.usage.cost,
+        taskType: 'board-run', role: 'research', boardRunId,
+      });
+      results.costs.push(costEntry);
+      console.log(`  Tokens: ${result.usage.totalTokens} | Est cost: $${costEntry.cost.toFixed(4)}`);
     } catch (e) {
-      results.steps.push({ role: 'Perplexity Research Director', status: 'error', error: e.message });
+      const state = e.providerState || 'error';
+      results.steps.push({ role: 'Perplexity Research Director', status: 'error', error: e.message, providerState: state });
       results.errors.push('Perplexity: ' + e.message);
       console.log('  Error: ' + e.message);
     }
@@ -300,24 +327,49 @@ async function runBoard() {
   // Step 4: Gemini Growth Strategist
   console.log(`[4/${totalSteps}] Gemini Growth Strategist — generating growth analysis...`);
   if (!process.env.GEMINI_API_KEY) {
-    const msg = 'GEMINI_API_KEY not set. Skipping growth analysis.';
-    results.steps.push({ role: 'Gemini Growth Strategist', status: 'skipped', error: msg });
-    results.errors.push(msg);
-    console.log('  ' + msg);
+    results.steps.push({ role: 'Gemini Growth Strategist', status: 'skipped', providerState: PROVIDER_STATES.MISSING });
+    console.log('  Skipped: GEMINI_API_KEY not configured.');
   } else {
-    try {
-      const growth = await runGrowthStrategist(contextText);
-      const growthFile = writeOutput(
-        `03-Operations/Reports/Growth-Strategy-${today}.md`,
-        `# RPGPO Growth Strategy\n## Generated: ${runTs}\n## Source: Gemini Growth Strategist\n\n${growth}\n`
-      );
-      results.steps.push({ role: 'Gemini Growth Strategist', status: 'success', model: 'gemini-2.0-flash' });
-      results.filesWritten.push(growthFile);
-      console.log(`  Growth strategy written to: ${growthFile}`);
-    } catch (e) {
-      results.steps.push({ role: 'Gemini Growth Strategist', status: 'error', error: e.message });
-      results.errors.push('Gemini: ' + e.message);
-      console.log('  Error: ' + e.message);
+    // Check budget before calling
+    const budgetCheck = costs.checkBudget('gemini');
+    if (!budgetCheck.ok) {
+      results.steps.push({ role: 'Gemini Growth Strategist', status: 'skipped', providerState: 'budget_exceeded',
+        error: `Daily budget exceeded ($${budgetCheck.todayCost.toFixed(4)} / $${budgetCheck.limit})` });
+      console.log(`  Skipped: Daily budget exceeded ($${budgetCheck.todayCost.toFixed(4)} / $${budgetCheck.limit})`);
+    } else {
+      if (budgetCheck.warning) {
+        console.log(`  Warning: Approaching daily budget ($${budgetCheck.todayCost.toFixed(4)} / $${budgetCheck.limit})`);
+      }
+      try {
+        const result = await runGrowthStrategist(contextText);
+        const growthFile = writeOutput(
+          `03-Operations/Reports/Growth-Strategy-${today}.md`,
+          `# RPGPO Growth Strategy\n## Generated: ${runTs}\n## Source: Gemini Growth Strategist\n\n${result.text}\n`
+        );
+        results.steps.push({ role: 'Gemini Growth Strategist', status: 'success', model: result.model });
+        results.filesWritten.push(growthFile);
+        console.log(`  Growth strategy written to: ${growthFile}`);
+
+        const costEntry = costs.recordCost({
+          provider: 'gemini', model: result.model,
+          inputTokens: result.usage.inputTokens, outputTokens: result.usage.outputTokens,
+          totalTokens: result.usage.totalTokens,
+          taskType: 'board-run', role: 'strategy', boardRunId,
+        });
+        results.costs.push(costEntry);
+        console.log(`  Tokens: ${result.usage.totalTokens} | Est cost: $${costEntry.cost.toFixed(4)}`);
+      } catch (e) {
+        const state = e.providerState || 'error';
+        // Classify and continue in 3-model mode
+        const stateLabel = state === PROVIDER_STATES.QUOTA_UNAVAILABLE ? 'quota unavailable'
+          : state === PROVIDER_STATES.MODEL_UNAVAILABLE ? 'model unavailable'
+          : state === PROVIDER_STATES.AUTH_FAILED ? 'auth failed'
+          : 'error';
+        results.steps.push({ role: 'Gemini Growth Strategist', status: 'skipped', error: e.message, providerState: state });
+        results.errors.push(`Gemini (${stateLabel}): ${e.message}`);
+        console.log(`  ${stateLabel}: ${e.message}`);
+        console.log('  Continuing with 3-model Board run.');
+      }
     }
   }
   console.log('');
@@ -326,17 +378,25 @@ async function runBoard() {
   const successCount = results.steps.filter(s => s.status === 'success').length;
   const skipCount = results.steps.filter(s => s.status === 'skipped').length;
   const errorCount = results.steps.filter(s => s.status === 'error').length;
+  const totalCost = results.costs.reduce((s, c) => s + (c.cost || 0), 0);
 
   const logContent = `# RPGPO Board of AI Run Log
 
 ## Timestamp
 ${runTs}
 
+## Board Run ID
+${boardRunId}
+
 ## Summary
 Board run completed. ${successCount} succeeded, ${skipCount} skipped, ${errorCount} failed out of ${totalSteps} steps.
 
+## Cost
+Total estimated: $${totalCost.toFixed(4)}
+${results.costs.map(c => `- ${c.provider}/${c.model}: ${c.totalTokens} tokens, $${c.cost.toFixed(4)}`).join('\n') || '- No API calls with cost data'}
+
 ## Steps
-${results.steps.map(s => `- **${s.role}**: ${s.status}${s.model ? ` (${s.model})` : ''}${s.error ? ` — ${s.error}` : ''}`).join('\n')}
+${results.steps.map(s => `- **${s.role}**: ${s.status}${s.model ? ` (${s.model})` : ''}${s.providerState ? ` [${s.providerState}]` : ''}${s.error ? ` — ${s.error}` : ''}`).join('\n')}
 
 ## Files Written
 ${results.filesWritten.length > 0 ? results.filesWritten.map(f => `- ${f}`).join('\n') : '- None'}
@@ -358,14 +418,8 @@ Green (read + write reports only, no external actions)
   console.log(`  Succeeded: ${successCount}/${totalSteps}`);
   console.log(`  Skipped:   ${skipCount}/${totalSteps}`);
   console.log(`  Errors:    ${errorCount}/${totalSteps}`);
+  console.log(`  Cost:      $${totalCost.toFixed(4)}`);
   console.log(`  Files:     ${results.filesWritten.join(', ')}`);
-  if (results.errors.length > 0) {
-    console.log('');
-    console.log('Missing keys? Set them in .env or shell and restart:');
-    if (!process.env.OPENAI_API_KEY) console.log('  OPENAI_API_KEY=sk-...');
-    if (!process.env.PERPLEXITY_API_KEY) console.log('  PERPLEXITY_API_KEY=pplx-...');
-    if (!process.env.GEMINI_API_KEY) console.log('  GEMINI_API_KEY=AIza...');
-  }
 
   // Output JSON for the worker to parse
   console.log('\n__BOARD_RESULT__' + JSON.stringify(results));

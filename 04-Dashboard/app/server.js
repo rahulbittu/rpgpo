@@ -1,4 +1,4 @@
-// RPGPO Dashboard Server v5 — Premium Command Center
+// RPGPO Dashboard Server v6 — Premium Command Center with Cost Tracking
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -23,6 +23,7 @@ const { execSync } = require('child_process');
 const { RPGPO_ROOT, readFile, readJson, listFiles, readAllInDir, parseMission, logAction } = require('./lib/files');
 const queue = require('./lib/queue');
 const events = require('./lib/events');
+const costs = require('./lib/costs');
 
 const PORT = process.env.PORT || 3200;
 const startTime = Date.now();
@@ -86,6 +87,25 @@ function json(res, data, status = 200) {
   res.end(JSON.stringify(data));
 }
 
+// --- Provider state ---
+
+function getProviderState(keyName, keyValue) {
+  if (!keyValue) return 'missing';
+  return 'ready';
+}
+
+function getProviderStates() {
+  return {
+    claude: { state: 'ready', type: 'local' },
+    openai: { state: getProviderState('OPENAI_API_KEY', process.env.OPENAI_API_KEY), model: 'gpt-4o' },
+    perplexity: { state: getProviderState('PERPLEXITY_API_KEY', process.env.PERPLEXITY_API_KEY), model: 'sonar' },
+    gemini: {
+      state: getProviderState('GEMINI_API_KEY', process.env.GEMINI_API_KEY),
+      model: costs.getSettings().geminiModel || 'gemini-2.5-flash-lite',
+    },
+  };
+}
+
 // --- API data builder ---
 
 function buildApiData() {
@@ -117,7 +137,10 @@ function buildApiData() {
   const toprankerSummary = readFile('03-Operations/Reports/TopRanker-Operating-Summary.md');
   const decisionLogs = readAllInDir('03-Operations/Logs/Decisions');
 
-  return { state, missions, briefs, approvals, logs, decisionLogs, toprankerSummary };
+  // Cost summary for home
+  const costSummary = costs.getSummary();
+
+  return { state, missions, briefs, approvals, logs, decisionLogs, toprankerSummary, costSummary };
 }
 
 // --- Worker status ---
@@ -178,6 +201,7 @@ const server = http.createServer(async (req, res) => {
     return json(res, {
       server: { uptime: Date.now() - startTime, port: PORT },
       worker: getWorkerStatus(),
+      providers: getProviderStates(),
       keys: {
         OPENAI_API_KEY: process.env.OPENAI_API_KEY ? 'configured' : 'missing',
         PERPLEXITY_API_KEY: process.env.PERPLEXITY_API_KEY ? 'configured' : 'missing',
@@ -186,6 +210,26 @@ const server = http.createServer(async (req, res) => {
       workspace: RPGPO_ROOT,
       node: process.version,
     });
+  }
+
+  // Cost endpoints
+  if (req.url === '/api/costs') {
+    return json(res, costs.getSummary());
+  }
+
+  if (req.url === '/api/costs/history') {
+    return json(res, costs.getCosts({ since: new Date(Date.now() - 30 * 86400000).toISOString() }));
+  }
+
+  if (req.url === '/api/costs/settings' && req.method === 'GET') {
+    return json(res, costs.getSettings());
+  }
+
+  if (req.url === '/api/costs/settings' && req.method === 'POST') {
+    const body = await parseBody(req);
+    const updated = costs.updateSettings(body);
+    logAction('Cost settings updated', JSON.stringify(body), null);
+    return json(res, { ok: true, settings: updated });
   }
 
   // Task queue
@@ -255,6 +299,8 @@ const server = http.createServer(async (req, res) => {
         PERPLEXITY_API_KEY: process.env.PERPLEXITY_API_KEY ? 'configured' : 'missing',
         GEMINI_API_KEY: process.env.GEMINI_API_KEY ? 'configured' : 'missing',
       },
+      providers: getProviderStates(),
+      costSettings: costs.getSettings(),
       workspace: RPGPO_ROOT,
       node: process.version,
       platform: process.platform,
@@ -329,7 +375,7 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, '0.0.0.0', () => {
-  console.log(`\n  RPGPO Command Center v5 running at http://localhost:${PORT}`);
+  console.log(`\n  RPGPO Command Center v6 running at http://localhost:${PORT}`);
   console.log(`  Binding 0.0.0.0 for remote access`);
   console.log(`  Models: OpenAI=${process.env.OPENAI_API_KEY ? 'OK' : 'missing'} Perplexity=${process.env.PERPLEXITY_API_KEY ? 'OK' : 'missing'} Gemini=${process.env.GEMINI_API_KEY ? 'OK' : 'missing'}\n`);
 });

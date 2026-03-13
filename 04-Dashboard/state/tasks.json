@@ -1,5 +1,84 @@
 [
   {
+    "id": "mmody22ar0ip",
+    "type": "board-run",
+    "label": "Board of AI Run",
+    "status": "done",
+    "meta": {},
+    "createdAt": "2026-03-13T04:17:13.714Z",
+    "updatedAt": "2026-03-13T04:17:25.992Z",
+    "output": "=== RPGPO Board of AI v5 ===\nRun started: 2026-03-13T04:17:14.091Z\n\nGathering RPGPO context...\n  Missions: 8\n  Research queue: 3 items\n  Pending approvals: 0\n\n[1/4] Claude Builder — generating TopRanker review prompt...\n  Prompt written to: 03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md\n\n[2/4] OpenAI Chief of Staff — generating executive briefing...\n  Briefing written to: 03-Operations/DailyBriefs/2026-03-13-BoardBrief.md\n\n[3/4] Perplexity Research Director — running research scan...\n  Research written to: 03-Operations/Reports/Research-Scan-2026-03-13.md\n\n[4/4] Gemini Growth Strategist — generating growth analysis...\n  Error: This model models/gemini-2.0-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements.\n\n=== Board Run Complete ===\n  Succeeded: 3/4\n  Skipped:   0/4\n  Errors:    1/4\n  Files:     03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md, 03-Operations/DailyBriefs/2026-03-13-BoardBrief.md, 03-Operations/Reports/Research-Scan-2026-03-13.md, 03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md\n\nMissing keys? Set them in .env or shell and restart:\n\n",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md",
+      "03-Operations/DailyBriefs/2026-03-13-BoardBrief.md",
+      "03-Operations/Reports/Research-Scan-2026-03-13.md",
+      "03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md"
+    ]
+  },
+  {
+    "id": "mmoduhzo8m1y",
+    "type": "board-run",
+    "label": "Board of AI Run",
+    "status": "done",
+    "meta": {},
+    "createdAt": "2026-03-13T04:14:27.732Z",
+    "updatedAt": "2026-03-13T04:14:42.374Z",
+    "output": "=== RPGPO Board of AI v5 ===\nRun started: 2026-03-13T04:14:28.018Z\n\nGathering RPGPO context...\n  Missions: 8\n  Research queue: 3 items\n  Pending approvals: 0\n\n[1/4] Claude Builder — generating TopRanker review prompt...\n  Prompt written to: 03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md\n\n[2/4] OpenAI Chief of Staff — generating executive briefing...\n  Briefing written to: 03-Operations/DailyBriefs/2026-03-13-BoardBrief.md\n\n[3/4] Perplexity Research Director — running research scan...\n  Research written to: 03-Operations/Reports/Research-Scan-2026-03-13.md\n\n[4/4] Gemini Growth Strategist — generating growth analysis...\n  Error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 17.660527898s.\n\n=== Board Run Complete ===\n  Succeeded: 3/4\n  Skipped:   0/4\n  Errors:    1/4\n  Files:     03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md, 03-Operations/DailyBriefs/2026-03-13-BoardBrief.md, 03-Operations/Reports/Research-Scan-2026-03-13.md, 03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md\n\nMissing keys? Set them in .env or shell and restart:\n\n",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md",
+      "03-Operations/DailyBriefs/2026-03-13-BoardBrief.md",
+      "03-Operations/Reports/Research-Scan-2026-03-13.md",
+      "03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md"
+    ]
+  },
+  {
+    "id": "mmodesvs4w3a",
+    "type": "board-run",
+    "label": "Board of AI Run",
+    "status": "done",
+    "meta": {},
+    "createdAt": "2026-03-13T04:02:15.352Z",
+    "updatedAt": "2026-03-13T04:02:16.794Z",
+    "output": "=== RPGPO Board of AI v5 ===\nRun started: 2026-03-13T04:02:16.275Z\n\nGathering RPGPO context...\n  Missions: 8\n  Research queue: 3 items\n  Pending approvals: 0\n\n[1/4] Claude Builder — generating TopRanker review prompt...\n  Prompt written to: 03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md\n\n[2/4] OpenAI Chief of Staff — generating executive briefing...\n  Error: Incorrect API key provided: sk-proj-********************************************************************************************************************************************************efYA. You can find your API key at https://platform.openai.com/account/api-keys.\n\n[3/4] Perplexity Research Director — running research scan...\n  Error: Invalid API key provided. You can find your API key at https://www.perplexity.ai/settings/api.\n\n[4/4] Gemini Growth Strategist — generating growth analysis...\n  Error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 43.239474147s.\n\n=== Board Run Complete ===\n  Succeeded: 1/4\n  Skipped:   0/4\n  Errors:    3/4\n  Files:     03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md, 03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md\n\nMissing keys? Set them in .env or shell and restart:\n\n",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md",
+      "03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md"
+    ]
+  },
+  {
+    "id": "mmod6dtq7oub",
+    "type": "board-run",
+    "label": "Board of AI Run",
+    "status": "done",
+    "meta": {},
+    "createdAt": "2026-03-13T03:55:42.590Z",
+    "updatedAt": "2026-03-13T03:55:43.717Z",
+    "output": "=== RPGPO Board of AI v5 ===\nRun started: 2026-03-13T03:55:43.239Z\n\nGathering RPGPO context...\n  Missions: 8\n  Research queue: 3 items\n  Pending approvals: 0\n\n[1/4] Claude Builder — generating TopRanker review prompt...\n  Prompt written to: 03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md\n\n[2/4] OpenAI Chief of Staff — generating executive briefing...\n  Error: Incorrect API key provided: sk-proj-********************************************************************************************************************************************************efYA. You can find your API key at https://platform.openai.com/account/api-keys.\n\n[3/4] Perplexity Research Director — running research scan...\n  Error: Invalid API key provided. You can find your API key at https://www.perplexity.ai/settings/api.\n\n[4/4] Gemini Growth Strategist — generating growth analysis...\n  Error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\nPlease retry in 16.317493478s.\n\n=== Board Run Complete ===\n  Succeeded: 1/4\n  Skipped:   0/4\n  Errors:    3/4\n  Files:     03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md, 03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md\n\nMissing keys? Set them in .env or shell and restart:\n\n",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md",
+      "03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md"
+    ]
+  },
+  {
+    "id": "mmoczazd5ym7",
+    "type": "board-run",
+    "label": "Board of AI Run",
+    "status": "done",
+    "meta": {},
+    "createdAt": "2026-03-13T03:50:12.313Z",
+    "updatedAt": "2026-03-13T03:50:14.747Z",
+    "output": "=== RPGPO Board of AI v5 ===\nRun started: 2026-03-13T03:50:13.922Z\n\nGathering RPGPO context...\n  Missions: 8\n  Research queue: 3 items\n  Pending approvals: 0\n\n[1/4] Claude Builder — generating TopRanker review prompt...\n  Prompt written to: 03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md\n\n[2/4] OpenAI Chief of Staff — generating executive briefing...\n  Error: Incorrect API key provided: sk-proj-********************************************************************************************************************************************************efYA. You can find your API key at https://platform.openai.com/account/api-keys.\n\n[3/4] Perplexity Research Director — running research scan...\n  Error: Invalid API key provided. You can find your API key at https://www.perplexity.ai/settings/api.\n\n[4/4] Gemini Growth Strategist — generating growth analysis...\n  Error: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 0, model: gemini-2.0-flash\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 0, model: gemini-2.0-flash\nPlease retry in 45.28839681s.\n\n=== Board Run Complete ===\n  Succeeded: 1/4\n  Skipped:   0/4\n  Errors:    3/4\n  Files:     03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md, 03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md\n\nMissing keys? Set them in .env or shell and restart:\n\n",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Claude-Builder-Prompt-2026-03-13.md",
+      "03-Operations/Logs/AgentRuns/2026-03-13-BoardRun.md"
+    ]
+  },
+  {
     "id": "mmo9c706keum",
     "type": "board-run",
     "label": "Board of AI Run",

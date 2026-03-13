@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// RPGPO Background Task Worker v5
+// RPGPO Background Task Worker v6
 // Polls the task queue and executes tasks sequentially.
 // Safe: no auto-send, no auto-post, no financial execution.
 
@@ -26,11 +26,12 @@ const fs = require('fs');
 const queue = require('./lib/queue');
 const { RPGPO_ROOT, logAction, writeFile } = require('./lib/files');
 const { callOpenAI, callPerplexity, callGemini } = require('./lib/ai');
+const costs = require('./lib/costs');
 
 const POLL_INTERVAL = 2000;
 let running = false;
 
-console.log(`[worker] RPGPO Task Worker v5 started at ${new Date().toISOString()}`);
+console.log(`[worker] RPGPO Task Worker v6 started at ${new Date().toISOString()}`);
 console.log(`[worker] Root: ${RPGPO_ROOT}`);
 console.log(`[worker] Models: OpenAI=${process.env.OPENAI_API_KEY ? 'OK' : 'missing'} Perplexity=${process.env.PERPLEXITY_API_KEY ? 'OK' : 'missing'} Gemini=${process.env.GEMINI_API_KEY ? 'OK' : 'missing'}`);
 console.log(`[worker] Polling every ${POLL_INTERVAL}ms`);
@@ -87,6 +88,7 @@ const handlers = {
             output: consoleOut,
             boardResult,
             filesWritten: boardResult ? boardResult.filesWritten : [],
+            costs: boardResult ? boardResult.costs : [],
           });
         } else {
           reject(new Error(stderr || `Exit code ${code}`));
@@ -120,6 +122,7 @@ const handlers = {
 
     let output = '';
     let filesWritten = [];
+    let costEntries = [];
 
     if (model === 'claude') {
       // Claude runs locally — generate a prompt file for manual execution
@@ -131,36 +134,60 @@ const handlers = {
       output = `Claude prompt saved to ${promptFile}\nUse "Launch Claude" to execute this prompt in a terminal session.`;
     } else if (model === 'openai') {
       queue.updateTask(task.id, { output: 'Calling OpenAI...' });
-      const response = await callOpenAI(systemPrompt, prompt);
+      const result = await callOpenAI(systemPrompt, prompt);
       const outFile = writeFile(
         `03-Operations/Reports/Channel-OpenAI-${today}-${shortId}.md`,
-        `# RPGPO Channel Response — OpenAI\n## Generated: ${ts}\n## Role: ${role || 'general'}\n## Model: gpt-4o\n\n${response}\n`
+        `# RPGPO Channel Response — OpenAI\n## Generated: ${ts}\n## Role: ${role || 'general'}\n## Model: ${result.model}\n\n${result.text}\n`
       );
       filesWritten.push(outFile);
-      output = response;
+      output = result.text;
+
+      costEntries.push(costs.recordCost({
+        provider: 'openai', model: result.model,
+        inputTokens: result.usage.inputTokens, outputTokens: result.usage.outputTokens,
+        totalTokens: result.usage.totalTokens,
+        taskId: task.id, taskType: 'ai-channel', role: role || 'general',
+      }));
     } else if (model === 'perplexity') {
       queue.updateTask(task.id, { output: 'Calling Perplexity...' });
-      const response = await callPerplexity(systemPrompt, prompt);
+      const result = await callPerplexity(systemPrompt, prompt);
       const outFile = writeFile(
         `03-Operations/Reports/Channel-Perplexity-${today}-${shortId}.md`,
-        `# RPGPO Channel Response — Perplexity\n## Generated: ${ts}\n## Role: ${role || 'general'}\n## Model: sonar\n\n${response}\n`
+        `# RPGPO Channel Response — Perplexity\n## Generated: ${ts}\n## Role: ${role || 'general'}\n## Model: ${result.model}\n\n${result.text}\n`
       );
       filesWritten.push(outFile);
-      output = response;
+      output = result.text;
+
+      costEntries.push(costs.recordCost({
+        provider: 'perplexity', model: result.model,
+        inputTokens: result.usage.inputTokens, outputTokens: result.usage.outputTokens,
+        totalTokens: result.usage.totalTokens,
+        cost: result.usage.cost,
+        taskId: task.id, taskType: 'ai-channel', role: role || 'general',
+      }));
     } else if (model === 'gemini') {
       queue.updateTask(task.id, { output: 'Calling Gemini...' });
-      const response = await callGemini(systemPrompt, prompt);
+      const costSettings = costs.getSettings();
+      const geminiModel = costSettings.geminiModel || 'gemini-2.5-flash-lite';
+      const result = await callGemini(systemPrompt, prompt, { model: geminiModel });
       const outFile = writeFile(
         `03-Operations/Reports/Channel-Gemini-${today}-${shortId}.md`,
-        `# RPGPO Channel Response — Gemini\n## Generated: ${ts}\n## Role: ${role || 'general'}\n## Model: gemini-2.0-flash\n\n${response}\n`
+        `# RPGPO Channel Response — Gemini\n## Generated: ${ts}\n## Role: ${role || 'general'}\n## Model: ${result.model}\n\n${result.text}\n`
       );
       filesWritten.push(outFile);
-      output = response;
+      output = result.text;
+
+      costEntries.push(costs.recordCost({
+        provider: 'gemini', model: result.model,
+        inputTokens: result.usage.inputTokens, outputTokens: result.usage.outputTokens,
+        totalTokens: result.usage.totalTokens,
+        taskId: task.id, taskType: 'ai-channel', role: role || 'general',
+      }));
     } else {
       throw new Error(`Unknown model: ${model}`);
     }
 
-    return { output, filesWritten };
+    return { output, filesWritten, costs: costEntries };
   },
 };
 

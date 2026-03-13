@@ -1,16 +1,44 @@
-// RPGPO Shared AI API Call Module
-// Used by board-runner.js and worker.js for all AI model interactions.
+// RPGPO Shared AI API Call Module v2
+// Returns structured results with usage metadata for cost tracking.
 // Safe: no auto-send, no auto-post, no financial execution.
 
 const https = require('https');
 
+// Provider state classification
+const PROVIDER_STATES = {
+  READY: 'ready',
+  MISSING: 'missing',
+  AUTH_FAILED: 'auth_failed',
+  QUOTA_UNAVAILABLE: 'quota_unavailable',
+  MODEL_UNAVAILABLE: 'model_unavailable',
+};
+
+function classifyError(provider, statusCode, errorMsg) {
+  const msg = (errorMsg || '').toLowerCase();
+  if (msg.includes('api key') || msg.includes('unauthorized') || msg.includes('invalid key') || statusCode === 401 || statusCode === 403) {
+    return PROVIDER_STATES.AUTH_FAILED;
+  }
+  if (msg.includes('quota') || msg.includes('rate limit') || msg.includes('resource exhausted') || msg.includes('too many requests') || statusCode === 429) {
+    return PROVIDER_STATES.QUOTA_UNAVAILABLE;
+  }
+  if (msg.includes('model not found') || msg.includes('not found') || msg.includes('does not exist') || msg.includes('is not available') || statusCode === 404) {
+    return PROVIDER_STATES.MODEL_UNAVAILABLE;
+  }
+  return null;
+}
+
 function callOpenAI(systemPrompt, userPrompt, opts = {}) {
   return new Promise((resolve, reject) => {
     const key = process.env.OPENAI_API_KEY;
-    if (!key) return reject(new Error('OPENAI_API_KEY not set'));
+    if (!key) {
+      const err = new Error('OPENAI_API_KEY not set');
+      err.providerState = PROVIDER_STATES.MISSING;
+      return reject(err);
+    }
 
+    const model = opts.model || 'gpt-4o';
     const body = JSON.stringify({
-      model: opts.model || 'gpt-4o',
+      model,
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt },
@@ -33,8 +61,23 @@ function callOpenAI(systemPrompt, userPrompt, opts = {}) {
       res.on('end', () => {
         try {
           const parsed = JSON.parse(data);
-          if (parsed.error) return reject(new Error(parsed.error.message));
-          resolve(parsed.choices[0].message.content);
+          if (parsed.error) {
+            const err = new Error(parsed.error.message);
+            err.providerState = classifyError('openai', res.statusCode, parsed.error.message);
+            return reject(err);
+          }
+          const text = parsed.choices[0].message.content;
+          const usage = parsed.usage || {};
+          resolve({
+            text,
+            provider: 'openai',
+            model,
+            usage: {
+              inputTokens: usage.prompt_tokens || 0,
+              outputTokens: usage.completion_tokens || 0,
+              totalTokens: usage.total_tokens || 0,
+            },
+          });
         } catch (e) {
           reject(new Error('OpenAI parse error: ' + data.slice(0, 300)));
         }
@@ -51,10 +94,15 @@ function callOpenAI(systemPrompt, userPrompt, opts = {}) {
 function callPerplexity(systemPrompt, userPrompt, opts = {}) {
   return new Promise((resolve, reject) => {
     const key = process.env.PERPLEXITY_API_KEY;
-    if (!key) return reject(new Error('PERPLEXITY_API_KEY not set'));
+    if (!key) {
+      const err = new Error('PERPLEXITY_API_KEY not set');
+      err.providerState = PROVIDER_STATES.MISSING;
+      return reject(err);
+    }
 
+    const model = opts.model || 'sonar';
     const body = JSON.stringify({
-      model: opts.model || 'sonar',
+      model,
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt },
@@ -77,8 +125,24 @@ function callPerplexity(systemPrompt, userPrompt, opts = {}) {
       res.on('end', () => {
         try {
           const parsed = JSON.parse(data);
-          if (parsed.error) return reject(new Error(parsed.error.message || JSON.stringify(parsed.error)));
-          resolve(parsed.choices[0].message.content);
+          if (parsed.error) {
+            const err = new Error(parsed.error.message || JSON.stringify(parsed.error));
+            err.providerState = classifyError('perplexity', res.statusCode, parsed.error.message);
+            return reject(err);
+          }
+          const text = parsed.choices[0].message.content;
+          const usage = parsed.usage || {};
+          resolve({
+            text,
+            provider: 'perplexity',
+            model,
+            usage: {
+              inputTokens: usage.prompt_tokens || 0,
+              outputTokens: usage.completion_tokens || 0,
+              totalTokens: usage.total_tokens || 0,
+              cost: usage.cost || null,  // Perplexity may include direct cost
+            },
+          });
         } catch (e) {
           reject(new Error('Perplexity parse error: ' + data.slice(0, 300)));
         }
@@ -95,9 +159,13 @@ function callPerplexity(systemPrompt, userPrompt, opts = {}) {
 function callGemini(systemPrompt, userPrompt, opts = {}) {
   return new Promise((resolve, reject) => {
     const key = process.env.GEMINI_API_KEY;
-    if (!key) return reject(new Error('GEMINI_API_KEY not set. Add it to your environment and restart PM2.'));
+    if (!key) {
+      const err = new Error('GEMINI_API_KEY not set');
+      err.providerState = PROVIDER_STATES.MISSING;
+      return reject(err);
+    }
 
-    const model = opts.model || 'gemini-2.0-flash';
+    const model = opts.model || 'gemini-2.5-flash-lite';
     const body = JSON.stringify({
       contents: [
         { role: 'user', parts: [{ text: systemPrompt + '\n\n' + userPrompt }] }
@@ -119,10 +187,28 @@ function callGemini(systemPrompt, userPrompt, opts = {}) {
       res.on('end', () => {
         try {
           const parsed = JSON.parse(data);
-          if (parsed.error) return reject(new Error(parsed.error.message || JSON.stringify(parsed.error)));
+          if (parsed.error) {
+            const err = new Error(parsed.error.message || JSON.stringify(parsed.error));
+            err.providerState = classifyError('gemini', res.statusCode || parsed.error.code, parsed.error.message);
+            return reject(err);
+          }
           const text = parsed.candidates?.[0]?.content?.parts?.[0]?.text;
-          if (!text) return reject(new Error('No content in Gemini response: ' + data.slice(0, 200)));
-          resolve(text);
+          if (!text) {
+            const err = new Error('No content in Gemini response: ' + data.slice(0, 200));
+            err.providerState = PROVIDER_STATES.MODEL_UNAVAILABLE;
+            return reject(err);
+          }
+          const um = parsed.usageMetadata || {};
+          resolve({
+            text,
+            provider: 'gemini',
+            model,
+            usage: {
+              inputTokens: um.promptTokenCount || 0,
+              outputTokens: um.candidatesTokenCount || 0,
+              totalTokens: um.totalTokenCount || 0,
+            },
+          });
         } catch (e) {
           reject(new Error('Gemini parse error: ' + data.slice(0, 300)));
         }
@@ -136,4 +222,4 @@ function callGemini(systemPrompt, userPrompt, opts = {}) {
   });
 }
 
-module.exports = { callOpenAI, callPerplexity, callGemini };
+module.exports = { callOpenAI, callPerplexity, callGemini, PROVIDER_STATES, classifyError };

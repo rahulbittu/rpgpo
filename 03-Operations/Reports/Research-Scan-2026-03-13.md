@@ -1,42 +1,40 @@
 # RPGPO Research Scan
-## Generated: 2026-03-13T01:03:11.761Z
+## Generated: 2026-03-13T04:17:14.091Z
 ## Source: Perplexity Research Director
 
 ### TopRanker-Growth
-**Key findings**
-- Toprankers projected 100% revenue growth in FY24 to Rs 90-100 crore from Rs 45-50 crore in FY23, driven by service expansion and ProBano acquisition for career counseling[1].
-- Estimated annual revenue varies across sources: $85.9M (Growjo, 491 employees, 33% employee growth)[3]; $7.8M (ZoomInfo, 233 employees)[4].
-- Student reach expanded 18X via LeadSquared sales/marketing automation; over 3M registered students, 150K paid, 15K+ exam selections[2][5].
-- Raised $4M Series A from Sixth Sense Ventures in 2021 for new categories like study abroad and tutoring[4].
+**Key findings:**
+- TopRankers, an Indian edtech platform for test prep (e.g., CLAT, CAT, IPMAT), has 3M+ registered students and 150K+ paid students, with 15K+ exam selections[3][6].
+- Raised $4M (Rs 31cr) Series A from Sixth Sense Ventures in recent funding (2 rounds total, <$5M)[2].
+- 233 employees with revenue of $7.8M; uses LeadSquared for 18X student outreach growth via sales/marketing automation[1][2].
+- Launched Lighthouse platform with mobile app, dashboard, and mentor network for law, design, management, data science[5].
+- Positions as "India's Largest Super Career Platform" with 360° Prep Engine (classes, tests, feedback, mentoring)[6].
 
-**Actionable insight**  
-Target partnerships with edtech growth tools like LeadSquared for rapid student acquisition; monitor revenue discrepancies to validate market sizing before investing or competing.
+**Actionable insight:**  
+Integrate sales automation like LeadSquared to scale user outreach 10-20X when building edtech products; target non-med/eng exam preps (law, management) for high-growth niches in India.
 
-**Confidence level**  
-Medium (revenue estimates conflict; oldest data from 2023).
+**Confidence level:** High
 
 ### Career-Target-Roles
-**Key findings**
-- ProBano acquisition positions Toprankers as full-stack career platform, counseling 30K+ students across 24 states, targeting 75K in FY24 and 1M high schoolers long-term[1].
-- Focus on non-medical/engineering careers: law, management, design, commerce, creative fields via test prep and guidance[5][6].
-- Integrates career guides/project managers; serves students from 144 cities with online/offline test prep and analytics[1].
-- Platform emphasizes passion discovery, weak area strengthening, time management for competitive/govt exams[4][6].
+**Key findings:**
+- TopRankers targets careers beyond medicine/engineering, focusing on law (CLAT, Judiciary), management (CAT, IPMAT), design (NIFT, NID), commerce, and creative fields[3][6].
+- Offers study abroad, tutoring, career counseling, finance/commerce test preps post-funding[2].
+- Mentor network spans law, design, management, data science; 360° Prep Engine includes personalized feedback/mentoring[5][6].
+- TPT platform enables coaching centers for live videos, doubt clearing, targeting exam prep roles[7].
 
-**Actionable insight**  
-Build or acquire counseling tools for high schoolers in emerging careers to capture Toprankers' expansion market; prioritize law/design/commerce segments for product differentiation.
+**Actionable insight:**  
+Prioritize product features for underserved career paths like law/design/management in edtech; build mentor matching and counseling tools to boost retention and monetization.
 
-**Confidence level**  
-High (consistent expansion focus post-2023 acquisition).
+**Confidence level:** Medium (inferred from platform focus; limited direct role data)
 
 ### Founder2Founder-First-Offer
-**Key findings**
-- CEO Gaurav Goel leads; prior $4M Series A from Sixth Sense Ventures (only noted round, ~Rs 31cr)[1][4].
-- Leadership includes CFO Akshay Sharma, CTO Rohit Garg; founded ~2020, HQ Bhopal/Bangalore[5][6].
-- No public data on founder-to-founder deals, first offers, or secondary liquidity; pre-IPO shares available via EquityZen but no valuation disclosed[6].
-- Profitable 3+ years pre-2023; employee growth 33% YoY[1][3].
+**Key findings:**
+- Founder/CEO Gaurav Goel leads; raised $4M Series A from Sixth Sense Ventures as first major round (prior <$5M total funding)[1][2].
+- CFO Akshay Sharma, CTO Rohit Garg; HQ in Bhopal, India; founded ~2020 with 151-250 employees[3][4].
+- Goel credits LeadSquared as "lifeline" for 18X growth, expanding from basic leads to full automation[1].
+- No public data on prior founder-to-founder offers; Series A appears as key early institutional milestone[2].
 
-**Actionable insight**  
-Approach CEO Gaurav Goel directly for partnership/acquisition talks leveraging profitability; use EquityZen for pre-IPO access if scaling founder networks.
+**Actionable insight:**  
+For pre-Series A founders, secure operational tools (e.g., LeadSquared) pre-funding to demonstrate scalable growth metrics that attract VCs like Sixth Sense.
 
-**Confidence level**  
-Low (no direct data on founder deals/offers; inferred from leadership/funding).
+**Confidence level:** Medium (funding clear; no explicit F2F offer details)

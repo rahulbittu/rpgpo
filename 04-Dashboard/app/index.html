@@ -43,6 +43,9 @@
           <span class="nav-icon">&#9888;</span><span class="nav-label">Approvals</span>
           <span class="nav-badge" id="navApprovalBadge" style="display:none">0</span>
         </a>
+        <a href="#" class="nav-link" data-tab="costs">
+          <span class="nav-icon">&#36;</span><span class="nav-label">Costs</span>
+        </a>
         <a href="#" class="nav-link" data-tab="logs">
           <span class="nav-icon">&#9776;</span><span class="nav-label">Logs</span>
         </a>
@@ -79,6 +82,26 @@
           <div class="status-cell"><span class="status-cell-label">Queue</span><span class="status-cell-value" id="hsQueue">--</span></div>
           <div class="status-cell"><span class="status-cell-label">Models</span><span class="status-cell-value" id="hsModels">--</span></div>
           <div class="status-cell"><span class="status-cell-label">Approvals</span><span class="status-cell-value" id="hsApprovals">--</span></div>
+        </div>
+
+        <!-- Cost Summary Strip -->
+        <div class="cost-strip" id="homeCostStrip">
+          <div class="cost-strip-item">
+            <span class="cost-strip-label">Today</span>
+            <span class="cost-strip-value" id="costToday">--</span>
+          </div>
+          <div class="cost-strip-item">
+            <span class="cost-strip-label">This Week</span>
+            <span class="cost-strip-value" id="costWeek">--</span>
+          </div>
+          <div class="cost-strip-item">
+            <span class="cost-strip-label">Last Board Run</span>
+            <span class="cost-strip-value" id="costLastBoard">--</span>
+          </div>
+          <div class="cost-strip-item">
+            <span class="cost-strip-label">Calls Today</span>
+            <span class="cost-strip-value" id="costCallsToday">--</span>
+          </div>
         </div>
 
         <div class="heartbeat-bar" id="heartbeatBar">
@@ -303,6 +326,61 @@
         <div id="approvalsList"></div>
       </section>
 
+      <!-- COST CENTER -->
+      <section class="tab-panel" id="tab-costs">
+        <div class="page-header">
+          <div class="header-row">
+            <div>
+              <h1>Cost Center</h1>
+              <p class="subtitle">AI spend tracking by provider, model, and run</p>
+            </div>
+            <button class="refresh-btn" onclick="loadCosts()">&#8635;</button>
+          </div>
+        </div>
+
+        <!-- Summary cards -->
+        <div class="g4" id="costSummaryCards">
+          <div class="cost-card">
+            <span class="cost-card-label">Today</span>
+            <span class="cost-card-value" id="ccToday">--</span>
+            <span class="cost-card-detail" id="ccTodayCalls">--</span>
+          </div>
+          <div class="cost-card">
+            <span class="cost-card-label">This Week</span>
+            <span class="cost-card-value" id="ccWeek">--</span>
+            <span class="cost-card-detail" id="ccWeekCalls">--</span>
+          </div>
+          <div class="cost-card">
+            <span class="cost-card-label">Last Board Run</span>
+            <span class="cost-card-value" id="ccLastBoard">--</span>
+            <span class="cost-card-detail" id="ccLastBoardCalls">--</span>
+          </div>
+          <div class="cost-card">
+            <span class="cost-card-label">Total Entries</span>
+            <span class="cost-card-value" id="ccTotalEntries">--</span>
+            <span class="cost-card-detail">ledger records</span>
+          </div>
+        </div>
+
+        <!-- By Provider -->
+        <div class="g2 mt">
+          <div class="card">
+            <h3>By Provider (7d)</h3>
+            <div id="ccByProvider"></div>
+          </div>
+          <div class="card">
+            <h3>By Model (7d)</h3>
+            <div id="ccByModel"></div>
+          </div>
+        </div>
+
+        <!-- By Day -->
+        <div class="card mt">
+          <h3>By Day (7d)</h3>
+          <div id="ccByDay"></div>
+        </div>
+      </section>
+
       <!-- LOGS -->
       <section class="tab-panel" id="tab-logs">
         <div class="page-header">
@@ -379,17 +457,17 @@
       <section class="tab-panel" id="tab-settings">
         <div class="page-header">
           <h1>Settings</h1>
-          <p class="subtitle">Integrations, model status, and system info</p>
+          <p class="subtitle">Integrations, model status, budget, and system info</p>
         </div>
 
         <div class="g2">
           <div class="card">
-            <h3>AI Models</h3>
+            <h3>AI Providers</h3>
             <div id="settingsModels">
               <div class="model-row"><span class="model-name">Claude</span><span class="model-tag local">Local</span></div>
-              <div class="model-row"><span class="model-name">OpenAI</span><span class="model-tag" id="mOpenAI">--</span></div>
-              <div class="model-row"><span class="model-name">Perplexity</span><span class="model-tag" id="mPerplexity">--</span></div>
-              <div class="model-row"><span class="model-name">Gemini</span><span class="model-tag" id="mGemini">--</span></div>
+              <div class="model-row"><span class="model-name">OpenAI</span><span class="model-detail">gpt-4o</span><span class="model-tag" id="mOpenAI">--</span></div>
+              <div class="model-row"><span class="model-name">Perplexity</span><span class="model-detail">sonar</span><span class="model-tag" id="mPerplexity">--</span></div>
+              <div class="model-row"><span class="model-name">Gemini</span><span class="model-detail" id="mGeminiModel">gemini-2.5-flash-lite</span><span class="model-tag" id="mGemini">--</span></div>
             </div>
           </div>
           <div class="card">
@@ -400,17 +478,45 @@
 
         <div class="g2 mt">
           <div class="card">
+            <h3>Budget Settings</h3>
+            <div id="budgetSettings">
+              <div class="settings-row">
+                <span class="settings-label">Gemini Model</span>
+                <select id="settGeminiModel" class="settings-select" onchange="saveBudgetSettings()">
+                  <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (cheapest)</option>
+                  <option value="gemini-2.5-flash">gemini-2.5-flash (faster)</option>
+                </select>
+              </div>
+              <div class="settings-row">
+                <span class="settings-label">Daily Limit ($)</span>
+                <input type="number" id="settBudgetLimit" class="settings-input" placeholder="e.g. 1.00" step="0.01" min="0" onchange="saveBudgetSettings()" />
+              </div>
+              <div class="settings-row">
+                <span class="settings-label">Warn at ($)</span>
+                <input type="number" id="settWarnThreshold" class="settings-input" placeholder="e.g. 0.50" step="0.01" min="0" onchange="saveBudgetSettings()" />
+              </div>
+              <div class="settings-row">
+                <span class="settings-label">Auto-disable</span>
+                <label class="settings-toggle">
+                  <input type="checkbox" id="settDisableAfter" onchange="saveBudgetSettings()" />
+                  <span>Stop Gemini after limit</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="card">
             <h3>System</h3>
             <div id="settingsSystem"></div>
           </div>
-          <div class="card">
-            <h3>RPGPO Access Classes</h3>
-            <div style="font-size:12px">
-              <div class="settings-row"><span class="settings-label">Class A</span> Core Safe — governance, repos, dashboards</div>
-              <div class="settings-row"><span class="settings-label">Class B</span> Controlled — toprankerapp@gmail, approved tools</div>
-              <div class="settings-row"><span class="settings-label">Class C</span> Sensitive — selected threads, private docs</div>
-              <div class="settings-row"><span class="settings-label">Class D</span> Forbidden — anything not explicitly approved</div>
-            </div>
+        </div>
+
+        <div class="card mt">
+          <h3>RPGPO Access Classes</h3>
+          <div style="font-size:12px">
+            <div class="settings-row"><span class="settings-label">Class A</span> Core Safe — governance, repos, dashboards</div>
+            <div class="settings-row"><span class="settings-label">Class B</span> Controlled — toprankerapp@gmail, approved tools</div>
+            <div class="settings-row"><span class="settings-label">Class C</span> Sensitive — selected threads, private docs</div>
+            <div class="settings-row"><span class="settings-label">Class D</span> Forbidden — anything not explicitly approved</div>
           </div>
         </div>
       </section>
