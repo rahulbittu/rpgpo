@@ -7,7 +7,9 @@ const { execSync, spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
-// Load .env if it exists
+// .env is the canonical source for API keys — always overrides process.env
+// to prevent stale PM2-cached placeholders from being used.
+const API_KEY_NAMES = new Set(['OPENAI_API_KEY', 'PERPLEXITY_API_KEY', 'GEMINI_API_KEY']);
 (function loadEnv() {
   try {
     const lines = fs.readFileSync(path.join(__dirname, '.env'), 'utf-8').split('\n');
@@ -18,7 +20,7 @@ const fs = require('fs');
       if (eq === -1) continue;
       const key = t.slice(0, eq).trim();
       const val = t.slice(eq + 1).trim().replace(/^["']|["']$/g, '');
-      if (!process.env[key]) process.env[key] = val;
+      if (API_KEY_NAMES.has(key) || !process.env[key]) process.env[key] = val;
     }
   } catch {}
 })();
@@ -36,7 +38,14 @@ let running = false;
 
 console.log(`[worker] RPGPO Task Worker v6 started at ${new Date().toISOString()}`);
 console.log(`[worker] Root: ${RPGPO_ROOT}`);
-console.log(`[worker] Models: OpenAI=${process.env.OPENAI_API_KEY ? 'OK' : 'missing'} Perplexity=${process.env.PERPLEXITY_API_KEY ? 'OK' : 'missing'} Gemini=${process.env.GEMINI_API_KEY ? 'OK' : 'missing'}`);
+// Key diagnostic — show prefix only, confirm source is .env not placeholder
+function keyDiag(name) {
+  const v = process.env[name];
+  if (!v) return 'MISSING';
+  if (v === 'your_key_here' || v.startsWith('your_')) return 'PLACEHOLDER (broken!)';
+  return `OK (${v.slice(0, 6)}...)`;
+}
+console.log(`[worker] Keys: OpenAI=${keyDiag('OPENAI_API_KEY')} Perplexity=${keyDiag('PERPLEXITY_API_KEY')} Gemini=${keyDiag('GEMINI_API_KEY')}`);
 console.log(`[worker] Polling every ${POLL_INTERVAL}ms`);
 
 // --- Task handlers ---
@@ -168,92 +177,227 @@ const handlers = {
         const geminiModel = costSettings.geminiModel || 'gemini-2.5-flash-lite';
         result = await callGemini(systemPrompt, userPrompt, { model: geminiModel });
       } else if (model === 'claude') {
-        // Claude Builder — real execution path
+        // ═══ Claude Builder — honest execution path ═══
         const today = new Date().toISOString().slice(0, 10);
         const isBuildTask = ['implement', 'build', 'code'].includes(st.stage);
 
-        // Try to execute Claude CLI in print mode
+        // ── Step 1: Ground in real repo ──
+        queue.updateTask(task.id, { output: `[builder] Inspecting repo structure...` });
+        let repoContext = '';
+        try {
+          // Get real file tree for target files
+          const targetFiles = [...(st.files_to_read || []), ...(st.files_to_write || [])];
+          const realFiles = [];
+          const missingFiles = [];
+          for (const f of targetFiles) {
+            const fullPath = path.join(RPGPO_ROOT, f);
+            if (fs.existsSync(fullPath)) { realFiles.push(f); }
+            else { missingFiles.push(f); }
+          }
+          if (missingFiles.length && isBuildTask && !realFiles.length) {
+            // No real target files — block, do not guess
+            intake.updateSubtask(subtaskId, {
+              status: 'blocked',
+              builder_outcome: 'blocked_missing_context',
+              output: `Builder blocked: target files not found in repo.\nMissing: ${missingFiles.join(', ')}`,
+              error: `Cannot execute build — target files do not exist: ${missingFiles.join(', ')}`,
+            });
+            intake.updateTask(st.parent_task_id, { status: 'waiting_approval' });
+            return {
+              output: `Builder blocked: missing files ${missingFiles.join(', ')}`,
+              builderOutcome: 'blocked_missing_context',
+            };
+          }
+          if (realFiles.length) {
+            repoContext = `\nReal files verified in repo:\n${realFiles.map(f => '  ✓ ' + f).join('\n')}`;
+            if (missingFiles.length) repoContext += `\nMissing (will skip):\n${missingFiles.map(f => '  ✗ ' + f).join('\n')}`;
+          }
+        } catch (e) {
+          console.log(`[worker] Repo inspection warning: ${e.message.slice(0, 80)}`);
+        }
+
+        // ── Step 2: Attempt async Claude CLI execution ──
+        queue.updateTask(task.id, { output: `[builder] Launching Claude CLI...${repoContext}` });
         let claudeResult = null;
         let filesChanged = [];
+        let builderOutcome = null;
+
         try {
-          // Snapshot git status before
+          // Snapshot git state before
           let gitBefore = '';
           try { gitBefore = execSync('git diff --name-only', { cwd: RPGPO_ROOT, timeout: 5000 }).toString().trim(); } catch {}
 
-          // Run claude -p (non-interactive, print mode)
-          queue.updateTask(task.id, { output: `Claude Builder executing: ${st.title}...` });
-          const claudeOut = execSync(
-            `claude -p ${JSON.stringify(userPrompt.slice(0, 8000))}`,
-            { cwd: RPGPO_ROOT, timeout: 120000, maxBuffer: 1024 * 1024 }
-          ).toString();
+          // Async spawn with progress streaming + timeout
+          claudeResult = await new Promise((resolve, reject) => {
+            const args = ['-p', userPrompt.slice(0, 8000)];
+            const child = spawn('claude', args, {
+              cwd: RPGPO_ROOT,
+              timeout: 120000,
+              env: { ...process.env },
+              stdio: ['pipe', 'pipe', 'pipe'],
+            });
 
-          claudeResult = claudeOut;
+            let stdout = '';
+            let stderr = '';
+            const progressInterval = setInterval(() => {
+              const lines = stdout.split('\n').length;
+              queue.updateTask(task.id, {
+                output: `[builder] Claude working... (${lines} lines output so far)${repoContext}`,
+              });
+            }, 3000);
 
-          // Snapshot git status after to detect file changes
+            child.stdout.on('data', d => { stdout += d.toString(); });
+            child.stderr.on('data', d => { stderr += d.toString(); });
+
+            child.on('close', (code) => {
+              clearInterval(progressInterval);
+              if (code === 0 || stdout.length > 0) {
+                resolve(stdout);
+              } else {
+                reject(new Error(stderr || `Claude CLI exit code ${code}`));
+              }
+            });
+
+            child.on('error', (err) => {
+              clearInterval(progressInterval);
+              reject(err);
+            });
+
+            // Hard timeout
+            setTimeout(() => {
+              clearInterval(progressInterval);
+              try { child.kill('SIGTERM'); } catch {}
+              reject(new Error('BUILDER_TIMEOUT'));
+            }, 120000);
+          });
+
+          // ── Step 3: Detect file changes via git diff ──
+          queue.updateTask(task.id, { output: `[builder] Checking git diff for changes...` });
           try {
             const gitAfter = execSync('git diff --name-only', { cwd: RPGPO_ROOT, timeout: 5000 }).toString().trim();
             const beforeSet = new Set(gitBefore.split('\n').filter(Boolean));
-            const afterFiles = gitAfter.split('\n').filter(Boolean);
-            filesChanged = afterFiles.filter(f => !beforeSet.has(f));
-            // Also check untracked files
+            filesChanged = gitAfter.split('\n').filter(Boolean).filter(f => !beforeSet.has(f));
             const untracked = execSync('git ls-files --others --exclude-standard', { cwd: RPGPO_ROOT, timeout: 5000 }).toString().trim();
             if (untracked) filesChanged.push(...untracked.split('\n').filter(Boolean));
           } catch {}
 
+          // ── Step 4: Classify outcome honestly ──
+          if (filesChanged.length > 0) {
+            builderOutcome = 'code_applied';
+          } else {
+            builderOutcome = 'no_changes';
+          }
+
         } catch (claudeErr) {
-          // Claude CLI not available or failed — fallback to prompt file
-          console.log(`[worker] Claude CLI failed, falling back to prompt file: ${claudeErr.message.slice(0, 100)}`);
+          const errMsg = claudeErr.message || '';
+          const isTimeout = errMsg.includes('ETIMEDOUT') || errMsg.includes('BUILDER_TIMEOUT');
+          const isNotFound = errMsg.includes('ENOENT') || errMsg.includes('not found');
+
+          console.log(`[worker] Claude Builder failed: ${errMsg.slice(0, 120)}`);
+
+          if (isTimeout) {
+            builderOutcome = 'builder_timeout';
+          } else {
+            builderOutcome = 'builder_fallback_prompt_created';
+          }
+
+          // ── Fallback: write prompt file, mark as builder_fallback (NOT done) ──
           const promptFile = writeFile(
             `03-Operations/Reports/Subtask-Claude-${today}-${subtaskId}.md`,
-            `# RPGPO Subtask — Claude Builder\n## ${st.title}\n## Stage: ${st.stage}\n\n${userPrompt}\n`
+            `# RPGPO Builder Prompt — Manual Execution Required\n## ${st.title}\n## Stage: ${st.stage}\n## Reason: ${isTimeout ? 'Claude CLI timed out' : 'Claude CLI unavailable'}\n\n${userPrompt}\n`
           );
+
           intake.updateSubtask(subtaskId, {
-            status: 'waiting_approval',
-            output: `Claude CLI unavailable. Prompt saved to ${promptFile}. Execute manually and approve when done.`,
+            status: 'builder_fallback',
+            builder_outcome: builderOutcome,
+            output: `Claude CLI ${isTimeout ? 'timed out' : 'unavailable'}. Prompt saved to ${promptFile}.\nManual execution required — launch Claude Builder and run this prompt.`,
+            prompt_file: promptFile,
             files_changed: [],
           });
-          return { output: `Claude prompt saved: ${promptFile} (execute manually)`, filesWritten: [promptFile] };
+          intake.updateTask(st.parent_task_id, { status: 'waiting_approval' });
+
+          return {
+            output: `Builder ${isTimeout ? 'timeout' : 'fallback'}: ${promptFile}`,
+            builderOutcome,
+            filesWritten: [promptFile],
+          };
         }
 
-        // Save output report
+        // ── Step 5: Save report ──
         const reportFile = writeFile(
           `03-Operations/Reports/Builder-Claude-${today}-${subtaskId}.md`,
-          `# Claude Builder Output\n## ${st.title}\n## Stage: ${st.stage}\n## Date: ${today}\n\n${claudeResult.slice(0, 10000)}\n\n## Files Changed\n${filesChanged.map(f => '- ' + f).join('\n') || 'None detected'}\n`
+          `# Claude Builder Output\n## ${st.title}\n## Stage: ${st.stage}\n## Outcome: ${builderOutcome}\n## Date: ${today}\n\n${(claudeResult || '').slice(0, 10000)}\n\n## Files Changed\n${filesChanged.map(f => '- ' + f).join('\n') || 'None detected'}\n`
         );
 
-        // For build tasks with file changes, require approval before continuing
-        if (isBuildTask && filesChanged.length > 0) {
+        // ── Step 6: State transition based on honest outcome ──
+        if (builderOutcome === 'code_applied') {
+          // Real changes made — require approval before continuing
+          queue.updateTask(task.id, { output: `[builder] Code applied. ${filesChanged.length} files changed. Waiting for review.` });
+
+          // Generate diff summary
+          let diffSummary = '';
+          try {
+            diffSummary = execSync('git diff --stat', { cwd: RPGPO_ROOT, timeout: 5000 }).toString().trim();
+          } catch {}
+
           intake.updateSubtask(subtaskId, {
             status: 'waiting_approval',
-            output: claudeResult.slice(0, 5000),
+            builder_outcome: 'code_applied',
+            output: (claudeResult || '').slice(0, 5000),
             files_changed: filesChanged,
+            diff_summary: diffSummary,
           });
           intake.updateTask(st.parent_task_id, { status: 'waiting_approval' });
+
           return {
-            output: `Claude Builder completed: ${st.title}\nFiles changed: ${filesChanged.join(', ')}\nAwaiting approval before continuing.`,
+            output: `Builder: code_applied. ${filesChanged.length} file(s) changed. Awaiting approval.`,
+            builderOutcome: 'code_applied',
             filesWritten: [reportFile, ...filesChanged],
           };
         }
 
-        // Non-build or no file changes — mark done
-        intake.updateSubtask(subtaskId, {
-          status: 'done',
-          output: claudeResult.slice(0, 5000),
-          files_changed: filesChanged,
-        });
-        const wfResult = workflow.onSubtaskComplete(subtaskId);
+        if (builderOutcome === 'no_changes') {
+          // Claude ran but made no file changes
+          if (isBuildTask) {
+            // Build task with no changes is suspicious — surface it, don't auto-continue
+            intake.updateSubtask(subtaskId, {
+              status: 'waiting_approval',
+              builder_outcome: 'no_changes',
+              output: `Claude ran but made no file changes.\n${(claudeResult || '').slice(0, 3000)}`,
+              files_changed: [],
+            });
+            intake.updateTask(st.parent_task_id, { status: 'waiting_approval' });
 
-        if (wfResult.next_subtask_ids) {
-          for (const nextId of wfResult.next_subtask_ids) {
-            const nextSt = intake.getSubtask(nextId);
-            if (nextSt) queue.addTask('execute-subtask', `Subtask: ${nextSt.title}`, { subtaskId: nextId });
+            return {
+              output: `Builder: no_changes on a build task — needs review.`,
+              builderOutcome: 'no_changes',
+              filesWritten: [reportFile],
+            };
           }
+
+          // Non-build (research/audit) Claude task with no changes is fine
+          intake.updateSubtask(subtaskId, {
+            status: 'done',
+            builder_outcome: 'no_changes',
+            output: (claudeResult || '').slice(0, 5000),
+            files_changed: [],
+          });
+          const wfResult = workflow.onSubtaskComplete(subtaskId);
+          if (wfResult.next_subtask_ids) {
+            for (const nextId of wfResult.next_subtask_ids) {
+              const nextSt = intake.getSubtask(nextId);
+              if (nextSt) queue.addTask('execute-subtask', `Subtask: ${nextSt.title}`, { subtaskId: nextId });
+            }
+          }
+          return {
+            output: `Builder: ${(claudeResult || '').slice(0, 400)}\n${wfResult.message}`,
+            builderOutcome: 'no_changes',
+            filesWritten: [reportFile],
+          };
         }
 
-        return {
-          output: `Claude Builder: ${claudeResult.slice(0, 500)}\nFiles: ${filesChanged.join(', ') || 'none'}\n${wfResult.message}`,
-          filesWritten: [reportFile, ...filesChanged],
-        };
+        // Should not reach here, but be safe
+        return { output: 'Builder completed with unknown outcome', builderOutcome };
       } else {
         throw new Error('Unknown model: ' + model);
       }

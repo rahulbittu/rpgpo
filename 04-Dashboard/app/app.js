@@ -1170,7 +1170,7 @@ function updateFlowExplainer() {
   }
 
   const stageOrder = ['intake', 'deliberating', 'planned', 'executing', 'done'];
-  const statusMap = { waiting_approval: 'executing', failed: 'done', canceled: 'done' };
+  const statusMap = { waiting_approval: 'executing', builder_fallback: 'executing', waiting_human: 'executing', failed: 'done', canceled: 'done' };
   const current = statusMap[t.status] || t.status;
   const currentIdx = stageOrder.indexOf(current);
 
@@ -1194,7 +1194,9 @@ function getStatusBanner(status) {
     deliberating:      { dot: 'var(--purple)',     text: 'Board is deliberating — analyzing your request...', pulse: true },
     planned:           { dot: 'var(--blue)',       text: 'Plan ready — review the Board\'s recommendation and approve', pulse: false },
     waiting_approval:  { dot: 'var(--yellow)',     text: 'Waiting for your approval on one or more subtasks', pulse: true },
-    executing:         { dot: 'var(--yellow)',     text: 'Executing subtasks...', pulse: true },
+    builder_fallback:  { dot: 'var(--red)',        text: 'Builder could not execute — manual Claude session required', pulse: true },
+    waiting_human:     { dot: 'var(--yellow)',     text: 'Waiting for manual action from Rahul', pulse: true },
+    executing:         { dot: 'var(--green)',      text: 'Executing subtasks...', pulse: true },
     done:              { dot: 'var(--green)',      text: 'All subtasks completed', pulse: false },
     failed:            { dot: 'var(--red)',        text: 'One or more subtasks failed', pulse: false },
   };
@@ -1240,14 +1242,17 @@ function renderIntakeCurrentHero() {
   // Status dot color + pulse
   const dotColors = {
     intake: 'var(--text-dim)', deliberating: 'var(--purple)', planned: 'var(--blue)',
-    executing: 'var(--yellow)', waiting_approval: 'var(--yellow)', done: 'var(--green)', failed: 'var(--red)',
+    executing: 'var(--green)', waiting_approval: 'var(--yellow)', builder_fallback: 'var(--red)',
+    waiting_human: 'var(--yellow)', done: 'var(--green)', failed: 'var(--red)',
   };
   const isPulse = ['deliberating', 'executing'].includes(t.status);
   const dotColor = dotColors[t.status] || 'var(--text-faint)';
 
   const statusLabels = {
     intake: 'Task Submitted', deliberating: 'Deliberation Running', planned: 'Plan Ready',
-    executing: 'Executing', waiting_approval: 'Waiting for Approval', done: 'Completed', failed: 'Failed',
+    executing: 'Executing', waiting_approval: 'Waiting for Approval',
+    builder_fallback: 'Builder Fallback', waiting_human: 'Needs Manual Action',
+    done: 'Completed', failed: 'Failed',
   };
 
   hero.innerHTML = `<div class="intake-hero" onclick="showIntakeDetail('${t.task_id}')" style="cursor:pointer">
@@ -1592,7 +1597,11 @@ function renderGlobalApprovalInbox() {
 
   for (const s of PENDING_APPROVALS) {
     const typeIcon = getSubtaskTypeIcon(s.stage);
-    html += `<div class="approval-inbox-item">
+    const isFallback = s.status === 'builder_fallback';
+    const outcome = s.builder_outcome || '';
+    const outcomeLabel = getBuilderOutcomeLabel(outcome);
+
+    html += `<div class="approval-inbox-item ${isFallback ? 'is-fallback' : ''}">
       <div class="approval-inbox-item-info">
         <span class="subtask-type-icon ${s.stage}">${typeIcon}</span>
         <div>
@@ -1600,14 +1609,32 @@ function renderGlobalApprovalInbox() {
           <div class="approval-inbox-item-meta">
             <span class="stage-tag ${s.stage}">${esc(s.stage)}</span>
             <span class="task-model-tag ${s.assigned_model}">${esc(s.assigned_model)}</span>
+            ${outcome ? `<span class="builder-outcome-tag ${outcome}">${outcomeLabel}</span>` : ''}
             <span style="color:var(--text-faint);font-size:9px">from: ${esc(s.parent_title)}</span>
           </div>
           ${s.files_changed && s.files_changed.length ? `<div class="approval-files-changed">${s.files_changed.map(f => '<span class="file-badge">' + esc(f) + '</span>').join('')}</div>` : ''}
+          ${s.diff_summary ? `<div class="builder-diff-summary"><pre>${esc(s.diff_summary)}</pre></div>` : ''}
+          ${s.prompt_file ? `<div class="builder-prompt-link">Prompt file: <code>${esc(s.prompt_file)}</code></div>` : ''}
         </div>
       </div>
-      <button class="btn-approve-global" onclick="event.stopPropagation();approveSubtaskGlobal('${s.subtask_id}', this)">
-        <span>&#10003;</span> Approve & Continue
-      </button>
+      <div class="approval-inbox-actions">
+        ${isFallback ? `
+          <button class="btn-launch-builder" onclick="event.stopPropagation();launchClaude()">
+            <span>&#9654;</span> Launch Claude Builder
+          </button>
+          <button class="btn-approve-global" onclick="event.stopPropagation();approveSubtaskGlobal('${s.subtask_id}', this)">
+            <span>&#10003;</span> Manual Execution Done
+          </button>
+        ` : outcome === 'code_applied' ? `
+          <button class="btn-approve-global" onclick="event.stopPropagation();approveSubtaskGlobal('${s.subtask_id}', this)">
+            <span>&#10003;</span> Approve Changes
+          </button>
+        ` : `
+          <button class="btn-approve-global" onclick="event.stopPropagation();approveSubtaskGlobal('${s.subtask_id}', this)">
+            <span>&#10003;</span> Approve & Continue
+          </button>
+        `}
+      </div>
     </div>`;
   }
 
@@ -1665,7 +1692,9 @@ function renderCurrentTaskFocus(data) {
 
   const statusLabels = {
     intake: 'Submitted', deliberating: 'Board Deliberating', planned: 'Plan Ready',
-    executing: 'Executing', waiting_approval: 'Needs Approval', done: 'Done', failed: 'Failed',
+    executing: 'Executing', waiting_approval: 'Needs Approval',
+    builder_fallback: 'Builder Fallback', waiting_human: 'Manual Action Needed',
+    done: 'Done', failed: 'Failed',
   };
 
   let html = `<div class="current-task-focus" onclick="switchTab('intake');showIntakeDetail('${t.task_id}')" style="cursor:pointer">
@@ -1735,6 +1764,19 @@ function getSubtaskTypeIcon(stage) {
   return icons[stage] || '&#9654;';
 }
 
+function getBuilderOutcomeLabel(outcome) {
+  const labels = {
+    code_applied: 'Code Applied',
+    no_changes: 'No Changes',
+    builder_fallback_prompt_created: 'Fallback — Manual Required',
+    builder_timeout: 'Builder Timed Out',
+    blocked_missing_context: 'Blocked — Missing Files',
+    waiting_approval_for_commit: 'Awaiting Commit Approval',
+    manual_execution_confirmed: 'Manual Done',
+  };
+  return labels[outcome] || outcome || '';
+}
+
 // ═══════════════════════════════════════════
 // TASK TIMELINE — Vertical timeline per task
 // ═══════════════════════════════════════════
@@ -1773,6 +1815,8 @@ function renderTaskTimeline(task, subtasks) {
       role: st.assigned_role, model: st.assigned_model, status: st.status,
       output: st.output?.slice(0, 120), files: st.files_changed || st.files_to_write || [],
       error: st.error, subtask_id: st.subtask_id, order: i + 1,
+      builder_outcome: st.builder_outcome, diff_summary: st.diff_summary,
+      prompt_file: st.prompt_file,
     });
   }
 
@@ -1782,6 +1826,8 @@ function renderTaskTimeline(task, subtasks) {
     const statusCls = ev.status === 'done' ? 'tl-done' :
                       ev.status === 'running' ? 'tl-running' :
                       ev.status === 'waiting_approval' ? 'tl-waiting' :
+                      ev.status === 'builder_fallback' ? 'tl-fallback' :
+                      ev.status === 'waiting_human' ? 'tl-waiting' :
                       ev.status === 'failed' ? 'tl-failed' :
                       ev.status === 'blocked' ? 'tl-blocked' :
                       ev.status === 'queued' ? 'tl-queued' : 'tl-proposed';
@@ -1799,16 +1845,52 @@ function renderTaskTimeline(task, subtasks) {
           <span class="intake-status-badge ${ev.status}" style="font-size:8px;margin-left:auto">${(ev.status || '').replace('_', ' ')}</span>
         </div>`;
 
+    // Builder outcome badge
+    if (ev.builder_outcome) {
+      const outcomeLabel = getBuilderOutcomeLabel(ev.builder_outcome);
+      html += `<div style="margin-top:3px"><span class="builder-outcome-tag ${ev.builder_outcome}">${outcomeLabel}</span></div>`;
+    }
+
     if (ev.detail) html += `<div class="tl-detail">${esc(ev.detail)}</div>`;
     if (ev.output) html += `<div class="tl-output">${esc(ev.output)}</div>`;
     if (ev.error) html += `<div class="tl-error">${esc(ev.error)}</div>`;
+
+    // Diff summary for code changes
+    if (ev.diff_summary) {
+      html += `<div class="tl-diff-summary"><div class="tl-diff-label">Changes:</div><pre>${esc(ev.diff_summary)}</pre></div>`;
+    }
+
     if (ev.files && ev.files.length) {
       html += `<div class="tl-files">${ev.files.map(f => '<span class="file-badge">' + esc(f) + '</span>').join('')}</div>`;
     }
-    if (ev.status === 'waiting_approval') {
-      html += `<button class="btn-approve-inline" onclick="event.stopPropagation();approveSubtaskGlobal('${ev.subtask_id}', this)" style="margin-top:4px">
-        <span>&#10003;</span> Approve & Continue
-      </button>`;
+
+    // Prompt file link for fallbacks
+    if (ev.prompt_file) {
+      html += `<div class="builder-prompt-link" style="margin-top:4px">Prompt: <code>${esc(ev.prompt_file)}</code></div>`;
+    }
+
+    // Action buttons based on status
+    if (ev.status === 'builder_fallback') {
+      html += `<div class="tl-actions" style="margin-top:6px;display:flex;gap:6px">
+        <button class="btn-launch-builder" onclick="event.stopPropagation();launchClaude()">
+          <span>&#9654;</span> Launch Claude Builder
+        </button>
+        <button class="btn-approve-inline" onclick="event.stopPropagation();approveSubtaskGlobal('${ev.subtask_id}', this)">
+          <span>&#10003;</span> Manual Execution Done
+        </button>
+      </div>`;
+    } else if (ev.status === 'waiting_approval') {
+      html += `<div class="tl-actions" style="margin-top:4px">`;
+      if (ev.builder_outcome === 'code_applied') {
+        html += `<button class="btn-approve-inline" onclick="event.stopPropagation();approveSubtaskGlobal('${ev.subtask_id}', this)">
+          <span>&#10003;</span> Approve Changes
+        </button>`;
+      } else {
+        html += `<button class="btn-approve-inline" onclick="event.stopPropagation();approveSubtaskGlobal('${ev.subtask_id}', this)">
+          <span>&#10003;</span> Approve & Continue
+        </button>`;
+      }
+      html += `</div>`;
     }
 
     html += '</div></div>';

@@ -13,6 +13,15 @@ const PROVIDER_STATES = {
   MODEL_UNAVAILABLE: 'model_unavailable',
 };
 
+// Reject placeholder / obviously-bad keys before they hit any API
+function validateKey(provider, key) {
+  if (!key) return { valid: false, reason: `${provider} API key not set` };
+  if (key === 'your_key_here' || key.startsWith('your_') || key === 'sk-placeholder' || key.length < 10) {
+    return { valid: false, reason: `${provider} API key is a placeholder ("${key.slice(0, 8)}...")` };
+  }
+  return { valid: true };
+}
+
 function classifyError(provider, statusCode, errorMsg) {
   const msg = (errorMsg || '').toLowerCase();
   if (msg.includes('api key') || msg.includes('unauthorized') || msg.includes('invalid key') || statusCode === 401 || statusCode === 403) {
@@ -30,8 +39,9 @@ function classifyError(provider, statusCode, errorMsg) {
 function callOpenAI(systemPrompt, userPrompt, opts = {}) {
   return new Promise((resolve, reject) => {
     const key = process.env.OPENAI_API_KEY;
-    if (!key) {
-      const err = new Error('OPENAI_API_KEY not set');
+    const keyCheck = validateKey('OpenAI', key);
+    if (!keyCheck.valid) {
+      const err = new Error(keyCheck.reason);
       err.providerState = PROVIDER_STATES.MISSING;
       return reject(err);
     }
@@ -94,8 +104,9 @@ function callOpenAI(systemPrompt, userPrompt, opts = {}) {
 function callPerplexity(systemPrompt, userPrompt, opts = {}) {
   return new Promise((resolve, reject) => {
     const key = process.env.PERPLEXITY_API_KEY;
-    if (!key) {
-      const err = new Error('PERPLEXITY_API_KEY not set');
+    const keyCheck = validateKey('Perplexity', key);
+    if (!keyCheck.valid) {
+      const err = new Error(keyCheck.reason);
       err.providerState = PROVIDER_STATES.MISSING;
       return reject(err);
     }
@@ -159,8 +170,9 @@ function callPerplexity(systemPrompt, userPrompt, opts = {}) {
 function callGemini(systemPrompt, userPrompt, opts = {}) {
   return new Promise((resolve, reject) => {
     const key = process.env.GEMINI_API_KEY;
-    if (!key) {
-      const err = new Error('GEMINI_API_KEY not set');
+    const keyCheck = validateKey('Gemini', key);
+    if (!keyCheck.valid) {
+      const err = new Error(keyCheck.reason);
       err.providerState = PROVIDER_STATES.MISSING;
       return reject(err);
     }

@@ -1414,6 +1414,78 @@ h3, .section-title {
 }
 .tl-error { font-size: 10px; color: var(--red); margin-top: 2px; }
 .tl-files { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 3px; }
+.tl-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* Builder fallback timeline node */
+.tl-dot.tl-fallback { background: var(--red); border: 2px solid var(--red-border); }
+.tl-event.tl-fallback .tl-content {
+  border-color: var(--red-border); background: var(--red-soft);
+}
+
+/* Diff summary in timeline */
+.tl-diff-summary {
+  margin-top: 4px; padding: 4px 6px; border-radius: var(--r-xs);
+  background: var(--bg-card); border: 1px solid var(--border);
+}
+.tl-diff-label { font-size: 9px; font-weight: 700; color: var(--text-faint); text-transform: uppercase; letter-spacing: .3px; margin-bottom: 2px; }
+.tl-diff-summary pre {
+  font-size: 9px; font-family: var(--mono); color: var(--cyan);
+  margin: 0; white-space: pre-wrap; max-height: 80px; overflow: hidden;
+}
+
+/* ═══════════════════════════════════════════
+   BUILDER OUTCOME TAGS + REVIEW
+   ═══════════════════════════════════════════ */
+
+.builder-outcome-tag {
+  font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .3px;
+  padding: 2px 6px; border-radius: var(--r-xs); display: inline-block;
+}
+.builder-outcome-tag.code_applied { background: var(--green-soft); color: var(--green); border: 1px solid var(--green-border); }
+.builder-outcome-tag.no_changes { background: var(--yellow-soft); color: var(--yellow); border: 1px solid var(--yellow-border); }
+.builder-outcome-tag.builder_fallback_prompt_created,
+.builder-outcome-tag.builder_timeout { background: var(--red-soft); color: var(--red); border: 1px solid var(--red-border); }
+.builder-outcome-tag.blocked_missing_context { background: var(--red-soft); color: var(--red); border: 1px solid var(--red-border); }
+.builder-outcome-tag.waiting_approval_for_commit { background: var(--yellow-soft); color: var(--yellow); border: 1px solid var(--yellow-border); }
+.builder-outcome-tag.manual_execution_confirmed { background: var(--green-soft); color: var(--green); border: 1px solid var(--green-border); }
+
+.builder-prompt-link {
+  font-size: 10px; color: var(--text-dim); margin-top: 3px;
+}
+.builder-prompt-link code {
+  font-family: var(--mono); color: var(--cyan); font-size: 9px;
+  background: var(--bg-inset); padding: 1px 4px; border-radius: var(--r-xs);
+}
+
+.builder-diff-summary { margin-top: 4px; }
+.builder-diff-summary pre {
+  font-size: 9px; font-family: var(--mono); color: var(--cyan);
+  background: var(--bg-inset); padding: 4px 6px; border-radius: var(--r-xs);
+  margin: 2px 0 0; max-height: 60px; overflow: hidden; white-space: pre-wrap;
+}
+
+.btn-launch-builder {
+  background: linear-gradient(135deg, var(--purple), #7b5ff5);
+  color: white; border: none; border-radius: var(--r-sm);
+  padding: 6px 14px; font-size: 11px; font-weight: 700;
+  cursor: pointer; white-space: nowrap; transition: all var(--transition);
+  display: flex; align-items: center; gap: 4px;
+}
+.btn-launch-builder:hover { transform: scale(1.03); box-shadow: 0 2px 8px rgba(155,127,245,.3); }
+
+/* Fallback inbox item visual treatment */
+.approval-inbox-item.is-fallback {
+  border-color: var(--red-border); background: var(--red-soft);
+}
+.approval-inbox-actions { display: flex; gap: 6px; flex-direction: column; align-items: flex-end; }
+
+/* Status badges for new states */
+.intake-status-badge.builder_fallback { background: var(--red-soft); color: var(--red); border: 1px solid var(--red-border); }
+.intake-status-badge.waiting_human { background: var(--yellow-soft); color: var(--yellow); border: 1px solid var(--yellow-border); }
+.status-banner.banner-builder_fallback { border-color: var(--red-border); background: var(--red-soft); }
+.status-banner.banner-waiting_human { border-color: var(--yellow-border); background: var(--yellow-soft); }
+.subtask-status-dot.builder_fallback { background: var(--red); }
+.subtask-status-dot.waiting_human { background: var(--yellow); }
 
 /* LANDSCAPE TABLET OPTIMIZATION */
 @media (min-width: 600px) and (max-height: 500px) {

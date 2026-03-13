@@ -18,7 +18,8 @@ const today = new Date().toISOString().slice(0, 10);
 const runTs = new Date().toISOString();
 const boardRunId = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 
-// Load .env from app dir
+// .env is the canonical source for API keys — always overrides process.env
+const API_KEY_NAMES = new Set(['OPENAI_API_KEY', 'PERPLEXITY_API_KEY', 'GEMINI_API_KEY']);
 (function loadEnv() {
   try {
     const lines = fs.readFileSync(path.join(__dirname, '..', '.env'), 'utf-8').split('\n');
@@ -29,7 +30,7 @@ const boardRunId = Date.now().toString(36) + Math.random().toString(36).slice(2,
       if (eq === -1) continue;
       const key = t.slice(0, eq).trim();
       const val = t.slice(eq + 1).trim().replace(/^["']|["']$/g, '');
-      if (!process.env[key]) process.env[key] = val;
+      if (API_KEY_NAMES.has(key) || !process.env[key]) process.env[key] = val;
     }
   } catch {}
 })();

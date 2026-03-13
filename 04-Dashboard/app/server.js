@@ -5,6 +5,9 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 // Load .env if it exists (no dependencies needed)
+// .env is the canonical source for API keys — always overrides process.env
+// to prevent stale PM2-cached placeholders from being used.
+const API_KEY_NAMES = new Set(['OPENAI_API_KEY', 'PERPLEXITY_API_KEY', 'GEMINI_API_KEY']);
 (function loadEnv() {
   try {
     const lines = fs.readFileSync(path.join(__dirname, '.env'), 'utf-8').split('\n');
@@ -15,7 +18,9 @@ const { execSync } = require('child_process');
       if (eq === -1) continue;
       const key = t.slice(0, eq).trim();
       const val = t.slice(eq + 1).trim().replace(/^["']|["']$/g, '');
-      if (!process.env[key]) process.env[key] = val;
+      // API keys: always use .env value (prevents stale PM2 env from winning)
+      // Other vars: only set if not already present
+      if (API_KEY_NAMES.has(key) || !process.env[key]) process.env[key] = val;
     }
   } catch {}
 })();
@@ -413,8 +418,32 @@ const server = http.createServer(async (req, res) => {
     const subtaskId = req.url.match(/^\/api\/subtask\/([^/]+)\/approve$/)[1];
     const st = intake.getSubtask(subtaskId);
     if (!st) return json(res, { error: 'Not found' }, 404);
-    if (st.status !== 'waiting_approval') return json(res, { error: 'Subtask not awaiting approval' }, 400);
+    const approvable = ['waiting_approval', 'builder_fallback', 'waiting_human'];
+    if (!approvable.includes(st.status)) return json(res, { error: 'Subtask not awaiting approval' }, 400);
 
+    const body = await parseBody(req);
+
+    // If builder_fallback, user is confirming manual execution is complete — mark done
+    if (st.status === 'builder_fallback') {
+      intake.updateSubtask(subtaskId, {
+        status: 'done',
+        builder_outcome: 'manual_execution_confirmed',
+        output: (st.output || '') + '\n\n[Manual execution confirmed by Rahul]',
+      });
+      // Continue workflow from this point
+      const wfResult = workflow.onSubtaskComplete(subtaskId);
+      if (wfResult.next_subtask_ids) {
+        for (const nextId of wfResult.next_subtask_ids) {
+          const nextSt = intake.getSubtask(nextId);
+          if (nextSt) queue.addTask('execute-subtask', `Subtask: ${nextSt.title}`, { subtaskId: nextId });
+        }
+      }
+      events.broadcast('activity', { action: `Builder fallback confirmed: ${st.title}`, ts: new Date().toISOString() });
+      events.broadcast('intake-update', { taskId: st.parent_task_id, subtaskId, action: 'builder_confirmed' });
+      return json(res, { ok: true, resumed: st.title, action: 'builder_confirmed' });
+    }
+
+    // Normal approval — re-queue for execution
     intake.updateSubtask(subtaskId, { status: 'queued' });
     queue.addTask('execute-subtask', `Subtask: ${st.title}`, { subtaskId });
 
@@ -441,7 +470,7 @@ const server = http.createServer(async (req, res) => {
   // Global pending approvals — subtasks + tasks waiting approval
   if (req.url === '/api/intake/pending-approvals') {
     const allSubs = intake.getAllSubtasks();
-    const pending = allSubs.filter(s => s.status === 'waiting_approval').map(s => {
+    const pending = allSubs.filter(s => ['waiting_approval', 'builder_fallback', 'waiting_human'].includes(s.status)).map(s => {
       const parent = intake.getTask(s.parent_task_id);
       return { ...s, parent_title: parent ? parent.title : 'Unknown', parent_domain: parent ? parent.domain : 'general' };
     });
@@ -460,6 +489,22 @@ const server = http.createServer(async (req, res) => {
     const activeSubtask = subtasks.find(s => s.status === 'running') || subtasks.find(s => s.status === 'queued') || null;
     const nextBlocking = subtasks.find(s => s.status === 'waiting_approval') || null;
     return json(res, { task: current, subtasks, progress, pendingApprovals, activeSubtask, nextBlocking });
+  }
+
+  // Provider key diagnostic (safe — never exposes full keys)
+  if (req.url === '/api/diag/keys') {
+    function diagKey(name) {
+      const v = process.env[name];
+      if (!v) return { status: 'missing', source: 'none' };
+      if (v === 'your_key_here' || v.startsWith('your_')) return { status: 'placeholder', source: 'stale', prefix: v.slice(0, 8) };
+      return { status: 'ok', prefix: v.slice(0, 6) + '...', length: v.length };
+    }
+    return json(res, {
+      openai: diagKey('OPENAI_API_KEY'),
+      perplexity: diagKey('PERPLEXITY_API_KEY'),
+      gemini: diagKey('GEMINI_API_KEY'),
+      envFile: fs.existsSync(path.join(__dirname, '.env')) ? 'present' : 'missing',
+    });
   }
 
   // File reader (sandbox-safe)
@@ -489,8 +534,15 @@ const server = http.createServer(async (req, res) => {
   });
 });
 
+function keyDiag(name) {
+  const v = process.env[name];
+  if (!v) return 'MISSING';
+  if (v === 'your_key_here' || v.startsWith('your_')) return 'PLACEHOLDER (broken!)';
+  return `OK (${v.slice(0, 6)}...)`;
+}
+
 server.listen(PORT, '0.0.0.0', () => {
   console.log(`\n  RPGPO Command Center v6 running at http://localhost:${PORT}`);
   console.log(`  Binding 0.0.0.0 for remote access`);
-  console.log(`  Models: OpenAI=${process.env.OPENAI_API_KEY ? 'OK' : 'missing'} Perplexity=${process.env.PERPLEXITY_API_KEY ? 'OK' : 'missing'} Gemini=${process.env.GEMINI_API_KEY ? 'OK' : 'missing'}\n`);
+  console.log(`  Keys: OpenAI=${keyDiag('OPENAI_API_KEY')} Perplexity=${keyDiag('PERPLEXITY_API_KEY')} Gemini=${keyDiag('GEMINI_API_KEY')}\n`);
 });
