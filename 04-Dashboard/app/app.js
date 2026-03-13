@@ -1905,16 +1905,17 @@ function renderCurrentTaskFocus(data) {
 
 function getSubtaskTypeIcon(stage) {
   const icons = {
-    audit: '&#128269;',     // magnifying glass
-    decide: '&#9878;',      // scales
-    implement: '&#128736;', // hammer wrench
+    audit: '&#128269;',         // magnifying glass
+    decide: '&#9878;',          // scales
+    implement: '&#128736;',     // hammer wrench
     build: '&#128736;',
-    code: '&#128187;',      // laptop
-    report: '&#128196;',    // document
-    research: '&#128218;',  // book
-    review: '&#128065;',    // eye
-    strategy: '&#9813;',    // chess queen
-    approve: '&#9989;',     // checkmark
+    code: '&#128187;',          // laptop
+    locate_files: '&#128205;',  // round pushpin — file targeting
+    report: '&#128196;',        // document
+    research: '&#128218;',      // book
+    review: '&#128065;',        // eye
+    strategy: '&#9813;',        // chess queen
+    approve: '&#9989;',         // checkmark
   };
   return icons[stage] || '&#9654;';
 }
@@ -1951,10 +1952,17 @@ function renderTaskTimeline(task, subtasks) {
 
   // Deliberation (if happened)
   if (task.board_deliberation) {
+    const rg = task.board_deliberation.repo_grounding;
+    let deliberationDetail = task.board_deliberation.recommended_strategy?.slice(0, 80) || 'Plan produced';
+    if (rg && rg.grounded) {
+      deliberationDetail += ` | Repo grounded: ${rg.totalFiles} files scanned, ${rg.candidateCount} candidates`;
+    }
+
     events.push({
       type: 'milestone', label: 'Board Deliberation', stage: 'deliberating',
-      detail: task.board_deliberation.recommended_strategy?.slice(0, 80) || 'Plan produced',
+      detail: deliberationDetail,
       time: task.updated_at, status: 'done', model: task.board_deliberation.model_used,
+      repo_grounding: rg,
     });
 
     events.push({
@@ -2052,6 +2060,25 @@ function renderTaskTimeline(task, subtasks) {
       if (ev.detail) html += `<div class="tl-detail">${esc(ev.detail)}</div>`;
       if (ev.output) html += `<div class="tl-output">${esc(ev.output)}</div>`;
       if (ev.error) html += `<div class="tl-error">${esc(ev.error)}</div>`;
+
+      // Repo grounding display for deliberation milestone
+      if (ev.repo_grounding && ev.repo_grounding.grounded) {
+        const rg = ev.repo_grounding;
+        html += `<div class="tl-repo-grounding">
+          <div class="tl-repo-grounding-label">Repo Grounding</div>
+          <div class="tl-repo-grounding-stats">
+            <span class="rg-stat">${rg.totalFiles} files scanned</span>
+            <span class="rg-stat">${rg.candidateCount} candidates found</span>
+            ${rg.targetAreas && rg.targetAreas.length ? `<span class="rg-stat">Areas: ${rg.targetAreas.join(', ')}</span>` : ''}
+          </div>
+          ${rg.candidates && rg.candidates.length ? `<div class="tl-repo-grounding-files">${rg.candidates.slice(0, 5).map(f => '<span class="file-badge rg-file">' + esc(f) + '</span>').join('')}${rg.candidates.length > 5 ? '<span class="rg-more">+' + (rg.candidates.length - 5) + ' more</span>' : ''}</div>` : ''}
+        </div>`;
+      } else if (ev.repo_grounding && !ev.repo_grounding.grounded) {
+        html += `<div class="tl-repo-grounding tl-repo-grounding-failed">
+          <div class="tl-repo-grounding-label">Repo Grounding Failed</div>
+          <div class="tl-repo-grounding-reason">No source repo found — file paths may be unverified</div>
+        </div>`;
+      }
 
       if (ev.diff_summary) {
         html += `<div class="tl-diff-summary"><div class="tl-diff-label">Changes:</div><pre>${esc(ev.diff_summary)}</pre></div>`;

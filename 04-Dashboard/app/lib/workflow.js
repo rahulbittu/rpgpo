@@ -4,6 +4,7 @@
 
 const intake = require('./intake');
 const queue = require('./queue');
+const repoScanner = require('./repo-scanner');
 
 /**
  * After a subtask completes (done or failed), decide what happens next.
@@ -161,20 +162,46 @@ function checkTaskCompletion(taskId, allSubs) {
 function materializeSubtasks(taskId, deliberation) {
   const subtaskDefs = deliberation.subtasks || [];
   const created = [];
+  const domain = intake.getTask(taskId)?.domain || 'general';
+  const isCodeTask = deliberation.is_code_task || false;
 
   for (let i = 0; i < subtaskDefs.length; i++) {
     const def = subtaskDefs[i];
+
+    // ── Path validation for implement/claude subtasks on code tasks ──
+    let validatedRead = def.files_to_read || [];
+    let validatedWrite = def.files_to_write || [];
+    let pathWarnings = [];
+
+    if (isCodeTask && (def.stage === 'implement' || def.assigned_model === 'claude')) {
+      const allPaths = [...validatedRead, ...validatedWrite];
+      if (allPaths.length > 0) {
+        const validation = repoScanner.validatePaths(allPaths);
+        if (!validation.valid) {
+          // Strip invented paths, keep only real ones
+          validatedRead = validatedRead.filter(f => !validation.missing.includes(f));
+          validatedWrite = validatedWrite.filter(f => !validation.missing.includes(f));
+          pathWarnings = validation.missing;
+        }
+      }
+
+      // Block implement subtasks with zero real target files
+      if (validatedRead.length === 0 && validatedWrite.length === 0 && def.stage === 'implement') {
+        def._blocked_no_files = true;
+      }
+    }
+
     const st = intake.createSubtask({
       parent_task_id: taskId,
       title: def.title || `Subtask ${i + 1}`,
-      domain: intake.getTask(taskId)?.domain || 'general',
+      domain,
       stage: def.stage || 'audit',
       assigned_role: def.assigned_role || 'general',
       assigned_model: def.assigned_model || 'openai',
       expected_output: def.expected_output || '',
       prompt: def.prompt || '',
-      files_to_read: def.files_to_read || [],
-      files_to_write: def.files_to_write || [],
+      files_to_read: validatedRead,
+      files_to_write: validatedWrite,
       risk_level: def.risk_level || 'green',
       approval_required: !!def.approval_required,
       depends_on: (def.depends_on || []).map(dep => {
@@ -185,7 +212,19 @@ function materializeSubtasks(taskId, deliberation) {
         return dep;
       }),
       order: i,
+      // Store grounding metadata
+      _stripped_paths: pathWarnings.length > 0 ? pathWarnings : undefined,
+      _is_locate_files: def.stage === 'locate_files',
     });
+
+    // Block implement subtasks that lost all their target files
+    if (def._blocked_no_files) {
+      intake.updateSubtask(st.subtask_id, {
+        status: 'blocked',
+        error: 'Blocked: no real target files identified. Needs locate_files or manual grounding.',
+      });
+    }
+
     created.push(st);
   }
 
