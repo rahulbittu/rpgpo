@@ -1,8 +1,70 @@
-// RPGPO Dashboard — Client
+// RPGPO Dashboard v2 — Client with SSE, task queue, live activity feed
 
 let DATA = null;
+let TASKS = [];
+let STATUS = null;
+const activityLog = [];
+const MAX_ACTIVITY = 50;
+
+// --- SSE Connection ---
+
+let evtSource = null;
+
+function connectSSE() {
+  if (evtSource) { try { evtSource.close(); } catch {} }
+  evtSource = new EventSource('/api/events');
+
+  evtSource.addEventListener('connected', () => {
+    document.getElementById('liveDot').classList.add('connected');
+    addActivity('SSE connected');
+  });
+
+  evtSource.addEventListener('activity', (e) => {
+    try {
+      const data = JSON.parse(e.data);
+      addActivity(data.action);
+    } catch {}
+  });
+
+  evtSource.addEventListener('task', (e) => {
+    try {
+      const data = JSON.parse(e.data);
+      if (data.event === 'task_added' || data.event === 'task_updated') {
+        loadTasks();
+      }
+    } catch {}
+  });
+
+  evtSource.onerror = () => {
+    document.getElementById('liveDot').classList.remove('connected');
+  };
+}
+
+function addActivity(text) {
+  const now = new Date();
+  const time = now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  activityLog.unshift({ time, text });
+  if (activityLog.length > MAX_ACTIVITY) activityLog.length = MAX_ACTIVITY;
+  renderActivityFeed();
+}
+
+function renderActivityFeed() {
+  const feed = document.getElementById('activityFeed');
+  if (!feed) return;
+  if (activityLog.length === 0) {
+    feed.innerHTML = '<div class="activity-empty">Waiting for events...</div>';
+    return;
+  }
+  feed.innerHTML = activityLog.slice(0, 20).map(a =>
+    `<div class="activity-item">
+      <span class="activity-time">${a.time}</span>
+      <span class="activity-text">${escapeHtml(a.text)}</span>
+    </div>`
+  ).join('');
+}
 
 // --- Tab navigation ---
+
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
@@ -20,20 +82,202 @@ function switchTab(tab) {
 }
 
 // --- Load data ---
+
 async function loadData() {
   try {
     const res = await fetch('/api/data');
     DATA = await res.json();
     render();
-    document.getElementById('sysStatus').innerHTML =
-      '<span style="color:#4ade80">&#9679;</span> System active';
   } catch (e) {
-    document.getElementById('sysStatus').textContent = 'Error loading data';
-    console.error(e);
+    console.error('Failed to load data:', e);
+  }
+}
+
+async function loadStatus() {
+  try {
+    const res = await fetch('/api/status');
+    STATUS = await res.json();
+    renderStatus();
+  } catch (e) {
+    console.error('Failed to load status:', e);
+  }
+}
+
+async function loadTasks() {
+  try {
+    const res = await fetch('/api/tasks');
+    TASKS = await res.json();
+    renderTasks();
+    renderHomeRecentTasks();
+  } catch {}
+}
+
+// --- Render status ---
+
+function renderStatus() {
+  if (!STATUS) return;
+
+  // Sidebar pills
+  const serverPill = document.getElementById('serverPill');
+  const workerPill = document.getElementById('workerPill');
+  serverPill.classList.add('online');
+  workerPill.classList.toggle('online', STATUS.worker.running);
+
+  // Sidebar text
+  const sysStatus = document.getElementById('sysStatus');
+  const uptime = STATUS.server.uptime ? formatUptime(STATUS.server.uptime) : '--';
+  sysStatus.textContent = `Up ${uptime} | :${STATUS.server.port}`;
+
+  // Home status bar
+  const homeServer = document.getElementById('homeServerStatus');
+  homeServer.textContent = 'Online';
+  homeServer.className = 'status-value ok';
+
+  const homeWorker = document.getElementById('homeWorkerStatus');
+  homeWorker.textContent = STATUS.worker.running ? 'Running' : 'Stopped';
+  homeWorker.className = 'status-value ' + (STATUS.worker.running ? 'ok' : 'err');
+
+  const homeModels = document.getElementById('homeModelStatus');
+  const openaiOk = STATUS.keys.OPENAI_API_KEY === 'configured';
+  const perpOk = STATUS.keys.PERPLEXITY_API_KEY === 'configured';
+  const modelCount = 1 + (openaiOk ? 1 : 0) + (perpOk ? 1 : 0); // Claude always available
+  homeModels.textContent = `${modelCount}/3 ready`;
+  homeModels.className = 'status-value ' + (modelCount === 3 ? 'ok' : 'warn');
+
+  // Settings model badges
+  const openaiTag = document.getElementById('modelOpenAI');
+  openaiTag.textContent = openaiOk ? 'Ready' : 'No Key';
+  openaiTag.className = 'model-tag ' + (openaiOk ? 'ready' : '');
+
+  const perpTag = document.getElementById('modelPerplexity');
+  perpTag.textContent = perpOk ? 'Ready' : 'No Key';
+  perpTag.className = 'model-tag ' + (perpOk ? 'ready' : '');
+
+  // Settings server
+  const settingsServer = document.getElementById('settingsServer');
+  if (settingsServer) {
+    settingsServer.innerHTML = `
+      <div class="settings-row"><span class="settings-label">Uptime</span> ${uptime}</div>
+      <div class="settings-row"><span class="settings-label">Port</span> ${STATUS.server.port}</div>
+      <div class="settings-row"><span class="settings-label">Worker</span> ${STATUS.worker.running ? '<span style="color:var(--green)">Running</span>' : '<span style="color:var(--red)">Stopped</span>'}</div>
+      <div class="settings-row"><span class="settings-label">Node</span> ${escapeHtml(STATUS.node)}</div>
+    `;
+  }
+
+  // Settings keys
+  const keysDiv = document.getElementById('settingsKeys');
+  if (keysDiv) {
+    keysDiv.innerHTML = Object.entries(STATUS.keys).map(([key, status]) => {
+      const cls = status === 'configured' ? 'key-configured' : 'key-missing';
+      return `<div class="settings-row">
+        <span class="settings-label">${escapeHtml(key.replace('_API_KEY', ''))}</span>
+        <span class="key-status ${cls}">${status}</span>
+      </div>`;
+    }).join('');
+  }
+
+  // Settings system
+  const sysDiv = document.getElementById('settingsSystem');
+  if (sysDiv) {
+    sysDiv.innerHTML = `
+      <div class="settings-row"><span class="settings-label">Workspace</span> ${escapeHtml(STATUS.workspace)}</div>
+      <div class="settings-row"><span class="settings-label">Node</span> ${escapeHtml(STATUS.node)}</div>
+    `;
+  }
+}
+
+function formatUptime(ms) {
+  const s = Math.floor(ms / 1000);
+  if (s < 60) return s + 's';
+  const m = Math.floor(s / 60);
+  if (m < 60) return m + 'm';
+  const h = Math.floor(m / 60);
+  if (h < 24) return h + 'h ' + (m % 60) + 'm';
+  const d = Math.floor(h / 24);
+  return d + 'd ' + (h % 24) + 'h';
+}
+
+// --- Render task queue ---
+
+function renderTasks() {
+  const list = document.getElementById('taskQueueList');
+  const countBadge = document.getElementById('taskQueueCount');
+  if (!list) return;
+
+  countBadge.textContent = TASKS.length + ' task' + (TASKS.length !== 1 ? 's' : '');
+
+  // Home task count
+  const homeTaskCount = document.getElementById('homeTaskCount');
+  const running = TASKS.filter(t => t.status === 'running').length;
+  const queued = TASKS.filter(t => t.status === 'queued').length;
+  if (running > 0) {
+    homeTaskCount.textContent = `${running} running`;
+    homeTaskCount.className = 'status-value warn';
+  } else if (queued > 0) {
+    homeTaskCount.textContent = `${queued} queued`;
+    homeTaskCount.className = 'status-value warn';
+  } else {
+    homeTaskCount.textContent = 'Idle';
+    homeTaskCount.className = 'status-value ok';
+  }
+
+  if (TASKS.length === 0) {
+    list.innerHTML = '<div class="task-empty">No tasks in queue.</div>';
+    return;
+  }
+
+  list.innerHTML = TASKS.slice(0, 20).map(t => {
+    const time = new Date(t.updatedAt || t.createdAt).toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+    return `<div class="task-row" onclick="showTaskDetail('${t.id}')">
+      <span class="task-status-dot ${t.status}"></span>
+      <span class="task-label">${escapeHtml(t.label)}</span>
+      <span class="task-type-badge">${escapeHtml(t.type)}</span>
+      <span class="task-time">${time}</span>
+    </div>`;
+  }).join('');
+}
+
+function renderHomeRecentTasks() {
+  const container = document.getElementById('homeRecentTasks');
+  if (!container) return;
+
+  if (TASKS.length === 0) {
+    container.innerHTML = '<div class="task-empty">No tasks yet.</div>';
+    return;
+  }
+
+  container.innerHTML = TASKS.slice(0, 8).map(t => {
+    const time = new Date(t.updatedAt || t.createdAt).toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+    return `<div class="task-row" onclick="showTaskDetail('${t.id}')">
+      <span class="task-status-dot ${t.status}"></span>
+      <span class="task-label">${escapeHtml(t.label)}</span>
+      <span class="task-time">${time}</span>
+    </div>`;
+  }).join('');
+}
+
+function showTaskDetail(id) {
+  const task = TASKS.find(t => t.id === id);
+  if (!task) return;
+  const title = `${task.label} [${task.status}]`;
+  let body = `Type:    ${task.type}\nStatus:  ${task.status}\nCreated: ${task.createdAt}\nUpdated: ${task.updatedAt}\n`;
+  if (task.error) body += `\nError:\n${task.error}`;
+  if (task.output) body += `\nOutput:\n${task.output}`;
+  if (task.filesWritten && task.filesWritten.length) body += `\nFiles Written:\n${task.filesWritten.join('\n')}`;
+
+  document.getElementById('taskModalTitle').textContent = title;
+  document.getElementById('taskModalBody').textContent = body;
+  document.getElementById('taskModal').classList.add('open');
+}
+
+function closeTaskModal(event) {
+  if (event.target === event.currentTarget) {
+    document.getElementById('taskModal').classList.remove('open');
   }
 }
 
 // --- Render all sections ---
+
 function render() {
   if (!DATA) return;
   renderHome();
@@ -42,7 +286,6 @@ function render() {
   renderApprovals();
   renderLogs();
   renderTopRanker();
-  renderSettings();
 }
 
 // --- HOME ---
@@ -53,35 +296,27 @@ function renderHome() {
 
   // Priorities
   const ul = document.getElementById('homePriorities');
-  ul.innerHTML = (s.top_priorities || []).map(p => `<li>${p}</li>`).join('');
+  ul.innerHTML = (s.top_priorities || []).map(p => `<li>${escapeHtml(p)}</li>`).join('');
 
   // Approvals
   const appDiv = document.getElementById('homeApprovals');
   if (DATA.approvals.length === 0) {
-    appDiv.innerHTML = '<p style="color:var(--text-muted);font-size:13px;">No pending approvals.</p>';
+    appDiv.innerHTML = '<p style="color:var(--text-muted);font-size:12px;">No pending approvals.</p>';
   } else {
     appDiv.innerHTML = DATA.approvals.map(a =>
-      `<div class="approval-pill" onclick="switchTab('approvals')">${a.name}</div>`
+      `<div class="approval-pill" onclick="switchTab('approvals')">${escapeHtml(a.name)}</div>`
     ).join('');
   }
 
-  // Research queue
-  const rq = document.getElementById('homeResearch');
-  rq.innerHTML = (s.research_queue || []).map(r => `<li>${r}</li>`).join('');
-
-  // Missions overview
+  // Mission health
   const md = document.getElementById('homeMissions');
   md.innerHTML = DATA.missions.map(m => {
     const cls = statusClass(m.status);
     return `<div class="home-mission">
-      <span>${m.mission === 'TopRanker' ? '<strong style="color:var(--accent)">' + m.mission + '</strong>' : m.mission}</span>
-      <span class="mission-status ${cls}">${m.status}</span>
+      <span>${m.mission === 'TopRanker' ? '<strong style="color:var(--accent)">' + escapeHtml(m.mission) + '</strong>' : escapeHtml(m.mission)}</span>
+      <span class="mission-status ${cls}">${escapeHtml(m.status)}</span>
     </div>`;
   }).join('');
-
-  // Recent wins
-  const wins = document.getElementById('homeWins');
-  wins.innerHTML = (s.recent_wins || []).map(w => `<li>${w}</li>`).join('');
 }
 
 // --- MISSIONS ---
@@ -91,36 +326,16 @@ function renderMissions() {
     const isFlagship = m.mission === 'TopRanker';
     const cls = statusClass(m.status);
     return `<div class="mission-card ${isFlagship ? 'flagship-card' : ''}">
-      <div style="display:flex;align-items:center;gap:8px;">
-        <span class="mission-name">${m.mission}</span>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <span class="mission-name">${escapeHtml(m.mission)}</span>
         ${isFlagship ? '<span class="badge-flagship">Flagship</span>' : ''}
       </div>
-      <span class="mission-status ${cls}">${m.status}</span>
-
-      <div class="mission-section">
-        <strong>Objective</strong>
-        ${m.objective}
-      </div>
-
-      <div class="mission-section">
-        <strong>Recent Progress</strong>
-        ${formatList(m.progress)}
-      </div>
-
-      <div class="mission-section">
-        <strong>Blockers</strong>
-        ${formatList(m.blockers)}
-      </div>
-
-      <div class="mission-section">
-        <strong>Next Actions</strong>
-        ${formatList(m.nextActions)}
-      </div>
-
-      <div class="mission-section">
-        <strong>Owner</strong>
-        ${m.owner}
-      </div>
+      <span class="mission-status ${cls}">${escapeHtml(m.status)}</span>
+      <div class="mission-section"><strong>Objective</strong>${escapeHtml(m.objective)}</div>
+      <div class="mission-section"><strong>Recent Progress</strong>${formatList(m.progress)}</div>
+      <div class="mission-section"><strong>Blockers</strong>${formatList(m.blockers)}</div>
+      <div class="mission-section"><strong>Next Actions</strong>${formatList(m.nextActions)}</div>
+      <div class="mission-section"><strong>Owner</strong>${escapeHtml(m.owner)}</div>
     </div>`;
   }).join('');
 }
@@ -132,9 +347,7 @@ function renderBrief() {
     container.innerHTML = '<p style="color:var(--text-muted)">No daily briefs found.</p>';
     return;
   }
-  // Show the most recent brief
-  const latest = DATA.briefs[0];
-  container.innerHTML = md2html(latest.content);
+  container.innerHTML = md2html(DATA.briefs[0].content);
 }
 
 // --- APPROVALS ---
@@ -155,7 +368,7 @@ function renderApprovals() {
         <h4>${escapeHtml(action)}</h4>
         <span class="risk-badge risk-${risk}">${risk} risk</span>
       </div>
-      <div class="md-content" style="margin-top:8px;">${md2html(a.content)}</div>
+      <div class="md-content" style="margin-top:6px;max-height:200px;overflow-y:auto;">${md2html(a.content)}</div>
       <div class="approval-actions" id="actions-${safeId}">
         <button class="btn-approve" onclick="handleApproval('${a.name}', 'approve', '${safeId}')">Approve</button>
         <button class="btn-reject" onclick="handleApproval('${a.name}', 'reject', '${safeId}')">Reject</button>
@@ -168,11 +381,7 @@ function renderApprovals() {
 function renderLogs() {
   const container = document.getElementById('logsList');
   const allLogs = [];
-
-  // Agent run logs
   (DATA.logs || []).forEach(l => allLogs.push({ name: l.name, content: l.content, type: 'Agent Run' }));
-
-  // Decision logs
   (DATA.decisionLogs || []).forEach(l => allLogs.push({ name: l.name, content: l.content, type: 'Decision' }));
 
   if (allLogs.length === 0) {
@@ -180,9 +389,7 @@ function renderLogs() {
     return;
   }
 
-  // Sort by name (date-prefixed) descending
   allLogs.sort((a, b) => b.name.localeCompare(a.name));
-
   container.innerHTML = allLogs.map(l =>
     `<div class="log-entry">
       <div style="display:flex;justify-content:space-between;align-items:center;">
@@ -196,51 +403,53 @@ function renderLogs() {
 
 // --- TOPRANKER ---
 function renderTopRanker() {
-  // Status card
   const trMission = DATA.missions.find(m => m.mission === 'TopRanker');
   const statusDiv = document.getElementById('trStatus');
   if (trMission) {
     statusDiv.innerHTML = `
       <h3>Mission Status</h3>
-      <span class="mission-status status-active">${trMission.status}</span>
-      <div class="mission-section"><strong>Objective</strong>${trMission.objective}</div>
+      <span class="mission-status status-active">${escapeHtml(trMission.status)}</span>
+      <div class="mission-section"><strong>Objective</strong>${escapeHtml(trMission.objective)}</div>
       <div class="mission-section"><strong>Blockers</strong>${formatList(trMission.blockers)}</div>
       <div class="mission-section"><strong>Next Actions</strong>${formatList(trMission.nextActions)}</div>
     `;
   }
 
-  // Quick facts from synthesis
-  const factsDiv = document.getElementById('trQuickFacts');
-  factsDiv.innerHTML = `
+  document.getElementById('trQuickFacts').innerHTML = `
     <h3>Quick Facts</h3>
     <ul style="list-style:none;padding:0;">
-      <li style="padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><strong>Type:</strong> Community-ranked local business leaderboard</li>
-      <li style="padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><strong>Stack:</strong> Expo/React Native + Express.js + PostgreSQL</li>
-      <li style="padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><strong>Tests:</strong> 10,827 across 616 files</li>
-      <li style="padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><strong>Source:</strong> 1,054 TypeScript files</li>
-      <li style="padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><strong>Active:</strong> 5 Texas cities + 6 beta</li>
-      <li style="padding:5px 0;"><strong>Core Loop:</strong> Rate &rarr; Consequence &rarr; Ranking</li>
+      <li><strong>Type:</strong> Community-ranked local business leaderboard</li>
+      <li><strong>Stack:</strong> Expo/React Native + Express.js + PostgreSQL</li>
+      <li><strong>Tests:</strong> 10,827 across 616 files</li>
+      <li><strong>Source:</strong> 1,054 TypeScript files</li>
+      <li><strong>Active:</strong> 5 Texas cities + 6 beta</li>
+      <li><strong>Core Loop:</strong> Rate &rarr; Consequence &rarr; Ranking</li>
     </ul>
   `;
 
-  // Full summary
   const summaryDiv = document.getElementById('trSummary');
   if (DATA.toprankerSummary) {
     summaryDiv.innerHTML = '<h3>Operating Summary</h3>' + md2html(DATA.toprankerSummary);
   }
 }
 
-// --- Controls ---
-async function runAction(name) {
+// --- Task submission (via queue) ---
+
+async function submitTask(type, label) {
   const log = document.getElementById('controlLog');
-  log.textContent = `Running ${name}...\n`;
+  log.textContent = `Submitting task: ${label}...\n`;
+  addActivity(`Task submitted: ${label}`);
+
   try {
-    const res = await fetch('/api/run/' + name, { method: 'POST' });
+    const res = await fetch('/api/tasks/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type, label })
+    });
     const result = await res.json();
     if (result.ok) {
-      log.textContent += result.output + '\nDone.';
-      // Reload data after script runs
-      await loadData();
+      log.textContent += `Queued as ${result.task.id}. Worker will pick it up.\n`;
+      loadTasks();
     } else {
       log.textContent += 'Error: ' + result.error;
     }
@@ -248,6 +457,62 @@ async function runAction(name) {
     log.textContent += 'Failed: ' + e.message;
   }
 }
+
+// --- Direct actions ---
+
+async function launchClaude() {
+  const log = document.getElementById('controlLog');
+  log.textContent = 'Launching Claude session...\n';
+  try {
+    const res = await fetch('/api/launch-claude', { method: 'POST' });
+    const result = await res.json();
+    log.textContent += result.ok ? result.output : 'Error: ' + result.error;
+  } catch (e) {
+    log.textContent += 'Failed: ' + e.message;
+  }
+}
+
+async function runAiTask(task) {
+  const log = document.getElementById('controlLog');
+  log.textContent = `Running AI task: ${task}...\n`;
+  try {
+    const res = await fetch('/api/ai/' + task, { method: 'POST' });
+    const result = await res.json();
+    log.textContent += result.ok ? result.output : 'Error: ' + result.error;
+  } catch (e) {
+    log.textContent += 'Failed: ' + e.message;
+  }
+}
+
+// --- Approval actions ---
+
+async function handleApproval(filename, decision, safeId) {
+  const actionsDiv = document.getElementById('actions-' + safeId);
+  if (!actionsDiv) return;
+  actionsDiv.querySelectorAll('button').forEach(b => b.disabled = true);
+
+  const endpoint = decision === 'approve' ? '/api/approval/approve' : '/api/approval/reject';
+  try {
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ filename })
+    });
+    const result = await res.json();
+    if (result.ok) {
+      const color = result.decision === 'Approved' ? 'var(--green)' : 'var(--red)';
+      actionsDiv.innerHTML = `<span class="approval-decided" style="color:${color}">${result.decision}</span>`;
+      addActivity(`${result.decision}: ${filename}`);
+      setTimeout(() => loadData(), 800);
+    } else {
+      actionsDiv.innerHTML = `<span style="color:var(--red);font-size:12px;">Error: ${escapeHtml(result.error)}</span>`;
+    }
+  } catch (e) {
+    actionsDiv.innerHTML = `<span style="color:var(--red);font-size:12px;">Failed: ${escapeHtml(e.message)}</span>`;
+  }
+}
+
+// --- File viewer ---
 
 async function openFile(relPath) {
   try {
@@ -268,6 +533,7 @@ function closeModal(event) {
 }
 
 // --- Helpers ---
+
 function statusClass(status) {
   const s = (status || '').toLowerCase().replace(/\s+/g, '-');
   if (s === 'active') return 'status-active';
@@ -279,9 +545,9 @@ function statusClass(status) {
 function formatList(text) {
   if (!text) return '<span style="color:var(--text-muted)">None</span>';
   const items = text.split('\n').filter(l => l.startsWith('- ')).map(l => l.slice(2));
-  if (items.length === 0) return `<span style="font-size:13px">${escapeHtml(text)}</span>`;
-  return '<ul style="list-style:disc;padding-left:16px;margin:4px 0;">' +
-    items.map(i => `<li style="font-size:13px;padding:2px 0;border:none;">${escapeHtml(i)}</li>`).join('') +
+  if (items.length === 0) return `<span style="font-size:12px">${escapeHtml(text)}</span>`;
+  return '<ul style="list-style:disc;padding-left:14px;margin:3px 0;">' +
+    items.map(i => `<li style="font-size:12px;padding:1px 0;border:none;">${escapeHtml(i)}</li>`).join('') +
     '</ul>';
 }
 
@@ -294,7 +560,6 @@ function md2html(md) {
   if (!md) return '';
   return md
     .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-    // Tables
     .replace(/^\|(.+)\|$/gm, (match) => {
       const cells = match.split('|').filter(c => c.trim()).map(c => c.trim());
       if (cells.every(c => /^[-:]+$/.test(c))) return '<!-- separator -->';
@@ -302,7 +567,6 @@ function md2html(md) {
     })
     .replace(/((<tr>.*<\/tr>\n?)+)/g, '<table>$1</table>')
     .replace(/<!-- separator -->\n?/g, '')
-    // Headers
     .replace(/^#### (.+)$/gm, '<h4>$1</h4>')
     .replace(/^### (.+)$/gm, '<h3>$1</h3>')
     .replace(/^## (.+)$/gm, '<h2>$1</h2>')
@@ -315,158 +579,15 @@ function md2html(md) {
     .replace(/<p>\s*<\/p>/g, '');
 }
 
-// --- SETTINGS ---
-async function renderSettings() {
-  try {
-    const res = await fetch('/api/settings');
-    const settings = await res.json();
-
-    const keysDiv = document.getElementById('settingsKeys');
-    if (keysDiv) {
-      keysDiv.innerHTML = Object.entries(settings.keys).map(([key, status]) => {
-        const cls = status === 'configured' ? 'key-configured' : 'key-missing';
-        return `<div class="settings-row">
-          <span class="settings-label">${escapeHtml(key)}</span>
-          <span class="key-status ${cls}">${status}</span>
-        </div>`;
-      }).join('');
-    }
-
-    const sysDiv = document.getElementById('settingsSystem');
-    if (sysDiv) {
-      sysDiv.innerHTML = `
-        <div class="settings-row"><span class="settings-label">Workspace</span> ${escapeHtml(settings.workspace)}</div>
-        <div class="settings-row"><span class="settings-label">Node</span> ${escapeHtml(settings.node)}</div>
-        <div class="settings-row"><span class="settings-label">Platform</span> ${escapeHtml(settings.platform)}</div>
-      `;
-    }
-  } catch (e) {
-    console.error('Failed to load settings:', e);
-  }
-}
-
-// --- Approval actions ---
-async function handleApproval(filename, decision, safeId) {
-  const actionsDiv = document.getElementById('actions-' + safeId);
-  if (!actionsDiv) return;
-
-  // Disable buttons immediately
-  actionsDiv.querySelectorAll('button').forEach(b => b.disabled = true);
-
-  const endpoint = decision === 'approve' ? '/api/approval/approve' : '/api/approval/reject';
-
-  try {
-    const res = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ filename })
-    });
-    const result = await res.json();
-
-    if (result.ok) {
-      const color = result.decision === 'Approved' ? 'var(--green)' : 'var(--red)';
-      actionsDiv.innerHTML = `<span class="approval-decided" style="color:${color}">${result.decision}</span>`;
-      // Reload data after a moment
-      setTimeout(() => loadData(), 800);
-    } else {
-      actionsDiv.innerHTML = `<span style="color:var(--red);font-size:13px;">Error: ${escapeHtml(result.error)}</span>`;
-    }
-  } catch (e) {
-    actionsDiv.innerHTML = `<span style="color:var(--red);font-size:13px;">Failed: ${escapeHtml(e.message)}</span>`;
-  }
-}
-
-// --- Launch Claude session ---
-async function launchClaude() {
-  const log = document.getElementById('controlLog');
-  log.textContent = 'Launching Claude session in Terminal...\n';
-  try {
-    const res = await fetch('/api/launch-claude', { method: 'POST' });
-    const result = await res.json();
-    if (result.ok) {
-      log.textContent += result.output;
-    } else {
-      log.textContent += 'Error: ' + result.error;
-    }
-  } catch (e) {
-    log.textContent += 'Failed: ' + e.message;
-  }
-}
-
-// --- AI task runner ---
-async function runAiTask(task) {
-  const log = document.getElementById('controlLog');
-  log.textContent = `Running AI task: ${task}...\n`;
-  try {
-    const res = await fetch('/api/ai/' + task, { method: 'POST' });
-    const result = await res.json();
-    if (result.ok) {
-      log.textContent += result.output;
-    } else {
-      log.textContent += 'Error:\n' + result.error;
-    }
-  } catch (e) {
-    log.textContent += 'Failed: ' + e.message;
-  }
-}
-
-// --- Board of AI runner ---
-async function runBoard() {
-  const log = document.getElementById('controlLog');
-  const btn = document.getElementById('boardRunBtn');
-
-  btn.classList.add('running');
-  btn.disabled = true;
-  log.textContent = '=== RPGPO Board of AI ===\nStarting orchestration...\n\n';
-  log.textContent += 'Roles:\n';
-  log.textContent += '  [1] Claude Builder — TopRanker review prompt\n';
-  log.textContent += '  [2] OpenAI Chief of Staff — executive briefing\n';
-  log.textContent += '  [3] Perplexity Research Director — research scan\n\n';
-  log.textContent += 'Running... (this may take 30-60 seconds if API calls are made)\n\n';
-
-  try {
-    const res = await fetch('/api/board-run', { method: 'POST' });
-    const data = await res.json();
-
-    log.textContent = '';
-
-    if (data.output) {
-      log.textContent += data.output + '\n';
-    }
-
-    // Show structured result if available
-    if (data.result) {
-      const r = data.result;
-      log.textContent += '\n--- Board Run Summary ---\n\n';
-      for (const step of r.steps) {
-        const icon = step.status === 'success' ? '[OK]' : step.status === 'skipped' ? '[--]' : '[!!]';
-        log.textContent += `${icon} ${step.role}: ${step.status}`;
-        if (step.model) log.textContent += ` (${step.model})`;
-        if (step.error) log.textContent += ` — ${step.error}`;
-        log.textContent += '\n';
-      }
-
-      if (r.filesWritten.length > 0) {
-        log.textContent += '\nFiles written:\n';
-        for (const f of r.filesWritten) {
-          log.textContent += `  ${f}\n`;
-        }
-      }
-    }
-
-    if (!data.ok && !data.result) {
-      log.textContent += '\nError: ' + (data.error || 'Unknown error');
-    }
-
-    // Reload dashboard data
-    await loadData();
-  } catch (e) {
-    log.textContent += '\nFailed: ' + e.message;
-  } finally {
-    btn.classList.remove('running');
-    btn.disabled = false;
-  }
-}
-
 // --- Init ---
+
+connectSSE();
 loadData();
+loadStatus();
+loadTasks();
+
+// Poll status and tasks periodically
+setInterval(loadStatus, 15000);
+setInterval(loadTasks, 5000);
+// Reload dashboard data every 60s
+setInterval(loadData, 60000);
