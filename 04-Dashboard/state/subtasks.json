@@ -1,0 +1,113 @@
+[
+  {
+    "subtask_id": "st_mmofiklnr1po",
+    "parent_task_id": "t_mmofia4tezn9",
+    "title": "Compile Audit Report",
+    "domain": "topranker",
+    "stage": "report",
+    "assigned_role": "chief",
+    "assigned_model": "openai",
+    "expected_output": "Comprehensive audit report with findings and optimization recommendations.",
+    "prompt": "Compile the findings from the audit into a detailed report, including specific recommendations for addressing N+1 queries and adding missing indexes.",
+    "files_to_read": [],
+    "files_to_write": [
+      "03-Operations/Reports/TopRanker-Performance-Audit-Report.md"
+    ],
+    "risk_level": "green",
+    "status": "proposed",
+    "approval_required": false,
+    "next_subtasks": [],
+    "depends_on": [
+      "st_mmofiklmdnf2",
+      "st_mmofiklnr18i"
+    ],
+    "order": 3,
+    "created_at": "2026-03-13T05:01:10.475Z",
+    "updated_at": "2026-03-13T05:01:10.475Z",
+    "output": null,
+    "error": null,
+    "cost": null
+  },
+  {
+    "subtask_id": "st_mmofiklnr18i",
+    "parent_task_id": "t_mmofia4tezn9",
+    "title": "Check for Missing Indexes",
+    "domain": "topranker",
+    "stage": "audit",
+    "assigned_role": "builder",
+    "assigned_model": "claude",
+    "expected_output": "List of tables with missing indexes that could improve performance.",
+    "prompt": "Examine the database schema and identify any tables that may benefit from additional indexes.",
+    "files_to_read": [
+      "03-Operations/Reports/TopRanker-Operating-Summary.md"
+    ],
+    "files_to_write": [],
+    "risk_level": "yellow",
+    "status": "proposed",
+    "approval_required": true,
+    "next_subtasks": [],
+    "depends_on": [
+      "st_mmofiklmfdfs"
+    ],
+    "order": 2,
+    "created_at": "2026-03-13T05:01:10.475Z",
+    "updated_at": "2026-03-13T05:01:10.475Z",
+    "output": null,
+    "error": null,
+    "cost": null
+  },
+  {
+    "subtask_id": "st_mmofiklmdnf2",
+    "parent_task_id": "t_mmofia4tezn9",
+    "title": "Detect N+1 Queries",
+    "domain": "topranker",
+    "stage": "audit",
+    "assigned_role": "builder",
+    "assigned_model": "claude",
+    "expected_output": "List of API endpoints with potential N+1 query issues.",
+    "prompt": "Analyze the API endpoints and identify any N+1 query patterns.",
+    "files_to_read": [
+      "03-Operations/Reports/TopRanker-Operating-Summary.md"
+    ],
+    "files_to_write": [],
+    "risk_level": "yellow",
+    "status": "proposed",
+    "approval_required": true,
+    "next_subtasks": [],
+    "depends_on": [
+      "st_mmofiklmfdfs"
+    ],
+    "order": 1,
+    "created_at": "2026-03-13T05:01:10.474Z",
+    "updated_at": "2026-03-13T05:01:10.474Z",
+    "output": null,
+    "error": null,
+    "cost": null
+  },
+  {
+    "subtask_id": "st_mmofiklmfdfs",
+    "parent_task_id": "t_mmofia4tezn9",
+    "title": "Identify API Endpoints",
+    "domain": "topranker",
+    "stage": "audit",
+    "assigned_role": "chief",
+    "assigned_model": "openai",
+    "expected_output": "List of all API endpoints in the TopRanker application.",
+    "prompt": "List all API endpoints in the TopRanker application, focusing on those that handle database interactions.",
+    "files_to_read": [
+      "03-Operations/Reports/TopRanker-Operating-Summary.md"
+    ],
+    "files_to_write": [],
+    "risk_level": "green",
+    "status": "proposed",
+    "approval_required": false,
+    "next_subtasks": [],
+    "depends_on": [],
+    "order": 0,
+    "created_at": "2026-03-13T05:01:10.474Z",
+    "updated_at": "2026-03-13T05:01:10.474Z",
+    "output": null,
+    "error": null,
+    "cost": null
+  }
+]

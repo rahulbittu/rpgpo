@@ -1,0 +1,103 @@
+[
+  {
+    "task_id": "t_mmofia4tezn9",
+    "title": "Audit TopRanker API endpoints for performance issues and identify any N+1 querie",
+    "raw_request": "Audit TopRanker API endpoints for performance issues and identify any N+1 queries or missing indexes",
+    "domain": "topranker",
+    "desired_outcome": "Performance audit report with specific optimization recommendations",
+    "constraints": "",
+    "urgency": "high",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-13T05:00:56.909Z",
+    "updated_at": "2026-03-13T05:01:10.473Z",
+    "status": "planned",
+    "board_deliberation": {
+      "timestamp": "2026-03-13T05:01:10.473Z",
+      "interpreted_objective": "Audit TopRanker API endpoints for performance issues, focusing on N+1 queries and missing indexes.",
+      "expected_outcome": "A detailed performance audit report highlighting specific optimization recommendations for TopRanker API endpoints.",
+      "key_unknowns": [
+        "Current performance metrics of API endpoints",
+        "Specific API endpoints that may have N+1 query issues",
+        "Indexes that may be missing in the database schema"
+      ],
+      "recommended_strategy": "Conduct a systematic audit of the TopRanker API endpoints to identify performance bottlenecks. Focus on detecting N+1 query patterns and missing database indexes. Use this information to generate a report with targeted optimization recommendations.",
+      "risk_level": "yellow",
+      "approval_points": [
+        "Approval for implementing changes based on audit findings"
+      ],
+      "subtasks": [
+        {
+          "title": "Identify API Endpoints",
+          "stage": "audit",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "List of all API endpoints in the TopRanker application.",
+          "prompt": "List all API endpoints in the TopRanker application, focusing on those that handle database interactions.",
+          "files_to_read": [
+            "03-Operations/Reports/TopRanker-Operating-Summary.md"
+          ],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Detect N+1 Queries",
+          "stage": "audit",
+          "assigned_role": "builder",
+          "assigned_model": "claude",
+          "expected_output": "List of API endpoints with potential N+1 query issues.",
+          "prompt": "Analyze the API endpoints and identify any N+1 query patterns.",
+          "files_to_read": [
+            "03-Operations/Reports/TopRanker-Operating-Summary.md"
+          ],
+          "files_to_write": [],
+          "risk_level": "yellow",
+          "approval_required": true,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Check for Missing Indexes",
+          "stage": "audit",
+          "assigned_role": "builder",
+          "assigned_model": "claude",
+          "expected_output": "List of tables with missing indexes that could improve performance.",
+          "prompt": "Examine the database schema and identify any tables that may benefit from additional indexes.",
+          "files_to_read": [
+            "03-Operations/Reports/TopRanker-Operating-Summary.md"
+          ],
+          "files_to_write": [],
+          "risk_level": "yellow",
+          "approval_required": true,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Compile Audit Report",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "Comprehensive audit report with findings and optimization recommendations.",
+          "prompt": "Compile the findings from the audit into a detailed report, including specific recommendations for addressing N+1 queries and adding missing indexes.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/TopRanker-Performance-Audit-Report.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            1,
+            2
+          ]
+        }
+      ],
+      "model_used": "gpt-4o",
+      "tokens_used": 1974
+    },
+    "execution_plan": null
+  }
+]

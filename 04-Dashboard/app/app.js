@@ -1,6 +1,9 @@
 // RPGPO Command Center v6 — Premium Private Operations Console
 
 let DATA = null, TASKS = [], STATUS = null, COSTS = null, COST_SETTINGS = null;
+let INTAKE_TASKS = [];
+let intakeFilter = 'all';
+let selectedIntakeTaskId = null;
 const activity = [];
 const MAX_ACT = 50;
 let trackedTaskId = null;
@@ -114,6 +117,7 @@ function switchTab(tab) {
   if (panel) panel.classList.add('active');
   if (tab === 'costs') loadCosts();
   if (tab === 'settings') loadCostSettings();
+  if (tab === 'intake') loadIntakeTasks();
 }
 
 // ═══════════════════════════════════════════
@@ -1081,6 +1085,261 @@ function md2html(md) {
 }
 
 // ═══════════════════════════════════════════
+// INTAKE — Unified Task Intake + Deliberation
+// ═══════════════════════════════════════════
+
+async function loadIntakeTasks() {
+  try {
+    const r = await fetch('/api/intake/tasks');
+    INTAKE_TASKS = await r.json();
+    renderIntakeTasks();
+    renderIntakeBadge();
+  } catch {}
+}
+
+function renderIntakeBadge() {
+  const active = INTAKE_TASKS.filter(t => t.status !== 'done' && t.status !== 'failed' && t.status !== 'canceled').length;
+  const badge = document.getElementById('navIntakeBadge');
+  if (badge) { badge.textContent = active; badge.style.display = active > 0 ? '' : 'none'; }
+}
+
+function renderIntakeTasks() {
+  const list = document.getElementById('intakeTaskList');
+  if (!list) return;
+  const filtered = intakeFilter === 'all' ? INTAKE_TASKS : INTAKE_TASKS.filter(t => t.status === intakeFilter);
+
+  if (!filtered.length) {
+    list.innerHTML = '<div class="task-empty" style="padding:12px">No tasks match filter. Submit a task above to get started.</div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map(t => {
+    const urgTag = (t.urgency === 'high' || t.urgency === 'critical')
+      ? `<span class="urgency-tag ${t.urgency}">${t.urgency}</span>` : '';
+    const riskTag = t.risk_level && t.risk_level !== 'green'
+      ? `<span class="risk-badge risk-${t.risk_level}">${t.risk_level}</span>` : '';
+    const delib = t.board_deliberation;
+    const objective = delib ? delib.interpreted_objective : '';
+
+    return `<div class="intake-card status-${t.status}" onclick="showIntakeDetail('${t.task_id}')">
+      <div class="intake-card-header">
+        <div>
+          <div class="intake-card-title">${esc(t.title)}</div>
+          ${objective ? `<div style="font-size:11px;color:var(--text-dim);margin-top:2px">${esc(objective)}</div>` : ''}
+        </div>
+        <span class="intake-status-badge ${t.status}">${t.status.replace('_', ' ')}</span>
+      </div>
+      <div class="intake-card-meta">
+        <span class="domain-tag">${esc(t.domain)}</span>
+        ${urgTag}${riskTag}
+        <span style="font-size:9px;color:var(--text-faint);font-family:var(--mono);margin-left:auto">${fmtTime(t.created_at)}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function filterIntake(f) {
+  intakeFilter = f;
+  document.querySelectorAll('#intakeFilters .filter-btn').forEach(b => {
+    b.classList.toggle('active-filter', b.dataset.filter === f);
+  });
+  renderIntakeTasks();
+}
+
+async function submitIntakeTask() {
+  const raw = document.getElementById('intakeRequest').value.trim();
+  if (!raw) { showToast('Enter a task description', 'info'); return; }
+
+  const domain = document.getElementById('intakeDomain').value || undefined;
+  const urgency = document.getElementById('intakeUrgency').value;
+  const desired_outcome = document.getElementById('intakeOutcome').value.trim() || undefined;
+
+  try {
+    const r = await fetch('/api/intake/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ raw_request: raw, domain, urgency, desired_outcome }),
+    });
+    const d = await r.json();
+    if (d.ok) {
+      showToast('Task submitted: ' + d.task.title, 'success');
+      document.getElementById('intakeRequest').value = '';
+      document.getElementById('intakeOutcome').value = '';
+      loadIntakeTasks();
+    } else {
+      showToast('Error: ' + d.error, 'error');
+    }
+  } catch (e) { showToast('Network error', 'error'); }
+}
+
+async function showIntakeDetail(taskId) {
+  selectedIntakeTaskId = taskId;
+  const panel = document.getElementById('intakeDetailPanel');
+  if (!panel) return;
+
+  panel.style.display = 'block';
+  panel.innerHTML = '<div class="delib-panel"><div style="color:var(--text-dim)">Loading...</div></div>';
+
+  try {
+    const r = await fetch('/api/intake/task/' + taskId);
+    const data = await r.json();
+    renderIntakeDetail(data);
+  } catch (e) {
+    panel.innerHTML = '<div class="delib-panel"><div style="color:var(--red)">Failed to load task</div></div>';
+  }
+}
+
+function renderIntakeDetail(data) {
+  const panel = document.getElementById('intakeDetailPanel');
+  if (!panel) return;
+  const { task, subtasks, progress } = data;
+  const delib = task.board_deliberation;
+
+  let html = '<div class="delib-panel">';
+
+  // Header
+  html += `<div class="delib-header">
+    <div>
+      <div style="font-size:14px;font-weight:700">${esc(task.title)}</div>
+      <div class="intake-card-meta" style="margin-top:4px">
+        <span class="domain-tag">${esc(task.domain)}</span>
+        <span class="intake-status-badge ${task.status}">${task.status.replace('_', ' ')}</span>
+        ${task.risk_level !== 'green' ? `<span class="risk-badge risk-${task.risk_level}">${task.risk_level}</span>` : ''}
+      </div>
+    </div>
+    <div style="display:flex;gap:6px">`;
+
+  // Action buttons based on status
+  if (task.status === 'intake') {
+    html += `<button class="send-btn" onclick="deliberateTask('${task.task_id}')" style="font-size:11px;padding:5px 14px">Deliberate</button>`;
+  } else if (task.status === 'planned') {
+    html += `<button class="send-btn" onclick="approvePlan('${task.task_id}')" style="font-size:11px;padding:5px 14px">Approve &amp; Execute</button>`;
+  }
+  html += '</div></div>';
+
+  // Raw request
+  html += `<div class="delib-section">
+    <div class="delib-section-title">Request</div>
+    <div class="delib-section-body">${esc(task.raw_request)}</div>
+  </div>`;
+
+  // Deliberation results
+  if (delib) {
+    html += `<div class="delib-section">
+      <div class="delib-section-title">Interpreted Objective</div>
+      <div class="delib-section-body" style="font-weight:600">${esc(delib.interpreted_objective)}</div>
+    </div>`;
+
+    html += `<div class="delib-section">
+      <div class="delib-section-title">Recommended Strategy</div>
+      <div class="delib-section-body">${esc(delib.recommended_strategy)}</div>
+    </div>`;
+
+    if (delib.expected_outcome) {
+      html += `<div class="delib-section">
+        <div class="delib-section-title">Expected Outcome</div>
+        <div class="delib-section-body">${esc(delib.expected_outcome)}</div>
+      </div>`;
+    }
+
+    if (delib.key_unknowns && delib.key_unknowns.length) {
+      html += `<div class="delib-section">
+        <div class="delib-section-title">Key Unknowns</div>
+        <div class="delib-section-body"><ul style="list-style:disc;padding-left:14px;margin:0">${delib.key_unknowns.map(u => `<li style="font-size:12px;padding:2px 0;color:var(--text-secondary)">${esc(u)}</li>`).join('')}</ul></div>
+      </div>`;
+    }
+
+    if (delib.approval_points && delib.approval_points.length) {
+      html += `<div class="delib-section">
+        <div class="delib-section-title">Approval Points</div>
+        <div class="delib-section-body"><ul style="list-style:disc;padding-left:14px;margin:0">${delib.approval_points.map(a => `<li style="font-size:12px;padding:2px 0;color:var(--yellow)">${esc(a)}</li>`).join('')}</ul></div>
+      </div>`;
+    }
+
+    html += `<div class="delib-section" style="display:flex;gap:16px;flex-wrap:wrap">
+      <div><span class="delib-section-title">Risk</span> <span class="risk-badge risk-${delib.risk_level || 'green'}">${delib.risk_level || 'green'}</span></div>
+      <div><span class="delib-section-title">Model</span> <span style="font-size:11px;color:var(--text-dim);font-family:var(--mono)">${esc(delib.model_used || '')}</span></div>
+      <div><span class="delib-section-title">Tokens</span> <span style="font-size:11px;color:var(--text-dim);font-family:var(--mono)">${delib.tokens_used || '--'}</span></div>
+    </div>`;
+  }
+
+  // Subtasks
+  if (subtasks && subtasks.length) {
+    html += `<div class="delib-section">
+      <div class="delib-section-title">Subtask Plan (${progress.done}/${progress.total} done)</div>`;
+
+    for (let i = 0; i < subtasks.length; i++) {
+      const st = subtasks[i];
+      const approveBtn = st.status === 'waiting_approval'
+        ? `<button class="btn-approve" style="font-size:9px;padding:2px 8px;min-height:auto" onclick="event.stopPropagation();approveSubtask('${st.subtask_id}')">Approve</button>`
+        : '';
+
+      html += `<div class="delib-subtask">
+        <div class="delib-subtask-order">${i + 1}</div>
+        <span class="subtask-status-dot ${st.status}" style="margin-top:6px"></span>
+        <div class="delib-subtask-body">
+          <div class="delib-subtask-title">${esc(st.title)}</div>
+          <div class="delib-subtask-meta">
+            <span class="stage-tag ${st.stage}">${esc(st.stage)}</span>
+            <span class="task-model-tag ${st.assigned_model}">${esc(st.assigned_model)}</span>
+            <span class="intake-status-badge ${st.status}" style="font-size:8px">${st.status.replace('_', ' ')}</span>
+            ${approveBtn}
+          </div>
+          ${st.expected_output ? `<div style="font-size:10px;color:var(--text-faint);margin-top:2px">${esc(st.expected_output)}</div>` : ''}
+          ${st.output ? `<div style="font-size:10px;color:var(--text-dim);margin-top:4px;max-height:60px;overflow:hidden;font-family:var(--mono)">${esc(st.output.slice(0, 200))}</div>` : ''}
+          ${st.error ? `<div style="font-size:10px;color:var(--red);margin-top:2px">${esc(st.error.slice(0, 150))}</div>` : ''}
+        </div>
+      </div>`;
+    }
+    html += '</div>';
+  }
+
+  html += '</div>';
+  panel.innerHTML = html;
+}
+
+async function deliberateTask(taskId) {
+  try {
+    const r = await fetch('/api/intake/task/' + taskId + '/deliberate', { method: 'POST' });
+    const d = await r.json();
+    if (d.ok) {
+      showToast('Deliberation queued', 'success');
+      pushActivity('Deliberation queued for ' + taskId);
+      setTimeout(() => { loadIntakeTasks(); showIntakeDetail(taskId); }, 2000);
+    } else {
+      showToast('Error: ' + (d.error || 'Unknown'), 'error');
+    }
+  } catch (e) { showToast('Network error', 'error'); }
+}
+
+async function approvePlan(taskId) {
+  try {
+    const r = await fetch('/api/intake/task/' + taskId + '/approve-plan', { method: 'POST' });
+    const d = await r.json();
+    if (d.ok) {
+      showToast(`Plan approved, ${d.queued} subtasks queued`, 'success');
+      pushActivity('Plan approved: ' + taskId);
+      setTimeout(() => { loadIntakeTasks(); showIntakeDetail(taskId); }, 2000);
+    } else {
+      showToast('Error: ' + (d.error || 'Unknown'), 'error');
+    }
+  } catch (e) { showToast('Network error', 'error'); }
+}
+
+async function approveSubtask(subtaskId) {
+  try {
+    const r = await fetch('/api/subtask/' + subtaskId + '/approve', { method: 'POST' });
+    const d = await r.json();
+    if (d.ok) {
+      showToast('Subtask approved and queued', 'success');
+      if (selectedIntakeTaskId) setTimeout(() => showIntakeDetail(selectedIntakeTaskId), 1500);
+    } else {
+      showToast('Error: ' + (d.error || 'Unknown'), 'error');
+    }
+  } catch (e) { showToast('Network error', 'error'); }
+}
+
+// ═══════════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════════
 
@@ -1098,7 +1357,7 @@ setInterval(renderHeartbeat, 5000);
 document.addEventListener('keydown', (e) => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
   if (e.key === 'Escape') document.getElementById('taskModal').classList.remove('open');
-  const tabs = ['home', 'tasks', 'channels', 'missions', 'topranker', 'approvals', 'costs', 'logs', 'controls', 'settings'];
+  const tabs = ['home', 'tasks', 'intake', 'channels', 'missions', 'topranker', 'approvals', 'costs', 'logs', 'controls', 'settings'];
   const n = parseInt(e.key);
   if (n >= 1 && n <= 9 && !e.metaKey && !e.ctrlKey && !e.altKey) switchTab(tabs[n - 1]);
   if (e.key === '0' && !e.metaKey && !e.ctrlKey && !e.altKey) switchTab(tabs[9]);

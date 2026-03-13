@@ -74,6 +74,9 @@ function recordCost(entry) {
     taskType: entry.taskType || null,
     role: entry.role || null,
     boardRunId: entry.boardRunId || null,
+    intakeTaskId: entry.intakeTaskId || null,
+    subtaskId: entry.subtaskId || null,
+    domain: entry.domain || null,
   };
   entries.push(record);
   writeLedger(entries);

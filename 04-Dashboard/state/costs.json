@@ -129,5 +129,50 @@
     "taskType": "board-run",
     "role": "strategy",
     "boardRunId": "mmof38akifsp"
+  },
+  {
+    "ts": "2026-03-13T04:52:46.158Z",
+    "date": "2026-03-13",
+    "provider": "perplexity",
+    "model": "sonar",
+    "inputTokens": 33,
+    "outputTokens": 154,
+    "totalTokens": 187,
+    "cost": 0,
+    "taskId": "mmof7ohnli0d",
+    "taskType": "ai-channel",
+    "role": "general",
+    "boardRunId": null
+  },
+  {
+    "ts": "2026-03-13T04:53:50.059Z",
+    "date": "2026-03-13",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "inputTokens": 33,
+    "outputTokens": 10,
+    "totalTokens": 43,
+    "cost": 0,
+    "taskId": "mmof946igxuh",
+    "taskType": "ai-channel",
+    "role": "general",
+    "boardRunId": null
+  },
+  {
+    "ts": "2026-03-13T05:01:10.473Z",
+    "date": "2026-03-13",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 1251,
+    "outputTokens": 723,
+    "totalTokens": 1974,
+    "cost": 0.0103575,
+    "taskId": "t_mmofia4tezn9",
+    "taskType": "deliberation",
+    "role": "board",
+    "boardRunId": null,
+    "intakeTaskId": null,
+    "subtaskId": null,
+    "domain": null
   }
 ]

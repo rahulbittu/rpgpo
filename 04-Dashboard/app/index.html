@@ -30,6 +30,10 @@
           <span class="nav-icon">&#9654;</span><span class="nav-label">Tasks</span>
           <span class="nav-badge" id="navTaskBadge" style="display:none">0</span>
         </a>
+        <a href="#" class="nav-link" data-tab="intake">
+          <span class="nav-icon">&#9998;</span><span class="nav-label">Intake</span>
+          <span class="nav-badge" id="navIntakeBadge" style="display:none">0</span>
+        </a>
         <a href="#" class="nav-link" data-tab="channels">
           <span class="nav-icon">&#9881;</span><span class="nav-label">Channels</span>
         </a>
@@ -115,7 +119,7 @@
         <div class="g4 mt-sm">
           <button class="action-btn" onclick="submitTask('refresh-state','Refresh State')"><span class="btn-icon">&#8635;</span>Refresh</button>
           <button class="action-btn" onclick="submitTask('board-run','Board of AI')"><span class="btn-icon">&#9670;</span>Board Run</button>
-          <button class="action-btn" onclick="switchTab('approvals')"><span class="btn-icon">&#9888;</span>Approvals</button>
+          <button class="action-btn" onclick="switchTab('intake')"><span class="btn-icon">&#9998;</span>Intake</button>
           <button class="action-btn" onclick="switchTab('channels')"><span class="btn-icon">&#9881;</span>Channels</button>
         </div>
 
@@ -203,6 +207,68 @@
         <div id="taskQueueList" class="task-queue-list" style="max-height:none">
           <div class="task-empty">No tasks in queue</div>
         </div>
+      </section>
+
+      <!-- INTAKE — Unified Task Intake + Board Deliberation -->
+      <section class="tab-panel" id="tab-intake">
+        <div class="page-header">
+          <div class="header-row">
+            <div>
+              <h1>Task Intake</h1>
+              <p class="subtitle">Submit tasks for Board deliberation and governed execution</p>
+            </div>
+            <button class="refresh-btn" onclick="loadIntakeTasks()">&#8635;</button>
+          </div>
+        </div>
+
+        <!-- Quick Submit Form -->
+        <div class="card" style="margin-bottom:14px">
+          <h3>New Task</h3>
+          <div class="intake-form">
+            <textarea id="intakeRequest" class="channel-textarea" placeholder="Describe the task... (e.g., 'Audit TopRanker API endpoints for performance issues')" rows="3"></textarea>
+            <div class="intake-form-row">
+              <select id="intakeDomain" class="channel-select">
+                <option value="">Auto-detect domain</option>
+                <option value="topranker">TopRanker</option>
+                <option value="careeregine">CareerEngine</option>
+                <option value="founder2founder">Founder2Founder</option>
+                <option value="wealthresearch">WealthResearch</option>
+                <option value="newsroom">Newsroom</option>
+                <option value="screenwriting">Screenwriting</option>
+                <option value="music">Music</option>
+                <option value="personalops">PersonalOps</option>
+                <option value="general">General</option>
+              </select>
+              <select id="intakeUrgency" class="channel-select">
+                <option value="normal">Normal</option>
+                <option value="low">Low</option>
+                <option value="high">High</option>
+                <option value="critical">Critical</option>
+              </select>
+              <input type="text" id="intakeOutcome" class="settings-input" style="flex:1;width:auto" placeholder="Desired outcome (optional)" />
+              <button class="send-btn" onclick="submitIntakeTask()">
+                <span>&#9998;</span> Submit
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Row -->
+        <div class="filter-row" id="intakeFilters">
+          <button class="filter-btn active-filter" data-filter="all" onclick="filterIntake('all')">All</button>
+          <button class="filter-btn" data-filter="intake" onclick="filterIntake('intake')">Intake</button>
+          <button class="filter-btn" data-filter="deliberating" onclick="filterIntake('deliberating')">Deliberating</button>
+          <button class="filter-btn" data-filter="planned" onclick="filterIntake('planned')">Planned</button>
+          <button class="filter-btn" data-filter="executing" onclick="filterIntake('executing')">Executing</button>
+          <button class="filter-btn" data-filter="waiting_approval" onclick="filterIntake('waiting_approval')">Approval</button>
+          <button class="filter-btn" data-filter="done" onclick="filterIntake('done')">Done</button>
+        </div>
+
+        <!-- Task List -->
+        <div id="intakeTaskList"></div>
+
+        <!-- Deliberation Detail Panel (shown when a task is selected) -->
+        <div id="intakeDetailPanel" style="display:none"></div>
       </section>
 
       <!-- CHANNELS — AI Model Interaction Surface -->

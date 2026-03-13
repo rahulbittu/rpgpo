@@ -24,9 +24,12 @@ const fs = require('fs');
 })();
 
 const queue = require('./lib/queue');
-const { RPGPO_ROOT, logAction, writeFile } = require('./lib/files');
+const { RPGPO_ROOT, logAction, writeFile, readFile } = require('./lib/files');
 const { callOpenAI, callPerplexity, callGemini } = require('./lib/ai');
 const costs = require('./lib/costs');
+const intake = require('./lib/intake');
+const { deliberate } = require('./lib/deliberation');
+const workflow = require('./lib/workflow');
 
 const POLL_INTERVAL = 2000;
 let running = false;
@@ -97,6 +100,144 @@ const handlers = {
 
       child.on('error', reject);
     });
+  },
+
+  // Deliberate on an intake task
+  'deliberate': async (task) => {
+    const taskId = task.meta?.taskId;
+    if (!taskId) throw new Error('No taskId in meta');
+
+    const intakeTask = intake.getTask(taskId);
+    if (!intakeTask) throw new Error('Intake task not found: ' + taskId);
+
+    intake.updateTask(taskId, { status: 'deliberating' });
+    queue.updateTask(task.id, { output: 'Deliberating...' });
+
+    const { deliberation, costEntry } = await deliberate(intakeTask);
+
+    // Store deliberation result on the task
+    intake.updateTask(taskId, {
+      status: 'planned',
+      board_deliberation: deliberation,
+      risk_level: deliberation.risk_level || 'green',
+    });
+
+    // Materialize subtasks from the deliberation
+    const created = workflow.materializeSubtasks(taskId, deliberation);
+
+    const summary = `Deliberation complete.\nObjective: ${deliberation.interpreted_objective}\nStrategy: ${deliberation.recommended_strategy}\nRisk: ${deliberation.risk_level}\nSubtasks: ${created.length}\nTokens: ${deliberation.tokens_used}`;
+
+    return {
+      output: summary,
+      deliberation,
+      subtasksCreated: created.length,
+    };
+  },
+
+  // Execute a single subtask via AI
+  'execute-subtask': async (task) => {
+    const subtaskId = task.meta?.subtaskId;
+    if (!subtaskId) throw new Error('No subtaskId in meta');
+
+    const st = intake.getSubtask(subtaskId);
+    if (!st) throw new Error('Subtask not found: ' + subtaskId);
+
+    intake.updateSubtask(subtaskId, { status: 'running' });
+    queue.updateTask(task.id, { output: `Running subtask: ${st.title}` });
+
+    const model = st.assigned_model || 'openai';
+    const systemPrompt = `You are operating inside RPGPO. Stage: ${st.stage}. Role: ${st.assigned_role}. Be direct, specific, and actionable.`;
+
+    // Gather file context
+    let fileContext = '';
+    for (const f of (st.files_to_read || [])) {
+      const content = readFile(f);
+      if (content) fileContext += `\n### ${f}\n${content.slice(0, 2000)}\n`;
+    }
+
+    const userPrompt = `${st.prompt}${fileContext ? '\n\n## Reference Files\n' + fileContext : ''}`;
+
+    let result;
+    try {
+      if (model === 'openai') {
+        result = await callOpenAI(systemPrompt, userPrompt);
+      } else if (model === 'perplexity') {
+        result = await callPerplexity(systemPrompt, userPrompt);
+      } else if (model === 'gemini') {
+        const costSettings = costs.getSettings();
+        const geminiModel = costSettings.geminiModel || 'gemini-2.5-flash-lite';
+        result = await callGemini(systemPrompt, userPrompt, { model: geminiModel });
+      } else if (model === 'claude') {
+        // Claude runs locally — save prompt file for manual execution
+        const today = new Date().toISOString().slice(0, 10);
+        const promptFile = writeFile(
+          `03-Operations/Reports/Subtask-Claude-${today}-${subtaskId}.md`,
+          `# RPGPO Subtask — Claude\n## ${st.title}\n## Stage: ${st.stage}\n\n${userPrompt}\n`
+        );
+        intake.updateSubtask(subtaskId, {
+          status: 'done',
+          output: `Claude prompt saved to ${promptFile}. Execute manually.`,
+        });
+        const wfResult = workflow.onSubtaskComplete(subtaskId);
+        return { output: `Claude prompt saved: ${promptFile}\n${wfResult.message}`, filesWritten: [promptFile] };
+      } else {
+        throw new Error('Unknown model: ' + model);
+      }
+
+      // Record cost
+      const costEntry = costs.recordCost({
+        provider: result.provider,
+        model: result.model,
+        inputTokens: result.usage.inputTokens,
+        outputTokens: result.usage.outputTokens,
+        totalTokens: result.usage.totalTokens,
+        cost: result.usage.cost,
+        taskId: st.parent_task_id,
+        taskType: 'subtask',
+        role: st.assigned_role,
+      });
+
+      // Write output file if files_to_write specified
+      const filesWritten = [];
+      if (st.files_to_write && st.files_to_write.length > 0) {
+        for (const f of st.files_to_write) {
+          const written = writeFile(f, result.text);
+          if (written) filesWritten.push(written);
+        }
+      }
+
+      // Mark subtask done
+      intake.updateSubtask(subtaskId, {
+        status: 'done',
+        output: result.text.slice(0, 5000),
+        cost: costEntry,
+      });
+
+      // Auto-continue workflow
+      const wfResult = workflow.onSubtaskComplete(subtaskId);
+
+      // Queue next subtasks via the task queue
+      if (wfResult.next_subtask_ids) {
+        for (const nextId of wfResult.next_subtask_ids) {
+          const nextSt = intake.getSubtask(nextId);
+          if (nextSt) {
+            queue.addTask('execute-subtask', `Subtask: ${nextSt.title}`, { subtaskId: nextId });
+          }
+        }
+      }
+
+      return {
+        output: `${st.title}: ${result.text.slice(0, 500)}\n\n${wfResult.message}`,
+        filesWritten,
+      };
+    } catch (err) {
+      intake.updateSubtask(subtaskId, {
+        status: 'failed',
+        error: err.message.slice(0, 500),
+      });
+      workflow.onSubtaskComplete(subtaskId);
+      throw err;
+    }
   },
 
   // AI Channel tasks — direct model interaction from the Channels tab

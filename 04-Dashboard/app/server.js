@@ -24,6 +24,8 @@ const { RPGPO_ROOT, readFile, readJson, listFiles, readAllInDir, parseMission, l
 const queue = require('./lib/queue');
 const events = require('./lib/events');
 const costs = require('./lib/costs');
+const intake = require('./lib/intake');
+const workflow = require('./lib/workflow');
 
 const PORT = process.env.PORT || 3200;
 const startTime = Date.now();
@@ -345,6 +347,83 @@ const server = http.createServer(async (req, res) => {
       return json(res, { ok: false, error: 'GEMINI_API_KEY not set. Configure it and restart.' });
     }
     return json(res, { ok: true, output: 'Use "Run Board of AI" or the Channels tab to execute via the task queue.' });
+  }
+
+  // ── Intake API ──
+
+  // Submit a new intake task
+  if (req.url === '/api/intake/submit' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.raw_request) return json(res, { ok: false, error: 'Missing raw_request' }, 400);
+    const task = intake.createTask(body);
+    events.broadcast('activity', { action: `Intake task created: ${task.title}`, ts: new Date().toISOString() });
+    logAction('Intake submit', task.task_id, task.title);
+    return json(res, { ok: true, task });
+  }
+
+  // List all intake tasks
+  if (req.url === '/api/intake/tasks') {
+    return json(res, intake.getAllTasks());
+  }
+
+  // Get a specific intake task with its subtasks
+  if (req.url?.match(/^\/api\/intake\/task\/([^/]+)$/) && req.method === 'GET') {
+    const taskId = req.url.match(/^\/api\/intake\/task\/([^/]+)$/)[1];
+    const task = intake.getTask(taskId);
+    if (!task) return json(res, { error: 'Not found' }, 404);
+    const subtasks = intake.getSubtasksForTask(taskId);
+    const progress = intake.getTaskProgress(taskId);
+    return json(res, { task, subtasks, progress });
+  }
+
+  // Trigger deliberation on an intake task
+  if (req.url?.match(/^\/api\/intake\/task\/([^/]+)\/deliberate$/) && req.method === 'POST') {
+    const taskId = req.url.match(/^\/api\/intake\/task\/([^/]+)\/deliberate$/)[1];
+    const task = intake.getTask(taskId);
+    if (!task) return json(res, { error: 'Not found' }, 404);
+    const qTask = queue.addTask('deliberate', `Deliberate: ${task.title}`, { taskId });
+    events.broadcast('activity', { action: `Deliberation queued: ${task.title}`, ts: new Date().toISOString() });
+    logAction('Deliberation queued', taskId, task.title);
+    return json(res, { ok: true, queueTask: qTask });
+  }
+
+  // Approve plan and start execution
+  if (req.url?.match(/^\/api\/intake\/task\/([^/]+)\/approve-plan$/) && req.method === 'POST') {
+    const taskId = req.url.match(/^\/api\/intake\/task\/([^/]+)\/approve-plan$/)[1];
+    const task = intake.getTask(taskId);
+    if (!task) return json(res, { error: 'Not found' }, 404);
+    if (task.status !== 'planned') return json(res, { error: 'Task not in planned state' }, 400);
+
+    // Queue initial subtasks
+    const queuedIds = workflow.queueInitialSubtasks(taskId);
+
+    // Add queued subtasks to the worker queue
+    for (const stId of queuedIds) {
+      const st = intake.getSubtask(stId);
+      if (st) queue.addTask('execute-subtask', `Subtask: ${st.title}`, { subtaskId: stId });
+    }
+
+    events.broadcast('activity', { action: `Plan approved, ${queuedIds.length} subtasks queued`, ts: new Date().toISOString() });
+    logAction('Plan approved', taskId, `${queuedIds.length} subtasks queued`);
+    return json(res, { ok: true, queued: queuedIds.length });
+  }
+
+  // Approve a single subtask
+  if (req.url?.match(/^\/api\/subtask\/([^/]+)\/approve$/) && req.method === 'POST') {
+    const subtaskId = req.url.match(/^\/api\/subtask\/([^/]+)\/approve$/)[1];
+    const st = intake.getSubtask(subtaskId);
+    if (!st) return json(res, { error: 'Not found' }, 404);
+    if (st.status !== 'waiting_approval') return json(res, { error: 'Subtask not awaiting approval' }, 400);
+
+    intake.updateSubtask(subtaskId, { status: 'queued' });
+    queue.addTask('execute-subtask', `Subtask: ${st.title}`, { subtaskId });
+    events.broadcast('activity', { action: `Subtask approved: ${st.title}`, ts: new Date().toISOString() });
+    return json(res, { ok: true });
+  }
+
+  // Get all subtasks
+  if (req.url === '/api/subtasks') {
+    return json(res, intake.getAllSubtasks());
   }
 
   // File reader (sandbox-safe)
