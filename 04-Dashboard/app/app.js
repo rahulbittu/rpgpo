@@ -1170,7 +1170,7 @@ function updateFlowExplainer() {
   }
 
   const stageOrder = ['intake', 'deliberating', 'planned', 'executing', 'done'];
-  const statusMap = { waiting_approval: 'executing', builder_fallback: 'executing', waiting_human: 'executing', failed: 'done', canceled: 'done' };
+  const statusMap = { waiting_approval: 'executing', builder_running: 'executing', builder_fallback: 'executing', waiting_human: 'executing', failed: 'done', canceled: 'done' };
   const current = statusMap[t.status] || t.status;
   const currentIdx = stageOrder.indexOf(current);
 
@@ -1193,6 +1193,7 @@ function getStatusBanner(status) {
     intake:            { dot: 'var(--text-dim)',  text: 'Task submitted — ready for Board deliberation', pulse: false },
     deliberating:      { dot: 'var(--purple)',     text: 'Board is deliberating — analyzing your request...', pulse: true },
     planned:           { dot: 'var(--blue)',       text: 'Plan ready — review the Board\'s recommendation and approve', pulse: false },
+    builder_running:   { dot: 'var(--purple)',     text: 'Claude Builder is executing — writing code in your repo...', pulse: true },
     waiting_approval:  { dot: 'var(--yellow)',     text: 'Waiting for your approval on one or more subtasks', pulse: true },
     builder_fallback:  { dot: 'var(--red)',        text: 'Builder could not execute — manual Claude session required', pulse: true },
     waiting_human:     { dot: 'var(--yellow)',     text: 'Waiting for manual action from Rahul', pulse: true },
@@ -1242,15 +1243,17 @@ function renderIntakeCurrentHero() {
   // Status dot color + pulse
   const dotColors = {
     intake: 'var(--text-dim)', deliberating: 'var(--purple)', planned: 'var(--blue)',
-    executing: 'var(--green)', waiting_approval: 'var(--yellow)', builder_fallback: 'var(--red)',
+    builder_running: 'var(--purple)', executing: 'var(--green)',
+    waiting_approval: 'var(--yellow)', builder_fallback: 'var(--red)',
     waiting_human: 'var(--yellow)', done: 'var(--green)', failed: 'var(--red)',
   };
-  const isPulse = ['deliberating', 'executing'].includes(t.status);
+  const isPulse = ['deliberating', 'executing', 'builder_running'].includes(t.status);
   const dotColor = dotColors[t.status] || 'var(--text-faint)';
 
   const statusLabels = {
     intake: 'Task Submitted', deliberating: 'Deliberation Running', planned: 'Plan Ready',
-    executing: 'Executing', waiting_approval: 'Waiting for Approval',
+    builder_running: 'Builder Running', executing: 'Executing',
+    waiting_approval: 'Waiting for Approval',
     builder_fallback: 'Builder Fallback', waiting_human: 'Needs Manual Action',
     done: 'Completed', failed: 'Failed',
   };
@@ -1598,10 +1601,37 @@ function renderGlobalApprovalInbox() {
   for (const s of PENDING_APPROVALS) {
     const typeIcon = getSubtaskTypeIcon(s.stage);
     const isFallback = s.status === 'builder_fallback';
+    const isBuilderRunning = s.status === 'builder_running';
     const outcome = s.builder_outcome || '';
     const outcomeLabel = getBuilderOutcomeLabel(outcome);
+    const phase = s.builder_phase || '';
 
-    html += `<div class="approval-inbox-item ${isFallback ? 'is-fallback' : ''}">
+    // Builder running — show progress, no actions
+    if (isBuilderRunning) {
+      const phaseLabels = {
+        inspecting: 'Scanning repo...', launching: 'Starting CLI...',
+        running: 'Writing code...', diffing: 'Checking changes...',
+        classifying: 'Analyzing...', reporting: 'Reporting...',
+      };
+      html += `<div class="approval-inbox-item is-builder-running">
+        <div class="approval-inbox-item-info">
+          <span class="subtask-type-icon ${s.stage}">${typeIcon}</span>
+          <div>
+            <div class="approval-inbox-item-title">${esc(s.title)}</div>
+            <div class="approval-inbox-item-meta">
+              <span class="stage-tag ${s.stage}">${esc(s.stage)}</span>
+              <span class="task-model-tag claude">claude</span>
+              <span class="builder-phase-indicator phase-${phase}">${phaseLabels[phase] || 'Builder running...'}</span>
+            </div>
+            ${s.files_to_write && s.files_to_write.length ? `<div class="approval-files-changed"><span style="font-size:9px;color:var(--text-faint)">Targeting:</span> ${s.files_to_write.slice(0, 3).map(f => '<span class="file-badge">' + esc(f) + '</span>').join('')}</div>` : ''}
+          </div>
+        </div>
+        <div class="builder-running-spinner"></div>
+      </div>`;
+      continue;
+    }
+
+    html += `<div class="approval-inbox-item ${isFallback ? 'is-fallback' : ''} ${outcome === 'code_applied' ? 'is-code-applied' : ''}">
       <div class="approval-inbox-item-info">
         <span class="subtask-type-icon ${s.stage}">${typeIcon}</span>
         <div>
@@ -1611,11 +1641,44 @@ function renderGlobalApprovalInbox() {
             <span class="task-model-tag ${s.assigned_model}">${esc(s.assigned_model)}</span>
             ${outcome ? `<span class="builder-outcome-tag ${outcome}">${outcomeLabel}</span>` : ''}
             <span style="color:var(--text-faint);font-size:9px">from: ${esc(s.parent_title)}</span>
-          </div>
-          ${s.files_changed && s.files_changed.length ? `<div class="approval-files-changed">${s.files_changed.map(f => '<span class="file-badge">' + esc(f) + '</span>').join('')}</div>` : ''}
-          ${s.diff_summary ? `<div class="builder-diff-summary"><pre>${esc(s.diff_summary)}</pre></div>` : ''}
-          ${s.prompt_file ? `<div class="builder-prompt-link">Prompt file: <code>${esc(s.prompt_file)}</code></div>` : ''}
-        </div>
+          </div>`;
+
+    // Review surface for code_applied: changed files + diff summary + output excerpt
+    if (outcome === 'code_applied') {
+      html += `<div class="builder-review-surface">`;
+      if (s.files_changed && s.files_changed.length) {
+        html += `<div class="review-files-section">
+          <div class="review-section-label">Changed Files (${s.files_changed.length})</div>
+          <div class="approval-files-changed">${s.files_changed.map(f => '<span class="file-badge">' + esc(f) + '</span>').join('')}</div>
+        </div>`;
+      }
+      if (s.diff_summary) {
+        html += `<div class="review-diff-section">
+          <div class="review-section-label">Diff Summary</div>
+          <pre class="review-diff-pre">${esc(s.diff_summary)}</pre>
+        </div>`;
+      }
+      if (s.output) {
+        html += `<div class="review-output-section">
+          <div class="review-section-label">Builder Output</div>
+          <pre class="review-output-pre">${esc((s.output || '').slice(0, 500))}</pre>
+        </div>`;
+      }
+      html += `</div>`;
+    } else {
+      // Non-code-applied: show basic info
+      if (s.files_changed && s.files_changed.length) {
+        html += `<div class="approval-files-changed">${s.files_changed.map(f => '<span class="file-badge">' + esc(f) + '</span>').join('')}</div>`;
+      }
+      if (s.diff_summary) {
+        html += `<div class="builder-diff-summary"><pre>${esc(s.diff_summary)}</pre></div>`;
+      }
+      if (s.prompt_file) {
+        html += `<div class="builder-prompt-link">Prompt file: <code>${esc(s.prompt_file)}</code></div>`;
+      }
+    }
+
+    html += `</div>
       </div>
       <div class="approval-inbox-actions">
         ${isFallback ? `
@@ -1628,6 +1691,12 @@ function renderGlobalApprovalInbox() {
         ` : outcome === 'code_applied' ? `
           <button class="btn-approve-global" onclick="event.stopPropagation();approveSubtaskGlobal('${s.subtask_id}', this)">
             <span>&#10003;</span> Approve Changes
+          </button>
+          <button class="btn-reject-global" onclick="event.stopPropagation();rejectSubtask('${s.subtask_id}')">
+            <span>&#10007;</span> Reject
+          </button>
+          <button class="btn-revise-global" onclick="event.stopPropagation();reviseSubtask('${s.subtask_id}')">
+            <span>&#9998;</span> Revise
           </button>
         ` : `
           <button class="btn-approve-global" onclick="event.stopPropagation();approveSubtaskGlobal('${s.subtask_id}', this)">
@@ -1665,6 +1734,52 @@ async function approveSubtaskGlobal(subtaskId, btnEl) {
   }
 }
 
+async function rejectSubtask(subtaskId) {
+  const reason = prompt('Reason for rejection (changes will be reverted):');
+  if (!reason) return;
+  try {
+    const r = await fetch('/api/subtask/' + subtaskId + '/reject', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ reason }),
+    });
+    const d = await r.json();
+    if (d.ok) {
+      showToast(`Rejected & reverted: ${d.rejected}`, 'info');
+      pushActivity(`Rejected: ${d.rejected}`);
+      loadPendingApprovals();
+      loadCurrentTaskFocus();
+      if (selectedIntakeTaskId) showIntakeDetail(selectedIntakeTaskId);
+      loadIntakeTasks();
+    } else {
+      showToast('Error: ' + (d.error || 'Unknown'), 'error');
+    }
+  } catch (e) { showToast('Network error', 'error'); }
+}
+
+async function reviseSubtask(subtaskId) {
+  const notes = prompt('Revision instructions for the builder:');
+  if (!notes) return;
+  try {
+    const r = await fetch('/api/subtask/' + subtaskId + '/revise', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ notes }),
+    });
+    const d = await r.json();
+    if (d.ok) {
+      showToast(`Revision queued: ${d.revised}`, 'success');
+      pushActivity(`Revision queued: ${d.revised}`);
+      loadPendingApprovals();
+      loadCurrentTaskFocus();
+      if (selectedIntakeTaskId) showIntakeDetail(selectedIntakeTaskId);
+      loadIntakeTasks();
+    } else {
+      showToast('Error: ' + (d.error || 'Unknown'), 'error');
+    }
+  } catch (e) { showToast('Network error', 'error'); }
+}
+
 async function loadCurrentTaskFocus() {
   try {
     const r = await fetch('/api/intake/current');
@@ -1685,14 +1800,17 @@ function renderCurrentTaskFocus(data) {
 
   const dotColors = {
     intake: 'var(--text-dim)', deliberating: 'var(--purple)', planned: 'var(--blue)',
-    executing: 'var(--green)', waiting_approval: 'var(--yellow)', done: 'var(--green)', failed: 'var(--red)',
+    builder_running: 'var(--purple)', executing: 'var(--green)',
+    waiting_approval: 'var(--yellow)', builder_fallback: 'var(--red)',
+    waiting_human: 'var(--yellow)', done: 'var(--green)', failed: 'var(--red)',
   };
   const dot = dotColors[t.status] || 'var(--text-faint)';
-  const isPulse = ['deliberating', 'executing'].includes(t.status);
+  const isPulse = ['deliberating', 'executing', 'builder_running'].includes(t.status);
 
   const statusLabels = {
     intake: 'Submitted', deliberating: 'Board Deliberating', planned: 'Plan Ready',
-    executing: 'Executing', waiting_approval: 'Needs Approval',
+    builder_running: 'Builder Running', executing: 'Executing',
+    waiting_approval: 'Needs Approval',
     builder_fallback: 'Builder Fallback', waiting_human: 'Manual Action Needed',
     done: 'Done', failed: 'Failed',
   };
@@ -1715,8 +1833,34 @@ function renderCurrentTaskFocus(data) {
     </div>`;
   }
 
-  // Active subtask
-  if (active) {
+  // Builder active — show detailed builder info
+  const builderActive = data.builderActive;
+  if (builderActive) {
+    const phase = builderActive.builder_phase || 'running';
+    const phaseLabels = {
+      inspecting: 'Scanning repo...', launching: 'Starting Claude CLI...',
+      running: 'Claude is writing code...', diffing: 'Checking for changes...',
+      classifying: 'Analyzing results...', reporting: 'Generating report...',
+      review: 'Ready for review', fallback: 'Needs manual execution',
+    };
+    const targetFiles = builderActive.target_files || {};
+    const realFiles = targetFiles.real || builderActive.files_to_write || [];
+
+    html += `<div class="ctf-builder-active">
+      <span class="ctf-mini-label" style="color:var(--purple)">BUILDER:</span>
+      <span class="builder-phase-indicator phase-${phase}">${phaseLabels[phase] || phase}</span>
+    </div>`;
+    if (realFiles.length) {
+      html += `<div class="ctf-builder-files">
+        <span class="ctf-mini-label">FILES:</span>
+        ${realFiles.slice(0, 4).map(f => '<span class="file-badge">' + esc(f.split('/').pop()) + '</span>').join('')}
+        ${realFiles.length > 4 ? '<span class="file-badge">+' + (realFiles.length - 4) + ' more</span>' : ''}
+      </div>`;
+    }
+  }
+
+  // Active subtask (non-builder)
+  if (active && !builderActive) {
     const typeIcon = getSubtaskTypeIcon(active.stage);
     html += `<div class="ctf-active-subtask">
       <span class="ctf-mini-label">NOW:</span>
@@ -1726,8 +1870,17 @@ function renderCurrentTaskFocus(data) {
     </div>`;
   }
 
+  // Review ready items (code changes awaiting approval)
+  const reviewReady = data.reviewReady || [];
+  if (reviewReady.length > 0) {
+    html += `<div class="ctf-review-ready">
+      <span class="ctf-mini-label" style="color:var(--yellow)">REVIEW:</span>
+      <span>${reviewReady.length} subtask(s) with code changes need your review</span>
+    </div>`;
+  }
+
   // Blocking item
-  if (blocking && !active) {
+  if (blocking && !active && !builderActive) {
     html += `<div class="ctf-blocking">
       <span class="ctf-mini-label" style="color:var(--yellow)">BLOCKED:</span>
       <span>${esc(blocking.title)}</span>
@@ -1741,7 +1894,9 @@ function renderCurrentTaskFocus(data) {
   } else if (t.status === 'planned') {
     html += `<div class="ctf-next-action">Your action: Review plan and Approve & Execute</div>`;
   } else if (t.status === 'waiting_approval') {
-    html += `<div class="ctf-next-action">Your action: Approve ${data.pendingApprovals.length} pending subtask(s)</div>`;
+    html += `<div class="ctf-next-action">Your action: Review and approve ${data.pendingApprovals.length} pending subtask(s)</div>`;
+  } else if (t.status === 'builder_running' || (builderActive && t.status === 'executing')) {
+    html += `<div class="ctf-next-action" style="color:var(--purple)">Builder is working — will stop for review when done</div>`;
   }
 
   html += '</div>';
@@ -1773,6 +1928,7 @@ function getBuilderOutcomeLabel(outcome) {
     blocked_missing_context: 'Blocked — Missing Files',
     waiting_approval_for_commit: 'Awaiting Commit Approval',
     manual_execution_confirmed: 'Manual Done',
+    rejected: 'Rejected — Reverted',
   };
   return labels[outcome] || outcome || '';
 }
@@ -1813,10 +1969,13 @@ function renderTaskTimeline(task, subtasks) {
     events.push({
       type: 'subtask', label: st.title, stage: st.stage,
       role: st.assigned_role, model: st.assigned_model, status: st.status,
-      output: st.output?.slice(0, 120), files: st.files_changed || st.files_to_write || [],
+      output: st.output?.slice(0, 120), files: st.files_changed || [],
       error: st.error, subtask_id: st.subtask_id, order: i + 1,
-      builder_outcome: st.builder_outcome, diff_summary: st.diff_summary,
-      prompt_file: st.prompt_file,
+      builder_outcome: st.builder_outcome, builder_phase: st.builder_phase,
+      diff_summary: st.diff_summary, prompt_file: st.prompt_file,
+      what_done: st.what_done, outcome_type: st.outcome_type,
+      code_modified: st.code_modified, report_file: st.report_file,
+      file_scope: st.file_scope,
     });
   }
 
@@ -1825,6 +1984,7 @@ function renderTaskTimeline(task, subtasks) {
   for (const ev of events) {
     const statusCls = ev.status === 'done' ? 'tl-done' :
                       ev.status === 'running' ? 'tl-running' :
+                      ev.status === 'builder_running' ? 'tl-builder-running' :
                       ev.status === 'waiting_approval' ? 'tl-waiting' :
                       ev.status === 'builder_fallback' ? 'tl-fallback' :
                       ev.status === 'waiting_human' ? 'tl-waiting' :
@@ -1851,22 +2011,74 @@ function renderTaskTimeline(task, subtasks) {
       html += `<div style="margin-top:3px"><span class="builder-outcome-tag ${ev.builder_outcome}">${outcomeLabel}</span></div>`;
     }
 
-    if (ev.detail) html += `<div class="tl-detail">${esc(ev.detail)}</div>`;
-    if (ev.output) html += `<div class="tl-output">${esc(ev.output)}</div>`;
-    if (ev.error) html += `<div class="tl-error">${esc(ev.error)}</div>`;
+    // "What was done" section — compact summary for completed/terminal subtasks
+    if (ev.type === 'subtask' && ev.what_done && ['done', 'failed', 'waiting_approval', 'builder_fallback', 'blocked'].includes(ev.status)) {
+      html += `<div class="tl-what-done">`;
+      html += `<div class="tl-what-done-label">What was done</div>`;
+      html += `<div class="tl-what-done-text">${esc(ev.what_done)}</div>`;
 
-    // Diff summary for code changes
-    if (ev.diff_summary) {
-      html += `<div class="tl-diff-summary"><div class="tl-diff-label">Changes:</div><pre>${esc(ev.diff_summary)}</pre></div>`;
-    }
+      // Show file scope if available (RPGPO vs TopRanker)
+      if (ev.file_scope) {
+        if (ev.file_scope.onlyRpgpo) {
+          html += `<div class="tl-scope-warning">Changed only RPGPO infra files — no TopRanker project files modified</div>`;
+        } else if (ev.file_scope.summary) {
+          html += `<div class="tl-scope-detail">${esc(ev.file_scope.summary)}</div>`;
+        }
+      }
 
-    if (ev.files && ev.files.length) {
-      html += `<div class="tl-files">${ev.files.map(f => '<span class="file-badge">' + esc(f) + '</span>').join('')}</div>`;
+      // Explicit "no code changes" for build tasks
+      if (ev.code_modified === false && ['implement', 'build', 'code'].includes(ev.stage)) {
+        html += `<div class="tl-no-code-changes">No code changes made</div>`;
+      }
+
+      // Changed files
+      if (ev.files && ev.files.length) {
+        html += `<div class="tl-files">${ev.files.map(f => '<span class="file-badge">' + esc(f) + '</span>').join('')}</div>`;
+      }
+
+      // Diff summary
+      if (ev.diff_summary) {
+        html += `<div class="tl-diff-summary"><div class="tl-diff-label">Diff:</div><pre>${esc(ev.diff_summary)}</pre></div>`;
+      }
+
+      // Report link
+      if (ev.report_file) {
+        html += `<div class="tl-report-link">Report: <code>${esc(ev.report_file)}</code></div>`;
+      }
+
+      html += `</div>`;
+    } else {
+      // Fallback for subtasks without what_done (legacy) or milestones
+      if (ev.detail) html += `<div class="tl-detail">${esc(ev.detail)}</div>`;
+      if (ev.output) html += `<div class="tl-output">${esc(ev.output)}</div>`;
+      if (ev.error) html += `<div class="tl-error">${esc(ev.error)}</div>`;
+
+      if (ev.diff_summary) {
+        html += `<div class="tl-diff-summary"><div class="tl-diff-label">Changes:</div><pre>${esc(ev.diff_summary)}</pre></div>`;
+      }
+
+      if (ev.files && ev.files.length) {
+        html += `<div class="tl-files">${ev.files.map(f => '<span class="file-badge">' + esc(f) + '</span>').join('')}</div>`;
+      }
     }
 
     // Prompt file link for fallbacks
     if (ev.prompt_file) {
       html += `<div class="builder-prompt-link" style="margin-top:4px">Prompt: <code>${esc(ev.prompt_file)}</code></div>`;
+    }
+
+    // Builder running — show phase indicator
+    if (ev.status === 'builder_running') {
+      const phase = ev.builder_phase || 'running';
+      const phaseLabels = {
+        inspecting: 'Scanning repo...', launching: 'Starting CLI...',
+        running: 'Writing code...', diffing: 'Checking changes...',
+        classifying: 'Analyzing...', reporting: 'Reporting...',
+      };
+      html += `<div class="tl-builder-progress">
+        <span class="builder-phase-indicator phase-${phase}">${phaseLabels[phase] || 'Builder running...'}</span>
+        <div class="builder-running-spinner"></div>
+      </div>`;
     }
 
     // Action buttons based on status
@@ -1884,6 +2096,12 @@ function renderTaskTimeline(task, subtasks) {
       if (ev.builder_outcome === 'code_applied') {
         html += `<button class="btn-approve-inline" onclick="event.stopPropagation();approveSubtaskGlobal('${ev.subtask_id}', this)">
           <span>&#10003;</span> Approve Changes
+        </button>
+        <button class="btn-reject-inline" onclick="event.stopPropagation();rejectSubtask('${ev.subtask_id}')">
+          <span>&#10007;</span> Reject
+        </button>
+        <button class="btn-revise-inline" onclick="event.stopPropagation();reviseSubtask('${ev.subtask_id}')">
+          <span>&#9998;</span> Revise
         </button>`;
       } else {
         html += `<button class="btn-approve-inline" onclick="event.stopPropagation();approveSubtaskGlobal('${ev.subtask_id}', this)">

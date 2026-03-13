@@ -462,6 +462,84 @@ const server = http.createServer(async (req, res) => {
     return json(res, { ok: true, resumed: st.title, parentTask: parentTask?.title });
   }
 
+  // Reject a subtask's code changes (revert via git checkout)
+  if (req.url?.match(/^\/api\/subtask\/([^/]+)\/reject$/) && req.method === 'POST') {
+    const subtaskId = req.url.match(/^\/api\/subtask\/([^/]+)\/reject$/)[1];
+    const st = intake.getSubtask(subtaskId);
+    if (!st) return json(res, { error: 'Not found' }, 404);
+    if (st.status !== 'waiting_approval') return json(res, { error: 'Subtask not awaiting approval' }, 400);
+
+    const body = await parseBody(req);
+    const reason = body.reason || 'Rejected by Rahul';
+
+    // Revert changed files if code_applied
+    if (st.builder_outcome === 'code_applied' && st.files_changed && st.files_changed.length) {
+      try {
+        for (const f of st.files_changed) {
+          execSync(`git checkout -- "${f}"`, { cwd: RPGPO_ROOT, timeout: 5000 });
+        }
+      } catch (e) {
+        console.log(`[server] Git revert warning: ${e.message.slice(0, 80)}`);
+      }
+    }
+
+    intake.updateSubtask(subtaskId, {
+      status: 'failed',
+      builder_outcome: 'rejected',
+      error: `Rejected: ${reason}`,
+      output: (st.output || '') + `\n\n[Rejected by Rahul: ${reason}]`,
+    });
+    workflow.onSubtaskComplete(subtaskId);
+
+    events.broadcast('activity', { action: `Subtask rejected: ${st.title}`, ts: new Date().toISOString() });
+    events.broadcast('intake-update', { taskId: st.parent_task_id, subtaskId, action: 'rejected' });
+    return json(res, { ok: true, rejected: st.title, reverted: st.files_changed || [] });
+  }
+
+  // Revise a subtask — re-run builder with additional instructions
+  if (req.url?.match(/^\/api\/subtask\/([^/]+)\/revise$/) && req.method === 'POST') {
+    const subtaskId = req.url.match(/^\/api\/subtask\/([^/]+)\/revise$/)[1];
+    const st = intake.getSubtask(subtaskId);
+    if (!st) return json(res, { error: 'Not found' }, 404);
+    if (st.status !== 'waiting_approval' && st.status !== 'builder_fallback')
+      return json(res, { error: 'Subtask not in revisable state' }, 400);
+
+    const body = await parseBody(req);
+    if (!body.notes) return json(res, { error: 'Missing revision notes' }, 400);
+
+    // Revert existing changes first if code_applied
+    if (st.builder_outcome === 'code_applied' && st.files_changed && st.files_changed.length) {
+      try {
+        for (const f of st.files_changed) {
+          execSync(`git checkout -- "${f}"`, { cwd: RPGPO_ROOT, timeout: 5000 });
+        }
+      } catch (e) {
+        console.log(`[server] Git revert for revise warning: ${e.message.slice(0, 80)}`);
+      }
+    }
+
+    // Reset subtask to queued and queue a builder re-run
+    intake.updateSubtask(subtaskId, {
+      status: 'queued',
+      builder_outcome: null,
+      builder_phase: null,
+      files_changed: [],
+      diff_summary: '',
+      diff_detail: '',
+      revision_notes: body.notes,
+      output: (st.output || '') + `\n\n[Revision requested: ${body.notes}]`,
+    });
+
+    const qTask = queue.addTask('execute-builder', `Builder re-run: ${st.title}`, {
+      subtaskId,
+      revisionNotes: body.notes,
+    });
+
+    events.broadcast('activity', { action: `Builder revision queued: ${st.title}`, ts: new Date().toISOString() });
+    events.broadcast('intake-update', { taskId: st.parent_task_id, subtaskId, action: 'revised' });
+    return json(res, { ok: true, revised: st.title, queueTask: qTask });
+  }
+
   // Get all subtasks
   if (req.url === '/api/subtasks') {
     return json(res, intake.getAllSubtasks());
@@ -470,7 +548,7 @@ const server = http.createServer(async (req, res) => {
   // Global pending approvals — subtasks + tasks waiting approval
   if (req.url === '/api/intake/pending-approvals') {
     const allSubs = intake.getAllSubtasks();
-    const pending = allSubs.filter(s => ['waiting_approval', 'builder_fallback', 'waiting_human'].includes(s.status)).map(s => {
+    const pending = allSubs.filter(s => ['waiting_approval', 'builder_fallback', 'waiting_human', 'builder_running'].includes(s.status)).map(s => {
       const parent = intake.getTask(s.parent_task_id);
       return { ...s, parent_title: parent ? parent.title : 'Unknown', parent_domain: parent ? parent.domain : 'general' };
     });
@@ -486,9 +564,11 @@ const server = http.createServer(async (req, res) => {
     const subtasks = intake.getSubtasksForTask(current.task_id);
     const progress = intake.getTaskProgress(current.task_id);
     const pendingApprovals = subtasks.filter(s => s.status === 'waiting_approval');
-    const activeSubtask = subtasks.find(s => s.status === 'running') || subtasks.find(s => s.status === 'queued') || null;
-    const nextBlocking = subtasks.find(s => s.status === 'waiting_approval') || null;
-    return json(res, { task: current, subtasks, progress, pendingApprovals, activeSubtask, nextBlocking });
+    const activeSubtask = subtasks.find(s => s.status === 'builder_running') || subtasks.find(s => s.status === 'running') || subtasks.find(s => s.status === 'queued') || null;
+    const nextBlocking = subtasks.find(s => s.status === 'waiting_approval') || subtasks.find(s => s.status === 'builder_fallback') || null;
+    const builderActive = subtasks.find(s => s.status === 'builder_running') || null;
+    const reviewReady = subtasks.filter(s => s.status === 'waiting_approval' && s.builder_outcome);
+    return json(res, { task: current, subtasks, progress, pendingApprovals, activeSubtask, nextBlocking, builderActive, reviewReady });
   }
 
   // Provider key diagnostic (safe — never exposes full keys)

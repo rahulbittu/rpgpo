@@ -143,7 +143,7 @@ function checkTaskCompletion(taskId, allSubs) {
 
   // builder_fallback / waiting_human are stop states — not terminal, not auto-continuable
   const terminal = ['done', 'failed', 'blocked', 'canceled'];
-  const stopping = ['builder_fallback', 'waiting_approval', 'waiting_human'];
+  const stopping = ['builder_running', 'builder_fallback', 'waiting_approval', 'waiting_human'];
   const anyStopped = subs.some(s => stopping.includes(s.status));
   if (anyStopped) return; // Don't finalize while any subtask needs human action
 

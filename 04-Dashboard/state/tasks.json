@@ -1,5 +1,47 @@
 [
   {
+    "id": "mmoys6w1a7sg",
+    "type": "execute-subtask",
+    "label": "Subtask: Implement API Key Fix",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmoh81vl7vd7"
+    },
+    "createdAt": "2026-03-13T14:00:31.969Z",
+    "updatedAt": "2026-03-13T14:00:33.954Z",
+    "output": "Builder blocked: missing files config/api_key_status.json",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmoyl65v8ugn",
+    "type": "execute-subtask",
+    "label": "Subtask: Decide on API Key Fix",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmoh81vl7k6n"
+    },
+    "createdAt": "2026-03-13T13:55:04.435Z",
+    "updatedAt": "2026-03-13T13:55:07.608Z",
+    "output": "Decide on API Key Fix: **Decision:** The API key fix is **partially effective**. Further action is **required**.\n\n**Rationale:**\n\n*   **Audit Findings:** The audit confirmed that the implemented fix prevents the direct exposure of API keys in logs. This is a positive outcome and addresses a critical vulnerability.\n*   **Remaining Risk:** However, the audit also identified that API keys are still being transmitted in plain text within API requests. This exposes them to man-in-the-middle attacks and unauthorized access \n\n1 subtask(s) need approval",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmoykth55h3e",
+    "type": "execute-subtask",
+    "label": "Subtask: Implement Code Fix",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmohkgcizcyr"
+    },
+    "createdAt": "2026-03-13T13:54:47.993Z",
+    "updatedAt": "2026-03-13T13:54:49.788Z",
+    "output": "Builder blocked: missing files api/source_code/main.py, api/source_code/main.py",
+    "error": null,
+    "filesWritten": []
+  },
+  {
     "id": "mmohlq530aqs",
     "type": "execute-subtask",
     "label": "Subtask: Implement Code Fix",

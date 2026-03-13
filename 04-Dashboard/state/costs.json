@@ -361,5 +361,22 @@
     "intakeTaskId": null,
     "subtaskId": null,
     "domain": null
+  },
+  {
+    "ts": "2026-03-13T13:55:07.600Z",
+    "date": "2026-03-13",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "inputTokens": 45,
+    "outputTokens": 406,
+    "totalTokens": 451,
+    "cost": 0,
+    "taskId": "t_mmoh7qxkb3wy",
+    "taskType": "subtask",
+    "role": "chief",
+    "boardRunId": null,
+    "intakeTaskId": null,
+    "subtaskId": null,
+    "domain": null
   }
 ]

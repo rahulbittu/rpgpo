@@ -95,7 +95,7 @@ function updateTask(taskId, updates) {
 
 // --- Subtask CRUD ---
 
-// statuses: proposed, queued, running, waiting_approval, done, failed, blocked, canceled
+// statuses: proposed, queued, running, builder_running, waiting_approval, builder_fallback, waiting_human, done, failed, blocked, canceled
 function createSubtask(opts) {
   const subtasks = readStore(SUBTASKS_FILE);
   const st = {
