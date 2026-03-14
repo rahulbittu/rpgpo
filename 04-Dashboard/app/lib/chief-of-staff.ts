@@ -1668,6 +1668,20 @@ export function getCurrentRelease(project: string, channel: string) {
   try { const ra = require('./release-assembly') as { getCurrentRelease(p: string, c: string): unknown }; return ra.getCurrentRelease(project, channel); } catch { return null; }
 }
 
+// Part 65: Runtime Pipeline Integration
+export function onRuntimeTaskStart(taskId: string, engineId: string) {
+  try { const rdp = require('./runtime-deliverable-pipeline') as { onTaskStart(t: string, e: string): unknown }; return rdp.onTaskStart(taskId, engineId); } catch { return null; }
+}
+export function onRuntimeSubtaskComplete(taskId: string, subtaskId: string, output: string, engineId: string) {
+  try { const rdp = require('./runtime-deliverable-pipeline') as { onSubtaskComplete(t: string, s: string, o: string, e: string): unknown }; return rdp.onSubtaskComplete(taskId, subtaskId, output, engineId); } catch { return null; }
+}
+export function onRuntimeTaskComplete(taskId: string, engineId: string) {
+  try { const rdp = require('./runtime-deliverable-pipeline') as { onTaskComplete(t: string, e: string): unknown }; return rdp.onTaskComplete(taskId, engineId); } catch { return null; }
+}
+export function getRuntimeDeliverableSummary() {
+  try { const rdp = require('./runtime-deliverable-pipeline') as { getSummary(): unknown }; return rdp.getSummary(); } catch { return null; }
+}
+
 module.exports = {
   interpretBoardResult,
   getNextBestActions, getEngineActions, getProjectActions,
@@ -1808,4 +1822,7 @@ module.exports = {
   // Part 64
   buildReleaseCandidate, getReleaseCandidates,
   getCurrentRelease,
+  // Part 65
+  onRuntimeTaskStart, onRuntimeSubtaskComplete,
+  onRuntimeTaskComplete, getRuntimeDeliverableSummary,
 };

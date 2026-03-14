@@ -6333,3 +6333,29 @@ export interface ReleaseRecord {
   created_by: string;
   supersedes?: string;
 }
+
+// ── Part 65: Runtime Pipeline Integration ──
+
+export type ContractSatisfactionStatus = 'pending' | 'partial' | 'satisfied' | 'violated';
+
+export interface RuntimeDeliverableState {
+  task_id: string;
+  deliverable_id: string;
+  engine_id: string;
+  scaffold_created: boolean;
+  fields_populated: string[];
+  fields_missing: string[];
+  contract_status: ContractSatisfactionStatus;
+  merge_count: number;
+  last_merge_at: string | null;
+  created_at: string;
+}
+
+export interface RuntimeDeliverableSummary {
+  total_tasks: number;
+  with_deliverables: number;
+  satisfied: number;
+  partial: number;
+  pending: number;
+  violated: number;
+}

@@ -3308,6 +3308,15 @@ const server = http.createServer(async (req, res) => {
     try { const cos = require('./lib/chief-of-staff'); const d = cos.getStoredDeliverable(id); return d ? json(res, d) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 65: Runtime Deliverable Pipeline
+  if (req.url?.match(/^\/api\/runtime-deliverable\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/runtime-deliverable\/([^/]+)$/)[1];
+    try { const rdp = require('./lib/runtime-deliverable-pipeline'); const s = rdp.getState(id); return s ? json(res, s) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/runtime-deliverable-summary' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getRuntimeDeliverableSummary()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // File reader (sandbox-safe)
   if (req.url?.startsWith('/api/file/')) {
     const relPath = decodeURIComponent(req.url.replace('/api/file/', ''));

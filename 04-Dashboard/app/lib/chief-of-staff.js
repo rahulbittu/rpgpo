@@ -197,6 +197,10 @@ exports.getDeliverableApprovalRequests = getDeliverableApprovalRequests;
 exports.buildReleaseCandidate = buildReleaseCandidate;
 exports.getReleaseCandidates = getReleaseCandidates;
 exports.getCurrentRelease = getCurrentRelease;
+exports.onRuntimeTaskStart = onRuntimeTaskStart;
+exports.onRuntimeSubtaskComplete = onRuntimeSubtaskComplete;
+exports.onRuntimeTaskComplete = onRuntimeTaskComplete;
+exports.getRuntimeDeliverableSummary = getRuntimeDeliverableSummary;
 const context = require('./context');
 const engines = require('./engines');
 const projects = require('./projects');
@@ -2502,6 +2506,43 @@ function getCurrentRelease(project, channel) {
         return null;
     }
 }
+// Part 65: Runtime Pipeline Integration
+function onRuntimeTaskStart(taskId, engineId) {
+    try {
+        const rdp = require('./runtime-deliverable-pipeline');
+        return rdp.onTaskStart(taskId, engineId);
+    }
+    catch {
+        return null;
+    }
+}
+function onRuntimeSubtaskComplete(taskId, subtaskId, output, engineId) {
+    try {
+        const rdp = require('./runtime-deliverable-pipeline');
+        return rdp.onSubtaskComplete(taskId, subtaskId, output, engineId);
+    }
+    catch {
+        return null;
+    }
+}
+function onRuntimeTaskComplete(taskId, engineId) {
+    try {
+        const rdp = require('./runtime-deliverable-pipeline');
+        return rdp.onTaskComplete(taskId, engineId);
+    }
+    catch {
+        return null;
+    }
+}
+function getRuntimeDeliverableSummary() {
+    try {
+        const rdp = require('./runtime-deliverable-pipeline');
+        return rdp.getSummary();
+    }
+    catch {
+        return null;
+    }
+}
 module.exports = {
     interpretBoardResult,
     getNextBestActions, getEngineActions, getProjectActions,
@@ -2642,5 +2683,8 @@ module.exports = {
     // Part 64
     buildReleaseCandidate, getReleaseCandidates,
     getCurrentRelease,
+    // Part 65
+    onRuntimeTaskStart, onRuntimeSubtaskComplete,
+    onRuntimeTaskComplete, getRuntimeDeliverableSummary,
 };
 //# sourceMappingURL=chief-of-staff.js.map
