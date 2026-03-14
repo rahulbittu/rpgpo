@@ -1,0 +1,70 @@
+{
+  "ej_profile": {
+    "job_id": "ej_profile",
+    "status": "completed",
+    "last_run_at": "2026-03-14T18:07:17.100Z",
+    "last_result": {
+      "source_id": "profile",
+      "patterns_found": [],
+      "decisions_extracted": [],
+      "artifacts_found": [],
+      "summary": "Refined operator profile: 0 pattern(s) found",
+      "run_at": "2026-03-14T18:07:17.100Z"
+    },
+    "last_error": null,
+    "next_due_at": "2026-03-21T18:07:17.100Z",
+    "run_count": 40,
+    "enabled": true
+  },
+  "ej_patterns": {
+    "job_id": "ej_patterns",
+    "status": "completed",
+    "last_run_at": "2026-03-14T17:56:56.415Z",
+    "last_result": {
+      "source_id": "patterns",
+      "patterns_found": [],
+      "decisions_extracted": [],
+      "artifacts_found": [],
+      "summary": "Pattern extraction: 0 pattern(s)",
+      "run_at": "2026-03-14T17:56:56.415Z"
+    },
+    "last_error": null,
+    "next_due_at": "2026-03-21T17:56:56.415Z",
+    "run_count": 39,
+    "enabled": true
+  },
+  "ej_quality": {
+    "job_id": "ej_quality",
+    "status": "completed",
+    "last_run_at": "2026-03-14T17:56:56.416Z",
+    "last_result": {
+      "source_id": "quality",
+      "patterns_found": [],
+      "decisions_extracted": [],
+      "artifacts_found": [],
+      "summary": "Context quality: 0 finding(s)",
+      "run_at": "2026-03-14T17:56:56.416Z"
+    },
+    "last_error": null,
+    "next_due_at": "2026-03-15T17:56:56.416Z",
+    "run_count": 40,
+    "enabled": true
+  },
+  "ej_summaries": {
+    "job_id": "ej_summaries",
+    "status": "completed",
+    "last_run_at": "2026-03-14T17:56:56.419Z",
+    "last_result": {
+      "source_id": "summaries",
+      "patterns_found": [],
+      "decisions_extracted": [],
+      "artifacts_found": [],
+      "summary": "Summary check: 0 improvement(s) suggested",
+      "run_at": "2026-03-14T17:56:56.419Z"
+    },
+    "last_error": null,
+    "next_due_at": "2026-03-15T17:56:56.419Z",
+    "run_count": 39,
+    "enabled": true
+  }
+}

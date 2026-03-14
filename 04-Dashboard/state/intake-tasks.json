@@ -1,5 +1,299 @@
 [
   {
+    "task_id": "t_mmqtkxg4ky9m",
+    "title": "give top 10 news in hyderabad India.",
+    "raw_request": "give top 10 news in hyderabad India.",
+    "domain": "newsroom",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-14T21:10:27.412Z",
+    "updated_at": "2026-03-14T21:11:14.550Z",
+    "status": "waiting_approval",
+    "board_deliberation": {
+      "timestamp": "2026-03-14T21:10:43.935Z",
+      "interpreted_objective": "Identify and report the top 10 current news stories in Hyderabad, India.",
+      "expected_outcome": "A compiled report of the top 10 news stories in Hyderabad, stored in the designated directory.",
+      "key_unknowns": [
+        "Preferred format for the report",
+        "Criteria for ranking news stories",
+        "Current top news sources for Hyderabad"
+      ],
+      "recommended_strategy": "Research current news sources to identify the top 10 news stories in Hyderabad. Compile these stories into a report and store it in the designated directory. Ensure the news is current and relevant by cross-referencing multiple sources.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Approval required for the final report format and content before storage"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Top News Sources",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of reliable news sources for Hyderabad.",
+          "prompt": "Identify reliable news sources that frequently update on Hyderabad's current events.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Identify Top News Stories",
+          "stage": "decide",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "A list of the top 10 news stories in Hyderabad.",
+          "prompt": "Using the identified news sources, list the top 10 current news stories in Hyderabad.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Compile News Report",
+          "stage": "implement",
+          "assigned_role": "builder",
+          "assigned_model": "claude",
+          "expected_output": "A compiled report of the top 10 news stories.",
+          "prompt": "Compile the top 10 news stories into a report format.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/Hyderabad_Top_10_News_Report.txt"
+          ],
+          "risk_level": "yellow",
+          "approval_required": true,
+          "depends_on": [
+            1
+          ]
+        },
+        {
+          "title": "Store News Report",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "Confirmation of the report's storage location and verification.",
+          "prompt": "Store the compiled news report in the specified directory and confirm its location.",
+          "files_to_read": [
+            "03-Operations/Reports/Hyderabad_Top_10_News_Report.txt"
+          ],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            2
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1651
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelm412"
+  },
+  {
+    "task_id": "t_mmqst1fmfj67",
+    "title": "summarize the current state of top ranker",
+    "raw_request": "summarize the current state of top ranker",
+    "domain": "topranker",
+    "desired_outcome": "show me the summary",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-14T20:48:46.210Z",
+    "updated_at": "2026-03-14T20:49:14.187Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-14T20:48:54.432Z",
+      "interpreted_objective": "Summarize the current state of TopRanker.",
+      "expected_outcome": "A concise summary of TopRanker's current mission status, technical profile, and recent progress.",
+      "key_unknowns": [
+        "Any recent changes not documented in the provided files",
+        "Current state of any ongoing experiments"
+      ],
+      "recommended_strategy": "Review the provided mission and operating summary documents to extract key information. Synthesize this into a brief summary highlighting the mission's status, technical details, and any recent developments or blockers. Ensure the summary is aligned with RPGPO's current objectives and priorities.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Audit Mission Status",
+          "stage": "audit",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "Key points from the mission status document.",
+          "prompt": "Extract key points from the mission status document to summarize TopRanker's current status, objectives, and blockers.",
+          "files_to_read": [
+            "03-Operations/MissionStatus/TopRanker.md"
+          ],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Audit Operating Summary",
+          "stage": "audit",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "Key points from the operating summary document.",
+          "prompt": "Extract key points from the operating summary document to summarize TopRanker's technical profile and recent progress.",
+          "files_to_read": [
+            "03-Operations/Reports/TopRanker-Operating-Summary.md"
+          ],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Decide on Summary Content",
+          "stage": "decide",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "Decision on which key points to include in the final summary.",
+          "prompt": "Based on the extracted key points from the mission status and operating summary documents, decide on the most important content to include in a concise summary of TopRanker's current state.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        },
+        {
+          "title": "Report Summary",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "A concise summary report of TopRanker's current state.",
+          "prompt": "Create a concise summary report of TopRanker's current state, including mission status, technical profile, and recent progress, based on the decisions made.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/TopRanker-Current-State-Summary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            2
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2110
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmqn1d6vm0li"
+  },
+  {
+    "task_id": "t_mmqsbefzp21f",
+    "title": "can you get me top 10 news in Hyderabad India.",
+    "raw_request": "can you get me top 10 news in Hyderabad India.",
+    "domain": "newsroom",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-14T20:35:03.263Z",
+    "updated_at": "2026-03-14T20:35:52.021Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-14T20:35:14.578Z",
+      "interpreted_objective": "Identify and report the top 10 current news stories in Hyderabad, India.",
+      "expected_outcome": "A report listing the top 10 news stories in Hyderabad, India, compiled and documented in a specified directory.",
+      "key_unknowns": [
+        "Current top news sources for Hyderabad",
+        "Criteria for ranking news stories",
+        "Preferred format for the report"
+      ],
+      "recommended_strategy": "Research current news sources to identify the top 10 news stories in Hyderabad. Compile these stories into a report and store it in the designated directory. Ensure the news is current and relevant by cross-referencing multiple sources.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Top News Sources",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of reliable news sources for Hyderabad.",
+          "prompt": "Identify reliable news sources for Hyderabad, India, that frequently update with current events.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Identify Top News Stories",
+          "stage": "decide",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of the top 10 current news stories in Hyderabad.",
+          "prompt": "Using the identified sources, list the top 10 current news stories in Hyderabad, India.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Compile News Report",
+          "stage": "implement",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "A compiled report of the top 10 news stories.",
+          "prompt": "Compile the identified news stories into a report format suitable for documentation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/hyderabad_top_10_news.json"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            1
+          ]
+        },
+        {
+          "title": "Store News Report",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "Confirmation of report storage in the designated directory.",
+          "prompt": "Store the compiled news report in the specified directory and confirm its location.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            2
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1376
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelm412"
+  },
+  {
     "task_id": "t_mmp0vnz0j8af",
     "title": "Optimize TopRanker app startup performance — reduce time to interactive, impleme",
     "raw_request": "Optimize TopRanker app startup performance — reduce time to interactive, implement the safest first fix, and stop for approval before commit/push.",
@@ -581,8 +875,8 @@
     "risk_level": "yellow",
     "success_criteria": "",
     "created_at": "2026-03-13T05:05:17.620Z",
-    "updated_at": "2026-03-13T05:06:45.632Z",
-    "status": "planned",
+    "updated_at": "2026-03-13T20:26:38.710Z",
+    "status": "waiting_approval",
     "board_deliberation": {
       "timestamp": "2026-03-13T05:06:45.632Z",
       "interpreted_objective": "Identify and prioritize performance issues in TopRanker's API endpoints.",
@@ -696,8 +990,8 @@
     "risk_level": "yellow",
     "success_criteria": "",
     "created_at": "2026-03-13T05:00:56.909Z",
-    "updated_at": "2026-03-13T05:01:10.473Z",
-    "status": "planned",
+    "updated_at": "2026-03-14T21:13:07.176Z",
+    "status": "done",
     "board_deliberation": {
       "timestamp": "2026-03-13T05:01:10.473Z",
       "interpreted_objective": "Audit TopRanker API endpoints for performance issues, focusing on N+1 queries and missing indexes.",

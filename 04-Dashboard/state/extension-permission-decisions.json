@@ -1,0 +1,29 @@
+[
+  {
+    "decision_id": "ep_mmqs6titsfe4",
+    "extension_id": "request_ext",
+    "permission": "governance",
+    "action": "use",
+    "outcome": "denied",
+    "reason": "Extension not found",
+    "created_at": "2026-03-14T20:31:29.525Z"
+  },
+  {
+    "decision_id": "ep_mmqs6ti8n509",
+    "extension_id": "untrusted_ext",
+    "permission": "data_write",
+    "action": "use",
+    "outcome": "denied",
+    "reason": "Extension not found",
+    "created_at": "2026-03-14T20:31:29.504Z"
+  },
+  {
+    "decision_id": "ep_mmqs6thufsyk",
+    "extension_id": "untrusted_ext",
+    "permission": "data_write",
+    "action": "use",
+    "outcome": "denied",
+    "reason": "Extension not found",
+    "created_at": "2026-03-14T20:31:29.490Z"
+  }
+]

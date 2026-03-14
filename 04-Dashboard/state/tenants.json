@@ -1,0 +1,47 @@
+[
+  {
+    "tenant_id": "rpgpo",
+    "name": "Rahul Pitta's GPO",
+    "plan": "pro",
+    "enabled_engines": [
+      "topranker",
+      "careeregine",
+      "founder2founder",
+      "wealthresearch",
+      "newsroom",
+      "screenwriting",
+      "music",
+      "personalops",
+      "general"
+    ],
+    "enabled_modules": [
+      "governance",
+      "audit",
+      "compliance",
+      "collaboration",
+      "release",
+      "provider_governance",
+      "tenant_admin",
+      "pattern_exchange",
+      "approval_workspace",
+      "memory_viewer"
+    ],
+    "environment": {
+      "lanes_enabled": [
+        "dev",
+        "beta",
+        "prod"
+      ],
+      "storage_root": "./state",
+      "deployment_target": "local",
+      "auto_refresh_interval_ms": 30000
+    },
+    "governance_defaults": {
+      "review_strictness": "balanced",
+      "documentation_strictness": "balanced"
+    },
+    "isolation_state": "strict",
+    "created_at": "2026-03-14T18:06:55.539Z",
+    "updated_at": "2026-03-14T18:06:55.539Z"
+  }
+]

@@ -1,0 +1,782 @@
+[
+  {
+    "report_id": "dp_mmqnijen3zpb",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall_score": 78,
+    "dimensions": [
+      {
+        "dimension": "tenant_isolation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Project/tenant isolation enforced"
+      },
+      {
+        "dimension": "governance_completeness",
+        "score": 9,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Governance layers 19-35 implemented"
+      },
+      {
+        "dimension": "release_maturity",
+        "score": 6,
+        "max_score": 10,
+        "status": "partial",
+        "details": "Release orchestration and pipeline available"
+      },
+      {
+        "dimension": "documentation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Documentation governance active"
+      },
+      {
+        "dimension": "audit_compliance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Audit hub, compliance export, policy history available"
+      },
+      {
+        "dimension": "rollback_readiness",
+        "score": 7,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Rollback control and tuning rollback available"
+      },
+      {
+        "dimension": "provider_governance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Reliability, cost, latency governance active"
+      },
+      {
+        "dimension": "admin_subscription",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Tenant admin and subscription operations available"
+      },
+      {
+        "dimension": "ux_operator",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Approval workspace, escalation inbox, collaboration runtime available"
+      }
+    ],
+    "blockers": [],
+    "warnings": [
+      "No release plans created yet"
+    ],
+    "risks": [],
+    "recommended_fixes": [],
+    "created_at": "2026-03-14T18:20:38.207Z"
+  },
+  {
+    "report_id": "dp_mmqngtqdu8rx",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall_score": 78,
+    "dimensions": [
+      {
+        "dimension": "tenant_isolation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Project/tenant isolation enforced"
+      },
+      {
+        "dimension": "governance_completeness",
+        "score": 9,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Governance layers 19-35 implemented"
+      },
+      {
+        "dimension": "release_maturity",
+        "score": 6,
+        "max_score": 10,
+        "status": "partial",
+        "details": "Release orchestration and pipeline available"
+      },
+      {
+        "dimension": "documentation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Documentation governance active"
+      },
+      {
+        "dimension": "audit_compliance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Audit hub, compliance export, policy history available"
+      },
+      {
+        "dimension": "rollback_readiness",
+        "score": 7,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Rollback control and tuning rollback available"
+      },
+      {
+        "dimension": "provider_governance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Reliability, cost, latency governance active"
+      },
+      {
+        "dimension": "admin_subscription",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Tenant admin and subscription operations available"
+      },
+      {
+        "dimension": "ux_operator",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Approval workspace, escalation inbox, collaboration runtime available"
+      }
+    ],
+    "blockers": [],
+    "warnings": [
+      "No release plans created yet"
+    ],
+    "risks": [],
+    "recommended_fixes": [],
+    "created_at": "2026-03-14T18:19:18.277Z"
+  },
+  {
+    "report_id": "dp_mmqn4exefu7q",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall_score": 78,
+    "dimensions": [
+      {
+        "dimension": "tenant_isolation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Project/tenant isolation enforced"
+      },
+      {
+        "dimension": "governance_completeness",
+        "score": 9,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Governance layers 19-35 implemented"
+      },
+      {
+        "dimension": "release_maturity",
+        "score": 6,
+        "max_score": 10,
+        "status": "partial",
+        "details": "Release orchestration and pipeline available"
+      },
+      {
+        "dimension": "documentation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Documentation governance active"
+      },
+      {
+        "dimension": "audit_compliance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Audit hub, compliance export, policy history available"
+      },
+      {
+        "dimension": "rollback_readiness",
+        "score": 7,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Rollback control and tuning rollback available"
+      },
+      {
+        "dimension": "provider_governance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Reliability, cost, latency governance active"
+      },
+      {
+        "dimension": "admin_subscription",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Tenant admin and subscription operations available"
+      },
+      {
+        "dimension": "ux_operator",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Approval workspace, escalation inbox, collaboration runtime available"
+      }
+    ],
+    "blockers": [],
+    "warnings": [
+      "No release plans created yet"
+    ],
+    "risks": [],
+    "recommended_fixes": [],
+    "created_at": "2026-03-14T18:09:39.218Z"
+  },
+  {
+    "report_id": "dp_mmqn4exdamdm",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall_score": 78,
+    "dimensions": [
+      {
+        "dimension": "tenant_isolation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Project/tenant isolation enforced"
+      },
+      {
+        "dimension": "governance_completeness",
+        "score": 9,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Governance layers 19-35 implemented"
+      },
+      {
+        "dimension": "release_maturity",
+        "score": 6,
+        "max_score": 10,
+        "status": "partial",
+        "details": "Release orchestration and pipeline available"
+      },
+      {
+        "dimension": "documentation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Documentation governance active"
+      },
+      {
+        "dimension": "audit_compliance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Audit hub, compliance export, policy history available"
+      },
+      {
+        "dimension": "rollback_readiness",
+        "score": 7,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Rollback control and tuning rollback available"
+      },
+      {
+        "dimension": "provider_governance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Reliability, cost, latency governance active"
+      },
+      {
+        "dimension": "admin_subscription",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Tenant admin and subscription operations available"
+      },
+      {
+        "dimension": "ux_operator",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Approval workspace, escalation inbox, collaboration runtime available"
+      }
+    ],
+    "blockers": [],
+    "warnings": [
+      "No release plans created yet"
+    ],
+    "risks": [],
+    "recommended_fixes": [],
+    "created_at": "2026-03-14T18:09:39.217Z"
+  },
+  {
+    "report_id": "dp_mmqn1kd40361",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall_score": 78,
+    "dimensions": [
+      {
+        "dimension": "tenant_isolation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Project/tenant isolation enforced"
+      },
+      {
+        "dimension": "governance_completeness",
+        "score": 9,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Governance layers 19-35 implemented"
+      },
+      {
+        "dimension": "release_maturity",
+        "score": 6,
+        "max_score": 10,
+        "status": "partial",
+        "details": "Release orchestration and pipeline available"
+      },
+      {
+        "dimension": "documentation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Documentation governance active"
+      },
+      {
+        "dimension": "audit_compliance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Audit hub, compliance export, policy history available"
+      },
+      {
+        "dimension": "rollback_readiness",
+        "score": 7,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Rollback control and tuning rollback available"
+      },
+      {
+        "dimension": "provider_governance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Reliability, cost, latency governance active"
+      },
+      {
+        "dimension": "admin_subscription",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Tenant admin and subscription operations available"
+      },
+      {
+        "dimension": "ux_operator",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Approval workspace, escalation inbox, collaboration runtime available"
+      }
+    ],
+    "blockers": [],
+    "warnings": [
+      "No release plans created yet"
+    ],
+    "risks": [],
+    "recommended_fixes": [],
+    "created_at": "2026-03-14T18:07:26.296Z"
+  },
+  {
+    "report_id": "dp_mmqn1kcz4rch",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall_score": 78,
+    "dimensions": [
+      {
+        "dimension": "tenant_isolation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Project/tenant isolation enforced"
+      },
+      {
+        "dimension": "governance_completeness",
+        "score": 9,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Governance layers 19-35 implemented"
+      },
+      {
+        "dimension": "release_maturity",
+        "score": 6,
+        "max_score": 10,
+        "status": "partial",
+        "details": "Release orchestration and pipeline available"
+      },
+      {
+        "dimension": "documentation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Documentation governance active"
+      },
+      {
+        "dimension": "audit_compliance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Audit hub, compliance export, policy history available"
+      },
+      {
+        "dimension": "rollback_readiness",
+        "score": 7,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Rollback control and tuning rollback available"
+      },
+      {
+        "dimension": "provider_governance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Reliability, cost, latency governance active"
+      },
+      {
+        "dimension": "admin_subscription",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Tenant admin and subscription operations available"
+      },
+      {
+        "dimension": "ux_operator",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Approval workspace, escalation inbox, collaboration runtime available"
+      }
+    ],
+    "blockers": [],
+    "warnings": [
+      "No release plans created yet"
+    ],
+    "risks": [],
+    "recommended_fixes": [],
+    "created_at": "2026-03-14T18:07:26.291Z"
+  },
+  {
+    "report_id": "dp_mmqn0wmx1tiq",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall_score": 78,
+    "dimensions": [
+      {
+        "dimension": "tenant_isolation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Project/tenant isolation enforced"
+      },
+      {
+        "dimension": "governance_completeness",
+        "score": 9,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Governance layers 19-35 implemented"
+      },
+      {
+        "dimension": "release_maturity",
+        "score": 6,
+        "max_score": 10,
+        "status": "partial",
+        "details": "Release orchestration and pipeline available"
+      },
+      {
+        "dimension": "documentation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Documentation governance active"
+      },
+      {
+        "dimension": "audit_compliance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Audit hub, compliance export, policy history available"
+      },
+      {
+        "dimension": "rollback_readiness",
+        "score": 7,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Rollback control and tuning rollback available"
+      },
+      {
+        "dimension": "provider_governance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Reliability, cost, latency governance active"
+      },
+      {
+        "dimension": "admin_subscription",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Tenant admin and subscription operations available"
+      },
+      {
+        "dimension": "ux_operator",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Approval workspace, escalation inbox, collaboration runtime available"
+      }
+    ],
+    "blockers": [],
+    "warnings": [
+      "No release plans created yet"
+    ],
+    "risks": [],
+    "recommended_fixes": [],
+    "created_at": "2026-03-14T18:06:55.545Z"
+  },
+  {
+    "report_id": "dp_mmqn0wmstma0",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall_score": 78,
+    "dimensions": [
+      {
+        "dimension": "tenant_isolation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Project/tenant isolation enforced"
+      },
+      {
+        "dimension": "governance_completeness",
+        "score": 9,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Governance layers 19-35 implemented"
+      },
+      {
+        "dimension": "release_maturity",
+        "score": 6,
+        "max_score": 10,
+        "status": "partial",
+        "details": "Release orchestration and pipeline available"
+      },
+      {
+        "dimension": "documentation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Documentation governance active"
+      },
+      {
+        "dimension": "audit_compliance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Audit hub, compliance export, policy history available"
+      },
+      {
+        "dimension": "rollback_readiness",
+        "score": 7,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Rollback control and tuning rollback available"
+      },
+      {
+        "dimension": "provider_governance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Reliability, cost, latency governance active"
+      },
+      {
+        "dimension": "admin_subscription",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Tenant admin and subscription operations available"
+      },
+      {
+        "dimension": "ux_operator",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Approval workspace, escalation inbox, collaboration runtime available"
+      }
+    ],
+    "blockers": [],
+    "warnings": [
+      "No release plans created yet"
+    ],
+    "risks": [],
+    "recommended_fixes": [],
+    "created_at": "2026-03-14T18:06:55.540Z"
+  },
+  {
+    "report_id": "dp_mmqmontbd23k",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall_score": 78,
+    "dimensions": [
+      {
+        "dimension": "tenant_isolation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Project/tenant isolation enforced"
+      },
+      {
+        "dimension": "governance_completeness",
+        "score": 9,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Governance layers 19-35 implemented"
+      },
+      {
+        "dimension": "release_maturity",
+        "score": 6,
+        "max_score": 10,
+        "status": "partial",
+        "details": "Release orchestration and pipeline available"
+      },
+      {
+        "dimension": "documentation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Documentation governance active"
+      },
+      {
+        "dimension": "audit_compliance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Audit hub, compliance export, policy history available"
+      },
+      {
+        "dimension": "rollback_readiness",
+        "score": 7,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Rollback control and tuning rollback available"
+      },
+      {
+        "dimension": "provider_governance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Reliability, cost, latency governance active"
+      },
+      {
+        "dimension": "admin_subscription",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Tenant admin and subscription operations available"
+      },
+      {
+        "dimension": "ux_operator",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Approval workspace, escalation inbox, collaboration runtime available"
+      }
+    ],
+    "blockers": [],
+    "warnings": [
+      "No release plans created yet"
+    ],
+    "risks": [],
+    "recommended_fixes": [],
+    "created_at": "2026-03-14T17:57:24.239Z"
+  },
+  {
+    "report_id": "dp_mmqm258omyxz",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall_score": 78,
+    "dimensions": [
+      {
+        "dimension": "tenant_isolation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Project/tenant isolation enforced"
+      },
+      {
+        "dimension": "governance_completeness",
+        "score": 9,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Governance layers 19-35 implemented"
+      },
+      {
+        "dimension": "release_maturity",
+        "score": 6,
+        "max_score": 10,
+        "status": "partial",
+        "details": "Release orchestration and pipeline available"
+      },
+      {
+        "dimension": "documentation",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Documentation governance active"
+      },
+      {
+        "dimension": "audit_compliance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Audit hub, compliance export, policy history available"
+      },
+      {
+        "dimension": "rollback_readiness",
+        "score": 7,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Rollback control and tuning rollback available"
+      },
+      {
+        "dimension": "provider_governance",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Reliability, cost, latency governance active"
+      },
+      {
+        "dimension": "admin_subscription",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Tenant admin and subscription operations available"
+      },
+      {
+        "dimension": "ux_operator",
+        "score": 8,
+        "max_score": 10,
+        "status": "ready",
+        "details": "Approval workspace, escalation inbox, collaboration runtime available"
+      }
+    ],
+    "blockers": [],
+    "warnings": [
+      "No release plans created yet"
+    ],
+    "risks": [],
+    "recommended_fixes": [],
+    "created_at": "2026-03-14T17:39:53.736Z"
+  }
+]

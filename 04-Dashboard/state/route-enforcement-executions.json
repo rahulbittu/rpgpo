@@ -1,0 +1,227 @@
+[
+  {
+    "route": "/api/marketplace",
+    "guard_type": "extension",
+    "tenant_id": "untrusted",
+    "outcome": "deny",
+    "http_status": 403,
+    "detail": "extension guard: deny",
+    "created_at": "2026-03-14T20:31:29.525Z"
+  },
+  {
+    "route": "/api/enforcement-evidence",
+    "guard_type": "boundary",
+    "tenant_id": "rpgpo",
+    "outcome": "redact",
+    "http_status": 200,
+    "detail": "boundary guard: redact",
+    "created_at": "2026-03-14T20:31:29.524Z"
+  },
+  {
+    "route": "/api/audit-hub",
+    "guard_type": "boundary",
+    "tenant_id": "rpgpo",
+    "outcome": "redact",
+    "http_status": 200,
+    "detail": "boundary guard: redact",
+    "created_at": "2026-03-14T20:31:29.523Z"
+  },
+  {
+    "route": "/api/tenant-admin",
+    "guard_type": "entitlement",
+    "tenant_id": "rpgpo-other",
+    "outcome": "deny",
+    "http_status": 403,
+    "detail": "entitlement guard: deny",
+    "created_at": "2026-03-14T20:31:29.522Z"
+  },
+  {
+    "route": "/api/tenant-admin",
+    "guard_type": "entitlement",
+    "tenant_id": "free_tenant",
+    "outcome": "deny",
+    "http_status": 403,
+    "detail": "entitlement guard: deny",
+    "created_at": "2026-03-14T20:31:29.521Z"
+  },
+  {
+    "route": "/api/audit-hub",
+    "guard_type": "boundary",
+    "tenant_id": "rpgpo",
+    "outcome": "redact",
+    "http_status": 200,
+    "detail": "boundary guard: redact",
+    "created_at": "2026-03-14T20:19:01.351Z"
+  },
+  {
+    "route": "/api/tenant-admin",
+    "guard_type": "entitlement",
+    "tenant_id": "free_tenant",
+    "outcome": "deny",
+    "http_status": 403,
+    "detail": "entitlement guard: deny",
+    "created_at": "2026-03-14T20:19:01.349Z"
+  },
+  {
+    "route": "/api/tenant-admin",
+    "guard_type": "entitlement",
+    "tenant_id": "rpgpo-other",
+    "outcome": "deny",
+    "http_status": 403,
+    "detail": "entitlement guard: deny",
+    "created_at": "2026-03-14T20:19:01.348Z"
+  },
+  {
+    "route": "/api/marketplace",
+    "guard_type": "extension",
+    "tenant_id": "untrusted",
+    "outcome": "deny",
+    "http_status": 403,
+    "detail": "extension guard: deny",
+    "created_at": "2026-03-14T19:31:42.329Z"
+  },
+  {
+    "route": "/api/enforcement-evidence",
+    "guard_type": "boundary",
+    "tenant_id": "rpgpo",
+    "outcome": "redact",
+    "http_status": 200,
+    "detail": "boundary guard: redact",
+    "created_at": "2026-03-14T19:31:42.327Z"
+  },
+  {
+    "route": "/api/audit-hub",
+    "guard_type": "boundary",
+    "tenant_id": "rpgpo",
+    "outcome": "redact",
+    "http_status": 200,
+    "detail": "boundary guard: redact",
+    "created_at": "2026-03-14T19:31:42.326Z"
+  },
+  {
+    "route": "/api/tenant-admin",
+    "guard_type": "entitlement",
+    "tenant_id": "rpgpo-other",
+    "outcome": "deny",
+    "http_status": 403,
+    "detail": "entitlement guard: deny",
+    "created_at": "2026-03-14T19:31:42.322Z"
+  },
+  {
+    "route": "/api/tenant-admin",
+    "guard_type": "entitlement",
+    "tenant_id": "free_tenant",
+    "outcome": "deny",
+    "http_status": 403,
+    "detail": "entitlement guard: deny",
+    "created_at": "2026-03-14T19:31:42.320Z"
+  },
+  {
+    "route": "/api/marketplace",
+    "guard_type": "extension",
+    "tenant_id": "untrusted",
+    "outcome": "deny",
+    "http_status": 403,
+    "detail": "extension guard: deny",
+    "created_at": "2026-03-14T19:31:32.285Z"
+  },
+  {
+    "route": "/api/enforcement-evidence",
+    "guard_type": "boundary",
+    "tenant_id": "rpgpo",
+    "outcome": "redact",
+    "http_status": 200,
+    "detail": "boundary guard: redact",
+    "created_at": "2026-03-14T19:31:32.282Z"
+  },
+  {
+    "route": "/api/audit-hub",
+    "guard_type": "boundary",
+    "tenant_id": "rpgpo",
+    "outcome": "redact",
+    "http_status": 200,
+    "detail": "boundary guard: redact",
+    "created_at": "2026-03-14T19:31:32.278Z"
+  },
+  {
+    "route": "/api/tenant-admin",
+    "guard_type": "entitlement",
+    "tenant_id": "rpgpo-other",
+    "outcome": "deny",
+    "http_status": 403,
+    "detail": "entitlement guard: deny",
+    "created_at": "2026-03-14T19:31:32.276Z"
+  },
+  {
+    "route": "/api/tenant-admin",
+    "guard_type": "entitlement",
+    "tenant_id": "free_tenant",
+    "outcome": "deny",
+    "http_status": 403,
+    "detail": "entitlement guard: deny",
+    "created_at": "2026-03-14T19:31:32.274Z"
+  },
+  {
+    "route": "/api/marketplace",
+    "guard_type": "extension",
+    "tenant_id": "untrusted",
+    "outcome": "deny",
+    "http_status": 403,
+    "detail": "extension guard: deny",
+    "created_at": "2026-03-14T19:30:55.894Z"
+  },
+  {
+    "route": "/api/enforcement-evidence",
+    "guard_type": "boundary",
+    "tenant_id": "rpgpo",
+    "outcome": "redact",
+    "http_status": 200,
+    "detail": "boundary guard: redact",
+    "created_at": "2026-03-14T19:30:55.892Z"
+  },
+  {
+    "route": "/api/audit-hub",
+    "guard_type": "boundary",
+    "tenant_id": "rpgpo",
+    "outcome": "redact",
+    "http_status": 200,
+    "detail": "boundary guard: redact",
+    "created_at": "2026-03-14T19:30:55.890Z"
+  },
+  {
+    "route": "/api/tenant-admin",
+    "guard_type": "entitlement",
+    "tenant_id": "rpgpo-other",
+    "outcome": "deny",
+    "http_status": 403,
+    "detail": "entitlement guard: deny",
+    "created_at": "2026-03-14T19:30:55.889Z"
+  },
+  {
+    "route": "/api/enforcement-evidence",
+    "guard_type": "boundary",
+    "tenant_id": "rpgpo",
+    "outcome": "redact",
+    "http_status": 200,
+    "detail": "boundary guard: redact",
+    "created_at": "2026-03-14T19:30:36.452Z"
+  },
+  {
+    "route": "/api/audit-hub",
+    "guard_type": "boundary",
+    "tenant_id": "rpgpo",
+    "outcome": "redact",
+    "http_status": 200,
+    "detail": "boundary guard: redact",
+    "created_at": "2026-03-14T19:30:36.440Z"
+  },
+  {
+    "route": "/api/tenant-admin",
+    "guard_type": "entitlement",
+    "tenant_id": "rpgpo-other",
+    "outcome": "deny",
+    "http_status": 403,
+    "detail": "entitlement guard: deny",
+    "created_at": "2026-03-14T19:30:36.431Z"
+  }
+]

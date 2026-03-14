@@ -1,0 +1,181 @@
+/* GPO Visual System Map & Agent Surfaces */
+
+/* ═══════════════════════════════════════════
+   SYSTEM MAP — Architecture overview
+   ═══════════════════════════════════════════ */
+
+.sysmap { margin-bottom: 14px; }
+
+.sysmap-summary {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 10px 14px; margin-bottom: 10px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r); font-size: 11px;
+}
+.sysmap-health { font-weight: 800; letter-spacing: 1px; font-size: 10px; }
+.sysmap-stat { color: var(--text-dim); }
+.sysmap-plan {
+  margin-left: auto; font-weight: 700; font-size: 10px;
+  padding: 2px 8px; border-radius: var(--r-xs);
+  background: var(--accent-soft); color: var(--accent-text);
+  letter-spacing: .5px; text-transform: uppercase;
+}
+
+.sysmap-layers { display: flex; flex-direction: column; gap: 8px; }
+
+.sysmap-layer {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 10px 12px;
+}
+.sysmap-layer-label {
+  font-size: 9px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--text-faint); margin-bottom: 8px;
+}
+.sysmap-nodes {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+
+.sysmap-node {
+  display: flex; align-items: flex-start; gap: 6px;
+  padding: 6px 10px; border-radius: var(--r-sm);
+  background: var(--bg-raised); border: 1px solid var(--border);
+  min-width: 100px; transition: all 150ms ease;
+}
+.sysmap-node:hover { border-color: var(--border-mid); }
+.sysmap-mission { cursor: pointer; }
+.sysmap-mission:hover { border-color: var(--accent); }
+
+.sysmap-node-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  margin-top: 4px; flex-shrink: 0;
+}
+.sysmap-node-label { font-size: 11px; font-weight: 600; color: var(--text); }
+.sysmap-node-detail { font-size: 9px; color: var(--text-faint); margin-top: 1px; }
+
+.sysmap-s-disabled { opacity: 0.5; }
+.sysmap-s-blocked .sysmap-node-label { color: var(--yellow); }
+
+/* ═══════════════════════════════════════════
+   MISSION MAP — Modal detail view
+   ═══════════════════════════════════════════ */
+
+.mm-section { margin-bottom: 12px; }
+.mm-label {
+  font-size: 10px; font-weight: 700; letter-spacing: .5px;
+  text-transform: uppercase; color: var(--text-faint); margin-bottom: 4px;
+}
+.mm-sublabel { font-size: 9px; font-weight: 600; color: var(--text-dim); margin: 6px 0 3px; }
+.mm-value { font-size: 13px; font-weight: 600; color: var(--text); }
+.mm-item {
+  font-size: 12px; color: var(--text-secondary); padding: 3px 0;
+  border-bottom: 1px solid var(--border); line-height: 1.4;
+}
+.mm-item:last-child { border-bottom: none; }
+.mm-blocker { font-size: 11px; color: var(--yellow); margin-top: 4px; }
+.mm-blocker-item { color: var(--yellow); border-left: 2px solid var(--yellow); padding-left: 8px; }
+.mm-done { color: var(--green); }
+.mm-decision { color: var(--blue); font-style: italic; }
+.mm-question { color: var(--purple); }
+.mm-status {
+  font-size: 9px; font-weight: 600; padding: 1px 5px;
+  border-radius: var(--r-xs); background: var(--bg-raised);
+  border: 1px solid var(--border); margin-left: 6px;
+}
+.mm-agent-name { font-weight: 600; }
+.mm-agent-role { font-size: 10px; color: var(--text-dim); margin-left: 6px; }
+
+/* ═══════════════════════════════════════════
+   TASK FLOW CARDS — Visual stage progression
+   ═══════════════════════════════════════════ */
+
+.task-flow {
+  display: flex; flex-direction: column; gap: 0;
+  padding: 8px 0;
+}
+
+.tf-step {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 8px 0;
+  position: relative;
+}
+.tf-step.tf-active { background: rgba(155,127,245,.04); border-radius: var(--r); padding: 8px 10px; margin: 0 -10px; }
+
+.tf-connector {
+  position: absolute; left: 13px; top: 28px; bottom: -8px;
+  width: 2px; opacity: 0.3;
+}
+.tf-step:last-child .tf-connector { display: none; }
+
+.tf-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 2px solid var(--border); display: flex;
+  align-items: center; justify-content: center;
+  font-size: 12px; flex-shrink: 0;
+  background: var(--bg-card); z-index: 1;
+}
+.tf-done .tf-icon { color: #0a0d15; }
+
+.tf-body { flex: 1; min-width: 0; }
+.tf-title { font-size: 12px; font-weight: 600; color: var(--text); }
+.tf-meta { display: flex; gap: 6px; align-items: center; margin-top: 2px; }
+.tf-model { font-size: 8px; }
+.tf-status { font-size: 10px; font-weight: 600; }
+.tf-desc { font-size: 11px; color: var(--text-dim); margin-top: 3px; line-height: 1.3; }
+.tf-files { margin-top: 4px; display: flex; flex-wrap: wrap; gap: 2px; }
+
+.tf-arrow {
+  width: 0; height: 0; margin: -4px 0 -4px 12px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--border);
+  opacity: 0;
+}
+
+/* ═══════════════════════════════════════════
+   AGENT SURFACE
+   ═══════════════════════════════════════════ */
+
+.agent-surface { margin-top: 14px; }
+.agent-surface-title {
+  font-size: 10px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--text-faint); margin-bottom: 8px;
+}
+
+.agent-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px; margin-bottom: 10px;
+}
+
+.agent-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 10px 12px;
+}
+.agent-card-header { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.agent-card-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.agent-card-name { font-size: 11px; font-weight: 600; color: var(--text); }
+.agent-card-role { font-size: 10px; color: var(--text-dim); margin-bottom: 4px; }
+.agent-card-caps { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 4px; }
+.agent-cap-tag {
+  font-size: 8px; padding: 1px 5px; border-radius: var(--r-xs);
+  background: var(--bg-raised); border: 1px solid var(--border);
+  color: var(--text-faint);
+}
+.agent-card-status { font-size: 10px; font-weight: 600; }
+
+.agent-handoffs-title {
+  font-size: 9px; font-weight: 600; color: var(--text-faint);
+  text-transform: uppercase; letter-spacing: .5px; margin: 8px 0 4px;
+}
+.agent-handoff-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 11px; color: var(--text-secondary);
+  padding: 4px 0; border-bottom: 1px solid var(--border);
+}
+.agent-hf-from { font-weight: 600; }
+.agent-hf-arrow { color: var(--text-faint); }
+.agent-hf-to { font-weight: 600; }
+.agent-hf-stage {
+  font-size: 9px; padding: 1px 5px; border-radius: var(--r-xs);
+  background: var(--bg-raised); border: 1px solid var(--border);
+  margin-left: auto;
+}

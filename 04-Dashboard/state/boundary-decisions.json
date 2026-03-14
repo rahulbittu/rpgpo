@@ -1,0 +1,1452 @@
+[
+  {
+    "decision_id": "bd_mmqs6tistfnz",
+    "source_scope": "project:other-project",
+    "target_scope": "project:default",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T20:31:29.524Z"
+  },
+  {
+    "decision_id": "bd_mmqs6tir8uo7",
+    "source_scope": "project:other-project",
+    "target_scope": "project:default",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T20:31:29.523Z"
+  },
+  {
+    "decision_id": "bd_mmqs6ti9z6iz",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T20:31:29.505Z"
+  },
+  {
+    "decision_id": "bd_mmqs6ti8df96",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T20:31:29.504Z"
+  },
+  {
+    "decision_id": "bd_mmqs6ti6k2kb",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T20:31:29.502Z"
+  },
+  {
+    "decision_id": "bd_mmqs6thx8rxe",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T20:31:29.493Z"
+  },
+  {
+    "decision_id": "bd_mmqs6tht6wkg",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T20:31:29.489Z"
+  },
+  {
+    "decision_id": "bd_mmqs6thr3893",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T20:31:29.487Z"
+  },
+  {
+    "decision_id": "bd_mmqrqs86073t",
+    "source_scope": "project:other-project",
+    "target_scope": "project:default",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T20:19:01.350Z"
+  },
+  {
+    "decision_id": "bd_mmqq1xmfphkk",
+    "source_scope": "project:other-project",
+    "target_scope": "project:default",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:31:42.327Z"
+  },
+  {
+    "decision_id": "bd_mmqq1xmdxvqz",
+    "source_scope": "project:other-project",
+    "target_scope": "project:default",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:31:42.325Z"
+  },
+  {
+    "decision_id": "bd_mmqq1xlnun06",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T19:31:42.299Z"
+  },
+  {
+    "decision_id": "bd_mmqq1xllklxu",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:31:42.297Z"
+  },
+  {
+    "decision_id": "bd_mmqq1xlkmpeu",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:31:42.296Z"
+  },
+  {
+    "decision_id": "bd_mmqq1xlil0es",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T19:31:42.294Z"
+  },
+  {
+    "decision_id": "bd_mmqq1xlg3kz3",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:31:42.292Z"
+  },
+  {
+    "decision_id": "bd_mmqq1xld7u6l",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:31:42.289Z"
+  },
+  {
+    "decision_id": "bd_mmqq1pve31qs",
+    "source_scope": "project:other-project",
+    "target_scope": "project:default",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:31:32.282Z"
+  },
+  {
+    "decision_id": "bd_mmqq1pv90fyr",
+    "source_scope": "project:other-project",
+    "target_scope": "project:default",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:31:32.277Z"
+  },
+  {
+    "decision_id": "bd_mmqq0xsj2upj",
+    "source_scope": "project:other-project",
+    "target_scope": "project:default",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:30:55.891Z"
+  },
+  {
+    "decision_id": "bd_mmqq0xsiygaq",
+    "source_scope": "project:other-project",
+    "target_scope": "project:default",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:30:55.890Z"
+  },
+  {
+    "decision_id": "bd_mmqq0isjysea",
+    "source_scope": "project:other-project",
+    "target_scope": "project:default",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:30:36.451Z"
+  },
+  {
+    "decision_id": "bd_mmqq0is87e89",
+    "source_scope": "project:other-project",
+    "target_scope": "project:default",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:30:36.440Z"
+  },
+  {
+    "decision_id": "bd_mmqpbzwe2bus",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T19:11:32.222Z"
+  },
+  {
+    "decision_id": "bd_mmqpbzwckmbe",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:11:32.220Z"
+  },
+  {
+    "decision_id": "bd_mmqpbzwahuqi",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:11:32.218Z"
+  },
+  {
+    "decision_id": "bd_mmqpbzvr2ez0",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T19:11:32.199Z"
+  },
+  {
+    "decision_id": "bd_mmqpbzvqctbj",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:11:32.198Z"
+  },
+  {
+    "decision_id": "bd_mmqpbzvp1te3",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:11:32.197Z"
+  },
+  {
+    "decision_id": "bd_mmqpbzvneqsj",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T19:11:32.195Z"
+  },
+  {
+    "decision_id": "bd_mmqpbzvl6k1u",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:11:32.193Z"
+  },
+  {
+    "decision_id": "bd_mmqpbzvjcxhg",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:11:32.191Z"
+  },
+  {
+    "decision_id": "bd_mmqpaoigj4is",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T19:10:30.808Z"
+  },
+  {
+    "decision_id": "bd_mmqpaoiftuyl",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:10:30.807Z"
+  },
+  {
+    "decision_id": "bd_mmqpaoiexbxa",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:10:30.806Z"
+  },
+  {
+    "decision_id": "bd_mmqpaohwu1ca",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T19:10:30.788Z"
+  },
+  {
+    "decision_id": "bd_mmqpaohvjiqo",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:10:30.787Z"
+  },
+  {
+    "decision_id": "bd_mmqpaohu2auo",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:10:30.786Z"
+  },
+  {
+    "decision_id": "bd_mmqpaohtvh3e",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T19:10:30.785Z"
+  },
+  {
+    "decision_id": "bd_mmqpaohqiemz",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:10:30.782Z"
+  },
+  {
+    "decision_id": "bd_mmqpaohofj2u",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:10:30.780Z"
+  },
+  {
+    "decision_id": "bd_mmqpagk7n35g",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T19:10:20.503Z"
+  },
+  {
+    "decision_id": "bd_mmqpagk69vi0",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:10:20.502Z"
+  },
+  {
+    "decision_id": "bd_mmqpagk5qbn8",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:10:20.501Z"
+  },
+  {
+    "decision_id": "bd_mmqpagjoe60p",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T19:10:20.484Z"
+  },
+  {
+    "decision_id": "bd_mmqpagjnkf0x",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:10:20.483Z"
+  },
+  {
+    "decision_id": "bd_mmqpagjmnaux",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:10:20.482Z"
+  },
+  {
+    "decision_id": "bd_mmqpagjk15f1",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T19:10:20.480Z"
+  },
+  {
+    "decision_id": "bd_mmqpagjh673l",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:10:20.477Z"
+  },
+  {
+    "decision_id": "bd_mmqpagjfqglf",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:10:20.475Z"
+  },
+  {
+    "decision_id": "bd_mmqpa5qilcik",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T19:10:06.474Z"
+  },
+  {
+    "decision_id": "bd_mmqpa5qhpgyr",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:10:06.473Z"
+  },
+  {
+    "decision_id": "bd_mmqpa5qgmyy3",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:10:06.472Z"
+  },
+  {
+    "decision_id": "bd_mmqpa5py9w2a",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T19:10:06.454Z"
+  },
+  {
+    "decision_id": "bd_mmqpa5pxf2mh",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T19:10:06.453Z"
+  },
+  {
+    "decision_id": "bd_mmqpa5pwd8am",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:10:06.452Z"
+  },
+  {
+    "decision_id": "bd_mmqpa5pu0a9x",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T19:10:06.450Z"
+  },
+  {
+    "decision_id": "bd_mmqpa5psbd2j",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:10:06.448Z"
+  },
+  {
+    "decision_id": "bd_mmqpa5pq4smb",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T19:10:06.446Z"
+  },
+  {
+    "decision_id": "bd_mmqog4dcd2vf",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:45.024Z"
+  },
+  {
+    "decision_id": "bd_mmqog4dbuv2o",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:45.023Z"
+  },
+  {
+    "decision_id": "bd_mmqog4davqw8",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:45.022Z"
+  },
+  {
+    "decision_id": "bd_mmqog4d8pk5v",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:45.020Z"
+  },
+  {
+    "decision_id": "bd_mmqog4d7exqz",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:45.019Z"
+  },
+  {
+    "decision_id": "bd_mmqog4d64swd",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:45.018Z"
+  },
+  {
+    "decision_id": "bd_mmqog4d5ablf",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:45.017Z"
+  },
+  {
+    "decision_id": "bd_mmqog4d4aa4n",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:45.016Z"
+  },
+  {
+    "decision_id": "bd_mmqog4d315pr",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:45.015Z"
+  },
+  {
+    "decision_id": "bd_mmqog4d29lpl",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:45.014Z"
+  },
+  {
+    "decision_id": "bd_mmqog4d1hkqy",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:45.013Z"
+  },
+  {
+    "decision_id": "bd_mmqog4d0cl1c",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:45.012Z"
+  },
+  {
+    "decision_id": "bd_mmqog4czpr7j",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:45.011Z"
+  },
+  {
+    "decision_id": "bd_mmqog4cybj1s",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:45.010Z"
+  },
+  {
+    "decision_id": "bd_mmqog4cxzcf5",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:45.009Z"
+  },
+  {
+    "decision_id": "bd_mmqog4cwqlmj",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:45.008Z"
+  },
+  {
+    "decision_id": "bd_mmqog4cvti2e",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:45.007Z"
+  },
+  {
+    "decision_id": "bd_mmqog4cu4hqn",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:45.006Z"
+  },
+  {
+    "decision_id": "bd_mmqog4cte0p9",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:45.005Z"
+  },
+  {
+    "decision_id": "bd_mmqog4cs3i0l",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:45.004Z"
+  },
+  {
+    "decision_id": "bd_mmqog4cr6kvb",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:45.004Z"
+  },
+  {
+    "decision_id": "bd_mmqog4crbfc3",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:45.003Z"
+  },
+  {
+    "decision_id": "bd_mmqog4cpj4zm",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:45.001Z"
+  },
+  {
+    "decision_id": "bd_mmqog4cpnwkl",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:45.001Z"
+  },
+  {
+    "decision_id": "bd_mmqog4cou7hk",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:45.000Z"
+  },
+  {
+    "decision_id": "bd_mmqog4ca8o42",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:44.986Z"
+  },
+  {
+    "decision_id": "bd_mmqog4c93zqv",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:44.985Z"
+  },
+  {
+    "decision_id": "bd_mmqog4c8l7w6",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:44.984Z"
+  },
+  {
+    "decision_id": "bd_mmqog4c7dfy8",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:44.983Z"
+  },
+  {
+    "decision_id": "bd_mmqog4c52ac4",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:44.981Z"
+  },
+  {
+    "decision_id": "bd_mmqog4c3wet6",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:44.979Z"
+  },
+  {
+    "decision_id": "bd_mmqofvc9umal",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:33.321Z"
+  },
+  {
+    "decision_id": "bd_mmqofvc8m6hz",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:33.320Z"
+  },
+  {
+    "decision_id": "bd_mmqofvc7fghy",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:33.319Z"
+  },
+  {
+    "decision_id": "bd_mmqofvc5c6km",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:33.317Z"
+  },
+  {
+    "decision_id": "bd_mmqofvc4cr10",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:33.316Z"
+  },
+  {
+    "decision_id": "bd_mmqofvc3441f",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:33.315Z"
+  },
+  {
+    "decision_id": "bd_mmqofvc1xdi2",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:33.313Z"
+  },
+  {
+    "decision_id": "bd_mmqofvc0oz2g",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:33.312Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbzgvgj",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:33.311Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbytbf9",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:33.310Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbxkzyc",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:33.309Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbwhq8p",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:33.308Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbv9zlg",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:33.307Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbteqtb",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:33.305Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbs0v8d",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:33.304Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbrmw1t",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:33.303Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbqhzhr",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:33.302Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbo9aqr",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:33.300Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbnsggr",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:33.299Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbmqqri",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:33.298Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbldirx",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:33.297Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbktle8",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:33.296Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbjpmiu",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:33.295Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbi9w9e",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:33.294Z"
+  },
+  {
+    "decision_id": "bd_mmqofvbhj9kr",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:33.293Z"
+  },
+  {
+    "decision_id": "bd_mmqofvb0yo7t",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:33.276Z"
+  },
+  {
+    "decision_id": "bd_mmqofvayptxl",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:46:33.274Z"
+  },
+  {
+    "decision_id": "bd_mmqofvax9zos",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:33.273Z"
+  },
+  {
+    "decision_id": "bd_mmqofvaw0e5k",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:46:33.272Z"
+  },
+  {
+    "decision_id": "bd_mmqofvatsiqn",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:33.269Z"
+  },
+  {
+    "decision_id": "bd_mmqofvardfv5",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:46:33.267Z"
+  },
+  {
+    "decision_id": "bd_mmqnztre36mj",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:34:04.778Z"
+  },
+  {
+    "decision_id": "bd_mmqnztre97ok",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:34:04.778Z"
+  },
+  {
+    "decision_id": "bd_mmqnztrcf56j",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:34:04.776Z"
+  },
+  {
+    "decision_id": "bd_mmqnztrbd0jv",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:34:04.775Z"
+  },
+  {
+    "decision_id": "bd_mmqnztr87krf",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:34:04.772Z"
+  },
+  {
+    "decision_id": "bd_mmqnztr6wtft",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_project_api: project:* → project:*",
+    "created_at": "2026-03-14T18:34:04.770Z"
+  },
+  {
+    "decision_id": "bd_mmqnz8hleoyn",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:33:37.209Z"
+  },
+  {
+    "decision_id": "bd_mmqnz8hlexu4",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "redact",
+    "reason": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+    "created_at": "2026-03-14T18:33:37.209Z"
+  },
+  {
+    "decision_id": "bd_mmqnz8hj0dcp",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "No boundary restriction",
+    "created_at": "2026-03-14T18:33:37.207Z"
+  },
+  {
+    "decision_id": "bd_mmqnz8hiq85f",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:33:37.206Z"
+  },
+  {
+    "decision_id": "bd_mmqnz8hffhn7",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "No boundary restriction",
+    "created_at": "2026-03-14T18:33:37.203Z"
+  },
+  {
+    "decision_id": "bd_mmqnz8hek3ka",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "No boundary restriction",
+    "created_at": "2026-03-14T18:33:37.202Z"
+  },
+  {
+    "decision_id": "bd_mmqnyj06ok7a",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:33:04.182Z"
+  },
+  {
+    "decision_id": "bd_mmqnyj04h43s",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "context",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_tenant: tenant:* → tenant:*",
+    "created_at": "2026-03-14T18:33:04.180Z"
+  },
+  {
+    "decision_id": "bd_mmqnyj022de6",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_tenant: tenant:* → tenant:*",
+    "created_at": "2026-03-14T18:33:04.178Z"
+  },
+  {
+    "decision_id": "bd_mmqnyizwbor6",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:33:04.172Z"
+  },
+  {
+    "decision_id": "bd_mmqnyizq0zt1",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_tenant: tenant:* → tenant:*",
+    "created_at": "2026-03-14T18:33:04.166Z"
+  },
+  {
+    "decision_id": "bd_mmqnyizovj50",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_tenant: tenant:* → tenant:*",
+    "created_at": "2026-03-14T18:33:04.164Z"
+  },
+  {
+    "decision_id": "bd_mmqnijeb7f12",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:20:38.195Z"
+  },
+  {
+    "decision_id": "bd_mmqnije9x0tu",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_tenant: tenant:* → tenant:*",
+    "created_at": "2026-03-14T18:20:38.193Z"
+  },
+  {
+    "decision_id": "bd_mmqnije8mze7",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_tenant: tenant:* → tenant:*",
+    "created_at": "2026-03-14T18:20:38.192Z"
+  },
+  {
+    "decision_id": "bd_mmqngtq6vhn8",
+    "source_scope": "tenant:rpgpo",
+    "target_scope": "tenant:rpgpo",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "allow",
+    "reason": "Same scope",
+    "created_at": "2026-03-14T18:19:18.270Z"
+  },
+  {
+    "decision_id": "bd_mmqngtq5fiq1",
+    "source_scope": "project:alpha",
+    "target_scope": "project:beta",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_tenant: tenant:* → tenant:*",
+    "created_at": "2026-03-14T18:19:18.269Z"
+  },
+  {
+    "decision_id": "bd_mmqngtq4g409",
+    "source_scope": "project:A",
+    "target_scope": "project:B",
+    "artifact_type": "api",
+    "action": "read",
+    "outcome": "deny",
+    "reason": "Matched policy bp_cross_tenant: tenant:* → tenant:*",
+    "created_at": "2026-03-14T18:19:18.268Z"
+  }
+]
