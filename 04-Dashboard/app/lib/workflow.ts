@@ -176,6 +176,21 @@ export function checkTaskCompletion(taskId: string, allSubs?: Subtask[]): void {
   if (!allTerminal) return;
 
   const anyFailed = subs.some(s => s.status === 'failed');
+
+  // Part 66: Wire runtime deliverable pipeline — validate contract at task completion
+  if (!anyFailed) {
+    try {
+      const cos = require('./chief-of-staff') as { onRuntimeTaskComplete(t: string, e: string): { gate_passed: boolean; closure_reason: string } };
+      const intakeTask = intake.getTask(taskId) as unknown as { domain?: string } | null;
+      const engineId = intakeTask?.domain || 'general';
+      const result = cos.onRuntimeTaskComplete(taskId, engineId);
+      if (result && !result.gate_passed) {
+        // Contract violated — still mark done but record the violation
+        intake.updateTask(taskId, { status: 'done' as any });
+      }
+    } catch { /* pipeline not critical for task completion */ }
+  }
+
   intake.updateTask(taskId, { status: anyFailed ? 'failed' : 'done' });
 }
 

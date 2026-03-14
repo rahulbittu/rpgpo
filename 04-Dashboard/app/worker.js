@@ -650,6 +650,16 @@ const handlers = {
       risk_level: deliberation.risk_level || 'green',
     });
 
+    // Part 66: Wire runtime deliverable pipeline — init scaffold from engine contract
+    try {
+      const cos = require('./lib/chief-of-staff');
+      const engineId = intakeTask.domain || 'general';
+      cos.onRuntimeTaskStart(taskId, engineId);
+      // Augment plan with contract context
+      const ctx = cos.getBoardContractContext(engineId);
+      if (ctx && deliberation) deliberation._contract_context = ctx;
+    } catch (e) { console.log('[worker] Deliverable scaffold init:', e.message?.slice(0, 80)); }
+
     // Materialize subtasks from the deliberation
     const created = workflow.materializeSubtasks(taskId, deliberation);
 
@@ -756,6 +766,14 @@ const handlers = {
         report_file: reportFile,
         what_done: whatDone,
       });
+
+      // Part 66: Wire runtime deliverable pipeline — merge subtask output
+      try {
+        const cos = require('./lib/chief-of-staff');
+        const parentTask = intake.getTask(st.parent_task);
+        const engineId = parentTask?.domain || 'general';
+        cos.onRuntimeSubtaskComplete(st.parent_task, subtaskId, result.text?.slice(0, 3000) || '', engineId);
+      } catch (e) { console.log('[worker] Deliverable merge:', e.message?.slice(0, 80)); }
 
       // Auto-continue workflow
       const wfResult = workflow.onSubtaskComplete(subtaskId);
