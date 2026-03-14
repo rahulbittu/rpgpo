@@ -2229,12 +2229,167 @@ function renderTaskTimeline(task, subtasks) {
     html += '</div></div>';
   }
   html += '</div>';
+
+  // Part 57: Final Result block for completed tasks
+  if (task.status === 'done') {
+    html += '<div class="final-result-block" id="finalResult_' + task.task_id + '">';
+    html += '<div class="final-result-header">Final Result</div>';
+    html += '<div class="final-result-loading">Loading final output...</div>';
+    html += '</div>';
+    // Async-load final output — try structured deliverable first, then raw
+    setTimeout(function() {
+      // Part 59: Try structured deliverable
+      fetch('/api/tasks/' + encodeURIComponent(task.task_id) + '/deliverable').then(function(r) { return r.ok ? r.json() : null; }).then(function(deliv) {
+        var slot = document.getElementById('finalResult_' + task.task_id);
+        if (slot && deliv && deliv.model) {
+          var h = '<div class="final-result-header">Final Result</div>';
+          h += renderStructuredDeliverable(deliv.model);
+          if (deliv.model.badges && deliv.model.badges.length) {
+            h += '<div class="deliverable-badges">' + deliv.model.badges.map(function(b) { return '<span class="badge-missing">' + esc(b) + '</span>'; }).join(' ') + '</div>';
+          }
+          h += '<div style="margin-top:6px"><a href="#" onclick="event.preventDefault();this.parentNode.nextSibling.style.display=this.parentNode.nextSibling.style.display===\'none\'?\'block\':\'none\'" style="font-size:10px;color:var(--accent-text)">Toggle raw output</a></div><div style="display:none" id="rawOutput_' + task.task_id + '"></div>';
+          slot.innerHTML = h;
+          // Load raw fallback into hidden div
+          loadRawOutput(task.task_id);
+          return;
+        }
+        // Fallback to raw output
+        loadRawOutput(task.task_id);
+      }).catch(function() { loadRawOutput(task.task_id); });
+    }, 100);
+  }
+
   return html;
+}
+
+/** Part 59: Render structured deliverable from RenderModel */
+function renderStructuredDeliverable(model) {
+  if (!model) return '';
+  var h = '';
+  if (model.rendererKey === 'newsroom_list' && model.items) {
+    h += '<div class="deliverable-list">';
+    for (var i = 0; i < model.items.length; i++) {
+      var item = model.items[i];
+      h += '<div class="deliverable-card"><span class="deliverable-rank">' + (item.rank || (i+1)) + '</span>';
+      h += '<div class="deliverable-card-body"><div class="deliverable-headline">' + esc(String(item.headline || item.label || '')) + '</div>';
+      h += '<div class="deliverable-summary">' + esc(String(item.summary || item.rationale || '')) + '</div>';
+      if (item.source_url) h += '<a href="' + esc(String(item.source_url)) + '" target="_blank" class="deliverable-source">' + esc(String(item.source_name || 'Source')) + '</a>';
+      h += '</div></div>';
+    }
+    h += '</div>';
+  } else if (model.rendererKey === 'shopping_table' && model.table) {
+    h += '<table class="deliverable-table"><thead><tr>' + model.table.columns.map(function(c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>';
+    for (var j = 0; j < model.table.rows.length; j++) {
+      var row = model.table.rows[j];
+      h += '<tr>' + model.table.columns.map(function(c) { return '<td>' + esc(String(row[c] || '')) + '</td>'; }).join('') + '</tr>';
+    }
+    h += '</tbody></table>';
+  } else if (model.rendererKey === 'code_diff' && model.diffs) {
+    for (var k = 0; k < model.diffs.length; k++) {
+      var diff = model.diffs[k];
+      h += '<div class="deliverable-diff"><div class="diff-header">' + esc(diff.changeType) + ' ' + esc(diff.filePath) + '</div>';
+      if (diff.hunks) { for (var l = 0; l < diff.hunks.length; l++) { h += '<pre class="diff-hunk">' + esc(diff.hunks[l].lines.join('\n')) + '</pre>'; } }
+      h += '</div>';
+    }
+  } else if ((model.rendererKey === 'document_sections' || model.rendererKey === 'creative_view') && model.sections) {
+    for (var m = 0; m < model.sections.length; m++) {
+      h += '<div class="deliverable-section"><h4>' + esc(model.sections[m].heading) + '</h4><div>' + esc(model.sections[m].content).replace(/\n/g, '<br>') + '</div></div>';
+    }
+  } else if (model.rendererKey === 'action_plan_steps' && model.steps) {
+    h += '<div class="deliverable-steps">';
+    for (var n = 0; n < model.steps.length; n++) {
+      var step = model.steps[n];
+      h += '<div class="deliverable-step"><span class="step-status">' + esc(step.status || 'todo') + '</span><span>' + esc(step.description) + '</span></div>';
+    }
+    h += '</div>';
+  } else if ((model.rendererKey === 'recommendation_list' || model.rendererKey === 'analysis_brief') && model.items) {
+    h += '<div class="deliverable-list">';
+    for (var p = 0; p < model.items.length; p++) {
+      var rec = model.items[p];
+      h += '<div class="deliverable-card"><div class="deliverable-card-body"><div class="deliverable-headline">' + esc(String(rec.label || '')) + '</div>';
+      h += '<div class="deliverable-summary">' + esc(String(rec.rationale || rec.detail || '')) + '</div>';
+      if (rec.confidence) h += '<span class="deliverable-confidence">' + rec.confidence + '% confidence</span>';
+      h += '</div></div>';
+    }
+    h += '</div>';
+  } else if (model.rendererKey === 'schedule_timeline' && model.timeline) {
+    h += '<div class="deliverable-timeline">';
+    for (var q = 0; q < model.timeline.length; q++) {
+      var ev = model.timeline[q];
+      h += '<div class="deliverable-event"><span class="event-time">' + esc(ev.start) + '</span><span>' + esc(ev.title) + '</span>';
+      if (ev.location) h += '<span class="event-location">' + esc(ev.location) + '</span>';
+      h += '</div>';
+    }
+    h += '</div>';
+  } else {
+    h += '<div class="deliverable-fallback">Structured deliverable available but no specific renderer — showing raw</div>';
+  }
+  return h;
+}
+
+/** Load raw output fallback */
+function loadRawOutput(taskId) {
+  fetch('/api/final-output/' + encodeURIComponent(taskId)).then(function(r) { return r.ok ? r.json() : null; }).then(function(output) {
+        var slot = document.getElementById('finalResult_' + taskId);
+        var rawSlot = document.getElementById('rawOutput_' + taskId);
+        if (!output) { if (slot && !slot.innerHTML.includes('final-result-header')) { slot.innerHTML = '<div class="final-result-header">Final Result</div><div class="final-result-empty">No output available</div>'; } return; }
+        // Build raw HTML
+        var rh = '';
+        if (output.final_answer) {
+          rh += '<div class="final-result-answer">' + esc(output.final_answer).replace(/\n/g, '<br>') + '</div>';
+        } else if (output.summary) {
+          rh += '<div class="final-result-answer">' + esc(output.summary) + '</div>';
+        } else {
+          rh += '<div class="final-result-empty">No final answer extracted — check report files below</div>';
+        }
+        if (output.artifacts && output.artifacts.length) {
+          rh += '<div class="final-result-artifacts">';
+          for (var i = 0; i < output.artifacts.length; i++) {
+            var a = output.artifacts[i];
+            rh += '<div class="final-result-artifact"><span class="fra-type">' + esc(a.type) + '</span><span class="fra-title">' + esc(a.title) + '</span>';
+            if (a.path) rh += ' <a href="/api/file/' + encodeURIComponent(a.path) + '" target="_blank" class="fra-link">Open</a>';
+            rh += '</div>';
+          }
+          rh += '</div>';
+        }
+        if (output.report_paths && output.report_paths.length) {
+          rh += '<div class="final-result-reports"><span class="fra-type">Reports:</span> ';
+          for (var j = 0; j < output.report_paths.length; j++) {
+            rh += '<a href="/api/file/' + encodeURIComponent(output.report_paths[j]) + '" target="_blank" class="fra-link">' + esc(output.report_paths[j].split('/').pop()) + '</a> ';
+          }
+          rh += '</div>';
+        }
+        if (output.files_changed && output.files_changed.length) {
+          rh += '<div class="final-result-files">' + output.files_changed.map(function(f) { return '<span class="file-badge">' + esc(f) + '</span>'; }).join('') + '</div>';
+        }
+        // If structured renderer already populated slot, put raw in hidden div
+        if (rawSlot) { rawSlot.innerHTML = rh; }
+        else if (slot) { slot.innerHTML = '<div class="final-result-header">Final Result</div>' + rh; }
+      }).catch(function() {});
 }
 
 // ═══════════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════════
+
+// Part 58: Engine contract hint on domain selection
+(function() {
+  var domainSelect = document.getElementById('intakeDomain');
+  var hintEl = document.getElementById('engineContractHint');
+  if (domainSelect && hintEl) {
+    domainSelect.addEventListener('change', function() {
+      var engineId = domainSelect.value;
+      if (!engineId) { hintEl.style.display = 'none'; return; }
+      fetch('/api/output-contracts/' + encodeURIComponent(engineId)).then(function(r) { return r.ok ? r.json() : null; }).then(function(data) {
+        if (data && data.contract) {
+          var c = data.contract;
+          hintEl.style.display = 'block';
+          hintEl.innerHTML = '<strong>Expected output:</strong> ' + esc(c.example_deliverable) + (c.approval_required ? ' <span style="color:var(--accent-text)">| Approval required</span>' : ' | Auto-complete');
+        } else { hintEl.style.display = 'none'; }
+      }).catch(function() { hintEl.style.display = 'none'; });
+    });
+  }
+})();
 
 connectSSE();
 loadData();

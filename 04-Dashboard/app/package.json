@@ -1,0 +1,28 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test 'tests/*.test.js'",
+    "test:unit": "node --test tests/state-machine.test.js tests/validate.test.js tests/privacy.test.js tests/plans.test.js",
+    "test:smoke": "node --test tests/workflow-smoke.test.js tests/environments.test.js",
+    "test:all": "tsc --noEmit && node --test 'tests/*.test.js'",
+    "start": "node server.js",
+    "dev": "tsc && node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "typescript": "^5.9.3"
+  }
+}

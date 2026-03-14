@@ -1,269 +1,242 @@
-// RPGPO Workflow Engine — Auto-Continue Logic
+"use strict";
+// RPGPO Workflow Engine — Auto-Continue Logic (TypeScript)
 // Manages subtask state machine and auto-queuing.
 // Safety: Yellow/Red subtasks stop for approval. No auto-external actions.
-
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.onSubtaskComplete = onSubtaskComplete;
+exports.findReadySubtasks = findReadySubtasks;
+exports.blockDependents = blockDependents;
+exports.checkTaskCompletion = checkTaskCompletion;
+exports.materializeSubtasks = materializeSubtasks;
+exports.queueInitialSubtasks = queueInitialSubtasks;
+const state_machine_1 = require("./state-machine");
+// ── Dependencies ──
+// All lib modules use module.exports (commonjs), so we require them.
+/* eslint-disable @typescript-eslint/no-var-requires */
 const intake = require('./intake');
-const queue = require('./queue');
 const repoScanner = require('./repo-scanner');
-
+// ═══════════════════════════════════════════
+// Core Workflow
+// ═══════════════════════════════════════════
 /**
  * After a subtask completes (done or failed), decide what happens next.
  * - Green + success → auto-queue next safe subtask
  * - Yellow/Red → stop, surface approval
- * - Failed → create failure card, stop
- * Returns { action, next_subtask_ids, message }
+ * - Failed → block dependents, stop
  */
 function onSubtaskComplete(subtaskId) {
-  const st = intake.getSubtask(subtaskId);
-  if (!st) return { action: 'error', message: 'Subtask not found' };
-
-  const parentTask = intake.getTask(st.parent_task_id);
-  if (!parentTask) return { action: 'error', message: 'Parent task not found' };
-
-  const allSubs = intake.getSubtasksForTask(st.parent_task_id);
-
-  // If subtask failed, create failure card and stop
-  if (st.status === 'failed') {
-    intake.updateSubtask(subtaskId, { status: 'failed' });
-    // Block any subtask that depends on this one
-    blockDependents(subtaskId, allSubs);
-    // Check if all subtasks are terminal
-    checkTaskCompletion(parentTask.task_id, allSubs);
-    return {
-      action: 'failed',
-      message: `Subtask "${st.title}" failed: ${st.error || 'Unknown error'}`,
-      next_subtask_ids: [],
-    };
-  }
-
-  // Subtask succeeded — find next subtasks
-  if (st.status !== 'done') return { action: 'noop', message: 'Subtask not in terminal state' };
-
-  // Find subtasks that depend on this one and are now unblocked
-  const nextReady = findReadySubtasks(subtaskId, allSubs);
-
-  if (!nextReady.length) {
-    // No more subtasks to run — check if task is complete
-    checkTaskCompletion(parentTask.task_id, allSubs);
-    return { action: 'complete', message: 'No more subtasks to queue', next_subtask_ids: [] };
-  }
-
-  const queued = [];
-  const needsApproval = [];
-
-  for (const next of nextReady) {
-    if (next.risk_level === 'red' || next.risk_level === 'yellow' || next.approval_required) {
-      // Stop for approval
-      intake.updateSubtask(next.subtask_id, { status: 'waiting_approval' });
-      needsApproval.push(next.subtask_id);
-    } else {
-      // Green + no approval needed → auto-queue
-      intake.updateSubtask(next.subtask_id, { status: 'queued' });
-      queued.push(next.subtask_id);
+    const st = intake.getSubtask(subtaskId);
+    if (!st)
+        return { action: 'error', message: 'Subtask not found', next_subtask_ids: [] };
+    const parentTask = intake.getTask(st.parent_task_id);
+    if (!parentTask)
+        return { action: 'error', message: 'Parent task not found', next_subtask_ids: [] };
+    const allSubs = intake.getSubtasksForTask(st.parent_task_id);
+    // Failed → block dependents and check completion
+    if (st.status === 'failed') {
+        blockDependents(subtaskId, allSubs);
+        checkTaskCompletion(parentTask.task_id, allSubs);
+        return {
+            action: 'failed',
+            message: `Subtask "${st.title}" failed: ${st.error || 'Unknown error'}`,
+            next_subtask_ids: [],
+        };
     }
-  }
-
-  if (needsApproval.length > 0) {
-    intake.updateTask(parentTask.task_id, { status: 'waiting_approval' });
-  }
-
-  return {
-    action: needsApproval.length > 0 ? 'needs_approval' : 'auto_continue',
-    next_subtask_ids: queued,
-    approval_needed: needsApproval,
-    message: queued.length > 0
-      ? `Auto-queued ${queued.length} subtask(s)`
-      : `${needsApproval.length} subtask(s) need approval`,
-  };
+    // Only proceed if done
+    if (st.status !== 'done') {
+        return { action: 'noop', message: 'Subtask not in terminal state', next_subtask_ids: [] };
+    }
+    // Find subtasks that depend on this one and are now unblocked
+    const nextReady = findReadySubtasks(subtaskId, allSubs);
+    if (!nextReady.length) {
+        checkTaskCompletion(parentTask.task_id, allSubs);
+        return { action: 'complete', message: 'No more subtasks to queue', next_subtask_ids: [] };
+    }
+    const queued = [];
+    const needsApproval = [];
+    for (const next of nextReady) {
+        if (next.risk_level === 'red' || next.risk_level === 'yellow' || next.approval_required) {
+            intake.updateSubtask(next.subtask_id, { status: 'waiting_approval' });
+            needsApproval.push(next.subtask_id);
+        }
+        else {
+            intake.updateSubtask(next.subtask_id, { status: 'queued' });
+            queued.push(next.subtask_id);
+        }
+    }
+    if (needsApproval.length > 0) {
+        intake.updateTask(parentTask.task_id, { status: 'waiting_approval' });
+    }
+    return {
+        action: needsApproval.length > 0 ? 'needs_approval' : 'auto_continue',
+        next_subtask_ids: queued,
+        approval_needed: needsApproval,
+        message: queued.length > 0
+            ? `Auto-queued ${queued.length} subtask(s)`
+            : `${needsApproval.length} subtask(s) need approval`,
+    };
 }
-
 /**
  * Find subtasks that are ready to run after a given subtask completes.
  * A subtask is ready when all its depends_on subtasks are done.
  */
 function findReadySubtasks(completedSubtaskId, allSubs) {
-  const ready = [];
-  for (const s of allSubs) {
-    if (s.status !== 'proposed') continue;
-    if (!s.depends_on || !s.depends_on.length) continue;
-
-    // Check if this subtask depends on the completed one (by index or id)
-    const dependsOnCompleted = s.depends_on.some(dep => {
-      // dep could be an index (number) or a subtask_id (string)
-      if (typeof dep === 'number') {
-        const depSub = allSubs[dep];
-        return depSub && depSub.subtask_id === completedSubtaskId;
-      }
-      return dep === completedSubtaskId;
-    });
-
-    if (!dependsOnCompleted) continue;
-
-    // Check if ALL dependencies are done
-    const allDepsDone = s.depends_on.every(dep => {
-      let depSub;
-      if (typeof dep === 'number') {
-        depSub = allSubs[dep];
-      } else {
-        depSub = allSubs.find(x => x.subtask_id === dep);
-      }
-      return depSub && depSub.status === 'done';
-    });
-
-    if (allDepsDone) ready.push(s);
-  }
-  return ready;
+    const ready = [];
+    for (const s of allSubs) {
+        if (s.status !== 'proposed')
+            continue;
+        if (!s.depends_on || !s.depends_on.length)
+            continue;
+        // Check if this subtask depends on the completed one
+        const dependsOnCompleted = s.depends_on.some((dep) => {
+            if (typeof dep === 'number') {
+                const depSub = allSubs[dep];
+                return depSub && depSub.subtask_id === completedSubtaskId;
+            }
+            return dep === completedSubtaskId;
+        });
+        if (!dependsOnCompleted)
+            continue;
+        // Check if ALL dependencies are done
+        const allDepsDone = s.depends_on.every((dep) => {
+            let depSub;
+            if (typeof dep === 'number') {
+                depSub = allSubs[dep];
+            }
+            else {
+                depSub = allSubs.find(x => x.subtask_id === dep);
+            }
+            return depSub && depSub.status === 'done';
+        });
+        if (allDepsDone)
+            ready.push(s);
+    }
+    return ready;
 }
-
 /**
  * Block subtasks that depend on a failed subtask.
  */
 function blockDependents(failedSubtaskId, allSubs) {
-  for (const s of allSubs) {
-    if (s.status !== 'proposed' && s.status !== 'queued') continue;
-    const depends = s.depends_on.some(dep => {
-      if (typeof dep === 'number') {
-        const depSub = allSubs[dep];
-        return depSub && depSub.subtask_id === failedSubtaskId;
-      }
-      return dep === failedSubtaskId;
-    });
-    if (depends) {
-      intake.updateSubtask(s.subtask_id, { status: 'blocked', error: `Blocked: dependency "${failedSubtaskId}" failed` });
+    for (const s of allSubs) {
+        if (s.status !== 'proposed' && s.status !== 'queued')
+            continue;
+        const depends = s.depends_on.some((dep) => {
+            if (typeof dep === 'number') {
+                const depSub = allSubs[dep];
+                return depSub && depSub.subtask_id === failedSubtaskId;
+            }
+            return dep === failedSubtaskId;
+        });
+        if (depends) {
+            intake.updateSubtask(s.subtask_id, {
+                status: 'blocked',
+                error: `Blocked: dependency "${failedSubtaskId}" failed`,
+            });
+        }
     }
-  }
 }
-
 /**
- * Check if all subtasks are in terminal state (done/failed/blocked/canceled).
- * If so, mark the parent task as done or failed.
+ * Check if all subtasks are in terminal state. If so, mark the parent task accordingly.
  */
 function checkTaskCompletion(taskId, allSubs) {
-  const subs = allSubs || intake.getSubtasksForTask(taskId);
-  if (!subs.length) return;
-
-  // builder_fallback / waiting_human are stop states — not terminal, not auto-continuable
-  const terminal = ['done', 'failed', 'blocked', 'canceled'];
-  const stopping = ['builder_running', 'builder_fallback', 'waiting_approval', 'waiting_human'];
-  const anyStopped = subs.some(s => stopping.includes(s.status));
-  if (anyStopped) return; // Don't finalize while any subtask needs human action
-
-  const allTerminal = subs.every(s => terminal.includes(s.status));
-  if (!allTerminal) return;
-
-  const anyFailed = subs.some(s => s.status === 'failed');
-  intake.updateTask(taskId, { status: anyFailed ? 'failed' : 'done' });
+    const subs = allSubs || intake.getSubtasksForTask(taskId);
+    if (!subs.length)
+        return;
+    // Don't finalize while any subtask needs human action
+    const anyStopped = subs.some(s => state_machine_1.SUBTASK_STOPPING.has(s.status));
+    if (anyStopped)
+        return;
+    const allTerminal = subs.every(s => state_machine_1.SUBTASK_TERMINAL.has(s.status));
+    if (!allTerminal)
+        return;
+    const anyFailed = subs.some(s => s.status === 'failed');
+    intake.updateTask(taskId, { status: anyFailed ? 'failed' : 'done' });
 }
-
 /**
  * Materialize subtasks from a deliberation result into the subtask store.
  * Links them to the parent task and sets up dependency chains.
  */
 function materializeSubtasks(taskId, deliberation) {
-  const subtaskDefs = deliberation.subtasks || [];
-  const created = [];
-  const domain = intake.getTask(taskId)?.domain || 'general';
-  const isCodeTask = deliberation.is_code_task || false;
-
-  for (let i = 0; i < subtaskDefs.length; i++) {
-    const def = subtaskDefs[i];
-
-    // ── Path validation for implement/claude subtasks on code tasks ──
-    let validatedRead = def.files_to_read || [];
-    let validatedWrite = def.files_to_write || [];
-    let pathWarnings = [];
-
-    if (isCodeTask && (def.stage === 'implement' || def.assigned_model === 'claude')) {
-      const allPaths = [...validatedRead, ...validatedWrite];
-      if (allPaths.length > 0) {
-        const validation = repoScanner.validatePaths(allPaths);
-        if (!validation.valid) {
-          // Strip invented paths, keep only real ones
-          validatedRead = validatedRead.filter(f => !validation.missing.includes(f));
-          validatedWrite = validatedWrite.filter(f => !validation.missing.includes(f));
-          pathWarnings = validation.missing;
+    const subtaskDefs = deliberation.subtasks || [];
+    const created = [];
+    const task = intake.getTask(taskId);
+    const domain = task?.domain || 'general';
+    const isCodeTask = deliberation.is_code_task || false;
+    for (let i = 0; i < subtaskDefs.length; i++) {
+        const def = subtaskDefs[i];
+        // Path validation for implement/claude subtasks on code tasks
+        let validatedRead = def.files_to_read || [];
+        let validatedWrite = def.files_to_write || [];
+        let pathWarnings = [];
+        if (isCodeTask && (def.stage === 'implement' || def.assigned_model === 'claude')) {
+            const allPaths = [...validatedRead, ...validatedWrite];
+            if (allPaths.length > 0) {
+                const validation = repoScanner.validatePaths(allPaths);
+                if (!validation.valid) {
+                    validatedRead = validatedRead.filter((f) => !validation.missing.includes(f));
+                    validatedWrite = validatedWrite.filter((f) => !validation.missing.includes(f));
+                    pathWarnings = validation.missing;
+                }
+            }
+            if (validatedRead.length === 0 && validatedWrite.length === 0 && def.stage === 'implement') {
+                def._blocked_no_files = true;
+            }
         }
-      }
-
-      // Block implement subtasks with zero real target files
-      if (validatedRead.length === 0 && validatedWrite.length === 0 && def.stage === 'implement') {
-        def._blocked_no_files = true;
-      }
-    }
-
-    const st = intake.createSubtask({
-      parent_task_id: taskId,
-      title: def.title || `Subtask ${i + 1}`,
-      domain,
-      stage: def.stage || 'audit',
-      assigned_role: def.assigned_role || 'general',
-      assigned_model: def.assigned_model || 'openai',
-      expected_output: def.expected_output || '',
-      prompt: def.prompt || '',
-      files_to_read: validatedRead,
-      files_to_write: validatedWrite,
-      risk_level: def.risk_level || 'green',
-      approval_required: !!def.approval_required,
-      depends_on: (def.depends_on || []).map(dep => {
-        // Convert index references to subtask_ids
-        if (typeof dep === 'number' && dep < created.length) {
-          return created[dep].subtask_id;
+        const st = intake.createSubtask({
+            parent_task_id: taskId,
+            title: def.title || `Subtask ${i + 1}`,
+            domain,
+            stage: def.stage || 'audit',
+            assigned_role: def.assigned_role || 'general',
+            assigned_model: def.assigned_model || 'openai',
+            expected_output: def.expected_output || '',
+            prompt: def.prompt || '',
+            files_to_read: validatedRead,
+            files_to_write: validatedWrite,
+            risk_level: def.risk_level || 'green',
+            approval_required: !!def.approval_required,
+            depends_on: (def.depends_on || []).map((dep) => {
+                if (typeof dep === 'number' && dep < created.length) {
+                    return created[dep].subtask_id;
+                }
+                return dep;
+            }),
+            order: i,
+            _stripped_paths: pathWarnings.length > 0 ? pathWarnings : undefined,
+            _is_locate_files: def.stage === 'locate_files',
+        });
+        if (def._blocked_no_files) {
+            intake.updateSubtask(st.subtask_id, {
+                status: 'blocked',
+                error: 'Blocked: no real target files identified. Needs locate_files or manual grounding.',
+            });
         }
-        return dep;
-      }),
-      order: i,
-      // Store grounding metadata
-      _stripped_paths: pathWarnings.length > 0 ? pathWarnings : undefined,
-      _is_locate_files: def.stage === 'locate_files',
-    });
-
-    // Block implement subtasks that lost all their target files
-    if (def._blocked_no_files) {
-      intake.updateSubtask(st.subtask_id, {
-        status: 'blocked',
-        error: 'Blocked: no real target files identified. Needs locate_files or manual grounding.',
-      });
+        created.push(st);
     }
-
-    created.push(st);
-  }
-
-  return created;
+    return created;
 }
-
 /**
  * Queue the first batch of subtasks that have no dependencies.
- * Returns subtask ids that were queued.
  */
 function queueInitialSubtasks(taskId) {
-  const subs = intake.getSubtasksForTask(taskId);
-  const queued = [];
-
-  for (const s of subs) {
-    if (s.status !== 'proposed') continue;
-    // No dependencies or empty deps → ready to run
-    if (!s.depends_on || !s.depends_on.length) {
-      if (s.risk_level === 'red' || s.risk_level === 'yellow' || s.approval_required) {
-        intake.updateSubtask(s.subtask_id, { status: 'waiting_approval' });
-      } else {
-        intake.updateSubtask(s.subtask_id, { status: 'queued' });
-        queued.push(s.subtask_id);
-      }
+    const subs = intake.getSubtasksForTask(taskId);
+    const queued = [];
+    for (const s of subs) {
+        if (s.status !== 'proposed')
+            continue;
+        if (!s.depends_on || !s.depends_on.length) {
+            if (s.risk_level === 'red' || s.risk_level === 'yellow' || s.approval_required) {
+                intake.updateSubtask(s.subtask_id, { status: 'waiting_approval' });
+            }
+            else {
+                intake.updateSubtask(s.subtask_id, { status: 'queued' });
+                queued.push(s.subtask_id);
+            }
+        }
     }
-  }
-
-  if (queued.length > 0) {
-    intake.updateTask(taskId, { status: 'executing' });
-  }
-
-  return queued;
+    if (queued.length > 0) {
+        intake.updateTask(taskId, { status: 'executing' });
+    }
+    return queued;
 }
-
-module.exports = {
-  onSubtaskComplete,
-  findReadySubtasks,
-  blockDependents,
-  checkTaskCompletion,
-  materializeSubtasks,
-  queueInitialSubtasks,
-};
+//# sourceMappingURL=workflow.js.map

@@ -1,0 +1,123 @@
+"use strict";
+// GPO Final Output Surfacing — Surface final answers and artifacts from completed tasks
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getFinalOutput = getFinalOutput;
+exports.getSurfacingReport = getSurfacingReport;
+const fs = require('fs');
+const path = require('path');
+function uid() { return 'fos_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+const STATE_DIR = path.resolve(__dirname, '..', '..', 'state');
+const REPORTS_DIR = path.resolve(__dirname, '..', '..', '..', '03-Operations', 'Reports');
+function readJson(f, fb) { try {
+    return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf-8')) : fb;
+}
+catch {
+    return fb;
+} }
+/** Get final output for a specific task */
+function getFinalOutput(taskId) {
+    // Load tasks and subtasks
+    const tasks = readJson(path.join(STATE_DIR, 'tasks.json'), []);
+    const subtasks = readJson(path.join(STATE_DIR, 'subtasks.json'), []);
+    const task = tasks.find(t => t.task_id === taskId);
+    if (!task)
+        return null;
+    const taskSubtasks = subtasks.filter(st => st.parent_task === taskId);
+    // Synthesize final answer from subtask outputs and reports
+    let finalAnswer = null;
+    let summary = null;
+    const artifacts = [];
+    const reportPaths = [];
+    const filesChanged = [];
+    // Collect from subtasks (newest first)
+    const doneSubs = taskSubtasks.filter(st => st.status === 'done').sort((a, b) => (b.updated_at || '').localeCompare(a.updated_at || ''));
+    for (const st of doneSubs) {
+        // Collect report paths
+        if (st.report_file) {
+            reportPaths.push(st.report_file);
+            // Try to read the report content for the final answer
+            if (!finalAnswer) {
+                const reportContent = tryReadReport(st.report_file);
+                if (reportContent) {
+                    finalAnswer = reportContent;
+                    artifacts.push({ type: 'report', title: st.title || 'Report', path: st.report_file, preview: reportContent.slice(0, 300) });
+                }
+            }
+        }
+        // Collect what_done as summary
+        if (st.what_done && !summary) {
+            summary = st.what_done;
+        }
+        // Collect files changed
+        if (st.files_changed?.length) {
+            for (const f of st.files_changed) {
+                if (!filesChanged.includes(f))
+                    filesChanged.push(f);
+            }
+        }
+        // Collect diff as code change artifact
+        if (st.diff_summary) {
+            artifacts.push({ type: 'code_change', title: `Changes: ${st.title}`, path: '', preview: st.diff_summary.slice(0, 200) });
+        }
+        // Collect output as answer if no report
+        if (!finalAnswer && st.output && st.output.length > 20) {
+            finalAnswer = st.output;
+            artifacts.push({ type: 'answer', title: st.title || 'Output', path: '', preview: st.output.slice(0, 300) });
+        }
+    }
+    // Fallback: task-level output
+    if (!finalAnswer && task.output) {
+        finalAnswer = task.output;
+    }
+    return {
+        task_id: taskId, task_title: task.title || task.request || taskId,
+        status: task.status || 'unknown',
+        final_answer: finalAnswer, summary,
+        artifacts, report_paths: reportPaths, files_changed: filesChanged,
+        created_at: task.created_at || new Date().toISOString(),
+    };
+}
+/** Try to read a report file */
+function tryReadReport(reportPath) {
+    const candidates = [
+        path.resolve(__dirname, '..', '..', '..', reportPath),
+        path.resolve(REPORTS_DIR, path.basename(reportPath)),
+        reportPath,
+    ];
+    for (const candidate of candidates) {
+        try {
+            if (fs.existsSync(candidate)) {
+                return fs.readFileSync(candidate, 'utf-8');
+            }
+        }
+        catch { /* */ }
+    }
+    return null;
+}
+/** Get output surfacing report — checks all recent tasks */
+function getSurfacingReport() {
+    const tasks = readJson(path.join(STATE_DIR, 'tasks.json'), []);
+    const doneTasks = tasks.filter(t => t.status === 'done').slice(0, 20);
+    const issues = [];
+    let withAnswer = 0;
+    let missingAnswer = 0;
+    for (const task of doneTasks) {
+        const output = getFinalOutput(task.task_id);
+        if (output?.final_answer) {
+            withAnswer++;
+        }
+        else {
+            missingAnswer++;
+            issues.push(`Task "${task.title || task.task_id}" completed without visible final answer`);
+        }
+    }
+    const quality = missingAnswer === 0 ? 'good' : missingAnswer <= doneTasks.length * 0.3 ? 'partial' : 'missing';
+    return {
+        report_id: uid(), tasks_checked: doneTasks.length,
+        with_final_answer: withAnswer, missing_answer: missingAnswer,
+        surfacing_quality: quality, issues: issues.slice(0, 10),
+        created_at: new Date().toISOString(),
+    };
+}
+module.exports = { getFinalOutput, getSurfacingReport };
+//# sourceMappingURL=final-output-surfacing.js.map

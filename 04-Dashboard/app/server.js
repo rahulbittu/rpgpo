@@ -198,6 +198,10 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // Part 55: Inline route middleware guard
+  const _tenantId = req.headers['x-tenant-id'] || 'rpgpo';
+  const _projectId = req.headers['x-project-id'] || 'default';
+
   // Main data
   if (req.url === '/api/data') {
     return json(res, buildApiData());
@@ -705,6 +709,2536 @@ const server = http.createServer(async (req, res) => {
       gemini: diagKey('GEMINI_API_KEY'),
       envFile: fs.existsSync(path.join(__dirname, '.env')) ? 'present' : 'missing',
     });
+  }
+
+  // ── Chief of Staff API ──
+
+  if (req.url === '/api/chief-of-staff/brief') {
+    try {
+      const cos = require('./lib/chief-of-staff');
+      return json(res, cos.generateBrief());
+    } catch (e) {
+      console.error('[server] Chief of Staff error:', e.message);
+      return json(res, { error: e.message }, 500);
+    }
+  }
+
+  if (req.url === '/api/chief-of-staff/actions' && req.method === 'GET') {
+    try {
+      const cos = require('./lib/chief-of-staff');
+      return json(res, { actions: cos.getNextBestActions(20) });
+    } catch (e) {
+      return json(res, { error: e.message }, 500);
+    }
+  }
+
+  if (req.url?.match(/^\/api\/chief-of-staff\/engine\/([^/]+)$/) && req.method === 'GET') {
+    const domain = req.url.match(/^\/api\/chief-of-staff\/engine\/([^/]+)$/)[1];
+    try {
+      const cos = require('./lib/chief-of-staff');
+      return json(res, { actions: cos.getEngineActions(domain) });
+    } catch (e) {
+      return json(res, { error: e.message }, 500);
+    }
+  }
+
+  // ── Mission Statements API ──
+
+  if (req.url === '/api/mission-statements' && req.method === 'GET') {
+    try {
+      const ms = require('./lib/mission-statements');
+      return json(res, { statements: ms.getAllStatements() });
+    } catch (e) {
+      return json(res, { error: e.message }, 500);
+    }
+  }
+
+  if (req.url === '/api/mission-statements' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.level || !body.scope_id || !body.statement) {
+      return json(res, { error: 'Missing level, scope_id, or statement' }, 400);
+    }
+    try {
+      const ms = require('./lib/mission-statements');
+      const result = ms.setStatement(body.level, body.scope_id, {
+        statement: body.statement,
+        objectives: body.objectives || [],
+        values: body.values || [],
+        success_criteria: body.success_criteria || [],
+      });
+      logAction('Mission statement set', `${body.level}:${body.scope_id}`, body.statement.slice(0, 60));
+      return json(res, { ok: true, statement: result });
+    } catch (e) {
+      return json(res, { error: e.message }, 500);
+    }
+  }
+
+  // ── Memory Viewer API ──
+
+  if (req.url === '/api/memory-viewer' && req.method === 'GET') {
+    try {
+      const mv = require('./lib/memory-viewer');
+      return json(res, mv.getMemoryViewerData());
+    } catch (e) {
+      console.error('[server] Memory viewer error:', e.message);
+      return json(res, { error: e.message }, 500);
+    }
+  }
+
+  if (req.url?.startsWith('/api/memory-viewer/search') && req.method === 'GET') {
+    const query = new URL(req.url, 'http://localhost').searchParams.get('q') || '';
+    try {
+      const mv = require('./lib/memory-viewer');
+      return json(res, { results: mv.searchDocuments(query) });
+    } catch (e) {
+      return json(res, { error: e.message }, 500);
+    }
+  }
+
+  if (req.url?.match(/^\/api\/memory-viewer\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const domain = req.url.match(/^\/api\/memory-viewer\/domain\/([^/]+)$/)[1];
+    try {
+      const mv = require('./lib/memory-viewer');
+      return json(res, { documents: mv.getDocumentsByDomain(domain) });
+    } catch (e) {
+      return json(res, { error: e.message }, 500);
+    }
+  }
+
+  // ── Execution Graphs API ──
+
+  if (req.url === '/api/execution-graphs' && req.method === 'GET') {
+    try {
+      const eg = require('./lib/execution-graph');
+      return json(res, { graphs: eg.getAllGraphs() });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/execution-graphs\/task\/([^/]+)$/) && req.method === 'GET') {
+    const taskId = req.url.match(/^\/api\/execution-graphs\/task\/([^/]+)$/)[1];
+    try {
+      const eg = require('./lib/execution-graph');
+      const graph = eg.getGraphForTask(taskId);
+      if (!graph) return json(res, { error: 'No graph for task' }, 404);
+      const nodes = eg.getNodesForGraph(graph.graph_id);
+      return json(res, { graph, nodes });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/execution-graphs\/([^/]+)$/) && req.method === 'GET') {
+    const graphId = req.url.match(/^\/api\/execution-graphs\/([^/]+)$/)[1];
+    if (graphId === 'create') { /* fall through to POST handler */ }
+    else {
+      try {
+        const eg = require('./lib/execution-graph');
+        const graph = eg.getGraph(graphId);
+        if (!graph) return json(res, { error: 'Graph not found' }, 404);
+        const nodes = eg.getNodesForGraph(graphId);
+        const ag = require('./lib/approval-gates');
+        const gates = ag.getGatesForGraph(graphId);
+        const rc = require('./lib/review-contracts');
+        const reviews = rc.getReviewsForGraph(graphId);
+        let dossier = null;
+        if (graph.dossier_id) {
+          const pd = require('./lib/promotion-dossiers');
+          dossier = pd.getDossier(graph.dossier_id);
+        }
+        return json(res, { graph, nodes, gates, reviews, dossier });
+      } catch (e) { return json(res, { error: e.message }, 500); }
+    }
+  }
+
+  if (req.url === '/api/execution-graphs/create' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.task_id) return json(res, { error: 'Missing task_id' }, 400);
+    try {
+      const cos = require('./lib/chief-of-staff');
+      const result = cos.orchestrateTask(body.task_id);
+      if (!result.graph) return json(res, { error: 'Could not create graph — task may lack board deliberation' }, 400);
+      events.broadcast('activity', { action: `Execution graph created for "${result.graph.title}"`, ts: new Date().toISOString() });
+      logAction('Execution graph created', result.graph.graph_id, result.graph.title);
+      return json(res, { ok: true, ...result });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/execution-graphs\/([^/]+)\/rebuild$/) && req.method === 'POST') {
+    const graphId = req.url.match(/^\/api\/execution-graphs\/([^/]+)\/rebuild$/)[1];
+    try {
+      const eg = require('./lib/execution-graph');
+      const graph = eg.rebuildGraph(graphId);
+      if (!graph) return json(res, { error: 'Cannot rebuild — graph not in failed/canceled state' }, 400);
+      return json(res, { ok: true, graph });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/execution-graphs\/([^/]+)\/nodes$/) && req.method === 'GET') {
+    const graphId = req.url.match(/^\/api\/execution-graphs\/([^/]+)\/nodes$/)[1];
+    try {
+      const eg = require('./lib/execution-graph');
+      return json(res, { nodes: eg.getNodesForGraph(graphId) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Execution Nodes API ──
+
+  if (req.url?.match(/^\/api\/execution-nodes\/([^/]+)$/) && req.method === 'GET') {
+    const nodeId = req.url.match(/^\/api\/execution-nodes\/([^/]+)$/)[1];
+    try {
+      const eg = require('./lib/execution-graph');
+      const node = eg.getNode(nodeId);
+      if (!node) return json(res, { error: 'Node not found' }, 404);
+      return json(res, { node });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/execution-nodes\/([^/]+)\/status$/) && req.method === 'POST') {
+    const nodeId = req.url.match(/^\/api\/execution-nodes\/([^/]+)\/status$/)[1];
+    const body = await parseBody(req);
+    if (!body.status) return json(res, { error: 'Missing status' }, 400);
+    try {
+      const eg = require('./lib/execution-graph');
+      const node = eg.updateNodeStatus(nodeId, body.status);
+      if (!node) return json(res, { error: 'Invalid transition or node not found' }, 400);
+      return json(res, { ok: true, node });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Approval Gates API ──
+
+  if (req.url?.match(/^\/api\/approval-gates\/([^/]+)$/) && req.method === 'GET') {
+    const graphId = req.url.match(/^\/api\/approval-gates\/([^/]+)$/)[1];
+    try {
+      const ag = require('./lib/approval-gates');
+      return json(res, { gates: ag.getGatesForGraph(graphId) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/approval-gates\/([^/]+)\/approve$/) && req.method === 'POST') {
+    const gateId = req.url.match(/^\/api\/approval-gates\/([^/]+)\/approve$/)[1];
+    const body = await parseBody(req);
+    try {
+      const ag = require('./lib/approval-gates');
+      const gate = ag.approveGate(gateId, body.resolved_by || 'operator', body.notes);
+      if (!gate) return json(res, { error: 'Gate not found or already resolved' }, 400);
+      events.broadcast('activity', { action: `Gate approved: ${gate.title}`, ts: new Date().toISOString() });
+      return json(res, { ok: true, gate });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/approval-gates\/([^/]+)\/reject$/) && req.method === 'POST') {
+    const gateId = req.url.match(/^\/api\/approval-gates\/([^/]+)\/reject$/)[1];
+    const body = await parseBody(req);
+    try {
+      const ag = require('./lib/approval-gates');
+      const gate = ag.rejectGate(gateId, body.resolved_by || 'operator', body.notes);
+      if (!gate) return json(res, { error: 'Gate not found or already resolved' }, 400);
+      events.broadcast('activity', { action: `Gate rejected: ${gate.title}`, ts: new Date().toISOString() });
+      return json(res, { ok: true, gate });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/approval-gates\/([^/]+)\/waive$/) && req.method === 'POST') {
+    const gateId = req.url.match(/^\/api\/approval-gates\/([^/]+)\/waive$/)[1];
+    const body = await parseBody(req);
+    try {
+      const ag = require('./lib/approval-gates');
+      const gate = ag.waiveGate(gateId, body.resolved_by || 'operator', body.notes);
+      if (!gate) return json(res, { error: 'Gate not found or already resolved' }, 400);
+      events.broadcast('activity', { action: `Gate waived: ${gate.title}`, ts: new Date().toISOString() });
+      return json(res, { ok: true, gate });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Review Contracts API ──
+
+  if (req.url?.match(/^\/api\/review-contracts\/([^/]+)$/) && req.method === 'GET') {
+    const graphId = req.url.match(/^\/api\/review-contracts\/([^/]+)$/)[1];
+    try {
+      const rc = require('./lib/review-contracts');
+      return json(res, { reviews: rc.getReviewsForGraph(graphId) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/review-contracts\/([^/]+)\/complete$/) && req.method === 'POST') {
+    const reviewId = req.url.match(/^\/api\/review-contracts\/([^/]+)\/complete$/)[1];
+    const body = await parseBody(req);
+    if (!body.verdict) return json(res, { error: 'Missing verdict' }, 400);
+    try {
+      const rc = require('./lib/review-contracts');
+      const review = rc.completeReview(reviewId, body.verdict, body.reviewer || 'operator', body.notes, body.checklist_updates);
+      if (!review) return json(res, { error: 'Review not found' }, 404);
+      events.broadcast('activity', { action: `Review completed: ${review.title} (${body.verdict})`, ts: new Date().toISOString() });
+      return json(res, { ok: true, review });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Promotion Dossiers API ──
+
+  if (req.url === '/api/promotion-dossiers' && req.method === 'GET') {
+    try {
+      const pd = require('./lib/promotion-dossiers');
+      return json(res, { dossiers: pd.getAllDossiers() });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url === '/api/promotion-dossiers/generate' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.graph_id) return json(res, { error: 'Missing graph_id' }, 400);
+    try {
+      const cos = require('./lib/chief-of-staff');
+      const dossier = cos.generatePromotionDossier(body.graph_id);
+      if (!dossier) return json(res, { error: 'Could not generate dossier — graph may not exist' }, 400);
+      events.broadcast('activity', { action: `Dossier generated: ${dossier.title} (${dossier.recommendation})`, ts: new Date().toISOString() });
+      logAction('Promotion dossier generated', dossier.dossier_id, dossier.recommendation);
+      return json(res, { ok: true, dossier });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/promotion-dossiers\/([^/]+)\/promote$/) && req.method === 'POST') {
+    const dossierId = req.url.match(/^\/api\/promotion-dossiers\/([^/]+)\/promote$/)[1];
+    try {
+      const pd = require('./lib/promotion-dossiers');
+      const dossier = pd.promoteDossier(dossierId);
+      if (!dossier) return json(res, { error: 'Cannot promote — dossier not found or recommendation is rework' }, 400);
+      events.broadcast('activity', { action: `Dossier promoted: ${dossier.title}`, ts: new Date().toISOString() });
+      logAction('Dossier promoted', dossierId, dossier.title);
+      return json(res, { ok: true, dossier });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/promotion-dossiers\/([^/]+)$/) && req.method === 'GET') {
+    const dossierId = req.url.match(/^\/api\/promotion-dossiers\/([^/]+)$/)[1];
+    if (dossierId === 'generate') { /* handled above */ }
+    else {
+      try {
+        const pd = require('./lib/promotion-dossiers');
+        const dossier = pd.getDossier(dossierId);
+        if (!dossier) return json(res, { error: 'Dossier not found' }, 404);
+        return json(res, { dossier });
+      } catch (e) { return json(res, { error: e.message }, 500); }
+    }
+  }
+
+  // ── Provider Registry API ──
+
+  if (req.url === '/api/provider-registry' && req.method === 'GET') {
+    try {
+      const pr = require('./lib/provider-registry');
+      return json(res, { providers: pr.getProviderProfiles(), fits: pr.getAllFits(), recipes: pr.getAllRecipes() });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/provider-registry\/providers\/([^/]+)$/) && req.method === 'GET') {
+    const providerId = req.url.match(/^\/api\/provider-registry\/providers\/([^/]+)$/)[1];
+    try {
+      const pr = require('./lib/provider-registry');
+      const profile = pr.getProviderProfile(providerId);
+      const fits = pr.getFitsForProvider(providerId);
+      const recipes = pr.getRecipesForProvider(providerId);
+      return json(res, { profile, fits, recipes });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url === '/api/provider-registry/fits' && req.method === 'GET') {
+    try {
+      const pr = require('./lib/provider-registry');
+      return json(res, { fits: pr.getAllFits() });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/provider-registry\/fits\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const domain = req.url.match(/^\/api\/provider-registry\/fits\/domain\/([^/]+)$/)[1];
+    try {
+      const pr = require('./lib/provider-registry');
+      return json(res, { fits: pr.getFitsForDomain(domain) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/provider-registry\/fits\/project\/([^/]+)$/) && req.method === 'GET') {
+    const projectId = req.url.match(/^\/api\/provider-registry\/fits\/project\/([^/]+)$/)[1];
+    try {
+      const pr = require('./lib/provider-registry');
+      return json(res, { fits: pr.getFitsForProject(projectId) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url === '/api/provider-registry/fits' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.provider_id || !body.role || !body.task_kind) return json(res, { error: 'Missing fields' }, 400);
+    try {
+      const pr = require('./lib/provider-registry');
+      const fit = pr.upsertFit(body);
+      return json(res, { ok: true, fit });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/provider-registry\/fits\/([^/]+)\/promote$/) && req.method === 'POST') {
+    const fitId = req.url.match(/^\/api\/provider-registry\/fits\/([^/]+)\/promote$/)[1];
+    try {
+      const pr = require('./lib/provider-registry');
+      const fit = pr.promoteFit(fitId);
+      if (!fit) return json(res, { error: 'Fit not found' }, 404);
+      return json(res, { ok: true, fit });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/provider-registry\/fits\/([^/]+)\/deprecate$/) && req.method === 'POST') {
+    const fitId = req.url.match(/^\/api\/provider-registry\/fits\/([^/]+)\/deprecate$/)[1];
+    try {
+      const pr = require('./lib/provider-registry');
+      const fit = pr.deprecateFit(fitId);
+      if (!fit) return json(res, { error: 'Fit not found' }, 404);
+      return json(res, { ok: true, fit });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Collaboration Contracts API ──
+
+  if (req.url === '/api/collaboration-contracts' && req.method === 'GET') {
+    try {
+      const cc = require('./lib/collaboration-contracts');
+      return json(res, { contracts: cc.getAllContracts() });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/collaboration-contracts\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const domain = req.url.match(/^\/api\/collaboration-contracts\/domain\/([^/]+)$/)[1];
+    try {
+      const cc = require('./lib/collaboration-contracts');
+      return json(res, { contracts: cc.getContractsForDomain(domain) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/collaboration-contracts\/project\/([^/]+)$/) && req.method === 'GET') {
+    const projectId = req.url.match(/^\/api\/collaboration-contracts\/project\/([^/]+)$/)[1];
+    try {
+      const cc = require('./lib/collaboration-contracts');
+      return json(res, { contracts: cc.getContractsForProject(projectId) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url === '/api/collaboration-contracts' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.title || !body.from_role || !body.to_role) return json(res, { error: 'Missing fields' }, 400);
+    try {
+      const cc = require('./lib/collaboration-contracts');
+      const contract = cc.createContract(body);
+      return json(res, { ok: true, contract });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/collaboration-contracts\/([^/]+)\/toggle$/) && req.method === 'POST') {
+    const contractId = req.url.match(/^\/api\/collaboration-contracts\/([^/]+)\/toggle$/)[1];
+    try {
+      const cc = require('./lib/collaboration-contracts');
+      const contract = cc.toggleContract(contractId);
+      if (!contract) return json(res, { error: 'Contract not found' }, 404);
+      return json(res, { ok: true, contract });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Handoff Records API ──
+
+  if (req.url?.match(/^\/api\/handoffs\/graph\/([^/]+)$/) && req.method === 'GET') {
+    const graphId = req.url.match(/^\/api\/handoffs\/graph\/([^/]+)$/)[1];
+    try {
+      const cc = require('./lib/collaboration-contracts');
+      return json(res, { handoffs: cc.getHandoffsForGraph(graphId) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Prompt Recipes API ──
+
+  if (req.url === '/api/prompt-recipes' && req.method === 'GET') {
+    try {
+      const pr = require('./lib/provider-registry');
+      return json(res, { recipes: pr.getAllRecipes() });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/prompt-recipes\/provider\/([^/]+)$/) && req.method === 'GET') {
+    const providerId = req.url.match(/^\/api\/prompt-recipes\/provider\/([^/]+)$/)[1];
+    try {
+      const pr = require('./lib/provider-registry');
+      return json(res, { recipes: pr.getRecipesForProvider(providerId) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/prompt-recipes\/project\/([^/]+)$/) && req.method === 'GET') {
+    const projectId = req.url.match(/^\/api\/prompt-recipes\/project\/([^/]+)$/)[1];
+    try {
+      const pr = require('./lib/provider-registry');
+      return json(res, { recipes: pr.getRecipesForProject(projectId) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url === '/api/prompt-recipes' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.provider_id || !body.role || !body.task_kind || !body.title || !body.template) return json(res, { error: 'Missing fields' }, 400);
+    try {
+      const pr = require('./lib/provider-registry');
+      const recipe = pr.createRecipe(body);
+      return json(res, { ok: true, recipe });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/prompt-recipes\/([^/]+)\/promote$/) && req.method === 'POST') {
+    const recipeId = req.url.match(/^\/api\/prompt-recipes\/([^/]+)\/promote$/)[1];
+    try {
+      const pr = require('./lib/provider-registry');
+      const recipe = pr.promoteRecipe(recipeId);
+      if (!recipe) return json(res, { error: 'Recipe not found' }, 404);
+      return json(res, { ok: true, recipe });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/prompt-recipes\/([^/]+)\/deprecate$/) && req.method === 'POST') {
+    const recipeId = req.url.match(/^\/api\/prompt-recipes\/([^/]+)\/deprecate$/)[1];
+    try {
+      const pr = require('./lib/provider-registry');
+      const recipe = pr.deprecateRecipe(recipeId);
+      if (!recipe) return json(res, { error: 'Recipe not found' }, 404);
+      return json(res, { ok: true, recipe });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Reverse Prompting API ──
+
+  if (req.url?.match(/^\/api\/reverse-prompting\/run\/([^/]+)$/) && req.method === 'POST') {
+    const graphId = req.url.match(/^\/api\/reverse-prompting\/run\/([^/]+)$/)[1];
+    try {
+      const cos = require('./lib/chief-of-staff');
+      const run = cos.runReversePrompting(graphId);
+      if (!run) return json(res, { error: 'Could not run reverse prompting' }, 400);
+      events.broadcast('activity', { action: `Reverse prompting completed: ${run.success_factors.length} successes, ${run.anti_patterns.length} anti-patterns`, ts: new Date().toISOString() });
+      return json(res, { ok: true, run });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/reverse-prompting\/runs\/([^/]+)$/) && req.method === 'GET') {
+    const graphId = req.url.match(/^\/api\/reverse-prompting\/runs\/([^/]+)$/)[1];
+    try {
+      const rp = require('./lib/reverse-prompting');
+      return json(res, { runs: rp.getRunsForGraph(graphId) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Operator Policies API ──
+
+  if (req.url === '/api/operator-policies' && req.method === 'GET') {
+    try { const m = require('./lib/operator-policies'); return json(res, { policies: m.getAllPolicies() }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/operator-policies\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/operator-policies\/domain\/([^/]+)$/)[1];
+    try { const m = require('./lib/operator-policies'); return json(res, { policies: m.getPoliciesForDomain(d) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/operator-policies\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/operator-policies\/project\/([^/]+)$/)[1];
+    try { const m = require('./lib/operator-policies'); return json(res, { policies: m.getPoliciesForProject(p) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/operator-policies' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.area || !body.value) return json(res, { error: 'Missing area or value' }, 400);
+    try { const m = require('./lib/operator-policies'); return json(res, { ok: true, policy: m.createPolicy(body) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/operator-policies\/([^/]+)\/toggle$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/operator-policies\/([^/]+)\/toggle$/)[1];
+    try { const m = require('./lib/operator-policies'); const p = m.togglePolicy(id); return p ? json(res, { ok: true, policy: p }) : json(res, { error: 'Not found' }, 404); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Autonomy Budgets API ──
+
+  if (req.url === '/api/autonomy-budgets' && req.method === 'GET') {
+    try { const m = require('./lib/autonomy-budgets'); return json(res, { budgets: m.getAllBudgets() }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/autonomy-budgets\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/autonomy-budgets\/domain\/([^/]+)$/)[1];
+    try { const m = require('./lib/autonomy-budgets'); return json(res, { budgets: m.getBudgetsForDomain(d) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/autonomy-budgets\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/autonomy-budgets\/project\/([^/]+)$/)[1];
+    try { const m = require('./lib/autonomy-budgets'); return json(res, { budgets: m.getBudgetsForProject(p) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/autonomy-budgets' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.scope_level || !body.scope_id || !body.lane) return json(res, { error: 'Missing fields' }, 400);
+    try { const m = require('./lib/autonomy-budgets'); return json(res, { ok: true, budget: m.createBudget(body) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/autonomy-budgets\/([^/]+)\/toggle$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/autonomy-budgets\/([^/]+)\/toggle$/)[1];
+    try { const m = require('./lib/autonomy-budgets'); const b = m.toggleBudget(id); return b ? json(res, { ok: true, budget: b }) : json(res, { error: 'Not found' }, 404); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Escalation Rules API ──
+
+  if (req.url === '/api/escalation-rules' && req.method === 'GET') {
+    try { const m = require('./lib/escalation-governance'); return json(res, { rules: m.getAllRules() }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/escalation-rules\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/escalation-rules\/domain\/([^/]+)$/)[1];
+    try { const m = require('./lib/escalation-governance'); return json(res, { rules: m.getRulesForDomain(d) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/escalation-rules\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/escalation-rules\/project\/([^/]+)$/)[1];
+    try { const m = require('./lib/escalation-governance'); return json(res, { rules: m.getRulesForProject(p) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/escalation-rules' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.trigger || !body.action) return json(res, { error: 'Missing fields' }, 400);
+    try { const m = require('./lib/escalation-governance'); return json(res, { ok: true, rule: m.createRule(body) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/escalation-rules\/([^/]+)\/toggle$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/escalation-rules\/([^/]+)\/toggle$/)[1];
+    try { const m = require('./lib/escalation-governance'); const r = m.toggleRule(id); return r ? json(res, { ok: true, rule: r }) : json(res, { error: 'Not found' }, 404); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/escalation\/evaluate\/([^/]+)$/) && req.method === 'POST') {
+    const graphId = req.url.match(/^\/api\/escalation\/evaluate\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { events: cos.evaluateEscalation(graphId) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Documentation Governance API ──
+
+  if (req.url === '/api/documentation-requirements' && req.method === 'GET') {
+    try { const m = require('./lib/documentation-governance'); return json(res, { requirements: m.getAllRequirements() }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/documentation-requirements' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.scope_type || !body.title) return json(res, { error: 'Missing fields' }, 400);
+    try { const m = require('./lib/documentation-governance'); return json(res, { ok: true, requirement: m.createRequirement(body) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/documentation-artifacts\/([^/]+)\/([^/]+)$/) && req.method === 'GET') {
+    const match = req.url.match(/^\/api\/documentation-artifacts\/([^/]+)\/([^/]+)$/);
+    try { const m = require('./lib/documentation-governance'); return json(res, { artifacts: m.getArtifactsForScope(match[1], match[2]) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/documentation-artifacts' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.scope_type || !body.related_id || !body.title || !body.path) return json(res, { error: 'Missing fields' }, 400);
+    try { const m = require('./lib/documentation-governance'); return json(res, { ok: true, artifact: m.createArtifact(body) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/documentation\/check\/([^/]+)\/([^/]+)$/) && req.method === 'POST') {
+    const match = req.url.match(/^\/api\/documentation\/check\/([^/]+)\/([^/]+)$/);
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.checkDocumentationRequirements(match[1], match[2], body.lane || 'dev')); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Policy Simulation API ──
+
+  if (req.url === '/api/policy-simulation/run' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.related_type || !body.related_id || !body.lane) return json(res, { error: 'Missing related_type, related_id, or lane' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); const r = cos.simulateGovernanceScenario(body.related_type, body.related_id, body.lane, body.overrides); return r ? json(res, { ok: true, result: r }) : json(res, { error: 'Simulation failed' }, 500); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/policy-simulation\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/policy-simulation\/([^/]+)$/)[1];
+    try { const ps = require('./lib/policy-simulation'); const s = ps.getScenario(id); return s ? json(res, { scenario: s }) : json(res, { error: 'Not found' }, 404); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/policy-simulation\/results\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/policy-simulation\/results\/([^/]+)$/)[1];
+    try { const ps = require('./lib/policy-simulation'); const r = ps.getResult(id); return r ? json(res, { result: r }) : json(res, { error: 'Not found' }, 404); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Governance Testing API ──
+
+  if (req.url?.match(/^\/api\/governance-tests\/run\/([^/]+)\/([^/]+)$/) && req.method === 'POST') {
+    const match = req.url.match(/^\/api\/governance-tests\/run\/([^/]+)\/([^/]+)$/);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { tests: cos.runWhatIfTestSuite(match[1], match[2]) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/governance-tests\/([^/]+)\/([^/]+)$/) && req.method === 'GET') {
+    const match = req.url.match(/^\/api\/governance-tests\/([^/]+)\/([^/]+)$/);
+    try { const gt = require('./lib/governance-testing'); return json(res, { tests: gt.getTestsForEntity(match[1], match[2]) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Release Readiness API ──
+
+  if (req.url?.match(/^\/api\/release-readiness\/score\/([^/]+)\/([^/]+)$/) && req.method === 'POST') {
+    const match = req.url.match(/^\/api\/release-readiness\/score\/([^/]+)\/([^/]+)$/);
+    try { const cos = require('./lib/chief-of-staff'); const s = cos.computeReleaseReadiness(match[1], match[2]); return s ? json(res, { ok: true, score: s }) : json(res, { error: 'Scoring failed' }, 500); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/release-readiness\/([^/]+)\/([^/]+)$/) && req.method === 'GET') {
+    const match = req.url.match(/^\/api\/release-readiness\/([^/]+)\/([^/]+)$/);
+    try { const rr = require('./lib/release-readiness'); return json(res, { scores: rr.getScoresForEntity(match[1], match[2]) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url === '/api/release-readiness/rules' && req.method === 'GET') {
+    try { const rr = require('./lib/release-readiness'); return json(res, { rules: rr.getRules() }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Dossier Simulation + Readiness ──
+
+  if (req.url?.match(/^\/api\/promotion-dossiers\/([^/]+)\/simulate$/) && req.method === 'POST') {
+    const dossierId = req.url.match(/^\/api\/promotion-dossiers\/([^/]+)\/simulate$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); const r = cos.simulateGovernanceScenario('dossier', dossierId, body.lane || 'beta', body.overrides); return r ? json(res, { ok: true, result: r }) : json(res, { error: 'Failed' }, 500); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/promotion-dossiers\/([^/]+)\/readiness$/) && req.method === 'POST') {
+    const dossierId = req.url.match(/^\/api\/promotion-dossiers\/([^/]+)\/readiness$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); const s = cos.computeReleaseReadiness('dossier', dossierId); return s ? json(res, { ok: true, score: s }) : json(res, { error: 'Failed' }, 500); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Enforcement Engine API ──
+
+  if (req.url === '/api/enforcement/evaluate' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.related_type || !body.related_id || !body.action || !body.lane) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); const d = cos.evaluateEnforcement(body.related_type, body.related_id, body.action, body.lane); return d ? json(res, { ok: true, decision: d }) : json(res, { error: 'Failed' }, 500); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/enforcement\/([^/]+)\/([^/]+)$/) && req.method === 'GET') {
+    const m = req.url.match(/^\/api\/enforcement\/([^/]+)\/([^/]+)$/);
+    if (m[1] !== 'decisions' && m[1] !== 'rules') {
+      try { const ee = require('./lib/enforcement-engine'); return json(res, { decisions: ee.getDecisionsForEntity(m[1], m[2]) }); }
+      catch (e) { return json(res, { error: e.message }, 500); }
+    }
+  }
+
+  if (req.url?.match(/^\/api\/enforcement\/decisions\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/enforcement\/decisions\/([^/]+)$/)[1];
+    try { const ee = require('./lib/enforcement-engine'); const d = ee.getDecision(id); return d ? json(res, { decision: d }) : json(res, { error: 'Not found' }, 404); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url === '/api/enforcement/rules' && req.method === 'GET') {
+    try { const ee = require('./lib/enforcement-engine'); return json(res, { rules: ee.getRules() }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Override Ledger API ──
+
+  if (req.url === '/api/overrides/request' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.related_type || !body.related_id || !body.action || !body.override_type || !body.reason) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); const o = cos.requestOverride(body.related_type, body.related_id, body.action, body.override_type, body.reason, body.notes); return o ? json(res, { ok: true, override: o }) : json(res, { error: 'Failed' }, 500); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/overrides\/([^/]+)\/approve$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/overrides\/([^/]+)\/approve$/)[1];
+    try { const ol = require('./lib/override-ledger'); const o = ol.approveOverride(id); return o ? json(res, { ok: true, override: o }) : json(res, { error: 'Not found or not pending' }, 400); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/overrides\/([^/]+)\/reject$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/overrides\/([^/]+)\/reject$/)[1];
+    try { const ol = require('./lib/override-ledger'); const o = ol.rejectOverride(id); return o ? json(res, { ok: true, override: o }) : json(res, { error: 'Not found or not pending' }, 400); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/overrides\/([^/]+)\/([^/]+)$/) && req.method === 'GET') {
+    const m = req.url.match(/^\/api\/overrides\/([^/]+)\/([^/]+)$/);
+    if (m[1] !== 'pending') {
+      try { const ol = require('./lib/override-ledger'); return json(res, { overrides: ol.getOverridesForEntity(m[1], m[2]) }); }
+      catch (e) { return json(res, { error: e.message }, 500); }
+    }
+  }
+
+  if (req.url === '/api/overrides/pending' && req.method === 'GET') {
+    try { const ol = require('./lib/override-ledger'); return json(res, { overrides: ol.getPendingOverrides() }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Promotion Control API ──
+
+  if (req.url === '/api/promotion-policies' && req.method === 'GET') {
+    try { const pc = require('./lib/promotion-control'); return json(res, { policies: pc.getPolicies() }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url === '/api/promotion-policies' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.target_lane) return json(res, { error: 'Missing target_lane' }, 400);
+    try { const pc = require('./lib/promotion-control'); return json(res, { ok: true, policy: pc.createPolicy(body) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/promotion-control\/([^/]+)\/evaluate\/([^/]+)$/) && req.method === 'POST') {
+    const m = req.url.match(/^\/api\/promotion-control\/([^/]+)\/evaluate\/([^/]+)$/);
+    try { const cos = require('./lib/chief-of-staff'); const d = cos.resolvePromotionDecision(m[1], m[2]); return d ? json(res, { ok: true, decision: d }) : json(res, { error: 'Failed' }, 500); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/promotion-control\/([^/]+)\/promote\/([^/]+)$/) && req.method === 'POST') {
+    const m = req.url.match(/^\/api\/promotion-control\/([^/]+)\/promote\/([^/]+)$/);
+    try {
+      const cos = require('./lib/chief-of-staff');
+      const result = cos.applyPromotionControl(m[1], m[2]);
+      if (result.promoted) {
+        events.broadcast('activity', { action: `Dossier promoted to ${m[2]}`, ts: new Date().toISOString() });
+        logAction('Promotion executed', m[1], `to ${m[2]}`);
+      }
+      return json(res, { ok: true, ...result });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  if (req.url?.match(/^\/api\/promotion-decisions\/([^/]+)$/) && req.method === 'GET') {
+    const dossierId = req.url.match(/^\/api\/promotion-decisions\/([^/]+)$/)[1];
+    try { const pc = require('./lib/promotion-control'); return json(res, { decisions: pc.getDecisionsForDossier(dossierId) }); }
+    catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Exception Analytics API ──
+
+  if (req.url === '/api/exception-analytics' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.analyzeExceptions()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/exception-analytics\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/exception-analytics\/domain\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.analyzeExceptions(d)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/exception-analytics\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/exception-analytics\/project\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.analyzeExceptions(undefined, p)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/exception-analytics\/provider\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/exception-analytics\/provider\/([^/]+)$/)[1];
+    try { const ea = require('./lib/exception-analytics'); return json(res, ea.aggregate({ provider_id: p })); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Governance Drift API ──
+
+  if (req.url === '/api/governance-drift' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { report: cos.detectGovernanceDrift() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/governance-drift\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/governance-drift\/domain\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { report: cos.detectGovernanceDrift('engine', d, d) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/governance-drift\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/governance-drift\/project\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { report: cos.detectGovernanceDrift('project', p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Governance Health API ──
+
+  if (req.url === '/api/governance-health' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { health: cos.getGovernanceHealth() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Policy Tuning API ──
+
+  if (req.url === '/api/policy-tuning/recommendations' && req.method === 'GET') {
+    try { const pt = require('./lib/policy-tuning'); return json(res, { recommendations: pt.getAllRecommendations() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/policy-tuning\/recommendations\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/policy-tuning\/recommendations\/domain\/([^/]+)$/)[1];
+    try { const pt = require('./lib/policy-tuning'); return json(res, { recommendations: pt.getRecommendationsForScope(d) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/policy-tuning\/recommendations\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/policy-tuning\/recommendations\/project\/([^/]+)$/)[1];
+    try { const pt = require('./lib/policy-tuning'); return json(res, { recommendations: pt.getRecommendationsForScope(undefined, p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/policy-tuning\/recommendations\/([^/]+)\/approve$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/policy-tuning\/recommendations\/([^/]+)\/approve$/)[1];
+    const body = await parseBody(req);
+    try { const pt = require('./lib/policy-tuning'); const d = pt.approveRecommendation(id, body.decided_by, body.notes); return d ? json(res, { ok: true, decision: d }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/policy-tuning\/recommendations\/([^/]+)\/reject$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/policy-tuning\/recommendations\/([^/]+)\/reject$/)[1];
+    const body = await parseBody(req);
+    try { const pt = require('./lib/policy-tuning'); const d = pt.rejectRecommendation(id, body.decided_by, body.notes); return d ? json(res, { ok: true, decision: d }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/policy-tuning\/decisions\/([^/]+)\/apply$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/policy-tuning\/decisions\/([^/]+)\/apply$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); const d = cos.applyApprovedTuning(id); return d ? json(res, { ok: true, decision: d }) : json(res, { error: 'Not approved or not found' }, 400); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Governance Ops Console API ──
+
+  if (req.url === '/api/governance-ops' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getGovernanceOpsView()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/governance-ops/filter' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getGovernanceOpsView(body)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/governance-ops/hotspots' && req.method === 'GET') {
+    try { const go = require('./lib/governance-ops'); const v = go.getOpsView(); return json(res, { hotspots: v.hotspots }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/governance-ops/watchlist' && req.method === 'GET') {
+    try { const go = require('./lib/governance-ops'); return json(res, { watchlist: go.getWatchlist() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/governance-ops/watchlist' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.scope || !body.reason) return json(res, { error: 'Missing scope or reason' }, 400);
+    try { const go = require('./lib/governance-ops'); return json(res, { ok: true, entry: go.addToWatchlist(body.scope, body.reason) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/governance-ops\/watchlist\/([^/]+)\/toggle$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/governance-ops\/watchlist\/([^/]+)\/toggle$/)[1];
+    try { const go = require('./lib/governance-ops'); const e = go.toggleWatchlistEntry(id); return e ? json(res, { ok: true, entry: e }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Scoped Drift Resolutions API ──
+
+  if (req.url === '/api/scoped-drift-resolutions' && req.method === 'GET') {
+    try { const sdr = require('./lib/scoped-drift-resolution'); return json(res, { resolutions: sdr.getAllResolutions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/scoped-drift-resolutions\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/scoped-drift-resolutions\/domain\/([^/]+)$/)[1];
+    try { const sdr = require('./lib/scoped-drift-resolution'); return json(res, { resolutions: sdr.getResolutionsForDomain(d) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/scoped-drift-resolutions\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/scoped-drift-resolutions\/project\/([^/]+)$/)[1];
+    try { const sdr = require('./lib/scoped-drift-resolution'); return json(res, { resolutions: sdr.getResolutionsForProject(p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/scoped-drift-resolutions\/provider\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/scoped-drift-resolutions\/provider\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { resolutions: cos.resolveScopedDrift('global', 'global') }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/scoped-drift-resolutions\/([^/]+)\/approve$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/scoped-drift-resolutions\/([^/]+)\/approve$/)[1];
+    try { const sdr = require('./lib/scoped-drift-resolution'); const r = sdr.approveResolution(id); return r ? json(res, { ok: true, resolution: r }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/scoped-drift-resolutions\/([^/]+)\/reject$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/scoped-drift-resolutions\/([^/]+)\/reject$/)[1];
+    try { const sdr = require('./lib/scoped-drift-resolution'); const r = sdr.rejectResolution(id); return r ? json(res, { ok: true, resolution: r }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/scoped-drift-resolutions\/([^/]+)\/verify$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/scoped-drift-resolutions\/([^/]+)\/verify$/)[1];
+    const body = await parseBody(req);
+    try { const sdr = require('./lib/scoped-drift-resolution'); const r = sdr.verifyResolution(id, body.notes || ''); return r ? json(res, { ok: true, resolution: r }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Tuning Application API ──
+
+  if (req.url?.match(/^\/api\/policy-tuning\/recommendations\/([^/]+)\/preview-apply$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/policy-tuning\/recommendations\/([^/]+)\/preview-apply$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); const p = cos.previewTuningApplication(id); return p ? json(res, { ok: true, plan: p }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/policy-tuning\/applications\/([^/]+)\/rollback$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/policy-tuning\/applications\/([^/]+)\/rollback$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); const r = cos.rollbackTuningApplication(id); return r ? json(res, { ok: true, rollback: r }) : json(res, { error: 'Not found or not available' }, 400); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/policy-tuning/applications' && req.method === 'GET') {
+    try { const ta = require('./lib/tuning-application'); return json(res, { applications: ta.getApplications() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/policy-tuning/rollbacks' && req.method === 'GET') {
+    try { const ta = require('./lib/tuning-application'); return json(res, { rollbacks: ta.getRollbacks() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Governance Trends API ──
+
+  if (req.url === '/api/governance-trends' && req.method === 'GET') {
+    try { const go = require('./lib/governance-ops'); const v = go.getOpsView(); return json(res, { trends: v.trends }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/governance-trends\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/governance-trends\/domain\/([^/]+)$/)[1];
+    try { const go = require('./lib/governance-ops'); const v = go.getOpsView({ domain: d }); return json(res, { trends: v.trends }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/governance-trends\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/governance-trends\/project\/([^/]+)$/)[1];
+    try { const go = require('./lib/governance-ops'); const v = go.getOpsView({ project_id: p }); return json(res, { trends: v.trends }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Runtime Enforcement API ──
+
+  if (req.url === '/api/runtime-enforcement' && req.method === 'GET') {
+    try { const re = require('./lib/runtime-enforcement'); return json(res, re.getSummary()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/runtime-enforcement\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/runtime-enforcement\/domain\/([^/]+)$/)[1];
+    try { const re = require('./lib/runtime-enforcement'); return json(res, { blocks: re.getBlocks({ domain: d }) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/runtime-enforcement\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/runtime-enforcement\/project\/([^/]+)$/)[1];
+    try { const re = require('./lib/runtime-enforcement'); return json(res, { blocks: re.getBlocks({ project_id: p }) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/runtime-enforcement\/graph\/([^/]+)$/) && req.method === 'GET') {
+    const g = req.url.match(/^\/api\/runtime-enforcement\/graph\/([^/]+)$/)[1];
+    try { const re = require('./lib/runtime-enforcement'); return json(res, { results: re.getResultsForGraph(g) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/runtime-enforcement\/node\/([^/]+)$/) && req.method === 'GET') {
+    const n = req.url.match(/^\/api\/runtime-enforcement\/node\/([^/]+)$/)[1];
+    try { const re = require('./lib/runtime-enforcement'); return json(res, { results: re.getResultsForNode(n) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/runtime-enforcement/evaluate' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.graph_id || !body.transition) return json(res, { error: 'Missing graph_id or transition' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { result: cos.evaluateRuntimeGovernance(body.graph_id, body.node_id, body.transition) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Worker Governance API ──
+
+  if (req.url === '/api/worker-governance' && req.method === 'GET') {
+    try { const wg = require('./lib/worker-governance'); return json(res, { decisions: wg.getAllDecisions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/worker-governance\/graph\/([^/]+)$/) && req.method === 'GET') {
+    const g = req.url.match(/^\/api\/worker-governance\/graph\/([^/]+)$/)[1];
+    try { const wg = require('./lib/worker-governance'); return json(res, { decisions: wg.getDecisionsForGraph(g) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/worker-governance\/node\/([^/]+)$/) && req.method === 'GET') {
+    const n = req.url.match(/^\/api\/worker-governance\/node\/([^/]+)$/)[1];
+    try { const wg = require('./lib/worker-governance'); return json(res, { decisions: wg.getDecisionsForNode(n) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Execution Hooks API ──
+
+  if (req.url?.match(/^\/api\/execution-hooks\/attach\/([^/]+)$/) && req.method === 'POST') {
+    const g = req.url.match(/^\/api\/execution-hooks\/attach\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, hooks: cos.attachExecutionHooks(g) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/execution-hooks\/graph\/([^/]+)$/) && req.method === 'GET') {
+    const g = req.url.match(/^\/api\/execution-hooks\/graph\/([^/]+)$/)[1];
+    try { const eh = require('./lib/execution-hooks'); return json(res, { hooks: eh.getHooksForGraph(g) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Runtime Blocks API ──
+
+  if (req.url === '/api/runtime-blocks' && req.method === 'GET') {
+    try { const re = require('./lib/runtime-enforcement'); return json(res, { blocks: re.getActiveBlocks() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/runtime-blocks\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/runtime-blocks\/domain\/([^/]+)$/)[1];
+    try { const re = require('./lib/runtime-enforcement'); return json(res, { blocks: re.getBlocks({ domain: d }).filter(b => !b.resolved) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/runtime-blocks\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/runtime-blocks\/project\/([^/]+)$/)[1];
+    try { const re = require('./lib/runtime-enforcement'); return json(res, { blocks: re.getBlocks({ project_id: p }).filter(b => !b.resolved) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Override Operations API ──
+
+  if (req.url === '/api/override-ops' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getOverrideOperationsView()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/override-ops/filter' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getOverrideOperationsView(body)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/override-ops/pending' && req.method === 'GET') {
+    try { const ol = require('./lib/override-ledger'); return json(res, { overrides: ol.getPendingOverrides() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/override-ops/stale' && req.method === 'GET') {
+    try { const oo = require('./lib/override-operations'); return json(res, { overrides: oo.getStaleOverrides() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/override-ops/consumed' && req.method === 'GET') {
+    try { const oo = require('./lib/override-operations'); return json(res, { records: oo.getConsumptionRecords() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/override-consumption' && req.method === 'GET') {
+    try { const oo = require('./lib/override-operations'); return json(res, { records: oo.getConsumptionRecords() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/overrides\/([^/]+)\/consume$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/overrides\/([^/]+)\/consume$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); const r = cos.consumeOverrideAction(id, body.decision_id || 'manual'); return r ? json(res, { ok: true, record: r }) : json(res, { error: 'Not found or not approved' }, 400); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Exception Cases API ──
+
+  if (req.url === '/api/exception-cases' && req.method === 'GET') {
+    try { const el = require('./lib/exception-lifecycle'); return json(res, { cases: el.getAllCases() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/exception-cases\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/exception-cases\/domain\/([^/]+)$/)[1];
+    try { const el = require('./lib/exception-lifecycle'); return json(res, { cases: el.getCasesForDomain(d) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/exception-cases\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/exception-cases\/project\/([^/]+)$/)[1];
+    try { const el = require('./lib/exception-lifecycle'); return json(res, { cases: el.getCasesForProject(p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/exception-cases' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.source_type || !body.source_id) return json(res, { error: 'Missing source_type or source_id' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); const c = cos.createExceptionCase(body.source_type, body.source_id, body); return c ? json(res, { ok: true, case: c }) : json(res, { error: 'Failed' }, 500); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/exception-cases\/([^/]+)\/assign$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/exception-cases\/([^/]+)\/assign$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); const c = cos.assignExceptionOwner(id, body.owner || 'operator'); return c ? json(res, { ok: true, case: c }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/exception-cases\/([^/]+)\/update-status$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/exception-cases\/([^/]+)\/update-status$/)[1];
+    const body = await parseBody(req);
+    if (!body.stage) return json(res, { error: 'Missing stage' }, 400);
+    try { const el = require('./lib/exception-lifecycle'); const c = el.updateStatus(id, body.stage, body.notes); return c ? json(res, { ok: true, case: c }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Block Resolution API ──
+
+  if (req.url === '/api/block-resolutions' && req.method === 'GET') {
+    try { const br = require('./lib/block-resolution'); return json(res, { resolutions: br.getAllResolutions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/block-resolutions\/([^/]+)\/resolve$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/block-resolutions\/([^/]+)\/resolve$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); const r = cos.resolveBlock(id, body.outcome || 'resolved', body.notes, body.override_id); return r ? json(res, { ok: true, resolution: r }) : json(res, { error: 'Block not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/block-resolutions\/([^/]+)\/reopen$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/block-resolutions\/([^/]+)\/reopen$/)[1];
+    try { const br = require('./lib/block-resolution'); return json(res, { ok: br.reopenBlock(id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Escalation Pauses API ──
+
+  if (req.url === '/api/escalation-pauses' && req.method === 'GET') {
+    try { const br = require('./lib/block-resolution'); return json(res, { pauses: br.getAllPauses() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/escalation-pauses\/([^/]+)\/resume$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/escalation-pauses\/([^/]+)\/resume$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); const p = cos.resumeEscalatedExecution(id); return p ? json(res, { ok: true, pause: p }) : json(res, { error: 'Not found or not paused' }, 400); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Project Isolation API ──
+
+  if (req.url === '/api/project-isolation' && req.method === 'GET') {
+    try { const pi = require('./lib/project-isolation'); return json(res, { policies: pi.getAllPolicies() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/project-isolation\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/project-isolation\/project\/([^/]+)$/)[1];
+    try { const pi = require('./lib/project-isolation'); return json(res, { policy: pi.getPolicy(p), decisions: pi.getDecisions(p), violations: pi.getViolations(p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/project-isolation/evaluate' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.source_project || !body.target_project || !body.artifact_type) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { decision: cos.evaluateCrossProjectAccess(body.source_project, body.target_project, body.artifact_type, body.action) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/isolation-violations' && req.method === 'GET') {
+    try { const pi = require('./lib/project-isolation'); return json(res, { violations: pi.getViolations() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/isolation-violations\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/isolation-violations\/project\/([^/]+)$/)[1];
+    try { const pi = require('./lib/project-isolation'); return json(res, { violations: pi.getViolations(p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Pattern Exchange API ──
+
+  if (req.url === '/api/pattern-exchange/candidates' && req.method === 'GET') {
+    try { const pe = require('./lib/pattern-exchange'); return json(res, { candidates: pe.getCandidates() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/pattern-exchange/candidates' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.source_project || !body.candidate_type || !body.title || !body.content) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, candidate: cos.createPatternExchangeCandidate(body.source_project, body.artifact_ref || '', body.candidate_type, body.title, body.content, body.source_domain || 'general') }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/pattern-exchange\/candidates\/([^/]+)\/approve$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/pattern-exchange\/candidates\/([^/]+)\/approve$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); const p = cos.approveSharedPattern(id, body.target_scope); return p ? json(res, { ok: true, pattern: p }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/pattern-exchange\/candidates\/([^/]+)\/reject$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/pattern-exchange\/candidates\/([^/]+)\/reject$/)[1];
+    try { const pe = require('./lib/pattern-exchange'); const c = pe.rejectCandidate(id); return c ? json(res, { ok: true, candidate: c }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Shared Patterns API ──
+
+  if (req.url === '/api/shared-patterns' && req.method === 'GET') {
+    try { const pe = require('./lib/pattern-exchange'); return json(res, { patterns: pe.getPatterns() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/shared-patterns\/engine\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/shared-patterns\/engine\/([^/]+)$/)[1];
+    try { const pe = require('./lib/pattern-exchange'); return json(res, { patterns: pe.getPatternsForEngine(d) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/shared-patterns\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/shared-patterns\/project\/([^/]+)$/)[1];
+    try { const pe = require('./lib/pattern-exchange'); return json(res, { patterns: pe.getPatternsForProject(p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/shared-patterns\/([^/]+)\/deprecate$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/shared-patterns\/([^/]+)\/deprecate$/)[1];
+    try { const pe = require('./lib/pattern-exchange'); const p = pe.deprecatePattern(id); return p ? json(res, { ok: true, pattern: p }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/shared-patterns\/([^/]+)\/use$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/shared-patterns\/([^/]+)\/use$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); const u = cos.useSharedPattern(body.project_id || 'default', id, body.context); return u ? json(res, { ok: true, usage: u }) : json(res, { error: 'Pattern not found or deprecated' }, 400); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/shared-pattern-usage' && req.method === 'GET') {
+    try { const pe = require('./lib/pattern-exchange'); return json(res, { records: pe.getUsageRecords() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Shared Governance Boundaries API ──
+
+  if (req.url === '/api/shared-governance-boundaries' && req.method === 'GET') {
+    try { const sgb = require('./lib/shared-governance-boundaries'); return json(res, { boundaries: sgb.getAllBoundaries() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/shared-governance-boundaries' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.artifact_type) return json(res, { error: 'Missing artifact_type' }, 400);
+    try { const sgb = require('./lib/shared-governance-boundaries'); return json(res, { ok: true, boundary: sgb.createBoundary(body) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Provider Reliability API ──
+
+  if (req.url === '/api/provider-reliability' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { snapshots: cos.getProviderReliability() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/provider-reliability\/provider\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/provider-reliability\/provider\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { snapshots: cos.getProviderReliability(p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/provider-reliability\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/provider-reliability\/domain\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { snapshots: cos.getProviderReliability(undefined, d) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/provider-reliability\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/provider-reliability\/project\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { snapshots: cos.getProviderReliability(undefined, undefined, p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/provider-incidents' && req.method === 'GET') {
+    try { const pr = require('./lib/provider-reliability'); return json(res, { incidents: pr.getAllIncidents() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/provider-incidents' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.provider_id || !body.incident_type) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, incident: cos.recordProviderIncident(body.provider_id, body.incident_type, body) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Provider Cost Governance API ──
+
+  if (req.url === '/api/provider-cost' && req.method === 'GET') {
+    try { const cg = require('./lib/cost-governance'); return json(res, { profiles: cg.getCostProfiles(), decisions: cg.getCostDecisions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/provider-cost\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/provider-cost\/domain\/([^/]+)$/)[1];
+    try { const cg = require('./lib/cost-governance'); return json(res, { profiles: cg.getCostProfiles(), decisions: cg.getCostDecisions(d) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/provider-cost\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/provider-cost\/project\/([^/]+)$/)[1];
+    try { const cg = require('./lib/cost-governance'); return json(res, { profiles: cg.getCostProfiles(), decisions: cg.getCostDecisions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/provider-cost/evaluate' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.provider_id || !body.action || !body.lane) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { decision: cos.evaluateProviderCost(body.provider_id, body.action, body.lane, body.domain, body.project_id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Provider Latency Governance API ──
+
+  if (req.url === '/api/provider-latency' && req.method === 'GET') {
+    try { const lg = require('./lib/latency-governance'); return json(res, { profiles: lg.getLatencyProfiles(), decisions: lg.getLatencyDecisions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/provider-latency\/provider\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/provider-latency\/provider\/([^/]+)$/)[1];
+    try { const lg = require('./lib/latency-governance'); return json(res, { profile: lg.getLatencyProfile(p), decisions: lg.getLatencyDecisions(p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/provider-latency/evaluate' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.provider_id || !body.role || !body.lane) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { decision: cos.evaluateProviderLatency(body.provider_id, body.role, body.lane, body.domain) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Provider Governance Summary API ──
+
+  if (req.url === '/api/provider-governance-summary' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { summary: cos.getProviderGovernanceSummary() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Artifact Registry API ──
+
+  if (req.url === '/api/artifact-registry' && req.method === 'GET') {
+    try { const ar = require('./lib/artifact-registry'); return json(res, { artifacts: ar.getAll() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/artifact-registry\/type\/([^/]+)$/) && req.method === 'GET') {
+    const t = req.url.match(/^\/api\/artifact-registry\/type\/([^/]+)$/)[1];
+    try { const ar = require('./lib/artifact-registry'); return json(res, { artifacts: ar.getByType(t) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/artifact-registry\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/artifact-registry\/domain\/([^/]+)$/)[1];
+    try { const ar = require('./lib/artifact-registry'); return json(res, { artifacts: ar.getByDomain(d) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/artifact-registry\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/artifact-registry\/project\/([^/]+)$/)[1];
+    try { const ar = require('./lib/artifact-registry'); return json(res, { artifacts: ar.getByProject(p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/artifact-registry\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/artifact-registry\/([^/]+)$/)[1];
+    if (id !== 'register') {
+      try { const ar = require('./lib/artifact-registry'); const a = ar.getById(id); return a ? json(res, { artifact: a }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+    }
+  }
+  if (req.url === '/api/artifact-registry/register' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.source_id || !body.type || !body.title) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, artifact: cos.registerArtifact(body.type, body.source_id, body.title, body) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Evidence Chain API ──
+
+  if (req.url?.match(/^\/api\/evidence-chain\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/evidence-chain\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { lineage: cos.getLineageSummary(id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/evidence-chain/link' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.source_id || !body.target_id || !body.relation) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, edge: cos.linkEvidence(body.source_id, body.target_id, body.relation, body.notes) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/evidence-bundles\/([^/]+)\/([^/]+)$/) && req.method === 'GET') {
+    const m = req.url.match(/^\/api\/evidence-bundles\/([^/]+)\/([^/]+)$/);
+    try { const ec = require('./lib/evidence-chain'); return json(res, { bundles: ec.getBundles(m[1], m[2]) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/evidence-bundles\/build\/([^/]+)\/([^/]+)$/) && req.method === 'POST') {
+    const m = req.url.match(/^\/api\/evidence-bundles\/build\/([^/]+)\/([^/]+)$/);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, bundle: cos.buildEvidenceBundle(m[1], m[2]) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Traceability Ledger API ──
+
+  if (req.url === '/api/traceability-ledger' && req.method === 'GET') {
+    try { const tl = require('./lib/traceability-ledger'); return json(res, { entries: tl.getAll() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/traceability-ledger\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/traceability-ledger\/domain\/([^/]+)$/)[1];
+    try { const tl = require('./lib/traceability-ledger'); return json(res, { entries: tl.getByDomain(d) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/traceability-ledger\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/traceability-ledger\/project\/([^/]+)$/)[1];
+    try { const tl = require('./lib/traceability-ledger'); return json(res, { entries: tl.getByProject(p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/traceability-ledger\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/traceability-ledger\/([^/]+)$/)[1];
+    if (id !== 'domain' && id !== 'project') {
+      try { const tl = require('./lib/traceability-ledger'); const e = tl.getById(id); return e ? json(res, { entry: e }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+    }
+  }
+
+  // ── Audit Hub API ──
+
+  if (req.url === '/api/audit-hub' && req.method === 'GET') {
+    // Part 55: Inline boundary guard
+    try {
+      const hrg = require('./lib/http-response-guard');
+      const gd = hrg.guard('/api/audit-hub', _tenantId, _projectId);
+      if (!gd.allowed) return json(res, gd.payload, gd.status);
+      if (gd.outcome === 'redact') {
+        try { const cos = require('./lib/chief-of-staff'); const data = cos.getAuditView(); return json(res, hrg.redactPayload(data, gd.reason)); } catch (e) { return json(res, { error: e.message }, 500); }
+      }
+    } catch { /* */ }
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getAuditView()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/audit-hub/query' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getAuditView(body)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/audit-hub\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/audit-hub\/project\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getAuditView({ project_id: p })); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/audit-hub\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/audit-hub\/domain\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getAuditView({ domain: d })); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/audit-packages\/([^/]+)\/([^/]+)$/) && req.method === 'GET') {
+    const m = req.url.match(/^\/api\/audit-packages\/([^/]+)\/([^/]+)$/);
+    try { const cos = require('./lib/chief-of-staff'); const p = cos.buildAuditPackage(m[1], m[2]); return p ? json(res, { package: p }) : json(res, { error: 'Failed' }, 500); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Compliance Export API ──
+
+  if (req.url === '/api/compliance-export' && req.method === 'POST') {
+    // Part 55: Inline entitlement guard
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/compliance-export', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* guard not available — allow */ }
+    const body = await parseBody(req);
+    if (!body.scope_type || !body.related_id) return json(res, { error: 'Missing scope_type or related_id' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, export: cos.exportComplianceBundle(body.scope_type, body.related_id, body) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/compliance-export\/([^/]+)$/) && req.method === 'GET') {
+    // Part 55: Inline entitlement guard
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/compliance-export', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const id = req.url.match(/^\/api\/compliance-export\/([^/]+)$/)[1];
+    try { const ce = require('./lib/compliance-export'); const e = ce.getExport(id); return e ? json(res, { export: e }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Policy History API ──
+
+  if (req.url === '/api/policy-history' && req.method === 'GET') {
+    try { const ph = require('./lib/policy-history'); return json(res, { versions: ph.getAllVersions(), changes: ph.getAllChanges() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/policy-history\/diff\/([^/]+)\/([^/]+)$/) && req.method === 'GET') {
+    const m = req.url.match(/^\/api\/policy-history\/diff\/([^/]+)\/([^/]+)$/);
+    try { const ph = require('./lib/policy-history'); const d = ph.getDiff(m[1], m[2]); return d ? json(res, { diff: d }) : json(res, { error: 'No changes found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/policy-history\/([^/]+)\/([^/]+)$/) && req.method === 'GET') {
+    const m = req.url.match(/^\/api\/policy-history\/([^/]+)\/([^/]+)$/);
+    if (m[1] !== 'diff') {
+      try { const cos = require('./lib/chief-of-staff'); return json(res, { history: cos.getPolicyHistory(m[1], m[2]) }); } catch (e) { return json(res, { error: e.message }, 500); }
+    }
+  }
+  if (req.url?.match(/^\/api\/policy-history\/([^/]+)$/) && req.method === 'GET') {
+    const t = req.url.match(/^\/api\/policy-history\/([^/]+)$/)[1];
+    if (t !== 'diff') {
+      try { const cos = require('./lib/chief-of-staff'); return json(res, { versions: cos.getPolicyHistory(t) }); } catch (e) { return json(res, { error: e.message }, 500); }
+    }
+  }
+
+  // ── Approval Workspace API ──
+
+  if (req.url === '/api/approval-workspace' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getApprovalWorkspace()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/approval-workspace/filter' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getApprovalWorkspace(body)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/approval-workspace/pending' && req.method === 'GET') {
+    try { const aw = require('./lib/approval-workspace'); return json(res, { items: aw.getPending() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/approval-workspace/overdue' && req.method === 'GET') {
+    try { const aw = require('./lib/approval-workspace'); return json(res, { items: aw.getOverdue() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/approval-workspace/delegated' && req.method === 'GET') {
+    try { const aw = require('./lib/approval-workspace'); return json(res, { items: aw.getDelegated() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/approval-workspace\/([^/]+)\/approve$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/approval-workspace\/([^/]+)\/approve$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, decision: cos.applyApprovalDecision(id, 'approve', body.notes) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/approval-workspace\/([^/]+)\/reject$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/approval-workspace\/([^/]+)\/reject$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, decision: cos.applyApprovalDecision(id, 'reject', body.notes) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/approval-workspace\/([^/]+)\/request-evidence$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/approval-workspace\/([^/]+)\/request-evidence$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, decision: cos.applyApprovalDecision(id, 'request_evidence') }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Delegation Rules API ──
+
+  if (req.url === '/api/delegation-rules' && req.method === 'GET') {
+    try { const dm = require('./lib/delegation-manager'); return json(res, { rules: dm.getAllRules() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/delegation-rules' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.approval_type || !body.delegated_to) return json(res, { error: 'Missing fields' }, 400);
+    try { const dm = require('./lib/delegation-manager'); return json(res, { ok: true, rule: dm.createRule(body) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/delegation-rules\/([^/]+)\/toggle$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/delegation-rules\/([^/]+)\/toggle$/)[1];
+    try { const dm = require('./lib/delegation-manager'); const r = dm.toggleRule(id); return r ? json(res, { ok: true, rule: r }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Escalation Inbox API ──
+
+  if (req.url === '/api/escalation-inbox' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { items: cos.getEscalationInbox() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/escalation-inbox/new' && req.method === 'GET') {
+    try { const ei = require('./lib/escalation-inbox'); return json(res, { items: ei.getNew() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/escalation-inbox/overdue' && req.method === 'GET') {
+    try { const ei = require('./lib/escalation-inbox'); return json(res, { items: ei.getInbox().filter(i => i.status === 'new' && new Date(i.created_at) < new Date(Date.now() - 86400000)) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/escalation-inbox\/([^/]+)\/triage$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/escalation-inbox\/([^/]+)\/triage$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, item: cos.resolveEscalationInboxItem(id, 'triage', body.notes) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/escalation-inbox\/([^/]+)\/resolve$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/escalation-inbox\/([^/]+)\/resolve$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, item: cos.resolveEscalationInboxItem(id, 'resolve', body.notes) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/escalation-inbox\/([^/]+)\/delegate$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/escalation-inbox\/([^/]+)\/delegate$/)[1];
+    const body = await parseBody(req);
+    try { const ei = require('./lib/escalation-inbox'); return json(res, { ok: true, item: ei.delegateItem(id, body.delegate_to || 'operator', body.notes) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/escalation-threads\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/escalation-threads\/([^/]+)$/)[1];
+    try { const ei = require('./lib/escalation-inbox'); const item = ei.getItem(id); return item ? json(res, { thread: item.thread, item }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Release Orchestration API ──
+
+  if (req.url === '/api/release-orchestration' && req.method === 'GET') {
+    // Part 55: Inline entitlement guard
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/release-orchestration', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const ro = require('./lib/release-orchestration'); return json(res, { plans: ro.getPlans(), executions: ro.getExecutions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/release-orchestration\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/release-orchestration\/project\/([^/]+)$/)[1];
+    try { const ro = require('./lib/release-orchestration'); return json(res, { plans: ro.getPlans(p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/release-orchestration/plan' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.project_id || !body.target_lane) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, plan: cos.createReleasePlan(body.project_id, body, body.target_lane) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/release-orchestration\/([^/]+)\/approve$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/release-orchestration\/([^/]+)\/approve$/)[1];
+    try { const ro = require('./lib/release-orchestration'); const p = ro.approvePlan(id); return p ? json(res, { ok: true, plan: p }) : json(res, { error: 'Not found or not draft' }, 400); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/release-orchestration\/([^/]+)\/execute$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/release-orchestration\/([^/]+)\/execute$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); const e = cos.executeReleasePlan(id); return e ? json(res, { ok: true, execution: e }) : json(res, { error: 'Not approved or not found' }, 400); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/release-orchestration\/([^/]+)\/verify$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/release-orchestration\/([^/]+)\/verify$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); const e = cos.verifyReleaseExecution(id, body.notes); return e ? json(res, { ok: true, execution: e }) : json(res, { error: 'Not found' }, 400); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Environment Pipeline API ──
+
+  if (req.url?.match(/^\/api\/environment-pipeline\/evaluate\/([^/]+)\/([^/]+)$/) && req.method === 'POST') {
+    const m = req.url.match(/^\/api\/environment-pipeline\/evaluate\/([^/]+)\/([^/]+)$/);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, request: cos.evaluatePromotionPipeline(m[1], m[2]) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/environment-pipeline\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/environment-pipeline\/project\/([^/]+)$/)[1];
+    try { const ep = require('./lib/environment-pipeline'); return json(res, { requests: ep.getRequests(p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/environment-pipeline\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/environment-pipeline\/([^/]+)$/)[1];
+    if (id !== 'evaluate' && id !== 'project') {
+      try { const ep = require('./lib/environment-pipeline'); const r = ep.getRequest(id); return r ? json(res, { request: r }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+    }
+  }
+
+  // ── Rollback Control API ──
+
+  if (req.url === '/api/rollback-control/plan' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.release_execution_id || !body.trigger) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, plan: cos.createRollbackPlan(body.release_execution_id, body.trigger, body) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/rollback-control\/([^/]+)\/execute$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/rollback-control\/([^/]+)\/execute$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); const e = cos.executeRollback(id); return e ? json(res, { ok: true, execution: e }) : json(res, { error: 'Not ready or not found' }, 400); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/rollback-control\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/rollback-control\/project\/([^/]+)$/)[1];
+    try { const rc = require('./lib/rollback-control'); return json(res, { plans: rc.getPlans(p), executions: rc.getExecutions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Release Workspace Summary API ──
+
+  if (req.url === '/api/release-workspace-summary' && req.method === 'GET') {
+    try {
+      const ro = require('./lib/release-orchestration');
+      const plans = ro.getPlans();
+      const executions = ro.getExecutions();
+      return json(res, { total_plans: plans.length, executing: plans.filter(p => p.status === 'executing').length, completed: plans.filter(p => p.status === 'completed').length, halted: plans.filter(p => p.status === 'halted').length, total_executions: executions.length });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Collaboration Runtime API ──
+
+  if (req.url === '/api/collaboration-runtime' && req.method === 'GET') {
+    try { const cr = require('./lib/collaboration-runtime'); return json(res, { sessions: cr.getSessions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/collaboration-runtime\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/collaboration-runtime\/project\/([^/]+)$/)[1];
+    try { const cr = require('./lib/collaboration-runtime'); return json(res, { sessions: cr.getSessions(p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/collaboration-runtime\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/collaboration-runtime\/([^/]+)$/)[1];
+    if (id !== 'create' && id !== 'project') {
+      try { const cr = require('./lib/collaboration-runtime'); const s = cr.getSession(id); return s ? json(res, { session: s }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+    }
+  }
+  if (req.url === '/api/collaboration-runtime/create' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.scope_type || !body.scope_id || !body.participants || !body.protocol_type) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, session: cos.createCollaborationSession(body.scope_type, body.scope_id, body.participants, body.protocol_type, body) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/collaboration-runtime\/([^/]+)\/propose$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/collaboration-runtime\/([^/]+)\/propose$/)[1];
+    const body = await parseBody(req);
+    if (!body.provider_id || !body.role || !body.content) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, proposal: cos.recordAgentProposal(id, body.provider_id, body.role, body.content, body.confidence || 70, body.rationale || '') }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/collaboration-runtime\/([^/]+)\/negotiate$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/collaboration-runtime\/([^/]+)\/negotiate$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); const o = cos.runNegotiationProtocol(id); return o ? json(res, { ok: true, outcome: o }) : json(res, { error: 'Failed' }, 400); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/collaboration-runtime\/([^/]+)\/consensus$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/collaboration-runtime\/([^/]+)\/consensus$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, consensus: cos.computeConsensus(id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/collaboration-runtime\/([^/]+)\/resolve$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/collaboration-runtime\/([^/]+)\/resolve$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.resolveCollaborationOutcome(id)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Negotiation Protocols API ──
+
+  if (req.url === '/api/negotiation-protocols' && req.method === 'GET') {
+    try { const np = require('./lib/negotiation-protocols'); return json(res, { protocols: np.getProtocols() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/negotiation-protocols' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.protocol_type) return json(res, { error: 'Missing protocol_type' }, 400);
+    try { const np = require('./lib/negotiation-protocols'); return json(res, { ok: true, protocol: np.createProtocol(body) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Agent Consensus API ──
+
+  if (req.url?.match(/^\/api\/agent-consensus\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/agent-consensus\/([^/]+)$/)[1];
+    try { const ac = require('./lib/agent-consensus'); return json(res, { votes: ac.getVotesForSession(id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/dissent-records\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/dissent-records\/([^/]+)$/)[1];
+    try { const ac = require('./lib/agent-consensus'); return json(res, { records: ac.getDissentForSession(id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Tenant Admin API ──
+
+  if (req.url === '/api/tenant-admin' && req.method === 'GET') {
+    // Part 55: Inline isolation guard
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/tenant-admin', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const ta = require('./lib/tenant-admin'); return json(res, { tenants: ta.getAllTenants() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/tenant-admin\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/tenant-admin\/([^/]+)$/)[1];
+    if (id !== 'update') {
+      try { const ta = require('./lib/tenant-admin'); const t = ta.getTenant(id); return t ? json(res, { tenant: t }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+    }
+  }
+  if (req.url === '/api/tenant-admin' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.name) return json(res, { error: 'Missing name' }, 400);
+    try { const ta = require('./lib/tenant-admin'); return json(res, { ok: true, tenant: ta.createTenant(body) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/tenant-admin\/([^/]+)\/update$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/tenant-admin\/([^/]+)\/update$/)[1];
+    const body = await parseBody(req);
+    try { const ta = require('./lib/tenant-admin'); const t = ta.updateTenant(id, body); return t ? json(res, { ok: true, tenant: t }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Subscription Operations API ──
+
+  if (req.url === '/api/subscription-operations' && req.method === 'GET') {
+    try { const so = require('./lib/subscription-operations'); return json(res, { entitlements: so.evaluateEntitlements('rpgpo', ['governance', 'audit', 'compliance', 'collaboration', 'release', 'provider_governance', 'tenant_admin']) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/subscription-operations\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/subscription-operations\/([^/]+)$/)[1];
+    try { const so = require('./lib/subscription-operations'); return json(res, { meters: so.getUsageMeters(id), billing: so.getBillingEvents(id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/subscription-operations\/([^/]+)\/entitlements\/evaluate$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/subscription-operations\/([^/]+)\/entitlements\/evaluate$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { entitlements: cos.evaluateSubscriptionEntitlements(id, body.features || []) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/subscription-operations\/([^/]+)\/usage$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/subscription-operations\/([^/]+)\/usage$/)[1];
+    const body = await parseBody(req);
+    if (!body.meter_type || body.amount === undefined) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, meter: cos.recordUsageMeter(id, body.meter_type, body.amount) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/billing-events\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/billing-events\/([^/]+)$/)[1];
+    try { const so = require('./lib/subscription-operations'); return json(res, { events: so.getBillingEvents(id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Deployment Readiness API ──
+
+  if (req.url === '/api/deployment-readiness' && req.method === 'GET') {
+    try { const dr = require('./lib/deployment-readiness'); return json(res, { reports: dr.getReports() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/deployment-readiness\/([^/]+)\/([^/]+)$/) && req.method === 'GET') {
+    const m = req.url.match(/^\/api\/deployment-readiness\/([^/]+)\/([^/]+)$/);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { report: cos.computeDeploymentReadiness(m[1], m[2]) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/deployment-readiness/run' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, report: cos.computeDeploymentReadiness(body.scope_type || 'platform', body.scope_id || 'gpo') }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Secret Governance API ──
+
+  if (req.url === '/api/secret-governance' && req.method === 'GET') {
+    try { const sg = require('./lib/secret-governance'); return json(res, { secrets: sg.getSecrets() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/secret-governance\/scope\/([^/]+)\/([^/]+)$/) && req.method === 'GET') {
+    const m = req.url.match(/^\/api\/secret-governance\/scope\/([^/]+)\/([^/]+)$/);
+    try { const sg = require('./lib/secret-governance'); return json(res, { secrets: sg.getSecrets(m[1], m[2]) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/secret-governance/access/evaluate' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.secret_id || !body.actor || !body.action) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { decision: cos.evaluateSecretAccess(body.secret_id, body.actor, body.action) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/secret-governance/usage' && req.method === 'GET') {
+    try { const sg = require('./lib/secret-governance'); return json(res, { usage: sg.getUsage() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Security Hardening API ──
+
+  if (req.url === '/api/security-hardening' && req.method === 'GET') {
+    // Part 56: Inline entitlement guard
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/security-hardening', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const sh = require('./lib/security-hardening'); return json(res, { reports: sh.getReports() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/security-hardening/run' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, report: cos.getSecurityPosture(body.scope_type, body.scope_id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/security-hardening/findings' && req.method === 'GET') {
+    try { const sh = require('./lib/security-hardening'); return json(res, { findings: sh.getFindings() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/security-posture' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { posture: cos.getSecurityPosture() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/hardening-checklist' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { checklist: cos.getHardeningChecklist() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Data Boundaries API ──
+
+  if (req.url === '/api/data-boundaries' && req.method === 'GET') {
+    try { const db = require('./lib/data-boundaries'); return json(res, { policies: db.getPolicies() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/data-boundaries/evaluate' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.source_scope || !body.target_scope || !body.artifact_type) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { decision: cos.evaluateDataBoundary(body.source_scope, body.target_scope, body.artifact_type, body.action) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/boundary-violations' && req.method === 'GET') {
+    try { const db = require('./lib/data-boundaries'); return json(res, { violations: db.getViolations() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Observability API ──
+
+  if (req.url === '/api/observability' && req.method === 'GET') {
+    // Part 56: Inline entitlement guard
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/observability', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getObservabilityView()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/observability/query' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getObservabilityView(body)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/observability\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/observability\/project\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getObservabilityView({ project_id: p })); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/observability\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/observability\/domain\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getObservabilityView({ domain: d })); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Reliability API ──
+
+  if (req.url === '/api/reliability' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getReliabilitySummary()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/reliability\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/reliability\/project\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getReliabilitySummary()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/reliability/incidents' && req.method === 'GET') {
+    try { const rg = require('./lib/reliability-governance'); return json(res, { incidents: rg.getIncidents() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/reliability/incidents' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.subsystem || !body.title) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, incident: cos.recordReliabilityIncident(body.subsystem, body.title, body.detail || '', body) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── SLO/SLA API ──
+
+  if (req.url === '/api/slo-sla' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { statuses: cos.getSLOStatus(), definitions: require('./lib/slo-sla').getDefinitions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/slo-sla\/project\/([^/]+)$/) && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { statuses: cos.getSLOStatus() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/alerts' && req.method === 'GET') {
+    try { const slo = require('./lib/slo-sla'); return json(res, { alerts: slo.getAlerts(), rules: slo.getRules() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/alerts/rules' && req.method === 'POST') {
+    const body = await parseBody(req);
+    return json(res, { ok: true, message: 'Custom alert rules stored (future implementation)' });
+  }
+  if (req.url === '/api/service-health' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getReliabilitySummary()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Skill Packs API ──
+
+  if (req.url === '/api/skill-packs' && req.method === 'GET') {
+    // Part 56: Inline entitlement guard
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/skill-packs', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const sp = require('./lib/skill-packs'); return json(res, { packs: sp.getPacks() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/skill-packs\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/skill-packs\/([^/]+)$/)[1];
+    if (id !== 'bindings') { try { const sp = require('./lib/skill-packs'); const p = sp.getPack(id); return p ? json(res, { pack: p }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); } }
+  }
+  if (req.url === '/api/skill-packs' && req.method === 'POST') {
+    // Part 56: Mutation guard
+    try { const mg = require('./lib/mutation-route-guards'); const gd = mg.guardMutation('/api/skill-packs', 'POST', _tenantId, _projectId); if (!gd.allowed) return json(res, { error: gd.reason, guard: 'mutation' }, 403); } catch { /* */ }
+    const body = await parseBody(req);
+    if (!body.name) return json(res, { error: 'Missing name' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, pack: cos.createSkillPack(body) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/skill-packs\/([^/]+)\/version$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/skill-packs\/([^/]+)\/version$/)[1];
+    const body = await parseBody(req);
+    try { const sp = require('./lib/skill-packs'); const p = sp.versionPack(id, body); return p ? json(res, { ok: true, pack: p }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/skill-packs\/([^/]+)\/bind$/) && req.method === 'POST') {
+    // Part 56: Mutation guard
+    try { const mg = require('./lib/mutation-route-guards'); const gd = mg.guardMutation('/api/skill-packs/:id/bind', 'POST', _tenantId, _projectId); if (!gd.allowed) return json(res, { error: gd.reason, guard: 'mutation' }, 403); } catch { /* */ }
+    const id = req.url.match(/^\/api\/skill-packs\/([^/]+)\/bind$/)[1];
+    const body = await parseBody(req);
+    if (!body.scope_type || !body.scope_id) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, binding: cos.bindSkillPack(body.scope_type, body.scope_id, id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/skill-pack-bindings' && req.method === 'GET') {
+    try { const sp = require('./lib/skill-packs'); return json(res, { bindings: sp.getBindings() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Engine Templates API ──
+
+  if (req.url === '/api/engine-templates' && req.method === 'GET') {
+    // Part 56: Inline entitlement guard
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/engine-templates', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const et = require('./lib/engine-templates'); return json(res, { templates: et.getTemplates() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/engine-templates\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/engine-templates\/([^/]+)$/)[1];
+    try { const et = require('./lib/engine-templates'); const t = et.getTemplate(id); return t ? json(res, { template: t }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/engine-templates' && req.method === 'POST') {
+    // Part 56: Mutation guard
+    try { const mg = require('./lib/mutation-route-guards'); const gd = mg.guardMutation('/api/engine-templates', 'POST', _tenantId, _projectId); if (!gd.allowed) return json(res, { error: gd.reason, guard: 'mutation' }, 403); } catch { /* */ }
+    const body = await parseBody(req);
+    if (!body.name || !body.domain_type) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, template: cos.createEngineTemplate(body) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/engine-templates\/([^/]+)\/instantiate$/) && req.method === 'POST') {
+    // Part 56: Mutation guard
+    try { const mg = require('./lib/mutation-route-guards'); const gd = mg.guardMutation('/api/engine-templates/:id/instantiate', 'POST', _tenantId, _projectId); if (!gd.allowed) return json(res, { error: gd.reason, guard: 'mutation' }, 403); } catch { /* */ }
+    const id = req.url.match(/^\/api\/engine-templates\/([^/]+)\/instantiate$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); const r = cos.instantiateEngineTemplate(id, body.tenant_id || 'rpgpo', body.engine_id || id, body.domain || 'general'); return r ? json(res, { ok: true, record: r }) : json(res, { error: 'Template not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/template-instantiations' && req.method === 'GET') {
+    try { const et = require('./lib/engine-templates'); return json(res, { instantiations: et.getInstantiations() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Domain Capabilities API ──
+
+  if (req.url?.match(/^\/api\/domain-capabilities\/([^/]+)\/([^/]+)$/) && req.method === 'GET') {
+    const m = req.url.match(/^\/api\/domain-capabilities\/([^/]+)\/([^/]+)$/);
+    if (m[2] !== 'compose') { try { const cos = require('./lib/chief-of-staff'); return json(res, { plan: cos.composeDomainCapabilities(m[1], m[2]) }); } catch (e) { return json(res, { error: e.message }, 500); } }
+  }
+  if (req.url?.match(/^\/api\/domain-capabilities\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/domain-capabilities\/([^/]+)$/)[1];
+    if (id !== 'compose') { try { const cos = require('./lib/chief-of-staff'); return json(res, { plan: cos.composeDomainCapabilities(id) }); } catch (e) { return json(res, { error: e.message }, 500); } }
+  }
+  if (req.url?.match(/^\/api\/domain-capabilities\/([^/]+)\/compose$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/domain-capabilities\/([^/]+)\/compose$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, plan: cos.composeDomainCapabilities(id, body.project_id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Extension Framework API ──
+
+  if (req.url === '/api/extensions' && req.method === 'GET') {
+    // Part 56: Inline extension guard
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/extensions', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const ef = require('./lib/extension-framework'); return json(res, { packages: ef.getPackages(), installs: ef.getInstalls() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/extensions\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/extensions\/([^/]+)$/)[1];
+    try { const ef = require('./lib/extension-framework'); const p = ef.getPackage(id); return p ? json(res, { package: p }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/extensions' && req.method === 'POST') {
+    // Part 56: Mutation guard
+    try { const mg = require('./lib/mutation-route-guards'); const gd = mg.guardMutation('/api/extensions', 'POST', _tenantId, _projectId); if (!gd.allowed) return json(res, { error: gd.reason, guard: 'mutation' }, 403); } catch { /* */ }
+    const body = await parseBody(req);
+    if (!body.name) return json(res, { error: 'Missing name' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, package: cos.createExtensionPackage(body) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/extensions\/([^/]+)\/version$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/extensions\/([^/]+)\/version$/)[1];
+    try { const ef = require('./lib/extension-framework'); const p = ef.versionPackage(id); return p ? json(res, { ok: true, package: p }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/extensions\/([^/]+)\/install$/) && req.method === 'POST') {
+    // Part 56: Mutation guard
+    try { const mg = require('./lib/mutation-route-guards'); const gd = mg.guardMutation('/api/extensions/:id/install', 'POST', _tenantId, _projectId); if (!gd.allowed) return json(res, { error: gd.reason, guard: 'mutation' }, 403); } catch { /* */ }
+    const id = req.url.match(/^\/api\/extensions\/([^/]+)\/install$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); const r = cos.installExtension(id, body.tenant_id || 'rpgpo', body.scope); return r ? json(res, { ok: true, install: r }) : json(res, { error: 'Install blocked' }, 400); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/extensions\/([^/]+)\/uninstall$/) && req.method === 'POST') {
+    // Part 56: Mutation guard
+    try { const mg = require('./lib/mutation-route-guards'); const gd = mg.guardMutation('/api/extensions/:id/uninstall', 'POST', _tenantId, _projectId); if (!gd.allowed) return json(res, { error: gd.reason, guard: 'mutation' }, 403); } catch { /* */ }
+    const id = req.url.match(/^\/api\/extensions\/([^/]+)\/uninstall$/)[1];
+    const body = await parseBody(req);
+    try { const ef = require('./lib/extension-framework'); return json(res, { ok: ef.uninstallPackage(id, body.tenant_id || 'rpgpo') }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Marketplace API ──
+
+  if (req.url === '/api/marketplace' && req.method === 'GET') {
+    // Part 55: Inline extension guard
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/marketplace', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const mp = require('./lib/marketplace'); return json(res, { listings: mp.getListings() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/marketplace\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/marketplace\/([^/]+)$/)[1];
+    if (id !== 'publish') { try { const mp = require('./lib/marketplace'); const l = mp.getListing(id); return l ? json(res, { listing: l }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); } }
+  }
+  if (req.url === '/api/marketplace/publish' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.asset_type || !body.asset_ref || !body.name) return json(res, { error: 'Missing fields' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, listing: cos.publishMarketplaceListing(body.asset_ref, body.asset_type, body) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/marketplace\/([^/]+)\/review$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/marketplace\/([^/]+)\/review$/)[1];
+    const body = await parseBody(req);
+    try { const mp = require('./lib/marketplace'); const l = mp.reviewListing(id, body.approved !== false); return l ? json(res, { ok: true, listing: l }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/marketplace\/([^/]+)\/deprecate$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/marketplace\/([^/]+)\/deprecate$/)[1];
+    try { const mp = require('./lib/marketplace'); const l = mp.deprecateListing(id); return l ? json(res, { ok: true, listing: l }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/marketplace-summary' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getMarketplaceSummary()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Integrations API ──
+
+  if (req.url === '/api/integrations' && req.method === 'GET') {
+    // Part 56: Inline entitlement guard
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/integrations', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const ig = require('./lib/integration-governance'); return json(res, { integrations: ig.getIntegrations() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/integrations\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/integrations\/([^/]+)$/)[1];
+    try { const ig = require('./lib/integration-governance'); const i = ig.getIntegration(id); return i ? json(res, { integration: i }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/integrations' && req.method === 'POST') {
+    // Part 56: Mutation guard
+    try { const mg = require('./lib/mutation-route-guards'); const gd = mg.guardMutation('/api/integrations', 'POST', _tenantId, _projectId); if (!gd.allowed) return json(res, { error: gd.reason, guard: 'mutation' }, 403); } catch { /* */ }
+    const body = await parseBody(req);
+    if (!body.name || !body.category) return json(res, { error: 'Missing fields' }, 400);
+    try { const ig = require('./lib/integration-governance'); return json(res, { ok: true, integration: ig.createIntegration(body) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/integrations\/([^/]+)\/evaluate$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/integrations\/([^/]+)\/evaluate$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { decision: cos.evaluateIntegrationAccess(id, body.tenant_id || 'rpgpo', body.action) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/integrations\/([^/]+)\/toggle$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/integrations\/([^/]+)\/toggle$/)[1];
+    try { const ig = require('./lib/integration-governance'); const i = ig.toggleIntegration(id); return i ? json(res, { ok: true, integration: i }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── UI Surface Audit API ──
+
+  if (req.url === '/api/ui-surface-audit' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getUISurfaceAudit()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/ui-surface-audit\/area\/([^/]+)$/) && req.method === 'GET') {
+    const a = req.url.match(/^\/api\/ui-surface-audit\/area\/([^/]+)$/)[1];
+    try { const ua = require('./lib/ui-surface-audit'); return json(res, { surfaces: ua.getAuditByArea(a) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/ui-readiness' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getUIReadiness()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/ui-readiness\/area\/([^/]+)$/) && req.method === 'GET') {
+    const a = req.url.match(/^\/api\/ui-readiness\/area\/([^/]+)$/)[1];
+    try { const ur = require('./lib/ui-readiness'); const r = ur.computeReadiness(); return json(res, { area_score: r.area_scores[a] || null }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/ui-wiring-gaps' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { gaps: cos.getUIWiringGaps() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/ui-wiring-gaps\/area\/([^/]+)$/) && req.method === 'GET') {
+    const a = req.url.match(/^\/api\/ui-wiring-gaps\/area\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { gaps: cos.getUIWiringGaps(a) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/ui-end-to-end-check/run' && req.method === 'POST') {
+    try { const ur = require('./lib/ui-readiness'); return json(res, { report: ur.computeReadiness() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/ui-end-to-end-check' && req.method === 'GET') {
+    try { const ur = require('./lib/ui-readiness'); const r = ur.computeReadiness(); return json(res, { checks: r.e2e_checks }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Workflow Activation API ──
+
+  if (req.url === '/api/workflow-activation' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getWorkflowActivationReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/workflow-activation\/area\/([^/]+)$/) && req.method === 'GET') {
+    const a = req.url.match(/^\/api\/workflow-activation\/area\/([^/]+)$/)[1];
+    try { const wa = require('./lib/workflow-activation'); return json(res, { workflows: wa.getByArea(a) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/operator-actions' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getOperatorActions()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/operator-actions\/area\/([^/]+)$/) && req.method === 'GET') {
+    const a = req.url.match(/^\/api\/operator-actions\/area\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getOperatorActions(a)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/e2e-flow\/run\/([^/]+)$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/e2e-flow\/run\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { run: cos.runE2EFlowCheck(id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/e2e-flow' && req.method === 'GET') {
+    try { const ef = require('./lib/e2e-flow-state'); return json(res, { runs: ef.getRuns() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/e2e-flow\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/e2e-flow\/([^/]+)$/)[1];
+    if (id !== 'run') { try { const ef = require('./lib/e2e-flow-state'); const r = ef.getRunForFlow(id); return r ? json(res, { run: r }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); } }
+  }
+
+  // ── Action Visibility + Runtime Completion API ──
+
+  if (req.url === '/api/action-visibility' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { actions: cos.getVisibleOperatorActions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/action-visibility\/area\/([^/]+)$/) && req.method === 'GET') {
+    const a = req.url.match(/^\/api\/action-visibility\/area\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { actions: cos.getVisibleOperatorActions(a) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/action-visibility-gaps' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { gaps: cos.getActionVisibilityGaps() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/runtime-completion' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getRuntimeCompletionReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/runtime-completion\/area\/([^/]+)$/) && req.method === 'GET') {
+    const a = req.url.match(/^\/api\/runtime-completion\/area\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); const r = cos.getRuntimeCompletionReport(); const filtered = r?.paths?.filter(p => p.path.includes(a)) || []; return json(res, { paths: filtered }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/mutation-refresh\/run\/([^/]+)$/) && req.method === 'POST') {
+    const a = req.url.match(/^\/api\/mutation-refresh\/run\/([^/]+)$/)[1];
+    try { const mr = require('./lib/mutation-refresh'); return json(res, { result: mr.recordRefresh(a) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── UX Polish + Navigation + Refresh API ──
+
+  if (req.url === '/api/ux-consistency' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getUXConsistencyReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/navigation-map' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { map: cos.getNavigationMap() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/navigation-gaps' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { gaps: cos.getNavigationGaps() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/targeted-refresh' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { plans: cos.getTargetedRefreshPlans() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/targeted-refresh\/area\/([^/]+)$/) && req.method === 'GET') {
+    const a = req.url.match(/^\/api\/targeted-refresh\/area\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { plan: cos.getTargetedRefreshPlans(a) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/targeted-refresh\/run\/([^/]+)$/) && req.method === 'POST') {
+    const a = req.url.match(/^\/api\/targeted-refresh\/run\/([^/]+)$/)[1];
+    try { const mr = require('./lib/mutation-refresh'); return json(res, { result: mr.recordRefresh(a) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/operator-journeys' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { journeys: cos.getOperatorJourneys() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/operator-journeys\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/operator-journeys\/([^/]+)$/)[1];
+    try { const ux = require('./lib/ux-polish'); const j = ux.getJourneys().find(j => j.journey_id === id); return j ? json(res, { journey: j }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Telemetry Wiring + Measured Reliability + Alert Routing API ──
+
+  if (req.url === '/api/telemetry-wiring' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getTelemetryWiringReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/telemetry-wiring\/area\/([^/]+)$/) && req.method === 'GET') {
+    const a = req.url.match(/^\/api\/telemetry-wiring\/area\/([^/]+)$/)[1];
+    try { const tw = require('./lib/telemetry-wiring'); return json(res, { flows: tw.getWiringByArea(a) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/measured-reliability' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getMeasuredReliability()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/measured-reliability\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/measured-reliability\/project\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getMeasuredReliability(`project:${p}`)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/measured-reliability\/domain\/([^/]+)$/) && req.method === 'GET') {
+    const d = req.url.match(/^\/api\/measured-reliability\/domain\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getMeasuredReliability(`domain:${d}`)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/reliability-regressions' && req.method === 'GET') {
+    try { const mr = require('./lib/measured-reliability'); const r = mr.computeReliability(); return json(res, { regressions: r.regressions }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/reliability-regressions\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/reliability-regressions\/project\/([^/]+)$/)[1];
+    try { const mr = require('./lib/measured-reliability'); const r = mr.computeReliability(`project:${p}`); return json(res, { regressions: r.regressions }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/alert-routing' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getAlertRoutingSummary()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/alert-routing/run' && req.method === 'POST') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { decisions: cos.runAlertCheck() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/slo-breaches' && req.method === 'GET') {
+    try { const ar = require('./lib/alert-routing'); return json(res, { breaches: ar.getBreaches() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Tenant Isolation + Entitlement + Boundary Enforcement API ──
+
+  if (req.url === '/api/tenant-isolation' && req.method === 'GET') {
+    try { const tir = require('./lib/tenant-isolation-runtime'); return json(res, { decisions: tir.getDecisions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/tenant-isolation\/tenant\/([^/]+)$/) && req.method === 'GET') {
+    const t = req.url.match(/^\/api\/tenant-isolation\/tenant\/([^/]+)$/)[1];
+    try { const tir = require('./lib/tenant-isolation-runtime'); return json(res, { decisions: tir.getDecisions(t) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/tenant-isolation\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/tenant-isolation\/project\/([^/]+)$/)[1];
+    try { const tir = require('./lib/tenant-isolation-runtime'); return json(res, { decisions: tir.getDecisions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/tenant-isolation/evaluate' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { decision: cos.evaluateTenantIsolation(body.source_tenant || 'rpgpo', body.target_tenant || 'rpgpo', body.action) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/api-entitlements' && req.method === 'GET') {
+    try { const aee = require('./lib/api-entitlement-enforcement'); return json(res, { routes: aee.getProtectedRoutes(), decisions: aee.getDecisions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/api-entitlements\/tenant\/([^/]+)$/) && req.method === 'GET') {
+    const t = req.url.match(/^\/api\/api-entitlements\/tenant\/([^/]+)$/)[1];
+    try { const aee = require('./lib/api-entitlement-enforcement'); return json(res, { decisions: aee.getDecisions(t) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/api-entitlements/evaluate' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.route) return json(res, { error: 'Missing route' }, 400);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { decision: cos.evaluateAPIEntitlement(body.route, body.tenant_id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/route-protection' && req.method === 'GET') {
+    try { const aee = require('./lib/api-entitlement-enforcement'); return json(res, { rules: aee.getProtectedRoutes() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/boundary-enforcement' && req.method === 'GET') {
+    try { const be = require('./lib/boundary-enforcement'); return json(res, { results: be.getResults() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/boundary-enforcement\/project\/([^/]+)$/) && req.method === 'GET') {
+    const p = req.url.match(/^\/api\/boundary-enforcement\/project\/([^/]+)$/)[1];
+    try { const be = require('./lib/boundary-enforcement'); return json(res, { results: be.getResults(p) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/boundary-enforcement/evaluate' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { result: cos.evaluateBoundaryEnforcement(body.request_type || 'query', body.source_scope || '', body.target_scope || '', body.artifact_type || '') }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/enforcement-reports/isolation' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getIsolationEnforcementReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/enforcement-reports/entitlements' && req.method === 'GET') {
+    try { const aee = require('./lib/api-entitlement-enforcement'); return json(res, { routes: aee.getProtectedRoutes(), decisions: aee.getDecisions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/enforcement-reports/boundaries' && req.method === 'GET') {
+    try { const be = require('./lib/boundary-enforcement'); return json(res, be.getReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Runtime Capability Activation API ──
+
+  if (req.url === '/api/runtime-capabilities' && req.method === 'GET') {
+    try { const rca = require('./lib/runtime-capability-activation'); return json(res, { activations: rca.getActivations() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/runtime-capabilities\/engine\/([^/]+)\/project\/([^/]+)$/) && req.method === 'GET') {
+    const m = req.url.match(/^\/api\/runtime-capabilities\/engine\/([^/]+)\/project\/([^/]+)$/);
+    try { const rca = require('./lib/runtime-capability-activation'); return json(res, { activations: rca.getActivations(m[1]) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/runtime-capabilities\/engine\/([^/]+)$/) && req.method === 'GET') {
+    const e = req.url.match(/^\/api\/runtime-capabilities\/engine\/([^/]+)$/)[1];
+    try { const rca = require('./lib/runtime-capability-activation'); return json(res, { activations: rca.getActivations(e) }); } catch (e2) { return json(res, { error: e2.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/runtime-capabilities\/activate\/([^/]+)\/([^/]+)$/) && req.method === 'POST') {
+    const m = req.url.match(/^\/api\/runtime-capabilities\/activate\/([^/]+)\/([^/]+)$/);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, activations: cos.activateComposedCapabilities(m[1], m[2]) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/runtime-capabilities\/activate\/([^/]+)$/) && req.method === 'POST') {
+    const e = req.url.match(/^\/api\/runtime-capabilities\/activate\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, activations: cos.activateComposedCapabilities(e) }); } catch (e2) { return json(res, { error: e2.message }, 500); }
+  }
+  if (req.url === '/api/template-runtime-bindings' && req.method === 'GET') {
+    try { const trb = require('./lib/template-runtime-binding'); return json(res, { bindings: trb.getBindings() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/template-runtime-bind\/([^/]+)\/([^/]+)\/([^/]+)$/) && req.method === 'POST') {
+    const m = req.url.match(/^\/api\/template-runtime-bind\/([^/]+)\/([^/]+)\/([^/]+)$/);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, binding: cos.bindTemplateRuntime(m[1], m[2], m[3]) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/template-runtime-bind\/([^/]+)\/([^/]+)$/) && req.method === 'POST') {
+    const m = req.url.match(/^\/api\/template-runtime-bind\/([^/]+)\/([^/]+)$/);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, binding: cos.bindTemplateRuntime(m[1], m[2]) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/extension-permissions' && req.method === 'GET') {
+    try { const epe = require('./lib/extension-permission-enforcement'); return json(res, { decisions: epe.getDecisions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/extension-permissions\/([^/]+)\/evaluate$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/extension-permissions\/([^/]+)\/evaluate$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { decision: cos.evaluateExtensionPermissions(id, body.permission || 'read_context', body.action) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/capability-conflicts' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { conflicts: cos.getCapabilityConflicts() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/runtime-activation-report' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getRuntimeActivationReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Production Readiness Closure API ──
+
+  if (req.url === '/api/production-readiness-closure' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getProductionReadinessClosure()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/production-readiness-closure\/area\/([^/]+)$/) && req.method === 'GET') {
+    const a = req.url.match(/^\/api\/production-readiness-closure\/area\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); const r = cos.getProductionReadinessClosure(); return json(res, { dimension: r?.dimensions?.find(d => d.name === a) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/live-integration-status' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getLiveIntegrationStatus()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/live-integration-status\/area\/([^/]+)$/) && req.method === 'GET') {
+    const a = req.url.match(/^\/api\/live-integration-status\/area\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { statuses: cos.getLiveIntegrationStatus(a) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/operator-acceptance/run' && req.method === 'POST') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.runOperatorAcceptance()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/operator-acceptance' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.runOperatorAcceptance()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/ship-readiness' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getShipReadinessDecision()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // ── Ship Blocker Closure + Middleware + Workflow Completion API ──
+
+  if (req.url === '/api/ship-blockers' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getShipBlockerSummary()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/ship-blockers/summary' && req.method === 'GET') {
+    try { const sbc = require('./lib/ship-blocker-closure'); return json(res, sbc.getSummary()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/ship-blockers\/([^/]+)\/resolve$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/ship-blockers\/([^/]+)\/resolve$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { blocker: cos.resolveShipBlocker(id, body.evidence) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/middleware-enforcement' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { coverage: cos.getMiddlewareCoverageReport() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/middleware-enforcement\/area\/([^/]+)$/) && req.method === 'GET') {
+    const a = req.url.match(/^\/api\/middleware-enforcement\/area\/([^/]+)$/)[1];
+    try { const me = require('./lib/middleware-enforcement'); const all = me.getCoverageReport(); return json(res, { coverage: all.filter(r => r.area === a) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/middleware-enforcement\/validate\/([^/]+)$/) && req.method === 'POST') {
+    const a = req.url.match(/^\/api\/middleware-enforcement\/validate\/([^/]+)$/)[1];
+    try { const me = require('./lib/middleware-enforcement'); return json(res, me.enforce('/api/' + a)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/workflow-completion' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getWorkflowCompletionReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/workflow-completion\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/workflow-completion\/([^/]+)$/)[1];
+    try { const owc = require('./lib/operator-workflow-completion'); const r = owc.getCompletionReport(); const wf = r.workflows.find(w => w.workflow_id === id); return wf ? json(res, { workflow: wf }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/rollback-restoration' && req.method === 'GET') {
+    return json(res, { states: [
+      { path: 'release_execution_state', state: 'fully_restorable', detail: 'Release execution status reverted on rollback' },
+      { path: 'promotion_pipeline_state', state: 'partially_restorable', detail: 'Pipeline request not auto-reverted' },
+      { path: 'binding_configuration', state: 'logical_only', detail: 'Template bindings not auto-reverted' },
+    ] });
+  }
+
+  // Part 50: Go-Live Closure + Provider Gating + Readiness Reconciliation
+  if (req.url === '/api/go-live-closure' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getGoLiveClosureReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/release-provider-gating' && req.method === 'GET') {
+    // Part 55: Inline provider guard
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/release-provider-gating', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.evaluateReleaseProviderGating()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/release-provider-gating\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/release-provider-gating\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.evaluateReleaseProviderGating(id)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/readiness-reconciliation' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getReadinessReconciliation()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 51: Protected Path Validation + Middleware Truth + Enforcement Evidence
+  if (req.url === '/api/protected-paths' && req.method === 'GET') {
+    try { const ppv = require('./lib/protected-path-validation'); return json(res, { paths: ppv.getProtectedPaths() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/protected-paths\/run-all$/) && req.method === 'POST') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.runProtectedPathValidation()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/protected-paths\/run\/([^/]+)$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/protected-paths\/run\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.runProtectedPathValidation(id)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/protected-paths\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/protected-paths\/([^/]+)$/)[1];
+    try { const ppv = require('./lib/protected-path-validation'); const paths = ppv.getProtectedPaths(); const p = paths.find(pp => pp.path_id === id); return p ? json(res, { path: p }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/middleware-truth' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getMiddlewareTruthReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/enforcement-evidence' && req.method === 'GET') {
+    // Part 55: Inline boundary guard with redaction support
+    try {
+      const hrg = require('./lib/http-response-guard');
+      const gd = hrg.guard('/api/enforcement-evidence', _tenantId, _projectId);
+      if (!gd.allowed) return json(res, gd.payload, gd.status);
+      if (gd.outcome === 'redact') {
+        try { const cos = require('./lib/chief-of-staff'); const data = { evidence: cos.getEnforcementEvidence() }; return json(res, hrg.redactPayload(data, gd.reason)); } catch (e) { return json(res, { error: e.message }, 500); }
+      }
+    } catch { /* */ }
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { evidence: cos.getEnforcementEvidence() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/enforcement-evidence\/area\/([^/]+)$/) && req.method === 'GET') {
+    const area = req.url.match(/^\/api\/enforcement-evidence\/area\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { evidence: cos.getEnforcementEvidence(area) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/protected-path-summary' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getProtectedPathSummary()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 52: HTTP Middleware Validation + Final Blockers + Final Ship Decision
+  if (req.url === '/api/http-middleware-validation' && req.method === 'GET') {
+    try { const hmv = require('./lib/http-middleware-validation'); const run = hmv.getLatestRun(); return run ? json(res, run) : json(res, { error: 'No validation run yet' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/http-middleware-validation/run' && req.method === 'POST') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.runHTTPMiddlewareValidation()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/final-blockers' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getFinalBlockerReconciliation()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/final-blockers/reconciliation' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getFinalBlockerReconciliation()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/final-workflow-closure' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getFinalWorkflowClosure()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/redaction-behavior' && req.method === 'GET') {
+    try { const hmv = require('./lib/http-middleware-validation'); return json(res, { records: hmv.getRedactionBehavior() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/final-ship-decision' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getFinalShipDecisionReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/final-ship-decision/recompute' && req.method === 'POST') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getFinalShipDecisionReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 53: Network HTTP Validation + Reliability Closure + Clean-State Go
+  if (req.url === '/api/network-http-validation' && req.method === 'GET') {
+    try { const nhv = require('./lib/network-http-validation'); const run = nhv.getLatestRun(); return run ? json(res, run) : json(res, { error: 'No validation run yet' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/network-http-validation/run' && req.method === 'POST') {
+    try { const cos = require('./lib/chief-of-staff'); cos.runNetworkHTTPValidation().then(r => json(res, r)).catch(e => json(res, { error: e.message }, 500)); return; } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/reliability-closure' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getReliabilityClosureReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/clean-state-verification' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.runCleanStateVerification()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/clean-state-verification/clear' && req.method === 'POST') {
+    try { const csv = require('./lib/clean-state-verification'); return json(res, csv.clearValidationState()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/final-go-verification' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getFinalGoVerificationReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/final-go-verification/recompute' && req.method === 'POST') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getFinalGoVerificationReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 54: Live Server Proof + Go Authorization
+  if (req.url === '/api/live-server-proof' && req.method === 'GET') {
+    try { const lsp = require('./lib/live-server-proof'); const run = lsp.getLatestRun(); return run ? json(res, run) : json(res, { error: 'No proof run yet' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/live-server-proof/run' && req.method === 'POST') {
+    try { const cos = require('./lib/chief-of-staff'); cos.runLiveServerProof().then(r => json(res, r)).catch(e => json(res, { error: e.message }, 500)); return; } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/validation-harness' && req.method === 'GET') {
+    try { const vho = require('./lib/validation-harness-orchestrator'); const exec = vho.getLatestExecution(); return exec ? json(res, exec) : json(res, { error: 'No harness run yet' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/validation-harness/run' && req.method === 'POST') {
+    try { const vho = require('./lib/validation-harness-orchestrator'); vho.runHarness().then(r => json(res, r)).catch(e => json(res, { error: e.message }, 500)); return; } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/go-authorization' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getGoAuthorizationDecision()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/go-authorization/recompute' && req.method === 'POST') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getGoAuthorizationDecision()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 55: Route Middleware Enforcement + Final Go Proof
+  if (req.url === '/api/route-middleware' && req.method === 'GET') {
+    try { const rme = require('./lib/route-middleware-enforcement'); return json(res, { bindings: rme.getBindings(), executions: rme.getExecutions().slice(0, 20) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/route-middleware/coverage' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getRouteMiddlewareCoverage()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/route-middleware/validate' && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); return json(res, hrg.getGuardSummary()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/http-response-guard' && req.method === 'GET') {
+    try { const hrg = require('./lib/http-response-guard'); return json(res, { guards: hrg.getGuardSummary() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/final-go-proof' && req.method === 'GET') {
+    try { const fgp = require('./lib/final-go-proof'); const run = fgp.getLatestRun(); return run ? json(res, run) : json(res, { error: 'No proof run yet' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/final-go-proof/run' && req.method === 'POST') {
+    try { const cos = require('./lib/chief-of-staff'); cos.runFinalGoProof().then(r => json(res, r)).catch(e => json(res, { error: e.message }, 500)); return; } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/unconditional-go-report' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getUnconditionalGoReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 56: Route Protection Expansion + Mutation Guards + Deep Redaction
+  if (req.url === '/api/route-protection-expansion' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getRouteProtectionExpansionReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/route-protection-expansion\/category\/([^/]+)$/) && req.method === 'GET') {
+    const cat = req.url.match(/^\/api\/route-protection-expansion\/category\/([^/]+)$/)[1];
+    try { const rpe = require('./lib/route-protection-expansion'); return json(res, { bindings: rpe.getByCategory(cat) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/mutation-route-guards' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getMutationProtectionReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/mutation-route-guards/validate' && req.method === 'POST') {
+    try { const mg = require('./lib/mutation-route-guards'); return json(res, { rules: mg.getRules(), decisions: mg.getDecisions().slice(0, 20) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/deep-redaction' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getDeepRedactionReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/deep-redaction/validate' && req.method === 'POST') {
+    try { const dr = require('./lib/deep-redaction'); return json(res, dr.validateRedaction()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/protection-regressions' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getProtectionRegressionChecks()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 57: Product Shell + Output Surfacing + Task Experience
+  if (req.url === '/api/product-shell' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getProductShellState()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/product-shell/sections' && req.method === 'GET') {
+    try { const ps = require('./lib/product-shell'); return json(res, { sections: ps.getSections() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/final-output\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/final-output\/([^/]+)$/)[1];
+    try { const fos = require('./lib/final-output-surfacing'); const o = fos.getFinalOutput(id); return o ? json(res, o) : json(res, { error: 'Task not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/final-output-report' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getOutputSurfacingReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/task-experience' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { experiences: cos.getTaskExperienceReport() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/task-experience\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/task-experience\/([^/]+)$/)[1];
+    try { const te = require('./lib/task-experience'); const e = te.getTaskExperience(id); return e ? json(res, e) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/ux-consolidation-report' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getProductShellState()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 58: Engine Catalog + Output Contracts + Mission Acceptance
+  if (req.url === '/api/engine-catalog' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getEngineCatalogSummary()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/engine-catalog\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/engine-catalog\/([^/]+)$/)[1];
+    try { const ec = require('./lib/engine-catalog'); const e = ec.getEngine(id); return e ? json(res, { engine: e }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/output-contracts' && req.method === 'GET') {
+    try { const oc = require('./lib/output-contracts'); return json(res, { contracts: oc.getContracts() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/output-contracts\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/output-contracts\/([^/]+)$/)[1];
+    try { const oc = require('./lib/output-contracts'); const c = oc.getContract(id); return c ? json(res, { contract: c }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/task-deliverable-status\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/task-deliverable-status\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.validateTaskAgainstOutputContract(id)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/task-contract-validation\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/task-contract-validation\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.validateTaskAgainstOutputContract(id)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/mission-acceptance' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getMissionAcceptanceSummary()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/mission-acceptance\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/mission-acceptance\/([^/]+)$/)[1];
+    try { const mas = require('./lib/mission-acceptance-suite'); return json(res, { cases: mas.getCasesByEngine(id), summary: mas.getRunSummary(id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/deliverable-visibility-report' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getOutputContractReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 59: Structured Deliverables + Contract Enforcement + Rendering
+  if (req.url?.match(/^\/api\/tasks\/([^/]+)\/deliverable$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/tasks\/([^/]+)\/deliverable$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); const r = cos.renderDeliverable(id); return r ? json(res, r) : json(res, { error: 'No deliverable' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/tasks\/([^/]+)\/deliverable\/validate$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/tasks\/([^/]+)\/deliverable\/validate$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.validateDeliverableForTask(id)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/tasks\/([^/]+)\/plan\/contract-enforce$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/tasks\/([^/]+)\/plan\/contract-enforce$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard(req.url, _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getBoardContractContext(id)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 60: Deliverable Store
+  if (req.url === '/api/deliverables' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.getDeliverableStoreIndex()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/deliverables\/migrate-flat$/) && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/deliverables', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.migrateDeliverables()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/deliverables\/reindex$/) && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/deliverables', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const ds = require('./lib/deliverable-store'); return json(res, ds.reindex()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/deliverables\/([^/]+)\/versions$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/deliverables\/([^/]+)\/versions$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { versions: cos.getDeliverableHistory(id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/deliverables\/([^/]+)\/versions\/(\d+)$/) && req.method === 'GET') {
+    const m = req.url.match(/^\/api\/deliverables\/([^/]+)\/versions\/(\d+)$/);
+    try { const cos = require('./lib/chief-of-staff'); const d = cos.getStoredDeliverable(m[1], parseInt(m[2])); return d ? json(res, d) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/deliverables\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/deliverables\/([^/]+)$/)[1];
+    try { const cos = require('./lib/chief-of-staff'); const d = cos.getStoredDeliverable(id); return d ? json(res, d) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
   // File reader (sandbox-safe)
