@@ -2090,6 +2090,43 @@ if (_origSwitchTab) {
         }).catch(() => { slot.innerHTML = html; });
       }).catch(() => {});
     }
+    // Part 63: Deliverables panel in releases tab
+    if (tab === 'releases') {
+      Promise.all([
+        fetch('/api/deliverables').then(r => r.ok ? r.json() : null).catch(() => null),
+        fetch('/api/deliverable-approvals').then(r => r.ok ? r.json() : null).catch(() => null),
+      ]).then(function(arr) {
+        var storeIdx = arr[0], approvals = arr[1];
+        var dp = document.getElementById('deliverablesPanel');
+        if (!dp) return;
+        var html = '';
+        if (storeIdx && storeIdx.entries) {
+          var ids = Object.keys(storeIdx.entries);
+          html += '<div class="aud-section"><div class="aud-section-title">Deliverables Store — ' + ids.length + ' deliverables, ' + storeIdx.totalVersions + ' versions</div>';
+          if (ids.length > 0) {
+            html += ids.slice(0, 10).map(function(id) {
+              var e = storeIdx.entries[id];
+              var sCls = e.status === 'approved' ? 'trc-type' : e.status === 'proposed' ? 'trc-action' : e.status === 'rejected' ? 'exc-sev' : 'trc-status';
+              return '<div class="trc-item"><span class="' + sCls + '">' + esc(e.status) + '</span><span class="trc-title">' + esc(id.slice(0, 40)) + '</span><span class="trc-status">v' + e.latestVersion + (e.approvedVersion ? ' (approved: v' + e.approvedVersion + ')' : '') + '</span></div>';
+            }).join('');
+          } else {
+            html += '<div class="gov-empty">No deliverables in store yet</div>';
+          }
+          html += '</div>';
+        }
+        if (approvals && approvals.requests && approvals.requests.length) {
+          html += '<div class="aud-section"><div class="aud-section-title">Deliverable Approvals</div>';
+          html += approvals.requests.slice(0, 5).map(function(r) {
+            var rCls = r.status === 'approved' ? 'trc-type' : r.status === 'rejected' ? 'exc-sev' : 'trc-action';
+            return '<div class="trc-item"><span class="' + rCls + '">' + esc(r.status) + '</span><span class="trc-title">' + esc(r.deliverable_id.slice(0, 30)) + ' v' + r.version + '</span>' +
+              (r.status === 'pending' ? '<span style="margin-left:auto;display:flex;gap:4px"><button class="nop-btn nop-btn-primary" style="font-size:9px;padding:2px 8px" onclick="gpoAction(this,\'/api/deliverables/' + esc(r.deliverable_id) + '/approve\',\'POST\',\'releases\')">Approve</button><button class="nop-btn nop-btn-secondary" style="font-size:9px;padding:2px 8px" onclick="gpoAction(this,\'/api/deliverables/' + esc(r.deliverable_id) + '/reject\',\'POST\',\'releases\')">Reject</button></span>' : '') +
+              '</div>';
+          }).join('');
+          html += '</div>';
+        }
+        dp.innerHTML = html;
+      });
+    }
     if (tab === 'admin') {
       Promise.all([
         fetch('/api/tenant-admin').then(r => r.ok ? r.json() : null).catch(() => null),
