@@ -1,0 +1,1 @@
+export interface ProductionReadinessClosureReport { report_id: string; dimensions: Array<{ name: string; status: string; score: number; max: number; detail: string }>; overall_score: number; ship_blockers: string[]; closure_priorities: string[]; ship_decision: 'go' | 'conditional_go' | 'no_go'; created_at: string; }

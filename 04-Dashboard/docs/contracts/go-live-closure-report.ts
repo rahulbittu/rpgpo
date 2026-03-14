@@ -1,0 +1,1 @@
+export interface GoLiveClosureReport { report_id: string; blockers: Array<{ name: string; status: 'closed' | 'partial' | 'blocked'; evidence: string }>; closed: number; partial: number; blocked: number; total: number; remaining_risk: string[]; recommendation: 'go' | 'conditional_go' | 'no_go'; created_at: string; }

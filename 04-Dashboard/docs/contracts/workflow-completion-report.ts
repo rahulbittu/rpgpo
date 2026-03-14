@@ -1,0 +1,1 @@
+export interface WorkflowCompletionReport { report_id: string; workflows: Array<{ workflow_id: string; name: string; status: string; has_ui_entry: boolean; has_actions: boolean; has_feedback: boolean; has_refresh: boolean; detail: string }>; usable: number; partial: number; blocked: number; total: number; created_at: string; }

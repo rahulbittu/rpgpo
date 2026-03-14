@@ -1,0 +1,1 @@
+export interface ProtectedPathSummary { total_paths: number; validated: number; partially_validated: number; failed: number; not_wired: number; validation_runs: Array<{ run_id: string; path_id: string; path_name: string; overall: string; evidence_id: string }>; created_at: string; }

@@ -1,0 +1,1 @@
+export interface ExtensionPermissionDecision { decision_id: string; extension_id: string; permission: string; action: string; outcome: 'granted' | 'denied' | 'denied_trust' | 'denied_entitlement' | 'denied_isolation'; reason: string; created_at: string; }

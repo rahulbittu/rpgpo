@@ -1,0 +1,1 @@
+export interface APIEntitlementDecision { decision_id: string; route: string; tenant_id: string; feature: string; outcome: 'allowed' | 'denied' | 'denied_upgrade_required' | 'denied_scope_violation'; reason: string; created_at: string; }

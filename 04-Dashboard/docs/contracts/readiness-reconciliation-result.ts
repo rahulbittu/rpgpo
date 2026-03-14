@@ -1,0 +1,1 @@
+export interface ReadinessReconciliationResult { report_id: string; workflow_completion: number; middleware_coverage: number; blocker_closure: number; operator_acceptance: number; reconciled_score: number; stale_contradictions_resolved: number; ship_decision: 'go' | 'conditional_go' | 'no_go'; created_at: string; }

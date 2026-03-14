@@ -1,0 +1,1 @@
+export interface ActivatedCapability { capability_id: string; name: string; type: string; source: string; source_id: string; engine_id: string; project_id?: string; active: boolean; decision: string; config: Record<string, unknown>; created_at: string; }

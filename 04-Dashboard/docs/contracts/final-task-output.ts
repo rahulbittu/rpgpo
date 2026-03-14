@@ -1,0 +1,1 @@
+export interface FinalTaskOutput { task_id: string; task_title: string; status: string; final_answer: string | null; summary: string | null; artifacts: Array<{ type: 'report' | 'code_change' | 'answer' | 'approval'; title: string; path: string; preview: string }>; report_paths: string[]; files_changed: string[]; created_at: string; }

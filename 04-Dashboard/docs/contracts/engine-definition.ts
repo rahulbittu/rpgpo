@@ -1,0 +1,1 @@
+export interface EngineDefinition { engine_id: string; name: string; description: string; capabilities: string[]; default_output: 'ranked_list' | 'document' | 'code_change' | 'recommendation' | 'schedule' | 'creative_draft' | 'analysis' | 'action_plan'; approval_model: 'auto' | 'operator_review' | 'explicit_approval'; icon: string; }

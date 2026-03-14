@@ -1,0 +1,1 @@
+export interface EnforcementEvidenceRecord { record_id: string; area: string; middleware_ran: string; decision_made: string; response_effect: string; scope_type: string; scope_id: string; route: string; linked_path_id: string; created_at: string; }

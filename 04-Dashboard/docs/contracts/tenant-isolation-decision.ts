@@ -1,0 +1,1 @@
+export interface TenantIsolationDecision { decision_id: string; source_tenant: string; target_tenant: string; action: string; outcome: 'allow' | 'deny' | 'redact'; reason: string; created_at: string; }

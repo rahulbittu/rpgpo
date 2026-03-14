@@ -1,0 +1,1 @@
+export interface OperatorAcceptanceRun { run_id: string; checks: Array<{ name: string; status: 'usable' | 'partially_usable' | 'broken' | 'blocked_backend' | 'blocked_ui'; detail: string }>; usable: number; partial: number; broken: number; blocked: number; created_at: string; }

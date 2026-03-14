@@ -1,0 +1,2 @@
+export interface FinalBlockerState { blocker_id: string; name: string; source: string; status: 'open' | 'partially_closed' | 'closed' | 'stale'; evidence: string; reconciled_from: string[]; last_updated: string; }
+export interface BlockerReconciliationReport { report_id: string; blockers: FinalBlockerState[]; open: number; partially_closed: number; closed: number; stale: number; total: number; stale_contradictions_resolved: number; created_at: string; }

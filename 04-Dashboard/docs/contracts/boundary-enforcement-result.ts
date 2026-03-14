@@ -1,0 +1,1 @@
+export interface BoundaryEnforcementResult { result_id: string; request_type: string; source_scope: string; target_scope: string; artifact_type: string; outcome: 'allowed' | 'blocked' | 'redacted'; reason: string; created_at: string; }

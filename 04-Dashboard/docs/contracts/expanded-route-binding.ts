@@ -1,0 +1,1 @@
+export interface ExpandedRouteBinding { route: string; method: string; guard_type: string; category: 'ship_critical' | 'sensitive_noncritical' | 'low_risk'; status: 'fully_guarded' | 'partially_guarded' | 'not_guarded' | 'not_applicable'; }

@@ -1,0 +1,1 @@
+export interface ShipReadinessDecision { decision: 'go' | 'conditional_go' | 'no_go'; readiness_score: number; deployment_score: number; security_posture: string; operator_acceptance_rate: number; ship_blockers: string[]; created_at: string; }

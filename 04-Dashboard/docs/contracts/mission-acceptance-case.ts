@@ -1,0 +1,1 @@
+export interface MissionAcceptanceCase { case_id: string; engine_id: string; request: string; expected_deliverable: string; expected_approval: string; expected_action: string; required_tools: string[]; failure_if: string; status: 'seeded' | 'passed' | 'failed' | 'not_run'; }

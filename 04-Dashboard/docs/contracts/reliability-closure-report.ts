@@ -1,0 +1,1 @@
+export interface ReliabilityClosureReport { report_id: string; metrics: Array<{ metric_name: string; status: 'fully_measured' | 'partially_measured' | 'proxy_only'; value: number; unit: string; source: string; detail: string }>; fully_measured: number; partially_measured: number; proxy_only: number; total: number; closure_score: number; created_at: string; }

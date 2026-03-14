@@ -1,0 +1,1 @@
+export interface FinalWorkflowClosureReport { report_id: string; workflows: Array<{ workflow_id: string; name: string; status: 'usable' | 'partially_usable' | 'blocked' | 'broken'; detail: string }>; usable: number; partial: number; blocked: number; broken: number; total: number; closed_in_this_pass: string[]; created_at: string; }

@@ -1,0 +1,2 @@
+export type TaskClosureState = 'final_deliverable_visible' | 'awaiting_operator_approval' | 'blocked_with_remediation' | 'action_executed_with_proof' | 'failed_with_reason';
+export interface TaskDeliverableStatus { task_id: string; engine_id: string; closure_state: TaskClosureState; deliverable_visible: boolean; contract_satisfied: boolean; missing_fields: string[]; remediation: string | null; best_partial: string | null; }

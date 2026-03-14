@@ -1,0 +1,1 @@
+export interface IsolationEnforcementReport { report_id: string; total_decisions: number; allowed: number; denied: number; redacted: number; protected_routes: number; enforced_routes: number; boundary_blocks: number; leak_risks: string[]; created_at: string; }

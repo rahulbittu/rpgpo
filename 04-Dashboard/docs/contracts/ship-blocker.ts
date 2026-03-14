@@ -1,0 +1,1 @@
+export interface ShipBlocker { blocker_id: string; name: string; severity: string; scope: string; reason: string; status: 'open' | 'in_progress' | 'resolved'; resolution_evidence?: string; created_at: string; resolved_at?: string; }

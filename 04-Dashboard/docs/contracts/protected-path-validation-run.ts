@@ -1,0 +1,1 @@
+export interface ProtectedPathValidationRun { run_id: string; path_id: string; path_name: string; steps: Array<{ step: string; middleware_invoked: string; decision: 'deny' | 'allow' | 'redact' | 'error'; payload_observed: string; matched_expectation: boolean }>; overall: 'validated' | 'partially_validated' | 'failed' | 'not_wired'; evidence_id: string; created_at: string; }

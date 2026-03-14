@@ -1,0 +1,1 @@
+export interface CleanStateVerificationRun { run_id: string; issues: Array<{ file: string; issue: string; severity: 'info' | 'warn' | 'stale'; detail: string }>; state_files_checked: number; stale_detected: number; clean: boolean; detail: string; created_at: string; }

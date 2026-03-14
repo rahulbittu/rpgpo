@@ -1,0 +1,1 @@
+export interface ReleaseProviderGatingDecision { decision_id: string; release_id: string; provider_health: string; cost_ok: boolean; latency_ok: boolean; incidents: number; outcome: 'clear' | 'warning' | 'blocked'; detail: string; created_at: string; }

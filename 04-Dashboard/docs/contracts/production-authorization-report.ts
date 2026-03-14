@@ -1,0 +1,1 @@
+export interface ProductionAuthorizationReport { report_id: string; authorization: import('./go-authorization-decision').GoAuthorizationDecision; live_proof: import('./live-server-proof-run').LiveServerProofRun | null; harness: import('./validation-harness-execution').ValidationHarnessExecution | null; created_at: string; }

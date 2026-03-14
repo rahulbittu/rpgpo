@@ -1,0 +1,1 @@
+export interface CapabilityConflictRecord { conflict_id: string; engine_id: string; capability_name: string; source_a: string; source_b: string; conflict_type: string; resolution: string; created_at: string; }
