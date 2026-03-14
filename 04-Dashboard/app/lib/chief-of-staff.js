@@ -189,6 +189,11 @@ exports.migrateDeliverables = migrateDeliverables;
 exports.mergeDeliverableFragments = mergeDeliverableFragments;
 exports.validateMergedDeliverable = validateMergedDeliverable;
 exports.diffDeliverableVersions = diffDeliverableVersions;
+exports.attachDeliverableEvidence = attachDeliverableEvidence;
+exports.proposeDeliverable = proposeDeliverable;
+exports.approveDeliverable = approveDeliverable;
+exports.rejectDeliverable = rejectDeliverable;
+exports.getDeliverableApprovalRequests = getDeliverableApprovalRequests;
 const context = require('./context');
 const engines = require('./engines');
 const projects = require('./projects');
@@ -2420,6 +2425,52 @@ function diffDeliverableVersions(deliverableId, v1, v2) {
         return null;
     }
 }
+// Part 62: Evidence Linking + Approval Lifecycle
+function attachDeliverableEvidence(deliverableId, version, refs) {
+    try {
+        const el = require('./evidence-linker');
+        return el.attachEvidence(deliverableId, version, refs);
+    }
+    catch {
+        return null;
+    }
+}
+function proposeDeliverable(deliverableId, version) {
+    try {
+        const ag = require('./approval-gates-deliverables');
+        return ag.propose(deliverableId, version);
+    }
+    catch {
+        return null;
+    }
+}
+function approveDeliverable(deliverableId, version, approver) {
+    try {
+        const ag = require('./approval-gates-deliverables');
+        return ag.approve(deliverableId, version, approver);
+    }
+    catch {
+        return null;
+    }
+}
+function rejectDeliverable(deliverableId, version, reviewer, reason) {
+    try {
+        const ag = require('./approval-gates-deliverables');
+        return ag.reject(deliverableId, version, reviewer, reason);
+    }
+    catch {
+        return null;
+    }
+}
+function getDeliverableApprovalRequests(deliverableId) {
+    try {
+        const ag = require('./approval-gates-deliverables');
+        return ag.getRequests(deliverableId);
+    }
+    catch {
+        return null;
+    }
+}
 module.exports = {
     interpretBoardResult,
     getNextBestActions, getEngineActions, getProjectActions,
@@ -2553,5 +2604,9 @@ module.exports = {
     // Part 61
     mergeDeliverableFragments, validateMergedDeliverable,
     diffDeliverableVersions,
+    // Part 62
+    attachDeliverableEvidence, proposeDeliverable,
+    approveDeliverable, rejectDeliverable,
+    getDeliverableApprovalRequests,
 };
 //# sourceMappingURL=chief-of-staff.js.map

@@ -6247,3 +6247,31 @@ export interface MergeTimeEnforcementResult {
   violations: Array<{ field: string; message: string }>;
   warnings: Array<{ field: string; message: string }>;
 }
+
+// ── Part 62: Evidence Linking + Deliverable Approval Lifecycle ──
+
+export interface EvidenceRef {
+  kind: 'artifact' | 'trace' | 'url' | 'subtask';
+  ref: string;
+  label?: string;
+}
+
+export interface DeliverableApprovalRequest {
+  request_id: string;
+  deliverable_id: string;
+  version: number;
+  status: 'pending' | 'approved' | 'rejected';
+  requested_at: string;
+  decided_at?: string;
+  decided_by?: string;
+  reason?: string;
+}
+
+export interface EvidenceLinkReport {
+  deliverable_id: string;
+  version: number;
+  total_refs: number;
+  artifact_refs: number;
+  subtask_refs: number;
+  url_refs: number;
+}

@@ -1,0 +1,21 @@
+{
+  "dlv_rpgpo_task123_newsroom_fdfe74f7": {
+    "2": [
+      {
+        "kind": "subtask",
+        "ref": "st_research_1",
+        "label": "Research subtask"
+      },
+      {
+        "kind": "url",
+        "ref": "https://toi.in/123",
+        "label": "Times of India"
+      },
+      {
+        "kind": "artifact",
+        "ref": "art_report_001",
+        "label": "Research report"
+      }
+    ]
+  }
+}

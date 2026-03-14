@@ -3254,6 +3254,32 @@ const server = http.createServer(async (req, res) => {
   if (req.url === '/api/merge-strategies' && req.method === 'GET') {
     try { const dm = require('./lib/deliverable-merge'); return json(res, { strategies: dm.getStrategies() }); } catch (e) { return json(res, { error: e.message }, 500); }
   }
+  // Part 62: Evidence + Approval
+  if (req.url?.match(/^\/api\/deliverables\/([^/]+)\/propose$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/deliverables\/([^/]+)\/propose$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/deliverables', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.proposeDeliverable(id, body.version || 1)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/deliverables\/([^/]+)\/approve$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/deliverables\/([^/]+)\/approve$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/deliverables', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.approveDeliverable(id, body.version || 1, body.approver || 'operator')); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/deliverables\/([^/]+)\/reject$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/deliverables\/([^/]+)\/reject$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/deliverables', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.rejectDeliverable(id, body.version || 1, body.reviewer || 'operator', body.reason || 'Rejected')); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/deliverables\/([^/]+)\/evidence\/(\d+)$/) && req.method === 'GET') {
+    const m = req.url.match(/^\/api\/deliverables\/([^/]+)\/evidence\/(\d+)$/);
+    try { const el = require('./lib/evidence-linker'); return json(res, el.getLinkReport(m[1], parseInt(m[2]))); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/deliverable-approvals' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { requests: cos.getDeliverableApprovalRequests() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
   if (req.url?.match(/^\/api\/deliverables\/([^/]+)$/) && req.method === 'GET') {
     const id = req.url.match(/^\/api\/deliverables\/([^/]+)$/)[1];
     try { const cos = require('./lib/chief-of-staff'); const d = cos.getStoredDeliverable(id); return d ? json(res, d) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }

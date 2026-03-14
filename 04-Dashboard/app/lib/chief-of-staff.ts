@@ -1640,6 +1640,23 @@ export function diffDeliverableVersions(deliverableId: string, v1: number, v2: n
   } catch { return null; }
 }
 
+// Part 62: Evidence Linking + Approval Lifecycle
+export function attachDeliverableEvidence(deliverableId: string, version: number, refs: Array<{ kind: string; ref: string; label?: string }>) {
+  try { const el = require('./evidence-linker') as { attachEvidence(id: string, v: number, refs: unknown[]): unknown }; return el.attachEvidence(deliverableId, version, refs); } catch { return null; }
+}
+export function proposeDeliverable(deliverableId: string, version: number) {
+  try { const ag = require('./approval-gates-deliverables') as { propose(id: string, v: number): unknown }; return ag.propose(deliverableId, version); } catch { return null; }
+}
+export function approveDeliverable(deliverableId: string, version: number, approver: string) {
+  try { const ag = require('./approval-gates-deliverables') as { approve(id: string, v: number, a: string): unknown }; return ag.approve(deliverableId, version, approver); } catch { return null; }
+}
+export function rejectDeliverable(deliverableId: string, version: number, reviewer: string, reason: string) {
+  try { const ag = require('./approval-gates-deliverables') as { reject(id: string, v: number, r: string, rs: string): unknown }; return ag.reject(deliverableId, version, reviewer, reason); } catch { return null; }
+}
+export function getDeliverableApprovalRequests(deliverableId?: string) {
+  try { const ag = require('./approval-gates-deliverables') as { getRequests(id?: string): unknown }; return ag.getRequests(deliverableId); } catch { return null; }
+}
+
 module.exports = {
   interpretBoardResult,
   getNextBestActions, getEngineActions, getProjectActions,
@@ -1773,4 +1790,8 @@ module.exports = {
   // Part 61
   mergeDeliverableFragments, validateMergedDeliverable,
   diffDeliverableVersions,
+  // Part 62
+  attachDeliverableEvidence, proposeDeliverable,
+  approveDeliverable, rejectDeliverable,
+  getDeliverableApprovalRequests,
 };
