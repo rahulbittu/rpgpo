@@ -1657,6 +1657,17 @@ export function getDeliverableApprovalRequests(deliverableId?: string) {
   try { const ag = require('./approval-gates-deliverables') as { getRequests(id?: string): unknown }; return ag.getRequests(deliverableId); } catch { return null; }
 }
 
+// Part 64: Release Assembly
+export function buildReleaseCandidate(project: string, channel: string) {
+  try { const ra = require('./release-assembly') as { buildCandidate(p: string, c: string, a: string): unknown }; return ra.buildCandidate(project, channel, 'operator'); } catch { return null; }
+}
+export function getReleaseCandidates(project?: string, channel?: string) {
+  try { const ra = require('./release-assembly') as { getCandidates(p?: string, c?: string): unknown }; return ra.getCandidates(project, channel); } catch { return null; }
+}
+export function getCurrentRelease(project: string, channel: string) {
+  try { const ra = require('./release-assembly') as { getCurrentRelease(p: string, c: string): unknown }; return ra.getCurrentRelease(project, channel); } catch { return null; }
+}
+
 module.exports = {
   interpretBoardResult,
   getNextBestActions, getEngineActions, getProjectActions,
@@ -1794,4 +1805,7 @@ module.exports = {
   attachDeliverableEvidence, proposeDeliverable,
   approveDeliverable, rejectDeliverable,
   getDeliverableApprovalRequests,
+  // Part 64
+  buildReleaseCandidate, getReleaseCandidates,
+  getCurrentRelease,
 };

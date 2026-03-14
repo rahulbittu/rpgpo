@@ -194,6 +194,9 @@ exports.proposeDeliverable = proposeDeliverable;
 exports.approveDeliverable = approveDeliverable;
 exports.rejectDeliverable = rejectDeliverable;
 exports.getDeliverableApprovalRequests = getDeliverableApprovalRequests;
+exports.buildReleaseCandidate = buildReleaseCandidate;
+exports.getReleaseCandidates = getReleaseCandidates;
+exports.getCurrentRelease = getCurrentRelease;
 const context = require('./context');
 const engines = require('./engines');
 const projects = require('./projects');
@@ -2471,6 +2474,34 @@ function getDeliverableApprovalRequests(deliverableId) {
         return null;
     }
 }
+// Part 64: Release Assembly
+function buildReleaseCandidate(project, channel) {
+    try {
+        const ra = require('./release-assembly');
+        return ra.buildCandidate(project, channel, 'operator');
+    }
+    catch {
+        return null;
+    }
+}
+function getReleaseCandidates(project, channel) {
+    try {
+        const ra = require('./release-assembly');
+        return ra.getCandidates(project, channel);
+    }
+    catch {
+        return null;
+    }
+}
+function getCurrentRelease(project, channel) {
+    try {
+        const ra = require('./release-assembly');
+        return ra.getCurrentRelease(project, channel);
+    }
+    catch {
+        return null;
+    }
+}
 module.exports = {
     interpretBoardResult,
     getNextBestActions, getEngineActions, getProjectActions,
@@ -2608,5 +2639,8 @@ module.exports = {
     attachDeliverableEvidence, proposeDeliverable,
     approveDeliverable, rejectDeliverable,
     getDeliverableApprovalRequests,
+    // Part 64
+    buildReleaseCandidate, getReleaseCandidates,
+    getCurrentRelease,
 };
 //# sourceMappingURL=chief-of-staff.js.map

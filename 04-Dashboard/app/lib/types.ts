@@ -6275,3 +6275,61 @@ export interface EvidenceLinkReport {
   subtask_refs: number;
   url_refs: number;
 }
+
+// ── Part 64: Release Candidate Assembly + Lockfiles + Diff ──
+
+export interface LockfileEntry {
+  key: string;
+  type: DeliverableType;
+  variant: string;
+  deliverableId: string;
+  version: number;
+  contentHash: string;
+  evidenceRefs: string[];
+}
+
+export interface ReleaseLockfile {
+  lockfile_id: string;
+  project: string;
+  channel: string;
+  entries: LockfileEntry[];
+  entries_hash: string;
+  created_at: string;
+  created_by: string;
+  base_release_id?: string;
+}
+
+export interface AssemblyCandidate {
+  candidate_id: string;
+  status: 'pending' | 'promoted' | 'rejected';
+  project: string;
+  channel: string;
+  lockfile_id: string;
+  entry_count: number;
+  created_at: string;
+  created_by: string;
+}
+
+export interface ReleaseDiffStat {
+  added: number;
+  removed: number;
+  changed: number;
+  unchanged: number;
+}
+
+export interface ReleaseLockfileDiff {
+  a_id: string;
+  b_id: string;
+  stat: ReleaseDiffStat;
+  changes: Array<{ key: string; type: string; from_hash?: string; to_hash?: string; change: 'added' | 'removed' | 'changed' | 'unchanged' }>;
+}
+
+export interface ReleaseRecord {
+  release_id: string;
+  project: string;
+  channel: string;
+  lockfile_id: string;
+  created_at: string;
+  created_by: string;
+  supersedes?: string;
+}

@@ -3280,6 +3280,29 @@ const server = http.createServer(async (req, res) => {
   if (req.url === '/api/deliverable-approvals' && req.method === 'GET') {
     try { const cos = require('./lib/chief-of-staff'); return json(res, { requests: cos.getDeliverableApprovalRequests() }); } catch (e) { return json(res, { error: e.message }, 500); }
   }
+  // Part 64: Release Assembly
+  if (req.url === '/api/releases/candidates/build' && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/releases', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.buildReleaseCandidate(body.project || 'rpgpo', body.channel || 'dev'), 201); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/releases/candidates' && req.method === 'GET') {
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { candidates: cos.getReleaseCandidates() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/releases\/candidates\/([^/]+)\/promote$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/releases\/candidates\/([^/]+)\/promote$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/releases', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const ra = require('./lib/release-assembly'); const r = ra.promoteCandidate(id, 'operator'); return r ? json(res, { release: r }) : json(res, { error: 'Not found or not pending' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/releases\/candidates\/([^/]+)\/reject$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/releases\/candidates\/([^/]+)\/reject$/)[1];
+    try { const ra = require('./lib/release-assembly'); return json(res, { rejected: ra.rejectCandidate(id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/releases/current' && req.method === 'GET') {
+    const project = new URL(req.url, 'http://x').searchParams?.get('project') || 'rpgpo';
+    const channel = new URL(req.url, 'http://x').searchParams?.get('channel') || 'dev';
+    try { const cos = require('./lib/chief-of-staff'); return json(res, { release: cos.getCurrentRelease(project, channel) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
   if (req.url?.match(/^\/api\/deliverables\/([^/]+)$/) && req.method === 'GET') {
     const id = req.url.match(/^\/api\/deliverables\/([^/]+)$/)[1];
     try { const cos = require('./lib/chief-of-staff'); const d = cos.getStoredDeliverable(id); return d ? json(res, d) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
