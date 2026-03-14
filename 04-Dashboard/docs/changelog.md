@@ -1,5 +1,11 @@
 # GPO Changelog
 
+## 2026-03-14 — Part 61: Merge Pipeline + Merge-Time Enforcement + Strategy Registry
+- `deliverable-merge.ts` — 5 merge strategies, per-variant field policies, provenance tracking
+- Merge-time contract enforcement with variant-specific validation
+- Field-level diff between deliverable versions
+- 4 new API routes, 3 CoS functions
+
 ## 2026-03-14 — Part 60: Deliverable Identity + Versioned Store + Migration
 - `deliverable-id.ts` — Deterministic ID (sha256-based), key creation, content hashing
 - `deliverable-store.ts` — Versioned append-only persistence with atomic writes, status lifecycle, migration

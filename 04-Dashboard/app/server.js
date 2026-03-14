@@ -3236,6 +3236,24 @@ const server = http.createServer(async (req, res) => {
     const m = req.url.match(/^\/api\/deliverables\/([^/]+)\/versions\/(\d+)$/);
     try { const cos = require('./lib/chief-of-staff'); const d = cos.getStoredDeliverable(m[1], parseInt(m[2])); return d ? json(res, d) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
   }
+  if (req.url?.match(/^\/api\/deliverables\/([^/]+)\/merge$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/deliverables\/([^/]+)\/merge$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/deliverables', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.mergeDeliverableFragments(id, body.fragments || [])); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/deliverables\/([^/]+)\/validate-merge$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/deliverables\/([^/]+)\/validate-merge$/)[1];
+    const body = await parseBody(req);
+    try { const cos = require('./lib/chief-of-staff'); return json(res, cos.validateMergedDeliverable(body.engineId || 'general', id)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/deliverables\/([^/]+)\/diff\/(\d+)\.\.(\d+)$/) && req.method === 'GET') {
+    const m = req.url.match(/^\/api\/deliverables\/([^/]+)\/diff\/(\d+)\.\.(\d+)$/);
+    try { const cos = require('./lib/chief-of-staff'); const d = cos.diffDeliverableVersions(m[1], parseInt(m[2]), parseInt(m[3])); return d ? json(res, { changes: d }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/merge-strategies' && req.method === 'GET') {
+    try { const dm = require('./lib/deliverable-merge'); return json(res, { strategies: dm.getStrategies() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
   if (req.url?.match(/^\/api\/deliverables\/([^/]+)$/) && req.method === 'GET') {
     const id = req.url.match(/^\/api\/deliverables\/([^/]+)$/)[1];
     try { const cos = require('./lib/chief-of-staff'); const d = cos.getStoredDeliverable(id); return d ? json(res, d) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }

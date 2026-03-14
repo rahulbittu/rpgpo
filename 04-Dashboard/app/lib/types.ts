@@ -6212,3 +6212,38 @@ export interface MigrationResult {
   errors: string[];
   created_at: string;
 }
+
+// ── Part 61: Merge Pipeline + Merge-Time Enforcement + Strategy Registry ──
+
+export type MergeStrategyKey = 'replace' | 'append' | 'union_dedupe' | 'pick_best' | 'structural_merge';
+
+export interface MergeStrategy {
+  key: MergeStrategyKey;
+  description: string;
+}
+
+export interface MergePolicy {
+  variant: StructuredDeliverable['kind'];
+  fieldStrategies: Record<string, MergeStrategyKey>;
+}
+
+export interface MergeResult {
+  merged: StructuredDeliverable;
+  fieldsUpdated: string[];
+  fieldsSkipped: string[];
+  conflicts: Array<{ field: string; reason: string; resolution: string }>;
+  provenance: Record<string, Array<{ subtaskId: string; stepType: string; fieldHash: string }>>;
+}
+
+export interface MergeFragment {
+  subtaskId: string;
+  engine: string;
+  content: Record<string, unknown>;
+  stepType: string;
+}
+
+export interface MergeTimeEnforcementResult {
+  passed: boolean;
+  violations: Array<{ field: string; message: string }>;
+  warnings: Array<{ field: string; message: string }>;
+}

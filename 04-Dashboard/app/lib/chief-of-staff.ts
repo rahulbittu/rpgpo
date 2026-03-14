@@ -1610,6 +1610,36 @@ export function migrateDeliverables() {
   try { const ds = require('./deliverable-store') as { migrateFlatStore(): unknown }; return ds.migrateFlatStore(); } catch { return null; }
 }
 
+// Part 61: Merge Pipeline
+export function mergeDeliverableFragments(taskId: string, fragments: Array<{ subtaskId: string; engine: string; content: Record<string, unknown>; stepType: string }>) {
+  try {
+    const ce = require('./contract-enforcement') as { getDeliverable(id: string): import('./types').StructuredDeliverable | null };
+    const dm = require('./deliverable-merge') as { mergeScaffold(base: import('./types').StructuredDeliverable, frags: unknown[]): import('./types').MergeResult };
+    const base = ce.getDeliverable(taskId);
+    if (!base) return null;
+    return dm.mergeScaffold(base, fragments);
+  } catch { return null; }
+}
+export function validateMergedDeliverable(engineId: string, taskId: string) {
+  try {
+    const ce = require('./contract-enforcement') as { getDeliverable(id: string): import('./types').StructuredDeliverable | null };
+    const dm = require('./deliverable-merge') as { validateMerged(eid: string, c: import('./types').StructuredDeliverable): unknown };
+    const d = ce.getDeliverable(taskId);
+    if (!d) return { passed: false, violations: [{ field: 'deliverable', message: 'No deliverable found' }], warnings: [] };
+    return dm.validateMerged(engineId, d);
+  } catch { return null; }
+}
+export function diffDeliverableVersions(deliverableId: string, v1: number, v2: number) {
+  try {
+    const ds = require('./deliverable-store') as { getByVersion(id: string, v: number): import('./types').StoredDeliverable | null };
+    const dm = require('./deliverable-merge') as { diff(a: import('./types').StructuredDeliverable, b: import('./types').StructuredDeliverable): unknown };
+    const a = ds.getByVersion(deliverableId, v1);
+    const b = ds.getByVersion(deliverableId, v2);
+    if (!a || !b) return null;
+    return dm.diff(a.content, b.content);
+  } catch { return null; }
+}
+
 module.exports = {
   interpretBoardResult,
   getNextBestActions, getEngineActions, getProjectActions,
@@ -1740,4 +1770,7 @@ module.exports = {
   // Part 60
   getDeliverableStoreIndex, getStoredDeliverable,
   getDeliverableHistory, migrateDeliverables,
+  // Part 61
+  mergeDeliverableFragments, validateMergedDeliverable,
+  diffDeliverableVersions,
 };

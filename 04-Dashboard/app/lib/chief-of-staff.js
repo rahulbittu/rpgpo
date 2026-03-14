@@ -186,6 +186,9 @@ exports.getDeliverableStoreIndex = getDeliverableStoreIndex;
 exports.getStoredDeliverable = getStoredDeliverable;
 exports.getDeliverableHistory = getDeliverableHistory;
 exports.migrateDeliverables = migrateDeliverables;
+exports.mergeDeliverableFragments = mergeDeliverableFragments;
+exports.validateMergedDeliverable = validateMergedDeliverable;
+exports.diffDeliverableVersions = diffDeliverableVersions;
 const context = require('./context');
 const engines = require('./engines');
 const projects = require('./projects');
@@ -2376,6 +2379,47 @@ function migrateDeliverables() {
         return null;
     }
 }
+// Part 61: Merge Pipeline
+function mergeDeliverableFragments(taskId, fragments) {
+    try {
+        const ce = require('./contract-enforcement');
+        const dm = require('./deliverable-merge');
+        const base = ce.getDeliverable(taskId);
+        if (!base)
+            return null;
+        return dm.mergeScaffold(base, fragments);
+    }
+    catch {
+        return null;
+    }
+}
+function validateMergedDeliverable(engineId, taskId) {
+    try {
+        const ce = require('./contract-enforcement');
+        const dm = require('./deliverable-merge');
+        const d = ce.getDeliverable(taskId);
+        if (!d)
+            return { passed: false, violations: [{ field: 'deliverable', message: 'No deliverable found' }], warnings: [] };
+        return dm.validateMerged(engineId, d);
+    }
+    catch {
+        return null;
+    }
+}
+function diffDeliverableVersions(deliverableId, v1, v2) {
+    try {
+        const ds = require('./deliverable-store');
+        const dm = require('./deliverable-merge');
+        const a = ds.getByVersion(deliverableId, v1);
+        const b = ds.getByVersion(deliverableId, v2);
+        if (!a || !b)
+            return null;
+        return dm.diff(a.content, b.content);
+    }
+    catch {
+        return null;
+    }
+}
 module.exports = {
     interpretBoardResult,
     getNextBestActions, getEngineActions, getProjectActions,
@@ -2506,5 +2550,8 @@ module.exports = {
     // Part 60
     getDeliverableStoreIndex, getStoredDeliverable,
     getDeliverableHistory, migrateDeliverables,
+    // Part 61
+    mergeDeliverableFragments, validateMergedDeliverable,
+    diffDeliverableVersions,
 };
 //# sourceMappingURL=chief-of-staff.js.map
