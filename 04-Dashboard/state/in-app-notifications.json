@@ -43,5 +43,59 @@
         }
       }
     ]
+  },
+  {
+    "id": "notif_mmr8x4ys_acf8af3b",
+    "type": "system.info",
+    "severity": "low",
+    "title": "Subtask complete: Gather Pricing Information",
+    "message": "**Pricing details for common AI tools cannot be provided without specific tool names, as the query lists [Tool1, Tool2, Tool3] as placeholders. Below ",
+    "createdAt": 1773548391268,
+    "actions": [
+      {
+        "label": "View Task",
+        "action": "viewWorkflow",
+        "ref": {
+          "kind": "task",
+          "id": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "notif_mmr8xcy1_582787b3",
+    "type": "system.info",
+    "severity": "low",
+    "title": "Subtask complete: Compare Tools",
+    "message": "## Decision: Top 3 Trending AI Tools for Data Engineers",
+    "createdAt": 1773548401609,
+    "actions": [
+      {
+        "label": "View Task",
+        "action": "viewWorkflow",
+        "ref": {
+          "kind": "task",
+          "id": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "notif_mmr8xhpw_bcf7ede2",
+    "type": "system.info",
+    "severity": "low",
+    "title": "Subtask complete: Compile Report",
+    "message": "### Report: Top 3 AI Tools for Data Engineers",
+    "createdAt": 1773548407796,
+    "actions": [
+      {
+        "label": "View Task",
+        "action": "viewWorkflow",
+        "ref": {
+          "kind": "task",
+          "id": ""
+        }
+      }
+    ]
   }
 ]

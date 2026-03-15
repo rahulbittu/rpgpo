@@ -1154,5 +1154,83 @@
     "taskId": "t_mmr8o2w7v2xf",
     "taskType": "subtask",
     "role": "builder"
+  },
+  {
+    "ts": "2026-03-15T04:18:09.607Z",
+    "date": "2026-03-15",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 819,
+    "outputTokens": 801,
+    "totalTokens": 1620,
+    "cost": 0.0100575,
+    "taskId": "t_mmr8utd022lo",
+    "taskType": "deliberation",
+    "role": "board"
+  },
+  {
+    "ts": "2026-03-15T04:19:41.562Z",
+    "date": "2026-03-15",
+    "provider": "perplexity",
+    "model": "sonar",
+    "inputTokens": 40,
+    "outputTokens": 300,
+    "totalTokens": 340,
+    "cost": 0,
+    "taskId": "t_mmr8utd022lo",
+    "taskType": "subtask",
+    "role": "research"
+  },
+  {
+    "ts": "2026-03-15T04:19:46.069Z",
+    "date": "2026-03-15",
+    "provider": "perplexity",
+    "model": "sonar",
+    "inputTokens": 46,
+    "outputTokens": 377,
+    "totalTokens": 423,
+    "cost": 0,
+    "taskId": "t_mmr8utd022lo",
+    "taskType": "subtask",
+    "role": "research"
+  },
+  {
+    "ts": "2026-03-15T04:19:51.253Z",
+    "date": "2026-03-15",
+    "provider": "perplexity",
+    "model": "sonar",
+    "inputTokens": 311,
+    "outputTokens": 853,
+    "totalTokens": 1164,
+    "cost": 0,
+    "taskId": "t_mmr8utd022lo",
+    "taskType": "subtask",
+    "role": "research"
+  },
+  {
+    "ts": "2026-03-15T04:20:01.603Z",
+    "date": "2026-03-15",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "inputTokens": 276,
+    "outputTokens": 2000,
+    "totalTokens": 2276,
+    "cost": 0,
+    "taskId": "t_mmr8utd022lo",
+    "taskType": "subtask",
+    "role": "strategy"
+  },
+  {
+    "ts": "2026-03-15T04:20:07.788Z",
+    "date": "2026-03-15",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 284,
+    "outputTokens": 911,
+    "totalTokens": 1195,
+    "cost": 0.00982,
+    "taskId": "t_mmr8utd022lo",
+    "taskType": "subtask",
+    "role": "creative"
   }
 ]
