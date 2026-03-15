@@ -1261,5 +1261,72 @@
       "completion": "done",
       "domain_routed": "learning"
     }
+  },
+  {
+    "test_case_id": "GPO-WRI-15",
+    "global_rank": 82,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:53:56.724Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "writing"
+    }
+  },
+  {
+    "test_case_id": "GPO-FIN-08",
+    "global_rank": 84,
+    "engine": "Personal Finance & Investing",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:53:56.725Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "wealthresearch"
+    }
+  },
+  {
+    "test_case_id": "GPO-STA-05",
+    "global_rank": 86,
+    "engine": "Startup & Business Builder",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:53:56.725Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "writing",
+      "subtask_count": 4
+    }
+  },
+  {
+    "test_case_id": "GPO-LEA-07",
+    "global_rank": 88,
+    "engine": "Learning & Tutoring",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:53:56.725Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "learning"
+    }
+  },
+  {
+    "test_case_id": "GPO-TRA-05",
+    "global_rank": 90,
+    "engine": "Travel & Relocation Planner",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:53:56.725Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "travel",
+      "subtask_count": 4
+    }
   }
 ]
