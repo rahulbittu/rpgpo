@@ -1,5 +1,413 @@
 [
   {
+    "task_id": "t_mms394w99z3a",
+    "title": "Write a scene where a programmer explains to a non-technical CEO why the last sp",
+    "raw_request": "Write a scene where a programmer explains to a non-technical CEO why the last sprint took 3 weeks instead of 1. Make it funny but technically accurate.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:28:59.529Z",
+    "updated_at": "2026-03-15T18:31:02.266Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:29:29.493Z",
+      "interpreted_objective": "Write a humorous and technically accurate scene where a programmer explains to a non-technical CEO why a sprint took longer than expected.",
+      "expected_outcome": "A funny, engaging, and technically sound scene that illustrates the challenges of software development timelines.",
+      "key_unknowns": [
+        "Specific technical reasons for the sprint delay",
+        "The personalities of the programmer and CEO",
+        "The setting of the conversation"
+      ],
+      "recommended_strategy": "Research common reasons for sprint delays in software development to ensure technical accuracy. Use this information to craft a humorous dialogue that conveys the complexity of the situation to a non-technical audience. Focus on relatable scenarios and misunderstandings that can lead to comedic moments.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research common sprint delay reasons",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of common reasons why software development sprints can take longer than planned, with sources.",
+          "prompt": "Search the web for common reasons why software development sprints often take longer than planned. Include real examples, technical reasons, and any humorous anecdotes or quotes from developers.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize scene dialogue",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A humorous and technically accurate scene script where a programmer explains to a CEO why the last sprint took longer than expected.",
+          "prompt": "Based on the research results, write a scene where a programmer humorously explains to a non-technical CEO why the last sprint took 3 weeks instead of 1. Include technical details that are accurate but presented in a funny way.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-sprint-delay-scene.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1921
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mms393c4el10",
+    "title": "Create a 90-day plan for transitioning from individual contributor to engineerin",
+    "raw_request": "Create a 90-day plan for transitioning from individual contributor to engineering manager. Include leadership skills to develop, books to read, and relationships to build.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:28:57.508Z",
+    "updated_at": "2026-03-15T18:30:49.438Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:29:25.594Z",
+      "interpreted_objective": "Create a 90-day transition plan for Rahul to move from individual contributor to engineering manager.",
+      "expected_outcome": "Rahul has a clear roadmap with specific leadership skills to develop, books to read, and relationships to build for his transition.",
+      "key_unknowns": [
+        "Rahul's current leadership skills",
+        "Rahul's preferred learning style",
+        "Key stakeholders in Rahul's organization"
+      ],
+      "recommended_strategy": "Research effective leadership skills and resources for engineering managers. Develop a structured 90-day plan including specific books, skills, and relationship-building activities. Tailor the plan to Rahul's current role and future goals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Leadership Skills and Resources",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of essential leadership skills and recommended books for engineering managers.",
+          "prompt": "Search the web for current, specific information about essential leadership skills and recommended books for transitioning to an engineering manager role. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop 90-Day Transition Plan",
+          "stage": "strategy",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "A detailed 90-day plan with specific actions, books to read, skills to develop, and relationships to build.",
+          "prompt": "Analyze the research results and develop a 90-day transition plan for Rahul. Include specific leadership skills to develop, books to read, and relationships to build. Tailor the plan to his current role and future goals.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2333
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms391ry2p2n",
+    "title": "Research the best coworking spaces in Austin TX for solo developers. Compare WeW",
+    "raw_request": "Research the best coworking spaces in Austin TX for solo developers. Compare WeWork, Industrious, and local options. Include pricing, amenities, and community vibe.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:28:55.486Z",
+    "updated_at": "2026-03-15T18:30:40.341Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:29:19.967Z",
+      "interpreted_objective": "Identify and compare the best coworking spaces in Austin, TX for solo developers, focusing on WeWork, Industrious, and local options.",
+      "expected_outcome": "A comprehensive comparison report detailing pricing, amenities, and community vibe of coworking spaces in Austin, TX, with a clear recommendation.",
+      "key_unknowns": [
+        "Current pricing of coworking spaces",
+        "Specific amenities offered",
+        "Community vibe descriptions",
+        "Local coworking space options"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current data on coworking spaces in Austin, TX, focusing on WeWork, Industrious, and local options. Then, synthesize this data into a structured comparison report with specific recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Coworking Spaces in Austin",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on pricing, amenities, and community vibe of WeWork, Industrious, and local coworking spaces in Austin, TX.",
+          "prompt": "Search the web for current, specific information about coworking spaces in Austin, TX for solo developers. Focus on WeWork, Industrious, and local options. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Coworking Space Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of coworking spaces in Austin, TX, with a recommendation.",
+          "prompt": "Based on the research results from the previous subtask, synthesize actionable recommendations for the best coworking spaces in Austin, TX for solo developers. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-coworking-spaces-austin.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1932
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms3907uqnpj",
+    "title": "Design a personal knowledge graph connecting my skills, interests, projects, and",
+    "raw_request": "Design a personal knowledge graph connecting my skills, interests, projects, and career goals. Show how to identify gaps and opportunities from the connections.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:28:53.466Z",
+    "updated_at": "2026-03-15T18:30:33.549Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:29:05.635Z",
+      "interpreted_objective": "Design a personal knowledge graph to map skills, interests, projects, and career goals to identify gaps and opportunities.",
+      "expected_outcome": "A visual representation of the knowledge graph that highlights connections and identifies potential areas for growth or new opportunities.",
+      "key_unknowns": [
+        "Rahul's specific skills, interests, projects, and career goals",
+        "Preferred tools or platforms for creating knowledge graphs",
+        "Criteria for identifying gaps and opportunities"
+      ],
+      "recommended_strategy": "Conduct research on best practices for creating personal knowledge graphs and tools available. Use this information to design a framework for Rahul's knowledge graph. Identify gaps and opportunities by analyzing connections within the graph.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Selection of tools or platforms for knowledge graph creation",
+        "Criteria for identifying gaps and opportunities"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Knowledge Graphs",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and recommended tools for creating personal knowledge graphs.",
+          "prompt": "Search the web for current best practices and tools for creating personal knowledge graphs that connect skills, interests, projects, and career goals. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Knowledge Graph Strategy",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A strategic plan for creating a personal knowledge graph, including tool recommendations and criteria for identifying gaps and opportunities.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a strategic plan for creating a personal knowledge graph. Include recommendations for tools and methods to identify gaps and opportunities.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-knowledge-graph-strategy.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1858
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms38ynheoci",
+    "title": "Write a comprehensive onboarding email sequence for a new SaaS customer. 5 email",
+    "raw_request": "Write a comprehensive onboarding email sequence for a new SaaS customer. 5 emails over 14 days. Include subject lines, body copy, and CTAs. Friendly but professional tone.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:28:51.437Z",
+    "updated_at": "2026-03-15T18:30:24.748Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:29:00.309Z",
+      "interpreted_objective": "Create a 5-email onboarding sequence for a new SaaS customer over 14 days.",
+      "expected_outcome": "A friendly yet professional onboarding email sequence that effectively engages new SaaS customers.",
+      "key_unknowns": [
+        "Specific SaaS product details",
+        "Target audience demographics",
+        "Key features or benefits to highlight"
+      ],
+      "recommended_strategy": "Research best practices for SaaS onboarding email sequences. Synthesize findings into a structured email sequence with subject lines, body copy, and CTAs. Ensure the tone is friendly but professional.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research SaaS onboarding email best practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and examples for SaaS onboarding emails.",
+          "prompt": "Search the web for current best practices and examples of effective SaaS onboarding email sequences. Include specific subject lines, body copy examples, and CTAs. Provide sources and URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize onboarding email sequence",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 5-email onboarding sequence with subject lines, body copy, and CTAs.",
+          "prompt": "Based on the research results, create a 5-email onboarding sequence for a new SaaS customer. Include subject lines, body copy, and CTAs for each email. Ensure the tone is friendly but professional.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-onboarding-email-sequence.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1832
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mms38x2l82x3",
+    "title": "Create an A/B testing framework guide for a startup. Include hypothesis formatio",
+    "raw_request": "Create an A/B testing framework guide for a startup. Include hypothesis formation, sample size calculation, test duration, and statistical significance. With practical examples.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:28:49.389Z",
+    "updated_at": "2026-03-15T18:29:52.861Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:28:53.907Z",
+      "interpreted_objective": "Create a comprehensive guide on A/B testing for startups, covering hypothesis formation, sample size calculation, test duration, and statistical significance with practical examples.",
+      "expected_outcome": "A detailed, practical guide that startups can use to implement A/B testing effectively, enhancing decision-making and product optimization.",
+      "key_unknowns": [
+        "Specific startup industry or sector focus",
+        "Preferred statistical methods or tools for analysis",
+        "Level of detail required for practical examples"
+      ],
+      "recommended_strategy": "Conduct web research to gather current best practices and methodologies for A/B testing in startups. Synthesize findings into a structured guide that includes practical examples. Ensure the guide is actionable and easy to understand for startup teams with varying levels of expertise.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research A/B Testing Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and methodologies for A/B testing in startups.",
+          "prompt": "Search the web for current best practices and methodologies for A/B testing in startups. Include information on hypothesis formation, sample size calculation, test duration, and statistical significance. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize A/B Testing Guide",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on A/B testing for startups, including practical examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on A/B testing for startups. Include sections on hypothesis formation, sample size calculation, test duration, and statistical significance. Provide practical examples and ensure the guide is actionable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2170
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
     "task_id": "t_mms2xzmyswbw",
     "title": "Create an ergonomic assessment checklist for a home office. Include desk height,",
     "raw_request": "Create an ergonomic assessment checklist for a home office. Include desk height, monitor position, chair settings, lighting, and break reminders. Based on occupational health guidelines.",

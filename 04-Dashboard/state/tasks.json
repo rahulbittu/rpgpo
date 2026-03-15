@@ -1,5 +1,291 @@
 [
   {
+    "id": "mms3arokx1qt",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize scene dialogue",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms39s2g2smo"
+    },
+    "createdAt": "2026-03-15T18:30:15.716Z",
+    "updatedAt": "2026-03-15T18:31:02.272Z",
+    "output": "Synthesize scene dialogue: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/screenwriting-{date}-sprint-delay-scene.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms39s2g2smo.md"
+    ]
+  },
+  {
+    "id": "mms3alw1d77y",
+    "type": "execute-subtask",
+    "label": "Subtask: Develop 90-Day Transition Plan",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms39p1lf10m"
+    },
+    "createdAt": "2026-03-15T18:30:08.209Z",
+    "updatedAt": "2026-03-15T18:30:49.444Z",
+    "output": "Develop 90-Day Transition Plan: ## 90-Day Transition Plan for Rahul: Data Engineering Leadership & Startup Growth\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-gemini-2026-03-15-st_mms39p1lf10m.md"
+    ]
+  },
+  {
+    "id": "mms3adoizz19",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Coworking Space Comparison",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms39kp56vtv"
+    },
+    "createdAt": "2026-03-15T18:29:57.570Z",
+    "updatedAt": "2026-03-15T18:30:40.346Z",
+    "output": "Synthesize Coworking Space Comparison: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/shopping-{date}-coworking-spaces-austin.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms39kp56vtv.md"
+    ]
+  },
+  {
+    "id": "mms3a3qbgstr",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Knowledge Graph Strategy",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms399nkghel"
+    },
+    "createdAt": "2026-03-15T18:29:44.675Z",
+    "updatedAt": "2026-03-15T18:30:33.556Z",
+    "output": "Synthesize Knowledge Graph Strategy: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/learning-{date}-knowledge-graph-strategy.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms399nkghel.md"
+    ]
+  },
+  {
+    "id": "mms39xyj4avz",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize onboarding email sequence",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms395jn2bm4"
+    },
+    "createdAt": "2026-03-15T18:29:37.195Z",
+    "updatedAt": "2026-03-15T18:30:24.754Z",
+    "output": "Synthesize onboarding email sequence: ## 5-Email Onboarding Sequence for New SaaS Customers\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/writing-{date}-onboarding-email-sequence.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms395jn2bm4.md"
+    ]
+  },
+  {
+    "id": "mms39s3oizfm",
+    "type": "execute-subtask",
+    "label": "Subtask: Research common sprint delay reasons",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms39s1rcj5c"
+    },
+    "createdAt": "2026-03-15T18:29:29.604Z",
+    "updatedAt": "2026-03-15T18:30:15.717Z",
+    "output": "Research common sprint delay reasons: ## Common Reasons for Sprint Overruns\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms39s1rcj5c.md"
+    ]
+  },
+  {
+    "id": "mms39p2rp9ar",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Leadership Skills and Resources",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms39p156yq6"
+    },
+    "createdAt": "2026-03-15T18:29:25.683Z",
+    "updatedAt": "2026-03-15T18:30:08.209Z",
+    "output": "Research Leadership Skills and Resources: ## Essential Leadership Skills for Engineering Manager Transition\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms39p156yq6.md"
+    ]
+  },
+  {
+    "id": "mms39kq7rg3q",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Coworking Spaces in Austin",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms39kor6kqj"
+    },
+    "createdAt": "2026-03-15T18:29:20.047Z",
+    "updatedAt": "2026-03-15T18:29:57.570Z",
+    "output": "Research Coworking Spaces in Austin: ## No Relevant Results Found\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms39kor6kqj.md"
+    ]
+  },
+  {
+    "id": "mms39g5h4s79",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize A/B Testing Guide",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms390lp411j"
+    },
+    "createdAt": "2026-03-15T18:29:14.117Z",
+    "updatedAt": "2026-03-15T18:29:52.868Z",
+    "output": "Synthesize A/B Testing Guide: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms390lp411j.md"
+    ]
+  },
+  {
+    "id": "mms399orjp5t",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Best Practices for Knowledge Graphs",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms399mwjtod"
+    },
+    "createdAt": "2026-03-15T18:29:05.739Z",
+    "updatedAt": "2026-03-15T18:29:44.675Z",
+    "output": "Research Best Practices for Knowledge Graphs: ## Finding 1: GraphRAG by Microsoft for Knowledge Graph Construction\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms399mwjtod.md"
+    ]
+  },
+  {
+    "id": "mms395ku6xrk",
+    "type": "execute-subtask",
+    "label": "Subtask: Research SaaS onboarding email best practices",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms395iy36fg"
+    },
+    "createdAt": "2026-03-15T18:29:00.414Z",
+    "updatedAt": "2026-03-15T18:29:37.196Z",
+    "output": "Research SaaS onboarding email best practices: ## Key Best Practices for SaaS Onboarding Email Sequences\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms395iy36fg.md"
+    ]
+  },
+  {
+    "id": "mms394wc3wpf",
+    "type": "deliberate",
+    "label": "Deliberate: Write a scene where a programmer explains to a non-technical CEO why the last sp",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms394w99z3a",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T18:28:59.532Z",
+    "updatedAt": "2026-03-15T18:29:29.604Z",
+    "output": "Deliberation complete.\nObjective: Write a humorous and technically accurate scene where a programmer explains to a non-technical CEO why a sprint took longer than expected.\nStrategy: Research common reasons for sprint delays in software development to ensure technical accuracy. Use this information to craft a humorous dialogue that conveys the complexity of the situation to a non-technical audience. Focus on relatable scenarios and misunderstandings that can lead to comedic moments.\nRisk: green\nSubtasks: 2\nTokens: 1921",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms393c7j2k2",
+    "type": "deliberate",
+    "label": "Deliberate: Create a 90-day plan for transitioning from individual contributor to engineerin",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms393c4el10",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T18:28:57.511Z",
+    "updatedAt": "2026-03-15T18:29:25.683Z",
+    "output": "Deliberation complete.\nObjective: Create a 90-day transition plan for Rahul to move from individual contributor to engineering manager.\nStrategy: Research effective leadership skills and resources for engineering managers. Develop a structured 90-day plan including specific books, skills, and relationship-building activities. Tailor the plan to Rahul's current role and future goals.\nRisk: green\nSubtasks: 2\nTokens: 2333",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms391s1lrsw",
+    "type": "deliberate",
+    "label": "Deliberate: Research the best coworking spaces in Austin TX for solo developers. Compare WeW",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms391ry2p2n",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T18:28:55.489Z",
+    "updatedAt": "2026-03-15T18:29:20.048Z",
+    "output": "Deliberation complete.\nObjective: Identify and compare the best coworking spaces in Austin, TX for solo developers, focusing on WeWork, Industrious, and local options.\nStrategy: First, conduct a web search to gather current data on coworking spaces in Austin, TX, focusing on WeWork, Industrious, and local options. Then, synthesize this data into a structured comparison report with specific recommendations.\nRisk: green\nSubtasks: 2\nTokens: 1932",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms390mwkwuc",
+    "type": "execute-subtask",
+    "label": "Subtask: Research A/B Testing Best Practices",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms390l2tnij"
+    },
+    "createdAt": "2026-03-15T18:28:54.008Z",
+    "updatedAt": "2026-03-15T18:29:14.118Z",
+    "output": "Research A/B Testing Best Practices: ## Hypothesis Formation\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms390l2tnij.md"
+    ]
+  },
+  {
+    "id": "mms3907x8eky",
+    "type": "deliberate",
+    "label": "Deliberate: Design a personal knowledge graph connecting my skills, interests, projects, and",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms3907uqnpj",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T18:28:53.469Z",
+    "updatedAt": "2026-03-15T18:29:05.739Z",
+    "output": "Deliberation complete.\nObjective: Design a personal knowledge graph to map skills, interests, projects, and career goals to identify gaps and opportunities.\nStrategy: Conduct research on best practices for creating personal knowledge graphs and tools available. Use this information to design a framework for Rahul's knowledge graph. Identify gaps and opportunities by analyzing connections within the graph.\nRisk: green\nSubtasks: 2\nTokens: 1858",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms38ynoia6b",
+    "type": "deliberate",
+    "label": "Deliberate: Write a comprehensive onboarding email sequence for a new SaaS customer. 5 email",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms38ynheoci",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T18:28:51.444Z",
+    "updatedAt": "2026-03-15T18:29:00.414Z",
+    "output": "Deliberation complete.\nObjective: Create a 5-email onboarding sequence for a new SaaS customer over 14 days.\nStrategy: Research best practices for SaaS onboarding email sequences. Synthesize findings into a structured email sequence with subject lines, body copy, and CTAs. Ensure the tone is friendly but professional.\nRisk: green\nSubtasks: 2\nTokens: 1832",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms38x2om41p",
+    "type": "deliberate",
+    "label": "Deliberate: Create an A/B testing framework guide for a startup. Include hypothesis formatio",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms38x2l82x3",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T18:28:49.392Z",
+    "updatedAt": "2026-03-15T18:28:54.009Z",
+    "output": "Deliberation complete.\nObjective: Create a comprehensive guide on A/B testing for startups, covering hypothesis formation, sample size calculation, test duration, and statistical significance with practical examples.\nStrategy: Conduct web research to gather current best practices and methodologies for A/B testing in startups. Synthesize findings into a structured guide that includes practical examples. Ensure the guide is actionable and easy to understand for startup teams with varying levels of expertise.\nRisk: green\nSubtasks: 2\nTokens: 2170",
+    "error": null,
+    "filesWritten": []
+  },
+  {
     "id": "mms2zn97cttu",
     "type": "execute-subtask",
     "label": "Subtask: Synthesize Ergonomic Checklist",
@@ -1304,290 +1590,5 @@
     "output": "Deliberation complete.\nObjective: Research and compare static site generators and hosting options for building a personal website as a data engineer.\nStrategy: First, conduct web research to gather current information on Hugo, Next.js, and Astro, focusing on their features, benefits, and use cases. Then, research hosting options and costs for each generator. Finally, synthesize the findings into a comparative analysis with recommendations.\nRisk: green\nSubtasks: 3\nTokens: 2365",
     "error": null,
     "filesWritten": []
-  },
-  {
-    "id": "mms1qaz36glv",
-    "type": "deliberate",
-    "label": "Deliberate: Write a resignation letter template that is professional and bridges-burning-fre",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms1qaz0z0ww",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T17:46:21.327Z",
-    "updatedAt": "2026-03-15T17:46:25.989Z",
-    "output": "Deliberation complete.\nObjective: Create a professional resignation letter template for a senior engineer leaving for a startup.\nStrategy: Draft a resignation letter template that maintains professionalism and avoids burning bridges. Ensure the letter includes a clear notice period, an offer to assist with the transition, and expressions of gratitude for the opportunities provided. Use a tone that reflects the seniority of the engineer and the new opportunity at a startup.\nRisk: green\nSubtasks: 1\nTokens: 1850",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms1n8uie8sh",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Guide for Home Recording Studio Setup",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms1m5hl5aje"
-    },
-    "createdAt": "2026-03-15T17:43:58.602Z",
-    "updatedAt": "2026-03-15T17:44:23.519Z",
-    "output": "Synthesize Guide for Home Recording Studio Setup: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/music-{date}-home-recording-studio-guide.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms1m5hl5aje.md"
-    ]
-  },
-  {
-    "id": "mms1mvmpgv9o",
-    "type": "execute-subtask",
-    "label": "Subtask: Compile Data Lakehouse Architecture Guide",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms1luefxuc2"
-    },
-    "createdAt": "2026-03-15T17:43:41.473Z",
-    "updatedAt": "2026-03-15T17:44:15.834Z",
-    "output": "Compile Data Lakehouse Architecture Guide: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms1luefxuc2.md"
-    ]
-  },
-  {
-    "id": "mms1mhye3bcu",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize journaling challenge prompts",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms1lp7xckhr"
-    },
-    "createdAt": "2026-03-15T17:43:23.750Z",
-    "updatedAt": "2026-03-15T17:44:05.851Z",
-    "output": "Synthesize journaling challenge prompts: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/health-{date}-journaling-challenge.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms1lp7xckhr.md"
-    ]
-  },
-  {
-    "id": "mms1m5in9ho8",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Budget-Friendly Recording Equipment",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms1m5h3s59n"
-    },
-    "createdAt": "2026-03-15T17:43:07.631Z",
-    "updatedAt": "2026-03-15T17:43:58.602Z",
-    "output": "Research Budget-Friendly Recording Equipment: ## Microphones\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms1m5h3s59n.md"
-    ]
-  },
-  {
-    "id": "mms1lzf17j1x",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize App Comparison",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms1lebmhacy"
-    },
-    "createdAt": "2026-03-15T17:42:59.725Z",
-    "updatedAt": "2026-03-15T17:43:50.352Z",
-    "output": "Synthesize App Comparison: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/shopping-2026-productivity-apps.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms1lebmhacy.md"
-    ]
-  },
-  {
-    "id": "mms1lufyilqq",
-    "type": "execute-subtask",
-    "label": "Subtask: Compare Delta Lake, Apache Iceberg, and Apache Hudi",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms1lue2e2h9"
-    },
-    "createdAt": "2026-03-15T17:42:53.278Z",
-    "updatedAt": "2026-03-15T17:43:41.473Z",
-    "output": "Compare Delta Lake, Apache Iceberg, and Apache Hudi: ## Delta Lake, Apache Iceberg, and Apache Hudi Comparison\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms1lue2e2h9.md"
-    ]
-  },
-  {
-    "id": "mms1luft4tch",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Data Lakehouse Components",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms1ludmpuuo"
-    },
-    "createdAt": "2026-03-15T17:42:53.273Z",
-    "updatedAt": "2026-03-15T17:43:31.691Z",
-    "output": "Research Data Lakehouse Components: ## Storage Layer\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms1ludmpuuo.md"
-    ]
-  },
-  {
-    "id": "mms1lp8zuaor",
-    "type": "execute-subtask",
-    "label": "Subtask: Research existing journaling challenges",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms1lp7f6a5s"
-    },
-    "createdAt": "2026-03-15T17:42:46.547Z",
-    "updatedAt": "2026-03-15T17:43:23.750Z",
-    "output": "Research existing journaling challenges: I need to conduct a web search to find current, specific information about 30-day journaling challenges with self-reflection, goal setting, and gratit\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms1lp7f6a5s.md"
-    ]
-  },
-  {
-    "id": "mms1lldcp9mr",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Pitch Deck Outline",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms1la4qmq9b"
-    },
-    "createdAt": "2026-03-15T17:42:41.520Z",
-    "updatedAt": "2026-03-15T17:43:15.783Z",
-    "output": "Synthesize Pitch Deck Outline: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms1la4qmq9b.md"
-    ]
-  },
-  {
-    "id": "mms1lfk8k6ph",
-    "type": "deliberate",
-    "label": "Deliberate: Write a comprehensive guide for setting up a home recording studio on a budget u",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms1lfk6vfmg",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T17:42:33.992Z",
-    "updatedAt": "2026-03-15T17:43:07.631Z",
-    "output": "Deliberation complete.\nObjective: Create a comprehensive guide for setting up a home recording studio on a budget under $500.\nStrategy: Conduct research on current budget-friendly recording equipment and software options. Synthesize findings into a comprehensive guide that provides clear recommendations and setup instructions. Ensure all recommendations fit within the $500 budget constraint.\nRisk: green\nSubtasks: 2\nTokens: 1908",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms1lecnygon",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Productivity Apps",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms1leb4fn0w"
-    },
-    "createdAt": "2026-03-15T17:42:32.423Z",
-    "updatedAt": "2026-03-15T17:42:59.726Z",
-    "output": "Research Productivity Apps: Notion is an all-in-one cloud workspace excelling in collaborative team knowledge management, databases, project tools, and AI integration, with a fre\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms1leb4fn0w.md"
-    ]
-  },
-  {
-    "id": "mms1ld8632vo",
-    "type": "deliberate",
-    "label": "Deliberate: Explain how to build a data lakehouse architecture from scratch. Cover storage l",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms1ld83v1cg",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T17:42:30.966Z",
-    "updatedAt": "2026-03-15T17:42:53.279Z",
-    "output": "Deliberation complete.\nObjective: Explain the process of building a data lakehouse architecture from scratch, including comparisons of Delta Lake, Apache Iceberg, and Apache Hudi.\nStrategy: First, research the components of a data lakehouse architecture, focusing on storage, compute, governance, and query engines. Then, compare Delta Lake, Apache Iceberg, and Apache Hudi in terms of features, performance, and use cases. Finally, compile the findings into a detailed report.\nRisk: green\nSubtasks: 3\nTokens: 2222",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms1law3sju0",
-    "type": "deliberate",
-    "label": "Deliberate: Create a 30-day journaling challenge with daily prompts. Focus on self-reflectio",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms1law1iaif",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T17:42:27.939Z",
-    "updatedAt": "2026-03-15T17:42:46.547Z",
-    "output": "Deliberation complete.\nObjective: Create a 30-day journaling challenge with daily prompts focusing on self-reflection, goal setting, and gratitude.\nStrategy: Research existing journaling challenges to gather ideas and best practices. Synthesize findings into a structured 30-day challenge with clear, actionable prompts for both morning and evening entries. Ensure prompts are varied and cover self-reflection, goal setting, and gratitude effectively.\nRisk: green\nSubtasks: 2\nTokens: 1868",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms1la5k9khd",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Standard Pitch Deck Structures",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms1la4er2g0"
-    },
-    "createdAt": "2026-03-15T17:42:26.984Z",
-    "updatedAt": "2026-03-15T17:42:41.520Z",
-    "output": "Research Standard Pitch Deck Structures: ## Finding 1: MADX Digital SaaS Pitch Deck Guide (2026 Update Implied)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms1la4er2g0.md"
-    ]
-  },
-  {
-    "id": "mms1l8jy945d",
-    "type": "deliberate",
-    "label": "Deliberate: Research the best productivity apps for engineers in 2026. Compare Notion, Linea",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms1l8jvuv17",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T17:42:24.910Z",
-    "updatedAt": "2026-03-15T17:42:32.423Z",
-    "output": "Deliberation complete.\nObjective: Research and compare productivity apps for engineers in 2026, focusing on Notion, Linear, Obsidian, and Raycast, including pricing, features, and suitability for solo engineers vs teams.\nStrategy: First, perform web research to gather current information on pricing and features of the specified apps. Then, synthesize this data into a structured comparison report, highlighting pros and cons and recommending the best app for solo engineers and teams.\nRisk: green\nSubtasks: 2\nTokens: 1958",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms1l67u78w2",
-    "type": "deliberate",
-    "label": "Deliberate: Create an investor-ready pitch deck outline for a SaaS startup. Include 12 slide",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms1l67ruugl",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T17:42:21.882Z",
-    "updatedAt": "2026-03-15T17:42:26.985Z",
-    "output": "Deliberation complete.\nObjective: Create a detailed outline for an investor-ready pitch deck for a SaaS startup.\nStrategy: Develop a structured pitch deck outline by identifying key content for each slide. Use existing knowledge of SaaS startups and standard pitch deck structures to ensure completeness and relevance. Focus on clarity and conciseness to make the pitch compelling for investors.\nRisk: green\nSubtasks: 2\nTokens: 2385",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms1ii6tpehn",
-    "type": "execute-subtask",
-    "label": "Subtask: Draft PRD for business owner features",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms1hgxegpgv"
-    },
-    "createdAt": "2026-03-15T17:40:17.429Z",
-    "updatedAt": "2026-03-15T17:41:22.346Z",
-    "output": "Draft PRD for business owner features: ## Product Requirements Document (PRD) for Business Owner Features\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms1hgxegpgv.md"
-    ]
   }
 ]

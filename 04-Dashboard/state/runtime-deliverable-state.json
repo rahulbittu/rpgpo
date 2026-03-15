@@ -2777,5 +2777,97 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-15T18:20:45.355Z"
+  },
+  "t_mms38x2l82x3": {
+    "task_id": "t_mms38x2l82x3",
+    "deliverable_id": "dlv_rpgpo_tmms38x2l82x3_recommendation_9094759d",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:28:53.920Z"
+  },
+  "t_mms38ynheoci": {
+    "task_id": "t_mms38ynheoci",
+    "deliverable_id": "dlv_rpgpo_tmms38ynheoci_document_8a78883a",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:29:00.324Z"
+  },
+  "t_mms3907uqnpj": {
+    "task_id": "t_mms3907uqnpj",
+    "deliverable_id": "dlv_rpgpo_tmms3907uqnpj_document_365d7d3a",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:29:05.653Z"
+  },
+  "t_mms391ry2p2n": {
+    "task_id": "t_mms391ry2p2n",
+    "deliverable_id": "dlv_rpgpo_tmms391ry2p2n_shopping_500a4e1d",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:29:19.978Z"
+  },
+  "t_mms393c4el10": {
+    "task_id": "t_mms393c4el10",
+    "deliverable_id": "dlv_rpgpo_tmms393c4el10_document_ad1c46f8",
+    "engine_id": "careeregine",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:29:25.611Z"
+  },
+  "t_mms394w99z3a": {
+    "task_id": "t_mms394w99z3a",
+    "deliverable_id": "dlv_rpgpo_tmms394w99z3a_creative_draft_65173d49",
+    "engine_id": "screenwriting",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "artifacts",
+      "premise",
+      "beat_sheet"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:29:29.509Z"
   }
 }

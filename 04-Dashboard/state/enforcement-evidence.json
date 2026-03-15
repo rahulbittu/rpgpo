@@ -1,5 +1,77 @@
 [
   {
+    "record_id": "ee_mms3brlgqwjj",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing artifacts, premise, bea",
+    "scope_type": "task",
+    "scope_id": "t_mms394w99z3a",
+    "route": "screenwriting",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:31:02.260Z"
+  },
+  {
+    "record_id": "ee_mms3bhp8a5ei",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mms393c4el10",
+    "route": "careeregine",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:30:49.436Z"
+  },
+  {
+    "record_id": "ee_mms3baof91ol",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing items, comparisonKeys, ",
+    "scope_type": "task",
+    "scope_id": "t_mms391ry2p2n",
+    "route": "shopping",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:30:40.335Z"
+  },
+  {
+    "record_id": "ee_mms3b5fv3ev5",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mms3907uqnpj",
+    "route": "learning",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:30:33.547Z"
+  },
+  {
+    "record_id": "ee_mms3aynedqez",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mms38ynheoci",
+    "route": "writing",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:30:24.746Z"
+  },
+  {
+    "record_id": "ee_mms3aa1jtp0w",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing recommendations, thesis",
+    "scope_type": "task",
+    "scope_id": "t_mms38x2l82x3",
+    "route": "research",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:29:52.855Z"
+  },
+  {
     "record_id": "ee_mms30h4mh6j0",
     "area": "runtime_deliverable",
     "middleware_ran": "runtime-deliverable-pipeline",
