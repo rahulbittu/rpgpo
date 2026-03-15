@@ -3352,6 +3352,34 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 77: Smart Templates + Recurring Scheduler
+  if (req.url?.match(/^\/api\/templates(\?.*)?$/) && req.method === 'GET') {
+    try { const ts = require('./lib/template-store'); return json(res, { templates: ts.listTemplates() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/templates' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const ts = require('./lib/template-store'); return json(res, { ok: true, template: ts.createTemplate(body) }, 201); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/templates\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/templates\/([^/]+)$/)[1];
+    try { const ts = require('./lib/template-store'); const t = ts.getTemplate(id); return t ? json(res, t) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/templates\/([^/]+)$/) && req.method === 'DELETE') {
+    const id = req.url.match(/^\/api\/templates\/([^/]+)$/)[1];
+    try { const ts = require('./lib/template-store'); return json(res, { ok: ts.deleteTemplate(id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/schedules(\?.*)?$/) && req.method === 'GET') {
+    try { const rs = require('./lib/recurring-scheduler'); return json(res, { schedules: rs.listSchedules() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/schedules' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const rs = require('./lib/recurring-scheduler'); return json(res, { ok: true, schedule: rs.createSchedule(body) }, 201); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/schedules\/([^/]+)$/) && req.method === 'DELETE') {
+    const id = req.url.match(/^\/api\/schedules\/([^/]+)$/)[1];
+    try { const rs = require('./lib/recurring-scheduler'); return json(res, { ok: rs.deleteSchedule(id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 76: Conversations + Task Chaining
   if (req.url?.match(/^\/api\/conversations\/([^/]+)$/) && req.method === 'GET') {
     const taskId = req.url.match(/^\/api\/conversations\/([^/]+)$/)[1];

@@ -6938,3 +6938,40 @@ export interface ChainEvaluationResult {
   triggered: boolean;
   tasksToCreate: Array<{ template: ChainRule['nextTaskTemplate']; ruleId: string; parentOutputRef?: string }>;
 }
+
+// ── Part 77: Smart Templates + Recurring Task Scheduler ──
+
+export interface TaskTemplate {
+  id: string;
+  name: string;
+  description: string;
+  domain: string;
+  urgency: string;
+  prompt: string;
+  desiredOutcome: string;
+  tags: string[];
+  scope: 'private' | 'tenant' | 'global';
+  version: number;
+  createdBy: string;
+  createdAt: number;
+  updatedAt: number;
+  metrics: { runs: number; successRate: number; avgLatencyMs: number; avgCostUsd: number; qualityScore: number };
+}
+
+export interface RecurringSchedule {
+  id: string;
+  name: string;
+  templateId: string;
+  cron: string;
+  timezone: 'UTC' | 'LOCAL';
+  enabled: boolean;
+  misfire: 'skip' | 'catchup';
+  concurrency: 'skip_if_running' | 'allow';
+  maxCostPerRunUsd?: number;
+  createdAt: number;
+  updatedAt: number;
+  lastRunAt?: number;
+  nextRunAt?: number;
+  runCount: number;
+  history: Array<{ runAt: number; taskId: string; status: 'success' | 'failed' | 'skipped' }>;
+}
