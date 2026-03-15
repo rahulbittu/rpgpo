@@ -3352,6 +3352,22 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 83: RBAC + API Keys
+  if (req.url === '/api/rbac/keys' && req.method === 'GET') {
+    try { const rbac = require('./lib/rbac'); return json(res, { keys: rbac.listApiKeys() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/rbac/keys' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const rbac = require('./lib/rbac'); const result = rbac.createApiKey(body.name || 'API Key', body.role || 'viewer'); return json(res, { ok: true, key: result.key, apiKey: { ...result.apiKey, keyHash: undefined } }, 201); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/rbac\/keys\/([^/]+)\/revoke$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/rbac\/keys\/([^/]+)\/revoke$/)[1];
+    try { const rbac = require('./lib/rbac'); return json(res, { ok: rbac.revokeApiKey(id) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/rbac/audit' && req.method === 'GET') {
+    try { const rbac = require('./lib/rbac'); return json(res, { entries: rbac.getAuditLog() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 82: Health Check + Onboarding
   if (req.url === '/api/health' && req.method === 'GET') {
     try { const hc = require('./lib/health-check'); return json(res, hc.runHealthChecks(false)); } catch (e) { return json(res, { error: e.message }, 500); }
