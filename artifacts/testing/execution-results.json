@@ -1473,5 +1473,70 @@
       "completion": "done",
       "domain_routed": "health"
     }
+  },
+  {
+    "test_case_id": "GPO-SCR-04",
+    "global_rank": 114,
+    "engine": "Screenwriting & Story Development",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:03:32.438Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "screenwriting"
+    }
+  },
+  {
+    "test_case_id": "GPO-HOM-03",
+    "global_rank": 116,
+    "engine": "Home & Lifestyle Design",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:03:32.439Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "shopping"
+    }
+  },
+  {
+    "test_case_id": "GPO-CAR-07",
+    "global_rank": 118,
+    "engine": "Career & Job Search",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:03:32.439Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "careeregine"
+    }
+  },
+  {
+    "test_case_id": "GPO-HEA-07",
+    "global_rank": 120,
+    "engine": "Health & Wellness Coach",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:03:32.439Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "health"
+    }
+  },
+  {
+    "test_case_id": "GPO-WRI-18",
+    "global_rank": 122,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:03:32.439Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "writing"
+    }
   }
 ]
