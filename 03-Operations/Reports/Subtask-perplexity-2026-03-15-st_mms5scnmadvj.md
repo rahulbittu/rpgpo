@@ -1,0 +1,39 @@
+# Subtask Output — Research Espresso Machines
+## Model: sonar
+## Stage: research
+## Date: 2026-03-15
+
+## Top Semi-Automatic Espresso Machines Under $500 with Milk Steaming for Beginners (2026)
+
+The **Breville Barista Express** ($499 on sale) stands out as the best overall for beginners due to its built-in grinder, manual steam wand, PID temperature control, and large community support for troubleshooting.[1] Other strong options include the **Casabrews 3700** (under $130) for value and ease, and **De'Longhi Dedica Maestro Plus** (under £500) for consistency and beginner-friendly features.[1][2]
+
+### Breville Barista Express (~$499 on sale)
+- **Key features**: Built-in conical burr grinder (16 settings), 67oz water tank, stainless steel build, manual steam wand for milk frothing, PID temp control; unbox-and-brew simplicity, no extra counter space needed.[1]
+- **Beginner suitability**: Amazon's #1 bestselling semi-automatic; huge YouTube community solves common issues; ideal for milk drinks without separate grinder.[1]
+- **User reviews**: Strong community praise for one-box convenience and shot quality; recommended as best overall under $500.[1]
+- **Source**: https://jayarr.coffee/blog/best-espresso-machines-under-500-2026-7-picks-for-every-budget/[1]
+
+### Casabrews 3700 Essential / Casabrews Espresso Machine (under $130)
+- **Key features**: PID temperature control, stainless steel build, steam wand for milk frothing (consistent crema-rich shots); sleek design under $250 category.[1][3]
+- **Beginner suitability**: Easiest for home users; simple one-step brewing, no dialing-in frustration; top pick for budget under $250 with reliable milk texturing.[3]
+- **User reviews**: Best overall budget pick in tests for consistent shots and ease; impressive value at sub-$130 price.[1][3]
+- **Source**: https://jayarr.coffee/blog/best-espresso-machines-under-500-2026-7-picks-for-every-budget/[1]; https://www.businessinsider.com/guides/kitchen/best-budget-espresso-machine[3]
+
+### De'Longhi Dedica Maestro Plus EC950.M (under £500 / ~$650 USD equivalent, often on sale under $500)
+- **Key features**: Compact design, premium build, clear pre-heat indicator, automatic milk preparation option, consistent espresso pulls.[2]
+- **Beginner suitability**: Top-scoring model (impressed experts with consistency); clear lights and user-friendly for hands-on learning without complexity.[2]
+- **User reviews**: Highest verdict pick for under £500; great for lattes with practice on manual wand.[2]
+- **Source**: https://www.goodhousekeeping.com/uk/product-reviews/house-garden/g70407064/best-coffee-machines/[2]
+
+### Philips Barista Brew Semi-Automatic (~under $500)
+- **Key features**: Manual steam wand for microfoam, large removable water tank, LCD screen for drink selection, grind size adjustment, quality build.[2]
+- **Beginner suitability**: Very user-friendly (92/100 score); ready-to-brew on startup, easy for sleepy mornings; good for hands-on without high cost.[2]
+- **User reviews**: Pros include easy tank refill and beginner foam practice; cons: no simultaneous brew/steam, no hot water option.[2]
+- **Source**: https://www.goodhousekeeping.com/uk/product-reviews/house-garden/g70407064/best-coffee-machines/[2]
+
+### Additional Beginner Picks Under $500 with Milk Steaming
+- **Gaggia Classic Evo Pro** (~$450): Commercial portafilter, manual steam wand; best for tinkerers wanting long-term growth (15-20 years with mods); pairs well with grinders like 1Zpresso JX-Pro ($130 total ~$580).[1]
+- **Bella Pro Barista Elite** (under $120): Easy shot performance, steam wand; simple for entry-level without flavor sacrifice.[3]
+- **Source**: https://jayarr.coffee/blog/best-espresso-machines-under-500-2026-7-picks-for-every-budget/[1]; https://www.businessinsider.com/guides/kitchen/best-budget-espresso-machine[3]
+
+**Next steps**: Check current Amazon/Best Buy sales for Breville Barista Express (often $499); read full Casabrews review on Business Insider; test water hardness for longevity per De'Longhi tips.[1][2][3] Prices fluctuate; verify under $500 at purchase. No results found for machines explicitly over 30 days old beyond these 2026 reviews.

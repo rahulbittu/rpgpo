@@ -1,5 +1,720 @@
 [
   {
+    "task_id": "t_mms5q76tf78x",
+    "title": "Research the best home espresso machines under 500 dollars for a coffee enthusia",
+    "raw_request": "Research the best home espresso machines under 500 dollars for a coffee enthusiast beginner. Compare semi-automatic options with milk steaming capability.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:38:14.885Z",
+    "updated_at": "2026-03-15T19:42:58.352Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:39:55.262Z",
+      "interpreted_objective": "Identify and compare the best home espresso machines under $500 for beginner coffee enthusiasts, focusing on semi-automatic options with milk steaming capability.",
+      "expected_outcome": "A detailed report comparing semi-automatic home espresso machines under $500, including specific product recommendations with pros, cons, and pricing.",
+      "key_unknowns": [
+        "Current top-rated semi-automatic espresso machines under $500",
+        "Specific features and capabilities of these machines",
+        "User reviews and satisfaction levels"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on the best semi-automatic espresso machines under $500, focusing on those with milk steaming capabilities. Then, synthesize this information into a comprehensive report that includes specific product recommendations, pricing, and an analysis of pros and cons.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Espresso Machines",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on semi-automatic espresso machines under $500, including features and reviews.",
+          "prompt": "Search the web for current, specific information about the best semi-automatic espresso machines under $500 with milk steaming capability for beginners. Include real product names, prices, features, user reviews, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Espresso Machine Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with product comparisons, pros and cons, and specific recommendations.",
+          "prompt": "Based on the research results from the previous subtask, synthesize actionable recommendations for the best semi-automatic espresso machines under $500. Include specific product names, prices, pros and cons, and a clear recommendation with reasoning.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-espresso-machines.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1923
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms5q5m9r7ty",
+    "title": "Create a guide for building a second brain using Obsidian. Include folder struct",
+    "raw_request": "Create a guide for building a second brain using Obsidian. Include folder structure, linking strategy, daily note template, and review workflow.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:38:12.849Z",
+    "updated_at": "2026-03-15T19:42:50.692Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:39:20.862Z",
+      "interpreted_objective": "Create a detailed guide for building a second brain using Obsidian.",
+      "expected_outcome": "A comprehensive guide that includes folder structure, linking strategy, daily note template, and review workflow for Obsidian users.",
+      "key_unknowns": [
+        "Specific preferences or constraints Rahul might have for the guide",
+        "Any existing materials or templates Rahul may already use or prefer"
+      ],
+      "recommended_strategy": "Research best practices for setting up a second brain in Obsidian, then synthesize this information into a structured guide. Include practical examples and templates for immediate use. Ensure the guide aligns with Rahul's productivity and personal development goals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Second Brain in Obsidian",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices and strategies for using Obsidian as a second brain.",
+          "prompt": "Search the web for current best practices and strategies for building a second brain using Obsidian. Include folder structure, linking strategies, daily note templates, and review workflows. Provide real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Building a Second Brain",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide for building a second brain in Obsidian, including practical examples and templates.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building a second brain using Obsidian. Include folder structure, linking strategy, daily note template, and review workflow. Provide practical examples and templates.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2069
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms5q41rwbml",
+    "title": "Write a cold open for a tech documentary about the first AI to pass the Turing t",
+    "raw_request": "Write a cold open for a tech documentary about the first AI to pass the Turing test. Include interview snippets, b-roll descriptions, and narrator voiceover.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:38:10.815Z",
+    "updated_at": "2026-03-15T19:41:28.996Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:39:16.147Z",
+      "interpreted_objective": "Write a cold open for a tech documentary about the first AI to pass the Turing test.",
+      "expected_outcome": "A compelling cold open script that includes interview snippets, b-roll descriptions, and a narrator voiceover.",
+      "key_unknowns": [
+        "Specific style and tone preferences for the documentary",
+        "Exact content of interview snippets",
+        "B-roll footage available"
+      ],
+      "recommended_strategy": "Create a narrative framework for the cold open, incorporating engaging interview snippets and vivid b-roll descriptions. Use prior knowledge of screenwriting to ensure the script is both informative and captivating. Ensure the script aligns with the mission context of AI/tech industry awareness.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Draft Cold Open Script",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A draft script for the cold open of the documentary.",
+          "prompt": "Write a cold open for a tech documentary about the first AI to pass the Turing test. Include engaging interview snippets, vivid descriptions of b-roll footage, and a compelling narrator voiceover. Ensure the script is captivating and informative.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1881
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mms5q2hcwy7f",
+    "title": "Research the best neighborhoods in Denver CO for a tech worker relocating from A",
+    "raw_request": "Research the best neighborhoods in Denver CO for a tech worker relocating from Austin. Compare RiNo, Capitol Hill, Wash Park, and Highlands. Include rent, walkability, food scene.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:38:08.784Z",
+    "updated_at": "2026-03-15T19:42:40.916Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:39:11.234Z",
+      "interpreted_objective": "Research and compare the best neighborhoods in Denver, CO for a tech worker relocating from Austin, focusing on RiNo, Capitol Hill, Wash Park, and Highlands.",
+      "expected_outcome": "A detailed comparison report of the neighborhoods including rent, walkability, and food scene.",
+      "key_unknowns": [
+        "Current rent prices in each neighborhood",
+        "Walkability scores",
+        "Food scene quality and options"
+      ],
+      "recommended_strategy": "Conduct a detailed web search to gather current data on rent, walkability, and food scene for each neighborhood. Synthesize this information into a comprehensive comparison report to aid decision-making for relocation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Rent Prices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current rent prices for RiNo, Capitol Hill, Wash Park, and Highlands in Denver, CO.",
+          "prompt": "Search the web for current rent prices in RiNo, Capitol Hill, Wash Park, and Highlands neighborhoods of Denver, CO. Include specific numbers, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Walkability Scores",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Walkability scores for RiNo, Capitol Hill, Wash Park, and Highlands.",
+          "prompt": "Search the web for walkability scores for RiNo, Capitol Hill, Wash Park, and Highlands neighborhoods in Denver, CO. Include specific scores, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Food Scene",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Overview of the food scene in RiNo, Capitol Hill, Wash Park, and Highlands.",
+          "prompt": "Search the web for information about the food scene in RiNo, Capitol Hill, Wash Park, and Highlands neighborhoods of Denver, CO. Include specific names of popular restaurants, types of cuisine, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Neighborhood Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive comparison report of the neighborhoods based on rent, walkability, and food scene.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comparison report of RiNo, Capitol Hill, Wash Park, and Highlands neighborhoods in Denver, CO. Include specific data on rent, walkability, and food scene with actionable insights.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2309
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mms5q0ww1uhv",
+    "title": "Design a desk-based mobility routine for programmers. 10 minutes, can be done be",
+    "raw_request": "Design a desk-based mobility routine for programmers. 10 minutes, can be done between meetings. Include neck, shoulder, wrist, hip, and lower back exercises.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:38:06.752Z",
+    "updated_at": "2026-03-15T19:42:32.132Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:39:04.515Z",
+      "interpreted_objective": "Create a 10-minute desk-based mobility routine for programmers that can be done between meetings, focusing on neck, shoulder, wrist, hip, and lower back exercises.",
+      "expected_outcome": "A specific, evidence-based, and actionable mobility routine that programmers can easily follow to improve their health and reduce discomfort during work.",
+      "key_unknowns": [
+        "Current best practices for desk-based mobility exercises",
+        "Specific exercises suitable for each targeted body part",
+        "Safety considerations for each exercise"
+      ],
+      "recommended_strategy": "Research current best practices for desk-based mobility exercises. Synthesize findings into a concise routine that addresses neck, shoulder, wrist, hip, and lower back. Ensure exercises are safe and can be performed in a typical office setting.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Desk-Based Mobility Exercises",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices and specific exercises for desk-based mobility, including safety considerations.",
+          "prompt": "Search the web for current, specific information about desk-based mobility exercises for programmers, focusing on neck, shoulder, wrist, hip, and lower back. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Mobility Routine",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable 10-minute mobility routine for programmers, with specific exercises for neck, shoulder, wrist, hip, and lower back.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable 10-minute desk-based mobility routine for programmers. Include specific exercises for neck, shoulder, wrist, hip, and lower back, with safety disclaimers where appropriate.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-desk-mobility-routine.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1872
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms5pzcrayf5",
+    "title": "Create a comprehensive guide for asking for a raise as a senior data engineer. I",
+    "raw_request": "Create a comprehensive guide for asking for a raise as a senior data engineer. Include timing, data to gather, script for the conversation, and fallback positions.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:38:04.731Z",
+    "updated_at": "2026-03-15T19:42:23.202Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:38:45.132Z",
+      "interpreted_objective": "Create a comprehensive guide for asking for a raise as a senior data engineer.",
+      "expected_outcome": "A detailed guide including timing, data to gather, conversation script, and fallback positions for a raise request.",
+      "key_unknowns": [
+        "Best timing for asking a raise in the tech industry",
+        "Specific data points to gather for a raise request",
+        "Effective scripts for raise conversations",
+        "Fallback positions if the raise is denied"
+      ],
+      "recommended_strategy": "Conduct research to identify best practices for asking for a raise in the tech industry, focusing on senior data engineers. Synthesize this information into a structured guide with actionable steps and scripts. Ensure the guide is tailored to the specific context of senior data engineers seeking raises.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research best practices for asking for a raise",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices for asking for a raise as a senior data engineer, including timing, data to gather, and conversation strategies.",
+          "prompt": "Search the web for current best practices for asking for a raise as a senior data engineer. Include specific timing, data to gather, effective conversation scripts, and fallback strategies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize guide for asking for a raise",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and actionable guide for asking for a raise, tailored for senior data engineers.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for asking for a raise as a senior data engineer. Include specific timing, data to gather, conversation scripts, and fallback positions. Ensure the guide is actionable and detailed.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-raise-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2256
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms5pxsfp0hj",
+    "title": "Research the best blue light blocking glasses for programmers. Compare prescript",
+    "raw_request": "Research the best blue light blocking glasses for programmers. Compare prescription and non-prescription options. Include lens coating quality and frame comfort for long wear.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:38:02.703Z",
+    "updated_at": "2026-03-15T19:42:15.592Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:38:39.548Z",
+      "interpreted_objective": "Identify the best blue light blocking glasses for programmers, comparing prescription and non-prescription options with a focus on lens coating quality and frame comfort.",
+      "expected_outcome": "A detailed comparison report of top blue light blocking glasses for programmers, highlighting specific products, prices, pros/cons, and a clear recommendation.",
+      "key_unknowns": [
+        "Current top-rated blue light blocking glasses",
+        "Differences in lens coating quality",
+        "Comfort levels of various frames",
+        "Price range for prescription vs non-prescription options"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on blue light blocking glasses for programmers, focusing on both prescription and non-prescription options. Then, synthesize the findings into a comprehensive comparison report, highlighting lens coating quality and frame comfort.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Blue Light Blocking Glasses",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on blue light blocking glasses, including specific products, prices, lens coating quality, and frame comfort.",
+          "prompt": "Search the web for current, specific information about the best blue light blocking glasses for programmers. Include both prescription and non-prescription options, focusing on lens coating quality and frame comfort. Provide real names, numbers, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Glasses Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing blue light blocking glasses, including specific products, prices, pros/cons, and a recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for the best blue light blocking glasses for programmers. Include specific names, numbers, and concrete next steps, focusing on lens coating quality and frame comfort.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-blue-light-glasses.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1944
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms5pw84ax20",
+    "title": "Teach me about zero-trust architecture from scratch. Cover principles, implement",
+    "raw_request": "Teach me about zero-trust architecture from scratch. Cover principles, implementation layers, and specific tools. For a startup with 20 employees and cloud-first infrastructure.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:38:00.676Z",
+    "updated_at": "2026-03-15T19:41:58.508Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:38:13.277Z",
+      "interpreted_objective": "Educate on zero-trust architecture for a startup with cloud-first infrastructure.",
+      "expected_outcome": "A comprehensive understanding of zero-trust principles, implementation layers, and tools tailored for a small cloud-first startup.",
+      "key_unknowns": [
+        "Specific cloud services used by the startup",
+        "Current security measures in place",
+        "Technical expertise level of the employees"
+      ],
+      "recommended_strategy": "Research zero-trust architecture principles, layers, and tools. Synthesize findings into a tailored educational report for a small startup with cloud-first infrastructure. Ensure the report is accessible to non-experts while providing depth for technical staff.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Zero-Trust Principles",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of zero-trust architecture principles.",
+          "prompt": "Search the web for current, specific information about zero-trust architecture principles. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Implementation Layers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of implementation layers in zero-trust architecture.",
+          "prompt": "Search the web for current, specific information about implementation layers in zero-trust architecture. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Zero-Trust Tools",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of specific tools for implementing zero-trust architecture.",
+          "prompt": "Search the web for current, specific tools used in zero-trust architecture. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Zero-Trust Educational Report",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive educational report on zero-trust architecture tailored for a startup.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive educational report on zero-trust architecture. Include principles, implementation layers, and specific tools. Tailor the content for a startup with 20 employees and a cloud-first infrastructure.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2224
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms5punpr4qh",
+    "title": "Create a tax-loss harvesting strategy guide for a tech worker with a 100k broker",
+    "raw_request": "Create a tax-loss harvesting strategy guide for a tech worker with a 100k brokerage account. Include wash sale rules, optimal timing, and tax bracket considerations.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:37:58.645Z",
+    "updated_at": "2026-03-15T19:40:41.457Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:38:06.642Z",
+      "interpreted_objective": "Create a tax-loss harvesting strategy guide for a tech worker with a $100k brokerage account.",
+      "expected_outcome": "A detailed guide that includes wash sale rules, optimal timing, and tax bracket considerations for tax-loss harvesting.",
+      "key_unknowns": [
+        "Current tax laws affecting tech workers",
+        "Specific wash sale rules applicable",
+        "Optimal timing for tax-loss harvesting in the current market"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on tax-loss harvesting, wash sale rules, and tax bracket considerations. Synthesize this data into a comprehensive guide tailored for a tech worker with a $100k brokerage account.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tax-Loss Harvesting",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on tax-loss harvesting, wash sale rules, and tax bracket considerations.",
+          "prompt": "Search the web for current, specific information about tax-loss harvesting strategies, including wash sale rules and tax bracket considerations. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Tax-Loss Harvesting Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on tax-loss harvesting for a tech worker with a $100k brokerage account.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed tax-loss harvesting strategy guide. Include specific wash sale rules, optimal timing, and tax bracket considerations. Provide actionable recommendations tailored for a tech worker with a $100k brokerage account.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-tax-loss-harvesting-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2195
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms5pt2vk0vm",
+    "title": "Write a disaster recovery plan for a small SaaS application. Include RTO/RPO tar",
+    "raw_request": "Write a disaster recovery plan for a small SaaS application. Include RTO/RPO targets, backup strategy, failover procedures, and communication plan.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:37:56.599Z",
+    "updated_at": "2026-03-15T19:40:08.728Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:38:01.125Z",
+      "interpreted_objective": "Create a comprehensive disaster recovery plan for a small SaaS application.",
+      "expected_outcome": "A detailed document outlining RTO/RPO targets, backup strategies, failover procedures, and a communication plan.",
+      "key_unknowns": [
+        "Specific SaaS application details",
+        "Current infrastructure setup",
+        "Existing backup and failover capabilities",
+        "Stakeholders involved in the communication plan"
+      ],
+      "recommended_strategy": "Conduct research on best practices for disaster recovery in SaaS applications. Synthesize this information into a structured plan, ensuring all key components are addressed. Tailor the plan to be applicable to a generic small SaaS application, with placeholders for specific details that can be customized by the user.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Disaster Recovery Best Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of best practices and strategies for disaster recovery in SaaS applications, with citations.",
+          "prompt": "Search the web for current best practices and strategies for disaster recovery in small SaaS applications. Include information on RTO/RPO targets, backup strategies, failover procedures, and communication plans. Provide real examples, names, numbers, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Disaster Recovery Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured disaster recovery plan document for a small SaaS application.",
+          "prompt": "Based on the research results, synthesize a comprehensive disaster recovery plan for a small SaaS application. Include sections on RTO/RPO targets, backup strategies, failover procedures, and a communication plan. Ensure the document is detailed and structured, suitable for customization.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-disaster-recovery-plan.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1886
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms5irbd9km4",
     "title": "Create a comprehensive performance review self-assessment template for a senior ",
     "raw_request": "Create a comprehensive performance review self-assessment template for a senior data engineer. Include technical contributions, leadership, and growth areas.",

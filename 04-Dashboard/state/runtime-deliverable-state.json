@@ -4321,5 +4321,159 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-15T19:33:34.675Z"
+  },
+  "t_mms5pt2vk0vm": {
+    "task_id": "t_mms5pt2vk0vm",
+    "deliverable_id": "dlv_rpgpo_tmms5pt2vk0vm_document_df61e348",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T19:38:01.133Z"
+  },
+  "t_mms5punpr4qh": {
+    "task_id": "t_mms5punpr4qh",
+    "deliverable_id": "dlv_rpgpo_tmms5punpr4qh_document_a9eb9c7d",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T19:38:06.650Z"
+  },
+  "t_mms5pw84ax20": {
+    "task_id": "t_mms5pw84ax20",
+    "deliverable_id": "dlv_rpgpo_tmms5pw84ax20_document_aecabf62",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T19:38:13.292Z"
+  },
+  "t_mms5pxsfp0hj": {
+    "task_id": "t_mms5pxsfp0hj",
+    "deliverable_id": "dlv_rpgpo_tmms5pxsfp0hj_shopping_95f63f78",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T19:38:39.564Z"
+  },
+  "t_mms5pzcrayf5": {
+    "task_id": "t_mms5pzcrayf5",
+    "deliverable_id": "dlv_rpgpo_tmms5pzcrayf5_document_d4692c93",
+    "engine_id": "careeregine",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T19:38:45.140Z"
+  },
+  "t_mms5q0ww1uhv": {
+    "task_id": "t_mms5q0ww1uhv",
+    "deliverable_id": "dlv_rpgpo_tmms5q0ww1uhv_action_plan_38fe1d36",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T19:39:04.522Z"
+  },
+  "t_mms5q2hcwy7f": {
+    "task_id": "t_mms5q2hcwy7f",
+    "deliverable_id": "dlv_rpgpo_tmms5q2hcwy7f_action_plan_b1673fae",
+    "engine_id": "travel",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "itinerary",
+      "options",
+      "cost_comparison"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T19:39:11.243Z"
+  },
+  "t_mms5q41rwbml": {
+    "task_id": "t_mms5q41rwbml",
+    "deliverable_id": "dlv_rpgpo_tmms5q41rwbml_creative_draft_a05b3ff6",
+    "engine_id": "screenwriting",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "artifacts",
+      "premise",
+      "beat_sheet"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T19:39:16.153Z"
+  },
+  "t_mms5q5m9r7ty": {
+    "task_id": "t_mms5q5m9r7ty",
+    "deliverable_id": "dlv_rpgpo_tmms5q5m9r7ty_document_c7d2954b",
+    "engine_id": "personalops",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T19:39:20.876Z"
+  },
+  "t_mms5q76tf78x": {
+    "task_id": "t_mms5q76tf78x",
+    "deliverable_id": "dlv_rpgpo_tmms5q76tf78x_shopping_e0b87227",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T19:39:55.270Z"
   }
 }
