@@ -1603,5 +1603,83 @@
       "completion": "done",
       "domain_routed": "health"
     }
+  },
+  {
+    "test_case_id": "GPO-WRI-20",
+    "global_rank": 134,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:11:11.681Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "writing"
+    }
+  },
+  {
+    "test_case_id": "GPO-CAR-09",
+    "global_rank": 136,
+    "engine": "Career & Job Search",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:11:11.683Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "careeregine"
+    }
+  },
+  {
+    "test_case_id": "GPO-RES-13",
+    "global_rank": 138,
+    "engine": "Research & Analysis",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:11:11.683Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "research"
+    }
+  },
+  {
+    "test_case_id": "GPO-SHO-08",
+    "global_rank": 140,
+    "engine": "Shopping & Buying Advisor",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:11:11.683Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "shopping"
+    }
+  },
+  {
+    "test_case_id": "GPO-LEA-10",
+    "global_rank": 142,
+    "engine": "Learning & Tutoring",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:11:11.683Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "learning"
+    }
+  },
+  {
+    "test_case_id": "GPO-TRA-06",
+    "global_rank": 144,
+    "engine": "Travel & Relocation Planner",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:11:11.683Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "travel"
+    }
   }
 ]
