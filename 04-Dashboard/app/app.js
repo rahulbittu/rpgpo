@@ -2203,7 +2203,7 @@ function renderTaskTimeline(task, subtasks) {
     events.push({
       type: 'subtask', label: st.title, stage: st.stage,
       role: st.assigned_role, model: st.assigned_model, status: st.status,
-      output: st.output?.slice(0, 120), files: st.files_changed || [],
+      output: st.output?.slice(0, 500), files: st.files_changed || [],
       error: st.error, subtask_id: st.subtask_id, order: i + 1,
       builder_outcome: st.builder_outcome, builder_phase: st.builder_phase,
       diff_summary: st.diff_summary, prompt_file: st.prompt_file,
@@ -2248,8 +2248,13 @@ function renderTaskTimeline(task, subtasks) {
     // "What was done" section — compact summary for completed/terminal subtasks
     if (ev.type === 'subtask' && ev.what_done && ['done', 'failed', 'waiting_approval', 'builder_fallback', 'blocked'].includes(ev.status)) {
       html += `<div class="tl-what-done">`;
-      html += `<div class="tl-what-done-label">What was done</div>`;
-      html += `<div class="tl-what-done-text">${esc(ev.what_done)}</div>`;
+      html += `<div class="tl-what-done-label">WHAT WAS DONE</div>`;
+      const wdText = ev.what_done || '';
+      if (wdText.length > 200) {
+        html += `<div class="tl-what-done-text">${esc(wdText.slice(0, 200))}... <a href="#" onclick="event.preventDefault();this.parentNode.innerHTML=decodeURIComponent('${encodeURIComponent(esc(wdText))}')" style="color:var(--accent-text);font-size:10px">Show more</a></div>`;
+      } else {
+        html += `<div class="tl-what-done-text">${esc(wdText)}</div>`;
+      }
 
       // Show file scope if available (RPGPO vs TopRanker)
       if (ev.file_scope) {
