@@ -1,5 +1,435 @@
 [
   {
+    "task_id": "t_mms3mavfj8s4",
+    "title": "Write a movie review of a hypothetical sci-fi film about AI consciousness. Writt",
+    "raw_request": "Write a movie review of a hypothetical sci-fi film about AI consciousness. Written in Roger Ebert style. Include rating and analysis of themes.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:39:13.803Z",
+    "updated_at": "2026-03-15T18:41:21.474Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:39:48.207Z",
+      "interpreted_objective": "Write a movie review in Roger Ebert's style for a hypothetical sci-fi film about AI consciousness.",
+      "expected_outcome": "A well-written movie review that includes a rating and analysis of themes, capturing the style of Roger Ebert.",
+      "key_unknowns": [
+        "Specific themes of the hypothetical film",
+        "Details of the film's plot and characters"
+      ],
+      "recommended_strategy": "Research Roger Ebert's style to understand his approach to film reviews. Draft a review that includes a rating and thematic analysis, ensuring it aligns with Ebert's tone and style. Focus on the hypothetical nature of the film, using creative elements to fill in gaps.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Roger Ebert's Review Style",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Insights into Roger Ebert's style and approach to film reviews.",
+          "prompt": "Search the web for information on Roger Ebert's film review style. Focus on his tone, structure, and approach to analyzing themes and providing ratings.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Draft Hypothetical Sci-Fi Film Review",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete movie review in the style of Roger Ebert, including a rating and thematic analysis.",
+          "prompt": "Based on the research of Roger Ebert's style, write a movie review for a hypothetical sci-fi film about AI consciousness. Include a rating and analysis of themes, ensuring the review captures Ebert's tone and approach.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2028
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mms3m9b1ucil",
+    "title": "Create a 5-day clean eating meal plan focused on anti-inflammatory foods. Includ",
+    "raw_request": "Create a 5-day clean eating meal plan focused on anti-inflammatory foods. Include recipes, grocery list, and prep schedule. No dairy, minimal gluten.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:39:11.773Z",
+    "updated_at": "2026-03-15T18:41:13.945Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:39:43.794Z",
+      "interpreted_objective": "Create a 5-day clean eating meal plan focused on anti-inflammatory foods, including recipes, a grocery list, and a prep schedule, with no dairy and minimal gluten.",
+      "expected_outcome": "A comprehensive, evidence-based meal plan that promotes anti-inflammatory eating, is easy to follow, and meets dietary constraints.",
+      "key_unknowns": [
+        "Specific anti-inflammatory foods to include",
+        "Recipes that meet the dietary constraints",
+        "Optimal prep schedule for efficiency"
+      ],
+      "recommended_strategy": "Research current anti-inflammatory foods and recipes that exclude dairy and minimize gluten. Compile a structured meal plan, grocery list, and prep schedule. Ensure all recommendations are evidence-based and actionable.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Anti-Inflammatory Foods",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of anti-inflammatory foods that exclude dairy and minimize gluten, with sources.",
+          "prompt": "Search the web for current, specific information about anti-inflammatory foods that exclude dairy and minimize gluten. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Meal Plan and Recipes",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A 5-day meal plan with recipes, grocery list, and prep schedule.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 5-day clean eating meal plan focused on anti-inflammatory foods. Include recipes, a grocery list, and a prep schedule. Ensure the plan excludes dairy and minimizes gluten.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-meal-plan.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1831
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms3m7qohc4j",
+    "title": "Compare the top 3 standing desk converters under 400 dollars. I need one that fi",
+    "raw_request": "Compare the top 3 standing desk converters under 400 dollars. I need one that fits a 34-inch ultrawide monitor. Include height range and weight capacity.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:39:09.744Z",
+    "updated_at": "2026-03-15T18:41:09.542Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:39:39.389Z",
+      "interpreted_objective": "Identify and compare the top 3 standing desk converters under $400 that can accommodate a 34-inch ultrawide monitor.",
+      "expected_outcome": "A detailed comparison report of the top 3 standing desk converters, including height range, weight capacity, and a clear buying recommendation.",
+      "key_unknowns": [
+        "Current top models under $400",
+        "Specific height range and weight capacity of each model",
+        "Compatibility with a 34-inch ultrawide monitor"
+      ],
+      "recommended_strategy": "Conduct web research to identify the top 3 standing desk converters under $400 that fit a 34-inch ultrawide monitor. Analyze their specifications, including height range and weight capacity, and compile a comparison report with pros and cons to provide a clear recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Standing Desk Converters",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Research data on top standing desk converters under $400, including height range and weight capacity.",
+          "prompt": "Search the web for current information about the top 3 standing desk converters under $400 that can fit a 34-inch ultrawide monitor. Include details on height range, weight capacity, and any other relevant specifications.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the top 3 standing desk converters with a buying recommendation.",
+          "prompt": "Based on the research results, synthesize a comparison report of the top 3 standing desk converters under $400. Include specific details on height range, weight capacity, pros and cons, and provide a clear buying recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-standing-desk-converters.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1873
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms3m66gedpw",
+    "title": "Explain the CAP theorem, PACELC, and consistency models in distributed systems. ",
+    "raw_request": "Explain the CAP theorem, PACELC, and consistency models in distributed systems. Use real database examples (Cassandra, CockroachDB, Spanner) and help me decide which to use.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:39:07.720Z",
+    "updated_at": "2026-03-15T18:40:53.293Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:39:19.951Z",
+      "interpreted_objective": "Explain CAP theorem, PACELC, and consistency models using database examples, and recommend a database choice.",
+      "expected_outcome": "A detailed explanation of CAP theorem, PACELC, and consistency models with examples and a database recommendation.",
+      "key_unknowns": [
+        "Current real-world applications of CAP theorem and PACELC",
+        "Specific use cases for Cassandra, CockroachDB, and Spanner"
+      ],
+      "recommended_strategy": "Conduct research on CAP theorem, PACELC, and consistency models, including specific database examples. Synthesize findings into a comprehensive report and provide a strategic recommendation on which database to use.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research CAP theorem, PACELC, and consistency models",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data on CAP theorem, PACELC, and consistency models with real-world examples and citations.",
+          "prompt": "Search the web for current, specific information about the CAP theorem, PACELC, and consistency models in distributed systems. Include real-world applications and examples, specifically focusing on databases like Cassandra, CockroachDB, and Spanner. Provide citations with URLs and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize research into a report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining CAP theorem, PACELC, and consistency models with examples and a database recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations on CAP theorem, PACELC, and consistency models. Include specific examples from databases like Cassandra, CockroachDB, and Spanner, and provide a strategic recommendation on which database to use.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-CAP-PACELC-ConsistencyModels.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1894
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms3m4j3un7z",
+    "title": "Create a comprehensive guide to building wealth in your 30s with a tech salary. ",
+    "raw_request": "Create a comprehensive guide to building wealth in your 30s with a tech salary. Include 401k, Roth IRA, brokerage, real estate, and alternative investments.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:39:05.583Z",
+    "updated_at": "2026-03-15T18:40:42.188Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:39:14.201Z",
+      "interpreted_objective": "Create a detailed guide for building wealth in your 30s with a tech salary, covering various investment options.",
+      "expected_outcome": "A comprehensive, actionable guide that includes specific investment strategies and revenue estimates for tech professionals in their 30s.",
+      "key_unknowns": [
+        "Current best practices for 401k and Roth IRA investments",
+        "Market data on real estate and alternative investments",
+        "Specific revenue estimates for each investment type"
+      ],
+      "recommended_strategy": "Conduct thorough research on each investment type, gather current market data, and synthesize findings into a practical guide. Focus on providing specific examples and revenue estimates tailored for tech professionals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research 401k and Roth IRA Investment Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and strategies for 401k and Roth IRA investments.",
+          "prompt": "Search the web for current best practices and strategies for 401k and Roth IRA investments for tech professionals in their 30s. Include specific contribution limits, tax implications, and growth potential.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Real Estate Investment Opportunities",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current market data and opportunities for real estate investments.",
+          "prompt": "Search the web for current real estate investment opportunities suitable for tech professionals in their 30s. Include market trends, potential returns, and specific locations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Alternative Investments",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Information on alternative investment options and their potential returns.",
+          "prompt": "Search the web for alternative investment options for tech professionals in their 30s, such as cryptocurrencies, peer-to-peer lending, and collectibles. Include potential returns and risks.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Wealth Building Guide",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide to building wealth in your 30s with a tech salary.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building wealth in your 30s with a tech salary. Include specific strategies for 401k, Roth IRA, brokerage accounts, real estate, and alternative investments, along with revenue estimates and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2613
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms3m2yhu324",
+    "title": "Write a data privacy impact assessment for a mobile app that collects location d",
+    "raw_request": "Write a data privacy impact assessment for a mobile app that collects location data. Include risk matrix, mitigation strategies, and compliance requirements.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:39:03.545Z",
+    "updated_at": "2026-03-15T18:41:03.037Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:39:07.955Z",
+      "interpreted_objective": "Create a comprehensive data privacy impact assessment for a mobile app collecting location data.",
+      "expected_outcome": "A detailed report including a risk matrix, mitigation strategies, and compliance requirements for the app.",
+      "key_unknowns": [
+        "Specific compliance requirements for location data",
+        "Current best practices for data privacy in mobile apps",
+        "Potential risks associated with location data collection"
+      ],
+      "recommended_strategy": "Conduct research on data privacy laws and best practices for mobile apps collecting location data. Synthesize findings into a structured report with a risk matrix and mitigation strategies. Ensure compliance with relevant regulations.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Data Privacy Laws and Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current data privacy laws and best practices for mobile apps collecting location data.",
+          "prompt": "Search the web for current data privacy laws and best practices specifically for mobile apps that collect location data. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Data Privacy Impact Assessment",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured data privacy impact assessment report including a risk matrix, mitigation strategies, and compliance requirements.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a data privacy impact assessment for a mobile app collecting location data. Include a risk matrix, mitigation strategies, and compliance requirements with specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-data-privacy-impact-assessment.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1839
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms3db4j4r2e",
     "title": "Research the current state of serverless computing in 2026. Compare AWS Lambda, ",
     "raw_request": "Research the current state of serverless computing in 2026. Compare AWS Lambda, Cloudflare Workers, and Vercel Functions. Include cold start benchmarks and pricing.",

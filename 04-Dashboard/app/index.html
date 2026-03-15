@@ -212,13 +212,13 @@
         <div id="homeApprovals" style="display:none"></div>
       </section>
 
-      <!-- TASKS -->
+      <!-- TASK STREAM -->
       <section class="tab-panel" id="tab-tasks">
         <div class="page-header">
           <div class="header-row">
             <div>
-              <h1>Task Stream</h1>
-              <p class="subtitle">All queued, running, and completed tasks</p>
+              <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Task Stream</h1>
+              <p class="subtitle">Worker queue — queued, running, and completed operations</p>
             </div>
             <div class="header-actions">
               <button class="refresh-btn" onclick="loadTasks()">&#8635;</button>
@@ -412,13 +412,13 @@
 
       <!-- ENGINES -->
       <section class="tab-panel" id="tab-missions">
-        <div class="page-header">
-          <h1>Engines</h1>
-          <p class="subtitle">15 engines powering your GPO — missions, objectives, and capabilities</p>
+        <div style="margin-bottom:20px">
+          <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Engines</h1>
+          <p class="subtitle">15 AI engines powering your GPO across every domain</p>
         </div>
-        <div id="missionSnapshotGrid" class="g2"></div>
+        <div id="missionSnapshotGrid" class="g2" style="margin-bottom:20px"></div>
         <div id="missionStatementsPanel"></div>
-        <div id="missionCards" class="g2"></div>
+        <div id="missionCards" class="g2" style="margin-top:20px"></div>
       </section>
 
       <!-- MEMORY & DOCUMENTS -->
@@ -545,13 +545,13 @@
         </div>
       </section>
 
-      <!-- COST CENTER -->
+      <!-- AI SPEND -->
       <section class="tab-panel" id="tab-costs">
         <div class="page-header">
           <div class="header-row">
             <div>
-              <h1>Cost Center</h1>
-              <p class="subtitle">AI spend tracking by provider, model, and run</p>
+              <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">AI Spend</h1>
+              <p class="subtitle">Cost tracking by provider, model, and execution</p>
             </div>
             <button class="refresh-btn" onclick="loadCosts()">&#8635;</button>
           </div>
@@ -600,13 +600,13 @@
         </div>
       </section>
 
-      <!-- LOGS -->
+      <!-- ACTIVITY -->
       <section class="tab-panel" id="tab-logs">
         <div class="page-header">
           <div class="header-row">
             <div>
-              <h1>Activity Log</h1>
-              <p class="subtitle">Agent runs, board decisions, briefs, and system events</p>
+              <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Activity</h1>
+              <p class="subtitle">Task executions, board decisions, and system events</p>
             </div>
             <div class="filter-row" id="logFilters">
               <button class="filter-btn active-filter" data-filter="all" onclick="filterLogs('all')">All</button>
@@ -619,11 +619,11 @@
         <div id="logsList"></div>
       </section>
 
-      <!-- CONTROLS -->
+      <!-- OPERATIONS -->
       <section class="tab-panel" id="tab-controls">
-        <div class="page-header">
-          <h1>Operations</h1>
-          <p class="subtitle">Board runs, operating loops, and task dispatch</p>
+        <div style="margin-bottom:16px">
+          <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Operations</h1>
+          <p class="subtitle">System operations, Board of AI, and task dispatch</p>
         </div>
 
         <div style="margin-bottom:14px">
@@ -682,9 +682,9 @@
 
       <!-- SETTINGS -->
       <section class="tab-panel" id="tab-settings">
-        <div class="page-header">
-          <h1>Settings</h1>
-          <p class="subtitle">Operator profile, integrations, budget, and system info</p>
+        <div style="margin-bottom:16px">
+          <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Settings</h1>
+          <p class="subtitle">Operator profile, AI providers, budget controls, and system configuration</p>
         </div>
 
         <div class="card" style="margin-bottom:14px" id="operatorProfileCard">

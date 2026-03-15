@@ -2973,5 +2973,96 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-15T18:33:04.127Z"
+  },
+  "t_mms3m2yhu324": {
+    "task_id": "t_mms3m2yhu324",
+    "deliverable_id": "dlv_rpgpo_tmms3m2yhu324_document_aa7e746d",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:39:07.969Z"
+  },
+  "t_mms3m4j3un7z": {
+    "task_id": "t_mms3m4j3un7z",
+    "deliverable_id": "dlv_rpgpo_tmms3m4j3un7z_document_7f338dd4",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:39:14.214Z"
+  },
+  "t_mms3m66gedpw": {
+    "task_id": "t_mms3m66gedpw",
+    "deliverable_id": "dlv_rpgpo_tmms3m66gedpw_document_8263434f",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:39:19.971Z"
+  },
+  "t_mms3m7qohc4j": {
+    "task_id": "t_mms3m7qohc4j",
+    "deliverable_id": "dlv_rpgpo_tmms3m7qohc4j_shopping_67b40b1d",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:39:39.397Z"
+  },
+  "t_mms3m9b1ucil": {
+    "task_id": "t_mms3m9b1ucil",
+    "deliverable_id": "dlv_rpgpo_tmms3m9b1ucil_action_plan_10bf0813",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:39:43.807Z"
+  },
+  "t_mms3mavfj8s4": {
+    "task_id": "t_mms3mavfj8s4",
+    "deliverable_id": "dlv_rpgpo_tmms3mavfj8s4_creative_draft_9efe2fed",
+    "engine_id": "screenwriting",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "artifacts",
+      "premise",
+      "beat_sheet"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:39:48.226Z"
   }
 }
