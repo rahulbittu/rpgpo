@@ -740,6 +740,18 @@ RULES:
 - Never produce generic templates or placeholder text like "[Insert Title]"
 - If you cannot find specific information, say so explicitly${modelRules}`;
 
+    // Gather completed sibling subtask outputs as context
+    let priorOutputs = '';
+    try {
+      const allSubs = intake.getSubtasksForTask(st.parent_task);
+      const completedSiblings = allSubs.filter(s => s.status === 'done' && s.subtask_id !== subtaskId && s.output);
+      if (completedSiblings.length > 0) {
+        priorOutputs = '\n\n## Prior Subtask Results\n' + completedSiblings.map(s =>
+          `### ${s.title}\n${(s.output || s.what_done || '').slice(0, 1500)}`
+        ).join('\n\n');
+      }
+    } catch { /* non-fatal */ }
+
     // Gather file context
     let fileContext = '';
     for (const f of (st.files_to_read || [])) {
@@ -747,7 +759,7 @@ RULES:
       if (content) fileContext += `\n### ${f}\n${content.slice(0, 2000)}\n`;
     }
 
-    const userPrompt = `${st.prompt}${fileContext ? '\n\n## Reference Files\n' + fileContext : ''}`;
+    const userPrompt = `${st.prompt}${priorOutputs}${fileContext ? '\n\n## Reference Files\n' + fileContext : ''}`;
 
     let result;
     try {

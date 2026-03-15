@@ -1,5 +1,85 @@
 [
   {
+    "task_id": "t_mmr8o2w7v2xf",
+    "title": "Search the web for today's most important AI and technology news. Include major ",
+    "raw_request": "Search the web for today's most important AI and technology news. Include major product launches, funding rounds, and research breakthroughs from the last 48 hours.",
+    "domain": "newsroom",
+    "desired_outcome": "Curated news digest with 10-15 items, sources, and relevance analysis",
+    "constraints": "",
+    "urgency": "high",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T04:12:48.679Z",
+    "updated_at": "2026-03-15T04:15:09.209Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T04:13:18.863Z",
+      "interpreted_objective": "Compile a digest of the most important AI and technology news from the past 48 hours.",
+      "expected_outcome": "A curated news digest with 10-15 items, including sources and relevance analysis.",
+      "key_unknowns": [
+        "Current major AI and technology news stories",
+        "Relevance of each news item to the mission context"
+      ],
+      "recommended_strategy": "Use Perplexity to search for the latest AI and technology news from the past 48 hours. Analyze and synthesize the findings using OpenAI to create a concise digest. Ensure each news item is relevant to the mission context and includes source information.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Search for Latest AI and Tech News",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of recent AI and technology news headlines with brief summaries.",
+          "prompt": "Search the web for the most important AI and technology news from the last 48 hours, including major product launches, funding rounds, and research breakthroughs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Analyze and Synthesize News",
+          "stage": "decide",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A curated list of 10-15 news items with relevance analysis.",
+          "prompt": "Analyze the recent AI and technology news headlines and synthesize them into a curated list of 10-15 items. Include relevance analysis for each item based on the mission context.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Compile News Digest Report",
+          "stage": "report",
+          "assigned_role": "builder",
+          "assigned_model": "openai",
+          "expected_output": "A formatted news digest report ready for distribution.",
+          "prompt": "Compile the curated list of news items into a formatted report, including sources and relevance analysis.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/AI_Tech_News_Digest.json"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            1
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1565
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelm412"
+  },
+  {
     "task_id": "t_mmr8e3sdivuj",
     "title": "What are the top 5 passive income ideas for a data engineer in 2025?",
     "raw_request": "What are the top 5 passive income ideas for a data engineer in 2025?",
