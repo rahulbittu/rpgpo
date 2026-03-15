@@ -933,5 +933,83 @@
     "taskId": "t_mmr26qcckpwa",
     "taskType": "subtask",
     "role": "strategy"
+  },
+  {
+    "ts": "2026-03-15T01:16:10.201Z",
+    "date": "2026-03-15",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 1227,
+    "outputTokens": 609,
+    "totalTokens": 1836,
+    "cost": 0.009157499999999999,
+    "taskId": "t_mmr2cnotiesl",
+    "taskType": "deliberation",
+    "role": "board"
+  },
+  {
+    "ts": "2026-03-15T01:16:31.194Z",
+    "date": "2026-03-15",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "inputTokens": 52,
+    "outputTokens": 1381,
+    "totalTokens": 1433,
+    "cost": 0,
+    "taskId": "t_mmr2cnotiesl",
+    "taskType": "subtask",
+    "role": "strategy"
+  },
+  {
+    "ts": "2026-03-15T01:16:46.143Z",
+    "date": "2026-03-15",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "inputTokens": 520,
+    "outputTokens": 965,
+    "totalTokens": 1485,
+    "cost": 0,
+    "taskId": "t_mmr2cnotiesl",
+    "taskType": "subtask",
+    "role": "strategy"
+  },
+  {
+    "ts": "2026-03-15T01:16:56.692Z",
+    "date": "2026-03-15",
+    "provider": "perplexity",
+    "model": "sonar",
+    "inputTokens": 519,
+    "outputTokens": 510,
+    "totalTokens": 1029,
+    "cost": 0,
+    "taskId": "t_mmr2cnotiesl",
+    "taskType": "subtask",
+    "role": "research"
+  },
+  {
+    "ts": "2026-03-15T01:19:32.136Z",
+    "date": "2026-03-15",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 3898,
+    "outputTokens": 776,
+    "totalTokens": 4674,
+    "cost": 0.017505,
+    "taskId": "t_mmofq6ilo6jf",
+    "taskType": "deliberation",
+    "role": "board"
+  },
+  {
+    "ts": "2026-03-15T01:19:40.635Z",
+    "date": "2026-03-15",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 3960,
+    "outputTokens": 798,
+    "totalTokens": 4758,
+    "cost": 0.01788,
+    "taskId": "t_mmofq6ilo6jf",
+    "taskType": "deliberation",
+    "role": "board"
   }
 ]

@@ -344,11 +344,11 @@
         <div id="intakeTaskList"></div>
       </section>
 
-      <!-- CHANNELS — AI Model Interaction Surface -->
+      <!-- ASK AI — Direct AI Model Interaction -->
       <section class="tab-panel" id="tab-channels">
         <div class="page-header">
-          <h1>AI Channels</h1>
-          <p class="subtitle">Direct model interaction and task dispatch</p>
+          <h1>Ask AI</h1>
+          <p class="subtitle">Direct conversation with AI models — research, analysis, strategy</p>
         </div>
 
         <div class="channel-selector" id="channelSelector">
@@ -409,7 +409,7 @@
       <section class="tab-panel" id="tab-missions">
         <div class="page-header">
           <h1>Missions</h1>
-          <p class="subtitle">All RPGPO mission domains</p>
+          <p class="subtitle">Engine mission statements, objectives, and domain context</p>
         </div>
         <div id="missionSnapshotGrid" class="g2"></div>
         <div id="missionStatementsPanel"></div>
@@ -498,8 +498,8 @@
       <!-- ADMIN -->
       <section class="tab-panel" id="tab-admin">
         <div class="page-header">
-          <h1>Admin & Productization</h1>
-          <p class="subtitle">Tenant admin, subscription, deployment readiness</p>
+          <h1>System Admin</h1>
+          <p class="subtitle">Security, deployment readiness, extensions, and system health</p>
         </div>
         <div id="adminPanel"></div>
         <div id="deploymentReadinessPanel"></div>
@@ -620,8 +620,8 @@
         <div class="page-header">
           <div class="header-row">
             <div>
-              <h1>Logs</h1>
-              <p class="subtitle">System events, agent runs, decisions, and briefs</p>
+              <h1>Activity Log</h1>
+              <p class="subtitle">Agent runs, board decisions, briefs, and system events</p>
             </div>
             <div class="filter-row" id="logFilters">
               <button class="filter-btn active-filter" data-filter="all" onclick="filterLogs('all')">All</button>
@@ -637,8 +637,8 @@
       <!-- CONTROLS -->
       <section class="tab-panel" id="tab-controls">
         <div class="page-header">
-          <h1>Controls</h1>
-          <p class="subtitle">Operations surface and task dispatch</p>
+          <h1>Operations</h1>
+          <p class="subtitle">Board runs, operating loops, and task dispatch</p>
         </div>
 
         <div style="margin-bottom:14px">
@@ -675,10 +675,10 @@
 
         <h3 class="mt">Quick Nav</h3>
         <div class="g4">
-          <button class="filter-btn" onclick="switchTab('tasks')">Tasks</button>
-          <button class="filter-btn" onclick="switchTab('approvals')">Approvals</button>
+          <button class="filter-btn" onclick="switchTab('intake')">New Task</button>
+          <button class="filter-btn" onclick="switchTab('channels')">Ask AI</button>
           <button class="filter-btn" onclick="switchTab('topranker')">TopRanker</button>
-          <button class="filter-btn" onclick="switchTab('channels')">Channels</button>
+          <button class="filter-btn" onclick="switchTab('tasks')">Task Stream</button>
         </div>
 
         <div class="card mt">

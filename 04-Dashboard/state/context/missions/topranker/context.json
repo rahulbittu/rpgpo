@@ -1,9 +1,31 @@
 {
   "instance_id": "rpgpo",
   "domain": "topranker",
-  "objective": "Summarize the current state of TopRanker.",
+  "objective": "Audit and identify performance issues in TopRanker's API endpoints and create a prioritized plan for fixes.",
   "current_status": "",
   "recent_decisions": [
+    {
+      "domain": "topranker",
+      "category": "strategy",
+      "title": "Deliberation: Audit TopRanker API endpoints for performance issues and pro",
+      "decision": "First, audit the API endpoints to identify performance bottlenecks. Then, analyze the root causes of these issues. Finally, create a prioritized plan for addressing the most impactful issues first.",
+      "reasoning": "Objective: Audit and identify performance issues in TopRanker's API endpoints and create a prioritized plan for fixes.",
+      "impact": "4 subtasks planned. Risk: yellow",
+      "task_id": "t_mmofq6ilo6jf",
+      "id": "ctx_mmr2hffy4w93",
+      "made_at": "2026-03-15T01:19:40.654Z"
+    },
+    {
+      "domain": "topranker",
+      "category": "strategy",
+      "title": "Deliberation: Audit TopRanker API endpoints for performance issues and pro",
+      "decision": "First, conduct an audit to identify API endpoints with performance issues. Then, analyze these endpoints to understand the root causes of the issues. Finally, create a prioritized plan for addressing these issues, focusing on high-impact changes that can be implemented quickly.",
+      "reasoning": "Objective: Identify and address performance issues in TopRanker's API endpoints.",
+      "impact": "4 subtasks planned. Risk: yellow",
+      "task_id": "t_mmofq6ilo6jf",
+      "id": "ctx_mmr2h8vytypx",
+      "made_at": "2026-03-15T01:19:32.158Z"
+    },
     {
       "domain": "topranker",
       "category": "process",
@@ -79,6 +101,54 @@
   "open_questions": [
     {
       "domain": "topranker",
+      "question": "Specific API endpoints with performance issues",
+      "context": "From deliberation on: Audit TopRanker API endpoints for performance issues and produce the first prior",
+      "priority": "medium",
+      "id": "ctx_mmr2hfg0uave",
+      "raised_at": "2026-03-15T01:19:40.656Z"
+    },
+    {
+      "domain": "topranker",
+      "question": "Current load and performance metrics for each endpoint",
+      "context": "From deliberation on: Audit TopRanker API endpoints for performance issues and produce the first prior",
+      "priority": "medium",
+      "id": "ctx_mmr2hffz7eot",
+      "raised_at": "2026-03-15T01:19:40.655Z"
+    },
+    {
+      "domain": "topranker",
+      "question": "Recent changes to API logic or infrastructure",
+      "context": "From deliberation on: Audit TopRanker API endpoints for performance issues and produce the first prior",
+      "priority": "medium",
+      "id": "ctx_mmr2hffzhl2r",
+      "raised_at": "2026-03-15T01:19:40.655Z"
+    },
+    {
+      "domain": "topranker",
+      "question": "Any recent changes to API logic or infrastructure",
+      "context": "From deliberation on: Audit TopRanker API endpoints for performance issues and produce the first prior",
+      "priority": "medium",
+      "id": "ctx_mmr2h8w1w9tz",
+      "raised_at": "2026-03-15T01:19:32.161Z"
+    },
+    {
+      "domain": "topranker",
+      "question": "Current load and performance metrics for each endpoint",
+      "context": "From deliberation on: Audit TopRanker API endpoints for performance issues and produce the first prior",
+      "priority": "medium",
+      "id": "ctx_mmr2h8w0d9w9",
+      "raised_at": "2026-03-15T01:19:32.160Z"
+    },
+    {
+      "domain": "topranker",
+      "question": "Specific API endpoints with performance issues",
+      "context": "From deliberation on: Audit TopRanker API endpoints for performance issues and produce the first prior",
+      "priority": "medium",
+      "id": "ctx_mmr2h8vzvm63",
+      "raised_at": "2026-03-15T01:19:32.159Z"
+    },
+    {
+      "domain": "topranker",
       "question": "Current state of any ongoing experiments",
       "context": "From deliberation on: summarize the current state of top ranker",
       "priority": "medium",
@@ -144,12 +214,12 @@
   ],
   "approval_patterns": [],
   "next_actions": [
-    "Audit Mission Status",
-    "Audit Operating Summary",
-    "Decide on Summary Content",
-    "Report Summary"
+    "Audit API Performance",
+    "Locate Files for API Fixes",
+    "Analyze Root Causes",
+    "Create Prioritized Fix Plan"
   ],
   "known_issues": [],
   "context_summary": "",
-  "updated_at": "2026-03-14T21:13:07.171Z"
+  "updated_at": "2026-03-15T01:19:40.656Z"
 }
