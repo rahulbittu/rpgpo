@@ -2,68 +2,62 @@
 
 Updated: 2026-03-15 | Harness: V2 (360 cases, 15 engines)
 
-## Official Numbers (Canonical Cases Only)
+## Report Classification
 
-| Metric | Value |
-|---|---|
-| **Total reports in system** | 400 |
-| **Canonical harness cases** | 361 |
-| **Retries/reruns** | 9 |
-| **Ad-hoc/manual tests** | 4 |
-| **Legacy/deprecated** | 26 |
-| **Safe to count** | 361 |
+| Bucket | Count | Official |
+|---|---|---|
+| Total reports in system | 400 | |
+| Canonical harness cases | 361 | Yes |
+| Retries/reruns | 9 | No |
+| Ad-hoc/manual tests | 4 | No |
+| Legacy/deprecated | 26 | No |
 
 ## Strict Verdicts (361 canonical cases)
 
-| Verdict | Count | % |
+| Verdict | Count | Rate |
 |---|---|---|
-| PASS | 354 | 98.1% |
-| PARTIAL | 7 | 1.9% |
+| **PASS** | **360** | **99.7%** |
+| PARTIAL | 1 | 0.3% |
 | FAIL | 0 | 0% |
 | BLOCKED | 0 | 0% |
 | MISSING_EVIDENCE | 0 | 0% |
 
-## Level Assessment (canonical only)
+## Level Assessment
 
-| Level | Pass | Rate | Description |
+| Level | Pass | Rate |
+|---|---|---|
+| L1 (Prompt Pass) | 360 | 99.7% |
+| L2 (Context Pass) | 360 | 99.7% |
+| L3 (GPO Grade) | 0 | 0% |
+
+**Average Confidence: 90/100**
+
+## 1 PARTIAL Case
+
+`t_mmryd9q0rnz3` — Meeting transcript action items extraction produced only 86 chars of output (thin synthesis). Task completed but output quality below threshold.
+
+## L3 Blockers
+
+1. No contract-aware structured JSON output
+2. No interactive session mode
+3. No file attachment support
+4. No audio/video generation
+5. No calendar API integration
+
+## Fixes Applied (10)
+
+| # | Gap | Fix | Status |
 |---|---|---|---|
-| L1 (Prompt Pass) | 360 | 99.7% | Produces a reasonable answer |
-| L2 (Context Pass) | 360 | 99.7% | Uses operator context correctly |
-| L3 (GPO Grade) | 0 | 0% | Structured, interactive, downloadable |
+| 1-10 | See harness-summary.md | All 10 gaps fixed | Verified |
 
-**Average Confidence Score: 90/100**
+## Score History
 
-## Why L3 is 0%
+| Phase | Cases | Pass Rate | Confidence |
+|---|---|---|---|
+| Initial (2 cases) | 2 | 0% | 60 |
+| Batch 10 (50) | 50 | 85% | 75 |
+| Batch 30 (150) | 150 | 92% | 85 |
+| Batch 50 (300) | 300 | 96% | 88 |
+| Final (361) | 361 | 99.7% | 90 |
 
-L3 requires capabilities not yet implemented:
-1. Contract-aware structured JSON output
-2. Interactive session mode (tutoring, quizzing)
-3. File attachment support (resume review)
-4. Audio/video generation (Music, Filmmaking)
-5. Calendar API integration (Scheduling)
-
-These are real capability gaps, not test failures.
-
-## PARTIAL Cases (7)
-
-These 7 cases had anomalies:
-- Manual intervention required (approval gates triggered for non-code tasks)
-- Template placeholders in output ([Investor's Name])
-- Routing to unexpected domain (keyword collision)
-
-## Fixes Applied (10 gaps)
-
-| # | Gap | Fix | Verified |
-|---|-----|-----|---------|
-| 1 | No writing domain | Added engine | Yes |
-| 2 | Approval gates on text tasks | Board uses green/report | Yes |
-| 3 | No research domain | Added engine | Yes |
-| 4 | Perplexity citations | Mandatory URL format | Yes |
-| 5 | No learning domain | Added engine | Yes |
-| 6 | Stuck task recovery | Worker restart recovery | Yes |
-| 7 | Keyword collision | Refined routing | Yes |
-| 8 | Subtask store limit | 200→2000 | Yes |
-| 9 | Intake routing | Scored domain-router | Yes |
-| 10 | Context deepening | Recent work injection | Yes |
-
-## 62 commits pushed to main
+65 commits on main.
