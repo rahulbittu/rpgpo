@@ -1,5 +1,694 @@
 [
   {
+    "task_id": "t_mms5irbd9km4",
+    "title": "Create a comprehensive performance review self-assessment template for a senior ",
+    "raw_request": "Create a comprehensive performance review self-assessment template for a senior data engineer. Include technical contributions, leadership, and growth areas.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:32:27.721Z",
+    "updated_at": "2026-03-15T19:36:18.018Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:33:34.662Z",
+      "interpreted_objective": "Create a detailed self-assessment template for a senior data engineer's performance review, focusing on technical contributions, leadership, and growth areas.",
+      "expected_outcome": "A comprehensive template that Rahul can use to self-assess his performance as a senior data engineer, highlighting key achievements and areas for development.",
+      "key_unknowns": [
+        "Specific technical contributions relevant to Rahul's current projects",
+        "Leadership roles and responsibilities Rahul currently holds",
+        "Growth areas Rahul is focusing on"
+      ],
+      "recommended_strategy": "Research existing self-assessment templates for senior data engineers to identify common components. Then, synthesize these findings into a tailored template that aligns with Rahul's career objectives and recent work. Ensure the template includes sections for technical achievements, leadership contributions, and personal growth goals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Self-Assessment Templates",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of common elements in self-assessment templates for senior data engineers.",
+          "prompt": "Search the web for current, specific information about self-assessment templates for senior data engineers. Include real examples, common sections, and any industry-specific considerations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Self-Assessment Template",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A tailored self-assessment template for a senior data engineer, including sections for technical contributions, leadership, and growth areas.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a self-assessment template for a senior data engineer. Include sections for technical achievements, leadership roles, and growth opportunities, aligning with Rahul's career objectives.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2376
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms5ipqzglo4",
+    "title": "Research the best electric vehicle charging solutions for apartment dwellers. Co",
+    "raw_request": "Research the best electric vehicle charging solutions for apartment dwellers. Compare Level 1, portable Level 2, and local charging networks. Include costs.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:32:25.691Z",
+    "updated_at": "2026-03-15T19:36:09.881Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:33:28.957Z",
+      "interpreted_objective": "Research and compare electric vehicle charging solutions for apartment dwellers, focusing on Level 1, portable Level 2, and local charging networks, including costs.",
+      "expected_outcome": "A comprehensive report comparing the costs, pros, and cons of Level 1, portable Level 2, and local charging networks for apartment dwellers, with a clear recommendation.",
+      "key_unknowns": [
+        "Current costs of Level 1 chargers",
+        "Current costs of portable Level 2 chargers",
+        "Availability and costs of local charging networks",
+        "Pros and cons of each charging solution"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on costs and features of Level 1, portable Level 2, and local charging networks. Then, analyze the data to compare the solutions and provide a recommendation based on the findings.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research EV Charging Solutions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on costs, features, and availability of Level 1, portable Level 2, and local charging networks for apartment dwellers.",
+          "prompt": "Search the web for current, specific information about Level 1, portable Level 2, and local charging networks for electric vehicles, focusing on costs, features, and availability for apartment dwellers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Charging Solutions Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Level 1, portable Level 2, and local charging networks, including costs, pros/cons, and a recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Level 1, portable Level 2, and local charging networks for apartment dwellers. Include specific names, numbers, pros/cons, and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-EV-Charging-Solutions.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1974
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms5io6pxnxa",
+    "title": "Write a spec for a 10-episode podcast series about the history of software engin",
+    "raw_request": "Write a spec for a 10-episode podcast series about the history of software engineering disasters. Include episode titles, descriptions, and narrative arc.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:32:23.665Z",
+    "updated_at": "2026-03-15T19:36:01.496Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:33:23.032Z",
+      "interpreted_objective": "Create a detailed specification for a 10-episode podcast series on software engineering disasters.",
+      "expected_outcome": "A comprehensive podcast spec with episode titles, descriptions, and a narrative arc that engages listeners and educates them about historical software engineering failures.",
+      "key_unknowns": [
+        "Specific historical software engineering disasters to include",
+        "Target audience for the podcast",
+        "Desired tone and style of the podcast series"
+      ],
+      "recommended_strategy": "First, conduct research to identify notable software engineering disasters and gather detailed information about each. Then, synthesize this information to create engaging episode titles and descriptions, ensuring a coherent narrative arc across the series. Finally, compile the spec into a structured document.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Software Engineering Disasters",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of notable software engineering disasters with details and sources.",
+          "prompt": "Search the web for current, specific information about notable software engineering disasters. Include real names, dates, impacts, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Podcast Episode Titles and Descriptions",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured document with episode titles, descriptions, and a narrative arc.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a podcast spec with 10 episode titles and descriptions. Ensure a coherent narrative arc and engaging content.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-podcast-spec.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1890
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mms5immguy6u",
+    "title": "Plan a tech conference attendance strategy. How to maximize ROI from a 3-day con",
+    "raw_request": "Plan a tech conference attendance strategy. How to maximize ROI from a 3-day conference. Include networking plan, session selection framework, and follow-up system.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:32:21.640Z",
+    "updated_at": "2026-03-15T19:35:50.186Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:33:09.661Z",
+      "interpreted_objective": "Develop a comprehensive strategy to maximize ROI from attending a 3-day tech conference.",
+      "expected_outcome": "A detailed plan that includes a networking strategy, session selection framework, and follow-up system to enhance ROI from the conference.",
+      "key_unknowns": [
+        "Specific conference details (location, agenda, attendees)",
+        "Rahul's specific goals for attending the conference",
+        "Budget constraints for the conference"
+      ],
+      "recommended_strategy": "Conduct research on best practices for conference attendance, including networking, session selection, and follow-up strategies. Synthesize these findings into a structured plan tailored to Rahul's priorities and constraints. Ensure the plan is actionable and aligns with Rahul's broader personal and professional goals.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final review of the conference attendance strategy to ensure alignment with Rahul's goals"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Conference Attendance",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices for maximizing ROI from tech conferences, including networking, session selection, and follow-up strategies.",
+          "prompt": "Search the web for current, specific information about best practices for maximizing ROI from tech conferences. Include strategies for networking, session selection, and follow-up. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Conference Strategy",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured plan for conference attendance, including networking strategy, session selection framework, and follow-up system.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a tech conference attendance strategy. Include specific names, numbers, and concrete next steps for networking, session selection, and follow-up.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-conference-strategy.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1968
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms5il2ayxez",
+    "title": "Design an evidence-based sleep hygiene protocol for shift workers or people with",
+    "raw_request": "Design an evidence-based sleep hygiene protocol for shift workers or people with irregular schedules. Include blue light management, melatonin timing, and temperature control.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:32:19.618Z",
+    "updated_at": "2026-03-15T19:35:42.026Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:33:03.516Z",
+      "interpreted_objective": "Design an evidence-based sleep hygiene protocol for individuals with irregular schedules, focusing on blue light management, melatonin timing, and temperature control.",
+      "expected_outcome": "A comprehensive, evidence-based sleep hygiene protocol that shift workers or those with irregular schedules can implement to improve sleep quality.",
+      "key_unknowns": [
+        "Current best practices for blue light management",
+        "Optimal melatonin timing for irregular schedules",
+        "Effective temperature control strategies for sleep"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and evidence-based strategies for sleep hygiene tailored to irregular schedules. Synthesize this information into a structured protocol that includes actionable steps and safety disclaimers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Sleep Hygiene for Irregular Schedules",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and evidence-based strategies for sleep hygiene, focusing on blue light management, melatonin timing, and temperature control.",
+          "prompt": "Search the web for current, specific information about sleep hygiene for shift workers or people with irregular schedules. Include strategies for blue light management, melatonin timing, and temperature control. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Sleep Hygiene Protocol",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "An actionable, structured sleep hygiene protocol tailored for individuals with irregular schedules, including specific recommendations and safety disclaimers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable sleep hygiene protocol for shift workers or people with irregular schedules. Include specific recommendations for blue light management, melatonin timing, and temperature control, along with safety disclaimers.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-sleep-hygiene-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1861
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms5iji4bjf5",
+    "title": "Create a guide for data engineers transitioning to machine learning engineering.",
+    "raw_request": "Create a guide for data engineers transitioning to machine learning engineering. Include skill gaps, learning path, project ideas, and timeline.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:32:17.596Z",
+    "updated_at": "2026-03-15T19:35:30.833Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:32:57.061Z",
+      "interpreted_objective": "Create a detailed guide for data engineers transitioning to machine learning engineering, covering skill gaps, learning paths, project ideas, and timelines.",
+      "expected_outcome": "A comprehensive guide that outlines the transition process for data engineers to become machine learning engineers, including specific skills, learning resources, project ideas, and a suggested timeline.",
+      "key_unknowns": [
+        "Current skill gaps between data engineering and machine learning engineering",
+        "Effective learning paths and resources for acquiring necessary ML skills",
+        "Relevant project ideas to demonstrate ML capabilities",
+        "Optimal timeline for transitioning from data engineering to ML engineering"
+      ],
+      "recommended_strategy": "Conduct research to identify the skill gaps and learning paths for transitioning from data engineering to machine learning engineering. Synthesize this information into a structured guide with actionable steps, project ideas, and a timeline. Ensure the guide is tailored to Rahul's career context and goals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Skill Gaps and Learning Paths",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on skill gaps and learning paths for data engineers transitioning to machine learning engineering.",
+          "prompt": "Search the web for current, specific information about skill gaps and learning paths for data engineers transitioning to machine learning engineering. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Transitioning to ML Engineering",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide with skill gaps, learning paths, project ideas, and timeline for transitioning from data engineering to machine learning engineering.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for data engineers transitioning to machine learning engineering. Include specific skill gaps, learning paths, project ideas, and a timeline.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-2023-11-02-transition-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2269
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms5ihxybeui",
+    "title": "Research the best standing desk mats for comfort during long coding sessions. Co",
+    "raw_request": "Research the best standing desk mats for comfort during long coding sessions. Compare anti-fatigue features. Under 80 dollars. Include surface texture and durability.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:32:15.574Z",
+    "updated_at": "2026-03-15T19:35:22.825Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:32:44.757Z",
+      "interpreted_objective": "Identify the best standing desk mats under $80 with a focus on comfort, anti-fatigue features, surface texture, and durability for long coding sessions.",
+      "expected_outcome": "A detailed comparison report of standing desk mats under $80, highlighting comfort, anti-fatigue features, surface texture, and durability, leading to a clear buying recommendation.",
+      "key_unknowns": [
+        "Current market options for standing desk mats under $80",
+        "Specific anti-fatigue features of available mats",
+        "Durability and surface texture information for each mat"
+      ],
+      "recommended_strategy": "Conduct a web search to gather current information on standing desk mats under $80, focusing on comfort, anti-fatigue features, surface texture, and durability. Synthesize this information into a structured comparison report with a clear buying recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Standing Desk Mats",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on standing desk mats under $80, including comfort, anti-fatigue features, surface texture, and durability.",
+          "prompt": "Search the web for current, specific information about standing desk mats under $80. Focus on comfort, anti-fatigue features, surface texture, and durability. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Standing Desk Mat Comparison",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of standing desk mats under $80, highlighting comfort, anti-fatigue features, surface texture, and durability, with a buying recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for standing desk mats under $80. Include specific names, numbers, and concrete next steps. Highlight comfort, anti-fatigue features, surface texture, and durability.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-standing-desk-mats.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1963
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms5igds9e9d",
+    "title": "Teach me about gRPC and Protocol Buffers. Compare with REST APIs. Cover streamin",
+    "raw_request": "Teach me about gRPC and Protocol Buffers. Compare with REST APIs. Cover streaming, code generation, and when to choose each. Include Node.js examples.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:32:13.552Z",
+    "updated_at": "2026-03-15T19:35:13.938Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:32:29.799Z",
+      "interpreted_objective": "Provide a comprehensive comparison of gRPC and Protocol Buffers with REST APIs, including Node.js examples.",
+      "expected_outcome": "A detailed report explaining gRPC, Protocol Buffers, and REST APIs with examples, highlighting their differences and use cases.",
+      "key_unknowns": [
+        "Specific examples needed for Node.js",
+        "Current trends in gRPC and REST API usage",
+        "Detailed comparison criteria"
+      ],
+      "recommended_strategy": "Research the fundamentals of gRPC, Protocol Buffers, and REST APIs. Then, compile a comparative report including Node.js examples and scenarios for choosing each technology. Ensure the report covers streaming and code generation aspects.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research gRPC and Protocol Buffers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, detailed information on gRPC and Protocol Buffers, including their features and use cases.",
+          "prompt": "Search the web for current, specific information about gRPC and Protocol Buffers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research REST APIs",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, detailed information on REST APIs, including their features and use cases.",
+          "prompt": "Search the web for current, specific information about REST APIs. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report comparing gRPC, Protocol Buffers, and REST APIs with Node.js examples, covering streaming and code generation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing gRPC, Protocol Buffers, and REST APIs. Include Node.js examples, streaming, code generation, and scenarios for choosing each technology.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2102
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms5iethrjjx",
+    "title": "Create a retirement planning calculator for a 32-year-old targeting early retire",
+    "raw_request": "Create a retirement planning calculator for a 32-year-old targeting early retirement at 50. Include savings rate needed, investment growth assumptions, and withdrawal strategy.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:32:11.525Z",
+    "updated_at": "2026-03-15T19:34:38.149Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:32:23.069Z",
+      "interpreted_objective": "Develop a retirement planning calculator for a 32-year-old aiming to retire at 50, detailing savings rate, investment growth, and withdrawal strategy.",
+      "expected_outcome": "A comprehensive report outlining the necessary savings rate, growth assumptions, and withdrawal strategy for early retirement at 50.",
+      "key_unknowns": [
+        "Current savings and income levels of the individual",
+        "Preferred investment vehicles and risk tolerance",
+        "Expected lifestyle and expenses in retirement"
+      ],
+      "recommended_strategy": "First, research current best practices and benchmarks for early retirement planning. Then, synthesize this information into a detailed report, including specific savings rates, growth assumptions, and withdrawal strategies. Finally, provide actionable steps for implementation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Early Retirement Planning",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices, benchmarks, and strategies for early retirement planning.",
+          "prompt": "Search the web for current best practices and benchmarks for early retirement planning, specifically for individuals aiming to retire at 50. Include savings rates, investment growth assumptions, and withdrawal strategies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Retirement Planning Report",
+          "stage": "report",
+          "assigned_role": "builder",
+          "assigned_model": "openai",
+          "expected_output": "A detailed report with actionable recommendations for early retirement planning.",
+          "prompt": "Based on the research results, synthesize actionable recommendations for a 32-year-old planning to retire at 50. Include specific savings rates, investment growth assumptions, and withdrawal strategies. Provide concrete next steps for implementation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-retirement-planning.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2193
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms5id8vo179",
+    "title": "Write a comprehensive guide to setting up Playwright for end-to-end testing of a",
+    "raw_request": "Write a comprehensive guide to setting up Playwright for end-to-end testing of a React application. Include page objects, CI integration, and visual regression testing.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:32:09.487Z",
+    "updated_at": "2026-03-15T19:34:01.902Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:32:15.794Z",
+      "interpreted_objective": "Create a detailed guide for setting up Playwright for testing React apps.",
+      "expected_outcome": "A comprehensive, actionable guide that includes page objects, CI integration, and visual regression testing for Playwright with React.",
+      "key_unknowns": [
+        "Specific CI tools to cover",
+        "Level of detail required for each section",
+        "Preferred format for the guide"
+      ],
+      "recommended_strategy": "Research current best practices for using Playwright with React applications, focusing on page objects, CI integration, and visual regression testing. Synthesize the findings into a clear, structured guide tailored for developers setting up these systems. Ensure the guide is practical and includes examples where possible.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Playwright setup for React",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on setting up Playwright for React applications.",
+          "prompt": "Search the web for current, specific information about setting up Playwright for end-to-end testing of React applications. Focus on page objects, CI integration, and visual regression testing. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Playwright guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide for setting up Playwright with React, including page objects, CI integration, and visual regression testing.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for setting up Playwright for end-to-end testing of React applications. Include sections on page objects, CI integration, and visual regression testing with specific examples and actionable steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1999
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms58asaw9g3",
     "title": "Build a personal development scoreboard. Track skills, health metrics, financial",
     "raw_request": "Build a personal development scoreboard. Track skills, health metrics, financial goals, and relationships. Include weekly review template.",
