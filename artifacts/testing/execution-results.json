@@ -724,5 +724,43 @@
       "domain_routed": "wealthresearch",
       "completion": "done"
     }
+  },
+  {
+    "test_case_id": "GPO-MUS-01",
+    "global_rank": 51,
+    "engine": "Music & Audio Creation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:07:15.828Z",
+    "level_1_prompt_pass": false,
+    "level_2_context_pass": false,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmry4p2of4uw",
+      "domain_routed": "music",
+      "completion": "done",
+      "output_quality": "Weak — found track names but NO actual composition data. Cannot generate music.",
+      "issues": [
+        "No music generation capability",
+        "Perplexity search finds tracks not composition theory"
+      ],
+      "gaps": [
+        "BLOCKED_BY_PROVIDER: no audio/composition generation"
+      ]
+    }
+  },
+  {
+    "test_case_id": "GPO-WRI-08",
+    "global_rank": 27,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:07:15.828Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "task_id": "t_mmry4p2m137n",
+      "domain_routed": "topranker",
+      "completion": "done",
+      "output_quality": "Good — pitch deck script with market data"
+    }
   }
 ]
