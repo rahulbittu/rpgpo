@@ -3352,6 +3352,25 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 78: Compound Workflows
+  if (req.url?.match(/^\/api\/compound-workflows\/templates(\?.*)?$/) && req.method === 'GET') {
+    try { const cw = require('./lib/compound-workflows'); return json(res, { templates: cw.listWorkflowTemplates() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/compound-workflows/templates' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const cw = require('./lib/compound-workflows'); return json(res, { ok: true, template: cw.createWorkflowTemplate(body) }, 201); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/compound-workflows\/runs(\?.*)?$/) && req.method === 'GET') {
+    try { const cw = require('./lib/compound-workflows'); return json(res, { runs: cw.listWorkflowRuns() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/compound-workflows/runs' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const cw = require('./lib/compound-workflows'); return json(res, { ok: true, run: cw.startWorkflowRun(body.templateId, body.params || {}) }, 201); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/compound-workflows/seed' && req.method === 'POST') {
+    try { const cw = require('./lib/compound-workflows'); return json(res, { ok: true, seeded: cw.seedBuiltinTemplates() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 77: Smart Templates + Recurring Scheduler
   if (req.url?.match(/^\/api\/templates(\?.*)?$/) && req.method === 'GET') {
     try { const ts = require('./lib/template-store'); return json(res, { templates: ts.listTemplates() }); } catch (e) { return json(res, { error: e.message }, 500); }

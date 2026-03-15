@@ -6939,6 +6939,29 @@ export interface ChainEvaluationResult {
   tasksToCreate: Array<{ template: ChainRule['nextTaskTemplate']; ruleId: string; parentOutputRef?: string }>;
 }
 
+// ── Part 78: Multi-Engine Orchestration ──
+
+export interface CompoundWorkflowTemplate {
+  id: string; name: string; description: string;
+  nodes: CompoundWorkflowNode[]; edges: CompoundWorkflowEdge[];
+  parameters: CompoundWorkflowParam[];
+  tags: string[]; createdAt: number; updatedAt: number;
+}
+export interface CompoundWorkflowNode {
+  id: string; name: string; engineId: string;
+  type: 'engine' | 'gate' | 'aggregate';
+  promptTemplate: string; desiredOutcome?: string;
+  inputBindings?: Record<string, { source: 'const' | 'context' | 'nodeOutput' | 'param'; nodeId?: string; path?: string; value?: unknown; paramName?: string }>;
+}
+export interface CompoundWorkflowEdge { from: string; to: string; condition?: string; }
+export interface CompoundWorkflowParam { name: string; type: string; required: boolean; default?: unknown; description?: string; }
+export interface CompoundWorkflowRun {
+  id: string; templateId: string; params: Record<string, unknown>;
+  status: 'pending' | 'running' | 'completed' | 'failed' | 'cancelled';
+  nodeRuns: Record<string, { status: string; taskId?: string; output?: string; startedAt?: number; completedAt?: number }>;
+  createdAt: number; updatedAt: number;
+}
+
 // ── Part 77: Smart Templates + Recurring Task Scheduler ──
 
 export interface TaskTemplate {
