@@ -559,5 +559,35 @@
         "Domain correct, auto-approved (GAP-002 fix working)"
       ]
     }
+  },
+  {
+    "test_case_id": "GPO-RES-05",
+    "global_rank": 23,
+    "engine": "Research & Analysis",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:55:32.058Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrxqej5v4an",
+      "domain_routed": "research",
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-STA-02",
+    "global_rank": 37,
+    "engine": "Startup & Business Builder",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:55:32.058Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrxqej7flha",
+      "domain_routed": "topranker",
+      "completion": "done"
+    }
   }
 ]
