@@ -3355,6 +3355,17 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 102: Session Manager
+  if (req.url === '/api/session' && req.method === 'GET') {
+    try { const sm = require('./lib/session-manager'); return json(res, { session: sm.getCurrentSession() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/session/start' && req.method === 'POST') {
+    try { const sm = require('./lib/session-manager'); return json(res, { session: sm.startSession() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/session/history' && req.method === 'GET') {
+    try { const sm = require('./lib/session-manager'); return json(res, { sessions: sm.getSessionHistory() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 101: Task Prioritizer
   if (req.url === '/api/prioritize' && req.method === 'GET') {
     try { const tp = require('./lib/task-prioritizer'); return json(res, { tasks: tp.prioritizeTasks() }); } catch (e) { return json(res, { error: e.message }, 500); }
