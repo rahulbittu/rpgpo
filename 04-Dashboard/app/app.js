@@ -1,13 +1,31 @@
 // GPO Command Center v7 — Premium Private Operations Console
 
-// Domain name display mapping
+// Domain name display mapping — aligned to 15-engine harness model
 const DOMAIN_LABELS = {
-  topranker: 'TopRanker', newsroom: 'News', shopping: 'Shopping', startup: 'Code',
-  legal: 'Legal', screenwriting: 'Creative', music: 'Music', calendar: 'Calendar',
-  chief_of_staff: 'Planning', career: 'Career', careeregine: 'Career',
-  health: 'Health', finance: 'Income', wealthresearch: 'Income',
-  travel: 'Travel', research: 'Research', home: 'Home', communications: 'Writing',
-  personalops: 'Personal', general: 'General',
+  startup: 'Code & Product Engineering',
+  topranker: 'Startup & Business Builder',
+  writing: 'Writing & Documentation',
+  research: 'Research & Analysis',
+  learning: 'Learning & Tutoring',
+  personalops: 'Scheduling & Life Ops',
+  health: 'Health & Wellness',
+  shopping: 'Shopping & Buying',
+  travel: 'Travel & Relocation',
+  careeregine: 'Career & Job Search',
+  wealthresearch: 'Personal Finance',
+  screenwriting: 'Screenwriting & Story',
+  music: 'Music & Audio',
+  newsroom: 'News & Intelligence',
+  general: 'General',
+  // Legacy aliases
+  career: 'Career & Job Search',
+  finance: 'Personal Finance',
+  home: 'Home & Lifestyle',
+  communications: 'Writing & Documentation',
+  chief_of_staff: 'Scheduling & Life Ops',
+  calendar: 'Scheduling & Life Ops',
+  legal: 'Writing & Documentation',
+  founder2founder: 'Startup & Business Builder',
 };
 function domainLabel(d) { return DOMAIN_LABELS[d] || d; }
 
