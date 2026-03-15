@@ -3355,6 +3355,17 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 97: Data Export
+  if (req.url === '/api/export/tasks.csv' && req.method === 'GET') {
+    try { const de = require('./lib/data-export'); res.writeHead(200, { 'Content-Type': 'text/csv', 'Content-Disposition': 'attachment; filename=gpo-tasks.csv' }); res.end(de.exportTasksCSV()); return; } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/export/costs.csv' && req.method === 'GET') {
+    try { const de = require('./lib/data-export'); res.writeHead(200, { 'Content-Type': 'text/csv', 'Content-Disposition': 'attachment; filename=gpo-costs.csv' }); res.end(de.exportCostsCSV()); return; } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/export/knowledge.json' && req.method === 'GET') {
+    try { const de = require('./lib/data-export'); res.writeHead(200, { 'Content-Type': 'application/json', 'Content-Disposition': 'attachment; filename=gpo-knowledge.json' }); res.end(de.exportKnowledgeJSON()); return; } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 95: Operator Insights
   if (req.url?.match(/^\/api\/operator-insights(\?.*)?$/) && req.method === 'GET') {
     try { const oi = require('./lib/operator-insights'); const params = new URL(req.url, 'http://x').searchParams; return json(res, oi.getOperatorInsights(parseInt(params.get('days') || '7'))); } catch (e) { return json(res, { error: e.message }, 500); }
