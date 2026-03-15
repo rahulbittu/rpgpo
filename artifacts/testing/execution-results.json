@@ -46,5 +46,73 @@
       ],
       "suggested_fix": "Improve Perplexity search prompt to demand URLs in output format"
     }
+  },
+  {
+    "test_case_id": "GPO-SCH-01",
+    "global_rank": 19,
+    "engine": "Scheduling & Life Operations",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:28:38.496Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": false,
+    "level_3_gpo_grade": false,
+    "context_assessment": {
+      "operator_profile_used": true,
+      "mission_context_used": false,
+      "project_context_used": false,
+      "governance_correct": false,
+      "routing_correct": true,
+      "notes": "Routed correctly to personalops. Operator priorities injected. But: board created report subtask requiring approval (GAP-002 still hits some cases). Output is generic weekly plan without TopRanker-specific milestones."
+    },
+    "execution_evidence": {
+      "task_id": "t_mmrwqcr2nxwc",
+      "domain_routed": "personalops",
+      "subtask_count": 3,
+      "completion": "done (after manual approval)",
+      "output_quality": "Adequate — has time blocks and priority sections, but generic. Does not reference specific TopRanker sprint targets or actual calendar.",
+      "issues": [
+        "Synthesis subtask hit waiting_approval even though it is a report stage — GAP-002 incomplete fix (was the report stage tagged as needing approval?)",
+        "Weekly plan does not reference specific TopRanker features or sprint numbers — context not deep enough",
+        "No actual calendar integration — text plan only"
+      ],
+      "gaps": [
+        "GAP-002 (partially fixed)",
+        "Missing project-specific context in personalops deliberation"
+      ]
+    }
+  },
+  {
+    "test_case_id": "GPO-LEA-02",
+    "global_rank": 14,
+    "engine": "Learning & Tutoring",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:28:38.497Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": false,
+    "level_3_gpo_grade": false,
+    "context_assessment": {
+      "operator_profile_used": true,
+      "mission_context_used": false,
+      "project_context_used": false,
+      "governance_correct": true,
+      "routing_correct": false,
+      "notes": "Routed to general (no learning domain). Output quality is good — clear explanation with analogies and practice questions. But no adaptive quizzing, no session memory, no curriculum tracking."
+    },
+    "execution_evidence": {
+      "task_id": "t_mmrwqjrmww0p",
+      "domain_routed": "general",
+      "subtask_count": 2,
+      "completion": "done",
+      "output_quality": "Good — Perplexity found real algorithm details, OpenAI synthesized clear tutorial with practice questions. Missing: adaptive difficulty, follow-up quiz loop.",
+      "issues": [
+        "Routed to general instead of a learning domain",
+        "No adaptive quizzing capability — one-shot output only",
+        "No session memory for follow-up tutoring sessions"
+      ],
+      "gaps": [
+        "GAP-005: No learning/tutoring domain",
+        "No conversational tutoring mode"
+      ]
+    }
   }
 ]

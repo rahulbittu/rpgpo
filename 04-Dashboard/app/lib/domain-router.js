@@ -2,23 +2,30 @@
 // GPO Domain Router — Auto-detect the best engine for a task request
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.routeRequest = routeRequest;
+exports.resolveAlias = resolveAlias;
 const DOMAIN_KEYWORDS = {
-    newsroom: ['news', 'headline', 'trending', 'latest', 'current events', 'journalism', 'breaking'],
-    wealthresearch: ['passive income', 'investment', 'wealth', 'money', 'side hustle', 'revenue', 'profit', 'saas'],
-    career: ['job', 'career', 'salary', 'hiring', 'resume', 'interview', 'promotion', 'data engineer'],
-    careeregine: ['job market', 'skill gap', 'professional development', 'networking'],
+    newsroom: ['news', 'headline', 'trending', 'latest', 'current events', 'journalism', 'breaking', 'today\'s'],
+    wealthresearch: ['passive income', 'investment', 'wealth', 'money', 'side hustle', 'revenue', 'profit', 'saas', 'side project', 'income ideas', 'income stream'],
+    careeregine: ['job', 'career', 'salary', 'hiring', 'resume', 'interview', 'promotion', 'data engineer', 'job market', 'skill gap', 'professional development', 'networking', 'job search', 'compensation', 'job opening'],
     topranker: ['topranker', 'leaderboard', 'ranking', 'business listing', 'community rank'],
-    research: ['research', 'analyze', 'study', 'investigate', 'evaluate', 'compare', 'assessment'],
-    chief_of_staff: ['plan', 'prioritize', 'strategy', 'roadmap', 'decision', 'brief', 'weekly'],
-    finance: ['budget', 'financial', 'cost analysis', 'roi', 'pricing'],
-    communications: ['email', 'write', 'draft', 'message', 'letter', 'proposal'],
+    writing: ['email', 'write', 'draft', 'memo', 'prd', 'spec', 'sop', 'runbook', 'document', 'proposal', 'letter', 'rewrite', 'executive summary', 'summarize this'],
+    research: ['research', 'analyze', 'study', 'investigate', 'evaluate', 'assessment', 'deep-dive', 'deep dive', 'market analysis', 'competitive analysis'],
+    learning: ['teach me', 'explain', 'tutor', 'learn', 'study plan', 'quiz me', 'course', 'curriculum', 'master it'],
+    shopping: ['buy', 'purchase', 'compare products', 'shopping', 'best price', 'recommendation'],
+    travel: ['travel', 'trip', 'flight', 'hotel', 'itinerary', 'relocation', 'moving to'],
+    health: ['fitness', 'workout', 'diet', 'health', 'wellness', 'exercise', 'nutrition'],
+    personalops: ['plan my week', 'schedule', 'time block', 'calendar', 'routine', 'habit', 'prioritize'],
     startup: ['code', 'implement', 'build', 'fix bug', 'feature', 'deploy', 'api'],
-    shopping: ['buy', 'purchase', 'compare products', 'review', 'recommendation'],
-    calendar: ['schedule', 'meeting', 'calendar', 'appointment', 'time block'],
-    health: ['fitness', 'workout', 'diet', 'health', 'wellness'],
-    travel: ['travel', 'trip', 'flight', 'hotel', 'itinerary'],
     screenwriting: ['screenplay', 'script', 'dialogue', 'scene', 'story'],
     music: ['music', 'song', 'composition', 'lyrics', 'melody'],
+};
+// Map intake form values to canonical domain names
+const DOMAIN_ALIASES = {
+    career: 'careeregine',
+    finance: 'wealthresearch',
+    home: 'personalops',
+    communications: 'writing',
+    chief_of_staff: 'personalops',
 };
 function routeRequest(rawRequest) {
     const lower = rawRequest.toLowerCase();
@@ -39,11 +46,20 @@ function routeRequest(rawRequest) {
     const best = scores[0];
     const maxScore = best.score;
     const confidence = Math.min(1, maxScore / 3);
+    const canonicalDomain = DOMAIN_ALIASES[best.domain] || best.domain;
     return {
-        domain: best.domain,
+        domain: canonicalDomain,
         confidence,
-        alternates: scores.slice(1, 4).map(s => ({ domain: s.domain, confidence: Math.min(1, s.score / 3) })),
-        reason: `Matched ${maxScore} keywords for ${best.domain}`,
+        alternates: scores.slice(1, 4).map(s => ({
+            domain: DOMAIN_ALIASES[s.domain] || s.domain,
+            confidence: Math.min(1, s.score / 3),
+        })),
+        reason: `Matched ${maxScore} keywords for ${canonicalDomain}`,
     };
 }
-module.exports = { routeRequest };
+/** Resolve domain aliases (e.g., 'career' → 'careeregine') */
+function resolveAlias(domain) {
+    return DOMAIN_ALIASES[domain] || domain;
+}
+module.exports = { routeRequest, resolveAlias };
+//# sourceMappingURL=domain-router.js.map

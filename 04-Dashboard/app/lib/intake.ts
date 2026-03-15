@@ -41,13 +41,26 @@ function stid(): string { return 'st_' + Date.now().toString(36) + Math.random()
 
 const DOMAIN_KEYWORDS: Record<string, string[]> = {
   topranker: ['topranker', 'leaderboard', 'rankings', 'local business', 'expo', 'react native'],
-  careeregine: ['career', 'resume', 'job'],
+  careeregine: ['career', 'resume', 'job', 'salary', 'hiring', 'interview', 'data engineer', 'job search', 'job market', 'compensation'],
   founder2founder: ['founder', 'f2f', 'community'],
-  wealthresearch: ['wealth', 'investment', 'finance', 'portfolio'],
-  newsroom: ['news', 'journalism', 'media'],
+  wealthresearch: ['wealth', 'investment', 'finance', 'portfolio', 'passive income', 'side hustle', 'side project', 'income ideas', 'money'],
+  newsroom: ['news', 'journalism', 'media', 'headline', 'trending', 'current events', 'breaking'],
+  writing: ['email', 'draft', 'write', 'memo', 'prd', 'spec', 'sop', 'runbook', 'document', 'proposal', 'letter', 'rewrite', 'summarize', 'executive summary'],
+  research: ['research', 'analyze', 'compare', 'investigate', 'deep dive', 'market analysis', 'competitive analysis', 'assessment'],
+  learning: ['teach', 'explain', 'tutor', 'learn', 'study plan', 'quiz', 'course', 'curriculum', 'master'],
+  shopping: ['buy', 'purchase', 'compare products', 'recommendation', 'shopping', 'best price', 'review products'],
+  travel: ['travel', 'trip', 'flight', 'hotel', 'itinerary', 'relocation', 'moving to'],
+  health: ['fitness', 'workout', 'diet', 'health', 'wellness', 'exercise', 'nutrition', 'sleep'],
   screenwriting: ['screenplay', 'script', 'film', 'movie'],
   music: ['music', 'song', 'album', 'production'],
-  personalops: ['personal', 'ops', 'admin', 'household'],
+  personalops: ['plan my week', 'schedule', 'time block', 'calendar', 'routine', 'habit'],
+};
+
+// Resolve domain aliases from the intake form (e.g., 'career' → 'careeregine')
+const INTAKE_ALIASES: Record<string, string> = {
+  career: 'careeregine',
+  finance: 'wealthresearch',
+  home: 'personalops',
 };
 
 function detectDomain(text: string): Domain {
@@ -58,10 +71,15 @@ function detectDomain(text: string): Domain {
   return 'general';
 }
 
+function resolveDomainAlias(domain: string): Domain {
+  return (INTAKE_ALIASES[domain] || domain) as Domain;
+}
+
 function createTask(opts: Partial<IntakeTask> & { raw_request?: string; project_id?: string }): IntakeTask {
   const tasks = readStore<IntakeTask>(TASKS_FILE);
   const raw = opts.raw_request || '';
-  const domain = opts.domain || detectDomain(raw);
+  const rawDomain = opts.domain || detectDomain(raw);
+  const domain = resolveDomainAlias(rawDomain as string);
 
   // Resolve project_id — use provided, or default for domain
   let projectId = opts.project_id;

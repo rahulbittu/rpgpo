@@ -66,5 +66,21 @@
     "root_cause": "Worker Perplexity prompt asks for URLs but does not enforce output format with mandatory source links",
     "fix": "Strengthen Perplexity system prompt to require Source: [URL] format for every claim",
     "status": "identified"
+  },
+  {
+    "gap_id": "GAP-005",
+    "category": "routing",
+    "severity": "medium",
+    "description": "No learning/tutoring domain — 24 Learning & Tutoring cases fall to general",
+    "affected_cases": [
+      "GPO-LEA-01",
+      "GPO-LEA-02",
+      "GPO-LEA-03",
+      "GPO-LEA-04",
+      "GPO-LEA-05"
+    ],
+    "root_cause": "No learning domain in intake.ts or deliberation.ts DOMAIN_CONTEXT",
+    "fix": "Add learning domain with tutoring-specific context and prompts",
+    "status": "identified"
   }
 ]

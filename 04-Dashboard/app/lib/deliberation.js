@@ -61,6 +61,42 @@ const DOMAIN_CONTEXT = {
         governed_loop: ['audit', 'decide', 'report'],
         specialists: ['chief'],
     },
+    writing: {
+        description: 'Writing and documentation engine. Produces professional emails, PRDs, SOPs, memos, board docs, summaries, and proposals. Outputs must be clear, tailored to audience, structurally sound, and immediately usable. Match the requested tone (executive, casual, technical). Never produce generic boilerplate.',
+        key_files: [],
+        governed_loop: ['audit', 'report'],
+        specialists: ['chief'],
+    },
+    research: {
+        description: 'Research and analysis engine. Produces deep-dive research briefs, market analysis, competitive comparisons, risk assessments, and evidence-based recommendations. ALWAYS use Perplexity for web research first, then OpenAI for synthesis. Outputs must include specific data, citations with URLs, tradeoffs, and concrete recommendations.',
+        key_files: [],
+        governed_loop: ['research', 'report'],
+        specialists: ['research'],
+    },
+    learning: {
+        description: 'Learning and tutoring engine. Produces personalized study plans, concept explanations, adaptive quizzes, and skill assessments. Outputs should use clear analogies, build from simple to complex, include practice questions, and adapt to the learner level. For Rahul: assume strong technical background in data engineering.',
+        key_files: [],
+        governed_loop: ['research', 'report'],
+        specialists: ['research'],
+    },
+    shopping: {
+        description: 'Shopping and buying advisor engine. Produces product comparisons, shortlists, buying recommendations, and value analyses. Use Perplexity for current pricing and reviews. Outputs must include specific products, prices, pros/cons, and a clear recommendation with reasoning.',
+        key_files: [],
+        governed_loop: ['research', 'report'],
+        specialists: ['research'],
+    },
+    travel: {
+        description: 'Travel and relocation planning engine. Produces itineraries, cost estimates, comparison analyses, and relocation checklists. Use Perplexity for current pricing and availability. Outputs must include specific options, dates, costs, and logistics.',
+        key_files: [],
+        governed_loop: ['research', 'report'],
+        specialists: ['research'],
+    },
+    health: {
+        description: 'Health and wellness coaching engine. Produces workout plans, meal guidance, habit-building strategies, and wellness assessments. Outputs must be specific, evidence-based, and actionable. Include safety disclaimers where appropriate.',
+        key_files: [],
+        governed_loop: ['research', 'report'],
+        specialists: ['research'],
+    },
     general: {
         description: 'General RPGPO task.',
         key_files: [],

@@ -31,13 +31,25 @@ function uid() { return 't_' + Date.now().toString(36) + Math.random().toString(
 function stid() { return 'st_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
 const DOMAIN_KEYWORDS = {
     topranker: ['topranker', 'leaderboard', 'rankings', 'local business', 'expo', 'react native'],
-    careeregine: ['career', 'resume', 'job'],
+    careeregine: ['career', 'resume', 'job', 'salary', 'hiring', 'interview', 'data engineer', 'job search', 'job market', 'compensation'],
     founder2founder: ['founder', 'f2f', 'community'],
-    wealthresearch: ['wealth', 'investment', 'finance', 'portfolio'],
-    newsroom: ['news', 'journalism', 'media'],
+    wealthresearch: ['wealth', 'investment', 'finance', 'portfolio', 'passive income', 'side hustle', 'side project', 'income ideas', 'money'],
+    newsroom: ['news', 'journalism', 'media', 'headline', 'trending', 'current events', 'breaking'],
+    writing: ['email', 'draft', 'write', 'memo', 'prd', 'spec', 'sop', 'runbook', 'document', 'proposal', 'letter', 'rewrite', 'summarize', 'executive summary'],
+    research: ['research', 'analyze', 'compare', 'investigate', 'deep dive', 'market analysis', 'competitive analysis', 'assessment'],
+    learning: ['teach', 'explain', 'tutor', 'learn', 'study plan', 'quiz', 'course', 'curriculum', 'master'],
+    shopping: ['buy', 'purchase', 'compare products', 'recommendation', 'shopping', 'best price', 'review products'],
+    travel: ['travel', 'trip', 'flight', 'hotel', 'itinerary', 'relocation', 'moving to'],
+    health: ['fitness', 'workout', 'diet', 'health', 'wellness', 'exercise', 'nutrition', 'sleep'],
     screenwriting: ['screenplay', 'script', 'film', 'movie'],
     music: ['music', 'song', 'album', 'production'],
-    personalops: ['personal', 'ops', 'admin', 'household'],
+    personalops: ['plan my week', 'schedule', 'time block', 'calendar', 'routine', 'habit'],
+};
+// Resolve domain aliases from the intake form (e.g., 'career' → 'careeregine')
+const INTAKE_ALIASES = {
+    career: 'careeregine',
+    finance: 'wealthresearch',
+    home: 'personalops',
 };
 function detectDomain(text) {
     const lower = (text || '').toLowerCase();
@@ -47,10 +59,14 @@ function detectDomain(text) {
     }
     return 'general';
 }
+function resolveDomainAlias(domain) {
+    return (INTAKE_ALIASES[domain] || domain);
+}
 function createTask(opts) {
     const tasks = readStore(TASKS_FILE);
     const raw = opts.raw_request || '';
-    const domain = opts.domain || detectDomain(raw);
+    const rawDomain = opts.domain || detectDomain(raw);
+    const domain = resolveDomainAlias(rawDomain);
     // Resolve project_id — use provided, or default for domain
     let projectId = opts.project_id;
     try {
