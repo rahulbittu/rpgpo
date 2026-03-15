@@ -1,5 +1,1034 @@
 [
   {
+    "task_id": "t_mms6edovqc6t",
+    "title": "Create a comprehensive comparison of Austin vs Portland for a tech worker. Inclu",
+    "raw_request": "Create a comprehensive comparison of Austin vs Portland for a tech worker. Include job market, cost of living, weather, culture, and outdoor activities.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:57:03.055Z",
+    "updated_at": "2026-03-15T20:03:12.342Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:58:47.870Z",
+      "interpreted_objective": "Compare Austin and Portland for tech workers across key lifestyle and career factors.",
+      "expected_outcome": "A detailed comparison report highlighting job market, cost of living, weather, culture, and outdoor activities in Austin and Portland.",
+      "key_unknowns": [
+        "Current job market trends in Austin and Portland",
+        "Cost of living specifics",
+        "Weather patterns",
+        "Cultural highlights",
+        "Outdoor activities available"
+      ],
+      "recommended_strategy": "Conduct web research to gather current data on job market, cost of living, weather, culture, and outdoor activities for both cities. Synthesize findings into a structured report comparing the two cities. Highlight pros and cons for tech workers considering relocation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Austin and Portland",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on job market, cost of living, weather, culture, and outdoor activities in Austin and Portland.",
+          "prompt": "Search the web for current, specific information about the job market, cost of living, weather, culture, and outdoor activities in Austin and Portland. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of Austin vs Portland for tech workers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Austin and Portland for tech workers. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-Austin-vs-Portland.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1830
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mms6ec48ztde",
+    "title": "Design a journaling system for tracking personal growth. Include prompts for dif",
+    "raw_request": "Design a journaling system for tracking personal growth. Include prompts for different life areas, weekly review format, and quarterly reflection template.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:57:01.016Z",
+    "updated_at": "2026-03-15T20:03:03.615Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:58:44.242Z",
+      "interpreted_objective": "Create a comprehensive journaling system to track personal growth with specific prompts and reflection templates.",
+      "expected_outcome": "A structured journaling system with prompts for various life areas, a weekly review format, and a quarterly reflection template.",
+      "key_unknowns": [
+        "Specific life areas to focus on in the journaling prompts",
+        "Preferred format for the weekly review and quarterly reflection",
+        "Evidence-based practices for effective journaling"
+      ],
+      "recommended_strategy": "Research current best practices in journaling for personal growth. Develop specific prompts and templates based on evidence-based strategies. Compile findings into a detailed report for implementation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices in Journaling",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and effective strategies in journaling for personal growth.",
+          "prompt": "Search the web for current, specific information about best practices in journaling for personal growth. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Journaling System",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured journaling system with prompts for different life areas, a weekly review format, and a quarterly reflection template.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a journaling system. Include specific prompts for different life areas, a weekly review format, and a quarterly reflection template.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-journaling-system.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1817
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms6eajnc9ki",
+    "title": "Teach me about browser rendering pipeline. Cover DOM construction, CSSOM, layout",
+    "raw_request": "Teach me about browser rendering pipeline. Cover DOM construction, CSSOM, layout, paint, and compositing. Include performance optimization tips.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:56:58.979Z",
+    "updated_at": "2026-03-15T20:02:50.858Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:58:28.922Z",
+      "interpreted_objective": "Teach the user about the browser rendering pipeline with performance optimization tips.",
+      "expected_outcome": "A comprehensive explanation of the browser rendering pipeline including DOM construction, CSSOM, layout, paint, and compositing, along with performance optimization tips.",
+      "key_unknowns": [
+        "User's current knowledge level on browser rendering",
+        "Specific performance optimization techniques relevant to the user"
+      ],
+      "recommended_strategy": "Research and compile a detailed explanation of each stage of the browser rendering pipeline. Provide practical performance optimization tips tailored to common bottlenecks in the process. Ensure the content is accessible to someone with a technical background.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Browser Rendering Pipeline",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on DOM construction, CSSOM, layout, paint, and compositing.",
+          "prompt": "Search the web for current, specific information about the browser rendering pipeline. Include details on DOM construction, CSSOM, layout, paint, and compositing. Provide URLs and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Performance Optimization Tips",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of performance optimization tips for the browser rendering pipeline.",
+          "prompt": "Search the web for performance optimization tips specific to the browser rendering pipeline. Focus on techniques that address common bottlenecks in DOM construction, CSSOM, layout, paint, and compositing. Provide URLs and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Browser Rendering Pipeline Explanation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive explanation of the browser rendering pipeline with performance optimization tips.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive explanation of the browser rendering pipeline. Cover DOM construction, CSSOM, layout, paint, and compositing. Include performance optimization tips.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2097
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms6e8ydwaja",
+    "title": "Create an estate planning checklist for a tech worker in their 30s. Include will",
+    "raw_request": "Create an estate planning checklist for a tech worker in their 30s. Include will, trust, beneficiary designations, digital assets, and power of attorney.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:56:56.917Z",
+    "updated_at": "2026-03-15T20:02:42.410Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:58:22.950Z",
+      "interpreted_objective": "Create a comprehensive estate planning checklist for a tech worker in their 30s, covering will, trust, beneficiary designations, digital assets, and power of attorney.",
+      "expected_outcome": "A detailed checklist that provides actionable steps for estate planning tailored to tech workers in their 30s, including specific considerations for digital assets.",
+      "key_unknowns": [
+        "Specific legal requirements for estate planning in different jurisdictions",
+        "Unique considerations for tech workers regarding digital assets"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on estate planning essentials, especially for tech workers. Synthesize findings into a structured checklist, ensuring it includes practical steps and considerations for digital assets, wills, trusts, and power of attorney.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Estate Planning Essentials",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on estate planning essentials for tech workers, including wills, trusts, beneficiary designations, digital assets, and power of attorney.",
+          "prompt": "Search the web for current, specific information about estate planning essentials for tech workers in their 30s. Include details on wills, trusts, beneficiary designations, digital assets, and power of attorney. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Estate Planning Checklist",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured estate planning checklist tailored for tech workers in their 30s.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable estate planning checklist for tech workers in their 30s. Include specific steps for wills, trusts, beneficiary designations, digital assets, and power of attorney.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-estate-planning-checklist.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2218
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms6e7dxoao0",
+    "title": "Write a guide to effective 1-on-1 meetings for engineering managers. Include que",
+    "raw_request": "Write a guide to effective 1-on-1 meetings for engineering managers. Include question bank, meeting template, and how to build psychological safety.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:56:54.885Z",
+    "updated_at": "2026-03-15T20:02:34.054Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:58:08.775Z",
+      "interpreted_objective": "Create a comprehensive guide for engineering managers on conducting effective 1-on-1 meetings.",
+      "expected_outcome": "A detailed guide that includes a question bank, meeting template, and strategies for building psychological safety in 1-on-1 meetings.",
+      "key_unknowns": [
+        "Specific details or preferences Rahul might have for the guide content",
+        "Any particular format or style requirements beyond 'balanced/terse'"
+      ],
+      "recommended_strategy": "Develop a structured guide by researching best practices for 1-on-1 meetings, creating a question bank, and outlining strategies to foster psychological safety. Ensure the content is clear and actionable for engineering managers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Effective 1-on-1 Meeting Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices for conducting 1-on-1 meetings in engineering contexts.",
+          "prompt": "Search the web for current, specific information about best practices for 1-on-1 meetings for engineering managers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Question Bank and Meeting Template",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A question bank and a meeting template tailored for engineering managers.",
+          "prompt": "Based on the research results from prior subtasks, create a question bank and meeting template for engineering managers to use during 1-on-1 meetings. Ensure the content is practical and immediately usable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Outline Strategies for Building Psychological Safety",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "A set of strategies for engineering managers to build psychological safety during 1-on-1 meetings.",
+          "prompt": "Analyze the data and provide strategic recommendations for building psychological safety in 1-on-1 meetings within engineering teams. Include specific pros/cons and actionable steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2108
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mms6e5t7cxct",
+    "title": "Research the best indoor cycling bikes for a home gym under 1000 dollars. Compar",
+    "raw_request": "Research the best indoor cycling bikes for a home gym under 1000 dollars. Compare Peloton alternatives with built-in screens and app integration.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:56:52.843Z",
+    "updated_at": "2026-03-15T20:02:12.850Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:58:02.639Z",
+      "interpreted_objective": "Identify and compare the best indoor cycling bikes under $1000 with built-in screens and app integration, focusing on Peloton alternatives.",
+      "expected_outcome": "A detailed comparison report of indoor cycling bikes under $1000, highlighting Peloton alternatives with built-in screens and app integration, including specific product names, prices, pros/cons, and a clear recommendation.",
+      "key_unknowns": [
+        "Current market prices of indoor cycling bikes under $1000",
+        "Features of Peloton alternatives",
+        "App integration capabilities of these bikes"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on indoor cycling bikes under $1000 with built-in screens and app integration. Next, synthesize the findings into a structured comparison report, highlighting specific products, prices, and features. Finally, provide a clear recommendation based on the analysis.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Indoor Cycling Bikes",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on indoor cycling bikes under $1000 with built-in screens and app integration, including product names, prices, and features.",
+          "prompt": "Search the web for current, specific information about indoor cycling bikes under $1000 with built-in screens and app integration. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Bike Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of indoor cycling bikes under $1000, highlighting Peloton alternatives with built-in screens and app integration, including specific product names, prices, pros/cons, and a recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for indoor cycling bikes under $1000 with built-in screens and app integration. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-indoor-cycling-bikes.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1966
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms6e48tjl6a",
+    "title": "Create a digital declutter guide. Organize email, files, photos, and subscriptio",
+    "raw_request": "Create a digital declutter guide. Organize email, files, photos, and subscriptions in one weekend. Include automation rules for ongoing maintenance.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:56:50.813Z",
+    "updated_at": "2026-03-15T20:02:03.921Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:57:57.135Z",
+      "interpreted_objective": "Create a comprehensive guide for digital decluttering over a weekend, including ongoing maintenance automation.",
+      "expected_outcome": "A detailed, actionable guide that helps users organize their digital life in a weekend and maintain it efficiently with automation.",
+      "key_unknowns": [
+        "Specific tools or platforms the user prefers for email, files, photos, and subscriptions",
+        "User's current level of digital clutter",
+        "Preferred automation tools or platforms"
+      ],
+      "recommended_strategy": "Research current best practices and tools for digital decluttering and automation. Synthesize this information into a structured guide that outlines a weekend plan for organizing email, files, photos, and subscriptions, and includes automation rules for ongoing maintenance.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Digital Decluttering Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices and tools for digital decluttering and automation.",
+          "prompt": "Search the web for current best practices and tools for digital decluttering, focusing on organizing emails, files, photos, and managing subscriptions. Include information on automation tools for ongoing maintenance. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Digital Declutter Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable guide for digital decluttering over a weekend, including automation rules for ongoing maintenance.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed guide for digital decluttering over a weekend. Include specific steps for organizing emails, files, photos, and subscriptions, and propose automation rules for ongoing maintenance. Ensure the guide is actionable and easy to follow.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-digital-declutter-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1957
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms6e2o81g25",
+    "title": "Write a pitch for an anthology series where each episode is based on a real soft",
+    "raw_request": "Write a pitch for an anthology series where each episode is based on a real software bug that caused a major incident. Include 3 episode concepts.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:56:48.776Z",
+    "updated_at": "2026-03-15T20:01:56.225Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:57:52.318Z",
+      "interpreted_objective": "Create a pitch for an anthology series with episode concepts based on real software bugs causing major incidents.",
+      "expected_outcome": "A compelling pitch document with three detailed episode concepts, each based on a real software bug incident.",
+      "key_unknowns": [
+        "Specific software bugs to feature",
+        "Details of each incident",
+        "Tone and style of the series"
+      ],
+      "recommended_strategy": "Research notable software bugs that caused significant incidents. Develop episode concepts around these incidents, highlighting the drama and impact of each bug. Craft a cohesive pitch that ties the episodes together under a unifying theme.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Significant Software Bugs",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of real software bugs that caused major incidents, with details and sources.",
+          "prompt": "Search the web for significant software bugs that caused major incidents. Include real names, dates, and detailed descriptions of the incidents with sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Episode Concepts",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "Three detailed episode concepts based on the researched software bugs.",
+          "prompt": "Based on the research results, create three episode concepts for an anthology series. Each episode should be based on a real software bug incident, highlighting the drama and impact. Include a brief synopsis for each episode.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-anthology_series_pitch.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1857
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mms6e13sogwf",
+    "title": "Research the best weekend getaways within 3 hours of Austin TX. Compare Frederic",
+    "raw_request": "Research the best weekend getaways within 3 hours of Austin TX. Compare Fredericksburg, New Braunfels, Wimberley, and Marble Falls.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:56:46.744Z",
+    "updated_at": "2026-03-15T20:01:46.973Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:57:36.347Z",
+      "interpreted_objective": "Research and compare the best weekend getaways within 3 hours of Austin, TX, focusing on Fredericksburg, New Braunfels, Wimberley, and Marble Falls.",
+      "expected_outcome": "A detailed comparison report of the four destinations, including travel logistics, attractions, accommodations, and costs.",
+      "key_unknowns": [
+        "Current travel logistics and costs for each destination",
+        "Key attractions and activities available in each location",
+        "Accommodation options and their pricing"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on travel logistics, attractions, and accommodations for each destination. Then, synthesize this data into a structured comparison report highlighting the pros and cons of each location. Finally, provide actionable recommendations based on the findings.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Weekend Getaways",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on travel logistics, attractions, and accommodations for Fredericksburg, New Braunfels, Wimberley, and Marble Falls.",
+          "prompt": "Search the web for current, specific information about weekend getaways within 3 hours of Austin, TX, focusing on Fredericksburg, New Braunfels, Wimberley, and Marble Falls. Include travel logistics, key attractions, accommodation options, and costs. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the four destinations, including travel logistics, attractions, accommodations, and costs.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comparison report for Fredericksburg, New Braunfels, Wimberley, and Marble Falls. Include travel logistics, attractions, accommodations, and costs, highlighting the pros and cons of each location. Provide actionable recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-2023-11-04-weekend-getaways.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1974
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mms6dzjez2je",
+    "title": "Design a desk worker eye care routine. Include 20-20-20 rule implementation, mon",
+    "raw_request": "Design a desk worker eye care routine. Include 20-20-20 rule implementation, monitor settings, ambient lighting, and annual checkup checklist.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:56:44.715Z",
+    "updated_at": "2026-03-15T20:01:38.610Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:57:32.291Z",
+      "interpreted_objective": "Create a comprehensive eye care routine for desk workers.",
+      "expected_outcome": "A detailed, actionable eye care routine that includes the 20-20-20 rule, monitor settings, ambient lighting recommendations, and an annual checkup checklist.",
+      "key_unknowns": [
+        "Specific evidence-based guidelines for monitor settings",
+        "Optimal ambient lighting conditions for eye health",
+        "Checklist items for annual eye checkups"
+      ],
+      "recommended_strategy": "Research current guidelines and evidence-based practices for eye care related to desk work. Compile these findings into a structured routine that addresses the key components requested. Ensure all recommendations are actionable and include safety disclaimers where appropriate.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research 20-20-20 Rule and Eye Care Guidelines",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current guidelines and evidence-based practices for the 20-20-20 rule and general eye care for desk workers.",
+          "prompt": "Search the web for current, specific information about the 20-20-20 rule and eye care guidelines for desk workers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Eye Care Routine",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive eye care routine for desk workers, including the 20-20-20 rule, monitor settings, ambient lighting, and an annual checkup checklist.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive eye care routine for desk workers. Include specific recommendations for the 20-20-20 rule, monitor settings, ambient lighting, and an annual checkup checklist.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1988
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms6dxz2i600",
+    "title": "Create a framework for evaluating job offers beyond salary. Include total comp a",
+    "raw_request": "Create a framework for evaluating job offers beyond salary. Include total comp analysis, culture signals, growth trajectory, and work-life balance indicators.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:56:42.686Z",
+    "updated_at": "2026-03-15T20:01:29.741Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:57:05.996Z",
+      "interpreted_objective": "Create a framework for evaluating job offers beyond salary, focusing on total compensation, culture, growth, and work-life balance.",
+      "expected_outcome": "A comprehensive framework that Rahul can use to evaluate job offers holistically, aiding in career decisions.",
+      "key_unknowns": [
+        "Specific indicators for culture signals",
+        "Metrics for growth trajectory",
+        "Work-life balance indicators relevant to data engineers"
+      ],
+      "recommended_strategy": "First, research current best practices and indicators for evaluating job offers beyond salary. Then, synthesize this information into a structured framework tailored for data engineering roles. Finally, compile the framework into a report for Rahul's use.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Job Offer Evaluation Metrics",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices and indicators for evaluating job offers beyond salary.",
+          "prompt": "Search the web for current, specific information about evaluating job offers beyond salary. Focus on total compensation analysis, culture signals, growth trajectory, and work-life balance indicators. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Framework for Job Offer Evaluation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured framework for evaluating job offers beyond salary, tailored for data engineering roles.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a framework for evaluating job offers beyond salary. Include specific indicators for total compensation, culture signals, growth trajectory, and work-life balance. Provide actionable recommendations for data engineering roles.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-job-offer-evaluation-framework.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2206
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms6dwedqnw6",
+    "title": "Find the best USB-C hub for a MacBook Pro developer setup. Must support dual 4K ",
+    "raw_request": "Find the best USB-C hub for a MacBook Pro developer setup. Must support dual 4K monitors, Ethernet, and SD card reader. Under 100 dollars.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:56:40.645Z",
+    "updated_at": "2026-03-15T20:00:59.307Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:57:00.630Z",
+      "interpreted_objective": "Identify the best USB-C hub under $100 for a MacBook Pro that supports dual 4K monitors, Ethernet, and an SD card reader.",
+      "expected_outcome": "A detailed report recommending a specific USB-C hub with pricing, pros, cons, and justification for its suitability for a MacBook Pro developer setup.",
+      "key_unknowns": [
+        "Current market prices of USB-C hubs",
+        "Availability of features like dual 4K support, Ethernet, and SD card reader",
+        "User reviews and ratings"
+      ],
+      "recommended_strategy": "Conduct a web search to gather current information on USB-C hubs that meet the specified criteria. Analyze the data to compare options and select the best one based on features, price, and user reviews. Compile findings into a structured report with a clear recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research USB-C Hubs",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of USB-C hubs under $100 with dual 4K monitor support, Ethernet, and SD card reader, including prices and reviews.",
+          "prompt": "Search the web for current USB-C hubs under $100 that support dual 4K monitors, Ethernet, and an SD card reader. Include product names, prices, features, user reviews, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize USB-C Hub Recommendations",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with a comparison of USB-C hubs, including pros/cons and a final recommendation.",
+          "prompt": "Based on the research results, synthesize a report comparing USB-C hubs under $100 that support dual 4K monitors, Ethernet, and an SD card reader. Include specific product names, prices, pros/cons, and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-usb-c-hub-recommendation.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1900
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms6duu6uxfj",
+    "title": "Teach me about connection pooling in databases. Cover PgBouncer, pgpool, and app",
+    "raw_request": "Teach me about connection pooling in databases. Cover PgBouncer, pgpool, and application-level pooling. Include sizing formulas and monitoring.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:56:38.622Z",
+    "updated_at": "2026-03-15T19:59:35.280Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:56:47.942Z",
+      "interpreted_objective": "Provide a comprehensive tutorial on connection pooling in databases, covering PgBouncer, pgpool, and application-level pooling, including sizing formulas and monitoring techniques.",
+      "expected_outcome": "A detailed report that educates on connection pooling, with practical insights on sizing and monitoring, tailored for someone with a technical background in data engineering.",
+      "key_unknowns": [
+        "Specific sizing formulas for each pooling method",
+        "Best practices for monitoring each pooling method",
+        "Current trends and tools in connection pooling"
+      ],
+      "recommended_strategy": "First, conduct research to gather current information on connection pooling, focusing on PgBouncer, pgpool, and application-level pooling. Then, synthesize this information into a structured report that includes practical sizing formulas and monitoring techniques. Finally, ensure the report is clear and accessible for someone with a technical background.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Connection Pooling",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and insights on connection pooling, PgBouncer, pgpool, application-level pooling, sizing formulas, and monitoring techniques.",
+          "prompt": "Search the web for current, specific information about connection pooling in databases, focusing on PgBouncer, pgpool, and application-level pooling. Include details on sizing formulas and monitoring techniques, with real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Connection Pooling Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and comprehensive report on connection pooling, including practical insights on sizing and monitoring.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations on connection pooling in databases. Include specific details on PgBouncer, pgpool, and application-level pooling, with practical sizing formulas and monitoring techniques.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-connection_pooling.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1898
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms6dt9s4tzb",
+    "title": "Create a side income tax optimization guide. How to structure freelance income, ",
+    "raw_request": "Create a side income tax optimization guide. How to structure freelance income, business expenses, and estimated tax payments for a W2 worker with a side LLC.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:56:36.592Z",
+    "updated_at": "2026-03-15T19:59:04.701Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:56:43.814Z",
+      "interpreted_objective": "Create a detailed guide on optimizing taxes for a W2 worker with a side LLC, covering freelance income, business expenses, and estimated tax payments.",
+      "expected_outcome": "A comprehensive, actionable tax optimization guide tailored for individuals with both W2 and LLC income streams.",
+      "key_unknowns": [
+        "Current tax laws and regulations affecting W2 workers with LLCs",
+        "Best practices for structuring freelance income and business expenses",
+        "Methods for estimating tax payments for mixed income sources"
+      ],
+      "recommended_strategy": "First, research current tax laws and best practices for managing mixed income from W2 and LLC sources. Then, synthesize this information into a practical guide with specific strategies for income structuring, expense management, and tax payment estimation. Finally, compile the findings into a detailed report.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tax Laws and Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on tax laws and best practices for W2 workers with LLCs.",
+          "prompt": "Search the web for current, specific information about tax optimization for W2 workers with a side LLC, focusing on structuring freelance income, business expenses, and estimated tax payments. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Tax Optimization Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable tax optimization guide for W2 workers with a side LLC.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for tax optimization for W2 workers with a side LLC. Include specific strategies for structuring freelance income, managing business expenses, and estimating tax payments.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-tax-optimization-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2227
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms6drpctrhv",
+    "title": "Write a comprehensive guide to database migration strategies. Cover blue-green d",
+    "raw_request": "Write a comprehensive guide to database migration strategies. Cover blue-green deployments, rolling migrations, and feature flags for schema changes.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:56:34.560Z",
+    "updated_at": "2026-03-15T19:58:17.205Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:56:40.131Z",
+      "interpreted_objective": "Create a comprehensive guide on database migration strategies.",
+      "expected_outcome": "A detailed, well-structured guide covering blue-green deployments, rolling migrations, and feature flags for schema changes.",
+      "key_unknowns": [
+        "Specific audience for the guide",
+        "Preferred format or length of the guide"
+      ],
+      "recommended_strategy": "Research and synthesize best practices for database migration strategies, focusing on blue-green deployments, rolling migrations, and feature flags. Structure the guide to be clear and actionable, suitable for technical audiences interested in database management.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Database Migration Strategies",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Research findings on database migration strategies including blue-green deployments, rolling migrations, and feature flags.",
+          "prompt": "Search the web for current, specific information about database migration strategies, focusing on blue-green deployments, rolling migrations, and feature flags for schema changes. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Database Migration Strategies",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on database migration strategies, structured and tailored for a technical audience.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on database migration strategies. Cover blue-green deployments, rolling migrations, and feature flags for schema changes. Ensure the guide is clear, actionable, and suitable for a technical audience.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1962
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms66fdhj8pt",
     "title": "Research the best plants for improving air quality in a home office. Include low",
     "raw_request": "Research the best plants for improving air quality in a home office. Include low-maintenance options, NASA clean air study references, and placement tips.",
