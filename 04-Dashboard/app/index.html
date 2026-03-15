@@ -151,10 +151,10 @@
         <div id="homeRunningTask"></div>
 
         <div class="g4 mt-sm">
-          <button class="action-btn" onclick="submitTask('refresh-state','Refresh State')"><span class="btn-icon">&#8635;</span>Refresh</button>
+          <button class="action-btn" onclick="switchTab('intake')"><span class="btn-icon">&#9998;</span>New Task</button>
+          <button class="action-btn" onclick="switchTab('channels')"><span class="btn-icon">&#9881;</span>Ask AI</button>
           <button class="action-btn" onclick="submitTask('board-run','Board of AI')"><span class="btn-icon">&#9670;</span>Board Run</button>
-          <button class="action-btn" onclick="switchTab('intake')"><span class="btn-icon">&#9998;</span>Intake</button>
-          <button class="action-btn" onclick="switchTab('channels')"><span class="btn-icon">&#9881;</span>Channels</button>
+          <button class="action-btn" onclick="submitTask('refresh-state','Refresh State')"><span class="btn-icon">&#8635;</span>Refresh</button>
         </div>
 
         <!-- TopRanker Flagship + Priorities -->
@@ -276,6 +276,9 @@
 
         <!-- Execution Graph Panel (shown for tasks with graphs) -->
         <div id="executionGraphPanel"></div>
+
+        <!-- Quick Task Templates -->
+        <div id="missionTemplateGrid" class="g3" style="margin-bottom:14px"></div>
 
         <!-- Quick Submit Form -->
         <div class="card" style="margin-bottom:14px" id="intakeFormCard">
