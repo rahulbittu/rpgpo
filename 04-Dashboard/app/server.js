@@ -3352,6 +3352,17 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 81: Analytics
+  if (req.url?.match(/^\/api\/analytics\/summary(\?.*)?$/) && req.method === 'GET') {
+    try { const a = require('./lib/analytics'); const params = new URL(req.url, 'http://x').searchParams; return json(res, a.getAnalyticsSummary(parseInt(params.get('days') || '7'))); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/analytics\/cost-trend(\?.*)?$/) && req.method === 'GET') {
+    try { const a = require('./lib/analytics'); const params = new URL(req.url, 'http://x').searchParams; return json(res, a.getCostTrend(parseInt(params.get('days') || '30'))); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/analytics\/task-trend(\?.*)?$/) && req.method === 'GET') {
+    try { const a = require('./lib/analytics'); const params = new URL(req.url, 'http://x').searchParams; return json(res, a.getTaskTrend(parseInt(params.get('days') || '30'))); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 80: Integration Gateway
   if (req.url === '/api/integrations/subscriptions' && req.method === 'GET') {
     try { const gw = require('./lib/integration-gateway'); return json(res, { subscriptions: gw.listSubscriptions() }); } catch (e) { return json(res, { error: e.message }, 500); }
