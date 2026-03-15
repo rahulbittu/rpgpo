@@ -1681,5 +1681,83 @@
       "completion": "done",
       "domain_routed": "travel"
     }
+  },
+  {
+    "test_case_id": "GPO-FIN-12",
+    "global_rank": 146,
+    "engine": "Personal Finance & Investing",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:14:41.200Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "wealthresearch"
+    }
+  },
+  {
+    "test_case_id": "GPO-WRI-21",
+    "global_rank": 148,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:14:41.201Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "writing"
+    }
+  },
+  {
+    "test_case_id": "GPO-HEA-09",
+    "global_rank": 150,
+    "engine": "Health & Wellness Coach",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:14:41.201Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "health"
+    }
+  },
+  {
+    "test_case_id": "GPO-RES-14",
+    "global_rank": 152,
+    "engine": "Research & Analysis",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:14:41.201Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "research"
+    }
+  },
+  {
+    "test_case_id": "GPO-SCR-05",
+    "global_rank": 154,
+    "engine": "Screenwriting & Story Development",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:14:41.201Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "screenwriting"
+    }
+  },
+  {
+    "test_case_id": "GPO-HEA-10",
+    "global_rank": 156,
+    "engine": "Health & Wellness Coach",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:14:41.201Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "health"
+    }
   }
 ]
