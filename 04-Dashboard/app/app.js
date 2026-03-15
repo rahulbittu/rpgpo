@@ -1435,6 +1435,7 @@ async function submitIntakeTask() {
     });
     const d = await r.json();
     if (d.ok) {
+      _autoApproved = false;
       showToast('Task submitted — starting Board deliberation...', 'success');
       document.getElementById('intakeRequest').value = '';
       document.getElementById('intakeOutcome').value = '';
@@ -1457,14 +1458,32 @@ async function submitIntakeTask() {
 
 function startIntakeDetailPoll() {
   stopIntakeDetailPoll();
-  _intakeDetailPollTimer = setInterval(() => {
-    if (selectedIntakeTaskId) {
-      loadIntakeTasks();
-    } else {
-      stopIntakeDetailPoll();
-    }
+  _intakeDetailPollTimer = setInterval(async () => {
+    if (!selectedIntakeTaskId) { stopIntakeDetailPoll(); return; }
+    await loadIntakeTasks();
+    // Auto-approve plan when deliberation completes (for non-code research tasks)
+    try {
+      const r = await fetch('/api/intake/task/' + selectedIntakeTaskId);
+      if (r.ok) {
+        const d = await r.json();
+        if (d.task?.status === 'planned' && !_autoApproved) {
+          _autoApproved = true;
+          const isCodeTask = d.task.board_deliberation?.is_code_task;
+          if (!isCodeTask) {
+            showToast('Plan approved — executing subtasks...', 'success');
+            await fetch('/api/intake/task/' + selectedIntakeTaskId + '/approve-plan', { method: 'POST' });
+            pushActivity('Auto-approved plan for: ' + d.task.title);
+          }
+        }
+        if (d.task?.status === 'done' || d.task?.status === 'failed') {
+          stopIntakeDetailPoll();
+          showIntakeDetail(selectedIntakeTaskId);
+        }
+      }
+    } catch { /* polling error, continue */ }
   }, 3000);
 }
+var _autoApproved = false;
 
 function stopIntakeDetailPoll() {
   if (_intakeDetailPollTimer) { clearInterval(_intakeDetailPollTimer); _intakeDetailPollTimer = null; }

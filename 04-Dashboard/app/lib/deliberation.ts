@@ -176,10 +176,14 @@ Rules:
 - Risk levels: green (safe, reversible), yellow (needs review), red (needs explicit approval)
 
 CRITICAL PROMPT QUALITY RULES FOR SUBTASKS:
-- Perplexity research subtasks MUST instruct: "Search the web for current, specific information. Include real names, numbers, dates, URLs, and sources. Do not produce generic summaries or placeholder text."
-- OpenAI synthesis subtasks MUST instruct: "Synthesize the research into actionable recommendations with specific next steps. Include concrete examples."
-- Every subtask prompt must tell the AI to produce REAL, SPECIFIC output — never templates, never "[Insert X]" placeholders
-- Research subtasks should ask for current data, recent articles, real companies, real numbers
+- Each subtask prompt MUST be self-contained — it should include ALL necessary context from the task request so the AI model can execute it independently
+- NEVER use placeholders like [Tool1], [Company Name], [Insert Here] in subtask prompts — include the actual values from the task request
+- If the task asks about specific things (e.g., "passive income ideas"), the subtask prompt must repeat those specifics
+- Perplexity research subtasks MUST instruct: "Search the web for current, specific information about [exact topic from request]. Include real names, numbers, dates, URLs, and sources."
+- OpenAI synthesis subtasks MUST instruct: "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps."
+- Gemini strategy subtasks MUST instruct: "Analyze the data and provide strategic comparison with specific pros/cons and recommendations."
+- Later subtasks receive output from earlier ones automatically — write prompts assuming this context will be available
+- Every subtask prompt must produce REAL, SPECIFIC output — never templates, never placeholders
 ${filePathRules}
 - Output valid JSON only, no markdown wrapping`;
 
