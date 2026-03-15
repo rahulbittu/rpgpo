@@ -3355,6 +3355,11 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 94: System Dashboard
+  if (req.url === '/api/system/dashboard' && req.method === 'GET') {
+    try { const ss = require('./lib/system-status'); return json(res, ss.getSystemDashboard()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 93: Cost Optimization
   if (req.url === '/api/cost-insights' && req.method === 'GET') {
     try { const co = require('./lib/cost-optimizer'); return json(res, { insights: co.getCostInsights() }); } catch (e) { return json(res, { error: e.message }, 500); }
