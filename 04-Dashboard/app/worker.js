@@ -912,6 +912,13 @@ RULES:
           message: err.message.slice(0, 200),
         });
       } catch { /* non-fatal */ }
+      // Track error
+      try {
+        const et = require('./lib/error-tracker');
+        const errMsg = err.message || '';
+        const category = errMsg.includes('timeout') ? 'timeout' : errMsg.includes('API key') ? 'provider' : errMsg.includes('parse') ? 'parse' : 'system';
+        et.trackError({ category, severity: 'high', source: 'worker', message: errMsg, taskId: st.parent_task, providerId: model, retryable: category === 'timeout' || category === 'provider' });
+      } catch { /* non-fatal */ }
       workflow.onSubtaskComplete(subtaskId);
       throw err;
     }
