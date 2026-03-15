@@ -448,9 +448,9 @@ const server = http.createServer(async (req, res) => {
     const task = intake.createTask(body);
     events.broadcast('activity', { action: `Task submitted: ${task.title}`, ts: new Date().toISOString() });
     logAction('Intake submit', task.task_id, task.title);
-    // Auto-queue deliberation so task starts processing immediately
+    // Auto-queue deliberation with auto-approve so task runs without clicks
     try {
-      queue.addTask('deliberate', `Deliberate: ${task.title}`, { taskId: task.task_id });
+      queue.addTask('deliberate', `Deliberate: ${task.title}`, { taskId: task.task_id, autoApprove: true });
       events.broadcast('activity', { action: `Board deliberation queued: ${task.title}`, ts: new Date().toISOString() });
     } catch { /* manual deliberation fallback */ }
     return json(res, { ok: true, task, message: 'Task submitted and deliberation started' });

@@ -1232,5 +1232,70 @@
     "taskId": "t_mmr8utd022lo",
     "taskType": "subtask",
     "role": "creative"
+  },
+  {
+    "ts": "2026-03-15T05:35:51.093Z",
+    "date": "2026-03-15",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 1139,
+    "outputTokens": 691,
+    "totalTokens": 1830,
+    "cost": 0.009757499999999999,
+    "taskId": "t_mmrbmq1ra3xl",
+    "taskType": "deliberation",
+    "role": "board"
+  },
+  {
+    "ts": "2026-03-15T05:36:47.621Z",
+    "date": "2026-03-15",
+    "provider": "perplexity",
+    "model": "sonar",
+    "inputTokens": 45,
+    "outputTokens": 703,
+    "totalTokens": 748,
+    "cost": 0,
+    "taskId": "t_mmrbmq1ra3xl",
+    "taskType": "subtask",
+    "role": "research"
+  },
+  {
+    "ts": "2026-03-15T05:37:57.705Z",
+    "date": "2026-03-15",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "inputTokens": 48,
+    "outputTokens": 701,
+    "totalTokens": 749,
+    "cost": 0,
+    "taskId": "t_mmrbmq1ra3xl",
+    "taskType": "subtask",
+    "role": "strategy"
+  },
+  {
+    "ts": "2026-03-15T05:38:03.810Z",
+    "date": "2026-03-15",
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "inputTokens": 268,
+    "outputTokens": 2000,
+    "totalTokens": 2268,
+    "cost": 0,
+    "taskId": "t_mmrbmq1ra3xl",
+    "taskType": "subtask",
+    "role": "strategy"
+  },
+  {
+    "ts": "2026-03-15T05:38:55.801Z",
+    "date": "2026-03-15",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 54,
+    "outputTokens": 631,
+    "totalTokens": 685,
+    "cost": 0.006445,
+    "taskId": "t_mmrbmq1ra3xl",
+    "taskType": "subtask",
+    "role": "creative"
   }
 ]

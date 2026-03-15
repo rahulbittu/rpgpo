@@ -7,5 +7,23 @@
     "message": "u",
     "createdAt": 1773552852303,
     "acknowledgedAt": 1773552852303
+  },
+  {
+    "id": "notif_mmrbpprl_f8311829",
+    "type": "system.info",
+    "severity": "low",
+    "title": "Subtask complete: Analyze Competition",
+    "message": "## Competitive Landscape Analysis for Data Engineering SaaS Ideas (2026 Projection)",
+    "createdAt": 1773553083825,
+    "actions": [
+      {
+        "label": "View Task",
+        "action": "viewWorkflow",
+        "ref": {
+          "kind": "task",
+          "id": ""
+        }
+      }
+    ]
   }
 ]
