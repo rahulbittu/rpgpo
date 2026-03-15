@@ -2686,5 +2686,96 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-15T18:16:54.757Z"
+  },
+  "t_mms2xrtcsabo": {
+    "task_id": "t_mms2xrtcsabo",
+    "deliverable_id": "dlv_rpgpo_tmms2xrtcsabo_document_12818eaf",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:20:14.868Z"
+  },
+  "t_mms2xtduywxn": {
+    "task_id": "t_mms2xtduywxn",
+    "deliverable_id": "dlv_rpgpo_tmms2xtduywxn_shopping_40f6c7c1",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:20:19.918Z"
+  },
+  "t_mms2xuy6madh": {
+    "task_id": "t_mms2xuy6madh",
+    "deliverable_id": "dlv_rpgpo_tmms2xuy6madh_document_107f32c4",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:20:24.937Z"
+  },
+  "t_mms2xwifkhxu": {
+    "task_id": "t_mms2xwifkhxu",
+    "deliverable_id": "dlv_rpgpo_tmms2xwifkhxu_document_1d82fda9",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:20:37.386Z"
+  },
+  "t_mms2xy2ots62": {
+    "task_id": "t_mms2xy2ots62",
+    "deliverable_id": "dlv_rpgpo_tmms2xy2ots62_creative_draft_ca27234a",
+    "engine_id": "screenwriting",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "artifacts",
+      "premise",
+      "beat_sheet"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:20:41.015Z"
+  },
+  "t_mms2xzmyswbw": {
+    "task_id": "t_mms2xzmyswbw",
+    "deliverable_id": "dlv_rpgpo_tmms2xzmyswbw_action_plan_ba97e7b2",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:20:45.355Z"
   }
 }
