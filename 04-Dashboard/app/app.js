@@ -2239,11 +2239,11 @@ function renderTaskTimeline(task, subtasks) {
     html += '<div class="final-result-header">Final Result</div>';
     html += '<div class="final-result-loading">Loading final output...</div>';
     html += '</div>';
-    // Async-load final output — try structured deliverable first, then raw
+    // Async-load final output — try structured deliverable first, then raw, then subtask reports
     setTimeout(function() {
+      var slot = document.getElementById('finalResult_' + task.task_id);
       // Part 59: Try structured deliverable
       fetch('/api/tasks/' + encodeURIComponent(task.task_id) + '/deliverable').then(function(r) { return r.ok ? r.json() : null; }).then(function(deliv) {
-        var slot = document.getElementById('finalResult_' + task.task_id);
         if (slot && deliv && deliv.model) {
           var h = '<div class="final-result-header">Final Result</div>';
           h += renderStructuredDeliverable(deliv.model);
@@ -2252,13 +2252,27 @@ function renderTaskTimeline(task, subtasks) {
           }
           h += '<div style="margin-top:6px"><a href="#" onclick="event.preventDefault();this.parentNode.nextSibling.style.display=this.parentNode.nextSibling.style.display===\'none\'?\'block\':\'none\'" style="font-size:10px;color:var(--accent-text)">Toggle raw output</a></div><div style="display:none" id="rawOutput_' + task.task_id + '"></div>';
           slot.innerHTML = h;
-          // Load raw fallback into hidden div
           loadRawOutput(task.task_id);
           return;
         }
         // Fallback to raw output
         loadRawOutput(task.task_id);
-      }).catch(function() { loadRawOutput(task.task_id); });
+        // If raw output also fails after 2s, show subtask reports as fallback
+        setTimeout(function() {
+          if (slot && slot.innerHTML.includes('Loading final output')) {
+            var fallbackHtml = '<div class="final-result-header">Final Result</div>';
+            fallbackHtml += '<div class="final-result-answer" style="color:var(--text-secondary)">Output available in subtask reports above. Click the report links to view details.</div>';
+            slot.innerHTML = fallbackHtml;
+          }
+        }, 2000);
+      }).catch(function() {
+        loadRawOutput(task.task_id);
+        setTimeout(function() {
+          if (slot && slot.innerHTML.includes('Loading final output')) {
+            slot.innerHTML = '<div class="final-result-header">Final Result</div><div class="final-result-answer" style="color:var(--text-secondary)">Output available in subtask reports above.</div>';
+          }
+        }, 2000);
+      });
     }, 100);
   }
 
