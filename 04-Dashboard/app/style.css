@@ -210,11 +210,11 @@ h3, .section-title {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--r);
-  padding: 14px;
+  padding: 16px 18px;
   box-shadow: var(--shadow-sm);
-  transition: border-color var(--transition);
+  transition: border-color var(--transition), box-shadow var(--transition);
 }
-.card:hover { border-color: var(--border-mid); }
+.card:hover { border-color: var(--border-mid); box-shadow: var(--shadow-md); }
 .card.accent { border-color: var(--border-glow); }
 .card.flagship-card {
   border-color: var(--border-glow);

@@ -1,5 +1,518 @@
 [
   {
+    "task_id": "t_mms3db4j4r2e",
+    "title": "Research the current state of serverless computing in 2026. Compare AWS Lambda, ",
+    "raw_request": "Research the current state of serverless computing in 2026. Compare AWS Lambda, Cloudflare Workers, and Vercel Functions. Include cold start benchmarks and pricing.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:32:14.227Z",
+    "updated_at": "2026-03-15T18:34:43.454Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:33:04.115Z",
+      "interpreted_objective": "Research and compare the state of serverless computing in 2026, focusing on AWS Lambda, Cloudflare Workers, and Vercel Functions, including cold start benchmarks and pricing.",
+      "expected_outcome": "A comprehensive report comparing AWS Lambda, Cloudflare Workers, and Vercel Functions in 2026, with specific data on cold start benchmarks and pricing.",
+      "key_unknowns": [
+        "Current state of serverless computing in 2026",
+        "Cold start benchmarks for AWS Lambda, Cloudflare Workers, and Vercel Functions",
+        "Pricing details for AWS Lambda, Cloudflare Workers, and Vercel Functions"
+      ],
+      "recommended_strategy": "First, conduct web research to gather the latest data on serverless computing in 2026, focusing on AWS Lambda, Cloudflare Workers, and Vercel Functions. Then, synthesize this data into a structured report highlighting key comparisons, including cold start benchmarks and pricing.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Serverless Computing in 2026",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on serverless computing in 2026, focusing on AWS Lambda, Cloudflare Workers, and Vercel Functions, with citations.",
+          "prompt": "Search the web for current, specific information about the state of serverless computing in 2026, focusing on AWS Lambda, Cloudflare Workers, and Vercel Functions. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Serverless Computing Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing AWS Lambda, Cloudflare Workers, and Vercel Functions in 2026, including cold start benchmarks and pricing.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2026-serverless-computing.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2159
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mms3d9kdtdk3",
+    "title": "Write a professional bio in 3 lengths: 1 sentence, 1 paragraph, and full page. F",
+    "raw_request": "Write a professional bio in 3 lengths: 1 sentence, 1 paragraph, and full page. For a senior data engineer who builds startups on the side.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:32:12.205Z",
+    "updated_at": "2026-03-15T18:34:37.881Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:32:52.329Z",
+      "interpreted_objective": "Create a professional bio for a senior data engineer who also builds startups, in three different lengths.",
+      "expected_outcome": "A clear, concise, and engaging bio in three formats that effectively communicates the subject's professional background and entrepreneurial pursuits.",
+      "key_unknowns": [
+        "Specific achievements or projects of the data engineer",
+        "Preferred tone or style for the bio",
+        "Target audience for the bio"
+      ],
+      "recommended_strategy": "Gather information about the data engineer's career and startup projects. Draft bios in three lengths: one sentence, one paragraph, and one full page, ensuring each is tailored to highlight key achievements and entrepreneurial endeavors. Use a balanced and professional tone.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Data Engineer's Background",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of the data engineer's career highlights and startup projects.",
+          "prompt": "Search the web for information about the senior data engineer's career achievements, skills, and any startups they have built. Include specific names, numbers, dates, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Draft One-Sentence Bio",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A concise one-sentence bio highlighting the data engineer's key role and entrepreneurial activities.",
+          "prompt": "Based on the research results, write a one-sentence bio for a senior data engineer who builds startups on the side. Highlight key achievements and entrepreneurial spirit.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Draft One-Paragraph Bio",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A one-paragraph bio providing a brief overview of the data engineer's career and startup ventures.",
+          "prompt": "Using the research summary, create a one-paragraph bio for a senior data engineer who also builds startups. Include notable achievements and the impact of their entrepreneurial work.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Draft Full-Page Bio",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A full-page bio detailing the data engineer's professional journey and startup experiences.",
+          "prompt": "Based on the research, write a full-page bio for a senior data engineer who builds startups on the side. Provide a detailed account of their career, skills, and entrepreneurial achievements.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2242
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mms3d80a7thw",
+    "title": "Create a 5-minute pre-meeting energizer activity for remote engineering teams. M",
+    "raw_request": "Create a 5-minute pre-meeting energizer activity for remote engineering teams. Must work over video call and not feel cheesy.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:32:10.186Z",
+    "updated_at": "2026-03-15T18:34:27.000Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:32:43.998Z",
+      "interpreted_objective": "Create an engaging and non-cheesy pre-meeting energizer activity for remote engineering teams.",
+      "expected_outcome": "A 5-minute activity that effectively energizes remote engineering teams over a video call without feeling cheesy.",
+      "key_unknowns": [
+        "What specific activities are currently popular and effective in remote settings?",
+        "What are the preferences and demographics of the engineering teams?",
+        "What tools or platforms are available for use during a video call?"
+      ],
+      "recommended_strategy": "Research current popular and effective energizer activities for remote teams. Synthesize findings into a specific activity proposal that fits the engineering team's context and preferences. Ensure the activity is concise, engaging, and easy to execute over a video call.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Remote Energizer Activities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current popular and effective energizer activities for remote teams with sources.",
+          "prompt": "Search the web for current, specific information about popular and effective energizer activities for remote teams. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Activity Proposal",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed proposal for a 5-minute energizer activity suitable for remote engineering teams.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable proposal for a 5-minute energizer activity for remote engineering teams. Ensure it is engaging, non-cheesy, and executable over a video call.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-energizer-activity.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1938
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms3d6g6w6hp",
+    "title": "Calculate the financial impact of switching from W2 employment to full-time free",
+    "raw_request": "Calculate the financial impact of switching from W2 employment to full-time freelancing. Include tax differences, health insurance, retirement accounts, and minimum hourly rate needed.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:32:08.166Z",
+    "updated_at": "2026-03-15T18:34:52.554Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:32:38.174Z",
+      "interpreted_objective": "Assess the financial implications of transitioning from W2 employment to full-time freelancing, including tax, insurance, retirement, and income requirements.",
+      "expected_outcome": "A detailed report outlining the financial impact, including specific tax differences, health insurance costs, retirement account options, and the minimum hourly rate needed for freelancing.",
+      "key_unknowns": [
+        "Current tax rates and implications for freelancers",
+        "Health insurance options and costs for freelancers",
+        "Retirement account options available to freelancers",
+        "Minimum hourly rate needed to maintain current lifestyle"
+      ],
+      "recommended_strategy": "First, research current tax, health insurance, and retirement options for freelancers compared to W2 employees. Then, analyze the financial impact, including minimum hourly rate calculations. Finally, compile findings into a comprehensive report.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Tax and Insurance Differences",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on tax rates, health insurance, and retirement options for freelancers versus W2 employees.",
+          "prompt": "Search the web for current, specific information about tax differences, health insurance options, and retirement accounts for freelancers compared to W2 employees. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Analyze Financial Impact and Minimum Hourly Rate",
+          "stage": "strategy",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "Strategic comparison of financial impacts and calculation of minimum hourly rate needed for freelancing.",
+          "prompt": "Analyze the data on tax, insurance, and retirement differences for freelancers versus W2 employees. Calculate the minimum hourly rate needed for freelancing to maintain current income levels. Provide strategic comparison with specific pros/cons and recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Compile Comprehensive Financial Impact Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed report outlining the financial impact of switching from W2 employment to freelancing.",
+          "prompt": "Based on the research and analysis, compile a comprehensive report outlining the financial impact of switching from W2 employment to full-time freelancing. Include specific tax differences, health insurance costs, retirement account options, and the minimum hourly rate needed.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-freelancing-impact.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            1
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2373
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms3d4w10p57",
+    "title": "Teach me about database indexing strategies from basic to advanced. Cover B-tree",
+    "raw_request": "Teach me about database indexing strategies from basic to advanced. Cover B-tree, hash, GIN, GiST, and partial indexes. With PostgreSQL examples.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:32:06.145Z",
+    "updated_at": "2026-03-15T18:34:11.882Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:32:19.131Z",
+      "interpreted_objective": "Create a comprehensive educational resource on database indexing strategies, including PostgreSQL examples.",
+      "expected_outcome": "A structured report that explains database indexing strategies from basic to advanced, with practical PostgreSQL examples.",
+      "key_unknowns": [
+        "Current best practices for each indexing strategy",
+        "Specific PostgreSQL examples for each type of index"
+      ],
+      "recommended_strategy": "Conduct research on each indexing strategy to gather current best practices and examples. Synthesize the findings into a structured report that explains concepts from basic to advanced, tailored for learners with a technical background.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Database Indexing Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive information on B-tree, hash, GIN, GiST, and partial indexes with PostgreSQL examples.",
+          "prompt": "Search the web for current, specific information about database indexing strategies, focusing on B-tree, hash, GIN, GiST, and partial indexes. Include real PostgreSQL examples, best practices, and recent developments.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Indexing Strategies Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining database indexing strategies from basic to advanced, with PostgreSQL examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report on database indexing strategies. Explain B-tree, hash, GIN, GiST, and partial indexes with practical PostgreSQL examples, building from basic to advanced concepts.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-database-indexing-strategies.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1846
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms3d3bp3aob",
+    "title": "Research the best noise machines and sound conditioners for deep work in a home ",
+    "raw_request": "Research the best noise machines and sound conditioners for deep work in a home office. Under 100 dollars. Include decibel levels and sound options.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:32:04.117Z",
+    "updated_at": "2026-03-15T18:33:52.740Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:32:13.743Z",
+      "interpreted_objective": "Identify the best noise machines and sound conditioners under $100 for enhancing productivity in a home office.",
+      "expected_outcome": "A detailed report with specific product recommendations including decibel levels, sound options, and prices.",
+      "key_unknowns": [
+        "Current top-rated noise machines and sound conditioners",
+        "Their decibel levels and sound options",
+        "Prices under $100"
+      ],
+      "recommended_strategy": "First, research current noise machines and sound conditioners under $100 using Perplexity to gather data on product features, prices, and reviews. Then, synthesize this data into a structured report highlighting the best options with specific details like decibel levels and sound options.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Noise Machines",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on noise machines and sound conditioners under $100, including decibel levels and sound options.",
+          "prompt": "Search the web for current, specific information about the best noise machines and sound conditioners for deep work in a home office, priced under $100. Include details on decibel levels, sound options, prices, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Product Recommendations",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with product recommendations including specific names, prices, decibel levels, and sound options.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for the best noise machines and sound conditioners under $100. Include specific product names, prices, decibel levels, sound options, and a clear recommendation with reasoning.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-noise-machines.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1915
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms3d1qzzq6t",
+    "title": "Create a data quality monitoring checklist for production data pipelines. Includ",
+    "raw_request": "Create a data quality monitoring checklist for production data pipelines. Include freshness, completeness, accuracy, and schema drift detection strategies.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:32:02.075Z",
+    "updated_at": "2026-03-15T18:33:22.099Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:32:08.013Z",
+      "interpreted_objective": "Create a comprehensive checklist for monitoring data quality in production data pipelines.",
+      "expected_outcome": "A detailed checklist that includes strategies for monitoring data freshness, completeness, accuracy, and schema drift.",
+      "key_unknowns": [
+        "Specific format or structure preferred for the checklist",
+        "Any existing standards or templates to align with",
+        "Specific tools or technologies used in the data pipelines"
+      ],
+      "recommended_strategy": "Research best practices for data quality monitoring in production pipelines, focusing on freshness, completeness, accuracy, and schema drift. Synthesize findings into a structured checklist tailored for practical use. Ensure the checklist is immediately applicable and clear.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Data Quality Monitoring Best Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices for data quality monitoring in production pipelines.",
+          "prompt": "Search the web for current best practices in data quality monitoring for production data pipelines, focusing on freshness, completeness, accuracy, and schema drift detection. Include specific strategies, tools, and techniques used in the industry.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Data Quality Monitoring Checklist",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured checklist for data quality monitoring in production data pipelines.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed checklist for monitoring data quality in production data pipelines. Include strategies for freshness, completeness, accuracy, and schema drift detection. Ensure the checklist is clear, actionable, and tailored for practical use.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1974
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms394w99z3a",
     "title": "Write a scene where a programmer explains to a non-technical CEO why the last sp",
     "raw_request": "Write a scene where a programmer explains to a non-technical CEO why the last sprint took 3 weeks instead of 1. Make it funny but technically accurate.",

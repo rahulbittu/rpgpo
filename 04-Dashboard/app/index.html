@@ -85,113 +85,121 @@
     <!-- MAIN CONTENT -->
     <main class="content">
 
-      <!-- HOME -->
+      <!-- HOME — Dashboard -->
       <section class="tab-panel active" id="tab-home">
-        <div class="page-header" style="display:flex;justify-content:space-between;align-items:center">
+        <!-- Hero Header -->
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px">
           <div>
-            <h1 id="homeGreeting">Command Center</h1>
-            <p class="subtitle" id="homeDate"></p>
+            <h1 id="homeGreeting" style="font-size:22px;font-weight:800;letter-spacing:-.5px;margin-bottom:2px">Command Center</h1>
+            <p class="subtitle" id="homeDate" style="font-size:11px"></p>
           </div>
-          <button class="send-btn" onclick="switchTab('intake')" style="font-size:13px;padding:8px 20px">
+          <button class="send-btn" onclick="switchTab('intake')" style="font-size:13px;padding:10px 24px;border-radius:6px">
             <span>&#9998;</span> New Task
           </button>
         </div>
 
-        <div class="status-strip">
+        <!-- System Status Bar -->
+        <div class="status-strip" style="margin-bottom:12px">
           <div class="status-cell"><span class="status-cell-label">Server</span><span class="status-cell-value" id="hsServer">--</span></div>
           <div class="status-cell"><span class="status-cell-label">Worker</span><span class="status-cell-value" id="hsWorker">--</span></div>
           <div class="status-cell"><span class="status-cell-label">Queue</span><span class="status-cell-value" id="hsQueue">--</span></div>
           <div class="status-cell"><span class="status-cell-label">Models</span><span class="status-cell-value" id="hsModels">--</span></div>
           <div class="status-cell"><span class="status-cell-label">Approvals</span><span class="status-cell-value" id="hsApprovals">--</span></div>
-          <div class="status-cell"><span class="status-cell-label">Tasks Done</span><span class="status-cell-value" id="hsTasksDone">--</span></div>
+          <div class="status-cell"><span class="status-cell-label">Completed</span><span class="status-cell-value" id="hsTasksDone">--</span></div>
         </div>
 
-        <!-- Cost Summary Strip -->
-        <div class="cost-strip" id="homeCostStrip">
-          <div class="cost-strip-item">
-            <span class="cost-strip-label">Today</span>
-            <span class="cost-strip-value" id="costToday">--</span>
-          </div>
-          <div class="cost-strip-item">
-            <span class="cost-strip-label">This Week</span>
-            <span class="cost-strip-value" id="costWeek">--</span>
-          </div>
-          <div class="cost-strip-item">
-            <span class="cost-strip-label">Last Board Run</span>
-            <span class="cost-strip-value" id="costLastBoard">--</span>
-          </div>
-          <div class="cost-strip-item">
-            <span class="cost-strip-label">Calls Today</span>
-            <span class="cost-strip-value" id="costCallsToday">--</span>
-          </div>
-        </div>
-
-        <div class="heartbeat-bar" id="heartbeatBar">
+        <!-- Worker Heartbeat -->
+        <div class="heartbeat-bar" id="heartbeatBar" style="margin-bottom:16px">
           <span class="heartbeat-dot" id="heartbeatDot"></span>
           <span class="heartbeat-label" id="heartbeatLabel">Worker idle</span>
           <span class="heartbeat-detail" id="heartbeatDetail">--</span>
         </div>
 
-        <!-- Needs Operator Hero — priority blocker surface -->
+        <!-- Priority: Operator Action Required -->
         <div id="needsRahulHero"></div>
-
-        <!-- Global Approval Inbox — impossible to miss -->
         <div id="globalApprovalInbox"></div>
 
-        <!-- Recent Notifications -->
+        <!-- Notifications -->
         <div id="homeNotifications"></div>
 
-        <!-- Chief of Staff — next best actions surface -->
+        <!-- Chief of Staff -->
         <div id="chiefOfStaffPanel"></div>
 
-        <!-- Current Task Focus — always shows what's happening -->
+        <!-- Active Task -->
         <div id="currentTaskFocus"></div>
-
         <div id="homeRunningTask"></div>
 
-        <div class="g4 mt-sm">
+        <!-- Quick Actions -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0">
           <button class="action-btn" onclick="switchTab('intake')"><span class="btn-icon">&#9998;</span>New Task</button>
           <button class="action-btn" onclick="switchTab('channels')"><span class="btn-icon">&#9881;</span>Ask AI</button>
           <button class="action-btn" onclick="switchTab('missions')"><span class="btn-icon">&#9673;</span>Engines</button>
-          <button class="action-btn" onclick="submitTask('refresh-state','Refresh State')"><span class="btn-icon">&#8635;</span>Refresh</button>
+          <button class="action-btn" onclick="submitTask('refresh-state','Refresh')"><span class="btn-icon">&#8635;</span>Refresh</button>
         </div>
 
-        <!-- Engines + Priorities -->
-        <div class="g-2-1 mt">
+        <!-- Two-column: Today's Activity + Priorities -->
+        <div class="g2" style="margin-top:12px">
+          <div class="card" id="homeTodaySummary" style="border-left:3px solid var(--green)">
+            <h3 style="margin-bottom:8px">Today</h3>
+            <div id="homeTodayContent" style="font-size:12px;color:var(--text-secondary)">Loading...</div>
+          </div>
           <div class="card">
-            <div class="card-top-row">
-              <h3 style="margin:0">Engines</h3>
-              <button class="link-btn" onclick="switchTab('missions')">View All</button>
-            </div>
-            <div id="homeEngineStatus" class="card-body-text" style="font-size:11px"></div>
-          </div>
-          <div class="card accent">
-            <h3>Top Priorities</h3>
-            <ul id="homePriorities"></ul>
+            <h3>Priorities</h3>
+            <ul id="homePriorities" style="font-size:12px"></ul>
           </div>
         </div>
 
-        <!-- Mission Health + Approvals -->
+        <!-- Two-column: Engine Health + Cost Summary -->
         <div class="g2 mt">
           <div class="card">
-            <h3>Mission Health</h3>
-            <div id="homeMissions"></div>
+            <div class="card-top-row">
+              <h3 style="margin:0">Engine Health</h3>
+              <button class="link-btn" onclick="switchTab('missions')">All Engines</button>
+            </div>
+            <div id="homeMissions" style="margin-top:8px"></div>
           </div>
           <div class="card">
-            <h3>Pending Approvals</h3>
-            <div id="homeApprovals"></div>
+            <h3>AI Spend</h3>
+            <div class="cost-strip" id="homeCostStrip" style="flex-wrap:wrap;gap:12px;padding:0;background:none;border:none">
+              <div class="cost-strip-item"><span class="cost-strip-label">Today</span><span class="cost-strip-value" id="costToday">--</span></div>
+              <div class="cost-strip-item"><span class="cost-strip-label">Week</span><span class="cost-strip-value" id="costWeek">--</span></div>
+              <div class="cost-strip-item"><span class="cost-strip-label">Calls</span><span class="cost-strip-value" id="costCallsToday">--</span></div>
+              <div class="cost-strip-item"><span class="cost-strip-label">Board Run</span><span class="cost-strip-value" id="costLastBoard">--</span></div>
+            </div>
+            <div id="homeEngineStatus" class="card-body-text" style="font-size:11px;margin-top:8px;display:none"></div>
           </div>
         </div>
 
-        <!-- Today's Summary -->
-        <div class="card mt" id="homeTodaySummary" style="border-left:3px solid var(--green)">
-          <div class="card-top-row">
-            <h3 style="margin-bottom:0">Today's GPO Activity</h3>
+        <!-- Deliverables -->
+        <div class="mt" id="homeDeliverables">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <h3 style="margin:0">Recent Deliverables</h3>
+            <button class="link-btn" onclick="switchTab('intake');filterIntake('done')">View All</button>
           </div>
-          <div id="homeTodayContent" style="font-size:12px;color:var(--text-secondary)">Loading...</div>
+          <div id="homeDeliverablesContent"><div class="task-empty">No deliverables yet</div></div>
         </div>
 
-        <!-- Latest Brief Excerpt -->
+        <!-- Three-column: Completed + Reports + Live -->
+        <div class="g3 mt">
+          <div>
+            <h3>Completed</h3>
+            <div id="homeLatestTask"><div class="task-empty">No completed tasks yet</div></div>
+          </div>
+          <div>
+            <h3>Reports</h3>
+            <div id="homeRecentReports" class="task-queue-list" style="max-height:200px">
+              <div class="task-empty">Loading...</div>
+            </div>
+          </div>
+          <div>
+            <h3>Live Feed</h3>
+            <div class="activity-feed" id="activityFeed">
+              <div class="activity-empty">Waiting for events...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brief -->
         <div class="card mt" id="homeBriefCard">
           <div class="card-top-row">
             <h3 style="margin-bottom:0">Latest Brief</h3>
@@ -200,34 +208,8 @@
           <div id="homeBriefExcerpt" class="brief-excerpt md-content"></div>
         </div>
 
-        <!-- Recent Deliverables — actual AI output from completed work -->
-        <div class="mt" id="homeDeliverables">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-            <h3 style="margin:0">Recent Deliverables</h3>
-            <button class="link-btn" onclick="switchTab('intake');filterIntake('done')">View All</button>
-          </div>
-          <div id="homeDeliverablesContent"><div class="task-empty">Loading deliverables...</div></div>
-        </div>
-
-        <!-- Latest Completed + Reports + Activity -->
-        <div class="g3 mt">
-          <div>
-            <h3>Latest Completed</h3>
-            <div id="homeLatestTask"><div class="task-empty">No completed tasks yet</div></div>
-          </div>
-          <div>
-            <h3>Recent Reports</h3>
-            <div id="homeRecentReports" class="task-queue-list" style="max-height:200px">
-              <div class="task-empty">Loading reports...</div>
-            </div>
-          </div>
-          <div>
-            <h3>Live Activity</h3>
-            <div class="activity-feed" id="activityFeed">
-              <div class="activity-empty">Waiting for events...</div>
-            </div>
-          </div>
-        </div>
+        <!-- Hidden: Pending Approvals card (data still rendered) -->
+        <div id="homeApprovals" style="display:none"></div>
       </section>
 
       <!-- TASKS -->
@@ -260,25 +242,23 @@
         </div>
       </section>
 
-      <!-- INTAKE — Unified Task Intake + Board Deliberation -->
+      <!-- INTAKE — Task Submission & Execution -->
       <section class="tab-panel" id="tab-intake">
-        <div class="page-header">
-          <div class="header-row">
-            <div>
-              <h1>Task Intake</h1>
-              <p class="subtitle">Submit tasks for Board deliberation and governed execution</p>
-            </div>
-            <button class="refresh-btn" onclick="loadIntakeTasks()">&#8635;</button>
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px">
+          <div>
+            <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Tasks</h1>
+            <p class="subtitle">Submit, track, and review AI-powered task execution</p>
           </div>
+          <button class="refresh-btn" onclick="loadIntakeTasks()" style="opacity:0.6">&#8635;</button>
         </div>
 
-        <!-- Flow Explainer -->
-        <div class="flow-explainer" id="flowExplainer">
+        <!-- Pipeline Steps -->
+        <div class="flow-explainer" id="flowExplainer" style="margin-bottom:16px">
           <div class="flow-step" data-step="intake"><span class="flow-step-num">1</span><span class="flow-step-label">Submit</span></div>
           <div class="flow-arrow">&#8594;</div>
-          <div class="flow-step" data-step="deliberating"><span class="flow-step-num">2</span><span class="flow-step-label">Deliberate</span></div>
+          <div class="flow-step" data-step="deliberating"><span class="flow-step-num">2</span><span class="flow-step-label">Plan</span></div>
           <div class="flow-arrow">&#8594;</div>
-          <div class="flow-step" data-step="planned"><span class="flow-step-num">3</span><span class="flow-step-label">Plan Ready</span></div>
+          <div class="flow-step" data-step="planned"><span class="flow-step-num">3</span><span class="flow-step-label">Review</span></div>
           <div class="flow-arrow">&#8594;</div>
           <div class="flow-step" data-step="executing"><span class="flow-step-num">4</span><span class="flow-step-label">Execute</span></div>
           <div class="flow-arrow">&#8594;</div>
@@ -294,13 +274,13 @@
         <!-- Execution Graph Panel (shown for tasks with graphs) -->
         <div id="executionGraphPanel"></div>
 
-        <!-- Quick Task Templates -->
-        <h3>Quick Start</h3>
-        <div id="missionTemplateGrid" class="template-grid"></div>
+        <!-- Quick Start Templates -->
+        <h3 style="margin-bottom:8px">Quick Start</h3>
+        <div id="missionTemplateGrid" class="template-grid" style="margin-bottom:16px"></div>
 
-        <!-- Quick Submit Form -->
-        <div class="card" style="margin-bottom:14px" id="intakeFormCard">
-          <h3>Custom Task</h3>
+        <!-- Task Submission -->
+        <div class="card" style="margin-bottom:16px;border-left:3px solid var(--accent)" id="intakeFormCard">
+          <h3 style="margin-bottom:8px">Submit a Task</h3>
           <div class="intake-form">
             <textarea id="intakeRequest" class="channel-textarea" placeholder="What do you need? (e.g., 'Research top passive income ideas for a data engineer', 'Summarize today's AI news', 'Find data engineering jobs $180k+ remote')" rows="3"></textarea>
             <div class="intake-form-row">
@@ -360,11 +340,11 @@
         <div id="intakeTaskList"></div>
       </section>
 
-      <!-- ASK AI — Direct AI Model Interaction -->
+      <!-- ASK AI — Direct AI Interaction -->
       <section class="tab-panel" id="tab-channels">
-        <div class="page-header">
-          <h1>Ask AI</h1>
-          <p class="subtitle">Direct conversation with AI models — research, analysis, strategy</p>
+        <div style="margin-bottom:16px">
+          <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Ask AI</h1>
+          <p class="subtitle">Direct conversation with AI models across all engines</p>
         </div>
 
         <div class="channel-selector" id="channelSelector">
@@ -556,11 +536,13 @@
 
       <!-- APPROVALS -->
       <section class="tab-panel" id="tab-approvals">
-        <div class="page-header">
-          <h1>Approvals</h1>
-          <p class="subtitle">Packets requiring Rahul's decision</p>
+        <div style="margin-bottom:16px">
+          <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Approvals</h1>
+          <p class="subtitle">Review and approve pending work items</p>
         </div>
-        <div id="approvalsList"></div>
+        <div id="approvalsList">
+          <div class="task-empty" style="padding:32px 0">No pending approvals. All clear.</div>
+        </div>
       </section>
 
       <!-- COST CENTER -->
