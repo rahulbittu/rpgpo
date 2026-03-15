@@ -38,6 +38,27 @@ let running = false;
 
 console.log(`[worker] RPGPO Task Worker v6 started at ${new Date().toISOString()}`);
 console.log(`[worker] Root: ${RPGPO_ROOT}`);
+
+// GAP-006 fix: Recover stuck subtasks on startup
+// If worker was killed while a subtask was running, reset it to queued
+try {
+  const allTasks = intake.getAllTasks();
+  let recovered = 0;
+  for (const t of allTasks) {
+    if (['executing', 'waiting_approval'].includes(t.status)) {
+      const subs = intake.getSubtasksForTask(t.task_id);
+      for (const s of subs) {
+        if (s.status === 'running' || s.status === 'builder_running') {
+          intake.updateSubtask(s.subtask_id, { status: 'queued', builder_phase: null });
+          queue.addTask('execute-subtask', `Subtask: ${s.title}`, { subtaskId: s.subtask_id });
+          recovered++;
+          console.log(`[worker] Recovered stuck subtask: ${s.subtask_id} (${s.title})`);
+        }
+      }
+    }
+  }
+  if (recovered > 0) console.log(`[worker] Recovered ${recovered} stuck subtask(s) from prior crash`);
+} catch (e) { console.log(`[worker] Stuck task recovery: ${e.message?.slice(0, 80)}`); }
 // Key diagnostic — show prefix only, confirm source is .env not placeholder
 function keyDiag(name) {
   const v = process.env[name];

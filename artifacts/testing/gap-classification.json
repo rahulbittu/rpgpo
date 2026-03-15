@@ -82,5 +82,17 @@
     "root_cause": "No learning domain in intake.ts or deliberation.ts DOMAIN_CONTEXT",
     "fix": "Add learning domain with tutoring-specific context and prompts",
     "status": "identified"
+  },
+  {
+    "gap_id": "GAP-006",
+    "category": "execution",
+    "severity": "medium",
+    "description": "Subtasks stuck in running after worker restart — no recovery",
+    "affected_cases": [
+      "GPO-WRI-01"
+    ],
+    "root_cause": "Worker restart kills in-flight subtasks but status stays running",
+    "fix": "Add stuck-task recovery on worker startup",
+    "status": "identified"
   }
 ]

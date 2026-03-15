@@ -114,5 +114,51 @@
         "No conversational tutoring mode"
       ]
     }
+  },
+  {
+    "test_case_id": "GPO-WRI-01-retest",
+    "global_rank": 2,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:35:42.488Z",
+    "retest": true,
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": false,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrwwk02lm4p",
+      "domain_routed": "writing",
+      "issues": [
+        "Board still set approval_required:true — fix not yet in effect",
+        "Subtask stuck in running after worker restart"
+      ],
+      "gaps": [
+        "GAP-002",
+        "GAP-006"
+      ]
+    }
+  },
+  {
+    "test_case_id": "GPO-RES-02",
+    "global_rank": 12,
+    "engine": "Research & Analysis",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:35:42.489Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrwwrxi76m6",
+      "domain_routed": "careeregine",
+      "subtask_count": 3,
+      "completion": "done",
+      "output_quality": "Excellent — real pricing data, clear recommendation",
+      "issues": [
+        "Domain routing: careeregine instead of research (keyword collision)"
+      ],
+      "gaps": [
+        "Keyword collision between career and research domains"
+      ]
+    }
   }
 ]

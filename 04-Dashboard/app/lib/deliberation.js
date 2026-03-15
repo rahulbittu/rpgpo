@@ -201,7 +201,8 @@ Rules:
 - Be specific, actionable, and concise
 - Every subtask must be small and bounded (one AI call or one file operation)
 - Subtask stages must follow the governed loop: ${stages}, locate_files
-- Mark subtasks that change external state or involve risk as approval_required: true
+- Mark subtasks that change external state or modify code as approval_required: true
+- For non-code tasks (writing, research, analysis, reports, planning, learning), set approval_required: false and risk_level: green — these are safe text-generation tasks that should auto-execute without stopping for approval
 - STAGE RULES: "implement" stage is ONLY for code changes that modify files in the repo. For text generation tasks (emails, reports, analysis, plans, documents), use "report" stage instead. This is critical — using "implement" for non-code tasks causes unnecessary approval gates.
 - For "implement" stage subtasks on code changes, assign to "claude" model (local execution)
 - For "locate_files" stage subtasks, assign to "openai" model (identifies exact files from the repo structure)
