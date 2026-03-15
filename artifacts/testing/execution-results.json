@@ -1831,5 +1831,77 @@
     "execution_evidence": {
       "completion": "done"
     }
+  },
+  {
+    "test_case_id": "GPO-WRI-24",
+    "global_rank": 170,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:21:03.066Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-SHO-10",
+    "global_rank": 172,
+    "engine": "Shopping & Buying Advisor",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:21:03.067Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-SCH-06",
+    "global_rank": 174,
+    "engine": "Scheduling & Life Operations",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:21:03.067Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-LEA-13",
+    "global_rank": 176,
+    "engine": "Learning & Tutoring",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:21:03.067Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-SCR-06",
+    "global_rank": 178,
+    "engine": "Screenwriting & Story Development",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:21:03.067Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-HEA-11",
+    "global_rank": 180,
+    "engine": "Health & Wellness Coach",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:21:03.067Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done"
+    }
   }
 ]
