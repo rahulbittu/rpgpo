@@ -3355,6 +3355,15 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 103: Template Discovery
+  if (req.url === '/api/template-discovery' && req.method === 'GET') {
+    try { const td = require('./lib/template-discovery'); return json(res, { patterns: td.discoverPatterns() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/template-discovery\/create\/([^/]+)$/) && req.method === 'POST') {
+    const patternId = req.url.match(/^\/api\/template-discovery\/create\/([^/]+)$/)[1];
+    try { const td = require('./lib/template-discovery'); return json(res, td.createTemplateFromPattern(patternId)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 102: Session Manager
   if (req.url === '/api/session' && req.method === 'GET') {
     try { const sm = require('./lib/session-manager'); return json(res, { session: sm.getCurrentSession() }); } catch (e) { return json(res, { error: e.message }, 500); }
