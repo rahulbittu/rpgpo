@@ -201,6 +201,13 @@ ${filePathRules}
     console.log(`[deliberation] Context injection warning: ${message}`);
   }
 
+  // Part 88: Inject prior knowledge from completed tasks
+  let knowledgeSection = '';
+  try {
+    const enrichment = require('./context-enrichment') as { getRelevantKnowledge(req: string, domain: string): string };
+    knowledgeSection = enrichment.getRelevantKnowledge(task.raw_request, task.domain);
+  } catch { /* non-fatal */ }
+
   const userPrompt = `Deliberate on this task:
 
 ## Raw Request
@@ -218,6 +225,7 @@ ${task.desired_outcome || 'Not specified — infer from request'}
 ## Constraints
 ${task.constraints || 'Standard RPGPO safety rules apply'}
 ${contextSection}
+${knowledgeSection}
 ${domainFiles ? '## Domain Files\n' + domainFiles : ''}
 ${repoSection}
 

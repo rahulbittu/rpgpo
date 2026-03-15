@@ -3355,6 +3355,15 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 88: Context Enrichment
+  if (req.url === '/api/enrichment/run' && req.method === 'POST') {
+    try { const ce = require('./lib/context-enrichment'); return json(res, ce.enrichAllPending()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/enrichment\/task\/([^/]+)$/) && req.method === 'POST') {
+    const taskId = req.url.match(/^\/api\/enrichment\/task\/([^/]+)$/)[1];
+    try { const ce = require('./lib/context-enrichment'); return json(res, ce.enrichFromCompletedTask(taskId)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 87: Error Tracking
   if (req.url?.match(/^\/api\/errors(\?.*)?$/) && req.method === 'GET') {
     try { const et = require('./lib/error-tracker'); return json(res, { errors: et.getErrors() }); } catch (e) { return json(res, { error: e.message }, 500); }
