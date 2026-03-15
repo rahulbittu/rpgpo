@@ -1,5 +1,538 @@
 [
   {
+    "task_id": "t_mms4nwbvhl1q",
+    "title": "Write a pilot episode outline for a comedy web series about a startup where the ",
+    "raw_request": "Write a pilot episode outline for a comedy web series about a startup where the AI assistant is the most competent team member. Include A-plot, B-plot, and character dynamics.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:08:27.883Z",
+    "updated_at": "2026-03-15T19:10:36.014Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:09:17.271Z",
+      "interpreted_objective": "Create a pilot episode outline for a comedy web series about a startup with an AI assistant as the most competent team member.",
+      "expected_outcome": "A detailed outline including A-plot, B-plot, and character dynamics for the pilot episode.",
+      "key_unknowns": [
+        "Specific character details",
+        "Setting specifics",
+        "Tone and style preferences"
+      ],
+      "recommended_strategy": "Develop a narrative structure focusing on the comedic dynamics between the AI assistant and the human team members. Highlight the A-plot and B-plot, ensuring they interconnect and showcase the AI's competence. Define character roles and relationships to support the comedic elements.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Develop A-plot and B-plot",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A-plot and B-plot for the pilot episode.",
+          "prompt": "Create an A-plot and B-plot for a comedy web series pilot episode about a startup where the AI assistant is the most competent team member. The A-plot should focus on a major challenge faced by the startup, while the B-plot should explore personal dynamics between team members, highlighting the AI's role.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Define Character Dynamics",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "Character dynamics and relationships for the pilot episode.",
+          "prompt": "Outline the character dynamics and relationships for a comedy web series pilot episode about a startup with an AI assistant as the most competent team member. Include descriptions of key characters, their roles, and how they interact with the AI and each other.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2051
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mms4nurptsb5",
+    "title": "Plan an ideal work-from-home day for maximum productivity. Include environment s",
+    "raw_request": "Plan an ideal work-from-home day for maximum productivity. Include environment setup, time blocks, break schedule, and evening wind-down. Based on chronobiology research.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:08:25.861Z",
+    "updated_at": "2026-03-15T19:11:24.379Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:09:01.471Z",
+      "interpreted_objective": "Plan a productive work-from-home day using chronobiology principles.",
+      "expected_outcome": "A detailed daily schedule including environment setup, time blocks, breaks, and wind-down routine.",
+      "key_unknowns": [
+        "Specific chronobiology principles applicable to productivity",
+        "Optimal time blocks for different tasks based on chronobiology",
+        "Ideal break schedule according to chronobiology"
+      ],
+      "recommended_strategy": "Research current chronobiology insights related to productivity. Use findings to design a detailed work-from-home schedule, considering environment setup, task time blocks, break schedule, and evening wind-down routine.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Chronobiology and Productivity",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current insights on chronobiology and its impact on productivity.",
+          "prompt": "Search the web for current, specific information about chronobiology and its impact on productivity. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Work-from-Home Schedule",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured work-from-home schedule based on chronobiology research.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed work-from-home schedule. Include environment setup, time blocks, break schedule, and evening wind-down routine, with specific times and activities.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-work-from-home-schedule.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1916
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms4nt7kvm0v",
+    "title": "Design a 7-day gut health reset protocol. Include foods to eat, foods to avoid, ",
+    "raw_request": "Design a 7-day gut health reset protocol. Include foods to eat, foods to avoid, supplement recommendations (evidence-based), and daily schedule.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:08:23.840Z",
+    "updated_at": "2026-03-15T19:11:16.105Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:08:55.481Z",
+      "interpreted_objective": "Create a 7-day gut health reset protocol with dietary and supplement guidelines.",
+      "expected_outcome": "A comprehensive, evidence-based 7-day plan for improving gut health, including specific foods, supplements, and a daily schedule.",
+      "key_unknowns": [
+        "Specific dietary restrictions or preferences of the target audience",
+        "Current scientific consensus on gut health supplements",
+        "Potential interactions or contraindications of recommended supplements"
+      ],
+      "recommended_strategy": "Conduct research to gather current scientific information about gut health foods and supplements. Synthesize this information into a structured 7-day plan that includes specific foods to eat and avoid, evidence-based supplement recommendations, and a daily schedule. Ensure all recommendations are safe and include disclaimers where necessary.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Gut Health Foods and Supplements",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current scientific information about foods beneficial and detrimental to gut health, and evidence-based supplement recommendations.",
+          "prompt": "Search the web for current, specific information about foods and supplements that impact gut health. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Gut Health Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 7-day gut health reset protocol including foods to eat, foods to avoid, supplement recommendations, and a daily schedule.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable 7-day gut health reset protocol. Include specific foods to eat and avoid, evidence-based supplement recommendations, and a daily schedule. Ensure all recommendations are safe and include disclaimers where necessary.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-gut-health-reset-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1856
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms4nrncmz32",
+    "title": "Create a technical portfolio project idea list for a data engineer looking to st",
+    "raw_request": "Create a technical portfolio project idea list for a data engineer looking to stand out. 5 projects with scope, tech stack, and what it demonstrates to hiring managers.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:08:21.816Z",
+    "updated_at": "2026-03-15T19:11:07.578Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:08:50.957Z",
+      "interpreted_objective": "Create a list of five technical portfolio project ideas for a data engineer, including scope, tech stack, and demonstration value.",
+      "expected_outcome": "A detailed list of five unique and impactful data engineering projects that can enhance Rahul's portfolio and appeal to hiring managers.",
+      "key_unknowns": [
+        "Specific technologies or tools Rahul prefers or is proficient in",
+        "Current trends in data engineering that are most appealing to hiring managers",
+        "Rahul's existing portfolio projects"
+      ],
+      "recommended_strategy": "Research current trends and in-demand skills in data engineering to identify potential project ideas. Then, synthesize this information into a list of five projects, detailing their scope, tech stack, and what they demonstrate to hiring managers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Data Engineering Trends",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current trends and in-demand skills in data engineering.",
+          "prompt": "Search the web for current trends and in-demand skills in data engineering. Include specific technologies, tools, and methodologies that are popular in the industry. Provide sources and citations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Project Ideas",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A list of five technical portfolio project ideas with scope, tech stack, and demonstration value.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a list of five technical portfolio project ideas for a data engineer. For each project, include the scope, recommended tech stack, and what it demonstrates to hiring managers.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-portfolio-project-ideas.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2213
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms4nq37792d",
+    "title": "Find the best portable monitor for a digital nomad under 250 dollars. Must be 15",
+    "raw_request": "Find the best portable monitor for a digital nomad under 250 dollars. Must be 15.6 inches, USB-C powered, and IPS panel. Compare 3 options with current pricing.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:08:19.795Z",
+    "updated_at": "2026-03-15T19:10:57.157Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:08:43.089Z",
+      "interpreted_objective": "Identify the best portable monitor for a digital nomad under $250 with specific features.",
+      "expected_outcome": "A detailed comparison of three portable monitors, including pricing, features, and a recommendation.",
+      "key_unknowns": [
+        "Current pricing of portable monitors",
+        "Availability of monitors with specified features",
+        "User reviews and ratings"
+      ],
+      "recommended_strategy": "Conduct a web search to gather current information on portable monitors that meet the specified criteria. Analyze the data to compare features, pricing, and user feedback, and then synthesize a report with a clear recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Portable Monitors",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on portable monitors that fit the criteria, including prices and features.",
+          "prompt": "Search the web for current information about portable monitors that are 15.6 inches, USB-C powered, IPS panel, and priced under $250. Include specific product names, prices, features, and user reviews.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Monitor Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of three portable monitors with pros, cons, and a recommendation.",
+          "prompt": "Based on the research results, synthesize a comparison of three portable monitors that meet the specified criteria. Include their pros, cons, current pricing, and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-portable_monitor_comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1830
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms4noj49hxb",
+    "title": "Teach me about message queues and event streaming. Compare RabbitMQ, Apache Kafk",
+    "raw_request": "Teach me about message queues and event streaming. Compare RabbitMQ, Apache Kafka, and AWS SQS. Include when to use each with architecture diagrams described in text.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:08:17.776Z",
+    "updated_at": "2026-03-15T19:10:49.070Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:08:31.193Z",
+      "interpreted_objective": "Educate Rahul on message queues and event streaming, comparing RabbitMQ, Apache Kafka, and AWS SQS with use cases and architecture descriptions.",
+      "expected_outcome": "A comprehensive report detailing the differences, use cases, and architectural diagrams of RabbitMQ, Apache Kafka, and AWS SQS, aiding Rahul's understanding of when to use each.",
+      "key_unknowns": [
+        "Rahul's current familiarity with message queues and event streaming",
+        "Specific architectural preferences or constraints Rahul might have"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information about RabbitMQ, Apache Kafka, and AWS SQS, including their features, use cases, and any architectural diagrams. Then, synthesize this information into a structured report that includes comparisons, use cases, and architecture descriptions.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Message Queues and Event Streaming",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on RabbitMQ, Apache Kafka, and AWS SQS with citations.",
+          "prompt": "Search the web for current, specific information about RabbitMQ, Apache Kafka, and AWS SQS. Include features, use cases, architecture diagrams, and any relevant comparisons. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Information into a Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing RabbitMQ, Apache Kafka, and AWS SQS, including use cases and architecture descriptions.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report comparing RabbitMQ, Apache Kafka, and AWS SQS. Include specific features, use cases, and architecture descriptions with diagrams described in text.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-message-queues-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1894
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms4nmyyzd38",
+    "title": "Create a dollar-cost averaging investment calculator. Starting with 500/month in",
+    "raw_request": "Create a dollar-cost averaging investment calculator. Starting with 500/month into VTI for 20 years. Show projected value at 7%, 10%, and 12% annual returns with compound growth.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:08:15.754Z",
+    "updated_at": "2026-03-15T19:10:15.507Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:08:26.686Z",
+      "interpreted_objective": "Develop a dollar-cost averaging investment calculator for VTI with projections at different annual returns.",
+      "expected_outcome": "A detailed report outlining projected investment values using dollar-cost averaging for VTI over 20 years at 7%, 10%, and 12% annual returns.",
+      "key_unknowns": [
+        "Exact formula and assumptions for compound growth",
+        "Historical performance data for VTI",
+        "Potential market fluctuations affecting VTI"
+      ],
+      "recommended_strategy": "Conduct research to gather historical data and average returns for VTI. Use this data to calculate projections for dollar-cost averaging over 20 years. Synthesize findings into a comprehensive report with clear projections and assumptions.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Historical VTI Performance",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Historical performance data for VTI with average annual returns.",
+          "prompt": "Search the web for historical performance data of the Vanguard Total Stock Market ETF (VTI), including average annual returns over the past 20 years. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Investment Projections",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A report with projected investment values using dollar-cost averaging for VTI at 7%, 10%, and 12% annual returns.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for dollar-cost averaging into VTI over 20 years. Include projected investment values at 7%, 10%, and 12% annual returns with compound growth. Provide specific numbers and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-VTI-investment-projections.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2238
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms4nldshyur",
+    "title": "Write a comprehensive employee handbook section on remote work policies. Include",
+    "raw_request": "Write a comprehensive employee handbook section on remote work policies. Include communication expectations, equipment allowance, security requirements, and performance measurement.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:08:13.696Z",
+    "updated_at": "2026-03-15T19:09:34.925Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:08:19.701Z",
+      "interpreted_objective": "Create a detailed section on remote work policies for an employee handbook.",
+      "expected_outcome": "A comprehensive document outlining remote work policies, including communication, equipment, security, and performance metrics.",
+      "key_unknowns": [
+        "Specific company policies on remote work",
+        "Current communication tools and protocols",
+        "Equipment allowance details",
+        "Security measures in place",
+        "Performance measurement criteria"
+      ],
+      "recommended_strategy": "Conduct research to gather best practices for remote work policies. Synthesize this information into a structured document that addresses communication, equipment, security, and performance. Ensure the content is clear, actionable, and tailored to a professional audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Remote Work Best Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices for remote work policies, including communication, equipment, security, and performance.",
+          "prompt": "Search the web for current best practices in remote work policies, focusing on communication expectations, equipment allowances, security requirements, and performance measurement. Include specific examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Draft Remote Work Policies Section",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A draft section for an employee handbook on remote work policies.",
+          "prompt": "Based on the research results, draft a comprehensive employee handbook section on remote work policies. Include detailed communication expectations, equipment allowance guidelines, security requirements, and performance measurement criteria.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1962
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms4ft6xr1dw",
     "title": "Write the opening scene of a thriller podcast about a data center that starts ma",
     "raw_request": "Write the opening scene of a thriller podcast about a data center that starts making autonomous decisions. Include sound design notes and voice direction.",
