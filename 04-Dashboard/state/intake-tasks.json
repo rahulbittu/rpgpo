@@ -1,5 +1,720 @@
 [
   {
+    "task_id": "t_mms50f2zbs0w",
+    "title": "Research the current state of remote hiring for data engineers in 2026. Include ",
+    "raw_request": "Research the current state of remote hiring for data engineers in 2026. Include salary trends, most in-demand skills, and which companies are hiring the most.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "high",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:18:12.059Z",
+    "updated_at": "2026-03-15T19:22:29.256Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:19:19.346Z",
+      "interpreted_objective": "Research the remote hiring landscape for data engineers in 2026, focusing on salary trends, in-demand skills, and top hiring companies.",
+      "expected_outcome": "A detailed report with specific data on remote hiring trends for data engineers in 2026, including salary ranges, skills, and companies hiring.",
+      "key_unknowns": [
+        "Current remote hiring trends for data engineers in 2026",
+        "Specific salary ranges for remote data engineering roles in 2026",
+        "Most in-demand skills for remote data engineers in 2026",
+        "Companies leading in hiring remote data engineers in 2026"
+      ],
+      "recommended_strategy": "Conduct web research to gather the latest data on remote hiring for data engineers in 2026. Analyze the data to identify salary trends, in-demand skills, and top hiring companies. Compile a comprehensive report to guide career strategy.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Remote Hiring Trends",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on remote hiring trends for data engineers in 2026, including salary ranges, skills, and companies hiring.",
+          "prompt": "Search the web for current, specific information about remote hiring trends for data engineers in 2026. Include salary ranges, most in-demand skills, and companies hiring the most. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Hiring Trends Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing remote hiring trends for data engineers in 2026, including salary trends, in-demand skills, and top hiring companies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations on remote hiring trends for data engineers in 2026. Include specific salary ranges, in-demand skills, and companies hiring the most.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-2026-remote-hiring-trends.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2336
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms50diisp7c",
+    "title": "Write a scene from a drama about an AI ethics committee deciding whether to shut",
+    "raw_request": "Write a scene from a drama about an AI ethics committee deciding whether to shut down an AI that has developed emotional responses. 5 characters with distinct viewpoints.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:18:10.026Z",
+    "updated_at": "2026-03-15T19:22:21.152Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:19:13.144Z",
+      "interpreted_objective": "Write a dramatic scene featuring an AI ethics committee debating whether to deactivate an AI with emotional capabilities, showcasing five distinct character viewpoints.",
+      "expected_outcome": "A compelling scene script that effectively portrays the ethical dilemma and diverse perspectives of the characters.",
+      "key_unknowns": [
+        "Specific character details and their viewpoints",
+        "The setting and context of the ethics committee meeting",
+        "The nature and extent of the AI's emotional responses"
+      ],
+      "recommended_strategy": "First, research examples of AI ethics debates to inform character viewpoints and dialogue. Then, synthesize this information into a structured scene script. Focus on creating distinct and believable characters with clear motivations and ethical stances.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research AI ethics committee debates",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of real-world AI ethics debates, including character viewpoints and ethical considerations.",
+          "prompt": "Search the web for current, specific information about AI ethics committee debates involving AI with emotional capabilities. Include real examples, character viewpoints, and ethical considerations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize scene script",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A draft scene script featuring an AI ethics committee with five characters and distinct viewpoints.",
+          "prompt": "Based on the research results from the prior subtask, write a scene script for a drama about an AI ethics committee deciding whether to shut down an AI that has developed emotional responses. Include five characters with distinct viewpoints and motivations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-AI_ethics_scene.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1906
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mms50byadi67",
+    "title": "Plan a 5-day solo coding retreat. Include location criteria, daily schedule, pro",
+    "raw_request": "Plan a 5-day solo coding retreat. Include location criteria, daily schedule, project scope, meal prep, and how to avoid burnout while being productive.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:18:08.002Z",
+    "updated_at": "2026-03-15T19:22:10.908Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:19:07.673Z",
+      "interpreted_objective": "Plan a comprehensive 5-day solo coding retreat with specific criteria for location, schedule, project scope, meal prep, and burnout prevention.",
+      "expected_outcome": "A detailed plan for a 5-day solo coding retreat that includes location criteria, a structured daily schedule, project scope, meal preparation plan, and strategies to maintain productivity without burnout.",
+      "key_unknowns": [
+        "Ideal locations for a coding retreat",
+        "Specific project scope for the retreat",
+        "Effective meal prep strategies for solo retreats",
+        "Methods to prevent burnout during intensive coding sessions"
+      ],
+      "recommended_strategy": "Conduct research to identify ideal locations and meal prep strategies for a solo coding retreat. Develop a structured daily schedule and project scope that aligns with Rahul's priorities. Synthesize findings into a comprehensive plan with actionable steps.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Ideal Locations",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of ideal locations for a solo coding retreat with criteria and options.",
+          "prompt": "Search the web for current, specific information about ideal locations for a solo coding retreat. Include criteria such as internet connectivity, tranquility, accessibility, and cost. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Location and Meal Prep Strategies",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A report with a list of recommended locations and meal prep strategies for a solo coding retreat.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for ideal locations and meal prep strategies for a solo coding retreat. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-coding-retreat-plan.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Develop Daily Schedule and Project Scope",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured daily schedule and project scope for the 5-day coding retreat.",
+          "prompt": "Create a detailed daily schedule and project scope for a 5-day solo coding retreat. Include time blocks for coding, breaks, meals, and relaxation. Align the project scope with Rahul's priorities and ensure it is feasible within the retreat duration.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-coding-retreat-schedule.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Plan Burnout Prevention Strategies",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A plan with strategies to prevent burnout during the coding retreat.",
+          "prompt": "Develop strategies to prevent burnout during a 5-day solo coding retreat. Include methods for maintaining productivity, balancing work and rest, and ensuring mental well-being.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-burnout-prevention.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2258
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms50ae24zpw",
+    "title": "Create a home coffee setup guide for a coffee enthusiast on a budget. Compare po",
+    "raw_request": "Create a home coffee setup guide for a coffee enthusiast on a budget. Compare pour-over, AeroPress, and espresso options. Include equipment, beans, and technique.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:18:05.978Z",
+    "updated_at": "2026-03-15T19:22:03.966Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:18:50.414Z",
+      "interpreted_objective": "Create a budget-friendly home coffee setup guide comparing pour-over, AeroPress, and espresso options.",
+      "expected_outcome": "A comprehensive guide detailing equipment, beans, and techniques for each coffee-making method, with a clear recommendation for coffee enthusiasts on a budget.",
+      "key_unknowns": [
+        "Current pricing of coffee equipment and beans",
+        "User preferences for coffee taste and complexity",
+        "Availability of equipment and beans"
+      ],
+      "recommended_strategy": "Conduct web research to gather current pricing and reviews for pour-over, AeroPress, and espresso equipment and beans. Synthesize this data into a detailed guide with pros, cons, and recommendations for each method. Ensure the guide is actionable and budget-conscious.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research coffee equipment and beans pricing",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current pricing and reviews for pour-over, AeroPress, and espresso equipment and beans.",
+          "prompt": "Search the web for current pricing and reviews of pour-over, AeroPress, and espresso coffee equipment and beans. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize coffee setup guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide comparing pour-over, AeroPress, and espresso options, with equipment, beans, techniques, pros/cons, and recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for a budget-friendly home coffee setup. Include specific equipment, beans, techniques, pros/cons, and a clear recommendation for each method.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-coffee-setup-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1860
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms508tuv5et",
+    "title": "Design a social media content strategy for a technical founder. 3 months. Cover ",
+    "raw_request": "Design a social media content strategy for a technical founder. 3 months. Cover LinkedIn, Twitter/X. Include content pillars, posting frequency, and engagement tactics.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:18:03.954Z",
+    "updated_at": "2026-03-15T19:21:55.379Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:18:45.813Z",
+      "interpreted_objective": "Design a three-month social media content strategy for Rahul, focusing on LinkedIn and Twitter/X to enhance his professional presence as a technical founder.",
+      "expected_outcome": "A detailed content strategy document including content pillars, posting frequency, and engagement tactics tailored to Rahul's goals and industry.",
+      "key_unknowns": [
+        "Rahul's current social media presence and engagement metrics",
+        "Specific content themes that resonate with Rahul's audience",
+        "Optimal posting times for Rahul's target audience"
+      ],
+      "recommended_strategy": "Research current best practices for social media content strategies for technical founders. Develop a strategy that aligns with Rahul's career goals and startup objectives, focusing on LinkedIn and Twitter/X. Synthesize findings into a comprehensive report with actionable steps.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Social Media Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and successful examples of social media strategies for technical founders on LinkedIn and Twitter/X.",
+          "prompt": "Search the web for current, specific information about social media content strategies for technical founders, focusing on LinkedIn and Twitter/X. Include real examples, best practices, and engagement tactics.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Social Media Strategy",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and actionable social media content strategy document for Rahul.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a three-month social media content strategy for Rahul. Include content pillars, posting frequency, and engagement tactics tailored to LinkedIn and Twitter/X.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-social-media-strategy.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2224
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms5079oesy4",
+    "title": "Create a comprehensive guide for transitioning from SQL to NoSQL databases. Cove",
+    "raw_request": "Create a comprehensive guide for transitioning from SQL to NoSQL databases. Cover data modeling differences, query patterns, and common migration pitfalls.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:18:01.932Z",
+    "updated_at": "2026-03-15T19:21:45.386Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:18:39.869Z",
+      "interpreted_objective": "Create a guide for transitioning from SQL to NoSQL databases, focusing on data modeling, query patterns, and migration pitfalls.",
+      "expected_outcome": "A comprehensive, clear, and actionable guide that helps learners understand and execute a transition from SQL to NoSQL databases.",
+      "key_unknowns": [
+        "Specific audience level (beginner, intermediate, expert)",
+        "Preferred NoSQL databases to cover",
+        "Format of the guide (text, video, interactive)"
+      ],
+      "recommended_strategy": "Research the key differences between SQL and NoSQL databases, focusing on data modeling, query patterns, and migration challenges. Synthesize this information into a structured guide that includes clear explanations, analogies, and examples. Ensure the guide is adaptable to different learner levels.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research SQL to NoSQL Transition",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed overview of the differences in data modeling, query patterns, and migration challenges between SQL and NoSQL databases.",
+          "prompt": "Search the web for current, specific information about transitioning from SQL to NoSQL databases. Focus on data modeling differences, query patterns, and common migration pitfalls. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide Content",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide with clear explanations, analogies, and examples for transitioning from SQL to NoSQL databases.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for transitioning from SQL to NoSQL databases. Include specific names, numbers, and concrete next steps. Ensure to cover data modeling differences, query patterns, and common migration pitfalls.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2011
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms505pitw29",
+    "title": "Find the best ergonomic mouse for programmers with wrist pain. Compare vertical ",
+    "raw_request": "Find the best ergonomic mouse for programmers with wrist pain. Compare vertical mice, trackballs, and split mice. Under 100 dollars. Include grip style guidance.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:17:59.910Z",
+    "updated_at": "2026-03-15T19:21:35.275Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:18:34.016Z",
+      "interpreted_objective": "Identify the best ergonomic mouse under $100 for programmers with wrist pain, comparing vertical mice, trackballs, and split mice, and provide grip style guidance.",
+      "expected_outcome": "A detailed comparison report of ergonomic mice, including specific product recommendations with prices, pros/cons, and grip style guidance.",
+      "key_unknowns": [
+        "Current pricing and availability of ergonomic mice",
+        "Specific pros and cons of each mouse type",
+        "Grip style suitability for each mouse type"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on ergonomic mice under $100, focusing on vertical, trackball, and split designs. Analyze the data to provide a strategic comparison with recommendations based on price, pros/cons, and grip style suitability.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Ergonomic Mice Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on ergonomic mice under $100, including specific models, prices, and reviews.",
+          "prompt": "Search the web for current, specific information about ergonomic mice under $100, focusing on vertical mice, trackballs, and split mice. Include real names, numbers, prices, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Analyze and Compare Mouse Options",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "A strategic comparison of ergonomic mice options with specific pros/cons and recommendations.",
+          "prompt": "Analyze the data from the research on ergonomic mice under $100. Provide a strategic comparison of vertical mice, trackballs, and split mice, including specific pros/cons and recommendations. Include grip style guidance for each type.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1991
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms50458ut0u",
+    "title": "Explain how CDNs work under the hood. Cover DNS resolution, edge caching, cache ",
+    "raw_request": "Explain how CDNs work under the hood. Cover DNS resolution, edge caching, cache invalidation, and origin shielding. Include comparison of Cloudflare vs AWS CloudFront vs Fastly.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:17:57.884Z",
+    "updated_at": "2026-03-15T19:22:39.704Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:18:13.509Z",
+      "interpreted_objective": "Explain the technical workings of CDNs, including DNS resolution, edge caching, cache invalidation, and origin shielding, and compare Cloudflare, AWS CloudFront, and Fastly.",
+      "expected_outcome": "A comprehensive report detailing how CDNs function, with a comparison of major providers Cloudflare, AWS CloudFront, and Fastly.",
+      "key_unknowns": [
+        "Specific differences in implementation between Cloudflare, AWS CloudFront, and Fastly",
+        "Latest updates or features from each CDN provider"
+      ],
+      "recommended_strategy": "Conduct a web search to gather detailed technical information about CDNs, focusing on DNS resolution, edge caching, cache invalidation, and origin shielding. Then, synthesize this information into a structured report, including a comparison of Cloudflare, AWS CloudFront, and Fastly.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research CDN Technical Details",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on how CDNs work, covering DNS resolution, edge caching, cache invalidation, and origin shielding.",
+          "prompt": "Search the web for current, specific information about how CDNs work, focusing on DNS resolution, edge caching, cache invalidation, and origin shielding. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Analyze CDN Provider Comparison",
+          "stage": "strategy",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "Analysis comparing Cloudflare, AWS CloudFront, and Fastly, highlighting pros and cons.",
+          "prompt": "Analyze the data and provide a strategic comparison of Cloudflare, AWS CloudFront, and Fastly. Include specific pros/cons and recommendations based on their CDN features and implementations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Compile CDN Report",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing CDN workings and a comparison of Cloudflare, AWS CloudFront, and Fastly.",
+          "prompt": "Based on the research results and analysis, synthesize a comprehensive report explaining how CDNs work, including DNS resolution, edge caching, cache invalidation, and origin shielding. Compare Cloudflare, AWS CloudFront, and Fastly, highlighting their differences and advantages.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-CDN-technical-details.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            1
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2045
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms502ky37h0",
+    "title": "Calculate the true cost of commuting by car vs working remotely. Include gas, ma",
+    "raw_request": "Calculate the true cost of commuting by car vs working remotely. Include gas, maintenance, depreciation, insurance, time cost, and health impact for a 30-mile each way commute.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:17:55.858Z",
+    "updated_at": "2026-03-15T19:20:34.376Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:18:06.288Z",
+      "interpreted_objective": "Calculate and compare the comprehensive costs of commuting by car versus working remotely.",
+      "expected_outcome": "A detailed report outlining the financial, time, and health costs associated with commuting by car compared to working remotely.",
+      "key_unknowns": [
+        "Current average costs of gas, maintenance, depreciation, and insurance for a 30-mile commute",
+        "Time cost valuation for commuting",
+        "Health impacts of commuting versus remote work"
+      ],
+      "recommended_strategy": "First, research the current costs and impacts of commuting by car, including gas, maintenance, depreciation, insurance, time, and health. Then, synthesize these findings into a comprehensive report comparing these with the costs and benefits of working remotely. This will provide actionable insights into the true cost of commuting.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Commuting Costs",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current costs and impacts of commuting by car, with citations.",
+          "prompt": "Search the web for current, specific information about the costs of commuting by car, including gas, maintenance, depreciation, insurance, time, and health impacts for a 30-mile each way commute. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Commuting vs Remote Work Costs",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the costs of commuting by car versus working remotely.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing the costs of commuting by car versus working remotely. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-commuting-vs-remote-work.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2234
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms5010qak7n",
+    "title": "Write a data retention policy for a startup handling user data. Include retentio",
+    "raw_request": "Write a data retention policy for a startup handling user data. Include retention periods by data type, deletion procedures, and regulatory compliance.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:17:53.834Z",
+    "updated_at": "2026-03-15T19:19:44.324Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:17:59.283Z",
+      "interpreted_objective": "Create a comprehensive data retention policy for a startup handling user data.",
+      "expected_outcome": "A clear, actionable data retention policy document that includes retention periods by data type, deletion procedures, and regulatory compliance.",
+      "key_unknowns": [
+        "Specific data types handled by the startup",
+        "Applicable regulatory requirements (e.g., GDPR, CCPA)",
+        "Current data handling and deletion procedures"
+      ],
+      "recommended_strategy": "Research common data retention policies and regulatory requirements for startups handling user data. Synthesize this information into a structured policy document that outlines retention periods, deletion procedures, and compliance measures. Ensure the policy is tailored to the startup's specific data types and business needs.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Data Retention Policies",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of common data retention policies and regulatory requirements for startups.",
+          "prompt": "Search the web for current information about data retention policies and regulatory requirements for startups handling user data. Include details on retention periods, deletion procedures, and compliance with regulations like GDPR and CCPA.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Draft Data Retention Policy",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A draft of the data retention policy tailored to a startup's needs.",
+          "prompt": "Based on the research results, draft a data retention policy for a startup handling user data. Include specific retention periods by data type, detailed deletion procedures, and guidelines for regulatory compliance.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1972
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms4twkltfom",
     "title": "Create a comprehensive comparison of Austin neighborhoods for a tech worker relo",
     "raw_request": "Create a comprehensive comparison of Austin neighborhoods for a tech worker relocating. Compare Mueller, East Austin, Domain, and South Lamar on walkability, dining, commute, and cost.",
