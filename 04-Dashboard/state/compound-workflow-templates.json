@@ -1,0 +1,205 @@
+[
+  {
+    "id": "cwt_40590d61",
+    "name": "Research → Analyze → Plan",
+    "description": "Research a topic, analyze findings, then create an action plan",
+    "nodes": [
+      {
+        "id": "research",
+        "name": "Research",
+        "engineId": "research",
+        "type": "engine",
+        "promptTemplate": "Research {{topic}} thoroughly. Include real data, sources, and citations."
+      },
+      {
+        "id": "analyze",
+        "name": "Analyze",
+        "engineId": "finance",
+        "type": "engine",
+        "promptTemplate": "Analyze the research findings and identify key opportunities, risks, and recommendations.",
+        "inputBindings": {
+          "priorResearch": {
+            "source": "nodeOutput",
+            "nodeId": "research"
+          }
+        }
+      },
+      {
+        "id": "plan",
+        "name": "Action Plan",
+        "engineId": "chief_of_staff",
+        "type": "engine",
+        "promptTemplate": "Create a detailed action plan based on the analysis. Include specific steps, timelines, and priorities.",
+        "inputBindings": {
+          "analysis": {
+            "source": "nodeOutput",
+            "nodeId": "analyze"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": "research",
+        "to": "analyze"
+      },
+      {
+        "from": "analyze",
+        "to": "plan"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "topic",
+        "type": "string",
+        "required": true,
+        "description": "What to research"
+      }
+    ],
+    "tags": [
+      "research",
+      "analysis",
+      "planning"
+    ],
+    "createdAt": 1773556355844,
+    "updatedAt": 1773556355844
+  },
+  {
+    "id": "cwt_f8a6b449",
+    "name": "News → Strategy → Brief",
+    "description": "Gather news, analyze strategically, produce executive brief",
+    "nodes": [
+      {
+        "id": "news",
+        "name": "News Gather",
+        "engineId": "newsroom",
+        "type": "engine",
+        "promptTemplate": "Search for the latest news on {{topic}}. Include sources and dates."
+      },
+      {
+        "id": "strategy",
+        "name": "Strategic Analysis",
+        "engineId": "research",
+        "type": "engine",
+        "promptTemplate": "Analyze the news findings for strategic implications.",
+        "inputBindings": {
+          "newsData": {
+            "source": "nodeOutput",
+            "nodeId": "news"
+          }
+        }
+      },
+      {
+        "id": "brief",
+        "name": "Executive Brief",
+        "engineId": "chief_of_staff",
+        "type": "engine",
+        "promptTemplate": "Produce a concise executive brief with key takeaways and recommended actions.",
+        "inputBindings": {
+          "analysis": {
+            "source": "nodeOutput",
+            "nodeId": "strategy"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": "news",
+        "to": "strategy"
+      },
+      {
+        "from": "strategy",
+        "to": "brief"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "topic",
+        "type": "string",
+        "required": true,
+        "description": "News topic"
+      }
+    ],
+    "tags": [
+      "news",
+      "strategy",
+      "briefing"
+    ],
+    "createdAt": 1773556355844,
+    "updatedAt": 1773556355844
+  },
+  {
+    "id": "cwt_601c453d",
+    "name": "Income Research Pipeline",
+    "description": "Research income ideas, evaluate market, create business plan",
+    "nodes": [
+      {
+        "id": "ideas",
+        "name": "Idea Research",
+        "engineId": "research",
+        "type": "engine",
+        "promptTemplate": "Research {{count}} passive income ideas for {{profile}}. Include revenue estimates."
+      },
+      {
+        "id": "market",
+        "name": "Market Analysis",
+        "engineId": "finance",
+        "type": "engine",
+        "promptTemplate": "Analyze the market for the top ideas. Include competition, market size, and barriers.",
+        "inputBindings": {
+          "ideas": {
+            "source": "nodeOutput",
+            "nodeId": "ideas"
+          }
+        }
+      },
+      {
+        "id": "plan",
+        "name": "Business Plan",
+        "engineId": "chief_of_staff",
+        "type": "engine",
+        "promptTemplate": "Create a business plan for the most promising opportunity.",
+        "inputBindings": {
+          "market": {
+            "source": "nodeOutput",
+            "nodeId": "market"
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": "ideas",
+        "to": "market"
+      },
+      {
+        "from": "market",
+        "to": "plan"
+      }
+    ],
+    "parameters": [
+      {
+        "name": "count",
+        "type": "number",
+        "required": false,
+        "default": 5,
+        "description": "Number of ideas"
+      },
+      {
+        "name": "profile",
+        "type": "string",
+        "required": false,
+        "default": "a data engineer",
+        "description": "Target profile"
+      }
+    ],
+    "tags": [
+      "income",
+      "research",
+      "business"
+    ],
+    "createdAt": 1773556355844,
+    "updatedAt": 1773556355844
+  }
+]

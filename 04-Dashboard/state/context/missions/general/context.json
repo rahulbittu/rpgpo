@@ -1,0 +1,142 @@
+{
+  "instance_id": "rpgpo",
+  "domain": "general",
+  "objective": "Identify and detail top passive income opportunities for senior data engineers in 2025-2026.",
+  "current_status": "",
+  "recent_decisions": [
+    {
+      "domain": "general",
+      "category": "process",
+      "title": "Compile and Report Findings",
+      "decision": "**Comprehensive Report on Project Opportunities**",
+      "reasoning": "Stage: report, Model: openai",
+      "impact": "No code changes",
+      "task_id": "t_mmrd57n5bvzj",
+      "subtask_id": "st_mmrd5ccpd5x9",
+      "id": "ctx_mmrd6maiygy8",
+      "made_at": "2026-03-15T06:19:12.090Z"
+    },
+    {
+      "domain": "general",
+      "category": "technical",
+      "title": "Develop Actionable Steps",
+      "decision": "Analysis complete (no code changes made)",
+      "reasoning": "Stage: implement, Model: openai",
+      "impact": "No code changes",
+      "task_id": "t_mmrd57n5bvzj",
+      "subtask_id": "st_mmrd5ccmba04",
+      "id": "ctx_mmrd6ccmmvwv",
+      "made_at": "2026-03-15T06:18:59.206Z"
+    },
+    {
+      "domain": "general",
+      "category": "process",
+      "title": "Synthesize Research Findings",
+      "decision": "### 1. **Online Courses and Workshops**",
+      "reasoning": "Stage: report, Model: openai",
+      "impact": "No code changes",
+      "task_id": "t_mmrd57n5bvzj",
+      "subtask_id": "st_mmrd5bg8hpfz",
+      "id": "ctx_mmrd5x2doxb0",
+      "made_at": "2026-03-15T06:18:39.397Z"
+    },
+    {
+      "domain": "general",
+      "category": "process",
+      "title": "Research Passive Income Opportunities",
+      "decision": "**Top passive income opportunities for senior data engineers include SaaS micro-products like AI tools and lead generation software, API-as-a-service ",
+      "reasoning": "Stage: audit, Model: perplexity",
+      "impact": "No code changes",
+      "task_id": "t_mmrd57n5bvzj",
+      "subtask_id": "st_mmrd5ccg2my8",
+      "id": "ctx_mmrd5kk7ty8n",
+      "made_at": "2026-03-15T06:18:23.191Z"
+    },
+    {
+      "domain": "general",
+      "category": "strategy",
+      "title": "Deliberation: Research the top 10 passive income opportunities for a senio",
+      "decision": "Conduct research to identify current trends and successful examples in the specified areas. Analyze these examples to estimate future potential and develop actionable steps. Validate findings with real-world data and expert opinions.",
+      "reasoning": "Objective: Identify and detail top passive income opportunities for senior data engineers in 2025-2026.",
+      "impact": "4 subtasks planned. Risk: yellow",
+      "task_id": "t_mmrd57n5bvzj",
+      "id": "ctx_mmrd5ccquntc",
+      "made_at": "2026-03-15T06:18:12.554Z"
+    }
+  ],
+  "open_questions": [
+    {
+      "domain": "general",
+      "question": "Feasibility of opportunities in 2025-2026",
+      "context": "From deliberation on: Research the top 10 passive income opportunities for a senior data engineer / en",
+      "priority": "medium",
+      "id": "ctx_mmrd5ccr6i87",
+      "raised_at": "2026-03-15T06:18:12.555Z"
+    },
+    {
+      "domain": "general",
+      "question": "Accurate estimates for income potential and startup costs",
+      "context": "From deliberation on: Research the top 10 passive income opportunities for a senior data engineer / en",
+      "priority": "medium",
+      "id": "ctx_mmrd5ccrlcd2",
+      "raised_at": "2026-03-15T06:18:12.555Z"
+    },
+    {
+      "domain": "general",
+      "question": "Current successful examples of passive income in specified areas",
+      "context": "From deliberation on: Research the top 10 passive income opportunities for a senior data engineer / en",
+      "priority": "medium",
+      "id": "ctx_mmrd5ccqww9a",
+      "raised_at": "2026-03-15T06:18:12.554Z"
+    }
+  ],
+  "constraints": [],
+  "key_artifacts": [
+    {
+      "domain": "general",
+      "type": "report",
+      "title": "report: Compile and Report Findings",
+      "path": "03-Operations/Reports/Subtask-openai-2026-03-15-st_mmrd5ccpd5x9.md",
+      "task_id": "t_mmrd57n5bvzj",
+      "id": "ctx_mmrd6mahvd4m",
+      "created_at": "2026-03-15T06:19:12.089Z"
+    },
+    {
+      "domain": "general",
+      "type": "report",
+      "title": "implement: Develop Actionable Steps",
+      "path": "03-Operations/Reports/Subtask-openai-2026-03-15-st_mmrd5ccmba04.md",
+      "task_id": "t_mmrd57n5bvzj",
+      "id": "ctx_mmrd6cclm0kj",
+      "created_at": "2026-03-15T06:18:59.205Z"
+    },
+    {
+      "domain": "general",
+      "type": "report",
+      "title": "report: Synthesize Research Findings",
+      "path": "03-Operations/Reports/Subtask-openai-2026-03-15-st_mmrd5bg8hpfz.md",
+      "task_id": "t_mmrd57n5bvzj",
+      "id": "ctx_mmrd5x2bo8wr",
+      "created_at": "2026-03-15T06:18:39.395Z"
+    },
+    {
+      "domain": "general",
+      "type": "report",
+      "title": "audit: Research Passive Income Opportunities",
+      "path": "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mmrd5ccg2my8.md",
+      "task_id": "t_mmrd57n5bvzj",
+      "id": "ctx_mmrd5kk69oms",
+      "created_at": "2026-03-15T06:18:23.190Z"
+    }
+  ],
+  "approval_patterns": [],
+  "next_actions": [
+    "Research Passive Income Opportunities",
+    "Analyze Income Potential and Costs",
+    "Develop Actionable Steps",
+    "Compile and Report Findings"
+  ],
+  "known_issues": [],
+  "context_summary": "",
+  "updated_at": "2026-03-15T06:19:12.090Z"
+}
