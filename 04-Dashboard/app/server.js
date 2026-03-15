@@ -3355,6 +3355,15 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 92: Prompt Optimization
+  if (req.url?.match(/^\/api\/prompt-optimizer\/suggest(\?.*)?$/) && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const po = require('./lib/prompt-optimizer'); return json(res, { suggestions: po.getOptimizationSuggestions(body.engineId || 'general', body.prompt || '') }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/prompt-optimizer\/patterns(\?.*)?$/) && req.method === 'GET') {
+    try { const po = require('./lib/prompt-optimizer'); const params = new URL(req.url, 'http://x').searchParams; return json(res, { patterns: po.getBestPatterns(params.get('engineId') || 'general') }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 91: Smart Suggestions
   if (req.url?.match(/^\/api\/suggestions(\?.*)?$/) && req.method === 'GET') {
     try { const se = require('./lib/suggestions-engine'); const params = new URL(req.url, 'http://x').searchParams; return json(res, { suggestions: se.getSuggestions(parseInt(params.get('limit') || '5')) }); } catch (e) { return json(res, { error: e.message }, 500); }
