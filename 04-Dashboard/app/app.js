@@ -17,7 +17,7 @@ const DOMAIN_LABELS = {
   music: 'Music & Audio',
   newsroom: 'News & Intelligence',
   general: 'General',
-  // Legacy aliases
+  // Legacy aliases + mission name mappings
   career: 'Career & Job Search',
   finance: 'Personal Finance',
   home: 'Home & Lifestyle',
@@ -25,6 +25,12 @@ const DOMAIN_LABELS = {
   chief_of_staff: 'Scheduling & Life Ops',
   calendar: 'Scheduling & Life Ops',
   legal: 'Writing & Documentation',
+  // Mission status file names (lowercase, no spaces)
+  wealthresearch: 'Personal Finance',
+  careeregine: 'Career & Job Search',
+  careerengine: 'Career & Job Search',
+  personalops: 'Scheduling & Life Ops',
+  founder2founder: 'Filmmaking & Video',
   founder2founder: 'Startup & Business Builder',
 };
 function domainLabel(d) { return DOMAIN_LABELS[d] || d; }
@@ -741,12 +747,13 @@ function renderHome() {
   if (engineDiv) {
     const activeMissions = DATA.missions.filter(m => (m.status || '').toLowerCase() !== 'planned');
     if (activeMissions.length > 0) {
-      engineDiv.innerHTML = activeMissions.slice(0, 5).map(m =>
-        `<div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.03)">
-          <span>${esc(m.mission)}</span>
+      engineDiv.innerHTML = activeMissions.slice(0, 5).map(m => {
+        const displayName = domainLabel(m.mission.toLowerCase().replace(/\s+/g, '').replace('engine','egine')) || m.mission;
+        return `<div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.03)">
+          <span>${esc(displayName)}</span>
           <span class="mission-badge ${badgeClass(m.status)}" style="font-size:9px">${esc(m.status)}</span>
-        </div>`
-      ).join('');
+        </div>`;
+      }).join('');
     } else {
       engineDiv.innerHTML = '<div style="color:var(--text-faint)">No active engines</div>';
     }
@@ -968,13 +975,13 @@ async function saveBudgetSettings() {
 
 function renderMissions() {
   document.getElementById('missionCards').innerHTML = DATA.missions.map(m => {
-    const flag = m.mission === 'TopRanker';
     const bc = badgeClass(m.status);
     const isPlanned = (m.status || '').toLowerCase() === 'planned';
-    return `<div class="mission-card ${flag ? 'flagship' : ''} ${isPlanned ? 'planned' : ''}">
+    // Map old mission names to 15-engine display names
+    const displayName = domainLabel(m.mission.toLowerCase().replace(/\s+/g, '').replace('engine','egine')) || m.mission;
+    return `<div class="mission-card ${isPlanned ? 'planned' : ''}">
       <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
-        <span class="mission-name">${esc(m.mission)}</span>
-        ${flag ? '<span class="badge-flagship">Flagship</span>' : ''}
+        <span class="mission-name">${esc(displayName)}</span>
       </div>
       <span class="mission-badge ${bc}">${esc(m.status)}</span>
       <div class="mission-section"><strong>Objective</strong>${esc(m.objective)}</div>

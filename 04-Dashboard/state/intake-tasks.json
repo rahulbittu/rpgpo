@@ -1,5 +1,340 @@
 [
   {
+    "task_id": "t_mms1qkbv4tci",
+    "title": "Explain graph databases and when to use them instead of relational databases. In",
+    "raw_request": "Explain graph databases and when to use them instead of relational databases. Include Neo4j vs Amazon Neptune comparison, and 3 real use cases with example queries.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:46:33.451Z",
+    "updated_at": "2026-03-15T17:48:31.467Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:47:22.125Z",
+      "interpreted_objective": "Explain graph databases and compare Neo4j vs Amazon Neptune, including use cases and example queries.",
+      "expected_outcome": "A comprehensive report that explains graph databases, compares Neo4j and Amazon Neptune, and provides three real use cases with example queries.",
+      "key_unknowns": [
+        "Specific features of Neo4j and Amazon Neptune",
+        "Current real-world use cases for graph databases",
+        "Example queries for each use case"
+      ],
+      "recommended_strategy": "First, conduct web research to gather detailed information on graph databases, Neo4j, and Amazon Neptune. Then, synthesize this information into a structured report that includes a comparison of the two databases and real-world use cases with example queries.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Graph Databases and Neo4j vs Amazon Neptune",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on graph databases, Neo4j, and Amazon Neptune with sources.",
+          "prompt": "Search the web for current, specific information about graph databases, focusing on Neo4j and Amazon Neptune. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Graph Database Information",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining graph databases, comparing Neo4j and Amazon Neptune, and detailing three use cases with example queries.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-graph-databases.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1848
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms1qhzj1hrw",
+    "title": "Design a subscription pricing page for a SaaS product. Include 3 tiers with feat",
+    "raw_request": "Design a subscription pricing page for a SaaS product. Include 3 tiers with features, pricing psychology principles applied, and FAQ section. Output as structured content.",
+    "domain": "topranker",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:46:30.415Z",
+    "updated_at": "2026-03-15T17:48:21.451Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:46:50.982Z",
+      "interpreted_objective": "Design a subscription pricing page for TopRanker's SaaS product with three tiers, applying pricing psychology and including an FAQ section.",
+      "expected_outcome": "A structured content document outlining a subscription pricing page with three tiers, detailed features, pricing strategies, and an FAQ section ready for implementation.",
+      "key_unknowns": [
+        "Specific features to include in each pricing tier",
+        "Pricing strategy details and principles to apply",
+        "Common FAQs related to TopRanker's SaaS product"
+      ],
+      "recommended_strategy": "Conduct research on effective SaaS pricing strategies and common features for subscription tiers. Synthesize this information to design a pricing page that aligns with TopRanker's objectives and market positioning. Ensure the content is structured for easy implementation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research SaaS Pricing Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on effective SaaS pricing strategies and common features for subscription tiers.",
+          "prompt": "Search the web for current, specific information about effective SaaS pricing strategies and common features for subscription tiers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Pricing Page Content",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured content document outlining the subscription pricing page with three tiers, features, pricing psychology principles, and an FAQ section.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for designing a subscription pricing page for TopRanker's SaaS product. Include specific features for each tier, pricing psychology principles, and a FAQ section.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/topranker-2023-10-subscription-pricing-page.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2254
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmqn1d6vm0li"
+  },
+  {
+    "task_id": "t_mms1qfnd2uov",
+    "title": "Create a complete packing list for a 2-week international trip. Categories: clot",
+    "raw_request": "Create a complete packing list for a 2-week international trip. Categories: clothing, tech, documents, health, and miscellaneous. For a solo tech worker traveling to Japan in spring.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:46:27.385Z",
+    "updated_at": "2026-03-15T17:48:11.357Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:46:45.580Z",
+      "interpreted_objective": "Create a comprehensive packing list for a solo tech worker traveling to Japan for two weeks in spring.",
+      "expected_outcome": "A detailed, categorized packing list that includes clothing, tech, documents, health, and miscellaneous items tailored for a tech worker's needs.",
+      "key_unknowns": [
+        "Specific tech equipment required by the traveler",
+        "Personal preferences for clothing and miscellaneous items",
+        "Any health or dietary needs"
+      ],
+      "recommended_strategy": "Research typical packing lists for tech workers traveling to Japan in spring. Synthesize this information into a structured list, ensuring all categories are covered. Tailor recommendations to a tech worker's needs, considering both professional and personal requirements.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research typical packing lists for Japan in spring",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on packing lists for Japan in spring, with a focus on tech workers.",
+          "prompt": "Search the web for current packing lists for a two-week trip to Japan in spring, specifically for tech workers. Include categories like clothing, tech, documents, health, and miscellaneous. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize packing list",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured packing list tailored for a tech worker traveling to Japan in spring.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive packing list for a solo tech worker traveling to Japan for two weeks in spring. Include specific items under categories: clothing, tech, documents, health, and miscellaneous.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-packing-list.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1864
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mms1qdb64efc",
+    "title": "Research the best approach to building a personal website as a data engineer. Co",
+    "raw_request": "Research the best approach to building a personal website as a data engineer. Compare static site generators (Hugo, Next.js, Astro). Include hosting options and expected costs.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:46:24.354Z",
+    "updated_at": "2026-03-15T17:47:48.112Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:46:31.087Z",
+      "interpreted_objective": "Research and compare static site generators and hosting options for building a personal website as a data engineer.",
+      "expected_outcome": "A detailed comparison of Hugo, Next.js, and Astro, including hosting options and expected costs, to guide the creation of a personal website.",
+      "key_unknowns": [
+        "Current features and benefits of Hugo, Next.js, and Astro",
+        "Hosting options suitable for these static site generators",
+        "Expected costs for using these tools and hosting services"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on Hugo, Next.js, and Astro, focusing on their features, benefits, and use cases. Then, research hosting options and costs for each generator. Finally, synthesize the findings into a comparative analysis with recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Static Site Generators",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Hugo, Next.js, and Astro including features, benefits, and use cases.",
+          "prompt": "Search the web for current, specific information about Hugo, Next.js, and Astro as static site generators. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Hosting Options and Costs",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on hosting options and expected costs for Hugo, Next.js, and Astro.",
+          "prompt": "Search the web for hosting options and expected costs for using Hugo, Next.js, and Astro. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Findings into Comparative Analysis",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comparative analysis of Hugo, Next.js, and Astro, including hosting options and costs, with recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comparative analysis of Hugo, Next.js, and Astro, including hosting options and expected costs. Provide actionable recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2365
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mms1qaz0z0ww",
+    "title": "Write a resignation letter template that is professional and bridges-burning-fre",
+    "raw_request": "Write a resignation letter template that is professional and bridges-burning-free. Include notice period, transition plan offer, and gratitude. For a senior engineer leaving for a startup.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:46:21.324Z",
+    "updated_at": "2026-03-15T17:46:39.211Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:46:25.921Z",
+      "interpreted_objective": "Create a professional resignation letter template for a senior engineer leaving for a startup.",
+      "expected_outcome": "A well-crafted resignation letter template that includes a notice period, transition plan offer, and gratitude, suitable for a senior engineer.",
+      "key_unknowns": [
+        "Specific notice period duration",
+        "Details of the transition plan offer",
+        "Any specific gratitude points or achievements to mention"
+      ],
+      "recommended_strategy": "Draft a resignation letter template that maintains professionalism and avoids burning bridges. Ensure the letter includes a clear notice period, an offer to assist with the transition, and expressions of gratitude for the opportunities provided. Use a tone that reflects the seniority of the engineer and the new opportunity at a startup.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Draft Resignation Letter Template",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete resignation letter template for a senior engineer.",
+          "prompt": "Write a resignation letter template for a senior engineer leaving for a startup. The letter should be professional and avoid burning bridges. Include a notice period, offer to assist with the transition, and expressions of gratitude for the opportunities provided.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1850
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms1lfk6vfmg",
     "title": "Write a comprehensive guide for setting up a home recording studio on a budget u",
     "raw_request": "Write a comprehensive guide for setting up a home recording studio on a budget under 500 dollars. Include microphone, interface, DAW software, acoustic treatment, and monitoring.",

@@ -405,7 +405,23 @@ function renderMissionStatements(statements) {
   if (!el) return;
 
   const levels = ['operator', 'engine', 'project'];
-  const engineDomains = ['topranker', 'careeregine', 'founder2founder', 'wealthresearch', 'newsroom', 'screenwriting', 'music', 'personalops', 'general'];
+  const engineDomains = [
+    { id: 'startup', name: 'Code & Product Engineering' },
+    { id: 'writing', name: 'Writing & Documentation' },
+    { id: 'research', name: 'Research & Analysis' },
+    { id: 'learning', name: 'Learning & Tutoring' },
+    { id: 'personalops', name: 'Scheduling & Life Operations' },
+    { id: 'health', name: 'Health & Wellness Coach' },
+    { id: 'shopping', name: 'Shopping & Buying Advisor' },
+    { id: 'travel', name: 'Travel & Relocation Planner' },
+    { id: 'careeregine', name: 'Career & Job Search' },
+    { id: 'wealthresearch', name: 'Personal Finance & Investing' },
+    { id: 'topranker', name: 'Startup & Business Builder' },
+    { id: 'screenwriting', name: 'Screenwriting & Story Development' },
+    { id: 'music', name: 'Music & Audio Creation' },
+    { id: 'newsroom', name: 'News & Intelligence' },
+    { id: 'general', name: 'General' },
+  ];
 
   let html = '<div class="ms-container">';
   html += '<div class="ms-header"><span class="ms-title">Mission Statements</span></div>';
@@ -426,15 +442,15 @@ function renderMissionStatements(statements) {
   </div>`;
 
   // Engine level
-  html += '<div class="ms-level"><div class="ms-level-title">Engine Missions</div><div class="ms-grid">';
-  for (const domain of engineDomains) {
-    const stmt = statements.find(s => s.level === 'engine' && s.scope_id === domain);
-    html += `<div class="ms-card ms-card-sm" id="msCard_${domain}">
-      <div class="ms-domain">${esc(domain)}</div>
+  html += '<div class="ms-level"><div class="ms-level-title">Engine Missions (15 Engines)</div><div class="ms-grid">';
+  for (const eng of engineDomains) {
+    const stmt = statements.find(s => s.level === 'engine' && s.scope_id === eng.id);
+    html += `<div class="ms-card ms-card-sm" id="msCard_${eng.id}">
+      <div class="ms-domain">${esc(eng.name)}</div>
       ${stmt
         ? `<div class="ms-statement-sm">${esc(stmt.statement.slice(0, 80))}</div>`
-        : '<div class="ms-empty-sm">No mission</div>'}
-      <button class="nop-btn nop-btn-secondary ms-edit-btn-sm" onclick="editMissionStatement('engine','${domain}')">
+        : '<div class="ms-empty-sm">No mission set</div>'}
+      <button class="nop-btn nop-btn-secondary ms-edit-btn-sm" onclick="editMissionStatement('engine','${eng.id}')">
         ${stmt ? 'Edit' : 'Set'}
       </button>
     </div>`;
@@ -451,7 +467,7 @@ function editMissionStatement(level, scopeId) {
 
   modal.style.display = 'flex';
   modal.innerHTML = `<div class="ms-modal-inner">
-    <div class="ms-modal-title">${level === 'operator' ? 'Operator' : esc(scopeId)} Mission Statement</div>
+    <div class="ms-modal-title">${level === 'operator' ? 'Operator' : (typeof domainLabel === 'function' ? domainLabel(scopeId) : esc(scopeId))} Mission Statement</div>
     <textarea id="msEditStatement" class="ms-textarea" placeholder="What is the core purpose and direction?" rows="3"></textarea>
     <input id="msEditObjectives" class="ms-input" placeholder="Key objectives (comma-separated)" />
     <input id="msEditValues" class="ms-input" placeholder="Core values (comma-separated)" />
