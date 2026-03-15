@@ -3355,6 +3355,11 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 95: Operator Insights
+  if (req.url?.match(/^\/api\/operator-insights(\?.*)?$/) && req.method === 'GET') {
+    try { const oi = require('./lib/operator-insights'); const params = new URL(req.url, 'http://x').searchParams; return json(res, oi.getOperatorInsights(parseInt(params.get('days') || '7'))); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 94: System Dashboard
   if (req.url === '/api/system/dashboard' && req.method === 'GET') {
     try { const ss = require('./lib/system-status'); return json(res, ss.getSystemDashboard()); } catch (e) { return json(res, { error: e.message }, 500); }
