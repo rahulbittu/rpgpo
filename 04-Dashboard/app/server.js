@@ -3347,6 +3347,22 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Reports listing
+  if (req.url?.match(/^\/api\/reports(\?.*)?$/) && req.method === 'GET') {
+    try {
+      const reportsDir = path.resolve(RPGPO_ROOT, '03-Operations', 'Reports');
+      if (!fs.existsSync(reportsDir)) return json(res, { reports: [] });
+      const files = fs.readdirSync(reportsDir).filter(f => f.endsWith('.md') || f.endsWith('.json') || f.endsWith('.txt'));
+      const reports = files.map(f => {
+        try {
+          const stat = fs.statSync(path.join(reportsDir, f));
+          return { name: f, path: '03-Operations/Reports/' + f, size: stat.size, modified: stat.mtimeMs };
+        } catch { return null; }
+      }).filter(Boolean).sort((a, b) => b.modified - a.modified).slice(0, 50);
+      return json(res, { reports, total: files.length });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 72: TopRanker Engine
   if (req.url === '/api/topranker/contracts' && req.method === 'GET') {
     try { const tc = require('./lib/contracts/topranker.contracts'); return json(res, { contracts: tc.getTopRankerContracts() }); } catch (e) { return json(res, { error: e.message }, 500); }
