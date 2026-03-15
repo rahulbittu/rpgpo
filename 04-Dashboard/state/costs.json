@@ -1609,5 +1609,44 @@
     "taskId": "t_mmrtdgk0lsh3",
     "taskType": "subtask",
     "role": "strategy"
+  },
+  {
+    "ts": "2026-03-15T13:55:02.716Z",
+    "date": "2026-03-15",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 1481,
+    "outputTokens": 496,
+    "totalTokens": 1977,
+    "cost": 0.0086625,
+    "taskId": "t_mmrtgqhqm5qi",
+    "taskType": "deliberation",
+    "role": "board"
+  },
+  {
+    "ts": "2026-03-15T13:58:16.017Z",
+    "date": "2026-03-15",
+    "provider": "perplexity",
+    "model": "sonar",
+    "inputTokens": 63,
+    "outputTokens": 376,
+    "totalTokens": 439,
+    "cost": 0,
+    "taskId": "t_mmrtgqhqm5qi",
+    "taskType": "subtask",
+    "role": "research"
+  },
+  {
+    "ts": "2026-03-15T13:59:28.430Z",
+    "date": "2026-03-15",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 759,
+    "outputTokens": 449,
+    "totalTokens": 1208,
+    "cost": 0.0063875,
+    "taskId": "t_mmrtgqhqm5qi",
+    "taskType": "subtask",
+    "role": "strategy"
   }
 ]
