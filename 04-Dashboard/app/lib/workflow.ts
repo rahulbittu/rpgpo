@@ -75,7 +75,12 @@ export function onSubtaskComplete(subtaskId: string): WorkflowResult {
   const needsApproval: string[] = [];
 
   for (const next of nextReady) {
-    if (next.risk_level === 'red' || next.risk_level === 'yellow' || next.approval_required) {
+    // Only require approval for: red risk, explicit approval_required, or code-writing tasks
+    // Yellow risk research/analysis tasks should auto-execute to reduce friction
+    const isCodeTask = next.stage === 'implement' || next.assigned_model === 'claude';
+    const needsHumanApproval = next.risk_level === 'red' || next.approval_required || (next.risk_level === 'yellow' && isCodeTask);
+
+    if (needsHumanApproval) {
       intake.updateSubtask(next.subtask_id, { status: 'waiting_approval' as SubtaskStatus });
       needsApproval.push(next.subtask_id);
     } else {

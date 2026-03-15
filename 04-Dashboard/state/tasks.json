@@ -3,15 +3,17 @@
     "id": "mmr8j9en0m1r",
     "type": "execute-subtask",
     "label": "Subtask: Compile Report",
-    "status": "running",
+    "status": "done",
     "meta": {
       "subtaskId": "st_mmr8h2dh3z5q"
     },
     "createdAt": "2026-03-15T04:09:03.839Z",
-    "updatedAt": "2026-03-15T04:11:36.915Z",
-    "output": "[builder:running] Claude waiting... 1 lines, 0KB, 150s elapsed [150s since last output]",
+    "updatedAt": "2026-03-15T04:12:06.882Z",
+    "output": "Builder timeout: 03-Operations/Reports/Subtask-Claude-2026-03-15-st_mmr8h2dh3z5q.md (180s, 0B output)",
     "error": null,
-    "filesWritten": []
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-Claude-2026-03-15-st_mmr8h2dh3z5q.md"
+    ]
   },
   {
     "id": "mmr8j3ltw7sv",
