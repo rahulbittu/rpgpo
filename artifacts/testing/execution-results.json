@@ -1089,5 +1089,58 @@
       "domain_routed": "travel",
       "subtask_count": 3
     }
+  },
+  {
+    "test_case_id": "GPO-FIN-06",
+    "global_rank": 64,
+    "engine": "Personal Finance & Investing",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:45:17.341Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "wealthresearch",
+      "subtask_count": 3
+    }
+  },
+  {
+    "test_case_id": "GPO-HEA-03",
+    "global_rank": 66,
+    "engine": "Health & Wellness Coach",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:45:17.341Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "health"
+    }
+  },
+  {
+    "test_case_id": "GPO-SCH-05",
+    "global_rank": 68,
+    "engine": "Scheduling & Life Operations",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:45:17.341Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "personalops"
+    }
+  },
+  {
+    "test_case_id": "GPO-FIN-07",
+    "global_rank": 70,
+    "engine": "Personal Finance & Investing",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:45:17.341Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "wealthresearch"
+    }
   }
 ]
