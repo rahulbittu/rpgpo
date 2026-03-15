@@ -8,12 +8,12 @@ export interface RoutingResult {
 }
 
 const DOMAIN_KEYWORDS: Record<string, string[]> = {
-  newsroom: ['news', 'headline', 'trending', 'latest', 'current events', 'journalism', 'breaking', 'today\'s'],
+  newsroom: ['news', 'headline', 'trending', 'current events', 'journalism', 'breaking', 'today\'s news'],
   wealthresearch: ['passive income', 'investment', 'wealth', 'money', 'side hustle', 'revenue', 'profit', 'saas', 'side project', 'income ideas', 'income stream'],
   careeregine: ['job', 'career', 'salary', 'hiring', 'resume', 'interview', 'promotion', 'data engineer', 'job market', 'skill gap', 'professional development', 'networking', 'job search', 'compensation', 'job opening'],
   topranker: ['topranker', 'leaderboard', 'ranking', 'business listing', 'community rank'],
   writing: ['email', 'write', 'draft', 'memo', 'prd', 'spec', 'sop', 'runbook', 'document', 'proposal', 'letter', 'rewrite', 'executive summary', 'summarize this'],
-  research: ['research', 'analyze', 'study', 'investigate', 'evaluate', 'assessment', 'deep-dive', 'deep dive', 'market analysis', 'competitive analysis'],
+  research: ['research', 'analyze', 'study', 'investigate', 'evaluate', 'assessment', 'deep-dive', 'deep dive', 'market analysis', 'competitive analysis', 'compare', 'latest evidence', 'benchmark'],
   learning: ['teach me', 'explain', 'tutor', 'learn', 'study plan', 'quiz me', 'course', 'curriculum', 'master it'],
   shopping: ['buy', 'purchase', 'compare products', 'shopping', 'best price', 'recommendation'],
   travel: ['travel', 'trip', 'flight', 'hotel', 'itinerary', 'relocation', 'moving to'],
