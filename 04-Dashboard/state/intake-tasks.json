@@ -1,5 +1,802 @@
 [
   {
+    "task_id": "t_mms58asaw9g3",
+    "title": "Build a personal development scoreboard. Track skills, health metrics, financial",
+    "raw_request": "Build a personal development scoreboard. Track skills, health metrics, financial goals, and relationships. Include weekly review template.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:24:19.738Z",
+    "updated_at": "2026-03-15T19:29:01.598Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:25:44.498Z",
+      "interpreted_objective": "Create a personal development scoreboard with tracking for skills, health, financial goals, and relationships, including a weekly review template.",
+      "expected_outcome": "A functional personal development scoreboard that tracks various life aspects and includes a template for weekly reviews.",
+      "key_unknowns": [
+        "Specific metrics for skills, health, financial goals, and relationships",
+        "Format and structure of the weekly review template",
+        "Integration with existing personalops tools or systems"
+      ],
+      "recommended_strategy": "First, research best practices for tracking personal development across the specified areas. Then, design a scoreboard layout and a weekly review template. Finally, implement the design into a usable format, considering integration with existing tools if applicable.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Approval of the scoreboard design and metrics",
+        "Decision on integration with existing tools"
+      ],
+      "subtasks": [
+        {
+          "title": "Research best practices for personal development tracking",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report on best practices for tracking skills, health, financial goals, and relationships.",
+          "prompt": "Search the web for current best practices in tracking personal development metrics such as skills, health, financial goals, and relationships. Include specific examples, tools, and templates used by individuals or organizations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Design personal development scoreboard and weekly review template",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed design of the personal development scoreboard and a weekly review template.",
+          "prompt": "Based on the research results, design a personal development scoreboard that includes sections for tracking skills, health metrics, financial goals, and relationships. Also, create a weekly review template that complements the scoreboard.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2133
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms5897hv46t",
+    "title": "Create a comprehensive guide to stock option compensation for startup employees.",
+    "raw_request": "Create a comprehensive guide to stock option compensation for startup employees. Cover ISOs, NSOs, 83b elections, and AMT. Include decision framework.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:24:17.693Z",
+    "updated_at": "2026-03-15T19:28:53.747Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:25:38.599Z",
+      "interpreted_objective": "Create a detailed guide on stock option compensation for startup employees.",
+      "expected_outcome": "A comprehensive guide that explains ISOs, NSOs, 83b elections, and AMT, including a decision framework for employees.",
+      "key_unknowns": [
+        "Specific details about ISOs, NSOs, 83b elections, and AMT relevant to startup employees",
+        "Current best practices and decision frameworks for stock option compensation"
+      ],
+      "recommended_strategy": "Research current information on stock option compensation, including ISOs, NSOs, 83b elections, and AMT. Synthesize this information into a comprehensive guide with actionable insights and a decision framework for startup employees.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Stock Option Compensation",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on ISOs, NSOs, 83b elections, and AMT.",
+          "prompt": "Search the web for current, specific information about stock option compensation for startup employees, including ISOs, NSOs, 83b elections, and AMT. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Stock Option Guide",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on stock option compensation for startup employees.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a comprehensive guide on stock option compensation for startup employees. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2330
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms587mvewp1",
+    "title": "Write a dialogue between a data engineer and a product manager about why the das",
+    "raw_request": "Write a dialogue between a data engineer and a product manager about why the dashboard numbers dont match. Technical but accessible. Include resolution.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:24:15.655Z",
+    "updated_at": "2026-03-15T19:28:46.190Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:25:34.289Z",
+      "interpreted_objective": "Write a dialogue scene between a data engineer and a product manager discussing and resolving discrepancies in dashboard numbers.",
+      "expected_outcome": "A technically accurate and accessible dialogue script that includes a resolution to the dashboard discrepancy issue.",
+      "key_unknowns": [
+        "Specific reasons for the dashboard discrepancies",
+        "Technical details to be included in the dialogue",
+        "Resolution steps for the discrepancy"
+      ],
+      "recommended_strategy": "Research common reasons for dashboard discrepancies and resolutions in data engineering contexts. Use this information to craft a dialogue that is both technically accurate and accessible to a general audience. Ensure the dialogue includes a clear resolution to the problem.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Dashboard Discrepancies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of common reasons for discrepancies in dashboard numbers and typical resolutions.",
+          "prompt": "Search the web for current, specific information about common reasons for discrepancies in dashboard numbers in data engineering and typical resolutions. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Dialogue Script",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A dialogue script between a data engineer and a product manager discussing dashboard discrepancies and their resolution.",
+          "prompt": "Based on the research results from prior subtasks, write a dialogue between a data engineer and a product manager discussing why dashboard numbers don't match. Include technical details and a clear resolution to the discrepancy.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-dashboard-dialogue.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1888
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mms58627n6w5",
+    "title": "Research the best cities for tech workers who want outdoor access. Compare Bould",
+    "raw_request": "Research the best cities for tech workers who want outdoor access. Compare Boulder, Portland, Salt Lake City, and Asheville on job market, cost, and recreation.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:24:13.615Z",
+    "updated_at": "2026-03-15T19:28:43.108Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:25:20.155Z",
+      "interpreted_objective": "Compare Boulder, Portland, Salt Lake City, and Asheville for tech workers seeking outdoor access based on job market, cost, and recreation.",
+      "expected_outcome": "A detailed comparison report highlighting the best city for tech workers considering job opportunities, living costs, and outdoor activities.",
+      "key_unknowns": [
+        "Current job market conditions in each city",
+        "Cost of living specifics for tech workers in each city",
+        "Availability and quality of outdoor recreational activities in each city"
+      ],
+      "recommended_strategy": "First, conduct research to gather current data on the job market, cost of living, and outdoor recreation in Boulder, Portland, Salt Lake City, and Asheville. Then, synthesize this information into a comparative analysis to identify the best city for tech workers seeking outdoor access.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research City Data",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on job market, cost of living, and outdoor recreation for Boulder, Portland, Salt Lake City, and Asheville.",
+          "prompt": "Search the web for current information about the job market, cost of living, and outdoor recreation in Boulder, Portland, Salt Lake City, and Asheville. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comparative analysis report of the four cities for tech workers seeking outdoor access.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Boulder, Portland, Salt Lake City, and Asheville for tech workers. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-city-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1926
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mms584hwz58s",
+    "title": "Design a 4-week core strength program using only bodyweight exercises. Must be d",
+    "raw_request": "Design a 4-week core strength program using only bodyweight exercises. Must be doable in 20 minutes. Include progression each week and rest day guidance.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:24:11.588Z",
+    "updated_at": "2026-03-15T19:28:34.726Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:25:15.457Z",
+      "interpreted_objective": "Create a 4-week bodyweight core strength program with weekly progression, fitting into a 20-minute daily routine.",
+      "expected_outcome": "A structured, evidence-based core strength program that users can follow weekly, ensuring progression and including rest day guidance.",
+      "key_unknowns": [
+        "Specific bodyweight exercises suitable for core strength",
+        "Optimal progression strategies for bodyweight exercises",
+        "Rest day recommendations for core workouts"
+      ],
+      "recommended_strategy": "Research current bodyweight core strength exercises and progression strategies. Synthesize this information into a structured 4-week program with clear weekly progression and rest day guidance. Ensure the program is evidence-based and actionable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Bodyweight Core Exercises",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of effective bodyweight exercises for core strength with sources.",
+          "prompt": "Search the web for current, specific information about effective bodyweight exercises for core strength. Include real names, descriptions, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Progression Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Information on progression strategies for bodyweight exercises.",
+          "prompt": "Search the web for current, specific information about progression strategies for bodyweight exercises. Include real strategies, examples, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Rest Day Recommendations",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Evidence-based rest day recommendations for core workouts.",
+          "prompt": "Search the web for current, specific information about rest day recommendations for core workouts. Include real guidelines, examples, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Core Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 4-week core strength program with exercises, progression, and rest day guidance.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 4-week bodyweight core strength program. Include specific exercises, weekly progression, and rest day guidance. Ensure the program is evidence-based and actionable.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-core-strength-program.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2057
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms582xse4hz",
+    "title": "Create a technical writing style guide for an engineering team. Cover code examp",
+    "raw_request": "Create a technical writing style guide for an engineering team. Cover code examples, API documentation, error messages, and inline comments.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:24:09.568Z",
+    "updated_at": "2026-03-15T19:28:25.102Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:25:10.120Z",
+      "interpreted_objective": "Create a technical writing style guide for an engineering team.",
+      "expected_outcome": "A comprehensive style guide that provides clear guidelines on code examples, API documentation, error messages, and inline comments.",
+      "key_unknowns": [
+        "Specific preferences of the engineering team",
+        "Existing documentation practices",
+        "Preferred tools and formats for documentation"
+      ],
+      "recommended_strategy": "Research best practices for technical writing in engineering contexts, focusing on code examples, API documentation, error messages, and inline comments. Synthesize this information into a clear, actionable style guide tailored to the engineering team's needs. Ensure the guide is easily accessible and understandable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report on best practices for technical writing in engineering, covering code examples, API documentation, error messages, and inline comments.",
+          "prompt": "Search the web for current best practices in technical writing for engineering teams, specifically focusing on code examples, API documentation, error messages, and inline comments. Include real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Style Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A draft of the technical writing style guide tailored for the engineering team.",
+          "prompt": "Based on the research results, synthesize a technical writing style guide for an engineering team. Include sections on code examples, API documentation, error messages, and inline comments with clear guidelines and examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1964
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mms581dhan2n",
+    "title": "Compare the top 3 mesh WiFi systems for a 2000 sq ft home in 2026. Must support ",
+    "raw_request": "Compare the top 3 mesh WiFi systems for a 2000 sq ft home in 2026. Must support WiFi 7. Include coverage, speed tests, and current pricing.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:24:07.541Z",
+    "updated_at": "2026-03-15T19:24:29.992Z",
+    "status": "executing",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:24:29.849Z",
+      "interpreted_objective": "Compare top 3 mesh WiFi systems for a 2000 sq ft home in 2026 with WiFi 7 support.",
+      "expected_outcome": "A detailed comparison report of the top 3 mesh WiFi systems including coverage, speed tests, and current pricing.",
+      "key_unknowns": [
+        "Which mesh WiFi systems will be top-rated in 2026?",
+        "What are the current prices for these systems?",
+        "What are the specific coverage and speed test results for each system?"
+      ],
+      "recommended_strategy": "Conduct web research to identify the top 3 mesh WiFi systems expected to be available in 2026 that support WiFi 7. Gather data on coverage, speed tests, and current pricing for these systems. Compile the findings into a comprehensive comparison report.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Top Mesh WiFi Systems for 2026",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of top 3 mesh WiFi systems supporting WiFi 7 in 2026.",
+          "prompt": "Search the web for current, specific information about the top 3 mesh WiFi systems expected to be available in 2026 that support WiFi 7. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Coverage and Speed Tests",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Coverage and speed test data for the identified mesh WiFi systems.",
+          "prompt": "Search the web for coverage and speed test results for the top 3 mesh WiFi systems identified. Include real data, test results, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Research Current Pricing",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current pricing for the identified mesh WiFi systems.",
+          "prompt": "Search the web for current pricing information for the top 3 mesh WiFi systems identified. Include prices, retailers, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Compile Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive comparison report of the top 3 mesh WiFi systems.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed comparison report of the top 3 mesh WiFi systems. Include specific names, coverage, speed test results, current pricing, pros/cons, and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2284
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms57zt61c7u",
+    "title": "Teach me about WebAssembly (WASM) for backend developers. Cover use cases, perfo",
+    "raw_request": "Teach me about WebAssembly (WASM) for backend developers. Cover use cases, performance characteristics, language support, and when it makes sense to use.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:24:05.514Z",
+    "updated_at": "2026-03-15T19:27:56.934Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:24:22.908Z",
+      "interpreted_objective": "Provide a comprehensive overview of WebAssembly (WASM) for backend developers, including use cases, performance characteristics, language support, and appropriate usage scenarios.",
+      "expected_outcome": "A detailed report that educates backend developers on the benefits and considerations of using WebAssembly, enabling informed decisions about its adoption.",
+      "key_unknowns": [
+        "Specific use cases for WebAssembly in backend development",
+        "Performance characteristics of WebAssembly compared to traditional backend technologies",
+        "Languages that support WebAssembly for backend development",
+        "Criteria for deciding when to use WebAssembly in backend projects"
+      ],
+      "recommended_strategy": "Conduct research to gather current, specific information about WebAssembly's use in backend development. Synthesize findings into a structured report that covers use cases, performance, language support, and decision criteria. Ensure the information is actionable and relevant to backend developers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research WebAssembly Use Cases for Backend",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on WebAssembly use cases in backend development, including real-world examples and sources.",
+          "prompt": "Search the web for current, specific information about WebAssembly use cases in backend development. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research WebAssembly Performance Characteristics",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on the performance characteristics of WebAssembly in backend applications, including comparisons to other technologies.",
+          "prompt": "Search the web for current, specific information about the performance characteristics of WebAssembly in backend development. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Language Support for WebAssembly",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Information on programming languages that support WebAssembly for backend development, including any limitations or considerations.",
+          "prompt": "Search the web for current, specific information about programming languages that support WebAssembly for backend development. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize WebAssembly Insights for Backend Developers",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report summarizing the research findings on WebAssembly use cases, performance, language support, and decision criteria for backend developers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for backend developers regarding WebAssembly. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2295
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms57y8d7a21",
+    "title": "Analyze whether I should max out 401k contributions or invest in a taxable broke",
+    "raw_request": "Analyze whether I should max out 401k contributions or invest in a taxable brokerage account. Income 200k, age 32, current 401k balance 80k. Include tax-adjusted returns.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:24:03.469Z",
+    "updated_at": "2026-03-15T19:27:12.076Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:24:14.431Z",
+      "interpreted_objective": "Determine the optimal investment strategy between maximizing 401k contributions and investing in a taxable brokerage account for Rahul.",
+      "expected_outcome": "A detailed analysis with tax-adjusted returns, specific recommendations, and next steps for Rahul's investment strategy.",
+      "key_unknowns": [
+        "Current tax rates applicable to Rahul",
+        "Expected rate of return for 401k and taxable accounts",
+        "Rahul's retirement timeline and financial goals"
+      ],
+      "recommended_strategy": "First, research current tax implications and typical returns for 401k and taxable accounts. Then, synthesize findings into a report comparing both options, considering Rahul's income and age. Finally, provide a strategic recommendation with specific actions.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tax Implications and Returns",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current tax implications and typical returns for 401k and taxable accounts.",
+          "prompt": "Search the web for current tax implications and typical returns for 401k accounts and taxable brokerage accounts. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Investment Strategy Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "An actionable report comparing 401k and taxable brokerage accounts for Rahul, with specific recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing 401k and taxable brokerage accounts for Rahul. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-investment-strategy.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2337
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms57wntcb94",
+    "title": "Write a change management plan for migrating a team from Jira to Linear. Include",
+    "raw_request": "Write a change management plan for migrating a team from Jira to Linear. Include rollout phases, training plan, data migration steps, and success metrics.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:24:01.433Z",
+    "updated_at": "2026-03-15T19:25:06.232Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:24:08.566Z",
+      "interpreted_objective": "Create a detailed change management plan for transitioning a team from Jira to Linear.",
+      "expected_outcome": "A comprehensive document outlining the phases of rollout, training plan, data migration steps, and success metrics for the transition.",
+      "key_unknowns": [
+        "Specific team size and structure",
+        "Current Jira usage details",
+        "Linear features to be utilized",
+        "Timeline for the transition",
+        "Stakeholder expectations"
+      ],
+      "recommended_strategy": "Develop a structured plan that includes a phased rollout approach, comprehensive training sessions tailored to different user roles, detailed data migration procedures, and clearly defined success metrics. Ensure the plan is adaptable to the team's specific needs and current usage of Jira.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Draft Rollout Phases",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed plan outlining the phases of the rollout from Jira to Linear.",
+          "prompt": "Create a detailed plan for the rollout phases when migrating a team from Jira to Linear. Include initial assessment, pilot phase, full deployment, and post-deployment support. Consider potential challenges and mitigation strategies.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Design Training Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive training plan tailored to different user roles for the transition from Jira to Linear.",
+          "prompt": "Develop a training plan for migrating a team from Jira to Linear. Include training sessions for different user roles, hands-on workshops, and resources for self-paced learning. Address potential learning curves and support mechanisms.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Outline Data Migration Steps",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A step-by-step guide for data migration from Jira to Linear.",
+          "prompt": "Outline the data migration steps required to transition from Jira to Linear. Include data extraction, transformation, and loading processes. Address data integrity and validation checks.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Define Success Metrics",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A set of success metrics to evaluate the effectiveness of the transition from Jira to Linear.",
+          "prompt": "Define success metrics for the migration from Jira to Linear. Include user adoption rates, system performance benchmarks, and feedback mechanisms. Consider both quantitative and qualitative measures.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2231
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms50f2zbs0w",
     "title": "Research the current state of remote hiring for data engineers in 2026. Include ",
     "raw_request": "Research the current state of remote hiring for data engineers in 2026. Include salary trends, most in-demand skills, and which companies are hiring the most.",

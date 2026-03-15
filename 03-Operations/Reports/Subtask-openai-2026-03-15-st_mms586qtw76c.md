@@ -1,3 +1,8 @@
+# Subtask Output — Synthesize Investment Strategy Report
+## Model: gpt-4o
+## Stage: report
+## Date: 2026-03-15
+
 ## Key Findings
 
 1. **401(k) Accounts**:
