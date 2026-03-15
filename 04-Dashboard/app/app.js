@@ -45,13 +45,22 @@ function connectSSE() {
     try { const d = JSON.parse(e.data); pushActivity(d.action); } catch {}
   });
 
+  let _intakeDebounce = null;
   evtSource.addEventListener('intake-update', (e) => {
-    // Instant refresh when intake state changes
-    loadPendingApprovals();
-    loadCurrentTaskFocus();
-    loadIntakeTasks();
+    // Debounced refresh to prevent scroll jump spam
+    if (_intakeDebounce) clearTimeout(_intakeDebounce);
+    _intakeDebounce = setTimeout(() => {
+      loadPendingApprovals();
+      loadCurrentTaskFocus();
+      // Only refresh intake list if the intake tab is active
+      const intakePanel = document.getElementById('tab-intake');
+      if (intakePanel && intakePanel.classList.contains('active')) {
+        loadIntakeTasks();
+      }
+    }, 3000);
   });
 
+  const _toastedTaskIds = new Set();
   evtSource.addEventListener('task', (e) => {
     try {
       const d = JSON.parse(e.data);
@@ -61,10 +70,14 @@ function connectSSE() {
         renderAllTasks();
         if (trackedTaskId === d.task.id) updateOutput(d.task);
 
-        if (d.task.status === 'done') {
+        // Deduplicate toasts — only show once per task completion
+        const toastKey = d.task.id + ':' + d.task.status;
+        if (d.task.status === 'done' && !_toastedTaskIds.has(toastKey)) {
+          _toastedTaskIds.add(toastKey);
           showToast(`Done: ${d.task.label}`, 'success');
           workerLastSeen = new Date();
-        } else if (d.task.status === 'failed') {
+        } else if (d.task.status === 'failed' && !_toastedTaskIds.has(toastKey)) {
+          _toastedTaskIds.add(toastKey);
           showToast(`Failed: ${d.task.label}`, 'error');
           workerLastSeen = new Date();
         } else if (d.task.status === 'running') {
@@ -343,8 +356,31 @@ function renderAllTasks() {
   renderLatest();
   renderRecentReports();
   renderHomeRecent();
+  renderDeliverables();
   renderNavBadges();
   renderChannelTasks();
+}
+
+// Render recent deliverables — combined task outputs from completed work
+function renderDeliverables() {
+  const el = document.getElementById('homeDeliverablesContent');
+  if (!el) return;
+  fetch('/api/task-outputs').then(r => r.ok ? r.json() : null).then(data => {
+    const outputs = data?.outputs || [];
+    if (!outputs.length) { el.innerHTML = '<div class="task-empty">No deliverables yet. Submit a task to get started.</div>'; return; }
+    el.innerHTML = outputs.slice(0, 5).map(o => {
+      const ago = fmtTimeAgo(o.modified);
+      const sizeKb = (o.size / 1024).toFixed(1);
+      return `<div class="deliverable-card" onclick="window.open('/api/file/${encodeURIComponent(o.path)}','_blank')">
+        <div class="deliverable-card-title">${esc(o.title.slice(0, 80))}</div>
+        <div class="deliverable-card-meta">
+          <span>${sizeKb}KB</span>
+          <span>${ago}</span>
+        </div>
+        <div class="deliverable-card-output">${esc((o.preview || '').slice(0, 300))}</div>
+      </div>`;
+    }).join('');
+  }).catch(() => { el.innerHTML = '<div class="task-empty">Error loading deliverables</div>'; });
 }
 
 function renderTaskQueue() {
@@ -461,30 +497,33 @@ function renderLatest() {
   const el = document.getElementById('homeLatestTask');
   if (!el) return;
 
-  // Try to show latest intake task first (more relevant)
+  // Show latest completed intake tasks with their deliverable output
   fetch('/api/intake/tasks').then(r => r.ok ? r.json() : null).then(data => {
     const tasks = (data?.tasks || data || []).filter(t => t.status === 'done');
     if (tasks.length > 0) {
       tasks.sort((a, b) => (b.updated_at || b.created_at || '').localeCompare(a.updated_at || a.created_at || ''));
-      const t = tasks[0];
-      el.innerHTML = `<div class="latest-task-card" onclick="switchTab('intake');showIntakeDetail('${t.task_id}')">
-        <div class="completed-label">Latest completed</div>
-        <div style="display:flex;align-items:center;gap:8px">
-          <span class="task-title">${esc((t.title || t.raw_request || '').slice(0, 60))}</span>
-          <span class="task-status-badge done" style="font-size:8px">done</span>
-        </div>
-        <div style="font-size:11px;color:var(--text-dim);margin-top:4px">${esc(t.domain || '')} &middot; ${esc(t.board_deliberation?.interpreted_objective?.slice(0, 100) || '')}</div>
-      </div>`;
+      // Show up to 3 recent completed tasks with output preview
+      el.innerHTML = tasks.slice(0, 3).map(t => {
+        const ago = fmtTimeAgo(t.updated_at || t.created_at);
+        return `<div class="deliverable-card" onclick="switchTab('intake');showIntakeDetail('${t.task_id}')">
+          <div class="deliverable-card-title">${esc((t.title || t.raw_request || '').slice(0, 60))}</div>
+          <div class="deliverable-card-meta">
+            <span>${esc(t.domain || 'general')}</span>
+            <span>${ago}</span>
+            <span class="task-status-badge done" style="font-size:8px">done</span>
+          </div>
+          ${t.board_deliberation?.interpreted_objective ? '<div class="deliverable-card-output">' + esc(t.board_deliberation.interpreted_objective.slice(0, 200)) + '</div>' : ''}
+        </div>`;
+      }).join('');
       return;
     }
     // Fall back to queue tasks
     const done = TASKS.filter(t => t.status === 'done' || t.status === 'failed');
     if (!done.length) { el.innerHTML = '<div class="task-empty">No completed tasks yet</div>'; return; }
     const qt = done[0];
-    el.innerHTML = `<div class="latest-task-card" onclick="showTask('${qt.id}')">
-      <div class="completed-label">${qt.status === 'failed' ? 'Failed' : 'Completed'}</div>
-      <div class="task-title">${esc(qt.label)}</div>
-      ${qt.output ? '<pre>' + esc(qt.output.slice(0, 200)) + '</pre>' : ''}
+    el.innerHTML = `<div class="deliverable-card" onclick="showTask('${qt.id}')">
+      <div class="deliverable-card-title">${qt.status === 'failed' ? 'Failed' : 'Completed'}: ${esc(qt.label)}</div>
+      ${qt.output ? '<div class="deliverable-card-output">' + esc(qt.output.slice(0, 300)) + '</div>' : ''}
     </div>`;
   }).catch(() => {
     el.innerHTML = '<div class="task-empty">No completed tasks yet</div>';
@@ -586,11 +625,82 @@ function render() {
   renderTopRanker();
   renderNavBadges();
   renderHomeCosts();
+  renderHomeNotifications();
+  renderTodaySummary();
 }
 
 // ═══════════════════════════════════════════
 // HOME
 // ═══════════════════════════════════════════
+
+function renderHomeNotifications() {
+  const el = document.getElementById('homeNotifications');
+  if (!el) return;
+  fetch('/api/notifications?limit=5').then(r => r.ok ? r.json() : null).then(data => {
+    const notifs = (data?.notifications || []).filter(n => !n.acknowledgedAt);
+    if (!notifs.length) { el.innerHTML = ''; return; }
+    const severityIcon = { high: '!', medium: '-', low: '.' };
+    const severityClass = { high: 'cos-high', medium: 'cos-medium', low: 'cos-low' };
+    el.innerHTML = `<div class="card" style="margin-bottom:12px;border-left:3px solid var(--accent)">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0">Notifications</h3>
+        <button class="link-btn" onclick="ackAllNotifications()" style="font-size:10px">Dismiss All</button>
+      </div>
+      ${notifs.map(n => `<div class="cos-action ${severityClass[n.severity] || ''}" style="padding:8px 10px;margin-bottom:4px">
+        <div class="cos-action-header">
+          <span class="cos-priority">${severityIcon[n.severity] || '-'}</span>
+          <span class="cos-action-title" style="font-size:11px">${esc(n.title)}</span>
+          <span style="font-size:9px;color:var(--text-faint)">${fmtTimeAgo(n.createdAt)}</span>
+        </div>
+        <div class="cos-action-why" style="font-size:10px">${esc((n.message || '').slice(0, 200))}</div>
+      </div>`).join('')}
+    </div>`;
+  }).catch(() => {});
+}
+
+async function ackAllNotifications() {
+  try {
+    const data = await fetch('/api/notifications?limit=10').then(r => r.json());
+    const ids = (data?.notifications || []).filter(n => !n.acknowledgedAt).map(n => n.id);
+    if (ids.length) {
+      await fetch('/api/notifications/ack', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ids }),
+      });
+    }
+    renderHomeNotifications();
+  } catch {}
+}
+
+function renderTodaySummary() {
+  const el = document.getElementById('homeTodayContent');
+  if (!el) return;
+  const today = new Date().toISOString().slice(0, 10);
+  const todayTasks = INTAKE_TASKS.filter(t => (t.created_at || '').startsWith(today) || (t.updated_at || '').startsWith(today));
+  const completed = todayTasks.filter(t => t.status === 'done');
+  const running = todayTasks.filter(t => ['executing', 'deliberating', 'planned', 'waiting_approval'].includes(t.status));
+  const failed = todayTasks.filter(t => t.status === 'failed');
+
+  if (!todayTasks.length) {
+    el.innerHTML = '<div style="color:var(--text-faint)">No tasks today yet. <a href="#" onclick="switchTab(\'intake\')" style="color:var(--accent-text)">Submit one</a></div>';
+    return;
+  }
+
+  let html = `<div style="display:flex;gap:16px;margin-bottom:8px">
+    <span><strong>${completed.length}</strong> completed</span>
+    ${running.length ? '<span><strong>' + running.length + '</strong> in progress</span>' : ''}
+    ${failed.length ? '<span style="color:var(--red)"><strong>' + failed.length + '</strong> failed</span>' : ''}
+  </div>`;
+
+  if (completed.length) {
+    html += completed.slice(0, 3).map(t => `<div style="padding:4px 0;border-bottom:1px solid rgba(255,255,255,.03)">
+      <span style="color:var(--green);margin-right:4px">&#10003;</span>${esc(t.title.slice(0, 60))} <span style="color:var(--text-faint);font-size:10px">${esc(t.domain)}</span>
+    </div>`).join('');
+    if (completed.length > 3) html += `<div style="color:var(--text-faint);font-size:10px;margin-top:4px">+${completed.length - 3} more</div>`;
+  }
+
+  el.innerHTML = html;
+}
 
 function renderHome() {
   const s = DATA.state;
@@ -1080,12 +1190,20 @@ function renderChannelTasks() {
     ct.innerHTML = chTasks.slice(0, 10).map(taskCard).join('');
   }
 
-  // Show latest completed output
+  // Show latest completed output as rendered markdown
   if (co) {
     const done = chTasks.find(t => t.status === 'done' && t.output);
     if (done) {
-      co.textContent = done.output.slice(0, 3000);
+      const output = done.output.slice(0, 5000);
+      if (output.includes('#') || output.includes('**') || output.includes('- ')) {
+        co.className = 'channel-output-area md-content';
+        co.innerHTML = md2html(output);
+      } else {
+        co.className = 'channel-output-area';
+        co.textContent = output;
+      }
     } else {
+      co.className = 'channel-output-area';
       co.innerHTML = '<div class="task-empty">Send a task to see output</div>';
     }
   }
@@ -1281,6 +1399,10 @@ function md2html(md) {
     .replace(/^## (.+)$/gm, '<h2>$1</h2>')
     .replace(/^# (.+)$/gm, '<h1>$1</h1>')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="color:var(--accent-text)">$1</a>')
+    .replace(/^(\d+)\.\s+(.+)$/gm, '<li>$2</li>')
     .replace(/^- (.+)$/gm, '<li>$1</li>')
     .replace(/(<li>.*<\/li>\n?)+/g, m => '<ul>' + m + '</ul>')
     .replace(/^(?!<[htul1]|<!)((?!<li|<td).+)$/gm, '<p>$1</p>')
@@ -1295,12 +1417,24 @@ function md2html(md) {
 let _intakeDetailPollTimer = null;
 let _lastKnownIntakeStatus = null;
 
+let _lastIntakeHeroTaskStatus = null;
 async function loadIntakeTasks() {
   try {
     const r = await fetch('/api/intake/tasks');
     INTAKE_TASKS = await r.json();
-    renderIntakeCurrentHero();
+    // Preserve main scroll position during re-render
+    const mainContent = document.querySelector('.content');
+    const mainScroll = mainContent ? mainContent.scrollTop : 0;
+    // Only re-render hero if the active task status changed (prevents scroll jumps)
+    const activeTask = INTAKE_TASKS.find(t => !['done', 'failed', 'canceled'].includes(t.status));
+    const currentHeroStatus = activeTask ? activeTask.status : null;
+    if (currentHeroStatus !== _lastIntakeHeroTaskStatus) {
+      _lastIntakeHeroTaskStatus = currentHeroStatus;
+      renderIntakeCurrentHero();
+    }
     renderIntakeTasks();
+    // Restore scroll position after render
+    if (mainContent) mainContent.scrollTop = mainScroll;
     renderIntakeBadge();
     updateFlowExplainer();
 
@@ -1499,7 +1633,10 @@ function renderIntakeTasks() {
     </div>`;
   }).join('');
 
+  // Preserve scroll position when re-rendering
+  const prevScroll = list.scrollTop;
   list.innerHTML = html;
+  list.scrollTop = prevScroll;
 }
 
 function filterIntake(f) {
@@ -1674,6 +1811,18 @@ function renderIntakeDetail(data) {
     html += `<button class="intake-hero-btn btn-approve-exec" onclick="approvePlan('${task.task_id}')" style="margin-bottom:14px">
       <span class="btn-icon">&#9654;</span> Approve &amp; Execute Plan
     </button>`;
+  } else if (task.status === 'done' || task.status === 'failed') {
+    html += `<div style="display:flex;gap:8px;margin-bottom:14px">
+      <button class="cos-action-btn" onclick="quickRunTask('${esc(task.domain)}','${esc((task.raw_request || '').replace(/'/g, "\\'").slice(0, 500))}','${task.urgency || 'normal'}')" style="padding:8px 16px;font-size:12px">
+        <span>&#8635;</span> Run Again
+      </button>
+      ${task.status === 'done' ? `<a href="/api/intake/task/${task.task_id}/export?fmt=md" download class="cos-action-btn" style="padding:8px 16px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center">
+        <span>&#8681;</span> Download MD
+      </a>
+      <a href="/api/intake/task/${task.task_id}/export?fmt=json" download class="cos-action-btn" style="padding:8px 16px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;background:var(--bg-card);border:1px solid var(--border);color:var(--text)">
+        <span>&#8681;</span> Download JSON
+      </a>` : ''}
+    </div>`;
   }
 
   // Raw request
@@ -2291,6 +2440,15 @@ function renderTaskTimeline(task, subtasks) {
         html += `<div class="tl-diff-summary"><div class="tl-diff-label">Diff:</div><pre>${esc(ev.diff_summary)}</pre></div>`;
       }
 
+      // Full output expandable for research/report subtasks (non-code)
+      if (ev.output && ev.status === 'done' && !ev.code_modified && !['implement', 'build', 'code'].includes(ev.stage)) {
+        const outId = 'out_' + (ev.subtask_id || '').replace(/[^a-zA-Z0-9]/g, '_');
+        html += `<div style="margin-top:4px">
+          <button onclick="document.getElementById('${outId}').style.display=document.getElementById('${outId}').style.display==='none'?'block':'none'" style="font-size:9px;padding:2px 8px;background:var(--bg-inset);border:1px solid var(--border);border-radius:3px;color:var(--accent-text);cursor:pointer">Show Full Output</button>
+          <div id="${outId}" class="md-content" style="display:none;margin-top:6px;padding:12px;background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);max-height:400px;overflow-y:auto;font-size:11px;line-height:1.6;white-space:pre-wrap;color:var(--text-secondary)">${esc(ev.output)}</div>
+        </div>`;
+      }
+
       // Report link — clickable to view
       if (ev.report_file) {
         const rId = 'rpt_' + ev.report_file.replace(/[^a-zA-Z0-9]/g, '_');
@@ -2567,13 +2725,14 @@ loadStatus();
 loadTasks();
 loadPendingApprovals();
 loadCurrentTaskFocus();
+if (typeof refreshChiefOfStaff === 'function') refreshChiefOfStaff();
 
 setInterval(loadStatus, 10000);
 setInterval(loadTasks, 3000);
 setInterval(loadData, 45000);
 setInterval(renderHeartbeat, 5000);
-setInterval(loadPendingApprovals, 4000);
-setInterval(loadCurrentTaskFocus, 4000);
+setInterval(loadPendingApprovals, 8000);
+setInterval(loadCurrentTaskFocus, 8000);
 
 // Keyboard shortcuts
 document.addEventListener('keydown', (e) => {
@@ -2589,4 +2748,57 @@ document.addEventListener('keydown', (e) => {
     switchTab('intake');
     setTimeout(() => { const el = document.getElementById('intakeRequest'); if (el) el.focus(); }, 100);
   }
+  // Ctrl+K / Cmd+K for search
+  if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+    e.preventDefault();
+    openSearchModal();
+  }
 });
+
+// Search modal
+function openSearchModal() {
+  let modal = document.getElementById('searchModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'searchModal';
+    modal.className = 'modal-overlay';
+    modal.style.cssText = 'z-index:300';
+    modal.onclick = (e) => { if (e.target === modal) modal.classList.remove('open'); };
+    modal.innerHTML = `<div class="modal-content" style="max-width:600px;margin-top:80px">
+      <input id="searchInput" type="text" placeholder="Search tasks, deliverables, templates..." style="width:100%;padding:12px 16px;font-size:15px;background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r);color:var(--text);outline:none;font-family:var(--sans)" oninput="performSearch(this.value)" />
+      <div id="searchResults" style="max-height:400px;overflow-y:auto;margin-top:8px"></div>
+    </div>`;
+    document.body.appendChild(modal);
+  }
+  modal.classList.add('open');
+  setTimeout(() => { document.getElementById('searchInput').value = ''; document.getElementById('searchInput').focus(); document.getElementById('searchResults').innerHTML = ''; }, 50);
+}
+
+let _searchDebounce = null;
+function performSearch(query) {
+  if (_searchDebounce) clearTimeout(_searchDebounce);
+  _searchDebounce = setTimeout(() => {
+    if (!query || query.length < 2) { document.getElementById('searchResults').innerHTML = ''; return; }
+    fetch('/api/search?q=' + encodeURIComponent(query)).then(r => r.json()).then(data => {
+      const el = document.getElementById('searchResults');
+      if (!data.results?.length) { el.innerHTML = '<div style="padding:12px;color:var(--text-faint)">No results</div>'; return; }
+      const typeIcon = { task: '&#9654;', knowledge: '&#9671;', template: '&#9998;', report: '&#9776;' };
+      el.innerHTML = data.results.slice(0, 15).map(r => `<div class="search-result" onclick="handleSearchResult('${r.type}','${r.id}')" style="padding:10px 12px;border-bottom:1px solid var(--border);cursor:pointer;transition:background var(--transition)">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="color:var(--text-faint);font-size:12px">${typeIcon[r.type] || ''}</span>
+          <span style="font-size:12px;font-weight:600;color:var(--text)">${esc(r.title)}</span>
+          <span style="font-size:9px;padding:1px 5px;background:var(--bg-inset);border-radius:3px;color:var(--text-dim)">${r.type}</span>
+          ${r.meta?.status ? '<span class="intake-status-badge ' + r.meta.status + '" style="font-size:8px">' + r.meta.status + '</span>' : ''}
+        </div>
+        <div style="font-size:10px;color:var(--text-dim);margin-top:3px">${esc(r.snippet)}</div>
+      </div>`).join('');
+    }).catch(() => {});
+  }, 300);
+}
+
+function handleSearchResult(type, id) {
+  document.getElementById('searchModal').classList.remove('open');
+  if (type === 'task') { switchTab('intake'); showIntakeDetail(id); }
+  else if (type === 'template') { switchTab('intake'); }
+  else { switchTab('logs'); }
+}

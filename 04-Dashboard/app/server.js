@@ -40,6 +40,7 @@ const startTime = Date.now();
 let lastTasksJson = '';
 const TASKS_FILE = path.resolve(__dirname, '..', 'state', 'tasks.json');
 
+const _taskStatusSeen = {};
 function watchTaskFile() {
   setInterval(() => {
     try {
@@ -51,9 +52,19 @@ function watchTaskFile() {
 
         for (const nt of newTasks) {
           const ot = oldTasks.find(t => t.id === nt.id);
-          if (!ot || ot.status !== nt.status || ot.updatedAt !== nt.updatedAt) {
-            const evt = { event: 'task_updated', task: nt };
-            events.broadcast('task', evt);
+          const statusChanged = !ot || ot.status !== nt.status;
+          const outputChanged = ot && ot.output !== nt.output;
+
+          // Always broadcast task data updates for live tracking
+          if (statusChanged || outputChanged) {
+            events.broadcast('task', { event: 'task_updated', task: nt });
+          }
+
+          // Only broadcast activity + toast-triggering events on STATUS changes (not output changes)
+          // and only once per task+status combo to prevent spam
+          const statusKey = nt.id + ':' + nt.status;
+          if (statusChanged && !_taskStatusSeen[statusKey]) {
+            _taskStatusSeen[statusKey] = true;
             if (nt.status === 'running') {
               events.broadcast('activity', { action: `Task running: ${nt.label}`, ts: new Date().toISOString() });
             } else if (nt.status === 'done') {
@@ -76,6 +87,50 @@ function watchTaskFile() {
 }
 
 watchTaskFile();
+
+// Watch intake-tasks.json for status changes → broadcast intake-update SSE
+const INTAKE_FILE = path.resolve(__dirname, '..', 'state', 'intake-tasks.json');
+let lastIntakeJson = '';
+let lastIntakeStatuses = {};
+
+function watchIntakeFile() {
+  setInterval(() => {
+    try {
+      const raw = fs.readFileSync(INTAKE_FILE, 'utf-8');
+      if (raw !== lastIntakeJson) {
+        const tasks = JSON.parse(raw);
+        let changed = false;
+        for (const t of tasks) {
+          const prev = lastIntakeStatuses[t.task_id];
+          if (prev && prev !== t.status) {
+            changed = true;
+            if (t.status === 'done') {
+              events.broadcast('activity', { action: `Task complete: ${(t.title || t.raw_request || '').slice(0, 60)}`, ts: new Date().toISOString() });
+            } else if (t.status === 'failed') {
+              events.broadcast('activity', { action: `Task failed: ${(t.title || t.raw_request || '').slice(0, 60)}`, ts: new Date().toISOString() });
+            } else if (t.status === 'executing') {
+              events.broadcast('activity', { action: `Executing: ${(t.title || t.raw_request || '').slice(0, 60)}`, ts: new Date().toISOString() });
+            }
+          }
+          lastIntakeStatuses[t.task_id] = t.status;
+        }
+        lastIntakeJson = raw;
+        if (changed) {
+          events.broadcast('intake-update', { action: 'status_changed' });
+        }
+      }
+    } catch {}
+  }, 2000);
+
+  try {
+    lastIntakeJson = fs.readFileSync(INTAKE_FILE, 'utf-8');
+    const tasks = JSON.parse(lastIntakeJson);
+    for (const t of tasks) lastIntakeStatuses[t.task_id] = t.status;
+    console.log(`[server] Intake file watcher initialized (${tasks.length} tasks).`);
+  } catch {}
+}
+
+watchIntakeFile();
 
 // --- Helpers ---
 
@@ -3788,6 +3843,96 @@ const server = http.createServer(async (req, res) => {
         } catch { return null; }
       }).filter(Boolean).sort((a, b) => b.modified - a.modified).slice(0, 50);
       return json(res, { reports, total: files.length });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Quick run — simplest possible task submission (just a prompt string)
+  if (req.url === '/api/run' && req.method === 'POST') {
+    const body = await parseBody(req);
+    const prompt = body.prompt || body.raw_request || body.q || '';
+    if (!prompt) return json(res, { ok: false, error: 'Missing prompt' }, 400);
+    try {
+      const task = intake.createTask({ raw_request: prompt, domain: body.domain, urgency: body.urgency || 'normal' });
+      queue.addTask('deliberate', `Deliberate: ${task.title}`, { taskId: task.task_id, autoApprove: true });
+      events.broadcast('activity', { action: `Quick run: ${task.title}`, ts: new Date().toISOString() });
+      return json(res, { ok: true, taskId: task.task_id, title: task.title, domain: task.domain });
+    } catch (e) { return json(res, { ok: false, error: e.message }, 500); }
+  }
+
+  // Export task deliverable as downloadable file
+  if (req.url?.match(/^\/api\/intake\/task\/([^/]+)\/export(\?.*)?$/) && req.method === 'GET') {
+    const taskId = req.url.match(/^\/api\/intake\/task\/([^/]+)\/export/)[1];
+    const params = new URL(req.url, 'http://x').searchParams;
+    const fmt = params.get('fmt') || 'md';
+    try {
+      const task = intake.getTask(taskId);
+      if (!task) return json(res, { error: 'Task not found' }, 404);
+      const subtasks = intake.getSubtasksForTask(taskId);
+      const doneSubs = subtasks.filter(s => s.status === 'done' && s.output);
+      const delib = task.board_deliberation;
+
+      if (fmt === 'json') {
+        const exportData = {
+          task_id: task.task_id, title: task.title, domain: task.domain,
+          status: task.status, created_at: task.created_at, updated_at: task.updated_at,
+          objective: delib?.interpreted_objective,
+          strategy: delib?.recommended_strategy,
+          subtasks: doneSubs.map(s => ({
+            title: s.title, stage: s.stage, model: s.assigned_model,
+            output: s.output, what_done: s.what_done,
+          })),
+        };
+        res.writeHead(200, {
+          'Content-Type': 'application/json',
+          'Content-Disposition': `attachment; filename="${taskId}.json"`,
+        });
+        return res.end(JSON.stringify(exportData, null, 2));
+      }
+
+      // Default: markdown
+      let md = `# ${task.title}\n\n`;
+      md += `**Domain:** ${task.domain} | **Status:** ${task.status} | **Date:** ${(task.created_at || '').slice(0, 10)}\n\n`;
+      if (delib) {
+        md += `## Objective\n${delib.interpreted_objective}\n\n`;
+        md += `## Strategy\n${delib.recommended_strategy}\n\n`;
+      }
+      for (const s of doneSubs) {
+        md += `## ${s.title}\n${s.output || s.what_done || 'No output'}\n\n`;
+      }
+      res.writeHead(200, {
+        'Content-Type': 'text/markdown; charset=utf-8',
+        'Content-Disposition': `attachment; filename="${taskId}.md"`,
+      });
+      return res.end(md);
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Search across tasks, knowledge, templates, reports
+  if (req.url?.match(/^\/api\/search(\?.*)?$/) && req.method === 'GET') {
+    try {
+      const searchIndex = require('./lib/search-index');
+      const params = new URL(req.url, 'http://x').searchParams;
+      const query = params.get('q') || '';
+      const limit = parseInt(params.get('limit') || '20');
+      return json(res, { results: searchIndex.search(query, limit), query });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Task outputs listing — combined outputs from completed tasks (deliverable files)
+  if (req.url?.match(/^\/api\/task-outputs(\?.*)?$/) && req.method === 'GET') {
+    try {
+      const delivDir = path.resolve(__dirname, '..', 'state', 'deliverables');
+      if (!fs.existsSync(delivDir)) return json(res, { outputs: [] });
+      const files = fs.readdirSync(delivDir).filter(f => f.endsWith('.md'));
+      const outputs = files.map(f => {
+        try {
+          const stat = fs.statSync(path.join(delivDir, f));
+          const content = fs.readFileSync(path.join(delivDir, f), 'utf-8');
+          const title = content.split('\n')[0]?.replace(/^#\s*/, '') || f;
+          return { name: f, title, path: 'state/deliverables/' + f, size: stat.size, modified: stat.mtimeMs, preview: content.slice(0, 500) };
+        } catch { return null; }
+      }).filter(Boolean).sort((a, b) => b.modified - a.modified).slice(0, 20);
+      return json(res, { outputs });
     } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
