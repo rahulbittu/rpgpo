@@ -208,5 +208,74 @@
         "Output format compliance needs improvement in synthesis prompt"
       ]
     }
+  },
+  {
+    "test_case_id": "GPO-LEA-01",
+    "global_rank": 10,
+    "engine": "Learning & Tutoring",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:40:47.929Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": false,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrx6puqicbu",
+      "domain_routed": "writing",
+      "subtask_count": 2,
+      "completion": "done",
+      "output_quality": "Good — Perplexity found real K8s resources, OpenAI synthesized week-by-week plan (4823 chars). Missing: adaptive progression, hands-on lab integration.",
+      "issues": [
+        "Domain routed to writing instead of learning (intake keyword order)",
+        "Study plan is one-shot — no adaptive follow-up capability"
+      ],
+      "gaps": [
+        "Intake detection order fixed — using domain-router now"
+      ]
+    }
+  },
+  {
+    "test_case_id": "GPO-TRA-01",
+    "global_rank": 26,
+    "engine": "Travel & Relocation Planner",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:40:47.930Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": false,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrx6puu12fr",
+      "domain_routed": "shopping",
+      "subtask_count": 3,
+      "completion": "done",
+      "output_quality": "Good — 3-subtask chain found real flights/hotels and tech spots. Synthesized 5-day itinerary.",
+      "issues": [
+        "Domain routed to shopping instead of travel"
+      ],
+      "gaps": [
+        "Intake detection order fixed — using domain-router now"
+      ]
+    }
+  },
+  {
+    "test_case_id": "GPO-HEA-01",
+    "global_rank": 30,
+    "engine": "Health & Wellness Coach",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:40:47.930Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": false,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrx6pus6yok",
+      "domain_routed": "health",
+      "subtask_count": 2,
+      "completion": "done",
+      "output_quality": "Good — Perplexity found real exercises, OpenAI produced 4-week progressive plan. Includes safety disclaimers.",
+      "issues": [
+        "Domain routing correct (health)",
+        "No tracking or follow-up capability"
+      ],
+      "gaps": []
+    }
   }
 ]

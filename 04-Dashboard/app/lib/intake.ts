@@ -64,6 +64,12 @@ const INTAKE_ALIASES: Record<string, string> = {
 };
 
 function detectDomain(text: string): Domain {
+  // Use the domain-router's scored matching instead of simple first-match
+  try {
+    const router = require('./domain-router') as { routeRequest(req: string): { domain: string; confidence: number } };
+    const result = router.routeRequest(text);
+    if (result.confidence > 0.2) return result.domain as Domain;
+  } catch { /* fallback to simple matching */ }
   const lower = (text || '').toLowerCase();
   for (const [domain, keywords] of Object.entries(DOMAIN_KEYWORDS)) {
     if (keywords.some((k: string) => lower.includes(k))) return domain as Domain;

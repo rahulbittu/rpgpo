@@ -52,6 +52,14 @@ const INTAKE_ALIASES = {
     home: 'personalops',
 };
 function detectDomain(text) {
+    // Use the domain-router's scored matching instead of simple first-match
+    try {
+        const router = require('./domain-router');
+        const result = router.routeRequest(text);
+        if (result.confidence > 0.2)
+            return result.domain;
+    }
+    catch { /* fallback to simple matching */ }
     const lower = (text || '').toLowerCase();
     for (const [domain, keywords] of Object.entries(DOMAIN_KEYWORDS)) {
         if (keywords.some((k) => lower.includes(k)))
