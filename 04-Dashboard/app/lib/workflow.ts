@@ -172,7 +172,22 @@ export function checkTaskCompletion(taskId: string, allSubs?: Subtask[]): void {
   const anyStopped = subs.some(s => SUBTASK_STOPPING.has(s.status));
   if (anyStopped) return;
 
-  const allTerminal = subs.every(s => SUBTASK_TERMINAL.has(s.status));
+  // Auto-block proposed subtasks whose dependencies are blocked/failed
+  for (const s of subs) {
+    if (s.status !== 'proposed') continue;
+    const depsBlocked = (s.depends_on || []).some((dep: string | number) => {
+      const depIdx = typeof dep === 'number' ? dep : subs.findIndex(x => x.subtask_id === dep);
+      if (depIdx < 0 || depIdx >= subs.length) return false;
+      return subs[depIdx].status === 'blocked' || subs[depIdx].status === 'failed';
+    });
+    if (depsBlocked) {
+      intake.updateSubtask(s.subtask_id, { status: 'blocked' as SubtaskStatus, error: 'Blocked: dependency failed or blocked' });
+    }
+  }
+
+  // Re-check after auto-blocking
+  const refreshedSubs = intake.getSubtasksForTask(taskId);
+  const allTerminal = refreshedSubs.every(s => SUBTASK_TERMINAL.has(s.status));
   if (!allTerminal) return;
 
   const anyFailed = subs.some(s => s.status === 'failed');
