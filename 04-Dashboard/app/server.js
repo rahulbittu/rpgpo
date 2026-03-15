@@ -3352,6 +3352,17 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 82: Health Check + Onboarding
+  if (req.url === '/api/health' && req.method === 'GET') {
+    try { const hc = require('./lib/health-check'); return json(res, hc.runHealthChecks(false)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/health/repair' && req.method === 'POST') {
+    try { const hc = require('./lib/health-check'); return json(res, hc.runHealthChecks(true)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/onboarding' && req.method === 'GET') {
+    try { const hc = require('./lib/health-check'); return json(res, hc.getOnboardingStatus()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 81: Analytics
   if (req.url?.match(/^\/api\/analytics\/summary(\?.*)?$/) && req.method === 'GET') {
     try { const a = require('./lib/analytics'); const params = new URL(req.url, 'http://x').searchParams; return json(res, a.getAnalyticsSummary(parseInt(params.get('days') || '7'))); } catch (e) { return json(res, { error: e.message }, 500); }
