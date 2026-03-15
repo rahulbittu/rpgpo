@@ -805,6 +805,18 @@ RULES:
         cos.onRuntimeSubtaskComplete(st.parent_task, subtaskId, result.text?.slice(0, 3000) || '', engineId);
       } catch (e) { console.log('[worker] Deliverable merge:', e.message?.slice(0, 80)); }
 
+      // Emit in-app notification on subtask completion
+      try {
+        const notif = require('./lib/in-app-notifications');
+        notif.emitNotification({
+          type: 'system.info',
+          severity: 'low',
+          title: `Subtask complete: ${st.title?.slice(0, 50) || subtaskId}`,
+          message: whatDone.slice(0, 200),
+          actions: [{ label: 'View Task', action: 'viewWorkflow', ref: { kind: 'task', id: st.parent_task || '' } }],
+        });
+      } catch { /* non-fatal */ }
+
       // Auto-continue workflow
       const wfResult = workflow.onSubtaskComplete(subtaskId);
 

@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="theme-color" content="#060810" />
   <meta name="mobile-web-app-capable" content="yes" />
-  <title>RPGPO</title>
+  <title>GPO Command Center</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,32 +23,33 @@
         <span class="logo-live" id="liveDot"></span>
       </div>
       <div class="nav-links">
-        <div class="nav-role-label">Product</div>
+        <div class="nav-role-label">Command</div>
         <a href="#" class="nav-link active" data-tab="home">
-          <span class="nav-icon">&#9670;</span><span class="nav-label">Home</span>
+          <span class="nav-icon">&#9670;</span><span class="nav-label">Dashboard</span>
+        </a>
+        <a href="#" class="nav-link" data-tab="intake">
+          <span class="nav-icon">&#9998;</span><span class="nav-label">New Task</span>
+          <span class="nav-badge" id="navIntakeBadge" style="display:none">0</span>
         </a>
         <a href="#" class="nav-link" data-tab="tasks">
           <span class="nav-icon">&#9654;</span><span class="nav-label">Tasks</span>
           <span class="nav-badge" id="navTaskBadge" style="display:none">0</span>
         </a>
-        <a href="#" class="nav-link" data-tab="intake">
-          <span class="nav-icon">&#9998;</span><span class="nav-label">Intake</span>
-          <span class="nav-badge" id="navIntakeBadge" style="display:none">0</span>
-        </a>
-        <a href="#" class="nav-link" data-tab="missions">
-          <span class="nav-icon">&#9673;</span><span class="nav-label">Missions</span>
-        </a>
-        <a href="#" class="nav-link flagship" data-tab="topranker">
-          <span class="nav-icon">&#9733;</span><span class="nav-label">TopRanker</span>
-        </a>
         <a href="#" class="nav-link" data-tab="approvals">
           <span class="nav-icon">&#9888;</span><span class="nav-label">Approvals</span>
           <span class="nav-badge" id="navApprovalBadge" style="display:none">0</span>
         </a>
-        <div class="nav-role-label">Advanced</div>
         <a href="#" class="nav-link" data-tab="channels">
-          <span class="nav-icon">&#9881;</span><span class="nav-label">Channels</span>
+          <span class="nav-icon">&#9881;</span><span class="nav-label">Ask AI</span>
         </a>
+        <div class="nav-role-label">Engines</div>
+        <a href="#" class="nav-link flagship" data-tab="topranker">
+          <span class="nav-icon">&#9733;</span><span class="nav-label">TopRanker</span>
+        </a>
+        <a href="#" class="nav-link" data-tab="missions">
+          <span class="nav-icon">&#9673;</span><span class="nav-label">Missions</span>
+        </a>
+        <div class="nav-role-label">Intelligence</div>
         <a href="#" class="nav-link" data-tab="memory">
           <span class="nav-icon">&#9671;</span><span class="nav-label">Memory</span>
         </a>
@@ -59,29 +60,26 @@
           <span class="nav-icon">&#36;</span><span class="nav-label">Costs</span>
         </a>
         <a href="#" class="nav-link" data-tab="logs">
-          <span class="nav-icon">&#9776;</span><span class="nav-label">Logs</span>
+          <span class="nav-icon">&#9776;</span><span class="nav-label">Activity</span>
         </a>
-        <a href="#" class="nav-link" data-tab="settings">
-          <span class="nav-icon">&#8943;</span><span class="nav-label">Settings</span>
-        </a>
-        <div class="nav-role-label">Operator</div>
+        <div class="nav-role-label">System</div>
         <a href="#" class="nav-link" data-tab="governance">
           <span class="nav-icon">&#9878;</span><span class="nav-label">Governance</span>
-        </a>
-        <a href="#" class="nav-link" data-tab="audit">
-          <span class="nav-icon">&#9874;</span><span class="nav-label">Audit</span>
         </a>
         <a href="#" class="nav-link" data-tab="releases">
           <span class="nav-icon">&#9658;</span><span class="nav-label">Releases</span>
         </a>
-        <a href="#" class="nav-link" data-tab="admin">
-          <span class="nav-icon">&#9881;</span><span class="nav-label">Admin</span>
-        </a>
-        <a href="#" class="nav-link" data-tab="dossiers">
-          <span class="nav-icon">&#9830;</span><span class="nav-label">Dossiers</span>
-        </a>
         <a href="#" class="nav-link" data-tab="controls">
           <span class="nav-icon">&#9654;</span><span class="nav-label">Controls</span>
+        </a>
+        <a href="#" class="nav-link" data-tab="settings">
+          <span class="nav-icon">&#8943;</span><span class="nav-label">Settings</span>
+        </a>
+        <a href="#" class="nav-link" data-tab="audit">
+          <span class="nav-icon">&#9874;</span><span class="nav-label">Audit</span>
+        </a>
+        <a href="#" class="nav-link" data-tab="admin">
+          <span class="nav-icon">&#9881;</span><span class="nav-label">Admin</span>
         </a>
       </div>
       <div class="sidebar-footer">

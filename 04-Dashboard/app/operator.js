@@ -7,16 +7,28 @@
 // ═══════════════════════════════════════════
 
 const MISSION_TEMPLATES = [
+  // HIGH VALUE — Research & Income
+  { domain: 'wealthresearch', title: 'Passive Income Ideas', desc: 'Research specific passive income opportunities', prompt: 'Research the top 10 passive income opportunities for a senior data engineer / entrepreneur in 2025-2026. Focus on: SaaS micro-products, API-as-a-service, data pipeline consulting, digital products, and automated tools. For each opportunity, provide: estimated monthly income potential, startup cost, time to first revenue, and 3 concrete first steps. Use real examples of people who have succeeded.', urgency: 'high', outcome: 'Specific, actionable passive income opportunities with real examples and concrete next steps' },
+  { domain: 'wealthresearch', title: 'Side Project Ideas', desc: 'Find profitable side project opportunities', prompt: 'Research profitable side project ideas for someone with expertise in data engineering, TypeScript/Python, PostgreSQL, and mobile app development (React Native/Expo). Focus on projects that can generate $1,000-$10,000/month with less than 20 hours/week. Include real examples, market size data, and competition analysis. Prioritize ideas that leverage existing skills.', urgency: 'normal', outcome: 'Ranked list of side project ideas with revenue potential, effort estimate, and competitive landscape' },
+
+  // HIGH VALUE — Career
+  { domain: 'careeregine', title: 'Data Eng Jobs', desc: 'Find current data engineering opportunities', prompt: 'Research the current data engineering job market for senior/staff/principal roles. Focus on: remote-friendly positions, companies actively hiring, salary ranges by level ($150K-$300K+), most in-demand skills (2025-2026), and emerging specializations (AI/ML infrastructure, real-time data, data mesh). Include specific companies known for strong data engineering cultures and current openings.', urgency: 'normal', outcome: 'Current job market analysis with specific companies, roles, salary data, and career path recommendations' },
+  { domain: 'careeregine', title: 'Career Growth Plan', desc: 'Strategic career development roadmap', prompt: 'Create a 12-month career growth roadmap for a senior data engineer who is also building a startup (TopRanker). Focus on: skills to develop for Staff/Principal level, leadership opportunities, conference talks, open source contributions, and how to balance W2 career with entrepreneurship. Include specific certifications, communities, and networking strategies.', urgency: 'normal', outcome: 'Specific 12-month roadmap with quarterly milestones, skills to develop, and actionable steps' },
+
+  // HIGH VALUE — News & Trends
+  { domain: 'newsroom', title: 'AI News Today', desc: 'Current AI industry news and analysis', prompt: 'Search the web and compile today\'s most important AI and technology news. Include: major product launches, funding rounds, policy/regulation updates, research breakthroughs, and industry moves. For each item provide: headline, 2-3 sentence summary, source URL, and why it matters for a data engineer / startup founder. Focus on the last 48 hours.', urgency: 'high', outcome: 'Curated news digest with 10-15 items, sources, and relevance analysis' },
+  { domain: 'newsroom', title: 'Startup News', desc: 'Startup ecosystem updates', prompt: 'Search the web for this week\'s most notable startup news. Focus on: Series A-C fundraising rounds, notable launches, Y Combinator updates, startup failures/lessons, and emerging markets. Include specific companies, amounts, and trends. Highlight anything relevant to local business / community platforms (similar to TopRanker\'s space).', urgency: 'normal', outcome: 'Weekly startup digest with funding data, launches, and trend analysis' },
+  { domain: 'newsroom', title: 'Tech Industry', desc: 'Technology industry analysis', prompt: 'Analyze the current state of the technology industry. Focus on: hiring trends, layoff updates, major company earnings/moves, emerging tech categories, and developer tool landscape. Include specific data points, company names, and market analysis. What should a data engineer / startup founder pay attention to this week?', urgency: 'normal', outcome: 'Industry analysis with specific data, trends, and actionable insights' },
+
+  // FLAGSHIP — TopRanker
   { domain: 'topranker', title: 'TopRanker Build', desc: 'Implement a feature or fix', prompt: 'In TopRanker, implement: ', urgency: 'normal', outcome: 'Code changes applied and tested' },
-  { domain: 'topranker', title: 'TopRanker Perf', desc: 'Optimize performance', prompt: 'Audit and optimize TopRanker startup performance. ', urgency: 'high', outcome: 'Measurable performance improvement' },
-  { domain: 'careeregine', title: 'Career Engine', desc: 'Career strategy task', prompt: '', urgency: 'normal', outcome: '' },
-  { domain: 'founder2founder', title: 'F2F', desc: 'Community task', prompt: '', urgency: 'normal', outcome: '' },
-  { domain: 'wealthresearch', title: 'Wealth Research', desc: 'Investment analysis', prompt: '', urgency: 'normal', outcome: '' },
-  { domain: 'newsroom', title: 'Newsroom', desc: 'News analysis', prompt: '', urgency: 'normal', outcome: '' },
-  { domain: 'screenwriting', title: 'Screenwriting', desc: 'Creative writing', prompt: '', urgency: 'normal', outcome: '' },
-  { domain: 'music', title: 'Music', desc: 'Music production', prompt: '', urgency: 'normal', outcome: '' },
-  { domain: 'personalops', title: 'Personal Ops', desc: 'Life management', prompt: '', urgency: 'normal', outcome: '' },
-  { domain: 'general', title: 'General', desc: 'Freeform task', prompt: '', urgency: 'normal', outcome: '' },
+  { domain: 'topranker', title: 'TopRanker Strategy', desc: 'Growth and launch strategy', prompt: 'Analyze TopRanker\'s competitive position as a community-ranked local business leaderboard app targeting Austin, TX. Research: similar apps and their traction, local business marketing trends, community-driven platforms, and go-to-market strategies for hyper-local apps. Provide specific growth tactics with expected impact and timeline.', urgency: 'normal', outcome: 'Competitive analysis and growth strategy with specific tactics and timelines' },
+
+  // PLANNING
+  { domain: 'personalops', title: 'Weekly Plan', desc: 'Plan the week ahead', prompt: 'Help me plan the upcoming week. Consider my priorities: TopRanker MVP shipping, passive income research, data engineering career growth, and personal productivity. Create a day-by-day plan with specific time blocks, key decisions to make, and tasks to delegate to GPO. Include buffer time for unexpected work.', urgency: 'normal', outcome: 'Day-by-day weekly plan with time blocks, priorities, and delegation suggestions' },
+
+  // GENERAL
+  { domain: 'general', title: 'Quick Research', desc: 'Research any topic', prompt: '', urgency: 'normal', outcome: 'Specific, cited research with actionable recommendations' },
 ];
 
 function renderMissionTemplates() {

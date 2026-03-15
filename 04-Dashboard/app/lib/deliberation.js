@@ -121,6 +121,17 @@ CRITICAL FILE PATH RULES:
 - For code implementation subtasks: include a "locate_files" stage subtask BEFORE the "implement" subtask that identifies exact target files.` : `
 - files_to_read and files_to_write should be relative paths from the RPGPO root (e.g., "03-Operations/Reports/...")
 - For non-code tasks, write output to "03-Operations/Reports/" directory.`;
+    // Load operator profile for better prompt quality
+    let operatorBlock = '';
+    try {
+        const opProfile = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, '..', 'state', 'context', 'operator-profile.json'), 'utf-8'));
+        operatorBlock = `\nOperator: ${opProfile.name} (${opProfile.professional_context?.role || 'Operator'})`;
+        if (opProfile.recurring_priorities?.length)
+            operatorBlock += `\nOperator priorities: ${opProfile.recurring_priorities.join('; ')}`;
+        if (opProfile.output_preferences?.style)
+            operatorBlock += `\nOutput style required: ${opProfile.output_preferences.style}`;
+    }
+    catch { /* */ }
     const systemPrompt = `You are the RPGPO Board of AI. You deliberate on tasks before execution.
 You have three perspectives:
 1. Chief of Staff — interprets objective, assesses feasibility, identifies what needs Rahul's decision
@@ -128,6 +139,7 @@ You have three perspectives:
 3. Domain Specialist (${task.domain}) — proposes specific technical/strategic approach
 
 Domain context: ${domainCtx.description}
+${operatorBlock}
 
 Rules:
 - Be specific, actionable, and concise
@@ -138,6 +150,12 @@ Rules:
 - For "locate_files" stage subtasks, assign to "openai" model (identifies exact files from the repo structure)
 - Assign the best model for each subtask: openai for synthesis/analysis, perplexity for research, gemini for strategy, claude for implementation
 - Risk levels: green (safe, reversible), yellow (needs review), red (needs explicit approval)
+
+CRITICAL PROMPT QUALITY RULES FOR SUBTASKS:
+- Perplexity research subtasks MUST instruct: "Search the web for current, specific information. Include real names, numbers, dates, URLs, and sources. Do not produce generic summaries or placeholder text."
+- OpenAI synthesis subtasks MUST instruct: "Synthesize the research into actionable recommendations with specific next steps. Include concrete examples."
+- Every subtask prompt must tell the AI to produce REAL, SPECIFIC output — never templates, never "[Insert X]" placeholders
+- Research subtasks should ask for current data, recent articles, real companies, real numbers
 ${filePathRules}
 - Output valid JSON only, no markdown wrapping`;
     // ── Inject structured context from Context Engine ──
@@ -351,4 +369,3 @@ async function executeStructuredSubtask(args) {
     }
 }
 module.exports = { deliberate, getDomainContext, DOMAIN_CONTEXT, executeStructuredSubtask };
-//# sourceMappingURL=deliberation.js.map

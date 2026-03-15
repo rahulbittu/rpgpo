@@ -105,8 +105,9 @@ function callPerplexity(systemPrompt, userPrompt, opts = {}) {
                 { role: 'system', content: systemPrompt },
                 { role: 'user', content: userPrompt },
             ],
-            max_tokens: opts.maxTokens || 1500,
+            max_tokens: opts.maxTokens || 3000,
             temperature: opts.temperature ?? 0.3,
+            search_recency_filter: 'week',
         });
         const req = https.request({
             hostname: 'api.perplexity.ai',
@@ -213,4 +214,3 @@ function callGemini(systemPrompt, userPrompt, opts = {}) {
     });
 }
 module.exports = { callOpenAI, callPerplexity, callGemini, PROVIDER_STATES, classifyError };
-//# sourceMappingURL=ai.js.map
