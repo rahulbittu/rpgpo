@@ -3355,6 +3355,19 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Parts 114-115: Output Formatter + Task Timeline
+  if (req.url?.match(/^\/api\/format\/brief\/([^/]+)$/) && req.method === 'GET') {
+    const taskId = req.url.match(/^\/api\/format\/brief\/([^/]+)$/)[1];
+    try { const of = require('./lib/output-formatter'); res.writeHead(200, { 'Content-Type': 'text/markdown' }); res.end(of.formatAsExecutiveBrief(taskId)); return; } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/format\/json\/([^/]+)$/) && req.method === 'GET') {
+    const taskId = req.url.match(/^\/api\/format\/json\/([^/]+)$/)[1];
+    try { const of = require('./lib/output-formatter'); return json(res, of.formatAsJSON(taskId) || { error: 'Not found' }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/timeline(\?.*)?$/) && req.method === 'GET') {
+    try { const tl = require('./lib/task-timeline'); const params = new URL(req.url, 'http://x').searchParams; return json(res, { events: tl.getTimeline(parseInt(params.get('days') || '7')) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Parts 112-113: Budget Guard + Domain Router
   if (req.url === '/api/budget-check' && req.method === 'GET') {
     try { const bg = require('./lib/budget-guard'); return json(res, bg.checkBudget()); } catch (e) { return json(res, { error: e.message }, 500); }
