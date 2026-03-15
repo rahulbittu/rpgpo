@@ -446,9 +446,14 @@ const server = http.createServer(async (req, res) => {
     const body = await parseBody(req);
     if (!body.raw_request) return json(res, { ok: false, error: 'Missing raw_request' }, 400);
     const task = intake.createTask(body);
-    events.broadcast('activity', { action: `Intake task created: ${task.title}`, ts: new Date().toISOString() });
+    events.broadcast('activity', { action: `Task submitted: ${task.title}`, ts: new Date().toISOString() });
     logAction('Intake submit', task.task_id, task.title);
-    return json(res, { ok: true, task });
+    // Auto-queue deliberation so task starts processing immediately
+    try {
+      queue.addTask('deliberate', `Deliberate: ${task.title}`, { taskId: task.task_id });
+      events.broadcast('activity', { action: `Board deliberation queued: ${task.title}`, ts: new Date().toISOString() });
+    } catch { /* manual deliberation fallback */ }
+    return json(res, { ok: true, task, message: 'Task submitted and deliberation started' });
   }
 
   // List all intake tasks
