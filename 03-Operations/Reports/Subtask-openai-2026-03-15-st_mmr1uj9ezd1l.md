@@ -1,0 +1,67 @@
+# Subtask Output — Generate Report
+## Model: gpt-4o
+## Stage: report
+## Date: 2026-03-15
+
+## Comprehensive Report on High-Paying Data Engineer Jobs and Networking Strategies
+
+### Overview
+
+This report outlines the process and findings from sourcing high-paying data engineer job listings, specifically those offering salaries over $180k, from various online platforms. Additionally, it provides insights into effective networking strategies to enhance job search outcomes.
+
+### High-Paying Data Engineer Job Listings
+
+**Platforms Utilized:**
+1. **LinkedIn**
+2. **Indeed**
+3. **Glassdoor**
+4. **Hired**
+5. **AngelList (for startups)**
+6. **Built In**
+
+**Process:**
+- **Search and Filter:** Each platform was utilized to search for "Data Engineer" roles, applying a salary filter of $180k+.
+- **Data Collection:** For each listing, the company name, location, job title, salary, and application link were recorded.
+- **Organization:** The collected data was organized into a spreadsheet with the following columns:
+  - Company Name
+  - Location
+  - Job Title
+  - Salary
+  - Application Link
+
+**Findings:**
+- A diverse range of companies, from large tech firms to innovative startups, offer competitive salaries for data engineering roles.
+- Locations varied, with a significant number of remote opportunities, reflecting the growing trend of flexible work arrangements in the tech industry.
+- The job market for high-paying data engineering roles is dynamic, necessitating regular updates to the listings to ensure relevance and accuracy.
+
+### Networking Strategies
+
+**Key Strategies:**
+1. **Leverage Professional Networks:**
+   - Actively engage with industry professionals on platforms like LinkedIn.
+   - Join relevant groups and participate in discussions to increase visibility.
+
+2. **Attend Industry Events:**
+   - Participate in webinars, conferences, and meetups related to data engineering.
+   - Use these events to connect with potential employers and peers.
+
+3. **Utilize Alumni Networks:**
+   - Reconnect with alumni from educational institutions who are in the tech industry.
+   - Seek guidance and referrals for job opportunities.
+
+4. **Engage in Online Communities:**
+   - Contribute to forums and online communities dedicated to data engineering and technology.
+   - Establish yourself as a knowledgeable professional by sharing insights and solutions.
+
+5. **Informational Interviews:**
+   - Reach out to professionals in desired companies for informational interviews.
+   - Gain insights into company culture and potential job openings.
+
+**Recommendations:**
+- Regularly update your professional profiles to reflect current skills and experiences.
+- Maintain a consistent presence in professional networks and communities.
+- Follow up on connections made during networking events to build lasting relationships.
+
+### Conclusion
+
+The job market for high-paying data engineer roles is competitive and requires a proactive approach in both job searching and networking. By utilizing the outlined platforms and strategies, candidates can effectively identify and pursue lucrative opportunities. Regular updates to job listings and continuous engagement in networking activities are essential for staying ahead in the job search process.

@@ -1,0 +1,39 @@
+# Subtask Output — Establish Role Filters
+## Model: gpt-4o
+## Stage: decide
+## Date: 2026-03-15
+
+To establish role filters for identifying high-quality remote data engineering jobs in the USA based on the target job profile, follow these actionable steps:
+
+1. **Job Title and Experience Level:**
+   - Filter for "Senior Data Engineer" or similar titles.
+   - Specify a minimum of 7 years of relevant experience.
+
+2. **Technical Skills:**
+   - Require expertise in at least one of the following programming languages: Python, Java, or Scala.
+   - Look for experience with data warehousing solutions such as AWS Redshift, Google BigQuery, or Snowflake.
+   - Ensure proficiency in ETL tools like Apache NiFi, Apache Airflow, or Talend.
+   - Include strong knowledge of big data technologies like Hadoop, Spark, and Kafka.
+   - Require experience with SQL and NoSQL databases, specifically PostgreSQL, MongoDB, or Cassandra.
+   - Specify experience with cloud platforms: AWS, Azure, or Google Cloud Platform.
+   - Include data modeling skills.
+
+3. **Analytical and Soft Skills:**
+   - Look for strong problem-solving capabilities and experience with large datasets.
+   - Require experience with data analysis and visualization tools like Tableau or Power BI.
+   - Ensure excellent communication skills, leadership, and mentoring abilities.
+   - Include strong project management skills.
+
+4. **Preferred Industries:**
+   - Filter for roles in Technology and Software Development, Finance and FinTech, Healthcare and Biotech, E-commerce and Retail, and Telecommunications.
+
+5. **Salary Expectations:**
+   - Set salary filters to $130,000 - $160,000 per year for roles in the USA.
+
+6. **Job Platforms:**
+   - Focus searches on platforms like LinkedIn, GitHub, and specialized job boards such as Stack Overflow Jobs and DataJobs.com.
+
+7. **Remote Work:**
+   - Ensure the job listings specify remote work or remote flexibility.
+
+By applying these filters, you can efficiently identify high-quality remote data engineering jobs that align with the target job profile.

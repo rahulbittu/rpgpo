@@ -1,0 +1,21 @@
+# Subtask Output — Compile Shortlist of Opportunities
+## Model: sonar
+## Stage: implement
+## Date: 2026-03-15
+
+### Shortlist of High-Paying Remote Senior Data Engineering Jobs in the USA
+
+Using the role filters (e.g., **Senior Data Engineer** titles, 7+ years experience, Python/Java/Scala, AWS/Snowflake/BigQuery, ETL like Airflow, big data like Spark/Kafka, SQL/NoSQL, cloud platforms, $130K-$160K+ salary, remote, preferred industries like tech/fintech/healthtech), here are the top matching opportunities from search results:[1][3][4]
+
+| Job Title | Company | Location | Salary | Key Matching Filters | Source |
+|-----------|---------|----------|--------|----------------------|--------|
+| **Senior Data Engineer** | Spring & Bond | Remote in New York, NY | **$120K-$160K**/year | 5–7+ years data engineering; scaling data systems (tech industry implied).[1] | [1] |
+| **REMOTE Sr Level Google AI Data Engineer** | EMC, Inc | Remote in Washington, DC (fully remote, US anywhere) | **$150K-$250K**/year | Lead teams/mentor engineers; AI/ML pipelines/data platforms (AI/tech).[1] | [1] |
+| **Staff Data Engineer** (Snowflake/AWS focus) | Unspecified (Healthtech/IT/Telehealth) | Remote New York, NY | **$176K-$264K**/year | Scalable pipelines, Snowflake optimization, AWS/Azure/GCP, Python/SQL (healthtech/software).[3] | [3] |
+| **Senior Manager of Analytics Engineering** | Unspecified (AI/Fintech/ML) | Remote New York, NY | **$186K-$258K**/year | Lead team/data infra, Airflow/Databricks/dbts/SQL (fintech/AI).[3][4] | [3][4] |
+| **Staff Data Engineer** (ETL/Compliance) | Unspecified | Remote San Francisco Bay Area, CA | Not specified (senior level, aligns with range) | ETL pipelines (Airflow/Databricks/dbts/Prefect), Snowflake/SQL/Python (adtech/cloud).[4] | [4] |
+
+**Actionable Next Steps:**  
+- Apply via Indeed for [1] listings (e.g., Spring & Bond, EMC).  
+- Check BuiltIn NYC/SF [3][4] for easy apply on high-salary roles matching cloud/ETL/big data skills.  
+- Cross-reference LinkedIn/Stack Overflow Jobs for updates, focusing on tech/fintech/healthcare industries.[1][3][4]

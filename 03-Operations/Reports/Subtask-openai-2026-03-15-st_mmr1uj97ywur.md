@@ -1,0 +1,48 @@
+# Subtask Output — Compile Job Listings
+## Model: gpt-4o
+## Stage: implement
+## Date: 2026-03-15
+
+To compile a list of current job listings for data engineer roles with salaries over $180k, follow these steps:
+
+1. **LinkedIn:**
+   - Go to the LinkedIn Jobs section.
+   - Use the search bar to enter "Data Engineer" as the job title.
+   - Set the salary filter to $180k+.
+   - Browse through the listings and note down the company name, location, and job details.
+   - Copy the application link for each relevant job.
+
+2. **Indeed:**
+   - Visit Indeed's website and enter "Data Engineer" in the job title search.
+   - Use the salary filter to select jobs paying over $180k.
+   - Review the job listings, noting the company, location, and application link.
+
+3. **Glassdoor:**
+   - Navigate to the Glassdoor Jobs section.
+   - Search for "Data Engineer" roles and apply the salary filter for $180k+.
+   - Record the company, location, and application details for each suitable job.
+
+4. **Hired:**
+   - Sign up or log in to Hired.
+   - Specify your interest in data engineering roles with a minimum salary of $180k.
+   - Browse through the available positions and gather the necessary details.
+
+5. **AngelList (for startups):**
+   - Access AngelList Talent and search for "Data Engineer."
+   - Filter results by salary expectations over $180k.
+   - Note down the company, location, and application process.
+
+6. **Built In:**
+   - Visit Built In and select the city or remote option.
+   - Search for "Data Engineer" roles with a salary filter set to $180k+.
+   - Collect information on the company, location, and application link.
+
+After gathering the data from these platforms, organize the information in a spreadsheet or document, including the following columns:
+
+- **Company Name**
+- **Location**
+- **Job Title**
+- **Salary**
+- **Application Link**
+
+Ensure to regularly update the list to keep it current and verify that the job listings are still active.

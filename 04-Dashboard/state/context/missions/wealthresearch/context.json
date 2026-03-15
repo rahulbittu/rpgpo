@@ -1,0 +1,38 @@
+{
+  "instance_id": "rpgpo",
+  "domain": "wealthresearch",
+  "objective": "",
+  "current_status": "",
+  "recent_decisions": [
+    {
+      "domain": "wealthresearch",
+      "category": "process",
+      "title": "Project Future Market Conditions",
+      "decision": "The search results provide substantial information about data engineering market projections for 2025, but they do not address passive income opportun",
+      "reasoning": "Stage: audit, Model: perplexity",
+      "impact": "No code changes",
+      "task_id": "t_mmr8e3sdivuj",
+      "subtask_id": "st_mmr8h2ddgbvs",
+      "id": "ctx_mmr8ici8n27e",
+      "made_at": "2026-03-15T04:08:21.200Z"
+    }
+  ],
+  "open_questions": [],
+  "constraints": [],
+  "key_artifacts": [
+    {
+      "domain": "wealthresearch",
+      "type": "report",
+      "title": "audit: Project Future Market Conditions",
+      "path": "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mmr8h2ddgbvs.md",
+      "task_id": "t_mmr8e3sdivuj",
+      "id": "ctx_mmr8ici8gd3a",
+      "created_at": "2026-03-15T04:08:21.200Z"
+    }
+  ],
+  "approval_patterns": [],
+  "next_actions": [],
+  "known_issues": [],
+  "context_summary": "",
+  "updated_at": "2026-03-15T04:08:21.201Z"
+}

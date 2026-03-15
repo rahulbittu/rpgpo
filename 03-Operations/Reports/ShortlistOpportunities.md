@@ -1,0 +1,10 @@
+**Shortlist of high-paying remote Senior Data Engineer jobs in the USA matching role filters (e.g., data modeling/architecture, ETL/ELT pipelines with tools like Spark/Airflow/dbt/Python/SQL, cloud platforms like AWS/Snowflake, databases, streaming like Kafka, 5-8+ years experience):**
+
+- **Senior Data Engineer at Spring & Bond (Remote in New York, NY)**: $120K-$160K/year. Requires 5–7+ years data engineering building/scaling data systems; aligns with data pipelines and architecture.[1]
+- **Master Data Engineer - Python/AWS/Dataframes at Connect Search (Remote in Chicago, IL)**: $65-$80/hour (~$135K-$166K/year). 8+ years experience, advanced SQL, data streaming/ingestion; matches Python/AWS, large-scale pipelines.[1]
+- **REMOTE Sr Level Google AI Data Engineer at EMC, Inc (Remote in Washington, DC)**: $150K-$250K/year. Architect AI/ML pipelines/data platforms, lead engineers; fits data architecture, enterprise-scale ETL/cloud.[1]
+- **Senior Data Engineer (Remote) at BuiltInNYC listing (Remote New York, NY)**: $176K-$264K/year. Design/maintain scalable pipelines, data architectures, optimize Snowflake; top skills: AWS/Azure/GCP/Python/Snowflake/SQL.[3]
+- **Staff Data Engineer at BuiltInNYC/SFBay listing (Remote NY/SF Bay Area)**: $166K-$260K/year or $186K-$258K/year. Build/scale pipelines, data modeling/ETL with Airflow/dbt/Databricks/Snowflake/Spark/Kafka/Python/SQL; strong cloud/warehouse match.[3][4]
+- **Senior Manager of Analytics Engineering (Remote SF Bay Area/NY)**: $186K-$258K/year. Lead data infrastructures/pipelines with Airflow/CI-CD/Databricks/dbt/SQL; aligns with architecture, optimization, team leadership.[3][4]
+
+These 6 roles exceed $120K/year, are fully remote USA, and explicitly hit 3+ core filters like pipelines (Airflow/Spark/dbt), cloud (AWS/Snowflake), SQL/Python, modeling.[1][3][4] Apply via Indeed/BuiltIn links in sources; prioritize those with streaming/cloud depth for 7-year profile fit.
