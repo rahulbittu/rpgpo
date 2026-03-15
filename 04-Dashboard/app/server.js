@@ -3355,6 +3355,27 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Parts 109-111: Daily Digest + Task Archive + Workspace Stats
+  if (req.url === '/api/digest/morning' && req.method === 'GET') {
+    try { const dd = require('./lib/daily-digest'); res.writeHead(200, { 'Content-Type': 'text/markdown' }); res.end(dd.generateMorningDigest()); return; } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/digest/evening' && req.method === 'GET') {
+    try { const dd = require('./lib/daily-digest'); res.writeHead(200, { 'Content-Type': 'text/markdown' }); res.end(dd.generateEveningWrap()); return; } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/archive/stats' && req.method === 'GET') {
+    try { const ta = require('./lib/task-archive'); return json(res, ta.getArchiveStats()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/archive/run' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const ta = require('./lib/task-archive'); return json(res, ta.archiveOldTasks(body.olderThanDays || 30)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/archive\/search(\?.*)?$/) && req.method === 'GET') {
+    try { const ta = require('./lib/task-archive'); const params = new URL(req.url, 'http://x').searchParams; return json(res, { results: ta.searchArchive(params.get('q') || '') }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/workspace-stats' && req.method === 'GET') {
+    try { const ws = require('./lib/workspace-stats'); return json(res, ws.getWorkspaceStats()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Parts 107-108: Usage Tracker + Task Estimator
   if (req.url === '/api/usage' && req.method === 'GET') {
     try { const ut = require('./lib/usage-tracker'); return json(res, ut.getSummary()); } catch (e) { return json(res, { error: e.message }, 500); }
