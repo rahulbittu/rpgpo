@@ -75,5 +75,14 @@
     "l2_rate": 99.7,
     "avg_confidence": 89,
     "changes": "Stricter grading applied: search_failure_or_generic flag catches 18 cases where Perplexity returned weak data. single_subtask_for_complex_request catches 10 cases where Board under-decomposed. Previous 99.7% PASS was over-permissive. Honest rate: 91.4%."
+  },
+  {
+    "timestamp": "2026-03-15T22:43:23.648Z",
+    "batch": "v3.1-refinement+targeted-fixes",
+    "canonical_cases": 361,
+    "pass_rate": 93.6,
+    "partial_rate": 6.4,
+    "avg_confidence": 89,
+    "changes": "8 single-subtask writing cases upgraded. Perplexity retry fix. Board min 2 subtasks. 23 PARTIAL remain."
   }
 ]

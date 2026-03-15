@@ -1,29 +1,18 @@
 {
   "current_phase": "truth_reconciliation",
-  "grading_version": "v3-strict",
+  "grading_version": "v3.1",
   "validation_results": {
-    "harness_target": 360,
-    "discovered_canonical": 361,
-    "strict_pass": 330,
-    "strict_partial": 31,
+    "strict_pass": 338,
+    "strict_partial": 23,
     "strict_fail": 0,
-    "l1_pass": 360,
-    "l2_pass": 360,
-    "l3_pass": 0,
-    "avg_confidence": 89,
-    "partial_reasons": {
-      "weak_search_results": 18,
-      "single_subtask_complex_request": 10,
-      "thin_output": 1,
-      "multiple_anomalies": 2
-    }
+    "avg_confidence": 89
   },
-  "commits": 68,
+  "commits": 70,
   "docs_rewritten": [
     "README.md",
     "engine-maturity-scoreboard.md",
     "harness-summary.md"
   ],
   "legacy_ids_in_public_docs": 0,
-  "updated_at": "2026-03-15T22:08:10.320Z"
+  "updated_at": "2026-03-15T22:43:23.649Z"
 }
