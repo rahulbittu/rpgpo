@@ -1,0 +1,57 @@
+[
+  {
+    "timestamp": "2026-03-15T15:00:00Z",
+    "batch": "initial",
+    "canonical_cases": 2,
+    "pass_rate": 0,
+    "partial_rate": 100,
+    "l1_rate": 100,
+    "l2_rate": 0,
+    "avg_confidence": 60,
+    "changes": "First 2 live tests (GPO-WRI-01, GPO-RES-01). Both PARTIAL due to routing and approval gate issues."
+  },
+  {
+    "timestamp": "2026-03-15T16:00:00Z",
+    "batch": "batch-10",
+    "canonical_cases": 50,
+    "pass_rate": 85,
+    "partial_rate": 15,
+    "l1_rate": 96,
+    "l2_rate": 50,
+    "avg_confidence": 75,
+    "changes": "6 new domains added. Approval gate fix. Stuck task recovery. L2 improving as context injection takes effect."
+  },
+  {
+    "timestamp": "2026-03-15T18:00:00Z",
+    "batch": "batch-30",
+    "canonical_cases": 150,
+    "pass_rate": 92,
+    "partial_rate": 8,
+    "l1_rate": 97,
+    "l2_rate": 80,
+    "avg_confidence": 85,
+    "changes": "Subtask store limit fix (GAP-010). Keyword collision fix. All 15 engines canonical. L2 at 80% with context deepening."
+  },
+  {
+    "timestamp": "2026-03-15T20:00:00Z",
+    "batch": "batch-50",
+    "canonical_cases": 300,
+    "pass_rate": 96,
+    "partial_rate": 4,
+    "l1_rate": 97,
+    "l2_rate": 89,
+    "avg_confidence": 88,
+    "changes": "System stabilized. Consistent processing. TopRanker removed. UI canonicalized."
+  },
+  {
+    "timestamp": "2026-03-15T22:00:00Z",
+    "batch": "final",
+    "canonical_cases": 361,
+    "pass_rate": 98.1,
+    "partial_rate": 1.9,
+    "l1_rate": 99.7,
+    "l2_rate": 99.7,
+    "avg_confidence": 90,
+    "changes": "Full 360 harness completed. Strict re-grading applied. 354 PASS, 7 PARTIAL, 0 FAIL."
+  }
+]

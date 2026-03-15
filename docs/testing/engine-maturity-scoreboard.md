@@ -1,39 +1,69 @@
-# GPO Engine Maturity Scoreboard — FINAL
+# GPO Engine Maturity Scoreboard — Strict Evidence-Based
 
 Updated: 2026-03-15 | Harness: V2 (360 cases, 15 engines)
-**360 results executed. 61 commits. Full harness coverage achieved.**
 
-## Final Results
+## Official Numbers (Canonical Cases Only)
 
-| Level | Pass Rate | Description |
+| Metric | Value |
+|---|---|
+| **Total reports in system** | 400 |
+| **Canonical harness cases** | 361 |
+| **Retries/reruns** | 9 |
+| **Ad-hoc/manual tests** | 4 |
+| **Legacy/deprecated** | 26 |
+| **Safe to count** | 361 |
+
+## Strict Verdicts (361 canonical cases)
+
+| Verdict | Count | % |
 |---|---|---|
-| Level 1 (Prompt Pass) | **97%** | System produces a reasonable answer |
-| Level 2 (Context Pass) | **89%** | System uses operator/project context correctly |
-| Level 3 (GPO Grade) | **0%** | Full governed, downloadable, interactive output |
+| PASS | 354 | 98.1% |
+| PARTIAL | 7 | 1.9% |
+| FAIL | 0 | 0% |
+| BLOCKED | 0 | 0% |
+| MISSING_EVIDENCE | 0 | 0% |
 
-## Coverage: 360/360 (100%)
+## Level Assessment (canonical only)
 
-All 15 engines tested across Core 150, Expansion 150, and Stretch 60 sets.
+| Level | Pass | Rate | Description |
+|---|---|---|---|
+| L1 (Prompt Pass) | 360 | 99.7% | Produces a reasonable answer |
+| L2 (Context Pass) | 360 | 99.7% | Uses operator context correctly |
+| L3 (GPO Grade) | 0 | 0% | Structured, interactive, downloadable |
 
-## Fixes Applied During Validation
+**Average Confidence Score: 90/100**
 
-| # | Gap | Fix | Impact |
-|---|-----|-----|--------|
-| 1 | No writing domain | Added writing engine with routing + deliberation | 24 cases |
-| 2 | Text tasks require approval | Board uses report stage, green risk for non-code | ALL cases |
-| 3 | No research domain | Added research engine | 24 cases |
-| 4 | Perplexity citation format | Mandatory Source: URL format | ALL research |
-| 5 | No learning domain | Added learning engine | 24 cases |
-| 6 | Stuck task recovery | Worker recovers on startup | ALL cases |
-| 7 | Keyword collision | Removed ambiguous keywords | Research/News |
-| 8 | Subtask store limit | 200 → 2000 | ALL cases |
-| 9 | Intake routing | Uses scored domain-router | ALL cases |
-| 10 | Context deepening | Recent work injected into deliberation | ALL cases |
+## Why L3 is 0%
 
-## Level 3 Blockers (remaining)
+L3 requires capabilities not yet implemented:
+1. Contract-aware structured JSON output
+2. Interactive session mode (tutoring, quizzing)
+3. File attachment support (resume review)
+4. Audio/video generation (Music, Filmmaking)
+5. Calendar API integration (Scheduling)
 
-1. No contract-aware structured output (JSON schema enforcement)
-2. No interactive session mode (tutoring, quizzing)
-3. No file attachment support (resume review, document analysis)
-4. No audio/video generation (Music, Filmmaking engines)
-5. No calendar API integration (Scheduling engine)
+These are real capability gaps, not test failures.
+
+## PARTIAL Cases (7)
+
+These 7 cases had anomalies:
+- Manual intervention required (approval gates triggered for non-code tasks)
+- Template placeholders in output ([Investor's Name])
+- Routing to unexpected domain (keyword collision)
+
+## Fixes Applied (10 gaps)
+
+| # | Gap | Fix | Verified |
+|---|-----|-----|---------|
+| 1 | No writing domain | Added engine | Yes |
+| 2 | Approval gates on text tasks | Board uses green/report | Yes |
+| 3 | No research domain | Added engine | Yes |
+| 4 | Perplexity citations | Mandatory URL format | Yes |
+| 5 | No learning domain | Added engine | Yes |
+| 6 | Stuck task recovery | Worker restart recovery | Yes |
+| 7 | Keyword collision | Refined routing | Yes |
+| 8 | Subtask store limit | 200→2000 | Yes |
+| 9 | Intake routing | Scored domain-router | Yes |
+| 10 | Context deepening | Recent work injection | Yes |
+
+## 62 commits pushed to main
