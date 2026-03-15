@@ -1,5 +1,796 @@
 [
   {
+    "task_id": "t_mms5ykcskpv1",
+    "title": "Create a financial independence calculator. Current savings 150k, annual income ",
+    "raw_request": "Create a financial independence calculator. Current savings 150k, annual income 200k, savings rate 30%, target 2M. Show timeline with different return assumptions.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:44:45.196Z",
+    "updated_at": "2026-03-15T19:49:05.153Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:46:03.106Z",
+      "interpreted_objective": "Develop a financial independence calculator with a timeline based on different return assumptions.",
+      "expected_outcome": "A detailed report showing the timeline to financial independence under various return scenarios, including specific calculations and assumptions.",
+      "key_unknowns": [
+        "Specific return rates to be considered",
+        "Inflation rate assumptions",
+        "Investment strategies to be used"
+      ],
+      "recommended_strategy": "Research current financial independence calculators and methodologies. Synthesize findings to create a tailored report for Rahul, including calculations and timelines based on different return scenarios. Ensure the report is actionable and specific.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Financial Independence Calculators",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current methodologies and tools for calculating financial independence timelines.",
+          "prompt": "Search the web for current, specific information about financial independence calculators. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Financial Independence Timeline Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report showing timelines to financial independence under various return scenarios.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a financial independence timeline. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-financial-independence-timeline.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2143
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms5yis3xu2n",
+    "title": "Research the best project management tools for solo developers in 2026. Compare ",
+    "raw_request": "Research the best project management tools for solo developers in 2026. Compare Notion, Linear, Todoist, and ClickUp. Include free tier limitations.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:44:43.155Z",
+    "updated_at": "2026-03-15T19:48:59.629Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:45:57.934Z",
+      "interpreted_objective": "Research and compare the best project management tools for solo developers in 2026, focusing on Notion, Linear, Todoist, and ClickUp, including their free tier limitations.",
+      "expected_outcome": "A detailed comparison report that helps solo developers choose the best project management tool for their needs in 2026, considering free tier limitations.",
+      "key_unknowns": [
+        "Current features and pricing of Notion, Linear, Todoist, and ClickUp in 2026",
+        "Free tier limitations for each tool in 2026"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather the latest information about the project management tools in question. Then, synthesize this information into a structured report that compares the tools based on features, pricing, and free tier limitations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Project Management Tools",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information about Notion, Linear, Todoist, and ClickUp, including features, pricing, and free tier limitations in 2026.",
+          "prompt": "Search the web for current information about Notion, Linear, Todoist, and ClickUp as of 2026. Include details on features, pricing, and free tier limitations. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of Notion, Linear, Todoist, and ClickUp for solo developers in 2026, including pros/cons and free tier limitations.",
+          "prompt": "Based on the research results, synthesize a comparison report for Notion, Linear, Todoist, and ClickUp. Include specific features, pricing, pros/cons, and free tier limitations, and provide a clear recommendation for solo developers.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-2026-project_management_tools.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1972
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms5yh7sh8ut",
+    "title": "Create a comprehensive home office acoustic treatment guide. Include sound absor",
+    "raw_request": "Create a comprehensive home office acoustic treatment guide. Include sound absorption vs diffusion, material options, and DIY vs commercial panels. Budget 300 dollars.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:44:41.128Z",
+    "updated_at": "2026-03-15T19:48:53.783Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:45:33.683Z",
+      "interpreted_objective": "Create a detailed guide for acoustic treatment of a home office within a $300 budget.",
+      "expected_outcome": "A comprehensive, actionable guide that includes sound absorption vs diffusion, material options, and a comparison of DIY vs commercial panels.",
+      "key_unknowns": [
+        "Current effective materials for acoustic treatment within budget",
+        "Differences in performance between DIY and commercial panels",
+        "Cost breakdown of materials and solutions"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on acoustic treatment materials and techniques. Synthesize this information into a guide that compares DIY and commercial options, focusing on cost-effectiveness and performance within the $300 budget constraint.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Acoustic Treatment Options",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current materials and methods for acoustic treatment, including costs and performance metrics.",
+          "prompt": "Search the web for current, specific information about acoustic treatment materials and methods for home offices. Include sound absorption vs diffusion, DIY vs commercial options, and budget-friendly solutions within $300. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Acoustic Treatment Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable guide for home office acoustic treatment, comparing DIY and commercial options with specific material recommendations and cost analysis.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for acoustic treatment of a home office. Include comparisons of sound absorption vs diffusion, DIY vs commercial panels, and specific material recommendations within a $300 budget. Provide concrete next steps for implementation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-acoustic-treatment-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1948
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms5yfnd6x97",
+    "title": "Write a pitch document for a tech startup reality TV show. Include format, episo",
+    "raw_request": "Write a pitch document for a tech startup reality TV show. Include format, episode structure, casting criteria, and what makes it different from Shark Tank.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:44:39.097Z",
+    "updated_at": "2026-03-15T19:48:45.188Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:45:29.441Z",
+      "interpreted_objective": "Create a pitch document for a tech startup reality TV show with unique elements.",
+      "expected_outcome": "A comprehensive pitch document detailing the show's format, episode structure, casting criteria, and differentiators from Shark Tank.",
+      "key_unknowns": [
+        "Specific format and episode structure for the show",
+        "Unique casting criteria for participants",
+        "Distinct elements that differentiate it from Shark Tank"
+      ],
+      "recommended_strategy": "Research existing reality TV show formats and identify unique elements that can be incorporated. Synthesize this information into a detailed pitch document. Highlight specific differentiators from Shark Tank to make the show appealing and innovative.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Reality TV Show Formats",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of existing reality TV show formats with unique elements.",
+          "prompt": "Search the web for current, specific information about popular reality TV show formats, especially those focusing on startups or entrepreneurship. Include real names, unique elements, and what makes them successful.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Pitch Document",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed pitch document outlining the show's format, episode structure, casting criteria, and differentiators from Shark Tank.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a pitch document for a tech startup reality TV show. Include format, episode structure, casting criteria, and what makes it different from Shark Tank. Highlight innovative elements and appeal factors.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2026
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mms5ye2ug8jc",
+    "title": "Plan a wine country weekend near Austin TX. Include Hill Country wineries, tasti",
+    "raw_request": "Plan a wine country weekend near Austin TX. Include Hill Country wineries, tasting routes, accommodation, and food pairings. For 2 people on moderate budget.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:44:37.062Z",
+    "updated_at": "2026-03-15T19:48:29.345Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:45:24.486Z",
+      "interpreted_objective": "Plan a budget-friendly wine country weekend near Austin, TX, including wineries, tasting routes, accommodations, and food pairings for two people.",
+      "expected_outcome": "A detailed itinerary for a weekend trip to Hill Country wineries with specific recommendations for wineries, routes, accommodations, and food pairings.",
+      "key_unknowns": [
+        "Specific wineries and tasting routes in Hill Country",
+        "Available accommodations near Austin",
+        "Food pairing options in the area",
+        "Current pricing and availability"
+      ],
+      "recommended_strategy": "Conduct research to identify popular Hill Country wineries, tasting routes, and accommodations near Austin. Gather current pricing and availability information. Synthesize this data into a comprehensive itinerary with specific recommendations for a budget-friendly weekend trip.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Hill Country Wineries and Tasting Routes",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of popular Hill Country wineries, tasting routes, and current pricing.",
+          "prompt": "Search the web for current information on popular Hill Country wineries and tasting routes near Austin, TX. Include names, addresses, tasting fees, and any special events or features.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Accommodations and Food Pairings",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of accommodations and food pairing options near Hill Country wineries.",
+          "prompt": "Search the web for budget-friendly accommodations near Hill Country wineries and food pairing options available at or near these wineries. Include names, locations, prices, and any special offers.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary and Recommendations",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "Detailed itinerary and recommendations for a wine country weekend near Austin, TX.",
+          "prompt": "Based on the research results, synthesize a detailed itinerary for a wine country weekend near Austin, TX. Include specific recommendations for wineries, tasting routes, accommodations, and food pairings, with pricing and availability details.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-2023-11-03-wine_country_weekend.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1988
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mms5ycifb8yr",
+    "title": "Design a post-vacation re-entry routine. How to transition back to work mode wit",
+    "raw_request": "Design a post-vacation re-entry routine. How to transition back to work mode without burnout. Include day-before, first-day, and first-week protocols.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:44:35.031Z",
+    "updated_at": "2026-03-15T19:48:20.117Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:45:09.963Z",
+      "interpreted_objective": "Design a structured routine to help individuals transition back to work smoothly after a vacation to prevent burnout.",
+      "expected_outcome": "A detailed post-vacation re-entry routine that includes day-before, first-day, and first-week protocols, helping individuals return to work without experiencing burnout.",
+      "key_unknowns": [
+        "Current best practices for post-vacation routines",
+        "Specific strategies to prevent burnout during work re-entry",
+        "Variations in effectiveness based on job type or industry"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices for post-vacation re-entry routines. Synthesize findings into a structured routine that includes specific protocols for the day before returning to work, the first day back, and the first week. Ensure recommendations are actionable and evidence-based.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Post-Vacation Re-entry Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices and strategies for transitioning back to work after a vacation.",
+          "prompt": "Search the web for current, specific information about best practices for post-vacation re-entry routines. Include strategies to prevent burnout, and any variations based on job type or industry. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Re-entry Routine",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable post-vacation re-entry routine including day-before, first-day, and first-week protocols.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a post-vacation re-entry routine. Include specific protocols for the day before, the first day back, and the first week. Ensure recommendations are evidence-based and include strategies to prevent burnout.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-post-vacation-reentry-routine.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1892
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms5yaxzx4vn",
+    "title": "Create a technical mentorship program framework. Include matching criteria, meet",
+    "raw_request": "Create a technical mentorship program framework. Include matching criteria, meeting cadence, goal setting, progress tracking, and program duration.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:44:32.999Z",
+    "updated_at": "2026-03-15T19:48:13.338Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:45:04.216Z",
+      "interpreted_objective": "Develop a detailed framework for a technical mentorship program tailored to data engineering leadership.",
+      "expected_outcome": "A comprehensive mentorship program framework that includes matching criteria, meeting cadence, goal setting, progress tracking, and program duration, specifically for data engineers.",
+      "key_unknowns": [
+        "Specific criteria for matching mentors and mentees in data engineering",
+        "Optimal meeting cadence for effective mentorship",
+        "Best practices for setting and tracking goals in a mentorship context",
+        "Ideal duration for a mentorship program in this field"
+      ],
+      "recommended_strategy": "Conduct research on existing technical mentorship programs to gather best practices and common structures. Synthesize this information to create a tailored framework for data engineering mentorship. Ensure the framework aligns with Rahul's career goals and startup objectives.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Existing Mentorship Programs",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and structures from existing technical mentorship programs.",
+          "prompt": "Search the web for current, specific information about technical mentorship programs, especially those related to data engineering. Include real names, structures, meeting cadences, goal-setting practices, and program durations. Provide URLs and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Mentorship Framework",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured framework for a technical mentorship program tailored to data engineering.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed framework for a technical mentorship program. Include specific matching criteria, meeting cadence, goal setting, progress tracking, and program duration. Tailor the framework to data engineering leadership and Rahul's career objectives.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-2023-10-technical-mentorship-framework.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2236
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms5y9dgu6ze",
+    "title": "Find the best noise-canceling headphones for office use under 350 dollars. Must ",
+    "raw_request": "Find the best noise-canceling headphones for office use under 350 dollars. Must have multipoint Bluetooth and 30+ hour battery. Compare Sony, Bose, and Apple.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:44:30.964Z",
+    "updated_at": "2026-03-15T19:48:05.514Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:44:47.194Z",
+      "interpreted_objective": "Identify the best noise-canceling headphones for office use under $350, featuring multipoint Bluetooth and a 30+ hour battery, comparing Sony, Bose, and Apple.",
+      "expected_outcome": "A comprehensive comparison report detailing the best noise-canceling headphones under $350 for office use, including specific product recommendations with pros and cons.",
+      "key_unknowns": [
+        "Current prices and availability of Sony, Bose, and Apple headphones",
+        "Specific models from each brand that meet the criteria",
+        "User reviews and expert opinions on these models"
+      ],
+      "recommended_strategy": "Conduct a web search to gather current information on noise-canceling headphones from Sony, Bose, and Apple. Then synthesize the findings into a structured report, providing a clear recommendation based on features, price, and user feedback.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Noise-Canceling Headphones",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on noise-canceling headphones from Sony, Bose, and Apple, including prices, features, and reviews.",
+          "prompt": "Search the web for current, specific information about noise-canceling headphones from Sony, Bose, and Apple that are priced under $350, have multipoint Bluetooth, and offer 30+ hours of battery life. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Headphone Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Sony, Bose, and Apple headphones, with specific product recommendations and pros/cons.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for the best noise-canceling headphones under $350 for office use. Include specific product names, prices, features, pros/cons, and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-headphones.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1917
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms5y7t6h59d",
+    "title": "Teach me about data mesh architecture. Compare with data warehouse and data lake",
+    "raw_request": "Teach me about data mesh architecture. Compare with data warehouse and data lake approaches. Include domain ownership, data products, and governance.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:44:28.938Z",
+    "updated_at": "2026-03-15T19:47:44.255Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:44:42.966Z",
+      "interpreted_objective": "Explain data mesh architecture and compare it with data warehouse and data lake approaches.",
+      "expected_outcome": "A comprehensive report that educates on data mesh architecture, highlighting differences with data warehouse and data lake, focusing on domain ownership, data products, and governance.",
+      "key_unknowns": [
+        "Current trends in data mesh architecture",
+        "Specific differences in governance between data mesh, data warehouse, and data lake"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on data mesh architecture and its comparison with data warehouse and data lake. Synthesize findings into a structured report focusing on domain ownership, data products, and governance.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Data Mesh Architecture",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on data mesh architecture, including domain ownership, data products, and governance.",
+          "prompt": "Search the web for current, specific information about data mesh architecture, focusing on domain ownership, data products, and governance. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Data Warehouse and Data Lake",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on data warehouse and data lake approaches, focusing on domain ownership, data products, and governance.",
+          "prompt": "Search the web for current, specific information about data warehouse and data lake approaches, focusing on domain ownership, data products, and governance. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing data mesh architecture with data warehouse and data lake, focusing on domain ownership, data products, and governance.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a report comparing data mesh architecture with data warehouse and data lake. Focus on domain ownership, data products, and governance. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-data-mesh-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1999
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms5y68zn9pe",
+    "title": "Create a guide to angel investing for tech workers. Include minimum investment a",
+    "raw_request": "Create a guide to angel investing for tech workers. Include minimum investment amounts, deal flow sources, due diligence checklist, and portfolio strategy.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:44:26.915Z",
+    "updated_at": "2026-03-15T19:46:56.421Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:44:35.451Z",
+      "interpreted_objective": "Create a detailed guide on angel investing specifically tailored for tech workers.",
+      "expected_outcome": "A comprehensive guide that includes minimum investment amounts, deal flow sources, a due diligence checklist, and portfolio strategy for tech workers interested in angel investing.",
+      "key_unknowns": [
+        "Current minimum investment amounts for angel investing",
+        "Reliable deal flow sources for tech workers",
+        "Effective due diligence practices specific to tech investments",
+        "Optimal portfolio strategies for tech-focused angel investors"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on angel investing specifics for tech workers. Then, synthesize this data into a structured guide that includes actionable steps and real-world examples. Finally, compile the information into a report for Rahul.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Angel Investing for Tech Workers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on minimum investment amounts, deal flow sources, due diligence practices, and portfolio strategies for tech workers in angel investing.",
+          "prompt": "Search the web for current, specific information about angel investing tailored for tech workers. Include details on minimum investment amounts, deal flow sources, due diligence checklists, and portfolio strategies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Angel Investing Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on angel investing for tech workers, including specific recommendations and real-world examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a guide on angel investing for tech workers. Include specific names, numbers, and concrete next steps for minimum investment amounts, deal flow sources, due diligence, and portfolio strategies.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-angel-investing-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2231
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms5y4o5occ2",
+    "title": "Write a comprehensive API rate limiting design document. Cover token bucket vs s",
+    "raw_request": "Write a comprehensive API rate limiting design document. Cover token bucket vs sliding window algorithms, Redis implementation, client SDKs, and monitoring dashboards.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:44:24.869Z",
+    "updated_at": "2026-03-15T19:46:33.426Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:44:30.822Z",
+      "interpreted_objective": "Create a detailed design document for API rate limiting.",
+      "expected_outcome": "A comprehensive document comparing token bucket and sliding window algorithms, detailing Redis implementation, client SDKs, and monitoring dashboards.",
+      "key_unknowns": [
+        "Specific requirements for client SDKs",
+        "Preferred monitoring tools",
+        "Any existing infrastructure constraints"
+      ],
+      "recommended_strategy": "First, research and compare token bucket and sliding window algorithms. Then, outline a Redis implementation strategy, followed by client SDK design considerations. Finally, propose monitoring dashboard solutions. Ensure the document is clear, concise, and actionable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research API Rate Limiting Algorithms",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A comparison of token bucket and sliding window algorithms for API rate limiting.",
+          "prompt": "Search the web for current, specific information about token bucket and sliding window algorithms for API rate limiting. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Outline Redis Implementation Strategy",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "An outline for implementing API rate limiting using Redis.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for implementing API rate limiting using Redis. Include specific steps, considerations, and potential challenges.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Design Client SDK Considerations",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "Design considerations for client SDKs supporting API rate limiting.",
+          "prompt": "Propose design considerations for client SDKs that will support API rate limiting. Include specific features, usability concerns, and integration guidelines.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Propose Monitoring Dashboard Solutions",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "Recommendations for monitoring dashboards to track API rate limiting.",
+          "prompt": "Propose solutions for monitoring dashboards that track API rate limiting. Include specific tools, metrics to monitor, and integration strategies.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2181
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms5q76tf78x",
     "title": "Research the best home espresso machines under 500 dollars for a coffee enthusia",
     "raw_request": "Research the best home espresso machines under 500 dollars for a coffee enthusiast beginner. Compare semi-automatic options with milk steaming capability.",

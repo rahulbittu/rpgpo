@@ -1,5 +1,595 @@
 [
   {
+    "id": "mms62pm47kqn",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Financial Independence Timeline Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms608iq2bef"
+    },
+    "createdAt": "2026-03-15T19:47:58.636Z",
+    "updatedAt": "2026-03-15T19:49:05.162Z",
+    "output": "Synthesize Financial Independence Timeline Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/wealthresearch-{date}-financial-independence-timeline.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms608iq2bef.md"
+    ]
+  },
+  {
+    "id": "mms62kb4jx37",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Comparison Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms604iv9qrp"
+    },
+    "createdAt": "2026-03-15T19:47:51.760Z",
+    "updatedAt": "2026-03-15T19:48:59.638Z",
+    "output": "Synthesize Comparison Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/shopping-2026-project_management_tools.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms604iv9qrp.md"
+    ]
+  },
+  {
+    "id": "mms626hrjho7",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Acoustic Treatment Guide",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5zlsygv2b"
+    },
+    "createdAt": "2026-03-15T19:47:33.855Z",
+    "updatedAt": "2026-03-15T19:48:53.792Z",
+    "output": "Synthesize Acoustic Treatment Guide: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/personalops-{date}-acoustic-treatment-guide.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5zlsygv2b.md"
+    ]
+  },
+  {
+    "id": "mms61yokuqc9",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Pitch Document",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5zijd93ef"
+    },
+    "createdAt": "2026-03-15T19:47:23.732Z",
+    "updatedAt": "2026-03-15T19:48:45.197Z",
+    "output": "Synthesize Pitch Document: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5zijd93ef.md"
+    ]
+  },
+  {
+    "id": "mms61rmqyvj5",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Itinerary and Recommendations",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5zeq8q0z0"
+    },
+    "createdAt": "2026-03-15T19:47:14.594Z",
+    "updatedAt": "2026-03-15T19:48:29.354Z",
+    "output": "Synthesize Itinerary and Recommendations: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/travel-2023-11-03-wine_country_weekend.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5zeq8q0z0.md"
+    ]
+  },
+  {
+    "id": "mms617tzslr0",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Re-entry Routine",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5z3ik364l"
+    },
+    "createdAt": "2026-03-15T19:46:48.935Z",
+    "updatedAt": "2026-03-15T19:48:20.126Z",
+    "output": "Synthesize Re-entry Routine: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/health-{date}-post-vacation-reentry-routine.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5z3ik364l.md"
+    ]
+  },
+  {
+    "id": "mms612jbyo1z",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Mentorship Framework",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5yz2ugijm"
+    },
+    "createdAt": "2026-03-15T19:46:42.071Z",
+    "updatedAt": "2026-03-15T19:48:13.347Z",
+    "output": "Synthesize Mentorship Framework: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/careeregine-2023-10-technical-mentorship-framework.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5yz2ugijm.md"
+    ]
+  },
+  {
+    "id": "mms60cohf2kr",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Headphone Comparison Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5yly14n4q"
+    },
+    "createdAt": "2026-03-15T19:46:08.561Z",
+    "updatedAt": "2026-03-15T19:48:05.523Z",
+    "output": "Synthesize Headphone Comparison Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/shopping-{date}-headphones.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5yly14n4q.md"
+    ]
+  },
+  {
+    "id": "mms608k9ze45",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Financial Independence Calculators",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms608i00pk3"
+    },
+    "createdAt": "2026-03-15T19:46:03.225Z",
+    "updatedAt": "2026-03-15T19:47:58.636Z",
+    "output": "Research Financial Independence Calculators: ## Finding 1: FlareFi Financial Independence Calculator\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms608i00pk3.md"
+    ]
+  },
+  {
+    "id": "mms604ke3u5v",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Project Management Tools",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms604i72h43"
+    },
+    "createdAt": "2026-03-15T19:45:58.046Z",
+    "updatedAt": "2026-03-15T19:47:51.761Z",
+    "output": "Research Project Management Tools: Notion is an all-in-one workspace combining notes, tasks, databases, wikis, and AI features like auto-suggested task priorities, content summaries, an\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms604i72h43.md"
+    ]
+  },
+  {
+    "id": "mms600zo3ok8",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Comparison Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5yiohejoy"
+    },
+    "createdAt": "2026-03-15T19:45:53.412Z",
+    "updatedAt": "2026-03-15T19:47:44.264Z",
+    "output": "Synthesize Comparison Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/learning-{date}-data-mesh-comparison.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5yiohejoy.md"
+    ]
+  },
+  {
+    "id": "mms5zlufzfc9",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Acoustic Treatment Options",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5zlsba5g5"
+    },
+    "createdAt": "2026-03-15T19:45:33.783Z",
+    "updatedAt": "2026-03-15T19:47:33.855Z",
+    "output": "Research Acoustic Treatment Options: ## Sound Absorption vs Diffusion\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms5zlsba5g5.md"
+    ]
+  },
+  {
+    "id": "mms5zikvxpnz",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Reality TV Show Formats",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5ziioxg6f"
+    },
+    "createdAt": "2026-03-15T19:45:29.551Z",
+    "updatedAt": "2026-03-15T19:47:23.733Z",
+    "output": "Research Reality TV Show Formats: I need to conduct a web search to find current information about popular reality TV show formats focused on startups or entrepreneurship, as the provi\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms5ziioxg6f.md"
+    ]
+  },
+  {
+    "id": "mms5zeshs0hu",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Accommodations and Food Pairings",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5zepnhag7"
+    },
+    "createdAt": "2026-03-15T19:45:24.641Z",
+    "updatedAt": "2026-03-15T19:47:14.594Z",
+    "output": "Research Accommodations and Food Pairings: ## Budget-Friendly Accommodations Near Hill Country Wineries\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms5zepnhag7.md"
+    ]
+  },
+  {
+    "id": "mms5zes8fbxe",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Hill Country Wineries and Tasting Routes",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5zeozn57m"
+    },
+    "createdAt": "2026-03-15T19:45:24.632Z",
+    "updatedAt": "2026-03-15T19:47:06.551Z",
+    "output": "Research Hill Country Wineries and Tasting Routes: ## Popular Hill Country Wineries Near Austin\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms5zeozn57m.md"
+    ]
+  },
+  {
+    "id": "mms5za8nm4ox",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Angel Investing Guide",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5ycvvoeep"
+    },
+    "createdAt": "2026-03-15T19:45:18.743Z",
+    "updatedAt": "2026-03-15T19:46:56.430Z",
+    "output": "Synthesize Angel Investing Guide: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/wealthresearch-{date}-angel-investing-guide.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5ycvvoeep.md"
+    ]
+  },
+  {
+    "id": "mms5z3k2jgs4",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Post-Vacation Re-entry Best Practices",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5z3hu87ms"
+    },
+    "createdAt": "2026-03-15T19:45:10.082Z",
+    "updatedAt": "2026-03-15T19:46:48.936Z",
+    "output": "Research Post-Vacation Re-entry Best Practices: ## Finding 1: 72-Hour Post-Trip Recalibration Period to Avoid Major Decisions and Burnout\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms5z3hu87ms.md"
+    ]
+  },
+  {
+    "id": "mms5yz4dt55u",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Existing Mentorship Programs",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5yz24g830"
+    },
+    "createdAt": "2026-03-15T19:45:04.333Z",
+    "updatedAt": "2026-03-15T19:46:42.071Z",
+    "output": "Research Existing Mentorship Programs: ## Finding 1: CodePath Software Engineering Mentorship\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms5yz24g830.md"
+    ]
+  },
+  {
+    "id": "mms5ytzxqi72",
+    "type": "execute-subtask",
+    "label": "Subtask: Propose Monitoring Dashboard Solutions",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5y9cffdm9"
+    },
+    "createdAt": "2026-03-15T19:44:57.693Z",
+    "updatedAt": "2026-03-15T19:46:33.435Z",
+    "output": "Propose Monitoring Dashboard Solutions: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5y9cffdm9.md"
+    ]
+  },
+  {
+    "id": "mms5ytzo5w6p",
+    "type": "execute-subtask",
+    "label": "Subtask: Design Client SDK Considerations",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5y9bup2zd"
+    },
+    "createdAt": "2026-03-15T19:44:57.684Z",
+    "updatedAt": "2026-03-15T19:46:24.308Z",
+    "output": "Design Client SDK Considerations: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5y9bup2zd.md"
+    ]
+  },
+  {
+    "id": "mms5ytzf20eu",
+    "type": "execute-subtask",
+    "label": "Subtask: Outline Redis Implementation Strategy",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5y9b8f056"
+    },
+    "createdAt": "2026-03-15T19:44:57.675Z",
+    "updatedAt": "2026-03-15T19:46:16.485Z",
+    "output": "Outline Redis Implementation Strategy: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5y9b8f056.md"
+    ]
+  },
+  {
+    "id": "mms5ylzmvipx",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Noise-Canceling Headphones",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5ylxb206m"
+    },
+    "createdAt": "2026-03-15T19:44:47.314Z",
+    "updatedAt": "2026-03-15T19:46:08.561Z",
+    "output": "Research Noise-Canceling Headphones: ## Sony WH-1000XM6\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms5ylxb206m.md"
+    ]
+  },
+  {
+    "id": "mms5ykcyqsri",
+    "type": "deliberate",
+    "label": "Deliberate: Create a financial independence calculator. Current savings 150k, annual income ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms5ykcskpv1",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:44:45.202Z",
+    "updatedAt": "2026-03-15T19:46:03.225Z",
+    "output": "Deliberation complete.\nObjective: Develop a financial independence calculator with a timeline based on different return assumptions.\nStrategy: Research current financial independence calculators and methodologies. Synthesize findings to create a tailored report for Rahul, including calculations and timelines based on different return scenarios. Ensure the report is actionable and specific.\nRisk: green\nSubtasks: 2\nTokens: 2143",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms5yis7sj3q",
+    "type": "deliberate",
+    "label": "Deliberate: Research the best project management tools for solo developers in 2026. Compare ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms5yis3xu2n",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:44:43.159Z",
+    "updatedAt": "2026-03-15T19:45:58.046Z",
+    "output": "Deliberation complete.\nObjective: Research and compare the best project management tools for solo developers in 2026, focusing on Notion, Linear, Todoist, and ClickUp, including their free tier limitations.\nStrategy: First, conduct a web search to gather the latest information about the project management tools in question. Then, synthesize this information into a structured report that compares the tools based on features, pricing, and free tier limitations.\nRisk: green\nSubtasks: 2\nTokens: 1972",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms5yiqph9ln",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Data Warehouse and Data Lake",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5yinxz5sk"
+    },
+    "createdAt": "2026-03-15T19:44:43.105Z",
+    "updatedAt": "2026-03-15T19:45:53.412Z",
+    "output": "Research Data Warehouse and Data Lake: ## Finding 1: Data Lake vs. Data Warehouse - Core Differences in Structure, Scalability, and Use Cases (No Direct Domain Ownership or Governance Cover\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms5yinxz5sk.md"
+    ]
+  },
+  {
+    "id": "mms5yiqgs472",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Data Mesh Architecture",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5yinee41u"
+    },
+    "createdAt": "2026-03-15T19:44:43.096Z",
+    "updatedAt": "2026-03-15T19:45:44.311Z",
+    "output": "Research Data Mesh Architecture: ## Finding 1: Data Mesh Principles Including Domain Ownership, Data as a Product, and Federated Governance\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms5yinee41u.md"
+    ]
+  },
+  {
+    "id": "mms5yh7we1b6",
+    "type": "deliberate",
+    "label": "Deliberate: Create a comprehensive home office acoustic treatment guide. Include sound absor",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms5yh7sh8ut",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:44:41.132Z",
+    "updatedAt": "2026-03-15T19:45:33.783Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed guide for acoustic treatment of a home office within a $300 budget.\nStrategy: Conduct web research to gather current information on acoustic treatment materials and techniques. Synthesize this information into a guide that compares DIY and commercial options, focusing on cost-effectiveness and performance within the $300 budget constraint.\nRisk: green\nSubtasks: 2\nTokens: 1948",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms5yfnjce2r",
+    "type": "deliberate",
+    "label": "Deliberate: Write a pitch document for a tech startup reality TV show. Include format, episo",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms5yfnd6x97",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:44:39.103Z",
+    "updatedAt": "2026-03-15T19:45:29.551Z",
+    "output": "Deliberation complete.\nObjective: Create a pitch document for a tech startup reality TV show with unique elements.\nStrategy: Research existing reality TV show formats and identify unique elements that can be incorporated. Synthesize this information into a detailed pitch document. Highlight specific differentiators from Shark Tank to make the show appealing and innovative.\nRisk: green\nSubtasks: 2\nTokens: 2026",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms5ye2zvupb",
+    "type": "deliberate",
+    "label": "Deliberate: Plan a wine country weekend near Austin TX. Include Hill Country wineries, tasti",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms5ye2ug8jc",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:44:37.067Z",
+    "updatedAt": "2026-03-15T19:45:24.641Z",
+    "output": "Deliberation complete.\nObjective: Plan a budget-friendly wine country weekend near Austin, TX, including wineries, tasting routes, accommodations, and food pairings for two people.\nStrategy: Conduct research to identify popular Hill Country wineries, tasting routes, and accommodations near Austin. Gather current pricing and availability information. Synthesize this data into a comprehensive itinerary with specific recommendations for a budget-friendly weekend trip.\nRisk: green\nSubtasks: 3\nTokens: 1988",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms5ycxe3h3m",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Angel Investing for Tech Workers",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5ycv55h13"
+    },
+    "createdAt": "2026-03-15T19:44:35.570Z",
+    "updatedAt": "2026-03-15T19:45:18.743Z",
+    "output": "Research Angel Investing for Tech Workers: ## Minimum Investment Amounts\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms5ycv55h13.md"
+    ]
+  },
+  {
+    "id": "mms5ycikeh2m",
+    "type": "deliberate",
+    "label": "Deliberate: Design a post-vacation re-entry routine. How to transition back to work mode wit",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms5ycifb8yr",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:44:35.036Z",
+    "updatedAt": "2026-03-15T19:45:10.082Z",
+    "output": "Deliberation complete.\nObjective: Design a structured routine to help individuals transition back to work smoothly after a vacation to prevent burnout.\nStrategy: Conduct research to gather current best practices for post-vacation re-entry routines. Synthesize findings into a structured routine that includes specific protocols for the day before returning to work, the first day back, and the first week. Ensure recommendations are actionable and evidence-based.\nRisk: green\nSubtasks: 2\nTokens: 1892",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms5yay5vh3r",
+    "type": "deliberate",
+    "label": "Deliberate: Create a technical mentorship program framework. Include matching criteria, meet",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms5yaxzx4vn",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:44:33.005Z",
+    "updatedAt": "2026-03-15T19:45:04.333Z",
+    "output": "Deliberation complete.\nObjective: Develop a detailed framework for a technical mentorship program tailored to data engineering leadership.\nStrategy: Conduct research on existing technical mentorship programs to gather best practices and common structures. Synthesize this information to create a tailored framework for data engineering mentorship. Ensure the framework aligns with Rahul's career goals and startup objectives.\nRisk: green\nSubtasks: 2\nTokens: 2236",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms5y9dzji10",
+    "type": "execute-subtask",
+    "label": "Subtask: Research API Rate Limiting Algorithms",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms5y9aiwmtj"
+    },
+    "createdAt": "2026-03-15T19:44:30.983Z",
+    "updatedAt": "2026-03-15T19:44:57.693Z",
+    "output": "Research API Rate Limiting Algorithms: # Token Bucket vs. Sliding Window: API Rate Limiting Algorithms\n\nAuto-queued 3 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms5y9aiwmtj.md"
+    ]
+  },
+  {
+    "id": "mms5y9djkzw2",
+    "type": "deliberate",
+    "label": "Deliberate: Find the best noise-canceling headphones for office use under 350 dollars. Must ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms5y9dgu6ze",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:44:30.967Z",
+    "updatedAt": "2026-03-15T19:44:47.314Z",
+    "output": "Deliberation complete.\nObjective: Identify the best noise-canceling headphones for office use under $350, featuring multipoint Bluetooth and a 30+ hour battery, comparing Sony, Bose, and Apple.\nStrategy: Conduct a web search to gather current information on noise-canceling headphones from Sony, Bose, and Apple. Then synthesize the findings into a structured report, providing a clear recommendation based on features, price, and user feedback.\nRisk: green\nSubtasks: 2\nTokens: 1917",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms5y7t9czqv",
+    "type": "deliberate",
+    "label": "Deliberate: Teach me about data mesh architecture. Compare with data warehouse and data lake",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms5y7t6h59d",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:44:28.941Z",
+    "updatedAt": "2026-03-15T19:44:43.105Z",
+    "output": "Deliberation complete.\nObjective: Explain data mesh architecture and compare it with data warehouse and data lake approaches.\nStrategy: Conduct web research to gather current information on data mesh architecture and its comparison with data warehouse and data lake. Synthesize findings into a structured report focusing on domain ownership, data products, and governance.\nRisk: green\nSubtasks: 3\nTokens: 1999",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms5y697wp8x",
+    "type": "deliberate",
+    "label": "Deliberate: Create a guide to angel investing for tech workers. Include minimum investment a",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms5y68zn9pe",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:44:26.923Z",
+    "updatedAt": "2026-03-15T19:44:35.570Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed guide on angel investing specifically tailored for tech workers.\nStrategy: First, conduct web research to gather current information on angel investing specifics for tech workers. Then, synthesize this data into a structured guide that includes actionable steps and real-world examples. Finally, compile the information into a report for Rahul.\nRisk: green\nSubtasks: 2\nTokens: 2231",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms5y4o9x6t7",
+    "type": "deliberate",
+    "label": "Deliberate: Write a comprehensive API rate limiting design document. Cover token bucket vs s",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms5y4o5occ2",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:44:24.873Z",
+    "updatedAt": "2026-03-15T19:44:30.983Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed design document for API rate limiting.\nStrategy: First, research and compare token bucket and sliding window algorithms. Then, outline a Redis implementation strategy, followed by client SDK design considerations. Finally, propose monitoring dashboard solutions. Ensure the document is clear, concise, and actionable.\nRisk: green\nSubtasks: 4\nTokens: 2181",
+    "error": null,
+    "filesWritten": []
+  },
+  {
     "id": "mms5v6soha4p",
     "type": "execute-subtask",
     "label": "Subtask: Synthesize Espresso Machine Report",
@@ -998,592 +1588,6 @@
     "createdAt": "2026-03-15T19:32:11.532Z",
     "updatedAt": "2026-03-15T19:32:23.180Z",
     "output": "Deliberation complete.\nObjective: Develop a retirement planning calculator for a 32-year-old aiming to retire at 50, detailing savings rate, investment growth, and withdrawal strategy.\nStrategy: First, research current best practices and benchmarks for early retirement planning. Then, synthesize this information into a detailed report, including specific savings rates, growth assumptions, and withdrawal strategies. Finally, provide actionable steps for implementation.\nRisk: green\nSubtasks: 2\nTokens: 2193",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms5id8z70i1",
-    "type": "deliberate",
-    "label": "Deliberate: Write a comprehensive guide to setting up Playwright for end-to-end testing of a",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms5id8vo179",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T19:32:09.491Z",
-    "updatedAt": "2026-03-15T19:32:15.891Z",
-    "output": "Deliberation complete.\nObjective: Create a detailed guide for setting up Playwright for testing React apps.\nStrategy: Research current best practices for using Playwright with React applications, focusing on page objects, CI integration, and visual regression testing. Synthesize the findings into a clear, structured guide tailored for developers setting up these systems. Ensure the guide is practical and includes examples where possible.\nRisk: green\nSubtasks: 2\nTokens: 1999",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms5cr3tim1t",
-    "type": "execute-subtask",
-    "label": "Subtask: Design personal development scoreboard and weekly review template",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms5a489av0b"
-    },
-    "createdAt": "2026-03-15T19:27:47.513Z",
-    "updatedAt": "2026-03-15T19:29:01.607Z",
-    "output": "Design personal development scoreboard and weekly review template: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5a489av0b.md"
-    ]
-  },
-  {
-    "id": "mms5cjc5eo4z",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Stock Option Guide",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms59znt6wso"
-    },
-    "createdAt": "2026-03-15T19:27:37.445Z",
-    "updatedAt": "2026-03-15T19:28:53.755Z",
-    "output": "Synthesize Stock Option Guide: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms59znt6wso.md"
-    ]
-  },
-  {
-    "id": "mms5cdqytjy0",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Dialogue Script",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms59wd5ectl"
-    },
-    "createdAt": "2026-03-15T19:27:30.202Z",
-    "updatedAt": "2026-03-15T19:28:46.198Z",
-    "output": "Synthesize Dialogue Script: I'm sorry, but it seems that the prior subtask results were cut off and incomplete. To provide a comprehensive and accurate dialogue, I would need the\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/screenwriting-{date}-dashboard-dialogue.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms59wd5ectl.md"
-    ]
-  },
-  {
-    "id": "mms5br960tyt",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Comparison Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms59lgej9k4"
-    },
-    "createdAt": "2026-03-15T19:27:01.050Z",
-    "updatedAt": "2026-03-15T19:28:43.116Z",
-    "output": "Synthesize Comparison Report: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/travel-{date}-city-comparison.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms59lgej9k4.md"
-    ]
-  },
-  {
-    "id": "mms5bg3dj9js",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Core Program",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms59hu1gx90"
-    },
-    "createdAt": "2026-03-15T19:26:46.585Z",
-    "updatedAt": "2026-03-15T19:28:34.735Z",
-    "output": "Synthesize Core Program: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/health-{date}-core-strength-program.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms59hu1gx90.md"
-    ]
-  },
-  {
-    "id": "mms5az9ofq0v",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Style Guide",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms59dpp4pwl"
-    },
-    "createdAt": "2026-03-15T19:26:24.780Z",
-    "updatedAt": "2026-03-15T19:28:25.110Z",
-    "output": "Synthesize Style Guide: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms59dpp4pwl.md"
-    ]
-  },
-  {
-    "id": "mms5arnfzdsu",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Current Pricing",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms58innuv7k"
-    },
-    "createdAt": "2026-03-15T19:26:14.907Z",
-    "updatedAt": "2026-03-15T19:28:17.702Z",
-    "output": "Research Current Pricing: # Current Pricing for Top 3 Mesh WiFi Systems (March 2026)\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms58innuv7k.md"
-    ]
-  },
-  {
-    "id": "mms5arn7g28n",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Coverage and Speed Tests",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms58in4xmns"
-    },
-    "createdAt": "2026-03-15T19:26:14.899Z",
-    "updatedAt": "2026-03-15T19:28:07.258Z",
-    "output": "Research Coverage and Speed Tests: ## TP-Link Deco BE63 Coverage and Speed Test Results\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms58in4xmns.md"
-    ]
-  },
-  {
-    "id": "mms5alo94mqx",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize WebAssembly Insights for Backend Developers",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms58db8n371"
-    },
-    "createdAt": "2026-03-15T19:26:07.161Z",
-    "updatedAt": "2026-03-15T19:27:56.943Z",
-    "output": "Synthesize WebAssembly Insights for Backend Developers: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms58db8n371.md"
-    ]
-  },
-  {
-    "id": "mms5a49ma9hk",
-    "type": "execute-subtask",
-    "label": "Subtask: Research best practices for personal development tracking",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms5a47nw0sp"
-    },
-    "createdAt": "2026-03-15T19:25:44.603Z",
-    "updatedAt": "2026-03-15T19:27:47.513Z",
-    "output": "Research best practices for personal development tracking: ## Skills Development Metrics and Tools\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms5a47nw0sp.md"
-    ]
-  },
-  {
-    "id": "mms59zp4lgau",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Stock Option Compensation",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms59znc56ld"
-    },
-    "createdAt": "2026-03-15T19:25:38.680Z",
-    "updatedAt": "2026-03-15T19:27:37.445Z",
-    "output": "Research Stock Option Compensation: ## Finding 1: Tax Treatment of ISOs and NSOs for Startup Employees\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms59znc56ld.md"
-    ]
-  },
-  {
-    "id": "mms59weih8xe",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Dashboard Discrepancies",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms59wcd41ln"
-    },
-    "createdAt": "2026-03-15T19:25:34.410Z",
-    "updatedAt": "2026-03-15T19:27:30.203Z",
-    "output": "Research Dashboard Discrepancies: # Common Dashboard Discrepancies in Data Engineering: Root Causes and Resolutions\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms59wcd41ln.md"
-    ]
-  },
-  {
-    "id": "mms59rxdwlai",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Investment Strategy Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms586qtw76c"
-    },
-    "createdAt": "2026-03-15T19:25:28.609Z",
-    "updatedAt": "2026-03-15T19:27:12.083Z",
-    "output": "Synthesize Investment Strategy Report: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/wealthresearch-{date}-investment-strategy.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms586qtw76c.md"
-    ]
-  },
-  {
-    "id": "mms59lhse20n",
-    "type": "execute-subtask",
-    "label": "Subtask: Research City Data",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms59lfo64d0"
-    },
-    "createdAt": "2026-03-15T19:25:20.272Z",
-    "updatedAt": "2026-03-15T19:27:01.051Z",
-    "output": "Research City Data: ## Job Market\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms59lfo64d0.md"
-    ]
-  },
-  {
-    "id": "mms59hwq4rl5",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Rest Day Recommendations",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms59htk883h"
-    },
-    "createdAt": "2026-03-15T19:25:15.626Z",
-    "updatedAt": "2026-03-15T19:26:46.585Z",
-    "output": "Research Rest Day Recommendations: ## Finding 1: Core Workout Frequency for General Health and Beginners\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms59htk883h.md"
-    ]
-  },
-  {
-    "id": "mms59hwidy7g",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Progression Strategies",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms59ht2b4uf"
-    },
-    "createdAt": "2026-03-15T19:25:15.618Z",
-    "updatedAt": "2026-03-15T19:26:39.601Z",
-    "output": "Research Progression Strategies: ## Finding 1: Calisthenics Exercise Progressions via Harder Variations\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms59ht2b4uf.md"
-    ]
-  },
-  {
-    "id": "mms59hwaqyzc",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Bodyweight Core Exercises",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms59hsjku1s"
-    },
-    "createdAt": "2026-03-15T19:25:15.610Z",
-    "updatedAt": "2026-03-15T19:26:32.711Z",
-    "output": "Research Bodyweight Core Exercises: ## Reverse Crunch\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms59hsjku1s.md"
-    ]
-  },
-  {
-    "id": "mms59dr3z2wu",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Best Practices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms59doyfq9d"
-    },
-    "createdAt": "2026-03-15T19:25:10.239Z",
-    "updatedAt": "2026-03-15T19:26:24.780Z",
-    "output": "Research Best Practices: ## Code Examples\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms59doyfq9d.md"
-    ]
-  },
-  {
-    "id": "mms58ipfsld8",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Top Mesh WiFi Systems for 2026",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms58imd332h"
-    },
-    "createdAt": "2026-03-15T19:24:30.003Z",
-    "updatedAt": "2026-03-15T19:26:14.908Z",
-    "output": "Research Top Mesh WiFi Systems for 2026: ## Finding 1: TP-Link Deco BE63 - Top Overall WiFi 7 Mesh System in 2026\n\nAuto-queued 2 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms58imd332h.md"
-    ]
-  },
-  {
-    "id": "mms58ddwesqt",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Language Support for WebAssembly",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms58dar08zn"
-    },
-    "createdAt": "2026-03-15T19:24:23.108Z",
-    "updatedAt": "2026-03-15T19:26:07.161Z",
-    "output": "Research Language Support for WebAssembly: I appreciate the detailed context, but I need to clarify what I'm seeing here.\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms58dar08zn.md"
-    ]
-  },
-  {
-    "id": "mms58ddog5dc",
-    "type": "execute-subtask",
-    "label": "Subtask: Research WebAssembly Performance Characteristics",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms58da749ii"
-    },
-    "createdAt": "2026-03-15T19:24:23.100Z",
-    "updatedAt": "2026-03-15T19:25:58.812Z",
-    "output": "Research WebAssembly Performance Characteristics: ## Finding 1: Rust + Wasm Delivers 8-10x Speed Gains Over JavaScript in Compute-Heavy Tasks\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms58da749ii.md"
-    ]
-  },
-  {
-    "id": "mms58ddgw56x",
-    "type": "execute-subtask",
-    "label": "Subtask: Research WebAssembly Use Cases for Backend",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms58d9i7cq4"
-    },
-    "createdAt": "2026-03-15T19:24:23.092Z",
-    "updatedAt": "2026-03-15T19:25:50.777Z",
-    "output": "Research WebAssembly Use Cases for Backend: ## Finding 1: Bytecode Alliance Expands Wasm to Server-Side and Edge Computing\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms58d9i7cq4.md"
-    ]
-  },
-  {
-    "id": "mms58asi3oea",
-    "type": "deliberate",
-    "label": "Deliberate: Build a personal development scoreboard. Track skills, health metrics, financial",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms58asaw9g3",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T19:24:19.746Z",
-    "updatedAt": "2026-03-15T19:25:44.603Z",
-    "output": "Deliberation complete.\nObjective: Create a personal development scoreboard with tracking for skills, health, financial goals, and relationships, including a weekly review template.\nStrategy: First, research best practices for tracking personal development across the specified areas. Then, design a scoreboard layout and a weekly review template. Finally, implement the design into a usable format, considering integration with existing tools if applicable.\nRisk: yellow\nSubtasks: 2\nTokens: 2133",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms5897pxgo9",
-    "type": "deliberate",
-    "label": "Deliberate: Create a comprehensive guide to stock option compensation for startup employees.",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms5897hv46t",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T19:24:17.701Z",
-    "updatedAt": "2026-03-15T19:25:38.681Z",
-    "output": "Deliberation complete.\nObjective: Create a detailed guide on stock option compensation for startup employees.\nStrategy: Research current information on stock option compensation, including ISOs, NSOs, 83b elections, and AMT. Synthesize this information into a comprehensive guide with actionable insights and a decision framework for startup employees.\nRisk: green\nSubtasks: 2\nTokens: 2330",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms587n0zyrk",
-    "type": "deliberate",
-    "label": "Deliberate: Write a dialogue between a data engineer and a product manager about why the das",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms587mvewp1",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T19:24:15.660Z",
-    "updatedAt": "2026-03-15T19:25:34.410Z",
-    "output": "Deliberation complete.\nObjective: Write a dialogue scene between a data engineer and a product manager discussing and resolving discrepancies in dashboard numbers.\nStrategy: Research common reasons for dashboard discrepancies and resolutions in data engineering contexts. Use this information to craft a dialogue that is both technically accurate and accessible to a general audience. Ensure the dialogue includes a clear resolution to the problem.\nRisk: green\nSubtasks: 2\nTokens: 1888",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms586s78dlb",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Tax Implications and Returns",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms586q29jwj"
-    },
-    "createdAt": "2026-03-15T19:24:14.551Z",
-    "updatedAt": "2026-03-15T19:25:28.609Z",
-    "output": "Research Tax Implications and Returns: ## 401(k) Accounts: Tax Implications (2026 Rules)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms586q29jwj.md"
-    ]
-  },
-  {
-    "id": "mms5862cwgpn",
-    "type": "deliberate",
-    "label": "Deliberate: Research the best cities for tech workers who want outdoor access. Compare Bould",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms58627n6w5",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T19:24:13.620Z",
-    "updatedAt": "2026-03-15T19:25:20.272Z",
-    "output": "Deliberation complete.\nObjective: Compare Boulder, Portland, Salt Lake City, and Asheville for tech workers seeking outdoor access based on job market, cost, and recreation.\nStrategy: First, conduct research to gather current data on the job market, cost of living, and outdoor recreation in Boulder, Portland, Salt Lake City, and Asheville. Then, synthesize this information into a comparative analysis to identify the best city for tech workers seeking outdoor access.\nRisk: green\nSubtasks: 2\nTokens: 1926",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms584i1hg7v",
-    "type": "deliberate",
-    "label": "Deliberate: Design a 4-week core strength program using only bodyweight exercises. Must be d",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms584hwz58s",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T19:24:11.593Z",
-    "updatedAt": "2026-03-15T19:25:15.626Z",
-    "output": "Deliberation complete.\nObjective: Create a 4-week bodyweight core strength program with weekly progression, fitting into a 20-minute daily routine.\nStrategy: Research current bodyweight core strength exercises and progression strategies. Synthesize this information into a structured 4-week program with clear weekly progression and rest day guidance. Ensure the program is evidence-based and actionable.\nRisk: green\nSubtasks: 4\nTokens: 2057",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms582xvsg7v",
-    "type": "deliberate",
-    "label": "Deliberate: Create a technical writing style guide for an engineering team. Cover code examp",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms582xse4hz",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T19:24:09.571Z",
-    "updatedAt": "2026-03-15T19:25:10.239Z",
-    "output": "Deliberation complete.\nObjective: Create a technical writing style guide for an engineering team.\nStrategy: Research best practices for technical writing in engineering contexts, focusing on code examples, API documentation, error messages, and inline comments. Synthesize this information into a clear, actionable style guide tailored to the engineering team's needs. Ensure the guide is easily accessible and understandable.\nRisk: green\nSubtasks: 2\nTokens: 1964",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms582bd2hqk",
-    "type": "execute-subtask",
-    "label": "Subtask: Define Success Metrics",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms5827x2de8"
-    },
-    "createdAt": "2026-03-15T19:24:08.761Z",
-    "updatedAt": "2026-03-15T19:25:06.240Z",
-    "output": "Define Success Metrics: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5827x2de8.md"
-    ]
-  },
-  {
-    "id": "mms582b55q5c",
-    "type": "execute-subtask",
-    "label": "Subtask: Outline Data Migration Steps",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms5827gzto3"
-    },
-    "createdAt": "2026-03-15T19:24:08.753Z",
-    "updatedAt": "2026-03-15T19:24:56.648Z",
-    "output": "Outline Data Migration Steps: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5827gzto3.md"
-    ]
-  },
-  {
-    "id": "mms582axmnql",
-    "type": "execute-subtask",
-    "label": "Subtask: Design Training Plan",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms5826y524g"
-    },
-    "createdAt": "2026-03-15T19:24:08.745Z",
-    "updatedAt": "2026-03-15T19:24:47.604Z",
-    "output": "Design Training Plan: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5826y524g.md"
-    ]
-  },
-  {
-    "id": "mms582ap6kjh",
-    "type": "execute-subtask",
-    "label": "Subtask: Draft Rollout Phases",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms5826f9dgm"
-    },
-    "createdAt": "2026-03-15T19:24:08.737Z",
-    "updatedAt": "2026-03-15T19:24:39.462Z",
-    "output": "Draft Rollout Phases: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms5826f9dgm.md"
-    ]
-  },
-  {
-    "id": "mms581dlpkor",
-    "type": "deliberate",
-    "label": "Deliberate: Compare the top 3 mesh WiFi systems for a 2000 sq ft home in 2026. Must support ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms581dhan2n",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T19:24:07.545Z",
-    "updatedAt": "2026-03-15T19:24:30.004Z",
-    "output": "Deliberation complete.\nObjective: Compare top 3 mesh WiFi systems for a 2000 sq ft home in 2026 with WiFi 7 support.\nStrategy: Conduct web research to identify the top 3 mesh WiFi systems expected to be available in 2026 that support WiFi 7. Gather data on coverage, speed tests, and current pricing for these systems. Compile the findings into a comprehensive comparison report.\nRisk: green\nSubtasks: 4\nTokens: 2284",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms57ztahpgg",
-    "type": "deliberate",
-    "label": "Deliberate: Teach me about WebAssembly (WASM) for backend developers. Cover use cases, perfo",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms57zt61c7u",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T19:24:05.518Z",
-    "updatedAt": "2026-03-15T19:24:23.108Z",
-    "output": "Deliberation complete.\nObjective: Provide a comprehensive overview of WebAssembly (WASM) for backend developers, including use cases, performance characteristics, language support, and appropriate usage scenarios.\nStrategy: Conduct research to gather current, specific information about WebAssembly's use in backend development. Synthesize findings into a structured report that covers use cases, performance, language support, and decision criteria. Ensure the information is actionable and relevant to backend developers.\nRisk: green\nSubtasks: 4\nTokens: 2295",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms57y8m48xm",
-    "type": "deliberate",
-    "label": "Deliberate: Analyze whether I should max out 401k contributions or invest in a taxable broke",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms57y8d7a21",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T19:24:03.478Z",
-    "updatedAt": "2026-03-15T19:24:14.552Z",
-    "output": "Deliberation complete.\nObjective: Determine the optimal investment strategy between maximizing 401k contributions and investing in a taxable brokerage account for Rahul.\nStrategy: First, research current tax implications and typical returns for 401k and taxable accounts. Then, synthesize findings into a report comparing both options, considering Rahul's income and age. Finally, provide a strategic recommendation with specific actions.\nRisk: green\nSubtasks: 2\nTokens: 2337",
     "error": null,
     "filesWritten": []
   }
