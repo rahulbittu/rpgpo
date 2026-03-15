@@ -277,5 +277,73 @@
       ],
       "gaps": []
     }
+  },
+  {
+    "test_case_id": "GPO-FIN-01",
+    "global_rank": 34,
+    "engine": "Personal Finance & Investing",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:43:32.178Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrx9glc267z",
+      "domain_routed": "wealthresearch",
+      "subtask_count": 3,
+      "completion": "done",
+      "output_quality": "Good — real Austin cost-of-living data, specific index fund names, budget breakdown. 3-subtask Perplexity chain.",
+      "issues": [
+        "Domain correct (wealthresearch)",
+        "No spreadsheet/calculable output — text only"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "test_case_id": "GPO-CAR-01",
+    "global_rank": 29,
+    "engine": "Career & Job Search",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:43:32.179Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrx9glefwzz",
+      "domain_routed": "careeregine",
+      "subtask_count": 2,
+      "completion": "done",
+      "output_quality": "Good — Perplexity found real job listings, OpenAI synthesized with company names and salary ranges.",
+      "issues": [
+        "Domain correct (careeregine)",
+        "Application links may not be current/valid"
+      ],
+      "gaps": []
+    }
+  },
+  {
+    "test_case_id": "GPO-STA-01",
+    "global_rank": 33,
+    "engine": "Startup & Business Builder",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:43:32.179Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrx9glahr65",
+      "domain_routed": "topranker",
+      "subtask_count": 3,
+      "completion": "done",
+      "output_quality": "Adequate — general user acquisition channels and CPA data. Missing Austin-specific data.",
+      "issues": [
+        "Domain routed to topranker (correct for TopRanker GTM)",
+        "Research lacked Austin-specific local business data"
+      ],
+      "gaps": [
+        "Perplexity search quality for hyper-local queries needs improvement"
+      ]
+    }
   }
 ]
