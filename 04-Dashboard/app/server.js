@@ -3355,6 +3355,15 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Parts 112-113: Budget Guard + Domain Router
+  if (req.url === '/api/budget-check' && req.method === 'GET') {
+    try { const bg = require('./lib/budget-guard'); return json(res, bg.checkBudget()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/route-request' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const dr = require('./lib/domain-router'); return json(res, dr.routeRequest(body.raw_request || '')); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Parts 109-111: Daily Digest + Task Archive + Workspace Stats
   if (req.url === '/api/digest/morning' && req.method === 'GET') {
     try { const dd = require('./lib/daily-digest'); res.writeHead(200, { 'Content-Type': 'text/markdown' }); res.end(dd.generateMorningDigest()); return; } catch (e) { return json(res, { error: e.message }, 500); }
