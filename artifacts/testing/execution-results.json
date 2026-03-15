@@ -439,5 +439,63 @@
         "No interactive session mode"
       ]
     }
+  },
+  {
+    "test_case_id": "GPO-RES-04",
+    "global_rank": 20,
+    "engine": "Research & Analysis",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:51:37.658Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "task_id": "t_mmrxjw2jm7kc",
+      "domain_routed": "topranker",
+      "completion": "done",
+      "output_quality": "Good — used eBay as comparison case, identified real failure modes",
+      "issues": [
+        "Domain correctly routed to topranker for TopRanker-specific analysis"
+      ]
+    }
+  },
+  {
+    "test_case_id": "GPO-WRI-06",
+    "global_rank": 17,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:51:37.659Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": false,
+    "execution_evidence": {
+      "task_id": "t_mmrxjw2l3nul",
+      "domain_routed": "wealthresearch",
+      "completion": "done",
+      "output_quality": "Weak — confused TopRanker app with a coaching brand called TopRanker",
+      "issues": [
+        "Domain routed to wealthresearch instead of writing",
+        "Perplexity search found wrong entity — missing project context"
+      ],
+      "gaps": [
+        "GAP-009: Context confusion — system does not distinguish operator project from web entities with same name"
+      ]
+    }
+  },
+  {
+    "test_case_id": "GPO-SCH-02",
+    "global_rank": 24,
+    "engine": "Scheduling & Life Operations",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:51:37.659Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "task_id": "t_mmrxjw2nmpiq",
+      "domain_routed": "health",
+      "completion": "done",
+      "output_quality": "Good — 3-phase energy model, specific time blocks, exercise integration",
+      "issues": [
+        "Domain routed to health instead of personalops (keyword overlap)"
+      ]
+    }
   }
 ]
