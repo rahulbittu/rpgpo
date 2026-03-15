@@ -24,9 +24,11 @@ const path = require('path');
 const fs = require('fs');
 
 // Part 67: Structured output imports
-let _structuredEnabled: boolean | null = null;
+let _structuredEnabled: boolean = false;
+let _structuredChecked = false;
 function isStructuredEnabled(): boolean {
-  if (_structuredEnabled !== null) return _structuredEnabled;
+  if (_structuredChecked) return _structuredEnabled;
+  _structuredChecked = true;
   try {
     const { loadContractAwareConfig } = require('./config/ai-io');
     _structuredEnabled = loadContractAwareConfig().enabled;
@@ -53,10 +55,28 @@ const DOMAIN_CONTEXT: Record<string, DomainContextEntry> = {
     specialists: ['builder', 'strategy'],
   },
   careeregine: {
-    description: 'CareerEngine is a career management tool.',
+    description: 'Career intelligence engine for Rahul (Senior Data Engineer / Entrepreneur). Covers job search, salary benchmarking, interview prep, career strategy, and skill development. Outputs must include specific companies, salary ranges, job listings, and actionable next steps — never generic career advice.',
     key_files: ['03-Operations/MissionStatus/CareerEngine.md'],
-    governed_loop: ['audit', 'decide', 'implement', 'report'],
-    specialists: ['builder'],
+    governed_loop: ['research', 'strategy', 'report'],
+    specialists: ['research', 'strategy'],
+  },
+  newsroom: {
+    description: 'News intelligence engine. Produces curated news digests from live web search. Outputs must include real headlines, source URLs, publication dates, and relevance analysis. ALWAYS use Perplexity for research (it has web search). NEVER produce template text or placeholders.',
+    key_files: [],
+    governed_loop: ['research', 'audit', 'report'],
+    specialists: ['research'],
+  },
+  wealthresearch: {
+    description: 'Wealth and income research engine for Rahul. Covers passive income ideas, investment opportunities, side project analysis, and financial strategy. Outputs must include specific revenue estimates, real examples, market data, and concrete first steps — not generic financial advice.',
+    key_files: [],
+    governed_loop: ['research', 'strategy', 'report'],
+    specialists: ['research', 'strategy'],
+  },
+  personalops: {
+    description: 'Personal operations and planning engine. Weekly planning, time management, priority setting. Outputs should be specific daily/weekly plans with time blocks, not abstract productivity frameworks.',
+    key_files: [],
+    governed_loop: ['audit', 'decide', 'report'],
+    specialists: ['chief'],
   },
   general: {
     description: 'General RPGPO task.',
@@ -170,6 +190,7 @@ Rules:
 - Every subtask must be small and bounded (one AI call or one file operation)
 - Subtask stages must follow the governed loop: ${stages}, locate_files
 - Mark subtasks that change external state or involve risk as approval_required: true
+- STAGE RULES: "implement" stage is ONLY for code changes that modify files in the repo. For text generation tasks (emails, reports, analysis, plans, documents), use "report" stage instead. This is critical — using "implement" for non-code tasks causes unnecessary approval gates.
 - For "implement" stage subtasks on code changes, assign to "claude" model (local execution)
 - For "locate_files" stage subtasks, assign to "openai" model (identifies exact files from the repo structure)
 - Assign the best model for each subtask: openai for synthesis/analysis/report-compilation, perplexity for research/web-search, gemini for strategy/comparison, claude ONLY for code implementation tasks
@@ -264,7 +285,14 @@ ${codeTask ? `IMPORTANT for code tasks:
 - Set target_files_identified to the specific files you plan to modify.` : ''}
 
 depends_on contains indices (0-based) of subtasks that must complete first.
-Keep subtasks to 3-6 items. Each must be completable in one AI call.`;
+Keep subtasks to 2-4 items. Each must be completable in one AI call.
+
+${!codeTask ? `IMPORTANT for research/analysis tasks:
+- Typical pattern: 1) Perplexity research subtask (web search), then 2) OpenAI synthesis subtask (depends_on: [0])
+- The Perplexity subtask does the web search and gathers raw data with citations
+- The OpenAI subtask synthesizes the research into an actionable, structured report
+- For complex topics, you can add a Gemini strategy subtask between them for comparative analysis
+- Write the final report to "03-Operations/Reports/{domain}-{date}-{topic}.md"` : ''}`;
 
   const result: AICallResult = await callOpenAI(systemPrompt, userPrompt, { maxTokens: 3000 });
 

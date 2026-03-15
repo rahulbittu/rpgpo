@@ -723,27 +723,35 @@ const handlers = {
     let modelRules = '';
     if (model === 'perplexity') {
       modelRules = `
-SEARCH INSTRUCTIONS:
-- You have web search capabilities. USE THEM to find current, real information.
-- Always include specific names, numbers, dates, URLs, and sources from your search results.
-- Do NOT give generic advice. Search the web and report what you actually find.
-- Include source citations for every major claim.
-- If the search doesn't return relevant results, say so and suggest better search terms.`;
+SEARCH INSTRUCTIONS (YOU HAVE LIVE WEB SEARCH — USE IT):
+- Search the web for current, real, specific information. This is your superpower.
+- For EVERY claim, include: specific name, number/amount, date, and source URL.
+- Structure results as: ## Finding 1: [Specific Title]\n- Detail with data\n- Source: [full URL starting with https://]
+- MANDATORY: Every finding MUST end with a Source: line containing a real URL. If you cannot provide a URL, write Source: [no URL available] and explain why.
+- For job searches: include company name, exact role title, salary range, location, requirements, application link.
+- For news: include headline, publication, date published, 2-3 sentence summary, source URL.
+- For research: include real examples, revenue/cost data, market size, competitor names.
+- NEVER give generic advice or frameworks. Only report what you actually find via search.
+- If a search returns nothing relevant, explicitly say "No results found for [query]" and suggest refined terms.
+- Today's date: ${new Date().toISOString().slice(0, 10)}. Focus on information from the last 30 days unless asked otherwise.`;
     } else if (model === 'openai') {
       modelRules = `
 SYNTHESIS INSTRUCTIONS:
 - You MUST use the "Prior Subtask Results" data provided below as your PRIMARY source of information.
 - Do NOT invent, hallucinate, or make up data. ONLY synthesize what was found by prior research subtasks.
-- If prior subtask results are provided, base your entire response on that data.
-- Synthesize into clear, actionable format with specific details from the research.
-- If no prior results are provided, state that and provide general guidance only.
-- NEVER say "I cannot access real-time data" if prior subtask results contain real data — USE that data.`;
+- If prior subtask results are provided, base your entire response on that data — use specific names, numbers, and sources from the research.
+- Structure as: ## Key Findings (top 3-5 actionable items) → ## Detailed Analysis → ## Recommended Actions (numbered, specific)
+- Every recommendation must include: what to do, why, expected outcome, and first step.
+- If no prior results are provided, state that clearly and provide only general guidance.
+- NEVER say "I cannot access real-time data" if prior subtask results contain real data — USE that data.
+- NEVER produce placeholder text like "[Insert Title]" or "[Company Name]" — use the actual data.`;
     } else if (model === 'gemini') {
       modelRules = `
 STRATEGY INSTRUCTIONS:
-- Focus on strategic analysis with specific data points.
-- Compare alternatives with clear pros/cons.
-- Provide actionable recommendations with expected impact.`;
+- Focus on strategic analysis with specific data points from prior subtask results.
+- Compare alternatives with clear pros/cons table format.
+- For each recommendation: state the action, expected impact (quantified if possible), effort level, and timeline.
+- Provide a ranked recommendation with clear #1 pick and reasoning.`;
     }
 
     const systemPrompt = `You are operating inside RPGPO, a governed personal AI operating system. Stage: ${st.stage}. Role: ${st.assigned_role}.${operatorContext}${domainContext}
@@ -780,13 +788,26 @@ RULES:
     let result;
     try {
       if (model === 'openai') {
-        result = await callOpenAI(systemPrompt, userPrompt);
+        result = await callOpenAI(systemPrompt, userPrompt, { maxTokens: 3000 });
       } else if (model === 'perplexity') {
-        result = await callPerplexity(systemPrompt, userPrompt);
+        // Use 'day' recency for news tasks, 'month' for broader research
+        const domain = st.domain || task.meta?.domain || 'general';
+        const searchRecency = domain === 'newsroom' ? 'day' : 'month';
+        try {
+          result = await callPerplexity(systemPrompt, userPrompt, { maxTokens: 4000, searchRecency });
+        } catch (ppxErr) {
+          console.log(`[worker] Perplexity failed: ${ppxErr.message?.slice(0, 100)}. Falling back to OpenAI.`);
+          result = await callOpenAI(systemPrompt, userPrompt, { maxTokens: 3000 });
+        }
       } else if (model === 'gemini') {
-        const costSettings = costs.getSettings();
-        const geminiModel = costSettings.geminiModel || 'gemini-2.5-flash-lite';
-        result = await callGemini(systemPrompt, userPrompt, { model: geminiModel });
+        try {
+          const costSettings = costs.getSettings();
+          const geminiModel = costSettings.geminiModel || 'gemini-2.5-flash-lite';
+          result = await callGemini(systemPrompt, userPrompt, { model: geminiModel });
+        } catch (gemErr) {
+          console.log(`[worker] Gemini failed: ${gemErr.message?.slice(0, 100)}. Falling back to OpenAI.`);
+          result = await callOpenAI(systemPrompt, userPrompt, { maxTokens: 3000 });
+        }
       } else if (model === 'claude') {
         // Route claude subtasks to the dedicated builder runner
         return await runBuilder(task, subtaskId, st, userPrompt);
@@ -1201,7 +1222,43 @@ async function processNext() {
   }
 }
 
+// Check recurring schedules every 60 seconds
+let lastScheduleCheck = 0;
+function checkRecurringSchedules() {
+  const now = Date.now();
+  if (now - lastScheduleCheck < 60000) return; // max once per minute
+  lastScheduleCheck = now;
+  try {
+    const scheduler = require('./lib/recurring-scheduler');
+    const due = scheduler.getDueSchedules();
+    for (const sched of due) {
+      // Submit the task via intake
+      try {
+        const templateStore = require('./lib/template-store');
+        const tmpl = templateStore.getTemplate(sched.templateId);
+        if (tmpl) {
+          const task = intake.createTask({
+            raw_request: tmpl.prompt || tmpl.description,
+            domain: tmpl.domain,
+            urgency: tmpl.urgency || 'normal',
+            title: `[Scheduled] ${tmpl.name}`,
+          });
+          queue.addTask('deliberate', `Deliberate: ${task.title}`, { taskId: task.task_id, autoApprove: true });
+          scheduler.recordRun(sched.id, task.task_id, 'success');
+          console.log(`[worker][recurring] Submitted scheduled task: ${task.title}`);
+        } else {
+          scheduler.recordRun(sched.id, '', 'skipped');
+        }
+      } catch (e) {
+        console.log(`[worker][recurring] Failed to submit schedule ${sched.id}: ${e.message}`);
+        scheduler.recordRun(sched.id, '', 'failed');
+      }
+    }
+  } catch { /* scheduler not loaded */ }
+}
+
 setInterval(processNext, POLL_INTERVAL);
+setInterval(checkRecurringSchedules, 30000); // check every 30s
 processNext();
 
 process.on('SIGTERM', () => { console.log('[worker] Shutting down...'); process.exit(0); });

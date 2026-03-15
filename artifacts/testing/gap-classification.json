@@ -1,0 +1,70 @@
+[
+  {
+    "gap_id": "GAP-001",
+    "category": "routing",
+    "severity": "high",
+    "description": "No dedicated writing domain — 24 Writing & Documentation cases fall to general or get misrouted",
+    "affected_cases": [
+      "GPO-WRI-01",
+      "GPO-WRI-02",
+      "GPO-WRI-03",
+      "GPO-WRI-04",
+      "GPO-WRI-05",
+      "GPO-WRI-06",
+      "GPO-WRI-07",
+      "GPO-WRI-08",
+      "GPO-WRI-09",
+      "GPO-WRI-10"
+    ],
+    "root_cause": "domain-router.ts has communications keywords (email, write, draft) but they route to a non-existent communications domain, not a writing engine",
+    "fix": "Add writing/communications domain entries in deliberation.ts DOMAIN_CONTEXT and ensure domain-router maps writing keywords to it",
+    "status": "identified"
+  },
+  {
+    "gap_id": "GAP-002",
+    "category": "deliberation",
+    "severity": "medium",
+    "description": "Board classifies text-generation subtasks as implement stage instead of report, causing unnecessary approval gates",
+    "affected_cases": [
+      "GPO-WRI-01"
+    ],
+    "root_cause": "Deliberation prompt does not clearly distinguish implement (code changes) from report (text generation) stages",
+    "fix": "Add explicit guidance in deliberation system prompt: implement stage is ONLY for code changes, use report for text generation",
+    "status": "identified"
+  },
+  {
+    "gap_id": "GAP-003",
+    "category": "routing",
+    "severity": "high",
+    "description": "No dedicated research domain — 24 Research & Analysis cases fall to general",
+    "affected_cases": [
+      "GPO-RES-01",
+      "GPO-RES-02",
+      "GPO-RES-03",
+      "GPO-RES-04",
+      "GPO-RES-05",
+      "GPO-RES-06",
+      "GPO-RES-07",
+      "GPO-RES-08",
+      "GPO-RES-09",
+      "GPO-RES-10"
+    ],
+    "root_cause": "domain-router.ts has research keywords but they map to a research domain that has no entry in deliberation.ts DOMAIN_CONTEXT",
+    "fix": "Add research domain entries in deliberation.ts with research-specific governed loop and context",
+    "status": "identified"
+  },
+  {
+    "gap_id": "GAP-004",
+    "category": "output_quality",
+    "severity": "medium",
+    "description": "Perplexity outputs lack citation URLs — research pass criteria requires specific source links",
+    "affected_cases": [
+      "GPO-RES-01",
+      "GPO-RES-02",
+      "GPO-RES-03"
+    ],
+    "root_cause": "Worker Perplexity prompt asks for URLs but does not enforce output format with mandatory source links",
+    "fix": "Strengthen Perplexity system prompt to require Source: [URL] format for every claim",
+    "status": "identified"
+  }
+]

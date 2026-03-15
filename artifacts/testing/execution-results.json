@@ -1,0 +1,50 @@
+[
+  {
+    "test_case_id": "GPO-WRI-01",
+    "global_rank": 2,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:24:20.750Z",
+    "execution_evidence": {
+      "task_id": "t_mmrwjqwx4rmq",
+      "domain_routed": "topranker",
+      "subtask_count": 2,
+      "completion": "done",
+      "output_quality": "Good — professional tone, real metrics, structured email",
+      "issues": [
+        "Stage classified as implement instead of report — caused unnecessary approval gate",
+        "Placeholder [Investor Name] not replaced — deliberation should instruct to use operator name or remove placeholder",
+        "Domain routed to topranker (correct given content, but writing engine would be better for generic writing tasks)"
+      ],
+      "gaps": [
+        "BLOCKED_BY_ROUTING — no dedicated writing domain",
+        "Stage misclassification in deliberation"
+      ],
+      "suggested_fix": "Add writing/report stage guidance in deliberation prompt for non-code tasks"
+    }
+  },
+  {
+    "test_case_id": "GPO-RES-01",
+    "global_rank": 8,
+    "engine": "Research & Analysis",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:24:20.751Z",
+    "execution_evidence": {
+      "task_id": "t_mmrwm1arvt4n",
+      "domain_routed": "topranker",
+      "subtask_count": 3,
+      "completion": "done",
+      "output_quality": "Good — real market data (CAGR, market size), competitor analysis, honest viability assessment",
+      "issues": [
+        "Perplexity first subtask returned partial data with meta-commentary about searching",
+        "Domain routed to topranker instead of research — topranker keywords dominated",
+        "No citation URLs in output — pass criteria requires citations"
+      ],
+      "gaps": [
+        "BLOCKED_BY_ROUTING — no dedicated research domain",
+        "Citation quality needs improvement in Perplexity prompt"
+      ],
+      "suggested_fix": "Improve Perplexity search prompt to demand URLs in output format"
+    }
+  }
+]
