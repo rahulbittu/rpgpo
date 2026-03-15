@@ -6,65 +6,6 @@
   "recent_decisions": [
     {
       "domain": "careeregine",
-      "category": "technical",
-      "title": "Compile Shortlist of Opportunities",
-      "decision": "Analysis complete (no code changes made)",
-      "reasoning": "Stage: implement, Model: perplexity",
-      "impact": "No code changes",
-      "task_id": "t_mmr2cnotiesl",
-      "subtask_id": "st_mmr2cx29ivrr",
-      "id": "ctx_mmr2dwxswqd2",
-      "made_at": "2026-03-15T01:16:56.704Z"
-    },
-    {
-      "domain": "careeregine",
-      "category": "process",
-      "title": "Establish Role Filters",
-      "decision": "## RPGPO Stage: Decide | Role: Strategy",
-      "reasoning": "Stage: decide, Model: gemini",
-      "impact": "No code changes",
-      "task_id": "t_mmr2cnotiesl",
-      "subtask_id": "st_mmr2cx27seyn",
-      "id": "ctx_mmr2dosrb9he",
-      "made_at": "2026-03-15T01:16:46.155Z"
-    },
-    {
-      "domain": "careeregine",
-      "category": "process",
-      "title": "Define Target Job Profile",
-      "decision": "## RPGPO Stage: Decide | Role: Strategy",
-      "reasoning": "Stage: decide, Model: gemini",
-      "impact": "No code changes",
-      "task_id": "t_mmr2cnotiesl",
-      "subtask_id": "st_mmr2cx24cmfd",
-      "id": "ctx_mmr2dd9imd52",
-      "made_at": "2026-03-15T01:16:31.206Z"
-    },
-    {
-      "domain": "careeregine",
-      "category": "strategy",
-      "title": "Deliberation: get me high paying remote data engineering jobs in use I am ",
-      "decision": "First, define the target job profile by identifying key skills, industries, and salary expectations. Next, establish role filters to ensure high-quality opportunities. Finally, compile a shortlist of target companies and roles that match these criteria.",
-      "reasoning": "Objective: Identify high-paying remote data engineering jobs in the USA for a data engineer with 7 years of experience.",
-      "impact": "3 subtasks planned. Risk: yellow",
-      "task_id": "t_mmr2cnotiesl",
-      "id": "ctx_mmr2cx2anpox",
-      "made_at": "2026-03-15T01:16:10.210Z"
-    },
-    {
-      "domain": "careeregine",
-      "category": "technical",
-      "title": "Compile Shortlist of Opportunities",
-      "decision": "Analysis complete (no code changes made)",
-      "reasoning": "Stage: implement, Model: perplexity",
-      "impact": "No code changes",
-      "task_id": "t_mmr26qcckpwa",
-      "subtask_id": "st_mmr26yqcv9sh",
-      "id": "ctx_mmr27s0qdfe5",
-      "made_at": "2026-03-15T01:12:10.394Z"
-    },
-    {
-      "domain": "careeregine",
       "category": "process",
       "title": "Establish Role Filters",
       "decision": "To establish role filters for identifying high-quality remote data engineering jobs in the USA based on the target job profile, follow these actionabl",
@@ -99,94 +40,9 @@
       "made_at": "2026-03-15T01:11:32.437Z"
     }
   ],
-  "open_questions": [
-    {
-      "domain": "careeregine",
-      "question": "Any geographical preferences within remote roles",
-      "context": "From deliberation on: get me high paying remote data engineering jobs in use I am a data engineer",
-      "priority": "medium",
-      "id": "ctx_mmr2cx2b309a",
-      "raised_at": "2026-03-15T01:16:10.211Z"
-    },
-    {
-      "domain": "careeregine",
-      "question": "Preferred industries or companies",
-      "context": "From deliberation on: get me high paying remote data engineering jobs in use I am a data engineer",
-      "priority": "medium",
-      "id": "ctx_mmr2cx2b7os8",
-      "raised_at": "2026-03-15T01:16:10.211Z"
-    },
-    {
-      "domain": "careeregine",
-      "question": "Specific salary expectations",
-      "context": "From deliberation on: get me high paying remote data engineering jobs in use I am a data engineer",
-      "priority": "medium",
-      "id": "ctx_mmr2cx2bu48p",
-      "raised_at": "2026-03-15T01:16:10.211Z"
-    },
-    {
-      "domain": "careeregine",
-      "question": "Any geographical preferences within remote roles",
-      "context": "From deliberation on: get me high paying remote data engineering jobs in use I am a data engineer with",
-      "priority": "medium",
-      "id": "ctx_mmr26yqewlao",
-      "raised_at": "2026-03-15T01:11:32.438Z"
-    },
-    {
-      "domain": "careeregine",
-      "question": "Preferred industries or companies",
-      "context": "From deliberation on: get me high paying remote data engineering jobs in use I am a data engineer with",
-      "priority": "medium",
-      "id": "ctx_mmr26yqdmxw6",
-      "raised_at": "2026-03-15T01:11:32.437Z"
-    },
-    {
-      "domain": "careeregine",
-      "question": "Specific salary expectations",
-      "context": "From deliberation on: get me high paying remote data engineering jobs in use I am a data engineer with",
-      "priority": "medium",
-      "id": "ctx_mmr26yqducr1",
-      "raised_at": "2026-03-15T01:11:32.437Z"
-    }
-  ],
+  "open_questions": [],
   "constraints": [],
   "key_artifacts": [
-    {
-      "domain": "careeregine",
-      "type": "report",
-      "title": "implement: Compile Shortlist of Opportunities",
-      "path": "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mmr2cx29ivrr.md",
-      "task_id": "t_mmr2cnotiesl",
-      "id": "ctx_mmr2dwxrdl7i",
-      "created_at": "2026-03-15T01:16:56.703Z"
-    },
-    {
-      "domain": "careeregine",
-      "type": "report",
-      "title": "decide: Establish Role Filters",
-      "path": "03-Operations/Reports/Subtask-gemini-2026-03-15-st_mmr2cx27seyn.md",
-      "task_id": "t_mmr2cnotiesl",
-      "id": "ctx_mmr2dospp3f3",
-      "created_at": "2026-03-15T01:16:46.153Z"
-    },
-    {
-      "domain": "careeregine",
-      "type": "report",
-      "title": "decide: Define Target Job Profile",
-      "path": "03-Operations/Reports/Subtask-gemini-2026-03-15-st_mmr2cx24cmfd.md",
-      "task_id": "t_mmr2cnotiesl",
-      "id": "ctx_mmr2dd9hcvvn",
-      "created_at": "2026-03-15T01:16:31.205Z"
-    },
-    {
-      "domain": "careeregine",
-      "type": "report",
-      "title": "implement: Compile Shortlist of Opportunities",
-      "path": "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mmr26yqcv9sh.md",
-      "task_id": "t_mmr26qcckpwa",
-      "id": "ctx_mmr27s0pgbxa",
-      "created_at": "2026-03-15T01:12:10.393Z"
-    },
     {
       "domain": "careeregine",
       "type": "report",
@@ -207,11 +63,7 @@
     }
   ],
   "approval_patterns": [],
-  "next_actions": [
-    "Define Target Job Profile",
-    "Establish Role Filters",
-    "Compile Shortlist of Opportunities"
-  ],
+  "next_actions": [],
   "known_issues": [],
   "context_summary": "Career strategy and professional development. Focus on data engineering leadership and work-life balance while building a startup.",
   "updated_at": "2026-03-15T01:16:56.705Z"

@@ -530,11 +530,24 @@ function generateBrief() {
             reason,
         });
     }
-    // Focus recommendation
+    // Focus recommendation — value-oriented suggestions
     const topAction = allActions[0];
-    const focusRec = topAction
-        ? `Focus on: ${topAction.title} (${topAction.priority} priority)`
-        : 'All clear — consider reviewing mission statements or starting new initiatives';
+    let focusRec;
+    if (topAction) {
+        focusRec = `Focus on: ${topAction.title} (${topAction.priority} priority)`;
+    }
+    else {
+        // Proactive value suggestions when queue is clear
+        const suggestions = [
+            'Submit "Research passive income ideas for data engineers" to discover opportunities',
+            'Submit "Summarize today\'s AI news" to stay current on industry trends',
+            'Submit "Find data engineering jobs $180k+ remote" for career intelligence',
+            'Submit "TopRanker competitive analysis" to refine your launch strategy',
+            'Review your mission statements to ensure priorities are up to date',
+        ];
+        const dayIdx = new Date().getDay();
+        focusRec = `Queue clear. Suggested: ${suggestions[dayIdx % suggestions.length]}`;
+    }
     return {
         generated_at: new Date().toISOString(),
         operator_summary: `${operator.name} | ${allActions.length} recommended actions | ${blockers.length} blockers`,
@@ -2720,4 +2733,3 @@ module.exports = {
     // Part 68
     getStructuredIOStatus, getStructuredIOBriefSnippet,
 };
-//# sourceMappingURL=chief-of-staff.js.map

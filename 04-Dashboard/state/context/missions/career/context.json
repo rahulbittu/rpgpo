@@ -6,30 +6,6 @@
   "recent_decisions": [
     {
       "domain": "career",
-      "category": "process",
-      "title": "Generate Report",
-      "decision": "## Comprehensive Report on High-Paying Data Engineer Jobs and Networking Strategies",
-      "reasoning": "Stage: report, Model: openai",
-      "impact": "No code changes",
-      "task_id": "t_mmr1uckne4lx",
-      "subtask_id": "st_mmr1uj9ezd1l",
-      "id": "ctx_mmr1v9epudde",
-      "made_at": "2026-03-15T01:02:26.401Z"
-    },
-    {
-      "domain": "career",
-      "category": "process",
-      "title": "Identify Networking Opportunities",
-      "decision": "## Networking Strategies for High-Paying, Unlisted Data Engineer Roles",
-      "reasoning": "Stage: decide, Model: gemini",
-      "impact": "No code changes",
-      "task_id": "t_mmr1uckne4lx",
-      "subtask_id": "st_mmr1uj9b30op",
-      "id": "ctx_mmr1v3n2j1m0",
-      "made_at": "2026-03-15T01:02:18.926Z"
-    },
-    {
-      "domain": "career",
       "category": "technical",
       "title": "Compile Job Listings",
       "decision": "Analysis complete (no code changes made)",
@@ -64,52 +40,9 @@
       "made_at": "2026-03-15T01:01:52.516Z"
     }
   ],
-  "open_questions": [
-    {
-      "domain": "career",
-      "question": "Any additional job criteria (e.g., remote work, company size)",
-      "context": "From deliberation on: find data engineer jobs more than 180k+",
-      "priority": "medium",
-      "id": "ctx_mmr1uj9jaqpk",
-      "raised_at": "2026-03-15T01:01:52.519Z"
-    },
-    {
-      "domain": "career",
-      "question": "Preferred geographic locations",
-      "context": "From deliberation on: find data engineer jobs more than 180k+",
-      "priority": "medium",
-      "id": "ctx_mmr1uj9i0nkk",
-      "raised_at": "2026-03-15T01:01:52.518Z"
-    },
-    {
-      "domain": "career",
-      "question": "Specific job boards or platforms to search",
-      "context": "From deliberation on: find data engineer jobs more than 180k+",
-      "priority": "medium",
-      "id": "ctx_mmr1uj9iokrw",
-      "raised_at": "2026-03-15T01:01:52.518Z"
-    }
-  ],
+  "open_questions": [],
   "constraints": [],
   "key_artifacts": [
-    {
-      "domain": "career",
-      "type": "report",
-      "title": "report: Generate Report",
-      "path": "03-Operations/Reports/Subtask-openai-2026-03-15-st_mmr1uj9ezd1l.md",
-      "task_id": "t_mmr1uckne4lx",
-      "id": "ctx_mmr1v9epcldi",
-      "created_at": "2026-03-15T01:02:26.401Z"
-    },
-    {
-      "domain": "career",
-      "type": "report",
-      "title": "decide: Identify Networking Opportunities",
-      "path": "03-Operations/Reports/Subtask-gemini-2026-03-15-st_mmr1uj9b30op.md",
-      "task_id": "t_mmr1uckne4lx",
-      "id": "ctx_mmr1v3n1zesf",
-      "created_at": "2026-03-15T01:02:18.925Z"
-    },
     {
       "domain": "career",
       "type": "report",
@@ -130,12 +63,7 @@
     }
   ],
   "approval_patterns": [],
-  "next_actions": [
-    "Research High-Paying Job Platforms",
-    "Compile Job Listings",
-    "Identify Networking Opportunities",
-    "Generate Report"
-  ],
+  "next_actions": [],
   "known_issues": [],
   "context_summary": "Career growth and data engineering job market engine. Tracks opportunities, salary trends, skill requirements. Focus on senior/staff/principal data engineering roles.",
   "updated_at": "2026-03-15T01:02:26.401Z"
