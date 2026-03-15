@@ -775,5 +775,46 @@
       "task_id": "t_mmryghq0y8u2",
       "completion": "done"
     }
+  },
+  {
+    "test_case_id": "GPO-WRI-05b",
+    "global_rank": 13,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:17:26.228Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "writing"
+    }
+  },
+  {
+    "test_case_id": "GPO-WRI-03",
+    "global_rank": 6,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:17:26.229Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "writing",
+      "output_quality": "1-subtask rewrite completed quickly"
+    }
+  },
+  {
+    "test_case_id": "GPO-LEA-04",
+    "global_rank": 22,
+    "engine": "Learning & Tutoring",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:17:26.229Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "learning",
+      "subtask_count": 2
+    }
   }
 ]
