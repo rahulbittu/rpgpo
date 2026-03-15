@@ -1,5 +1,65 @@
 [
   {
+    "record_id": "ee_mms1ns2a81we",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing artifacts, composition_",
+    "scope_type": "task",
+    "scope_id": "t_mms1lfk6vfmg",
+    "route": "music",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T17:44:23.506Z"
+  },
+  {
+    "record_id": "ee_mms1nm4yurz4",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mms1ld83v1cg",
+    "route": "learning",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T17:44:15.826Z"
+  },
+  {
+    "record_id": "ee_mms1nefnr3m6",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing steps, recommendations",
+    "scope_type": "task",
+    "scope_id": "t_mms1law1iaif",
+    "route": "health",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T17:44:05.843Z"
+  },
+  {
+    "record_id": "ee_mms1n2h1gc9u",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing items, comparisonKeys, ",
+    "scope_type": "task",
+    "scope_id": "t_mms1l8jvuv17",
+    "route": "shopping",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T17:43:50.341Z"
+  },
+  {
+    "record_id": "ee_mms1mbsvn8gj",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mms1l67ruugl",
+    "route": "topranker",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T17:43:15.775Z"
+  },
+  {
     "record_id": "ee_mms1jw9ti6rv",
     "area": "runtime_deliverable",
     "middleware_ran": "runtime-deliverable-pipeline",

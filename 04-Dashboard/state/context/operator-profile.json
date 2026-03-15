@@ -6,30 +6,24 @@
   "approval_threshold": "normal",
   "preferred_providers": ["claude", "openai"],
   "recurring_priorities": [
-    "TopRanker startup: ship MVP, grow community adoption, optimize ranking algorithms",
-    "Passive income research: SaaS ideas, side projects, investment opportunities",
+    "Build passive income streams: SaaS ideas, side projects, investment opportunities",
     "Data engineering career growth: job market, skills, leadership opportunities",
     "AI/tech industry awareness: trends, tools, competitive landscape",
-    "Personal productivity: reduce repetitive work, automate routine decisions"
+    "Personal productivity: reduce repetitive work, automate routine decisions",
+    "Ship startup projects to market"
   ],
   "risk_tolerance": "yellow",
   "interests": [
     "Data engineering and data platform architecture",
     "AI/ML applications and agent systems",
-    "Startup building (TopRanker is the flagship)",
+    "Startup building and entrepreneurship",
     "Passive income and wealth building",
     "Technology trends and industry analysis"
   ],
   "active_projects": [
     {
-      "name": "TopRanker",
-      "description": "Community-ranked local business leaderboard. Expo/React Native + Express + PostgreSQL. Currently in MVP stage targeting Austin, TX.",
-      "status": "active",
-      "priority": "flagship"
-    },
-    {
-      "name": "RPGPO/GPO",
-      "description": "Personal AI operating system for productivity, research, and decision support.",
+      "name": "GPO",
+      "description": "Personal AI operating system with 15 engines for productivity, research, and decision support.",
       "status": "active",
       "priority": "high"
     }
@@ -37,7 +31,7 @@
   "professional_context": {
     "role": "Senior Data Engineer / Entrepreneur",
     "domain_expertise": ["Data engineering", "ETL pipelines", "Cloud platforms", "PostgreSQL", "Python", "TypeScript", "React Native/Expo", "Node.js"],
-    "career_goals": ["Technical leadership (Staff/Principal level)", "Startup success (TopRanker)", "Build passive income streams ($5k+/month)"],
+    "career_goals": ["Technical leadership (Staff/Principal level)", "Startup success", "Build passive income streams ($5k+/month)"],
     "location": "Austin, TX (open to remote)",
     "target_salary": "$180,000+ base, $250,000+ total compensation",
     "years_experience": "10+ years in data engineering"
@@ -47,6 +41,6 @@
     "format": "Structured with clear sections. Bullet points over paragraphs. Links and sources always included.",
     "avoid": "Vague advice, generic templates, filler content, theoretical frameworks without practical application"
   },
-  "custom_notes": "Rahul values depth and specificity. He's building TopRanker actively and uses GPO to augment his capacity. Every output should be ready to act on, not just informational.",
-  "updated_at": "2026-03-15T00:45:00.000Z"
+  "custom_notes": "Rahul values depth and specificity. He uses GPO to augment his capacity across 15 engines. Every output should be ready to act on, not just informational.",
+  "updated_at": "2026-03-15T18:30:00.000Z"
 }

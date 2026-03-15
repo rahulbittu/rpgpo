@@ -2315,5 +2315,82 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-15T17:30:57.864Z"
+  },
+  "t_mms1l67ruugl": {
+    "task_id": "t_mms1l67ruugl",
+    "deliverable_id": "dlv_rpgpo_tmms1l67ruugl_document_612813b8",
+    "engine_id": "topranker",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T17:42:26.934Z"
+  },
+  "t_mms1l8jvuv17": {
+    "task_id": "t_mms1l8jvuv17",
+    "deliverable_id": "dlv_rpgpo_tmms1l8jvuv17_shopping_0db97af3",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T17:42:32.354Z"
+  },
+  "t_mms1law1iaif": {
+    "task_id": "t_mms1law1iaif",
+    "deliverable_id": "dlv_rpgpo_tmms1law1iaif_action_plan_166e87f5",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T17:42:46.476Z"
+  },
+  "t_mms1ld83v1cg": {
+    "task_id": "t_mms1ld83v1cg",
+    "deliverable_id": "dlv_rpgpo_tmms1ld83v1cg_document_78c447a6",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T17:42:53.184Z"
+  },
+  "t_mms1lfk6vfmg": {
+    "task_id": "t_mms1lfk6vfmg",
+    "deliverable_id": "dlv_rpgpo_tmms1lfk6vfmg_creative_draft_3a08946a",
+    "engine_id": "music",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "artifacts",
+      "composition_draft",
+      "lyrics_or_structure"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T17:43:07.561Z"
   }
 }

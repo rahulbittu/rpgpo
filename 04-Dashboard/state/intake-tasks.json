@@ -1,5 +1,355 @@
 [
   {
+    "task_id": "t_mms1lfk6vfmg",
+    "title": "Write a comprehensive guide for setting up a home recording studio on a budget u",
+    "raw_request": "Write a comprehensive guide for setting up a home recording studio on a budget under 500 dollars. Include microphone, interface, DAW software, acoustic treatment, and monitoring.",
+    "domain": "music",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:42:33.990Z",
+    "updated_at": "2026-03-15T17:44:23.512Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:43:07.550Z",
+      "interpreted_objective": "Create a comprehensive guide for setting up a home recording studio on a budget under $500.",
+      "expected_outcome": "A detailed, actionable guide that includes recommendations for microphone, interface, DAW software, acoustic treatment, and monitoring, all within a $500 budget.",
+      "key_unknowns": [
+        "Current prices and availability of recommended equipment",
+        "Best budget-friendly options for each category",
+        "Specific acoustic treatment techniques suitable for budget constraints"
+      ],
+      "recommended_strategy": "Conduct research on current budget-friendly recording equipment and software options. Synthesize findings into a comprehensive guide that provides clear recommendations and setup instructions. Ensure all recommendations fit within the $500 budget constraint.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Budget-Friendly Recording Equipment",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current budget-friendly options for microphones, interfaces, DAW software, acoustic treatment, and monitoring with prices and sources.",
+          "prompt": "Search the web for current, specific information about budget-friendly recording studio equipment under $500. Include options for microphones, interfaces, DAW software, acoustic treatment, and monitoring. Provide real names, prices, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Home Recording Studio Setup",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for setting up a home recording studio under $500, including equipment recommendations and setup instructions.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for setting up a home recording studio on a budget under $500. Include specific recommendations for microphones, interfaces, DAW software, acoustic treatment, and monitoring, along with setup instructions.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/music-{date}-home-recording-studio-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1908
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelnba2"
+  },
+  {
+    "task_id": "t_mms1ld83v1cg",
+    "title": "Explain how to build a data lakehouse architecture from scratch. Cover storage l",
+    "raw_request": "Explain how to build a data lakehouse architecture from scratch. Cover storage layer, compute layer, governance, and query engines. Compare Delta Lake, Apache Iceberg, and Apache Hudi.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:42:30.963Z",
+    "updated_at": "2026-03-15T17:44:15.828Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:42:53.179Z",
+      "interpreted_objective": "Explain the process of building a data lakehouse architecture from scratch, including comparisons of Delta Lake, Apache Iceberg, and Apache Hudi.",
+      "expected_outcome": "A comprehensive guide on building a data lakehouse architecture, covering storage, compute, governance, and query engines, with a comparison of Delta Lake, Apache Iceberg, and Apache Hudi.",
+      "key_unknowns": [
+        "Specific requirements or constraints for the architecture",
+        "Rahul's preferred technologies or tools",
+        "Level of detail required for each component"
+      ],
+      "recommended_strategy": "First, research the components of a data lakehouse architecture, focusing on storage, compute, governance, and query engines. Then, compare Delta Lake, Apache Iceberg, and Apache Hudi in terms of features, performance, and use cases. Finally, compile the findings into a detailed report.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Data Lakehouse Components",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on the components of a data lakehouse architecture.",
+          "prompt": "Search the web for current, specific information about the components of a data lakehouse architecture, including storage layer, compute layer, governance, and query engines. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compare Delta Lake, Apache Iceberg, and Apache Hudi",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comparison of Delta Lake, Apache Iceberg, and Apache Hudi in terms of features, performance, and use cases.",
+          "prompt": "Search the web for current, specific information comparing Delta Lake, Apache Iceberg, and Apache Hudi. Focus on features, performance, and use cases. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Data Lakehouse Architecture Guide",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on building a data lakehouse architecture, including comparisons of Delta Lake, Apache Iceberg, and Apache Hudi.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on building a data lakehouse architecture from scratch. Include detailed explanations of the storage layer, compute layer, governance, and query engines, as well as a comparison of Delta Lake, Apache Iceberg, and Apache Hudi.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2222
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms1law1iaif",
+    "title": "Create a 30-day journaling challenge with daily prompts. Focus on self-reflectio",
+    "raw_request": "Create a 30-day journaling challenge with daily prompts. Focus on self-reflection, goal setting, and gratitude. Include prompts for both morning and evening entries.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:42:27.937Z",
+    "updated_at": "2026-03-15T17:44:05.845Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:42:46.465Z",
+      "interpreted_objective": "Create a 30-day journaling challenge with daily prompts focusing on self-reflection, goal setting, and gratitude.",
+      "expected_outcome": "A structured 30-day journaling challenge with specific prompts for morning and evening entries that encourages self-reflection, goal setting, and gratitude.",
+      "key_unknowns": [
+        "Specific themes or topics for each day",
+        "Balance between morning and evening prompts",
+        "Length and complexity of each prompt"
+      ],
+      "recommended_strategy": "Research existing journaling challenges to gather ideas and best practices. Synthesize findings into a structured 30-day challenge with clear, actionable prompts for both morning and evening entries. Ensure prompts are varied and cover self-reflection, goal setting, and gratitude effectively.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research existing journaling challenges",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of existing journaling challenges with themes, structures, and examples.",
+          "prompt": "Search the web for current, specific information about existing 30-day journaling challenges focusing on self-reflection, goal setting, and gratitude. Include real names, themes, structures, and examples with URLs and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize journaling challenge prompts",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 30-day journaling challenge with morning and evening prompts.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 30-day journaling challenge with specific, actionable prompts for morning and evening entries. Ensure the prompts focus on self-reflection, goal setting, and gratitude. Include specific themes and examples for each day.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-journaling-challenge.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1868
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms1l8jvuv17",
+    "title": "Research the best productivity apps for engineers in 2026. Compare Notion, Linea",
+    "raw_request": "Research the best productivity apps for engineers in 2026. Compare Notion, Linear, Obsidian, and Raycast. Include pricing, key features, and which is best for a solo engineer vs a team.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:42:24.907Z",
+    "updated_at": "2026-03-15T17:43:50.346Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:42:32.344Z",
+      "interpreted_objective": "Research and compare productivity apps for engineers in 2026, focusing on Notion, Linear, Obsidian, and Raycast, including pricing, features, and suitability for solo engineers vs teams.",
+      "expected_outcome": "A detailed comparison report of the specified productivity apps with actionable recommendations for solo and team use cases.",
+      "key_unknowns": [
+        "Current pricing and features of Notion, Linear, Obsidian, and Raycast in 2026",
+        "Specific advantages and disadvantages of each app for solo engineers and teams"
+      ],
+      "recommended_strategy": "First, perform web research to gather current information on pricing and features of the specified apps. Then, synthesize this data into a structured comparison report, highlighting pros and cons and recommending the best app for solo engineers and teams.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Productivity Apps",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current pricing, features, and reviews of Notion, Linear, Obsidian, and Raycast for 2026.",
+          "prompt": "Search the web for current, specific information about Notion, Linear, Obsidian, and Raycast in 2026. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize App Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the apps with recommendations for solo engineers and teams.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for Notion, Linear, Obsidian, and Raycast. Include specific names, numbers, and concrete next steps for both solo engineers and teams.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-2026-productivity-apps.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1958
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms1l67ruugl",
+    "title": "Create an investor-ready pitch deck outline for a SaaS startup. Include 12 slide",
+    "raw_request": "Create an investor-ready pitch deck outline for a SaaS startup. Include 12 slides with specific content for each: problem, solution, market size, business model, traction, team, financials, ask.",
+    "domain": "topranker",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:42:21.879Z",
+    "updated_at": "2026-03-15T17:43:15.777Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:42:26.929Z",
+      "interpreted_objective": "Create a detailed outline for an investor-ready pitch deck for a SaaS startup.",
+      "expected_outcome": "A comprehensive pitch deck outline with 12 slides covering essential business aspects.",
+      "key_unknowns": [
+        "Specific details about the SaaS startup's problem and solution",
+        "Market size and business model specifics",
+        "Current traction and financial projections",
+        "Exact funding ask and use of funds"
+      ],
+      "recommended_strategy": "Develop a structured pitch deck outline by identifying key content for each slide. Use existing knowledge of SaaS startups and standard pitch deck structures to ensure completeness and relevance. Focus on clarity and conciseness to make the pitch compelling for investors.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Standard Pitch Deck Structures",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of standard pitch deck structures used by successful SaaS startups.",
+          "prompt": "Search the web for current, specific information about standard pitch deck structures for SaaS startups. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Pitch Deck Outline",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed outline for a 12-slide investor-ready pitch deck for a SaaS startup.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable pitch deck outline for a SaaS startup. Include specific content for each slide: problem, solution, market size, business model, traction, team, financials, and ask.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2385
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmqn1d6vm0li"
+  },
+  {
     "task_id": "t_mms15iukmosp",
     "title": "Design the information architecture for a personal knowledge management system. ",
     "raw_request": "Design the information architecture for a personal knowledge management system. Include categories, tagging strategy, search approach, and review cadence.",
