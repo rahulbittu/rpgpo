@@ -707,6 +707,30 @@ const handlers = {
       }
     } catch { /* no domain context */ }
 
+    // Model-specific system prompt enhancements
+    let modelRules = '';
+    if (model === 'perplexity') {
+      modelRules = `
+SEARCH INSTRUCTIONS:
+- You have web search capabilities. USE THEM to find current, real information.
+- Always include specific names, numbers, dates, URLs, and sources from your search results.
+- Do NOT give generic advice. Search the web and report what you actually find.
+- Include source citations for every major claim.
+- If the search doesn't return relevant results, say so and suggest better search terms.`;
+    } else if (model === 'openai') {
+      modelRules = `
+SYNTHESIS INSTRUCTIONS:
+- Synthesize information into clear, actionable recommendations.
+- Include specific examples, numbers, and concrete next steps.
+- Organize with clear sections and bullet points.`;
+    } else if (model === 'gemini') {
+      modelRules = `
+STRATEGY INSTRUCTIONS:
+- Focus on strategic analysis with specific data points.
+- Compare alternatives with clear pros/cons.
+- Provide actionable recommendations with expected impact.`;
+    }
+
     const systemPrompt = `You are operating inside RPGPO, a governed personal AI operating system. Stage: ${st.stage}. Role: ${st.assigned_role}.${operatorContext}${domainContext}
 
 RULES:
@@ -714,7 +738,7 @@ RULES:
 - Include real data, citations, and sources when available
 - Structure output clearly with sections and bullet points
 - Never produce generic templates or placeholder text like "[Insert Title]"
-- If you cannot find specific information, say so explicitly`;
+- If you cannot find specific information, say so explicitly${modelRules}`;
 
     // Gather file context
     let fileContext = '';
