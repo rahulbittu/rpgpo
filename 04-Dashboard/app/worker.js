@@ -887,6 +887,16 @@ RULES:
         status: 'failed',
         error: err.message.slice(0, 500),
       });
+      // Notify on failure
+      try {
+        const notif = require('./lib/in-app-notifications');
+        notif.emitNotification({
+          type: 'workflow.failed',
+          severity: 'high',
+          title: `Subtask failed: ${st.title?.slice(0, 50) || subtaskId}`,
+          message: err.message.slice(0, 200),
+        });
+      } catch { /* non-fatal */ }
       workflow.onSubtaskComplete(subtaskId);
       throw err;
     }
