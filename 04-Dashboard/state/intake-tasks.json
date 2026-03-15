@@ -1,5 +1,70 @@
 [
   {
+    "task_id": "t_mmr83d7jtkmu",
+    "title": "what are the top ten new in Hyderabad India",
+    "raw_request": "what are the top ten new in Hyderabad India",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T03:56:42.271Z",
+    "updated_at": "2026-03-15T03:57:06.822Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T03:56:49.338Z",
+      "interpreted_objective": "Identify the top ten current news stories in Hyderabad, India.",
+      "expected_outcome": "A list of the top ten news stories in Hyderabad, India, with specific details and sources.",
+      "key_unknowns": [
+        "What are the most recent and significant news stories in Hyderabad?",
+        "Which sources provide reliable news coverage of Hyderabad?"
+      ],
+      "recommended_strategy": "Conduct a web search to gather current news articles about Hyderabad. Synthesize the findings into a ranked list of the top ten news stories, ensuring each entry includes specific details and sources. This will provide a comprehensive overview of the current news landscape in Hyderabad.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current News in Hyderabad",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current news articles about Hyderabad, India, with specific details and sources.",
+          "prompt": "Search the web for current, specific information about the top news stories in Hyderabad, India. Include real names, numbers, dates, URLs, and sources. Do not produce generic summaries or placeholder text.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize News Findings",
+          "stage": "implement",
+          "assigned_role": "builder",
+          "assigned_model": "openai",
+          "expected_output": "A ranked list of the top ten news stories in Hyderabad, with specific details and sources.",
+          "prompt": "Synthesize the research into actionable recommendations with specific next steps. Include concrete examples. Create a ranked list of the top ten news stories in Hyderabad, India, with specific details and sources.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/top_ten_news_hyderabad.json"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1397
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
     "task_id": "t_mmr2cnotiesl",
     "title": "get me high paying remote data engineering jobs in use I am a data engineer",
     "raw_request": "get me high paying remote data engineering jobs in use I am a data engineer",

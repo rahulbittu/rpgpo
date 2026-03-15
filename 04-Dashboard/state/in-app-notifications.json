@@ -1,11 +1,47 @@
 [
   {
-    "id": "notif_mmr2wfs2_2afdcfb8",
+    "id": "notif_mmr81iq0_2afdcfb8",
     "type": "alert.fired",
     "severity": "urgent",
     "title": "Urg",
     "message": "u",
-    "createdAt": 1773538280930,
-    "acknowledgedAt": 1773538280930
+    "createdAt": 1773546916104,
+    "acknowledgedAt": 1773546916104
+  },
+  {
+    "id": "notif_mmr83paz_b0dfa669",
+    "type": "system.info",
+    "severity": "low",
+    "title": "Subtask complete: Research Current News in Hyderabad",
+    "message": "### Top News Stories in Hyderabad, India (as of March 15, 2026)",
+    "createdAt": 1773547017947,
+    "actions": [
+      {
+        "label": "View Task",
+        "action": "viewWorkflow",
+        "ref": {
+          "kind": "task",
+          "id": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "notif_mmr83w56_98ee7a2e",
+    "type": "system.info",
+    "severity": "low",
+    "title": "Subtask complete: Synthesize News Findings",
+    "message": "Analysis complete (no code changes made)",
+    "createdAt": 1773547026810,
+    "actions": [
+      {
+        "label": "View Task",
+        "action": "viewWorkflow",
+        "ref": {
+          "kind": "task",
+          "id": ""
+        }
+      }
+    ]
   }
 ]
