@@ -3352,6 +3352,23 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 80: Integration Gateway
+  if (req.url === '/api/integrations/subscriptions' && req.method === 'GET') {
+    try { const gw = require('./lib/integration-gateway'); return json(res, { subscriptions: gw.listSubscriptions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/integrations/subscriptions' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const gw = require('./lib/integration-gateway'); return json(res, { ok: true, subscription: gw.createSubscription(body) }, 201); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/integrations\/webhook\/([^/]+)$/) && req.method === 'POST') {
+    const subId = req.url.match(/^\/api\/integrations\/webhook\/([^/]+)$/)[1];
+    const body = await parseBody(req);
+    try { const gw = require('./lib/integration-gateway'); return json(res, gw.processInboundEvent(subId, body)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/integrations/events' && req.method === 'GET') {
+    try { const gw = require('./lib/integration-gateway'); return json(res, { events: gw.listEvents() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 79: State Backup + Export
   if (req.url === '/api/backup/snapshot' && req.method === 'POST') {
     try { const sb = require('./lib/state-backup'); return json(res, { ok: true, snapshot: sb.createSnapshot() }); } catch (e) { return json(res, { error: e.message }, 500); }
