@@ -589,5 +589,48 @@
       "domain_routed": "topranker",
       "completion": "done"
     }
+  },
+  {
+    "test_case_id": "GPO-WRI-11",
+    "global_rank": 47,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:58:39.664Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "task_id": "t_mmrxtfiwwwgf",
+      "domain_routed": "topranker",
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-RES-11",
+    "global_rank": 71,
+    "engine": "Research & Analysis",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:58:39.664Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "task_id": "t_mmrxtfj10ocq",
+      "domain_routed": "research",
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-LEA-11",
+    "global_rank": 76,
+    "engine": "Learning & Tutoring",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:58:39.664Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "task_id": "t_mmrxtfizcez3",
+      "domain_routed": "learning",
+      "completion": "done",
+      "output_quality": "3-subtask chain with research+coding examples+synthesis"
+    }
   }
 ]
