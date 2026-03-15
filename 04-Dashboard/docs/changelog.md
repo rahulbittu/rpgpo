@@ -1,5 +1,30 @@
 # GPO Changelog
 
+## 2026-03-15 — Parts 75-82: Enterprise Architecture Sprint
+- Part 75: Persistent Learning Store — provider perf EWMA, knowledge base with search, cross-session persistence
+- Part 76: Conversational Task Refinement — per-task conversations, task chaining with auto-follow-up
+- Part 77: Smart Templates — dynamic template CRUD, performance tracking, recurring task scheduler with cron
+- Part 78: Multi-Engine Orchestration — compound workflow DAG templates, 3 built-in workflows (Research→Analyze→Plan, News→Strategy→Brief, Income Pipeline)
+- Part 79: State Management — atomic snapshots, full export/import, integrity verification, SHA-256 checksums
+- Part 80: Integration Gateway — inbound/outbound webhooks, event routing, subscription management, HMAC signature verification
+- Part 81: Analytics Dashboard — productivity metrics, cost trends, engine usage, estimated hours saved
+- Part 82: Self-Healing + Onboarding — automated health checks (9 checks), auto-repair, onboarding wizard (4 steps)
+
+Total new modules: 9 | New API routes: 35+ | New types: 30+
+
+## 2026-03-15 — Value-First Improvements
+- CRITICAL: operator.js/css loaded in HTML (entire premium UI layer was missing)
+- CRITICAL: Worker context paths fixed (operator profile + domain context now injected)
+- MAJOR: Subtask output chaining (synthesis sees research data)
+- Auto-deliberation + auto-approve on every task submit (zero-click research)
+- Model-specific prompt instructions (Perplexity search, OpenAI synthesis, Gemini strategy)
+- Board prompt quality rules (no placeholders, self-contained prompts)
+- 12 value templates (income, jobs, news, career, TopRanker, weekly plan)
+- Inline report preview with markdown rendering
+- Enterprise CSS polish (scrollbars, transitions, cards, markdown typography)
+- Domain labels, personalized greeting, keyboard shortcut (/)
+- Updated all mission status files, dashboard state, operator profile
+
 ## 2026-03-15 — Part 74: Comprehensive Integration Test Suite + Acceptance Harness
 - 2 new test infrastructure modules: lib/test/provider-sim.ts, lib/test/scenario-runner.ts
 - Provider simulator: seeded deterministic RNG, contract-aware output generation for TopRanker/newsroom/general, configurable error/slow/invalidJson rates
