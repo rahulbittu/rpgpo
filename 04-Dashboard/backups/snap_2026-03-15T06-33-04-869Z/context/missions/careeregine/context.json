@@ -1,0 +1,70 @@
+{
+  "instance_id": "rpgpo",
+  "domain": "careeregine",
+  "objective": "Career strategy and professional development.",
+  "current_status": "",
+  "recent_decisions": [
+    {
+      "domain": "careeregine",
+      "category": "process",
+      "title": "Establish Role Filters",
+      "decision": "To establish role filters for identifying high-quality remote data engineering jobs in the USA based on the target job profile, follow these actionabl",
+      "reasoning": "Stage: decide, Model: openai",
+      "impact": "No code changes",
+      "task_id": "t_mmr26qcckpwa",
+      "subtask_id": "st_mmr26yqb0gkw",
+      "id": "ctx_mmr27hl4lpyg",
+      "made_at": "2026-03-15T01:11:56.872Z"
+    },
+    {
+      "domain": "careeregine",
+      "category": "process",
+      "title": "Define Target Job Profile",
+      "decision": "To define the target job profile for a senior data engineer with 7 years of experience, consider the following key elements:",
+      "reasoning": "Stage: decide, Model: openai",
+      "impact": "No code changes",
+      "task_id": "t_mmr26qcckpwa",
+      "subtask_id": "st_mmr26yqakov1",
+      "id": "ctx_mmr278nei9xe",
+      "made_at": "2026-03-15T01:11:45.290Z"
+    },
+    {
+      "domain": "careeregine",
+      "category": "strategy",
+      "title": "Deliberation: get me high paying remote data engineering jobs in use I am ",
+      "decision": "First, define the target job profile by identifying key skills, industries, and salary expectations. Next, establish role filters to ensure high-quality opportunities. Finally, compile a shortlist of target companies and roles that match these criteria.",
+      "reasoning": "Objective: Identify high-paying remote data engineering jobs in the USA for a data engineer with 7 years of experience.",
+      "impact": "3 subtasks planned. Risk: yellow",
+      "task_id": "t_mmr26qcckpwa",
+      "id": "ctx_mmr26yqdyu6c",
+      "made_at": "2026-03-15T01:11:32.437Z"
+    }
+  ],
+  "open_questions": [],
+  "constraints": [],
+  "key_artifacts": [
+    {
+      "domain": "careeregine",
+      "type": "report",
+      "title": "decide: Establish Role Filters",
+      "path": "03-Operations/Reports/Subtask-openai-2026-03-15-st_mmr26yqb0gkw.md",
+      "task_id": "t_mmr26qcckpwa",
+      "id": "ctx_mmr27hl3or7y",
+      "created_at": "2026-03-15T01:11:56.871Z"
+    },
+    {
+      "domain": "careeregine",
+      "type": "report",
+      "title": "decide: Define Target Job Profile",
+      "path": "03-Operations/Reports/Subtask-openai-2026-03-15-st_mmr26yqakov1.md",
+      "task_id": "t_mmr26qcckpwa",
+      "id": "ctx_mmr278nd5tqr",
+      "created_at": "2026-03-15T01:11:45.289Z"
+    }
+  ],
+  "approval_patterns": [],
+  "next_actions": [],
+  "known_issues": [],
+  "context_summary": "Career strategy and professional development. Focus on data engineering leadership and work-life balance while building a startup.",
+  "updated_at": "2026-03-15T01:16:56.705Z"
+}

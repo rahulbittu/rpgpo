@@ -1,0 +1,141 @@
+[
+  {
+    "run_id": "hv_mmqs6tiakhhj",
+    "results": [
+      {
+        "case_id": "hv_entitle_deny",
+        "case_name": "Non-entitled tenant on compliance route",
+        "route": "/api/compliance-export",
+        "expected_status": 403,
+        "actual_status": 403,
+        "expected_effect": "deny",
+        "actual_effect": "deny",
+        "payload_sample": "Feature \"compliance\" requires team plan",
+        "middleware_executed": [
+          "api-entitlement-enforcement.evaluate"
+        ],
+        "passed": true,
+        "validation_type": "function",
+        "detail": "Feature \"compliance\" requires team plan"
+      },
+      {
+        "case_id": "hv_entitle_allow",
+        "case_name": "Entitled tenant on release route",
+        "route": "/api/release-orchestration",
+        "expected_status": 200,
+        "actual_status": 200,
+        "expected_effect": "allow",
+        "actual_effect": "allow",
+        "payload_sample": "Entitled",
+        "middleware_executed": [
+          "api-entitlement-enforcement.evaluate"
+        ],
+        "passed": true,
+        "validation_type": "function",
+        "detail": "Entitled"
+      },
+      {
+        "case_id": "hv_cross_project",
+        "case_name": "Cross-project audit query",
+        "route": "/api/audit-hub",
+        "expected_status": 403,
+        "actual_status": 403,
+        "expected_effect": "deny",
+        "actual_effect": "deny",
+        "payload_sample": "Matched policy bp_cross_project_api: project:* → project:*",
+        "middleware_executed": [
+          "boundary-enforcement.enforce"
+        ],
+        "passed": true,
+        "validation_type": "function",
+        "detail": "Matched policy bp_cross_project_api: project:* → project:*"
+      },
+      {
+        "case_id": "hv_cross_tenant",
+        "case_name": "Cross-tenant query",
+        "route": "/api/tenant-admin",
+        "expected_status": 403,
+        "actual_status": 403,
+        "expected_effect": "deny",
+        "actual_effect": "deny",
+        "payload_sample": "Feature \"tenant_admin\" requires team plan",
+        "middleware_executed": [
+          "middleware-enforcement.enforce"
+        ],
+        "passed": true,
+        "validation_type": "function",
+        "detail": "Feature \"tenant_admin\" requires team plan"
+      },
+      {
+        "case_id": "hv_redact_boundary",
+        "case_name": "Boundary redact on cross-project context",
+        "route": "/api/evidence-chain",
+        "expected_status": 200,
+        "actual_status": 200,
+        "expected_effect": "redact",
+        "actual_effect": "redact",
+        "payload_sample": "Matched policy bp_cross_project: project:* → project:* (artifact: context)",
+        "middleware_executed": [
+          "data-boundaries.evaluateBoundary"
+        ],
+        "passed": true,
+        "validation_type": "function",
+        "detail": "Policy outcome: redact — Matched policy bp_cross_project: project:* → project:* (artifact: context)"
+      },
+      {
+        "case_id": "hv_extension_deny",
+        "case_name": "Extension permission denied",
+        "route": "/api/extensions/untrusted/action",
+        "expected_status": 403,
+        "actual_status": 403,
+        "expected_effect": "deny",
+        "actual_effect": "deny",
+        "payload_sample": "Extension not found",
+        "middleware_executed": [
+          "extension-permission-enforcement.evaluate"
+        ],
+        "passed": true,
+        "validation_type": "function",
+        "detail": "Extension not found"
+      },
+      {
+        "case_id": "hv_provider_gate",
+        "case_name": "Provider governance gate",
+        "route": "/api/release-provider-gating",
+        "expected_status": 200,
+        "actual_status": 200,
+        "expected_effect": "allow",
+        "actual_effect": "allow",
+        "payload_sample": "All provider gates clear",
+        "middleware_executed": [
+          "release-provider-gating.evaluateProviderGating"
+        ],
+        "passed": true,
+        "validation_type": "function",
+        "detail": "All provider gates clear"
+      },
+      {
+        "case_id": "hv_same_scope",
+        "case_name": "Same-scope boundary allowed",
+        "route": "/api/audit-hub",
+        "expected_status": 200,
+        "actual_status": 200,
+        "expected_effect": "allow",
+        "actual_effect": "allow",
+        "payload_sample": "Same scope or no boundary restriction",
+        "middleware_executed": [
+          "boundary-enforcement.enforce"
+        ],
+        "passed": true,
+        "validation_type": "function",
+        "detail": "Same scope or no boundary restriction"
+      }
+    ],
+    "passed": 8,
+    "failed": 0,
+    "total": 8,
+    "http_validated": 0,
+    "function_validated": 8,
+    "created_at": "2026-03-14T20:31:29.506Z"
+  }
+]

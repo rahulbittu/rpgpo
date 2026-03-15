@@ -1,0 +1,78 @@
+[
+  {
+    "key": {
+      "engineId": "general",
+      "taskKind": "audit",
+      "contractName": "research"
+    },
+    "providerId": "perplexity",
+    "ewma": {
+      "n": 2,
+      "lastTimestamp": 1773582754177,
+      "latencyMsEwma": 174.34000000000003,
+      "successRateEwma": 0.6800000000000002,
+      "qualityEwma": 0.6080000000000001,
+      "costPerTokenEwma": 0
+    },
+    "lastSamples": [
+      {
+        "timestamp": 1773582547065,
+        "providerId": "perplexity",
+        "latencyMs": 526.5,
+        "inputTokens": 352,
+        "outputTokens": 701,
+        "totalCostUsd": 0,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773582754177,
+        "providerId": "perplexity",
+        "latencyMs": 450.5,
+        "inputTokens": 348,
+        "outputTokens": 553,
+        "totalCostUsd": 0,
+        "success": true,
+        "qualityScore": 0.8
+      }
+    ]
+  },
+  {
+    "key": {
+      "engineId": "general",
+      "taskKind": "report",
+      "contractName": "strategy"
+    },
+    "providerId": "openai",
+    "ewma": {
+      "n": 2,
+      "lastTimestamp": 1773583168438,
+      "latencyMsEwma": 195.36,
+      "successRateEwma": 0.6800000000000002,
+      "qualityEwma": 0.6080000000000001,
+      "costPerTokenEwma": 0.000002250666159793082
+    },
+    "lastSamples": [
+      {
+        "timestamp": 1773582554585,
+        "providerId": "openai",
+        "latencyMs": 466,
+        "inputTokens": 316,
+        "outputTokens": 616,
+        "totalCostUsd": 0.0069500000000000004,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773583168438,
+        "providerId": "openai",
+        "latencyMs": 604,
+        "inputTokens": 759,
+        "outputTokens": 449,
+        "totalCostUsd": 0.0063875,
+        "success": true,
+        "qualityScore": 0.8
+      }
+    ]
+  }
+]

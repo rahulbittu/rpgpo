@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "env": "dev",
+    "instance_id": "rpgpo",
+    "state_root": "/Users/rpgpo/Projects/RPGPO/04-Dashboard/state",
+    "active": true,
+    "release_version": "0.9.0-dev",
+    "config_overrides": {}
+  },
+  "beta": {
+    "env": "beta",
+    "instance_id": "rpgpo",
+    "state_root": "/Users/rpgpo/Projects/RPGPO/04-Dashboard/state/env-beta",
+    "active": false,
+    "release_version": "0.0.0",
+    "config_overrides": {}
+  },
+  "prod": {
+    "env": "prod",
+    "instance_id": "rpgpo",
+    "state_root": "/Users/rpgpo/Projects/RPGPO/04-Dashboard/state/env-prod",
+    "active": false,
+    "release_version": "0.0.0",
+    "config_overrides": {}
+  }
+}

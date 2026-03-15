@@ -1,0 +1,70 @@
+{
+  "instance_id": "rpgpo",
+  "domain": "topranker",
+  "objective": "Ship TopRanker MVP, grow community adoption in Austin, optimize ranking algorithms and app performance.",
+  "current_status": "",
+  "recent_decisions": [
+    {
+      "domain": "topranker",
+      "category": "process",
+      "title": "Audit Operating Summary",
+      "decision": "### Key Points from TopRanker's Technical Profile and Recent Progress",
+      "reasoning": "Stage: audit, Model: openai",
+      "impact": "No code changes",
+      "task_id": "t_mmqst1fmfj67",
+      "subtask_id": "st_mmqst7s7uurz",
+      "id": "ctx_mmqsthf6568g",
+      "made_at": "2026-03-14T20:49:06.930Z"
+    },
+    {
+      "domain": "topranker",
+      "category": "process",
+      "title": "Audit Mission Status",
+      "decision": "### Summary of TopRanker's Current Status, Objectives, and Blockers",
+      "reasoning": "Stage: audit, Model: openai",
+      "impact": "No code changes",
+      "task_id": "t_mmqst1fmfj67",
+      "subtask_id": "st_mmqst7s4ows3",
+      "id": "ctx_mmqstdjs5uew",
+      "made_at": "2026-03-14T20:49:01.912Z"
+    },
+    {
+      "domain": "topranker",
+      "category": "strategy",
+      "title": "Deliberation: summarize the current state of top ranker",
+      "decision": "Review the provided mission and operating summary documents to extract key information. Synthesize this into a brief summary highlighting the mission's status, technical details, and any recent developments or blockers. Ensure the summary is aligned with RPGPO's current objectives and priorities.",
+      "reasoning": "Objective: Summarize the current state of TopRanker.",
+      "impact": "4 subtasks planned. Risk: green",
+      "task_id": "t_mmqst1fmfj67",
+      "id": "ctx_mmqst7sg0h51",
+      "made_at": "2026-03-14T20:48:54.448Z"
+    }
+  ],
+  "open_questions": [],
+  "constraints": [],
+  "key_artifacts": [
+    {
+      "domain": "topranker",
+      "type": "report",
+      "title": "audit: Audit Operating Summary",
+      "path": "03-Operations/Reports/Subtask-openai-2026-03-14-st_mmqst7s7uurz.md",
+      "task_id": "t_mmqst1fmfj67",
+      "id": "ctx_mmqsthf4qli8",
+      "created_at": "2026-03-14T20:49:06.928Z"
+    },
+    {
+      "domain": "topranker",
+      "type": "report",
+      "title": "audit: Audit Mission Status",
+      "path": "03-Operations/Reports/Subtask-openai-2026-03-14-st_mmqst7s4ows3.md",
+      "task_id": "t_mmqst1fmfj67",
+      "id": "ctx_mmqstdjr4q60",
+      "created_at": "2026-03-14T20:49:01.911Z"
+    }
+  ],
+  "approval_patterns": [],
+  "next_actions": [],
+  "known_issues": [],
+  "context_summary": "TopRanker is a community-ranked local business leaderboard app. MVP stage targeting Austin, TX. Stack: Expo/React Native + Express + PostgreSQL. Focus: shipping features, optimizing ranking algorithms, and growing community adoption.",
+  "updated_at": "2026-03-15T01:19:40.656Z"
+}

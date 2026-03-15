@@ -1,0 +1,49 @@
+{
+  "instance_id": "rpgpo",
+  "name": "Rahul",
+  "decision_style": "balanced",
+  "communication_style": "terse",
+  "approval_threshold": "normal",
+  "preferred_providers": ["claude", "openai"],
+  "recurring_priorities": [
+    "TopRanker startup: ship MVP, grow community adoption, optimize ranking algorithms",
+    "Passive income research: SaaS ideas, side projects, investment opportunities",
+    "Data engineering career growth: job market, skills, leadership opportunities",
+    "AI/tech industry awareness: trends, tools, competitive landscape",
+    "Personal productivity: reduce repetitive work, automate routine decisions"
+  ],
+  "risk_tolerance": "yellow",
+  "interests": [
+    "Data engineering and data platform architecture",
+    "AI/ML applications and agent systems",
+    "Startup building (TopRanker is the flagship)",
+    "Passive income and wealth building",
+    "Technology trends and industry analysis"
+  ],
+  "active_projects": [
+    {
+      "name": "TopRanker",
+      "description": "Community-ranked local business leaderboard. Expo/React Native + Express + PostgreSQL. Currently in MVP stage targeting Austin, TX.",
+      "status": "active",
+      "priority": "flagship"
+    },
+    {
+      "name": "RPGPO/GPO",
+      "description": "Personal AI operating system for productivity, research, and decision support.",
+      "status": "active",
+      "priority": "high"
+    }
+  ],
+  "professional_context": {
+    "role": "Senior Data Engineer / Entrepreneur",
+    "domain_expertise": ["Data engineering", "ETL pipelines", "Cloud platforms", "PostgreSQL", "Python", "TypeScript"],
+    "career_goals": ["Technical leadership", "Startup success", "Build passive income streams"]
+  },
+  "output_preferences": {
+    "style": "Specific, actionable, and cited. No generic frameworks. Include numbers, sources, and concrete next steps.",
+    "format": "Structured with clear sections. Bullet points over paragraphs. Links and sources always included.",
+    "avoid": "Vague advice, generic templates, filler content, theoretical frameworks without practical application"
+  },
+  "custom_notes": "Rahul values depth and specificity. He's building TopRanker actively and uses GPO to augment his capacity. Every output should be ready to act on, not just informational.",
+  "updated_at": "2026-03-15T00:45:00.000Z"
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "agent_id": "claude-local",
+    "name": "Claude (Local Builder)",
+    "provider": "claude",
+    "role": "executor",
+    "capabilities": [
+      "coding",
+      "repo-grounding",
+      "builder-execution"
+    ],
+    "execution_boundary": {
+      "can_read_files": true,
+      "can_write_files": true,
+      "can_execute_code": true,
+      "can_access_network": false,
+      "can_access_context": true,
+      "max_runtime_ms": 600000,
+      "allowed_stages": [
+        "implement",
+        "build",
+        "code",
+        "locate_files"
+      ],
+      "requires_approval": true
+    },
+    "privacy_scope": {
+      "scope": "instance",
+      "allowed_missions": [],
+      "can_see_operator_profile": false,
+      "can_see_decisions": true,
+      "can_see_artifacts": true,
+      "redact_before_send": false
+    },
+    "status": "available",
+    "created_at": "2026-03-13T23:32:03.640Z"
+  },
+  {
+    "agent_id": "openai-api",
+    "name": "OpenAI (API)",
+    "provider": "openai",
+    "role": "reasoner",
+    "capabilities": [
+      "research",
+      "deliberation",
+      "report-generation"
+    ],
+    "execution_boundary": {
+      "can_read_files": false,
+      "can_write_files": false,
+      "can_execute_code": false,
+      "can_access_network": true,
+      "can_access_context": true,
+      "max_runtime_ms": 60000,
+      "allowed_stages": [
+        "audit",
+        "research",
+        "decide",
+        "strategy",
+        "report",
+        "locate_files"
+      ],
+      "requires_approval": false
+    },
+    "privacy_scope": {
+      "scope": "task",
+      "allowed_missions": [],
+      "can_see_operator_profile": true,
+      "can_see_decisions": true,
+      "can_see_artifacts": false,
+      "redact_before_send": true
+    },
+    "status": "available",
+    "created_at": "2026-03-13T23:32:03.641Z"
+  },
+  {
+    "agent_id": "gemini-api",
+    "name": "Gemini (API)",
+    "provider": "gemini",
+    "role": "specialist",
+    "capabilities": [
+      "research",
+      "deliberation"
+    ],
+    "execution_boundary": {
+      "can_read_files": false,
+      "can_write_files": false,
+      "can_execute_code": false,
+      "can_access_network": true,
+      "can_access_context": true,
+      "max_runtime_ms": 60000,
+      "allowed_stages": [
+        "audit",
+        "research",
+        "strategy",
+        "report"
+      ],
+      "requires_approval": false
+    },
+    "privacy_scope": {
+      "scope": "task",
+      "allowed_missions": [],
+      "can_see_operator_profile": false,
+      "can_see_decisions": false,
+      "can_see_artifacts": false,
+      "redact_before_send": true
+    },
+    "status": "available",
+    "created_at": "2026-03-13T23:32:03.641Z"
+  },
+  {
+    "agent_id": "perplexity-api",
+    "name": "Perplexity (API)",
+    "provider": "perplexity",
+    "role": "specialist",
+    "capabilities": [
+      "research"
+    ],
+    "execution_boundary": {
+      "can_read_files": false,
+      "can_write_files": false,
+      "can_execute_code": false,
+      "can_access_network": true,
+      "can_access_context": false,
+      "max_runtime_ms": 60000,
+      "allowed_stages": [
+        "research"
+      ],
+      "requires_approval": false
+    },
+    "privacy_scope": {
+      "scope": "task",
+      "allowed_missions": [],
+      "can_see_operator_profile": false,
+      "can_see_decisions": false,
+      "can_see_artifacts": false,
+      "redact_before_send": true
+    },
+    "status": "available",
+    "created_at": "2026-03-13T23:32:03.641Z"
+  }
+]

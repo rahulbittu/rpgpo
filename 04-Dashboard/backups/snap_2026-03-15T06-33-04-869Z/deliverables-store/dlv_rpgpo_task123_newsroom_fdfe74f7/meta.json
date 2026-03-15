@@ -1,0 +1,24 @@
+{
+  "key": {
+    "projectId": "rpgpo",
+    "taskId": "task_123",
+    "variant": "newsroom",
+    "contractVersion": "v1"
+  },
+  "versions": [
+    {
+      "version": 1,
+      "status": "draft",
+      "contentHash": "bce69c8b86bae7f1",
+      "createdAt": "2026-03-14T22:18:16.161Z",
+      "createdBy": "agent"
+    },
+    {
+      "version": 2,
+      "status": "approved",
+      "contentHash": "00de7784d806c645",
+      "createdAt": "2026-03-14T22:18:16.162Z",
+      "createdBy": "agent"
+    }
+  ]
+}

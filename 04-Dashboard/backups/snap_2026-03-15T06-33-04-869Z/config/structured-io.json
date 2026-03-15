@@ -1,0 +1,39 @@
+{
+  "metrics": {
+    "latencyBucketsMs": [50, 100, 200, 400, 800, 1600, 3200, 6400],
+    "aggregationWindowMinutes": 5,
+    "retentionHours": 168
+  },
+  "providerLearning": {
+    "weights": { "successRate": 0.6, "latency": 0.25, "cost": 0.15 },
+    "minSamples": 30,
+    "decay": "ewma",
+    "alpha": 0.2,
+    "circuitBreaker": {
+      "failureRateThreshold": 0.5,
+      "minimumCalls": 20,
+      "sleepWindowMs": 300000
+    }
+  },
+  "evidence": {
+    "ttlDays": 30,
+    "cleanupIntervalMinutes": 60,
+    "maxBytes": 500000000
+  },
+  "alerts": {
+    "parseFailureRateThreshold": 0.2,
+    "providerErrorRateThreshold": 0.3,
+    "minCalls": 20,
+    "evaluationIntervalMinutes": 5,
+    "cooldownMinutes": 30
+  },
+  "cost": {
+    "providerPricing": {
+      "openai:gpt-4o": { "inputPer1k": 5.0, "outputPer1k": 15.0 },
+      "anthropic:claude-3-5": { "inputPer1k": 3.0, "outputPer1k": 15.0 },
+      "google:gemini-1.5-pro": { "inputPer1k": 1.25, "outputPer1k": 5.0 },
+      "perplexity:sonar-large": { "inputPer1k": 1.0, "outputPer1k": 2.0 }
+    },
+    "defaultPricing": { "inputPer1k": 2.0, "outputPer1k": 6.0 }
+  }
+}

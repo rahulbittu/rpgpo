@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "deliverableId": "dlv_rpgpo_task123_newsroom_fdfe74f7",
+    "version": 1,
+    "status": "draft",
+    "contentHash": "bce69c8b86bae7f1",
+    "createdAt": "2026-03-14T22:18:16.161Z",
+    "createdBy": "agent",
+    "parentVersion": null
+  },
+  "content": {
+    "kind": "newsroom",
+    "engineId": "newsroom",
+    "title": "Hyderabad News",
+    "generatedAt": "2026-03-14T22:18:16.160Z",
+    "rankedItems": [
+      {
+        "rank": 1,
+        "headline": "Tech Park announces 5000 jobs",
+        "summary": "Major expansion in Gachibowli",
+        "source": {
+          "name": "Times of India",
+          "url": "https://toi.in/123"
+        }
+      }
+    ]
+  },
+  "provenance": {}
+}

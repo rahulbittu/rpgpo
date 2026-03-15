@@ -1,0 +1,47 @@
+[
+  {
+    "id": "notif_mmrcvj7p_2afdcfb8",
+    "type": "alert.fired",
+    "severity": "urgent",
+    "title": "Urg",
+    "message": "u",
+    "createdAt": 1773555034885,
+    "acknowledgedAt": 1773555034885
+  },
+  {
+    "id": "notif_mmrd5nkx_f09c3fbd",
+    "type": "system.info",
+    "severity": "low",
+    "title": "Subtask complete: Research Passive Income Opportunities",
+    "message": "### Search Results Assessment",
+    "createdAt": 1773555507105,
+    "actions": [
+      {
+        "label": "View Task",
+        "action": "viewWorkflow",
+        "ref": {
+          "kind": "task",
+          "id": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "notif_mmrd60ac_889eaa23",
+    "type": "system.info",
+    "severity": "low",
+    "title": "Subtask complete: Analyze Income Potential and Costs",
+    "message": "**Decision: Analyze Passive Income Opportunities for Senior Data Engineers**",
+    "createdAt": 1773555523572,
+    "actions": [
+      {
+        "label": "View Task",
+        "action": "viewWorkflow",
+        "ref": {
+          "kind": "task",
+          "id": ""
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,106 @@
+{
+  "instance_id": "rpgpo",
+  "instance_name": "RPGPO",
+  "operator_name": "Rahul",
+  "enabled_missions": [
+    "topranker",
+    "careeregine",
+    "founder2founder",
+    "wealthresearch",
+    "newsroom",
+    "screenwriting",
+    "music",
+    "personalops",
+    "general"
+  ],
+  "enabled_capabilities": [
+    "coding",
+    "research",
+    "deliberation",
+    "repo-grounding",
+    "approval-handling",
+    "builder-execution",
+    "cost-tracking"
+  ],
+  "provider_settings": {
+    "claude": {
+      "enabled": true,
+      "mode": "local"
+    },
+    "openai": {
+      "enabled": true,
+      "model": "gpt-4o"
+    },
+    "perplexity": {
+      "enabled": true,
+      "model": "sonar"
+    },
+    "gemini": {
+      "enabled": true,
+      "model": "gemini-2.5-flash-lite"
+    }
+  },
+  "repo_mappings": {
+    "topranker": "02-Projects/TopRanker/source-repo",
+    "careeregine": "02-Projects/CareerEngine",
+    "founder2founder": "",
+    "wealthresearch": "",
+    "newsroom": "",
+    "screenwriting": "",
+    "music": "",
+    "personalops": "",
+    "general": ""
+  },
+  "policy": {
+    "local_only": false,
+    "allowed_providers": [
+      "claude",
+      "openai",
+      "perplexity",
+      "gemini"
+    ],
+    "mission_isolation": [],
+    "log_redaction_patterns": [
+      "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b",
+      "\\bsk-[a-zA-Z0-9]{20,}\\b"
+    ],
+    "sensitive_fields": [
+      "api_key",
+      "password",
+      "secret",
+      "token"
+    ],
+    "allow_export": true,
+    "allow_import": true,
+    "secret_scope": "env",
+    "memory_scope": "instance"
+  },
+  "budget": {
+    "geminiModel": "gemini-2.5-flash-lite",
+    "geminibudgetLimit": null,
+    "warningThreshold": null,
+    "disableAfterThreshold": false,
+    "builderTimeoutMinutes": 10
+  },
+  "notification_settings": {
+    "enabled": true,
+    "channels": [
+      "dashboard"
+    ],
+    "notify_on": [
+      "approval_needed",
+      "task_done",
+      "task_failed",
+      "builder_complete"
+    ]
+  },
+  "local_settings": {
+    "storage_root": "/Users/rpgpo/Projects/RPGPO/04-Dashboard/state",
+    "offline_capable": true,
+    "auto_refresh_interval_ms": 3000,
+    "builder_timeout_minutes": 10,
+    "operator_mode_default": false
+  },
+  "created_at": "2026-03-13T21:56:31.315Z",
+  "updated_at": "2026-03-13T21:56:31.316Z"
+}

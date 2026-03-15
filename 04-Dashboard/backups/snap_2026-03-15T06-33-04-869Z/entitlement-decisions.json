@@ -1,0 +1,155 @@
+[
+  {
+    "decision_id": "ae_mmr89n6dk9qh",
+    "route": "/api/structured-io",
+    "tenant_id": "rpgpo",
+    "feature": "",
+    "outcome": "allowed",
+    "reason": "No protection rule for this route",
+    "created_at": "2026-03-15T04:01:35.125Z"
+  },
+  {
+    "decision_id": "ae_mmr89n643wml",
+    "route": "/api/providers",
+    "tenant_id": "rpgpo",
+    "feature": "",
+    "outcome": "allowed",
+    "reason": "No protection rule for this route",
+    "created_at": "2026-03-15T04:01:35.116Z"
+  },
+  {
+    "decision_id": "ae_mmqs6tiwwmo0",
+    "route": "/api/audit-hub",
+    "tenant_id": "rpgpo",
+    "feature": "",
+    "outcome": "allowed",
+    "reason": "No protection rule for this route",
+    "created_at": "2026-03-14T20:31:29.528Z"
+  },
+  {
+    "decision_id": "ae_mmqs6tiuliu3",
+    "route": "/api/release-provider-gating",
+    "tenant_id": "rpgpo",
+    "feature": "",
+    "outcome": "allowed",
+    "reason": "No protection rule for this route",
+    "created_at": "2026-03-14T20:31:29.526Z"
+  },
+  {
+    "decision_id": "ae_mmqs6tit7a98",
+    "route": "/api/marketplace",
+    "tenant_id": "untrusted",
+    "feature": "governance",
+    "outcome": "allowed",
+    "reason": "Entitled",
+    "created_at": "2026-03-14T20:31:29.525Z"
+  },
+  {
+    "decision_id": "ae_mmqs6titicce",
+    "route": "/api/marketplace",
+    "tenant_id": "untrusted",
+    "feature": "governance",
+    "outcome": "allowed",
+    "reason": "Entitled",
+    "created_at": "2026-03-14T20:31:29.525Z"
+  },
+  {
+    "decision_id": "ae_mmqs6tis56em",
+    "route": "/api/enforcement-evidence",
+    "tenant_id": "rpgpo",
+    "feature": "",
+    "outcome": "allowed",
+    "reason": "No protection rule for this route",
+    "created_at": "2026-03-14T20:31:29.524Z"
+  },
+  {
+    "decision_id": "ae_mmqs6tirpw1l",
+    "route": "/api/audit-hub",
+    "tenant_id": "rpgpo",
+    "feature": "",
+    "outcome": "allowed",
+    "reason": "No protection rule for this route",
+    "created_at": "2026-03-14T20:31:29.523Z"
+  },
+  {
+    "decision_id": "ae_mmqs6tiqn519",
+    "route": "/api/tenant-admin",
+    "tenant_id": "rpgpo-other",
+    "feature": "tenant_admin",
+    "outcome": "denied_upgrade_required",
+    "reason": "Feature \"tenant_admin\" requires team plan",
+    "created_at": "2026-03-14T20:31:29.522Z"
+  },
+  {
+    "decision_id": "ae_mmqs6tipqiyl",
+    "route": "/api/release-orchestration",
+    "tenant_id": "rpgpo",
+    "feature": "release",
+    "outcome": "allowed",
+    "reason": "Entitled",
+    "created_at": "2026-03-14T20:31:29.521Z"
+  },
+  {
+    "decision_id": "ae_mmqs6tio1146",
+    "route": "/api/tenant-admin",
+    "tenant_id": "free_tenant",
+    "feature": "tenant_admin",
+    "outcome": "denied_upgrade_required",
+    "reason": "Feature \"tenant_admin\" requires team plan",
+    "created_at": "2026-03-14T20:31:29.520Z"
+  },
+  {
+    "decision_id": "ae_mmqs6ti79gup",
+    "route": "/api/tenant-admin",
+    "tenant_id": "rpgpo-other",
+    "feature": "tenant_admin",
+    "outcome": "denied_upgrade_required",
+    "reason": "Feature \"tenant_admin\" requires team plan",
+    "created_at": "2026-03-14T20:31:29.503Z"
+  },
+  {
+    "decision_id": "ae_mmqs6ti6mja1",
+    "route": "/api/release-orchestration",
+    "tenant_id": "rpgpo",
+    "feature": "release",
+    "outcome": "allowed",
+    "reason": "Entitled",
+    "created_at": "2026-03-14T20:31:29.502Z"
+  },
+  {
+    "decision_id": "ae_mmqs6ti696wd",
+    "route": "/api/compliance-export",
+    "tenant_id": "free_tenant",
+    "feature": "compliance",
+    "outcome": "denied_upgrade_required",
+    "reason": "Feature \"compliance\" requires team plan",
+    "created_at": "2026-03-14T20:31:29.502Z"
+  },
+  {
+    "decision_id": "ae_mmqs6thxx0sd",
+    "route": "/api/release-orchestration",
+    "tenant_id": "rpgpo",
+    "feature": "release",
+    "outcome": "allowed",
+    "reason": "Entitled",
+    "created_at": "2026-03-14T20:31:29.493Z"
+  },
+  {
+    "decision_id": "ae_mmqs6thtvy5a",
+    "route": "/api/tenant-admin",
+    "tenant_id": "rpgpo-other",
+    "feature": "tenant_admin",
+    "outcome": "denied_upgrade_required",
+    "reason": "Feature \"tenant_admin\" requires team plan",
+    "created_at": "2026-03-14T20:31:29.489Z"
+  },
+  {
+    "decision_id": "ae_mmqs6thq08bc",
+    "route": "/api/compliance-export",
+    "tenant_id": "free_tenant",
+    "feature": "compliance",
+    "outcome": "denied_upgrade_required",
+    "reason": "Feature \"compliance\" requires team plan",
+    "created_at": "2026-03-14T20:31:29.486Z"
+  }
+]

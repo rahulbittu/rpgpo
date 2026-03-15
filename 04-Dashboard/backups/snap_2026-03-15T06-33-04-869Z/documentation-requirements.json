@@ -1,0 +1,75 @@
+[
+  {
+    "req_id": "dr_arch",
+    "scope_type": "architecture_part",
+    "title": "Architecture Documentation",
+    "description": "Architecture parts must have design doc, contract doc, and runbook",
+    "required_artifacts": [
+      "architecture_doc",
+      "contract_doc",
+      "runbook"
+    ],
+    "lane_behavior": {
+      "dev": "warn",
+      "beta": "soft_block",
+      "prod": "hard_block"
+    },
+    "enabled": true,
+    "created_at": "2026-03-14T18:06:55.539Z",
+    "updated_at": "2026-03-14T18:06:55.539Z"
+  },
+  {
+    "req_id": "dr_graph",
+    "scope_type": "execution_graph",
+    "title": "Execution Graph Documentation",
+    "description": "Completed graphs should have summary documentation",
+    "required_artifacts": [
+      "graph_summary"
+    ],
+    "lane_behavior": {
+      "dev": "warn",
+      "beta": "warn",
+      "prod": "soft_block"
+    },
+    "enabled": true,
+    "created_at": "2026-03-14T18:06:55.539Z",
+    "updated_at": "2026-03-14T18:06:55.539Z"
+  },
+  {
+    "req_id": "dr_promo",
+    "scope_type": "promotion",
+    "title": "Promotion Documentation",
+    "description": "Promotions must have dossier and review documentation",
+    "required_artifacts": [
+      "dossier_doc",
+      "review_summary"
+    ],
+    "lane_behavior": {
+      "dev": "warn",
+      "beta": "soft_block",
+      "prod": "hard_block"
+    },
+    "enabled": true,
+    "created_at": "2026-03-14T18:06:55.539Z",
+    "updated_at": "2026-03-14T18:06:55.539Z"
+  },
+  {
+    "req_id": "dr_release",
+    "scope_type": "release",
+    "title": "Release Documentation",
+    "description": "Releases require changelog, release notes, and rollback plan",
+    "required_artifacts": [
+      "changelog",
+      "release_notes",
+      "rollback_plan"
+    ],
+    "lane_behavior": {
+      "dev": "warn",
+      "beta": "soft_block",
+      "prod": "hard_block"
+    },
+    "enabled": true,
+    "created_at": "2026-03-14T18:06:55.539Z",
+    "updated_at": "2026-03-14T18:06:55.539Z"
+  }
+]

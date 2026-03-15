@@ -1,0 +1,73 @@
+{
+  "task_test_65": {
+    "task_id": "task_test_65",
+    "deliverable_id": "dlv_rpgpo_tasktest65_newsroom_f3cf5361",
+    "engine_id": "newsroom",
+    "scaffold_created": true,
+    "fields_populated": [
+      "rankedItems"
+    ],
+    "fields_missing": [
+      "summaries",
+      "source_links"
+    ],
+    "contract_status": "partial",
+    "merge_count": 1,
+    "last_merge_at": "2026-03-14T22:44:47.965Z",
+    "created_at": "2026-03-14T22:44:47.964Z"
+  },
+  "t_mmr83d7jtkmu": {
+    "task_id": "t_mmr83d7jtkmu",
+    "deliverable_id": "dlv_rpgpo_tmmr83d7jtkmu_document_fd7925eb",
+    "engine_id": "general",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T03:56:49.354Z"
+  },
+  "t_mmr8e3sdivuj": {
+    "task_id": "t_mmr8e3sdivuj",
+    "deliverable_id": "dlv_rpgpo_tmmr8e3sdivuj_document_7d2c6231",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [],
+    "contract_status": "pending",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T04:07:21.404Z"
+  },
+  "t_mmr8utd022lo": {
+    "task_id": "t_mmr8utd022lo",
+    "deliverable_id": "",
+    "engine_id": "research",
+    "scaffold_created": false,
+    "fields_populated": [
+      "recommendations"
+    ],
+    "fields_missing": [
+      "deliverable_not_found"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T04:20:07.804Z"
+  },
+  "t_mmrd57n5bvzj": {
+    "task_id": "t_mmrd57n5bvzj",
+    "deliverable_id": "dlv_rpgpo_tmmrd57n5bvzj_document_035affad",
+    "engine_id": "general",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [],
+    "contract_status": "pending",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T06:18:16.480Z"
+  }
+}

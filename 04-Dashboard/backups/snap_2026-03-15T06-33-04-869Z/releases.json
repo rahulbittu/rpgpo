@@ -1,0 +1,63 @@
+[
+  {
+    "id": "rc_mmpkfqelboq3",
+    "version": "0.9.1",
+    "from_env": "dev",
+    "to_env": "beta",
+    "summary": "Part 10 release",
+    "changed_modules": [
+      "ai",
+      "costs",
+      "deliberation",
+      "events",
+      "files",
+      "intake",
+      "queue",
+      "repo-scanner",
+      "workflow",
+      ".gitignore",
+      "activity",
+      "agents",
+      "autonomy",
+      "board",
+      "capabilities",
+      "context-updater",
+      "context",
+      "conversations",
+      "docs-generator",
+      "environments",
+      "gitops",
+      "instance",
+      "loops",
+      "missions",
+      "notifications",
+      "operator-profile",
+      "plans",
+      "privacy",
+      "provisioning",
+      "releases",
+      "rpgpo-missions",
+      "state-machine",
+      "system-map",
+      "types",
+      "validate"
+    ],
+    "changed_files_count": 78,
+    "blockers": [
+      {
+        "type": "active_blocker",
+        "description": "3 active blocker(s): Code review: Detect N+1 Queries",
+        "severity": "blocking",
+        "resolvable_by": "Resolve workflow blockers"
+      },
+      {
+        "type": "pending_approval",
+        "description": "5 task(s) awaiting approval",
+        "severity": "warning",
+        "resolvable_by": "Review and approve/reject pending tasks"
+      }
+    ],
+    "ready": false,
+    "created_at": "2026-03-14T00:06:42.285Z"
+  }
+]

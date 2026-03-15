@@ -1,0 +1,1887 @@
+[
+  {
+    "event_id": "te_mmqs6tjt7bdq",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T20:31:29.561Z"
+  },
+  {
+    "event_id": "te_mmqs6tjlj0qh",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T20:31:29.553Z"
+  },
+  {
+    "event_id": "te_mmqs6tit944h",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:31:29.525Z"
+  },
+  {
+    "event_id": "te_mmqs6tiqfzsx",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:31:29.522Z"
+  },
+  {
+    "event_id": "te_mmqs6tiosxvl",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:31:29.520Z"
+  },
+  {
+    "event_id": "te_mmqs6ti92jol",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:31:29.505Z"
+  },
+  {
+    "event_id": "te_mmqs6ti77ed8",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:31:29.503Z"
+  },
+  {
+    "event_id": "te_mmqs6ti7slq5",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:31:29.503Z"
+  },
+  {
+    "event_id": "te_mmqs6ti7hyup",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:31:29.503Z"
+  },
+  {
+    "event_id": "te_mmqs6ti645q0",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:31:29.502Z"
+  },
+  {
+    "event_id": "te_mmqs6thw8nx4",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:31:29.492Z"
+  },
+  {
+    "event_id": "te_mmqs6thu1r2x",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:31:29.490Z"
+  },
+  {
+    "event_id": "te_mmqs6tht6rfn",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:31:29.489Z"
+  },
+  {
+    "event_id": "te_mmqs6thto80b",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:31:29.489Z"
+  },
+  {
+    "event_id": "te_mmqs6thslcjd",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:31:29.488Z"
+  },
+  {
+    "event_id": "te_mmqs6thqqcgm",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:31:29.486Z"
+  },
+  {
+    "event_id": "te_mmqs3yr5fgul",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T20:29:16.337Z"
+  },
+  {
+    "event_id": "te_mmqs288fmdam",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T20:27:55.311Z"
+  },
+  {
+    "event_id": "te_mmqs25a3ikxh",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T20:27:51.483Z"
+  },
+  {
+    "event_id": "te_mmqs126g3cjb",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T20:27:00.808Z"
+  },
+  {
+    "event_id": "te_mmqs1266uirr",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T20:27:00.798Z"
+  },
+  {
+    "event_id": "te_mmqrzldzvgas",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T20:25:52.391Z"
+  },
+  {
+    "event_id": "te_mmqrzkt4rk33",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T20:25:51.640Z"
+  },
+  {
+    "event_id": "te_mmqrxoh90acr",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T20:24:23.085Z"
+  },
+  {
+    "event_id": "te_mmqrqs8hhjbu",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T20:19:01.361Z"
+  },
+  {
+    "event_id": "te_mmqrqs85s1vm",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:19:01.349Z"
+  },
+  {
+    "event_id": "te_mmqrqs83r2xn",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T20:19:01.347Z"
+  },
+  {
+    "event_id": "te_mmqrjgvjiia4",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T20:13:20.047Z"
+  },
+  {
+    "event_id": "te_mmqq1xmnpd5n",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T19:31:42.335Z"
+  },
+  {
+    "event_id": "te_mmqq1xmhcr07",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:42.329Z"
+  },
+  {
+    "event_id": "te_mmqq1xmaroiw",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:42.322Z"
+  },
+  {
+    "event_id": "te_mmqq1xm8zutu",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:42.320Z"
+  },
+  {
+    "event_id": "te_mmqq1xlqswu7",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T19:31:42.302Z"
+  },
+  {
+    "event_id": "te_mmqq1xlmo1nu",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:42.298Z"
+  },
+  {
+    "event_id": "te_mmqq1xllkg4d",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:42.297Z"
+  },
+  {
+    "event_id": "te_mmqq1xllyse6",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:42.297Z"
+  },
+  {
+    "event_id": "te_mmqq1xlk9k9o",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:42.296Z"
+  },
+  {
+    "event_id": "te_mmqq1xlj9iju",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:42.295Z"
+  },
+  {
+    "event_id": "te_mmqq1xlho07m",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:42.293Z"
+  },
+  {
+    "event_id": "te_mmqq1xlg0iw4",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:42.292Z"
+  },
+  {
+    "event_id": "te_mmqq1xlffni2",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:42.291Z"
+  },
+  {
+    "event_id": "te_mmqq1xlfntpf",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:42.291Z"
+  },
+  {
+    "event_id": "te_mmqq1xletkch",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:42.290Z"
+  },
+  {
+    "event_id": "te_mmqq1xlcrpda",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:42.288Z"
+  },
+  {
+    "event_id": "te_mmqq1pvpotwe",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T19:31:32.293Z"
+  },
+  {
+    "event_id": "te_mmqq1pvgw3mw",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:32.284Z"
+  },
+  {
+    "event_id": "te_mmqq1pv82fiv",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:32.276Z"
+  },
+  {
+    "event_id": "te_mmqq1pv5vlec",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:31:32.273Z"
+  },
+  {
+    "event_id": "te_mmqq0xsw0edb",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T19:30:55.904Z"
+  },
+  {
+    "event_id": "te_mmqq0xslxok0",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:30:55.893Z"
+  },
+  {
+    "event_id": "te_mmqq0xsh1u59",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:30:55.889Z"
+  },
+  {
+    "event_id": "te_mmqq0iryllg1",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:30:36.430Z"
+  },
+  {
+    "event_id": "te_mmqpbzwkmpcq",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T19:11:32.228Z"
+  },
+  {
+    "event_id": "te_mmqpbzwd7wmt",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.221Z"
+  },
+  {
+    "event_id": "te_mmqpbzwclh0j",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.220Z"
+  },
+  {
+    "event_id": "te_mmqpbzwbrsjh",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.219Z"
+  },
+  {
+    "event_id": "te_mmqpbzwbz6v4",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.219Z"
+  },
+  {
+    "event_id": "te_mmqpbzw9r957",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.217Z"
+  },
+  {
+    "event_id": "te_mmqpbzvrsyeh",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.199Z"
+  },
+  {
+    "event_id": "te_mmqpbzvq6xcq",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.198Z"
+  },
+  {
+    "event_id": "te_mmqpbzvqexef",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.198Z"
+  },
+  {
+    "event_id": "te_mmqpbzvpe98q",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.197Z"
+  },
+  {
+    "event_id": "te_mmqpbzvosq1c",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.196Z"
+  },
+  {
+    "event_id": "te_mmqpbzvm9ijs",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.194Z"
+  },
+  {
+    "event_id": "te_mmqpbzvm9lez",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.194Z"
+  },
+  {
+    "event_id": "te_mmqpbzvlyyty",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.193Z"
+  },
+  {
+    "event_id": "te_mmqpbzvl4eoe",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.193Z"
+  },
+  {
+    "event_id": "te_mmqpbzvk1rq5",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.192Z"
+  },
+  {
+    "event_id": "te_mmqpbzvi1vtn",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:11:32.190Z"
+  },
+  {
+    "event_id": "te_mmqpaoima76t",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T19:10:30.814Z"
+  },
+  {
+    "event_id": "te_mmqpaoig7586",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.808Z"
+  },
+  {
+    "event_id": "te_mmqpaoifuva3",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.807Z"
+  },
+  {
+    "event_id": "te_mmqpaoiff2og",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.807Z"
+  },
+  {
+    "event_id": "te_mmqpaoiead8b",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.806Z"
+  },
+  {
+    "event_id": "te_mmqpaoidqtf9",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.805Z"
+  },
+  {
+    "event_id": "te_mmqpaohwt88v",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.788Z"
+  },
+  {
+    "event_id": "te_mmqpaohvb23m",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.787Z"
+  },
+  {
+    "event_id": "te_mmqpaohv2and",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.787Z"
+  },
+  {
+    "event_id": "te_mmqpaohvqttu",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.787Z"
+  },
+  {
+    "event_id": "te_mmqpaohumgem",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.786Z"
+  },
+  {
+    "event_id": "te_mmqpaohsfdf5",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.784Z"
+  },
+  {
+    "event_id": "te_mmqpaohrg7x1",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.783Z"
+  },
+  {
+    "event_id": "te_mmqpaohqd3z8",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.782Z"
+  },
+  {
+    "event_id": "te_mmqpaohqzsua",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.782Z"
+  },
+  {
+    "event_id": "te_mmqpaohpc5yo",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.781Z"
+  },
+  {
+    "event_id": "te_mmqpaohnd9de",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:30.779Z"
+  },
+  {
+    "event_id": "te_mmqpagkcuudk",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T19:10:20.508Z"
+  },
+  {
+    "event_id": "te_mmqpagk6i1mc",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.502Z"
+  },
+  {
+    "event_id": "te_mmqpagk6kko9",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.502Z"
+  },
+  {
+    "event_id": "te_mmqpagk6hp66",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.502Z"
+  },
+  {
+    "event_id": "te_mmqpagk5apor",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.501Z"
+  },
+  {
+    "event_id": "te_mmqpagk4c2py",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.500Z"
+  },
+  {
+    "event_id": "te_mmqpagjol8zq",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.484Z"
+  },
+  {
+    "event_id": "te_mmqpagjnk9s7",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.483Z"
+  },
+  {
+    "event_id": "te_mmqpagjmc2ea",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.482Z"
+  },
+  {
+    "event_id": "te_mmqpagjmipuy",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.482Z"
+  },
+  {
+    "event_id": "te_mmqpagjl5dqw",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.481Z"
+  },
+  {
+    "event_id": "te_mmqpagjjbwll",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.479Z"
+  },
+  {
+    "event_id": "te_mmqpagjik78p",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.478Z"
+  },
+  {
+    "event_id": "te_mmqpagjh3kam",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.477Z"
+  },
+  {
+    "event_id": "te_mmqpagjhdel4",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.477Z"
+  },
+  {
+    "event_id": "te_mmqpagjgbopf",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.476Z"
+  },
+  {
+    "event_id": "te_mmqpagje5l3s",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:20.474Z"
+  },
+  {
+    "event_id": "te_mmqpa5qo715t",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T19:10:06.480Z"
+  },
+  {
+    "event_id": "te_mmqpa5qih02s",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.474Z"
+  },
+  {
+    "event_id": "te_mmqpa5qhfcbr",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.473Z"
+  },
+  {
+    "event_id": "te_mmqpa5qhn8zd",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.473Z"
+  },
+  {
+    "event_id": "te_mmqpa5qhl16z",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.473Z"
+  },
+  {
+    "event_id": "te_mmqpa5qfd0zy",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.471Z"
+  },
+  {
+    "event_id": "te_mmqpa5pyozou",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.454Z"
+  },
+  {
+    "event_id": "te_mmqpa5pxydia",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.453Z"
+  },
+  {
+    "event_id": "te_mmqpa5pxg39k",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.453Z"
+  },
+  {
+    "event_id": "te_mmqpa5pwnyzw",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.452Z"
+  },
+  {
+    "event_id": "te_mmqpa5pvg9hz",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.451Z"
+  },
+  {
+    "event_id": "te_mmqpa5ptly2i",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.449Z"
+  },
+  {
+    "event_id": "te_mmqpa5ptb7aw",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.449Z"
+  },
+  {
+    "event_id": "te_mmqpa5ps3fnr",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.448Z"
+  },
+  {
+    "event_id": "te_mmqpa5psan69",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.448Z"
+  },
+  {
+    "event_id": "te_mmqpa5pry5n1",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.447Z"
+  },
+  {
+    "event_id": "te_mmqpa5ppwqc3",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T19:10:06.445Z"
+  },
+  {
+    "event_id": "te_mmqog4dfynd9",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T18:46:45.027Z"
+  },
+  {
+    "event_id": "te_mmqog4dbeiue",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.023Z"
+  },
+  {
+    "event_id": "te_mmqog4db4mph",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.023Z"
+  },
+  {
+    "event_id": "te_mmqog4da77ru",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.022Z"
+  },
+  {
+    "event_id": "te_mmqog4da8ud5",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.022Z"
+  },
+  {
+    "event_id": "te_mmqog4d9q097",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.021Z"
+  },
+  {
+    "event_id": "te_mmqog4d8zu7f",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.020Z"
+  },
+  {
+    "event_id": "te_mmqog4d761jt",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.019Z"
+  },
+  {
+    "event_id": "te_mmqog4d7qsry",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.019Z"
+  },
+  {
+    "event_id": "te_mmqog4d74kx2",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.019Z"
+  },
+  {
+    "event_id": "te_mmqog4d6ldgr",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.018Z"
+  },
+  {
+    "event_id": "te_mmqog4d4rbjp",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.016Z"
+  },
+  {
+    "event_id": "te_mmqog4d4k33l",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.016Z"
+  },
+  {
+    "event_id": "te_mmqog4d49wjc",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.016Z"
+  },
+  {
+    "event_id": "te_mmqog4d3z5xa",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.015Z"
+  },
+  {
+    "event_id": "te_mmqog4d2u575",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.014Z"
+  },
+  {
+    "event_id": "te_mmqog4d16lbw",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.013Z"
+  },
+  {
+    "event_id": "te_mmqog4d0dghu",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.012Z"
+  },
+  {
+    "event_id": "te_mmqog4d0e9m3",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.012Z"
+  },
+  {
+    "event_id": "te_mmqog4d07wn0",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.012Z"
+  },
+  {
+    "event_id": "te_mmqog4cz87uz",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.011Z"
+  },
+  {
+    "event_id": "te_mmqog4cy9pvw",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.010Z"
+  },
+  {
+    "event_id": "te_mmqog4cx1uji",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.009Z"
+  },
+  {
+    "event_id": "te_mmqog4cxahsm",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.009Z"
+  },
+  {
+    "event_id": "te_mmqog4cx9g12",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.009Z"
+  },
+  {
+    "event_id": "te_mmqog4cwdxw5",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.008Z"
+  },
+  {
+    "event_id": "te_mmqog4cvi12q",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.007Z"
+  },
+  {
+    "event_id": "te_mmqog4cue13t",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.006Z"
+  },
+  {
+    "event_id": "te_mmqog4cuvjzc",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.006Z"
+  },
+  {
+    "event_id": "te_mmqog4cu96wo",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.006Z"
+  },
+  {
+    "event_id": "te_mmqog4ctkqz3",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.005Z"
+  },
+  {
+    "event_id": "te_mmqog4csg0yl",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.004Z"
+  },
+  {
+    "event_id": "te_mmqog4crtntq",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.003Z"
+  },
+  {
+    "event_id": "te_mmqog4crw2py",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.003Z"
+  },
+  {
+    "event_id": "te_mmqog4cr3tkh",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.003Z"
+  },
+  {
+    "event_id": "te_mmqog4cq2isk",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.002Z"
+  },
+  {
+    "event_id": "te_mmqog4cpht6u",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.001Z"
+  },
+  {
+    "event_id": "te_mmqog4co4pw3",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.000Z"
+  },
+  {
+    "event_id": "te_mmqog4co499c",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.000Z"
+  },
+  {
+    "event_id": "te_mmqog4coo2yw",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:45.000Z"
+  },
+  {
+    "event_id": "te_mmqog4cn6iqt",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:44.999Z"
+  },
+  {
+    "event_id": "te_mmqog4caskjn",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:44.986Z"
+  },
+  {
+    "event_id": "te_mmqog4c98zzb",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:44.985Z"
+  },
+  {
+    "event_id": "te_mmqog4c9cver",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:44.985Z"
+  },
+  {
+    "event_id": "te_mmqog4c99bs3",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:44.985Z"
+  },
+  {
+    "event_id": "te_mmqog4c8s8hc",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:44.984Z"
+  },
+  {
+    "event_id": "te_mmqog4c6rimh",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:44.982Z"
+  },
+  {
+    "event_id": "te_mmqog4c5oi7k",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:44.981Z"
+  },
+  {
+    "event_id": "te_mmqog4c4t5aq",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:44.980Z"
+  },
+  {
+    "event_id": "te_mmqog4c4aj8j",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:44.980Z"
+  },
+  {
+    "event_id": "te_mmqog4c46equ",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:44.980Z"
+  },
+  {
+    "event_id": "te_mmqog4c1u3ey",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:44.977Z"
+  },
+  {
+    "event_id": "te_mmqofvcg0q0r",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T18:46:33.328Z"
+  },
+  {
+    "event_id": "te_mmqofvce594l",
+    "category": "reliability_closure",
+    "action": "latency_probe",
+    "outcome": "success",
+    "duration_ms": 15,
+    "created_at": "2026-03-14T18:46:33.326Z"
+  },
+  {
+    "event_id": "te_mmqofvc88bsn",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.320Z"
+  },
+  {
+    "event_id": "te_mmqofvc8eesq",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.320Z"
+  },
+  {
+    "event_id": "te_mmqofvc7mxh6",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.319Z"
+  },
+  {
+    "event_id": "te_mmqofvc7gayf",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.319Z"
+  },
+  {
+    "event_id": "te_mmqofvc6bwky",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.318Z"
+  },
+  {
+    "event_id": "te_mmqofvc58rq5",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.317Z"
+  },
+  {
+    "event_id": "te_mmqofvc41jrq",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.316Z"
+  },
+  {
+    "event_id": "te_mmqofvc31ae0",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.315Z"
+  },
+  {
+    "event_id": "te_mmqofvc3wdqr",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.315Z"
+  },
+  {
+    "event_id": "te_mmqofvc248ap",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.314Z"
+  },
+  {
+    "event_id": "te_mmqofvc1rjvr",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.313Z"
+  },
+  {
+    "event_id": "te_mmqofvc0akvd",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.312Z"
+  },
+  {
+    "event_id": "te_mmqofvc0u48d",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.312Z"
+  },
+  {
+    "event_id": "te_mmqofvc0vd8i",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.312Z"
+  },
+  {
+    "event_id": "te_mmqofvbyx9bq",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.310Z"
+  },
+  {
+    "event_id": "te_mmqofvbwh15w",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.308Z"
+  },
+  {
+    "event_id": "te_mmqofvbw81to",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.308Z"
+  },
+  {
+    "event_id": "te_mmqofvbwngjc",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.308Z"
+  },
+  {
+    "event_id": "te_mmqofvbvrmwn",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.307Z"
+  },
+  {
+    "event_id": "te_mmqofvbuzrxr",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.306Z"
+  },
+  {
+    "event_id": "te_mmqofvbtokzg",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.305Z"
+  },
+  {
+    "event_id": "te_mmqofvbsrdvj",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.304Z"
+  },
+  {
+    "event_id": "te_mmqofvbsn551",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.304Z"
+  },
+  {
+    "event_id": "te_mmqofvbs9x8o",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.304Z"
+  },
+  {
+    "event_id": "te_mmqofvbrgqru",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.303Z"
+  },
+  {
+    "event_id": "te_mmqofvbpojnl",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.301Z"
+  },
+  {
+    "event_id": "te_mmqofvbochgg",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.300Z"
+  },
+  {
+    "event_id": "te_mmqofvbo6r8u",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.300Z"
+  },
+  {
+    "event_id": "te_mmqofvboz9jc",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.300Z"
+  },
+  {
+    "event_id": "te_mmqofvbnyzz0",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.299Z"
+  },
+  {
+    "event_id": "te_mmqofvbmzcnx",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.298Z"
+  },
+  {
+    "event_id": "te_mmqofvblhdfk",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.297Z"
+  },
+  {
+    "event_id": "te_mmqofvbl7ijz",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.297Z"
+  },
+  {
+    "event_id": "te_mmqofvbko7e5",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.296Z"
+  },
+  {
+    "event_id": "te_mmqofvbjst6i",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.295Z"
+  },
+  {
+    "event_id": "te_mmqofvbi5o59",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.294Z"
+  },
+  {
+    "event_id": "te_mmqofvbhzl97",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.293Z"
+  },
+  {
+    "event_id": "te_mmqofvbhed4v",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.293Z"
+  },
+  {
+    "event_id": "te_mmqofvbhydr9",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.293Z"
+  },
+  {
+    "event_id": "te_mmqofvbgsl9b",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.292Z"
+  },
+  {
+    "event_id": "te_mmqofvaze90m",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.275Z"
+  },
+  {
+    "event_id": "te_mmqofvayirrp",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.274Z"
+  },
+  {
+    "event_id": "te_mmqofvay1xy2",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.274Z"
+  },
+  {
+    "event_id": "te_mmqofvay1460",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.274Z"
+  },
+  {
+    "event_id": "te_mmqofvax8e0m",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.273Z"
+  },
+  {
+    "event_id": "te_mmqofvau1mux",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.270Z"
+  },
+  {
+    "event_id": "te_mmqofvatwb47",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.269Z"
+  },
+  {
+    "event_id": "te_mmqofvasmafl",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.268Z"
+  },
+  {
+    "event_id": "te_mmqofvasrx6w",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.268Z"
+  },
+  {
+    "event_id": "te_mmqofvar0v8k",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.267Z"
+  },
+  {
+    "event_id": "te_mmqofvaos7dv",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:46:33.264Z"
+  },
+  {
+    "event_id": "te_mmqnztrevlto",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:34:04.778Z"
+  },
+  {
+    "event_id": "te_mmqnztrd06ub",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:34:04.777Z"
+  },
+  {
+    "event_id": "te_mmqnztrdr1q5",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:34:04.777Z"
+  },
+  {
+    "event_id": "te_mmqnztrdedzy",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:34:04.777Z"
+  },
+  {
+    "event_id": "te_mmqnztrc6x1b",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:34:04.776Z"
+  },
+  {
+    "event_id": "te_mmqnztr9dze6",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:34:04.773Z"
+  },
+  {
+    "event_id": "te_mmqnztr82unt",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:34:04.772Z"
+  },
+  {
+    "event_id": "te_mmqnztr8p9b4",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:34:04.772Z"
+  },
+  {
+    "event_id": "te_mmqnztr7coyh",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:34:04.771Z"
+  },
+  {
+    "event_id": "te_mmqnztr7pq8v",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:34:04.771Z"
+  },
+  {
+    "event_id": "te_mmqnztr5e7xc",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:34:04.769Z"
+  },
+  {
+    "event_id": "te_mmqnz8hl4mjl",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:37.209Z"
+  },
+  {
+    "event_id": "te_mmqnz8hkn121",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:37.208Z"
+  },
+  {
+    "event_id": "te_mmqnz8hkfh40",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:37.208Z"
+  },
+  {
+    "event_id": "te_mmqnz8hjdx9m",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:37.207Z"
+  },
+  {
+    "event_id": "te_mmqnz8hglmgg",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:37.204Z"
+  },
+  {
+    "event_id": "te_mmqnz8hfo681",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:37.203Z"
+  },
+  {
+    "event_id": "te_mmqnz8he7uks",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:37.202Z"
+  },
+  {
+    "event_id": "te_mmqnz8hc3ul5",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:37.200Z"
+  },
+  {
+    "event_id": "te_mmqnyj05econ",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:04.181Z"
+  },
+  {
+    "event_id": "te_mmqnyj03b04q",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:04.179Z"
+  },
+  {
+    "event_id": "te_mmqnyj034j56",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:04.179Z"
+  },
+  {
+    "event_id": "te_mmqnyj02qyeu",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:04.178Z"
+  },
+  {
+    "event_id": "te_mmqnyj0179a5",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:04.177Z"
+  },
+  {
+    "event_id": "te_mmqnyiztkr23",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:04.169Z"
+  },
+  {
+    "event_id": "te_mmqnyizrlkss",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:04.167Z"
+  },
+  {
+    "event_id": "te_mmqnyizpox4p",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:04.165Z"
+  },
+  {
+    "event_id": "te_mmqnyizpeu9p",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:04.165Z"
+  },
+  {
+    "event_id": "te_mmqnyizpjch0",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:04.165Z"
+  },
+  {
+    "event_id": "te_mmqnyizmapkj",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:33:04.162Z"
+  },
+  {
+    "event_id": "te_mmqnijeawqon",
+    "category": "extension_runtime",
+    "action": "permission_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:20:38.194Z"
+  },
+  {
+    "event_id": "te_mmqnije9j2nm",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:20:38.193Z"
+  },
+  {
+    "event_id": "te_mmqnije9i1yl",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:20:38.193Z"
+  },
+  {
+    "event_id": "te_mmqnije9v2na",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:20:38.193Z"
+  },
+  {
+    "event_id": "te_mmqnije8jpzl",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:20:38.192Z"
+  },
+  {
+    "event_id": "te_mmqnije6550r",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:20:38.190Z"
+  },
+  {
+    "event_id": "te_mmqngtq54ax6",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:19:18.269Z"
+  },
+  {
+    "event_id": "te_mmqngtq42bqp",
+    "category": "middleware",
+    "action": "entitlement_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:19:18.268Z"
+  },
+  {
+    "event_id": "te_mmqngtq4okbm",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:19:18.268Z"
+  },
+  {
+    "event_id": "te_mmqngtq4h9m1",
+    "category": "boundary",
+    "action": "boundary_blocked",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:19:18.268Z"
+  },
+  {
+    "event_id": "te_mmqngtq3u1lf",
+    "category": "entitlement",
+    "action": "api_denied",
+    "outcome": "blocked",
+    "created_at": "2026-03-14T18:19:18.267Z"
+  }
+]

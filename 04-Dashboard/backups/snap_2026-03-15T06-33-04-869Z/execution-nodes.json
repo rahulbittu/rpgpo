@@ -1,0 +1,34 @@
+[
+  {
+    "node_id": "en_mmrd6ux1rbm5",
+    "graph_id": "eg_mmrd6uwzuah8",
+    "title": "Synthesize Research Findings",
+    "description": "A synthesized report with actionable recommendations and examples.",
+    "stage": "report",
+    "assigned_agent": "openai",
+    "execution_mode": "sequential",
+    "depends_on": [
+      "en_mmrd6ux0m5ym"
+    ],
+    "status": "pending",
+    "risk_level": "yellow",
+    "gate_ids": [],
+    "created_at": "2026-03-15T06:19:23.269Z",
+    "updated_at": "2026-03-15T06:19:23.269Z"
+  },
+  {
+    "node_id": "en_mmrd6ux0m5ym",
+    "graph_id": "eg_mmrd6uwzuah8",
+    "title": "Research Passive Income Opportunities",
+    "description": "A list of top passive income opportunities for 2025-2026 with real examples and data.",
+    "stage": "audit",
+    "assigned_agent": "perplexity",
+    "execution_mode": "sequential",
+    "depends_on": [],
+    "status": "pending",
+    "risk_level": "yellow",
+    "gate_ids": [],
+    "created_at": "2026-03-15T06:19:23.268Z",
+    "updated_at": "2026-03-15T06:19:23.268Z"
+  }
+]
