@@ -1,76 +1,54 @@
 # GPO Engine Maturity Scoreboard
 
-Generated: 2026-03-15 | Harness: V2 (360 cases, 15 engines)
+Updated: 2026-03-15 | Harness: V2 (360 cases, 15 engines)
+**27 cases tested, 12 commits, 9 gaps, 6 fixes applied**
 
-## Engine → GPO Domain Mapping
+## Test Results Summary
 
-| Harness Engine | GPO Domain | Dedicated? | Core Cases | Avg Rank | Avg Demand | Predicted |
-|---|---|---|---|---|---|---|
-| Code & Product Engineering | topranker | Yes | 10 | 83 | 77 | PARTIAL |
-| Writing & Documentation | general | No | 10 | 83 | 75 | PARTIAL |
-| Research & Analysis | general | No | 10 | 106 | 73 | PARTIAL |
-| Learning & Tutoring | general | No | 10 | 107 | 71 | PARTIAL |
-| Scheduling & Life Operations | personalops | Yes | 10 | 126 | 69 | PARTIAL |
-| Shopping & Buying Advisor | general | No | 10 | 145 | 66 | PARTIAL |
-| Travel & Relocation Planner | general | No | 10 | 160 | 64 | PARTIAL |
-| Career & Job Search | careeregine | Yes | 10 | 180 | 58 | PARTIAL |
-| Personal Finance & Investing | wealthresearch | Yes | 10 | 187 | 62 | PARTIAL |
-| Startup & Business Builder | topranker | Yes | 10 | 187 | 60 | PARTIAL |
-| Health & Wellness Coach | general | No | 10 | 225 | 68 | PARTIAL |
-| Screenwriting & Story Development | screenwriting | Yes | 10 | 231 | 53 | PARTIAL |
-| Home & Lifestyle Design | personalops | Yes | 10 | 283 | 44 | PARTIAL |
-| Music & Audio Creation | music | Yes | 10 | 298 | 48 | FAIL |
-| Filmmaking & Video Production | general | No | 10 | 307 | 51 | FAIL |
+| Level | Pass Rate | Description |
+|---|---|---|
+| Level 1 (Prompt Pass) | 93% (25/27) | System can produce a reasonable answer |
+| Level 2 (Context Pass) | 44% (12/27) | System uses operator/project context correctly |
+| Level 3 (GPO Grade) | 0% (0/27) | Full governed, context-rich, downloadable output |
 
-## Coverage Summary
+## Engine Test Coverage
 
-- **Total cases:** 360 (150 Core, 150 Expansion, 60 Stretch)
-- **Predicted PASS:** 0 (no live testing done yet)
-- **Predicted PARTIAL:** 312 (87%)
-- **Predicted FAIL:** 48 (13% — all Music + Film cases)
-- **7 of 15 engines fall to `general`** — no dedicated routing or context
-- **2 highest-demand engines without dedicated domains:** Writing (rank 83) and Research (rank 106)
+| Engine | Tested | L1 Pass | L2 Pass | Domain | Status |
+|---|---|---|---|---|---|
+| Writing & Documentation | 5 | 5 | 3 | writing | Routing fixed, auto-approval working |
+| Research & Analysis | 5 | 5 | 3 | research | Routing fixed, good Perplexity+OpenAI chain |
+| Learning & Tutoring | 3 | 3 | 0 | learning | Routing fixed, no interactive mode |
+| Scheduling & Life Operations | 2 | 2 | 1 | personalops | Text plans only, no calendar |
+| Career & Job Search | 2 | 2 | 2 | careeregine | Good results with operator context |
+| Personal Finance & Investing | 2 | 2 | 2 | wealthresearch | Good personalized analysis |
+| Startup & Business Builder | 2 | 2 | 2 | topranker | Good strategy output |
+| Shopping & Buying Advisor | 1 | 1 | 0 | shopping/research | Routing needs work |
+| Travel & Relocation Planner | 1 | 1 | 0 | travel | Basic capability |
+| Health & Wellness Coach | 1 | 1 | 0 | health | Basic capability |
+| Screenwriting & Story Development | 1 | 1 | 0 | screenwriting | Keyword collision issues |
+| Home & Lifestyle Design | 1 | 0 | 0 | personalops | Perplexity search failure |
+| Code & Product Engineering | 0 | - | - | topranker | Not yet tested (needs Claude builder) |
+| Music & Audio Creation | 0 | - | - | music | BLOCKED: no audio generation |
+| Filmmaking & Video Production | 0 | - | - | general | BLOCKED: no video generation |
 
-## Critical Gaps
+## Gaps Classified (9)
 
-### Gap 1: Missing Domain Engines (7 engines route to general)
-Writing, Research, Learning, Shopping, Travel, Health, Filmmaking all fall to `general` domain.
-**Impact:** No tailored deliberation context, no domain-specific prompts, no specialized loop stages.
+| Gap | Category | Severity | Status | Fix |
+|---|---|---|---|---|
+| GAP-001 | routing | high | FIXED | Added writing domain |
+| GAP-002 | deliberation | medium | FIXED | Non-code tasks use report stage, approval_required:false |
+| GAP-003 | routing | high | FIXED | Added research domain |
+| GAP-004 | output_quality | medium | FIXED | Perplexity citation format strengthened |
+| GAP-005 | routing | medium | FIXED | Added learning domain |
+| GAP-006 | execution | medium | FIXED | Stuck task recovery on worker startup |
+| GAP-007 | routing | medium | FIXED | Keyword collision resolved (newsroom vs research) |
+| GAP-008 | provider | medium | open | Perplexity search failure for product/design queries |
+| GAP-009 | context | medium | open | Context confusion with external entities (TopRanker name) |
 
-### Gap 2: No Audio/Video Generation
-Blocks 48 cases (Music + Filmmaking). External tool integration required.
-**Status:** BLOCKED_BY_PROVIDER — escalation needed.
+## Level 3 Blockers (why 0% GPO-grade pass)
 
-### Gap 3: No Calendar/Scheduling API
-Scheduling engine can only produce text plans, not real calendar entries.
-
-### Gap 4: No Financial Modeling Tools
-Finance engine cannot do spreadsheet calculations or projections.
-
-## Priority Next Fixes (Evidence-Based)
-
-1. Add `writing` domain with keyword routing — unblocks 24 Writing cases
-2. Add `research` domain routing to existing Perplexity+OpenAI pipeline — unblocks 24 Research cases
-3. Add `learning` domain with tutoring-specific prompts — unblocks 24 Learning cases
-4. Live test top 10 Core 150 cases through actual GPO pipeline
-5. Classify real vs predicted failures from live execution
-
-## Maturity Scores (0-100, pre-testing)
-
-| Engine | Routing | Context | Execution | Output | UX | Overall |
-|---|---|---|---|---|---|---|
-| Code & Product Engineering | 70 | 80 | 60 | ? | 70 | 56 |
-| Writing & Documentation | 20 | 10 | 50 | ? | 30 | 22 |
-| Research & Analysis | 30 | 20 | 70 | ? | 50 | 34 |
-| Learning & Tutoring | 10 | 10 | 40 | ? | 20 | 16 |
-| Scheduling & Life Ops | 50 | 40 | 40 | ? | 40 | 34 |
-| Career & Job Search | 80 | 70 | 70 | ? | 60 | 56 |
-| Personal Finance | 60 | 50 | 60 | ? | 50 | 44 |
-| Startup & Business | 60 | 50 | 60 | ? | 50 | 44 |
-| Shopping & Buying | 20 | 10 | 40 | ? | 30 | 20 |
-| Travel & Relocation | 20 | 10 | 40 | ? | 30 | 20 |
-| Health & Wellness | 10 | 10 | 40 | ? | 20 | 16 |
-| Screenwriting | 60 | 40 | 40 | ? | 30 | 34 |
-| Home & Lifestyle | 40 | 30 | 40 | ? | 30 | 28 |
-| Music & Audio | 40 | 30 | 10 | ? | 20 | 20 |
-| Filmmaking & Video | 10 | 10 | 10 | ? | 10 | 10 |
+1. **No downloadable deliverables** — output stays in JSON, no PDF/doc export
+2. **No interactive modes** — tutoring, quizzing, follow-ups all one-shot
+3. **Shallow project context** — operator profile used but specific project state not injected
+4. **Output format non-compliance** — system produces good content but doesn't match requested format exactly
+5. **No file attachment support** — can't review actual resumes, documents, etc.
