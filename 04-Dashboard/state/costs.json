@@ -1531,5 +1531,44 @@
     "taskId": "t_mmrs5o8z7nbd",
     "taskType": "subtask",
     "role": "creative"
+  },
+  {
+    "ts": "2026-03-15T13:48:59.792Z",
+    "date": "2026-03-15",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 1521,
+    "outputTokens": 482,
+    "totalTokens": 2003,
+    "cost": 0.0086225,
+    "taskId": "t_mmrt8z1zmefj",
+    "taskType": "deliberation",
+    "role": "board"
+  },
+  {
+    "ts": "2026-03-15T13:49:07.058Z",
+    "date": "2026-03-15",
+    "provider": "perplexity",
+    "model": "sonar",
+    "inputTokens": 352,
+    "outputTokens": 701,
+    "totalTokens": 1053,
+    "cost": 0,
+    "taskId": "t_mmrt8z1zmefj",
+    "taskType": "subtask",
+    "role": "research"
+  },
+  {
+    "ts": "2026-03-15T13:49:14.571Z",
+    "date": "2026-03-15",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 316,
+    "outputTokens": 616,
+    "totalTokens": 932,
+    "cost": 0.0069500000000000004,
+    "taskId": "t_mmrt8z1zmefj",
+    "taskType": "subtask",
+    "role": "strategy"
   }
 ]

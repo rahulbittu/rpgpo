@@ -755,7 +755,8 @@ RULES:
     // Gather completed sibling subtask outputs as context
     let priorOutputs = '';
     try {
-      const allSubs = intake.getSubtasksForTask(st.parent_task);
+      const parentId = st.parent_task_id || st.parent_task;
+      const allSubs = intake.getSubtasksForTask(parentId);
       const completedSiblings = allSubs.filter(s => s.status === 'done' && s.subtask_id !== subtaskId && s.output);
       if (completedSiblings.length > 0) {
         priorOutputs = '\n\n## Prior Subtask Results\n' + completedSiblings.map(s =>
