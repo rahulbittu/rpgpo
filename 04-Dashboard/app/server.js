@@ -204,7 +204,10 @@ const server = http.createServer(async (req, res) => {
 
   // Main data
   if (req.url === '/api/data') {
-    return json(res, buildApiData());
+    try {
+      const { cached } = require('./lib/cache');
+      return json(res, cached('api_data', buildApiData, 3000));
+    } catch { return json(res, buildApiData()); }
   }
 
   // System status
