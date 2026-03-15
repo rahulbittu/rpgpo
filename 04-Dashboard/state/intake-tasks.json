@@ -1,5 +1,2097 @@
 [
   {
+    "task_id": "t_mms6z369l0xj",
+    "title": "Create a weekly meal prep workflow that takes under 2 hours. Include shopping li",
+    "raw_request": "Create a weekly meal prep workflow that takes under 2 hours. Include shopping list template, prep order, and storage tips.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:13:09.201Z",
+    "updated_at": "2026-03-15T20:25:43.732Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:16:09.681Z",
+      "interpreted_objective": "Develop a streamlined weekly meal prep workflow that can be completed in under 2 hours, including a shopping list template, prep order, and storage tips.",
+      "expected_outcome": "A clear, actionable guide for efficient weekly meal prep, enabling users to save time while maintaining a healthy diet.",
+      "key_unknowns": [
+        "Specific dietary preferences or restrictions of the target audience",
+        "Availability of ingredients in different regions",
+        "Storage capabilities of users"
+      ],
+      "recommended_strategy": "Research current best practices for quick meal prep workflows. Synthesize findings into a concise guide with a shopping list template, prep order, and storage tips. Ensure the guide is adaptable to various dietary needs and storage conditions.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Efficient Meal Prep Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices for meal prep workflows, including shopping list templates, prep orders, and storage tips.",
+          "prompt": "Search the web for current, specific information about efficient meal prep strategies that can be completed in under 2 hours. Include shopping list templates, prep orders, and storage tips. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Meal Prep Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide for a weekly meal prep workflow, including a shopping list template, prep order, and storage tips.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable meal prep guide. Include a shopping list template, prep order, and storage tips. Ensure the guide is adaptable to various dietary needs and storage conditions.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-meal-prep-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1852
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms6z2dndhfy",
+    "title": "Research the best cities for bootstrapped SaaS startups in 2026. Compare cost of",
+    "raw_request": "Research the best cities for bootstrapped SaaS startups in 2026. Compare cost of living, talent pool, and community.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:13:08.171Z",
+    "updated_at": "2026-03-15T20:25:34.706Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:16:03.797Z",
+      "interpreted_objective": "Identify and compare the best cities for bootstrapped SaaS startups in 2026 based on cost of living, talent pool, and community.",
+      "expected_outcome": "A comprehensive report detailing the top cities for bootstrapped SaaS startups in 2026, with comparisons on cost of living, talent pool, and community.",
+      "key_unknowns": [
+        "Current trends and projections for SaaS startup ecosystems in various cities by 2026",
+        "Specific cost of living data for these cities",
+        "Availability and quality of talent pools in these cities",
+        "Strength and supportiveness of startup communities in these cities"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on cities that are favorable for SaaS startups, focusing on cost of living, talent pool, and community. Then, synthesize this data into a comparative analysis to identify the top cities for bootstrapped SaaS startups in 2026.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Cities for SaaS Startups",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on the best cities for SaaS startups based on cost of living, talent pool, and community.",
+          "prompt": "Search the web for current, specific information about the best cities for bootstrapped SaaS startups in 2026. Include data on cost of living, talent pool, and community support. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize City Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A synthesized report comparing the top cities for bootstrapped SaaS startups in 2026, with specific recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for the best cities for bootstrapped SaaS startups in 2026. Include comparisons on cost of living, talent pool, and community, with specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2299
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mms6z1l3z0jb",
+    "title": "Write a guide to salary negotiation for engineers switching from big tech to sta",
+    "raw_request": "Write a guide to salary negotiation for engineers switching from big tech to startups. Include equity valuation and risk assessment.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:13:07.143Z",
+    "updated_at": "2026-03-15T20:25:27.936Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:15:57.874Z",
+      "interpreted_objective": "Create a detailed guide on salary negotiation for engineers transitioning from big tech to startups, focusing on equity valuation and risk assessment.",
+      "expected_outcome": "A comprehensive, actionable guide that helps engineers understand and negotiate salary packages when moving from big tech to startups, including equity considerations and risk evaluation.",
+      "key_unknowns": [
+        "Specific equity valuation methods relevant to startups",
+        "Common risk factors associated with startup employment",
+        "Differences in salary structures between big tech and startups"
+      ],
+      "recommended_strategy": "Research current practices in salary negotiation for engineers moving to startups, focusing on equity valuation and risk assessment. Synthesize findings into a practical guide with specific examples and recommendations. Ensure the guide is tailored to the needs of engineers with experience in big tech.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Salary Negotiation Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current practices and strategies for salary negotiation when transitioning from big tech to startups.",
+          "prompt": "Search the web for current, specific information about salary negotiation practices for engineers moving from big tech to startups. Include equity valuation methods, risk assessment strategies, and differences in salary structures. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Negotiation Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide on salary negotiation for engineers transitioning from big tech to startups, including equity valuation and risk assessment.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for engineers switching from big tech to startups. Include actionable recommendations on salary negotiation, equity valuation methods, and risk assessment. Provide specific examples and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2369
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms6z0slumwu",
+    "title": "Create a technical blog launch checklist. Include platform selection, SEO setup,",
+    "raw_request": "Create a technical blog launch checklist. Include platform selection, SEO setup, content calendar, and promotion strategy.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:13:06.117Z",
+    "updated_at": "2026-03-15T20:25:19.675Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:15:49.653Z",
+      "interpreted_objective": "Create a comprehensive checklist for launching a technical blog, covering platform selection, SEO setup, content calendar, and promotion strategy.",
+      "expected_outcome": "A detailed, actionable checklist that guides the launch of a technical blog, ensuring all critical aspects are covered for a successful start.",
+      "key_unknowns": [
+        "Preferred blogging platforms",
+        "Specific SEO tools to use",
+        "Content calendar format",
+        "Preferred promotion channels"
+      ],
+      "recommended_strategy": "Conduct research to identify the best practices and tools for each component of the blog launch checklist. Synthesize findings into a structured document that can be directly used for launching a technical blog.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Blog Platform Options",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current popular blogging platforms with pros and cons.",
+          "prompt": "Search the web for current popular blogging platforms suitable for a technical blog. Include pros and cons, pricing, and key features.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research SEO Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of effective SEO strategies and tools for technical blogs.",
+          "prompt": "Search the web for effective SEO strategies and tools specifically for technical blogs. Include specific tools, techniques, and best practices.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Content Calendar Formats",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of recommended content calendar formats and tools for blog management.",
+          "prompt": "Search the web for recommended content calendar formats and tools for managing a blog. Include examples and features of different tools.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Promotion Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of effective promotion strategies and channels for technical blogs.",
+          "prompt": "Search the web for effective promotion strategies and channels for technical blogs. Include social media platforms, email marketing, and other outreach methods.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Blog Launch Checklist",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive blog launch checklist document.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable blog launch checklist. Include platform selection, SEO setup, content calendar, and promotion strategy with specific recommendations and steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-blog-launch-checklist.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2174
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mms6z001a6xv",
+    "title": "Design a sustainable work routine that prevents RSI for programmers. Include erg",
+    "raw_request": "Design a sustainable work routine that prevents RSI for programmers. Include ergonomic setup, break schedule, and strengthening exercises.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:13:05.089Z",
+    "updated_at": "2026-03-15T20:25:12.333Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:15:41.881Z",
+      "interpreted_objective": "Design a sustainable work routine to prevent RSI for programmers, including ergonomic setup, break schedule, and strengthening exercises.",
+      "expected_outcome": "A comprehensive, evidence-based guide that programmers can follow to prevent RSI, improving their long-term health and productivity.",
+      "key_unknowns": [
+        "Current best practices for RSI prevention in programmers",
+        "Specific ergonomic setups recommended for programmers",
+        "Effective break schedules and strengthening exercises"
+      ],
+      "recommended_strategy": "Conduct research to identify current best practices for RSI prevention in programming. Synthesize this information into a structured guide that includes ergonomic setup, break schedules, and exercises. Ensure recommendations are evidence-based and actionable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research RSI Prevention Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and recommendations for preventing RSI in programmers.",
+          "prompt": "Search the web for current, specific information about best practices for preventing RSI in programmers, including ergonomic setups, break schedules, and strengthening exercises. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize RSI Prevention Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable guide for programmers to prevent RSI, including ergonomic setup, break schedule, and strengthening exercises.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable guide for programmers to prevent RSI. Include specific ergonomic setups, break schedules, and strengthening exercises. Ensure the guide is evidence-based and actionable.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-RSI-prevention-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1824
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms6yz7hgv5v",
+    "title": "Teach me about data lineage and data cataloging. Compare Datahub, Apache Atlas, ",
+    "raw_request": "Teach me about data lineage and data cataloging. Compare Datahub, Apache Atlas, and Amundsen. Include implementation considerations.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:13:04.061Z",
+    "updated_at": "2026-03-15T20:25:04.800Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:15:35.753Z",
+      "interpreted_objective": "Provide an educational comparison of Datahub, Apache Atlas, and Amundsen, focusing on data lineage and data cataloging.",
+      "expected_outcome": "A comprehensive report that educates on data lineage and cataloging, comparing Datahub, Apache Atlas, and Amundsen with implementation considerations.",
+      "key_unknowns": [
+        "Specific implementation details for each tool",
+        "Current industry trends related to these tools",
+        "Rahul's familiarity with each tool"
+      ],
+      "recommended_strategy": "Conduct research on data lineage and cataloging to establish foundational knowledge. Then, perform a comparative analysis of Datahub, Apache Atlas, and Amundsen, focusing on their features, pros, cons, and implementation considerations. Finally, compile these findings into a detailed report.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Data Lineage and Cataloging",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current and comprehensive information about data lineage and cataloging.",
+          "prompt": "Search the web for current, specific information about data lineage and data cataloging. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compare Datahub, Apache Atlas, and Amundsen",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed comparison data for Datahub, Apache Atlas, and Amundsen.",
+          "prompt": "Search the web for current, specific information about Datahub, Apache Atlas, and Amundsen. Focus on their features, pros, cons, and implementation considerations. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Findings into a Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report comparing Datahub, Apache Atlas, and Amundsen with a focus on data lineage and cataloging.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2124
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms6yyetl4os",
+    "title": "Create a guide to building an emergency fund as a freelancer with variable incom",
+    "raw_request": "Create a guide to building an emergency fund as a freelancer with variable income. Include strategies for lean months.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:13:03.029Z",
+    "updated_at": "2026-03-15T20:24:58.236Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:15:31.392Z",
+      "interpreted_objective": "Create a detailed guide for freelancers on building an emergency fund with strategies for managing variable income.",
+      "expected_outcome": "A comprehensive guide that provides actionable strategies for freelancers to build and maintain an emergency fund, including specific tactics for handling lean months.",
+      "key_unknowns": [
+        "Specific strategies freelancers currently use to manage variable income",
+        "The average income variability for freelancers in different industries",
+        "Existing tools or services that assist freelancers in managing finances"
+      ],
+      "recommended_strategy": "Research current strategies and tools used by freelancers to manage variable income and build emergency funds. Synthesize findings into a guide with actionable steps and real-world examples. Ensure the guide includes specific strategies for lean months to provide comprehensive support.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Freelancer Income Management Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current strategies and tools freelancers use to manage variable income and build emergency funds.",
+          "prompt": "Search the web for current, specific information about strategies freelancers use to manage variable income and build emergency funds. Include real examples, tools, and services that are popular among freelancers.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Building an Emergency Fund",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for freelancers on building an emergency fund, including strategies for lean months.",
+          "prompt": "Based on the research results, synthesize a detailed guide for freelancers on building an emergency fund. Include specific strategies for managing variable income and handling lean months, with real-world examples and actionable steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2333
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms6yxlt4fmu",
+    "title": "Research the best travel credit cards for tech workers who fly domestically 4-6 ",
+    "raw_request": "Research the best travel credit cards for tech workers who fly domestically 4-6 times per year. Compare Chase, Amex, and Capital One.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:13:01.985Z",
+    "updated_at": "2026-03-15T20:24:51.751Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:15:25.515Z",
+      "interpreted_objective": "Research and compare the best travel credit cards for tech workers flying domestically 4-6 times per year from Chase, Amex, and Capital One.",
+      "expected_outcome": "A detailed comparison report of travel credit cards from Chase, Amex, and Capital One, including specific recommendations for tech workers who fly domestically 4-6 times per year.",
+      "key_unknowns": [
+        "Current benefits and features of travel credit cards from Chase, Amex, and Capital One",
+        "Specific needs and preferences of tech workers who fly domestically",
+        "Current pricing and rewards structures of these credit cards"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on travel credit cards from Chase, Amex, and Capital One. Analyze the data to compare benefits, costs, and suitability for tech workers who fly domestically. Compile findings into a concise report with specific recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Travel Credit Cards",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on travel credit cards from Chase, Amex, and Capital One, including benefits, costs, and rewards.",
+          "prompt": "Search the web for current, specific information about travel credit cards from Chase, Amex, and Capital One. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Analyze and Compare Credit Cards",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "A strategic comparison of travel credit cards from Chase, Amex, and Capital One, with pros/cons and recommendations.",
+          "prompt": "Analyze the data and provide a strategic comparison of travel credit cards from Chase, Amex, and Capital One. Include specific pros/cons and recommendations for tech workers flying domestically 4-6 times per year.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2088
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms6ywsyjs5s",
+    "title": "Write a comedy sketch about a developer who uses AI to automate their entire job",
+    "raw_request": "Write a comedy sketch about a developer who uses AI to automate their entire job and gets promoted for being so productive.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:13:00.946Z",
+    "updated_at": "2026-03-15T20:24:45.488Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:15:12.250Z",
+      "interpreted_objective": "Create a comedic sketch about a developer using AI to automate their job and getting promoted.",
+      "expected_outcome": "A humorous and engaging sketch script that highlights the absurdity and potential consequences of over-relying on AI in the workplace.",
+      "key_unknowns": [
+        "Specific comedic elements or scenarios to include",
+        "Tone and style preferences for the sketch",
+        "Length of the sketch"
+      ],
+      "recommended_strategy": "Research current trends and examples of AI automation in the workplace to gather relevant and relatable content. Then, synthesize this information into a comedic sketch that aligns with recent work and the operator's style. Ensure the sketch is original and builds on prior comedic themes explored in related tasks.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research AI Automation Trends",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current examples and trends in AI automation in the workplace with citations.",
+          "prompt": "Search the web for current, specific information about AI being used to automate jobs in the tech industry. Include real examples, trends, and any humorous anecdotes or incidents. Provide URLs and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comedy Sketch",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A completed comedy sketch script about a developer automating their job with AI and getting promoted.",
+          "prompt": "Based on the research results from prior subtasks, write a comedic sketch about a developer who uses AI to automate their entire job and gets promoted for being so productive. Include specific examples and scenarios that highlight the humor in the situation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-comedy-sketch.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1900
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mms6yw096yp0",
+    "title": "Plan the perfect work-from-home Friday. Balance productive work, learning, perso",
+    "raw_request": "Plan the perfect work-from-home Friday. Balance productive work, learning, personal projects, and weekend preparation.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:59.913Z",
+    "updated_at": "2026-03-15T20:24:34.761Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:15:06.256Z",
+      "interpreted_objective": "Plan a balanced work-from-home Friday that includes productive work, learning, personal projects, and weekend preparation.",
+      "expected_outcome": "A detailed schedule for Friday that optimizes time for work, learning, personal projects, and weekend preparation, enhancing productivity and personal satisfaction.",
+      "key_unknowns": [
+        "Rahul's specific work tasks for Friday",
+        "Preferred learning topics",
+        "Personal projects Rahul is currently working on",
+        "Weekend preparation tasks"
+      ],
+      "recommended_strategy": "Research best practices for balancing work, learning, and personal projects in a work-from-home setting. Synthesize these insights into a specific, actionable Friday schedule. Consider Rahul's priorities and recent tasks to ensure alignment with his goals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Work-from-Home Balance",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and strategies for balancing work, learning, personal projects, and weekend preparation when working from home.",
+          "prompt": "Search the web for current best practices and strategies for balancing productive work, learning, personal projects, and weekend preparation in a work-from-home setting. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Work-from-Home Friday Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed and balanced schedule for a work-from-home Friday, including time blocks for work, learning, personal projects, and weekend preparation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a balanced work-from-home Friday schedule. Include specific time blocks for productive work, learning, personal projects, and weekend preparation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-work-from-home-friday-plan.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1950
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms6yv713jwt",
+    "title": "Design a home gym on a 500 dollar budget. Include essential equipment, floor pro",
+    "raw_request": "Design a home gym on a 500 dollar budget. Include essential equipment, floor protection, and a full-body workout program.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:58.861Z",
+    "updated_at": "2026-03-15T20:24:27.994Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:15:00.120Z",
+      "interpreted_objective": "Design a cost-effective home gym setup with essential equipment and a workout program within a $500 budget.",
+      "expected_outcome": "A detailed plan for a home gym including a list of equipment, floor protection solutions, and a full-body workout program, all within the specified budget.",
+      "key_unknowns": [
+        "Specific types of equipment needed",
+        "Cost and availability of equipment",
+        "Space requirements for the gym setup",
+        "User's fitness goals and preferences"
+      ],
+      "recommended_strategy": "Conduct research to identify affordable and essential gym equipment suitable for a home setup. Develop a full-body workout program that utilizes this equipment effectively. Ensure the total cost remains within the $500 budget. Include floor protection solutions to safeguard home surfaces.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the proposed gym setup and workout program by Rahul"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Affordable Home Gym Equipment",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of affordable gym equipment with prices and sources",
+          "prompt": "Search the web for current, specific information about affordable gym equipment suitable for a home setup within a $500 budget. Include real names, prices, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Home Gym Equipment and Workout Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "Detailed plan for a home gym including equipment list, floor protection solutions, and a full-body workout program",
+          "prompt": "Based on the research results, synthesize a detailed plan for a home gym setup within a $500 budget. Include a list of essential equipment, floor protection solutions, and a full-body workout program. Ensure the plan is cost-effective and actionable.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-home-gym-plan.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1852
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms6yue50gn5",
+    "title": "Teach me about event-driven microservices patterns. Cover choreography vs orches",
+    "raw_request": "Teach me about event-driven microservices patterns. Cover choreography vs orchestration, saga patterns, and eventual consistency.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:57.821Z",
+    "updated_at": "2026-03-15T20:24:20.878Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:14:54.079Z",
+      "interpreted_objective": "Educate on event-driven microservices patterns, focusing on choreography vs orchestration, saga patterns, and eventual consistency.",
+      "expected_outcome": "A comprehensive report that explains event-driven microservices patterns with clear examples and analogies, suitable for someone with a strong technical background.",
+      "key_unknowns": [
+        "Current trends and best practices in event-driven microservices",
+        "Specific examples of choreography and orchestration in real-world applications"
+      ],
+      "recommended_strategy": "Conduct a web search to gather the latest information and examples on event-driven microservices patterns. Synthesize this information into a structured report that explains the concepts clearly, using analogies and examples. Ensure the report is tailored to someone with a technical background.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Event-Driven Microservices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and examples about event-driven microservices, including choreography vs orchestration, saga patterns, and eventual consistency.",
+          "prompt": "Search the web for current, specific information about event-driven microservices patterns, including choreography vs orchestration, saga patterns, and eventual consistency. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Microservices Patterns Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining event-driven microservices patterns with examples and analogies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps. Explain event-driven microservices patterns, focusing on choreography vs orchestration, saga patterns, and eventual consistency, using clear analogies and examples.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-event-driven-microservices.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1870
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms6ytl05vr1",
+    "title": "Create a simple investment tracker spreadsheet design. Include portfolio allocat",
+    "raw_request": "Create a simple investment tracker spreadsheet design. Include portfolio allocation, returns tracking, rebalancing alerts, and tax lot tracking.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:56.772Z",
+    "updated_at": "2026-03-15T20:24:10.623Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:14:47.524Z",
+      "interpreted_objective": "Design a simple investment tracker spreadsheet with features for portfolio allocation, returns tracking, rebalancing alerts, and tax lot tracking.",
+      "expected_outcome": "A detailed design for an investment tracker spreadsheet that includes specific features and functionality for effective portfolio management.",
+      "key_unknowns": [
+        "Specific spreadsheet software to be used",
+        "Level of detail required for each feature",
+        "Any existing templates or formats preferred by Rahul"
+      ],
+      "recommended_strategy": "Research current best practices and features in investment tracking spreadsheets. Synthesize this information to design a comprehensive spreadsheet layout. Ensure the design includes specific methods for tracking returns, alerts for rebalancing, and tax lot tracking. Provide a detailed report with the design specifications.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Investment Tracker Features",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and features in investment tracking spreadsheets.",
+          "prompt": "Search the web for current best practices and features in investment tracking spreadsheets. Include details on portfolio allocation, returns tracking, rebalancing alerts, and tax lot tracking. Provide real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Spreadsheet Design",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed design for an investment tracker spreadsheet with specific features and functionality.",
+          "prompt": "Based on the research results, design a comprehensive investment tracker spreadsheet. Include detailed features for portfolio allocation, returns tracking, rebalancing alerts, and tax lot tracking. Provide specific layout and functionality recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-investment-tracker-design.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2187
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms6ysrvrqus",
+    "title": "Write a guide to managing technical debt in a startup. Include identification, p",
+    "raw_request": "Write a guide to managing technical debt in a startup. Include identification, prioritization, and communication to non-technical stakeholders.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:55.723Z",
+    "updated_at": "2026-03-15T20:24:02.352Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:14:42.672Z",
+      "interpreted_objective": "Create a comprehensive guide on managing technical debt in startups.",
+      "expected_outcome": "A clear, actionable guide that helps startup teams identify, prioritize, and communicate technical debt issues effectively.",
+      "key_unknowns": [
+        "Specific challenges startups face with technical debt",
+        "Effective communication strategies for non-technical stakeholders"
+      ],
+      "recommended_strategy": "Research current best practices for managing technical debt in startups. Synthesize this information into a structured guide that includes identification, prioritization, and communication strategies. Ensure the guide is clear and actionable for both technical and non-technical audiences.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Technical Debt Management",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices for managing technical debt in startups.",
+          "prompt": "Search the web for current best practices in managing technical debt within startups. Include identification, prioritization, and communication strategies, especially for non-technical stakeholders. Provide specific examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Technical Debt Management",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on managing technical debt in startups.",
+          "prompt": "Based on the research results, synthesize an actionable guide for managing technical debt in startups. Include sections on identification, prioritization, and communication to non-technical stakeholders. Ensure clarity and practical applicability.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1943
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mms6yrypdyz5",
+    "title": "Research the best home office desks for dual monitor setups. Compare sit-stand o",
+    "raw_request": "Research the best home office desks for dual monitor setups. Compare sit-stand options from Uplift, Flexispot, and IKEA. Under 700 dollars.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:54.673Z",
+    "updated_at": "2026-03-15T20:23:54.974Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:14:39.309Z",
+      "interpreted_objective": "Identify and compare the best sit-stand home office desks for dual monitor setups under $700 from Uplift, Flexispot, and IKEA.",
+      "expected_outcome": "A detailed comparison report of sit-stand desks from Uplift, Flexispot, and IKEA, including specific products, prices, pros/cons, and a clear recommendation.",
+      "key_unknowns": [
+        "Current pricing and availability of desks from Uplift, Flexispot, and IKEA",
+        "Specific features and benefits of each desk model",
+        "Customer reviews and ratings for each desk"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on sit-stand desks from Uplift, Flexispot, and IKEA, focusing on models suitable for dual monitor setups and priced under $700. Then, synthesize this data into a structured report with comparisons, pros/cons, and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research sit-stand desks",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on sit-stand desks from Uplift, Flexispot, and IKEA, including prices, features, and reviews.",
+          "prompt": "Search the web for current, specific information about sit-stand desks from Uplift, Flexispot, and IKEA that are suitable for dual monitor setups and priced under $700. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize desk comparison report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing sit-stand desks from Uplift, Flexispot, and IKEA, including specific products, prices, pros/cons, and a recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for sit-stand desks from Uplift, Flexispot, and IKEA. Include specific product names, prices, pros/cons, and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-sit-stand-desks.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2000
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms6yr5k1q49",
+    "title": "Create a networking event survival guide for introverted engineers. Include conv",
+    "raw_request": "Create a networking event survival guide for introverted engineers. Include conversation starters, exit strategies, and follow-up templates.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:53.624Z",
+    "updated_at": "2026-03-15T20:23:47.305Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:14:23.456Z",
+      "interpreted_objective": "Create a networking event survival guide tailored for introverted engineers.",
+      "expected_outcome": "A comprehensive guide that includes conversation starters, exit strategies, and follow-up templates for introverted engineers attending networking events.",
+      "key_unknowns": [
+        "Specific needs and challenges of introverted engineers at networking events",
+        "Effective conversation starters for introverts",
+        "Appropriate exit strategies and follow-up methods"
+      ],
+      "recommended_strategy": "Research current best practices and tips for introverted individuals attending networking events. Synthesize this information into a structured guide with actionable advice. Ensure the guide is tailored to the context of engineers, with specific examples and templates.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Networking Tips for Introverts",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current tips and strategies for introverts at networking events, including sources.",
+          "prompt": "Search the web for current, specific information about networking strategies for introverted individuals. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Networking Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide including conversation starters, exit strategies, and follow-up templates for introverted engineers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a networking event survival guide for introverted engineers. Include specific conversation starters, exit strategies, and follow-up templates.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-networking-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2177
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms6yqcwffmp",
+    "title": "Design a meal planning system for someone who hates cooking. Maximum 4 ingredien",
+    "raw_request": "Design a meal planning system for someone who hates cooking. Maximum 4 ingredients per meal. Include batch cooking strategies.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:52.592Z",
+    "updated_at": "2026-03-15T20:23:39.847Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:14:17.867Z",
+      "interpreted_objective": "Design a meal planning system for individuals who dislike cooking, using a maximum of four ingredients per meal, and incorporating batch cooking strategies.",
+      "expected_outcome": "A practical, evidence-based meal planning system that is easy to follow and minimizes cooking effort.",
+      "key_unknowns": [
+        "Specific dietary preferences or restrictions of the target audience",
+        "Batch cooking capabilities and storage facilities of the users",
+        "Time availability and budget constraints of the users"
+      ],
+      "recommended_strategy": "Research current meal planning strategies for individuals who dislike cooking, focusing on simplicity and efficiency. Synthesize these findings into a structured report that includes specific meal plans and batch cooking techniques. Ensure the plans are nutritionally balanced and provide safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research meal planning strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current meal planning strategies for individuals who dislike cooking, focusing on simplicity and efficiency, with a maximum of four ingredients per meal.",
+          "prompt": "Search the web for current, specific information about meal planning strategies for individuals who dislike cooking, using a maximum of four ingredients per meal. Include batch cooking techniques, real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize meal planning report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with actionable meal planning strategies for individuals who dislike cooking, including specific meal plans and batch cooking techniques.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable meal planning strategies for individuals who dislike cooking. Include specific meal plans, batch cooking techniques, and ensure nutritional balance. Provide safety disclaimers where necessary.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-meal-planning-system.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1855
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms6ypjo2sqk",
+    "title": "Teach me about container orchestration beyond Kubernetes. Compare Docker Swarm, ",
+    "raw_request": "Teach me about container orchestration beyond Kubernetes. Compare Docker Swarm, Nomad, and ECS. When is each appropriate?",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:51.540Z",
+    "updated_at": "2026-03-15T20:23:32.340Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:14:11.593Z",
+      "interpreted_objective": "Compare Docker Swarm, Nomad, and ECS for container orchestration beyond Kubernetes.",
+      "expected_outcome": "A detailed report comparing Docker Swarm, Nomad, and ECS with recommendations on when each is appropriate.",
+      "key_unknowns": [
+        "Current features and limitations of Docker Swarm, Nomad, and ECS",
+        "Specific use cases where each tool excels or falls short"
+      ],
+      "recommended_strategy": "Conduct a web search to gather current information on Docker Swarm, Nomad, and ECS. Synthesize this research into a comprehensive report comparing the three tools, highlighting their strengths, weaknesses, and appropriate use cases.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Docker Swarm, Nomad, and ECS",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Docker Swarm, Nomad, and ECS including features, limitations, and use cases.",
+          "prompt": "Search the web for current, specific information about Docker Swarm, Nomad, and ECS. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Docker Swarm, Nomad, and ECS with recommendations on when each is appropriate.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Docker Swarm, Nomad, and ECS. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-container-orchestration-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1838
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms6yoqgu6og",
+    "title": "Create a dividend investing strategy for building passive income. Include stock ",
+    "raw_request": "Create a dividend investing strategy for building passive income. Include stock screening criteria, portfolio construction, and DRIP plans.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:50.488Z",
+    "updated_at": "2026-03-15T20:25:51.352Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:14:05.949Z",
+      "interpreted_objective": "Develop a comprehensive dividend investing strategy for building passive income.",
+      "expected_outcome": "A detailed strategy document outlining stock screening criteria, portfolio construction, and DRIP plans.",
+      "key_unknowns": [
+        "Current market conditions for dividend stocks",
+        "Specific stock screening criteria that are effective",
+        "Optimal portfolio construction techniques for dividend investing",
+        "Best practices for implementing DRIP plans"
+      ],
+      "recommended_strategy": "Conduct research to identify effective stock screening criteria and current market conditions for dividend stocks. Develop a strategic plan for portfolio construction and DRIP implementation. Synthesize findings into a comprehensive report with actionable insights.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Dividend Stock Screening Criteria",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of effective criteria for screening dividend stocks.",
+          "prompt": "Search the web for current, specific information about effective criteria for screening dividend stocks. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Portfolio Construction Strategy",
+          "stage": "strategy",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "A strategic plan for constructing a dividend-focused investment portfolio.",
+          "prompt": "Analyze the data on dividend investing and provide a strategic comparison of portfolio construction techniques. Include specific pros/cons and recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Synthesize Dividend Investing Strategy Report",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report detailing the dividend investing strategy, including stock screening criteria, portfolio construction, and DRIP plans.",
+          "prompt": "Based on the research results and strategic analysis, synthesize a comprehensive dividend investing strategy report. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2416
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms6ynxldoa3",
+    "title": "Write a post-incident review template that promotes learning over blame. Include",
+    "raw_request": "Write a post-incident review template that promotes learning over blame. Include timeline format, contributing factors, and action items.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:49.449Z",
+    "updated_at": "2026-03-15T20:23:20.158Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:13:59.907Z",
+      "interpreted_objective": "Create a post-incident review template that focuses on learning and improvement rather than assigning blame.",
+      "expected_outcome": "A comprehensive template that includes a timeline format, identifies contributing factors, and lists actionable items for future prevention.",
+      "key_unknowns": [
+        "Specific elements that should be included in a timeline format",
+        "Best practices for identifying contributing factors",
+        "Effective ways to structure action items for learning"
+      ],
+      "recommended_strategy": "Research best practices for post-incident reviews that emphasize learning over blame. Synthesize findings into a structured template that includes a timeline, contributing factors, and action items. Ensure the template is clear, concise, and actionable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Post-Incident Reviews",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices for creating post-incident reviews that focus on learning.",
+          "prompt": "Search the web for current best practices in creating post-incident reviews that emphasize learning over blame. Include specific elements that should be included in a timeline format, ways to identify contributing factors, and how to structure action items for improvement.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Post-Incident Review Template",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured post-incident review template with a timeline format, contributing factors, and action items.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a post-incident review template that promotes learning over blame. Include a timeline format, methods for identifying contributing factors, and a section for action items. Ensure clarity and usability.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-post-incident-review-template.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1865
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mms6yn4raa0o",
+    "title": "Research the best desk lamps for coding at night. Compare LED desk lamps with ad",
+    "raw_request": "Research the best desk lamps for coding at night. Compare LED desk lamps with adjustable color temperature. Under 80 dollars.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:48.411Z",
+    "updated_at": "2026-03-15T20:23:12.371Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:13:51.802Z",
+      "interpreted_objective": "Identify and compare the best LED desk lamps with adjustable color temperature under 80 dollars for coding at night.",
+      "expected_outcome": "A comprehensive comparison report of LED desk lamps, including specific product names, prices, pros/cons, and a clear buying recommendation.",
+      "key_unknowns": [
+        "Current market options for LED desk lamps under 80 dollars",
+        "Specific features of these lamps",
+        "User reviews and ratings"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on LED desk lamps with adjustable color temperature under 80 dollars. Then, synthesize this information into a structured report that includes specific product comparisons and a buying recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research LED desk lamps",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on LED desk lamps with adjustable color temperature under 80 dollars, including product names, prices, and features.",
+          "prompt": "Search the web for current, specific information about LED desk lamps with adjustable color temperature under 80 dollars. Include real names, numbers, prices, features, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize desk lamp comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing LED desk lamps, including specific product names, prices, pros/cons, and a buying recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for LED desk lamps with adjustable color temperature under 80 dollars. Include specific product names, prices, pros/cons, and a clear buying recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-desk-lamps.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1901
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms6ymc5m9pc",
+    "title": "Create a knowledge management system for a solo developer. Compare Notion, Obsid",
+    "raw_request": "Create a knowledge management system for a solo developer. Compare Notion, Obsidian, and Logseq for code snippets and technical notes.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:47.381Z",
+    "updated_at": "2026-03-15T20:23:04.772Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:13:37.615Z",
+      "interpreted_objective": "Evaluate Notion, Obsidian, and Logseq for a solo developer's knowledge management system focusing on code snippets and technical notes.",
+      "expected_outcome": "A strategic recommendation on the best tool for managing code snippets and technical notes, tailored to a solo developer's needs.",
+      "key_unknowns": [
+        "Specific features and integrations of Notion, Obsidian, and Logseq relevant to code snippets",
+        "User preferences and specific use cases for the developer"
+      ],
+      "recommended_strategy": "Conduct a comparative analysis of Notion, Obsidian, and Logseq focusing on features relevant to code snippets and technical notes. Consider ease of use, integration capabilities, and customization options. Provide a strategic recommendation based on the analysis.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Notion, Obsidian, and Logseq",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on features, integrations, and user experiences for Notion, Obsidian, and Logseq.",
+          "prompt": "Search the web for current, specific information about Notion, Obsidian, and Logseq focusing on their capabilities for managing code snippets and technical notes. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparative Analysis",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A strategic comparison of Notion, Obsidian, and Logseq with pros/cons and recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a solo developer's knowledge management system. Include specific pros/cons and concrete next steps for Notion, Obsidian, and Logseq.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2087
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms6ylh8960j",
+    "title": "Write dialogue for a scene where a startup founder fires their CTO who is also t",
+    "raw_request": "Write dialogue for a scene where a startup founder fires their CTO who is also their best friend. Include emotional beats and subtext.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:46.268Z",
+    "updated_at": "2026-03-15T20:16:56.541Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:13:32.661Z",
+      "interpreted_objective": "Write a dialogue scene where a startup founder fires their CTO who is also their best friend, incorporating emotional beats and subtext.",
+      "expected_outcome": "A compelling and emotionally resonant dialogue scene that captures the complexity of the situation.",
+      "key_unknowns": [
+        "The specific emotional dynamics between the founder and the CTO",
+        "The reasons for the firing",
+        "The setting of the scene"
+      ],
+      "recommended_strategy": "Use the screenwriting domain expertise to craft a dialogue that balances the professional and personal stakes involved. Highlight the emotional conflict and subtext to create depth and realism in the interaction. Leverage recent work insights on character-driven narratives to enhance the scene's impact.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Write Dialogue Scene",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A written dialogue scene with emotional beats and subtext",
+          "prompt": "Write a dialogue scene where a startup founder fires their CTO who is also their best friend. Include emotional beats and subtext to capture the complexity of the situation. Consider the professional and personal stakes involved, and ensure the dialogue reflects the tension and emotional conflict.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1886
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mms6ykovcfk5",
+    "title": "Plan a 2-week road trip across the American Southwest. Include route, national p",
+    "raw_request": "Plan a 2-week road trip across the American Southwest. Include route, national parks, accommodation, and budget for a solo traveler.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:45.247Z",
+    "updated_at": "2026-03-15T20:22:50.241Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:13:29.052Z",
+      "interpreted_objective": "Plan a detailed 2-week road trip across the American Southwest for a solo traveler.",
+      "expected_outcome": "A comprehensive itinerary including route, national parks, accommodation options, and a budget breakdown.",
+      "key_unknowns": [
+        "Specific start and end locations for the trip",
+        "Preferred travel dates",
+        "Budget constraints",
+        "Accommodation preferences (e.g., hotels, hostels, camping)"
+      ],
+      "recommended_strategy": "First, gather current information on popular routes, national parks, accommodations, and costs for a solo traveler in the American Southwest. Then, synthesize this data into a detailed itinerary and budget plan.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research American Southwest Road Trip Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on routes, national parks, accommodations, and costs for a solo traveler in the American Southwest.",
+          "prompt": "Search the web for current, specific information about popular road trip routes, national parks, accommodation options, and cost estimates for a solo traveler planning a 2-week trip across the American Southwest. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Road Trip Itinerary and Budget",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed itinerary and budget for a 2-week road trip across the American Southwest.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed itinerary and budget for a 2-week road trip across the American Southwest. Include specific route suggestions, national parks to visit, accommodation options, and a budget breakdown with names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-southwest-roadtrip.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1866
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mms6yjw9stly",
+    "title": "Design a hydration tracking system for desk workers. Include daily targets, remi",
+    "raw_request": "Design a hydration tracking system for desk workers. Include daily targets, reminder schedule, and effects of dehydration on cognitive performance.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:44.217Z",
+    "updated_at": "2026-03-15T20:22:39.370Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:13:23.962Z",
+      "interpreted_objective": "Design a hydration tracking system tailored for desk workers.",
+      "expected_outcome": "A comprehensive system that includes hydration targets, reminder schedules, and educational content on dehydration's cognitive effects.",
+      "key_unknowns": [
+        "Specific hydration needs of desk workers",
+        "Optimal reminder frequency for hydration",
+        "Scientific evidence linking dehydration to cognitive performance"
+      ],
+      "recommended_strategy": "Research the hydration needs and cognitive effects of dehydration on desk workers. Develop a system with daily hydration targets and a reminder schedule. Include educational content on the cognitive effects of dehydration. Ensure that all recommendations are evidence-based and actionable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Hydration Needs",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on hydration needs for desk workers.",
+          "prompt": "Search the web for current, specific information about the hydration needs of desk workers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Effects of Dehydration on Cognitive Performance",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Scientific evidence linking dehydration to cognitive performance.",
+          "prompt": "Search the web for scientific studies and evidence about the effects of dehydration on cognitive performance. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Hydration Tracking System",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed plan for a hydration tracking system for desk workers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed plan for a hydration tracking system tailored for desk workers. Include daily hydration targets, reminder schedules, and educational content on the cognitive effects of dehydration.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2053
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms6yj2pykbv",
+    "title": "Create a guide for writing effective technical conference proposals. Include abs",
+    "raw_request": "Create a guide for writing effective technical conference proposals. Include abstract templates, bio writing, and submission strategy.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:43.153Z",
+    "updated_at": "2026-03-15T20:22:31.910Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:13:10.760Z",
+      "interpreted_objective": "Create a detailed guide for writing effective technical conference proposals, including templates and strategies.",
+      "expected_outcome": "A comprehensive guide that helps Rahul craft successful technical conference proposals, enhancing his visibility and career growth.",
+      "key_unknowns": [
+        "Current best practices for technical conference proposals",
+        "Effective abstract templates for data engineering topics",
+        "Optimal submission strategies for technical conferences"
+      ],
+      "recommended_strategy": "Research current best practices and successful examples of technical conference proposals. Synthesize findings into a guide with templates for abstracts and bios, and strategies for submission. Ensure the guide is tailored to data engineering topics and aligns with Rahul's career growth objectives.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Technical Conference Proposals",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and examples of successful technical conference proposals.",
+          "prompt": "Search the web for current best practices and successful examples of technical conference proposals, especially in data engineering. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Writing Conference Proposals",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide with abstract templates, bio writing tips, and submission strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a guide for writing effective technical conference proposals. Include specific abstract templates, tips for writing bios, and strategies for submission tailored to data engineering topics.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-conference-proposals-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2185
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms6yiaa7ypq",
+    "title": "Find the best desk organizer system for a minimalist programmer. Under 50 dollar",
+    "raw_request": "Find the best desk organizer system for a minimalist programmer. Under 50 dollars. Include cable management and device charging.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:42.130Z",
+    "updated_at": "2026-03-15T20:19:50.695Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:13:00.846Z",
+      "interpreted_objective": "Identify the best desk organizer system for a minimalist programmer under $50, including cable management and device charging features.",
+      "expected_outcome": "A detailed recommendation of a desk organizer system with specific products, prices, pros/cons, and a clear buying recommendation.",
+      "key_unknowns": [
+        "Current desk organizer systems available",
+        "Pricing under $50",
+        "Features related to cable management and device charging"
+      ],
+      "recommended_strategy": "Conduct a web search to identify desk organizer systems that fit the criteria. Analyze the findings to compare features, prices, and user reviews. Synthesize the data into a clear recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Desk Organizer Systems",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of desk organizer systems under $50 with cable management and device charging features, including prices and sources.",
+          "prompt": "Search the web for current desk organizer systems under $50 that include cable management and device charging features. Include specific product names, prices, features, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Desk Organizer Recommendations",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with specific product recommendations, prices, pros/cons, and a clear buying recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for the best desk organizer system under $50 for a minimalist programmer. Include specific product names, prices, pros/cons, and a clear buying recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-desk-organizer-recommendation.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1830
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms6yhhpce63",
+    "title": "Teach me about distributed tracing with OpenTelemetry. Cover spans, traces, cont",
+    "raw_request": "Teach me about distributed tracing with OpenTelemetry. Cover spans, traces, context propagation, and visualization with Jaeger.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:41.101Z",
+    "updated_at": "2026-03-15T20:18:23.996Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:12:53.569Z",
+      "interpreted_objective": "Provide a comprehensive learning resource on distributed tracing using OpenTelemetry, focusing on spans, traces, context propagation, and visualization with Jaeger.",
+      "expected_outcome": "A detailed report that educates on distributed tracing concepts and tools, enabling Rahul to understand and potentially implement these in a technical setting.",
+      "key_unknowns": [
+        "Current best practices for using OpenTelemetry with Jaeger",
+        "Recent updates or changes in OpenTelemetry and Jaeger tools"
+      ],
+      "recommended_strategy": "Conduct web research to gather the latest information on distributed tracing with OpenTelemetry and Jaeger. Synthesize this data into a structured report that explains key concepts, tools, and visualization techniques.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Distributed Tracing with OpenTelemetry",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and citations about distributed tracing with OpenTelemetry and Jaeger.",
+          "prompt": "Search the web for current, specific information about distributed tracing with OpenTelemetry, focusing on spans, traces, context propagation, and visualization with Jaeger. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Distributed Tracing Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining distributed tracing with OpenTelemetry and Jaeger, including key concepts and visualization techniques.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report on distributed tracing with OpenTelemetry. Include explanations of spans, traces, context propagation, and visualization with Jaeger, using clear analogies and building from simple to complex.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-distributed_tracing.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1854
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms6ygo833gy",
+    "title": "Create a charitable giving strategy for a high-income tech worker. Include donor",
+    "raw_request": "Create a charitable giving strategy for a high-income tech worker. Include donor-advised funds, tax deductions, and impact measurement.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:40.040Z",
+    "updated_at": "2026-03-15T20:17:12.667Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:12:47.402Z",
+      "interpreted_objective": "Develop a charitable giving strategy for a high-income tech worker that includes donor-advised funds, tax deductions, and impact measurement.",
+      "expected_outcome": "A detailed strategy document that outlines specific charitable giving options, potential tax benefits, and methods for measuring the impact of donations.",
+      "key_unknowns": [
+        "Current trends in donor-advised funds",
+        "Specific tax deduction opportunities for tech workers",
+        "Effective methods for impact measurement in charitable giving"
+      ],
+      "recommended_strategy": "Conduct research on current charitable giving options, focusing on donor-advised funds and tax benefits. Analyze the data to identify the most effective strategies for high-income tech workers. Synthesize findings into a comprehensive strategy report.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Charitable Giving Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on donor-advised funds, tax deductions, and impact measurement for charitable giving.",
+          "prompt": "Search the web for current, specific information about donor-advised funds, tax deductions for charitable giving, and impact measurement methods. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Charitable Giving Strategy",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured strategy document for charitable giving, including donor-advised funds, tax benefits, and impact measurement.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a charitable giving strategy for a high-income tech worker. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-charitable-giving-strategy.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2199
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms6yfvctgyt",
+    "title": "Write a comprehensive guide to feature flag management in production. Include ro",
+    "raw_request": "Write a comprehensive guide to feature flag management in production. Include rollout strategies, kill switches, and A/B testing integration.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:12:39.000Z",
+    "updated_at": "2026-03-15T20:16:27.030Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:12:43.204Z",
+      "interpreted_objective": "Create a comprehensive guide on feature flag management for production environments.",
+      "expected_outcome": "A detailed, actionable guide covering rollout strategies, kill switches, and A/B testing integration.",
+      "key_unknowns": [
+        "Specific audience for the guide",
+        "Preferred format (e.g., PDF, HTML)",
+        "Level of technical detail required"
+      ],
+      "recommended_strategy": "Research current best practices in feature flag management, including rollout strategies, kill switches, and A/B testing. Synthesize this information into a comprehensive guide tailored to a technical audience. Ensure the guide is clear, detailed, and immediately usable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Feature Flag Management",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed report on current best practices for feature flag management, including rollout strategies, kill switches, and A/B testing integration.",
+          "prompt": "Search the web for current, specific information about feature flag management in production environments. Include details on rollout strategies, kill switches, and A/B testing integration. Provide real examples, names, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide Content",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide draft on feature flag management, incorporating rollout strategies, kill switches, and A/B testing integration.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on feature flag management. Include sections on rollout strategies, kill switches, and A/B testing integration. Ensure the guide is detailed, actionable, and tailored to a technical audience.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1989
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms6ofax6lau",
     "title": "Create a framework for making build-vs-buy technology decisions. Include evaluat",
     "raw_request": "Create a framework for making build-vs-buy technology decisions. Include evaluation criteria, total cost of ownership analysis, and decision tree.",
