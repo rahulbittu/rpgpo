@@ -1,5 +1,438 @@
 [
   {
+    "task_id": "t_mms3rlevxh8h",
+    "title": "Create a sustainable energy management plan for someone who works 12-hour days. ",
+    "raw_request": "Create a sustainable energy management plan for someone who works 12-hour days. Include nutrition timing, exercise placement, and cognitive peak optimization.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:43:20.743Z",
+    "updated_at": "2026-03-15T18:45:31.473Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:44:12.536Z",
+      "interpreted_objective": "Develop a comprehensive energy management plan for a person working 12-hour days, focusing on nutrition, exercise, and cognitive performance.",
+      "expected_outcome": "A detailed, evidence-based plan that optimizes energy levels, cognitive function, and physical health for someone with a demanding work schedule.",
+      "key_unknowns": [
+        "Specific dietary preferences or restrictions",
+        "Current fitness level",
+        "Exact work schedule and breaks",
+        "Personal goals related to health and wellness"
+      ],
+      "recommended_strategy": "Conduct research to identify best practices for energy management in long workdays, including optimal nutrition timing, exercise routines, and cognitive performance strategies. Synthesize findings into a structured plan tailored for long work hours.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final review of the energy management plan by Rahul"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Sustainable Energy Management",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and recommendations for energy management, including nutrition, exercise, and cognitive performance for long workdays.",
+          "prompt": "Search the web for current, specific information about sustainable energy management for individuals working 12-hour days. Focus on nutrition timing, exercise placement, and cognitive peak optimization. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Energy Management Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable energy management plan tailored for someone working 12-hour days.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable energy management plan. Include specific recommendations for nutrition timing, exercise routines, and cognitive performance strategies.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-energy-management-plan.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1843
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms3rjulrjjf",
+    "title": "Write a cold email to a potential angel investor. Keep it under 150 words. Inclu",
+    "raw_request": "Write a cold email to a potential angel investor. Keep it under 150 words. Include traction metrics, ask, and why this investor specifically.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:43:18.717Z",
+    "updated_at": "2026-03-15T18:45:22.394Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:44:06.655Z",
+      "interpreted_objective": "Draft a concise cold email to a potential angel investor highlighting traction metrics and a specific ask.",
+      "expected_outcome": "A compelling cold email that effectively communicates the startup's traction and makes a clear ask to the investor, tailored to why this investor is a good fit.",
+      "key_unknowns": [
+        "Specific traction metrics to include",
+        "The specific ask or investment amount",
+        "Why this investor is a targeted recipient"
+      ],
+      "recommended_strategy": "Research the potential investor to understand their interests and past investments. Use this information to tailor the email, ensuring it highlights relevant traction metrics and makes a clear, specific ask. Keep the email under 150 words and ensure it is engaging and direct.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Investor Background",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information about the investor's interests, past investments, and any relevant public statements.",
+          "prompt": "Search the web for current, specific information about the potential angel investor, including their investment interests, past investments, and any public statements or interviews. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Draft Cold Email",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A draft of a cold email to the investor, including traction metrics, a specific ask, and reasons for targeting this investor.",
+          "prompt": "Based on the research results from the prior subtask, draft a cold email to the potential angel investor. Include specific traction metrics, a clear ask, and reasons why this investor is a good fit. Keep the email under 150 words.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-cold-email.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1870
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mms3riahavv2",
+    "title": "Research the best mechanical keyboard switches for coding. Compare Cherry MX Bro",
+    "raw_request": "Research the best mechanical keyboard switches for coding. Compare Cherry MX Brown, Gateron Brown, and Boba U4T. Include sound profiles and typing feel.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:43:16.697Z",
+    "updated_at": "2026-03-15T18:45:19.849Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:43:33.170Z",
+      "interpreted_objective": "Research and compare the best mechanical keyboard switches for coding, focusing on Cherry MX Brown, Gateron Brown, and Boba U4T, including sound profiles and typing feel.",
+      "expected_outcome": "A comprehensive comparison report of Cherry MX Brown, Gateron Brown, and Boba U4T switches, detailing their sound profiles, typing feel, pros/cons, and a recommendation for coding use.",
+      "key_unknowns": [
+        "Current market reviews and prices of Cherry MX Brown, Gateron Brown, and Boba U4T switches",
+        "Detailed sound profiles and typing feel descriptions for each switch"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information about Cherry MX Brown, Gateron Brown, and Boba U4T switches, focusing on their sound profiles and typing feel. Then, synthesize this information into a structured comparison report, highlighting the pros and cons of each switch and providing a recommendation for coding.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Keyboard Switches",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current market data on Cherry MX Brown, Gateron Brown, and Boba U4T switches, including sound profiles and typing feel.",
+          "prompt": "Search the web for current, specific information about Cherry MX Brown, Gateron Brown, and Boba U4T mechanical keyboard switches. Include details on sound profiles, typing feel, current prices, and reviews. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Switch Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of Cherry MX Brown, Gateron Brown, and Boba U4T switches with pros/cons and recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Cherry MX Brown, Gateron Brown, and Boba U4T switches. Include specific pros, cons, sound profiles, typing feel, and provide a recommendation for coding use.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-keyboard-switches.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2009
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms3rgqd8swh",
+    "title": "Design an API versioning strategy for a growing platform. Compare URL path, head",
+    "raw_request": "Design an API versioning strategy for a growing platform. Compare URL path, header, and query parameter approaches. Include migration playbook.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:43:14.677Z",
+    "updated_at": "2026-03-15T18:45:41.417Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:43:27.129Z",
+      "interpreted_objective": "Design a comprehensive API versioning strategy for a learning platform.",
+      "expected_outcome": "A detailed comparison of API versioning methods and a migration playbook to implement the chosen strategy.",
+      "key_unknowns": [
+        "Current API structure",
+        "Specific platform requirements",
+        "Existing user base and their needs",
+        "Technical constraints of the platform"
+      ],
+      "recommended_strategy": "Research the current best practices in API versioning, focusing on URL path, header, and query parameter approaches. Compare these methods based on criteria like ease of implementation, backward compatibility, and client impact. Develop a migration playbook to guide the transition to the new versioning strategy.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Decision on which versioning strategy to adopt"
+      ],
+      "subtasks": [
+        {
+          "title": "Research API Versioning Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Summary of current best practices in API versioning.",
+          "prompt": "Search the web for current best practices in API versioning, focusing on URL path, header, and query parameter approaches. Include real examples, pros and cons, and any relevant statistics or studies.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compare API Versioning Approaches",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A strategic comparison of URL path, header, and query parameter versioning approaches.",
+          "prompt": "Based on the research results, synthesize a strategic comparison of API versioning approaches using URL path, header, and query parameters. Include specific pros, cons, and recommendations for a learning platform.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Develop Migration Playbook",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed migration playbook for implementing the chosen API versioning strategy.",
+          "prompt": "Create a migration playbook for transitioning to the chosen API versioning strategy. Include steps for implementation, potential challenges, and solutions for a learning platform.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2100
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms3rf66332t",
+    "title": "Create a complete tax filing checklist for a W2 employee with side LLC income. I",
+    "raw_request": "Create a complete tax filing checklist for a W2 employee with side LLC income. Include all forms needed, deduction categories, and common mistakes to avoid.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:43:12.654Z",
+    "updated_at": "2026-03-15T18:45:02.858Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:43:21.699Z",
+      "interpreted_objective": "Create a detailed tax filing checklist for a W2 employee with side LLC income.",
+      "expected_outcome": "A comprehensive checklist including all necessary tax forms, deduction categories, and common mistakes to avoid for a W2 employee with side LLC income.",
+      "key_unknowns": [
+        "Specific tax forms needed for a W2 employee with side LLC income",
+        "Common deduction categories applicable to this scenario",
+        "Typical mistakes made during tax filing in this context"
+      ],
+      "recommended_strategy": "First, conduct research to identify the specific tax forms and deduction categories relevant to a W2 employee with side LLC income. Then, synthesize this information into a structured checklist, highlighting common mistakes to avoid. Finally, compile the findings into a detailed report.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tax Forms and Deductions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of tax forms and deduction categories for a W2 employee with side LLC income.",
+          "prompt": "Search the web for current, specific information about tax forms and deduction categories needed for a W2 employee with side LLC income. Include real names, numbers, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Tax Filing Checklist",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured checklist including tax forms, deduction categories, and common mistakes.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed tax filing checklist for a W2 employee with side LLC income. Include specific forms, deduction categories, and common mistakes to avoid.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-tax-filing-checklist.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2210
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms3rdlpqsgd",
+    "title": "Write a technical specification for a real-time notification system. Include Web",
+    "raw_request": "Write a technical specification for a real-time notification system. Include WebSocket vs SSE comparison, message schema, delivery guarantees, and scaling strategy.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:43:10.621Z",
+    "updated_at": "2026-03-15T18:44:00.378Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:43:17.300Z",
+      "interpreted_objective": "Create a detailed technical specification for a real-time notification system.",
+      "expected_outcome": "A comprehensive document that includes a comparison of WebSocket vs SSE, message schema, delivery guarantees, and scaling strategy.",
+      "key_unknowns": [
+        "Specific requirements for the notification system",
+        "Preferred technologies or frameworks",
+        "Target audience for the specification"
+      ],
+      "recommended_strategy": "First, research and compare WebSocket and SSE for real-time notifications to provide a clear analysis. Then, outline a message schema and delivery guarantees based on best practices. Finally, propose a scaling strategy suitable for the system's expected load and use case.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research WebSocket vs SSE",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed comparison of WebSocket and SSE for real-time notifications.",
+          "prompt": "Search the web for current, specific information comparing WebSocket and SSE for real-time notification systems. Include pros, cons, performance metrics, and use cases.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Define Message Schema and Delivery Guarantees",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A proposed message schema and delivery guarantees for the notification system.",
+          "prompt": "Based on industry best practices, define a message schema and delivery guarantees for a real-time notification system. Consider factors like message size, format, and reliability.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Propose Scaling Strategy",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "A scaling strategy for the real-time notification system.",
+          "prompt": "Analyze potential scaling strategies for a real-time notification system. Consider factors like expected load, infrastructure, and cost efficiency. Provide recommendations with specific pros and cons.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2068
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms3mavfj8s4",
     "title": "Write a movie review of a hypothetical sci-fi film about AI consciousness. Writt",
     "raw_request": "Write a movie review of a hypothetical sci-fi film about AI consciousness. Written in Roger Ebert style. Include rating and analysis of themes.",

@@ -1,5 +1,77 @@
 [
   {
+    "record_id": "ee_mms3ulyfp2gj",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mms3rgqd8swh",
+    "route": "learning",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:45:41.415Z"
+  },
+  {
+    "record_id": "ee_mms3uea7w641",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing steps, recommendations",
+    "scope_type": "task",
+    "scope_id": "t_mms3rlevxh8h",
+    "route": "health",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:45:31.471Z"
+  },
+  {
+    "record_id": "ee_mms3u7a047ip",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mms3rjulrjjf",
+    "route": "writing",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:45:22.392Z"
+  },
+  {
+    "record_id": "ee_mms3u5b7kgz1",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing items, comparisonKeys, ",
+    "scope_type": "task",
+    "scope_id": "t_mms3riahavv2",
+    "route": "shopping",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:45:19.843Z"
+  },
+  {
+    "record_id": "ee_mms3ts7bri79",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mms3rf66332t",
+    "route": "wealthresearch",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:45:02.855Z"
+  },
+  {
+    "record_id": "ee_mms3sfzrlv2q",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mms3rdlpqsgd",
+    "route": "writing",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:44:00.375Z"
+  },
+  {
     "record_id": "ee_mms3p1dmzfwo",
     "area": "runtime_deliverable",
     "middleware_ran": "runtime-deliverable-pipeline",
