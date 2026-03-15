@@ -1142,5 +1142,58 @@
       "completion": "done",
       "domain_routed": "wealthresearch"
     }
+  },
+  {
+    "test_case_id": "GPO-WRI-12",
+    "global_rank": 57,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:48:00.033Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "writing"
+    }
+  },
+  {
+    "test_case_id": "GPO-TRA-04",
+    "global_rank": 72,
+    "engine": "Travel & Relocation Planner",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:48:00.034Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "travel",
+      "subtask_count": 4
+    }
+  },
+  {
+    "test_case_id": "GPO-SHO-05",
+    "global_rank": 74,
+    "engine": "Shopping & Buying Advisor",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:48:00.034Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "shopping"
+    }
+  },
+  {
+    "test_case_id": "GPO-WRI-13",
+    "global_rank": 69,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:48:00.034Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "writing"
+    }
   }
 ]
