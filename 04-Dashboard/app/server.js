@@ -3355,6 +3355,14 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Parts 107-108: Usage Tracker + Task Estimator
+  if (req.url === '/api/usage' && req.method === 'GET') {
+    try { const ut = require('./lib/usage-tracker'); return json(res, ut.getSummary()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/estimate(\?.*)?$/) && req.method === 'GET') {
+    try { const te = require('./lib/task-estimator'); const params = new URL(req.url, 'http://x').searchParams; return json(res, te.estimateTask(params.get('domain') || 'general', parseInt(params.get('promptLength') || '100'))); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Parts 105-106: Task Dedup + Output Summarizer
   if (req.url?.match(/^\/api\/task-summary\/([^/]+)$/) && req.method === 'GET') {
     const taskId = req.url.match(/^\/api\/task-summary\/([^/]+)$/)[1];
