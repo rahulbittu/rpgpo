@@ -1036,5 +1036,58 @@
       "domain_routed": "careeregine",
       "output_quality": "Good — 10 STAR-format questions with example answers"
     }
+  },
+  {
+    "test_case_id": "GPO-SHO-04",
+    "global_rank": 60,
+    "engine": "Shopping & Buying Advisor",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:42:26.916Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "shopping"
+    }
+  },
+  {
+    "test_case_id": "GPO-LEA-05",
+    "global_rank": 26,
+    "engine": "Learning & Tutoring",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:42:26.917Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "learning"
+    }
+  },
+  {
+    "test_case_id": "GPO-WRI-08b",
+    "global_rank": 30,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:42:26.917Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "writing"
+    }
+  },
+  {
+    "test_case_id": "GPO-TRA-03",
+    "global_rank": 62,
+    "engine": "Travel & Relocation Planner",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:42:26.917Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "travel",
+      "subtask_count": 3
+    }
   }
 ]
