@@ -99,9 +99,14 @@
 
       <!-- HOME -->
       <section class="tab-panel active" id="tab-home">
-        <div class="page-header">
-          <h1 id="homeGreeting">Command Center</h1>
-          <p class="subtitle" id="homeDate"></p>
+        <div class="page-header" style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <h1 id="homeGreeting">Command Center</h1>
+            <p class="subtitle" id="homeDate"></p>
+          </div>
+          <button class="send-btn" onclick="switchTab('intake')" style="font-size:13px;padding:8px 20px">
+            <span>&#9998;</span> New Task
+          </button>
         </div>
 
         <div class="status-strip">
