@@ -321,6 +321,7 @@ function renderAllTasks() {
   renderTaskQueue();
   renderHomeRunning();
   renderLatest();
+  renderRecentReports();
   renderHomeRecent();
   renderNavBadges();
   renderChannelTasks();
@@ -468,6 +469,33 @@ function renderLatest() {
   }).catch(() => {
     el.innerHTML = '<div class="task-empty">No completed tasks yet</div>';
   });
+}
+
+function renderRecentReports() {
+  const el = document.getElementById('homeRecentReports');
+  if (!el) return;
+  fetch('/api/reports').then(r => r.ok ? r.json() : null).then(data => {
+    if (!data?.reports?.length) { el.innerHTML = '<div class="task-empty">No reports yet</div>'; return; }
+    el.innerHTML = data.reports.slice(0, 8).map(r => {
+      const name = r.name.replace(/^Subtask-/, '').replace(/\.md$|\.json$|\.txt$/, '');
+      const sizeKb = (r.size / 1024).toFixed(1);
+      const ago = fmtTimeAgo(r.modified);
+      return `<div class="task-card" onclick="window.open('/api/file/${encodeURIComponent(r.path)}','_blank')" style="padding:6px 10px;margin-bottom:3px">
+        <div class="task-body">
+          <div class="task-title" style="font-size:11px">${esc(name.slice(0, 40))}</div>
+          <div style="font-size:9px;color:var(--text-faint)">${sizeKb}KB &middot; ${ago}</div>
+        </div>
+      </div>`;
+    }).join('');
+  }).catch(() => { el.innerHTML = '<div class="task-empty">Error loading reports</div>'; });
+}
+
+function fmtTimeAgo(ts) {
+  const ms = Date.now() - (typeof ts === 'number' ? ts : new Date(ts).getTime());
+  if (ms < 60000) return 'just now';
+  if (ms < 3600000) return Math.floor(ms / 60000) + 'm ago';
+  if (ms < 86400000) return Math.floor(ms / 3600000) + 'h ago';
+  return Math.floor(ms / 86400000) + 'd ago';
 }
 
 function renderNavBadges() {

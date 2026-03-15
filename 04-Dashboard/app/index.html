@@ -195,15 +195,17 @@
           <div id="homeBriefExcerpt" class="brief-excerpt md-content"></div>
         </div>
 
-        <!-- Latest Completed + Queue + Activity -->
+        <!-- Latest Completed + Reports + Activity -->
         <div class="g3 mt">
           <div>
             <h3>Latest Completed</h3>
             <div id="homeLatestTask"><div class="task-empty">No completed tasks yet</div></div>
           </div>
           <div>
-            <div class="card-header"><h3>Task Queue</h3><button class="refresh-btn" onclick="loadTasks()">&#8635;</button></div>
-            <div id="homeRecentTasks" class="task-queue-list" style="max-height:200px"></div>
+            <h3>Recent Reports</h3>
+            <div id="homeRecentReports" class="task-queue-list" style="max-height:200px">
+              <div class="task-empty">Loading reports...</div>
+            </div>
           </div>
           <div>
             <h3>Live Activity</h3>
