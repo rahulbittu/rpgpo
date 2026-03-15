@@ -632,5 +632,55 @@
       "completion": "done",
       "output_quality": "3-subtask chain with research+coding examples+synthesis"
     }
+  },
+  {
+    "test_case_id": "GPO-COD-04",
+    "global_rank": 7,
+    "engine": "Code & Product Engineering",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:01:40.339Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrxwgjutgzt",
+      "domain_routed": "topranker",
+      "subtask_count": 4,
+      "completion": "done",
+      "output_quality": "Good — 4-subtask chain for architecture design. Used repo context for TopRanker specifics."
+    }
+  },
+  {
+    "test_case_id": "GPO-SHO-02",
+    "global_rank": 49,
+    "engine": "Shopping & Buying Advisor",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:01:40.340Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": false,
+    "execution_evidence": {
+      "task_id": "t_mmrxwgjxzumo",
+      "domain_routed": "research",
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-TRA-02",
+    "global_rank": 52,
+    "engine": "Travel & Relocation Planner",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:01:40.340Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "task_id": "t_mmrxwgjrjloe",
+      "domain_routed": "careeregine",
+      "subtask_count": 4,
+      "completion": "done",
+      "output_quality": "Good — comprehensive relocation guide with COL comparison, housing, tax analysis",
+      "issues": [
+        "Routed to careeregine (data engineer keyword collision)"
+      ]
+    }
   }
 ]

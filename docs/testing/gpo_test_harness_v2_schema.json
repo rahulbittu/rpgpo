@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GPO Test Harness V2 Case",
+  "type": "object",
+  "required": [
+    "test_case_id",
+    "global_rank",
+    "engine",
+    "category",
+    "set",
+    "engine_question_no",
+    "test_question",
+    "user_demand_score",
+    "estimated_audience_percent",
+    "achievability_score",
+    "business_value_score",
+    "current_gpo_status",
+    "blocking_layer",
+    "required_capabilities",
+    "provider_preference",
+    "difficulty",
+    "difficulty_score",
+    "test_method",
+    "expected_output_type",
+    "pass_criteria",
+    "failure_signal",
+    "suggested_fix_type",
+    "evidence_basis",
+    "source_basis"
+  ],
+  "properties": {
+    "test_case_id": {
+      "type": "string"
+    },
+    "global_rank": {
+      "type": "integer"
+    },
+    "engine": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "set": {
+      "type": "string",
+      "enum": [
+        "Core 150",
+        "Expansion 150",
+        "Stretch 60"
+      ]
+    },
+    "engine_question_no": {
+      "type": "integer"
+    },
+    "test_question": {
+      "type": "string"
+    },
+    "user_demand_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "estimated_audience_percent": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "achievability_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "business_value_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "current_gpo_status": {
+      "type": "string"
+    },
+    "blocking_layer": {
+      "type": "string"
+    },
+    "required_capabilities": {
+      "type": "string"
+    },
+    "needs_web": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "needs_memory": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "needs_tooling": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "needs_multi_agent": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "needs_approval": {
+      "type": "string",
+      "enum": [
+        "No",
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "provider_preference": {
+      "type": "string"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "Easy",
+        "Medium",
+        "Hard"
+      ]
+    },
+    "difficulty_score": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3
+    },
+    "test_method": {
+      "type": "string"
+    },
+    "expected_output_type": {
+      "type": "string"
+    },
+    "pass_criteria": {
+      "type": "string"
+    },
+    "failure_signal": {
+      "type": "string"
+    },
+    "suggested_fix_type": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "evidence_basis": {
+      "type": "string"
+    },
+    "source_basis": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}
