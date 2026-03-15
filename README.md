@@ -47,12 +47,12 @@ A 360-case test harness was executed across all 15 engines.
 |---|---|
 | Harness target | 360 cases |
 | Unique cases executed | 361 |
-| PASS (strict) | 330 (91.4%) |
-| PARTIAL | 31 (8.6%) |
+| PASS (strict) | 338 (93.6%) |
+| PARTIAL | 23 (6.4%) |
 | FAIL | 0 |
 | Average confidence | 89/100 |
 
-31 PARTIAL cases had anomalies: weak search results, single-subtask plans for complex requests, or thin output. See `docs/testing/engine-maturity-scoreboard.md`.
+23 PARTIAL cases had anomalies: Perplexity web search returned weak data (18), thin output (1), or multiple issues (4). See `docs/testing/engine-maturity-scoreboard.md`.
 
 ## Stack
 

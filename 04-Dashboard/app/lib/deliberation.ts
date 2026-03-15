@@ -338,6 +338,7 @@ ${codeTask ? `IMPORTANT for code tasks:
 - Set target_files_identified to the specific files you plan to modify.` : ''}
 
 depends_on contains indices (0-based) of subtasks that must complete first.
+MINIMUM 2 subtasks required. For simple writing tasks: 1) research/context gathering, 2) synthesis/writing. Single-subtask plans are acceptable ONLY for direct text transformations (rewrite, summarize) where no research is needed.
 Keep subtasks to 2-4 items. Each must be completable in one AI call.
 
 ${!codeTask ? `IMPORTANT for research/analysis tasks:

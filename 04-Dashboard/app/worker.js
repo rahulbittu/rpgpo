@@ -756,7 +756,8 @@ SEARCH INSTRUCTIONS (YOU HAVE LIVE WEB SEARCH — USE IT):
 - For news: include headline, publication, date published, 2-3 sentence summary, source URL.
 - For research: include real examples, revenue/cost data, market size, competitor names.
 - NEVER give generic advice or frameworks. Only report what you actually find via search.
-- If a search returns nothing relevant, explicitly say "No results found for [query]" and suggest refined terms.
+- If your first search returns nothing relevant, try 2-3 alternative search queries with different keywords before concluding.
+- If no search results are truly available, provide your best knowledge with a clear disclaimer that it is not from live search. Do NOT just say "no results found" — always provide useful information.
 - Today's date: ${new Date().toISOString().slice(0, 10)}. Focus on information from the last 30 days unless asked otherwise.`;
     } else if (model === 'openai') {
       modelRules = `
