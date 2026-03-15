@@ -688,7 +688,7 @@ const handlers = {
     // Value fix: Inject rich operator context + domain context into every subtask
     let operatorContext = '';
     try {
-      const opProfile = JSON.parse(fs.readFileSync(path.join(__dirname, 'state', 'context', 'operator-profile.json'), 'utf-8'));
+      const opProfile = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'state', 'context', 'operator-profile.json'), 'utf-8'));
       operatorContext = `\nOperator: ${opProfile.name} (${opProfile.professional_context?.role || 'Operator'})`;
       if (opProfile.recurring_priorities?.length) operatorContext += `\nPriorities: ${opProfile.recurring_priorities.slice(0, 3).join('; ')}`;
       if (opProfile.output_preferences?.style) operatorContext += `\nOutput style: ${opProfile.output_preferences.style}`;
@@ -698,7 +698,7 @@ const handlers = {
     let domainContext = '';
     try {
       const domain = st.domain || task.meta?.domain || 'general';
-      const ctxFile = path.join(__dirname, 'state', 'context', 'missions', domain, 'context.json');
+      const ctxFile = path.join(__dirname, '..', 'state', 'context', 'missions', domain, 'context.json');
       if (fs.existsSync(ctxFile)) {
         const ctx = JSON.parse(fs.readFileSync(ctxFile, 'utf-8'));
         if (ctx.context_summary) domainContext += `\nDomain context: ${ctx.context_summary.slice(0, 500)}`;
@@ -1020,7 +1020,7 @@ RULES:
     // Build system prompt based on role — with operator context
     let opCtx = '';
     try {
-      const opProfile = JSON.parse(fs.readFileSync(path.join(__dirname, 'state', 'context', 'operator-profile.json'), 'utf-8'));
+      const opProfile = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'state', 'context', 'operator-profile.json'), 'utf-8'));
       opCtx = `\nOperator: ${opProfile.name} (${opProfile.professional_context?.role || 'Operator'}). Priorities: ${(opProfile.recurring_priorities || []).slice(0, 3).join('; ')}.`;
       if (opProfile.output_preferences?.style) opCtx += ` Output style: ${opProfile.output_preferences.style}`;
     } catch { /* */ }
