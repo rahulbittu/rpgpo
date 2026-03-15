@@ -1,4 +1,15 @@
-// RPGPO Command Center v6 — Premium Private Operations Console
+// GPO Command Center v7 — Premium Private Operations Console
+
+// Domain name display mapping
+const DOMAIN_LABELS = {
+  topranker: 'TopRanker', newsroom: 'News', shopping: 'Shopping', startup: 'Code',
+  legal: 'Legal', screenwriting: 'Creative', music: 'Music', calendar: 'Calendar',
+  chief_of_staff: 'Planning', career: 'Career', careeregine: 'Career',
+  health: 'Health', finance: 'Income', wealthresearch: 'Income',
+  travel: 'Travel', research: 'Research', home: 'Home', communications: 'Writing',
+  personalops: 'Personal', general: 'General',
+};
+function domainLabel(d) { return DOMAIN_LABELS[d] || d; }
 
 let DATA = null, TASKS = [], STATUS = null, COSTS = null, COST_SETTINGS = null;
 let INTAKE_TASKS = [];
@@ -1414,7 +1425,7 @@ function renderIntakeTasks() {
         <span class="intake-status-badge ${t.status}">${t.status.replace('_', ' ')}</span>
       </div>
       <div class="intake-card-meta">
-        <span class="domain-tag">${esc(t.domain)}</span>
+        <span class="domain-tag">${domainLabel(t.domain)}</span>
         ${urgTag}${riskTag}
         <span style="font-size:9px;color:var(--text-faint);font-family:var(--mono);margin-left:auto">${fmtTime(t.created_at)}</span>
       </div>
@@ -1554,7 +1565,7 @@ function renderIntakeDetail(data) {
   html += `<div style="margin-bottom:12px">
     <div style="font-size:15px;font-weight:700;margin-bottom:4px">${esc(task.title)}</div>
     <div class="intake-card-meta">
-      <span class="domain-tag">${esc(task.domain)}</span>
+      <span class="domain-tag">${domainLabel(task.domain)}</span>
       <span class="intake-status-badge ${task.status}">${task.status.replace('_', ' ')}</span>
       ${task.risk_level !== 'green' ? `<span class="risk-badge risk-${task.risk_level}">${task.risk_level}</span>` : ''}
       <span style="font-size:9px;color:var(--text-faint);font-family:var(--mono);margin-left:auto">${fmtTime(task.created_at)}</span>
