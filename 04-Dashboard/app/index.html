@@ -281,26 +281,34 @@
         <div class="card" style="margin-bottom:14px" id="intakeFormCard">
           <h3>New Task</h3>
           <div class="intake-form">
-            <textarea id="intakeRequest" class="channel-textarea" placeholder="Describe the task... (e.g., 'Audit TopRanker API endpoints for performance issues')" rows="3"></textarea>
+            <textarea id="intakeRequest" class="channel-textarea" placeholder="What do you need? (e.g., 'Research top passive income ideas for a data engineer', 'Summarize today's AI news', 'Find data engineering jobs $180k+ remote')" rows="3"></textarea>
             <div class="intake-form-row">
               <select id="intakeDomain" class="channel-select">
                 <option value="">Auto-detect engine</option>
-                <option value="newsroom">Newsroom</option>
-                <option value="shopping">Shopping</option>
-                <option value="startup">Startup / Code</option>
-                <option value="legal">Legal / Documents</option>
-                <option value="screenwriting">Screenwriting</option>
-                <option value="music">Music</option>
-                <option value="calendar">Calendar</option>
-                <option value="chief_of_staff">Chief of Staff</option>
-                <option value="career">Career / Resume</option>
-                <option value="health">Health / Fitness</option>
-                <option value="finance">Finance / Wealth</option>
-                <option value="travel">Travel</option>
-                <option value="research">Research</option>
-                <option value="home">Home / Lifestyle</option>
-                <option value="communications">Communications</option>
-                <option value="topranker">TopRanker</option>
+                <optgroup label="High Value">
+                  <option value="research">Research & Analysis</option>
+                  <option value="newsroom">News & Intelligence</option>
+                  <option value="finance">Income & Wealth</option>
+                  <option value="career">Career & Growth</option>
+                  <option value="chief_of_staff">Planning & Strategy</option>
+                </optgroup>
+                <optgroup label="Flagship">
+                  <option value="topranker">TopRanker</option>
+                  <option value="startup">Code & Build</option>
+                </optgroup>
+                <optgroup label="Support">
+                  <option value="communications">Writing & Comms</option>
+                  <option value="shopping">Shopping & Compare</option>
+                  <option value="legal">Documents & Legal</option>
+                  <option value="calendar">Calendar & Schedule</option>
+                  <option value="health">Health & Fitness</option>
+                  <option value="travel">Travel & Planning</option>
+                  <option value="home">Home & Lifestyle</option>
+                </optgroup>
+                <optgroup label="Creative">
+                  <option value="screenwriting">Screenwriting</option>
+                  <option value="music">Music</option>
+                </optgroup>
                 <option value="general">General</option>
               </select>
               <select id="intakeUrgency" class="channel-select">
