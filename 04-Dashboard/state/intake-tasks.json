@@ -1,5 +1,685 @@
 [
   {
+    "task_id": "t_mms66fdhj8pt",
+    "title": "Research the best plants for improving air quality in a home office. Include low",
+    "raw_request": "Research the best plants for improving air quality in a home office. Include low-maintenance options, NASA clean air study references, and placement tips.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:50:51.989Z",
+    "updated_at": "2026-03-15T19:54:38.656Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:51:58.054Z",
+      "interpreted_objective": "Research and compile a report on the best low-maintenance plants for improving air quality in a home office, referencing NASA's clean air study and providing placement tips.",
+      "expected_outcome": "A comprehensive report detailing specific plants, their maintenance levels, air quality benefits, and optimal placement in a home office.",
+      "key_unknowns": [
+        "Which plants are specifically recommended by NASA for air quality improvement?",
+        "What are the most current low-maintenance plant options available?",
+        "What are the best practices for plant placement in a home office setting?"
+      ],
+      "recommended_strategy": "Conduct a web search to gather information on plants recommended for air quality improvement, focusing on low-maintenance options and NASA study references. Synthesize this information into a practical guide with placement tips.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Plants for Air Quality",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current information on plants that improve air quality, including low-maintenance options and NASA study references.",
+          "prompt": "Search the web for current, specific information about the best plants for improving air quality in a home office. Include low-maintenance options, NASA clean air study references, and placement tips. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Plant Information",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with actionable recommendations on plant selection and placement for air quality improvement in a home office.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for the best plants to improve air quality in a home office. Include specific plant names, maintenance levels, NASA references, and placement tips.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-air-quality-plants.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2014
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms66dt1kv4n",
+    "title": "Design a weekly review system using the GTD methodology. Include trigger questio",
+    "raw_request": "Design a weekly review system using the GTD methodology. Include trigger questions, areas of focus, horizon mapping, and 30-minute template.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:50:49.957Z",
+    "updated_at": "2026-03-15T19:54:30.850Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:51:53.512Z",
+      "interpreted_objective": "Design a weekly review system using GTD methodology tailored for personal productivity enhancement.",
+      "expected_outcome": "A structured weekly review system with trigger questions, areas of focus, horizon mapping, and a 30-minute template, documented in a detailed report.",
+      "key_unknowns": [
+        "Specific trigger questions relevant to GTD methodology",
+        "How to effectively integrate horizon mapping into the weekly review",
+        "Optimal structure for a 30-minute review template"
+      ],
+      "recommended_strategy": "Conduct research on GTD methodology focusing on weekly reviews, then synthesize findings into a structured system. Ensure the system is practical and aligns with Rahul's productivity goals. Document the system in a comprehensive report.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research GTD Weekly Review",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and examples of GTD weekly reviews including trigger questions and horizon mapping.",
+          "prompt": "Search the web for current, specific information about GTD methodology weekly review practices. Include trigger questions, areas of focus, and horizon mapping. Provide real examples, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Weekly Review System",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured weekly review system using GTD methodology with trigger questions, areas of focus, horizon mapping, and a 30-minute template.",
+          "prompt": "Based on the research results, synthesize a weekly review system using GTD methodology. Include specific trigger questions, areas of focus, horizon mapping, and a 30-minute template.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-GTD-Weekly-Review.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1926
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms66c8m40p2",
+    "title": "Write a comedic monologue from the perspective of a legacy codebase that refuses",
+    "raw_request": "Write a comedic monologue from the perspective of a legacy codebase that refuses to be refactored. 3 minutes. For a tech conference lightning talk.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:50:47.926Z",
+    "updated_at": "2026-03-15T19:53:20.897Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:51:34.768Z",
+      "interpreted_objective": "Write a comedic monologue from the perspective of a legacy codebase for a tech conference.",
+      "expected_outcome": "A humorous and engaging 3-minute monologue script that captures the quirks of a legacy codebase.",
+      "key_unknowns": [
+        "Specific tone or style preferences for the monologue",
+        "Audience familiarity with technical jargon"
+      ],
+      "recommended_strategy": "Develop a script that anthropomorphizes a legacy codebase, using humor to highlight common challenges and quirks. Focus on relatable experiences for developers, such as resistance to change and outdated technology. Ensure the humor is accessible to a tech-savvy audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Draft Comedic Monologue",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete comedic monologue script for a tech conference.",
+          "prompt": "Write a 3-minute comedic monologue from the perspective of a legacy codebase that refuses to be refactored. The monologue should be humorous, engaging, and relatable to a tech-savvy audience, highlighting common challenges and quirks of legacy systems.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1880
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mms66ao5e345",
+    "title": "Plan an optimal 4-day Thanksgiving trip from Austin to family in another city. I",
+    "raw_request": "Plan an optimal 4-day Thanksgiving trip from Austin to family in another city. Include flight timing, packing for weather change, and host gift ideas.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:50:45.893Z",
+    "updated_at": "2026-03-15T19:54:24.034Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:51:30.264Z",
+      "interpreted_objective": "Plan a comprehensive 4-day Thanksgiving trip from Austin to another city, including travel logistics, packing guidance, and gift ideas.",
+      "expected_outcome": "A detailed itinerary with flight options, packing list for weather changes, and host gift suggestions.",
+      "key_unknowns": [
+        "Destination city",
+        "Exact travel dates",
+        "Weather conditions at destination",
+        "Preferences for host gifts"
+      ],
+      "recommended_strategy": "Research current flight options from Austin for the Thanksgiving period. Gather information on weather conditions at the destination city to inform packing recommendations. Identify popular host gifts suitable for Thanksgiving. Compile all findings into a detailed travel plan.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final selection of flight options",
+        "Approval of host gift ideas"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Flight Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current flight options from Austin for the Thanksgiving period.",
+          "prompt": "Search the web for current flight options from Austin to major U.S. cities during the Thanksgiving period. Include airlines, prices, and timing.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Weather Conditions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Weather forecast for major U.S. cities during Thanksgiving.",
+          "prompt": "Search the web for weather forecasts in major U.S. cities during the Thanksgiving period. Include temperature ranges and any weather advisories.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Identify Host Gift Ideas",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Popular host gift ideas for Thanksgiving.",
+          "prompt": "Search the web for popular and thoughtful host gift ideas for Thanksgiving. Include price ranges and where to purchase.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Travel Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed travel plan including flight options, packing list, and host gift suggestions.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 4-day travel plan from Austin for Thanksgiving. Include flight options, packing recommendations for weather changes, and host gift ideas.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-thanksgiving-trip.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2054
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mms6693rqrn2",
+    "title": "Create a 21-day sugar reduction protocol. Include substitute foods, craving mana",
+    "raw_request": "Create a 21-day sugar reduction protocol. Include substitute foods, craving management, and expected timeline for reduced cravings. Evidence-based only.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:50:43.863Z",
+    "updated_at": "2026-03-15T19:54:14.352Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:51:12.478Z",
+      "interpreted_objective": "Develop a 21-day evidence-based protocol to reduce sugar intake, including food substitutes, craving management, and a timeline for craving reduction.",
+      "expected_outcome": "A comprehensive, evidence-based protocol that guides users through reducing sugar intake over 21 days with clear strategies and expected outcomes.",
+      "key_unknowns": [
+        "Current evidence on effective sugar substitutes",
+        "Strategies for managing sugar cravings",
+        "Expected timeline for craving reduction based on evidence"
+      ],
+      "recommended_strategy": "Conduct research to gather current evidence on sugar reduction strategies, including substitutes and craving management. Synthesize findings into a structured protocol with clear, actionable steps and timelines. Ensure all recommendations are evidence-based and include safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Sugar Reduction Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current evidence on sugar substitutes, craving management strategies, and timelines for craving reduction.",
+          "prompt": "Search the web for current, specific information about effective sugar reduction strategies, including sugar substitutes, craving management techniques, and expected timelines for reduced cravings. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Sugar Reduction Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, evidence-based 21-day sugar reduction protocol.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable 21-day sugar reduction protocol. Include specific food substitutes, craving management strategies, and a timeline for reduced cravings. Ensure all recommendations are evidence-based and include safety disclaimers where necessary.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-sugar-reduction-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1843
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms667jef4i5",
+    "title": "Write a LinkedIn recommendation request template. Include what to ask for, how t",
+    "raw_request": "Write a LinkedIn recommendation request template. Include what to ask for, how to make it easy for the recommender, and timing. For a senior engineer.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:50:41.834Z",
+    "updated_at": "2026-03-15T19:54:04.648Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:51:07.431Z",
+      "interpreted_objective": "Create a LinkedIn recommendation request template for a senior engineer.",
+      "expected_outcome": "A ready-to-use template that makes it easy for recommenders to write a LinkedIn recommendation, tailored for a senior engineer.",
+      "key_unknowns": [
+        "Specific elements that make a recommendation request effective for a senior engineer",
+        "Best practices for timing and approach in asking for LinkedIn recommendations"
+      ],
+      "recommended_strategy": "Research current best practices for LinkedIn recommendation requests specifically for senior engineers. Synthesize findings into a concise, actionable template that includes specific requests and timing advice. Ensure the template is easy to use and aligned with Rahul's career goals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research LinkedIn Recommendation Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices for LinkedIn recommendation requests, specifically for senior engineers.",
+          "prompt": "Search the web for current, specific information about best practices for requesting LinkedIn recommendations for senior engineers. Include real examples, timing advice, and specific elements to include in the request.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize LinkedIn Recommendation Request Template",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A LinkedIn recommendation request template tailored for senior engineers, including specific requests and timing advice.",
+          "prompt": "Based on the research results, synthesize a LinkedIn recommendation request template for a senior engineer. Include specific elements to ask for, how to make it easy for the recommender, and advice on timing the request.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-LinkedInRecommendationTemplate.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2207
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms665zahl31",
+    "title": "Research the best smart watches for health tracking in 2026. Compare Apple Watch",
+    "raw_request": "Research the best smart watches for health tracking in 2026. Compare Apple Watch, Garmin, and Samsung Galaxy Watch. Focus on sleep, HRV, and workout tracking accuracy.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:50:39.814Z",
+    "updated_at": "2026-03-15T19:53:57.104Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:51:02.433Z",
+      "interpreted_objective": "Research and compare the best smart watches for health tracking in 2026, focusing on Apple Watch, Garmin, and Samsung Galaxy Watch, specifically for sleep, HRV, and workout tracking accuracy.",
+      "expected_outcome": "A comprehensive report comparing the Apple Watch, Garmin, and Samsung Galaxy Watch in terms of health tracking features, with a focus on sleep, HRV, and workout tracking accuracy, providing a clear recommendation.",
+      "key_unknowns": [
+        "Current models and features of smart watches in 2026",
+        "Accuracy of health tracking features for each brand",
+        "Market reviews and user feedback for each brand"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on the health tracking capabilities of Apple Watch, Garmin, and Samsung Galaxy Watch in 2026. Then, synthesize this data into a structured comparison report highlighting pros and cons, and provide a recommendation based on accuracy and features.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Smart Watches 2026",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Apple Watch, Garmin, and Samsung Galaxy Watch models in 2026, focusing on health tracking features.",
+          "prompt": "Search the web for current, specific information about the health tracking features of Apple Watch, Garmin, and Samsung Galaxy Watch in 2026. Focus on sleep, HRV, and workout tracking accuracy. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Watch Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the smart watches, highlighting pros and cons and providing a recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for the best smart watch for health tracking in 2026. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-2026-smart-watch-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1975
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms664ezfac4",
+    "title": "Explain how DNS works end-to-end. From browser query to IP resolution. Cover rec",
+    "raw_request": "Explain how DNS works end-to-end. From browser query to IP resolution. Cover recursive resolvers, authoritative servers, caching, and DNSSEC.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:50:37.787Z",
+    "updated_at": "2026-03-15T19:53:29.987Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:50:49.519Z",
+      "interpreted_objective": "Explain the end-to-end process of DNS resolution, including all key components.",
+      "expected_outcome": "A comprehensive and clear explanation of DNS workings, suitable for educational purposes.",
+      "key_unknowns": [
+        "Current best practices in DNSSEC",
+        "Recent updates in DNS caching mechanisms"
+      ],
+      "recommended_strategy": "Conduct a two-step research and synthesis process. First, gather the latest information on DNS operations, including recursive resolvers, authoritative servers, caching, and DNSSEC. Then, synthesize this information into a detailed report that explains each component and their interactions in the DNS resolution process.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research DNS Resolution Process",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, specific information about DNS resolution, including recursive resolvers, authoritative servers, caching, and DNSSEC.",
+          "prompt": "Search the web for current, specific information about how DNS works end-to-end, covering recursive resolvers, authoritative servers, caching, and DNSSEC. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize DNS Resolution Explanation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining the DNS resolution process, suitable for educational purposes.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comprehensive explanation of how DNS works end-to-end. Include details on recursive resolvers, authoritative servers, caching, and DNSSEC, and ensure the explanation is clear and educational.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-dns-explanation.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1844
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms662uljztx",
+    "title": "Create a crypto investment risk assessment for a conservative tech worker. Inclu",
+    "raw_request": "Create a crypto investment risk assessment for a conservative tech worker. Include Bitcoin, Ethereum, and stablecoin strategies. Maximum 5% of portfolio.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:50:35.757Z",
+    "updated_at": "2026-03-15T19:52:48.319Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:50:44.001Z",
+      "interpreted_objective": "Create a crypto investment risk assessment for a conservative tech worker, focusing on Bitcoin, Ethereum, and stablecoin strategies, with a maximum of 5% portfolio allocation.",
+      "expected_outcome": "A detailed risk assessment report that provides specific strategies and risk evaluations for investing in Bitcoin, Ethereum, and stablecoins, tailored for a conservative tech worker.",
+      "key_unknowns": [
+        "Current market conditions for Bitcoin, Ethereum, and stablecoins",
+        "Specific risk factors associated with each cryptocurrency",
+        "Effective strategies for conservative investment in these cryptocurrencies"
+      ],
+      "recommended_strategy": "Conduct web research to gather current data on Bitcoin, Ethereum, and stablecoin investment risks and strategies. Synthesize this information into a structured report that includes specific recommendations for a conservative investment approach, considering a maximum 5% portfolio allocation.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Crypto Market Conditions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Bitcoin, Ethereum, and stablecoin market conditions, risks, and investment strategies.",
+          "prompt": "Search the web for current, specific information about Bitcoin, Ethereum, and stablecoin investment risks and strategies for conservative investors. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Crypto Investment Strategies",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with specific strategies and risk assessments for investing in Bitcoin, Ethereum, and stablecoins.",
+          "prompt": "Based on the research results, synthesize actionable recommendations for a conservative tech worker investing in Bitcoin, Ethereum, and stablecoins. Include specific names, numbers, and concrete next steps, considering a maximum 5% portfolio allocation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-crypto-risk-assessment.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2218
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms6619rzqlg",
+    "title": "Write a security audit checklist for a Node.js REST API. Include authentication,",
+    "raw_request": "Write a security audit checklist for a Node.js REST API. Include authentication, authorization, input validation, rate limiting, CORS, and dependency scanning.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:50:33.711Z",
+    "updated_at": "2026-03-15T19:52:08.857Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:50:38.327Z",
+      "interpreted_objective": "Create a comprehensive security audit checklist for a Node.js REST API.",
+      "expected_outcome": "A detailed checklist that covers all major security aspects for a Node.js REST API, including authentication, authorization, input validation, rate limiting, CORS, and dependency scanning.",
+      "key_unknowns": [
+        "Specific security standards or frameworks to align with",
+        "The intended audience for the checklist",
+        "Any specific Node.js frameworks or libraries in use"
+      ],
+      "recommended_strategy": "Develop a checklist by researching best practices and current standards in Node.js REST API security. Ensure the checklist is comprehensive and practical, addressing all specified areas. Tailor the content to be immediately usable by developers or security auditors.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Node.js REST API Security Best Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices and standards for securing a Node.js REST API.",
+          "prompt": "Search the web for current, specific information about best practices and standards for securing a Node.js REST API. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Security Audit Checklist",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed security audit checklist for a Node.js REST API.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive security audit checklist for a Node.js REST API. Include specific items for authentication, authorization, input validation, rate limiting, CORS, and dependency scanning.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1981
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms5ykcskpv1",
     "title": "Create a financial independence calculator. Current savings 150k, annual income ",
     "raw_request": "Create a financial independence calculator. Current savings 150k, annual income 200k, savings rate 30%, target 2M. Show timeline with different return assumptions.",
