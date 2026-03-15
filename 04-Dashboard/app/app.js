@@ -2182,9 +2182,9 @@ function renderTaskTimeline(task, subtasks) {
         html += `<div class="tl-diff-summary"><div class="tl-diff-label">Diff:</div><pre>${esc(ev.diff_summary)}</pre></div>`;
       }
 
-      // Report link
+      // Report link — clickable to view
       if (ev.report_file) {
-        html += `<div class="tl-report-link">Report: <code>${esc(ev.report_file)}</code></div>`;
+        html += `<div class="tl-report-link">Report: <a href="/api/file/${encodeURIComponent(ev.report_file)}" target="_blank" style="color:var(--accent-text);text-decoration:none;font-family:var(--mono);font-size:10px">${esc(ev.report_file.split('/').pop())}</a></div>`;
       }
 
       html += `</div>`;
