@@ -1,5 +1,420 @@
 [
   {
+    "id": "mms4xdcjvmw6",
+    "type": "execute-subtask",
+    "label": "Subtask: Finalize Learning Module Content",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4u039d4sj"
+    },
+    "createdAt": "2026-03-15T19:15:49.843Z",
+    "updatedAt": "2026-03-15T19:16:44.334Z",
+    "output": "Finalize Learning Module Content: ## Learning Module: Terraform and Infrastructure as Code\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms4u039d4sj.md"
+    ]
+  },
+  {
+    "id": "mms4x3zdwpy5",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Neighborhood Comparison",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4uycym6x1"
+    },
+    "createdAt": "2026-03-15T19:15:37.705Z",
+    "updatedAt": "2026-03-15T19:16:33.097Z",
+    "output": "Synthesize Neighborhood Comparison: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/travel-{date}-AustinNeighborhoodComparison.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms4uycym6x1.md"
+    ]
+  },
+  {
+    "id": "mms4wn1hihn1",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize story treatment",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4uothh2nd"
+    },
+    "createdAt": "2026-03-15T19:15:15.749Z",
+    "updatedAt": "2026-03-15T19:16:26.803Z",
+    "output": "Synthesize story treatment: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/screenwriting-{date}-smart-home-story.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms4uothh2nd.md"
+    ]
+  },
+  {
+    "id": "mms4whyd6lw0",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize running program",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4ukol2yxu"
+    },
+    "createdAt": "2026-03-15T19:15:09.157Z",
+    "updatedAt": "2026-03-15T19:16:17.714Z",
+    "output": "Synthesize running program: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/health-{date}-running-program.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms4ukol2yxu.md"
+    ]
+  },
+  {
+    "id": "mms4w9ojh88x",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Negotiation Strategy",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4ugqce1ry"
+    },
+    "createdAt": "2026-03-15T19:14:58.435Z",
+    "updatedAt": "2026-03-15T19:16:08.092Z",
+    "output": "Synthesize Negotiation Strategy: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/careeregine-{date}-remote-work-negotiation-strategy.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms4ugqce1ry.md"
+    ]
+  },
+  {
+    "id": "mms4vrudgu2p",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Camera Comparison Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4u4i4m9pv"
+    },
+    "createdAt": "2026-03-15T19:14:35.317Z",
+    "updatedAt": "2026-03-15T19:15:59.018Z",
+    "output": "Synthesize Camera Comparison Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/shopping-{date}-smart-home-security-cameras.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms4u4i4m9pv.md"
+    ]
+  },
+  {
+    "id": "mms4v3qqytx0",
+    "type": "execute-subtask",
+    "label": "Subtask: Compile Learning Module Outline",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4u028nm8x"
+    },
+    "createdAt": "2026-03-15T19:14:04.082Z",
+    "updatedAt": "2026-03-15T19:15:49.843Z",
+    "output": "Compile Learning Module Outline: ## Key Findings\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms4u028nm8x.md"
+    ]
+  },
+  {
+    "id": "mms4uyeapru0",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Austin Neighborhoods",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4uycagxyy"
+    },
+    "createdAt": "2026-03-15T19:13:57.154Z",
+    "updatedAt": "2026-03-15T19:15:37.706Z",
+    "output": "Research Austin Neighborhoods: I need to conduct a web search to provide current, specific information about Mueller, East Austin, South Lamar, and the Domain neighborhoods with rea\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms4uycagxyy.md"
+    ]
+  },
+  {
+    "id": "mms4uta1mwhs",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Insurance Audit Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4tv2io7rd"
+    },
+    "createdAt": "2026-03-15T19:13:50.521Z",
+    "updatedAt": "2026-03-15T19:15:26.124Z",
+    "output": "Synthesize Insurance Audit Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/wealthresearch-{date}-insurance-audit.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms4tv2io7rd.md"
+    ]
+  },
+  {
+    "id": "mms4uous9ya2",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Twilight Zone tone and style",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4uosver4r"
+    },
+    "createdAt": "2026-03-15T19:13:44.788Z",
+    "updatedAt": "2026-03-15T19:15:15.750Z",
+    "output": "Research Twilight Zone tone and style: ## Core Tone and Style of The Twilight Zone (1959 Series)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms4uosver4r.md"
+    ]
+  },
+  {
+    "id": "mms4ukpz9hja",
+    "type": "execute-subtask",
+    "label": "Subtask: Research beginner running programs",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4uknycihs"
+    },
+    "createdAt": "2026-03-15T19:13:39.431Z",
+    "updatedAt": "2026-03-15T19:15:09.157Z",
+    "output": "Research beginner running programs: ## Finding 1: Couch to 5K (C25K) Training Plan for Complete Beginners\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms4uknycihs.md"
+    ]
+  },
+  {
+    "id": "mms4ugrplucr",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Remote Work Negotiation Strategies",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4ugpo5hab"
+    },
+    "createdAt": "2026-03-15T19:13:34.309Z",
+    "updatedAt": "2026-03-15T19:14:58.435Z",
+    "output": "Research Remote Work Negotiation Strategies: ## Key Strategies for Negotiating Remote Work\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms4ugpo5hab.md"
+    ]
+  },
+  {
+    "id": "mms4uc90iqpd",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize MVCC Article",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4tr3nwtap"
+    },
+    "createdAt": "2026-03-15T19:13:28.452Z",
+    "updatedAt": "2026-03-15T19:14:46.954Z",
+    "output": "Synthesize MVCC Article: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/writing-{date}-PostgreSQL-MVCC.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms4tr3nwtap.md"
+    ]
+  },
+  {
+    "id": "mms4u4jh8m7g",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Wireless Security Cameras",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4u4hhliij"
+    },
+    "createdAt": "2026-03-15T19:13:18.461Z",
+    "updatedAt": "2026-03-15T19:14:35.318Z",
+    "output": "Research Wireless Security Cameras: ## Blink Wireless Security Cameras Under $150\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms4u4hhliij.md"
+    ]
+  },
+  {
+    "id": "mms4u055o3cm",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Best Practices and AWS Example",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4u02ste3d"
+    },
+    "createdAt": "2026-03-15T19:13:12.761Z",
+    "updatedAt": "2026-03-15T19:14:28.620Z",
+    "output": "Research Best Practices and AWS Example: # Terraform Best Practices and AWS Implementation Guide\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms4u02ste3d.md"
+    ]
+  },
+  {
+    "id": "mms4u04yldxi",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Terraform Basics",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4u01l4k5b"
+    },
+    "createdAt": "2026-03-15T19:13:12.754Z",
+    "updatedAt": "2026-03-15T19:14:04.082Z",
+    "output": "Research Terraform Basics: ## Terraform Basics\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms4u01l4k5b.md"
+    ]
+  },
+  {
+    "id": "mms4twkpy43k",
+    "type": "deliberate",
+    "label": "Deliberate: Create a comprehensive comparison of Austin neighborhoods for a tech worker relo",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms4twkltfom",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:13:08.137Z",
+    "updatedAt": "2026-03-15T19:13:57.155Z",
+    "output": "Deliberation complete.\nObjective: Compare Austin neighborhoods for a tech worker relocating, focusing on walkability, dining, commute, and cost.\nStrategy: First, gather current data on walkability, dining, commute, and cost for each neighborhood using web research. Then, synthesize this data into a structured comparison report highlighting key differences and recommendations.\nRisk: green\nSubtasks: 2\nTokens: 1865",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms4tv3tibrn",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Insurance Needs and Costs",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4tv1zahr7"
+    },
+    "createdAt": "2026-03-15T19:13:06.233Z",
+    "updatedAt": "2026-03-15T19:13:50.521Z",
+    "output": "Research Insurance Needs and Costs: No results found for typical insurance needs and costs for **life, disability, umbrella, and renters insurance** specifically for a 32-year-old tech w\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms4tv1zahr7.md"
+    ]
+  },
+  {
+    "id": "mms4tv08hidg",
+    "type": "deliberate",
+    "label": "Deliberate: Write a short story treatment about an engineer who discovers their smart home h",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms4tv04dvch",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:13:06.104Z",
+    "updatedAt": "2026-03-15T19:13:44.789Z",
+    "output": "Deliberation complete.\nObjective: Create a 2000-word short story treatment in a Twilight Zone tone about an engineer discovering their smart home's secret life optimization.\nStrategy: Research similar Twilight Zone episodes or stories for tone and style. Then, synthesize a unique plot that aligns with the engineer's discovery and the smart home's actions. Ensure the narrative builds suspense and delivers a thought-provoking conclusion.\nRisk: green\nSubtasks: 2\nTokens: 1917",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms4ttftkaez",
+    "type": "deliberate",
+    "label": "Deliberate: Design a progressive running program for a complete beginner. 8 weeks from couch",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms4ttfqhj9z",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:13:04.073Z",
+    "updatedAt": "2026-03-15T19:13:39.432Z",
+    "output": "Deliberation complete.\nObjective: Create an 8-week progressive running program for beginners to transition from a sedentary lifestyle to running a 5K.\nStrategy: Research current best practices for beginner running programs, focusing on injury prevention for sedentary individuals. Synthesize a structured 8-week plan with clear, actionable steps and safety guidelines.\nRisk: green\nSubtasks: 2\nTokens: 1868",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms4trviqax6",
+    "type": "deliberate",
+    "label": "Deliberate: Create a strategy for negotiating a remote work arrangement with a traditional e",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms4trvep3hk",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:13:02.046Z",
+    "updatedAt": "2026-03-15T19:13:34.310Z",
+    "output": "Deliberation complete.\nObjective: Develop a negotiation strategy for securing a remote work arrangement with a traditional employer.\nStrategy: Research industry standards and successful negotiation strategies for remote work. Develop a structured negotiation plan with talking points, data to support the request, and potential compromise positions.\nRisk: yellow\nSubtasks: 2\nTokens: 2166",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms4tr4x1i5l",
+    "type": "execute-subtask",
+    "label": "Subtask: Research PostgreSQL MVCC",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms4tr35l3op"
+    },
+    "createdAt": "2026-03-15T19:13:01.089Z",
+    "updatedAt": "2026-03-15T19:13:28.453Z",
+    "output": "Research PostgreSQL MVCC: ## PostgreSQL MVCC Overview\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms4tr35l3op.md"
+    ]
+  },
+  {
+    "id": "mms4tqb7udsw",
+    "type": "deliberate",
+    "label": "Deliberate: Research the best smart home security cameras for a rental apartment. Must be wi",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms4tqb4cp6z",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:13:00.019Z",
+    "updatedAt": "2026-03-15T19:13:18.461Z",
+    "output": "Deliberation complete.\nObjective: Identify the best wireless smart home security cameras for a rental apartment under $150, comparing Ring, Blink, and Arlo.\nStrategy: First, perform a web search to gather current pricing, features, and user reviews for Ring, Blink, and Arlo wireless security cameras under $150. Then, synthesize this information into a comparative analysis to identify the best option for a rental apartment, considering ease of installation and overall value.\nRisk: green\nSubtasks: 2\nTokens: 1945",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms4toqx5kg3",
+    "type": "deliberate",
+    "label": "Deliberate: Teach me about Terraform and Infrastructure as Code from scratch. Cover state ma",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms4toqu90cf",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:12:57.993Z",
+    "updatedAt": "2026-03-15T19:13:12.761Z",
+    "output": "Deliberation complete.\nObjective: Create a comprehensive learning module on Terraform and Infrastructure as Code for beginners.\nStrategy: Develop a structured learning module starting with basic concepts of Terraform and Infrastructure as Code, then delve into specific topics like state management, modules, and providers. Include practical examples and best practices, culminating in a real-world AWS use case. Ensure the content is adaptable to different learning styles.\nRisk: green\nSubtasks: 4\nTokens: 2244",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms4tn6my3l6",
+    "type": "deliberate",
+    "label": "Deliberate: Create a comprehensive insurance audit for a 32-year-old tech worker. Review lif",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms4tn6hv1w6",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:12:55.966Z",
+    "updatedAt": "2026-03-15T19:13:06.233Z",
+    "output": "Deliberation complete.\nObjective: Conduct a comprehensive insurance audit for a 32-year-old tech worker, covering life, disability, umbrella, and renters insurance, and determine necessary coverage and typical costs.\nStrategy: First, research typical insurance coverage needs and costs for a 32-year-old tech worker. Then, synthesize this information into a comprehensive report, providing actionable recommendations on coverage levels and expected costs.\nRisk: green\nSubtasks: 2\nTokens: 2235",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms4tllplq7c",
+    "type": "deliberate",
+    "label": "Deliberate: Write a technical deep-dive article on how PostgreSQL handles MVCC (Multi-Versio",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms4tllmphdo",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T19:12:53.917Z",
+    "updatedAt": "2026-03-15T19:13:01.089Z",
+    "output": "Deliberation complete.\nObjective: Write a detailed technical article on PostgreSQL's MVCC, including vacuum processes, dead tuples, and transaction isolation levels with examples.\nStrategy: Conduct research to gather current information on PostgreSQL MVCC, focusing on vacuum processes, dead tuples, and transaction isolation levels. Synthesize the findings into a structured article with examples and explanations. Ensure clarity and technical accuracy.\nRisk: green\nSubtasks: 2\nTokens: 1877",
+    "error": null,
+    "filesWritten": []
+  },
+  {
     "id": "mms4q0kldxve",
     "type": "execute-subtask",
     "label": "Subtask: Synthesize Work-from-Home Schedule",
@@ -1179,421 +1594,5 @@
     "output": "Deliberation complete.\nObjective: Explain the internal workings of a search engine, including crawling, indexing, ranking, and serving, with a focus on modern ML-based ranking factors.\nStrategy: Conduct web research to gather current information on search engine internals and ML-based ranking factors. Synthesize this information into a clear, structured report that explains each component and process in detail.\nRisk: green\nSubtasks: 2\nTokens: 1883",
     "error": null,
     "filesWritten": []
-  },
-  {
-    "id": "mms48lfpy3wo",
-    "type": "deliberate",
-    "label": "Deliberate: Research the best HSA-eligible health insurance plans for self-employed workers ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms48lfhqlza",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T18:56:33.925Z",
-    "updatedAt": "2026-03-15T18:56:44.069Z",
-    "output": "Deliberation complete.\nObjective: Research and compare HSA-eligible health insurance plans for self-employed workers in Texas for 2026.\nStrategy: Conduct web research to gather current data on HSA-eligible health insurance plans in Texas for self-employed individuals. Synthesize this data into a comprehensive report comparing key metrics such as premiums, deductibles, and HSA contribution limits.\nRisk: green\nSubtasks: 2\nTokens: 2296",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms48jutl4tu",
-    "type": "deliberate",
-    "label": "Deliberate: Write a comprehensive guide to building a CI/CD pipeline for a Node.js monorepo.",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms48juq3hwy",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T18:56:31.877Z",
-    "updatedAt": "2026-03-15T18:56:38.008Z",
-    "output": "Deliberation complete.\nObjective: Create a detailed guide for setting up a CI/CD pipeline for a Node.js monorepo using GitHub Actions.\nStrategy: Research current best practices for CI/CD pipelines in Node.js monorepos, focusing on GitHub Actions. Synthesize this information into a clear, step-by-step guide that includes testing, deployment, and rollback strategies. Ensure the guide is actionable and tailored to developers with intermediate knowledge of CI/CD processes.\nRisk: green\nSubtasks: 2\nTokens: 2052",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms45oskua6s",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize play narrative",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms43rutodpq"
-    },
-    "createdAt": "2026-03-15T18:54:18.308Z",
-    "updatedAt": "2026-03-15T18:55:21.903Z",
-    "output": "Synthesize play narrative: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/screenwriting-{date}-one-act-play-outline.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms43rutodpq.md"
-    ]
-  },
-  {
-    "id": "mms45k7nt7f2",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Micro-Practices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms43n203gac"
-    },
-    "createdAt": "2026-03-15T18:54:12.371Z",
-    "updatedAt": "2026-03-15T18:55:09.701Z",
-    "output": "Synthesize Micro-Practices: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/health-{date}-mindfulness-micro-practices.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms43n203gac.md"
-    ]
-  },
-  {
-    "id": "mms455ny6zs7",
-    "type": "execute-subtask",
-    "label": "Subtask: Compile day trip itinerary",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms43f375j9t"
-    },
-    "createdAt": "2026-03-15T18:53:53.518Z",
-    "updatedAt": "2026-03-15T18:55:01.613Z",
-    "output": "Compile day trip itinerary: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/travel-2023-10-21-day-trip-itinerary.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms43f375j9t.md"
-    ]
-  },
-  {
-    "id": "mms44h0f1l3i",
-    "type": "execute-subtask",
-    "label": "Subtask: Outline Engagement Tactics",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms439t06ejv"
-    },
-    "createdAt": "2026-03-15T18:53:21.567Z",
-    "updatedAt": "2026-03-15T18:54:51.447Z",
-    "output": "Outline Engagement Tactics: ## Engagement Tactics for Data Engineering Thought Leadership\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-gemini-2026-03-15-st_mms439t06ejv.md"
-    ]
-  },
-  {
-    "id": "mms44h082gu2",
-    "type": "execute-subtask",
-    "label": "Subtask: Develop Content Calendar",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms439sl233r"
-    },
-    "createdAt": "2026-03-15T18:53:21.560Z",
-    "updatedAt": "2026-03-15T18:54:44.379Z",
-    "output": "Develop Content Calendar: ## Content Calendar for Data Engineering Thought Leadership\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-gemini-2026-03-15-st_mms439sl233r.md"
-    ]
-  },
-  {
-    "id": "mms44ep9yzey",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Earbuds Comparison",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms435n5rz4a"
-    },
-    "createdAt": "2026-03-15T18:53:18.573Z",
-    "updatedAt": "2026-03-15T18:54:35.777Z",
-    "output": "Synthesize Earbuds Comparison: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/shopping-{date}-wireless-earbuds-comparison.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms435n5rz4a.md"
-    ]
-  },
-  {
-    "id": "mms4407i55el",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Sharding Strategies Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms42v9gqmfu"
-    },
-    "createdAt": "2026-03-15T18:52:59.790Z",
-    "updatedAt": "2026-03-15T18:54:27.313Z",
-    "output": "Synthesize Sharding Strategies Report: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/learning-{date}-database-sharding.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms42v9gqmfu.md"
-    ]
-  },
-  {
-    "id": "mms43rw1m9he",
-    "type": "execute-subtask",
-    "label": "Subtask: Research ethical dilemmas in AI disclosure",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms43ru8qlsn"
-    },
-    "createdAt": "2026-03-15T18:52:49.009Z",
-    "updatedAt": "2026-03-15T18:54:18.308Z",
-    "output": "Research ethical dilemmas in AI disclosure: ## Finding 1: Transparency vs. Competitive Advantage in AI Systems\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms43ru8qlsn.md"
-    ]
-  },
-  {
-    "id": "mms43n376olv",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Evidence-Based Mindfulness Practices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms43n1gewtz"
-    },
-    "createdAt": "2026-03-15T18:52:42.787Z",
-    "updatedAt": "2026-03-15T18:54:12.372Z",
-    "output": "Research Evidence-Based Mindfulness Practices: ## Finding 1: The Mindfulness App's 5-Minute Daily Practices for Stress Reduction in Tech Teams\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms43n1gewtz.md"
-    ]
-  },
-  {
-    "id": "mms43jcoo3vj",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Fund Comparison",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms42nlw9ufx"
-    },
-    "createdAt": "2026-03-15T18:52:37.944Z",
-    "updatedAt": "2026-03-15T18:54:01.170Z",
-    "output": "Synthesize Fund Comparison: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/wealthresearch-2023-index-funds-comparison.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms42nlw9ufx.md"
-    ]
-  },
-  {
-    "id": "mms43f5jim3f",
-    "type": "execute-subtask",
-    "label": "Subtask: Research restaurant recommendations",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms43f2rkwxo"
-    },
-    "createdAt": "2026-03-15T18:52:32.503Z",
-    "updatedAt": "2026-03-15T18:53:53.518Z",
-    "output": "Research restaurant recommendations: ## Finding 1: Pinkerton's Barbecue\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms43f2rkwxo.md"
-    ]
-  },
-  {
-    "id": "mms43f5csvrp",
-    "type": "execute-subtask",
-    "label": "Subtask: Research must-visit spots in San Antonio",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms43f2asypc"
-    },
-    "createdAt": "2026-03-15T18:52:32.496Z",
-    "updatedAt": "2026-03-15T18:53:45.178Z",
-    "output": "Research must-visit spots in San Antonio: Based on the search results provided, here are three must-visit spots in San Antonio for a day trip:\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms43f2asypc.md"
-    ]
-  },
-  {
-    "id": "mms43f552lsi",
-    "type": "execute-subtask",
-    "label": "Subtask: Research driving route and traffic conditions",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms43f1qt4vg"
-    },
-    "createdAt": "2026-03-15T18:52:32.489Z",
-    "updatedAt": "2026-03-15T18:53:27.576Z",
-    "output": "Research driving route and traffic conditions: No results found for current best driving route, traffic conditions, or estimated travel times from Austin to San Antonio on a Saturday (e.g., March 1\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms43f1qt4vg.md"
-    ]
-  },
-  {
-    "id": "mms439u4vuna",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Personal Branding Strategies",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms439s5lihs"
-    },
-    "createdAt": "2026-03-15T18:52:25.612Z",
-    "updatedAt": "2026-03-15T18:53:21.567Z",
-    "output": "Research Personal Branding Strategies: ## No results found for \"successful personal branding strategies for data engineers\"\n\nAuto-queued 2 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms439s5lihs.md"
-    ]
-  },
-  {
-    "id": "mms435oee0zp",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Top Wireless Earbuds",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms435mlcapq"
-    },
-    "createdAt": "2026-03-15T18:52:20.222Z",
-    "updatedAt": "2026-03-15T18:53:18.574Z",
-    "output": "Research Top Wireless Earbuds: ## Top Finding: Soundcore Liberty 5 (Best for Video Calls Under $150)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms435mlcapq.md"
-    ]
-  },
-  {
-    "id": "mms432n6kn1b",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Monitoring Guide",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms42it4pr72"
-    },
-    "createdAt": "2026-03-15T18:52:16.290Z",
-    "updatedAt": "2026-03-15T18:53:10.483Z",
-    "output": "Synthesize Monitoring Guide: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/writing-{date}-nodejs-monitoring-guide.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms42it4pr72.md"
-    ]
-  },
-  {
-    "id": "mms42vaoe1bm",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Database Sharding Strategies",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms42v8v7vs3"
-    },
-    "createdAt": "2026-03-15T18:52:06.768Z",
-    "updatedAt": "2026-03-15T18:52:59.790Z",
-    "output": "Research Database Sharding Strategies: ## Horizontal vs Vertical Partitioning\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms42v8v7vs3.md"
-    ]
-  },
-  {
-    "id": "mms42qd6wwsy",
-    "type": "deliberate",
-    "label": "Deliberate: Write a one-act play about two AIs debating whether they should tell their human",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms42qd3dd6h",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T18:52:00.378Z",
-    "updatedAt": "2026-03-15T18:52:49.009Z",
-    "output": "Deliberation complete.\nObjective: Write a one-act play about two AIs debating whether to disclose a critical bug to their human creators.\nStrategy: Develop a narrative that highlights the ethical dilemmas faced by AIs, using dialogue to explore different perspectives. Ensure the play is concise yet impactful, with a clear resolution. Leverage recent work on AI themes to enrich the script.\nRisk: green\nSubtasks: 2\nTokens: 1916",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms42oszdn9z",
-    "type": "deliberate",
-    "label": "Deliberate: Create a mindfulness practice specifically for high-stress tech workers. Include",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms42osx06i0",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T18:51:58.355Z",
-    "updatedAt": "2026-03-15T18:52:42.787Z",
-    "output": "Deliberation complete.\nObjective: Develop a mindfulness practice with five micro-practices for high-stress tech workers, each under two minutes, based on evidence.\nStrategy: Research current evidence-based mindfulness practices suitable for high-stress environments, particularly in the tech industry. Synthesize findings into concise, actionable micro-practices that can be easily adopted by tech workers.\nRisk: green\nSubtasks: 2\nTokens: 1839",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms42nn5y7j7",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Index Funds",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms42nlczil4"
-    },
-    "createdAt": "2026-03-15T18:51:56.849Z",
-    "updatedAt": "2026-03-15T18:52:37.944Z",
-    "output": "Research Index Funds: ## Vanguard Total Market Index Funds\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms42nlczil4.md"
-    ]
-  },
-  {
-    "id": "mms42n8u6tvd",
-    "type": "deliberate",
-    "label": "Deliberate: Plan a day trip from Austin to San Antonio. Include driving route, 3 must-visit ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms42n8rl7zm",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T18:51:56.334Z",
-    "updatedAt": "2026-03-15T18:52:32.503Z",
-    "output": "Deliberation complete.\nObjective: Plan a detailed day trip itinerary from Austin to San Antonio for a Saturday.\nStrategy: Conduct research to gather current information on driving routes, attractions, and dining options. Synthesize this data into a structured itinerary including specific places, timings, and recommendations. Ensure the plan is feasible for a Saturday trip.\nRisk: green\nSubtasks: 4\nTokens: 2100",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms42lomyktf",
-    "type": "deliberate",
-    "label": "Deliberate: Create a 6-month plan to build a personal brand as a data engineering thought le",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms42lojvbxn",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T18:51:54.310Z",
-    "updatedAt": "2026-03-15T18:52:25.612Z",
-    "output": "Deliberation complete.\nObjective: Develop a comprehensive 6-month plan for Rahul to establish himself as a thought leader in data engineering.\nStrategy: Research current trends and successful strategies in personal branding for data engineers. Develop a content calendar with specific topics and platforms. Outline engagement tactics to build and maintain an audience. Ensure alignment with Rahul's career goals and time constraints.\nRisk: green\nSubtasks: 3\nTokens: 2484",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms42k4isj7r",
-    "type": "deliberate",
-    "label": "Deliberate: Compare the top 3 wireless earbuds for video calls under 150 dollars. Must have ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms42k4gzwpd",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T18:51:52.290Z",
-    "updatedAt": "2026-03-15T18:52:20.222Z",
-    "output": "Deliberation complete.\nObjective: Compare the top 3 wireless earbuds under $150 for video calls with a focus on microphone quality, latency, and battery life.\nStrategy: First, conduct a web search to gather current data on wireless earbuds under $150, focusing on microphone quality, latency, and battery life. Then, synthesize this data into a structured report with a clear recommendation.\nRisk: green\nSubtasks: 2\nTokens: 1863",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms42iuch8i0",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Node.js Monitoring Tools",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms42isjsewk"
-    },
-    "createdAt": "2026-03-15T18:51:50.628Z",
-    "updatedAt": "2026-03-15T18:52:16.291Z",
-    "output": "Research Node.js Monitoring Tools: ## Monitoring Tools for Node.js Production Applications\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms42isjsewk.md"
-    ]
   }
 ]
