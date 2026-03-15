@@ -1,5 +1,65 @@
 [
   {
+    "record_id": "ee_mms2l5runkmw",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mms2ilm7rxjc",
+    "route": "personalops",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:10:20.922Z"
+  },
+  {
+    "record_id": "ee_mms2l120jqsz",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing items, comparisonKeys, ",
+    "scope_type": "task",
+    "scope_id": "t_mms2ik23ce94",
+    "route": "shopping",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:10:14.808Z"
+  },
+  {
+    "record_id": "ee_mms2kvtchxxz",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mms2iihy1pg6",
+    "route": "learning",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:10:08.016Z"
+  },
+  {
+    "record_id": "ee_mms2kojmcbi1",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mms2igxljn6p",
+    "route": "wealthresearch",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:09:58.594Z"
+  },
+  {
+    "record_id": "ee_mms2jpwqla6n",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mms2ifdabqjs",
+    "route": "writing",
+    "linked_path_id": "",
+    "created_at": "2026-03-15T18:09:13.706Z"
+  },
+  {
     "record_id": "ee_mms1t3e1mh64",
     "area": "runtime_deliverable",
     "middleware_ran": "runtime-deliverable-pipeline",

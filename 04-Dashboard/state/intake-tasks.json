@@ -1,5 +1,335 @@
 [
   {
+    "task_id": "t_mms2ilm7rxjc",
+    "title": "Design a personal CRM system for networking. Track contacts, interactions, follo",
+    "raw_request": "Design a personal CRM system for networking. Track contacts, interactions, follow-ups, and relationship strength. Include tool recommendations and workflow.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:08:21.487Z",
+    "updated_at": "2026-03-15T18:10:20.924Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:08:46.652Z",
+      "interpreted_objective": "Design a personal CRM system for networking to track contacts, interactions, follow-ups, and relationship strength.",
+      "expected_outcome": "A detailed plan for a personal CRM system, including tool recommendations and workflow, ready for implementation.",
+      "key_unknowns": [
+        "Specific tools currently used by Rahul for networking",
+        "Preferred platforms or integrations for the CRM system",
+        "Rahul's specific networking goals and metrics for relationship strength"
+      ],
+      "recommended_strategy": "Research current CRM tools and best practices for personal networking. Synthesize findings into a tailored CRM system design, including tool recommendations and workflows that align with Rahul's priorities and constraints.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final selection of CRM tools and workflow design"
+      ],
+      "subtasks": [
+        {
+          "title": "Research CRM Tools and Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current CRM tools and best practices for personal networking, with citations.",
+          "prompt": "Search the web for current CRM tools and best practices for personal networking. Include real names, features, pros/cons, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize CRM System Design",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing a personal CRM system design, including tool recommendations and workflows.",
+          "prompt": "Based on the research results, synthesize a detailed design for a personal CRM system for networking. Include specific tool recommendations, workflows, and how they align with Rahul's priorities.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-crm-system-design.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1912
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms2ik23ce94",
+    "title": "Create a sustainable wardrobe essentials list for a tech professional. 20 items ",
+    "raw_request": "Create a sustainable wardrobe essentials list for a tech professional. 20 items that mix and match. Include brands with fair pricing and quality focus.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:08:19.467Z",
+    "updated_at": "2026-03-15T18:10:14.814Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:08:41.736Z",
+      "interpreted_objective": "Create a sustainable wardrobe essentials list for a tech professional, focusing on quality and fair pricing.",
+      "expected_outcome": "A list of 20 wardrobe items that are sustainable, versatile for mixing and matching, and from brands known for fair pricing and quality.",
+      "key_unknowns": [
+        "Specific brands that focus on sustainability and fair pricing",
+        "Current trends in sustainable fashion for tech professionals"
+      ],
+      "recommended_strategy": "First, research current sustainable fashion trends and identify brands known for quality and fair pricing. Then, synthesize this information into a list of 20 wardrobe essentials that can mix and match, suitable for a tech professional.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Sustainable Fashion Brands",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of sustainable fashion brands known for quality and fair pricing.",
+          "prompt": "Search the web for current information about sustainable fashion brands that focus on quality and fair pricing. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Wardrobe Essentials List",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured list of 20 sustainable wardrobe essentials for a tech professional, including specific products and brands.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a list of 20 sustainable wardrobe essentials for a tech professional. Include specific products, brands, and reasons for selection.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-sustainable-wardrobe.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1820
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms2iihy1pg6",
+    "title": "Explain Kubernetes networking from basics to advanced. Cover Services, Ingress, ",
+    "raw_request": "Explain Kubernetes networking from basics to advanced. Cover Services, Ingress, Network Policies, and service mesh. Use diagrams described in text.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:08:17.446Z",
+    "updated_at": "2026-03-15T18:10:08.018Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:08:26.383Z",
+      "interpreted_objective": "Create a comprehensive explanation of Kubernetes networking, covering Services, Ingress, Network Policies, and service mesh, from basics to advanced levels.",
+      "expected_outcome": "A detailed report explaining Kubernetes networking with clear, text-based diagrams that can be used for educational purposes.",
+      "key_unknowns": [
+        "Current best practices in Kubernetes networking",
+        "Recent updates or changes in Kubernetes networking tools"
+      ],
+      "recommended_strategy": "Conduct thorough research on Kubernetes networking using Perplexity to gather the most current and relevant information. Synthesize this data into a structured report using OpenAI, ensuring clarity and educational value. Include text descriptions of diagrams to illustrate concepts.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Kubernetes Networking",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current and comprehensive data on Kubernetes networking, including Services, Ingress, Network Policies, and service mesh, with citations.",
+          "prompt": "Search the web for current, specific information about Kubernetes networking, including Services, Ingress, Network Policies, and service mesh. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Kubernetes Networking Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and comprehensive report on Kubernetes networking, including clear explanations and text-based diagrams.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report on Kubernetes networking. Cover Services, Ingress, Network Policies, and service mesh. Include clear, text-based diagrams to illustrate concepts.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-kubernetes-networking.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1845
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms2igxljn6p",
+    "title": "Research the best ways to automate personal finances. Compare tools like Monarch",
+    "raw_request": "Research the best ways to automate personal finances. Compare tools like Monarch, YNAB, Copilot, and manual spreadsheet approaches. Include pricing and automation capabilities.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:08:15.417Z",
+    "updated_at": "2026-03-15T18:09:58.596Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:08:22.555Z",
+      "interpreted_objective": "Research and compare automation tools for personal finance management, including Monarch, YNAB, Copilot, and manual spreadsheet approaches.",
+      "expected_outcome": "A detailed comparison report of personal finance automation tools, including pricing, features, and automation capabilities.",
+      "key_unknowns": [
+        "Current pricing for each tool",
+        "Specific automation features and capabilities",
+        "User reviews and satisfaction levels"
+      ],
+      "recommended_strategy": "Conduct a web search to gather up-to-date information on Monarch, YNAB, Copilot, and manual spreadsheet approaches. Analyze the data to compare their pricing, features, and automation capabilities. Synthesize the findings into a comprehensive report for Rahul.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Personal Finance Tools",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on Monarch, YNAB, Copilot, and manual spreadsheet approaches including pricing, features, and automation capabilities.",
+          "prompt": "Search the web for current, specific information about Monarch, YNAB, Copilot, and manual spreadsheet approaches for personal finance automation. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Tool Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of personal finance automation tools, with specific pricing, features, and automation capabilities.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Monarch, YNAB, Copilot, and manual spreadsheet approaches. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-finance-tools-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2259
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms2ifdabqjs",
+    "title": "Create a weekly newsletter template for a tech community. Include sections for t",
+    "raw_request": "Create a weekly newsletter template for a tech community. Include sections for top stories, tutorials, job listings, and community highlights. Professional but approachable tone.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:08:13.390Z",
+    "updated_at": "2026-03-15T18:09:13.708Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:08:18.920Z",
+      "interpreted_objective": "Create a professional yet approachable weekly newsletter template for a tech community.",
+      "expected_outcome": "A structured newsletter template with sections for top stories, tutorials, job listings, and community highlights, ready for use.",
+      "key_unknowns": [
+        "Specific tech community audience details",
+        "Preferred length and depth of each section",
+        "Frequency of newsletter distribution"
+      ],
+      "recommended_strategy": "Research current best practices for tech community newsletters to gather insights on structure and content. Then, synthesize these findings into a concise and tailored newsletter template. Ensure the tone is professional but approachable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tech Community Newsletter Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and common sections in tech community newsletters.",
+          "prompt": "Search the web for current best practices for tech community newsletters. Include information on common sections, tone, and structure. Provide real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Newsletter Template",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured newsletter template with sections for top stories, tutorials, job listings, and community highlights.",
+          "prompt": "Based on the research results from prior subtasks, create a professional yet approachable newsletter template for a tech community. Include sections for top stories, tutorials, job listings, and community highlights.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-newsletter-template.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1822
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms1qkbv4tci",
     "title": "Explain graph databases and when to use them instead of relational databases. In",
     "raw_request": "Explain graph databases and when to use them instead of relational databases. Include Neo4j vs Amazon Neptune comparison, and 3 real use cases with example queries.",

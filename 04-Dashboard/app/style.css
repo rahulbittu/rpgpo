@@ -359,7 +359,10 @@ h3, .section-title {
 .task-status-badge.failed { background: var(--red-soft); color: var(--red); }
 .task-time { font-size: 9px; color: var(--text-faint); font-family: var(--mono); }
 
-.task-empty { color: var(--text-faint); font-size: 12px; padding: 8px 0; }
+.task-empty {
+  color: var(--text-faint); font-size: 12px; padding: 16px 0;
+  text-align: center; font-style: italic;
+}
 .task-count {
   font-size: 10px; font-weight: 600; color: var(--text-dim);
   background: rgba(255,255,255,.05); padding: 2px 8px; border-radius: 10px;
@@ -642,18 +645,21 @@ h3, .section-title {
 .log-badge.model-ppx { background: var(--blue-soft); color: var(--blue); }
 .log-badge.model-gemini { background: var(--cyan-soft); color: var(--cyan); }
 
-/* TOPRANKER HERO */
-.tr-hero {
-  background: linear-gradient(135deg, rgba(212,170,40,.06), var(--bg-card) 60%);
-  border: 1px solid var(--border-glow);
+/* ENGINE HERO (generic engine card) */
+.engine-hero {
+  background: linear-gradient(135deg, rgba(212,170,40,.04), var(--bg-card) 60%);
+  border: 1px solid var(--border);
   border-radius: var(--r); padding: 16px;
   margin-bottom: 14px;
-  box-shadow: var(--shadow-md), 0 0 30px rgba(212,170,40,.03);
 }
-.tr-hero-header {
-  display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+.tr-hero { /* Legacy compat */
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r); padding: 16px;
+  margin-bottom: 14px;
 }
-.tr-hero-title { font-size: 16px; font-weight: 700; color: var(--accent-text); }
+.tr-hero-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.tr-hero-title { font-size: 16px; font-weight: 700; color: var(--text); }
 .tr-loop-stage {
   font-size: 10px; font-weight: 600; color: var(--text-dim);
   background: rgba(255,255,255,.04); padding: 2px 8px; border-radius: var(--r-xs);
@@ -668,7 +674,7 @@ h3, .section-title {
 .tr-stat-value { font-size: 13px; font-weight: 700; color: var(--text); }
 .tr-objective {
   font-size: 12px; color: var(--text-secondary);
-  border-top: 1px solid rgba(212,170,40,.1); padding-top: 8px;
+  border-top: 1px solid var(--border); padding-top: 8px;
 }
 .tr-next-action {
   font-size: 11px; color: var(--accent-text); margin-top: 6px;

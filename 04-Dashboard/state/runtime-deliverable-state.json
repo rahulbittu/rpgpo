@@ -2467,5 +2467,79 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-15T17:47:22.134Z"
+  },
+  "t_mms2ifdabqjs": {
+    "task_id": "t_mms2ifdabqjs",
+    "deliverable_id": "dlv_rpgpo_tmms2ifdabqjs_document_47ce78c1",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:08:18.937Z"
+  },
+  "t_mms2igxljn6p": {
+    "task_id": "t_mms2igxljn6p",
+    "deliverable_id": "dlv_rpgpo_tmms2igxljn6p_document_0031c709",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:08:22.561Z"
+  },
+  "t_mms2iihy1pg6": {
+    "task_id": "t_mms2iihy1pg6",
+    "deliverable_id": "dlv_rpgpo_tmms2iihy1pg6_document_49a392be",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:08:26.394Z"
+  },
+  "t_mms2ik23ce94": {
+    "task_id": "t_mms2ik23ce94",
+    "deliverable_id": "dlv_rpgpo_tmms2ik23ce94_shopping_53f55183",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:08:41.744Z"
+  },
+  "t_mms2ilm7rxjc": {
+    "task_id": "t_mms2ilm7rxjc",
+    "deliverable_id": "dlv_rpgpo_tmms2ilm7rxjc_document_a41d5ed2",
+    "engine_id": "personalops",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:08:46.662Z"
   }
 }
