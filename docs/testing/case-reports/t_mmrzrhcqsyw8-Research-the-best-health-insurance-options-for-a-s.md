@@ -1,31 +1,74 @@
 # Research the best health insurance options for a self-employed entrepreneur in T
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mmrzrhcqsyw8`
 - **Engine**: wealthresearch
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T16:51:17
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Research the best health insurance options for a self-employed entrepreneur in Texas. Compare marketplace plans, health sharing ministries, and direct primary care. Include monthly costs and coverage comparison.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Research and compare health insurance options for a self-employed entrepreneur in Texas, focusing on marketplace plans, health sharing ministries, and direct primary care.
-- **Strategy**: Conduct web research to gather current information on health insurance options available to self-employed individuals in Texas. Analyze the data to compare costs and coverage, then synthesize findings into a detailed report. Ensure the report provides actionable insights for decision-making.
-- **Subtasks**: 2
+**Chief of Staff**: "Research and compare health insurance options for a self-employed entrepreneur in Texas, focusing on marketplace plans, health sharing ministries, and direct primary care."
 
-## 3. Subtask Execution
+**Strategy**: Conduct web research to gather current information on health insurance options available to self-employed individuals in Texas. Analyze the data to compare costs and coverage, then synthesize findings into a detailed report. Ensure the report provides actionable insights for decision-making.
 
-### Subtask 1: Research Health Insurance Options
-- Model: perplexity | Stage: research | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Synthesize Insurance Comparison Report
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Health Insurance Options | perplexity | research |
+| 2 | Synthesize Insurance Comparison Report | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Health Insurance Options [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Marketplace Plans (ACA/Healthcare.gov) for Self-Employed in Texas
+Over 4.1 million Texans enrolled in marketplace plans in 2026, up more than 200,000 from prior year; self-employed like San Antonio graphic designer Laura Humphries saw premiums rise from $500/month (with enhanced credits through 2025) to nearly $3,000/month after expiration, prompting alternatives.[3]  
+About 75% of enrollees (3.1 million Texans) have incomes below 200% Federal Poverty Level with access to $0-premium plans in 2026; Bexar County had 234,000 marketplace enrollees in 2024, many self-employed or part-timers.[3]  
+**Source:** https://sanantonioreport.org/san-antonio-small-business-owners-navigate-health-insurance-spikes-we-feel-like-ping-pong-balls/[3]
+
+Self-employed Texans buy individual marketplace plans via Healthcare.gov (not SHOP, which is for groups); no specific 2026 Texas self-employed premium averages found in results, but small business single coverage averages $661/month nationally.[1]  
+**Source:** https://www.valuepenguin.com/small-business-health-insurance-cost[1]
+
+## Health Sharing Ministries
+Health sharing programs let members pay monthly shares and submit bills for sharing (not insurance); costs typically lower than traditional plans, with sharing based on program rules.[2]  
+No Texas-specific 2026 programs, names, or costs in results; self-employed entrepreneurs often use as ACA alternative amid premium spikes.[3]  
+**No additional sources found for specific Texas health sharing ministries like Medi-Share or Liberty HealthShare in 2026.**
+
+## Direct Primary Care (DPC)
+No specific 2026 Texas DPC options, providers, or costs found in results for self-employed; DPC typically involves monthly fees for primary care access, often paired with high-deductible plans or sharing.[2]  
+**No results found for "direct primary care Texas self-employed 2026".**
+
+## Other Self-Employed Relevant Options (HRAs)
+Self-employed without employees can't use QSEHRA (for <25 full-time workers); solo entrepreneurs reimburse personal premiums via Individual Coverage HRA (ICHRA), no cap, using pretax dollars up to $6,350/year single/$12,800 family (2025 limits; 2026 QSEHRA at $537.50/month single/$1,091.66 family for groups).[1][2]  
+**Source:** https://www.valuepenguin.com/small-business-health-insurance-cost[1]; https://hsaforamerica.com/blog/group-health-benefits-for-small-business/[2]
+
+## Blue Cross Blue Shield of Texas (BCBSTX) Level-Funded Plans
+BCBSTX offers 2026 level-funded plans for small groups (min 5 enrolled or 75% participation, up to 50 employees; employer pays 50%+ of lowest-cost option); includes EAP, virtual visits via MDLIVE, pharmacy via Prime Therapeutics, no specific self-employed/solo rates.[5]  
+**Source:** https://www.bcbstx.com/employer/small-group-level-funded-insurance[5]
+
+**Next Steps:**  
+- Enroll in Texas marketplace at Healthcare.gov during Open Enrollment (Nov 1, 2025-Jan 15, 2026 for 2026 coverage); check subsidies via income input.  
+- Contac
+
+*... truncated (3200 chars total)*
+
+### Step 2: Synthesize Insurance Comparison Report [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -69,10 +112,13 @@
    - **Expected Outcome:** Better financial planning and preparedness for future premium changes.
    - **First Step:** Set up alerts for news on healthcare policy changes in Texas.
 
-4. **Budget for Potential Premium Increases:**
-   - **What to Do:** Plan for potential increases in healthcare premiums post-2025.
-   - **Why:** To ensure financial stability and avoid unexpected expenses.
-   - **Expected Outcome:** A more predictable and manageable budget.
-   - **First Step:** Review your current financial plan and adjust for potential healthcare cost increases.
+4. **Budget for Potential Prem
 
-By following these steps, you can strategically manage your healthcare options as a self-employed entrepreneur in Texas, balancing cost and coverage effectively.
+*... truncated (3515 chars total)*
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mmrzrhcqsyw8/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mmrzrhcqsyw8/export?fmt=json

@@ -1,31 +1,93 @@
 # Create a guided meditation script for reducing anxiety before a technical interv
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms07uc5bz5l`
 - **Engine**: general
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T17:04:00
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a guided meditation script for reducing anxiety before a technical interview. 10 minutes long. Include breathing exercises, body scan, and positive visualization. Written for audio recording.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a 10-minute guided meditation script to reduce anxiety before a technical interview.
-- **Strategy**: Research effective meditation techniques for anxiety reduction, specifically before technical interviews. Synthesize findings into a structured script including breathing exercises, body scan, and positive visualization. Ensure the script is suitable for audio recording and includes safety disclaimers.
-- **Subtasks**: 2
+**Chief of Staff**: "Create a 10-minute guided meditation script to reduce anxiety before a technical interview."
 
-## 3. Subtask Execution
+**Strategy**: Research effective meditation techniques for anxiety reduction, specifically before technical interviews. Synthesize findings into a structured script including breathing exercises, body scan, and positive visualization. Ensure the script is suitable for audio recording and includes safety disclaimers.
 
-### Subtask 1: Research Meditation Techniques
-- Model: perplexity | Stage: research | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Synthesize Meditation Script
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Meditation Techniques | perplexity | research |
+| 2 | Synthesize Meditation Script | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Meditation Techniques [perplexity]
+
+**Status**: done | **Stage**: research
+
+# Effective Meditation Techniques for Reducing Anxiety Before Technical Interviews
+
+Based on current research, **mindfulness meditation and breath-focused techniques are the most evidence-backed methods for pre-interview anxiety reduction**, with studies showing measurable improvements in focus, emotional regulation, and stress management.
+
+## Key Techniques with Proven Efficacy
+
+**1. Breath-Focused Meditation (4-7-8 Breathing)**
+
+The 4-7-8 breathing technique—inhale for 4 counts, hold for 7, exhale for 8—is specifically recommended for immediate stress relief[5]. This method activates your parasympathetic nervous system, counteracting the "fight or flight" response that intensifies interview anxiety. Research shows that **10-12 minutes of daily meditation can improve focus and lower cortisol levels**[3], making it ideal for pre-interview preparation.
+
+**2. Mindfulness Meditation with Body Awareness**
+
+Mindfulness meditation teaches you to observe racing thoughts without judgment, which is critical during technical interviews when overthinking can derail performance[4]. A guided meditation approach involves:
+
+- Sitting comfortably and focusing on your breath[1]
+- Acknowledging wandering thoughts, then gently returning attention to breathing[1]
+- Starting with **5-minute sessions and gradually increasing duration**[1]
+
+Research from a 2015 JAMA Internal Medicine study found that participants who practiced mindfulness techniques for six weeks reported **less insomnia, depression, and fatigue**[5]. Additionally, a Frontiers in Neuroscience study showed that 15-minute mindfulness meditation focusing on emotional acceptance **reduced emotional intensity in response to negative stimuli**[5].
+
+**3. Progressive Muscle Relaxation (PMR)**
+
+PMR systematically releases physical tension by tensing and relaxing muscle groups (legs, abdomen, chest, arms, face)[1]. This is particularly useful before interviews because it:
+
+- Relieves physical tension that contributes to anxiety[1]
+- Increases awareness of relaxation sensations[1]
+- Improves sleep quality by reducing stress symptoms[1]
+
+**Practice PMR daily, especially before bed or during high-stress periods**[1].
+
+**4. Grounding Techniques for Acute Anxiety**
+
+When facing pre-interview panic, use concrete anchoring methods[4]:
+
+- Gently press your feet into the floor
+- Place a hand on your chest or stomach
+- Lightly press your fingertips together
+
+These techniques remind your nervous system that **you are present and safe in the moment**, helping interrupt the anxiety spiral[4].
+
+## Meditation Duration and Frequency
+
+**Short daily practice is more effective than occasional long sessions**. Even **5-minute guided meditations can regulate your nervous system and restore calm**[2]. For sustained benefits, dedicate time daily rather than cramming meditation the night before your interview.
+
+## Brain Changes from Regular Practice
+
+Meditation **shrinks the amygdala** (the brain region processing fear) and **reduces i
+
+*... truncated (3957 chars total)*
+
+### Step 2: Synthesize Meditation Script [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -75,21 +137,13 @@
 ## 10-Minute Guided Meditation Script
 
 ### Introduction
-"Welcome to this guided meditation designed to help you reduce anxiety before your technical interview. Please find a comfortable seated position, close your eyes, and take a deep breath in... and out. Let's begin."
+"Welcome to this guided meditation designed to help you reduce anxiety before your technical interview. Please find a comfortable seated position, close your eyes, and take a de
 
-### 4-7-8 Breathing Exercise (3 minutes)
-"Start by inhaling deeply through your nose for a count of four... Hold your breath for seven counts... and exhale slowly through your mouth for a count of eight... Repeat this cycle three more times, feeling your body relax with each breath."
+*... truncated (4598 chars total)*
 
-### Mindfulness Meditation with Body Awareness (4 minutes)
-"Now, shift your focus to your body. Begin a gentle scan from the top of your head down to your toes. Notice any sensations or tension without judgment. If your mind wanders, gently bring your focus back to your breath and continue the scan. Feel your body becoming more relaxed and grounded."
+## Phase 4: Deliverable
 
-### Positive Visualization (3 minutes)
-"Visualize yourself in the interview room. Imagine feeling calm, confident, and clear. See yourself answering questions with ease and clarity. Picture the interviewers smiling and nodding in approval. Hold onto this positive image and let it fill you with confidence."
-
-### Conclusion
-"Take a final deep breath in... and out. When you're ready, gently open your eyes. Remember, you are prepared, and you are capable. Carry this calm and confidence with you into your interview."
-
-### Safety Disclaimer
-"This meditation is intended for relaxation and stress reduction. If you experience discomfort or distress, please stop and consult a healthcare professional. Always meditate in a safe environment where you can relax fully."
-
-This script is structured to be recorded and used as a pre-interview meditation guide, helping to reduce anxiety and promote a state of calm and focus.
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms07uc5bz5l/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms07uc5bz5l/export?fmt=json

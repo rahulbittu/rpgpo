@@ -1,31 +1,74 @@
 # Create a comprehensive moving checklist for relocating to a new city. Include 60
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms0cl3q9k6q`
 - **Engine**: general
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T17:07:41
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a comprehensive moving checklist for relocating to a new city. Include 60-day, 30-day, 2-week, 1-week, and moving day tasks. Cover utilities, address changes, and settling in.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a detailed moving checklist for relocating to a new city with tasks segmented by timeframes.
-- **Strategy**: Conduct research to gather current best practices and common tasks involved in moving to a new city. Synthesize this information into a structured checklist segmented by timeframes. Ensure the checklist includes specific tasks related to utilities, address changes, and settling in.
-- **Subtasks**: 2
+**Chief of Staff**: "Create a detailed moving checklist for relocating to a new city with tasks segmented by timeframes."
 
-## 3. Subtask Execution
+**Strategy**: Conduct research to gather current best practices and common tasks involved in moving to a new city. Synthesize this information into a structured checklist segmented by timeframes. Ensure the checklist includes specific tasks related to utilities, address changes, and settling in.
 
-### Subtask 1: Research Moving Checklist Best Practices
-- Model: perplexity | Stage: research | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Synthesize Moving Checklist
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Moving Checklist Best Practices | perplexity | research |
+| 2 | Synthesize Moving Checklist | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Moving Checklist Best Practices [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Utilities Setup and Transfer
+Contact utility providers 4-6 weeks before moving to disconnect services at the old address and connect at the new one, including electricity, gas, water, internet, cable, and trash collection. Schedule activations for your move-in day to avoid gaps or extra charges; some new providers require deposits or verification, especially interstate.[1][4][6]  
+- Record meter readings (gas, electric, water) on moving day before movers leave.[6][8]  
+- Examples: Use moveutilities.com for service transfers; keep phone and utilities active through move day.[6]  
+Source: https://colonialvanlines.com/blog/how-to-move-long-distance/ [1]; https://www.moishes.com/relocating-to-another-state-guide/ [4]; https://www.arnoff.com/moving-resources/move-calendar/ [6]
+
+## Address Changes and Mail Forwarding
+Set up USPS mail forwarding up to 18 months via moversguide.usps.com at least 4 weeks ahead; also update bank, loans, subscriptions, doctors, dentists, and deliveries.[1][5][6]  
+- Notify employer, friends/family, gym/yoga studios, newspapers; open new bank accounts if no local branch.[3][5]  
+- For new city: Research local regulations (licenses, home-business rules) via Chamber of Commerce; update driver's license/vehicle registration post-move.[5][6]  
+Source: https://colonialvanlines.com/blog/how-to-move-long-distance/ [1]; https://spinemoving.com/resources/ [5]; https://www.arnoff.com/moving-resources/move-calendar/ [6]
+
+## Settling In Tasks
+Pack an "essentials box" for first 24 hours: toiletries, medications, phone chargers, clothes, pet food, coffee pot, keys, wallet, IDs, cash—keep it with you, not in the truck.[1][2][5]  
+- Day 1: Clean/repair new home, take photos of electronics assembled, confirm mover pickup/time/price, arrange pet/childcare.[2][8]  
+- Week 1: Service/clean appliances, defrost fridge, donate unused items (e.g., snowblower if moving to Florida), update insurance with move-in date.[1][2][5]  
+- Ongoing: Gather valuables from safe-deposit box, inventory home with photos/videos, use up non-travel food.[3][5]  
+Source: https://colonialvanlines.com/blog/how-to-move-long-distance/ [1]; https://www.lemonade.com/uk/home-insurance/explained/house-moving-checklist/ [2]; https://spinemoving.com/resources/ [5]
+
+## Full Timeline Checklist
+| Timeframe | Key Tasks |
+|-----------|-----------|
+| 6 Weeks Out | Declutter/donate, budget/move quotes, notify contacts, doctor records, storage if needed.[3][7] |
+| 4-5 Weeks Out | Book movers (e.g., Arnoff), utility transfers, USPS kit, pet/plant transport, Chamber of Commerce info.[5][6] |
+| 2 Weeks Out | Pack non-essentials, cancel local memberships, time off work, insurance confirmation.[2][5] |
+| 1 Week Out | Essentials box, clean/paint old home, confirm travel/hotel/car service.[2][3] |
+| Moving Day | Meter readings, supervise movers, read Bill of Lading/inventory, driver contact.[6] |
+| Post-Move | Utilities on, address updates, fridge defrost, nothing left behind (check attic/g
+
+*... truncated (3369 chars total)*
+
+### Step 2: Synthesize Moving Checklist [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -77,13 +120,13 @@
 2. **Set Up Mail Forwarding**:
    - **What to Do**: Arrange USPS mail forwarding 4 weeks before moving.
    - **Why**: To ensure all mail reaches your new address without interruption.
-   - **Expected Outcome**: Continuous receipt of important mail.
-   - **First Step**: Visit moversguide.usps.com to set up forwarding.
+   - **Expected Outcome**: Co
 
-3. **Prepare Essentials Box**:
-   - **What to Do**: Pack an essentials box for the first few days.
-   - **Why**: To have immediate access to necessary items upon arrival.
-   - **Expected Outcome**: Smooth transition without needing to unpack everything immediately.
-   - **First Step**: List essential items and pack them in a separate box.
+*... truncated (3555 chars total)*
 
-By following this structured checklist, you can ensure a smooth and organized relocation to your new city.
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms0cl3q9k6q/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms0cl3q9k6q/export?fmt=json

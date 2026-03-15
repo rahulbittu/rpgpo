@@ -1,43 +1,57 @@
 # Create a quarterly health checkup plan. List specific blood tests to request, ba
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms0qbuzov6a`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T17:18:22
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms0qbuzov6a/export?fmt=md) | [JSON](/api/intake/task/t_mms0qbuzov6a/export?fmt=json)
+- **Created**: 2026-03-15T17:18:22
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a quarterly health checkup plan. List specific blood tests to request, baseline measurements to track, and health metrics to monitor monthly for a 32-year-old male tech worker.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Develop a quarterly health checkup plan for a 32-year-old male tech worker.
-- **Strategy**: Research evidence-based health checkup guidelines for a 32-year-old male. Identify specific blood tests, baseline measurements, and health metrics relevant to tech workers. Compile findings into a quarterly plan with actionable steps.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific health concerns or conditions of the individual; Access to healthcare facilities or services; Current health status of the individual
+**Chief of Staff**: "Develop a quarterly health checkup plan for a 32-year-old male tech worker."
 
-## 3. Subtask Execution
+**Strategy**: Research evidence-based health checkup guidelines for a 32-year-old male. Identify specific blood tests, baseline measurements, and health metrics relevant to tech workers. Compile findings into a quarterly plan with actionable steps.
 
-### Subtask 1: Research Health Checkup Guidelines
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: ## Finding 1: Annual Wellness Exam Recommended for Adults 18-64, Including Screenings by Age and Risk
+**Execution Plan**:
 
-### Subtask 2: Compile Quarterly Health Checkup Plan
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Health Checkup Guidelines | perplexity | research |
+| 2 | Compile Quarterly Health Checkup Plan | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Health Checkup Guidelines [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Finding 1: Annual Wellness Exam Recommended for Adults 18-64, Including Screenings by Age and Risk
+Adults aged 18-64, including 32-year-old males, benefit from one yearly wellness exam plus age- and risk-matched screenings like colorectal cancer (starts at 45, colonoscopy every 10 years per ACS Guidelines), lipid checks, and lifestyle counseling on nutrition, tobacco, alcohol, sexual health, and mental health. No specific tests listed exclusively for 32-year-old males, but baseline cardiovascular and lipid assessments are standard in comprehensive men's wellness exams covering cardiovascular risk, sexual health, and substance use.  
+Source: https://texanhealth.org/blog/how-often-should-you-visit-a-preventive-health-care-clinic-for-optimal-health/[1]; https://www.droracle.ai/articles/907902/how-do-i-conduct-a-comprehensive-wellness-exam-for[2]
+
+## Finding 2: 2026 AHA/ACC Guideline on Dyslipidemia Recommends Lipid Testing for Adults, Including Baseline Lp(a) and ApoB
+The 2026 Guideline on the Management of Dyslipidemia (replaces 2018 version, based on evidence through late 2024) advises using PREVENT-ASCVD equations for primary-prevention lipid-lowering decisions in adults; test **lipoprotein(a) [Lp(a)]** at least once in a lifetime and selective **apolipoprotein B (ApoB)** for risk assessment; monitor **LDL-C**, **non-HDL-C** (with lower targets for high-risk), and triglycerides. For a 32-year-old male, establish baseline lipids via blood tests during wellness exam, especially if family history of ASCVD.  
+Source: https://professional.heart.org/en/science-news/2026-guideline-on-the-management-of-dyslipidemia[3]
+
+## Finding 3: Routine Baseline Measurements in Adult Screenings Include Blood Pressure and Cholesterol
+Standard health screenings for adults like 32-year-old males include **blood pressure** checks and **cholesterol blood tests** at regular primary care visits; discuss colorectal cancer screening (not yet routine at 32, starts at 45 unless high risk), with 5-year survival 6-74% depending on stage if diagnosed. Tailor to personal risk factors like family history.  
+Source: https://health.clevelandclinic.org/6-things-you-need-to-know-about-health-screening-tests[4]
+
+**No additional recent (last 30 days from March 15, 2026) sources found in results for 32-year-old male-specific blood tests or metrics beyond lipids/blood pressure; guidelines emphasize annual wellness with personalization. Next steps: Schedule annual exam; request lipid panel (LDL-C, HDL-C, triglycerides, Lp(a), ApoB if indicated), CBC, CMP, blood pressure; use AHA PREVENT calculator post-results.**
+
+### Step 2: Compile Quarterly Health Checkup Plan [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -74,7 +88,13 @@
    - **What to Do**: Track metrics such as weight, BMI, exercise frequency, diet quality, alcohol consumption, and stress levels.
    - **Why**: To maintain a healthy lifestyle and prevent chronic diseases.
    - **Expected Outcome**: Enhanced overall well-being and reduced risk of lifestyle-related health issues.
-   - **First Step**: Use a health tracking app to log daily activities and habits.
+   - **First Step**: Use a health tracking app to log daily
 
-4. **Safety Disclaimer**:
-   - Always consult with a healthcare professional before making significant changes to your health regimen or starting new supplements or medications. This ensures that any interventions are safe and appropriate for your specific health needs.
+*... truncated (3295 chars total)*
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms0qbuzov6a/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms0qbuzov6a/export?fmt=json

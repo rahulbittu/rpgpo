@@ -1,43 +1,116 @@
 # Write a comprehensive guide to building a CI/CD pipeline for a Node.js monorepo.
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms48juq3hwy`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T18:56:31
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms48juq3hwy/export?fmt=md) | [JSON](/api/intake/task/t_mms48juq3hwy/export?fmt=json)
+- **Created**: 2026-03-15T18:56:31
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Write a comprehensive guide to building a CI/CD pipeline for a Node.js monorepo. Include GitHub Actions, testing strategies, deployment stages, and rollback procedures.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a detailed guide for setting up a CI/CD pipeline for a Node.js monorepo using GitHub Actions.
-- **Strategy**: Research current best practices for CI/CD pipelines in Node.js monorepos, focusing on GitHub Actions. Synthesize this information into a clear, step-by-step guide that includes testing, deployment, and rollback strategies. Ensure the guide is actionable and tailored to developers with intermediate knowledge of CI/CD processes.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific Node.js monorepo structure; Current CI/CD best practices for Node.js; Details on rollback procedures
+**Chief of Staff**: "Create a detailed guide for setting up a CI/CD pipeline for a Node.js monorepo using GitHub Actions."
 
-## 3. Subtask Execution
+**Strategy**: Research current best practices for CI/CD pipelines in Node.js monorepos, focusing on GitHub Actions. Synthesize this information into a clear, step-by-step guide that includes testing, deployment, and rollback strategies. Ensure the guide is actionable and tailored to developers with intermediate knowledge of CI/CD processes.
 
-### Subtask 1: Research CI/CD Best Practices for Node.js Monorepos
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: report
-- **Status**: done
-- **Summary**: I need to conduct a web search for current best practices in CI/CD pipelines for Node.js monorepos, as the provided search results contain only partia
+**Execution Plan**:
 
-### Subtask 2: Synthesize CI/CD Guide for Node.js Monorepo
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research CI/CD Best Practices for Node.js Monorepos | perplexity | report |
+| 2 | Synthesize CI/CD Guide for Node.js Monorepo | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research CI/CD Best Practices for Node.js Monorepos [perplexity]
+
+**Status**: done | **Stage**: report
+
+I need to conduct a web search for current best practices in CI/CD pipelines for Node.js monorepos, as the provided search results contain only partial information about monorepo structure and some CI/CD elements, but lack comprehensive coverage of testing strategies, deployment procedures, and rollback mechanisms.
+
+Let me search for this information now.
+
+Based on the search results provided and my analysis, here are the current best practices for CI/CD pipelines in Node.js monorepos:
+
+## Finding 1: Package Manager Setup and Dependency Management
+
+**pnpm with workspace configuration** is the recommended approach for modern Node.js monorepos[2][6]. The critical setup includes:
+
+- Use `pnpm-workspace.yaml` to declare all packages in your monorepo[4]
+- Add `pnpm/action-setup@v4` before Node setup in GitHub Actions workflows[2]
+- Ensure strict dependency declarations: each package must explicitly declare its own dependencies rather than relying on hoisting[2]
+
+**Example GitHub Actions workflow:**
+```yaml
+steps:
+  - uses: actions/checkout@v4
+    with:
+      fetch-depth: 0
+  - uses: pnpm/action-setup@v4
+  - uses: actions/setup-node@v4
+    with:
+      node-version: 20
+  - run: pnpm install
+  - run: pnpm run build
+```
+
+This prevents the "sloppy dependency declaration" problem where packages work locally due to hoisting but fail in CI[2].
+
+## Finding 2: Semantic Versioning and Automated Release Management
+
+Use **semantic-release** to automate versioning across your monorepo[3]. This analyzes commit history and determines version bumps automatically:
+
+- `feat` commits → minor version bump (1.3.0 → 1.4.0)
+- `fix` commits → patch version bump (1.3.0 → 1.3.1)
+- `BREAKING CHANGE` or `feat!` → major version bump (1.x.x → 2.0.0)
+
+**Key advantage:** For tightly coupled services (backend, frontend, database), use a single version across all components[3]. This ensures:
+- Docker images tagged with matching versions (backend:v1.0.11, frontend:v1.0.11)
+- Database migrations correspond to exact releases
+- Each Git tag maps to a deterministic system state
+- Rollbacks become straightforward since all components share the same version[3]
+
+## Finding 3: Task Execution Across Monorepo Projects
+
+Use **Lerna** or **mise-en-place** for running tasks across multiple projects[1][4]:
+
+**Lerna approach:**
+```bash
+lerna run build --scope=addon  # Build specific package
+```
+
+**mise approach (experimental monorepo support):**
+```bash
+mise //...:lint              # Run lint task across all projects
+mise '//projects/frontend:*' # Run all tasks in frontend project
+mise //...:test*             # Run all test tasks in all projects
+```
+
+This allows selective task execution rather than rebuilding everything[1][4].
+
+## Finding 4: Multi-App Deployment Strategy
+
+For monorepos with multiple deployable applications, configure **separate Vercel projects** with distinct deployment commands[5]:
+
+| App | Deploy Command | Source |
+|-----|---|---|
+| Main App | `npm run deploy` | Root |
+| Marketing |
+
+*... truncated (3953 chars total)*
+
+### Step 2: Synthesize CI/CD Guide for Node.js Monorepo [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -91,24 +164,13 @@
    - **What to Do**: Configure `pnpm` and GitHub Actions as outlined.
    - **Why**: To ensure consistent environment setup and dependency management.
    - **Expected Outcome**: Reliable builds and fewer dependency-related issues.
-   - **First Step**: Create a `pnpm-workspace.yaml` file listing all packages.
+   - **First Step**: Create a `pnpm
 
-2. **Implement Semantic Release**:
-   - **What to Do**: Set up `semantic-release` in your CI/CD pipeline.
-   - **Why**: To automate versioning and release processes.
-   - **Expected Outcome**: Consistent versioning and reduced manual release effort.
-   - **First Step**: Install `semantic-release` and configure it with your repository.
+*... truncated (4256 chars total)*
 
-3. **Develop Comprehensive Testing Suite**:
-   - **What to Do**: Implement unit, integration, and end-to-end tests.
-   - **Why**: To ensure code quality and functionality.
-   - **Expected Outcome**: Higher confidence in code changes and fewer production issues.
-   - **First Step**: Set up Jest and Cypress in your project.
+## Phase 4: Deliverable
 
-4. **Define Deployment and Rollback Procedures**:
-   - **What to Do**: Create clear deployment stages and rollback plans.
-   - **Why**: To manage releases effectively and recover quickly from failures.
-   - **Expected Outcome**: Smooth deployments and quick recovery from issues.
-   - **First Step**: Document deployment stages and establish rollback criteria.
-
-By following these detailed steps and recommendations, you can build a robust CI/CD pipeline for your Node.js monorepo, ensuring efficient development, testing, and deployment processes.
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms48juq3hwy/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms48juq3hwy/export?fmt=json

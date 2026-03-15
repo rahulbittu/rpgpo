@@ -1,5 +1,579 @@
 [
   {
+    "task_id": "t_mms4ft6xr1dw",
+    "title": "Write the opening scene of a thriller podcast about a data center that starts ma",
+    "raw_request": "Write the opening scene of a thriller podcast about a data center that starts making autonomous decisions. Include sound design notes and voice direction.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:02:10.569Z",
+    "updated_at": "2026-03-15T19:05:42.613Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:03:05.249Z",
+      "interpreted_objective": "Write the opening scene of a thriller podcast with sound design and voice direction notes.",
+      "expected_outcome": "A compelling and engaging opening scene script for a thriller podcast, complete with sound design and voice direction.",
+      "key_unknowns": [
+        "Specific plot details of the podcast",
+        "Target audience for the podcast",
+        "Tone and style preferences for the podcast"
+      ],
+      "recommended_strategy": "Research current trends in thriller podcasts to understand popular themes and sound design techniques. Then, synthesize this information to draft a detailed opening scene script, incorporating sound and voice direction notes to enhance the narrative.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Thriller Podcast Trends",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current trends, themes, and sound design techniques in thriller podcasts.",
+          "prompt": "Search the web for current trends, themes, and sound design techniques in thriller podcasts. Include real examples, names, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Draft Opening Scene Script",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed script for the opening scene of the thriller podcast, including sound design and voice direction notes.",
+          "prompt": "Based on the research results from prior subtasks, write a detailed script for the opening scene of a thriller podcast about a data center making autonomous decisions. Include sound design and voice direction notes.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-thriller-podcast-opening.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1877
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mms4frmqjfxm",
+    "title": "Plan a 3-day workation in a mountain town near Austin. Must have reliable WiFi. ",
+    "raw_request": "Plan a 3-day workation in a mountain town near Austin. Must have reliable WiFi. Include accommodation, workspace options, and outdoor activities for breaks.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:02:08.546Z",
+    "updated_at": "2026-03-15T19:05:33.016Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:03:00.655Z",
+      "interpreted_objective": "Plan a 3-day workation in a mountain town near Austin with reliable WiFi, including accommodation, workspace options, and outdoor activities.",
+      "expected_outcome": "A detailed itinerary with specific accommodation, workspace, and activity options for a productive and enjoyable workation.",
+      "key_unknowns": [
+        "Specific mountain towns near Austin",
+        "Accommodation options with reliable WiFi",
+        "Available workspaces in the area",
+        "Outdoor activities available for breaks"
+      ],
+      "recommended_strategy": "Research mountain towns near Austin that offer reliable WiFi. Identify suitable accommodations, workspaces, and outdoor activities. Synthesize this information into a comprehensive itinerary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Mountain Towns and Accommodation",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of mountain towns near Austin with accommodation options offering reliable WiFi.",
+          "prompt": "Search the web for mountain towns near Austin, Texas, that offer accommodations with reliable WiFi. Include specific names, locations, and any relevant details about the WiFi reliability.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Identify Workspace Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of available workspaces in mountain towns near Austin.",
+          "prompt": "Search the web for available workspaces in mountain towns near Austin, Texas. Include coworking spaces, cafes, or other venues suitable for remote work with reliable WiFi.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Find Outdoor Activities",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of outdoor activities available in mountain towns near Austin.",
+          "prompt": "Search the web for outdoor activities available in mountain towns near Austin, Texas. Include hiking, biking, or other recreational activities suitable for breaks during a workation.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Workation Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 3-day workation itinerary including accommodation, workspace options, and outdoor activities.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 3-day workation itinerary for a mountain town near Austin, Texas. Include specific accommodation options, workspace venues, and outdoor activities with dates and logistics.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-workation-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2100
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mms4fq2lc9mo",
+    "title": "Design a weekend digital wellness routine. Balance screen time reduction with pr",
+    "raw_request": "Design a weekend digital wellness routine. Balance screen time reduction with productive technology use. Include specific app limits and alternative activities.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:02:06.525Z",
+    "updated_at": "2026-03-15T19:05:26.952Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:02:52.978Z",
+      "interpreted_objective": "Create a balanced weekend digital wellness routine that reduces screen time while promoting productive technology use.",
+      "expected_outcome": "A detailed plan outlining specific app usage limits and alternative activities for a digital wellness weekend.",
+      "key_unknowns": [
+        "Specific apps and technology currently used by the target audience",
+        "Preferred alternative activities for the target audience",
+        "Current screen time habits of the target audience"
+      ],
+      "recommended_strategy": "Research current trends and recommendations for digital wellness routines. Synthesize findings into a structured plan that includes app limits and alternative activities. Ensure the plan is evidence-based and actionable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Digital Wellness Trends",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current trends and recommendations for digital wellness routines, including specific app limits and alternative activities.",
+          "prompt": "Search the web for current, specific information about digital wellness routines for weekends. Include recommendations for app limits and alternative activities, with real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Wellness Routine",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured digital wellness routine with specific app limits and alternative activities.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a digital wellness routine for weekends. Include specific app limits, alternative activities, and actionable steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-digital-wellness-routine.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1804
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms4foijenh6",
+    "title": "Create a technical interview scoring rubric for hiring senior data engineers. In",
+    "raw_request": "Create a technical interview scoring rubric for hiring senior data engineers. Include categories, scoring criteria, and calibration guidelines.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:02:04.507Z",
+    "updated_at": "2026-03-15T19:05:20.436Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:02:34.938Z",
+      "interpreted_objective": "Develop a comprehensive technical interview scoring rubric for hiring senior data engineers.",
+      "expected_outcome": "A detailed rubric with categories, scoring criteria, and calibration guidelines for evaluating senior data engineer candidates.",
+      "key_unknowns": [
+        "Current best practices for technical interview scoring in data engineering",
+        "Specific categories and criteria used by leading tech companies",
+        "Calibration methods to ensure consistent scoring"
+      ],
+      "recommended_strategy": "First, research current best practices and criteria used by leading tech companies for technical interviews of senior data engineers. Then, synthesize this information into a structured rubric with clear categories, scoring criteria, and calibration guidelines. Finally, compile the rubric into a report for easy reference.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Technical Interview Scoring",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and criteria for technical interviews of senior data engineers, with sources.",
+          "prompt": "Search the web for current best practices and criteria used by leading tech companies for technical interviews of senior data engineers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Interview Scoring Rubric",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured rubric with categories, scoring criteria, and calibration guidelines for senior data engineer interviews.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive technical interview scoring rubric for senior data engineers. Include specific categories, scoring criteria, and calibration guidelines.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-interview-rubric.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2200
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms4fmyeokpg",
+    "title": "Research the best air purifiers for a home office. Compare HEPA filters, activat",
+    "raw_request": "Research the best air purifiers for a home office. Compare HEPA filters, activated carbon, and ionizers. Include room size coverage and noise levels. Budget under 300 dollars.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:02:02.486Z",
+    "updated_at": "2026-03-15T19:05:10.059Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:02:29.229Z",
+      "interpreted_objective": "Identify the best air purifiers under $300 for a home office, comparing HEPA filters, activated carbon, and ionizers.",
+      "expected_outcome": "A detailed comparison of air purifiers with specific recommendations based on room size coverage, noise levels, and budget constraints.",
+      "key_unknowns": [
+        "Current best air purifiers under $300",
+        "Performance differences between HEPA, activated carbon, and ionizers",
+        "Room size coverage and noise levels for each model"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on air purifiers under $300, focusing on HEPA filters, activated carbon, and ionizers. Then, synthesize this data into a structured report comparing these options based on room size coverage and noise levels, leading to a clear recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Air Purifiers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on air purifiers under $300, including HEPA, activated carbon, and ionizers, with room size coverage and noise levels.",
+          "prompt": "Search the web for current information about the best air purifiers under $300 for home offices. Include details on HEPA filters, activated carbon, and ionizers, focusing on room size coverage and noise levels. Provide product names, prices, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Air Purifier Data",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing air purifiers based on the research, with specific recommendations.",
+          "prompt": "Based on the research results, synthesize a report comparing air purifiers under $300 for home offices. Include analysis of HEPA filters, activated carbon, and ionizers, focusing on room size coverage and noise levels. Provide specific recommendations with reasoning.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-air_purifiers.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1963
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms4fldqbam7",
+    "title": "Teach me about observability in distributed systems. Cover the three pillars (lo",
+    "raw_request": "Teach me about observability in distributed systems. Cover the three pillars (logs, metrics, traces), tool comparison (Datadog vs Grafana vs New Relic), and implementation patterns.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:02:00.446Z",
+    "updated_at": "2026-03-15T19:04:59.087Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:02:12.206Z",
+      "interpreted_objective": "Educate on observability in distributed systems, covering logs, metrics, traces, tool comparison, and implementation patterns.",
+      "expected_outcome": "A comprehensive report on observability in distributed systems, including an understanding of the three pillars, a comparison of tools, and implementation patterns.",
+      "key_unknowns": [
+        "Specific implementation patterns to focus on",
+        "Depth of technical detail required for each tool",
+        "Preferred format for presenting the information"
+      ],
+      "recommended_strategy": "First, research the three pillars of observability in distributed systems. Then, compare the tools Datadog, Grafana, and New Relic. Finally, compile a report synthesizing this information, including implementation patterns.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Observability Pillars",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on logs, metrics, and traces in distributed systems.",
+          "prompt": "Search the web for current, specific information about the three pillars of observability in distributed systems: logs, metrics, and traces. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compare Observability Tools",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comparison data for Datadog, Grafana, and New Relic.",
+          "prompt": "Search the web for current, specific information comparing Datadog, Grafana, and New Relic as observability tools in distributed systems. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Observability Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report on observability in distributed systems, including pillars, tool comparison, and implementation patterns.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report on observability in distributed systems. Include detailed explanations of logs, metrics, traces, a comparison of Datadog, Grafana, and New Relic, and common implementation patterns.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2153
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms4fjtonntm",
+    "title": "Create a complete Roth IRA conversion strategy for someone earning 200k with a t",
+    "raw_request": "Create a complete Roth IRA conversion strategy for someone earning 200k with a traditional 401k balance of 150k. Include tax impact analysis and 5-year projections.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:01:58.428Z",
+    "updated_at": "2026-03-15T19:04:12.001Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:02:06.382Z",
+      "interpreted_objective": "Develop a Roth IRA conversion strategy for someone earning $200k with a traditional 401k balance of $150k, including tax impact analysis and 5-year projections.",
+      "expected_outcome": "A detailed strategy report outlining the Roth IRA conversion process, tax implications, and financial projections over five years.",
+      "key_unknowns": [
+        "Current tax rates and potential changes over the next five years",
+        "Specific financial goals and risk tolerance of the individual",
+        "State-specific tax implications"
+      ],
+      "recommended_strategy": "Conduct web research to gather current data on Roth IRA conversion strategies, tax implications, and projection methodologies. Synthesize findings into a comprehensive report with actionable recommendations.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Roth IRA Conversion Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Roth IRA conversion strategies, tax implications, and projection methodologies.",
+          "prompt": "Search the web for current, specific information about Roth IRA conversion strategies for individuals earning $200k with a traditional 401k balance of $150k. Include tax implications, 5-year projections, and relevant sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Roth IRA Conversion Strategy Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report detailing Roth IRA conversion strategy, including tax impact analysis and 5-year projections.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed Roth IRA conversion strategy for someone earning $200k with a traditional 401k balance of $150k. Include tax impact analysis and 5-year projections with specific numbers and recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-RothIRAConversionStrategy.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2229
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms4fi9lf4cs",
+    "title": "Write a technical architecture decision record (ADR) for choosing PostgreSQL ove",
+    "raw_request": "Write a technical architecture decision record (ADR) for choosing PostgreSQL over MongoDB for a real-time ranking system. Include context, decision, consequences, and alternatives considered.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T19:01:56.409Z",
+    "updated_at": "2026-03-15T19:03:34.490Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T19:02:00.945Z",
+      "interpreted_objective": "Create a technical architecture decision record (ADR) for choosing PostgreSQL over MongoDB for a real-time ranking system.",
+      "expected_outcome": "A comprehensive ADR document detailing the decision to use PostgreSQL, including context, decision rationale, consequences, and alternatives considered.",
+      "key_unknowns": [
+        "Specific requirements of the real-time ranking system",
+        "Why PostgreSQL is preferred over MongoDB in this context",
+        "Potential consequences of the decision"
+      ],
+      "recommended_strategy": "Conduct research to understand the specific advantages of PostgreSQL over MongoDB for real-time ranking systems. Synthesize findings into a structured ADR document, ensuring it includes context, decision rationale, consequences, and alternatives considered.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research PostgreSQL vs MongoDB for Real-Time Ranking",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Research data on the advantages and disadvantages of using PostgreSQL versus MongoDB for real-time ranking systems.",
+          "prompt": "Search the web for current, specific information about the advantages and disadvantages of using PostgreSQL versus MongoDB for real-time ranking systems. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize ADR Document",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured ADR document detailing the decision to use PostgreSQL over MongoDB, including context, decision rationale, consequences, and alternatives considered.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a technical architecture decision record (ADR) for choosing PostgreSQL over MongoDB for a real-time ranking system. Include context, decision rationale, consequences, and alternatives considered.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-ADR-PostgreSQL-vs-MongoDB.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1889
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms48uy0hmcl",
     "title": "Research the pros and cons of buying an investment property through an LLC vs pe",
     "raw_request": "Research the pros and cons of buying an investment property through an LLC vs personal name. Include liability protection, tax implications, and mortgage differences.",

@@ -1,31 +1,64 @@
 # Turn my rough thoughts into a polished PRD: TopRanker business owner dashboard w
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mmryghq0y8u2`
 - **Engine**: topranker
-- **Status**: done
+- **Urgency**: high
 - **Created**: 2026-03-15T16:14:44
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Turn my rough thoughts into a polished PRD: TopRanker business owner dashboard with listing claims, review responses, and analytics. Structure it for engineering review.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a polished Product Requirement Document (PRD) for the TopRanker business owner dashboard, including features like listing claims, review responses, and analytics, structured for engineering review.
-- **Strategy**: First, gather detailed requirements and expectations for the dashboard from existing documents and web research. Then, synthesize these findings into a structured PRD that aligns with engineering standards and includes all necessary technical specifications. Ensure the PRD is reviewed for completeness and clarity.
-- **Subtasks**: 2
+**Chief of Staff**: "Create a polished Product Requirement Document (PRD) for the TopRanker business owner dashboard, including features like listing claims, review responses, and analytics, structured for engineering review."
 
-## 3. Subtask Execution
+**Strategy**: First, gather detailed requirements and expectations for the dashboard from existing documents and web research. Then, synthesize these findings into a structured PRD that aligns with engineering standards and includes all necessary technical specifications. Ensure the PRD is reviewed for completeness and clarity.
 
-### Subtask 1: Research Business Owner Dashboard Features
-- Model: perplexity | Stage: audit | Status: done
+**Risk**: yellow | **Code Task**: No
 
-### Subtask 2: Synthesize PRD for Business Owner Dashboard
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Business Owner Dashboard Features | perplexity | audit |
+| 2 | Synthesize PRD for Business Owner Dashboard | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Business Owner Dashboard Features [perplexity]
+
+**Status**: done | **Stage**: audit
+
+## Finding 1: Rank Locally Mobile App Dashboard for Business Owners
+Rank Locally, based in Austin, TX and established in 2014, offers a proprietary mobile-first app enabling business owners to monitor local search rankings, respond to reviews, and update listings directly from smartphones. Over 60% of local searches originate from mobile devices, making this app's real-time notifications and on-the-go management popular for small businesses without dedicated marketing staff. Average review score: 4.1/5; price range: $$.  
+Source: https://firstpagesage.com/seo-blog/the-best-local-seo-companies/[2]
+
+## Finding 2: BrightLocal Intuitive Dashboard for Rank Tracking and Reporting
+BrightLocal, established in 2008 in Brighton, UK, serves over 10,000 agencies and businesses with an intuitive dashboard for granular rank tracking across multiple locations, citation management, and comprehensive reporting. Users praise its accuracy for local SEO campaigns, though it has limited customization for enterprise needs; average review score: 4.5/5; price range: $$$$.  
+Source: https://firstpagesage.com/seo-blog/the-best-local-seo-companies/[2]
+
+## Finding 3: Birdeye Local-Level Reporting Dashboard for Multi-Location Brands
+Birdeye's Agentic Marketing Platform provides local-level reporting dashboards analyzing metrics like reviews generated vs. requests, positive/negative review volume, and recurring trends per location. For multi-location brands, it ties Google reviews (81% of online reviews in 2024 per Birdeye's 2025 research) to AI-driven visibility and local growth; enables data-driven decisions by sharing reports with management.  
+Source: https://birdeye.com/blog/guide-to-manage-google-reviews/[3]
+
+## Finding 4: Local Rank Tracker Embeddable Widgets and Looker Studio Integration
+Local Rank Tracker offers a dashboard with API token for data visualization, including a dedicated connector for Looker Studio to pull and embed Local SERP Maps Grid widgets without clients visiting external URLs. Supports quick competitor analysis via Google Maps without full GBP connection; discussed in AppSumo forum on Feb 22-25, 2026.  
+Source: https://appsumo.com/products/local-rank-tracker/questions/api-capabilities-1479494/[4]
+
+## Best Practices Inferred from Tools (No Direct Dashboard Guides Found)
+No search results yielded explicit "best practices" articles for business owner dashboards in local ranking apps from the last 30 days (post-Feb 13, 2026). Relevant patterns from tools include: mobile accessibility (Rank Locally), multi-location granular reporting (Birdeye, BrightLocal), real-time notifications, review response integration, and embeddable widgets for client access. For TopRanker MVP, prioritize these: integrate PostgreSQL-backed ranking views, Expo push notifications for rank changes, and per-business analytics like review volume vs. rank position. Next steps: Test Rank Locally demo for Austin-specific mobile UX; query "BrightLocal dashboard API docs 2026" for integ
+
+*... truncated (3104 chars total)*
+
+### Step 2: Synthesize PRD for Business Owner Dashboard [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -61,8 +94,13 @@
    - **First Step**: Design a reporting module that aggregates data from multiple locations, allowing for easy comparison and analysis.
 
 4. **Prioritize User Experience and Customization**
-   - **Why**: To ensure the dashboard is intuitive and meets the specific needs of different business owners.
-   - **Expected Outcome**: Higher user satisfaction and retention due to a tailored user experience.
-   - **First Step**: Conduct user interviews and usability testing to identify key customization needs and pain points.
+   - **
 
-These recommendations are designed to leverage the strengths of existing solutions while addressing specific needs of the TopRanker user base. Implementing these features will align the business owner dashboard with industry standards and enhance its competitive edge.
+*... truncated (3593 chars total)*
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mmryghq0y8u2/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mmryghq0y8u2/export?fmt=json

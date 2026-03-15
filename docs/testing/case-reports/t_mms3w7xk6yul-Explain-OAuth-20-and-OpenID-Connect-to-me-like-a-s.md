@@ -1,43 +1,89 @@
 # Explain OAuth 2.0 and OpenID Connect to me like a senior engineer teaching a mid
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms3w7xk6yul`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T18:46:56
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms3w7xk6yul/export?fmt=md) | [JSON](/api/intake/task/t_mms3w7xk6yul/export?fmt=json)
+- **Created**: 2026-03-15T18:46:56
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Explain OAuth 2.0 and OpenID Connect to me like a senior engineer teaching a mid-level developer. Cover flows, token types, and common security mistakes.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Explain OAuth 2.0 and OpenID Connect in a detailed yet accessible manner for a mid-level developer.
-- **Strategy**: Conduct a web search to gather the latest detailed information on OAuth 2.0 and OpenID Connect. Then, synthesize this information into a structured explanation that includes analogies and examples suitable for a mid-level developer.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific prior knowledge of the mid-level developer; Preferred learning style of the developer
+**Chief of Staff**: "Explain OAuth 2.0 and OpenID Connect in a detailed yet accessible manner for a mid-level developer."
 
-## 3. Subtask Execution
+**Strategy**: Conduct a web search to gather the latest detailed information on OAuth 2.0 and OpenID Connect. Then, synthesize this information into a structured explanation that includes analogies and examples suitable for a mid-level developer.
 
-### Subtask 1: Research OAuth 2.0 and OpenID Connect
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: # OAuth 2.0 and OpenID Connect: Current Standards and Security Practices
+**Execution Plan**:
 
-### Subtask 2: Synthesize OAuth 2.0 and OpenID Connect Explanation
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research OAuth 2.0 and OpenID Connect | perplexity | research |
+| 2 | Synthesize OAuth 2.0 and OpenID Connect Explanation | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research OAuth 2.0 and OpenID Connect [perplexity]
+
+**Status**: done | **Stage**: research
+
+# OAuth 2.0 and OpenID Connect: Current Standards and Security Practices
+
+**OAuth 2.0 is an authorization framework for delegated access, while OpenID Connect (OIDC) is an authentication layer built on top of OAuth 2.0 that enables single sign-on.**[1][2] OAuth 2.0 answers "what can you access?" while OIDC answers "who are you?"[2]
+
+## Core Differences
+
+**OAuth 2.0** provides an *access token* for authorization—granting permissions to third-party applications to access resources without exposing user credentials.[1][4] **OpenID Connect**, introduced in 2014, adds an *ID token* containing verifiable user information like name and email, which confirms identity.[1] OIDC is backed by major companies including Google and Microsoft and is the industry standard for authentication.[1]
+
+The practical difference: an application uses OIDC to log a user in (authentication) and then uses the resulting OAuth 2.0 access token to call APIs on the user's behalf (authorization).[1]
+
+## Authentication Flows
+
+The standard flow for user-facing applications follows these steps:[2]
+
+1. User clicks "Login" on the client application
+2. Application redirects to the authorization server's `/authorize` endpoint
+3. Authorization server displays login page
+4. User enters credentials
+5. Authorization server redirects back with an authorization code
+6. Application exchanges the code for tokens (access token + ID token)
+7. Application calls APIs using the access token
+8. Resource server returns protected data
+
+For user-facing apps, the **Authorization Code with PKCE** (Proof Key for Code Exchange) flow is recommended.[2] For service-to-service communication, **Client Credentials** flow is appropriate.[2]
+
+## Token Types
+
+**Access tokens** are issued by OAuth 2.0 and grant permission to access resources.[2] **ID tokens** are JWT (JSON Web Tokens) provided by OpenID Connect and contain cryptographically signed proof of user identity.[2] **Refresh tokens** allow applications to obtain new access tokens without requiring the user to log in again.[2]
+
+## Common Security Mistakes
+
+Based on current guidance, avoid these practices:
+
+- **Sharing passwords with third-party apps:** OAuth 2.0 eliminates this by using access tokens instead.[4]
+- **Requesting excessive scopes:** Follow the principle of least privilege when requesting permissions.[2]
+- **Failing to validate tokens properly:** Tokens must be cryptographically verified before use.[2]
+- **Not implementing PKCE for public clients:** PKCE protects against authorization code interception attacks.[2]
+
+## Current Solutions (2026)
+
+**Ory** (combining Ory Kratos for user management and Ory Hydra for OAuth2/OIDC) is an open-source identity infrastructure designed for cloud-native architectures.[5] It provides OAuth 2.0 and OpenID Connect provider capabilities with native Go SDKs, RESTful APIs, and self-hosted deployment options.[5]
+
+An emerging standard, **OAuth 2.0 for First-Party Applications**, was last updated on February 27, 2026, 
+
+*... truncated (3471 chars total)*
+
+### Step 2: Synthesize OAuth 2.0 and OpenID Connect Explanation [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -80,29 +126,13 @@
 - **Token Validation**: Failing to validate tokens can allow unauthorized access.
 - **Implicit Flow**: Using implicit flow in insecure environments can expose tokens to interception.
 
-## Recommended Actions
+## Recommended Actio
 
-1. **Implement OIDC for Authentication**:
-   - **Why**: To ensure secure user identity verification and enable SSO.
-   - **Expected Outcome**: Enhanced security and user experience.
-   - **First Step**: Integrate an OIDC library like `oidc-client` into your application.
+*... truncated (4348 chars total)*
 
-2. **Secure Token Storage**:
-   - **Why**: To prevent unauthorized access if tokens are intercepted.
-   - **Expected Outcome**: Reduced risk of token theft.
-   - **First Step**: Use secure storage solutions like HTTP-only cookies for tokens.
+## Phase 4: Deliverable
 
-3. **Validate Tokens**:
-   - **Why**: To ensure that only valid tokens are used for accessing resources.
-   - **Expected Outcome**: Prevent unauthorized access and potential data breaches.
-   - **First Step**: Implement token validation checks using libraries like `jsonwebtoken`.
-
-4. **Avoid Implicit Flow**:
-   - **Why**: To minimize the risk of token exposure in insecure environments.
-   - **Expected Outcome**: Increased security for token handling.
-   - **First Step**: Use authorization code flow with PKCE (Proof Key for Code Exchange) instead.
-
-5. **Stay Updated with Industry Standards**:
-   - **Why**: To ensure compliance with the latest security practices.
-   - **Expected Outcome**: Up-to-date security measures in your applications.
-   - **First Step**: Regularly review updates from OAuth and OIDC working groups.
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms3w7xk6yul/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms3w7xk6yul/export?fmt=json

@@ -1,31 +1,69 @@
 # Research the best tax optimization strategies for a W2 employee earning 200k who
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mmrzgvzgldr2`
 - **Engine**: wealthresearch
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T16:43:02
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Research the best tax optimization strategies for a W2 employee earning 200k who also has a side LLC. Include: 401k max, backdoor Roth, HSA, QBI deduction eligibility, home office deduction, and estimated tax savings for each.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Research and compile tax optimization strategies for a W2 employee earning $200k with a side LLC, including estimated tax savings.
-- **Strategy**: Conduct a thorough web search to gather current information on tax optimization strategies for individuals with both W2 income and a side LLC. Analyze the gathered data to synthesize actionable recommendations, including estimated tax savings for each strategy.
-- **Subtasks**: 2
+**Chief of Staff**: "Research and compile tax optimization strategies for a W2 employee earning $200k with a side LLC, including estimated tax savings."
 
-## 3. Subtask Execution
+**Strategy**: Conduct a thorough web search to gather current information on tax optimization strategies for individuals with both W2 income and a side LLC. Analyze the gathered data to synthesize actionable recommendations, including estimated tax savings for each strategy.
 
-### Subtask 1: Research Tax Optimization Strategies
-- Model: perplexity | Stage: research | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Synthesize Tax Optimization Report
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Tax Optimization Strategies | perplexity | research |
+| 2 | Synthesize Tax Optimization Report | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Tax Optimization Strategies [perplexity]
+
+**Status**: done | **Stage**: research
+
+## 401k Max
+For 2026, W-2 employees can defer up to **$24,500** into a 401(k), 403(b), or governmental 457 plan, with an additional **$8,000** age-50+ catch-up (total **$32,500** if eligible and plan allows).[1]  
+**Estimated tax savings for $200k earner**: At a 32% marginal federal rate, maxing $24,500 saves **$7,840** in federal taxes; add state taxes (e.g., 5-10%) for **$8,700-$9,200** total. No side LLC impact noted.[1]  
+**Next step**: Log into payroll portal by March 31, 2026, to adjust deferral to hit limit; confirm bonus deferral rules with HR. Source: https://www.lewis.cpa/blog/tax-strategies-for-high-income-earners-maximize-savings-and-financial-success[1]
+
+## Backdoor Roth
+No 2026-specific details found in results for backdoor Roth IRA (post-tax contribution to Roth via nondeductible traditional IRA conversion). Strategy remains viable for high earners above income limits, but results lack updates on phaseouts or mega backdoor via 401(k).  
+**No estimated savings provided**.  
+**Next step**: Search IRS Pub 590-A (2026 update expected Q4 2026) or consult CPA for $7,000 IRA limit confirmation. No results found for "2026 backdoor Roth limits".
+
+## HSA
+Contribute to HSA if enrolled in HDHP; treat as long-term savings by paying medical expenses out-of-pocket and reimbursing later tax-free.[1] 2026 family limit not specified in results (2025 was $8,300 individual/$16,600 family).  
+**Estimated tax savings for $200k earner**: At 32% federal + 7.65% FICA savings, max family contribution saves **$6,500-$7,500** (assuming prior-year limits hold). Side LLC irrelevant.[1]  
+**Next step**: Verify HDHP status via insurer by April 15, 2026; contribute via payroll for FICA savings. Source: https://www.lewis.cpa/blog/tax-strategies-for-high-income-earners-maximize-savings-and-financial-success[1]
+
+## QBI Deduction Eligibility
+No direct 2026 details on **Qualified Business Income (QBI)** deduction (20% of qualified LLC income for pass-throughs). High earners ($200k W-2 + LLC) face phaseouts above $197,300 (2025 MFJ threshold, indexed for 2026). Side LLC may qualify if < specified service trade/business and wages/depreciation met.[3]  
+**Estimated tax savings**: For $50k LLC profit, 20% QBI = **$10,000** deduction; at 32% rate saves **$3,200** if eligible. Results silent on 2026 changes.[3]  
+**Next step**: Run QBI worksheet in tax software with 2025 LLC P&L; project 2026 wages threshold (~$205k MFJ). No results found for "2026 QBI phaseout limits".
+
+## Home Office Deduction
+No specific 2026 details found for home office deduction on Schedule C (side LLC). Requires exclusive/regular business use; simplified $5/sq ft (up to 300 sq ft = **$1,500** max) or actual expenses. W-2 employee LLC must prove business purpose.[5]  
+**Estimated tax savings for $200k earner**: 200 sq ft simplified = **$1,000** deduction; at 32% rate + self-employment tax offset saves **$400-$500**. Excess business loss limit caps non-corporate losses at **$256k** individual/$512k MFJ 
+
+*... truncated (4431 chars total)*
+
+### Step 2: Synthesize Tax Optimization Report [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -76,12 +114,13 @@
 
 4. **Evaluate QBI Deduction for LLC**:
    - **Why**: Potentially reduce taxable income by up to 20%.
-   - **Expected Outcome**: Lower overall tax liability.
-   - **First Step**: Review LLC income and consult with a tax advisor to confirm eligibility.
+   - 
 
-5. **Claim Home Office Deduction**:
-   - **Why**: Reduce taxable income by deducting home office expenses.
-   - **Expected Outcome**: Lower tax liability for the side LLC.
-   - **First Step**: Measure the home office space and choose between actual expense or simplified deduction method. 
+*... truncated (3579 chars total)*
 
-By following these steps, you can optimize your tax strategy, reduce your tax liability, and increase your savings for future financial goals.
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mmrzgvzgldr2/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mmrzgvzgldr2/export?fmt=json

@@ -1,43 +1,81 @@
 # Create a startup financial model template. Include revenue projections, cost str
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms2sv1c0jll`
 - **Engine**: wealthresearch
-- **Status**: done
-- **Created**: 2026-03-15T18:16:20
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms2sv1c0jll/export?fmt=md) | [JSON](/api/intake/task/t_mms2sv1c0jll/export?fmt=json)
+- **Created**: 2026-03-15T18:16:20
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a startup financial model template. Include revenue projections, cost structure, burn rate, runway, and break-even analysis. For a SaaS product with freemium model.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a financial model template for a SaaS startup with a freemium model.
-- **Strategy**: Research the financial components of successful SaaS startups with freemium models to gather data on revenue streams, cost structures, and financial metrics. Use this data to create a detailed financial model template. Ensure the template is adaptable to different SaaS products.
-- **Risk**: yellow
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific revenue streams for the SaaS product; Typical cost structure for SaaS with freemium model; Industry benchmarks for burn rate and runway
+**Chief of Staff**: "Create a financial model template for a SaaS startup with a freemium model."
 
-## 3. Subtask Execution
+**Strategy**: Research the financial components of successful SaaS startups with freemium models to gather data on revenue streams, cost structures, and financial metrics. Use this data to create a detailed financial model template. Ensure the template is adaptable to different SaaS products.
 
-### Subtask 1: Research SaaS Financial Models
+**Risk**: yellow | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: ## Finding 1: General SaaS Startup Cost Structure and Burn Rate Example
+**Execution Plan**:
 
-### Subtask 2: Synthesize Financial Model Template
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research SaaS Financial Models | perplexity | research |
+| 2 | Synthesize Financial Model Template | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research SaaS Financial Models [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Finding 1: General SaaS Startup Cost Structure and Burn Rate Example
+Financial model for a generic software startup estimates $75,000 in one-time setup costs and $15,000 monthly burn rate, requiring $165,000 funding for setup plus 6 months runway. Recurring OPEX includes monthly rent/utilities, salaries, SaaS subscriptions, and insurance; indirect overhead like $4,500/month office rent and $1,200/year accounting software impacts operating margin.[1]
+
+**Next steps:** Download a SaaS financial model Excel template to input your headcount (salaries/benefits by role/start date) and non-wage costs (marketing, tools, rent) for cash burn forecasting.[7]
+
+Source: https://financialmodelslab.com/blogs/blog/estimating-start-up-costs-step-by-step-guide
+
+## Finding 2: Cost-Plus Pricing in SaaS with Freemium Implications
+Cost-plus pricing adds margin to costs like $50 customer acquisition + $30 overhead = $100 charge for 20% profit; for SaaS freemium, factor CLTV due to recurring subscriptions. Freemium often pairs with usage-based tiers to convert free users without fixed pricing risks like churn from high usage costs.[2][9]
+
+**Break-even analysis:** Charge above total costs (CAC + overhead) scaled by LTV; e.g., post-freemium upgrade targets 20%+ margin over years.
+
+**Next steps:** Calculate your CLTV using MRR/ARR forecasts divided by churn rate, then test $100+ pricing on 10 beta freemium users.
+
+Source: https://www.madx.digital/learn/pricing-saas
+
+## Finding 3: Hybrid Freemium-Usage Model with Overages (Customer.io Example)
+Customer.io uses base plan with included usage (e.g., messages/month) plus overage fees, blending freemium entry with scalable revenue; common in freemium SaaS for predictable base MRR and growth via consumption. Tiered usage (0-10k units at rate X, 10k-100k at rate Y) incentivizes upsell without sharp jumps.[3]
+
+**Revenue streams:** Fixed base + variable overages; costs scale with usage (e.g., cloud fees).
+
+**Next steps:** Implement overages in your freemium tier using Stripe Billing; pilot with 50 free users tracking usage to project $5k MRR from 10% conversion.
+
+Source: https://schematichq.com/blog/why-usage-based-billing-is-taking-over-saas
+
+## Finding 4: SaaS Financial Model Template with Runway and Margins
+SaaS models forecast ARR, CAC, LTV, runway via headcount (salaries/benefits) and non-wage costs (marketing, SaaS tools); underestimating hiring ramps burn rate, compressing margins if expenses outpace revenue. No specific freemium numbers, but applicable to convert free tiers.[7]
+
+**Break-even:** When ARR covers burn; e.g., model shows leverage from new roles post-12 months.
+
+**Next steps:** Use free Excel template to simulate freemium: input 1,000 free users, 5% paid conversion at $50/month, $20k monthly burn for 10-month runway.
+
+Source: https://www.thevccorner.com/p/saas-financial-model-excel-template
+
+**No recent (post-2026-02-13) case studies found for successful freemium SaaS startups with full financials (revenue, burn
+
+*... truncated (3281 chars total)*
+
+### Step 2: Synthesize Financial Model Template [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -89,6 +127,13 @@
 4. **Conduct Regular Break-even Analysis**:
    - **Why**: To ensure pricing strategies align with financial goals.
    - **Expected Outcome**: Achieve break-even faster and improve profitability.
-   - **First Step**: Calculate and track CLTV and adjust pricing as needed to maintain a healthy margin.
+   - **First Step**: Ca
 
-By following these steps and utilizing the provided financial model, you can effectively manage and scale your SaaS startup while optimizing for profitability and growth.
+*... truncated (3253 chars total)*
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms2sv1c0jll/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms2sv1c0jll/export?fmt=json

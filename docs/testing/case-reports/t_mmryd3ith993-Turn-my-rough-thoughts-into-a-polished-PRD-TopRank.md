@@ -1,43 +1,39 @@
 # Turn my rough thoughts into a polished PRD: TopRanker should let business owners
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mmryd3ith993`
 - **Engine**: topranker
-- **Status**: done
-- **Created**: 2026-03-15T16:12:06
 - **Urgency**: high
-- **Download**: [Markdown](/api/intake/task/t_mmryd3ith993/export?fmt=md) | [JSON](/api/intake/task/t_mmryd3ith993/export?fmt=json)
+- **Created**: 2026-03-15T16:12:06
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Turn my rough thoughts into a polished PRD: TopRanker should let business owners claim their listing, respond to reviews, and see analytics. Make it clear and ready for engineering review.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a polished Product Requirements Document (PRD) for TopRanker to enable business owners to claim listings, respond to reviews, and view analytics.
-- **Strategy**: First, research current best practices for allowing business owners to claim listings and respond to reviews. Then, synthesize this information into a structured PRD that includes feature specifications, user stories, and acceptance criteria. Finally, ensure the document is formatted for easy engineering consumption.
-- **Risk**: yellow
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific analytics metrics to be included; Verification process for business owner claims; User interface design for review responses
+**Chief of Staff**: "Create a polished Product Requirements Document (PRD) for TopRanker to enable business owners to claim listings, respond to reviews, and view analytics."
 
-## 3. Subtask Execution
+**Strategy**: First, research current best practices for allowing business owners to claim listings and respond to reviews. Then, synthesize this information into a structured PRD that includes feature specifications, user stories, and acceptance criteria. Finally, ensure the document is formatted for easy engineering consumption.
 
-### Subtask 1: Research Best Practices for Business Owner Interactions
+**Risk**: yellow | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: audit
-- **Status**: done
-- **Summary**: # Best Practices for Business Listing Platforms: Claim, Review Response, and Analytics
+**Execution Plan**:
 
-### Subtask 2: Synthesize PRD for Business Owner Features
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Best Practices for Business Owner Interactions | perplexity | audit |
+| 2 | Synthesize PRD for Business Owner Features | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: Auto-repaired by health check
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Best Practices for Business Owner Interactions [perplexity]
+
+**Status**: done | **Stage**: audit
 
 # Best Practices for Business Listing Platforms: Claim, Review Response, and Analytics
 
@@ -88,59 +84,17 @@ Source: https://birdeye.com/blog/real-estate-marketing-tools/
 - SEO-optimized for traditional and AI-powered search
 - Enterprise-grade analytics and reporting
 
-**Positioning:** Built specifically for enterprises with multiple locations that need seamless scaling[6]
+**Positioning:** Built specifically for enterprises with multiple locations that need seamless
 
-Source: https://www.alchemer.com/listings-management/
+*... truncated (5000 chars total)*
 
----
+### Step 2: Synthesize PRD for Business Owner Features [openai]
 
-## Finding 4: eDirectory's Mature Directory Platform
+**Status**: done | **Stage**: report
 
-**eDirectory** is a mature platform for creating business listing sites with advanced search and categorization features[1]. It supports multiple listing types (business, events, jobs) and includes banner ad management with API access for integrations[1].
+## Phase 4: Deliverable
 
-**Key Features for Business Owners:**
-- Drag-and-drop page editor for easy listing management
-- Multiple listing types support
-- Banner ad management
-- API access for third-party integrations
-- Mobile app capabilities
-
-**Pricing:**
-- Professional (Cloud License): $99/month
-- Enterprise (Cloud Service): $199/month
-- Enterprise (Source License): $1,499 one-time
-- 25% discount available with annual billing[1]
-
-Source: https://joinit.com/blog/best-digital-directory-software
-
----
-
-## Finding 5: ListingProWP's WordPress-Based Solution
-
-**ListingProWP** is a WordPress theme specifically designed for building business directories with front-end submission capabilities[1]. It includes a built-in review and rating system, allowing business owners to manage reviews directly on their listings[1].
-
-**Key Features for Business Owners:**
-- Front-end listing submission and management
-- Advanced search with geolocation
-- Built-in review and rating system
-- Stripe/PayPal integration for monetization
-- Elementor compatibility
-
-**Pricing:** $69 one-time purchase[1]
-
-**User Ratings:**
-- Overall: 4.4/5
-- Ease of Use: 4.2/5
-- Value for Money: 4.4/5
-- Customer Service: 4.3/5[1]
-
-Source: https://joinit.com/blog/best-digital-directory-software
-
----
-
-## Industry Benchmark: Local SEO Tools Integration
-
-The broader local SEO market (as of 2026) emphasizes **centralized listing management** as a core differentiator[2]. Leading platforms like **BrightLocal**, **Semrush (Local SEO Module)**, **Whitespark**, and **Yext** all prioritize:
-
-- Automated distribution across 150+ directories
-- Review monitoring and response too
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mmryd3ith993/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mmryd3ith993/export?fmt=json

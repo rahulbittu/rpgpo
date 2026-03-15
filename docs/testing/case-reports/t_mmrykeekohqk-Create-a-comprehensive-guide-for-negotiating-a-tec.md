@@ -1,31 +1,90 @@
 # Create a comprehensive guide for negotiating a tech salary above 200k. Include s
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mmrykeekohqk`
 - **Engine**: careeregine
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T16:17:46
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a comprehensive guide for negotiating a tech salary above 200k. Include scripts for recruiter calls, counter-offer strategies, and how to leverage competing offers. Be specific to data engineering roles.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a detailed guide for negotiating a tech salary above $200k for data engineering roles.
-- **Strategy**: Conduct research to gather current best practices and strategies for tech salary negotiation above $200k. Synthesize this information into a structured guide with actionable scripts and strategies tailored for data engineering roles. Ensure the guide includes specific examples and scenarios relevant to the target salary range.
-- **Subtasks**: 2
+**Chief of Staff**: "Create a detailed guide for negotiating a tech salary above $200k for data engineering roles."
 
-## 3. Subtask Execution
+**Strategy**: Conduct research to gather current best practices and strategies for tech salary negotiation above $200k. Synthesize this information into a structured guide with actionable scripts and strategies tailored for data engineering roles. Ensure the guide includes specific examples and scenarios relevant to the target salary range.
 
-### Subtask 1: Research Current Salary Negotiation Practices
-- Model: perplexity | Stage: research | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Synthesize Salary Negotiation Guide
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Current Salary Negotiation Practices | perplexity | research |
+| 2 | Synthesize Salary Negotiation Guide | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Current Salary Negotiation Practices [perplexity]
+
+**Status**: done | **Stage**: research
+
+# Salary Negotiation Strategies for Tech Roles Above $200k
+
+## Key Finding 1: Negotiate the Full Compensation System, Not Just Base Salary
+
+The most critical mistake high-earning engineers make is treating salary negotiation as a single-number discussion focused on base pay alone[1]. Instead, **compensation is a system** where base salary, bonus, equity, sign-on incentives, refreshers, benefits, and level all interact[1].
+
+Before negotiating, understand how your target company structures compensation:
+- Which components have flexibility (equity vs. base vs. sign-on bonuses)
+- How level impacts future raises and equity refresh cycles
+- Internal leveling constraints that affect both initial offers and growth[1]
+
+**Actionable step:** Ask recruiters upfront: "How is compensation structured at this level, and which components have the most flexibility?" This reveals negotiation room you might otherwise miss[1].
+
+## Key Finding 2: Avoid Anchoring to Your Current Compensation
+
+Using your current salary as a reference point is especially risky when changing companies, levels, or locations[1]. Your previous compensation may reflect outdated market conditions or internal constraints unrelated to your new role's market value[1].
+
+**Better approach:** Delay discussing numbers until you understand the role scope and level. Frame compensation expectations as **ranges informed by market data** rather than personal history[1]. This keeps negotiations flexible and prevents accidental self-discounting[1].
+
+## Key Finding 3: AI Specialization Commands 1.4x to 1.9x Salary Multipliers
+
+For data engineering roles with AI focus, the market rewards specific expertise[2]:
+
+- **Full AI expertise multiplier:** 1.4 to 1.9x base salary of equivalent non-AI roles
+- **Partial AI expertise multiplier:** 1.1 to 1.3x
+- **Unsubstantiated AI claims:** Little to no premium, and may damage credibility[2]
+
+The premium rewards:
+- Depth of understanding in model architectures
+- Practical experience training or fine-tuning models at scale
+- Familiarity with evaluation methodologies
+- Ability to manage AI production infrastructure reliably[2]
+
+**Implication for $200k+ negotiations:** If you have substantiated AI/ML infrastructure expertise, you can justify significantly higher compensation by positioning yourself in the 1.4-1.9x multiplier range[2].
+
+## Key Finding 4: Startup vs. Enterprise Compensation Gap Has Compressed at Senior Levels
+
+For senior and principal engineers, the traditional startup discount has disappeared[2]:
+
+- **Senior/Principal level:** Well-funded Series B/C startups in AI, security, and fintech now offer base salaries at **parity or 5-12% higher** than enterprises
+- **At senior/principal levels:** Competitive startups frequently match or exceed enterprise base salary by **10-20%**, with equity on top[2]
+- **Junior/mid-level:** Enterprises still offer 8-15% higher base salary than early-stage startups[2]
+
+**Strategic insight:** If you're targeting $200k+ roles, Serie
+
+*... truncated (4363 chars total)*
+
+### Step 2: Synthesize Salary Negotiation Guide [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -70,8 +129,13 @@
    - **Script**: "Another offer I received includes a higher equity component. Is there room to adjust the equity portion of this offer to align more closely with that?"
 
 4. **First Step in Negotiation**
-   - **Objective**: Set the stage for successful negotiation.
-   - **Action**: Delay discussing specific numbers until you have a clear understanding of the role's scope and the company's compensation structure.
-   - **Script**: "Before we dive into numbers, could we discuss the role's responsibilities and how compensation is typically structured for this position?"
+   - **Objective**: Set the stage for successful negotia
 
-By implementing these strategies, you can effectively navigate salary negotiations and secure a comprehensive compensation package that reflects your market value and career goals.
+*... truncated (3494 chars total)*
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mmrykeekohqk/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mmrykeekohqk/export?fmt=json

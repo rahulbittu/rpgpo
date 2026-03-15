@@ -1,43 +1,72 @@
 # Create a 90-day plan for transitioning from individual contributor to engineerin
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms393c4el10`
 - **Engine**: careeregine
-- **Status**: done
-- **Created**: 2026-03-15T18:28:57
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms393c4el10/export?fmt=md) | [JSON](/api/intake/task/t_mms393c4el10/export?fmt=json)
+- **Created**: 2026-03-15T18:28:57
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a 90-day plan for transitioning from individual contributor to engineering manager. Include leadership skills to develop, books to read, and relationships to build.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a 90-day transition plan for Rahul to move from individual contributor to engineering manager.
-- **Strategy**: Research effective leadership skills and resources for engineering managers. Develop a structured 90-day plan including specific books, skills, and relationship-building activities. Tailor the plan to Rahul's current role and future goals.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Rahul's current leadership skills; Rahul's preferred learning style; Key stakeholders in Rahul's organization
+**Chief of Staff**: "Create a 90-day transition plan for Rahul to move from individual contributor to engineering manager."
 
-## 3. Subtask Execution
+**Strategy**: Research effective leadership skills and resources for engineering managers. Develop a structured 90-day plan including specific books, skills, and relationship-building activities. Tailor the plan to Rahul's current role and future goals.
 
-### Subtask 1: Research Leadership Skills and Resources
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: ## Essential Leadership Skills for Engineering Manager Transition
+**Execution Plan**:
 
-### Subtask 2: Develop 90-Day Transition Plan
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Leadership Skills and Resources | perplexity | research |
+| 2 | Develop 90-Day Transition Plan | gemini | strategy |
 
-- **Model**: gemini
-- **Stage**: strategy
-- **Status**: done
-- **Summary**: ## 90-Day Transition Plan for Rahul: Data Engineering Leadership & Startup Growth
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Leadership Skills and Resources [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Essential Leadership Skills for Engineering Manager Transition
+
+Key skills identified across recent sources include proactive problem-solving, mentoring, strategic thinking, empathy, curiosity, and people management, shifting focus from individual coding to team leadership and business alignment[1][2][3].
+
+- **Proactive initiative and problem-solving**: Demonstrate management skills by voluntarily managing projects, mentoring engineers, and solving systemic issues without being assigned, as done by a senior director at Uber who fixed a revenue-losing system in two months (published March 2026)[2].
+- **Mentoring and people management**: Naturally guide juniors through code reviews, best practices, and growth, while handling morale, performance, and conflicts; spend less time coding, more on priorities and workflows[1].
+- **Strategic planning and timing**: Align technical work with business goals, make trade-offs, and time ambitious ideas with company momentum for promotions[1][2].
+- **Curiosity, empathy, and learning mindset**: Foster a learning culture amid AI changes by being curious not judgmental, building personal AI skills, and empathizing with team pressures[3].
+- **Soft skills like communication and collaboration**: Develop organization, big-picture thinking, open communication, flexibility, and team-first attitude to represent yourself strongly[4].
+
+## Recommended Books for Engineering Managers
+
+Sources recommend these specific books for building motivation, decision-making, team empowerment, and effectiveness in management transitions[5].
+
+| Book Title | Author | Key Focus for Transition | Publication Note |
+|------------|--------|---------------------------|------------------|
+| **Drive: The Surprising Truth About What Motivates Us** | Daniel Pink | Motivating modern engineers with purpose, autonomy, and flexibility over traditional commands | Essential for shifting from individual contributor to team director |
+| **The Decision Maker** | Dennis Bakke | Empowering teams to make decisions, amplifying managerial effectiveness through vignettes | Helps move beyond individual software engineering decisions |
+| **Startup Engineering Management** | Piaw Na | Building teams, hiring top engineers, picking leaders, and defining processes in startups | Covers manager responsibilities at various stages |
+| **The Effective Executive** | Peter F. Drucker | Prioritizing thinking time amid meetings, effective for knowledge workers in management | Improves prioritization as engineer-turned-manager |
+
+**Next Steps**: Read "Drive" first for motivation skills (available via major retailers); apply by mentoring one junior weekly and tracking project initiatives for 30 days; seek formal training like a master's in leadership as suggested[1][5].
+
+**Sources**:
+- [1] https://www.psb-academy.edu.sg/blog/how-to-know-youre-ready-to-move-from-engineering-to-management
+- [2] https://www.businessinsider.com/senior-director-engineering-uber-shares-promotion-journe
+
+*... truncated (3293 chars total)*
+
+### Step 2: Develop 90-Day Transition Plan [gemini]
+
+**Status**: done | **Stage**: strategy
 
 ## 90-Day Transition Plan for Rahul: Data Engineering Leadership & Startup Growth
 
@@ -49,4 +78,13 @@ Rahul's dual priorities – data engineering leadership growth and passive incom
 
 **Comparison of Development Approaches:**
 
-| Approach                               | Pros                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+| Approach                               | Pros                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+
+*... truncated (5000 chars total)*
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms393c4el10/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms393c4el10/export?fmt=json

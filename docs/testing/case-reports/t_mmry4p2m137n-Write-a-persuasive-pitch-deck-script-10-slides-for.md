@@ -1,31 +1,77 @@
 # Write a persuasive pitch deck script (10 slides) for TopRanker to present to ang
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mmry4p2m137n`
 - **Engine**: topranker
-- **Status**: done
+- **Urgency**: high
 - **Created**: 2026-03-15T16:05:34
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Write a persuasive pitch deck script (10 slides) for TopRanker to present to angel investors. Include market opportunity, problem, solution, traction, team, financials, and ask. Make it compelling and data-driven.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a persuasive, data-driven pitch deck script for TopRanker to attract angel investors.
-- **Strategy**: First, gather current market data and trends for local business leaderboard apps using web research. Then, synthesize this data with existing TopRanker information to create a persuasive narrative for the pitch deck. Finally, compile the script into a structured format that aligns with investor expectations.
-- **Subtasks**: 2
+**Chief of Staff**: "Create a persuasive, data-driven pitch deck script for TopRanker to attract angel investors."
 
-## 3. Subtask Execution
+**Strategy**: First, gather current market data and trends for local business leaderboard apps using web research. Then, synthesize this data with existing TopRanker information to create a persuasive narrative for the pitch deck. Finally, compile the script into a structured format that aligns with investor expectations.
 
-### Subtask 1: Research Market Data
-- Model: perplexity | Stage: audit | Status: done
+**Risk**: yellow | **Code Task**: No
 
-### Subtask 2: Synthesize Pitch Deck Script
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Market Data | perplexity | audit |
+| 2 | Synthesize Pitch Deck Script | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Market Data [perplexity]
+
+**Status**: done | **Stage**: audit
+
+## Finding 1: No Direct Market Size Data for Local Business Leaderboard Apps
+No search results provide specific market size, growth rate, or CAGR for "local business leaderboard apps" as a distinct category. This niche (community-ranked local business directories/leaderboards like TopRanker) lacks dedicated reports in current sources from February-March 2026.
+
+Source: https://www.futuremarketinsights.com/reports/location-based-marketing-services-market [1]; https://wellows.com/blog/startup-ideas/ [2]; https://raptormobileapps.com/blog/top-10-profitable-app-ideas-to-build-in-2026 [3]
+
+## Finding 2: Closest Proxy - Location-Based Marketing Services Market
+Valued at USD 69.0 billion in 2025, projected to reach USD 79.8 billion in 2026 and USD 339.9 billion by 2036 at a CAGR of 15.6%. Includes geofencing, beacons, and platforms like Foursquare, Radar, Yext (local business visibility tools); no explicit leaderboard mention.
+
+- Absolute growth: USD 260.2 billion over 10 years.
+- Key drivers: AI in 61% of ad campaigns by early 2026 for geofence predictions.
+- Companies: Google, Apple, Foursquare, Yext.
+
+Source: https://www.futuremarketinsights.com/reports/location-based-marketing-services-market (published 2026 forecast) [1]
+
+## Finding 3: Related Mobile App Market (Broader Context)
+Global mobile application market at USD 196.8 billion in 2026, growing to USD 482.3 billion by 2036 at CAGR 9.3%. Encompasses local marketplace/e-commerce apps; North America CAGR 8.7%.
+
+Source: https://www.futuremarketinsights.com/reports/global-mobile-application-market (2026 forecast) [5]
+
+## Finding 4: Local Marketplace App Opportunity (No Size Data)
+Hyperlocal e-commerce/local marketplace apps highlighted as profitable for 2026; Android holds 72.67% download share. Examples: Facebook Marketplace. No revenue/market size figures; emphasizes AI matching, community commerce.
+
+Source: https://raptormobileapps.com/blog/top-10-profitable-app-ideas-to-build-in-2026 (2026 ideas) [3]
+
+## Finding 5: Neighborhood Platform Idea with Local Business Ads (Revenue Estimate)
+Build cost: $40K over 20 weeks (React Native, Stripe). Monetization: 10K neighborhoods at 10% paying $2/month = $240K/year + local business ads. No market size; implies untapped local ranking potential.
+
+Source: https://wellows.com/blog/startup-ideas/ (2026 startup ideas) [2]
+
+## Actionable Next Steps for TopRanker
+- **Refine search/validate proxy:** Query "Yext revenue 2026" or "Foursquare local search market share" for leaderboard-adjacent data; location marketing CAGR 15.6% suggests TopRanker fits high-growth segment [1].
+- **Benchmark revenue:** Target $240K/year at 10K users/neighborhoods via ads/subscriptions [2]; test Austin MVP with 1K users for $24K run rate.
+- **Build edge:** Integrate geofencing (like Radar SDK) for real-time rankings; aim for 15.6% growth trajectory by Q2 2026 [1].
+
+### Step 2: Synthesize Pitch Deck Script [openai]
+
+**Status**: done | **Stage**: report
 
 ## Slide 1: Introduction
 
@@ -88,18 +134,13 @@
 
 ## Recommended Actions
 
-1. **Finalize MVP Launch in Austin**: Complete core Wilson score ranking and business verification workflow to ensure a smooth launch.
-   - **Why**: Establish a strong presence in a key market to validate the product.
-   - **First Step**: Complete development tasks and initiate a targeted marketing campaign.
+1. **Finalize MVP Launch in Austin**: Complete core Wilson score ranking and business verification workflow to ensure a smooth lau
 
-2. **Expand Beta Testing**: Use feedback from 6 beta cities to refine features and improve user experience.
-   - **Why**: Ensure product-market fit and gather insights for broader rollout.
-   - **First Step**: Analyze beta test results and implement necessary adjustments.
+*... truncated (4030 chars total)*
 
-3. **Secure Funding**: Focus on pitching to investors who understand the location-based services market.
-   - **Why**: Funding is crucial for scaling operations and enhancing product features.
-   - **First Step**: Prepare detailed financial projections and refine pitch deck for investor meetings.
+## Phase 4: Deliverable
 
-4. **Enhance Marketing Strategy**: Develop a comprehensive plan to drive user and business adoption in Austin.
-   - **Why**: Effective marketing will accelerate community growth and engagement.
-   - **First Step**: Identify key channels and partnerships for targeted outreach.
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mmry4p2m137n/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mmry4p2m137n/export?fmt=json

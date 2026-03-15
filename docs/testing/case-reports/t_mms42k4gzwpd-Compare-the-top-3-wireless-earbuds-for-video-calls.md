@@ -1,43 +1,77 @@
 # Compare the top 3 wireless earbuds for video calls under 150 dollars. Must have 
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms42k4gzwpd`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T18:51:52
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms42k4gzwpd/export?fmt=md) | [JSON](/api/intake/task/t_mms42k4gzwpd/export?fmt=json)
+- **Created**: 2026-03-15T18:51:52
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Compare the top 3 wireless earbuds for video calls under 150 dollars. Must have good microphone quality. Include latency measurements and battery life.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Compare the top 3 wireless earbuds under $150 for video calls with a focus on microphone quality, latency, and battery life.
-- **Strategy**: First, conduct a web search to gather current data on wireless earbuds under $150, focusing on microphone quality, latency, and battery life. Then, synthesize this data into a structured report with a clear recommendation.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Current top wireless earbuds in the market under $150; Microphone quality of these earbuds; Latency measurements; Battery life details
+**Chief of Staff**: "Compare the top 3 wireless earbuds under $150 for video calls with a focus on microphone quality, latency, and battery life."
 
-## 3. Subtask Execution
+**Strategy**: First, conduct a web search to gather current data on wireless earbuds under $150, focusing on microphone quality, latency, and battery life. Then, synthesize this data into a structured report with a clear recommendation.
 
-### Subtask 1: Research Top Wireless Earbuds
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: ## Top Finding: Soundcore Liberty 5 (Best for Video Calls Under $150)
+**Execution Plan**:
 
-### Subtask 2: Synthesize Earbuds Comparison
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Top Wireless Earbuds | perplexity | research |
+| 2 | Synthesize Earbuds Comparison | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Top Wireless Earbuds [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Top Finding: Soundcore Liberty 5 (Best for Video Calls Under $150)
+- **Price**: Under $150 (exact pricing via Amazon links in source, typically $100-130 as of March 2026).
+- **Microphone Quality**: Voice sounds clear and natural; noise almost completely removed (makes voice slightly thinner); some wind noise audible, causing voice dips; automatic Transparency mode activates on calls to hear surroundings and avoid shouting; mute button via stem pinch (reminder beep every 20s).
+- **Latency**: Not explicitly measured, but optimized for video conferencing/Zoom with no reported sync issues.
+- **Battery Life**: Not detailed in call-specific tests, but strong overall performance noted for office use.
+- **Review Date**: Updated March 2026.
+- **Source**: https://www.scarbir.com/guide/best-cheap-wireless-earbuds-for-phone-calls[6]
+
+## Runner-Up: PrismXR Vega T1 Earbuds (Best Low-Latency Option Under $150)
+- **Price**: $70.
+- **Microphone Quality**: Not specifically tested for calls, but decent overall sound quality supports general use including video.
+- **Latency**: Zero latency via USB-C dongle (fixes Bluetooth delays on Meta Quest 3/VR; also works for PC/console); standard Bluetooth present but higher latency.
+- **Battery Life**: Not quantified in hours, but supports extended gaming sessions (e.g., competitive play on Asus ROG Ally X).
+- **Review Date**: Recent (2026 context via site).
+- **Source**: https://www.gamesradar.com/hardware/vr/prismxr-vega-t1-earbuds-review/[3]
+
+## Other Strong Contenders Under $150
+| Model | Mic Quality (Rating) | Latency Notes | Battery Life (ANC On/Off) | Price Notes | Source |
+|-------|----------------------|---------------|---------------------------|-------------|--------|
+| Soundcore Liberty 5 | Clear voice, excellent noise removal (slightly thin) | Video call optimized | Not specified | <$150 | [6] |
+| OnePlus Buds 4 (mentioned vs Liberty 5) | Slightly better than Liberty 5 in noise | Not specified | Not specified | <$150 (bargain premium features) | [4][6] |
+| EarFun Air Pro 4 | Not rated | Supports aptX LL/Adaptive for low latency | 54 hours total (ANC off w/ case) | Bargain (<$150) | [4] |
+| Unspecified TechRadar buds (LDAC model) | 4/5 | Bluetooth/LDAC/LC3 (standard ~150-200ms Bluetooth) | 10h/12h | <$150 implied | [2] |
+| Unspecified TechRadar buds (6-mic) | Not rated | Standard Bluetooth | 11h (ANC off); 39h w/ case | <$150 implied | [2] |
+
+## Key Insights from Searches
+- **No exact latency ms under 150ms found** for earbuds under $150 in video call tests; Bluetooth typically 150-200ms[1]; dongle solutions like PrismXR achieve <1ms[3].
+- **Top mic picks** prioritize noise removal for offices/Zoom: Soundcore Liberty 5 leads[6].
+- **Battery leaders**: Air Pro 4 at 54h total[4]; others 10-12h per charge[2].
+- **No results** for Technics EAH-AZ100, Samsung Galaxy Buds 4 Pro, or Bose under $150 with call-specific data (premium pricing >$150)[5][7].
+- **Next Steps**: Check Amazon for Soundcore Liberty 5 (US link in
+
+*... truncated (3230 chars total)*
+
+### Step 2: Synthesize Earbuds Comparison [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -80,3 +114,10 @@
    - **First Step**: Assess typical usage duration and check detailed battery specifications if available from sellers.
 
 These recommendations are based on the most recent reviews and provide a targeted approach based on specific needs such as professional calls or gaming.
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms42k4gzwpd/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms42k4gzwpd/export?fmt=json

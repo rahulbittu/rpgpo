@@ -1,43 +1,77 @@
 # Write a privacy policy template for a SaaS application that handles user data. I
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms2nvrxgmg4`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T18:12:27
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms2nvrxgmg4/export?fmt=md) | [JSON](/api/intake/task/t_mms2nvrxgmg4/export?fmt=json)
+- **Created**: 2026-03-15T18:12:27
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Write a privacy policy template for a SaaS application that handles user data. Include data collection, usage, retention, sharing, and user rights sections. GDPR and CCPA compliant.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a GDPR and CCPA compliant privacy policy template for a SaaS application.
-- **Strategy**: Conduct research on GDPR and CCPA compliance requirements for SaaS applications. Synthesize findings into a structured privacy policy template, ensuring clarity and compliance. Tailor the template to address typical SaaS data handling practices.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific SaaS application features; Target audience of the SaaS application
+**Chief of Staff**: "Create a GDPR and CCPA compliant privacy policy template for a SaaS application."
 
-## 3. Subtask Execution
+**Strategy**: Conduct research on GDPR and CCPA compliance requirements for SaaS applications. Synthesize findings into a structured privacy policy template, ensuring clarity and compliance. Tailor the template to address typical SaaS data handling practices.
 
-### Subtask 1: Research GDPR and CCPA Compliance
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: audit
-- **Status**: done
-- **Summary**: ## GDPR Compliance Requirements for SaaS Applications
+**Execution Plan**:
 
-### Subtask 2: Synthesize Privacy Policy Template
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research GDPR and CCPA Compliance | perplexity | audit |
+| 2 | Synthesize Privacy Policy Template | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research GDPR and CCPA Compliance [perplexity]
+
+**Status**: done | **Stage**: audit
+
+## GDPR Compliance Requirements for SaaS Applications
+
+GDPR applies to any SaaS company processing personal data of EU/EEA residents, regardless of company location, requiring a lawful basis for all processing (e.g., contractual necessity, consent, legitimate interest).[1][2]
+
+### Key Requirements
+- **Data Processing Agreement (DPA):** SaaS providers acting as processors must sign DPAs with controllers, covering confidentiality, security measures, data subject request assistance, data deletion/return at contract end, and compliance proof. Use standard DPA templates proactively.[1]
+- **Data Mapping and Privacy Policy:** Map all data processed; update privacy policy to list data types, purposes, sharing, and legal bases (six options under GDPR).[1][2]
+- **Data Subject Rights:** Implement processes for access, export, correction, deletion (right to erasure propagates across systems); notify breaches within **72 hours** to authorities.[1][6]
+- **Subprocessors and Transfers:** List subprocessors with their own DPAs; use Standard Contractual Clauses (SCCs) for EU/UK data transfers outside the region.[1][3]
+- **B2B Specific:** Document lawful basis (consent/legitimate interest) for purchased data; conduct legitimate interest assessments; process opt-outs within **30 days**; maintain suppression lists.[3]
+
+**Next Steps:** 
+- Complete data map today (step 1 per Turley Law guide).[1]
+- Draft DPA template and share with customers (saves negotiation time).[1]
+- Review subprocessors list and add to customer-facing documentation.[1]
+
+Source: https://turleylaw.com/blog/gdpr-for-saas-companies-practical-guide[1]; https://www.sparkdbi.com/blogs/gdpr-hipaa-can-spam-b2b-data-compliance-checklist-2026/[3]; https://atlan.com/know/data-privacy-governance-framework/[6]
+
+## CCPA Compliance Requirements for SaaS Applications
+
+CCPA (expanded by CPRA effective January 2023) applies to businesses collecting California residents' personal data, granting rights to access, delete, opt-out of sale/sharing; requires privacy notices explaining rights.[2][5]
+
+### Key Requirements
+- **Privacy Notice and Policy:** Publish accessible policy detailing data handling (accounts, billing, analytics), rights, and opt-out methods; required for transparency.[2]
+- **Opt-Out Signals:** Honor Global Privacy Control (GPC) as valid opt-out for sale/sharing across devices, domains, accounts; link to logged-in profiles; synchronize with ad/analytics systems. Non-compliance risks fines (e.g., recent enforcement actions).[5]
+- **Data Subject Rights:** Support deletion requests propagating across systems; manage preferences centrally with automated enforcement and identity resolution.[5][6]
+- **Contractors vs. Service Providers:** CPRA distinguishes roles with stricter contractor rules; conduct risk assessments for sensitive data.[2]
+
+**Next Steps:** 
+- Implement GPC recognition in all browsers/apps within 30 days; test cross-device syncing.[5]
+- Centralize preference management and monitor third-part
+
+*... truncated (3861 chars total)*
+
+### Step 2: Synthesize Privacy Policy Template [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -81,28 +115,13 @@
    - **What to Do:** Create a standard DPA template covering all necessary legal aspects.
    - **Why:** Streamlines negotiations and ensures compliance with GDPR.
    - **Expected Outcome:** Faster onboarding of clients and reduced legal risks.
-   - **First Step:** Review existing templates and customize them to fit your service offerings.
 
-2. **Conduct a Comprehensive Data Mapping Exercise**
-   - **What to Do:** Map all data processed, including types, purposes, and legal bases.
-   - **Why:** Ensures transparency and compliance with GDPR and CCPA.
-   - **Expected Outcome:** A clear understanding of data flows and improved privacy policy accuracy.
-   - **First Step:** Use tools like Turley Law's guide to start the mapping process.
 
-3. **Update Privacy Policy**
-   - **What to Do:** Revise the privacy policy to reflect data mapping findings.
-   - **Why:** Provides transparency to users and meets regulatory requirements.
-   - **Expected Outcome:** Enhanced user trust and regulatory compliance.
-   - **First Step:** Draft updates based on the data map and legal requirements.
+*... truncated (4629 chars total)*
 
-4. **Implement Data Subject Request Processes**
-   - **What to Do:** Set up processes for handling data subject requests efficiently.
-   - **Why:** Compliance with GDPR and CCPA rights like access, correction, and deletion.
-   - **Expected Outcome:** Reduced risk of non-compliance fines and increased user satisfaction.
-   - **First Step:** Develop internal workflows and train staff on these processes.
+## Phase 4: Deliverable
 
-5. **Review and Update Subprocessor Agreements**
-   - **What to Do:** Ensure all subprocessors have signed DPAs and are listed in the privacy policy.
-   - **Why:** Critical for compliance with data protection laws.
-   - **Expected Outcome:** Legal protection and transparency in data processing.
-   - **First Step:** Audit current subprocessors and update agreements as necessary.
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms2nvrxgmg4/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms2nvrxgmg4/export?fmt=json

@@ -1,43 +1,64 @@
 # Create a sustainable energy management plan for someone who works 12-hour days. 
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms3rlevxh8h`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T18:43:20
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms3rlevxh8h/export?fmt=md) | [JSON](/api/intake/task/t_mms3rlevxh8h/export?fmt=json)
+- **Created**: 2026-03-15T18:43:20
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a sustainable energy management plan for someone who works 12-hour days. Include nutrition timing, exercise placement, and cognitive peak optimization.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Develop a comprehensive energy management plan for a person working 12-hour days, focusing on nutrition, exercise, and cognitive performance.
-- **Strategy**: Conduct research to identify best practices for energy management in long workdays, including optimal nutrition timing, exercise routines, and cognitive performance strategies. Synthesize findings into a structured plan tailored for long work hours.
-- **Risk**: yellow
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific dietary preferences or restrictions; Current fitness level; Exact work schedule and breaks; Personal goals related to health and wellness
+**Chief of Staff**: "Develop a comprehensive energy management plan for a person working 12-hour days, focusing on nutrition, exercise, and cognitive performance."
 
-## 3. Subtask Execution
+**Strategy**: Conduct research to identify best practices for energy management in long workdays, including optimal nutrition timing, exercise routines, and cognitive performance strategies. Synthesize findings into a structured plan tailored for long work hours.
 
-### Subtask 1: Research Sustainable Energy Management
+**Risk**: yellow | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: I cannot provide the information you're requesting based on the search results provided.
+**Execution Plan**:
 
-### Subtask 2: Synthesize Energy Management Plan
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Sustainable Energy Management | perplexity | research |
+| 2 | Synthesize Energy Management Plan | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Sustainable Energy Management [perplexity]
+
+**Status**: done | **Stage**: research
+
+I cannot provide the information you're requesting based on the search results provided.
+
+**Why:** The search results contain job postings for energy management and data center roles at CBRE and Hitachi Energy, but they do not address the core topics you're asking about: nutrition timing, exercise placement, and cognitive peak optimization for individuals working 12-hour shifts.
+
+**What's missing:**
+- No research on nutrition strategies for shift workers
+- No data on exercise timing relative to 12-hour work schedules
+- No information on cognitive performance optimization during extended shifts
+- No specific names, studies, or dates related to these health/wellness topics
+
+**What I found instead:**
+The search results show job opportunities in energy management (CBRE Energy & Sustainability Manager in Warsaw, CBRE Data Center Team Lead roles with 12-hour overnight shifts, and Hitachi Energy positions), but these are career listings, not wellness or performance optimization content.
+
+**To get the information you need, I would need search results that cover:**
+- Peer-reviewed studies on shift worker nutrition and circadian rhythms
+- Exercise science research on optimal timing for 12-hour shift workers
+- Cognitive performance data during extended work hours
+- Specific protocols from sleep researchers, sports nutritionists, or occupational health experts
+
+Would you like me to search for this wellness and performance optimization information instead?
+
+### Step 2: Synthesize Energy Management Plan [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 Given the lack of specific data from prior subtasks, the following synthesis provides general guidance based on established principles in nutrition, exercise science, and cognitive performance for individuals working extended shifts. This will serve as a foundational energy management plan.
@@ -77,12 +98,13 @@ Given the lack of specific data from prior subtasks, the following synthesis pro
    - **What to do:** Establish a consistent sleep routine and environment conducive to rest.
    - **Why:** Quality sleep is crucial for cognitive function and overall health.
    - **Expected outcome:** Better sleep quality leading to improved cognitive performance.
-   - **First step:** Invest in blackout curtains and a white noise machine to enhance sleep quality.
+   - **First step:** Invest in blackout curtains and a white noise machine to enhance sleep quali
 
-4. **Incorporate Cognitive Breaks**
-   - **What to do:** Schedule regular short breaks and consider power naps during shifts.
-   - **Why:** Breaks help maintain focus and prevent burnout.
-   - **Expected outcome:** Sustained cognitive performance and reduced mental fatigue.
-   - **First step:** Use a timer to remind yourself to take breaks every 90-120 minutes.
+*... truncated (3594 chars total)*
 
-This plan is based on general principles and should be tailored to individual preferences and needs. For personalized advice, consulting with a nutritionist, fitness trainer, or occupational health specialist is recommended.
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms3rlevxh8h/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms3rlevxh8h/export?fmt=json

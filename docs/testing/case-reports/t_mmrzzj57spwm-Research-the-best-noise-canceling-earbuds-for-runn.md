@@ -1,31 +1,92 @@
 # Research the best noise-canceling earbuds for running under 200 dollars. Must be
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mmrzzj57spwm`
 - **Engine**: general
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T16:57:32
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Research the best noise-canceling earbuds for running under 200 dollars. Must be sweat-proof, secure fit, and good sound quality. Compare 3 options with current pricing.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Identify and compare the best noise-canceling earbuds for running under $200 that are sweat-proof, secure-fitting, and have good sound quality.
-- **Strategy**: First, conduct web research to gather current information on noise-canceling earbuds under $200 that are suitable for running. Then, synthesize the findings into a comparative analysis, highlighting pros and cons, and provide a buying recommendation.
-- **Subtasks**: 2
+**Chief of Staff**: "Identify and compare the best noise-canceling earbuds for running under $200 that are sweat-proof, secure-fitting, and have good sound quality."
 
-## 3. Subtask Execution
+**Strategy**: First, conduct web research to gather current information on noise-canceling earbuds under $200 that are suitable for running. Then, synthesize the findings into a comparative analysis, highlighting pros and cons, and provide a buying recommendation.
 
-### Subtask 1: Research Noise-Canceling Earbuds
-- Model: perplexity | Stage: research | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Synthesize Earbud Comparison
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Noise-Canceling Earbuds | perplexity | research |
+| 2 | Synthesize Earbud Comparison | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Noise-Canceling Earbuds [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Top Recommendation: Anker Soundcore Space A40
+The **Anker Soundcore Space A40 Truly Wireless** are the best noise-canceling earbuds under $200 for running, offering **amazing ANC**, **8-hour battery life** with ANC on, **warm sound signature**, and frequent sales under $50 (normally ~$50-60 as of Feb 2026).[4]
+
+- **Sweat-proofing**: IPX4 water resistance suitable for sweat and light rain during runs (inferred from budget ANC earbuds' standard ratings; exact IP not specified in running contexts).[4]
+- **Secure fit**: Stable in-ear design blocks noise effectively (noise isolation score 8.9/10), comfortable for extended wear like a workday.[4]
+- **Sound quality**: Warm profile with detailed audio; adaptive ANC blocks plane rumble, AC hum, office chatter.[4]
+- **Current price**: Often under $50 on sale (updated Feb 20, 2026).[4]
+- **User reviews**: Top pick for value ANC; outperforms expectations for price.[4]
+
+**Next steps**: Check Amazon for current price under $50; test fit with return policy.
+
+## Strong Runner-Up: Earfun Air Pro 4i
+**Earfun Air Pro 4i** excel in **strongest ANC under $100** (~$60 as of early 2026), with natural transparency mode for traffic awareness during runs.[2]
+
+- **Sweat-proofing**: IPX5 rating (handles sweat/rain; standard for model).[2]
+- **Secure fit**: Stable wing-free design; comfortable for active use.[2]
+- **Sound quality**: Fantastic ANC outperforms OnePlus Buds 4/SoundPEATS Air5 Pro+; good bass/mids.[2]
+- **Current price**: ~$60.[2]
+- **User reviews**: "Rocks fantastic ANC" and basics; top-ranked under $100 (Dec 2025 update).[2]
+
+**Next steps**: Buy on Amazon US; compare ANC demo videos.
+
+## Budget Option Under $50: Final ZE300
+**Final ZE300** provide **excellent sound and ANC** for under $50, with lightest/most comfortable fit ideal for long runs.[1]
+
+- **Sweat-proofing**: Not explicitly running-rated, but pressure-relieving design suits activity.[1]
+- **Secure fit**: Lightest buds; highly comfortable across genres.[1]
+- **Sound quality**: Excellent across genres; effective indoor ANC.[1]
+- **Current price**: Under $50.[1]
+- **User reviews**: Best value for sound/ANC/comfort.[1]
+
+**Next steps**: Read full review on Tom's Guide; purchase if prioritizing lightness.
+
+## Running-Specific Pick: Bose QuietComfort Earbuds (2024)
+**Bose QuietComfort Earbuds (2024)** offer **secure fit for runs**, rich sound, top ANC at ~$150-180 (premium under $200).[5]
+
+- **Sweat-proofing**: IPX4; handles busy week of runs.[5]
+- **Secure fit**: Comfortable/secure for runs; multi-device pairing.[5]
+- **Sound quality**: Bose signature rich/powerful; best ANC for price.[5]
+- **Current price**: Affordable chunk of Ultra model (8hr battery).[1][3][5]
+- **User reviews**: "Sweet spot premium/affordable"; secure for runs.[5]
+
+**Next steps**: Verify price on retailer sites; ideal if ANC priority over cost.
+
+| Model | Price | ANC Strength | Battery (ANC on) | Fit for Running | Key Source |
+|-------|--------|--------------|-------------------|--
+
+*... truncated (3571 chars total)*
+
+### Step 2: Synthesize Earbud Comparison [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -64,3 +125,10 @@
    - **First Step**: Familiarize yourself with the ANC and transparency mode settings to optimize your running experience.
 
 By following these steps, you can select the best earbuds for your running needs, ensuring a balance between cost, functionality, and comfort.
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mmrzzj57spwm/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mmrzzj57spwm/export?fmt=json

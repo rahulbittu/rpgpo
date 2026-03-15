@@ -1,43 +1,79 @@
 # Create a retrospective template for an engineering sprint. Include what went wel
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms0wtxdfcih`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T17:23:26
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms0wtxdfcih/export?fmt=md) | [JSON](/api/intake/task/t_mms0wtxdfcih/export?fmt=json)
+- **Created**: 2026-03-15T17:23:26
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a retrospective template for an engineering sprint. Include what went well, what did not, action items, and team health check. Format for a 30-minute async retro.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a structured template for a 30-minute asynchronous engineering sprint retrospective.
-- **Strategy**: Research current best practices for engineering sprint retrospectives, especially for asynchronous formats. Synthesize findings into a concise template that aligns with the request's focus areas. Ensure the template is easy to use and facilitates productive discussions.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific format preferences for the template; Any existing templates or guidelines within the organization
+**Chief of Staff**: "Create a structured template for a 30-minute asynchronous engineering sprint retrospective."
 
-## 3. Subtask Execution
+**Strategy**: Research current best practices for engineering sprint retrospectives, especially for asynchronous formats. Synthesize findings into a concise template that aligns with the request's focus areas. Ensure the template is easy to use and facilitates productive discussions.
 
-### Subtask 1: Research Best Practices for Async Sprint Retrospectives
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: audit
-- **Status**: done
-- **Summary**: ## Effective Structures for Asynchronous Sprint Retrospectives
+**Execution Plan**:
 
-### Subtask 2: Synthesize Retrospective Template
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Best Practices for Async Sprint Retrospectives | perplexity | audit |
+| 2 | Synthesize Retrospective Template | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Best Practices for Async Sprint Retrospectives [perplexity]
+
+**Status**: done | **Stage**: audit
+
+## Effective Structures for Asynchronous Sprint Retrospectives
+
+Asynchronous sprint retrospectives use tools like shared docs, collaborative boards (e.g., Asana, Mural), or AI facilitators to collect feedback without live meetings, ideal for distributed engineering teams. Key structure: Gather input in phases (data collection, insights, actions), then optional short sync for alignment. Teams catch issues 70% faster with regular retros.[1]
+
+## Core Elements to Include
+
+- **What Went Well**: Reinforce positives to build morale; e.g., "Highlight team behaviors like clear communication that sped up task completion."[2]
+- **What Did Not Go Well (or Caused Friction)**: Focus on processes, not people; e.g., "Identify bottlenecks via time estimates or task delays, supported by burndown charts."[3][1]
+- **Action Items**: Assign owners, deadlines, verb-starting descriptions; e.g., "Gather task context from stakeholders before backlog refinement by [Owner] by EOD next sprint."[1]
+- **Team Health Checks**: Use formats like Mad-Sad-Glad for emotions or Sailboat for risks; include metrics like velocity trends (aim 80-100% completion) or conflict surveys showing 22% dispute drop post-retro.[2][7]
+
+## Proven Formats and Best Practices
+
+| Format | Description | Best For | Source |
+|--------|-------------|----------|--------|
+| Start-Stop-Continue | What to start, stop, continue. | Mature teams, quick wins. | [7] |
+| 4Ls (Liked, Learned, Lacked, Longed For) | Feedback on positives, gaps, aspirations. | Newer teams exploring growth. | [7] |
+| Sailboat | Visualize winds (helps), anchors (blocks), rocks (risks). | Visual teams spotting dependencies. | [7] |
+| Mad-Sad-Glad | Emotional check-in on frustrations and wins. | Conflict-prone distributed teams. | [7] |
+| What Went Well / Friction / Changes | Structured for conflict resolution with data review. | Engineering teams with bottlenecks. | [2] |
+
+**Async Execution Steps**:
+1. **Prep (1-2 days pre-sprint end)**: Share template in Asana/Mural; prompt inputs on "What went well? Friction? Changes?"[1][7]
+2. **Collect Data Async (3-5 days)**: Team adds anonymously; review reports/Gantt for evidence (e.g., velocity drop 10% predicts under-delivery).[3][6]
+3. **Draw Insights**: Facilitator clusters patterns (e.g., recurring delays); AI tools prioritize actions.[1][5]
+4. **Action & Follow-Up**: 45-min optional sync; track owners/deadlines; every-sprint cadence cuts recurrence.[1][2]
+5. **Metrics**: Monitor sprint completion (80-100%), conflict drop (22%), faster fixes (70%).[1][2]
+
+## Real Examples
+
+- **Asana Engineering Team**: Async phase gathers "data" via shared doc, then 45-min sync clusters pain points (e.g., inaccurate estimates) into actions like "Adjust process to avoid bottlenecks."[1]
+- **Software Dev Teams (Scrum Alliance 2024 Survey)**: Every-sprint async retros with "What caused friction? What change?" format reduced disputes 22%; table shows fast detection vs. monthly (moderate).[2]
+- **Distributed Teams (Ko
+
+*... truncated (3458 chars total)*
+
+### Step 2: Synthesize Retrospective Template [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -73,14 +109,13 @@
    - **Expected Outcome**: Improved team morale and process efficiency.
    - **First Step**: Analyze recent sprint data to identify key positive outcomes and bottlenecks.
 
-3. **Define Clear Action Items**:
-   - **What to Do**: Create specific, actionable items with owners and deadlines.
-   - **Why**: Ensures accountability and timely resolution of identified issues.
-   - **Expected Outcome**: Increased follow-through on retrospective outcomes.
-   - **First Step**: Assign action items during the retrospective with clear deadlines.
+3. **Define Clear Acti
 
-4. **Conduct Regular Team Health Checks**:
-   - **What to Do**: Use emotional and risk assessment tools like Mad-Sad-Glad and Sailboat.
-   - **Why**: Provides insights into team dynamics and potential risks.
-   - **Expected Outcome**: Better understanding of team health and proactive risk management.
-   - **First Step**: Schedule regular intervals for team health assessments and track metrics like velocity trends.
+*... truncated (3760 chars total)*
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms0wtxdfcih/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms0wtxdfcih/export?fmt=json

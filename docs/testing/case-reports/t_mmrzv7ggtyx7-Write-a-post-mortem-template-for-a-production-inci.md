@@ -1,31 +1,81 @@
 # Write a post-mortem template for a production incident. Include timeline, root c
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mmrzv7ggtyx7`
 - **Engine**: general
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T16:54:10
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Write a post-mortem template for a production incident. Include timeline, root cause analysis, impact assessment, action items, and lessons learned. Make it blame-free and actionable.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a comprehensive and actionable post-mortem template for production incidents.
-- **Strategy**: Research existing post-mortem templates to gather best practices and common elements. Synthesize these findings into a clear, concise, and actionable template that aligns with the request for a blame-free approach.
-- **Subtasks**: 2
+**Chief of Staff**: "Create a comprehensive and actionable post-mortem template for production incidents."
 
-## 3. Subtask Execution
+**Strategy**: Research existing post-mortem templates to gather best practices and common elements. Synthesize these findings into a clear, concise, and actionable template that aligns with the request for a blame-free approach.
 
-### Subtask 1: Research Post-Mortem Templates
-- Model: perplexity | Stage: audit | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Synthesize Post-Mortem Template
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Post-Mortem Templates | perplexity | audit |
+| 2 | Synthesize Post-Mortem Template | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Post-Mortem Templates [perplexity]
+
+**Status**: done | **Stage**: audit
+
+## Google Cloud Blameless Postmortem Template
+OneUptime provides a structured template for blameless postmortems on Google Cloud incidents, emphasizing learning over blame. Key sections include Summary (date, duration, severity, affected GCP services, impact), Timeline table (UTC times for alerts, acknowledgment, root cause, fix, recovery), Root Cause (specific GCP resources/configurations/code), Detection (method, delay, missed alerts), Response (diagnosis, mitigation, resolution steps), Contributing Factors (systems/processes/tooling list), What Went Well/What Could Be Improved (bulleted lists), Action Items table (action, owner, priority, due date, status), and Lessons Learned.[1]
+
+**Example Timeline Table Format:**
+| Time | Event |
+|------|-------|
+| HH:MM | First alert triggered |
+| HH:MM | On-call engineer acknowledged |[1]
+
+## Terraform Incident Postmortem Template
+OneUptime's Terraform-specific template (in YAML format) covers incident ID, date, severity, duration, impact, timeline (detection time/method), and action items (with duration notes like 10 minutes for defining assignable items). Best practices: Maintain blameless culture by questioning system allowances for mistakes; investigate near-misses (e.g., plans caught in review); use structured investigation for declarative state management gaps between plan/apply.[2]
+
+**Example YAML Snippet:**
+```
+incident:
+  id: "INC-XXXX"
+  date: "YYYY-MM-DD"
+  severity: "P1/P2/P3"
+```
+[2]
+
+## General Blameless Post-Incident Review (PIR) Template
+IT Leadership Hub outlines a PIR document with Summary (1-3 sentences on what happened, duration, resolution), Impact (quantified: users affected, degradation duration, SLA/revenue loss). Process: Schedule review in 48-72 hours; build shared timeline collaboratively (from normal state to resolution, using logs); separate factors (people/process/technology/context); generate 5-8 SMART action items with single owners. Post-review: Publish draft in 24 hours, track in project tool, 30-day follow-up, quarterly pattern reviews.[3]
+
+**Follow-Through Checklist Items:**
+- Draft PIR published within 24 hours
+- Action items with owner/due date acknowledged
+- Priority assigned; stakeholders briefed (no blame)
+- PIR searchable for reference[3]
+
+## UX Teams Postmortem Best Practices
+NN Group recommends UX postmortems with psychological safety (facilitator states "improve system, not blame"), root-cause via "five whys" (e.g., high checkout abandonment → why? → unverified participants), and system-focused deliverables (e.g., "Add stakeholder-review gate post-research"; "Update recruitment checklist"; "Prelaunch analytics review"). Document: 2-3 pages covering overview/goals, metrics/outcomes, findings, deliverables/owners, timeline. Changes target processes (checklists/reviews) or culture (e.g., default designer-researcher pairing).[4]
+
+## Industry Metrics and Repeat Prevention
+Sherlocks.ai highlights postmortems reducing repeats: Aim for zero incidents recurring in 30 da
+
+*... truncated (3851 chars total)*
+
+### Step 2: Synthesize Post-Mortem Template [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -63,18 +113,13 @@
 
 3. **Conduct Thorough Root Cause Analysis**
    - **What**: Focus root cause analysis on system and process failures.
-   - **Why**: Identifies underlying issues that need addressing to prevent future incidents.
-   - **Expected Outcome**: Systematic improvements and reduced recurrence of similar incidents.
-   - **First Step**: Train team members on conducting effective root cause analysis using the provided templates.
+   - **Why**: Identifies underlying issues tha
 
-4. **Create Specific and Accountable Action Items**
-   - **What**: Develop action items with specific tasks, owners, and deadlines.
-   - **Why**: Ensures accountability and tracks progress on resolving issues.
-   - **Expected Outcome**: Timely implementation of improvements and reduced incident recurrence.
-   - **First Step**: Assign a project manager to oversee the creation and tracking of action items post-incident.
+*... truncated (4094 chars total)*
 
-5. **Document and Share Lessons Learned**
-   - **What**: Document lessons learned from each incident and share them across teams.
-   - **Why**: Promotes organizational learning and prevents similar incidents.
-   - **Expected Outcome**: A more resilient and informed team capable of handling future challenges.
-   - **First Step**: Set up a shared repository for lessons learned and encourage regular team reviews.
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mmrzv7ggtyx7/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mmrzv7ggtyx7/export?fmt=json

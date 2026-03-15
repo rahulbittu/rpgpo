@@ -1,43 +1,81 @@
 # Create a weekly newsletter template for a tech community. Include sections for t
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms2ifdabqjs`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T18:08:13
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms2ifdabqjs/export?fmt=md) | [JSON](/api/intake/task/t_mms2ifdabqjs/export?fmt=json)
+- **Created**: 2026-03-15T18:08:13
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a weekly newsletter template for a tech community. Include sections for top stories, tutorials, job listings, and community highlights. Professional but approachable tone.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a professional yet approachable weekly newsletter template for a tech community.
-- **Strategy**: Research current best practices for tech community newsletters to gather insights on structure and content. Then, synthesize these findings into a concise and tailored newsletter template. Ensure the tone is professional but approachable.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific tech community audience details; Preferred length and depth of each section; Frequency of newsletter distribution
+**Chief of Staff**: "Create a professional yet approachable weekly newsletter template for a tech community."
 
-## 3. Subtask Execution
+**Strategy**: Research current best practices for tech community newsletters to gather insights on structure and content. Then, synthesize these findings into a concise and tailored newsletter template. Ensure the tone is professional but approachable.
 
-### Subtask 1: Research Tech Community Newsletter Best Practices
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: audit
-- **Status**: done
-- **Summary**: ## Common Sections in Tech Community Newsletters
+**Execution Plan**:
 
-### Subtask 2: Synthesize Newsletter Template
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Tech Community Newsletter Best Practices | perplexity | audit |
+| 2 | Synthesize Newsletter Template | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Tech Community Newsletter Template
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Tech Community Newsletter Best Practices [perplexity]
+
+**Status**: done | **Stage**: audit
+
+## Common Sections in Tech Community Newsletters
+
+Tech community newsletters typically feature concise, scannable sections focused on insights, updates, and actionable content to engage busy readers like developers, founders, and builders. Key sections from startup and growth-focused templates include:
+
+- **Core Insight or Framework**: A single H3-headed section with 150-250 words explaining one key idea, supported by evidence or a 3-component framework (e.g., Component 1: explanation in 2-3 sentences).[2]
+- **Quick Numbers or Stats**: One data point with 2-3 sentences of analysis, e.g., "A number worth noting: [Stat] — [context and implications for readers]."[2]
+- **What I'm Working On**: 1-2 sentence personal update to build connection, e.g., sharing a project you're building or testing.[2]
+- **Company or Industry Updates**: Brief announcements on products, trends, or events, limited to 3-5 items with "What Changed," "Why It Matters," and "What To Do Next."[5][6]
+- **Success Stories or Customer Wins**: One story per issue structured as: The Win (specific outcome), Challenge, Team Involved, Impact.[6]
+- **CTA Section**: Exactly one per issue, e.g., "If you want [goal], [Product] helps with [benefit]. [Soft link]."[2]
+
+Traditional elements like Nameplate (branding), Masthead (staff credits), Headlines, Pull Quotes, and Byline also appear for professionalism.[1]
+
+## Recommended Tone
+
+Informal, direct, and human-focused to stand out from corporate media. Examples:
+- "Business as usual? No thanks." (Morning Brew, casual rebellion against bland business news).[3]
+- Personal and relatable: Use "What I'm working on" to feel "human, not corporate."[2]
+- Urgent and credible for tech/finance: Bold typography signaling "Financial News In Real Time" (Huge Alerts).[3]
+- Practical for builders: Data-backed insights without fluff, e.g., "proven growth strategies used by successful creators" (Growth in Reverse).[3]
+
+Avoid salesy blasts; prioritize value like expertise, hacks, or exclusive analysis.[4]
+
+## Structure and Best Practices
+
+- **Subject Lines (tested formulas)**: "[Number] things [audience] misunderstand about [topic]" or "[First name], here's what's worth paying attention to this week." Keep preview text 40-90 characters.[2]
+- **Overall Flow**: Start with insight/framework → Quick stat/personal update → Single CTA. Mobile-responsive, single-column, alternating colors for sections.[2][4]
+- **Frequency and Focus**: One key idea per issue; limit updates to avoid overload. Use tables for changes:
+
+| Update Type | What Changed | Why It Matters | What To Do Next | CTA |
+|-------------|--------------|----------------|-----------------|-----|
+| Process Change | Support tickets routed via new triage (March 1) | Reduces duplicates, faster response | Complete 10-min walkthrough by Friday | Watch walkthrough[6] |
+| Strategy Shift | Prioritize retention over new logos (Q2) | Shifts sales/marketing | Review comp structure | Review update[6] |
+
+- **Growth Tactics**
+
+*... truncated (4160 chars total)*
+
+### Step 2: Synthesize Newsletter Template [openai]
+
+**Status**: done | **Stage**: report
 
 ## Tech Community Newsletter Template
 
@@ -136,8 +174,13 @@ If you want to [Achieve Goal], [Product/Service] helps with [Benefit]. [Soft lin
 
 3. **Distribution and Feedback**: Use platforms like Mailchimp or Substack to distribute and gather reader feedback.
    - **Why**: Maximizes reach and engagement.
-   - **First Step**: Set up an account and import your mailing list.
+   - **First Step**: Set up an account and imp
 
-4. **Iterate Based on Feedback**: Regularly update sections based on reader preferences and industry trends.
-   - **Why**: Keeps content relevant and engaging.
-   - **First Step**: Analyze feedback and adjust content accordingly.
+*... truncated (3253 chars total)*
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms2ifdabqjs/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms2ifdabqjs/export?fmt=json

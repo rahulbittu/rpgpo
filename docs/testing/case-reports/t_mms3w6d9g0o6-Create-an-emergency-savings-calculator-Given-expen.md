@@ -1,43 +1,91 @@
 # Create an emergency savings calculator. Given expenses of 4500/month, current sa
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms3w6d9g0o6`
 - **Engine**: wealthresearch
-- **Status**: done
-- **Created**: 2026-03-15T18:46:54
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms3w6d9g0o6/export?fmt=md) | [JSON](/api/intake/task/t_mms3w6d9g0o6/export?fmt=json)
+- **Created**: 2026-03-15T18:46:54
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create an emergency savings calculator. Given expenses of 4500/month, current savings of 12000, and 800/month contribution, calculate months to reach 6-month emergency fund.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Calculate the time required to reach a 6-month emergency fund based on current savings, monthly expenses, and contributions.
-- **Strategy**: Research standard methods for calculating emergency fund timelines, considering monthly expenses, current savings, and contributions. Synthesize findings into a clear report with calculations and assumptions.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Exact formula or method to use for calculation; Assumptions about interest rates or inflation
+**Chief of Staff**: "Calculate the time required to reach a 6-month emergency fund based on current savings, monthly expenses, and contributions."
 
-## 3. Subtask Execution
+**Strategy**: Research standard methods for calculating emergency fund timelines, considering monthly expenses, current savings, and contributions. Synthesize findings into a clear report with calculations and assumptions.
 
-### Subtask 1: Research Emergency Fund Calculation Methods
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: I need to search the web for current methods and formulas to calculate the time needed to reach a 6-month emergency fund, as the provided results focu
+**Execution Plan**:
 
-### Subtask 2: Synthesize Emergency Fund Calculation Report
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Emergency Fund Calculation Methods | perplexity | research |
+| 2 | Synthesize Emergency Fund Calculation Report | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Emergency Fund Calculation Methods [perplexity]
+
+**Status**: done | **Stage**: research
+
+I need to search the web for current methods and formulas to calculate the time needed to reach a 6-month emergency fund, as the provided results focus on how much to save rather than the calculation timeline.
+
+Let me search for this specific information.
+
+Based on the search results provided, I can offer guidance on calculating your emergency fund target, but the results don't contain explicit formulas for calculating the *time* needed to reach a 6-month goal. However, I can synthesize the available information with the calculation framework:
+
+## Calculating Your 6-Month Emergency Fund Target
+
+**Step 1: Determine Monthly Essential Expenses**
+
+List only non-discretionary expenses:[1]
+- Housing (mortgage/rent, property taxes, insurance, HOA fees)
+- Utilities (gas, electric, water)
+- Groceries and food
+- Transportation
+- Insurance premiums (health, auto, life, disability)
+- Minimum debt payments
+
+Exclude streaming subscriptions, dining out, gym memberships, and other non-essentials.[1]
+
+**Step 2: Calculate Your 6-Month Target**
+
+Multiply your monthly essentials by 6 months.[1][4]
+
+**Example from search results:**
+For someone with $7,000 in monthly essential expenses, a 6-month emergency fund would be $42,000.[6][7]
+
+## Calculating Time to Reach Your Goal
+
+While the search results don't provide an explicit formula, the calculation is straightforward:
+
+**Time (in months) = (Target Amount − Current Savings) ÷ Monthly Contribution**
+
+**Practical Example:**
+- Target: $42,000 (6 months of $7,000 expenses)
+- Current savings: $2,000
+- Monthly contribution: $500
+
+Time needed = ($42,000 − $2,000) ÷ $500 = **80 months (approximately 6.7 years)**
+
+## Recommended Savings Strategy
+
+**Start small and automate:** Begin with $500–$1,000, then set up recurring automatic transfers to a **high-yield savings account** to grow your fund consistently.[1] This removes the friction of manual transfers and ensures steady progress.
+
+**Adjust based on your situation:** The 6-month target applies if you're self-employed, the sole earner, work in unpredictable industries, or have dependents.[1] Those in high-demand careers (nursing, computer science) may need only 3 months.[3]
+
+The search results provided don't contain current 2026 tools or calculators specifically designed for timeline calculations, so I recommend using the formula above with your actual numbers for precision.
+
+### Step 2: Synthesize Emergency Fund Calculation Report [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -92,3 +140,10 @@ Thus, it will take approximately 19 months to reach the 6-month emergency fund t
    - **First Step**: Research high-yield savings accounts or short-term bonds.
 
 By following these steps, you can efficiently plan and achieve your 6-month emergency fund target, ensuring financial security and preparedness for unforeseen circumstances.
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms3w6d9g0o6/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms3w6d9g0o6/export?fmt=json

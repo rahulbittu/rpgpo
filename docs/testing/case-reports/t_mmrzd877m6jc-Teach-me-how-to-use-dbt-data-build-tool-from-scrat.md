@@ -1,31 +1,72 @@
 # Teach me how to use dbt (data build tool) from scratch. I know SQL and have used
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mmrzd877m6jc`
 - **Engine**: general
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T16:40:11
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Teach me how to use dbt (data build tool) from scratch. I know SQL and have used Airflow. Create a progressive learning path with hands-on exercises. Start with basic models and work up to testing, documentation, and deployment patterns.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a progressive learning path for dbt, starting from basics to advanced concepts.
-- **Strategy**: Develop a structured learning path that introduces dbt concepts progressively. Start with basic model creation and gradually introduce more complex topics like testing, documentation, and deployment. Include hands-on exercises to reinforce learning. Tailor the content to assume familiarity with SQL and Airflow, leveraging these skills to ease the transition to dbt.
-- **Subtasks**: 2
+**Chief of Staff**: "Create a progressive learning path for dbt, starting from basics to advanced concepts."
 
-## 3. Subtask Execution
+**Strategy**: Develop a structured learning path that introduces dbt concepts progressively. Start with basic model creation and gradually introduce more complex topics like testing, documentation, and deployment. Include hands-on exercises to reinforce learning. Tailor the content to assume familiarity with SQL and Airflow, leveraging these skills to ease the transition to dbt.
 
-### Subtask 1: Research dbt learning resources
-- Model: perplexity | Stage: research | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Synthesize a progressive learning path for dbt
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research dbt learning resources | perplexity | research |
+| 2 | Synthesize a progressive learning path for dbt | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research dbt learning resources [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Finding 1: Official dbt Developer Hub Documentation
+Official dbt docs provide a comprehensive, free resource starting from basics like installation and model creation, progressing to advanced topics including testing (generic, singular, schema tests), documentation (via `dbt docs generate`), and deployment (CI/CD integration, dbt Cloud platform). Covers dbt framework (language for SQL models, Jinja templating, ref() for dependencies) and engines (dbt Core for basic execution, dbt Fusion for advanced static analysis and LSP features). Structure: introduction → build models → run/test → deploy/monitor.
+
+- **Progression**: Basics (models, sources, seeds); Advanced (testing frameworks, snapshots for SCD, macros, analyses, lineage).
+- **Authors**: dbt Labs team.
+- **Publication/Update**: Core docs ongoing; Fusion engine features highlighted in recent updates (as of 2026).
+- **URLs**: https://docs.getdbt.com/docs/introduction[4]; https://docs.getdbt.com/docs/local/install-dbt (installation, VS Code extension for local dev with IntelliSense, refactoring)[7].
+- **Source**: https://docs.getdbt.com/docs/introduction
+
+## Finding 2: dbt with BigQuery Setup Tutorial
+Step-by-step guide to basic dbt project setup (dbt_project.yml, models folder with example SQL files like my_first_dbt_model.sql), progressing to schema.yml for documentation/tests, ref() dependencies, staging/marts pattern, incremental models, snapshots, and macros. Emphasizes testing for data quality and scaling to production.
+
+- **Progression**: Project init → basic models → tests/docs → advanced (incremental, snapshots).
+- **Authors**: OneUptime blog team.
+- **Publication Date**: February 17, 2026.
+- **URL**: https://oneuptime.com/blog/post/2026-02-17-how-to-set-up-a-dbt-project-with-bigquery-as-the-data-warehouse-backend/view[6].
+- **Source**: https://oneuptime.com/blog/post/2026-02-17-how-to-set-up-a-dbt-project-with-bigquery-as-the-data-warehouse-backend/view
+
+## Finding 3: YouTube Tutorial on dbt Sources
+Video tutorial focused on creating sources in dbt (basic data ingestion step before models), part of a "2026 Full Guide" series on DBT data transformation, open-source tools, covering SQL-based workflows.
+
+- **Progression**: Sources (basic) as entry to full transformations/testing.
+- **Authors**: Not specified in snippet (channel likely DBT-focused).
+- **Publication Date**: 2026 (titled as such).
+- **URL**: https://www.youtube.com/watch?v=GPbKEKxEJcc[5].
+- **Source**: https://www.youtube.com/watch?v=GPbKEKxEJcc
+
+No additional high-quality, structured learning paths (e.g., full courses from Udemy/Coursera, recent blogs) matching exact progression from basics to advanced testing/docs/deployment found in last 30 days (Feb 13 - Mar 15, 2026). Other results mention dbt briefly as a tool but lack tutorials[1]. Refined search suggestion: "dbt tutorial 2026 full course basics to deployment".
+
+### Step 2: Synthesize a progressive learning path for dbt [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -66,21 +107,13 @@
    - **First Step**: Install dbt and initialize a new project using `dbt init`.
 
 2. **Implement Testing**:
-   - **What to do**: Add tests to your models using `schema.yml`.
-   - **Why**: Ensure data quality and integrity within your models.
-   - **Expected Outcome**: A robust testing framework that catches data issues early.
-   - **First Step**: Define and run basic tests using `dbt test`.
+   - **What to do**: A
 
-3. **Enhance Documentation**:
-   - **What to do**: Use `dbt docs generate` to create comprehensive documentation.
-   - **Why**: Improve project maintainability and facilitate team collaboration.
-   - **Expected Outcome**: Easily accessible and understandable project documentation.
-   - **First Step**: Add descriptions to your models and columns in `schema.yml`.
+*... truncated (4120 chars total)*
 
-4. **Advance to Deployment**:
-   - **What to do**: Set up CI/CD pipelines and deploy to dbt Cloud.
-   - **Why**: Automate processes and ensure consistent project updates.
-   - **Expected Outcome**: Streamlined deployment process with automated checks.
-   - **First Step**: Integrate your dbt project with a CI/CD tool like GitHub Actions.
+## Phase 4: Deliverable
 
-By following this structured learning path, you will progressively build expertise in dbt, from foundational skills to advanced deployment strategies.
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mmrzd877m6jc/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mmrzd877m6jc/export?fmt=json

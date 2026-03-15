@@ -1,31 +1,61 @@
 # Write a technical blog post about how I built a multi-agent AI system (GPO) usin
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mmrxni5i26k8`
 - **Engine**: general
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T15:52:12
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Write a technical blog post about how I built a multi-agent AI system (GPO) using Claude, OpenAI, Perplexity, and Gemini. Include architecture decisions, lessons learned, and practical tips. Target audience: senior engineers interested in AI orchestration. 1500-2000 words.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Write a detailed technical blog post about building a multi-agent AI system using Claude, OpenAI, Perplexity, and Gemini.
-- **Strategy**: Conduct web research to gather current information on multi-agent AI systems, focusing on architecture and implementation. Synthesize this information into a structured blog post, incorporating lessons learned and practical tips. Ensure the content is tailored to senior engineers with a focus on AI orchestration.
-- **Subtasks**: 2
+**Chief of Staff**: "Write a detailed technical blog post about building a multi-agent AI system using Claude, OpenAI, Perplexity, and Gemini."
 
-## 3. Subtask Execution
+**Strategy**: Conduct web research to gather current information on multi-agent AI systems, focusing on architecture and implementation. Synthesize this information into a structured blog post, incorporating lessons learned and practical tips. Ensure the content is tailored to senior engineers with a focus on AI orchestration.
 
-### Subtask 1: Research Multi-Agent AI Systems
-- Model: perplexity | Stage: audit | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Synthesize Research into Blog Post
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Multi-Agent AI Systems | perplexity | audit |
+| 2 | Synthesize Research into Blog Post | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Multi-Agent AI Systems [perplexity]
+
+**Status**: done | **Stage**: audit
+
+## Finding 1: Multi-Model Orchestration with Clarifai for Claude, GPT-5.2, Gemini 3.1 Pro
+Clarifai platform routes requests across **Gemini 3.1 Pro** (1M context for summarization), **GPT-5.2** (thinking mode for equation reasoning), and Claude models, reducing subscription clutter and enabling cost-controlled multi-agent pipelines. Example: User uploads 300-page PDF; Gemini extracts outline, GPT-5.2 solves math problems, human reviews outputs—reported to cut process time while respecting privacy. Architecture decision: Use decision tree for task scoring (e.g., agentic benchmarks: Gemini APEX-Agents 33.5%, MCP Atlas 69.2%); GPT-5.2 collapses multi-agents into "mega-agent" calling 20+ tools. Lesson: No single model fits all—multi-model orchestration best; tune reasoning tokens in GPT-5.2 for cost/quality.  
+**Source:** https://www.clarifai.com/blog/minimax-m2.5-vs-gpt-5.2-vs-claude-opus-4.6-vs-gemini-3.1-pro[1]
+
+## Finding 2: Anthropic's Claude Code for Multi-Agent Coding Teams
+**Claude Code** (preview with Opus 4.6/Sonnet 4.6, released alongside Opus 4.6) enables multiple Claude instances to collaborate in parallel on coding tasks, exchanging info for agentic workflows. Strengths: 1M-token context (Opus 4.6), constitutional safety reduces hallucinations; excels in judgment/code over multi-modal. Architecture: Massive context for entire codebases/regulatory docs; integrate via Slack bots. Lesson: Claude assembles safe agent teams; pair with MCP protocol (Anthropic Nov 2024 release, OpenAI adopted Mar 2025).  
+**Source:** https://intuitionlabs.ai/articles/claude-vs-chatgpt-vs-copilot-vs-gemini-enterprise-comparison[2]
+
+## Finding 3: Perplexity's Computer Agent with 19 Backend Models
+**Perplexity Computer** (Max tier, newest 2026 agent) decomposes high-level objectives into subtasks, delegates to optimal model among 19 backends (including Claude, OpenAI, Gemini variants) for multi-agent coordination. Architecture: Multi-model backend optimizes reasoning/speed/cost; **Deep Research** agent pulls multi-source data with citations. Lesson: Single interface hides orchestration; better for info discovery than deep reasoning—use Emergent platform to combine Perplexity with Claude/GPT/Gemini in unified workflows, avoiding single-tool limits. Implementation: Intelligent model selection per task (e.g., Claude for step-by-step analysis).  
+**Source:** https://emergent.sh/learn/perplexity-vs-claude[3]  
+**Source:** https://felloai.com/best-ai-agents/[4]
+
+## Finding 4: MCP Protocol as Universal Multi-Agent Standard Across Providers
+**Model Context Protocol (MCP)** (Anthropic Nov 2024; OpenAI Mar 2025; Google Apr 2025; Linux Foundation Dec 2025) standardizes agent-to-tool/business system connections—97M monthly SDK downloads, 5,800+ servers by 2026. Architecture: Multi-agent teams (e.g., lead qualification → technical assessment → proposal gen → contract proc); humans approve decisions, cutting cycle times 70-80%. Supports Claude, OpenAI, Gemini agents. Lesson: S
+
+*... truncated (4399 chars total)*
+
+### Step 2: Synthesize Research into Blog Post [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -57,17 +87,13 @@
 1. **Implement Clarifai for Multi-Model Orchestration**
    - **What to Do**: Set up Clarifai to manage and route tasks across Gemini 3.1 Pro, GPT-5.2, and Claude.
    - **Why**: To leverage the strengths of each model, reduce processing time, and maintain privacy.
-   - **Expected Outcome**: Improved efficiency and cost-effectiveness in handling complex tasks.
-   - **First Step**: Integrate Clarifai with your existing systems and configure routing rules based on task requirements.
+   - **Expected Outcome**: I
 
-2. **Adopt Claude Code for Coding Teams**
-   - **What to Do**: Deploy Claude Code for collaborative coding tasks, using its large context window.
-   - **Why**: To enhance code quality and reduce hallucinations in multi-agent coding environments.
-   - **Expected Outcome**: More efficient coding workflows and improved collaboration among team members.
-   - **First Step**: Set up Claude Code and integrate it with your team's communication tools like Slack.
+*... truncated (4153 chars total)*
 
-3. **Develop a Decision Tree for Task Scoring**
-   - **What to Do**: Create a decision tree to score tasks and select the best model based on agentic benchmarks.
-   - **Why**: To ensure optimal model selection for each task, improving performance and managing costs.
-   - **Expected Outcome**: More effective use of multi-agent systems with tailored model application.
-   - **First Step**: Analyze past task data to define scoring criteria and implement the decision tree in your orchestration system.
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mmrxni5i26k8/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mmrxni5i26k8/export?fmt=json

@@ -1,43 +1,66 @@
 # Create a character sheet for a tabletop RPG character: a data engineer who becam
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms0x3ajn5sa`
 - **Engine**: screenwriting
-- **Status**: done
-- **Created**: 2026-03-15T17:23:38
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms0x3ajn5sa/export?fmt=md) | [JSON](/api/intake/task/t_mms0x3ajn5sa/export?fmt=json)
+- **Created**: 2026-03-15T17:23:38
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a character sheet for a tabletop RPG character: a data engineer who became an adventurer. Include stats, backstory, personality traits, and special abilities tied to their tech background.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a detailed character sheet for a tabletop RPG character who is a data engineer turned adventurer.
-- **Strategy**: Research common character sheet formats and requirements for tabletop RPGs, focusing on integrating a tech background into special abilities. Then, synthesize this information into a cohesive character sheet that includes stats, backstory, and personality traits. Ensure the character's tech background is creatively tied to their abilities.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific RPG system or ruleset to use for stats; Preferred format or template for the character sheet; Level of detail required for the backstory and personality traits
+**Chief of Staff**: "Create a detailed character sheet for a tabletop RPG character who is a data engineer turned adventurer."
 
-## 3. Subtask Execution
+**Strategy**: Research common character sheet formats and requirements for tabletop RPGs, focusing on integrating a tech background into special abilities. Then, synthesize this information into a cohesive character sheet that includes stats, backstory, and personality traits. Ensure the character's tech background is creatively tied to their abilities.
 
-### Subtask 1: Research RPG character sheets
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: audit
-- **Status**: done
-- **Summary**: ## Common Formats and Elements of Tabletop RPG Character Sheets
+**Execution Plan**:
 
-### Subtask 2: Synthesize character sheet
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research RPG character sheets | perplexity | audit |
+| 2 | Synthesize character sheet | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research RPG character sheets [perplexity]
+
+**Status**: done | **Stage**: audit
+
+## Common Formats and Elements of Tabletop RPG Character Sheets
+
+Tabletop RPG character sheets typically include core sections like primary stats (e.g., Strength, Dexterity), secondary skills, saving throws, hit points, equipment, and special abilities, with formats varying from grid-based (D&D-style) to narrative-focused (PbtA games).[1][4] D&D 5e sheets feature dizzying arrays of feats, bonus actions, reactions, and passive perceptions, often resembling a "menu of superpowers," while OSR games minimize these for player-driven tool use.[1] Dungeon World sheets prioritize playbooks with bonds, moves (narrative skill checks), gear, and HP, lacking rigid initiative or separate combat math for freeform storytelling.[4]
+
+## Real Examples from Popular Systems
+
+- **Dungeons & Dragons (D&D) 5e**: Sheets track stats, skills, saving throws, features (e.g., spells like Fireball or Invisibility), and inventory; example pit trap scenario uses mundane tools like 10-foot pole, flour, twine, spikes, and mirror instead of abilities.[1]
+- **Dungeon World (Powered by the Apocalypse)**: Playbooks list moves (e.g., Hack and Slash for combat), stats (+2 to +3 modifiers), gear, bonds with other PCs, and HP; combat integrates into skill checks (2d6 + stat: 10+ full success, 7-9 partial/mixed, 6- failure advances fiction).[4]
+- **Old-School Renaissance (OSR) Games**: Barren sheets emphasize low stats and backpack tools (e.g., sack of flour for invisible foes, iron spikes for securing rooms) over powers, promoting "player skill" in lethal dungeons.[1]
+
+No results found for character sheet templates in the last 30 days; refined search terms like "D&D 5e character sheet PDF 2026" or "Dungeon World playbook template download" yielded no fresh hits.
+
+## Integrating Tech Backgrounds into Character Abilities
+
+Search results yielded no direct examples of tech backgrounds (e.g., cyberpunk hackers, AI engineers) integrated into tabletop RPG character sheets or abilities from the last 30 days. Closest indirect reference is Warhammer 40k tabletop minis (not RPG): Adeptus Mechanicus Tech-Priest Thulia (female named character, warfare specialist) with augments, servo-skulls, Omnissiah staff, and shoulder-mounted gun; Osqitari Heavy Infantry have bionic right arms with gyro-stabilized heavy weapons.[2] For RPG adaptation, map to sheets as feats/gear: e.g., in D&D, "Bionic Arm" as custom feat (+2 to ranged attacks, gyro-stabilization ignores recoil); in Dungeon World, tech move like "Augment Ally: Roll +Int to boost ally's weapon efficiency."
+
+**Concrete Next Steps**:
+- Download D&D 5e sheet from official site (search "D&D Beyond character sheet"); add tech via homebrew: "Neural Implant" feat (advantage on Intelligence saves, once/day hack enemy device as action).[1]
+- Grab Dungeon World playbooks (free PDF via publisher); customize Fighter playbook with tech gear like "Drone Scout" (reveals traps, uses 10-foot pole logic).[4]
+- Test integration: Build sample sheet in Google Sheets—col
+
+*... truncated (3125 chars total)*
+
+### Step 2: Synthesize character sheet [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -74,18 +97,13 @@
 
 2. **Develop Special Abilities**:
    - **What to Do**: Design abilities like "Data Insight" and "Algorithmic Thinking."
-   - **Why**: To reflect the character's unique background and provide gameplay advantages.
-   - **Expected Outcome**: Enhanced gameplay experience with unique problem-solving capabilities.
-   - **First Step**: Draft descriptions and mechanics for each ability.
+   - **Why**: To reflect the character's unique back
 
-3. **Craft the Backstory**:
-   - **What to Do**: Write a detailed backstory incorporating the character’s transition from data engineering to adventuring.
-   - **Why**: Provides motivation and depth, enhancing role-playing opportunities.
-   - **Expected Outcome**: A compelling narrative that engages both the player and the party.
-   - **First Step**: Outline key life events and motivations that led to the character's current path.
+*... truncated (4047 chars total)*
 
-4. **Select Equipment**:
-   - **What to Do**: Choose items that reflect a blend of tech and fantasy, like a "Tinker’s Kit."
-   - **Why**: To provide practical tools that align with the character's skills and background.
-   - **Expected Outcome**: A versatile inventory that supports creative problem-solving.
-   - **First Step**: List essential tools and magical items that fit the character’s theme.
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms0x3ajn5sa/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms0x3ajn5sa/export?fmt=json

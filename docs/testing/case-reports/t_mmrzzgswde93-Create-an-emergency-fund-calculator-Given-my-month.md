@@ -1,31 +1,62 @@
 # Create an emergency fund calculator. Given my monthly expenses of 4000 and curre
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mmrzzgswde93`
 - **Engine**: wealthresearch
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T16:57:29
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create an emergency fund calculator. Given my monthly expenses of 4000 and current savings of 8000, how many months of runway do I have? What is the target and how long to reach it at 1000/month savings rate?
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Calculate the emergency fund runway and target timeline based on current savings and monthly savings rate.
-- **Strategy**: First, calculate the current runway based on existing savings and monthly expenses. Then, determine the target emergency fund amount based on a standard guideline (e.g., 3-6 months of expenses). Finally, calculate the time needed to reach this target with the given monthly savings rate.
-- **Subtasks**: 2
+**Chief of Staff**: "Calculate the emergency fund runway and target timeline based on current savings and monthly savings rate."
 
-## 3. Subtask Execution
+**Strategy**: First, calculate the current runway based on existing savings and monthly expenses. Then, determine the target emergency fund amount based on a standard guideline (e.g., 3-6 months of expenses). Finally, calculate the time needed to reach this target with the given monthly savings rate.
 
-### Subtask 1: Research Standard Emergency Fund Guidelines
-- Model: perplexity | Stage: research | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Calculate Current Runway and Target Timeline
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Standard Emergency Fund Guidelines | perplexity | research |
+| 2 | Calculate Current Runway and Target Timeline | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Standard Emergency Fund Guidelines [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Standard Guideline
+The most widely recommended target for an emergency fund is **3-6 months** of essential living expenses, serving as a financial buffer for unexpected events like job loss or repairs.[1][4][5][6]
+
+## Key Recommendations from Sources
+- **3-6 months as baseline**: NerdWallet states "Three to six months' worth of your current living expenses is a good rule of thumb," applicable to general savers; start smaller like $500 if needed.[4] Source: https://www.nerdwallet.com/banking/learn/emergency-fund-calculator
+- **Tiered 1-6 months approach**: One Percent Club (2026) advises beyond basic 3-6 months: Tier 1 (1 month/20% ultra-liquid in savings), Tier 2 (2-3 months/40% in high-yield savings or liquid funds), Tier 3 (remainder in 8%+ FDs).[1] Source: https://www.onepercentclub.io/blog/personal-finance-rules/
+- **Veridian CU practical steps**: Save 3-6 months of essentials (housing, food, utilities); begin with $250-$500, use separate high-yield savings or laddered CDs (1 month liquid, rest short-term).[5] Source: https://www.veridiancu.org/news/advice/how-to-build-an-emergency-fund-a-practical-guide-to-financial-peace-of-mind
+- **Post-55 adjustment**: Miami Herald (2026) echoes 3-6 months in savings, tailored for those 55+ amid higher health risks.[6] Source: https://amp.miamiherald.com/living/article314952906.html
+
+## 2026-Specific Data and Stats
+- Bankrate 2026 Emergency Savings Report: 24% of ages 45-60 and 16% of ages 61-79 have zero emergency savings, highlighting gaps in adherence to 3-6 month standard.[7] Source: https://amp.sacbee.com/entertainment/living/article314951219.html
+- Marotta on Money (2026 waterfall): Use Roth IRA contributions (penalty-free withdrawals) or pension-linked ESA as emergency options after priorities; HSA limits $4,400 single/$8,750 family (+$1,000 catch-up at 55).[3] Source: https://marottaonmoney.com/account-funding-priorities-a-savings-waterfall-for-2026/
+
+## Next Steps
+1. Calculate essentials: List monthly housing/food/utilities/transport/insurance/debt; multiply by 3 (e.g., $4,000 x 3 = $12,000 target).[4][5]
+2. Open high-yield savings (e.g., 5% APY options noted).[4]
+3. Automate $10-50/week transfers to hit $500 in 10-50 weeks.[4]
+4. Track via app like 1% Club or Excel.[1]
+
+### Step 2: Calculate Current Runway and Target Timeline [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -75,3 +106,10 @@
    - **Why**: Maximizes interest earnings while maintaining liquidity for emergencies.
    - **Expected Outcome**: Increased returns on savings without sacrificing accessibility.
    - **First Step**: Research and compare high-yield savings accounts and short-term CD rates.
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mmrzzgswde93/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mmrzzgswde93/export?fmt=json

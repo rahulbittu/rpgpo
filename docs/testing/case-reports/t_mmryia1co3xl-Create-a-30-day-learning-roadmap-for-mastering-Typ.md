@@ -1,31 +1,82 @@
 # Create a 30-day learning roadmap for mastering TypeScript generics, advanced typ
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mmryia1co3xl`
 - **Engine**: general
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T16:16:08
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a 30-day learning roadmap for mastering TypeScript generics, advanced types, and type-level programming. I already know basic TypeScript. Include daily exercises with increasing difficulty.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Develop a 30-day learning roadmap for mastering TypeScript generics, advanced types, and type-level programming with daily exercises.
-- **Strategy**: Research current best practices and resources for learning TypeScript generics and advanced types. Synthesize this information into a structured 30-day learning plan with daily exercises of increasing difficulty. Ensure the plan is tailored to someone with a basic understanding of TypeScript.
-- **Subtasks**: 2
+**Chief of Staff**: "Develop a 30-day learning roadmap for mastering TypeScript generics, advanced types, and type-level programming with daily exercises."
 
-## 3. Subtask Execution
+**Strategy**: Research current best practices and resources for learning TypeScript generics and advanced types. Synthesize this information into a structured 30-day learning plan with daily exercises of increasing difficulty. Ensure the plan is tailored to someone with a basic understanding of TypeScript.
 
-### Subtask 1: Research TypeScript generics and advanced types learning resources
-- Model: perplexity | Stage: research | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Synthesize learning roadmap
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research TypeScript generics and advanced types learning resources | perplexity | research |
+| 2 | Synthesize learning roadmap | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research TypeScript generics and advanced types learning resources [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Finding 1: Mastering TypeScript Utility Types: Advanced Patterns in 2026
+Article by Rishik C, published 2026, covers **generics**, conditional types, mapped types, and template literal types with code examples.  
+- **Generics basics**: `function identity<T>(value: T): T` preserves type info (e.g., `identity("hello")` infers `string`); constraints like `extends { length: number }`; defaults like `interface ApiResponse<T = any>`.  
+- **Conditional types**: `type IsString<T> = T extends string ? true : false`.  
+- Real-world: API responses with `ApiResponse<User>`.  
+- Next steps: Combine for composable types; 5 key takeaways listed.  
+Source: https://rishikc.com/articles/typescript-utility-types-advanced-patterns/[1]
+
+## Finding 2: Mastering TypeScript Generics: From Basic Constraints to Advanced Utility Types
+Dev.to guide by midas126 (no exact date, recent 2026 context), advances from `Array<T>` to constraints, pitfalls, and best practices.  
+- **Key practices**: Avoid overusing generics; use descriptive names over `T/U`; leverage inference; document complex ones.  
+- **Next steps**: Refactor `any` to generics; study built-ins like `Partial<T>`, `Pick<T, K>`, `Omit<T, K>`; weekly challenge to refactor one function.  
+Source: https://dev.to/midas126/mastering-typescript-generics-from-basic-constraints-to-advanced-utility-types-4ak7[2]
+
+## Finding 3: TypeScript Tutorial on GeeksforGeeks
+Comprehensive tutorial (updated structure implies 2026 relevance), sections on **generics** (functions/classes/constraints/built-ins) and **advanced types** (conditional/mapped/template literal/recursive/utility).  
+- **Learning path**: Start fundamentals (type annotations/interfaces), then generics/union types, advanced like type guards/mapped types; build projects like task manager.  
+- Covers type-level: Recursive types, utility types.  
+Source: https://www.geeksforgeeks.org/typescript/typescript-tutorial/[3]
+
+## Finding 4: TypeScript Crash Course 2026: Everything You Need in 40 Mins (YouTube)
+Video by unnamed channel, 40-minute crash course uploaded ~2026, timestamps to **advanced generics** at 39:31.  
+- Covers: Setup (3:40), basics to interfaces/union/enums/classes (36:35), generics for reusable components/OOP.  
+- Resources: Official docs https://www.typescriptlang.org/.  
+- Action: Watch from 30:37 for unions/literals to generics wrap-up.  
+Source: https://www.youtube.com/watch?v=gOArPLICI0A[4]
+
+## Finding 5: TypeScript Advanced Functions & Type System (YouTube, Urdu/English)
+Tutorial video (~2026, mentions 2026 tracking), focuses on generics in functions, type assertions, narrowing for type-level programming.  
+- **Generics**: Reusable logic with real-world examples; function overloading.  
+- **Type-level**: `typeof`, `instanceof`, non-null `!`, narrowing; covers arrow/rest/optional params.  
+- Interview prep: Advanced typing post-video.  
+Source: https://www.youtube.com/watch?v=LbFuwztw7MA[5]
+
+**Concrete Next Steps**:  
+1. Read [1] for 2026 patterns (30 
+
+*... truncated (3436 chars total)*
+
+### Step 2: Synthesize learning roadmap [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -66,36 +117,13 @@
    - **Expected Outcome**: Improved type safety and code clarity.
    - **First Step**: Choose a simple function in your codebase that uses `any` and refactor it.
 
-### Week 2: Utility Types
-1. **Day 8-10**: Explore and implement `Partial<T>`, `Pick<T, K>`, and `Omit<T, K>`.
-   - **Expected Outcome**: Proficiency in using utility types for type manipulation.
-   - **First Step**: Refactor an interface using these utility types.
+### W
 
-2. **Day 11-12**: Apply utility types in a real-world scenario, such as API response handling.
-   - **Expected Outcome**: Practical understanding of utility types.
-   - **First Step**: Implement a type-safe API response handler using `Partial<T>`.
+*... truncated (5000 chars total)*
 
-3. **Day 13-14**: Weekly challenge to refactor one function using utility types.
-   - **Expected Outcome**: Reinforced learning through practice.
-   - **First Step**: Select a function from your project and refactor it using utility types.
+## Phase 4: Deliverable
 
-### Week 3: Conditional and Mapped Types
-1. **Day 15-17**: Study conditional types and implement examples like `IsString<T>`.
-   - **Expected Outcome**: Understanding of conditional types for dynamic type definitions.
-   - **First Step**: Implement a simple conditional type in your code.
-
-2. **Day 18-19**: Explore mapped types and create a reusable type definition.
-   - **Expected Outcome**: Ability to create dynamic and reusable types.
-   - **First Step**: Implement a mapped type that transforms an object type.
-
-3. **Day 20-21**: Apply conditional and mapped types in a small project.
-   - **Expected Outcome**: Practical application of advanced types.
-   - **First Step**: Choose a small project or module and refactor it using these types.
-
-### Week 4: Integration and Real-world Application
-1. **Day 22-24**: Integrate all learned concepts into a single project.
-   - **Expected Outcome**: Cohesive understanding and application of advanced TypeScript types.
-   - **First Step**: Start a new project or choose an existing one to integrate generics, utility, conditional, and mapped types.
-
-2. **Day 25-27**: Review and optimize code for type safety and clarity.
-   - **Expected Outcome**: Cleaner, more maintainable code with enhanced typ
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mmryia1co3xl/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mmryia1co3xl/export?fmt=json

@@ -1,31 +1,77 @@
 # Create a stretching routine for someone who sits 10+ hours a day. 15 minutes tot
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms0hs7ncgrx`
 - **Engine**: general
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T17:11:44
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a stretching routine for someone who sits 10+ hours a day. 15 minutes total. Include specific stretches for neck, shoulders, lower back, hips, and wrists. With rep counts and hold times.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a 15-minute stretching routine for individuals who sit for over 10 hours a day, focusing on neck, shoulders, lower back, hips, and wrists.
-- **Strategy**: Conduct research to identify effective stretching exercises for the neck, shoulders, lower back, hips, and wrists. Synthesize this information into a structured routine with clear instructions on reps and hold times. Ensure the routine is safe and suitable for individuals with a sedentary lifestyle.
-- **Subtasks**: 2
+**Chief of Staff**: "Create a 15-minute stretching routine for individuals who sit for over 10 hours a day, focusing on neck, shoulders, lower back, hips, and wrists."
 
-## 3. Subtask Execution
+**Strategy**: Conduct research to identify effective stretching exercises for the neck, shoulders, lower back, hips, and wrists. Synthesize this information into a structured routine with clear instructions on reps and hold times. Ensure the routine is safe and suitable for individuals with a sedentary lifestyle.
 
-### Subtask 1: Research effective stretches for sedentary individuals
-- Model: perplexity | Stage: research | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Synthesize stretching routine
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research effective stretches for sedentary individuals | perplexity | research |
+| 2 | Synthesize stretching routine | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research effective stretches for sedentary individuals [perplexity]
+
+**Status**: done | **Stage**: research
+
+# Effective Stretching Exercises for Desk Workers
+
+Individuals who sit for extended periods experience predictable muscular imbalances: tight hip flexors and chest muscles paired with weak, inactive glutes and upper back muscles[1]. Here are evidence-backed stretches targeting the key problem areas:
+
+## Neck Stretches
+
+**Neck tilts and rotations** are the foundational starting point. Sit upright and slowly tilt your head toward your left shoulder until you feel a gentle stretch along the right side of your neck, holding for **15-20 seconds**, then repeat on the other side[2]. Follow with slow neck rotations—turn your chin toward each shoulder, holding briefly at end range[2]. Perform these **every hour or two** to significantly reduce end-of-day neck stiffness[2].
+
+## Shoulder Stretches
+
+**Shoulder rolls** address the rounded-forward posture created by typing. Roll your shoulders up toward your ears, then back and down in slow circles—**five times backward, five times forward**[2]. For deeper relief, bring one arm across your chest, support it with your opposite hand, and hold for **15-20 seconds**[2].
+
+Research from the **University of Queensland** found that just **5 minutes of shoulder stretches three times daily reduced neck and shoulder pain by 45% over four weeks**[2].
+
+**Wall slides** are particularly effective for activating weak upper back muscles. Stand with your back against a wall and slide your arms up and down, keeping your elbows and wrists in contact with the wall[1].
+
+## Thoracic Spine and Upper Back
+
+**Cat-Cow stretches** directly counteract desk slouch by gently moving your mid-back through flexion and extension[1]. Move to all fours and alternate between arching your back (cow) and rounding it (cat), spending about **5 seconds in each position**[3]. Breathe in as you arch, out as you round[3]. This movement is supported by research as one of the most effective for reducing morning back stiffness[3].
+
+**Seated chest openers** counter rounded posture. Clasp your hands behind your back (or hold the sides of your chair) and gently lift your arms to open the chest[4].
+
+## Lower Back Stretches
+
+**Seated lower back stretch (forward fold)**: Sit near the edge of your chair with your feet flat on the floor. Slowly hinge forward at the hips, letting your arms hang toward the ground, and hold for **20-30 seconds**[4].
+
+**Seated spinal twist**: Sit upright and place your right hand on the back of your chair. Gently rotate your torso to the right, keeping your hips facing forward, and hold for a few moments, then repeat on the other side[4]. Perform **30 to 60 seconds** of seated core twists a few times daily to maintain spinal rotation[2].
+
+## Hip and Glute Stretches
+
+**Standing hip circles** lubricate the joint and open the hips[1]. **Walking lunges** focus on feeling a gentle stretch in the hip flexor of your back leg—perform **8-10 lunges per leg**, alternating sides[1]. Ensure your front knee tracks directly over your ankle and doesn'
+
+*... truncated (4354 chars total)*
+
+### Step 2: Synthesize stretching routine [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -69,12 +115,13 @@
    - **What to Do**: Perform hip flexor stretches, such as lunges or seated figure-four stretches.
    - **Why**: To counteract tight hip flexors from prolonged sitting.
    - **Expected Outcome**: Improved hip mobility and reduced discomfort.
-   - **First Step**: Identify a suitable hip stretch and practice it twice daily.
+   - **First Step**: Identify a suitable hip stretch 
 
-5. **Include Wrist Stretches**
-   - **What to Do**: Perform wrist flexor and extensor stretches.
-   - **Why**: To prevent repetitive strain injuries and improve wrist flexibility.
-   - **Expected Outcome**: Reduced wrist pain and increased range of motion.
-   - **First Step**: Find a wrist stretching guide and incorporate it into your routine.
+*... truncated (3549 chars total)*
 
-By following these recommendations, individuals who sit for extended periods can significantly improve their physical comfort and reduce the risk of musculoskeletal issues.
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms0hs7ncgrx/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms0hs7ncgrx/export?fmt=json

@@ -1,43 +1,71 @@
 # Write a data privacy impact assessment for a mobile app that collects location d
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms3m2yhu324`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T18:39:03
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms3m2yhu324/export?fmt=md) | [JSON](/api/intake/task/t_mms3m2yhu324/export?fmt=json)
+- **Created**: 2026-03-15T18:39:03
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Write a data privacy impact assessment for a mobile app that collects location data. Include risk matrix, mitigation strategies, and compliance requirements.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a comprehensive data privacy impact assessment for a mobile app collecting location data.
-- **Strategy**: Conduct research on data privacy laws and best practices for mobile apps collecting location data. Synthesize findings into a structured report with a risk matrix and mitigation strategies. Ensure compliance with relevant regulations.
-- **Risk**: yellow
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific compliance requirements for location data; Current best practices for data privacy in mobile apps; Potential risks associated with location data collection
+**Chief of Staff**: "Create a comprehensive data privacy impact assessment for a mobile app collecting location data."
 
-## 3. Subtask Execution
+**Strategy**: Conduct research on data privacy laws and best practices for mobile apps collecting location data. Synthesize findings into a structured report with a risk matrix and mitigation strategies. Ensure compliance with relevant regulations.
 
-### Subtask 1: Research Data Privacy Laws and Best Practices
+**Risk**: yellow | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: audit
-- **Status**: done
-- **Summary**: ## Key Data Privacy Laws for Mobile Apps Collecting Location Data (2026)
+**Execution Plan**:
 
-### Subtask 2: Synthesize Data Privacy Impact Assessment
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Data Privacy Laws and Best Practices | perplexity | audit |
+| 2 | Synthesize Data Privacy Impact Assessment | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Data Privacy Laws and Best Practices [perplexity]
+
+**Status**: done | **Stage**: audit
+
+## Key Data Privacy Laws for Mobile Apps Collecting Location Data (2026)
+
+Mobile apps collecting location data must comply with region-specific laws emphasizing consent, data minimization, localization, and restrictions on sharing, with enforcement actions like $200M FCC fines on carriers and FTC orders on GM highlighting risks.[3]
+
+### US Laws and Enforcement
+- **20 US states** enforce comprehensive privacy laws requiring data mapping, user consent for location collection, and restrictions on sales to third parties; apps on App Store/Google Play face multi-state exposure without geo-restrictions.[1]
+- **FCC Penalties (2024, under Supreme Court review 2026)**: $200 million fines on Verizon, AT&T, T-Mobile, Sprint for selling customer location data to aggregators without consent; case challenges FCC's in-house enforcement.[3]
+- **FTC Consent Order with GM/OnStar (finalized 2026)**: 5-year ban on sharing geolocation/driver data with reporting agencies; 20-year requirement for affirmative express consent before collection/use/sharing (exceptions for emergencies); mandates data access, deletion, opt-out, and disable precise location where feasible.[3]
+- **Montana Law (2025)**: First state to block government purchases of sensitive location data without warrants, closing data broker loopholes.[2]
+- **Federal Agency Issues**: DHS/CBP/ICE/USSS used commercial location data (from ad SDKs/RTB) without required Privacy Impact Assessments (PIAs) under E-Government Act of 2002; audit found non-compliance with privacy policies.[2][4]
+
+**Source**: https://www.blankrome.com/publications/br-privacy-security-download-february-2026[3]
+
+### EU and Global Laws
+- **GDPR (ongoing)**: Applies to apps handling EU residents' location data; requires explicit consent for processing, data minimization, breach notifications within 72 hours, and user rights (access/deletion/portability); TikTok fined €530 million for mishandling location data across EU/China rules.[1][5]
+- **EU AI Act (full implementation August 2026)**: Mandates compliance for location-based AI in apps, including risk assessments for high-risk processing.[1]
+- **China PIPL/Cybersecurity Law**: Mandatory data localization—location data on Chinese residents must store in China; non-compliance risks fines.[1]
+- **ePrivacy Directive**: Requires prior, explicit, specific consent for location tracking via cookies/SDKs in EU apps; easy withdrawal option mandatory.[5]
+
+**Source**: https://www.dogtownmedia.com/data-sovereignty-101-for-mobile-apps-navigating-the-2026-regulations-on-where-your-mobile-data-lives/[1]
+
+## Best Practices for Mobile Apps Collecting Location Data
+- **Obtain Granular Consent**: Limit to "while using app" or approximate location; review/revoke permissions regularly; essential for weather/navigation/dating/fitness apps using SDKs.[2]
+- **Data Minimization**: Collect only necessary location data (e.g., no precise tracking for flashlight apps); disable sharing with brokers/ad networks.[6]
+- **Dat
+
+*... truncated (4242 chars total)*
+
+### Step 2: Synthesize Data Privacy Impact Assessment [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -74,33 +102,13 @@
   
 - **Consent Management**: Develop a robust consent management system to obtain and document explicit user consent for location data collection, use, and sharing.
 
-- **Data Security Enhancements**: Use encryption and other security measures to protect location data from unauthorized access and breaches.
+- **Data Security Enhancements**: Use encry
 
-- **Regular PIAs**: Conduct regular Privacy Impact Assessments to identify and mitigate potential privacy risks associated with location data collection and use.
+*... truncated (4649 chars total)*
 
-## Recommended Actions
+## Phase 4: Deliverable
 
-1. **Implement Geo-Restrictions**
-   - **Why**: To comply with varying state laws and reduce legal exposure.
-   - **Expected Outcome**: Minimized risk of non-compliance fines.
-   - **First Step**: Develop and deploy geo-restriction capabilities within the app.
-
-2. **Enhance Consent Management**
-   - **Why**: To meet FTC requirements and build user trust.
-   - **Expected Outcome**: Compliance with consent laws and improved user transparency.
-   - **First Step**: Integrate a consent management platform that tracks user consent status.
-
-3. **Conduct Regular PIAs**
-   - **Why**: To identify and mitigate privacy risks proactively.
-   - **Expected Outcome**: Reduced risk of data misuse and regulatory penalties.
-   - **First Step**: Schedule and perform a comprehensive PIA with a focus on location data.
-
-4. **Strengthen Data Security Measures**
-   - **Why**: To protect sensitive location data from breaches.
-   - **Expected Outcome**: Enhanced data security and reduced risk of breaches.
-   - **First Step**: Implement encryption protocols and conduct security audits.
-
-5. **Monitor Legislative Changes**
-   - **Why**: To stay informed about new laws and regulations affecting data privacy.
-   - **Expected Outcome**: Proactive compliance and risk management.
-   - **First Step**: Assign a compliance officer to track and report on legislative developments.
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms3m2yhu324/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms3m2yhu324/export?fmt=json

@@ -1,43 +1,69 @@
 # Create a public speaking preparation plan for a first-time conference talk. Incl
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms2xuy6madh`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T18:20:13
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms2xuy6madh/export?fmt=md) | [JSON](/api/intake/task/t_mms2xuy6madh/export?fmt=json)
+- **Created**: 2026-03-15T18:20:13
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a public speaking preparation plan for a first-time conference talk. Include content development, slide design tips, practice schedule, and day-of checklist.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Develop a comprehensive preparation plan for a first-time conference speaker.
-- **Strategy**: Research best practices for public speaking preparation. Synthesize this information into a structured plan covering content creation, slide design, practice routines, and day-of strategies. Ensure the plan is actionable and easy to follow for a first-time speaker.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific conference details; Speaker's topic and audience; Speaker's current skill level
+**Chief of Staff**: "Develop a comprehensive preparation plan for a first-time conference speaker."
 
-## 3. Subtask Execution
+**Strategy**: Research best practices for public speaking preparation. Synthesize this information into a structured plan covering content creation, slide design, practice routines, and day-of strategies. Ensure the plan is actionable and easy to follow for a first-time speaker.
 
-### Subtask 1: Research Public Speaking Preparation
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: I need to conduct a web search for current, specific information about public speaking preparation for first-time conference speakers, as the provided
+**Execution Plan**:
 
-### Subtask 2: Synthesize Public Speaking Plan
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Public Speaking Preparation | perplexity | research |
+| 2 | Synthesize Public Speaking Plan | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Public Speaking Preparation [perplexity]
+
+**Status**: done | **Stage**: research
+
+I need to conduct a web search for current, specific information about public speaking preparation for first-time conference speakers, as the provided search results contain general guidance but lack the specific data, names, numbers, dates, and URLs you've requested.
+
+Let me search for this information now.
+
+Unfortunately, I don't have the ability to perform live web searches beyond the results already provided. The search results you've shared contain general public speaking frameworks but lack the specific, actionable data you're looking for.
+
+**What the current results provide:**
+- General 10-step frameworks from Kapable Club[1]
+- The NET approach (Notice, Explore, Transform) from Toastmasters International's March 2026 magazine[2]
+- Career-building strategies from Fearless Presentations[3]
+
+**What's missing for your needs:**
+- Specific conference names, dates, and speaker preparation timelines
+- Real speaker names and their preparation strategies
+- Concrete statistics on first-time speaker success rates
+- Specific conference submission deadlines or preparation costs
+- Real case studies with measurable outcomes
+
+**To get the specific information you need, I recommend:**
+1. Searching for "first-time conference speaker preparation 2026" on industry-specific platforms (LinkedIn, Medium, conference websites)
+2. Checking recent conference announcements (TED, industry-specific conferences) for speaker preparation guides with dates and requirements
+3. Looking at Toastmasters' current resources beyond the March 2026 article already cited
+4. Searching for "conference speaker training programs 2026" with pricing and enrollment data
+
+If you can provide more specific conference names, industries, or speaker types you're interested in, I can search for more targeted information with the concrete details you need.
+
+### Step 2: Synthesize Public Speaking Plan [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -79,12 +105,13 @@
 
 3. **Implement a Structured Practice Schedule**
    - **What to Do**: Follow a four-week practice plan with increasing intensity.
-   - **Why**: Consistent practice improves delivery, timing, and confidence.
-   - **Expected Outcome**: A polished and confident presentation.
-   - **First Step**: Schedule your first practice session and set goals for each week.
+   - **Why**: Consistent practice improves deli
 
-4. **Prepare a Day-of Checklist**
-   - **What to Do**: Create a checklist to ensure readiness on the day of the presentation.
-   - **Why**: A checklist helps manage logistics and reduce stress.
-   - **Expected Outcome**: Smooth execution and reduced pre-speech anxiety.
-   - **First Step**: List all technical and personal preparation tasks needed for the day.
+*... truncated (3544 chars total)*
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms2xuy6madh/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms2xuy6madh/export?fmt=json

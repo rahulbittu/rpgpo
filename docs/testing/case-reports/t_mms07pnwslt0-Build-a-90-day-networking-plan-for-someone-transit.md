@@ -1,34 +1,88 @@
 # Build a 90-day networking plan for someone transitioning from IC to engineering 
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms07pnwslt0`
 - **Engine**: careeregine
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T17:03:54
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Build a 90-day networking plan for someone transitioning from IC to engineering management. Include specific actions per week, communities to join, and conversation starters.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a detailed 90-day networking plan for transitioning from an individual contributor to an engineering management role.
-- **Strategy**: Research best practices and strategies for transitioning to engineering management. Identify relevant communities and networking opportunities. Develop a 90-day plan with specific weekly actions, including joining communities and conversation starters. Ensure the plan aligns with Rahul's career goals and the current job market trends.
-- **Subtasks**: 3
+**Chief of Staff**: "Create a detailed 90-day networking plan for transitioning from an individual contributor to an engineering management role."
 
-## 3. Subtask Execution
+**Strategy**: Research best practices and strategies for transitioning to engineering management. Identify relevant communities and networking opportunities. Develop a 90-day plan with specific weekly actions, including joining communities and conversation starters. Ensure the plan aligns with Rahul's career goals and the current job market trends.
 
-### Subtask 1: Research Best Practices for Transitioning to Engineering Management
-- Model: perplexity | Stage: research | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Identify Relevant Communities and Networking Opportunities
-- Model: perplexity | Stage: research | Status: done
+**Execution Plan**:
 
-### Subtask 3: Develop a 90-Day Networking Plan
-- Model: gemini | Stage: strategy | Status: done
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Best Practices for Transitioning to Engineering Management | perplexity | research |
+| 2 | Identify Relevant Communities and Networking Opportunities | perplexity | research |
+| 3 | Develop a 90-Day Networking Plan | gemini | strategy |
 
-## 4. Final Output
+## Phase 3: Execution
+
+### Step 1: Research Best Practices for Transitioning to Engineering Management [perplexity]
+
+**Status**: done | **Stage**: research
+
+No results found for "best practices for transitioning from an individual contributor to an engineering management role."
+
+## Search Summary
+- Searched queries including: "best practices IC to engineering manager transition 2026", "individual contributor to engineering leadership advice", "engineer to manager career transition guide recent", "data engineer to management role steps 2026".
+- All top results focused on unrelated topics: engineering change management[1], remote team practices[2], agentic AI workflows[3], quality engineering[4], cloud security[5].
+- No articles, guides, or data from 2026 (or last 30 days) matched the query with real names, numbers, dates, or examples of transitions.
+
+## Refined Search Suggestions
+- "Camille Fournier IC to manager" (her 2018 book "The Manager's Path" has timeless steps; check for 2026 updates).
+- "Will Larson engineering manager transition" (his blog/staffeng.com has specific ladders).
+- "Levels.fyi engineer to manager salary jump" for data engineering roles.
+- Site-specific: "site:charity.wtf IC to manager" or "site:engineeringmanagersjournal.com transition guide".
+
+### Step 2: Identify Relevant Communities and Networking Opportunities [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Finding 1: Washington IT Leadership Forum 2026
+- **Description**: 2nd Annual event for government and industry IT leaders focusing on leadership transitions, including "The Transition Survival Guide: Strategies for Changing Leadership" session by Tracye Cantrell (Interim CTO, City of Seattle IT) on maintaining continuity during leadership shifts, and sessions on building trust/morale through transitions and inclusive IT leadership teams. Includes networking breaks, lunch, and reception.
+- **Dates**: Not fully specified in listing, but 2026 event with sessions like 10:35 AM Pacific networking.
+- **Location**: Chambers Bay II-III and Union Meeting Room (Washington-focused).
+- **Relevance to engineering management transition**: Directly addresses leadership changes, proactive strategies for new leaders, and team motivation during transitions—applicable for IC-to-manager shifts in tech/IT.
+- **URL**: https://events.govtech.com/Washington-IT-Leadership-Forum[1]
+
+## Finding 2: ASSESS Simulation Leadership Summit 2026
+- **Description**: 3-day summit for engineering simulation leaders with roundtables (e.g., SIMULIA on AI, RESCALE focus group, Siemens on AI-driven simulation), industry perspectives, market analysis, and breakout discussions on real-world engineering challenges. Features networking lunch, welcome reception, and consensus-building on simulation's business impact.
+- **Dates**: 2026 in Atlanta, GA (exact dates not listed).
+- **Relevance to engineering management transition**: Targets "change-drivers" in engineering leadership, addressing gaps in simulation adoption/AI integration—useful for engineers moving to management roles overseeing tech strategy and teams.
+- **URL**: https://www.nafems.org/events/nafems/2026/assess-summit-2026/[2]
+
+## Finding 3: 2026 3DEXPERIENCE & ENOVIA User Conference
+- **Description**: Global user community event with sessions on organizational change management (e.g., "Organizational Change Management at Vermeer"), digital transformation by leaders like David Kepczynski (Ford Global Chief Digital Transformation) and Suresh Ammeneni (PLM Lead, Harbinger Motors), plus customer innovation panels.
+- **Dates**: March 11-12, 2026.
+- **Location**: Boston, Massachusetts, USA.
+- **Relevance to engineering management transition**: Focuses on engineering leadership in digital/product transformations, with real-world strategies from industry execs—ideal for data engineers transitioning to management in PLM/digital ops.
+- **URL**: https://myevents.3ds.com/2026-3dexperience-enovia-user-conference[3]
+
+## Finding 4: Dubai International Project Management Forum (DIPMF) 2026
+- **Description**: Global forum for PM professionals/government leaders on emerging practices, AI, sustainability, digital transformation, and leadership models. Features speakers like Patrik Schumacher (Zaha Hadid Architects) and Lenka Pinkot (PMI Chief of Staff); includes masterclasses and networking.
+- **Dates**: January 12-15, 2026.
+- **Location**: Madin
+
+*... truncated (4339 chars total)*
+
+### Step 3: Develop a 90-Day Networking Plan [gemini]
+
+**Status**: done | **Stage**: strategy
 
 ## Strategic Plan: 90-Day Networking for Engineering Management Transition
 
@@ -62,15 +116,13 @@ This plan is structured weekly, focusing on building momentum and progressively 
 **Overall Goal:** Secure 3-5 informational interviews with individuals who have successfully transitioned from IC to Engineering Management within the next 90 days.
 
 **Key Metrics:**
-*   Number of LinkedIn connection requests sent (Target: 100)
-*   Number of informational interviews scheduled (Target: 5)
-*   Number of active community engagements (Target: 15)
-*   Number of key insights documented (Target: 20)
+*   Number of LinkedIn c
 
----
+*... truncated (5000 chars total)*
 
-#### **Phase 1: Foundation & Initial Outreach (Weeks 1-4)**
+## Phase 4: Deliverable
 
-**Objective:** Identify key individuals and communities, initiate contact, and gather foundational knowledge.
-
-| Week | Actions                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+- **Status**: done
+- **Subtasks**: 3/3 completed
+- **Download MD**: /api/intake/task/t_mms07pnwslt0/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms07pnwslt0/export?fmt=json

@@ -1,43 +1,61 @@
 # Plan a productive sabbatical month. Balance learning new skills, health optimiza
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms2szpl7adu`
 - **Engine**: personalops
-- **Status**: done
-- **Created**: 2026-03-15T18:16:26
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms2szpl7adu/export?fmt=md) | [JSON](/api/intake/task/t_mms2szpl7adu/export?fmt=json)
+- **Created**: 2026-03-15T18:16:26
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Plan a productive sabbatical month. Balance learning new skills, health optimization, travel, and creative projects. Include weekly themes and daily structure.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Plan a structured and balanced sabbatical month for Rahul focusing on learning, health, travel, and creativity.
-- **Strategy**: Research current trends and recommendations for sabbatical planning, focusing on learning, health, travel, and creativity. Then synthesize this information into a detailed plan with weekly themes and daily structures. Ensure the plan aligns with Rahul's priorities and recent work in personalops.
-- **Risk**: yellow
-- **Subtasks planned**: 2
-- **Key unknowns**: Rahul's specific interests in new skills; Preferred travel destinations; Specific creative projects Rahul is interested in
+**Chief of Staff**: "Plan a structured and balanced sabbatical month for Rahul focusing on learning, health, travel, and creativity."
 
-## 3. Subtask Execution
+**Strategy**: Research current trends and recommendations for sabbatical planning, focusing on learning, health, travel, and creativity. Then synthesize this information into a detailed plan with weekly themes and daily structures. Ensure the plan aligns with Rahul's priorities and recent work in personalops.
 
-### Subtask 1: Research sabbatical planning strategies
+**Risk**: yellow | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: audit
-- **Status**: done
-- **Summary**: ## Finding 1: Clergy Sabbatical Plans at Saint Michael (2026)
+**Execution Plan**:
 
-### Subtask 2: Synthesize sabbatical plan
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research sabbatical planning strategies | perplexity | audit |
+| 2 | Synthesize sabbatical plan | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research sabbatical planning strategies [perplexity]
+
+**Status**: done | **Stage**: audit
+
+## Finding 1: Clergy Sabbatical Plans at Saint Michael (2026)
+Structured sabbaticals emphasize health, family, spiritual renewal, travel, and planning; Rev. Dr. Christopher Girata's summer 2026 sabbatical includes family time with choristers at St. Paul’s Cathedral in London, intentional physical/spiritual wellness, and a spiritual retreat in Mexico. Rev. Dr. Andrew Grosso's spring 2026 sabbatical focuses on pilgrimage research to Oxford (for 2027 trip) and writing projects. Policy requires 12-month advance outline of activities, personal/church benefits, staff coverage, and budgeting.
+- **Source:** https://saintmichael.org/investing-in-our-clergy-2026-sabbaticals-at-saint-michael/[1]
+
+## Finding 2: Founder Sabbatical Protocol from Romulus Strategy
+Phased preparation for sabbaticals: Phase 1 (Clarity) documents priorities/decision frameworks; Phase 2 (Elevation) delegates to leadership team with defined roles/communication. Post-sabbatical review assesses systems, leaders, and adjustments (e.g., permanent delegation, shift to strategy). No specific dates/numbers; emphasizes preparation over impulsive breaks for perspective and resilience.
+- **Source:** https://romulusstrategy.substack.com/p/the-case-for-founder-sabbaticals[2]
+
+## Finding 3: Mini-Sabbatical Trends and Funding Strategies
+Employees self-fund >50% of hiatuses (Harvard Business Review research); Sabbatical Project (founded by DJ DiDonna, Harvard) offers coaches/mentors. ExodUS Summit (co-founded by Stephanie Perry) virtual conference for Black women covers finances/safety/healthcare/rest. Perry uses housesitting (e.g., her Mexico/Bogota residencies) and YouTube sponsorships for low-cost travel sabbaticals.
+- **Source:** https://www.benefitscanada.com/news/bencan/mini-sabbaticals-adult-gap-years-more-employees-taking-extended-work-breaks/[3]
+
+## Finding 4: Gen Z Sabbatical Stats from HSBC Quality of Life Report 2025
+63% of Gen Z plan career breaks (prioritizing work-life balance via savings/freelance/geoarbitrage); 64% Gen Z/58% Millennials in India favor pauses; 85% of Indian respondents say 3-12 month breaks (every 6 years) enhance quality of life. Gen Z affords at age 27 vs. Millennials at 37 due to lower debt/dependents.
+- **Source:** https://www.news18.com/explainers/why-gen-z-can-go-on-sabbaticals-at-27-but-millennials-cant-even-at-37-explained-ws-ekl-9952118.html[4]
+
+No recent (post-Feb 2026) results found for sabbaticals explicitly combining skill-learning, health, travel, and creative projects; refined search terms like "2026 sabbatical planning skills health travel projects" yielded clergy/founder examples above.
+
+### Step 2: Synthesize sabbatical plan [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -75,14 +93,13 @@
    - **Expected Outcome**: A more focused and productive sabbatical.
    - **First Step**: Research and contact potential coaches or mentors through platforms like the Sabbatical Project.
 
-4. **Budget and Self-Funding Strategy**
-   - **What to Do**: Develop a budget plan for the sabbatical, considering potential self-funding and cost-saving measures.
-   - **Why**: Financial planning is crucial for a stress-free sabbatical.
-   - **Expected Outcome**: Financial security and peace of mind during the sabbatical.
-   - **First Step**: Assess current financial status and outline potential expenses and savings.
+4. **Budget and
 
-5. **Post-Sabbatical Review**
-   - **What to Do**: Plan a post-sabbatical review to assess outcomes and integrate learnings into daily life.
-   - **Why**: Ensures the sabbatical's benefits are sustained and applied long-term.
-   - **Expected Outcome**: Continued personal and professional growth post-sabbatical.
-   - **First Step**: Schedule a review meeting with key stakeholders and mentors.
+*... truncated (3802 chars total)*
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms2szpl7adu/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms2szpl7adu/export?fmt=json

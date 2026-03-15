@@ -1,43 +1,81 @@
 # Create a 5-minute pre-meeting energizer activity for remote engineering teams. M
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms3d80a7thw`
 - **Engine**: personalops
-- **Status**: done
-- **Created**: 2026-03-15T18:32:10
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms3d80a7thw/export?fmt=md) | [JSON](/api/intake/task/t_mms3d80a7thw/export?fmt=json)
+- **Created**: 2026-03-15T18:32:10
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a 5-minute pre-meeting energizer activity for remote engineering teams. Must work over video call and not feel cheesy.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create an engaging and non-cheesy pre-meeting energizer activity for remote engineering teams.
-- **Strategy**: Research current popular and effective energizer activities for remote teams. Synthesize findings into a specific activity proposal that fits the engineering team's context and preferences. Ensure the activity is concise, engaging, and easy to execute over a video call.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: What specific activities are currently popular and effective in remote settings?; What are the preferences and demographics of the engineering teams?; What tools or platforms are available for use during a video call?
+**Chief of Staff**: "Create an engaging and non-cheesy pre-meeting energizer activity for remote engineering teams."
 
-## 3. Subtask Execution
+**Strategy**: Research current popular and effective energizer activities for remote teams. Synthesize findings into a specific activity proposal that fits the engineering team's context and preferences. Ensure the activity is concise, engaging, and easy to execute over a video call.
 
-### Subtask 1: Research Remote Energizer Activities
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: audit
-- **Status**: done
-- **Summary**: ## Virtual Scavenger Hunt
+**Execution Plan**:
 
-### Subtask 2: Synthesize Activity Proposal
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Remote Energizer Activities | perplexity | audit |
+| 2 | Synthesize Activity Proposal | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Remote Energizer Activities [perplexity]
+
+**Status**: done | **Stage**: audit
+
+## Virtual Scavenger Hunt
+Remote teams race to find household items like "something blue" or "favorite mug" and show them on camera; first to return earns points. Duration: 5-10 minutes, works for any group size, reveals personal details to build energy.[2]
+
+**Source:** https://www.vantagecircle.com/en/blog/ice-breaker-games-for-work/
+
+## Emoji Status
+Participants drop an emoji in Slack/Teams/Zoom chat representing their mood or task, then explain in one sentence; proceeds in waterfall order. Duration: 2-3 minutes, ideal for remote teams of any size to quickly boost energy.[2]
+
+**Source:** https://www.vantagecircle.com/en/blog/ice-breaker-games-for-work/
+
+## Speed Networking Rounds
+Pair up for 2-3 minute talks on prompts like "most interesting project" or "skill to develop," then rotate; 6 rounds build 6 connections. Duration: under 20 minutes, suits larger remote/cross-departmental groups via video.[2][3]
+
+**Source:** https://www.vantagecircle.com/en/blog/ice-breaker-games-for-work/  
+**Source:** https://www.sweetsofties.com/2026/03/creative-team-bonding-picnic-ideas-for-your-next-company-event.html
+
+## Monday Motivation Huddle
+Start week with brief video call for wins, goals, group stretch, or brain teaser; pair as Accountability Buddies for midweek check-ins. Duration: short (5-10 minutes), adaptable for remote/hybrid to sustain energy.[1]
+
+**Source:** https://www.vantagefit.io/en/blog/summer-wellness-challenge-ideas/
+
+## Digital Sunset Tracker
+Log screen-free evening streaks, share activities in chat; weekly shout-outs for improved sleep/mood. Rewards: blue light glasses, tea samplers. Ongoing for async remote teams across time zones.[1]
+
+**Source:** https://www.vantagefit.io/en/blog/summer-wellness-challenge-ideas/
+
+## Liberation Run (Virtual)
+Synchronized neighborhood run/walk with photo/story shares in digital gallery. Rewards: medals, swag, raffles. Builds community for remote teams.[1]
+
+**Source:** https://www.vantagefit.io/en/blog/summer-wellness-challenge-ideas/
+
+## Follower Avoider Icebreaker
+Silently choose one to follow/one to avoid; move accordingly for 10 minutes to spark laughs and bonding. Free, works for new or known remote groups via video.[5]
+
+**Source:** https://symondsresearch.com/follower-avoider-game/
+
+**Next Steps:** Pick 1-2 activities matching team size/time zone; test in next meeting (e.g., Emoji Status for 2-3 min start). Track engagement via post-activity poll in Slack. No results found for engagement metrics or 2026-specific remote studies from last 30 days.
+
+### Step 2: Synthesize Activity Proposal [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -76,3 +114,10 @@
    - **First Step**: Select prompts for discussion and schedule the session during a team meeting.
 
 These activities are designed to be quick, engaging, and effective for remote engineering teams, helping to maintain high energy and strong team dynamics.
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms3d80a7thw/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms3d80a7thw/export?fmt=json

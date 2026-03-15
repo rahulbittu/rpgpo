@@ -1,43 +1,122 @@
 # Write a comprehensive onboarding email sequence for a new SaaS customer. 5 email
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms38ynheoci`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T18:28:51
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms38ynheoci/export?fmt=md) | [JSON](/api/intake/task/t_mms38ynheoci/export?fmt=json)
+- **Created**: 2026-03-15T18:28:51
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Write a comprehensive onboarding email sequence for a new SaaS customer. 5 emails over 14 days. Include subject lines, body copy, and CTAs. Friendly but professional tone.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a 5-email onboarding sequence for a new SaaS customer over 14 days.
-- **Strategy**: Research best practices for SaaS onboarding email sequences. Synthesize findings into a structured email sequence with subject lines, body copy, and CTAs. Ensure the tone is friendly but professional.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific SaaS product details; Target audience demographics; Key features or benefits to highlight
+**Chief of Staff**: "Create a 5-email onboarding sequence for a new SaaS customer over 14 days."
 
-## 3. Subtask Execution
+**Strategy**: Research best practices for SaaS onboarding email sequences. Synthesize findings into a structured email sequence with subject lines, body copy, and CTAs. Ensure the tone is friendly but professional.
 
-### Subtask 1: Research SaaS onboarding email best practices
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: audit
-- **Status**: done
-- **Summary**: ## Key Best Practices for SaaS Onboarding Email Sequences
+**Execution Plan**:
 
-### Subtask 2: Synthesize onboarding email sequence
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research SaaS onboarding email best practices | perplexity | audit |
+| 2 | Synthesize onboarding email sequence | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## 5-Email Onboarding Sequence for New SaaS Customers
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research SaaS onboarding email best practices [perplexity]
+
+**Status**: done | **Stage**: audit
+
+## Key Best Practices for SaaS Onboarding Email Sequences
+Effective SaaS onboarding uses **4–7 emails over 7–14 days**, with one goal per email, hybrid time-based (e.g., Day 0 welcome, Day 7 check-in) and behavioral triggers (e.g., inactivity after 48 hours) for **4.5x higher engagement** than time-based alone. Welcome emails hit **50–70% open rates** and **20–40% CTR**, dropping 3–5% per follow-up; personalize by role/industry and include social proof for uncertain users.[1][2][3]
+
+## Specific Subject Line Examples
+- **Semrush example**: "Quick 3-step setup to unlock your first SEO audit" – highlights value, immediacy, and simplicity to compel action.[1]
+- **Lowercase personal style** (e.g., Clay reactivation): "we shipped something big for you" – boosts opens by feeling human and casual.[6]
+
+## Body Copy and CTA Examples
+### 1. Welcome/Activation Email (Trello-inspired)
+**Structure**: Acknowledge signup, highlight one feature, single CTA.
+```
+Hi [Name],
+
+Welcome to Trello! Get started with your first board in 30 seconds.
+
+[One simple instruction: "Click here to create your first board"]
+
+Questions? Reply to this email.
+
+Best,
+[Your Name]
+```
+**CTA**: Single link to "Create your first board". Delivers one clear action for new users.[1][3]
+
+### 2. Stuck Helper/Next Step Email (Sequenzy template)
+**Structure**: Acknowledge progress, explain one next step, one link, help offer. Triggers on incomplete setup.
+```
+Hey [Name],
+
+Great job importing your first subscribers!
+
+Next: Connect your email provider to send your first campaign.
+
+[Button: "Connect Email Provider Now"]
+
+Stuck? Reply and we'll hop on a call.
+
+[Name]
+```
+**CTA**: "Connect Email Provider Now". Uses celebration + next step formula.[3]
+
+### 3. Social Proof/Success Story Email
+**Structure**: Share peer success for reassurance, tie to user's stage.
+```
+[Name],
+
+Marketers like you at [Industry] companies use [Product] to save 10 hours/week.
+
+See how [Customer] hit [Milestone]: [Link to case study]
+
+Ready for your win? [CTA]
+
+[Team]
+```
+**CTA**: "Start your [milestone] now". Leverages Cialdini's social proof for upgrade hesitation.[1]
+
+### 4. Re-engagement/Reactivation (Clay example)
+**Structure**: Trigger on inactivity, success story, incentive, roadmap.
+```
+we shipped something big for you
+
+[Name], last time you were building [project].
+
+We just added [new feature] – perfect for it.
+
+Plus, 15% off for 48 hours: [Discount code]
+
+See you in the dashboard,
+—Adam
+```
+**CTA**: "Login & claim discount". Includes urgency and human sign-off.[6]
+
+## Actionable Next Steps
+- **Today**: Map your activation milestone (e.g., first project created); write 3-email sequence: welcome (Day 0), stuck nudge (48 hours), celebration (post-milestone).[3]
+- **This week**: Test behavioral triggers in your ESP (e.g., HubSpot workflows for inactivity); aim for 3 signup questions (role, goal, size) to segment.[2][4]
+- **Measure**: Track open/CTR drop (target <5% per email), completion rates; iterate on top performers
+
+*... truncated (3371 chars total)*
+
+### Step 2: Synthesize onboarding email sequence [openai]
+
+**Status**: done | **Stage**: report
 
 ## 5-Email Onboarding Sequence for New SaaS Customers
 
@@ -143,11 +222,13 @@ Warm regards,
 2. **Personalize Emails**: Customize emails based on user data like role or industry.
    - **Why**: Personalization increases relevance and engagement.
    - **Expected Outcome**: Higher open and click-through rates.
-   - **First Step**: Segment your user list and tailor content accordingly.
+   - **First Step**: Segment your user list
 
-3. **Monitor Engagement Metrics**: Track open rates, CTR, and user feedback to refine the sequence.
-   - **Why**: Understanding user interaction helps optimize future communications.
-   - **Expected Outcome**: Enhanced onboarding experience and reduced churn.
-   - **First Step**: Set up analytics tracking in your email platform.
+*... truncated (3541 chars total)*
 
-By following this structured onboarding sequence, you can effectively engage new users, guide them through your SaaS features, and foster a strong relationship from the start.
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms38ynheoci/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms38ynheoci/export?fmt=json

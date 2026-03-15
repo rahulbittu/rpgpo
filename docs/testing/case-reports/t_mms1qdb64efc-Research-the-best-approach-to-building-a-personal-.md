@@ -1,50 +1,115 @@
 # Research the best approach to building a personal website as a data engineer. Co
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms1qdb64efc`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T17:46:24
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms1qdb64efc/export?fmt=md) | [JSON](/api/intake/task/t_mms1qdb64efc/export?fmt=json)
+- **Created**: 2026-03-15T17:46:24
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Research the best approach to building a personal website as a data engineer. Compare static site generators (Hugo, Next.js, Astro). Include hosting options and expected costs.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Research and compare static site generators and hosting options for building a personal website as a data engineer.
-- **Strategy**: First, conduct web research to gather current information on Hugo, Next.js, and Astro, focusing on their features, benefits, and use cases. Then, research hosting options and costs for each generator. Finally, synthesize the findings into a comparative analysis with recommendations.
-- **Risk**: green
-- **Subtasks planned**: 3
-- **Key unknowns**: Current features and benefits of Hugo, Next.js, and Astro; Hosting options suitable for these static site generators; Expected costs for using these tools and hosting services
+**Chief of Staff**: "Research and compare static site generators and hosting options for building a personal website as a data engineer."
 
-## 3. Subtask Execution
+**Strategy**: First, conduct web research to gather current information on Hugo, Next.js, and Astro, focusing on their features, benefits, and use cases. Then, research hosting options and costs for each generator. Finally, synthesize the findings into a comparative analysis with recommendations.
 
-### Subtask 1: Research Static Site Generators
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: ## Hugo as a Static Site Generator
+**Execution Plan**:
 
-### Subtask 2: Research Hosting Options and Costs
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Static Site Generators | perplexity | research |
+| 2 | Research Hosting Options and Costs | perplexity | research |
+| 3 | Synthesize Findings into Comparative Analysis | openai | report |
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: ## Hugo Hosting Options and Costs
+## Phase 3: Execution
 
-### Subtask 3: Synthesize Findings into Comparative Analysis
+### Step 1: Research Static Site Generators [perplexity]
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+**Status**: done | **Stage**: research
 
-## 4. Final Output
+## Hugo as a Static Site Generator
+
+Hugo is a popular SSG written in Go, emphasizing fast builds and superior performance for modern sites.[1] It supports over 300 themes, in-built templates, shortcodes, and multi-language development, but has a steep learning curve and lacks a plugin system.[1] In 2026 comparisons, Hugo ranks among top simple SSGs for speed and content management, compatible with Git-based headless CMS like Decap CMS, Sitepins, and Keystatic that write Markdown/YAML frontmatter.[4][6] It's frequently deployed on GitHub Pages, Vercel, Render, or Cloudflare Pages.[3]
+
+**Key Metrics and Use Cases (2026):**
+- Build time: Minutes for large sites (faster than dynamic sites).[1]
+- Pros: Excellent CMS capabilities, robust community support.[1]
+- Cons: Limited extensibility without plugins.[1]
+- Headless CMS fit: Strong for Hugo on Netlify via Decap CMS.[6]
+
+Source: https://www.esparkinfo.com/blog/top-jamstack-frameworks-to-choose[1]; https://www.jekyllpad.com/blog[4]; https://sitepins.com/blog/benefits-headless-cms[6]; https://dev.to/allenarduino/netlify-forms-is-getting-expensive-here-are-the-best-alternatives-in-2026-3a7k[3]
+
+## Next.js as a Static Site Generator
+
+Next.js supports Incremental Static Regeneration (ISR), image optimization, TypeScript, CSS, and omnichannel capabilities, making it highly flexible for customized experiences.[1] In 2026, it's listed in top JAMstack frameworks with quick turnaround, vast component libraries, and excellent community support; suitable for hybrid SSG+SSR sites.[1][4][5] It integrates with headless CMS like Sitepins and TinaCMS, and requires custom sitemap setup at build time to avoid staging URL errors.[5][6] Hosting favors Vercel for edge SSR and Git deploys.[7]
+
+**Key Metrics and Use Cases (2026):**
+- Features: Built-in ISR, default image optimization.[1]
+- Pros: Scalable, SEO-friendly via static exports.[1]
+- Headless CMS fit: TinaCMS for inline editing; Sitepins for static handoffs.[6]
+- Deployment: Vercel Edge for hybrid static/dynamic (300+ locations via Cloudflare alternatives).[7]
+
+Source: https://www.esparkinfo.com/blog/top-jamstack-frameworks-to-choose[1]; https://www.jekyllpad.com/blog[4]; https://rightblogger.com/blog/xml-sitemap-setup[5]; https://sitepins.com/blog/benefits-headless-cms[6]; https://crystallize.com/blog/ecommerce-frontend[7]
+
+## Astro as a Static Site Generator
+
+Astro is a static-first framework with partial hydration, minimizing client-side JavaScript for content-driven sites and top Lighthouse scores.[2] Ranked in 2026's top 12 simple SSGs, it's ideal for editorial, docs, and marketing with framework-agnostic components.[2][4] Supports Git-based CMS like TinaCMS (inline editing), Keystatic (schema-as-code), and Sitepins (non-technical editors); generates sitemaps at build time.[5][6] Deployable on GitHub Pages, Vercel, Cloudflare Pages.[3]
+
+**Key Metrics and Use Cases (2026):**
+- Performance: Strong Core Web Vitals, minimal JS by default.[2]
+- Pros: Excellent for 
+
+*... truncated (4365 chars total)*
+
+### Step 2: Research Hosting Options and Costs [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Hugo Hosting Options and Costs
+
+Hugo sites, being fully static, deploy easily to free or low-cost platforms with Git integration and global CDNs. Common hosts include Netlify, Vercel, Render, Cloudflare Pages, and GitHub Pages (free for public repos).
+
+- **Netlify**: Free tier for static sites up to 100GB bandwidth/month; Pro plan $19/month (300GB bandwidth, form submissions). Legacy free plan limited; new credit-based plans start free but scale to $19+/user/month for teams. Deploy via Git push.[5]
+- **Cloudflare Pages**: Free unlimited static sites, bandwidth, and builds; supports Hugo directly with zero monthly cost for serverless blogs. Pro $20/month adds advanced features like 10x builds.[3]
+- **Vercel**: Free hobby tier (100GB bandwidth/month); Pro $20/month per user for teams. Supports Hugo via static export, automated Git deploys.[2][4]
+- **Render**: Free static sites tier; paid instances from $7/month (Starter) for custom needs, predictable pricing vs. serverless. Git-based deploys.[2]
+- **GitHub Pages**: Free for public repos, 1GB storage, 100GB/month bandwidth; private repos require GitHub Pro ($4/month).[Prior Subtask]
+
+Source: https://dev.to/allenarduino/netlify-forms-is-getting-expensive-here-are-the-best-alternatives-in-2026-3a7k[5]; https://astro.build/blog/whats-new-february-2026/[3]; https://crystallize.com/blog/ecommerce-frontend[2]; https://www.deployhq.com/guides/v0[4]
+
+**Next Steps**: Test free tier on Cloudflare Pages (hugo build → git push); monitor bandwidth for $0 start. Scale to Netlify Pro if forms needed ($19/month).
+
+## Next.js Hosting Options and Costs
+
+Next.js supports static export, ISR/SSG+SSR, optimized for edge/serverless. Vercel is native; alternatives handle hybrid rendering.
+
+- **Vercel**: Free hobby (100GB bandwidth, 100 hours serverless/month); Pro $20/month per user (1TB bandwidth, advanced edge). First-class Next.js support, Git previews, multi-cloud edge. Usage-based beyond limits (e.g., $0.40/GB extra).[2][4]
+- **Render**: Free static tier; services from $7/month (512MB RAM instance). Supports Next.js SSR via long-running processes, Git deploys, no edge functions.[2]
+- **Netlify**: Free static/Functions (125k invocations/month); Pro $19/month. Partial Next.js support via Functions for dynamic parts.[5]
+- **DeployHQ to VPS/Shared**: Custom VPS (e.g., DigitalOcean $4/month droplet) + DeployHQ ($15/month starter). Cuts costs vs. Vercel for self-hosted Next.js (next build → SFTP/SSH).[4]
+
+Source: https://crystallize.com/blog/ecommerce-frontend[2]; https://www.deployhq.com/guides/v0 (updated March 5, 2026)[4]; https://dev.to/allenarduino/netlify-forms-is-getting-expensive-here-are-the-best-alternatives-in-2026-3a7k[5]
+
+**Next Steps**: Deploy to Vercel free tier (vercel --prod); track Function invocations. Migrate to Render $7/month if SSR-heavy and costs exceed $20.
+
+## Astro Hosting Options and Costs
+
+Astro excels in static/hybrid sites, partial hydration. Growing adoption (11.8% mobile sites Feb 2026). 
+
+*... truncated (4833 chars total)*
+
+### Step 3: Synthesize Findings into Comparative Analysis [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -89,12 +154,13 @@
    - **Expected Outcome**: Practical insights into hosting capabilities and performance.
    - **First Step**: Set up a Git repository and push a sample site to each platform.
 
-3. **Consider Long-term Costs and Scalability**: If expecting high traffic or complex needs, evaluate paid plans on Netlify or Vercel.
-   - **Why**: Ensures the site can handle increased demands without unexpected costs.
-   - **Expected Outcome**: Predictable budgeting and scalable infrastructure.
-   - **First Step**: Analyze current and projected traffic to decide on a suitable plan.
+3. **Consider Long-term Costs and Scalab
 
-4. **Explore Community and Support Resources**: Engage with communities or forums related to your chosen SSG for ongoing support and updates.
-   - **Why**: Staying informed about updates and best practices can optimize site performance and security.
-   - **Expected Outcome**: Access to troubleshooting help and new feature insights.
-   - **First Step**: Join relevant forums or subscribe to newsletters.
+*... truncated (3753 chars total)*
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 3/3 completed
+- **Download MD**: /api/intake/task/t_mms1qdb64efc/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms1qdb64efc/export?fmt=json

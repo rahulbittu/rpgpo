@@ -1,43 +1,65 @@
 # Explain the internals of how a search engine works. Cover crawling, indexing, ra
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms48n01acxo`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T18:56:35
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms48n01acxo/export?fmt=md) | [JSON](/api/intake/task/t_mms48n01acxo/export?fmt=json)
+- **Created**: 2026-03-15T18:56:35
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Explain the internals of how a search engine works. Cover crawling, indexing, ranking, and serving. Include modern ML-based ranking factors.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Explain the internal workings of a search engine, including crawling, indexing, ranking, and serving, with a focus on modern ML-based ranking factors.
-- **Strategy**: Conduct web research to gather current information on search engine internals and ML-based ranking factors. Synthesize this information into a clear, structured report that explains each component and process in detail.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific ML-based ranking factors used in modern search engines; Current trends or advancements in search engine technology
+**Chief of Staff**: "Explain the internal workings of a search engine, including crawling, indexing, ranking, and serving, with a focus on modern ML-based ranking factors."
 
-## 3. Subtask Execution
+**Strategy**: Conduct web research to gather current information on search engine internals and ML-based ranking factors. Synthesize this information into a clear, structured report that explains each component and process in detail.
 
-### Subtask 1: Research Search Engine Internals
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: ## Crawling
+**Execution Plan**:
 
-### Subtask 2: Synthesize Search Engine Explanation
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Search Engine Internals | perplexity | research |
+| 2 | Synthesize Search Engine Explanation | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Search Engine Internals [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Crawling
+Search engines discover and fetch web pages through automated bots called crawlers (e.g., Googlebot). Crawling starts from known URLs like sitemaps and follows links to new pages, prioritizing fresh content and high-authority sites. Technical factors enabling crawling include XML sitemaps, clean URL structures, logical site architecture, no broken internal links, proper canonical tags, and indexing clarity to ensure bots can access and interpret pages efficiently[3][6].
+
+## Indexing
+Once crawled, pages are analyzed and stored in a massive database called an index. Google processes structured data, entity clarity, and content depth for inclusion. In 2026, indexing emphasizes mobile-first design, HTTPS security, and Core Web Vitals (LCP, INP, CLS) for real user experience; poor metrics block effective indexing even for strong content. Mobile devices drive 63% of organic search visits per Statista data cited in 2026 guides[5][6].
+
+## Ranking
+Ranking orders indexed pages by relevance using hundreds of factors evaluated via machine learning algorithms. Key 2026 factors include:
+- **Content relevance and quality**: Direct answers to intent, structured headings, entity-rich language, depth, usefulness, originality, E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)[2][3][5].
+- **Authority signals**: High-quality backlinks from authoritative domains (relevance > quantity), internal linking, topical authority via clusters[2][5].
+- **User behavior and engagement**: Dwell time, click-through rate (CTR), mobile click-to-call, direction requests, scroll behavior, return visits; ML refines rankings based on interactions[1][5][6].
+- **Technical and trust**: Sub-second Core Web Vitals, page load under 3 seconds, mobile-friendliness[2][3][5].
+- **Local-specific**: Trusted Identity (consistent NAP across Google Business Profile, Apple Business Connect, Bing Places), review velocity/sentiment, GBP activity (posts, responses, media)[1][4].
+No single factor dominates; integration across relevance, authority, trust, and behavior is key, varying by query (e.g., local prioritizes proximity/reviews)[5].
+
+**Modern ML-based Ranking Factors**: Google's 2026 algorithms deploy AI/ML to assess user intent satisfaction, entity verification, behavioral signals, and AI extractability for zero-click SGE overviews. ML analyzes post-click engagement (e.g., time on page relative to depth) and AI visibility (citation in generative answers, attribution frequency). Brand search demand and topic clusters boost entity authority over isolated keywords[1][2][5][6].
+
+## Serving
+Serving delivers ranked results in SERPs, now AI-enhanced with overviews (SGE). Results prioritize zero-click extraction for "answer-ready" atomic units, behavioral trust (e.g., high mobile click-to-call, fresh geotagged photos), and conversions like bookings. Track map impressions, calls, and branded searches over positions; active GBP with CRM APIs enhances serving in local/AI queries[1]
+
+*... truncated (3477 chars total)*
+
+### Step 2: Synthesize Search Engine Explanation [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -84,22 +106,13 @@
    - **What to Do**: Ensure your site has a clear XML sitemap, clean URLs, and proper canonical tags.
    - **Why**: Facilitates efficient discovery and fetching of web pages by crawlers.
    - **Expected Outcome**: Improved crawlability and indexing of your site.
-   - **First Step**: Audit your site’s current sitemap and URL structure.
+   - **First Step**:
 
-2. **Enhance Indexing Readiness**:
-   - **What to Do**: Focus on mobile-first design, HTTPS security, and optimize Core Web Vitals.
-   - **Why**: These factors are critical for modern indexing and user experience.
-   - **Expected Outcome**: Better indexing performance and higher visibility in search results.
-   - **First Step**: Conduct a mobile usability and Core Web Vitals audit using tools like Google’s PageSpeed Insights.
+*... truncated (4271 chars total)*
 
-3. **Strengthen Content and Authority**:
-   - **What to Do**: Create high-quality, relevant content and build authoritative backlinks.
-   - **Why**: Content relevance and authority are key ranking factors.
-   - **Expected Outcome**: Higher rankings and increased organic traffic.
-   - **First Step**: Develop a content strategy focused on E-E-A-T and start a backlink outreach campaign.
+## Phase 4: Deliverable
 
-4. **Monitor User Engagement**:
-   - **What to Do**: Analyze user behavior metrics like click-through rates and dwell time.
-   - **Why**: User engagement signals influence search rankings.
-   - **Expected Outcome**: Enhanced understanding of user interaction leading to improved content strategies.
-   - **First Step**: Use tools like Google Analytics to track and analyze user engagement metrics.
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms48n01acxo/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms48n01acxo/export?fmt=json

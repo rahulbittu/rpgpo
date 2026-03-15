@@ -1,43 +1,74 @@
 # Teach me how to write effective system design documents. Include the structure, 
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms0x0y5cxzn`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T17:23:35
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms0x0y5cxzn/export?fmt=md) | [JSON](/api/intake/task/t_mms0x0y5cxzn/export?fmt=json)
+- **Created**: 2026-03-15T17:23:35
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Teach me how to write effective system design documents. Include the structure, what to include in each section, common mistakes, and a real example outline.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Teach Rahul how to write effective system design documents.
-- **Strategy**: Research best practices and structures for system design documents, including common mistakes. Synthesize this information into a clear, actionable guide with a real example outline. Ensure the content is concise and directly applicable to Rahul's needs.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Rahul's current level of familiarity with system design documents; Specific industry or context Rahul is focusing on for system design documents
+**Chief of Staff**: "Teach Rahul how to write effective system design documents."
 
-## 3. Subtask Execution
+**Strategy**: Research best practices and structures for system design documents, including common mistakes. Synthesize this information into a clear, actionable guide with a real example outline. Ensure the content is concise and directly applicable to Rahul's needs.
 
-### Subtask 1: Research System Design Document Best Practices
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: ## Best Practices for Writing System Design Documents
+**Execution Plan**:
 
-### Subtask 2: Synthesize System Design Document Guide
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research System Design Document Best Practices | perplexity | research |
+| 2 | Synthesize System Design Document Guide | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research System Design Document Best Practices [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Best Practices for Writing System Design Documents
+
+Use a clear, hierarchical structure with sections like **system architecture**, **modules/components**, **data flow diagrams (DFDs)**, **interface design**, **technology stack**, and **deployment architecture** to provide an overview of component relationships and interactions[3][5]. Organize into logical subpages or sections: **Foundations** (colors, typography, spacing), **Component Library** (with visuals, usage guidelines, states, code snippets), **Content & Voice** (tone, grammar, accessibility), and **Resources** (assets like icons)[1]. Include **artifacts** such as architecture diagrams, data flows, flowcharts, and performance trade-offs for scalability, security, and cost[5]. Employ consistent formatting like Markdown for headings, lists, code blocks, and scannable paragraphs to improve readability and navigation[4].
+
+**Concrete Next Steps:**
+- Start with a table of contents and sticky navigation for findability[4].
+- Add "Do’s and Don’ts" examples per component, e.g., "Don’t use primary button for destructive actions"[1].
+- Incorporate quick starts, interactive examples, and "next step" links like Stripe Docs[4].
+
+## Recommended Structures
+
+| Section | Key Elements | Example from Sources |
+|---------|--------------|----------------------|
+| **System Architecture** | Overview of components and relationships | E-commerce: user service, product service, order service, payment service[5]. |
+| **Modules/Components** | Breakdown by responsibility | Banking: account management, transaction processing; UI: atoms (colors), molecules (buttons), organisms (nav bars)[2][3][5]. |
+| **Data Flows & Interfaces** | DFDs, APIs, UI specs | Request/response formats, error codes; navigation menus, modals[3][5]. |
+| **Non-Functional** | Scalability, tech stack, deployment | Load balancing for video streaming; server configs, cloud infra[3][5]. |
+| **Foundations/Components** | Visuals, states, code | Buttons: default/hover/disabled states with React snippets; grid spacing in 8px increments[1][2]. |
+
+High-Level Design (HLD) documents focus on flows, flowcharts, and module logic; extend to Low-Level Design (LLD) for schemas and APIs[3][5]. Use layout templates for consistency, e.g., homepage, dashboard, mobile views[2].
+
+## Common Mistakes and How to Avoid Them
+
+- **Inconsistent or unmanaged structure**: Leads to duplicate data and misalignment; avoid by using source-controlled schemas with audits, unlike unmanaged variables[6].
+- **Poor readability**: Long, fragile docs (e.g., large DOC files) with random formatting; fix with Markdown, short paragraphs, stable menus, and search functionality[4].
+- **Missing details**: No states, usage guidelines, or trade-offs; include anatomy breakdowns, accessibility (A11y), and performance considerations explicitly[1][5].
+- **Overly complex without visuals**: Wall of text without previews or diagrams; add live examples, galleries, and DFDs[1][3].
+- **Lack of governance**
+
+*... truncated (3909 chars total)*
+
+### Step 2: Synthesize System Design Document Guide [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -79,30 +110,13 @@
 
 1. **Create a Comprehensive Table of Contents**:
    - **What**: Start with a detailed table of contents and sticky navigation.
-   - **Why**: Enhances findability and allows users to quickly locate specific sections.
-   - **Expected Outcome**: Improved user experience and efficiency in using the document.
-   - **First Step**: Draft the main sections and sub-sections based on the system's architecture and components.
+   - **Why**: Enhances find
 
-2. **Incorporate Visual Artifacts**:
-   - **What**: Include architecture diagrams, flowcharts, and DFDs.
-   - **Why**: Visuals help convey complex information more clearly and quickly.
-   - **Expected Outcome**: Better understanding of system design and data flows.
-   - **First Step**: Use tools like Lucidchart or Draw.io to create initial diagrams.
+*... truncated (4668 chars total)*
 
-3. **Use Consistent Formatting**:
-   - **What**: Apply consistent styles using Markdown or similar formatting tools.
-   - **Why**: Improves readability and helps maintain a professional appearance.
-   - **Expected Outcome**: Easier navigation and comprehension for readers.
-   - **First Step**: Establish a style guide for document formatting.
+## Phase 4: Deliverable
 
-4. **Add Interactive Elements**:
-   - **What**: Implement interactive examples and "next step" links.
-   - **Why**: Engages users and provides a guided learning experience.
-   - **Expected Outcome**: Increased user engagement and understanding.
-   - **First Step**: Identify key sections where interactivity would be beneficial and develop prototypes.
-
-5. **Regular Updates and Reviews**:
-   - **What**: Schedule regular reviews and updates to the document.
-   - **Why**: Keeps the document relevant and accurate as the system evolves.
-   - **Expected Outcome**: Maintained trust and reliability in the documentation.
-   - **First Step**: Set up a review calendar and assign responsibilities for updates.
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms0x0y5cxzn/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms0x0y5cxzn/export?fmt=json

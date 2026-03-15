@@ -1,28 +1,38 @@
 # Build a morning routine that takes exactly 60 minutes and includes exercise, pla
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mmrzgtndk835`
 - **Engine**: personalops
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T16:42:59
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Build a morning routine that takes exactly 60 minutes and includes exercise, planning, and learning. I wake at 6am and need to start work by 7:15am. Include specific timing for each block.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a detailed 60-minute morning routine for Rahul, including exercise, planning, and learning, starting at 6am.
-- **Strategy**: Develop a balanced 60-minute schedule that includes 20 minutes each for exercise, planning, and learning. Use insights from recent personalops tasks to align the routine with Rahul's productivity goals. Ensure the routine is realistic and achievable within the time constraints.
-- **Subtasks**: 1
+**Chief of Staff**: "Create a detailed 60-minute morning routine for Rahul, including exercise, planning, and learning, starting at 6am."
 
-## 3. Subtask Execution
+**Strategy**: Develop a balanced 60-minute schedule that includes 20 minutes each for exercise, planning, and learning. Use insights from recent personalops tasks to align the routine with Rahul's productivity goals. Ensure the routine is realistic and achievable within the time constraints.
 
-### Subtask 1: Design 60-Minute Morning Routine
-- Model: openai | Stage: report | Status: done
+**Risk**: green | **Code Task**: No
 
-## 4. Final Output
+**Execution Plan**:
+
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Design 60-Minute Morning Routine | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Design 60-Minute Morning Routine [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 1. **Exercise**: Rahul prefers a quick, effective workout to boost energy and focus.
@@ -55,3 +65,10 @@
    - **First Step**: Choose a specific topic or course on platforms like Coursera or listen to a podcast such as "The Tim Ferriss Show" for insights on entrepreneurship and investments.
 
 By following this routine, Rahul can effectively start his day with increased energy, a clear plan, and new knowledge, all of which align with his productivity goals and personal preferences.
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 1/1 completed
+- **Download MD**: /api/intake/task/t_mmrzgtndk835/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mmrzgtndk835/export?fmt=json

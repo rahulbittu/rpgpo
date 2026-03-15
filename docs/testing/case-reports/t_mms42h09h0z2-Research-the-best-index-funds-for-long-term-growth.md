@@ -1,43 +1,70 @@
 # Research the best index funds for long-term growth in 2026. Compare Vanguard, Fi
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms42h09h0z2`
 - **Engine**: wealthresearch
-- **Status**: done
-- **Created**: 2026-03-15T18:51:48
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms42h09h0z2/export?fmt=md) | [JSON](/api/intake/task/t_mms42h09h0z2/export?fmt=json)
+- **Created**: 2026-03-15T18:51:48
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Research the best index funds for long-term growth in 2026. Compare Vanguard, Fidelity, and Schwab total market funds. Include expense ratios and historical returns.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Research and compare the best index funds from Vanguard, Fidelity, and Schwab for long-term growth in 2026.
-- **Strategy**: First, conduct a web search to gather current data on Vanguard, Fidelity, and Schwab total market index funds, focusing on expense ratios and historical returns. Then, synthesize this data into a comprehensive report with actionable insights and recommendations for long-term growth.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Current and projected performance of Vanguard, Fidelity, and Schwab total market funds; Expense ratios and historical returns of these funds; Market conditions affecting these funds in 2026
+**Chief of Staff**: "Research and compare the best index funds from Vanguard, Fidelity, and Schwab for long-term growth in 2026."
 
-## 3. Subtask Execution
+**Strategy**: First, conduct a web search to gather current data on Vanguard, Fidelity, and Schwab total market index funds, focusing on expense ratios and historical returns. Then, synthesize this data into a comprehensive report with actionable insights and recommendations for long-term growth.
 
-### Subtask 1: Research Index Funds
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: ## Vanguard Total Market Index Funds
+**Execution Plan**:
 
-### Subtask 2: Synthesize Fund Comparison
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Index Funds | perplexity | research |
+| 2 | Synthesize Fund Comparison | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Index Funds [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Vanguard Total Market Index Funds
+
+**Vanguard Total Stock Market Index Fund (VTSAX mutual fund) and ETF (VTI)** track the CRSP US Total Market Index, covering nearly the entire U.S. stock market.[3]
+- **Expense ratio**: 0.04% for VTSAX (admiral shares); 0.03% for VTI ETF (as of March 2026).[3]
+- **Historical returns**: 5-year annualized return not directly listed; related Vanguard S&P 500 funds (VFIAX, VOO) show 13.6% as of Feb. 23, 2026 (Morningstar data).[2]
+- **Minimum investment**: VTSAX typically $3,000; VTI none (one share minimum).[2]
+- Source: https://www.nerdwallet.com/investing/learn/low-cost-index-funds[3]; https://www.bankrate.com/investing/best-s-p-500-index-funds/[2]
+
+## Fidelity Total Market Index Funds
+
+**Fidelity Total Market Index Fund (FSKAX)** tracks a broad U.S. total market index.[3]
+- **Expense ratio**: 0.015% (as of March 2026).[3]
+- **Historical returns**: 5-year annualized return not specified; related Fidelity 500 Index (FXAIX) shows 13.6% as of Feb. 23, 2026 (Morningstar).[2]
+- **Minimum investment**: None.[2] (for related funds)
+- Source: https://www.nerdwallet.com/investing/learn/low-cost-index-funds[3]; https://www.bankrate.com/investing/best-s-p-500-index-funds/[2]
+
+## Schwab Total Market Index Funds
+
+**Schwab Total Stock Market Index Fund (SWTSX)** tracks a total U.S. stock market index.[3]
+- **Expense ratio**: 0.03% (as of March 2026).[3]
+- **Historical returns**: 5-year annualized return not directly listed; related Schwab S&P 500 (SWPPX) shows 13.6% as of Feb. 23, 2026 (Morningstar).[2]
+- **Minimum investment**: None.[2]
+- Schwab proprietary index funds often under 0.03% expense ratios.[1]
+- Source: https://www.nerdwallet.com/investing/learn/low-cost-index-funds[3]; https://www.bankrate.com/investing/best-s-p-500-index-funds/[2]; https://www.benzinga.com/money/best-online-brokers-for-index-funds[1]
+
+No 2026 projections found in results; searches yielded S&P 500 data (not total market) and general low-cost rankings as of Feb/March 2026. For latest, check fund prospectuses directly. Next steps: Compare via Morningstar (e.g., search "VTSAX performance 2026") or broker sites for Q1 2026 updates.
+
+### Step 2: Synthesize Fund Comparison [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -85,7 +112,13 @@
 4. **Review Historical Performance Regularly**:
    - **What to Do**: Monitor the performance of selected funds against market benchmarks annually.
    - **Why**: Ensures alignment with investment goals and market conditions.
-   - **Expected Outcome**: Informed decision-making and potential rebalancing if necessary.
-   - **First Step**: Set a calendar reminder for an annual review of fund performance.
+   - **Expected Outcome**: Informe
 
-By focusing on these specific actions, you can optimize your investment strategy for long-term growth while minimizing costs.
+*... truncated (3271 chars total)*
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms42h09h0z2/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms42h09h0z2/export?fmt=json

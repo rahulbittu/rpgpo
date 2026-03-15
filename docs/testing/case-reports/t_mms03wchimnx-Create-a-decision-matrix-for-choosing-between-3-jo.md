@@ -1,31 +1,85 @@
 # Create a decision matrix for choosing between 3 job offers. Factors: salary, rem
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms03wchimnx`
 - **Engine**: careeregine
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T17:00:56
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a decision matrix for choosing between 3 job offers. Factors: salary, remote flexibility, team culture, growth opportunity, tech stack, and benefits. Show me how to weight and score them.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a decision matrix to evaluate three job offers based on specified factors.
-- **Strategy**: Research how to construct a decision matrix for job offers, including factor weighting techniques. Then, synthesize this into a structured report with a sample matrix template for Rahul's use. Finally, guide Rahul on how to apply his preferences to the matrix.
-- **Subtasks**: 2
+**Chief of Staff**: "Create a decision matrix to evaluate three job offers based on specified factors."
 
-## 3. Subtask Execution
+**Strategy**: Research how to construct a decision matrix for job offers, including factor weighting techniques. Then, synthesize this into a structured report with a sample matrix template for Rahul's use. Finally, guide Rahul on how to apply his preferences to the matrix.
 
-### Subtask 1: Research Decision Matrix Construction
-- Model: perplexity | Stage: research | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Synthesize Decision Matrix Guide
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Decision Matrix Construction | perplexity | research |
+| 2 | Synthesize Decision Matrix Guide | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Decision Matrix Construction [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Core Methodology for Job Offer Decision Matrices
+
+Decision matrices evaluate job offers by listing options (e.g., Job A, Job B), defining criteria (salary, remote flexibility, team culture, growth opportunity, tech stack, benefits), assigning weights to criteria based on personal priorities, scoring each job on a 1-10 scale per criterion, calculating weighted scores (score × weight), and selecting the highest total score.[1][4][6]
+
+## Step-by-Step Construction Techniques
+
+- **List Criteria:** Identify measurable factors like **salary** (base + bonus), **remote flexibility** (hours, policy), **team culture** (collaboration, leadership), **growth opportunity** (promotions, mentorship), **tech stack** (tools, modernity), and **benefits** (health, retirement, vacation).[1][4]
+- **Assign Weights:** Use a 1-5 scale or distribute 100 points total; e.g., **work-life balance/remote flexibility: 30**, **career growth: 25**, **compensation/salary: 20**, **company culture/team culture: 15**, **role/tech stack: 10**.[1][4]
+- **Score Options:** Rate each job 1-10 objectively per criterion; involve others to reduce bias.[1][3]
+- **Calculate Scores:** Multiply score by weight, sum per job; highest total wins, but review for gut checks.[1][2][4]
+- **Analyze:** Compare totals; adjust weights if needed for priorities like cost efficiency vs. support.[3][6]
+
+## Real Examples with Job-Relevant Factors
+
+### Career Job Offer Example (Distribute 100 Points)
+Criteria and sample weights for evaluating offers:
+- **Compensation and Benefits** (salary, bonus, insurance): 20 points
+- **Work-Life Balance** (remote flexibility, hours, vacation): 30 points
+- **Career Growth** (promotions, mentorship): 25 points
+- **Company Culture** (team collaboration, mission fit): 15 points
+- **The Role Itself** (tasks, tech stack challenge): 10 points
+
+Score each job 1-5 per criterion, multiply by weight fraction (e.g., 30/100=0.3), sum totals. If numbers conflict with intuition, reweight or reassess biases.[4]  
+**Source:** https://www.corbyfine.com/blog/career-decision-making-framework
+
+### Hiring Decision Matrix (Adaptable to Job Evaluation)
+Options: Hire new employee vs. Don't hire. Criteria with weights:
+| Criterion | Weight | Hire Score × Weight | Don't Hire Score × Weight |
+|-----------|--------|---------------------|---------------------------|
+| **Current workload** (like team culture/growth) | 3 | 5×3=15 | 0×3=0 |
+| **Meet deadlines** (like remote flexibility) | 2 | 5×2=10 | 3×2=6 |
+| **Payroll expenses** (like salary/benefits) | 5 | 0×5=0 | 5×5=25 |
+
+Total: Hire=25, Don't Hire=31 (payroll outweighed others).[2]  
+**Source:** https://www.businessnewsdaily.com/6146-decision-matrix.html
+
+### Software Vendor Example (Map to Tech Stack/Benefits)
+Criteria: Cost (**salary** analog), functionality (**tech stack**), support (**growth/culture**). Weight cost higher for efficiency; score 1-10, multiply, sum.[3]  
+**Source:** https://www.cognativ.com/blogs/post/decision-rights-matrix-templ
+
+*... truncated (3562 chars total)*
+
+### Step 2: Synthesize Decision Matrix Guide [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -65,33 +119,13 @@
    - **First Step:** Write down all potential criteria and rank them by importance.
 
 2. **Score Each Job Offer:**
-   - **Action:** Rate each job from 1-10 for each criterion.
-   - **Why:** Provides a structured way to evaluate each offer objectively.
-   - **Expected Outcome:** A detailed comparison of job offers based on personal priorities.
-   - **First Step:** Gather data on each job offer related to the defined criteria.
+   - **Action:** Rate 
 
-3. **Calculate and Compare Weighted Scores:**
-   - **Action:** Multiply scores by weights and sum for each job.
-   - **Why:** Identifies which job offer best meets your overall priorities.
-   - **Expected Outcome:** A ranked list of job offers based on calculated scores.
-   - **First Step:** Use a spreadsheet to automate calculations for accuracy.
+*... truncated (5000 chars total)*
 
-4. **Review and Adjust:**
-   - **Action:** Perform a gut check and adjust weights if necessary.
-   - **Why:** Ensures the decision aligns with both calculated data and personal intuition.
-   - **Expected Outcome:** Confidence in the decision-making process and the final choice.
-   - **First Step:** Reflect on the calculated scores and adjust if they do not feel right.
+## Phase 4: Deliverable
 
-### Sample Matrix Template
-
-| Criteria            | Weight | Job A Score | Job A Weighted | Job B Score | Job B Weighted |
-|---------------------|--------|-------------|----------------|-------------|----------------|
-| Salary              | 20     | 8           | 160            | 7           | 140            |
-| Remote Flexibility  | 30     | 9           | 270            | 8           | 240            |
-| Team Culture        | 15     | 7           | 105            | 9           | 135            |
-| Growth Opportunity  | 25     | 8           | 200            | 8           | 200            |
-| Tech Stack          | 10     | 6           | 60             | 9           | 90             |
-| Benefits            | 10     | 7           | 70             | 8           | 80             |
-| **Total Score**     |        |             | **865**        |             | **885**        |
-
-- **Instructions:** Adjust the weights and scores based on your personal evaluation and priorities. 
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms03wchimnx/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms03wchimnx/export?fmt=json

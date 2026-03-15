@@ -1,31 +1,83 @@
 # Research the exact steps to set up a data engineering portfolio on GitHub that d
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mmrykc2g6zk9`
 - **Engine**: careeregine
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T16:17:43
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Research the exact steps to set up a data engineering portfolio on GitHub that demonstrates real skills. Include project ideas, README templates, and what hiring managers actually look for.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Identify and outline the exact steps to create a data engineering portfolio on GitHub that effectively demonstrates real skills.
-- **Strategy**: First, conduct a web search to gather current information on data engineering portfolios, focusing on project ideas, README templates, and hiring manager preferences. Then, synthesize these findings into a structured guide. Finally, compile the report into a markdown file for reference.
-- **Subtasks**: 2
+**Chief of Staff**: "Identify and outline the exact steps to create a data engineering portfolio on GitHub that effectively demonstrates real skills."
 
-## 3. Subtask Execution
+**Strategy**: First, conduct a web search to gather current information on data engineering portfolios, focusing on project ideas, README templates, and hiring manager preferences. Then, synthesize these findings into a structured guide. Finally, compile the report into a markdown file for reference.
 
-### Subtask 1: Research Data Engineering Portfolios
-- Model: perplexity | Stage: research | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Synthesize Portfolio Setup Guide
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Data Engineering Portfolios | perplexity | research |
+| 2 | Synthesize Portfolio Setup Guide | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Data Engineering Portfolios [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Project Ideas for Data Engineering Portfolios
+
+- **Real estate Dagster pipeline**: Processes real estate data end-to-end; includes a blog on building it in 20 minutes. GitHub repo via ssp.sh projects list[1].
+- **Airbyte Monitoring with dbt and Metabase**: Monitors Airbyte connectors using dbt for transformations and Metabase for visualization. Direct GitHub code linked[1].
+- **Open Enterprise Data Platform**: Integrates dbt, Airflow, and Superset on Postgres for enterprise-grade pipelines. Focuses on unified open-source tooling[1].
+- **Airflow KubernetesPodOperator + dbt example**: Downloads 150 CSVs, loads to Postgres, runs dbt; runnable via Astro CLI for local/production testing[1].
+- **Kestra + dlt + Snowflake pipeline**: Builds enterprise pipelines with orchestration, data loading, secrets management, git sync, and AI integration[1].
+- **Cloud Cost Analyzer**: Multi-cloud cost tracking framework, extendable with dlt loader; includes companion blog[1].
+- **Spark/PySpark/Delta Lake/Unity Catalog workflows**: Real-world analytics pipelines for learning/portfolio; covers Spark, SQL on GitHub topic repos updated recently[3].
+
+**Next step**: Fork 2-3 repos (e.g., Airbyte Monitoring, Dagster real estate), customize with your data source, deploy to free tier (Dagster Cloud free tier supports 1 deployment), commit changes by March 20, 2026.
+
+Source: https://www.ssp.sh/brain/open-source-data-engineering-projects/[1]; https://github.com/topics/data-engineering-project?o=asc&s=updated[3]
+
+## README Best Practices from Hiring Managers
+
+Hiring managers prioritize repos showing **full workflow** (raw data to clean results) and **clear documentation**. A README must explain: what you did, data sources, findings. Undocumented repos signal poor communication—many skip interviews without it. Aim for 3-5 projects demonstrating tool range (e.g., Python/SQL + orchestration)[2].
+
+**Template structure** (adapt from Dataquest guidelines):
+- Project title and 1-sentence overview.
+- Tools/tech stack (e.g., Dagster, dbt, Postgres).
+- Data source + business problem.
+- Step-by-step workflow (code snippets, diagrams).
+- Results/insights (metrics, visuals).
+- Challenges solved + improvements.
+- Run instructions (docker-compose up).
+
+**Next step**: Clone a project like Airflow dbt example, add README.md with above sections, include Jupyter notebook for EDA; push to public repo named "rahul-de-portfolio-1" today.
+
+Source: https://www.dataquest.io/blog/data-analyst-projects-for-beginners/[2]
+
+## What Hiring Managers Look For (Specifics)
+
+- **End-to-end pipelines**: Raw ingestion to production-ready output (e.g., Dagster assets used by Dagster team at high-growth startups)[1].
+- **Real tools in context**: Airflow Kubernetes ops, dbt transforms, Airbyte EL, not isolated scripts[1][3].
+- **Business impact**: EDA answering questions (e.g., app profitability analysis: 4-6 hours Python project on App Store data)[2].
+- **Documentation quality**: README > code alone; recruiters ch
+
+*... truncated (3780 chars total)*
+
+### Step 2: Synthesize Portfolio Setup Guide [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -57,28 +109,13 @@
    - **What to do**: Fork and customize 2-3 projects from the list, such as the Airbyte Monitoring and Dagster real estate pipeline.
    - **Why**: Customization with your data sources demonstrates your ability to adapt and personalize solutions.
    - **Expected Outcome**: A personalized portfolio that reflects your technical skills and problem-solving abilities.
-   - **First Step**: Fork the repositories and start by integrating your data sources.
+   - **First Step**: Fork the repositories and start by int
 
-2. **Deploy Projects**:
-   - **What to do**: Deploy at least one project on a cloud platform like Dagster Cloud.
-   - **Why**: Demonstrates your ability to implement and manage projects in a real-world environment.
-   - **Expected Outcome**: A live demonstration of your skills that can be shared with potential employers.
-   - **First Step**: Set up an account on Dagster Cloud and follow deployment instructions for the chosen project.
+*... truncated (4734 chars total)*
 
-3. **Enhance Documentation**:
-   - **What to do**: Create comprehensive README files for each project.
-   - **Why**: Clear documentation is crucial for understanding and showcases your communication skills.
-   - **Expected Outcome**: Improved readability and professionalism of your portfolio.
-   - **First Step**: Draft a README template that includes sections like project overview, setup instructions, and key learnings.
+## Phase 4: Deliverable
 
-4. **Engage with the Community**:
-   - **What to do**: Share your projects and insights on platforms like LinkedIn or data engineering forums.
-   - **Why**: Increases visibility and demonstrates engagement with the data engineering community.
-   - **Expected Outcome**: Enhanced professional network and potential job opportunities.
-   - **First Step**: Write a post summarizing your project experience and share it on LinkedIn.
-
-5. **Iterate and Update**:
-   - **What to do**: Regularly update your projects with new features or optimizations.
-   - **Why**: Shows continuous learning and improvement, which is attractive to employers.
-   - **Expected Outcome**: A dynamic and up-to-date portfolio that reflects current skills and knowledge.
-   - **First Step**: Schedule regular intervals (e.g., monthly) to review and update your projects.
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mmrykc2g6zk9/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mmrykc2g6zk9/export?fmt=json

@@ -1,43 +1,68 @@
 # Design a personal knowledge graph connecting my skills, interests, projects, and
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms3907uqnpj`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T18:28:53
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms3907uqnpj/export?fmt=md) | [JSON](/api/intake/task/t_mms3907uqnpj/export?fmt=json)
+- **Created**: 2026-03-15T18:28:53
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Design a personal knowledge graph connecting my skills, interests, projects, and career goals. Show how to identify gaps and opportunities from the connections.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Design a personal knowledge graph to map skills, interests, projects, and career goals to identify gaps and opportunities.
-- **Strategy**: Conduct research on best practices for creating personal knowledge graphs and tools available. Use this information to design a framework for Rahul's knowledge graph. Identify gaps and opportunities by analyzing connections within the graph.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Rahul's specific skills, interests, projects, and career goals; Preferred tools or platforms for creating knowledge graphs; Criteria for identifying gaps and opportunities
+**Chief of Staff**: "Design a personal knowledge graph to map skills, interests, projects, and career goals to identify gaps and opportunities."
 
-## 3. Subtask Execution
+**Strategy**: Conduct research on best practices for creating personal knowledge graphs and tools available. Use this information to design a framework for Rahul's knowledge graph. Identify gaps and opportunities by analyzing connections within the graph.
 
-### Subtask 1: Research Best Practices for Knowledge Graphs
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: ## Finding 1: GraphRAG by Microsoft for Knowledge Graph Construction
+**Execution Plan**:
 
-### Subtask 2: Synthesize Knowledge Graph Strategy
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Best Practices for Knowledge Graphs | perplexity | research |
+| 2 | Synthesize Knowledge Graph Strategy | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Best Practices for Knowledge Graphs [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Finding 1: GraphRAG by Microsoft for Knowledge Graph Construction
+GraphRAG combines knowledge graphs with retrieval-augmented generation (RAG) to connect entities like skills, projects, and relationships with 3x better accuracy than baseline RAG; process includes entity/relationship extraction from documents, community detection, and LLM-generated summaries stored for queries.  
+Supports personal use by mapping project history, collaboration patterns, and expertise; in a 2024 case study, it enabled multi-hop reasoning to identify subject matter experts via verified connections, reducing search time for internal resources.  
+**Implementation steps**: Extract entities/relationships → Build graph → Detect communities → Generate summaries (upfront cost offsets query efficiency).  
+**Costs**: 3-5x higher than baseline RAG due to extraction; use for multi-hop questions connecting skills/projects/goals.  
+Source: https://www.articsledge.com/post/graphrag-retrieval-augmented-generation (published 2024-07-02)
+
+## Finding 2: Memgraph Database in GraphRAG for Personal/Career Graphs
+Memgraph graph database powers real-time knowledge graphs connecting medical/social data (adaptable to skills/interests/projects); Precina Health case (2024) mapped **1.6 million relationships** for diabetes management, uncovering hidden connections via multi-hop queries.  
+Another 2024 case used it for internal expert matching: connected project histories and roles for faster onboarding and mobility matching based on verified experience.  
+**Security for personal graphs**: Differential privacy on structures, relationship anonymization, query-level access control.  
+**Next steps**: Integrate with GraphRAG pipeline; start with Memgraph Community Edition for prototyping skills-projects-career nodes.  
+Source: https://www.articsledge.com/post/graphrag-retrieval-augmented-generation (Memgraph Case Studies, 2024)
+
+## Finding 3: Enterprise RAG Guide Recommending GraphRAG for Relationship Mapping
+GraphRAG structures relationships between entities (e.g., skills to projects to goals) via Documents → Entity/Relationship Extraction → Knowledge Graph → Community Detection → Graph Traversal + Vector Search.  
+**Best for**: Cross-document reasoning (e.g., "How do my projects relate to career goals?"), global summarization across personal notes.  
+**Tradeoffs**: Extraction costs 3–5× more than vector RAG; layer on fine-tuned LLM for domain tone. By 2027, 60% of RAG deployments include evaluation; update knowledge base for freshness without retraining.  
+**Next steps**: Phase 5 - Scale incrementally, add user feedback loops, monitor embedding drift.  
+Source: https://www.synvestable.com/enterprise-rag.html (2026 guide)
+
+No additional specific tools or best practices for **personal** knowledge graphs (e.g., Obsidian plugins, Logseq, Tana for skills-interests-projects-career) found in results matching 2026 timeframe; results focus on enterprise GraphRAG. Refine search to "personal knowledge gra
+
+*... truncated (3094 chars total)*
+
+### Step 2: Synthesize Knowledge Graph Strategy [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -71,14 +96,13 @@
 
 2. **Utilize Memgraph for Real-Time Data Processing**:
    - **What to Do**: Integrate Memgraph to handle the real-time aspect of your knowledge graph, ensuring it remains up-to-date with your evolving career data.
-   - **Why**: Real-time updates allow for immediate reflection of changes in your professional landscape, such as new skills or projects.
-   - **Expected Outcome**: Enhanced capability to quickly identify new opportunities and connections as they arise.
-   - **First Step**: Set up Memgraph and connect it to your existing data sources to start mapping relationships.
+   - **Why**: Real-time updates allow for immediate reflection of changes in your profess
 
-3. **Conduct Regular Community Detection and Analysis**:
-   - **What to Do**: Regularly perform community detection within your knowledge graph to identify emerging patterns and collaboration opportunities.
-   - **Why**: Understanding community dynamics can reveal new opportunities for collaboration and skill development.
-   - **Expected Outcome**: Improved strategic planning for career growth through insights into collaboration patterns and expertise areas.
-   - **First Step**: Schedule quarterly reviews of your knowledge graph to analyze community structures and adjust strategies accordingly.
+*... truncated (4098 chars total)*
 
-By leveraging these tools and methods, you can create a robust personal knowledge graph that not only maps your current professional landscape but also highlights gaps and opportunities for growth and collaboration.
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms3907uqnpj/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms3907uqnpj/export?fmt=json

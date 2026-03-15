@@ -1,43 +1,68 @@
 # Create a pre-interview preparation ritual. Include day-before, morning-of, and r
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms3wb1x3v2i`
 - **Engine**: careeregine
-- **Status**: done
-- **Created**: 2026-03-15T18:47:00
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms3wb1x3v2i/export?fmt=md) | [JSON](/api/intake/task/t_mms3wb1x3v2i/export?fmt=json)
+- **Created**: 2026-03-15T18:47:00
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a pre-interview preparation ritual. Include day-before, morning-of, and right-before-the-call steps. For virtual technical interviews.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Develop a structured pre-interview preparation ritual for virtual technical interviews.
-- **Strategy**: Conduct research to identify effective pre-interview rituals and best practices for virtual technical interviews. Synthesize this information into a structured ritual that includes day-before, morning-of, and right-before-the-call steps. Ensure the ritual is tailored to data engineering roles.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific techniques or rituals that are most effective for virtual technical interviews; Current best practices for interview preparation in the data engineering field
+**Chief of Staff**: "Develop a structured pre-interview preparation ritual for virtual technical interviews."
 
-## 3. Subtask Execution
+**Strategy**: Conduct research to identify effective pre-interview rituals and best practices for virtual technical interviews. Synthesize this information into a structured ritual that includes day-before, morning-of, and right-before-the-call steps. Ensure the ritual is tailored to data engineering roles.
 
-### Subtask 1: Research Pre-Interview Rituals
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: I need to be direct with you: **the search results provided do not contain information about pre-interview rituals for virtual technical interviews**.
+**Execution Plan**:
 
-### Subtask 2: Synthesize Interview Ritual
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Pre-Interview Rituals | perplexity | research |
+| 2 | Synthesize Interview Ritual | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Pre-Interview Rituals [perplexity]
+
+**Status**: done | **Stage**: research
+
+I need to be direct with you: **the search results provided do not contain information about pre-interview rituals for virtual technical interviews**. The results focus on interview question preparation, course offerings, and system design strategies—not pre-interview routines or rituals.
+
+To properly answer your query with the specificity you've requested (real names, numbers, dates, URLs), I would need to conduct a fresh web search targeting:
+
+- Pre-interview preparation routines for technical interviews
+- Virtual interview best practices and rituals
+- Data engineer-specific interview day strategies
+- Research on interview performance optimization techniques
+
+**What I can tell you from the current results:**
+
+The search results do emphasize preparation strategies for 2026 data engineering interviews[1][2][3], including:
+- Practicing verbal articulation without whiteboards (particularly relevant for virtual formats)[5]
+- Building requirements-gathering habits before proposing solutions[5]
+- Thinking through operational edge cases and system failures[5]
+
+However, these are preparation strategies rather than pre-interview rituals (like morning routines, breathing exercises, or mental preparation techniques).
+
+**Would you like me to:**
+1. Conduct a new web search specifically for "pre-interview rituals virtual technical interviews" or similar terms?
+2. Search for data engineer-specific interview day preparation routines?
+3. Look for research on interview performance optimization and mental preparation?
+
+I want to deliver the specific, cited, actionable information you've requested rather than speculate without sources.
+
+### Step 2: Synthesize Interview Ritual [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -85,13 +110,13 @@
    - **First Step**: Plan a 15-minute walk or yoga session.
 
 4. **Perform Technical Warm-Up**:
-   - **What to Do**: Solve a quick problem or review a concept right before the call.
-   - **Why**: Activates technical thinking and readiness.
-   - **Expected Outcome**: Better performance on technical questions.
-   - **First Step**: Select a coding problem or concept to review.
+   - **What to Do**: Solve a quick prob
 
-5. **Practice Breathing Exercises**:
-   - **What to Do**: Use deep breathing techniques before the interview.
-   - **Why**: Calms nerves and improves focus.
-   - **Expected Outcome**: Increased composure and confidence.
-   - **First Step**: Learn a simple breathing exercise, like the 4-7-8 technique.
+*... truncated (3544 chars total)*
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms3wb1x3v2i/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms3wb1x3v2i/export?fmt=json

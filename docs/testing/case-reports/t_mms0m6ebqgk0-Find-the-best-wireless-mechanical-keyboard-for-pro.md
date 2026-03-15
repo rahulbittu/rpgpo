@@ -1,31 +1,76 @@
 # Find the best wireless mechanical keyboard for programming under 150 dollars. Mu
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms0m6ebqgk0`
 - **Engine**: general
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T17:15:09
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Find the best wireless mechanical keyboard for programming under 150 dollars. Must have hot-swappable switches, low latency, and Mac compatibility. Compare 3 options.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Identify the best wireless mechanical keyboard for programming under $150 with specific features.
-- **Strategy**: First, conduct a web search to identify wireless mechanical keyboards under $150 that are hot-swappable, have low latency, and are Mac compatible. Then, synthesize the findings into a structured comparison and recommendation.
-- **Subtasks**: 2
+**Chief of Staff**: "Identify the best wireless mechanical keyboard for programming under $150 with specific features."
 
-## 3. Subtask Execution
+**Strategy**: First, conduct a web search to identify wireless mechanical keyboards under $150 that are hot-swappable, have low latency, and are Mac compatible. Then, synthesize the findings into a structured comparison and recommendation.
 
-### Subtask 1: Research Wireless Mechanical Keyboards
-- Model: perplexity | Stage: research | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Synthesize Keyboard Comparison
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Wireless Mechanical Keyboards | perplexity | research |
+| 2 | Synthesize Keyboard Comparison | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Wireless Mechanical Keyboards [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Cooler Master MK770
+- **Price**: $119[1]
+- **Features**: Wireless, gasket mount mechanical gaming keyboard, hot-swappable PCB, 96-percent layout, well-built for gaming and typing[1]
+- **Low Latency & Mac Compatibility**: Suitable for gaming (implies low latency); no explicit Mac mention but mainstream gaming keyboards typically support Mac via Bluetooth/USB[1]
+- **User Reviews**: "Fantastic price for everything you get... well-built"; similar specs to pricier Asus ROG Strix Scope II 96 Wireless but $60 cheaper[1]
+- **Source**: https://www.tomshardware.com/peripherals/gaming-keyboards/best-gaming-keyboards[1]
+
+## Akko 3098B/N
+- **Price**: $90[1]
+- **Features**: Wireless, 96-percent hot-swappable keyboard, great for gaming and typing[1]
+- **Low Latency & Mac Compatibility**: Gaming-capable (low latency implied); wireless connectivity supports Mac layouts[1]
+- **User Reviews**: Recommended as budget alternative to $119+ boards; solid feature-rich option[1]
+- **Source**: https://www.tomshardware.com/peripherals/gaming-keyboards/best-gaming-keyboards[1]
+
+## Morgrie Air68
+- **Price**: $89[2]
+- **Features**: Aluminum case, tri-mode connectivity (Bluetooth/2.4GHz/wired for low latency), hot-swap sockets, low-profile 68% layout, comfortable angle, good keycaps[2]
+- **Low Latency & Mac Compatibility**: Tri-mode includes 2.4GHz wireless (low latency for gaming); used with iPad/laptop, confirming Mac compatibility[2]
+- **User Reviews**: "Much better than expected... one of my favorite low profile boards"; strong community buzz, stacks up against NuPhy/Lofree; ideal for work-friendly setup but spacebar/LED tweaks needed[2]
+- **Source**: https://www.alexotos.com/feed/[2]
+
+## Keychron Q1 Max
+- **Price**: €70-150 range (approx. $75-160 USD)[3]
+- **Features**: Mid-range mechanical, hot-swappable (inferred from Keychron lineup), wireless options[3]
+- **Low Latency & Mac Compatibility**: Keychron keyboards are natively Mac-compatible with low-latency modes; value champion for gaming[3]
+- **User Reviews**: Top "value champion" in mid-range category[3]
+- **Source**: https://www.onoff.gr/blog/en/gaming/gaming-keyboard-mixaniko-odigos/[3]
+
+**Next Steps**:
+- Check current prices/availability on Amazon or official sites (e.g., Cooler Master, Akko, Morgrie, Keychron) as of March 2026.
+- Verify Mac-specific keycaps and polling rates (aim for 1000Hz) via product pages.
+- Read full reviews on Reddit r/MechanicalKeyboards for latest user latency tests on Mac.
+
+### Step 2: Synthesize Keyboard Comparison [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -64,10 +109,13 @@
    - **What to Do**: Consider the Morgrie Air68 if you prefer a more compact design with versatile connectivity options.
    - **Why**: Its tri-mode connectivity and aluminum build provide flexibility and durability, suitable for multiple device use.
    - **Expected Outcome**: Enhanced portability and ease of use across devices, especially beneficial for users frequently switching between devices.
-   - **First Step**: Verify compatibility with your specific devices and order from a trusted source.
+   - **First Step**: Verify compatibility with your specific devic
 
-3. **High-Quality Choice**:
-   - **What to Do**: Opt for the Cooler Master MK770 if you prioritize build quality and gaming performance.
-   - **Why**: It offers superior build and features comparable to higher-end models at a lower price.
-   - **Expected Outcome**: Long-term durability and enhanced gaming experience.
-   - **First Step**: Check for any ongoing discounts or promotions to potentially reduce costs further.
+*... truncated (3459 chars total)*
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms0m6ebqgk0/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms0m6ebqgk0/export?fmt=json

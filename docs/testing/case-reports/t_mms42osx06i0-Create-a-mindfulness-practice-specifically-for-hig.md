@@ -1,43 +1,71 @@
 # Create a mindfulness practice specifically for high-stress tech workers. Include
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms42osx06i0`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T18:51:58
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms42osx06i0/export?fmt=md) | [JSON](/api/intake/task/t_mms42osx06i0/export?fmt=json)
+- **Created**: 2026-03-15T18:51:58
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create a mindfulness practice specifically for high-stress tech workers. Include 5 micro-practices that take under 2 minutes each. Evidence-based only.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Develop a mindfulness practice with five micro-practices for high-stress tech workers, each under two minutes, based on evidence.
-- **Strategy**: Research current evidence-based mindfulness practices suitable for high-stress environments, particularly in the tech industry. Synthesize findings into concise, actionable micro-practices that can be easily adopted by tech workers.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific evidence supporting each micro-practice; Current mindfulness techniques effective for tech workers; Potential barriers to adoption in tech environments
+**Chief of Staff**: "Develop a mindfulness practice with five micro-practices for high-stress tech workers, each under two minutes, based on evidence."
 
-## 3. Subtask Execution
+**Strategy**: Research current evidence-based mindfulness practices suitable for high-stress environments, particularly in the tech industry. Synthesize findings into concise, actionable micro-practices that can be easily adopted by tech workers.
 
-### Subtask 1: Research Evidence-Based Mindfulness Practices
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: ## Finding 1: The Mindfulness App's 5-Minute Daily Practices for Stress Reduction in Tech Teams
+**Execution Plan**:
 
-### Subtask 2: Synthesize Micro-Practices
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Evidence-Based Mindfulness Practices | perplexity | research |
+| 2 | Synthesize Micro-Practices | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Evidence-Based Mindfulness Practices [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Finding 1: The Mindfulness App's 5-Minute Daily Practices for Stress Reduction in Tech Teams
+- **Practice Details**: 5-minute daily mindfulness sessions, including a 5-day introductory course with 10 minutes/day, reduce stress by up to 30%; tailored for high-pressure roles like remote tech workers with offline access and programs for anxiety, focus under pressure.
+- **Evidence & Tech Relevance**: LinkedIn used 30-day meditation challenges with prizes to normalize practice; SAP trained 10,000+ employees via two-day courses, creating 42 internal trainers and 50 ambassadors for global teams; employees practicing mindfulness show 8-12% productivity gains and are 2x more likely to stay.
+- **Implementation**: Start meetings with 1-minute grounding exercises; premium personalization for sleep and anxiety.
+- **Date**: 2026 guide.
+- Source: https://www.themindfulnessapp.com/articles/2026-employee-mindfulness-programs-guide[1]
+
+## Finding 2: Neurowellness & Somatic Practices for AI-Induced Stress in Tech Workplaces
+- **Practice Details**: Nervous system regulation via somatic practices (e.g., downshifting fight-or-flight) as "daily mental hygiene" for dysregulated workers; shift from apps to human-led, communal programs.
+- **Evidence & Tech Relevance**: Gartner 2026 report flags AI's psychological costs (job anxiety, skill erosion; only 1% H1 2025 layoffs from AI gains); targets "tired and wired" tech workers; employers redirecting to evidence-based care over apps.
+- **Implementation**: Frame as "neurowellness" for accessibility; address AI-related "psychological injury" in CHRO plans.
+- **Date**: Spring 2026 Pulse Report (January trends).
+- Source: https://www.mindfulleader.org/blog/117755-mindful-leader-spring-pulse-report[2]
+
+## Finding 3: Grounding Exercises & Micro-Meditations for Tech Career Anxiety (e.g., Software Developers)
+- **Practice Details**: Grounding to break "future-tripping" on tech shifts/sprint deadlines; micro-meditations between tasks; "digital sunset" ritual (notice phone urge, mentally log out post-work).
+- **Evidence & Tech Relevance**: Reduces rumination (burnout driver), drops cortisol, improves sleep/performance; tailored for software developers facing rapid changes, high-stakes tech environments.
+- **Implementation**: Use in online therapy for transitions; observe impulse before acting.
+- **Date**: 2026 article.
+- Source: https://www.newgrowthcounseling.com/how-mindfulness-based-therapy-helps-young-adults-navigate-career-anxiety-in-2026/[3]
+
+## Finding 4: Embedded Mindfulness Modules in Tech L&D for Stress Management
+- **Practice Details**: Integrate guided meditation, stress management, resilience into leadership/tech training; digital coaching bots suggest short meditations based on mood/stress.
+- **Evidence & Tech Relevance**: 2026 L&D shift to holistic programs treating stress/empathy as skills; personalization via apps/SaaS for roles like tech (e.g., new parents, high-stress).
+- **Implementation**: Embed in learning pla
+
+*... truncated (4592 chars total)*
+
+### Step 2: Synthesize Micro-Practices [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -96,16 +124,13 @@
    - **What to Do**: Introduce body scans during breaks.
    - **Why**: To manage stress and enhance awareness.
    - **Expected Outcome**: Improved emotional regulation.
-   - **First Step**: Share guides or apps that facilitate body scans.
+   - **Fir
 
-4. **Schedule Micro-Meditation Sessions**:
-   - **What to Do**: Encourage brief meditation sessions.
-   - **Why**: To reduce stress and improve focus.
-   - **Expected Outcome**: Enhanced employee well-being.
-   - **First Step**: Provide access to meditation apps or sessions.
+*... truncated (3637 chars total)*
 
-5. **Facilitate Mindful Transitions**:
-   - **What to Do**: Encourage pauses between tasks.
-   - **Why**: To reduce cognitive load and improve clarity.
-   - **Expected Outcome**: Increased efficiency and reduced burnout.
-   - **First Step**: Educate employees on the benefits of mindful transitions.
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms42osx06i0/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms42osx06i0/export?fmt=json

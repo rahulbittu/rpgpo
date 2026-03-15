@@ -1,43 +1,77 @@
 # Design the information architecture for a personal knowledge management system. 
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms15iukmosp`
 - **Engine**: personalops
-- **Status**: done
-- **Created**: 2026-03-15T17:30:11
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms15iukmosp/export?fmt=md) | [JSON](/api/intake/task/t_mms15iukmosp/export?fmt=json)
+- **Created**: 2026-03-15T17:30:11
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Design the information architecture for a personal knowledge management system. Include categories, tagging strategy, search approach, and review cadence.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Design an information architecture for a personal knowledge management system.
-- **Strategy**: Conduct research on best practices for personal knowledge management systems. Synthesize findings into a tailored information architecture that includes categories, tagging, search, and review strategies. Ensure the plan aligns with Rahul's productivity and personal growth goals.
-- **Risk**: yellow
-- **Subtasks planned**: 2
-- **Key unknowns**: Rahul's specific knowledge management needs and preferences; Existing tools or systems Rahul currently uses for knowledge management; Rahul's frequency and style of reviewing personal knowledge
+**Chief of Staff**: "Design an information architecture for a personal knowledge management system."
 
-## 3. Subtask Execution
+**Strategy**: Conduct research on best practices for personal knowledge management systems. Synthesize findings into a tailored information architecture that includes categories, tagging, search, and review strategies. Ensure the plan aligns with Rahul's productivity and personal growth goals.
 
-### Subtask 1: Research Personal Knowledge Management Best Practices
+**Risk**: yellow | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: audit
-- **Status**: done
-- **Summary**: ## Finding 1: Taskade's 2026 Guide to Building a Personal Knowledge Management (PKM) System
+**Execution Plan**:
 
-### Subtask 2: Synthesize Information Architecture Plan
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Personal Knowledge Management Best Practices | perplexity | audit |
+| 2 | Synthesize Information Architecture Plan | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Personal Knowledge Management Best Practices [perplexity]
+
+**Status**: done | **Stage**: audit
+
+## Finding 1: Taskade's 2026 Guide to Building a Personal Knowledge Management (PKM) System
+Taskade outlines a three-tier structure for PKM: **Projects** (like blank notebook pages), **Folders** (for organization), and **Workspaces** (digital cabinets), using #tags or nested folders to mimic physical note storage and reduce friction for long-term use. Key templates include daily journaling, quick notes, brainstorming, problem-solving, and daily/weekly planning. Emphasizes data portability via exports to PDF, .md (Markdown), or plain text for future-proofing.  
+**Source:** https://www.taskade.com/blog/best-knowledge-base-apps [3]
+
+## Finding 2: Asana's 4-Step Knowledge Management Process (Applicable to Personal Use)
+1. **Gather**: Collect info via interviews or docs, e.g., define Areas of Responsibility (AORs) for ownership.  
+2. **Organize**: Use templates to structure data.  
+3. **Distribute**: Train on access and integrate into workflows with change management.  
+4. **Use**: Assign quarterly audits (one person per team) for updates; aim for consistent workflow integration.  
+**Source:** https://asana.com/resources/knowledge-management [4]
+
+## Finding 3: Knowmax's Criteria for Selecting Personal Knowledge Management Tools in 2026
+Top tools: Knowmax (AI capture/categorization), Notion (collaboration/search), ProProfs Knowledge Base (AI content creation, multilingual, version control). Selection steps: Define objectives/users, list features like ease of use, AI search, analytics, security; compare free trials. ProProfs features reuse content, powerful search, integrations.  
+**Source:** https://knowmax.ai/knowledge-management/tools/ [2]
+
+## Finding 4: Bettermode's 10 Self-Service Best Practices for Knowledge Systems (2026)
+1. Keep content relevant: Regular reviews, prompt updates on launches, user testing.  
+3. Feedback: Forms/ratings/surveys, data-driven actions, close loops.  
+6. Continuous training: Ongoing with real examples, feedback loops.  
+7. Resource allocation: Analytics for high-traffic areas.  
+8. Proactive: Suggest next steps, tailor content via analytics.  
+9. Visibility: Prominent placement, chatbots, SEO, onboarding integration.  
+**Source:** https://bettermode.com/blog/self-service-best-practices [1]
+
+## Finding 5: Bhyve's Enterprise KM Stats and Practices (Personal Adaptation: 2026)
+Effective KM reduces search time by **35%**, boosts productivity **20-25%**; centralizes info to prevent loss (e.g., from retirements), supports remote access via intranets like SharePoint with training tracking.  
+**Source:** https://bhyve.io/blogs/enterprise-knowledge-management-in-2026 [5]
+
+## Finding 6: ClickHelp's Tool Selection Best Practices for Knowledge Bases (2026)
+Prioritize ease of use, customization, scalability, support/training. Example: Nuclino for collaborative docs, Slack/Google Drive integrations, searchable organization.  
+**Source:** https://clickhelp.com/clickhelp-technical-writing-blog/11-best-knowledge-base-software-and-tools/ 
+
+*... truncated (3408 chars total)*
+
+### Step 2: Synthesize Information Architecture Plan [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 1. **Three-Tier Structure**: Implement a three-tier structure consisting of Projects, Folders, and Workspaces to organize information effectively, as recommended by Taskade.
@@ -78,17 +112,13 @@ Taskade emphasizes the importance of data portability. By allowing exports to fo
 3. **Incorporate AI-Enhanced Search**
    - **What to do**: Utilize tools with AI search capabilities like Notion or Knowmax.
    - **Why**: AI search can significantly reduce the time spent finding information.
-   - **Expected Outcome**: Increased efficiency in retrieving information.
-   - **First Step**: Evaluate current tools for AI search capabilities and consider integrating a new tool if necessary.
+   - **Expected Outcome**: Increased
 
-4. **Establish a Quarterly Review Process**
-   - **What to do**: Conduct quarterly audits of your knowledge base.
-   - **Why**: Ensures information remains accurate and relevant.
-   - **Expected Outcome**: Up-to-date and reliable knowledge management system.
-   - **First Step**: Assign a person responsible for conducting these reviews and set reminders for each quarter.
+*... truncated (3901 chars total)*
 
-5. **Ensure Data Portability**
-   - **What to do**: Enable data export in multiple formats.
-   - **Why**: Future-proofs your information and facilitates easy transfer between systems.
-   - **Expected Outcome**: Greater flexibility and security of your data.
-   - **First Step**: Check your current tool's export options and ensure compatibility with desired formats.
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms15iukmosp/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms15iukmosp/export?fmt=json

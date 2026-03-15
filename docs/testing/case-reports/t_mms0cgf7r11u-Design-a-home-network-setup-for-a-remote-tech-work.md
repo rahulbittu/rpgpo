@@ -1,31 +1,101 @@
 # Design a home network setup for a remote tech worker. Include router recommendat
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms0cgf7r11u`
 - **Engine**: general
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T17:07:35
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Design a home network setup for a remote tech worker. Include router recommendation, mesh WiFi vs single AP, NAS for backups, and security hardening. Budget under 500 dollars.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Design a cost-effective home network setup for a remote tech worker under $500.
-- **Strategy**: Conduct research on current affordable and reliable networking equipment, focusing on routers, mesh WiFi systems, and NAS options. Evaluate security features and provide a comprehensive setup recommendation under the budget constraint.
-- **Subtasks**: 2
+**Chief of Staff**: "Design a cost-effective home network setup for a remote tech worker under $500."
 
-## 3. Subtask Execution
+**Strategy**: Conduct research on current affordable and reliable networking equipment, focusing on routers, mesh WiFi systems, and NAS options. Evaluate security features and provide a comprehensive setup recommendation under the budget constraint.
 
-### Subtask 1: Research Current Networking Equipment
-- Model: perplexity | Stage: research | Status: done
+**Risk**: yellow | **Code Task**: No
 
-### Subtask 2: Synthesize Network Setup Recommendation
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Current Networking Equipment | perplexity | research |
+| 2 | Synthesize Network Setup Recommendation | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Current Networking Equipment [perplexity]
+
+**Status**: done | **Stage**: research
+
+# Affordable Home Network Setup Under $500
+
+Based on current 2026 options, here are specific products that fit your budget:
+
+## Routers & Mesh Systems
+
+**TP-Link Archer BE3600 – Best Budget Wi-Fi 7 Router**
+- **Price:** $99[3]
+- **Specs:** Wi-Fi 7, 2.5 Gbps WAN port
+- **Best for:** Budget-conscious users wanting newer Wi-Fi standard
+- **Pros:** Respectable performance at entry price point[3]
+- **Cons:** Doesn't support full Wi-Fi 7 spec
+- Source: https://www.tomshardware.com/networking/routers/best-wi-fi-routers
+
+**TP-Link Deco BE63 (2-pack) – Best Budget Mesh System**
+- **Price:** Under $300 for two-pack[3]
+- **Specs:** Wi-Fi 7, tri-band, four 2.5 GbE auto-sensing ports per node, covers up to 5,800 sq feet[3]
+- **Best for:** Whole-home coverage without premium pricing
+- **Pros:** Surprising performance and features for general consumers, extensive configuration options[3]
+- **Cons:** App-only control
+- Source: https://www.tomshardware.com/networking/routers/best-wi-fi-routers
+
+**Netgear Orbi 370 (3-pack) – Best Budget Mesh Wi-Fi 7**
+- **Price:** $350[4]
+- **Specs:** Dual-band Wi-Fi 7, compact design (8.0 x 4.7 x 3.0 inches), two 2.5 Gbps ports on main unit, one 2.5 Gbps port on satellites[4]
+- **Best for:** Compact homes needing strong signal penetration
+- **Pros:** Demonstrated superior sustained performance (515.4 Mbps at 50 feet), beat more expensive tri-band models, excellent wall penetration[4]
+- **Cons:** Limited port selection due to compact size[4]
+- Source: https://www.tomsguide.com/computing/routers/best-mesh-wi-fi-systems
+
+**TP-Link Archer AX55 – Best Budget Wi-Fi 6 Router**
+- **Price:** Not specified in results
+- **Specs:** Dual-band Wi-Fi 6, compact footprint
+- **Best for:** Large homes on budget
+- **Pros:** Saturates connections up to 750 Mbps at close range, maintains fast speeds at nearly 100 ft, handles multiple 4K streams[5]
+- **Cons:** Older Wi-Fi standard (Wi-Fi 6 vs. Wi-Fi 7)
+- Source: https://www.rtings.com/router/reviews/best/large-home
+
+**ARRIS SBG8300 – Modem-Router Combo**
+- **Price:** Mid-range (exact price not specified)[1]
+- **Specs:** Wi-Fi 5, dual-band (2.4GHz + 5GHz), up to 2.35 Gbps max speed[1]
+- **Best for:** Spectrum customers, replacing ISP rental equipment, medium-to-large homes[1]
+- **Pros:** Outperforms Spectrum's rental unit, eliminates modem rental fees ($5–$10/month)[1]
+- **Cons:** Wi-Fi 5 standard (older technology)
+- Source: https://cybernews.com/best-wifi-routers/spectrum/
+
+## Budget Allocation
+
+With a $500 budget, you can combine:
+- **Mesh system ($300–$350)** + **Modem-router combo ($150–$200)** if needed for Spectrum, or
+- **Mesh system ($300–$350)** + **Additional networking equipment** for security/storage
+
+## Important Note on NAS Devices
+
+**No NAS device information was found in the search results.** The results focused exclusively on routers and mesh systems. To get specific NAS recommendations under $500, a separate search would be needed covering products like Synology, QNAP, or Asustor mod
+
+*... truncated (3484 chars total)*
+
+### Step 2: Synthesize Network Setup Recommendation [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -61,3 +131,10 @@
    - **First Step**: Install the main unit in a central location and strategically place satellites to optimize signal distribution.
 
 By following these recommendations, you can establish a robust home network under $500, tailored to your specific coverage and performance needs.
+
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms0cgf7r11u/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms0cgf7r11u/export?fmt=json

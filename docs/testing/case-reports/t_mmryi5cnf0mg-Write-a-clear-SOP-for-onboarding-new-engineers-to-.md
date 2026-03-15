@@ -1,31 +1,65 @@
 # Write a clear SOP for onboarding new engineers to the TopRanker codebase. Includ
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mmryi5cnf0mg`
 - **Engine**: general
-- **Status**: done
+- **Urgency**: normal
 - **Created**: 2026-03-15T16:16:01
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Write a clear SOP for onboarding new engineers to the TopRanker codebase. Include repo setup, local dev environment, testing commands, deployment flow, and key architecture decisions they need to understand.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a comprehensive SOP for onboarding new engineers to the TopRanker codebase.
-- **Strategy**: Research the best practices for onboarding engineers to a codebase, focusing on setup, development, testing, and deployment. Then, synthesize this information into a structured SOP document tailored to the TopRanker project. Ensure clarity and usability for new engineers.
-- **Subtasks**: 2
+**Chief of Staff**: "Create a comprehensive SOP for onboarding new engineers to the TopRanker codebase."
 
-## 3. Subtask Execution
+**Strategy**: Research the best practices for onboarding engineers to a codebase, focusing on setup, development, testing, and deployment. Then, synthesize this information into a structured SOP document tailored to the TopRanker project. Ensure clarity and usability for new engineers.
 
-### Subtask 1: Research Best Practices for Engineer Onboarding
-- Model: perplexity | Stage: report | Status: done
+**Risk**: green | **Code Task**: No
 
-### Subtask 2: Draft SOP for TopRanker Engineer Onboarding
-- Model: openai | Stage: report | Status: done
+**Execution Plan**:
 
-## 4. Final Output
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Best Practices for Engineer Onboarding | perplexity | report |
+| 2 | Draft SOP for TopRanker Engineer Onboarding | openai | report |
+
+## Phase 3: Execution
+
+### Step 1: Research Best Practices for Engineer Onboarding [perplexity]
+
+**Status**: done | **Stage**: report
+
+## Relevant Findings on Onboarding Engineers to Software Codebases
+
+No comprehensive, current (post-2025) guides found specifically detailing step-by-step onboarding for new engineers including **repo setup**, **local development environment**, **testing commands**, and **deployment flow**. Searches returned tangential results on repo organization, IaC patterns, and general dev practices, but nothing matching the full query with concrete commands or flows for general software codebases.
+
+### Key Partial Matches
+- **Repo Structure Decisions**: Align repo boundaries (monorepo vs. polyrepo) with change rate and ownership; use monorepo for tightly coupled app/IaC in serverless/microservices, polyrepo for independent infra in server-based setups.[1] Source: https://support.hashicorp.com/hc/en-us/articles/45101646458515-Best-Practices-Organising-Terraform-and-Application-Code
+- **Git Repo Best Practices**: Use external Git repos (GitHub/GitLab) as single source of truth; include .gitignore to exclude node_modules, binaries, media; keep history clean by avoiding large files.[3] Source: https://docs.umbraco.com/umbraco-cloud/explore-umbraco-cloud/technology-overview/repositories-in-a-cloud-project
+- **Modern Dev Practices**: Mandate Git for version control, automated testing across environments, and code reviews for onboarding consistency.[7] Source: https://www.microsoft.com/en-us/software-development-companies/resources/articles/modern-practices
+- **Repo Configuration**: Set up repos for VS Code/Git/GitHub Copilot consistency (no specific steps provided).[5] Source: https://dotjesper.com/2026/how-to-set-up-a-well-configured-repository/
+
+## No Results Found For
+- Specific **local dev environment setup** steps (e.g., Docker, IDE config).
+- **Testing commands** (e.g., npm test, pytest equivalents).
+- **Deployment flows** (e.g., CI/CD pipelines with exact YAML/commands).
+
+Refined search terms to try: "engineer onboarding checklist codebase 2026", "new hire dev environment setup guide", "software repo onboarding steps GitHub 2026". 
+
+## Concrete Next Steps
+- Check GitHub's official docs: Search "GitHub new contributor guide" for repo cloning/forking steps.
+- Review internal TopRanker repo: Create a README.md with `git clone <url>`, `npm install`, `npm test`, `docker-compose up` if applicable.
+- Assign 1-hour task: Draft onboarding doc based on [3] .gitignore template and [7] Git/testing standards.
+
+### Step 2: Draft SOP for TopRanker Engineer Onboarding [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -60,34 +94,13 @@
 ### Key Architecture Decisions
 - **Documentation**: Maintain comprehensive documentation on why certain architectural decisions were made, such as the choice between monorepo and polyrepo. This helps new engineers understand the project's evolution and rationale.
 
-## Recommended Actions
+## R
 
-1. **Set Up the Repository**:
-   - **What**: Configure the Git repository with a `.gitignore` file and set up a monorepo structure.
-   - **Why**: To maintain a clean, efficient, and organized codebase.
-   - **Expected Outcome**: A streamlined and manageable repository structure.
-   - **First Step**: Create a `.gitignore` file and configure the repository settings on GitHub or GitLab.
+*... truncated (4773 chars total)*
 
-2. **Standardize Local Development**:
-   - **What**: Use Docker to set up a standardized local development environment.
-   - **Why**: To ensure consistency and prevent environment-specific issues.
-   - **Expected Outcome**: A uniform development setup across all engineers' machines.
-   - **First Step**: Create a Dockerfile with all necessary configurations and dependencies.
+## Phase 4: Deliverable
 
-3. **Implement Automated Testing**:
-   - **What**: Set up automated testing using a CI tool.
-   - **Why**: To ensure code quality and consistency across environments.
-   - **Expected Outcome**: Early detection of bugs and issues.
-   - **First Step**: Integrate a CI tool like Jenkins or GitHub Actions with the repository.
-
-4. **Define Deployment Flow**:
-   - **What**: Establish a continuous deployment pipeline.
-   - **Why**: To automate the release process and reduce manual errors.
-   - **Expected Outcome**: Faster and more reliable deployments.
-   - **First Step**: Set up a CD tool and define the deployment steps.
-
-5. **Document Architecture Decisions**:
-   - **What**: Create documentation detailing key architectural decisions.
-   - **Why**: To provide context and understanding for new engineers.
-   - **Expected Outcome**: Improved onboarding experience and project comprehension.
-   - **First Step**: Write a document outlining the rationale behind the current architecture.
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mmryi5cnf0mg/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mmryi5cnf0mg/export?fmt=json

@@ -1,43 +1,79 @@
 # Write a detailed scene outline for a 5-minute animated short about a robot learn
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms3we68neuj`
 - **Engine**: screenwriting
-- **Status**: done
-- **Created**: 2026-03-15T18:47:04
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms3we68neuj/export?fmt=md) | [JSON](/api/intake/task/t_mms3we68neuj/export?fmt=json)
+- **Created**: 2026-03-15T18:47:04
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Write a detailed scene outline for a 5-minute animated short about a robot learning to paint. Include visual descriptions and emotional beats.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a detailed scene outline for a 5-minute animated short about a robot learning to paint, including visual descriptions and emotional beats.
-- **Strategy**: Research current trends in animated shorts to understand popular themes and styles. Then, synthesize this information to create a detailed scene outline that includes visual descriptions and emotional beats. Ensure the outline is engaging and suitable for a 5-minute runtime.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific visual style or animation technique preferred; Target audience for the short film; Any thematic elements or messages to be conveyed
+**Chief of Staff**: "Create a detailed scene outline for a 5-minute animated short about a robot learning to paint, including visual descriptions and emotional beats."
 
-## 3. Subtask Execution
+**Strategy**: Research current trends in animated shorts to understand popular themes and styles. Then, synthesize this information to create a detailed scene outline that includes visual descriptions and emotional beats. Ensure the outline is engaging and suitable for a 5-minute runtime.
 
-### Subtask 1: Research Animated Short Trends
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: audit
-- **Status**: done
-- **Summary**: ## Popular Themes in Recent Successful Animated Shorts
+**Execution Plan**:
 
-### Subtask 2: Synthesize Scene Outline
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research Animated Short Trends | perplexity | audit |
+| 2 | Synthesize Scene Outline | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research Animated Short Trends [perplexity]
+
+**Status**: done | **Stage**: audit
+
+## Popular Themes in Recent Successful Animated Shorts
+
+Recent Oscar-nominated and festival-winning animated shorts emphasize **bittersweet sentimentality**, **self-deception and procrastination**, **historical survival**, and **slice-of-life humor with emotional depth**. These themes resonate universally, often blending humor, pathos, and poignancy in under 17 minutes.[1][3]
+
+- **Bittersweet retirement and self-deception**: *Retirement Plan* (John Kelly, Ireland, 7 minutes, 2024 premiere) features a character (voiced by Domhnall Gleeson) listing retirement plans in a poignant, funny comic-strip style critiquing procrastination.[1][3]
+- **Holocaust survival**: *Butterfly* (about swimmer Alfred Nakache, Algerian Jewish Olympian sent to Auschwitz) mixes pathos, politics, and high animation quality; predicted to win by some critics.[2][3]
+- **Isolated family dynamics and rivalry**: *The Three Sisters* (Konstantin Bronzit, Israel/Cyprus, 14 minutes) uses dialogue-free sight gags about three sisters on an island who compete for a boarder's attention after losing savings; simple paper cutout style.[3]
+- **Feel-good character studies**: *Forevergreen* evokes a "cute Pixar short" vibe; contenders like *A Friend of Dorothy* favored for emotional "oomph."[2]
+
+## Visual Styles
+
+**Clean, appealing 2D styles** dominate, including sophisticated comic strips, paper cutouts, and polished aesthetics akin to adult cartoons or Pixar simplicity. Variety spans from minimalistic to detailed, prioritizing emotional impact over complexity.[1][2][3]
+
+| Short Film          | Visual Style Description                  | Runtime | Source |
+|---------------------|-------------------------------------------|---------|--------|
+| *Retirement Plan*  | Clean, simple, delightful; adult comic strip-like | 7 min  | [1][3] |
+| *Butterfly*        | High-quality animation with political pathos | N/A    | [2][3] |
+| *The Three Sisters*| Simple paper cutout-like with sight gags | 14 min | [3]    |
+| *Forevergreen*     | Cute Pixar-esque polish                   | N/A    | [2]    |
+
+## Animation Techniques
+
+Techniques focus on **2D hand-drawn or cutout methods** for rhythmic storytelling, enhanced by voice-over (e.g., celebrity narration) and short runtimes for broad appeal. No heavy CGI emphasis noted; success ties to "refreshingly short" formats (7-17 minutes) and festival-friendly portability.[1][3]
+
+- Poetic rhythm via writing, voice-over, and simple animation as "cherry on top" in *Retirement Plan*.[1]
+- Dialogue-free, gag-driven paper cutouts in *The Three Sisters*.[3]
+
+## Key Examples and Predictions (2026 Oscars)
+
+Oscar-nominated shorts (showing in theaters nationwide from early 2026) highlight festival winners like *Retirement Plan* (SXSW Audience/Jury Awards, most qualifying awards).[1][3][4]
+
+- **Top Prediction**: *Retirement Plan* (clean style, universal message, Domhnall Gleeson VO).[1]
+- **Other Contenders**: *Butterfly* (best mix of pathos/politics), *Forevergreen* (Pixar f
+
+*... truncated (3564 chars total)*
+
+### Step 2: Synthesize Scene Outline [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -73,17 +109,13 @@
 
 ## Recommended Actions
 
-1. **Develop the Script**: Write a detailed script focusing on Artie's internal conflict and emotional growth. Emphasize the contrast between its mechanical nature and the organic process of painting.
-   - **Why**: A strong script will ensure the story's emotional beats are clear and impactful.
-   - **Expected Outcome**: A compelling narrative that resonates with audiences and aligns with current trends.
-   - **First Step**: Outline key dialogue and monologue moments to capture Artie's transformation.
+1. **Develop the Script**: Write a detailed script focusing on Artie's internal conflict and emotion
 
-2. **Design Visual Elements**: Create concept art for Artie and the workshop, ensuring a clean 2D style that allows for expressive animation.
-   - **Why**: Visual consistency will enhance storytelling and audience engagement.
-   - **Expected Outcome**: A visually appealing short that captures the thematic elements effectively.
-   - **First Step**: Collaborate with an illustrator to draft initial character and setting designs.
+*... truncated (4234 chars total)*
 
-3. **Plan the Animation**: Develop a storyboard that maps out the key scenes and transitions, focusing on the emotional and visual journey.
-   - **Why**: A well-planned storyboard will guide the animation process and ensure coherence.
-   - **Expected Outcome**: A seamless animation that brings the story to life.
-   - **First Step**: Sketch rough storyboards to visualize scene flow and pacing.
+## Phase 4: Deliverable
+
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms3we68neuj/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms3we68neuj/export?fmt=json

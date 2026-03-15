@@ -1,43 +1,67 @@
 # Create an A/B testing framework guide for a startup. Include hypothesis formatio
 
-## 1. Context
+## Phase 1: User Context
 
 - **Task ID**: `t_mms38x2l82x3`
 - **Engine**: general
-- **Status**: done
-- **Created**: 2026-03-15T18:28:49
 - **Urgency**: normal
-- **Download**: [Markdown](/api/intake/task/t_mms38x2l82x3/export?fmt=md) | [JSON](/api/intake/task/t_mms38x2l82x3/export?fmt=json)
+- **Created**: 2026-03-15T18:28:49
 
-### User Request
+### Operator Context (auto-injected)
+- Rahul, Senior Data Engineer / Entrepreneur, Austin TX
+- Output style: Specific, actionable, cited. No generic frameworks.
 
+### Request
 > Create an A/B testing framework guide for a startup. Include hypothesis formation, sample size calculation, test duration, and statistical significance. With practical examples.
 
-## 2. Board Deliberation
+## Phase 2: Board of AI Deliberation
 
-- **Objective**: Create a comprehensive guide on A/B testing for startups, covering hypothesis formation, sample size calculation, test duration, and statistical significance with practical examples.
-- **Strategy**: Conduct web research to gather current best practices and methodologies for A/B testing in startups. Synthesize findings into a structured guide that includes practical examples. Ensure the guide is actionable and easy to understand for startup teams with varying levels of expertise.
-- **Risk**: green
-- **Subtasks planned**: 2
-- **Key unknowns**: Specific startup industry or sector focus; Preferred statistical methods or tools for analysis; Level of detail required for practical examples
+**Chief of Staff**: "Create a comprehensive guide on A/B testing for startups, covering hypothesis formation, sample size calculation, test duration, and statistical significance with practical examples."
 
-## 3. Subtask Execution
+**Strategy**: Conduct web research to gather current best practices and methodologies for A/B testing in startups. Synthesize findings into a structured guide that includes practical examples. Ensure the guide is actionable and easy to understand for startup teams with varying levels of expertise.
 
-### Subtask 1: Research A/B Testing Best Practices
+**Risk**: green | **Code Task**: No
 
-- **Model**: perplexity
-- **Stage**: research
-- **Status**: done
-- **Summary**: ## Hypothesis Formation
+**Execution Plan**:
 
-### Subtask 2: Synthesize A/B Testing Guide
+| Step | Task | Model | Stage |
+|------|------|-------|-------|
+| 1 | Research A/B Testing Best Practices | perplexity | research |
+| 2 | Synthesize A/B Testing Guide | openai | report |
 
-- **Model**: openai
-- **Stage**: report
-- **Status**: done
-- **Summary**: ## Key Findings
+## Phase 3: Execution
 
-## 4. Final Output
+### Step 1: Research A/B Testing Best Practices [perplexity]
+
+**Status**: done | **Stage**: research
+
+## Hypothesis Formation
+- **Structure**: Use the template "Because [data-backed observation], we believe that [change] will [measurable outcome] for [target audience]." Example: "Because heatmap data shows users are not scrolling past the hero image on mobile, we believe adding a visible ‘Shop Now’ button above the fold will increase mobile add-to-cart rate by 12% for new visitors."[3]
+- **Process**: Start with data from analytics, heatmaps (e.g., Hotjar, Microsoft Clarity), session recordings; identify specific issues like "74% of mobile visitors leave the landing page within 5 seconds"; pick one variable (e.g., headline, CTA placement); state expected measurable outcome (e.g., "12% increase in add-to-cart rate"); define success metric and statistical significance upfront.[1][3]
+- **Tools**: Personizely AI Hypothesis Generator (input situation, outputs structured hypothesis); VWO AI for personalized testing ideas from URL scans.[1][2]
+- **Next Step**: Analyze Google Analytics 4 or Shopify Analytics for drop-off points, then input into Personizely tool. Source: https://www.personizely.net/tools/hypothesis-generator [1]; https://www.brillmark.com/how-to-run-a-b-tests-on-your-shopify-store-tools-process-common-mistakes/ [3]
+
+## Sample Size Calculation
+- **Methodology**: Use free calculators like Optimizely’s or Evan Miller’s; input current conversion rate, minimum detectable effect (e.g., 10% lift), and desired statistical significance (typically 95%).[3]
+- **Common Mistake**: Ending tests too early without calculated sample size per variation.[3]
+- **Next Step**: For a 2% baseline conversion rate targeting 10% lift at 95% significance, calculate via Evan Miller’s tool (requires ~16,000 visitors per variation). Source: https://www.brillmark.com/how-to-run-a-b-tests-on-your-shopify-store-tools-process-common-mistakes/ [3]
+
+## Test Duration
+- **Approach**: Use VWO Bayesian Calculator to determine duration for statistical significance; set fixed run time or minimum sample size upfront to avoid stopping early on random variation.[1][2]
+- **Factors**: Base on traffic volume; run until sample size met, not calendar days alone.[3]
+- **Next Step**: Input metrics into VWO calculator post-hypothesis; aim for full cycles (e.g., 7-14 days for e-commerce to capture weekly patterns). Source: https://vwo.com/ab-testing/ [2]
+
+## Statistical Significance
+- **Threshold**: Typically 95% confidence level; define upfront with success metric (e.g., conversion rate lift).[1][3]
+- **Analysis**: Compare against hypothesis; if inconclusive, document learnings in experimentation log.[3]
+- **Implementation**: If variant wins at significance, deploy permanently; use Bayesian methods via VWO for ongoing stats.[2][3]
+- **Next Step**: Run test via Shopify tools (e.g., integrated with Google Optimize alternatives); check significance weekly using built-in calculators. Source: https://vwo.com/ab-testing/ [2]; https://www.brillmark.com/how-to-run-a-b-tests-on-your-shopify-store-tool
+
+*... truncated (3908 chars total)*
+
+### Step 2: Synthesize A/B Testing Guide [openai]
+
+**Status**: done | **Stage**: report
 
 ## Key Findings
 
@@ -80,23 +104,13 @@
 1. **Formulate Hypotheses**:
    - **What to Do**: Use Personizely AI to generate hypotheses based on Google Analytics data.
    - **Why**: Ensures hypotheses are data-driven and actionable.
-   - **Expected Outcome**: More precise and effective A/B tests.
-   - **First Step**: Analyze current user behavior in Google Analytics and input findings into Personizely.
+   - **Expected Outcome**: More p
 
-2. **Calculate Sample Size**:
-   - **What to Do**: Use Optimizely’s sample size calculator.
-   - **Why**: To ensure the test is statistically valid.
-   - **Expected Outcome**: Reliable results that can guide decision-making.
-   - **First Step**: Gather current conversion rate data and desired effect size.
+*... truncated (4168 chars total)*
 
-3. **Plan Test Duration**:
-   - **What to Do**: Schedule tests to run for a minimum of 2-4 weeks.
-   - **Why**: To reach statistical significance without external influence.
-   - **Expected Outcome**: Accurate and reliable test outcomes.
-   - **First Step**: Analyze site traffic to estimate how long it will take to reach the required sample size.
+## Phase 4: Deliverable
 
-4. **Ensure Statistical Significance**:
-   - **What to Do**: Use VWO or Google Optimize to monitor statistical significance.
-   - **Why**: To confirm that results are not due to chance.
-   - **Expected Outcome**: Confidence in test results and subsequent business decisions.
-   - **First Step**: Set up tests in VWO or Google Optimize with predefined confidence levels.
+- **Status**: done
+- **Subtasks**: 2/2 completed
+- **Download MD**: /api/intake/task/t_mms38x2l82x3/export?fmt=md
+- **Download JSON**: /api/intake/task/t_mms38x2l82x3/export?fmt=json
