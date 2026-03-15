@@ -16,13 +16,25 @@ catch {
 } }
 /** Get final output for a specific task */
 function getFinalOutput(taskId) {
-    // Load tasks and subtasks
+    // Load tasks from both queue and intake systems
     const tasks = readJson(path.join(STATE_DIR, 'tasks.json'), []);
+    const intakeTasks = readJson(path.join(STATE_DIR, 'intake-tasks.json'), []);
     const subtasks = readJson(path.join(STATE_DIR, 'subtasks.json'), []);
-    const task = tasks.find(t => t.task_id === taskId);
+    let task = tasks.find(t => t.task_id === taskId);
+    if (!task)
+        task = intakeTasks.find(t => t.task_id === taskId);
     if (!task)
         return null;
-    const taskSubtasks = subtasks.filter(st => st.parent_task === taskId);
+    // Load subtasks from both subtasks.json and inline intake subtasks
+    let taskSubtasks = subtasks.filter(st => st.parent_task === taskId);
+    // Also try intake module subtasks if none found
+    if (taskSubtasks.length === 0) {
+        try {
+            const intake = require('./intake');
+            taskSubtasks = intake.getSubtasksForTask(taskId);
+        }
+        catch { /* */ }
+    }
     // Synthesize final answer from subtask outputs and reports
     let finalAnswer = null;
     let summary = null;
@@ -120,4 +132,3 @@ function getSurfacingReport() {
     };
 }
 module.exports = { getFinalOutput, getSurfacingReport };
-//# sourceMappingURL=final-output-surfacing.js.map

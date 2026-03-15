@@ -14,14 +14,24 @@ function readJson<T>(f: string, fb: T): T { try { return fs.existsSync(f) ? JSON
 
 /** Get final output for a specific task */
 export function getFinalOutput(taskId: string): FinalTaskOutput | null {
-  // Load tasks and subtasks
+  // Load tasks from both queue and intake systems
   const tasks = readJson<any[]>(path.join(STATE_DIR, 'tasks.json'), []);
+  const intakeTasks = readJson<any[]>(path.join(STATE_DIR, 'intake-tasks.json'), []);
   const subtasks = readJson<any[]>(path.join(STATE_DIR, 'subtasks.json'), []);
 
-  const task = tasks.find(t => t.task_id === taskId);
+  let task = tasks.find(t => t.task_id === taskId);
+  if (!task) task = intakeTasks.find(t => t.task_id === taskId);
   if (!task) return null;
 
-  const taskSubtasks = subtasks.filter(st => st.parent_task === taskId);
+  // Load subtasks from both subtasks.json and inline intake subtasks
+  let taskSubtasks = subtasks.filter(st => st.parent_task === taskId);
+  // Also try intake module subtasks if none found
+  if (taskSubtasks.length === 0) {
+    try {
+      const intake = require('./intake') as { getSubtasksForTask(id: string): any[] };
+      taskSubtasks = intake.getSubtasksForTask(taskId);
+    } catch { /* */ }
+  }
 
   // Synthesize final answer from subtask outputs and reports
   let finalAnswer: string | null = null;
