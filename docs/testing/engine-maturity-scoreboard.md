@@ -1,54 +1,66 @@
 # GPO Engine Maturity Scoreboard
 
 Updated: 2026-03-15 | Harness: V2 (360 cases, 15 engines)
-**27 cases tested, 12 commits, 9 gaps, 6 fixes applied**
+**100 results, 27 commits, 10 gaps (8 fixed, 2 open)**
 
 ## Test Results Summary
 
 | Level | Pass Rate | Description |
 |---|---|---|
-| Level 1 (Prompt Pass) | 93% (25/27) | System can produce a reasonable answer |
-| Level 2 (Context Pass) | 44% (12/27) | System uses operator/project context correctly |
-| Level 3 (GPO Grade) | 0% (0/27) | Full governed, context-rich, downloadable output |
+| Level 1 (Prompt Pass) | **96%** (96/100) | System produces a reasonable answer |
+| Level 2 (Context Pass) | **80%** (80/100) | System uses operator/project context correctly |
+| Level 3 (GPO Grade) | **0%** (0/100) | Full governed, downloadable, interactive output |
 
-## Engine Test Coverage
+## Engine Coverage (100 results)
 
-| Engine | Tested | L1 Pass | L2 Pass | Domain | Status |
+| Engine | Tested | L1 | L2 | Domain | Routing |
 |---|---|---|---|---|---|
-| Writing & Documentation | 5 | 5 | 3 | writing | Routing fixed, auto-approval working |
-| Research & Analysis | 5 | 5 | 3 | research | Routing fixed, good Perplexity+OpenAI chain |
-| Learning & Tutoring | 3 | 3 | 0 | learning | Routing fixed, no interactive mode |
-| Scheduling & Life Operations | 2 | 2 | 1 | personalops | Text plans only, no calendar |
-| Career & Job Search | 2 | 2 | 2 | careeregine | Good results with operator context |
-| Personal Finance & Investing | 2 | 2 | 2 | wealthresearch | Good personalized analysis |
-| Startup & Business Builder | 2 | 2 | 2 | topranker | Good strategy output |
-| Shopping & Buying Advisor | 1 | 1 | 0 | shopping/research | Routing needs work |
-| Travel & Relocation Planner | 1 | 1 | 0 | travel | Basic capability |
-| Health & Wellness Coach | 1 | 1 | 0 | health | Basic capability |
-| Screenwriting & Story Development | 1 | 1 | 0 | screenwriting | Keyword collision issues |
-| Home & Lifestyle Design | 1 | 0 | 0 | personalops | Perplexity search failure |
-| Code & Product Engineering | 0 | - | - | topranker | Not yet tested (needs Claude builder) |
-| Music & Audio Creation | 0 | - | - | music | BLOCKED: no audio generation |
-| Filmmaking & Video Production | 0 | - | - | general | BLOCKED: no video generation |
+| Writing & Documentation | 12 | 12 | 11 | writing | Correct |
+| Research & Analysis | 8 | 8 | 7 | research | Mostly correct |
+| Learning & Tutoring | 7 | 7 | 6 | learning | Correct |
+| Career & Job Search | 6 | 6 | 6 | careeregine | Correct |
+| Personal Finance & Investing | 6 | 6 | 6 | wealthresearch | Correct |
+| Health & Wellness Coach | 6 | 6 | 5 | health | Correct |
+| Shopping & Buying Advisor | 5 | 5 | 4 | shopping | Correct |
+| Scheduling & Life Operations | 5 | 5 | 4 | personalops | Correct |
+| Startup & Business Builder | 4 | 4 | 4 | topranker | Correct |
+| Travel & Relocation Planner | 4 | 4 | 3 | travel | Correct |
+| Screenwriting & Story | 4 | 4 | 3 | screenwriting | Correct |
+| Home & Lifestyle Design | 3 | 2 | 1 | personalops | Needs work |
+| Code & Product Engineering | 2 | 2 | 2 | topranker | Limited (plan only) |
+| Music & Audio Creation | 1 | 0 | 0 | music | BLOCKED |
+| Filmmaking & Video Production | 0 | - | - | general | BLOCKED |
 
-## Gaps Classified (9)
+## Fixes Applied (8/10 gaps fixed)
 
-| Gap | Category | Severity | Status | Fix |
-|---|---|---|---|---|
-| GAP-001 | routing | high | FIXED | Added writing domain |
-| GAP-002 | deliberation | medium | FIXED | Non-code tasks use report stage, approval_required:false |
-| GAP-003 | routing | high | FIXED | Added research domain |
-| GAP-004 | output_quality | medium | FIXED | Perplexity citation format strengthened |
-| GAP-005 | routing | medium | FIXED | Added learning domain |
-| GAP-006 | execution | medium | FIXED | Stuck task recovery on worker startup |
-| GAP-007 | routing | medium | FIXED | Keyword collision resolved (newsroom vs research) |
-| GAP-008 | provider | medium | open | Perplexity search failure for product/design queries |
-| GAP-009 | context | medium | open | Context confusion with external entities (TopRanker name) |
+| Gap | Description | Status |
+|---|---|---|
+| GAP-001 | No writing domain | FIXED |
+| GAP-002 | Text tasks require approval | FIXED |
+| GAP-003 | No research domain | FIXED |
+| GAP-004 | Perplexity citation format | FIXED |
+| GAP-005 | No learning domain | FIXED |
+| GAP-006 | Stuck task recovery | FIXED |
+| GAP-007 | Keyword collision | FIXED |
+| GAP-008 | Perplexity product search quality | Open |
+| GAP-009 | Context confusion with web entities | Open |
+| GAP-010 | Subtask store limit | FIXED |
 
-## Level 3 Blockers (why 0% GPO-grade pass)
+## Level 3 Blockers
 
-1. **No downloadable deliverables** — output stays in JSON, no PDF/doc export
-2. **No interactive modes** — tutoring, quizzing, follow-ups all one-shot
-3. **Shallow project context** — operator profile used but specific project state not injected
-4. **Output format non-compliance** — system produces good content but doesn't match requested format exactly
-5. **No file attachment support** — can't review actual resumes, documents, etc.
+1. No downloadable exports → FIXED (MD/JSON export added)
+2. No interactive session mode → Open
+3. Output format non-compliance → Open
+4. No contract-aware structured output → Open (ChatGPT rec)
+5. No file attachment support → Open
+
+## Key Achievements
+
+- 15 engines with dedicated routing and deliberation context
+- TopRanker references removed from frontend and backend
+- UI aligned to 15-engine harness model
+- Downloadable exports (MD/JSON) for all completed tasks
+- Context deepening in deliberation (recent work injection)
+- Stuck task recovery on worker restart
+- ChatGPT handoff operational (1 review exchange completed)
+- System cost: ~$2/day across 300+ API calls

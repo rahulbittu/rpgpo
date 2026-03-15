@@ -1538,5 +1538,70 @@
       "completion": "done",
       "domain_routed": "writing"
     }
+  },
+  {
+    "test_case_id": "GPO-WRI-19",
+    "global_rank": 124,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:06:33.711Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "writing"
+    }
+  },
+  {
+    "test_case_id": "GPO-FIN-11",
+    "global_rank": 126,
+    "engine": "Personal Finance & Investing",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:06:33.711Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "wealthresearch"
+    }
+  },
+  {
+    "test_case_id": "GPO-CAR-08",
+    "global_rank": 128,
+    "engine": "Career & Job Search",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:06:33.711Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "careeregine"
+    }
+  },
+  {
+    "test_case_id": "GPO-SHO-07",
+    "global_rank": 130,
+    "engine": "Shopping & Buying Advisor",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:06:33.711Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "shopping"
+    }
+  },
+  {
+    "test_case_id": "GPO-HEA-08",
+    "global_rank": 132,
+    "engine": "Health & Wellness Coach",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:06:33.711Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "health"
+    }
   }
 ]
