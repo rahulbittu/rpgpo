@@ -3355,6 +3355,17 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 87: Error Tracking
+  if (req.url?.match(/^\/api\/errors(\?.*)?$/) && req.method === 'GET') {
+    try { const et = require('./lib/error-tracker'); return json(res, { errors: et.getErrors() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/errors/stats' && req.method === 'GET') {
+    try { const et = require('./lib/error-tracker'); return json(res, et.getErrorStats()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/errors/suggestions' && req.method === 'GET') {
+    try { const et = require('./lib/error-tracker'); return json(res, { suggestions: et.getSuggestions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 84: API Docs
   if (req.url === '/api/docs' && req.method === 'GET') {
     try { const docs = require('./lib/api-docs'); return json(res, { routes: docs.scanRoutes(), total: docs.scanRoutes().length }); } catch (e) { return json(res, { error: e.message }, 500); }
