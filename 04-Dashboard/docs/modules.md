@@ -2,7 +2,7 @@
 
 *Auto-generated: 2026-03-14*
 
-## Modules (62 total, 12380 lines)
+## Modules (87 total, ~17000 lines)
 
 | Module | Lines | Purpose |
 |--------|-------|---------|
@@ -68,3 +68,27 @@
 | `validate` | 369 | GPO Runtime Validation |
 | `validation-harness-orchestrator` | 86 | GPO Validation Harness — 4-phase orchestrated validation pipeline |
 | `workflow` | 279 | RPGPO Workflow Engine — Auto-Continue Logic (TypeScript) |
+| `config/ai-io` | 48 | GPO Contract-Aware AI I/O Config — Feature flag, provider modes, sentinel config |
+| `contracts/schema-encoder` | 155 | GPO Schema Encoder — Engine contract → JSON Schema draft-07 with stable hashing |
+| `prompt/contract-aware` | 72 | GPO Contract-Aware Prompt Builder — Schema injection, field policies, mode selection |
+| `ai/providers` | 74 | GPO Provider Structured Call — Mode-specific structured AI calls |
+| `ai/structured-output` | 163 | GPO Structured Output Parser — 4-stage JSON extraction pipeline with validation |
+| `merge/field-populator` | 107 | GPO Field Populator — Policy-aware structured field mapping |
+| `evidence/structured` | 66 | GPO Structured Evidence Recorder — Redacted schema/prompt/parse/mapping evidence |
+| `evidence/reader` | 67 | GPO Evidence Reader — Query structured evidence by deliverable and task |
+| `ai/provider-capabilities` | 110 | GPO Provider Capabilities — Structured output capability registry + routing decisions |
+| `ai/backoff` | 35 | GPO Backoff — Exponential backoff with jitter for parse retry |
+| `contracts/board-phase` | 100 | GPO Board Phase Schema — JSON Schema per board lifecycle phase |
+| `structured-io-metrics` | 180 | GPO Structured I/O Metrics — Event ingestion, aggregation, histograms, percentiles |
+| `structured-io-cost` | 56 | GPO Structured I/O Cost — Per-call cost estimation and accumulation |
+| `provider-learning` | 130 | GPO Provider Learning — EWMA scoring, circuit breaker, routing bias |
+| `evidence-lifecycle` | 108 | GPO Evidence Lifecycle — TTL cleanup, size enforcement, indexing |
+| `structured-io-alerts` | 115 | GPO Structured I/O Alerts — Spike detection, alert lifecycle, acknowledgement |
+| `scheduler/scheduler` | 130 | GPO Scheduler — Orchestrator loop for parallel execution |
+| `scheduler/work-queue` | 180 | GPO Work Queue — Priority queue with persistence and lease management |
+| `scheduler/provider-capacity` | 90 | GPO Provider Capacity — Concurrency semaphores with dynamic backpressure |
+| `scheduler/backpressure` | 50 | GPO Backpressure — Policy engine for dynamic throttling |
+| `scheduler/dag-runner` | 110 | GPO DAG Runner — Execution graph to queue items, ready set transitions |
+| `scheduler/recovery` | 50 | GPO Scheduler Recovery — Lease expiration and crash recovery |
+| `scheduler/ids` | 15 | GPO Scheduler IDs — Deterministic queue item ID generation |
+| `state/scheduler-store` | 55 | GPO Scheduler Store — Config and state persistence |

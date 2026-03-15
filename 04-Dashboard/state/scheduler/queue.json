@@ -1,0 +1,30 @@
+[
+  {
+    "id": "qi_test_lease",
+    "key": {
+      "runId": "r",
+      "nodeId": "l"
+    },
+    "projectId": "default",
+    "tenantId": "rpgpo",
+    "provider": "openai",
+    "priority": "normal",
+    "enqueuedAt": "2026-03-15T00:30:09.117Z",
+    "attempts": [
+      {
+        "attemptId": "a1",
+        "startedAt": "2026-03-15T00:30:09.117Z",
+        "status": "expired",
+        "finishedAt": "2026-03-15T00:30:09.117Z"
+      }
+    ],
+    "status": "queued",
+    "payloadRef": {
+      "contractId": "c",
+      "subtaskSpecRef": "n"
+    },
+    "deps": [],
+    "dependents": [],
+    "ready": true
+  }
+]

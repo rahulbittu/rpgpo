@@ -281,4 +281,79 @@ function accum(voice: BoardVoice | null, all: BoardVoice[], _cost: number, _toke
   if (voice) all.push(voice);
 }
 
-module.exports = { runBoard, exchangeToDecision };
+// ═══════════════════════════════════════════
+// Part 68: Board Structured Phase Execution
+// ═══════════════════════════════════════════
+
+import type { GPO_StructuredIOStatus, GPO_BoardPhaseOutput } from './types';
+
+/** Track structured IO statuses per task */
+const _boardStructuredStatuses: Map<string, GPO_StructuredIOStatus[]> = new Map();
+
+/**
+ * Execute a board phase through the structured output pipeline.
+ * Falls back to legacy plain-text on failure.
+ */
+async function executeBoardPhaseStructured(
+  taskId: string,
+  engineId: string,
+  phase: BoardLifecyclePhase,
+  prompt: string,
+  roleKey: string,
+  domain: Domain
+): Promise<{ text: string; structured: GPO_BoardPhaseOutput | null; status: GPO_StructuredIOStatus | null }> {
+  let cfg: any;
+  try {
+    const { loadContractAwareConfig } = require('./config/ai-io');
+    cfg = loadContractAwareConfig();
+  } catch { return { text: '', structured: null, status: null }; }
+
+  if (!cfg.boardStructuredEnabled) {
+    return { text: '', structured: null, status: null };
+  }
+
+  try {
+    const { executeWithParseRetry } = require('./ai/structured-output');
+    const result = await executeWithParseRetry({
+      engineId,
+      taskId,
+      taskDescription: prompt,
+      preferredProvider: ROLES[roleKey]?.provider,
+      context: 'board',
+      phase,
+    });
+
+    // Track status
+    if (!_boardStructuredStatuses.has(taskId)) _boardStructuredStatuses.set(taskId, []);
+    _boardStructuredStatuses.get(taskId)!.push(result.status);
+
+    if (result.finalParsed?.ok && result.finalParsed.value) {
+      const output: GPO_BoardPhaseOutput = {
+        phase,
+        summary: result.finalParsed.value.summary || JSON.stringify(result.finalParsed.value).slice(0, 300),
+        decisions: result.finalParsed.value.decisions,
+        risks: result.finalParsed.value.risks,
+        subtasks: result.finalParsed.value.subtasks,
+        requiredFieldsCovered: result.finalParsed.value.requiredFieldsCovered,
+        missingFields: result.finalParsed.value.missingFields,
+        contractHints: result.finalParsed.value.contractHints,
+      };
+      return { text: output.summary, structured: output, status: result.status };
+    }
+
+    // Fallback status
+    result.status.status = 'fallback';
+    if (!_boardStructuredStatuses.has(taskId)) _boardStructuredStatuses.set(taskId, []);
+    return { text: '', structured: null, status: result.status };
+  } catch (e) {
+    console.log(`[board] Structured phase ${phase} error: ${(e as Error).message?.slice(0, 100)}`);
+    return { text: '', structured: null, status: null };
+  }
+}
+
+/** Get structured IO statuses for a board task */
+export function getBoardStructuredStatuses(taskId: string): GPO_StructuredIOStatus[] {
+  return _boardStructuredStatuses.get(taskId) || [];
+}
+
+module.exports = { runBoard, exchangeToDecision, getBoardStructuredStatuses };

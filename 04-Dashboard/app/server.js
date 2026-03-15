@@ -3303,6 +3303,288 @@ const server = http.createServer(async (req, res) => {
     const channel = new URL(req.url, 'http://x').searchParams?.get('channel') || 'dev';
     try { const cos = require('./lib/chief-of-staff'); return json(res, { release: cos.getCurrentRelease(project, channel) }); } catch (e) { return json(res, { error: e.message }, 500); }
   }
+  // Part 73: Mission Control + Notifications
+  if (req.url === '/api/mission-control/summary' && req.method === 'GET') {
+    try { const mc = require('./lib/mission-control'); return json(res, mc.getMissionControlSummary()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/mission-control\/full(\?.*)?$/) && req.method === 'GET') {
+    try {
+      const mc = require('./lib/mission-control');
+      const params = new URL(req.url, 'http://x').searchParams;
+      const limit = { workflows: parseInt(params.get('w') || '20'), deliverables: parseInt(params.get('d') || '20'), alerts: parseInt(params.get('a') || '20') };
+      return json(res, mc.getMissionControlPayload({ limit }));
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/notifications(\?.*)?$/) && req.method === 'GET') {
+    try {
+      const notif = require('./lib/in-app-notifications');
+      const params = new URL(req.url, 'http://x').searchParams;
+      const since = params.get('since') ? parseInt(params.get('since')) : Date.now() - 86400000;
+      return json(res, { notifications: notif.listNotifications(since, parseInt(params.get('limit') || '50')) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/notifications/ack' && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/notifications', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const notif = require('./lib/in-app-notifications'); return json(res, notif.ackNotifications(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/notifications/mark-read' && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/notifications', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 72: TopRanker Engine
+  if (req.url === '/api/topranker/contracts' && req.method === 'GET') {
+    try { const tc = require('./lib/contracts/topranker.contracts'); return json(res, { contracts: tc.getTopRankerContracts() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/topranker/tasks/run' && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/topranker', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try {
+      const engine = require('./lib/engines/topranker-engine');
+      const orc = require('./lib/workflow-orchestrator');
+      const wf = orc.createFromIntake(`topranker_${Date.now().toString(36)}`, { tenantId: _tenantId, projectId: _projectId, autopilot: { enabled: body.autopilot || false } });
+      const deliverableId = engine.computeDeliverableId('topranker.weekly-leaderboard', body);
+      return json(res, { workflowId: wf.id, deliverableId, status: wf.state }, 201);
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/topranker/build' && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/topranker', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const adapter = require('./lib/integrations/topranker-repo-adapter'); const result = await adapter.runTopRankerBuild({ dryRun: body.dryRun !== false, steps: body.steps }); return json(res, result); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/topranker\/deliverables(\?.*)?$/) && req.method === 'GET') {
+    try {
+      const ws = require('./lib/workflow-store');
+      const workflows = ws.list({ tenantId: _tenantId });
+      const toprankerWfs = workflows.filter(w => w.intakeRef?.intakeId?.startsWith('topranker_'));
+      return json(res, { deliverables: toprankerWfs.map(w => ({ workflowId: w.id, state: w.state, deliverableRefs: w.deliverableRefs, createdAt: w.createdAt })) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 71: Workflow Orchestration
+  if (req.url === '/api/workflows' && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/workflows', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const orc = require('./lib/workflow-orchestrator'); const wf = orc.createFromIntake(body.intakeId, { tenantId: body.tenantId || _tenantId, projectId: body.projectId || _projectId, autopilot: body.autopilot }); return json(res, { workflow: wf }, 201); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/workflows(\?.*)?$/) && req.method === 'GET') {
+    try {
+      const ws = require('./lib/workflow-store');
+      const params = new URL(req.url, 'http://x').searchParams;
+      const filter = {};
+      if (params.get('tenantId')) filter.tenantId = params.get('tenantId');
+      if (params.get('projectId')) filter.projectId = params.get('projectId');
+      if (params.get('state')) filter.state = params.get('state').split(',');
+      return json(res, { workflows: ws.list(filter) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/workflows\/([^/]+)\/pause$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/workflows\/([^/]+)\/pause$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/workflows', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const orc = require('./lib/workflow-orchestrator'); const wf = orc.pause(id, 'operator', body.reason); return wf ? json(res, { workflow: wf }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/workflows\/([^/]+)\/resume$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/workflows\/([^/]+)\/resume$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/workflows', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const orc = require('./lib/workflow-orchestrator'); const wf = orc.resume(id, 'operator'); return wf ? json(res, { workflow: wf }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/workflows\/([^/]+)\/cancel$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/workflows\/([^/]+)\/cancel$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/workflows', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const orc = require('./lib/workflow-orchestrator'); const wf = orc.cancel(id, 'operator', body.reason); return wf ? json(res, { workflow: wf }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/workflows\/([^/]+)\/advance$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/workflows\/([^/]+)\/advance$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/workflows', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const orc = require('./lib/workflow-orchestrator'); const wf = orc.advance(id, body.reason || 'Operator advance', 'operator'); return wf ? json(res, { workflow: wf }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/workflows\/([^/]+)\/autopilot$/) && req.method === 'POST') {
+    const id = req.url.match(/^\/api\/workflows\/([^/]+)\/autopilot$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/workflows', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try {
+      const ws = require('./lib/workflow-store'); const ap = require('./lib/autopilot-controller');
+      const wf = ws.get(id); if (!wf) return json(res, { error: 'Not found' }, 404);
+      wf.autopilot = ap.getPolicyFor(body);
+      ws.update(wf);
+      return json(res, { autopilot: wf.autopilot });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/workflows\/([^/]+)\/timeline$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/workflows\/([^/]+)\/timeline$/)[1];
+    try { const ws = require('./lib/workflow-store'); const wf = ws.get(id); return wf ? json(res, { timeline: wf.timeline }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/metrics/orchestrator' && req.method === 'GET') {
+    try { const tel = require('./lib/orchestrator-telemetry'); return json(res, tel.getMetrics()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/workflows\/([^/]+)$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/workflows\/([^/]+)$/)[1];
+    try { const ws = require('./lib/workflow-store'); const wf = ws.get(id); return wf ? json(res, { workflow: wf }) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 70: Runtime Scheduler
+  if (req.url === '/runtime/scheduler' && req.method === 'GET') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/runtime/scheduler', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const s = require('./lib/scheduler/scheduler'); return json(res, s.state()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/runtime/scheduler/pause' && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/runtime/scheduler', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const s = require('./lib/scheduler/scheduler'); s.pause(); return json(res, { ok: true, paused: true }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/runtime/scheduler/resume' && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/runtime/scheduler', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const s = require('./lib/scheduler/scheduler'); s.resume(); return json(res, { ok: true, paused: false }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/runtime/scheduler/config' && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/runtime/scheduler', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const store = require('./lib/state/scheduler-store'); const current = store.loadConfig(); const updated = { ...current, ...body }; store.saveConfig(updated); return json(res, { ok: true, config: updated }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/runtime\/queue(\?.*)?$/) && req.method === 'GET') {
+    try {
+      const wq = require('./lib/scheduler/work-queue');
+      const params = new URL(req.url, 'http://x').searchParams;
+      const result = { stats: wq.stats() };
+      if (params.get('includeSnapshot') === '1') result.snapshot = wq.snapshot();
+      return json(res, result);
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/runtime/queue/reprioritize' && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/runtime/scheduler', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const wq = require('./lib/scheduler/work-queue'); wq.reprioritize(body.itemId, body.priority); return json(res, { ok: true }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/runtime\/queue\/([^/]+)$/) && req.method === 'DELETE') {
+    const itemId = req.url.match(/^\/runtime\/queue\/([^/]+)$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/runtime/scheduler', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try { const wq = require('./lib/scheduler/work-queue'); wq.markCanceled(itemId, 'Operator canceled'); return json(res, { ok: true }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/runtime\/providers\/([^/]+)\/limits$/) && req.method === 'POST') {
+    const provider = req.url.match(/^\/runtime\/providers\/([^/]+)\/limits$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/runtime/scheduler', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const store = require('./lib/state/scheduler-store'); const cfg = store.loadConfig(); cfg.perProviderMaxConcurrent[provider] = body.maxConcurrent; store.saveConfig(cfg); return json(res, { ok: true }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/runtime\/runs\/([^/]+)\/progress$/) && req.method === 'GET') {
+    const runId = req.url.match(/^\/runtime\/runs\/([^/]+)\/progress$/)[1];
+    try { const dag = require('./lib/scheduler/dag-runner'); const p = dag.runProgress(runId); return p ? json(res, { runId, ...p, updatedAt: new Date().toISOString() }) : json(res, { error: 'Run not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/runtime\/runs\/([^/]+)\/cancel$/) && req.method === 'POST') {
+    const runId = req.url.match(/^\/runtime\/runs\/([^/]+)\/cancel$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/runtime/scheduler', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const rec = require('./lib/scheduler/recovery'); const count = rec.cancelRun(runId, body.reason || 'Operator canceled'); return json(res, { ok: true, canceled: count }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 69: Structured I/O Observability + Metrics + Provider Learning
+  if (req.url?.match(/^\/api\/structured-io\/metrics(\?.*)?$/) && req.method === 'GET') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/structured-io', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try {
+      const m = require('./lib/structured-io-metrics');
+      const params = new URL(req.url, 'http://x').searchParams;
+      const wm = parseInt(params.get('windowMinutes') || '60');
+      return json(res, m.getCurrentSnapshot(wm));
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/structured-io/metrics/providers' && req.method === 'GET') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/structured-io', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try {
+      const m = require('./lib/structured-io-metrics');
+      const snap = m.getCurrentSnapshot(60);
+      return json(res, { providers: Object.values(snap.byProvider) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/structured-io/metrics/schemas' && req.method === 'GET') {
+    try { const m = require('./lib/structured-io-metrics'); const snap = m.getCurrentSnapshot(60); return json(res, { schemas: Object.values(snap.bySchema) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/structured-io\/latency-histogram(\?.*)?$/) && req.method === 'GET') {
+    try { const m = require('./lib/structured-io-metrics'); const params = new URL(req.url, 'http://x').searchParams; return json(res, m.getLatencyHistogram(parseInt(params.get('windowMinutes') || '60'))); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/structured-io\/costs(\?.*)?$/) && req.method === 'GET') {
+    try { const c = require('./lib/structured-io-cost'); const params = new URL(req.url, 'http://x').searchParams; return json(res, c.getCostSummary(parseInt(params.get('windowMinutes') || '1440'))); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/structured-io/alerts' && req.method === 'GET') {
+    try { const a = require('./lib/structured-io-alerts'); return json(res, { alerts: a.listActiveAlerts() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/structured-io/alerts/ack' && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/structured-io', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const a = require('./lib/structured-io-alerts'); const ok = a.acknowledgeAlert(body.id, body.actor || 'operator'); return json(res, { acknowledged: ok }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/structured-io/providers/learning' && req.method === 'GET') {
+    try { const pl = require('./lib/provider-learning'); return json(res, { providers: pl.getProviderLearningState() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/structured-io/providers/override-score' && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/structured-io', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const pl = require('./lib/provider-learning'); pl.overrideProviderScore(body.providerKey, body.score); return json(res, { overridden: true, providerKey: body.providerKey, score: body.score }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/structured-io/metrics/reset' && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/structured-io', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try { const m = require('./lib/structured-io-metrics'); m.resetMetrics(body.scope, body.key); return json(res, { reset: true }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/structured-io/evidence/index' && req.method === 'GET') {
+    try { const el = require('./lib/evidence-lifecycle'); return json(res, el.indexEvidence()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 68: Structured IO Status + Retry + Provider Capabilities
+  if (req.url?.match(/^\/api\/ai-io\/status\/([^/]+)$/) && req.method === 'GET') {
+    const taskId = req.url.match(/^\/api\/ai-io\/status\/([^/]+)$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/ai-io', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try {
+      const cos = require('./lib/chief-of-staff');
+      const statuses = cos.getStructuredIOStatus(taskId);
+      try { const dr = require('./lib/deep-redaction'); const r = dr.redactDeep({ taskId, statuses }, '/api/ai-io/status', 'api_response', ['tenant_data']); return json(res, r.data); } catch { return json(res, { taskId, statuses }); }
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/ai-io\/retry\/([^/]+)$/) && req.method === 'POST') {
+    const taskId = req.url.match(/^\/api\/ai-io\/retry\/([^/]+)$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/ai-io', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try {
+      const { loadContractAwareConfig } = require('./lib/config/ai-io');
+      const cfg = loadContractAwareConfig();
+      if (!cfg.allowManualRetry) return json(res, { error: 'Manual retry not allowed by config' }, 403);
+      return json(res, { taskId, message: 'Retry queued', status: 'queued' });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/providers/capabilities' && req.method === 'GET') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/providers', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try {
+      const pc = require('./lib/ai/provider-capabilities');
+      const { loadContractAwareConfig } = require('./lib/config/ai-io');
+      const cfg = loadContractAwareConfig();
+      return json(res, { capabilities: pc.getProviderCapabilities(), routing: cfg.providerRouting || 'capability-preferred' });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
+  // Part 67: Structured Output Extraction API
+  if (req.url?.match(/^\/api\/deliverables\/([^/]+)\/structured$/) && req.method === 'GET') {
+    const id = req.url.match(/^\/api\/deliverables\/([^/]+)\/structured$/)[1];
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/deliverables', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try {
+      const reader = require('./lib/evidence/reader');
+      const evidence = reader.getLatestEvidence(id);
+      if (!evidence) return json(res, { error: 'No structured evidence found' }, 404);
+      try { const dr = require('./lib/deep-redaction'); const r = dr.redactDeep(evidence, '/api/deliverables/structured', 'api_response', ['tenant_data']); return json(res, r.data); } catch { return json(res, evidence); }
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/deliverables\/([^/]+)\/structured\/([^/]+)$/) && req.method === 'GET') {
+    const m = req.url.match(/^\/api\/deliverables\/([^/]+)\/structured\/([^/]+)$/);
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/deliverables', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    try {
+      const reader = require('./lib/evidence/reader');
+      const entries = reader.getTaskEvidence(m[1], m[2]);
+      if (entries.length === 0) return json(res, { error: 'No evidence for this task' }, 404);
+      try { const dr = require('./lib/deep-redaction'); const r = dr.redactDeep(entries, '/api/deliverables/structured', 'api_response', ['tenant_data']); return json(res, { entries: r.data }); } catch { return json(res, { entries }); }
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   if (req.url?.match(/^\/api\/deliverables\/([^/]+)$/) && req.method === 'GET') {
     const id = req.url.match(/^\/api\/deliverables\/([^/]+)$/)[1];
     try { const cos = require('./lib/chief-of-staff'); const d = cos.getStoredDeliverable(id); return d ? json(res, d) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }

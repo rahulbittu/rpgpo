@@ -1,0 +1,22 @@
+{
+  "enabled": true,
+  "acceptNonStrict": true,
+  "maxParseAttempts": 3,
+  "maxResponseBytes": 400000,
+  "providerModes": {
+    "openai": "native-json",
+    "anthropic": "native-json",
+    "perplexity": "prompt-sentinel",
+    "google": "mime-json",
+    "gemini": "mime-json"
+  },
+  "sentinel": { "start": "<gpo_json>", "end": "</gpo_json>" },
+  "boardStructuredEnabled": true,
+  "workerStructuredEnabled": true,
+  "providerRouting": "capability-preferred",
+  "backoffMs": 250,
+  "backoffMultiplier": 1.7,
+  "backoffJitter": 0.2,
+  "exposeStatusToOperator": true,
+  "allowManualRetry": false
+}

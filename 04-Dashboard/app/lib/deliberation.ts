@@ -23,6 +23,17 @@ const contextEngine = require('./context');
 const path = require('path');
 const fs = require('fs');
 
+// Part 67: Structured output imports
+let _structuredEnabled: boolean | null = null;
+function isStructuredEnabled(): boolean {
+  if (_structuredEnabled !== null) return _structuredEnabled;
+  try {
+    const { loadContractAwareConfig } = require('./config/ai-io');
+    _structuredEnabled = loadContractAwareConfig().enabled;
+  } catch { _structuredEnabled = false; }
+  return _structuredEnabled;
+}
+
 // Domain-specific context for richer deliberation
 interface DomainContextEntry {
   description: string;
@@ -303,4 +314,93 @@ Keep subtasks to 3-6 items. Each must be completable in one AI call.`;
   };
 }
 
-module.exports = { deliberate, getDomainContext, DOMAIN_CONTEXT };
+/**
+ * Part 67: Execute a subtask with contract-aware structured output.
+ * Returns parsed structured extraction alongside raw AI result.
+ * Falls back to raw text if structured path fails or is disabled.
+ */
+async function executeStructuredSubtask(args: {
+  provider: string;
+  model?: string;
+  taskDescription: string;
+  engineId: string;
+  deliverableId?: string;
+  taskId: string;
+  subtaskId: string;
+  priorContext?: string;
+  fieldPolicies?: Record<string, string>;
+}): Promise<{ text: string; structured: any | null; mapping: any | null }> {
+  const { provider, taskDescription, engineId, deliverableId, taskId, subtaskId, priorContext, fieldPolicies } = args;
+
+  if (!isStructuredEnabled()) {
+    // Fallback: use plain AI call
+    const result = await callOpenAI(
+      'You are a GPO worker. Complete the following subtask.',
+      taskDescription,
+      { model: args.model, maxTokens: 3000 }
+    );
+    return { text: result.text, structured: null, mapping: null };
+  }
+
+  try {
+    const { buildContractAwarePrompt } = require('./prompt/contract-aware');
+    const { callProviderStructured } = require('./ai/providers');
+    const { parseStructured } = require('./ai/structured-output');
+    const { loadContractAwareConfig } = require('./config/ai-io');
+    const { populateDeliverableFromStructured } = require('./merge/field-populator');
+    const { recordStructuredEvidence } = require('./evidence/structured');
+
+    const cfg = loadContractAwareConfig();
+    const { envelope, schema } = buildContractAwarePrompt({
+      provider, taskKind: 'subtask-execution', taskDescription,
+      deliverableContract: null, priorContext, fieldPolicies, engineId,
+    });
+
+    const res = await callProviderStructured({ provider, model: args.model, envelope, schema });
+    const parsed = parseStructured(res.rawText, res.usedMode, schema, cfg);
+    parsed.tokensIn = res.tokensIn;
+    parsed.tokensOut = res.tokensOut;
+    parsed.durationMs = res.durationMs;
+    parsed.promptId = envelope.promptId;
+
+    let mapping = null;
+    if (parsed.ok) {
+      // Try to populate deliverable if we have one
+      try {
+        const ce = require('./contract-enforcement');
+        const deliverable = ce.getDeliverable(taskId);
+        if (deliverable) {
+          const { getMergePolicy } = require('./deliverable-merge');
+          const policy = getMergePolicy(deliverable.kind);
+          mapping = populateDeliverableFromStructured({ deliverable, parsed, mergePolicy: policy });
+        }
+      } catch { /* non-fatal */ }
+    }
+
+    // Record evidence
+    try {
+      recordStructuredEvidence({
+        deliverableId: deliverableId || taskId,
+        taskId: subtaskId,
+        schema, envelope, extraction: parsed, mapping,
+      });
+    } catch { /* non-fatal */ }
+
+    return {
+      text: parsed.ok ? JSON.stringify(parsed.value) : res.rawText,
+      structured: parsed.ok ? parsed : null,
+      mapping,
+    };
+  } catch (e) {
+    // Full fallback on any error
+    console.log(`[deliberation] Structured subtask fallback: ${e instanceof Error ? e.message : String(e)}`);
+    const result = await callOpenAI(
+      'You are a GPO worker. Complete the following subtask.',
+      taskDescription,
+      { model: args.model, maxTokens: 3000 }
+    );
+    return { text: result.text, structured: null, mapping: null };
+  }
+}
+
+module.exports = { deliberate, getDomainContext, DOMAIN_CONTEXT, executeStructuredSubtask };

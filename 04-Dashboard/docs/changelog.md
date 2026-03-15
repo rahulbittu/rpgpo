@@ -1,5 +1,107 @@
 # GPO Changelog
 
+## 2026-03-15 — Part 74: Comprehensive Integration Test Suite + Acceptance Harness
+- 2 new test infrastructure modules: lib/test/provider-sim.ts, lib/test/scenario-runner.ts
+- Provider simulator: seeded deterministic RNG, contract-aware output generation for TopRanker/newsroom/general, configurable error/slow/invalidJson rates
+- Scenario runner: end-to-end workflow execution through all 14 stages with assertions on deliverables, evidence, and stage transitions
+- 14 new acceptance tests: provider sim (8), scenario runner (6) covering TopRanker, newsroom, general engines
+- Multi-engine acceptance scenarios: happy paths, evidence verification, field validation, batch execution
+- All core 258 tests pass, 297 total including integration scenarios
+
+## 2026-03-14 — Part 73: Mission Control Dashboard + Operator Notifications
+- 2 new modules: mission-control.ts (aggregation), in-app-notifications.ts (notification engine)
+- Mission Control aggregator: collects workflow, provider, scheduler, alert, deliverable, approval state into unified payload with health computation (green/yellow/red)
+- In-app notification engine: emit/list/ack/markRead with rolling 2000-entry persistence, 60s dedup window, badge counts
+- 10+ new types: MissionControlSummary, MissionControlPayload, GPO_Notification, NotificationBadgeCounts, MCHealth, NotificationType, etc.
+- 5 new API routes: /api/mission-control/summary, /api/mission-control/full, /api/notifications, /api/notifications/ack, /api/notifications/mark-read
+- 13 new tests (283 total), 0 regressions
+
+## 2026-03-14 — Part 72: TopRanker Engine Deep Integration
+- 3 new modules: contracts/topranker.contracts.ts, engines/topranker-engine.ts, integrations/topranker-repo-adapter.ts
+- 4 TopRanker contracts: leaderboard.v1, scorecard.v1, review-aggregation.v1, release-artifact.v1 with JSON Schema validation
+- TopRanker engine template: 3 task templates (weekly-leaderboard, scorecards, review-aggregation), domain-specific prompts with governance rules, merge with de-dup by businessId, deterministic deliverable IDs
+- Repo adapter: detect/prepare/build/collect with dry-run mode, checksum-verified artifacts, redacted env vars, build logs
+- 4 TopRanker types: TopRankerLeaderboardEntry, TopRankerBusinessScorecard, TopRankerReviewAggregation, TopRankerReleaseArtifact
+- 4 new API routes: /api/topranker/contracts, /api/topranker/tasks/run, /api/topranker/build, /api/topranker/deliverables
+- Sample data: state/samples/topranker/sample-leaderboard.json with 3 Austin coffee shops
+- 21 new tests (270 total), 0 regressions
+
+## 2026-03-14 — Part 71: End-to-End Workflow Orchestration + Autopilot Mode
+- 9 new modules: workflow-types.ts, workflow-store.ts, workflow-orchestrator.ts, autopilot-controller.ts, scheduler-bridge.ts, approval-gate-adapter.ts, release-trigger.ts, orchestrator-events.ts, orchestrator-telemetry.ts
+- Durable workflow state machine: 14 stages (intake_received → released) with typed transitions and idempotency keys
+- Autopilot controller: per-tenant/project/workflow policies, daily caps, gate allow/deny lists, budget guardrails
+- Scheduler bridge: integrates with Part 70 parallel execution engine
+- Approval gate adapter: uniform gate status interface
+- Release trigger: auto-assemble RC and promote on approval
+- Evidence emission: per-transition records with redaction
+- Telemetry: transition counts, stage durations, auto-advance/release tracking
+- 10 new API routes: workflow CRUD, pause/resume/cancel/advance/autopilot, timeline, metrics
+- Feature flags config: state/config/feature-flags.json with autopilot defaults
+- Docs: ADR-0071 workflow orchestrator and autopilot
+- 25 new tests (249 total), 0 regressions
+
+## 2026-03-14 — Part 70: Parallel Execution Engine + Resource-Aware Scheduling + Backpressure
+- 9 new modules: scheduler/scheduler.ts, work-queue.ts, provider-capacity.ts, backpressure.ts, dag-runner.ts, recovery.ts, ids.ts, state/scheduler-store.ts
+- DAG runner: execution graph → queue items with dependency tracking, ready set transitions on node completion
+- Priority work queue: JSON-persisted with priority ordering, lease management, dead letter queue
+- Provider capacity: per-provider/tenant/project concurrency semaphores with dynamic limits from backpressure
+- Backpressure: integrates circuit breaker state and error rates to scale concurrency
+- Recovery: lease expiration sweep, crash recovery, graceful drain on shutdown
+- 15+ new types: SchedulerConfig, SchedulerFeatureFlags, BackpressureSignal, CapacityWindow, QueueItem, QueueStats, etc.
+- 10 new API routes: scheduler state/pause/resume/config, queue stats/reprioritize/cancel, provider limits, run progress/cancel
+- Feature-flagged (enabled=false, globalMaxConcurrent=1 by default, preserving serial behavior)
+- Config: state/scheduler/config.json with full scheduler configuration
+- Docs: ADR-0070 parallel execution and backpressure
+- 25 new tests (224 total), 0 regressions
+
+## 2026-03-14 — Part 69: Structured I/O Observability + Metrics + Provider Learning + Evidence Lifecycle
+- 5 new modules: structured-io-metrics.ts, structured-io-cost.ts, provider-learning.ts, evidence-lifecycle.ts, structured-io-alerts.ts
+- `structured-io-metrics.ts` — In-memory event ring buffer, rolling aggregation, latency histograms, p50/p95/p99 percentiles, per-provider and per-schema metrics
+- `structured-io-cost.ts` — Per-call cost estimation from provider pricing table, accumulation by task/provider
+- `provider-learning.ts` — EWMA scoring (alpha=0.2, weights: 60% success + 25% latency + 15% cost), circuit breaker (50% threshold, 5min sleep), routing bias (±20%)
+- `evidence-lifecycle.ts` — TTL cleanup (30d default), max bytes enforcement (500MB LRU), file indexing with age distribution
+- `structured-io-alerts.ts` — parse_spike and provider_error_spike detection, cooldown, acknowledgement lifecycle
+- 11 new API routes: metrics, providers, schemas, histogram, costs, alerts, ack, learning, override-score, reset, evidence index
+- UI: New "Structured I/O" tab with KPI dashboard, per-provider table, latency histogram, alerts with ack, evidence summary
+- Config: state/config/structured-io.json with metrics, learning, evidence, alerts, cost settings
+- 12 new types: StructuredIoEvent, StructuredIoMetricsSnapshot, ProviderMetrics, SchemaMetrics, ProviderLearningConfig, StructuredIoConfig, StructuredIoAlert
+- Docs: ADR-0069, structured-io-alerts runbook
+- 25 new tests (199 total), 0 regressions
+
+## 2026-03-14 — Part 68: Board + Worker Structured Integration + Retry + Provider-Aware Routing
+- 3 new modules: ai/provider-capabilities.ts, ai/backoff.ts, contracts/board-phase.ts
+- `provider-capabilities.ts` — 5-provider capability registry with structured output support flags; `decideProviderRouting()` with 3 routing modes (capability-preferred, force-config, legacy)
+- `backoff.ts` — Exponential backoff with jitter for parse retry (250ms base, 1.7x multiplier, 0.2 jitter)
+- `board-phase.ts` — JSON Schema for all 8 board lifecycle phases
+- `executeWithParseRetry()` — Unified retry loop in structured-output.ts; loops up to maxParseAttempts with backoff, records evidence per attempt
+- Board integration: `executeBoardPhaseStructured()` wraps each phase with structured pipeline; falls back to legacy on failure
+- Chief of Staff: `getStructuredIOStatus(taskId)` and `getStructuredIOBriefSnippet(taskId)` surface structured status in briefs
+- Config v2: boardStructuredEnabled, workerStructuredEnabled, providerRouting, backoffMs/Multiplier/Jitter, exposeStatusToOperator, allowManualRetry
+- 6 new types: GPO_ProviderCapability, GPO_ProviderRoutingDecision, GPO_StructuredIOAttempt, GPO_StructuredIOStatus, GPO_BoardPhaseOutput, GPO_ProviderMode
+- 3 new API routes: GET /api/ai-io/status/:taskId, POST /api/ai-io/retry/:taskId, GET /api/providers/capabilities
+- UI: Structured IO status badge with provider/mode/attempts/status
+- Docs: ADR-0068, ai-io-ops runbook
+- 27 new tests (174 total), 0 regressions
+
+## 2026-03-14 — Part 67: Contract-Aware Prompt Augmentation + Structured Output Extraction
+- 8 new TypeScript modules across 5 new subdirectories (config/, contracts/, prompt/, ai/, evidence/)
+- `config/ai-io.ts` — Feature-flagged config loader with provider mode matrix and sentinel config
+- `contracts/schema-encoder.ts` — Engine contract → JSON Schema draft-07 with deterministic hashing
+- `prompt/contract-aware.ts` — Builds prompts with schema injection, field policies, per-provider modes
+- `ai/providers.ts` — `callProviderStructured()` maps native-json/mime-json/prompt-sentinel to provider calls
+- `ai/structured-output.ts` — 4-stage parse pipeline: direct → sentinel → fenced → balanced braces
+- `merge/field-populator.ts` — Policy-aware field-level deliverable population from parsed JSON
+- `evidence/structured.ts` — Redacted evidence recording (schema hash, prompt ID, parse status, mapping diffs)
+- `evidence/reader.ts` — Query structured evidence by deliverable and task
+- 6 new types: GPO_StructuredMode, GPO_SchemaEnvelope, GPO_PromptEnvelope, GPO_StructuredExtraction, GPO_FieldMappingResult, GPO_ContractAwareConfig
+- `deliberation.ts` — New `executeStructuredSubtask()` with full pipeline + graceful fallback
+- `runtime-deliverable-pipeline.ts` — `onSubtaskComplete` now accepts structured results for field-level population
+- 2 new API routes: GET /api/deliverables/:id/structured, GET /api/deliverables/:id/structured/:taskId
+- UI: "Structured" badge on deliverables, Raw/Parsed toggle with evidence viewer
+- Config: state/config/ai-io.json with feature flag, provider modes, parse limits, sentinel markers
+- Docs: ADR-0067, structured-output-runbook, schema-encoding contracts doc
+- 72 tests (52 unit + 20 integration), 0 regressions on existing 75-test suite
+
 ## 2026-03-14 — Part 61: Merge Pipeline + Merge-Time Enforcement + Strategy Registry
 - `deliverable-merge.ts` — 5 merge strategies, per-variant field policies, provenance tracking
 - Merge-time contract enforcement with variant-specific validation

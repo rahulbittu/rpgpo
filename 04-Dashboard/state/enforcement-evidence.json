@@ -1,5 +1,29 @@
 [
   {
+    "record_id": "ee_mmqwy95pcokh",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing summaries, source_links",
+    "scope_type": "task",
+    "scope_id": "task_test_65",
+    "route": "newsroom",
+    "linked_path_id": "",
+    "created_at": "2026-03-14T22:44:47.965Z"
+  },
+  {
+    "record_id": "ee_mmqwbvklhc5p",
+    "area": "evidence_link",
+    "middleware_ran": "evidence-linker",
+    "decision_made": "linked_3_refs",
+    "response_effect": "linked",
+    "scope_type": "deliverable",
+    "scope_id": "dlv_rpgpo_task123_newsroom_fdfe74f7",
+    "route": "v2",
+    "linked_path_id": "",
+    "created_at": "2026-03-14T22:27:23.925Z"
+  },
+  {
     "record_id": "ee_mmqs6tiw4hqz",
     "area": "route_level_proof",
     "middleware_ran": "inline_guard_rlv_same_scope",

@@ -2107,7 +2107,10 @@ if (_origSwitchTab) {
             html += ids.slice(0, 10).map(function(id) {
               var e = storeIdx.entries[id];
               var sCls = e.status === 'approved' ? 'trc-type' : e.status === 'proposed' ? 'trc-action' : e.status === 'rejected' ? 'exc-sev' : 'trc-status';
-              return '<div class="trc-item"><span class="' + sCls + '">' + esc(e.status) + '</span><span class="trc-title">' + esc(id.slice(0, 40)) + '</span><span class="trc-status">v' + e.latestVersion + (e.approvedVersion ? ' (approved: v' + e.approvedVersion + ')' : '') + '</span></div>';
+              return '<div class="trc-item"><span class="' + sCls + '">' + esc(e.status) + '</span><span class="trc-title">' + esc(id.slice(0, 40)) + '</span><span class="trc-status">v' + e.latestVersion + (e.approvedVersion ? ' (approved: v' + e.approvedVersion + ')' : '') + '</span>' +
+                '<span class="structured-badge-slot" data-dlv-id="' + esc(id) + '"></span>' +
+                '<button class="nop-btn nop-btn-secondary" style="font-size:9px;padding:2px 6px;margin-left:4px" onclick="gpoToggleStructuredView(this,\'' + esc(id) + '\')">Raw/Parsed</button>' +
+                '</div><div class="structured-view-slot" id="sv-' + esc(id.replace(/[^a-zA-Z0-9_-]/g,'_')) + '" style="display:none"></div>';
             }).join('');
           } else {
             html += '<div class="gov-empty">No deliverables in store yet</div>';
@@ -2322,5 +2325,194 @@ setTimeout(() => {
   // Load Chief of Staff on home
   refreshChiefOfStaff();
 }, 500);
+
+// Part 67: Structured output badge + Raw/Parsed toggle
+window.gpoToggleStructuredView = function(btn, dlvId) {
+  var slotId = 'sv-' + dlvId.replace(/[^a-zA-Z0-9_-]/g, '_');
+  var slot = document.getElementById(slotId);
+  if (!slot) return;
+  if (slot.style.display !== 'none') { slot.style.display = 'none'; return; }
+  slot.style.display = 'block';
+  slot.innerHTML = '<div class="gov-empty">Loading structured view...</div>';
+  fetch('/api/deliverables/' + encodeURIComponent(dlvId) + '/structured')
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(data) {
+      if (!data || data.error) {
+        slot.innerHTML = '<div class="gov-empty">No structured extraction available</div>';
+        return;
+      }
+      var html = '<div class="aud-section" style="margin:4px 0 8px 24px;padding:8px;background:var(--bg-secondary,#1a1a2e);border-radius:6px;font-size:11px">';
+      html += '<div style="display:flex;gap:8px;margin-bottom:4px"><span class="trc-type">Structured</span>';
+      html += '<span class="trc-status">Mode: ' + esc(data.extraction?.usedMode || '?') + '</span>';
+      html += '<span class="trc-status">' + (data.extraction?.ok ? 'Parse OK' : 'Parse Failed') + '</span>';
+      if (data.extraction?.durationMs) html += '<span class="trc-status">' + data.extraction.durationMs + 'ms</span>';
+      html += '</div>';
+      if (data.extraction?.valueKeys?.length) {
+        html += '<div style="margin-top:4px"><strong>Fields:</strong> ' + data.extraction.valueKeys.join(', ') + '</div>';
+      }
+      if (data.mapping) {
+        if (data.mapping.updatedFields?.length) html += '<div style="color:var(--accent-green,#4ade80)">Updated: ' + data.mapping.updatedFields.join(', ') + '</div>';
+        if (data.mapping.rejectedFields?.length) html += '<div style="color:var(--accent-red,#f87171)">Rejected: ' + data.mapping.rejectedFields.join(', ') + '</div>';
+      }
+      if (data.extraction?.errors?.length) {
+        html += '<div style="color:var(--accent-red,#f87171);margin-top:4px">Errors: ' + data.extraction.errors.map(esc).join('; ') + '</div>';
+      }
+      html += '<div style="margin-top:4px;color:var(--text-tertiary,#888)">Schema: ' + esc(data.schema?.contractId || '?') + ' hash:' + esc((data.schema?.schemaHash || '?').slice(0, 8)) + '</div>';
+      html += '</div>';
+      slot.innerHTML = html;
+    })
+    .catch(function() { slot.innerHTML = '<div class="gov-empty">Error loading structured data</div>'; });
+};
+
+// Load structured badges for visible deliverables
+function loadStructuredBadges() {
+  var slots = document.querySelectorAll('.structured-badge-slot[data-dlv-id]');
+  slots.forEach(function(slot) {
+    var id = slot.getAttribute('data-dlv-id');
+    if (!id || slot.dataset.loaded) return;
+    slot.dataset.loaded = '1';
+    fetch('/api/deliverables/' + encodeURIComponent(id) + '/structured')
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(data) {
+        if (data && data.extraction && data.extraction.ok) {
+          slot.innerHTML = '<span class="trc-type" style="font-size:9px;padding:1px 4px;margin-left:4px">Structured</span>';
+        }
+      })
+      .catch(function() {});
+  });
+}
+// Run badge loading after tab renders
+var _origTabSwitch = window.switchTab;
+if (_origTabSwitch) {
+  window.switchTab = function(tab) {
+    _origTabSwitch(tab);
+    if (tab === 'releases') setTimeout(loadStructuredBadges, 600);
+  };
+}
+
+// Part 68: Structured IO status badge for tasks
+window.gpoLoadStructuredIOStatus = function(taskId, container) {
+  fetch('/api/ai-io/status/' + encodeURIComponent(taskId))
+    .then(function(r) { return r.ok ? r.json() : null; })
+    .then(function(data) {
+      if (!data || !data.statuses || !data.statuses.length) return;
+      var latest = data.statuses[data.statuses.length - 1];
+      var statusColor = latest.status === 'complete' ? 'var(--accent-green,#4ade80)'
+        : latest.status === 'partial' ? 'var(--accent-amber,#fbbf24)'
+        : latest.status === 'failed' ? 'var(--accent-red,#f87171)'
+        : latest.status === 'fallback' ? 'var(--text-tertiary,#888)'
+        : 'var(--text-secondary,#aaa)';
+      var attemptStr = (latest.attempts ? latest.attempts.length : 0) + '/' + (latest.maxAttempts || 3);
+      var modeLabel = latest.providerMode === 'native-json' ? 'JSON' : latest.providerMode === 'mime-json' ? 'MIME' : 'Sentinel';
+      var badge = '<span class="structured-io-badge" style="display:inline-flex;align-items:center;gap:4px;font-size:10px;padding:2px 6px;border-radius:4px;background:var(--bg-secondary,#1a1a2e)">'
+        + '<span style="color:' + statusColor + '">' + esc(latest.status) + '</span>'
+        + '<span style="color:var(--text-tertiary,#888)">' + esc(latest.providerId) + ' ' + modeLabel + '</span>'
+        + '<span style="color:var(--text-tertiary,#888)">' + attemptStr + '</span>'
+        + (latest.fieldsExtracted ? '<span style="color:var(--text-secondary,#aaa)">' + latest.fieldsExtracted + ' fields</span>' : '')
+        + '</span>';
+      if (container) container.innerHTML = badge;
+    })
+    .catch(function() {});
+};
+
+// Part 69: Structured I/O Health Panel
+var _sioInterval = null;
+function renderStructuredIoPanel() {
+  var panel = document.getElementById('structuredIoPanel');
+  if (!panel) return;
+  panel.innerHTML = '<div class="gov-empty">Loading structured I/O metrics...</div>';
+
+  Promise.all([
+    fetch('/api/structured-io/metrics?windowMinutes=60').then(function(r) { return r.ok ? r.json() : null; }).catch(function() { return null; }),
+    fetch('/api/structured-io/metrics/providers').then(function(r) { return r.ok ? r.json() : null; }).catch(function() { return null; }),
+    fetch('/api/structured-io/costs?windowMinutes=1440').then(function(r) { return r.ok ? r.json() : null; }).catch(function() { return null; }),
+    fetch('/api/structured-io/alerts').then(function(r) { return r.ok ? r.json() : null; }).catch(function() { return null; }),
+    fetch('/api/structured-io/evidence/index').then(function(r) { return r.ok ? r.json() : null; }).catch(function() { return null; }),
+    fetch('/api/structured-io/latency-histogram?windowMinutes=60').then(function(r) { return r.ok ? r.json() : null; }).catch(function() { return null; }),
+  ]).then(function(arr) {
+    var snap = arr[0], providers = arr[1], costs = arr[2], alertsData = arr[3], evidence = arr[4], histogram = arr[5];
+    var html = '';
+
+    // KPIs
+    if (snap) {
+      var sr = (snap.successRate * 100).toFixed(1);
+      var srCls = snap.successRate >= 0.9 ? 'trc-type' : snap.successRate >= 0.7 ? 'trc-action' : 'exc-sev';
+      html += '<div class="aud-section"><div class="aud-section-title">Global KPIs (1h window)</div>';
+      html += '<div style="display:flex;gap:12px;flex-wrap:wrap;margin:8px 0">';
+      html += '<div class="kpi-box"><span class="' + srCls + '">' + sr + '%</span><span class="kpi-label">Success Rate</span></div>';
+      html += '<div class="kpi-box"><span class="trc-status">' + snap.p50LatencyMs.toFixed(0) + 'ms</span><span class="kpi-label">p50 Latency</span></div>';
+      html += '<div class="kpi-box"><span class="trc-status">' + snap.p95LatencyMs.toFixed(0) + 'ms</span><span class="kpi-label">p95 Latency</span></div>';
+      html += '<div class="kpi-box"><span class="trc-status">' + (snap.retryRate * 100).toFixed(1) + '%</span><span class="kpi-label">Retry Rate</span></div>';
+      html += '<div class="kpi-box"><span class="trc-status">' + snap.totalCalls + '</span><span class="kpi-label">Total Calls</span></div>';
+      html += '<div class="kpi-box"><span class="trc-status">$' + snap.totalCostUsd.toFixed(4) + '</span><span class="kpi-label">Cost (1h)</span></div>';
+      html += '</div></div>';
+    }
+
+    // Provider table
+    if (providers && providers.providers && providers.providers.length) {
+      html += '<div class="aud-section"><div class="aud-section-title">Per-Provider Metrics</div>';
+      html += '<div style="overflow-x:auto"><table style="width:100%;font-size:11px;border-collapse:collapse">';
+      html += '<tr style="border-bottom:1px solid var(--border,#222)"><th>Provider</th><th>Calls</th><th>Success</th><th>Errors</th><th>p95</th><th>Attempts</th><th>Cost</th><th>Score</th><th>Circuit</th></tr>';
+      providers.providers.forEach(function(p) {
+        var circuitCls = p.circuitOpen ? 'exc-sev' : 'trc-type';
+        html += '<tr><td>' + esc(p.providerKey) + '</td><td>' + p.totalCalls + '</td><td>' + (p.successRate * 100).toFixed(1) + '%</td><td>' + (p.providerErrorRate * 100).toFixed(1) + '%</td><td>' + p.p95LatencyMs.toFixed(0) + 'ms</td><td>' + p.avgAttempts.toFixed(1) + '</td><td>$' + p.totalCostUsd.toFixed(4) + '</td><td>' + p.dynamicScore.toFixed(2) + '</td><td><span class="' + circuitCls + '">' + (p.circuitOpen ? 'OPEN' : 'closed') + '</span></td></tr>';
+      });
+      html += '</table></div></div>';
+    }
+
+    // Latency histogram
+    if (histogram && histogram.counts) {
+      html += '<div class="aud-section"><div class="aud-section-title">Latency Histogram (1h)</div>';
+      var maxC = Math.max.apply(null, histogram.counts) || 1;
+      html += '<div style="display:flex;align-items:flex-end;gap:2px;height:60px;margin:8px 0">';
+      for (var i = 0; i < histogram.counts.length; i++) {
+        var h = Math.max(2, (histogram.counts[i] / maxC) * 60);
+        var label = histogram.bucketsMs[i] === Infinity ? '>' + histogram.bucketsMs[i-1] : '<' + histogram.bucketsMs[i] + 'ms';
+        html += '<div style="flex:1;background:var(--accent-blue,#60a5fa);height:' + h + 'px;border-radius:2px 2px 0 0" title="' + label + ': ' + histogram.counts[i] + '"></div>';
+      }
+      html += '</div></div>';
+    }
+
+    // Alerts
+    if (alertsData && alertsData.alerts && alertsData.alerts.length) {
+      html += '<div class="aud-section"><div class="aud-section-title">Active Alerts (' + alertsData.alerts.length + ')</div>';
+      alertsData.alerts.forEach(function(a) {
+        html += '<div class="trc-item"><span class="exc-sev">' + esc(a.kind) + '</span><span class="trc-title">' + esc(a.details.slice(0, 80)) + '</span>';
+        html += '<button class="nop-btn nop-btn-secondary" style="font-size:9px;padding:2px 6px;margin-left:auto" onclick="fetch(\'/api/structured-io/alerts/ack\',{method:\'POST\',headers:{\'Content-Type\':\'application/json\'},body:JSON.stringify({id:\'' + esc(a.id) + '\',actor:\'operator\'})}).then(function(){renderStructuredIoPanel()})">Ack</button></div>';
+      });
+      html += '</div>';
+    }
+
+    // Evidence lifecycle
+    if (evidence) {
+      html += '<div class="aud-section"><div class="aud-section-title">Evidence Store</div>';
+      html += '<div style="display:flex;gap:12px;flex-wrap:wrap;margin:8px 0">';
+      html += '<div class="kpi-box"><span class="trc-status">' + evidence.totalFiles + '</span><span class="kpi-label">Files</span></div>';
+      html += '<div class="kpi-box"><span class="trc-status">' + (evidence.totalBytes / 1024).toFixed(1) + ' KB</span><span class="kpi-label">Size</span></div>';
+      if (evidence.byAge) {
+        Object.keys(evidence.byAge).forEach(function(k) {
+          html += '<div class="kpi-box"><span class="trc-status">' + evidence.byAge[k] + '</span><span class="kpi-label">' + k + '</span></div>';
+        });
+      }
+      html += '</div></div>';
+    }
+
+    if (!html) html = '<div class="gov-empty">No structured I/O data yet</div>';
+    panel.innerHTML = html;
+  });
+}
+
+// Hook tab switch for structured-io panel with polling
+var _origTabSwitch2 = window.switchTab;
+if (_origTabSwitch2) {
+  window.switchTab = function(tab) {
+    _origTabSwitch2(tab);
+    if (_sioInterval) { clearInterval(_sioInterval); _sioInterval = null; }
+    if (tab === 'structured-io') {
+      renderStructuredIoPanel();
+      _sioInterval = setInterval(renderStructuredIoPanel, 10000);
+    }
+  };
+}
 
 console.log('[operator] GPO Operator Product Layer + Chief of Staff loaded');

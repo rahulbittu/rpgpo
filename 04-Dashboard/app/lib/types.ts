@@ -6359,3 +6359,470 @@ export interface RuntimeDeliverableSummary {
   pending: number;
   violated: number;
 }
+
+// ── Part 67: Contract-Aware Prompt Augmentation + Structured Output Extraction ──
+
+export type GPO_StructuredMode = 'native-json' | 'tool-call' | 'mime-json' | 'prompt-sentinel';
+
+export interface GPO_SchemaEnvelope {
+  contractId: string;
+  version: string;
+  schemaHash: string;
+  jsonSchema: any;
+  schemaSummary: string;
+}
+
+export interface GPO_PromptEnvelope {
+  promptId: string;
+  mode: GPO_StructuredMode;
+  system: string;
+  user: string;
+  instructions: string;
+  sentinelStart?: string;
+  sentinelEnd?: string;
+  providerHints?: Record<string, any>;
+}
+
+export interface GPO_StructuredExtraction<T = any> {
+  ok: boolean;
+  value?: T;
+  errors?: string[];
+  raw: string;
+  usedMode: GPO_StructuredMode;
+  schema: GPO_SchemaEnvelope;
+  promptId: string;
+  tokensIn?: number;
+  tokensOut?: number;
+  durationMs?: number;
+  attempts: number;
+}
+
+export interface GPO_FieldMappingResult {
+  updatedFields: string[];
+  skippedFields: string[];
+  rejectedFields: string[];
+  diffs: Record<string, { before: any; after: any }>;
+}
+
+export interface GPO_ContractAwareConfig {
+  enabled: boolean;
+  acceptNonStrict: boolean;
+  maxParseAttempts: number;
+  maxResponseBytes: number;
+  providerModes: Partial<Record<string, GPO_StructuredMode>>;
+  sentinel: { start: string; end: string };
+  boardStructuredEnabled?: boolean;
+  workerStructuredEnabled?: boolean;
+  providerRouting?: 'force-config' | 'capability-preferred' | 'legacy';
+  backoffMs?: number;
+  backoffMultiplier?: number;
+  backoffJitter?: number;
+  exposeStatusToOperator?: boolean;
+  allowManualRetry?: boolean;
+}
+
+// ── Part 68: Board + Worker Structured Integration + Retry + Provider-Aware Routing ──
+
+export type GPO_ProviderMode = 'native-json' | 'mime-json' | 'prompt-sentinel';
+
+export interface GPO_ProviderCapability {
+  id: string;
+  modes: GPO_ProviderMode[];
+  supportsStructured: boolean;
+  supportsNativeJson: boolean;
+  supportsMimeJson: boolean;
+  supportsPromptSentinel: boolean;
+  maxJsonTokens?: number;
+  notes?: string;
+}
+
+export interface GPO_ProviderRoutingDecision {
+  providerId: string;
+  mode: GPO_ProviderMode;
+  structuredPath: boolean;
+  featureFlagActive: boolean;
+  parseRetriesPlanned: number;
+  reason: string;
+}
+
+export interface GPO_StructuredIOAttempt {
+  attempt: number;
+  mode: GPO_ProviderMode;
+  providerId: string;
+  startedAt: string;
+  endedAt?: string;
+  durationMs?: number;
+  success: boolean;
+  errorCode?: string;
+  errorMessage?: string;
+  fieldsExtracted?: number;
+  fieldsMissing?: string[];
+  evidenceId?: string;
+}
+
+export interface GPO_StructuredIOStatus {
+  enabled: boolean;
+  taskId: string;
+  phase?: string;
+  providerId: string;
+  providerMode: GPO_ProviderMode;
+  attempts: GPO_StructuredIOAttempt[];
+  maxAttempts: number;
+  status: 'idle' | 'in-progress' | 'partial' | 'complete' | 'failed' | 'disabled' | 'fallback';
+  fieldsExtracted?: number;
+  fieldsMissing?: string[];
+  lastErrorCode?: string;
+  lastErrorMessage?: string;
+  totalDurationMs?: number;
+}
+
+export interface GPO_BoardPhaseOutput {
+  phase: BoardLifecyclePhase;
+  summary: string;
+  decisions?: string[];
+  risks?: string[];
+  subtasks?: any[];
+  requiredFieldsCovered?: string[];
+  missingFields?: string[];
+  contractHints?: Record<string, any>;
+}
+
+// ── Part 69: Structured I/O Observability + Metrics + Provider Learning + Evidence Lifecycle ──
+
+export interface StructuredIoEvent {
+  id: string;
+  taskId: string | null;
+  subtaskId: string | null;
+  deliverableId: string | null;
+  schemaId: string;
+  phase: 'scaffold' | 'plan' | 'deliberate' | 'execute' | 'merge' | 'validate' | 'complete';
+  providerKey: string;
+  capability: 'native-json' | 'mime-json' | 'sentinel';
+  attempt: number;
+  startedAt: number;
+  endedAt: number;
+  latencyMs: number;
+  outcome: 'success' | 'parse_failure' | 'provider_error' | 'timeout' | 'rate_limited' | 'cancelled';
+  errorCode?: string;
+  errorMessageRedacted?: string;
+  retryCount: number;
+  inputTokens?: number;
+  outputTokens?: number;
+  costUsd?: number;
+}
+
+export interface ProviderMetrics {
+  providerKey: string;
+  totalCalls: number;
+  successRate: number;
+  parseFailureRate: number;
+  providerErrorRate: number;
+  avgLatencyMs: number;
+  p50LatencyMs: number;
+  p95LatencyMs: number;
+  p99LatencyMs: number;
+  avgAttempts: number;
+  totalCostUsd: number;
+  dynamicScore: number;
+  samples: number;
+  circuitOpen: boolean;
+  lastUpdated: number;
+}
+
+export interface SchemaMetrics {
+  schemaId: string;
+  totalCalls: number;
+  successRate: number;
+  avgLatencyMs: number;
+  avgAttempts: number;
+}
+
+export interface StructuredIoMetricsSnapshot {
+  windowStart: number;
+  windowEnd: number;
+  totalCalls: number;
+  successRate: number;
+  parseFailureRate: number;
+  providerErrorRate: number;
+  avgLatencyMs: number;
+  p50LatencyMs: number;
+  p95LatencyMs: number;
+  p99LatencyMs: number;
+  retryRate: number;
+  avgAttempts: number;
+  totalCostUsd: number;
+  byProvider: Record<string, ProviderMetrics>;
+  bySchema: Record<string, SchemaMetrics>;
+}
+
+export interface ProviderLearningConfig {
+  weights: { successRate: number; latency: number; cost: number };
+  minSamples: number;
+  decay: 'ewma' | 'sliding';
+  alpha: number;
+  circuitBreaker: {
+    failureRateThreshold: number;
+    minimumCalls: number;
+    sleepWindowMs: number;
+  };
+}
+
+export interface StructuredIoConfig {
+  metrics: {
+    latencyBucketsMs: number[];
+    aggregationWindowMinutes: number;
+    retentionHours: number;
+  };
+  providerLearning: ProviderLearningConfig;
+  evidence: {
+    ttlDays: number;
+    cleanupIntervalMinutes: number;
+    maxBytes: number;
+  };
+  alerts: {
+    parseFailureRateThreshold: number;
+    providerErrorRateThreshold: number;
+    minCalls: number;
+    evaluationIntervalMinutes: number;
+    cooldownMinutes: number;
+  };
+  cost: {
+    providerPricing: Record<string, { inputPer1k: number; outputPer1k: number }>;
+    defaultPricing: { inputPer1k: number; outputPer1k: number };
+  };
+}
+
+export interface StructuredIoAlert {
+  id: string;
+  kind: 'parse_spike' | 'provider_error_spike' | 'cost_spike';
+  providerKey?: string;
+  windowStart: number;
+  windowEnd: number;
+  observedRate?: number;
+  threshold: number;
+  totalCalls: number;
+  acknowledged: boolean;
+  acknowledgedBy?: string;
+  acknowledgedAt?: number;
+  details: string;
+}
+
+// ── Part 70: Parallel Execution Engine + Resource-Aware Scheduling + Backpressure ──
+
+export type ProviderKey = 'openai' | 'anthropic' | 'google' | 'perplexity' | string;
+export type QueuePriority = 'critical' | 'high' | 'normal' | 'low';
+
+export interface SchedulerFeatureFlags {
+  enabled: boolean;
+  enableFairSharing: boolean;
+  enableDeadLetter: boolean;
+  enableDynamicBackpressure: boolean;
+}
+
+export interface SchedulerConfig {
+  version: 1;
+  featureFlags: SchedulerFeatureFlags;
+  globalMaxConcurrent: number;
+  defaultTimeoutMs: number;
+  perProviderMaxConcurrent: Record<ProviderKey, number>;
+  perTenantMaxConcurrent: Record<string, number>;
+  perProjectMaxConcurrent: Record<string, number>;
+  queueCapacity: number;
+  inFlightLeaseMs: number;
+  maxAttempts: number;
+  initialRetryDelayMs: number;
+  maxRetryDelayMs: number;
+  fairnessWeights: {
+    tenant: Record<string, number>;
+    project: Record<string, number>;
+  };
+}
+
+export interface BackpressureSignal {
+  provider: ProviderKey;
+  reason: 'p95_slow' | 'error_spike' | 'breaker_open' | 'rate_limited' | 'budget_throttle';
+  factor: number;
+  observed: {
+    p95LatencyMs?: number;
+    errorRate?: number;
+    open?: boolean;
+    lastStatusCodes?: number[];
+    budgetRemaining?: number;
+  };
+  ttlMs: number;
+  at: string;
+}
+
+export interface CapacityWindow {
+  provider: ProviderKey;
+  baseLimit: number;
+  dynamicLimit: number;
+  inUse: number;
+  available: number;
+  signals: BackpressureSignal[];
+}
+
+export interface QueueItemKey {
+  runId: string;
+  nodeId: string;
+}
+
+export interface ExecutionAttemptRecord {
+  attemptId: string;
+  startedAt: string;
+  finishedAt?: string;
+  status: 'in_progress' | 'succeeded' | 'failed' | 'canceled' | 'expired';
+  errorCode?: string;
+  errorMessage?: string;
+  provider?: ProviderKey;
+  durationMs?: number;
+}
+
+export interface QueueItem {
+  id: string;
+  key: QueueItemKey;
+  projectId: string;
+  tenantId: string;
+  provider: ProviderKey;
+  priority: QueuePriority;
+  enqueuedAt: string;
+  leasedBy?: string;
+  leaseExpiresAt?: string;
+  attempts: ExecutionAttemptRecord[];
+  status: 'queued' | 'in_flight' | 'done' | 'dead_letter' | 'canceled';
+  reason?: string;
+  payloadRef: {
+    contractId: string;
+    subtaskSpecRef: string;
+  };
+  deps: string[];
+  dependents: string[];
+  ready: boolean;
+  timeoutMs?: number;
+  costEstimateCents?: number;
+}
+
+export interface QueueStats {
+  total: number;
+  queued: number;
+  inFlight: number;
+  done: number;
+  deadLetter: number;
+  byProvider: Record<ProviderKey, { queued: number; inFlight: number }>;
+  byPriority: Record<QueuePriority, number>;
+  byTenant: Record<string, number>;
+  byProject: Record<string, number>;
+  capacityWindows: CapacityWindow[];
+  saturation: number;
+  avgWaitMs?: number;
+  p95WaitMs?: number;
+}
+
+export interface SchedulerStateSnapshot {
+  config: SchedulerConfig;
+  stats: QueueStats;
+  paused: boolean;
+  updatedAt: string;
+}
+
+export interface RunProgress {
+  runId: string;
+  graphNodes: number;
+  completed: number;
+  blocked: number;
+  ready: number;
+  failed: number;
+  criticalPathMs?: number;
+  startedAt: string;
+  updatedAt: string;
+}
+
+// ── Part 72: TopRanker Engine Deep Integration ──
+
+export interface TopRankerCategory { id: string; name: string; slug: string; }
+
+export interface TopRankerLeaderboardEntry {
+  businessId: string; name: string; rank: number; score: number; confidence: number;
+  city: string; category: string;
+  verificationStatus: 'unverified' | 'pending' | 'verified';
+  signals: { reviews: number; avgRating: number; recencyBias: number; wilsonScore: number; volumeWeight: number; };
+  rationale: string; computedAt: string;
+}
+
+export interface TopRankerBusinessScorecard {
+  businessId: string; name: string; city: string; category: string;
+  kpis: { trust: number; responsiveness: number; satisfaction: number; consistency: number; };
+  riskFlags: { suspiciousActivity: boolean; conflictingInfo: boolean; lowVolume: boolean; };
+  notes: string[]; computedAt: string;
+}
+
+export interface TopRankerReviewAggregation {
+  businessId: string;
+  period: { from: string; to: string; windowDays: number; };
+  sources: Array<{ source: 'google' | 'yelp' | 'facebook' | 'opentable' | 'other'; count: number; avgRating: number; lastReviewAt?: string; }>;
+  sentiment: { positive: number; neutral: number; negative: number; };
+  sampleSnippets: Array<{ text: string; sentiment: 'positive' | 'neutral' | 'negative'; source: string; capturedAt: string; }>;
+  aggregationMethod: 'bayesian' | 'wilson' | 'hybrid'; computedAt: string;
+}
+
+export interface TopRankerReleaseArtifact {
+  artifactId: string; repoPath: string; commitSha?: string; buildNumber?: string;
+  platform: 'server' | 'mobile' | 'web'; filePath: string;
+  sizeBytes: number; checksumSha256: string; createdAt: string;
+}
+
+// ── Part 73: Mission Control Dashboard + Operator Notifications ──
+
+export type MCHealth = 'green' | 'yellow' | 'red';
+
+export interface MissionControlSummary {
+  timestamp: number;
+  health: MCHealth;
+  counts: {
+    workflowsActive: number; workflowsStuck: number; pendingApprovals: number;
+    openAlerts: number; recentDeliverables: number; providersDegraded: number;
+    queueDepth: number; runningTasks: number;
+  };
+  notes?: string[];
+}
+
+export type NotificationSeverity = 'low' | 'medium' | 'high' | 'urgent';
+
+export type NotificationType =
+  | 'approval.requested' | 'alert.fired' | 'provider.circuit.open' | 'provider.circuit.closed'
+  | 'workflow.stuck' | 'workflow.failed' | 'deliverable.pending-approval' | 'release.ready' | 'system.info';
+
+export interface NotificationAction {
+  label: string;
+  action: 'viewWorkflow' | 'viewApproval' | 'viewAlerts' | 'viewDeliverable' | 'viewRelease' | 'noop';
+  ref?: { kind: string; id: string };
+}
+
+export interface GPO_Notification {
+  id: string;
+  type: NotificationType;
+  severity: NotificationSeverity;
+  title: string;
+  message: string;
+  createdAt: number;
+  readAt?: number;
+  acknowledgedAt?: number;
+  actions?: NotificationAction[];
+}
+
+export interface NotificationBadgeCounts {
+  unread: number;
+  unackedAlerts: number;
+  pendingApprovals: number;
+}
+
+export interface MissionControlPayload {
+  summary: MissionControlSummary;
+  workflows: any[];
+  providers: any[];
+  scheduler: any;
+  alerts: any[];
+  deliverables: any[];
+  approvals: any[];
+  badgeCounts: NotificationBadgeCounts;
+}

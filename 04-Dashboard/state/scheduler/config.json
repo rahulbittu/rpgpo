@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "featureFlags": {
+    "enabled": false,
+    "enableFairSharing": true,
+    "enableDeadLetter": true,
+    "enableDynamicBackpressure": true
+  },
+  "globalMaxConcurrent": 1,
+  "defaultTimeoutMs": 180000,
+  "perProviderMaxConcurrent": { "openai": 4, "anthropic": 3, "google": 3, "perplexity": 2 },
+  "perTenantMaxConcurrent": {},
+  "perProjectMaxConcurrent": {},
+  "queueCapacity": 200,
+  "inFlightLeaseMs": 120000,
+  "maxAttempts": 4,
+  "initialRetryDelayMs": 2000,
+  "maxRetryDelayMs": 45000,
+  "fairnessWeights": { "tenant": {}, "project": {} }
+}

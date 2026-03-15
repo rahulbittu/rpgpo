@@ -39,17 +39,37 @@ export function onTaskStart(taskId: string, engineId: string, projectId: string 
 }
 
 /** Hook: Called when a subtask completes — merges output into deliverable */
-export function onSubtaskComplete(taskId: string, subtaskId: string, output: string, engineId: string): RuntimeDeliverableState | null {
+export function onSubtaskComplete(taskId: string, subtaskId: string, output: string, engineId: string, structuredResult?: { parsed?: any; mapping?: any }): RuntimeDeliverableState | null {
   const state = getState(taskId);
   if (!state) return null;
 
-  // Merge subtask output into scaffold
-  try {
-    const ce = require('./contract-enforcement') as { mergeSubtaskOutput(taskId: string, subtaskId: string, output: unknown): { updated: StructuredDeliverable } };
-    ce.mergeSubtaskOutput(taskId, subtaskId, output);
-    state.merge_count++;
-    state.last_merge_at = new Date().toISOString();
-  } catch { /* merge optional */ }
+  // Part 67: If structured extraction succeeded, use field-level population
+  if (structuredResult?.parsed?.ok && structuredResult?.mapping) {
+    try {
+      const ce = require('./contract-enforcement') as { getDeliverable(taskId: string): StructuredDeliverable | null };
+      const deliverable = ce.getDeliverable(taskId);
+      if (deliverable) {
+        // Structured path: field-level mapping was already applied by executeStructuredSubtask
+        // Just write the updated deliverable back
+        const fsp = require('fs') as typeof import('fs');
+        const pp = require('path') as typeof import('path');
+        const delivPath = pp.resolve(__dirname, '..', '..', 'state', 'deliverables', `${taskId}.json`);
+        fsp.writeFileSync(delivPath, JSON.stringify(deliverable, null, 2));
+        state.merge_count++;
+        state.last_merge_at = new Date().toISOString();
+      }
+    } catch { /* fall through to heuristic */ }
+  }
+
+  // Heuristic merge fallback (existing path)
+  if (!structuredResult?.parsed?.ok) {
+    try {
+      const ce = require('./contract-enforcement') as { mergeSubtaskOutput(taskId: string, subtaskId: string, output: unknown): { updated: StructuredDeliverable } };
+      ce.mergeSubtaskOutput(taskId, subtaskId, output);
+      state.merge_count++;
+      state.last_merge_at = new Date().toISOString();
+    } catch { /* merge optional */ }
+  }
 
   // Re-evaluate contract satisfaction
   updateContractStatus(taskId, engineId, state);

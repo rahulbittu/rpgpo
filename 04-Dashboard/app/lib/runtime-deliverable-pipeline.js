@@ -43,18 +43,38 @@ function onTaskStart(taskId, engineId, projectId = 'rpgpo') {
     return state;
 }
 /** Hook: Called when a subtask completes — merges output into deliverable */
-function onSubtaskComplete(taskId, subtaskId, output, engineId) {
+function onSubtaskComplete(taskId, subtaskId, output, engineId, structuredResult) {
     const state = getState(taskId);
     if (!state)
         return null;
-    // Merge subtask output into scaffold
-    try {
-        const ce = require('./contract-enforcement');
-        ce.mergeSubtaskOutput(taskId, subtaskId, output);
-        state.merge_count++;
-        state.last_merge_at = new Date().toISOString();
+    // Part 67: If structured extraction succeeded, use field-level population
+    if (structuredResult?.parsed?.ok && structuredResult?.mapping) {
+        try {
+            const ce = require('./contract-enforcement');
+            const deliverable = ce.getDeliverable(taskId);
+            if (deliverable) {
+                // Structured path: field-level mapping was already applied by executeStructuredSubtask
+                // Just write the updated deliverable back
+                const fsp = require('fs');
+                const pp = require('path');
+                const delivPath = pp.resolve(__dirname, '..', '..', 'state', 'deliverables', `${taskId}.json`);
+                fsp.writeFileSync(delivPath, JSON.stringify(deliverable, null, 2));
+                state.merge_count++;
+                state.last_merge_at = new Date().toISOString();
+            }
+        }
+        catch { /* fall through to heuristic */ }
     }
-    catch { /* merge optional */ }
+    // Heuristic merge fallback (existing path)
+    if (!structuredResult?.parsed?.ok) {
+        try {
+            const ce = require('./contract-enforcement');
+            ce.mergeSubtaskOutput(taskId, subtaskId, output);
+            state.merge_count++;
+            state.last_merge_at = new Date().toISOString();
+        }
+        catch { /* merge optional */ }
+    }
     // Re-evaluate contract satisfaction
     updateContractStatus(taskId, engineId, state);
     saveState(taskId, state);

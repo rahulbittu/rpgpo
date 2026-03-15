@@ -1,0 +1,26 @@
+{
+  "entries": [
+    {
+      "businessId": "biz_001", "name": "Epoch Coffee", "rank": 1, "score": 92.5, "confidence": 0.95,
+      "city": "Austin", "category": "Coffee", "verificationStatus": "verified",
+      "signals": { "reviews": 342, "avgRating": 4.7, "recencyBias": 0.85, "wilsonScore": 0.91, "volumeWeight": 0.88 },
+      "rationale": "Highest Wilson score with strong review volume and consistent recent ratings.",
+      "computedAt": "2026-03-14T00:00:00Z"
+    },
+    {
+      "businessId": "biz_002", "name": "Houndstooth Coffee", "rank": 2, "score": 89.1, "confidence": 0.92,
+      "city": "Austin", "category": "Coffee", "verificationStatus": "verified",
+      "signals": { "reviews": 287, "avgRating": 4.6, "recencyBias": 0.82, "wilsonScore": 0.88, "volumeWeight": 0.84 },
+      "rationale": "Strong Bayesian average with good volume. Slight recency dip from older reviews.",
+      "computedAt": "2026-03-14T00:00:00Z"
+    },
+    {
+      "businessId": "biz_003", "name": "Fleet Coffee", "rank": 3, "score": 87.3, "confidence": 0.88,
+      "city": "Austin", "category": "Coffee", "verificationStatus": "pending",
+      "signals": { "reviews": 156, "avgRating": 4.8, "recencyBias": 0.90, "wilsonScore": 0.82, "volumeWeight": 0.72 },
+      "rationale": "Highest raw rating but lower volume reduces confidence. Pending verification.",
+      "computedAt": "2026-03-14T00:00:00Z"
+    }
+  ],
+  "evidence": ["Wilson score computation from 785 total reviews across Google and Yelp"]
+}

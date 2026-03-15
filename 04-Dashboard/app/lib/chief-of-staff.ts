@@ -1682,6 +1682,33 @@ export function getRuntimeDeliverableSummary() {
   try { const rdp = require('./runtime-deliverable-pipeline') as { getSummary(): unknown }; return rdp.getSummary(); } catch { return null; }
 }
 
+// Part 68: Structured IO Status surfacing
+export function getStructuredIOStatus(taskId: string): unknown[] {
+  const statuses: unknown[] = [];
+  // Board statuses
+  try {
+    const board = require('./board') as { getBoardStructuredStatuses(id: string): unknown[] };
+    statuses.push(...board.getBoardStructuredStatuses(taskId));
+  } catch { /* */ }
+  return statuses;
+}
+
+export function getStructuredIOBriefSnippet(taskId: string): string | null {
+  try {
+    const { loadContractAwareConfig } = require('./config/ai-io') as { loadContractAwareConfig(): { exposeStatusToOperator?: boolean } };
+    const cfg = loadContractAwareConfig();
+    if (!cfg.exposeStatusToOperator) return null;
+  } catch { return null; }
+
+  const statuses = getStructuredIOStatus(taskId) as Array<{ providerId: string; providerMode: string; attempts: any[]; status: string; fieldsExtracted?: number; maxAttempts: number }>;
+  if (statuses.length === 0) return null;
+
+  const latest = statuses[statuses.length - 1];
+  const attemptStr = `${latest.attempts?.length || 0}/${latest.maxAttempts}`;
+  const fieldsStr = latest.fieldsExtracted !== undefined ? `${latest.fieldsExtracted} fields` : '';
+  return `Structured extraction via ${latest.providerId} ${latest.providerMode}; attempt ${attemptStr} ${latest.status}${fieldsStr ? '; ' + fieldsStr : ''}`;
+}
+
 module.exports = {
   interpretBoardResult,
   getNextBestActions, getEngineActions, getProjectActions,
@@ -1825,4 +1852,6 @@ module.exports = {
   // Part 65
   onRuntimeTaskStart, onRuntimeSubtaskComplete,
   onRuntimeTaskComplete, getRuntimeDeliverableSummary,
+  // Part 68
+  getStructuredIOStatus, getStructuredIOBriefSnippet,
 };

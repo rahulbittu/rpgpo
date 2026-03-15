@@ -201,6 +201,8 @@ exports.onRuntimeTaskStart = onRuntimeTaskStart;
 exports.onRuntimeSubtaskComplete = onRuntimeSubtaskComplete;
 exports.onRuntimeTaskComplete = onRuntimeTaskComplete;
 exports.getRuntimeDeliverableSummary = getRuntimeDeliverableSummary;
+exports.getStructuredIOStatus = getStructuredIOStatus;
+exports.getStructuredIOBriefSnippet = getStructuredIOBriefSnippet;
 const context = require('./context');
 const engines = require('./engines');
 const projects = require('./projects');
@@ -2543,6 +2545,35 @@ function getRuntimeDeliverableSummary() {
         return null;
     }
 }
+// Part 68: Structured IO Status surfacing
+function getStructuredIOStatus(taskId) {
+    const statuses = [];
+    // Board statuses
+    try {
+        const board = require('./board');
+        statuses.push(...board.getBoardStructuredStatuses(taskId));
+    }
+    catch { /* */ }
+    return statuses;
+}
+function getStructuredIOBriefSnippet(taskId) {
+    try {
+        const { loadContractAwareConfig } = require('./config/ai-io');
+        const cfg = loadContractAwareConfig();
+        if (!cfg.exposeStatusToOperator)
+            return null;
+    }
+    catch {
+        return null;
+    }
+    const statuses = getStructuredIOStatus(taskId);
+    if (statuses.length === 0)
+        return null;
+    const latest = statuses[statuses.length - 1];
+    const attemptStr = `${latest.attempts?.length || 0}/${latest.maxAttempts}`;
+    const fieldsStr = latest.fieldsExtracted !== undefined ? `${latest.fieldsExtracted} fields` : '';
+    return `Structured extraction via ${latest.providerId} ${latest.providerMode}; attempt ${attemptStr} ${latest.status}${fieldsStr ? '; ' + fieldsStr : ''}`;
+}
 module.exports = {
     interpretBoardResult,
     getNextBestActions, getEngineActions, getProjectActions,
@@ -2686,5 +2717,7 @@ module.exports = {
     // Part 65
     onRuntimeTaskStart, onRuntimeSubtaskComplete,
     onRuntimeTaskComplete, getRuntimeDeliverableSummary,
+    // Part 68
+    getStructuredIOStatus, getStructuredIOBriefSnippet,
 };
 //# sourceMappingURL=chief-of-staff.js.map
