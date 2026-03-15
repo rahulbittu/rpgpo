@@ -684,7 +684,37 @@ const handlers = {
     queue.updateTask(task.id, { output: `Running subtask: ${st.title}` });
 
     const model = st.assigned_model || 'openai';
-    const systemPrompt = `You are operating inside RPGPO. Stage: ${st.stage}. Role: ${st.assigned_role}. Be direct, specific, and actionable.`;
+
+    // Value fix: Inject rich operator context + domain context into every subtask
+    let operatorContext = '';
+    try {
+      const opProfile = JSON.parse(fs.readFileSync(path.join(__dirname, 'state', 'context', 'operator-profile.json'), 'utf-8'));
+      operatorContext = `\nOperator: ${opProfile.name} (${opProfile.professional_context?.role || 'Operator'})`;
+      if (opProfile.recurring_priorities?.length) operatorContext += `\nPriorities: ${opProfile.recurring_priorities.slice(0, 3).join('; ')}`;
+      if (opProfile.output_preferences?.style) operatorContext += `\nOutput style: ${opProfile.output_preferences.style}`;
+      if (opProfile.output_preferences?.avoid) operatorContext += `\nAvoid: ${opProfile.output_preferences.avoid}`;
+    } catch { /* no profile */ }
+
+    let domainContext = '';
+    try {
+      const domain = st.domain || task.meta?.domain || 'general';
+      const ctxFile = path.join(__dirname, 'state', 'context', 'missions', domain, 'context.json');
+      if (fs.existsSync(ctxFile)) {
+        const ctx = JSON.parse(fs.readFileSync(ctxFile, 'utf-8'));
+        if (ctx.context_summary) domainContext += `\nDomain context: ${ctx.context_summary.slice(0, 500)}`;
+        if (ctx.recent_decisions?.length) domainContext += `\nRecent decisions: ${ctx.recent_decisions.slice(0, 3).map(d => d.title || d.decision || d).join('; ')}`;
+        if (ctx.constraints?.length) domainContext += `\nConstraints: ${ctx.constraints.slice(0, 3).join('; ')}`;
+      }
+    } catch { /* no domain context */ }
+
+    const systemPrompt = `You are operating inside RPGPO, a governed personal AI operating system. Stage: ${st.stage}. Role: ${st.assigned_role}.${operatorContext}${domainContext}
+
+RULES:
+- Be direct, specific, and actionable
+- Include real data, citations, and sources when available
+- Structure output clearly with sections and bullet points
+- Never produce generic templates or placeholder text like "[Insert Title]"
+- If you cannot find specific information, say so explicitly`;
 
     // Gather file context
     let fileContext = '';
@@ -951,14 +981,21 @@ const handlers = {
     const ts = new Date().toISOString();
     const shortId = task.id.slice(-6);
 
-    // Build system prompt based on role
+    // Build system prompt based on role — with operator context
+    let opCtx = '';
+    try {
+      const opProfile = JSON.parse(fs.readFileSync(path.join(__dirname, 'state', 'context', 'operator-profile.json'), 'utf-8'));
+      opCtx = `\nOperator: ${opProfile.name} (${opProfile.professional_context?.role || 'Operator'}). Priorities: ${(opProfile.recurring_priorities || []).slice(0, 3).join('; ')}.`;
+      if (opProfile.output_preferences?.style) opCtx += ` Output style: ${opProfile.output_preferences.style}`;
+    } catch { /* */ }
+
     const rolePrompts = {
-      general: 'You are operating inside RPGPO (Rahul Pitta Governed Private Office). Be direct, concise, evidence-based, and actionable.',
-      research: 'You are the RPGPO Research Director. Provide evidence-based research with specific facts, numbers, and sources. Be concise and actionable.',
-      builder: 'You are the RPGPO Builder / CTO. Focus on technical analysis, implementation priorities, and practical engineering advice. Be specific and direct.',
-      strategy: 'You are the RPGPO Growth Strategist. Focus on business strategy, market positioning, growth channels, and actionable opportunities.',
-      creative: 'You are the RPGPO Creative Director. Support storytelling, ideation, and creative development with structured, imaginative, and practical output.',
-      chief: 'You are the RPGPO Chief of Staff. Synthesize information, identify priorities, surface blockers, and produce executive-quality briefings.',
+      general: `You are operating inside RPGPO (Rahul Pitta Governed Private Office).${opCtx} Be direct, concise, evidence-based, and actionable. Never produce generic templates or placeholder text.`,
+      research: `You are the RPGPO Research Director.${opCtx} Provide evidence-based research with specific facts, numbers, citations, and sources. Include actionable recommendations with concrete next steps.`,
+      builder: `You are the RPGPO Builder / CTO.${opCtx} Focus on technical analysis, implementation priorities, and practical engineering advice. Be specific and direct.`,
+      strategy: `You are the RPGPO Growth Strategist.${opCtx} Focus on business strategy, market positioning, growth channels, and actionable opportunities with specific examples and data.`,
+      creative: `You are the RPGPO Creative Director.${opCtx} Support storytelling, ideation, and creative development with structured, imaginative, and practical output.`,
+      chief: `You are the RPGPO Chief of Staff.${opCtx} Synthesize information, identify priorities, surface blockers, and produce executive-quality briefings with specific action items.`,
     };
     const systemPrompt = rolePrompts[role] || rolePrompts.general;
 
