@@ -6826,3 +6826,66 @@ export interface MissionControlPayload {
   approvals: any[];
   badgeCounts: NotificationBadgeCounts;
 }
+
+// ── Part 75: Persistent Learning + Cross-Session Knowledge Base ──
+
+export type LearningVersion = 'v1';
+
+export interface ProviderContextKey {
+  engineId: string;
+  taskKind: string;
+  contractName: string;
+}
+
+export interface ProviderPerfSample {
+  timestamp: number;
+  providerId: string;
+  latencyMs: number;
+  inputTokens: number;
+  outputTokens: number;
+  totalCostUsd: number;
+  success: boolean;
+  qualityScore: number;
+  errorCode?: string;
+}
+
+export interface EwmaStats {
+  n: number;
+  lastTimestamp: number;
+  latencyMsEwma: number;
+  successRateEwma: number;
+  qualityEwma: number;
+  costPerTokenEwma: number;
+}
+
+export interface ProviderPerfRecord {
+  key: ProviderContextKey;
+  providerId: string;
+  ewma: EwmaStats;
+  lastSamples: ProviderPerfSample[];
+}
+
+export interface KnowledgeEntry {
+  id: string;
+  tenantId: string;
+  projectId: string;
+  contractName: string;
+  engineId: string;
+  domainTags: string[];
+  title: string;
+  insights: string[];
+  promptTips: string[];
+  providerRanking: string[];
+  source: { deliverableId: string; releaseId?: string };
+  createdAt: number;
+}
+
+export interface LearningStoreMeta {
+  version: LearningVersion;
+  createdAt: number;
+  updatedAt: number;
+  recordCounts: {
+    providerPerf: number;
+    knowledgeEntries: number;
+  };
+}

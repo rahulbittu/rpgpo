@@ -3352,6 +3352,42 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 75: Learning Store APIs
+  if (req.url === '/api/learning/meta' && req.method === 'GET') {
+    try { const ls = require('./lib/learning-store'); return json(res, ls.getLearningMeta()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/learning/providers' && req.method === 'GET') {
+    try { const ls = require('./lib/learning-store'); return json(res, { records: ls.getAllProviderPerf() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/learning\/knowledge(\?.*)?$/) && req.method === 'GET') {
+    try {
+      const ls = require('./lib/learning-store');
+      const params = new URL(req.url, 'http://x').searchParams;
+      const query = {};
+      if (params.get('engineId')) query.engineId = params.get('engineId');
+      if (params.get('text')) query.text = params.get('text');
+      if (params.get('tags')) query.tags = params.get('tags').split(',');
+      return json(res, { entries: ls.searchKnowledge(query) });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/learning/knowledge' && req.method === 'POST') {
+    try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/learning', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
+    const body = await parseBody(req);
+    try {
+      const ls = require('./lib/learning-store');
+      const id = ls.addKnowledgeEntry({ ...body, tenantId: _tenantId, projectId: _projectId, createdAt: Date.now() });
+      return json(res, { ok: true, id });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/learning\/best-provider(\?.*)?$/) && req.method === 'GET') {
+    try {
+      const ls = require('./lib/learning-store');
+      const params = new URL(req.url, 'http://x').searchParams;
+      const best = ls.getBestProvider({ engineId: params.get('engineId') || 'general', taskKind: params.get('taskKind') || 'subtask', contractName: params.get('contractName') || 'general' });
+      return json(res, best || { providerId: null, score: 0 });
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Reports listing
   if (req.url?.match(/^\/api\/reports(\?.*)?$/) && req.method === 'GET') {
     try {

@@ -853,6 +853,21 @@ RULES:
         cos.onRuntimeSubtaskComplete(st.parent_task, subtaskId, result.text?.slice(0, 3000) || '', engineId);
       } catch (e) { console.log('[worker] Deliverable merge:', e.message?.slice(0, 80)); }
 
+      // Part 75: Record provider performance for persistent learning
+      try {
+        const ls = require('./lib/learning-store');
+        const parentTask = intake.getTask(st.parent_task);
+        ls.recordProviderSample(
+          { engineId: parentTask?.domain || 'general', taskKind: st.stage || 'subtask', contractName: st.assigned_role || 'general' },
+          {
+            timestamp: Date.now(), providerId: model,
+            latencyMs: result.usage?.totalTokens ? (result.usage.totalTokens * 0.5) : 500,
+            inputTokens: result.usage?.inputTokens || 0, outputTokens: result.usage?.outputTokens || 0,
+            totalCostUsd: costEntry?.cost || 0, success: true, qualityScore: 0.8,
+          }
+        );
+      } catch { /* learning non-fatal */ }
+
       // Emit in-app notification on subtask completion
       try {
         const notif = require('./lib/in-app-notifications');
