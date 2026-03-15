@@ -631,6 +631,11 @@ function renderHome() {
   const totalApprovals = DATA.approvals.length + PENDING_APPROVALS.length;
   setStatus('hsApprovals', totalApprovals === 0 ? 'Clear' : totalApprovals + ' pending', totalApprovals === 0 ? 'ok' : 'warn');
 
+  // Tasks done count
+  const doneTasks = INTAKE_TASKS.filter(t => t.status === 'done').length;
+  const totalTasks = INTAKE_TASKS.length;
+  setStatus('hsTasksDone', doneTasks + '/' + totalTasks, doneTasks === totalTasks ? 'ok' : '');
+
   // Mission health
   const md = document.getElementById('homeMissions');
   const activeMissions = DATA.missions.filter(m => (m.status || '').toLowerCase() !== 'planned');
