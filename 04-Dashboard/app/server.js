@@ -3355,6 +3355,12 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 90: Task Graph
+  if (req.url?.match(/^\/api\/task-graph\/([^/]+)$/) && req.method === 'GET') {
+    const taskId = req.url.match(/^\/api\/task-graph\/([^/]+)$/)[1];
+    try { const tg = require('./lib/task-graph'); const graph = tg.getGraphForTask(taskId); return graph ? json(res, graph) : json(res, { error: 'No graph' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 89: Quality Scoring
   if (req.url?.match(/^\/api\/quality\/score\/([^/]+)$/) && req.method === 'POST') {
     const taskId = req.url.match(/^\/api\/quality\/score\/([^/]+)$/)[1];
