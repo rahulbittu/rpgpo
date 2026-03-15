@@ -1807,11 +1807,14 @@ async function approveSubtaskGlobal(subtaskId, btnEl) {
         : `Approved & queued: ${d.resumed || 'subtask'}`;
       showToast(msg, 'success');
       pushActivity(msg);
-      // Instant refresh
+      // Instant refresh all approval surfaces
       loadPendingApprovals();
       loadCurrentTaskFocus();
       if (selectedIntakeTaskId) showIntakeDetail(selectedIntakeTaskId);
       loadIntakeTasks();
+      // Refresh operator panels
+      if (typeof renderNeedsOperator === 'function') renderNeedsOperator();
+      if (typeof refreshChiefOfStaff === 'function') refreshChiefOfStaff();
     } else {
       showToast('Error: ' + (d.error || 'Unknown'), 'error');
       if (btnEl) { btnEl.disabled = false; btnEl.innerHTML = '<span>&#10003;</span> Approve & Continue'; }
