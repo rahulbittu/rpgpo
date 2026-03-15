@@ -3355,6 +3355,16 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Parts 123-124: Provider Router + Task Replay
+  if (req.url?.match(/^\/api\/replay\/([^/]+)$/) && req.method === 'POST') {
+    const taskId = req.url.match(/^\/api\/replay\/([^/]+)$/)[1];
+    const body = await parseBody(req);
+    try { const tr = require('./lib/task-replay'); const result = tr.replayTask(taskId, body); return result ? json(res, result) : json(res, { error: 'Task not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/provider-route(\?.*)?$/) && req.method === 'GET') {
+    try { const pr = require('./lib/provider-router'); const params = new URL(req.url, 'http://x').searchParams; return json(res, pr.selectProvider(params.get('domain') || 'general', params.get('taskKind') || 'research')); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Parts 120-122: Context Window + Startup Optimizer + Feature Flags
   if (req.url === '/api/feature-flags' && req.method === 'GET') {
     try { const ff = require('./lib/feature-flags'); return json(res, { flags: ff.getAllFlags() }); } catch (e) { return json(res, { error: e.message }, 500); }
