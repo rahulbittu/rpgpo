@@ -3355,6 +3355,11 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 104: Provider Health
+  if (req.url === '/api/provider-health' && req.method === 'GET') {
+    try { const ph = require('./lib/provider-health'); return json(res, { providers: ph.getProviderHealth() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 103: Template Discovery
   if (req.url === '/api/template-discovery' && req.method === 'GET') {
     try { const td = require('./lib/template-discovery'); return json(res, { patterns: td.discoverPatterns() }); } catch (e) { return json(res, { error: e.message }, 500); }
