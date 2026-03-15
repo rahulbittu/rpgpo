@@ -1,31 +1,17 @@
+# Mission Status
+
 ## Mission
 Personal Ops
 
 ## Current Objective
-Streamline personal logistics, document management, and life operations inside RPGPO.
+Optimize personal productivity through AI-assisted planning and decision support
 
 ## Current Status
-Planned
+Active
 
-## Recent Progress
-- None yet
+## Focus
+Weekly planning, decision support, routine automation
 
-## Key Metrics
-- tasks automated
-- time saved
-- organization improvement
-
-## Blockers
-- Not yet activated
-- Access scope not yet defined
-
-## Risks
-- Privacy boundary must be carefully maintained
-
-## Next Recommended Actions
-1. Define scope of personal ops support
-2. Set access boundaries
-3. Identify first automation target
-
-## Owner / Domain
-RPGPO Personal Affairs Office
+## Next Steps
+- Establish weekly planning workflow
+- Build morning/evening loop routines

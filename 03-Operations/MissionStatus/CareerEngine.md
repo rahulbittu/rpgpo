@@ -4,35 +4,14 @@
 Career Engine
 
 ## Current Objective
-Increase Rahul's earnings potential by identifying high-quality senior data engineering and adjacent opportunities worth focused pursuit.
+Track data engineering job market for senior/staff/principal roles. Support career growth while building TopRanker startup.
 
 ## Current Status
-Needs decision
+Active
 
-## Key Metrics
-- number of high-fit opportunities
-- estimated salary upside
-- interview conversion
-- prep efficiency
+## Focus
+Job market intelligence, skill gap analysis, salary benchmarking, leadership development
 
-## Recent Progress
-- Career Engine domain module created
-- Career Strategist system prompt created
-
-## Blockers
-- target role profile not formalized
-- search criteria not defined
-- no current shortlist loaded
-
-## Risks
-- too much volume and not enough filtering
-- wasted prep on low-upside roles
-- unclear prioritization by upside vs effort
-
-## Next Recommended Actions
-1. define target job profile
-2. define role filters and constraints
-3. create first shortlist of target companies and roles
-
-## Owner / Domain
-Career and Opportunity Domain
+## Next Steps
+- Run weekly job market analysis for $180k+ remote data engineering roles
+- Track emerging skills in AI/ML infrastructure and data mesh
