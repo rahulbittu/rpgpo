@@ -928,5 +928,56 @@
       "completion": "done",
       "output_quality": "Good — 4-subtask chain with Redis benchmarks and go/no-go recommendation"
     }
+  },
+  {
+    "test_case_id": "GPO-FIN-05",
+    "global_rank": 46,
+    "engine": "Personal Finance & Investing",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:31:45.849Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "wealthresearch"
+    }
+  },
+  {
+    "test_case_id": "GPO-WRI-10",
+    "global_rank": 48,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:31:45.849Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "writing"
+    }
+  },
+  {
+    "test_case_id": "GPO-STA-04",
+    "global_rank": 50,
+    "engine": "Startup & Business Builder",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:31:45.849Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-SHO-03",
+    "global_rank": 55,
+    "engine": "Shopping & Buying Advisor",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:31:45.849Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": false,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "writing"
+    }
   }
 ]

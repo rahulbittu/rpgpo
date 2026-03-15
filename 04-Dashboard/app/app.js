@@ -718,15 +718,20 @@ function renderHome() {
     `<li style="cursor:pointer" onclick="switchTab('intake');document.getElementById('intakeRequest').value='${esc(p).replace(/'/g, "\\'")}';document.getElementById('intakeRequest').focus()" title="Click to create task">${esc(p)}</li>`
   ).join('') || '<li style="color:var(--text-faint)">None set</li>';
 
-  // TopRanker flagship card on home
-  const trm = DATA.missions.find(x => x.mission === 'TopRanker');
-  const trDiv = document.getElementById('homeTRStatus');
-  if (trDiv && trm) {
-    trDiv.innerHTML = `
-      <div style="margin-bottom:4px"><span class="mission-badge active">${esc(trm.status)}</span></div>
-      <div style="margin-bottom:6px">${esc(trm.objective)}</div>
-      <div style="font-size:11px;color:var(--text-dim)"><strong style="color:var(--text-faint);font-size:9px;text-transform:uppercase;letter-spacing:.4px;display:block;margin-bottom:2px">Next</strong>${fmtList(trm.nextActions)}</div>
-    `;
+  // Engines summary on home
+  const engineDiv = document.getElementById('homeEngineStatus');
+  if (engineDiv) {
+    const activeMissions = DATA.missions.filter(m => (m.status || '').toLowerCase() !== 'planned');
+    if (activeMissions.length > 0) {
+      engineDiv.innerHTML = activeMissions.slice(0, 5).map(m =>
+        `<div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,.03)">
+          <span>${esc(m.mission)}</span>
+          <span class="mission-badge ${badgeClass(m.status)}" style="font-size:9px">${esc(m.status)}</span>
+        </div>`
+      ).join('');
+    } else {
+      engineDiv.innerHTML = '<div style="color:var(--text-faint)">No active engines</div>';
+    }
   }
 
   // Approvals

@@ -12,20 +12,28 @@ const MISSION_TEMPLATES = [
   { domain: 'wealthresearch', title: 'Side Project Ideas', desc: 'Find profitable side project opportunities', prompt: 'Research profitable side project ideas for someone with expertise in data engineering, TypeScript/Python, PostgreSQL, and mobile app development (React Native/Expo). Focus on projects that can generate $1,000-$10,000/month with less than 20 hours/week. Include real examples, market size data, and competition analysis. Prioritize ideas that leverage existing skills.', urgency: 'normal', outcome: 'Ranked list of side project ideas with revenue potential, effort estimate, and competitive landscape' },
 
   // HIGH VALUE — Career
-  { domain: 'careeregine', title: 'Data Eng Jobs', desc: 'Find current data engineering opportunities', prompt: 'Research the current data engineering job market for senior/staff/principal roles. Focus on: remote-friendly positions, companies actively hiring, salary ranges by level ($150K-$300K+), most in-demand skills (2025-2026), and emerging specializations (AI/ML infrastructure, real-time data, data mesh). Include specific companies known for strong data engineering cultures and current openings.', urgency: 'normal', outcome: 'Current job market analysis with specific companies, roles, salary data, and career path recommendations' },
-  { domain: 'careeregine', title: 'Career Growth Plan', desc: 'Strategic career development roadmap', prompt: 'Create a 12-month career growth roadmap for a senior data engineer who is also building a startup (TopRanker). Focus on: skills to develop for Staff/Principal level, leadership opportunities, conference talks, open source contributions, and how to balance W2 career with entrepreneurship. Include specific certifications, communities, and networking strategies.', urgency: 'normal', outcome: 'Specific 12-month roadmap with quarterly milestones, skills to develop, and actionable steps' },
+  { domain: 'careeregine', title: 'Data Eng Jobs $180k+', desc: 'Find high-paying data engineering roles NOW', prompt: 'Search the web for current data engineering job openings paying $180,000+ per year. Focus on: remote-friendly roles at top companies (FAANG, unicorns, well-funded startups), Staff/Principal level positions, roles involving modern stack (Spark, Airflow, dbt, Snowflake/Databricks, Kafka). For each listing include: company name, exact role title, salary range, location/remote status, key requirements, and where to apply. Prioritize roles posted in the last 30 days.', urgency: 'high', outcome: 'Specific job listings with salary, company, requirements, and application links' },
+  { domain: 'careeregine', title: 'Career Growth Plan', desc: 'Strategic career development roadmap', prompt: 'Create a 12-month career growth roadmap for a senior data engineer who is also building a startup on the side. Focus on: skills to develop for Staff/Principal level, leadership opportunities, conference talks, open source contributions, and how to balance W2 career with entrepreneurship. Include specific certifications, communities, and networking strategies.', urgency: 'normal', outcome: 'Specific 12-month roadmap with quarterly milestones, skills to develop, and actionable steps' },
+  { domain: 'careeregine', title: 'Interview Prep', desc: 'Data engineering interview guide', prompt: 'Create a comprehensive data engineering interview preparation guide for Staff/Principal level roles. Include: common system design questions (with sketch answers), SQL optimization problems, data modeling scenarios, behavioral STAR examples for leadership, and questions to ask interviewers. Focus on real interview questions from companies like Google, Meta, Netflix, Databricks, and Snowflake.', urgency: 'normal', outcome: 'Interview prep guide with real questions, frameworks, and practice problems' },
+  { domain: 'careeregine', title: 'Salary Benchmark', desc: 'What should I be earning?', prompt: 'Research current salary benchmarks for senior/staff/principal data engineers in 2026. Include: base salary ranges by level and location (Austin TX, remote US, SF/NYC), total compensation (RSU, bonus, equity), how startup experience and side projects affect compensation, and negotiation tactics. Use real data from levels.fyi, Glassdoor, Blind, and similar sources.', urgency: 'normal', outcome: 'Detailed salary analysis with negotiation strategies and market positioning advice' },
 
   // HIGH VALUE — News & Trends
   { domain: 'newsroom', title: 'AI News Today', desc: 'Current AI industry news and analysis', prompt: 'Search the web and compile today\'s most important AI and technology news. Include: major product launches, funding rounds, policy/regulation updates, research breakthroughs, and industry moves. For each item provide: headline, 2-3 sentence summary, source URL, and why it matters for a data engineer / startup founder. Focus on the last 48 hours.', urgency: 'high', outcome: 'Curated news digest with 10-15 items, sources, and relevance analysis' },
-  { domain: 'newsroom', title: 'Startup News', desc: 'Startup ecosystem updates', prompt: 'Search the web for this week\'s most notable startup news. Focus on: Series A-C fundraising rounds, notable launches, Y Combinator updates, startup failures/lessons, and emerging markets. Include specific companies, amounts, and trends. Highlight anything relevant to local business / community platforms (similar to TopRanker\'s space).', urgency: 'normal', outcome: 'Weekly startup digest with funding data, launches, and trend analysis' },
+  { domain: 'newsroom', title: 'Startup News', desc: 'Startup ecosystem updates', prompt: 'Search the web for this week\'s most notable startup news. Focus on: Series A-C fundraising rounds, notable launches, Y Combinator updates, startup failures/lessons, and emerging markets. Include specific companies, amounts, and trends.', urgency: 'normal', outcome: 'Weekly startup digest with funding data, launches, and trend analysis' },
   { domain: 'newsroom', title: 'Tech Industry', desc: 'Technology industry analysis', prompt: 'Analyze the current state of the technology industry. Focus on: hiring trends, layoff updates, major company earnings/moves, emerging tech categories, and developer tool landscape. Include specific data points, company names, and market analysis. What should a data engineer / startup founder pay attention to this week?', urgency: 'normal', outcome: 'Industry analysis with specific data, trends, and actionable insights' },
 
-  // FLAGSHIP — TopRanker
-  { domain: 'topranker', title: 'TopRanker Build', desc: 'Implement a feature or fix', prompt: 'In TopRanker, implement: ', urgency: 'normal', outcome: 'Code changes applied and tested' },
-  { domain: 'topranker', title: 'TopRanker Strategy', desc: 'Growth and launch strategy', prompt: 'Analyze TopRanker\'s competitive position as a community-ranked local business leaderboard app targeting Austin, TX. Research: similar apps and their traction, local business marketing trends, community-driven platforms, and go-to-market strategies for hyper-local apps. Provide specific growth tactics with expected impact and timeline.', urgency: 'normal', outcome: 'Competitive analysis and growth strategy with specific tactics and timelines' },
+  // STARTUP & BUSINESS
+  { domain: 'topranker', title: 'Startup Strategy', desc: 'Competitive analysis and growth plan', prompt: 'Analyze my startup\'s competitive position in its market. Research similar products, their traction, and go-to-market strategies. Provide specific growth tactics with expected impact and timeline.', urgency: 'normal', outcome: 'Competitive analysis and growth strategy with specific tactics and timelines' },
+  { domain: 'topranker', title: 'Business Model', desc: 'Validate or design a business model', prompt: 'Help me design or validate a business model for my startup. Include revenue model options, pricing strategy, customer segments, and unit economics estimates.', urgency: 'normal', outcome: 'Business model canvas with revenue projections and validation strategy' },
 
-  // PLANNING
-  { domain: 'personalops', title: 'Weekly Plan', desc: 'Plan the week ahead', prompt: 'Help me plan the upcoming week. Consider my priorities: TopRanker MVP shipping, passive income research, data engineering career growth, and personal productivity. Create a day-by-day plan with specific time blocks, key decisions to make, and tasks to delegate to GPO. Include buffer time for unexpected work.', urgency: 'normal', outcome: 'Day-by-day weekly plan with time blocks, priorities, and delegation suggestions' },
+  // SCHEDULING & PLANNING
+  { domain: 'personalops', title: 'Weekly Plan', desc: 'Plan the week ahead', prompt: 'Help me plan the upcoming week. Consider my priorities: startup development, passive income research, career growth, and personal productivity. Create a day-by-day plan with specific time blocks, key decisions to make, and tasks to delegate to GPO.', urgency: 'normal', outcome: 'Day-by-day weekly plan with time blocks, priorities, and delegation suggestions' },
+
+  // LEARNING
+  { domain: 'learning', title: 'Learn a Topic', desc: 'Personalized study plan', prompt: '', urgency: 'normal', outcome: 'Structured learning path with resources and practice exercises' },
+
+  // HEALTH
+  { domain: 'health', title: 'Fitness Plan', desc: 'Create a workout or wellness plan', prompt: 'Create a personalized workout plan based on my goals and constraints. Include exercises, progression, and rest guidance.', urgency: 'normal', outcome: 'Actionable fitness plan with specific exercises and progression' },
 
   // GENERAL
   { domain: 'general', title: 'Quick Research', desc: 'Research any topic', prompt: '', urgency: 'normal', outcome: 'Specific, cited research with actionable recommendations' },
@@ -34,20 +42,47 @@ const MISSION_TEMPLATES = [
 function renderMissionTemplates() {
   const el = document.getElementById('missionTemplateGrid');
   if (!el) return;
-  // Store templates as data attributes to avoid quote-escaping issues in onclick
   el.innerHTML = MISSION_TEMPLATES.map((t, i) =>
-    `<div class="template-card" data-idx="${i}" onclick="applyTemplateByIndex(${i})">
+    `<div class="template-card" data-idx="${i}">
       <div class="tc-domain">${esc(t.domain)}</div>
-      <div class="tc-title">${esc(t.title)}</div>
+      <div class="tc-title" onclick="applyTemplateByIndex(${i})">${esc(t.title)}</div>
       <div class="tc-desc">${esc(t.desc)}</div>
+      ${t.prompt ? '<button class="tc-run-btn" onclick="event.stopPropagation();runTemplateByIndex(' + i + ')" title="Submit & run immediately">Run</button>' : ''}
     </div>`
   ).join('');
+}
+
+function runTemplateByIndex(idx) {
+  const t = MISSION_TEMPLATES[idx];
+  if (!t || !t.prompt) return;
+  quickRunTask(t.domain, t.prompt, t.urgency);
 }
 
 function applyTemplateByIndex(idx) {
   const t = MISSION_TEMPLATES[idx];
   if (!t) return;
   applyTemplate(t.domain, t.prompt, t.urgency, t.outcome);
+}
+
+// Quick-run a task directly from a one-click suggestion (no form, instant submit)
+async function quickRunTask(domain, prompt, urgency) {
+  try {
+    const res = await fetch('/api/intake/run', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ raw_request: prompt, domain, urgency }),
+    });
+    if (res.ok) {
+      showToast('Task submitted & running', 'success');
+      loadIntakeTasks();
+      loadPendingApprovals();
+      loadCurrentTaskFocus();
+    } else {
+      showToast('Failed to submit task', 'error');
+    }
+  } catch (e) {
+    showToast('Error: ' + e.message, 'error');
+  }
 }
 
 function applyTemplate(domain, prompt, urgency, outcome) {
@@ -249,13 +284,26 @@ function renderChiefOfStaffBrief(brief) {
   const priorityIcon = { critical: '!!', high: '!', medium: '-', low: '.' };
   const priorityClass = { critical: 'cos-critical', high: 'cos-high', medium: 'cos-medium', low: 'cos-low' };
 
-  const actionsHtml = (brief.top_priorities || []).map(a =>
-    `<div class="cos-action ${priorityClass[a.priority] || ''}">
+  const actionsHtml = (brief.top_priorities || []).map(a => {
+    // Generate one-click action button based on context
+    let actionBtn = '';
+    if (a.needs_approval && a.title.includes('Review and approve plan')) {
+      const taskId = a.title.match(/plan for "([^"]+)"/)?.[1] || '';
+      actionBtn = `<button class="cos-action-btn" onclick="event.stopPropagation();switchTab('intake')">Review Plan</button>`;
+    } else if (a.needs_approval && (a.title.includes('Review code') || a.title.includes('Approve "'))) {
+      actionBtn = `<button class="cos-action-btn" onclick="event.stopPropagation();switchTab('approvals')">Review</button>`;
+    } else if (a.title.includes('Send') && a.title.includes('Board')) {
+      actionBtn = `<button class="cos-action-btn" onclick="event.stopPropagation();switchTab('intake')">Go to Intake</button>`;
+    } else if (a.suggested_capability === 'research') {
+      actionBtn = `<button class="cos-action-btn" onclick="event.stopPropagation();applyTemplate('${esc(a.domain || 'general')}','${esc(a.title.replace(/'/g, "\\'").slice(0, 100))}','normal','');switchTab('intake')">Submit Task</button>`;
+    }
+    return `<div class="cos-action ${priorityClass[a.priority] || ''}">
       <div class="cos-action-header">
         <span class="cos-priority">${priorityIcon[a.priority] || '-'}</span>
         <span class="cos-action-title">${esc(a.title)}</span>
         ${a.needs_approval ? '<span class="cos-badge cos-approval">approval</span>' : ''}
         ${a.blocked ? '<span class="cos-badge cos-blocked">blocked</span>' : ''}
+        ${actionBtn}
       </div>
       <div class="cos-action-why">${esc(a.why)}</div>
       <div class="cos-action-meta">
@@ -263,8 +311,8 @@ function renderChiefOfStaffBrief(brief) {
         <span class="cos-alignment">${esc(a.mission_alignment)}</span>
         ${a.suggested_capability ? '<span class="cos-cap">' + esc(a.suggested_capability) + '</span>' : ''}
       </div>
-    </div>`
-  ).join('');
+    </div>`;
+  }).join('');
 
   const healthHtml = (brief.mission_health || []).map(h => {
     const alignClass = { on_track: 'mh-on-track', drifting: 'mh-drifting', stalled: 'mh-stalled', no_statement: 'mh-none' };
@@ -289,12 +337,34 @@ function renderChiefOfStaffBrief(brief) {
     </div>`;
   }).join('');
 
+  // Proactive suggestions when queue is clear
+  let proactiveSuggestionsHtml = '';
+  if (!actionsHtml) {
+    const proactiveSuggestions = [
+      { label: 'AI News', desc: 'Get today\'s AI headlines', domain: 'newsroom', prompt: 'Search the web for today\'s most important AI news. Include headlines, sources, and relevance.', urgency: 'high' },
+      { label: 'Job Market', desc: 'Data eng jobs $180k+ remote', domain: 'careeregine', prompt: 'Find the highest-paying remote data engineering jobs right now. Include salary, company, requirements, and application links.', urgency: 'normal' },
+      { label: 'Income Ideas', desc: 'Passive income for engineers', domain: 'wealthresearch', prompt: 'Research the top passive income opportunities for a senior data engineer in 2026. Include revenue estimates and concrete first steps.', urgency: 'normal' },
+      { label: 'TopRanker Growth', desc: 'Competitive analysis & strategy', domain: 'topranker', prompt: 'Analyze TopRanker\'s competitive position as a community-ranked local business leaderboard in Austin, TX. Include competitor data and growth tactics.', urgency: 'normal' },
+      { label: 'Weekly Plan', desc: 'Plan your week ahead', domain: 'personalops', prompt: 'Help me plan the upcoming week balancing TopRanker development, career growth, and passive income research. Create a day-by-day plan.', urgency: 'normal' },
+    ];
+    proactiveSuggestionsHtml = `<div class="cos-section">
+      <div class="cos-section-title">Suggested Tasks</div>
+      <div class="cos-suggestions-grid">${proactiveSuggestions.map(s =>
+        `<button class="cos-suggestion-btn" onclick="quickRunTask('${s.domain}','${s.prompt.replace(/'/g, "\\'")}','${s.urgency}')">
+          <span class="cos-sug-label">${esc(s.label)}</span>
+          <span class="cos-sug-desc">${esc(s.desc)}</span>
+        </button>`
+      ).join('')}</div>
+    </div>`;
+  }
+
   el.innerHTML = `<div class="chief-of-staff">
     <div class="cos-header">
       <div class="cos-title">Chief of Staff</div>
       <div class="cos-focus">${esc(brief.focus_recommendation || '')}</div>
     </div>
     ${actionsHtml ? '<div class="cos-section"><div class="cos-section-title">Next Best Actions</div>' + actionsHtml + '</div>' : ''}
+    ${proactiveSuggestionsHtml}
     ${enginesHtml ? '<div class="cos-section"><div class="cos-section-title">By Engine</div>' + enginesHtml + '</div>' : ''}
     ${healthHtml ? '<div class="cos-section"><div class="cos-section-title">Mission Health</div><div class="cos-health-grid">' + healthHtml + '</div></div>' : ''}
     ${brief.blockers_summary && brief.blockers_summary.length ? '<div class="cos-section"><div class="cos-section-title">Blockers</div>' + brief.blockers_summary.map(b => '<div class="cos-blocker">' + esc(b) + '</div>').join('') + '</div>' : ''}

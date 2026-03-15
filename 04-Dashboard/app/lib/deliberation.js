@@ -241,6 +241,24 @@ ${filePathRules}
         knowledgeSection = enrichment.getRelevantKnowledge(task.raw_request, task.domain);
     }
     catch { /* non-fatal */ }
+    // Context deepening: inject recent completed task summaries for this domain
+    let recentWorkSection = '';
+    try {
+        const intakeModule = require('./intake');
+        const allTasks = intakeModule.getAllTasks();
+        const recentDone = allTasks
+            .filter(t => t.status === 'done' && t.domain === task.domain && t.task_id !== task.task_id)
+            .sort((a, b) => (b.updated_at || '').localeCompare(a.updated_at || ''))
+            .slice(0, 3);
+        if (recentDone.length > 0) {
+            const summaries = recentDone.map(t => {
+                const objective = t.board_deliberation?.interpreted_objective || t.title || '';
+                return `- ${objective.slice(0, 120)}`;
+            }).join('\n');
+            recentWorkSection = `\n## Recent Completed Work in ${task.domain}\nThe operator has recently completed these tasks in this domain:\n${summaries}\nUse this context to avoid repeating work and to build on prior findings.\n`;
+        }
+    }
+    catch { /* non-fatal */ }
     const userPrompt = `Deliberate on this task:
 
 ## Raw Request
@@ -259,6 +277,7 @@ ${task.desired_outcome || 'Not specified — infer from request'}
 ${task.constraints || 'Standard RPGPO safety rules apply'}
 ${contextSection}
 ${knowledgeSection}
+${recentWorkSection}
 ${domainFiles ? '## Domain Files\n' + domainFiles : ''}
 ${repoSection}
 

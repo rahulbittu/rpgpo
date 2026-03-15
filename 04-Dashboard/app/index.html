@@ -44,11 +44,8 @@
           <span class="nav-icon">&#9881;</span><span class="nav-label">Ask AI</span>
         </a>
         <div class="nav-role-label">Engines</div>
-        <a href="#" class="nav-link flagship" data-tab="topranker">
-          <span class="nav-icon">&#9733;</span><span class="nav-label">TopRanker</span>
-        </a>
         <a href="#" class="nav-link" data-tab="missions">
-          <span class="nav-icon">&#9673;</span><span class="nav-label">Missions</span>
+          <span class="nav-icon">&#9673;</span><span class="nav-label">Engines</span>
         </a>
         <div class="nav-role-label">Intelligence</div>
         <a href="#" class="nav-link" data-tab="memory">
@@ -64,23 +61,11 @@
           <span class="nav-icon">&#9776;</span><span class="nav-label">Activity</span>
         </a>
         <div class="nav-role-label">System</div>
-        <a href="#" class="nav-link" data-tab="governance">
-          <span class="nav-icon">&#9878;</span><span class="nav-label">Governance</span>
-        </a>
-        <a href="#" class="nav-link" data-tab="releases">
-          <span class="nav-icon">&#9658;</span><span class="nav-label">Releases</span>
-        </a>
         <a href="#" class="nav-link" data-tab="controls">
-          <span class="nav-icon">&#9654;</span><span class="nav-label">Controls</span>
+          <span class="nav-icon">&#9654;</span><span class="nav-label">Operations</span>
         </a>
         <a href="#" class="nav-link" data-tab="settings">
           <span class="nav-icon">&#8943;</span><span class="nav-label">Settings</span>
-        </a>
-        <a href="#" class="nav-link" data-tab="audit">
-          <span class="nav-icon">&#9874;</span><span class="nav-label">Audit</span>
-        </a>
-        <a href="#" class="nav-link" data-tab="admin">
-          <span class="nav-icon">&#9881;</span><span class="nav-label">Admin</span>
         </a>
       </div>
       <div class="sidebar-footer">
@@ -90,7 +75,10 @@
           <span class="pill" id="ssePill">SSE</span>
         </div>
         <div class="sys-status" id="sysStatus">--</div>
-        <div style="font-size:9px;color:var(--text-faint);margin-top:4px">Press <kbd style="background:var(--bg-card);padding:1px 4px;border-radius:3px;border:1px solid var(--border)">/</kbd> to search</div>
+        <div style="font-size:9px;color:var(--text-faint);margin-top:4px">
+          <kbd style="background:var(--bg-card);padding:1px 4px;border-radius:3px;border:1px solid var(--border)">/</kbd> new task
+          <kbd style="background:var(--bg-card);padding:1px 4px;border-radius:3px;border:1px solid var(--border);margin-left:4px">&#8984;K</kbd> search
+        </div>
       </div>
     </nav>
 
@@ -150,6 +138,9 @@
         <!-- Global Approval Inbox — impossible to miss -->
         <div id="globalApprovalInbox"></div>
 
+        <!-- Recent Notifications -->
+        <div id="homeNotifications"></div>
+
         <!-- Chief of Staff — next best actions surface -->
         <div id="chiefOfStaffPanel"></div>
 
@@ -161,19 +152,18 @@
         <div class="g4 mt-sm">
           <button class="action-btn" onclick="switchTab('intake')"><span class="btn-icon">&#9998;</span>New Task</button>
           <button class="action-btn" onclick="switchTab('channels')"><span class="btn-icon">&#9881;</span>Ask AI</button>
-          <button class="action-btn" onclick="submitTask('board-run','Board of AI')"><span class="btn-icon">&#9670;</span>Board Run</button>
+          <button class="action-btn" onclick="switchTab('missions')"><span class="btn-icon">&#9673;</span>Engines</button>
           <button class="action-btn" onclick="submitTask('refresh-state','Refresh State')"><span class="btn-icon">&#8635;</span>Refresh</button>
         </div>
 
-        <!-- TopRanker Flagship + Priorities -->
+        <!-- Engines + Priorities -->
         <div class="g-2-1 mt">
-          <div class="card flagship-card">
+          <div class="card">
             <div class="card-top-row">
-              <span class="badge-flagship">Flagship</span>
-              <span class="flagship-name">TopRanker</span>
-              <button class="link-btn" onclick="switchTab('topranker')">View</button>
+              <h3 style="margin:0">Engines</h3>
+              <button class="link-btn" onclick="switchTab('missions')">View All</button>
             </div>
-            <div id="homeTRStatus" class="card-body-text"></div>
+            <div id="homeEngineStatus" class="card-body-text" style="font-size:11px"></div>
           </div>
           <div class="card accent">
             <h3>Top Priorities</h3>
@@ -193,6 +183,14 @@
           </div>
         </div>
 
+        <!-- Today's Summary -->
+        <div class="card mt" id="homeTodaySummary" style="border-left:3px solid var(--green)">
+          <div class="card-top-row">
+            <h3 style="margin-bottom:0">Today's GPO Activity</h3>
+          </div>
+          <div id="homeTodayContent" style="font-size:12px;color:var(--text-secondary)">Loading...</div>
+        </div>
+
         <!-- Latest Brief Excerpt -->
         <div class="card mt" id="homeBriefCard">
           <div class="card-top-row">
@@ -200,6 +198,15 @@
             <button class="link-btn" onclick="switchTab('logs');filterLogs('brief')">Full Brief</button>
           </div>
           <div id="homeBriefExcerpt" class="brief-excerpt md-content"></div>
+        </div>
+
+        <!-- Recent Deliverables — actual AI output from completed work -->
+        <div class="mt" id="homeDeliverables">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <h3 style="margin:0">Recent Deliverables</h3>
+            <button class="link-btn" onclick="switchTab('intake');filterIntake('done')">View All</button>
+          </div>
+          <div id="homeDeliverablesContent"><div class="task-empty">Loading deliverables...</div></div>
         </div>
 
         <!-- Latest Completed + Reports + Activity -->
@@ -299,29 +306,27 @@
             <div class="intake-form-row">
               <select id="intakeDomain" class="channel-select">
                 <option value="">Auto-detect engine</option>
-                <optgroup label="High Value">
+                <optgroup label="Core Engines">
+                  <option value="startup">Code & Product Engineering</option>
+                  <option value="writing">Writing & Documentation</option>
                   <option value="research">Research & Analysis</option>
-                  <option value="newsroom">News & Intelligence</option>
-                  <option value="finance">Income & Wealth</option>
-                  <option value="career">Career & Growth</option>
-                  <option value="chief_of_staff">Planning & Strategy</option>
+                  <option value="learning">Learning & Tutoring</option>
+                  <option value="personalops">Scheduling & Life Operations</option>
                 </optgroup>
-                <optgroup label="Flagship">
-                  <option value="topranker">TopRanker</option>
-                  <option value="startup">Code & Build</option>
+                <optgroup label="Specialized">
+                  <option value="shopping">Shopping & Buying Advisor</option>
+                  <option value="travel">Travel & Relocation Planner</option>
+                  <option value="careeregine">Career & Job Search</option>
+                  <option value="wealthresearch">Personal Finance & Investing</option>
+                  <option value="health">Health & Wellness Coach</option>
                 </optgroup>
-                <optgroup label="Support">
-                  <option value="communications">Writing & Comms</option>
-                  <option value="shopping">Shopping & Compare</option>
-                  <option value="legal">Documents & Legal</option>
-                  <option value="calendar">Calendar & Schedule</option>
-                  <option value="health">Health & Fitness</option>
-                  <option value="travel">Travel & Planning</option>
-                  <option value="home">Home & Lifestyle</option>
+                <optgroup label="Business">
+                  <option value="topranker">Startup & Business Builder</option>
                 </optgroup>
                 <optgroup label="Creative">
-                  <option value="screenwriting">Screenwriting</option>
-                  <option value="music">Music</option>
+                  <option value="screenwriting">Screenwriting & Story Development</option>
+                  <option value="music">Music & Audio Creation</option>
+                  <option value="personalops">Home & Lifestyle Design</option>
                 </optgroup>
                 <option value="general">General</option>
               </select>
@@ -386,7 +391,7 @@
           <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='What are the top AI news stories from the last 24 hours?';document.getElementById('channelPrompt').focus()" style="font-size:10px">AI News</button>
           <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='Research passive income ideas for data engineers with specific revenue estimates';document.getElementById('channelPrompt').focus()" style="font-size:10px">Income Ideas</button>
           <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='What are the highest paying data engineering jobs available right now?';document.getElementById('channelPrompt').focus()" style="font-size:10px">Job Search</button>
-          <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='Analyze TopRanker competitive landscape and suggest growth strategies';document.getElementById('channelPrompt').focus()" style="font-size:10px">TopRanker</button>
+          <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='Analyze my startup competitive landscape and suggest growth strategies';document.getElementById('channelPrompt').focus()" style="font-size:10px">Startup</button>
           <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='Create a weekly plan for balancing startup work and career growth';document.getElementById('channelPrompt').focus()" style="font-size:10px">Weekly Plan</button>
         </div>
 
@@ -529,46 +534,24 @@
       <!-- Mission Statement Edit Modal (global) -->
       <div id="msEditModal"></div>
 
-      <!-- TOPRANKER -->
+      <!-- STARTUP ENGINE (was TopRanker) -->
       <section class="tab-panel" id="tab-topranker">
         <div class="page-header">
-          <div class="header-row">
-            <div style="display:flex;align-items:center;gap:10px">
-              <h1>TopRanker</h1>
-              <span class="badge-flagship">Flagship Mission</span>
-            </div>
-          </div>
-          <p class="subtitle">Community-ranked local business leaderboard</p>
-        </div>
-
-        <div class="tr-hero">
-          <div class="tr-hero-header">
-            <span class="tr-hero-title">TopRanker Command</span>
-            <span class="tr-loop-stage" id="trLoopStage"></span>
-          </div>
-          <div class="tr-stat" id="trHeroStats">
-            <div class="tr-stat-item"><span class="tr-stat-label">Stack</span><span class="tr-stat-value">Expo/RN + Express + PG</span></div>
-            <div class="tr-stat-item"><span class="tr-stat-label">Stage</span><span class="tr-stat-value">MVP</span></div>
-            <div class="tr-stat-item"><span class="tr-stat-label">Market</span><span class="tr-stat-value">Austin, TX</span></div>
-            <div class="tr-stat-item"><span class="tr-stat-label">Focus</span><span class="tr-stat-value">Local Business Rankings</span></div>
-          </div>
-          <div id="trObjective" class="tr-objective"></div>
-          <div id="trNextAction" class="tr-next-action"></div>
+          <h1>Startup & Business Builder</h1>
+          <p class="subtitle">Build, launch, and grow your startup with AI-powered strategy and execution</p>
         </div>
 
         <div class="g4 mt-sm">
-          <button class="action-btn" onclick="runAiTask('claude-topranker-review')"><span class="btn-icon">&#9733;</span>Review Prompt</button>
-          <button class="action-btn" onclick="submitTask('board-run','Board of AI')"><span class="btn-icon">&#9670;</span>Run Board</button>
-          <button class="action-btn" onclick="switchTab('channels');switchChannel('openai')"><span class="btn-icon">&#9881;</span>Ask AI</button>
+          <button class="action-btn" onclick="switchTab('intake');document.getElementById('intakeRequest').value='Analyze my startup competitive landscape and suggest growth strategies';document.getElementById('intakeRequest').focus()"><span class="btn-icon">&#9733;</span>Competitive Analysis</button>
+          <button class="action-btn" onclick="switchTab('intake');document.getElementById('intakeRequest').value='Create a go-to-market plan for my startup launch';document.getElementById('intakeRequest').focus()"><span class="btn-icon">&#9670;</span>GTM Plan</button>
+          <button class="action-btn" onclick="switchTab('intake');document.getElementById('intakeRequest').value='Design the architecture for a new feature';document.getElementById('intakeRequest').focus()"><span class="btn-icon">&#9881;</span>Architecture</button>
           <button class="action-btn" onclick="switchTab('tasks')"><span class="btn-icon">&#9776;</span>Tasks</button>
         </div>
 
         <div class="g2 mt">
-          <div class="card" id="trStatus"></div>
-          <div class="card" id="trProgress"></div>
+          <div class="card" id="trStatus"><h3>Status</h3><div style="color:var(--text-faint);font-size:12px">Submit a startup task to see status here</div></div>
+          <div class="card" id="trProgress"><h3>Recent Progress</h3><div style="color:var(--text-faint);font-size:12px">No recent startup tasks</div></div>
         </div>
-
-        <div class="card md-content mt" id="trSummary"></div>
       </section>
 
       <!-- APPROVALS -->
@@ -688,7 +671,7 @@
         <h3 class="mt">Claude + AI</h3>
         <div class="g4">
           <button class="ctrl-btn" onclick="launchClaude()"><span class="ctrl-icon">&#9654;</span>Launch Claude</button>
-          <button class="ctrl-btn" onclick="runAiTask('claude-topranker-review')"><span class="ctrl-icon">&#9733;</span>TR Review</button>
+          <button class="ctrl-btn" onclick="switchTab('intake')"><span class="ctrl-icon">&#9998;</span>New Task</button>
           <button class="ctrl-btn" onclick="runAiTask('openai-daily-brief')"><span class="ctrl-icon">&#9673;</span>OpenAI Brief</button>
           <button class="ctrl-btn" onclick="runAiTask('perplexity-research')"><span class="ctrl-icon">&#8853;</span>PPX Research</button>
         </div>
@@ -697,8 +680,16 @@
         <div class="g4">
           <button class="filter-btn" onclick="switchTab('intake')">New Task</button>
           <button class="filter-btn" onclick="switchTab('channels')">Ask AI</button>
-          <button class="filter-btn" onclick="switchTab('topranker')">TopRanker</button>
+          <button class="filter-btn" onclick="switchTab('missions')">Engines</button>
           <button class="filter-btn" onclick="switchTab('tasks')">Task Stream</button>
+        </div>
+
+        <h3 class="mt">System Panels</h3>
+        <div class="g4">
+          <button class="filter-btn" onclick="switchTab('governance')">Governance</button>
+          <button class="filter-btn" onclick="switchTab('releases')">Releases</button>
+          <button class="filter-btn" onclick="switchTab('audit')">Audit</button>
+          <button class="filter-btn" onclick="switchTab('admin')">Admin</button>
         </div>
 
         <div class="card mt">
@@ -787,7 +778,7 @@
           <h3>GPO Access Classes</h3>
           <div style="font-size:12px">
             <div class="settings-row"><span class="settings-label">Class A</span> Core Safe — governance, repos, dashboards</div>
-            <div class="settings-row"><span class="settings-label">Class B</span> Controlled — toprankerapp@gmail, approved tools</div>
+            <div class="settings-row"><span class="settings-label">Class B</span> Controlled — approved accounts, approved tools</div>
             <div class="settings-row"><span class="settings-label">Class C</span> Sensitive — selected threads, private docs</div>
             <div class="settings-row"><span class="settings-label">Class D</span> Forbidden — anything not explicitly approved</div>
           </div>
