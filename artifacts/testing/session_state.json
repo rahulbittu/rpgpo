@@ -1,29 +1,33 @@
 {
   "current_phase": "evidence_hardening",
-  "current_batch": "phase-a-b-complete",
-  "last_completed": "Phase A (classification) + Phase B (strict verdicts)",
-  "next_batch": "Phase C (case report hardening) + Phase D (aggregate reconciliation)",
+  "current_batch": "phase-d-e-f-complete",
+  "last_completed": "Phase A+B (classification+verdicts) + Phase D (aggregates) + Phase E (repo docs) + Phase F (traceability)",
+  "next_batch": "Phase C (case report hardening) + Phase G (UI truth) + Phase H (score improvement)",
   "validation_results": {
     "total_reports": 400,
     "canonical_cases": 361,
-    "retries": 9,
-    "adhoc": 4,
-    "legacy": 26,
     "strict_pass": 354,
     "strict_partial": 7,
-    "strict_fail": 0,
     "l1_pass": 360,
     "l2_pass": 360,
     "l3_pass": 0,
     "avg_confidence": 90
   },
-  "commits": 62,
-  "active_blockers": [],
+  "commits": 65,
+  "documentation_status": {
+    "system_overview": "complete",
+    "repo_map": "complete",
+    "task_lifecycle": "complete",
+    "board_guide": "complete",
+    "operator_guide": "complete",
+    "harness_summary": "complete",
+    "traceability_guide": "complete",
+    "verdict_rubric": "complete",
+    "classification": "complete"
+  },
   "next_actions": [
-    "Phase C: Harden case reports with strict sections",
-    "Phase D: Reconcile all aggregate docs",
-    "Phase E: Repo comprehension docs",
-    "Phase F: Board traceability"
+    "Phase G: Verify UI canonical naming is complete",
+    "Phase H: Continue score improvement through real fixes"
   ],
-  "updated_at": "2026-03-15T22:00:00Z"
+  "updated_at": "2026-03-15T22:30:00Z"
 }

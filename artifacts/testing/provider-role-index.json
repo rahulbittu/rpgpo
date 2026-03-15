@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-03-15T21:19:40.148Z",
+  "provider_usage": {
+    "openai": {
+      "tasks": 354,
+      "subtasks": 390
+    },
+    "perplexity": {
+      "tasks": 345,
+      "subtasks": 409
+    },
+    "gemini": {
+      "tasks": 22,
+      "subtasks": 23
+    },
+    "claude": {
+      "tasks": 0,
+      "subtasks": 0
+    }
+  },
+  "stage_distribution": {
+    "research": 291,
+    "report": 425,
+    "audit": 87,
+    "strategy": 15,
+    "locate_files": 2,
+    "decide": 1,
+    "implement": 1
+  },
+  "domain_distribution": {
+    "general": 216,
+    "careeregine": 34,
+    "wealthresearch": 46,
+    "screenwriting": 24,
+    "personalops": 24,
+    "topranker": 14,
+    "newsroom": 2,
+    "music": 1
+  }
+}
