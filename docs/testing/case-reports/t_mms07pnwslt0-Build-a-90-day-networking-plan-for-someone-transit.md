@@ -1,0 +1,76 @@
+# Build a 90-day networking plan for someone transitioning from IC to engineering 
+
+## 1. Context
+
+- **Task ID**: `t_mms07pnwslt0`
+- **Engine**: careeregine
+- **Status**: done
+- **Created**: 2026-03-15T17:03:54
+
+### User Request
+
+> Build a 90-day networking plan for someone transitioning from IC to engineering management. Include specific actions per week, communities to join, and conversation starters.
+
+## 2. Board Deliberation
+
+- **Objective**: Create a detailed 90-day networking plan for transitioning from an individual contributor to an engineering management role.
+- **Strategy**: Research best practices and strategies for transitioning to engineering management. Identify relevant communities and networking opportunities. Develop a 90-day plan with specific weekly actions, including joining communities and conversation starters. Ensure the plan aligns with Rahul's career goals and the current job market trends.
+- **Subtasks**: 3
+
+## 3. Subtask Execution
+
+### Subtask 1: Research Best Practices for Transitioning to Engineering Management
+- Model: perplexity | Stage: research | Status: done
+
+### Subtask 2: Identify Relevant Communities and Networking Opportunities
+- Model: perplexity | Stage: research | Status: done
+
+### Subtask 3: Develop a 90-Day Networking Plan
+- Model: gemini | Stage: strategy | Status: done
+
+## 4. Final Output
+
+## Strategic Plan: 90-Day Networking for Engineering Management Transition
+
+**Operator:** Rahul (Senior Data Engineer / Entrepreneur)
+**Priorities:** TopRanker MVP, Passive Income Research, Data Engineering Career Growth (including leadership)
+**Stage:** Strategy
+**Role:** Strategy
+
+### Executive Summary
+
+This 90-day networking plan is designed to accelerate your transition from Senior Data Engineer to Engineering Management. It focuses on targeted outreach to individuals and communities with direct experience in this transition, leveraging insights from existing research and identifying key knowledge gaps. The plan prioritizes building relationships with potential mentors, understanding the practicalities of management roles, and gathering actionable advice.
+
+### Analysis of Prior Subtask Results
+
+The prior subtask results highlight a significant information gap regarding "best practices for transitioning from an individual contributor to an engineering management role." The searches conducted did not yield specific, actionable guides or recent data (2026) with concrete examples, numbers, or dates. This indicates a need for a more targeted and personalized networking approach rather than relying solely on publicly available, generic content.
+
+The identified communities, Washington IT Leadership Forum 2026 and ASSESS Simulation Leadership Summit 2026, offer potential networking opportunities, though their direct relevance to *engineering management transition* specifically for data engineers needs careful navigation. The Washington IT Leadership Forum's sessions on "The Transition Survival Guide" and building trust are more directly applicable than the ASSESS Summit, which appears focused on simulation leadership.
+
+### Refined Strategy: Building a Targeted Network
+
+Given the lack of readily available public resources, the most effective strategy is to proactively build a network of individuals who have successfully made this transition or are currently in engineering management roles. This involves:
+
+1.  **Identifying and Connecting with "Transition Experts":** Leveraging refined search suggestions to find individuals like Camille Fournier and Will Larson, and actively seeking out others through LinkedIn and community platforms.
+2.  **Engaging with Relevant Communities:** Participating in forums and events where engineering leaders and aspiring managers congregate, even if the primary focus isn't solely on the IC-to-manager transition.
+3.  **Structured Information Gathering:** Developing specific questions to ask during networking interactions to extract maximum value.
+
+### 90-Day Networking Plan for Transitioning to Engineering Management
+
+This plan is structured weekly, focusing on building momentum and progressively deepening connections.
+
+**Overall Goal:** Secure 3-5 informational interviews with individuals who have successfully transitioned from IC to Engineering Management within the next 90 days.
+
+**Key Metrics:**
+*   Number of LinkedIn connection requests sent (Target: 100)
+*   Number of informational interviews scheduled (Target: 5)
+*   Number of active community engagements (Target: 15)
+*   Number of key insights documented (Target: 20)
+
+---
+
+#### **Phase 1: Foundation & Initial Outreach (Weeks 1-4)**
+
+**Objective:** Identify key individuals and communities, initiate contact, and gather foundational knowledge.
+
+| Week | Actions                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

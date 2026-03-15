@@ -1,5 +1,551 @@
 [
   {
+    "task_id": "t_mms48uy0hmcl",
+    "title": "Research the pros and cons of buying an investment property through an LLC vs pe",
+    "raw_request": "Research the pros and cons of buying an investment property through an LLC vs personal name. Include liability protection, tax implications, and mortgage differences.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:56:46.248Z",
+    "updated_at": "2026-03-15T19:00:05.733Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:57:41.457Z",
+      "interpreted_objective": "Research and compare the benefits and drawbacks of purchasing an investment property through an LLC versus in a personal name, focusing on liability protection, tax implications, and mortgage differences.",
+      "expected_outcome": "A detailed report outlining the pros and cons of buying an investment property through an LLC vs personal name, including specific examples and actionable insights.",
+      "key_unknowns": [
+        "Current legal and tax regulations affecting LLCs and personal property ownership",
+        "Differences in mortgage terms and availability for LLCs versus individuals",
+        "Real-world examples of investors using LLCs for property purchases"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on the legal, tax, and financial aspects of purchasing properties through LLCs and personally. Then, synthesize this data into a comprehensive report that highlights the key differences, advantages, and disadvantages of each approach.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Legal and Tax Implications",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on legal and tax implications of buying properties through LLCs vs personal ownership.",
+          "prompt": "Search the web for current, specific information about the legal and tax implications of purchasing an investment property through an LLC versus personal ownership. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Mortgage Differences",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on mortgage differences when buying properties through LLCs vs personal ownership.",
+          "prompt": "Search the web for current, specific information about the mortgage differences for buying an investment property through an LLC versus personal ownership. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Findings into Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report detailing the pros and cons of buying an investment property through an LLC vs personal name.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations on the pros and cons of buying an investment property through an LLC versus personal name. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-investment-property-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2428
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms48tdpx10s",
+    "title": "Create a content calendar for a tech blog. 3 months, 2 posts per week. Include t",
+    "raw_request": "Create a content calendar for a tech blog. 3 months, 2 posts per week. Include topic ideas, SEO keywords, and target audience for each post.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:56:44.221Z",
+    "updated_at": "2026-03-15T18:59:54.121Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:57:35.728Z",
+      "interpreted_objective": "Create a detailed content calendar for a tech blog covering three months with specific topics, SEO keywords, and target audiences for each post.",
+      "expected_outcome": "A comprehensive content calendar that guides the blog's content strategy for three months, ensuring each post is relevant, SEO-optimized, and targeted to the right audience.",
+      "key_unknowns": [
+        "Specific tech blog focus areas",
+        "Current SEO trends in the tech industry",
+        "Target audience demographics for the blog"
+      ],
+      "recommended_strategy": "Conduct research to identify trending topics and SEO keywords in the tech industry. Synthesize this information into a structured content calendar with specific post ideas and target audiences. Ensure alignment with the operator's priorities for passive income, career growth, and tech industry awareness.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Trending Tech Topics and SEO Keywords",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of trending tech topics and relevant SEO keywords with sources.",
+          "prompt": "Search the web for current trending topics and SEO keywords in the tech industry. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Content Calendar",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured content calendar with topic ideas, SEO keywords, and target audiences for each post.",
+          "prompt": "Based on the research results from prior subtasks, create a content calendar for a tech blog covering three months, with two posts per week. Include specific topic ideas, SEO keywords, and target audiences for each post.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-content-calendar.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1866
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mms48rte3dnu",
+    "title": "Design a morning smoothie menu for a week. Each smoothie should be different, un",
+    "raw_request": "Design a morning smoothie menu for a week. Each smoothie should be different, under 300 calories, high protein, and take under 5 minutes. Include grocery list.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:56:42.194Z",
+    "updated_at": "2026-03-15T18:59:46.161Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:57:20.649Z",
+      "interpreted_objective": "Create a weekly morning smoothie menu that is high-protein, under 300 calories, and quick to prepare.",
+      "expected_outcome": "A detailed smoothie menu with recipes, a grocery list, and preparation instructions.",
+      "key_unknowns": [
+        "Specific dietary preferences or restrictions",
+        "Availability of ingredients in target region"
+      ],
+      "recommended_strategy": "Research current high-protein smoothie recipes that meet the calorie and time constraints. Compile a weekly menu with diverse options and create a comprehensive grocery list. Ensure all recipes are evidence-based and include preparation instructions. Provide safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research High-Protein Smoothie Recipes",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of high-protein smoothie recipes with ingredients, calories, and preparation time.",
+          "prompt": "Search the web for current, specific high-protein smoothie recipes that are under 300 calories and take less than 5 minutes to prepare. Include real names, numbers, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Smoothie Menu and Grocery List",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured weekly smoothie menu with recipes, preparation instructions, and a grocery list.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a weekly smoothie menu with high-protein recipes under 300 calories. Include preparation instructions and a comprehensive grocery list.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-smoothie-menu.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1816
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms48q4f5i1g",
+    "title": "Create a skill matrix for a data engineering team. Include technical skills (SQL",
+    "raw_request": "Create a skill matrix for a data engineering team. Include technical skills (SQL, Python, Spark, Cloud), soft skills, and proficiency levels with assessment criteria.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:56:39.999Z",
+    "updated_at": "2026-03-15T18:59:40.369Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:57:15.447Z",
+      "interpreted_objective": "Create a comprehensive skill matrix for a data engineering team, covering technical and soft skills with proficiency levels and assessment criteria.",
+      "expected_outcome": "A detailed skill matrix document that outlines required skills, proficiency levels, and assessment criteria for a data engineering team, aiding in skill gap analysis and development planning.",
+      "key_unknowns": [
+        "Specific assessment criteria for each skill",
+        "Proficiency level definitions",
+        "Industry benchmarks for data engineering skills"
+      ],
+      "recommended_strategy": "Conduct research to gather current industry standards for data engineering skills and proficiency levels. Synthesize this information into a structured skill matrix document, ensuring it aligns with Rahul's career growth and leadership development objectives.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Data Engineering Skills",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current technical and soft skills required for data engineering teams, including proficiency levels and assessment criteria.",
+          "prompt": "Search the web for current, specific information about technical and soft skills required for data engineering teams. Include proficiency levels and assessment criteria. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Skill Matrix",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured skill matrix document for a data engineering team.",
+          "prompt": "Based on the research results, synthesize a skill matrix for a data engineering team. Include technical skills like SQL, Python, Spark, Cloud, and soft skills. Define proficiency levels and assessment criteria. Ensure alignment with Rahul's career growth and leadership development objectives.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-skill-matrix.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2217
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms48ok878eq",
+    "title": "Find the best webcam for remote work under 200 dollars. Must have 4K resolution,",
+    "raw_request": "Find the best webcam for remote work under 200 dollars. Must have 4K resolution, good low-light performance, and auto-framing. Compare 3 options.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:56:37.976Z",
+    "updated_at": "2026-03-15T18:59:32.182Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:56:55.798Z",
+      "interpreted_objective": "Identify the best 4K webcam for remote work under $200 with good low-light performance and auto-framing.",
+      "expected_outcome": "A comparison of three 4K webcams under $200, highlighting their features, pros, cons, and a clear recommendation.",
+      "key_unknowns": [
+        "Current pricing of webcams",
+        "Availability of webcams with specified features",
+        "User reviews and ratings"
+      ],
+      "recommended_strategy": "Conduct web research to find three webcams that meet the specified criteria. Compare their features, prices, and reviews. Provide a synthesized report with a recommendation based on the findings.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research 4K webcams under $200",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on 4K webcams under $200 with good low-light performance and auto-framing.",
+          "prompt": "Search the web for current 4K webcams priced under $200 that offer good low-light performance and auto-framing. Include real names, prices, features, and URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compare and analyze webcam options",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A strategic comparison of the three identified webcams, including pros, cons, and a recommendation.",
+          "prompt": "Based on the research results, synthesize a comparison of the three identified webcams. Include their pros, cons, and a clear recommendation with reasoning.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1951
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms48n01acxo",
+    "title": "Explain the internals of how a search engine works. Cover crawling, indexing, ra",
+    "raw_request": "Explain the internals of how a search engine works. Cover crawling, indexing, ranking, and serving. Include modern ML-based ranking factors.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:56:35.953Z",
+    "updated_at": "2026-03-15T18:59:23.263Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:56:50.029Z",
+      "interpreted_objective": "Explain the internal workings of a search engine, including crawling, indexing, ranking, and serving, with a focus on modern ML-based ranking factors.",
+      "expected_outcome": "A comprehensive explanation document detailing the components and processes of a search engine, emphasizing modern machine learning techniques used in ranking.",
+      "key_unknowns": [
+        "Specific ML-based ranking factors used in modern search engines",
+        "Current trends or advancements in search engine technology"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on search engine internals and ML-based ranking factors. Synthesize this information into a clear, structured report that explains each component and process in detail.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Search Engine Internals",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, detailed information on how search engines work, focusing on crawling, indexing, ranking, and serving, including modern ML-based ranking factors.",
+          "prompt": "Search the web for current, specific information about how search engines work. Focus on the processes of crawling, indexing, ranking, and serving, and include details on modern machine learning-based ranking factors. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Search Engine Explanation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining the internals of a search engine, covering crawling, indexing, ranking, and serving, with a focus on modern ML-based ranking factors.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comprehensive explanation of how search engines work. Cover the processes of crawling, indexing, ranking, and serving, and emphasize modern machine learning-based ranking factors.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-search-engine-internals.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1883
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms48lfhqlza",
+    "title": "Research the best HSA-eligible health insurance plans for self-employed workers ",
+    "raw_request": "Research the best HSA-eligible health insurance plans for self-employed workers in Texas 2026. Compare premiums, deductibles, and HSA contribution limits.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:56:33.917Z",
+    "updated_at": "2026-03-15T18:58:37.651Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:56:43.997Z",
+      "interpreted_objective": "Research and compare HSA-eligible health insurance plans for self-employed workers in Texas for 2026.",
+      "expected_outcome": "A detailed report comparing premiums, deductibles, and HSA contribution limits for the best HSA-eligible plans in Texas for 2026.",
+      "key_unknowns": [
+        "Specific HSA-eligible plans available in Texas for 2026",
+        "Current and projected premiums and deductibles for these plans",
+        "HSA contribution limits for 2026"
+      ],
+      "recommended_strategy": "Conduct web research to gather current data on HSA-eligible health insurance plans in Texas for self-employed individuals. Synthesize this data into a comprehensive report comparing key metrics such as premiums, deductibles, and HSA contribution limits.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research HSA-eligible plans in Texas for 2026",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on HSA-eligible health insurance plans in Texas for 2026, including premiums, deductibles, and HSA contribution limits.",
+          "prompt": "Search the web for current, specific information about HSA-eligible health insurance plans for self-employed workers in Texas for 2026. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize insurance plan comparison report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the best HSA-eligible health insurance plans for self-employed workers in Texas for 2026, including premiums, deductibles, and HSA contribution limits.",
+          "prompt": "Based on the research results from the previous subtask, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-2026-HSA-Insurance-Comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2296
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms48juq3hwy",
+    "title": "Write a comprehensive guide to building a CI/CD pipeline for a Node.js monorepo.",
+    "raw_request": "Write a comprehensive guide to building a CI/CD pipeline for a Node.js monorepo. Include GitHub Actions, testing strategies, deployment stages, and rollback procedures.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:56:31.874Z",
+    "updated_at": "2026-03-15T18:58:12.589Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:56:37.930Z",
+      "interpreted_objective": "Create a detailed guide for setting up a CI/CD pipeline for a Node.js monorepo using GitHub Actions.",
+      "expected_outcome": "A comprehensive guide that includes setup instructions for GitHub Actions, testing strategies, deployment stages, and rollback procedures for a Node.js monorepo.",
+      "key_unknowns": [
+        "Specific Node.js monorepo structure",
+        "Current CI/CD best practices for Node.js",
+        "Details on rollback procedures"
+      ],
+      "recommended_strategy": "Research current best practices for CI/CD pipelines in Node.js monorepos, focusing on GitHub Actions. Synthesize this information into a clear, step-by-step guide that includes testing, deployment, and rollback strategies. Ensure the guide is actionable and tailored to developers with intermediate knowledge of CI/CD processes.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research CI/CD Best Practices for Node.js Monorepos",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices for setting up CI/CD pipelines in Node.js monorepos.",
+          "prompt": "Search the web for current best practices in setting up CI/CD pipelines for Node.js monorepos. Include specific strategies for using GitHub Actions, testing, deployment, and rollback procedures. Provide real examples and references.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize CI/CD Guide for Node.js Monorepo",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on building a CI/CD pipeline for a Node.js monorepo using GitHub Actions.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building a CI/CD pipeline for a Node.js monorepo. Include detailed steps for GitHub Actions setup, testing strategies, deployment stages, and rollback procedures. Ensure the guide is clear, detailed, and actionable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2052
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms42qd3dd6h",
     "title": "Write a one-act play about two AIs debating whether they should tell their human",
     "raw_request": "Write a one-act play about two AIs debating whether they should tell their human creators the truth about a critical bug they found.",
