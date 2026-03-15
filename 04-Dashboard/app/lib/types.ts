@@ -38,16 +38,24 @@ export type RiskLevel = 'green' | 'yellow' | 'red';
 /** Urgency levels for intake tasks */
 export type Urgency = 'low' | 'normal' | 'high' | 'critical';
 
-/** Mission domains — each maps to a pluggable mission context */
+/** Mission domains — aligned to 15-engine harness model */
 export type Domain =
-  | 'topranker'
-  | 'careeregine'
-  | 'founder2founder'
-  | 'wealthresearch'
-  | 'newsroom'
-  | 'screenwriting'
-  | 'music'
-  | 'personalops'
+  | 'topranker'      // Startup & Business Builder
+  | 'startup'        // Code & Product Engineering
+  | 'careeregine'    // Career & Job Search
+  | 'wealthresearch' // Personal Finance & Investing
+  | 'newsroom'       // News & Intelligence
+  | 'writing'        // Writing & Documentation
+  | 'research'       // Research & Analysis
+  | 'learning'       // Learning & Tutoring
+  | 'shopping'       // Shopping & Buying Advisor
+  | 'travel'         // Travel & Relocation Planner
+  | 'health'         // Health & Wellness Coach
+  | 'home'           // Home & Lifestyle Design
+  | 'screenwriting'  // Screenwriting & Story Development
+  | 'music'          // Music & Audio Creation
+  | 'founder2founder' // Filmmaking & Video Production
+  | 'personalops'    // Scheduling & Life Operations
   | 'general';
 
 /** AI provider identifiers */

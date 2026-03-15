@@ -3,50 +3,50 @@
     "id": "ms_operator",
     "level": "operator",
     "scope_id": "operator",
-    "statement": "Build a privacy-first AI operating system that amplifies Rahul's productivity, accelerates TopRanker to market, and systematically grows career and income opportunities.",
+    "statement": "Build a privacy-first AI operating system that amplifies Rahul's productivity across 15 engines — accelerating career growth, wealth building, and personal effectiveness.",
     "objectives": [
-      "Ship TopRanker MVP in Austin",
-      "Build passive income streams",
+      "Build passive income streams ($5k+/month)",
       "Advance to Staff/Principal Data Engineer",
-      "Stay ahead of AI and tech industry trends"
+      "Stay ahead of AI and tech industry trends",
+      "Ship startup projects to market"
     ],
     "values": ["Privacy-first", "Action-oriented", "Data-driven decisions"],
-    "success_criteria": ["TopRanker live with real users", "Monthly passive income $5k+", "Staff-level role or startup traction"],
+    "success_criteria": ["Monthly passive income $5k+", "Staff-level role or startup traction", "All 15 engines producing operator value"],
     "created_at": "2026-03-14T02:23:21.332Z",
-    "updated_at": "2026-03-15T04:00:00.000Z"
+    "updated_at": "2026-03-15T18:00:00.000Z"
   },
   {
-    "id": "ms_topranker",
+    "id": "ms_startup",
     "level": "engine",
     "scope_id": "topranker",
-    "statement": "Ship TopRanker as a community-ranked local business leaderboard that Austin residents trust and use daily.",
-    "objectives": ["Launch MVP in Austin", "Achieve 100 verified businesses", "Build community-driven ranking system"],
-    "values": ["Trust through transparency", "Community-first rankings"],
-    "success_criteria": ["1000+ monthly active users", "50+ verified businesses", "Positive press coverage"],
-    "created_at": "2026-03-15T04:00:00.000Z",
-    "updated_at": "2026-03-15T04:00:00.000Z"
+    "statement": "Help Rahul build, launch, and grow startup projects with AI-powered strategy, competitive analysis, and product development support.",
+    "objectives": ["Launch startup MVPs", "Validate business models", "Build go-to-market strategies"],
+    "values": ["Ship fast", "Validate before building"],
+    "success_criteria": ["Startup live with real users", "Clear unit economics", "Growth strategy in place"],
+    "created_at": "2026-03-15T18:00:00.000Z",
+    "updated_at": "2026-03-15T18:00:00.000Z"
   },
   {
     "id": "ms_research",
     "level": "engine",
     "scope_id": "wealthresearch",
     "statement": "Discover and evaluate passive income and wealth-building opportunities aligned with Rahul's data engineering and entrepreneurship skills.",
-    "objectives": ["Research SaaS micro-products", "Evaluate API-as-a-service opportunities", "Track investment trends"],
+    "objectives": ["Research SaaS micro-products", "Evaluate investment opportunities", "Track income trends"],
     "values": ["Evidence-based analysis", "Actionable recommendations"],
     "success_criteria": ["3+ validated income ideas per quarter", "Clear ROI analysis for each"],
     "created_at": "2026-03-15T04:00:00.000Z",
-    "updated_at": "2026-03-15T04:00:00.000Z"
+    "updated_at": "2026-03-15T18:00:00.000Z"
   },
   {
     "id": "ms_career",
     "level": "engine",
     "scope_id": "careeregine",
-    "statement": "Support Rahul's career growth as a senior data engineer while balancing startup building — focus on leadership skills, market positioning, and strategic networking.",
-    "objectives": ["Track job market trends", "Build technical leadership skills", "Strategic networking"],
+    "statement": "Support Rahul's career growth as a senior data engineer — focus on leadership skills, market positioning, salary optimization, and strategic networking.",
+    "objectives": ["Track job market trends", "Build technical leadership skills", "Optimize compensation"],
     "values": ["Continuous learning", "Strategic career moves"],
     "success_criteria": ["Clear path to Staff/Principal", "Active professional network", "Skills aligned with market demand"],
     "created_at": "2026-03-15T04:00:00.000Z",
-    "updated_at": "2026-03-15T04:00:00.000Z"
+    "updated_at": "2026-03-15T18:00:00.000Z"
   },
   {
     "id": "ms_newsroom",
@@ -55,8 +55,8 @@
     "statement": "Keep Rahul informed about AI, startups, and technology trends with daily curated intelligence — specific, cited, and actionable.",
     "objectives": ["Daily AI news digest", "Weekly startup ecosystem roundup", "Technology trend analysis"],
     "values": ["Current and verified", "Relevance over volume"],
-    "success_criteria": ["Daily brief available by 8am", "90%+ relevance to Rahul's interests"],
+    "success_criteria": ["Daily brief available by 8am", "90%+ relevance to interests"],
     "created_at": "2026-03-15T04:00:00.000Z",
-    "updated_at": "2026-03-15T04:00:00.000Z"
+    "updated_at": "2026-03-15T18:00:00.000Z"
   }
 ]

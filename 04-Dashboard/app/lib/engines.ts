@@ -39,8 +39,8 @@ export function getAllEngines(): Engine[] { return Array.from(engines.values());
 // ═══════════════════════════════════════════
 
 defineEngine({
-  engine_id: 'eng_startup', domain: 'topranker', display_name: 'Startup',
-  description: 'Product-building engine for startup projects — mobile apps, web apps, SaaS',
+  engine_id: 'eng_startup', domain: 'topranker', display_name: 'Startup & Business Builder',
+  description: 'Product-building engine for startup projects — strategy, GTM, code architecture',
   default_capabilities: ['coding', 'repo-grounding', 'builder-execution', 'research', 'deliberation'],
   default_board_roles: ['CTO', 'Growth Strategist', 'QA Lead'],
   default_loop_stages: ['audit', 'locate_files', 'implement', 'report', 'review'],
@@ -50,8 +50,8 @@ defineEngine({
 });
 
 defineEngine({
-  engine_id: 'eng_career', domain: 'careeregine', display_name: 'Career',
-  description: 'Career development engine — strategy, resume, positioning, job search',
+  engine_id: 'eng_career', domain: 'careeregine', display_name: 'Career & Job Search',
+  description: 'Career development engine — job search, resume, salary benchmarking, interview prep',
   default_capabilities: ['research', 'deliberation', 'creative-writing', 'report-generation'],
   default_board_roles: ['Career Strategist', 'Content Specialist'],
   default_loop_stages: ['research', 'strategy', 'implement', 'report'],
@@ -61,8 +61,8 @@ defineEngine({
 });
 
 defineEngine({
-  engine_id: 'eng_community', domain: 'founder2founder', display_name: 'Community',
-  description: 'Community-building engine — events, content, engagement',
+  engine_id: 'eng_community', domain: 'founder2founder', display_name: 'Filmmaking & Video Production',
+  description: 'Film and video production engine — shot lists, storyboards, production workflows',
   default_capabilities: ['research', 'deliberation', 'creative-writing'],
   default_board_roles: ['Community Strategist', 'Content Lead'],
   default_loop_stages: ['research', 'strategy', 'report'],
@@ -72,8 +72,8 @@ defineEngine({
 });
 
 defineEngine({
-  engine_id: 'eng_wealth', domain: 'wealthresearch', display_name: 'Wealth Research',
-  description: 'Investment research engine — analysis, due diligence, portfolio management',
+  engine_id: 'eng_wealth', domain: 'wealthresearch', display_name: 'Personal Finance & Investing',
+  description: 'Personal finance engine — budgeting, investing, tax optimization, wealth building',
   default_capabilities: ['research', 'deliberation', 'report-generation'],
   default_board_roles: ['Investment Analyst', 'Risk Assessor'],
   default_loop_stages: ['research', 'audit', 'strategy', 'report'],
@@ -83,8 +83,8 @@ defineEngine({
 });
 
 defineEngine({
-  engine_id: 'eng_news', domain: 'newsroom', display_name: 'Newsroom',
-  description: 'News and media engine — aggregation, analysis, editorial',
+  engine_id: 'eng_news', domain: 'newsroom', display_name: 'News & Intelligence',
+  description: 'News intelligence engine — daily digests, trend tracking, industry analysis',
   default_capabilities: ['research', 'report-generation'],
   default_board_roles: ['Editor', 'Fact-Checker'],
   default_loop_stages: ['research', 'audit', 'report'],
@@ -94,8 +94,8 @@ defineEngine({
 });
 
 defineEngine({
-  engine_id: 'eng_creative_writing', domain: 'screenwriting', display_name: 'Creative Writing',
-  description: 'Screenplay and creative writing engine — story, dialogue, structure',
+  engine_id: 'eng_creative_writing', domain: 'screenwriting', display_name: 'Screenwriting & Story Development',
+  description: 'Screenwriting and creative writing engine — scripts, treatments, story structure',
   default_capabilities: ['creative-writing', 'research', 'deliberation'],
   default_board_roles: ['Story Architect', 'Dialogue Specialist'],
   default_loop_stages: ['research', 'strategy', 'implement', 'review'],
@@ -105,8 +105,8 @@ defineEngine({
 });
 
 defineEngine({
-  engine_id: 'eng_music', domain: 'music', display_name: 'Music',
-  description: 'Music production engine — composition, arrangement, production',
+  engine_id: 'eng_music', domain: 'music', display_name: 'Music & Audio Creation',
+  description: 'Music and audio engine — composition, arrangement, production planning',
   default_capabilities: ['creative-writing', 'research'],
   default_board_roles: ['Composer', 'Producer'],
   default_loop_stages: ['research', 'strategy', 'implement'],
@@ -116,13 +116,101 @@ defineEngine({
 });
 
 defineEngine({
-  engine_id: 'eng_ops', domain: 'personalops', display_name: 'Personal Ops',
-  description: 'Personal operations engine — task management, scheduling, life admin',
+  engine_id: 'eng_ops', domain: 'personalops', display_name: 'Scheduling & Life Operations',
+  description: 'Scheduling and life operations engine — weekly planning, routines, time management',
   default_capabilities: ['research', 'deliberation', 'report-generation'],
   default_board_roles: ['Chief of Staff', 'Operations Planner'],
   default_loop_stages: ['audit', 'strategy', 'implement', 'report'],
   common_templates: ['Planning', 'Review', 'Optimization'],
   context_patterns: ['routine_optimization', 'priority_management'],
+  created_at: new Date().toISOString(),
+});
+
+defineEngine({
+  engine_id: 'eng_writing', domain: 'writing', display_name: 'Writing & Documentation',
+  description: 'Writing engine — emails, PRDs, SOPs, reports, blog posts, documentation',
+  default_capabilities: ['creative-writing', 'report-generation'],
+  default_board_roles: ['Writer', 'Editor'],
+  default_loop_stages: ['audit', 'report'],
+  common_templates: ['Email Draft', 'PRD', 'SOP', 'Blog Post'],
+  context_patterns: ['writing_style', 'audience_awareness', 'document_type'],
+  created_at: new Date().toISOString(),
+});
+
+defineEngine({
+  engine_id: 'eng_research', domain: 'research', display_name: 'Research & Analysis',
+  description: 'Research engine — market analysis, deep dives, comparisons, evidence-based recommendations',
+  default_capabilities: ['research', 'deliberation', 'report-generation'],
+  default_board_roles: ['Research Director', 'Analyst'],
+  default_loop_stages: ['research', 'report'],
+  common_templates: ['Market Research', 'Competitive Analysis', 'Deep Dive'],
+  context_patterns: ['research_depth', 'citation_quality', 'evidence_weight'],
+  created_at: new Date().toISOString(),
+});
+
+defineEngine({
+  engine_id: 'eng_learning', domain: 'learning', display_name: 'Learning & Tutoring',
+  description: 'Learning engine — study plans, concept explanations, quizzes, skill development',
+  default_capabilities: ['research', 'creative-writing', 'report-generation'],
+  default_board_roles: ['Tutor', 'Curriculum Designer'],
+  default_loop_stages: ['research', 'report'],
+  common_templates: ['Study Plan', 'Concept Explanation', 'Quiz'],
+  context_patterns: ['skill_level', 'learning_style', 'progression'],
+  created_at: new Date().toISOString(),
+});
+
+defineEngine({
+  engine_id: 'eng_shopping', domain: 'shopping', display_name: 'Shopping & Buying Advisor',
+  description: 'Shopping engine — product comparisons, recommendations, price tracking',
+  default_capabilities: ['research', 'report-generation'],
+  default_board_roles: ['Buying Advisor', 'Product Analyst'],
+  default_loop_stages: ['research', 'report'],
+  common_templates: ['Product Comparison', 'Buying Guide'],
+  context_patterns: ['budget_awareness', 'feature_priorities', 'value_analysis'],
+  created_at: new Date().toISOString(),
+});
+
+defineEngine({
+  engine_id: 'eng_travel', domain: 'travel', display_name: 'Travel & Relocation Planner',
+  description: 'Travel engine — itineraries, relocation planning, cost analysis',
+  default_capabilities: ['research', 'report-generation'],
+  default_board_roles: ['Travel Planner', 'Relocation Advisor'],
+  default_loop_stages: ['research', 'report'],
+  common_templates: ['Trip Itinerary', 'Relocation Checklist', 'Cost Comparison'],
+  context_patterns: ['budget_awareness', 'preference_matching', 'logistics'],
+  created_at: new Date().toISOString(),
+});
+
+defineEngine({
+  engine_id: 'eng_health', domain: 'health', display_name: 'Health & Wellness Coach',
+  description: 'Health engine — workout plans, nutrition, wellness, habit building',
+  default_capabilities: ['research', 'report-generation'],
+  default_board_roles: ['Wellness Coach', 'Fitness Planner'],
+  default_loop_stages: ['research', 'report'],
+  common_templates: ['Workout Plan', 'Meal Plan', 'Habit Builder'],
+  context_patterns: ['fitness_level', 'health_goals', 'constraints'],
+  created_at: new Date().toISOString(),
+});
+
+defineEngine({
+  engine_id: 'eng_home', domain: 'home', display_name: 'Home & Lifestyle Design',
+  description: 'Home and lifestyle engine — office setup, home improvement, organization',
+  default_capabilities: ['research', 'report-generation'],
+  default_board_roles: ['Design Advisor', 'Project Planner'],
+  default_loop_stages: ['research', 'report'],
+  common_templates: ['Room Design', 'Improvement Plan', 'Organization System'],
+  context_patterns: ['budget_awareness', 'space_constraints', 'style_preference'],
+  created_at: new Date().toISOString(),
+});
+
+defineEngine({
+  engine_id: 'eng_code', domain: 'startup', display_name: 'Code & Product Engineering',
+  description: 'Code engineering engine — architecture, debugging, refactoring, implementation',
+  default_capabilities: ['coding', 'repo-grounding', 'builder-execution', 'deliberation'],
+  default_board_roles: ['CTO', 'Code Reviewer', 'Architect'],
+  default_loop_stages: ['audit', 'locate_files', 'implement', 'report', 'review'],
+  common_templates: ['Build Feature', 'Debug Issue', 'Architecture Design', 'Code Review'],
+  context_patterns: ['code_quality', 'test_coverage', 'performance'],
   created_at: new Date().toISOString(),
 });
 

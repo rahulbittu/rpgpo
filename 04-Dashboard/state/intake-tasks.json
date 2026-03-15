@@ -1,5 +1,873 @@
 [
   {
+    "task_id": "t_mms15iukmosp",
+    "title": "Design the information architecture for a personal knowledge management system. ",
+    "raw_request": "Design the information architecture for a personal knowledge management system. Include categories, tagging strategy, search approach, and review cadence.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:30:11.756Z",
+    "updated_at": "2026-03-15T17:32:27.829Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:30:57.858Z",
+      "interpreted_objective": "Design an information architecture for a personal knowledge management system.",
+      "expected_outcome": "A detailed plan outlining categories, tagging strategy, search approach, and review cadence for managing personal knowledge.",
+      "key_unknowns": [
+        "Rahul's specific knowledge management needs and preferences",
+        "Existing tools or systems Rahul currently uses for knowledge management",
+        "Rahul's frequency and style of reviewing personal knowledge"
+      ],
+      "recommended_strategy": "Conduct research on best practices for personal knowledge management systems. Synthesize findings into a tailored information architecture that includes categories, tagging, search, and review strategies. Ensure the plan aligns with Rahul's productivity and personal growth goals.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the proposed information architecture"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Personal Knowledge Management Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of best practices and strategies for personal knowledge management systems.",
+          "prompt": "Search the web for current, specific information about best practices in personal knowledge management systems. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Information Architecture Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured plan detailing the information architecture for a personal knowledge management system, including categories, tagging strategy, search approach, and review cadence.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for designing an information architecture for a personal knowledge management system. Include specific categories, tagging strategies, search approaches, and review cadence.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-knowledge-management-architecture.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1955
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms15gi3ii0a",
+    "title": "Calculate whether it makes sense to pay off student loans early at 4.5% or inves",
+    "raw_request": "Calculate whether it makes sense to pay off student loans early at 4.5% or invest the extra money in index funds averaging 10%. Loan balance 35000. Extra monthly payment 500.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:30:08.715Z",
+    "updated_at": "2026-03-15T17:32:20.395Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:30:36.674Z",
+      "interpreted_objective": "Determine whether it's financially beneficial to pay off student loans early or invest in index funds.",
+      "expected_outcome": "A clear recommendation on whether Rahul should pay off student loans early or invest the extra money, with supporting analysis.",
+      "key_unknowns": [
+        "Current market conditions for index funds",
+        "Potential tax implications",
+        "Rahul's risk tolerance and financial goals"
+      ],
+      "recommended_strategy": "First, research current average returns on index funds and any potential tax implications. Then, compare the financial outcomes of paying off the loan early versus investing, considering Rahul's financial goals and risk tolerance. Finally, provide a recommendation with supporting data.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Index Fund Returns",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current average returns on index funds with sources.",
+          "prompt": "Search the web for current, specific information about average returns on index funds. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Financial Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comparative analysis of paying off student loans early versus investing in index funds.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations on whether to pay off student loans early or invest in index funds. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-loan-vs-investment.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2175
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms15e5bi0ua",
+    "title": "Explain microservices vs monolith architecture using a restaurant analogy. Then ",
+    "raw_request": "Explain microservices vs monolith architecture using a restaurant analogy. Then give me decision criteria for when to use each. Include real examples of companies that made each choice.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:30:05.663Z",
+    "updated_at": "2026-03-15T17:32:13.237Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:30:30.149Z",
+      "interpreted_objective": "Explain microservices vs monolith architecture using a restaurant analogy and provide decision criteria for each with real company examples.",
+      "expected_outcome": "A clear, engaging explanation of microservices and monolith architecture using a restaurant analogy, decision criteria for choosing each, and real-world examples of companies using each architecture.",
+      "key_unknowns": [
+        "Specific company examples for each architecture",
+        "Current trends in architecture choices"
+      ],
+      "recommended_strategy": "Conduct research to gather information on microservices and monolith architecture, including real-world examples. Use this data to create an engaging analogy and decision criteria. Compile findings into a structured report.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Microservices and Monolith Architecture",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on microservices and monolith architecture, including real-world examples and decision criteria.",
+          "prompt": "Search the web for current, specific information about microservices and monolith architecture. Include real examples of companies using each, decision criteria for choosing between them, and any relevant trends.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Architecture Research",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining microservices vs monolith architecture using a restaurant analogy, decision criteria, and real company examples.",
+          "prompt": "Based on the research results, synthesize an explanation of microservices vs monolith architecture using a restaurant analogy. Include decision criteria for each and real-world examples of companies using these architectures.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-architecture-analogy.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1852
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms15bsl502j",
+    "title": "Create a 2-week beginner meditation practice. Day by day, increasing from 3 to 1",
+    "raw_request": "Create a 2-week beginner meditation practice. Day by day, increasing from 3 to 15 minutes. Include specific techniques, timing, and common obstacles with solutions.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:30:02.613Z",
+    "updated_at": "2026-03-15T17:32:04.292Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:30:25.450Z",
+      "interpreted_objective": "Create a structured 2-week beginner meditation practice plan with increasing duration and specific techniques.",
+      "expected_outcome": "A detailed, day-by-day meditation practice guide for beginners that is actionable and addresses common obstacles.",
+      "key_unknowns": [
+        "Specific meditation techniques suitable for beginners",
+        "Common obstacles beginners face in meditation"
+      ],
+      "recommended_strategy": "Research current beginner meditation practices and common challenges. Synthesize a day-by-day plan with increasing duration and specific techniques, including solutions to common obstacles. Ensure the plan is evidence-based and actionable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Beginner Meditation Techniques",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of beginner meditation techniques and common obstacles with solutions.",
+          "prompt": "Search the web for current, specific information about beginner meditation techniques and common obstacles faced by beginners. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Meditation Practice Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 2-week meditation practice plan with increasing duration, specific techniques, and solutions to common obstacles.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 2-week beginner meditation practice plan. Include day-by-day guidance with increasing duration from 3 to 15 minutes, specific techniques, and solutions to common obstacles.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-meditation-practice.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1814
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms159g0mijg",
+    "title": "Research and compare the top 3 AI-powered transcription services for meeting not",
+    "raw_request": "Research and compare the top 3 AI-powered transcription services for meeting notes. Include accuracy rates, pricing, integrations, and real user feedback.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:29:59.568Z",
+    "updated_at": "2026-03-15T17:31:47.519Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:30:09.535Z",
+      "interpreted_objective": "Research and compare the top 3 AI-powered transcription services for meeting notes.",
+      "expected_outcome": "A detailed comparison report including accuracy rates, pricing, integrations, and real user feedback for the top 3 AI transcription services.",
+      "key_unknowns": [
+        "Which transcription services are currently considered the top 3?",
+        "What are the current accuracy rates for each service?",
+        "What are the pricing models for each service?",
+        "What integrations do these services offer?",
+        "What is the real user feedback on these services?"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on the top AI transcription services, focusing on accuracy, pricing, integrations, and user feedback. Then, synthesize this information into a structured report that provides a clear comparison and recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Top AI Transcription Services",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on top AI transcription services, including accuracy rates, pricing, integrations, and user feedback.",
+          "prompt": "Search the web for current, specific information about the top AI-powered transcription services for meeting notes. Include accuracy rates, pricing, integrations, and real user feedback. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Transcription Service Comparison",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the top 3 AI transcription services, including accuracy, pricing, integrations, and user feedback.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a detailed comparison report of the top 3 AI-powered transcription services for meeting notes. Include specific names, accuracy rates, pricing models, integration options, and user feedback. Provide a clear recommendation with reasoning.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-transcription-services.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1965
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms1573qcpeb",
+    "title": "Write a technical RFC for introducing a feature flag system to a Node.js codebas",
+    "raw_request": "Write a technical RFC for introducing a feature flag system to a Node.js codebase. Include problem statement, proposed solution, rollback strategy, and migration plan.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:29:56.534Z",
+    "updated_at": "2026-03-15T17:31:09.103Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:30:02.177Z",
+      "interpreted_objective": "Create a technical RFC for a feature flag system in a Node.js codebase.",
+      "expected_outcome": "A comprehensive RFC document detailing the problem, solution, rollback strategy, and migration plan for implementing a feature flag system.",
+      "key_unknowns": [
+        "Specific requirements or constraints for the feature flag system",
+        "Current architecture and dependencies of the Node.js codebase",
+        "Preferred tools or libraries for feature flagging"
+      ],
+      "recommended_strategy": "First, research best practices and tools for implementing feature flags in Node.js. Then, draft the RFC by outlining the problem statement, proposed solution, rollback strategy, and migration plan. Ensure the document is clear and addresses potential risks and unknowns.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Feature Flag Systems for Node.js",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices and tools for implementing feature flags in Node.js.",
+          "prompt": "Search the web for current, specific information about best practices and tools for implementing feature flags in Node.js. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Draft RFC Document",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A draft RFC document with a problem statement, proposed solution, rollback strategy, and migration plan.",
+          "prompt": "Based on the research results from prior subtasks, draft a technical RFC document for introducing a feature flag system to a Node.js codebase. Include a problem statement, proposed solution, rollback strategy, and migration plan. Ensure the document is clear, detailed, and actionable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2011
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mms0x5musbvd",
+    "title": "Build a recovery protocol for after a tough workout. Include nutrition timing, h",
+    "raw_request": "Build a recovery protocol for after a tough workout. Include nutrition timing, hydration, stretching sequence, and sleep recommendations. Evidence-based only.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:23:41.382Z",
+    "updated_at": "2026-03-15T17:26:38.628Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:24:24.338Z",
+      "interpreted_objective": "Develop an evidence-based recovery protocol for post-workout recovery.",
+      "expected_outcome": "A comprehensive recovery protocol that includes nutrition timing, hydration, stretching sequence, and sleep recommendations, all based on scientific evidence.",
+      "key_unknowns": [
+        "Specific evidence or studies supporting each component of the recovery protocol",
+        "Current best practices in post-workout recovery"
+      ],
+      "recommended_strategy": "Conduct research to gather current evidence-based practices for post-workout recovery, focusing on nutrition, hydration, stretching, and sleep. Synthesize findings into a cohesive protocol. Ensure recommendations are actionable and include safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Post-Workout Nutrition Timing",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current evidence-based practices for nutrition timing after workouts.",
+          "prompt": "Search the web for current, specific information about evidence-based nutrition timing after workouts. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Hydration Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current evidence-based hydration strategies for post-workout recovery.",
+          "prompt": "Search the web for current, specific information about evidence-based hydration strategies after workouts. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Stretching Sequences",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current evidence-based stretching sequences for post-workout recovery.",
+          "prompt": "Search the web for current, specific information about evidence-based stretching sequences after workouts. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Sleep Recommendations",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current evidence-based sleep recommendations for post-workout recovery.",
+          "prompt": "Search the web for current, specific information about evidence-based sleep recommendations after workouts. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Recovery Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive, evidence-based recovery protocol including nutrition timing, hydration, stretching, and sleep recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a post-workout recovery protocol. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2374
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms0x3ajn5sa",
+    "title": "Create a character sheet for a tabletop RPG character: a data engineer who becam",
+    "raw_request": "Create a character sheet for a tabletop RPG character: a data engineer who became an adventurer. Include stats, backstory, personality traits, and special abilities tied to their tech background.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:23:38.347Z",
+    "updated_at": "2026-03-15T17:26:29.483Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:24:14.237Z",
+      "interpreted_objective": "Create a detailed character sheet for a tabletop RPG character who is a data engineer turned adventurer.",
+      "expected_outcome": "A comprehensive character sheet with stats, backstory, personality traits, and special abilities related to a tech background, suitable for tabletop RPG use.",
+      "key_unknowns": [
+        "Specific RPG system or ruleset to use for stats",
+        "Preferred format or template for the character sheet",
+        "Level of detail required for the backstory and personality traits"
+      ],
+      "recommended_strategy": "Research common character sheet formats and requirements for tabletop RPGs, focusing on integrating a tech background into special abilities. Then, synthesize this information into a cohesive character sheet that includes stats, backstory, and personality traits. Ensure the character's tech background is creatively tied to their abilities.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research RPG character sheets",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of common RPG character sheet formats and elements, with a focus on integrating tech backgrounds.",
+          "prompt": "Search the web for current information about common formats and elements of tabletop RPG character sheets, especially how tech backgrounds can be integrated into character abilities. Include real examples, systems, and any relevant templates.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize character sheet",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed character sheet for a data engineer turned adventurer, including stats, backstory, personality traits, and special abilities.",
+          "prompt": "Based on the research results, create a detailed character sheet for a tabletop RPG character who is a data engineer turned adventurer. Include appropriate stats, a backstory, personality traits, and special abilities that reflect their tech background.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-character-sheet.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1959
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mms0x0y5cxzn",
+    "title": "Teach me how to write effective system design documents. Include the structure, ",
+    "raw_request": "Teach me how to write effective system design documents. Include the structure, what to include in each section, common mistakes, and a real example outline.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:23:35.309Z",
+    "updated_at": "2026-03-15T17:26:21.068Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:24:00.077Z",
+      "interpreted_objective": "Teach Rahul how to write effective system design documents.",
+      "expected_outcome": "Rahul gains a clear understanding of the structure, content, and common pitfalls of system design documents, along with a real example outline.",
+      "key_unknowns": [
+        "Rahul's current level of familiarity with system design documents",
+        "Specific industry or context Rahul is focusing on for system design documents"
+      ],
+      "recommended_strategy": "Research best practices and structures for system design documents, including common mistakes. Synthesize this information into a clear, actionable guide with a real example outline. Ensure the content is concise and directly applicable to Rahul's needs.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research System Design Document Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of best practices, common structures, and common mistakes in writing system design documents.",
+          "prompt": "Search the web for current, specific information about best practices, structures, and common mistakes in writing system design documents. Include real examples, citations, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize System Design Document Guide",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on writing effective system design documents, including sections, content, common mistakes, and a real example outline.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a guide for writing effective system design documents. Include the structure, what to include in each section, common mistakes, and a real example outline.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-system-design-documents.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1851
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms0wym13jw5",
+    "title": "Plan a home renovation project: convert a spare bedroom into a home office. Incl",
+    "raw_request": "Plan a home renovation project: convert a spare bedroom into a home office. Include design considerations, electrical requirements, cost estimates, and a timeline.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:23:32.281Z",
+    "updated_at": "2026-03-15T17:26:10.291Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:23:55.494Z",
+      "interpreted_objective": "Plan a comprehensive home renovation project to convert a spare bedroom into a functional home office.",
+      "expected_outcome": "A detailed plan including design considerations, electrical requirements, cost estimates, and a timeline for the renovation project.",
+      "key_unknowns": [
+        "Current design trends for home offices",
+        "Specific electrical requirements for a home office setup",
+        "Cost estimates for materials and labor",
+        "Optimal timeline for project completion"
+      ],
+      "recommended_strategy": "Conduct thorough research on current home office design trends and electrical requirements. Gather cost estimates from reliable sources and create a realistic timeline. Synthesize findings into a comprehensive report.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Office Design Trends",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current design trends for home offices with sources.",
+          "prompt": "Search the web for current design trends in home office renovations. Include specific styles, popular features, and innovative ideas with real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Electrical Requirements",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Specific electrical requirements for setting up a home office.",
+          "prompt": "Search the web for electrical requirements for setting up a home office. Include information on outlets, lighting, and any special considerations with sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Cost Estimates",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Cost estimates for materials and labor for home office renovation.",
+          "prompt": "Search the web for cost estimates for converting a bedroom into a home office. Include prices for materials, labor, and any additional costs with sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Renovation Plan",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive renovation plan including design, electrical, cost, and timeline.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive renovation plan for converting a bedroom into a home office. Include design considerations, electrical requirements, cost estimates, and a timeline.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-home-office-renovation.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2072
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms0ww9skalk",
+    "title": "Research the best ways to passively earn from a data engineering blog. Include m",
+    "raw_request": "Research the best ways to passively earn from a data engineering blog. Include monetization options: ads, sponsorships, courses, consulting leads. With realistic income estimates.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:23:29.248Z",
+    "updated_at": "2026-03-15T17:25:22.513Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:23:36.650Z",
+      "interpreted_objective": "Research and identify the best passive income strategies for a data engineering blog, including realistic income estimates.",
+      "expected_outcome": "A detailed report outlining monetization options for a data engineering blog, with specific income estimates and examples.",
+      "key_unknowns": [
+        "Current market rates for ads and sponsorships in the data engineering niche",
+        "Potential demand for courses or consulting services related to data engineering",
+        "Realistic traffic and engagement metrics for a successful data engineering blog"
+      ],
+      "recommended_strategy": "First, research current monetization strategies for blogs in the data engineering niche using Perplexity. Then, use OpenAI to synthesize the findings into a comprehensive report with specific income estimates and examples. Finally, compile the report for Rahul's review.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Monetization Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on monetization strategies for data engineering blogs, including ads, sponsorships, courses, and consulting leads.",
+          "prompt": "Search the web for current monetization strategies for data engineering blogs. Include real names, numbers, dates, URLs, and sources for ads, sponsorships, courses, and consulting leads.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Monetization Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report with actionable recommendations for monetizing a data engineering blog, including specific income estimates.",
+          "prompt": "Based on the research results, synthesize actionable recommendations for monetizing a data engineering blog. Include specific names, numbers, and concrete next steps for ads, sponsorships, courses, and consulting leads.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-data-engineering-blog-monetization.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2274
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms0wtxdfcih",
+    "title": "Create a retrospective template for an engineering sprint. Include what went wel",
+    "raw_request": "Create a retrospective template for an engineering sprint. Include what went well, what did not, action items, and team health check. Format for a 30-minute async retro.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T17:23:26.209Z",
+    "updated_at": "2026-03-15T17:24:33.457Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T17:23:31.612Z",
+      "interpreted_objective": "Create a structured template for a 30-minute asynchronous engineering sprint retrospective.",
+      "expected_outcome": "A clear, concise template that facilitates effective retrospectives by covering key areas such as successes, challenges, action items, and team health.",
+      "key_unknowns": [
+        "Specific format preferences for the template",
+        "Any existing templates or guidelines within the organization"
+      ],
+      "recommended_strategy": "Research current best practices for engineering sprint retrospectives, especially for asynchronous formats. Synthesize findings into a concise template that aligns with the request's focus areas. Ensure the template is easy to use and facilitates productive discussions.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Async Sprint Retrospectives",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices for asynchronous sprint retrospectives, including key elements and structure.",
+          "prompt": "Search the web for current best practices for conducting asynchronous sprint retrospectives in engineering teams. Focus on identifying effective structures and key elements to include, such as what went well, what did not, action items, and team health checks. Include real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Retrospective Template",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured template for a 30-minute asynchronous engineering sprint retrospective.",
+          "prompt": "Based on the research results, create a structured template for a 30-minute asynchronous engineering sprint retrospective. The template should include sections for what went well, what did not, action items, and a team health check. Ensure it is concise and easy to follow.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-sprint-retrospective-template.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1881
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms0qbuzov6a",
     "title": "Create a quarterly health checkup plan. List specific blood tests to request, ba",
     "raw_request": "Create a quarterly health checkup plan. List specific blood tests to request, baseline measurements to track, and health metrics to monitor monthly for a 32-year-old male tech worker.",
@@ -6266,8 +7134,8 @@
     "risk_level": "yellow",
     "success_criteria": "",
     "created_at": "2026-03-15T16:12:22.354Z",
-    "updated_at": "2026-03-15T16:12:27.143Z",
-    "status": "planned",
+    "updated_at": "2026-03-15T17:40:33.594Z",
+    "status": "done",
     "board_deliberation": {
       "timestamp": "2026-03-15T16:12:27.142Z",
       "interpreted_objective": "Explain distributed consensus for designing a distributed ranking system for TopRanker with global consistency across cities.",
@@ -6332,8 +7200,8 @@
     "risk_level": "yellow",
     "success_criteria": "",
     "created_at": "2026-03-15T16:12:14.328Z",
-    "updated_at": "2026-03-15T16:12:19.202Z",
-    "status": "planned",
+    "updated_at": "2026-03-15T17:39:40.242Z",
+    "status": "done",
     "board_deliberation": {
       "timestamp": "2026-03-15T16:12:19.198Z",
       "interpreted_objective": "Convert a meeting transcript into actionable tasks with clear ownership and deadlines for the TopRanker launch.",
@@ -6406,8 +7274,8 @@
     "risk_level": "yellow",
     "success_criteria": "",
     "created_at": "2026-03-15T16:12:06.293Z",
-    "updated_at": "2026-03-15T16:12:12.677Z",
-    "status": "planned",
+    "updated_at": "2026-03-15T17:40:49.956Z",
+    "status": "done",
     "board_deliberation": {
       "timestamp": "2026-03-15T16:12:12.674Z",
       "interpreted_objective": "Create a polished Product Requirements Document (PRD) for TopRanker to enable business owners to claim listings, respond to reviews, and view analytics.",
@@ -6474,8 +7342,8 @@
     "risk_level": "green",
     "success_criteria": "",
     "created_at": "2026-03-15T16:11:01.632Z",
-    "updated_at": "2026-03-15T16:11:01.632Z",
-    "status": "intake",
+    "updated_at": "2026-03-15T17:39:36.914Z",
+    "status": "canceled",
     "board_deliberation": null,
     "execution_plan": null,
     "project_id": "prj_mmplwhelajyt"
@@ -6491,8 +7359,8 @@
     "risk_level": "yellow",
     "success_criteria": "",
     "created_at": "2026-03-15T16:07:57.583Z",
-    "updated_at": "2026-03-15T16:08:28.583Z",
-    "status": "planned",
+    "updated_at": "2026-03-15T17:41:05.636Z",
+    "status": "done",
     "board_deliberation": {
       "timestamp": "2026-03-15T16:08:28.582Z",
       "interpreted_objective": "Explain distributed consensus and design a distributed ranking system for TopRanker with global consistency.",
@@ -6589,8 +7457,8 @@
     "risk_level": "yellow",
     "success_criteria": "",
     "created_at": "2026-03-15T16:07:57.578Z",
-    "updated_at": "2026-03-15T16:08:22.175Z",
-    "status": "planned",
+    "updated_at": "2026-03-15T17:41:13.855Z",
+    "status": "done",
     "board_deliberation": {
       "timestamp": "2026-03-15T16:08:22.174Z",
       "interpreted_objective": "Create a comprehensive daily operating system for Rahul to manage his work, startup, health, and personal life effectively.",
@@ -6658,8 +7526,8 @@
     "risk_level": "yellow",
     "success_criteria": "",
     "created_at": "2026-03-15T16:07:57.575Z",
-    "updated_at": "2026-03-15T16:08:15.475Z",
-    "status": "planned",
+    "updated_at": "2026-03-15T17:41:22.339Z",
+    "status": "done",
     "board_deliberation": {
       "timestamp": "2026-03-15T16:08:15.472Z",
       "interpreted_objective": "Create a polished PRD for a feature allowing business owners to claim listings, respond to reviews, and view analytics.",
@@ -6765,8 +7633,8 @@
     "risk_level": "green",
     "success_criteria": "",
     "created_at": "2026-03-15T16:07:57.571Z",
-    "updated_at": "2026-03-15T16:08:08.448Z",
-    "status": "planned",
+    "updated_at": "2026-03-15T17:40:23.459Z",
+    "status": "done",
     "board_deliberation": {
       "timestamp": "2026-03-15T16:08:08.446Z",
       "interpreted_objective": "Convert a meeting transcript into actionable tasks with assigned owners and deadlines for the TopRanker launch.",
