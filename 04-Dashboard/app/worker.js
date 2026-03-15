@@ -732,9 +732,12 @@ SEARCH INSTRUCTIONS:
     } else if (model === 'openai') {
       modelRules = `
 SYNTHESIS INSTRUCTIONS:
-- Synthesize information into clear, actionable recommendations.
-- Include specific examples, numbers, and concrete next steps.
-- Organize with clear sections and bullet points.`;
+- You MUST use the "Prior Subtask Results" data provided below as your PRIMARY source of information.
+- Do NOT invent, hallucinate, or make up data. ONLY synthesize what was found by prior research subtasks.
+- If prior subtask results are provided, base your entire response on that data.
+- Synthesize into clear, actionable format with specific details from the research.
+- If no prior results are provided, state that and provide general guidance only.
+- NEVER say "I cannot access real-time data" if prior subtask results contain real data — USE that data.`;
     } else if (model === 'gemini') {
       modelRules = `
 STRATEGY INSTRUCTIONS:
