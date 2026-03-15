@@ -3355,6 +3355,11 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 98: Search
+  if (req.url?.match(/^\/api\/search(\?.*)?$/) && req.method === 'GET') {
+    try { const si = require('./lib/search-index'); const params = new URL(req.url, 'http://x').searchParams; return json(res, { results: si.search(params.get('q') || '', parseInt(params.get('limit') || '20')) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 97: Data Export
   if (req.url === '/api/export/tasks.csv' && req.method === 'GET') {
     try { const de = require('./lib/data-export'); res.writeHead(200, { 'Content-Type': 'text/csv', 'Content-Disposition': 'attachment; filename=gpo-tasks.csv' }); res.end(de.exportTasksCSV()); return; } catch (e) { return json(res, { error: e.message }, 500); }
