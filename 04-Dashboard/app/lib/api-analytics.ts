@@ -1,0 +1,11 @@
+// GPO API Analytics — Track API call patterns for optimization
+const _calls: Array<{ route: string; method: string; timestamp: number; durationMs: number }> = [];
+export function recordApiCall(route: string, method: string, durationMs: number): void { _calls.push({ route, method, timestamp: Date.now(), durationMs }); if (_calls.length > 5000) _calls.splice(0, 2000); }
+export function getApiAnalytics(): { totalCalls: number; uniqueRoutes: number; topRoutes: Array<{ route: string; count: number; avgMs: number }>; callsPerMinute: number } {
+  const cutoff = Date.now() - 3600000; const recent = _calls.filter(c => c.timestamp > cutoff);
+  const byRoute: Record<string, { count: number; totalMs: number }> = {};
+  for (const c of recent) { if (!byRoute[c.route]) byRoute[c.route] = { count: 0, totalMs: 0 }; byRoute[c.route].count++; byRoute[c.route].totalMs += c.durationMs; }
+  const topRoutes = Object.entries(byRoute).map(([route, data]) => ({ route, count: data.count, avgMs: Math.round(data.totalMs / data.count) })).sort((a, b) => b.count - a.count).slice(0, 20);
+  return { totalCalls: recent.length, uniqueRoutes: Object.keys(byRoute).length, topRoutes, callsPerMinute: recent.length / 60 };
+}
+module.exports = { recordApiCall, getApiAnalytics };
