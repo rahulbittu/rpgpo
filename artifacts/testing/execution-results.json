@@ -1195,5 +1195,71 @@
       "completion": "done",
       "domain_routed": "writing"
     }
+  },
+  {
+    "test_case_id": "GPO-RES-09",
+    "global_rank": 47,
+    "engine": "Research & Analysis",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:51:00.156Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "careeregine"
+    }
+  },
+  {
+    "test_case_id": "GPO-WRI-14",
+    "global_rank": 74,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:51:00.157Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "writing"
+    }
+  },
+  {
+    "test_case_id": "GPO-HEA-04",
+    "global_rank": 76,
+    "engine": "Health & Wellness Coach",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:51:00.157Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "health"
+    }
+  },
+  {
+    "test_case_id": "GPO-RES-10",
+    "global_rank": 78,
+    "engine": "Research & Analysis",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:51:00.157Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "research",
+      "subtask_count": 5
+    }
+  },
+  {
+    "test_case_id": "GPO-LEA-06",
+    "global_rank": 80,
+    "engine": "Learning & Tutoring",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:51:00.157Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "learning"
+    }
   }
 ]
