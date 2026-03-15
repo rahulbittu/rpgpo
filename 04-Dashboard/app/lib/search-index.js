@@ -66,3 +66,4 @@ function computeScore(text, terms) {
     return score;
 }
 module.exports = { search };
+//# sourceMappingURL=search-index.js.map

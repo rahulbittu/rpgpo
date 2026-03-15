@@ -93,3 +93,4 @@ function getOperatorInsights(days = 7) {
     };
 }
 module.exports = { getOperatorInsights };
+//# sourceMappingURL=operator-insights.js.map

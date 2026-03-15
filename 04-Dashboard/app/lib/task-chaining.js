@@ -82,3 +82,4 @@ function createChainedTasks(parentTaskId, result) {
     return createdIds;
 }
 module.exports = { upsertChainSpec, getChainSpec, evaluateChainOnCompletion, createChainedTasks };
+//# sourceMappingURL=task-chaining.js.map

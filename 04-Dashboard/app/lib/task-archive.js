@@ -53,3 +53,4 @@ function writeArchive(data) {
     fs.writeFileSync(ARCHIVE_FILE, JSON.stringify(data, null, 2));
 }
 module.exports = { archiveOldTasks, getArchiveStats, searchArchive };
+//# sourceMappingURL=task-archive.js.map

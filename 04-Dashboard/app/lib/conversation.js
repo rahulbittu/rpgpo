@@ -72,3 +72,4 @@ function listConversations() {
         .map((f) => f.replace('.json', ''));
 }
 module.exports = { openConversation, appendMessage, getConversation, closeConversation, listConversations };
+//# sourceMappingURL=conversation.js.map

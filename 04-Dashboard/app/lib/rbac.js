@@ -103,3 +103,4 @@ function getAuditLog(limit) {
     return readState().auditLog.sort((a, b) => b.timestamp - a.timestamp).slice(0, limit || 50);
 }
 module.exports = { createApiKey, validateApiKey, listApiKeys, revokeApiKey, checkPermission, recordAudit, getAuditLog };
+//# sourceMappingURL=rbac.js.map

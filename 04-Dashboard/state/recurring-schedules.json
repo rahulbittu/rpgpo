@@ -1,0 +1,17 @@
+[
+  {
+    "id": "sched_a9b8c0be",
+    "name": "Morning AI News",
+    "templateId": "tpl_0cb10be3",
+    "cron": "0 7 * * *",
+    "timezone": "LOCAL",
+    "enabled": true,
+    "misfire": "skip",
+    "concurrency": "skip_if_running",
+    "createdAt": 1773586568950,
+    "updatedAt": 1773586568950,
+    "runCount": 0,
+    "history": [],
+    "nextRunAt": 1773662400000
+  }
+]

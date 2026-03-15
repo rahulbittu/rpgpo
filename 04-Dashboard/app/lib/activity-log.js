@@ -26,3 +26,4 @@ function logActivity(action, category, detail) {
 }
 function getRecentActivity(limit) { load(); return _log.slice(-(limit || 50)).reverse(); }
 module.exports = { logActivity, getRecentActivity };
+//# sourceMappingURL=activity-log.js.map

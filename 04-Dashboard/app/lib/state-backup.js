@@ -178,3 +178,4 @@ function collectFilesRecursive(dir) {
     return result;
 }
 module.exports = { createSnapshot, listSnapshots, restoreSnapshot, exportState, importState, listExports, verifyIntegrity };
+//# sourceMappingURL=state-backup.js.map

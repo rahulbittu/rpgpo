@@ -20,3 +20,4 @@ function getApiAnalytics() {
     return { totalCalls: recent.length, uniqueRoutes: Object.keys(byRoute).length, topRoutes, callsPerMinute: recent.length / 60 };
 }
 module.exports = { recordApiCall, getApiAnalytics };
+//# sourceMappingURL=api-analytics.js.map

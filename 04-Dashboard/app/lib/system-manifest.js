@@ -84,3 +84,4 @@ function generateManifest() {
     };
 }
 module.exports = { generateManifest };
+//# sourceMappingURL=system-manifest.js.map

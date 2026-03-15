@@ -55,3 +55,4 @@ function generateChangelog(days = 7) {
     return changelog;
 }
 module.exports = { generateChangelog };
+//# sourceMappingURL=changelog-generator.js.map

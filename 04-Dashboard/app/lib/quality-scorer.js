@@ -125,3 +125,4 @@ function scoreStructure(text) {
     return Math.min(1, (headings + sections / 3 + lists / 5) / 5);
 }
 module.exports = { scoreTask, rateTask, getScore, getScores, getAverageQuality };
+//# sourceMappingURL=quality-scorer.js.map

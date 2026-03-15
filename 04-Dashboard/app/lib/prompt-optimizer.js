@@ -118,3 +118,4 @@ function analyzePrompt(prompt) {
     };
 }
 module.exports = { recordPromptResult, getOptimizationSuggestions, getBestPatterns, getAllPatterns };
+//# sourceMappingURL=prompt-optimizer.js.map

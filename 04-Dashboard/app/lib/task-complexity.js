@@ -35,3 +35,4 @@ function analyzeComplexity(rawRequest, domain) {
     return { level, score, factors, estimatedSubtasks: subtasks, estimatedMinutes: minutes };
 }
 module.exports = { analyzeComplexity };
+//# sourceMappingURL=task-complexity.js.map

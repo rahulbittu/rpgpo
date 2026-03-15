@@ -53,7 +53,7 @@ export function state(): SchedulerStateSnapshot {
   const windows = providerCapacity.currentWindows(config);
   stats.capacityWindows = windows;
 
-  const totalCapacity = windows.reduce((s, w) => s + w.dynamicLimit, 0) || 1;
+  const totalCapacity = windows.reduce((s: number, w: { dynamicLimit: number }) => s + w.dynamicLimit, 0) || 1;
   stats.saturation = stats.inFlight / totalCapacity;
 
   return {
@@ -74,7 +74,7 @@ interface GraphNode {
 export function submitRun(runId: string, nodes: GraphNode[], ctx: { tenantId: string; projectId: string; priorityDefault?: QueuePriority }): void {
   const items = dagRunner.seedRun(runId, nodes, ctx);
   workQueue.enqueue(items);
-  console.log(`[scheduler] Submitted run ${runId} with ${items.length} nodes, ${items.filter(i => i.ready).length} ready`);
+  console.log(`[scheduler] Submitted run ${runId} with ${items.length} nodes, ${items.filter((i: { ready: boolean }) => i.ready).length} ready`);
 }
 
 async function tick(): Promise<void> {

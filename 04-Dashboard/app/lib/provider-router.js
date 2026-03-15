@@ -32,3 +32,4 @@ function selectProvider(domain, taskKind) {
     };
 }
 module.exports = { selectProvider };
+//# sourceMappingURL=provider-router.js.map

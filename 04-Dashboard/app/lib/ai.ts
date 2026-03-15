@@ -10,6 +10,7 @@ interface CallOptions {
   model?: string;
   maxTokens?: number;
   temperature?: number;
+  searchRecency?: 'day' | 'week' | 'month';
 }
 
 const PROVIDER_STATES: Record<string, ProviderReadiness> = {
@@ -120,7 +121,7 @@ function callPerplexity(systemPrompt: string, userPrompt: string, opts: CallOpti
       ],
       max_tokens: opts.maxTokens || 3000,
       temperature: opts.temperature ?? 0.3,
-      search_recency_filter: 'week',
+      search_recency_filter: opts.searchRecency || 'week',
     });
     const req = https.request({
       hostname: 'api.perplexity.ai',

@@ -197,3 +197,4 @@ function getOnboardingStatus() {
     return { completed, steps };
 }
 module.exports = { runHealthChecks, getOnboardingStatus };
+//# sourceMappingURL=health-check.js.map

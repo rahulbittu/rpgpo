@@ -60,7 +60,7 @@ function getSuggestions(limit = 5) {
         id: 'sug_job_market', title: 'Job Market Update',
         description: 'Current data engineering job market analysis',
         prompt: 'What are the highest-paying remote data engineering jobs right now? Include salary ranges, companies, and required skills.',
-        domain: 'career', urgency: 'normal', confidence: 0.65, source: 'priority',
+        domain: 'careeregine', urgency: 'normal', confidence: 0.65, source: 'priority',
     });
     suggestions.push({
         id: 'sug_topranker_next', title: 'TopRanker Next Step',
@@ -90,3 +90,4 @@ function getSuggestions(limit = 5) {
     return suggestions.sort((a, b) => b.confidence - a.confidence).slice(0, limit);
 }
 module.exports = { getSuggestions };
+//# sourceMappingURL=suggestions-engine.js.map

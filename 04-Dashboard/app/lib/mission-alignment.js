@@ -50,3 +50,4 @@ function checkAlignment(rawRequest, domain) {
     return { aligned: score > 0.3, score, matchedPriorities, matchedMissions, suggestion };
 }
 module.exports = { checkAlignment };
+//# sourceMappingURL=mission-alignment.js.map

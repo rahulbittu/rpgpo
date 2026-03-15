@@ -82,3 +82,4 @@ function stats() {
     };
 }
 module.exports = { cached, cachedAsync, invalidate, invalidatePrefix, clearAll, stats };
+//# sourceMappingURL=cache.js.map

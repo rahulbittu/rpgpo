@@ -67,3 +67,4 @@ function saveFlags(flags) {
     fs.writeFileSync(FLAGS_FILE, JSON.stringify(flags, null, 2));
 }
 module.exports = { isEnabled, setFlag, getAllFlags };
+//# sourceMappingURL=feature-flags.js.map

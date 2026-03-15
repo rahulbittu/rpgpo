@@ -1,17 +1,19 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import OpenAI from "openai";
 
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 if (!process.env.OPENAI_API_KEY) {
   console.error("Missing OPENAI_API_KEY in environment.");
   process.exit(1);
 }
 
-const ROOT = path.join(process.cwd(), ".gpo-handoff");
+const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
+const ROOT = path.resolve(__dirname, ".gpo-handoff");
 const REQ_DIR = path.join(ROOT, "from-claude");
 const RES_DIR = path.join(ROOT, "to-claude");
 const ARC_DIR = path.join(ROOT, "archive");
@@ -39,35 +41,17 @@ function log(msg) {
   fs.appendFileSync(LOG_FILE, line);
   process.stdout.write(line);
 }
-function listRequestFiles() {
-  return fs
-    .readdirSync(REQ_DIR)
-    .filter((f) => f.endsWith(".request.md"))
-    .sort();
-}
-function responsePathFor(reqFile) {
-  return path.join(RES_DIR, reqFile.replace(".request.md", ".response.md"));
-}
-function archiveFile(filePath) {
-  const base = path.basename(filePath);
-  const target = path.join(ARC_DIR, base);
-  if (fs.existsSync(filePath)) fs.renameSync(filePath, target);
-}
 function buildSystemPrompt() {
-  const projectContext = fs.readFileSync(PROJECT_CONTEXT, "utf8");
-  const claudeState = fs.readFileSync(CLAUDE_STATE, "utf8");
-
+  const projectContext = fs.existsSync(PROJECT_CONTEXT) ? fs.readFileSync(PROJECT_CONTEXT, "utf8") : "";
+  const claudeState = fs.existsSync(CLAUDE_STATE) ? fs.readFileSync(CLAUDE_STATE, "utf8") : "";
   return `
-You are acting as the architecture critic and next-part designer for the GPO project.
+You are acting as a constrained GPO collaborator.
 
 Your job:
 - produce rigorous, implementation-ready guidance
 - preserve existing working functionality
-- prefer typed, enterprise-grade, contract-driven designs
-- be explicit about modules, APIs, UI, docs, acceptance criteria, and hardening
 - do not drift into generic advice
-
-Repository-grounded project context follows.
+- be explicit and actionable
 
 ===== PROJECT CONTEXT =====
 ${projectContext}
@@ -88,7 +72,26 @@ Output format:
 ## Hardening Notes
 `.trim();
 }
-
+function isRequestFile(name) {
+  return name.endsWith(".request.md") || name.endsWith("-request.md");
+}
+function requestToResponseName(reqFile) {
+  if (reqFile.endsWith(".request.md")) return reqFile.replace(".request.md", ".response.md");
+  if (reqFile.endsWith("-request.md")) return reqFile.replace("-request.md", "-response.md");
+  return `${reqFile}.response.md`;
+}
+function listRequestFiles() {
+  return fs.readdirSync(REQ_DIR).filter(isRequestFile).sort();
+}
+function responsePathFor(reqFile) {
+  return path.join(RES_DIR, requestToResponseName(reqFile));
+}
+function archiveFile(filePath) {
+  if (!fs.existsSync(filePath)) return;
+  const base = path.basename(filePath);
+  const target = path.join(ARC_DIR, `${Date.now()}-${base}`);
+  fs.renameSync(filePath, target);
+}
 async function processRequest(reqFile) {
   const reqPath = path.join(REQ_DIR, reqFile);
   const resPath = responsePathFor(reqFile);
@@ -111,32 +114,38 @@ async function processRequest(reqFile) {
   });
 
   const text = response.output_text?.trim() || "No output returned.";
-  fs.writeFileSync(resPath, text + "\n");
-  log(`Wrote response ${path.basename(resPath)}`);
+  const tmpPath = `${resPath}.tmp`;
+  fs.writeFileSync(tmpPath, text + "\n");
+  fs.renameSync(tmpPath, resPath);
+
+  log(`Wrote response ${path.basename(resPath)} to to-claude`);
 
   archiveFile(reqPath);
-  archiveFile(resPath);
-  log(`Archived ${reqFile} and response`);
+  log(`Archived request ${reqFile}`);
 }
-
 async function tick() {
   const state = readSeen();
   const files = listRequestFiles();
 
   for (const reqFile of files) {
-    if (!state.seen.includes(reqFile)) {
+    if (state.seen.includes(reqFile)) continue;
+    try {
+      await processRequest(reqFile);
       state.seen.push(reqFile);
       writeSeen(state);
-      try {
-        await processRequest(reqFile);
-      } catch (err) {
-        log(`ERROR on ${reqFile}: ${err.message}`);
-      }
+    } catch (err) {
+      log(`ERROR on ${reqFile}: ${err?.message || String(err)}`);
     }
   }
 }
 
-log("Relay started. Watching .gpo-handoff/from-claude");
+log("Relay started");
+log(`ROOT=${ROOT}`);
+log(`REQ_DIR=${REQ_DIR}`);
+log(`RES_DIR=${RES_DIR}`);
+log(`ARC_DIR=${ARC_DIR}`);
+
+tick().catch((err) => log(`Initial tick failure: ${err?.message || String(err)}`));
 setInterval(() => {
-  tick().catch((err) => log(`Tick failure: ${err.message}`));
+  tick().catch((err) => log(`Tick failure: ${err?.message || String(err)}`));
 }, 3000);

@@ -56,3 +56,4 @@ function getSummary(days = 7) {
     };
 }
 module.exports = { track, getSummary };
+//# sourceMappingURL=usage-tracker.js.map

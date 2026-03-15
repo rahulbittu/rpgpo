@@ -99,3 +99,4 @@ function readJson(f, fb) {
     return fb;
 }
 module.exports = { getCostInsights };
+//# sourceMappingURL=cost-optimizer.js.map

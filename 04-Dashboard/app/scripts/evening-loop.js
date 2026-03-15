@@ -31,6 +31,23 @@ const approvalCount = listDir('03-Operations/Approvals/Pending').filter(f => f.e
 const logCount = listDir('03-Operations/Logs/AgentRuns').filter(f => f.startsWith(today)).length;
 
 const logFile = path.join(LOG_DIR, `${today}-EveningLoop.md`);
+// Get today's completed tasks
+let completedToday = [];
+try {
+  const intake = require(path.join(__dirname, '..', 'lib', 'intake'));
+  completedToday = intake.getAllTasks()
+    .filter(t => t.status === 'done' && (t.updated_at || '').startsWith(today))
+    .map(t => `- **${t.title}** (${t.domain})`);
+} catch {}
+
+// Get today's costs
+let costSummary = '';
+try {
+  const costs = require(path.join(__dirname, '..', 'lib', 'costs'));
+  const cs = costs.getCostSummary();
+  if (cs?.today) costSummary = `$${cs.today.cost.toFixed(4)} across ${cs.today.calls} API calls`;
+} catch {}
+
 const logContent = `# RPGPO Evening Loop Log
 
 ## Date
@@ -42,9 +59,14 @@ ${new Date().toISOString()}
 ## Summary
 Evening loop completed. Dashboard state refreshed.
 
+## Tasks Completed Today
+${completedToday.length > 0 ? completedToday.join('\n') : 'No tasks completed today'}
+
 ## Stats
+- Tasks completed today: ${completedToday.length}
 - Pending approvals: ${approvalCount}
 - Agent log entries today: ${logCount}
+${costSummary ? `- AI spend today: ${costSummary}` : ''}
 
 ## Actions Taken
 - Dashboard state refreshed

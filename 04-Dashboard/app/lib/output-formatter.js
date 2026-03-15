@@ -63,3 +63,4 @@ function formatAsJSON(taskId) {
     }
 }
 module.exports = { formatAsExecutiveBrief, formatAsSlackMessage, formatAsJSON };
+//# sourceMappingURL=output-formatter.js.map

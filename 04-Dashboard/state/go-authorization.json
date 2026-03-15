@@ -1,6 +1,6 @@
 {
-  "decision_id": "ga_mmqs288hx4pu",
-  "decision": "no_go",
+  "decision_id": "ga_mms06xjoofym",
+  "decision": "conditional_go",
   "confidence": {
     "overall": "fully_proven",
     "live_proof_cases": 8,
@@ -20,9 +20,9 @@
       "gate_id": "ga_blockers",
       "name": "Blocker reconciliation",
       "required_for_go": true,
-      "passed": false,
+      "passed": true,
       "proof_level": "live_network",
-      "detail": "4/7 closed"
+      "detail": "7/7 closed"
     },
     {
       "gate_id": "ga_workflows",
@@ -36,25 +36,25 @@
       "gate_id": "ga_middleware",
       "name": "Middleware truth",
       "required_for_go": true,
-      "passed": false,
+      "passed": true,
       "proof_level": "live_network",
-      "detail": "50%"
+      "detail": "100%"
     },
     {
       "gate_id": "ga_reliability",
       "name": "Reliability closure",
       "required_for_go": true,
-      "passed": false,
+      "passed": true,
       "proof_level": "live_network",
-      "detail": "Score 91%, 1 proxy-only"
+      "detail": "Score 100%, 0 proxy-only"
     },
     {
       "gate_id": "ga_clean_state",
       "name": "Clean state",
       "required_for_go": true,
-      "passed": true,
+      "passed": false,
       "proof_level": "live_network",
-      "detail": "Clean"
+      "detail": "7 stale file(s)"
     },
     {
       "gate_id": "ga_acceptance",
@@ -75,21 +75,11 @@
   ],
   "proof_gaps": [
     {
-      "area": "blockers",
-      "gap_type": "failed_case",
-      "detail": "2 open blocker(s)"
-    },
-    {
-      "area": "middleware",
-      "gap_type": "failed_case",
-      "detail": "Truth score 50%"
-    },
-    {
-      "area": "reliability",
-      "gap_type": "failed_case",
-      "detail": "1 proxy-only metric(s)"
+      "area": "clean_state",
+      "gap_type": "stale_evidence",
+      "detail": "7 stale state file(s)"
     }
   ],
-  "overall_score": 63,
-  "created_at": "2026-03-14T20:27:55.313Z"
+  "overall_score": 88,
+  "created_at": "2026-03-15T17:03:17.844Z"
 }

@@ -391,16 +391,23 @@ export function generateBrief(): ChiefOfStaffBrief {
   if (topAction) {
     focusRec = `Focus on: ${topAction.title} (${topAction.priority} priority)`;
   } else {
-    // Proactive value suggestions when queue is clear
-    const suggestions = [
-      'Submit "Research passive income ideas for data engineers" to discover opportunities',
-      'Submit "Summarize today\'s AI news" to stay current on industry trends',
-      'Submit "Find data engineering jobs $180k+ remote" for career intelligence',
-      'Submit "TopRanker competitive analysis" to refine your launch strategy',
-      'Review your mission statements to ensure priorities are up to date',
+    // Proactive value suggestions when queue is clear — rotate by day and hour
+    const hourSlot = new Date().getHours();
+    const suggestions = hourSlot < 12 ? [
+      'Submit "AI News Today" — start the day informed on industry moves',
+      'Submit "Data Eng Jobs $180k+ Remote" — fresh listings from overnight postings',
+      'Submit "Weekly Plan" — map out today\'s priorities and time blocks',
+    ] : hourSlot < 17 ? [
+      'Submit "Research passive income ideas for data engineers" — build wealth while working',
+      'Submit "TopRanker competitive analysis" — refine your launch strategy',
+      'Submit "Career Growth Plan" — map your path to Staff/Principal',
+    ] : [
+      'Submit "Summarize today\'s AI news" — catch up on what you missed',
+      'Submit "Salary Benchmark for Data Engineers" — know your market value',
+      'Submit "Side Project Ideas" — find your next income stream',
     ];
     const dayIdx = new Date().getDay();
-    focusRec = `Queue clear. Suggested: ${suggestions[dayIdx % suggestions.length]}`;
+    focusRec = `Queue clear. ${suggestions[dayIdx % suggestions.length]}`;
   }
 
   return {

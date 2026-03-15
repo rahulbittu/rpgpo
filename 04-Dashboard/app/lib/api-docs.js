@@ -132,3 +132,4 @@ function generateDocsHtml() {
     return html;
 }
 module.exports = { scanRoutes, generateDocsHtml };
+//# sourceMappingURL=api-docs.js.map

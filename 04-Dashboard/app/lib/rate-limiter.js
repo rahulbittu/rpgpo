@@ -30,3 +30,4 @@ function getRateLimitStats() {
     return { keys: _counters.size, configs: DEFAULTS };
 }
 module.exports = { checkRateLimit, getRateLimitStats };
+//# sourceMappingURL=rate-limiter.js.map

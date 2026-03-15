@@ -1,0 +1,71 @@
+[
+  {
+    "integration_id": "int_openai",
+    "name": "OpenAI API",
+    "category": "provider_api",
+    "trust_level": "verified",
+    "permissions": [
+      "call_provider"
+    ],
+    "secret_scope": "provider:openai",
+    "tenant_ids": [
+      "rpgpo"
+    ],
+    "enabled": true,
+    "usage_count": 0,
+    "created_at": "2026-03-15T16:28:05.100Z",
+    "updated_at": "2026-03-15T16:28:05.100Z"
+  },
+  {
+    "integration_id": "int_gemini",
+    "name": "Gemini API",
+    "category": "provider_api",
+    "trust_level": "verified",
+    "permissions": [
+      "call_provider"
+    ],
+    "secret_scope": "provider:gemini",
+    "tenant_ids": [
+      "rpgpo"
+    ],
+    "enabled": true,
+    "usage_count": 0,
+    "created_at": "2026-03-15T16:28:05.100Z",
+    "updated_at": "2026-03-15T16:28:05.100Z"
+  },
+  {
+    "integration_id": "int_perplexity",
+    "name": "Perplexity API",
+    "category": "provider_api",
+    "trust_level": "verified",
+    "permissions": [
+      "call_provider"
+    ],
+    "secret_scope": "provider:perplexity",
+    "tenant_ids": [
+      "rpgpo"
+    ],
+    "enabled": true,
+    "usage_count": 0,
+    "created_at": "2026-03-15T16:28:05.100Z",
+    "updated_at": "2026-03-15T16:28:05.100Z"
+  },
+  {
+    "integration_id": "int_local_fs",
+    "name": "Local Filesystem",
+    "category": "storage",
+    "trust_level": "official",
+    "permissions": [
+      "read_context",
+      "write_state"
+    ],
+    "secret_scope": "environment",
+    "tenant_ids": [
+      "rpgpo"
+    ],
+    "enabled": true,
+    "usage_count": 0,
+    "created_at": "2026-03-15T16:28:05.100Z",
+    "updated_at": "2026-03-15T16:28:05.100Z"
+  }
+]

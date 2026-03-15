@@ -69,3 +69,4 @@ function getProviderStatus(providerId) {
     return _healthData[providerId] || null;
 }
 module.exports = { recordProviderCall, getProviderHealth, getProviderStatus };
+//# sourceMappingURL=provider-health.js.map

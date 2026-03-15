@@ -129,3 +129,4 @@ function getSuggestions() {
     });
 }
 module.exports = { trackError, resolveError, getErrors, getErrorStats, getSuggestions };
+//# sourceMappingURL=error-tracker.js.map

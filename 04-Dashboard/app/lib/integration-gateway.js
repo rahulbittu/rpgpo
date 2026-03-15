@@ -153,3 +153,4 @@ function verifySignature(payload, signature, secret) {
     return signature === expected || signature === 'sha256=' + expected;
 }
 module.exports = { createSubscription, listSubscriptions, getSubscription, deleteSubscription, processInboundEvent, deliverOutbound, listEvents, verifySignature };
+//# sourceMappingURL=integration-gateway.js.map

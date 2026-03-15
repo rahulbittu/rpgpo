@@ -1,0 +1,28 @@
+[
+  {
+    "id": "tpl_0cb10be3",
+    "name": "Daily AI News Brief",
+    "description": "Search the web for today's most important AI and technology news headlines",
+    "domain": "newsroom",
+    "urgency": "high",
+    "prompt": "Search the web for today's most important AI and technology news. Include specific headlines, sources, publication dates, and relevance analysis for a data engineer / startup founder. Focus on the last 24 hours.",
+    "desiredOutcome": "Curated news digest with 10-15 items, sources, and relevance analysis",
+    "tags": [
+      "news",
+      "daily",
+      "automated"
+    ],
+    "scope": "private",
+    "version": 1,
+    "createdBy": "operator",
+    "createdAt": 1773586568948,
+    "updatedAt": 1773586568948,
+    "metrics": {
+      "runs": 0,
+      "successRate": 0,
+      "avgLatencyMs": 0,
+      "avgCostUsd": 0,
+      "qualityScore": 0
+    }
+  }
+]

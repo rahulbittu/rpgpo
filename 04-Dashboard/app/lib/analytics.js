@@ -118,3 +118,4 @@ function getTaskTrend(days = 30) {
     return { key: 'tasks.daily', label: 'Daily Tasks', unit: 'count', points };
 }
 module.exports = { getAnalyticsSummary, getCostTrend, getTaskTrend };
+//# sourceMappingURL=analytics.js.map

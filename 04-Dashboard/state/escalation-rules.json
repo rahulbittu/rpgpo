@@ -1,0 +1,103 @@
+[
+  {
+    "rule_id": "er_low_conf",
+    "trigger": "low_confidence",
+    "action": "notify_operator",
+    "threshold": 50,
+    "scope_level": "global",
+    "scope_id": "global",
+    "enabled": true,
+    "description": "Escalate when confidence drops below 50%",
+    "created_at": "2026-03-15T16:28:05.082Z",
+    "updated_at": "2026-03-15T16:28:05.082Z"
+  },
+  {
+    "rule_id": "er_review_conflict",
+    "trigger": "review_conflict",
+    "action": "require_second_provider_review",
+    "scope_level": "global",
+    "scope_id": "global",
+    "enabled": true,
+    "description": "Require second provider when reviews conflict",
+    "created_at": "2026-03-15T16:28:05.082Z",
+    "updated_at": "2026-03-15T16:28:05.082Z"
+  },
+  {
+    "rule_id": "er_privacy",
+    "trigger": "privacy_risk",
+    "action": "pause_execution",
+    "scope_level": "global",
+    "scope_id": "global",
+    "enabled": true,
+    "description": "Pause execution on privacy risk detection",
+    "created_at": "2026-03-15T16:28:05.082Z",
+    "updated_at": "2026-03-15T16:28:05.082Z"
+  },
+  {
+    "rule_id": "er_mission",
+    "trigger": "mission_conflict",
+    "action": "notify_operator",
+    "scope_level": "global",
+    "scope_id": "global",
+    "enabled": true,
+    "description": "Notify operator when work conflicts with mission",
+    "created_at": "2026-03-15T16:28:05.082Z",
+    "updated_at": "2026-03-15T16:28:05.082Z"
+  },
+  {
+    "rule_id": "er_doc_gap",
+    "trigger": "documentation_gap",
+    "action": "notify_operator",
+    "scope_level": "global",
+    "scope_id": "global",
+    "enabled": true,
+    "description": "Notify when required documentation is missing",
+    "created_at": "2026-03-15T16:28:05.082Z",
+    "updated_at": "2026-03-15T16:28:05.082Z"
+  },
+  {
+    "rule_id": "er_provider",
+    "trigger": "provider_mismatch",
+    "action": "downgrade_to_advisory",
+    "scope_level": "global",
+    "scope_id": "global",
+    "enabled": true,
+    "description": "Downgrade to advisory when provider fit is poor",
+    "created_at": "2026-03-15T16:28:05.082Z",
+    "updated_at": "2026-03-15T16:28:05.082Z"
+  },
+  {
+    "rule_id": "er_retry",
+    "trigger": "retry_exhaustion",
+    "action": "require_operator_approval",
+    "scope_level": "global",
+    "scope_id": "global",
+    "enabled": true,
+    "description": "Require approval when retries exhausted",
+    "created_at": "2026-03-15T16:28:05.082Z",
+    "updated_at": "2026-03-15T16:28:05.082Z"
+  },
+  {
+    "rule_id": "er_promo",
+    "trigger": "promotion_attempt",
+    "action": "require_operator_approval",
+    "scope_level": "global",
+    "scope_id": "global",
+    "enabled": true,
+    "description": "Require approval for promotion attempts",
+    "created_at": "2026-03-15T16:28:05.082Z",
+    "updated_at": "2026-03-15T16:28:05.082Z"
+  },
+  {
+    "rule_id": "er_handoff",
+    "trigger": "handoff_quality",
+    "action": "notify_operator",
+    "threshold": 40,
+    "scope_level": "global",
+    "scope_id": "global",
+    "enabled": true,
+    "description": "Notify when handoff confidence is low",
+    "created_at": "2026-03-15T16:28:05.082Z",
+    "updated_at": "2026-03-15T16:28:05.082Z"
+  }
+]

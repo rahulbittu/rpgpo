@@ -23,3 +23,4 @@ function setPreference(key, value) {
     fs.writeFileSync(PREFS_FILE, JSON.stringify(prefs, null, 2));
 }
 module.exports = { getPreferences, setPreference };
+//# sourceMappingURL=operator-preferences.js.map

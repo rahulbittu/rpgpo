@@ -83,3 +83,4 @@ function createTemplateFromPattern(patternId) {
     }
 }
 module.exports = { discoverPatterns, createTemplateFromPattern };
+//# sourceMappingURL=template-discovery.js.map

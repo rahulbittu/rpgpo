@@ -36,3 +36,4 @@ function getTimeline(days = 7, limit = 100) {
     return events.sort((a, b) => b.timestamp - a.timestamp).slice(0, limit);
 }
 module.exports = { getTimeline };
+//# sourceMappingURL=task-timeline.js.map

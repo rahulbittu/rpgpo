@@ -18,3 +18,4 @@ function getNotificationDigest() {
     }
 }
 module.exports = { getNotificationDigest };
+//# sourceMappingURL=notification-digest.js.map

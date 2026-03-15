@@ -75,7 +75,7 @@ export function getSuggestions(limit: number = 5): Suggestion[] {
     id: 'sug_job_market', title: 'Job Market Update',
     description: 'Current data engineering job market analysis',
     prompt: 'What are the highest-paying remote data engineering jobs right now? Include salary ranges, companies, and required skills.',
-    domain: 'career', urgency: 'normal', confidence: 0.65, source: 'priority',
+    domain: 'careeregine', urgency: 'normal', confidence: 0.65, source: 'priority',
   });
 
   suggestions.push({

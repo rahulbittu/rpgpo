@@ -149,7 +149,7 @@ export function advance(id: string, reason: string, by: 'system' | 'operator' | 
     release_candidate_prepared: 'release_promoted',
   };
 
-  const trigger = triggerMap[instance.state];
+  const trigger = triggerMap[instance.state as keyof typeof triggerMap];
   if (!trigger) return instance;
 
   if (by === 'autopilot') {

@@ -23,3 +23,4 @@ function getInventory() {
     return { modules: count(libDir, '.ts'), routes: 1100, types: 850, stateFiles: count(stateDir), reports: count(reportsDir), tests: count(testsDir, '.test.js'), docs: count(docsDir, '.md'), features: 68 };
 }
 module.exports = { getInventory };
+//# sourceMappingURL=system-inventory.js.map

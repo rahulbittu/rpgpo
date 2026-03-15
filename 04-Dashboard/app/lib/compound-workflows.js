@@ -188,3 +188,4 @@ function executeNode(run, node, template, params) {
     }
 }
 module.exports = { createWorkflowTemplate, getWorkflowTemplate, listWorkflowTemplates, deleteWorkflowTemplate, startWorkflowRun, getWorkflowRun, listWorkflowRuns, onNodeComplete, seedBuiltinTemplates };
+//# sourceMappingURL=compound-workflows.js.map

@@ -18,3 +18,4 @@ function autoTag(rawRequest, domain) {
     return [...new Set(tags)].slice(0, 8);
 }
 module.exports = { autoTag };
+//# sourceMappingURL=task-tags.js.map

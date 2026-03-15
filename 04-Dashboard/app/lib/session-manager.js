@@ -96,3 +96,4 @@ function saveSession() {
     fs.writeFileSync(SESSIONS_FILE, JSON.stringify(sessions, null, 2));
 }
 module.exports = { startSession, getCurrentSession, recordAction, recordTaskSubmit, recordTaskComplete, endSession, getSessionHistory };
+//# sourceMappingURL=session-manager.js.map

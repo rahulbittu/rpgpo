@@ -111,3 +111,4 @@ function exportTemplates() {
     return readStore();
 }
 module.exports = { createTemplate, getTemplate, listTemplates, updateTemplate, deleteTemplate, recordTemplateRun, importTemplates, exportTemplates };
+//# sourceMappingURL=template-store.js.map

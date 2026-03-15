@@ -75,3 +75,4 @@ function getSystemDashboard() {
     return { timestamp: now, health, uptime: { server: process.uptime() * 1000, worker: true }, providers, tasks, costs, knowledge, errors, storage, features };
 }
 module.exports = { getSystemDashboard };
+//# sourceMappingURL=system-status.js.map

@@ -185,6 +185,49 @@ function checkTaskCompletion(taskId, allSubs) {
         catch { /* pipeline not critical for task completion */ }
     }
     intake.updateTask(taskId, { status: anyFailed ? 'failed' : 'done' });
+    // Proactive delivery: emit notification on task completion so operator sees results
+    try {
+        const notif = require('./in-app-notifications');
+        const intakeTask = intake.getTask(taskId);
+        const taskTitle = intakeTask?.title || taskId;
+        const completedSubs = refreshedSubs.filter(s => s.status === 'done');
+        const outputPreview = completedSubs
+            .filter(s => s.output)
+            .map(s => s.what_done || s.output.slice(0, 100))
+            .slice(0, 3)
+            .join(' | ');
+        notif.emitNotification({
+            type: anyFailed ? 'workflow.failed' : 'workflow.complete',
+            severity: anyFailed ? 'high' : 'medium',
+            title: anyFailed ? `Task failed: ${taskTitle.slice(0, 60)}` : `Task complete: ${taskTitle.slice(0, 60)}`,
+            message: outputPreview.slice(0, 400) || (anyFailed ? 'One or more subtasks failed' : 'All subtasks completed successfully'),
+        });
+    }
+    catch { /* notification non-fatal */ }
+    // Save combined deliverable file for easy access
+    if (!anyFailed) {
+        try {
+            const fs = require('fs');
+            const path = require('path');
+            const intakeTask = intake.getTask(taskId);
+            const completedSubs = refreshedSubs.filter(s => s.status === 'done' && s.output);
+            if (completedSubs.length > 0 && intakeTask) {
+                const today = new Date().toISOString().slice(0, 10);
+                const safeName = (intakeTask.title || 'task').replace(/[^a-zA-Z0-9-_]/g, '-').slice(0, 40);
+                const deliverableContent = [
+                    `# ${intakeTask.title}`,
+                    `**Domain:** ${intakeTask.domain} | **Date:** ${today} | **Subtasks:** ${completedSubs.length}`,
+                    '',
+                    ...completedSubs.map(s => `## ${s.title}\n${s.output || s.what_done || 'No output'}`),
+                ].join('\n\n');
+                const delivDir = path.resolve(__dirname, '..', '..', 'state', 'deliverables');
+                if (!fs.existsSync(delivDir))
+                    fs.mkdirSync(delivDir, { recursive: true });
+                fs.writeFileSync(path.join(delivDir, `${today}-${safeName}.md`), deliverableContent);
+            }
+        }
+        catch { /* deliverable save non-fatal */ }
+    }
 }
 /**
  * Materialize subtasks from a deliberation result into the subtask store.
@@ -273,3 +316,4 @@ function queueInitialSubtasks(taskId) {
     }
     return queued;
 }
+//# sourceMappingURL=workflow.js.map

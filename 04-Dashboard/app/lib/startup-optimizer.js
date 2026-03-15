@@ -31,3 +31,4 @@ function getStartupReport() {
     };
 }
 module.exports = { lazyRequire, getLoadTimes, getSlowModules, getStartupReport };
+//# sourceMappingURL=startup-optimizer.js.map

@@ -83,5 +83,37 @@ ${approvalCount} item(s) pending review.
   console.log('  Brief created:', BRIEF_FILE);
 }
 
-console.log('');
-console.log('=== Morning loop complete ===');
+// Step 3: Auto-submit morning tasks via intake API
+console.log('Step 3: Submitting morning tasks...');
+const http = require('http');
+
+function submitTask(raw_request, domain, urgency) {
+  return new Promise((resolve) => {
+    const body = JSON.stringify({ raw_request, domain, urgency });
+    const req = http.request({
+      hostname: 'localhost', port: 3200, path: '/api/intake/run',
+      method: 'POST', headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(body) },
+    }, (res) => {
+      let data = '';
+      res.on('data', c => data += c);
+      res.on('end', () => { try { resolve(JSON.parse(data)); } catch { resolve(null); } });
+    });
+    req.on('error', () => resolve(null));
+    req.write(body);
+    req.end();
+  });
+}
+
+(async () => {
+  try {
+    const newsResult = await submitTask(
+      "Search the web for today's most important AI and technology news. Include specific headlines, sources, and relevance to a data engineer / startup founder.",
+      'newsroom', 'high'
+    );
+    if (newsResult?.ok) console.log('  Morning news task submitted: ' + newsResult.task.title);
+    else console.log('  News task failed or already running');
+  } catch (e) { console.log('  News task error:', e.message); }
+
+  console.log('');
+  console.log('=== Morning loop complete ===');
+})();

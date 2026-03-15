@@ -1,0 +1,125 @@
+[
+  {
+    "template_id": "et_startup",
+    "name": "Startup",
+    "domain_type": "startup",
+    "description": "Product-building engine for startup projects",
+    "version": 1,
+    "mission_defaults": {
+      "velocity": "high",
+      "risk_tolerance": "medium"
+    },
+    "default_projects": [
+      "MVP",
+      "Growth"
+    ],
+    "recommended_skill_packs": [],
+    "provider_strategy": {
+      "primary": "claude",
+      "critique": "gemini"
+    },
+    "governance_defaults": {
+      "review_strictness": "balanced"
+    },
+    "approval_defaults": {
+      "auto_green": true
+    },
+    "docs_starters": [
+      "architecture.md",
+      "api-guide.md"
+    ],
+    "created_at": "2026-03-15T16:28:05.099Z",
+    "updated_at": "2026-03-15T16:28:05.099Z"
+  },
+  {
+    "template_id": "et_research",
+    "name": "Research",
+    "domain_type": "research",
+    "description": "Research and analysis engine",
+    "version": 1,
+    "mission_defaults": {
+      "depth": "high",
+      "sources": "verified"
+    },
+    "default_projects": [
+      "Literature Review",
+      "Analysis"
+    ],
+    "recommended_skill_packs": [],
+    "provider_strategy": {
+      "primary": "perplexity",
+      "synthesis": "openai"
+    },
+    "governance_defaults": {
+      "review_strictness": "strict"
+    },
+    "approval_defaults": {
+      "auto_green": false
+    },
+    "docs_starters": [
+      "methodology.md"
+    ],
+    "created_at": "2026-03-15T16:28:05.099Z",
+    "updated_at": "2026-03-15T16:28:05.099Z"
+  },
+  {
+    "template_id": "et_creative",
+    "name": "Creative Writing",
+    "domain_type": "creative",
+    "description": "Creative writing and screenwriting engine",
+    "version": 1,
+    "mission_defaults": {
+      "voice": "original",
+      "iteration": "high"
+    },
+    "default_projects": [
+      "Draft",
+      "Review"
+    ],
+    "recommended_skill_packs": [],
+    "provider_strategy": {
+      "primary": "claude",
+      "feedback": "openai"
+    },
+    "governance_defaults": {
+      "review_strictness": "permissive"
+    },
+    "approval_defaults": {
+      "auto_green": true
+    },
+    "docs_starters": [
+      "style-guide.md"
+    ],
+    "created_at": "2026-03-15T16:28:05.099Z",
+    "updated_at": "2026-03-15T16:28:05.099Z"
+  },
+  {
+    "template_id": "et_ops",
+    "name": "Operations",
+    "domain_type": "operations",
+    "description": "Personal/business operations engine",
+    "version": 1,
+    "mission_defaults": {
+      "efficiency": "high"
+    },
+    "default_projects": [
+      "Automation",
+      "Review"
+    ],
+    "recommended_skill_packs": [],
+    "provider_strategy": {
+      "primary": "openai"
+    },
+    "governance_defaults": {
+      "review_strictness": "balanced"
+    },
+    "approval_defaults": {
+      "auto_green": true
+    },
+    "docs_starters": [
+      "runbook.md"
+    ],
+    "created_at": "2026-03-15T16:28:05.099Z",
+    "updated_at": "2026-03-15T16:28:05.099Z"
+  }
+]
