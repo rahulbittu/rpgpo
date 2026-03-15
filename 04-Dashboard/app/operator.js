@@ -34,13 +34,20 @@ const MISSION_TEMPLATES = [
 function renderMissionTemplates() {
   const el = document.getElementById('missionTemplateGrid');
   if (!el) return;
-  el.innerHTML = MISSION_TEMPLATES.map(t =>
-    `<div class="template-card" onclick="applyTemplate('${t.domain}','${esc(t.prompt)}','${t.urgency}','${esc(t.outcome)}')">
+  // Store templates as data attributes to avoid quote-escaping issues in onclick
+  el.innerHTML = MISSION_TEMPLATES.map((t, i) =>
+    `<div class="template-card" data-idx="${i}" onclick="applyTemplateByIndex(${i})">
       <div class="tc-domain">${esc(t.domain)}</div>
       <div class="tc-title">${esc(t.title)}</div>
       <div class="tc-desc">${esc(t.desc)}</div>
     </div>`
   ).join('');
+}
+
+function applyTemplateByIndex(idx) {
+  const t = MISSION_TEMPLATES[idx];
+  if (!t) return;
+  applyTemplate(t.domain, t.prompt, t.urgency, t.outcome);
 }
 
 function applyTemplate(domain, prompt, urgency, outcome) {
