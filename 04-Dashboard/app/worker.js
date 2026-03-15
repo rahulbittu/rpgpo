@@ -665,6 +665,18 @@ const handlers = {
 
     const summary = `Deliberation complete.\nObjective: ${deliberation.interpreted_objective}\nStrategy: ${deliberation.recommended_strategy}\nRisk: ${deliberation.risk_level}\nSubtasks: ${created.length}\nTokens: ${deliberation.tokens_used}`;
 
+    // Auto-approve plan if requested (from /api/intake/run quick-run)
+    if (task.meta?.autoApprove) {
+      try {
+        const queuedIds = workflow.queueInitialSubtasks(taskId);
+        console.log(`[worker] Auto-approved plan for ${taskId}: ${queuedIds.length} subtasks queued`);
+        for (const id of queuedIds) {
+          const nextSt = intake.getSubtask(id);
+          if (nextSt) queue.addTask('execute-subtask', `Subtask: ${nextSt.title}`, { subtaskId: id });
+        }
+      } catch (e) { console.log('[worker] Auto-approve error:', e.message?.slice(0, 80)); }
+    }
+
     return {
       output: summary,
       deliberation,

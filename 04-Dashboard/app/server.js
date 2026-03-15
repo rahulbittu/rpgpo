@@ -429,6 +429,19 @@ const server = http.createServer(async (req, res) => {
   // ── Intake API ──
 
   // Submit a new intake task
+  // Quick run — submit + auto-deliberate + auto-approve in one step
+  if (req.url === '/api/intake/run' && req.method === 'POST') {
+    const body = await parseBody(req);
+    if (!body.raw_request) return json(res, { ok: false, error: 'Missing raw_request' }, 400);
+    try {
+      const task = intake.createTask(body);
+      events.broadcast('activity', { action: `Quick run: ${task.title}`, ts: new Date().toISOString() });
+      // Queue deliberation
+      queue.addTask('deliberate', `Deliberate: ${task.title}`, { taskId: task.task_id, autoApprove: true });
+      return json(res, { ok: true, task, message: 'Task submitted — auto-deliberation and execution started' });
+    } catch (e) { return json(res, { ok: false, error: e.message }, 500); }
+  }
+
   if (req.url === '/api/intake/submit' && req.method === 'POST') {
     const body = await parseBody(req);
     if (!body.raw_request) return json(res, { ok: false, error: 'Missing raw_request' }, 400);
