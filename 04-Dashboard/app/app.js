@@ -134,7 +134,7 @@ function switchTab(tab) {
   const panel = document.getElementById('tab-' + tab);
   if (panel) panel.classList.add('active');
   if (tab === 'costs') loadCosts();
-  if (tab === 'settings') loadCostSettings();
+  if (tab === 'settings') { loadCostSettings(); loadOperatorProfile(); }
   if (tab === 'intake') loadIntakeTasks();
 }
 
@@ -177,6 +177,26 @@ async function loadCosts() {
     COSTS = await r.json();
     renderCostCenter();
   } catch {}
+}
+
+async function loadOperatorProfile() {
+  const el = document.getElementById('operatorProfileDisplay');
+  if (!el) return;
+  try {
+    const r = await fetch('/api/file/04-Dashboard/state/context/operator-profile.json');
+    if (!r.ok) { el.innerHTML = '<span style="color:var(--text-faint)">Profile not found</span>'; return; }
+    const op = JSON.parse(await r.text());
+    el.innerHTML = `
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <div><strong>${esc(op.name)}</strong> &middot; ${esc(op.professional_context?.role || 'Operator')}</div>
+      </div>
+      <div style="margin-top:8px"><strong>Priorities:</strong></div>
+      <ul style="margin:4px 0 8px;padding-left:16px">${(op.recurring_priorities || []).map(p => '<li>' + esc(p) + '</li>').join('')}</ul>
+      <div><strong>Output Style:</strong> ${esc(op.output_preferences?.style || 'Default')}</div>
+      <div style="margin-top:4px"><strong>Active Projects:</strong> ${(op.active_projects || []).map(p => esc(p.name)).join(', ')}</div>
+      <div style="margin-top:4px;color:var(--text-faint);font-size:10px">Last updated: ${op.updated_at?.slice(0, 10) || 'unknown'}</div>
+    `;
+  } catch { el.innerHTML = '<span style="color:var(--text-faint)">Could not load profile</span>'; }
 }
 
 async function loadCostSettings() {
