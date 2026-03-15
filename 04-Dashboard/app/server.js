@@ -3355,6 +3355,19 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Parts 105-106: Task Dedup + Output Summarizer
+  if (req.url?.match(/^\/api\/task-summary\/([^/]+)$/) && req.method === 'GET') {
+    const taskId = req.url.match(/^\/api\/task-summary\/([^/]+)$/)[1];
+    try { const os = require('./lib/output-summarizer'); const result = os.summarizeTaskOutput(taskId); return result ? json(res, result) : json(res, { error: 'Not found' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/task-summaries' && req.method === 'GET') {
+    try { const os = require('./lib/output-summarizer'); return json(res, { summaries: os.summarizeAllCompleted() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/dedup-check' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const dd = require('./lib/task-dedup'); return json(res, dd.checkDuplicate(body.raw_request || '', body.domain || 'general')); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 104: Provider Health
   if (req.url === '/api/provider-health' && req.method === 'GET') {
     try { const ph = require('./lib/provider-health'); return json(res, { providers: ph.getProviderHealth() }); } catch (e) { return json(res, { error: e.message }, 500); }
