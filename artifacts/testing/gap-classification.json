@@ -94,5 +94,29 @@
     "root_cause": "Worker restart kills in-flight subtasks but status stays running",
     "fix": "Add stuck-task recovery on worker startup",
     "status": "identified"
+  },
+  {
+    "gap_id": "GAP-007",
+    "category": "routing",
+    "severity": "medium",
+    "description": "Keyword collision: domain-specific terms (data engineer) in unrelated prompts cause misrouting",
+    "affected_cases": [
+      "GPO-SCR-01"
+    ],
+    "root_cause": "Simple keyword matching cannot distinguish context",
+    "fix": "Add negative keywords or use LLM-based intent classification for ambiguous cases",
+    "status": "identified"
+  },
+  {
+    "gap_id": "GAP-008",
+    "category": "provider",
+    "severity": "medium",
+    "description": "Perplexity returns no relevant results for product/design queries",
+    "affected_cases": [
+      "GPO-HOM-01"
+    ],
+    "root_cause": "Search query too specific or Perplexity index lacks product catalog data",
+    "fix": "Improve search prompt to use simpler keywords, or add product-specific search fallback",
+    "status": "identified"
   }
 ]

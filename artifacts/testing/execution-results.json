@@ -345,5 +345,51 @@
         "Perplexity search quality for hyper-local queries needs improvement"
       ]
     }
+  },
+  {
+    "test_case_id": "GPO-SCR-01",
+    "global_rank": 36,
+    "engine": "Screenwriting & Story Development",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:45:23.419Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": false,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrxcqvi1v7h",
+      "domain_routed": "careeregine",
+      "issues": [
+        "Routed to careeregine — data engineer keyword collision with screenwriting",
+        "Still executing at check time"
+      ],
+      "gaps": [
+        "GAP-007: keyword collision needs context-aware routing"
+      ]
+    }
+  },
+  {
+    "test_case_id": "GPO-HOM-01",
+    "global_rank": 39,
+    "engine": "Home & Lifestyle Design",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:45:23.420Z",
+    "level_1_prompt_pass": false,
+    "level_2_context_pass": false,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrxcqvhlfbz",
+      "domain_routed": "writing",
+      "subtask_count": 2,
+      "completion": "done",
+      "output_quality": "Weak — Perplexity search returned no relevant results, synthesis fell back to generic advice",
+      "issues": [
+        "Domain routed to writing instead of home/lifestyle",
+        "Perplexity search quality poor for product/design queries"
+      ],
+      "gaps": [
+        "GAP-007",
+        "GAP-008: Perplexity search failure for product queries"
+      ]
+    }
   }
 ]
