@@ -118,5 +118,20 @@
     "root_cause": "Search query too specific or Perplexity index lacks product catalog data",
     "fix": "Improve search prompt to use simpler keywords, or add product-specific search fallback",
     "status": "identified"
+  },
+  {
+    "gap_id": "GAP-010",
+    "category": "execution",
+    "severity": "high",
+    "description": "Concurrent task deliberation causes subtask materialization to fail — file write race condition on subtasks.json",
+    "affected_cases": [
+      "GPO-WRI-02",
+      "GPO-WRI-09",
+      "GPO-RES-06",
+      "GPO-SCH-03"
+    ],
+    "root_cause": "Subtask store limit was 200 — new subtasks silently lost when store full",
+    "fix": "Add file-level locking or queue subtask writes, or limit concurrent deliberations to 1",
+    "status": "FIXED"
   }
 ]

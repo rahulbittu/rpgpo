@@ -762,5 +762,18 @@
       "completion": "done",
       "output_quality": "Good — pitch deck script with market data"
     }
+  },
+  {
+    "test_case_id": "GPO-WRI-02",
+    "global_rank": 4,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:15:44.955Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "task_id": "t_mmryghq0y8u2",
+      "completion": "done"
+    }
   }
 ]

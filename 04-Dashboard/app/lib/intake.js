@@ -23,8 +23,8 @@ function readStore(file) {
 }
 function writeStore(file, data) {
     ensureFile(file);
-    if (data.length > 200)
-        data = data.slice(-200);
+    if (data.length > 2000)
+        data = data.slice(-2000);
     fs.writeFileSync(file, JSON.stringify(data, null, 2));
 }
 function uid() { return 't_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
