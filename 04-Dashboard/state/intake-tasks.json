@@ -1,5 +1,350 @@
 [
   {
+    "task_id": "t_mms2szpl7adu",
+    "title": "Plan a productive sabbatical month. Balance learning new skills, health optimiza",
+    "raw_request": "Plan a productive sabbatical month. Balance learning new skills, health optimization, travel, and creative projects. Include weekly themes and daily structure.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:16:26.313Z",
+    "updated_at": "2026-03-15T18:18:22.495Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:16:54.744Z",
+      "interpreted_objective": "Plan a structured and balanced sabbatical month for Rahul focusing on learning, health, travel, and creativity.",
+      "expected_outcome": "A detailed plan with weekly themes and daily structures that balances learning new skills, health optimization, travel, and creative projects.",
+      "key_unknowns": [
+        "Rahul's specific interests in new skills",
+        "Preferred travel destinations",
+        "Specific creative projects Rahul is interested in"
+      ],
+      "recommended_strategy": "Research current trends and recommendations for sabbatical planning, focusing on learning, health, travel, and creativity. Then synthesize this information into a detailed plan with weekly themes and daily structures. Ensure the plan aligns with Rahul's priorities and recent work in personalops.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the sabbatical plan by Rahul"
+      ],
+      "subtasks": [
+        {
+          "title": "Research sabbatical planning strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current strategies and trends for planning a productive sabbatical month.",
+          "prompt": "Search the web for current strategies and trends for planning a productive sabbatical month that includes learning new skills, health optimization, travel, and creative projects. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize sabbatical plan",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured sabbatical plan with weekly themes and daily schedules.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed sabbatical plan for Rahul. Include weekly themes and daily structures that balance learning new skills, health optimization, travel, and creative projects. Ensure alignment with Rahul's priorities and recent work in personalops.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-sabbatical-plan.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1951
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms2sy5k9kpa",
+    "title": "Teach me about event sourcing and CQRS patterns with practical examples. When to",
+    "raw_request": "Teach me about event sourcing and CQRS patterns with practical examples. When to use them, common pitfalls, and how they relate to microservices. Include code sketches.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:16:24.296Z",
+    "updated_at": "2026-03-15T18:18:12.406Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:16:48.087Z",
+      "interpreted_objective": "Provide an educational overview of event sourcing and CQRS patterns with practical examples, pitfalls, and their relation to microservices.",
+      "expected_outcome": "Rahul gains a clear understanding of event sourcing and CQRS, including practical applications and potential challenges.",
+      "key_unknowns": [
+        "Rahul's current level of understanding of event sourcing and CQRS",
+        "Specific use cases or domains Rahul is interested in",
+        "Preferred programming languages or frameworks for code sketches"
+      ],
+      "recommended_strategy": "First, research the fundamentals of event sourcing and CQRS, including their benefits and common pitfalls. Then, compile a report with practical examples and code sketches, ensuring to relate these patterns to microservices architecture. Finally, highlight scenarios where these patterns are most beneficial and potential challenges.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Event Sourcing and CQRS",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive understanding of event sourcing and CQRS patterns, including benefits, pitfalls, and relation to microservices.",
+          "prompt": "Search the web for current, specific information about event sourcing and CQRS patterns. Include practical examples, common pitfalls, and how they relate to microservices. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Report on Event Sourcing and CQRS",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed report explaining event sourcing and CQRS patterns with examples, pitfalls, and their relation to microservices.",
+          "prompt": "Based on the research results, synthesize a report explaining event sourcing and CQRS patterns. Include practical examples, common pitfalls, and their relation to microservices. Ensure clarity and practical applicability.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2016
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms2swlj5a13",
+    "title": "Design a home automation setup for a smart home beginner. Include hub recommenda",
+    "raw_request": "Design a home automation setup for a smart home beginner. Include hub recommendation, must-have devices, setup sequence, and automation rules. Budget 500 dollars.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:16:22.279Z",
+    "updated_at": "2026-03-15T18:18:04.889Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:16:33.702Z",
+      "interpreted_objective": "Design a cost-effective and beginner-friendly smart home automation setup within a $500 budget.",
+      "expected_outcome": "A detailed plan for a smart home setup, including hub and device recommendations, setup sequence, and automation rules, all within budget.",
+      "key_unknowns": [
+        "Specific preferences or existing devices the user might have",
+        "The size and layout of the home",
+        "User's technical proficiency"
+      ],
+      "recommended_strategy": "Conduct a web search to identify current affordable smart home hubs and devices suitable for beginners. Synthesize findings into a detailed plan, ensuring it includes a recommended setup sequence and basic automation rules. Focus on compatibility, ease of use, and budget adherence.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final selection of devices and hub"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Smart Home Hubs and Devices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of affordable and beginner-friendly smart home hubs and devices with prices and features.",
+          "prompt": "Search the web for current, affordable smart home hubs and devices suitable for beginners. Include prices, features, and compatibility information. Focus on options that fit within a $500 budget.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Smart Home Setup Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured plan detailing the recommended smart home setup, including hub, devices, setup sequence, and automation rules.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a detailed smart home setup plan. Include a recommended hub, must-have devices, setup sequence, and basic automation rules. Ensure the total cost does not exceed $500.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-smart-home-setup.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1952
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms2sv1c0jll",
+    "title": "Create a startup financial model template. Include revenue projections, cost str",
+    "raw_request": "Create a startup financial model template. Include revenue projections, cost structure, burn rate, runway, and break-even analysis. For a SaaS product with freemium model.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:16:20.256Z",
+    "updated_at": "2026-03-15T18:17:51.920Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:16:29.003Z",
+      "interpreted_objective": "Create a financial model template for a SaaS startup with a freemium model.",
+      "expected_outcome": "A comprehensive financial model template including revenue projections, cost structure, burn rate, runway, and break-even analysis.",
+      "key_unknowns": [
+        "Specific revenue streams for the SaaS product",
+        "Typical cost structure for SaaS with freemium model",
+        "Industry benchmarks for burn rate and runway"
+      ],
+      "recommended_strategy": "Research the financial components of successful SaaS startups with freemium models to gather data on revenue streams, cost structures, and financial metrics. Use this data to create a detailed financial model template. Ensure the template is adaptable to different SaaS products.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research SaaS Financial Models",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on financial models of successful SaaS startups with freemium models.",
+          "prompt": "Search the web for current, specific information about financial models of successful SaaS startups with freemium models. Include revenue streams, cost structures, burn rate, runway, and break-even analysis. Provide real examples, numbers, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Financial Model Template",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive financial model template for a SaaS startup with a freemium model.",
+          "prompt": "Based on the research results, synthesize a financial model template for a SaaS startup with a freemium model. Include sections on revenue projections, cost structure, burn rate, runway, and break-even analysis. Ensure the template is adaptable and includes specific examples and numbers.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2367
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms2stguy0d1",
+    "title": "Write a technical blog post explaining how Bayesian scoring works in recommendat",
+    "raw_request": "Write a technical blog post explaining how Bayesian scoring works in recommendation systems. Include math explained simply, code examples in Python, and real-world applications.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:16:18.222Z",
+    "updated_at": "2026-03-15T18:17:25.625Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:16:23.358Z",
+      "interpreted_objective": "Write a technical blog post on Bayesian scoring in recommendation systems with math, Python code, and real-world examples.",
+      "expected_outcome": "A clear, informative blog post that explains Bayesian scoring in recommendation systems with practical examples.",
+      "key_unknowns": [
+        "Specific real-world applications to include",
+        "Level of technical detail required for the audience",
+        "Preferred platforms for showcasing code examples"
+      ],
+      "recommended_strategy": "Research the fundamentals of Bayesian scoring and its application in recommendation systems. Synthesize this information into a blog post with clear explanations of the math involved, code examples in Python, and relevant real-world applications. Ensure the content is accessible to readers with a technical background.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Bayesian Scoring Fundamentals",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of Bayesian scoring fundamentals and its role in recommendation systems.",
+          "prompt": "Search the web for current, specific information about Bayesian scoring in recommendation systems. Include explanations of the math involved, how it is implemented in Python, and examples of real-world applications. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Blog Post Content",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A draft blog post explaining Bayesian scoring in recommendation systems with math, Python code examples, and real-world applications.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a technical blog post that explains Bayesian scoring in recommendation systems. Include simple explanations of the math involved, Python code examples, and real-world applications. Ensure the content is clear and accessible to a technical audience.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2005
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms2o20wcyhs",
     "title": "Research the top 3 electric bikes for commuting under 2000 dollars. Include batt",
     "raw_request": "Research the top 3 electric bikes for commuting under 2000 dollars. Include battery range, motor power, weight, and current pricing. Must fold for apartment storage.",

@@ -531,7 +531,7 @@ function renderLatest() {
         return `<div class="deliverable-card" onclick="switchTab('intake');showIntakeDetail('${t.task_id}')">
           <div class="deliverable-card-title">${esc((t.title || t.raw_request || '').slice(0, 60))}</div>
           <div class="deliverable-card-meta">
-            <span>${esc(t.domain || 'general')}</span>
+            <span>${domainLabel(t.domain || 'general')}</span>
             <span>${ago}</span>
             <span class="task-status-badge done" style="font-size:8px">done</span>
           </div>
@@ -717,7 +717,7 @@ function renderTodaySummary() {
 
   if (completed.length) {
     html += completed.slice(0, 3).map(t => `<div style="padding:4px 0;border-bottom:1px solid rgba(255,255,255,.03)">
-      <span style="color:var(--green);margin-right:4px">&#10003;</span>${esc(t.title.slice(0, 60))} <span style="color:var(--text-faint);font-size:10px">${esc(t.domain)}</span>
+      <span style="color:var(--green);margin-right:4px">&#10003;</span>${esc(t.title.slice(0, 60))} <span style="color:var(--text-faint);font-size:10px">${domainLabel(t.domain)}</span>
     </div>`).join('');
     if (completed.length > 3) html += `<div style="color:var(--text-faint);font-size:10px;margin-top:4px">+${completed.length - 3} more</div>`;
   }
@@ -1055,7 +1055,7 @@ function renderApprovals() {
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
         <div>
           <h4>${esc(action)}</h4>
-          ${domain ? '<span style="font-size:11px;color:var(--text-dim)">' + esc(domain) + '</span>' : ''}
+          ${domain ? '<span style="font-size:11px;color:var(--text-dim)">' + domainLabel(domain) + '</span>' : ''}
         </div>
         <span class="risk-badge risk-${risk}">${risk}</span>
       </div>
@@ -1584,7 +1584,7 @@ function renderIntakeCurrentHero() {
     <div class="intake-hero-status">
       <span class="intake-hero-dot ${isPulse ? 'pulse' : ''}" style="background:${dotColor}"></span>
       <span class="intake-hero-status-text" style="color:${dotColor}">${statusLabels[t.status] || t.status}</span>
-      <span class="domain-tag" style="margin-left:auto">${esc(t.domain)}</span>
+      <span class="domain-tag" style="margin-left:auto">${domainLabel(t.domain)}</span>
     </div>
     <div class="intake-hero-title">${esc(t.title)}</div>
     ${objective ? `<div class="intake-hero-objective">${esc(objective)}</div>` : ''}
@@ -2233,7 +2233,7 @@ function renderCurrentTaskFocus(data) {
       <span class="ctf-label">CURRENT TASK</span>
       <span class="ctf-status-dot ${isPulse ? 'pulse' : ''}" style="background:${dot}"></span>
       <span class="ctf-status-text" style="color:${dot}">${statusLabels[t.status] || t.status}</span>
-      <span class="domain-tag" style="margin-left:auto">${esc(t.domain)}</span>
+      <span class="domain-tag" style="margin-left:auto">${domainLabel(t.domain)}</span>
     </div>
     <div class="ctf-title">${esc(t.title)}</div>`;
 
