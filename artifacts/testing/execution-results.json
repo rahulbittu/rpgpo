@@ -160,5 +160,53 @@
         "Keyword collision between career and research domains"
       ]
     }
+  },
+  {
+    "test_case_id": "GPO-SHO-01",
+    "global_rank": 25,
+    "engine": "Shopping & Buying Advisor",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:38:49.143Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": false,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrx4lc79bes",
+      "domain_routed": "research",
+      "subtask_count": 2,
+      "completion": "done",
+      "output_quality": "Good — found real products with prices. Sony WH-1000XM4, 1More Sonoflow SE.",
+      "issues": [
+        "Routed to research instead of shopping domain",
+        "Only 2 headphones instead of top 3 requested"
+      ],
+      "gaps": [
+        "Shopping domain routing needs stronger keywords to win over research"
+      ]
+    }
+  },
+  {
+    "test_case_id": "GPO-WRI-04",
+    "global_rank": 9,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:38:49.143Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrx4lc9z6lq",
+      "domain_routed": "writing",
+      "subtask_count": 2,
+      "completion": "done",
+      "output_quality": "Good — correctly read source file and produced structured summary",
+      "issues": [
+        "Did not produce exactly 5 bullet points as requested — output was longer structured report",
+        "No approval gate issues this time — ran auto-approved"
+      ],
+      "gaps": [
+        "Output format compliance needs improvement in synthesis prompt"
+      ]
+    }
   }
 ]
