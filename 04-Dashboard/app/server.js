@@ -3355,6 +3355,11 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 93: Cost Optimization
+  if (req.url === '/api/cost-insights' && req.method === 'GET') {
+    try { const co = require('./lib/cost-optimizer'); return json(res, { insights: co.getCostInsights() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 92: Prompt Optimization
   if (req.url?.match(/^\/api\/prompt-optimizer\/suggest(\?.*)?$/) && req.method === 'POST') {
     const body = await parseBody(req);
