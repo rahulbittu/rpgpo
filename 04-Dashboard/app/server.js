@@ -3355,6 +3355,11 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 116: Engine Health
+  if (req.url === '/api/engine-health' && req.method === 'GET') {
+    try { const eh = require('./lib/engine-health'); return json(res, { engines: eh.getEngineHealthReport() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Parts 114-115: Output Formatter + Task Timeline
   if (req.url?.match(/^\/api\/format\/brief\/([^/]+)$/) && req.method === 'GET') {
     const taskId = req.url.match(/^\/api\/format\/brief\/([^/]+)$/)[1];
