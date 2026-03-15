@@ -3355,6 +3355,18 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 89: Quality Scoring
+  if (req.url?.match(/^\/api\/quality\/score\/([^/]+)$/) && req.method === 'POST') {
+    const taskId = req.url.match(/^\/api\/quality\/score\/([^/]+)$/)[1];
+    try { const qs = require('./lib/quality-scorer'); return json(res, qs.scoreTask(taskId)); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/quality\/scores(\?.*)?$/) && req.method === 'GET') {
+    try { const qs = require('./lib/quality-scorer'); return json(res, { scores: qs.getScores() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/quality/average' && req.method === 'GET') {
+    try { const qs = require('./lib/quality-scorer'); return json(res, qs.getAverageQuality()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 88: Context Enrichment
   if (req.url === '/api/enrichment/run' && req.method === 'POST') {
     try { const ce = require('./lib/context-enrichment'); return json(res, ce.enrichAllPending()); } catch (e) { return json(res, { error: e.message }, 500); }
