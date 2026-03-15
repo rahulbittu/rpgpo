@@ -1,5 +1,74 @@
 [
   {
+    "task_id": "t_mmrd57n5bvzj",
+    "title": "Research the top 10 passive income opportunities for a senior data engineer / en",
+    "raw_request": "Research the top 10 passive income opportunities for a senior data engineer / entrepreneur in 2025-2026. Focus on: SaaS micro-products, API-as-a-service, data pipeline consulting, digital products, and automated tools. For each opportunity, provide: estimated monthly income potential, startup cost, time to first revenue, and 3 concrete first steps. Use real examples of people who have succeeded.",
+    "domain": "general",
+    "desired_outcome": "Specific, actionable passive income opportunities with real examples and concrete next steps",
+    "constraints": "",
+    "urgency": "high",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T06:18:06.449Z",
+    "updated_at": "2026-03-15T06:19:05.289Z",
+    "status": "executing",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T06:18:16.475Z",
+      "interpreted_objective": "Identify and detail the top 10 passive income opportunities for a senior data engineer/entrepreneur in 2025-2026.",
+      "expected_outcome": "A detailed report on passive income opportunities with specific examples, income potential, startup costs, time to revenue, and actionable steps.",
+      "key_unknowns": [
+        "Current trends and projections for passive income opportunities in 2025-2026",
+        "Real examples of successful individuals in these fields",
+        "Accurate estimates for income potential, startup costs, and time to first revenue"
+      ],
+      "recommended_strategy": "Conduct thorough web research to identify emerging trends and successful case studies in passive income opportunities relevant to data engineers. Synthesize findings into actionable insights with specific examples and steps.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Passive Income Opportunities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of top passive income opportunities for 2025-2026 with real examples and data.",
+          "prompt": "Search the web for current, specific information about the top 10 passive income opportunities for senior data engineers/entrepreneurs in 2025-2026. Focus on SaaS micro-products, API-as-a-service, data pipeline consulting, digital products, and automated tools. Include real examples, estimated monthly income potential, startup costs, time to first revenue, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Research Findings",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A synthesized report with actionable recommendations and examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for the top 10 passive income opportunities for a senior data engineer/entrepreneur in 2025-2026. Include specific names, numbers, and concrete next steps for each opportunity.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1952
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
     "task_id": "t_mmrbmq1ra3xl",
     "title": "What are the 3 most promising SaaS ideas for data engineers to build in 2026? In",
     "raw_request": "What are the 3 most promising SaaS ideas for data engineers to build in 2026? Include market size estimates and competition analysis.",

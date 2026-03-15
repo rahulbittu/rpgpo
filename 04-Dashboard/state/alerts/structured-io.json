@@ -271,5 +271,18 @@
     "details": "Parse failure rate 80.0% exceeds 10.0% threshold over 5 calls",
     "acknowledgedBy": "test_operator",
     "acknowledgedAt": 1773554537916
+  },
+  {
+    "id": "sio_mmrcvj7birjw",
+    "kind": "parse_spike",
+    "windowStart": 1773554734871,
+    "windowEnd": 1773555034871,
+    "observedRate": 0.8,
+    "threshold": 0.1,
+    "totalCalls": 5,
+    "acknowledged": true,
+    "details": "Parse failure rate 80.0% exceeds 10.0% threshold over 5 calls",
+    "acknowledgedBy": "test_operator",
+    "acknowledgedAt": 1773555034871
   }
 ]
