@@ -522,6 +522,11 @@ function render() {
 
 function renderHome() {
   const s = DATA.state;
+  // Time-aware greeting
+  const hour = new Date().getHours();
+  const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+  const greetingEl = document.getElementById('homeGreeting');
+  if (greetingEl) greetingEl.textContent = `${greeting}, Rahul`;
   document.getElementById('homeDate').textContent =
     new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
