@@ -3355,6 +3355,11 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 91: Smart Suggestions
+  if (req.url?.match(/^\/api\/suggestions(\?.*)?$/) && req.method === 'GET') {
+    try { const se = require('./lib/suggestions-engine'); const params = new URL(req.url, 'http://x').searchParams; return json(res, { suggestions: se.getSuggestions(parseInt(params.get('limit') || '5')) }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 90: Task Graph
   if (req.url?.match(/^\/api\/task-graph\/([^/]+)$/) && req.method === 'GET') {
     const taskId = req.url.match(/^\/api\/task-graph\/([^/]+)$/)[1];
