@@ -3352,6 +3352,23 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 79: State Backup + Export
+  if (req.url === '/api/backup/snapshot' && req.method === 'POST') {
+    try { const sb = require('./lib/state-backup'); return json(res, { ok: true, snapshot: sb.createSnapshot() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/backup/snapshots' && req.method === 'GET') {
+    try { const sb = require('./lib/state-backup'); return json(res, { snapshots: sb.listSnapshots() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/backup/export' && req.method === 'POST') {
+    try { const sb = require('./lib/state-backup'); return json(res, { ok: true, export: sb.exportState() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/backup/exports' && req.method === 'GET') {
+    try { const sb = require('./lib/state-backup'); return json(res, { exports: sb.listExports() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/backup/verify' && req.method === 'GET') {
+    try { const sb = require('./lib/state-backup'); return json(res, sb.verifyIntegrity()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 78: Compound Workflows
   if (req.url?.match(/^\/api\/compound-workflows\/templates(\?.*)?$/) && req.method === 'GET') {
     try { const cw = require('./lib/compound-workflows'); return json(res, { templates: cw.listWorkflowTemplates() }); } catch (e) { return json(res, { error: e.message }, 500); }
