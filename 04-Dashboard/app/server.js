@@ -3352,6 +3352,20 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 84: API Docs
+  if (req.url === '/api/docs' && req.method === 'GET') {
+    try { const docs = require('./lib/api-docs'); return json(res, { routes: docs.scanRoutes(), total: docs.scanRoutes().length }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/docs/html' && req.method === 'GET') {
+    try {
+      const docs = require('./lib/api-docs');
+      const html = `<!doctype html><html><head><title>GPO API Docs</title><style>body{font-family:Inter,sans-serif;background:#060810;color:#e2e6f0;padding:20px;max-width:900px;margin:0 auto}h1{color:#d4aa28}h2{color:#a0a8be;border-bottom:1px solid #222;padding-bottom:4px}table{margin-bottom:20px}p{color:#6b748a}</style></head><body>${docs.generateDocsHtml()}</body></html>`;
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end(html);
+      return;
+    } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 83: RBAC + API Keys
   if (req.url === '/api/rbac/keys' && req.method === 'GET') {
     try { const rbac = require('./lib/rbac'); return json(res, { keys: rbac.listApiKeys() }); } catch (e) { return json(res, { error: e.message }, 500); }
