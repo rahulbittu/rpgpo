@@ -2538,4 +2538,10 @@ document.addEventListener('keydown', (e) => {
   const n = parseInt(e.key);
   if (n >= 1 && n <= 9 && !e.metaKey && !e.ctrlKey && !e.altKey) switchTab(tabs[n - 1]);
   if (e.key === '0' && !e.metaKey && !e.ctrlKey && !e.altKey) switchTab(tabs[9]);
+  // / key to quick-focus intake form (like Spotlight)
+  if (e.key === '/' && !e.metaKey && !e.ctrlKey && !e.altKey && document.activeElement?.tagName !== 'INPUT' && document.activeElement?.tagName !== 'TEXTAREA' && document.activeElement?.tagName !== 'SELECT') {
+    e.preventDefault();
+    switchTab('intake');
+    setTimeout(() => { const el = document.getElementById('intakeRequest'); if (el) el.focus(); }, 100);
+  }
 });
