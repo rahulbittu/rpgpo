@@ -682,5 +682,47 @@
         "Routed to careeregine (data engineer keyword collision)"
       ]
     }
+  },
+  {
+    "test_case_id": "GPO-STA-03",
+    "global_rank": 41,
+    "engine": "Startup & Business Builder",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:05:08.136Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "task_id": "t_mmry1lups1mi",
+      "domain_routed": "writing",
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-HEA-02",
+    "global_rank": 43,
+    "engine": "Health & Wellness Coach",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:05:08.137Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": false,
+    "execution_evidence": {
+      "task_id": "t_mmry1luntr6m",
+      "domain_routed": "shopping",
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-FIN-03",
+    "global_rank": 38,
+    "engine": "Personal Finance & Investing",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:05:08.137Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "task_id": "t_mmry1lurd33m",
+      "domain_routed": "wealthresearch",
+      "completion": "done"
+    }
   }
 ]
