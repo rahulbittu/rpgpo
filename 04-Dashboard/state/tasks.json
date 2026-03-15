@@ -1,5 +1,323 @@
 [
   {
+    "id": "mms2qrnfuxwd",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Debt Payoff Strategy Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms2o4z6tm4v"
+    },
+    "createdAt": "2026-03-15T18:14:42.555Z",
+    "updatedAt": "2026-03-15T18:15:17.586Z",
+    "output": "Synthesize Debt Payoff Strategy Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/wealthresearch-{date}-debt-strategy.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms2o4z6tm4v.md"
+    ]
+  },
+  {
+    "id": "mms2qlqg6a5g",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Electric Bike Data",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms2oq320rwa"
+    },
+    "createdAt": "2026-03-15T18:14:34.888Z",
+    "updatedAt": "2026-03-15T18:15:09.586Z",
+    "output": "Synthesize Electric Bike Data: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/shopping-{date}-foldable-electric-bikes.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms2oq320rwa.md"
+    ]
+  },
+  {
+    "id": "mms2qb8dnzo0",
+    "type": "execute-subtask",
+    "label": "Subtask: Compile Rate Limiting Patterns Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms2omls5igp"
+    },
+    "createdAt": "2026-03-15T18:14:21.277Z",
+    "updatedAt": "2026-03-15T18:14:59.343Z",
+    "output": "Compile Rate Limiting Patterns Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms2omls5igp.md"
+    ]
+  },
+  {
+    "id": "mms2pi2pwx5w",
+    "type": "execute-subtask",
+    "label": "Subtask: Compile Comprehensive Emergency Kit Checklist",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms2oa2okcws"
+    },
+    "createdAt": "2026-03-15T18:13:43.489Z",
+    "updatedAt": "2026-03-15T18:14:50.031Z",
+    "output": "Compile Comprehensive Emergency Kit Checklist: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms2oa2okcws.md"
+    ]
+  },
+  {
+    "id": "mms2oyou8v72",
+    "type": "execute-subtask",
+    "label": "Subtask: Analyze Debt Profile",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms2o4yq55gg"
+    },
+    "createdAt": "2026-03-15T18:13:18.366Z",
+    "updatedAt": "2026-03-15T18:14:42.555Z",
+    "output": "Analyze Debt Profile: ## Strategic Analysis: Debt Payoff Strategy\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-gemini-2026-03-15-st_mms2o4yq55gg.md"
+    ]
+  },
+  {
+    "id": "mms2oq45tupr",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Foldable Electric Bikes",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms2oq2i1c11"
+    },
+    "createdAt": "2026-03-15T18:13:07.253Z",
+    "updatedAt": "2026-03-15T18:14:34.888Z",
+    "output": "Research Foldable Electric Bikes: I'll search for current information on foldable electric bikes under $2000 with your specified specs.\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms2oq2i1c11.md"
+    ]
+  },
+  {
+    "id": "mms2omnqxtpp",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Fixed Window Pattern",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms2omlfn6nk"
+    },
+    "createdAt": "2026-03-15T18:13:02.774Z",
+    "updatedAt": "2026-03-15T18:14:21.277Z",
+    "output": "Research Fixed Window Pattern: ## Fixed Window Rate Limiting Pattern\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms2omlfn6nk.md"
+    ]
+  },
+  {
+    "id": "mms2omnk6jo0",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Sliding Window Pattern",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms2oml02spy"
+    },
+    "createdAt": "2026-03-15T18:13:02.768Z",
+    "updatedAt": "2026-03-15T18:14:14.181Z",
+    "output": "Research Sliding Window Pattern: ## Sliding Window Rate Limiting Pattern\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms2oml02spy.md"
+    ]
+  },
+  {
+    "id": "mms2omnfiljm",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Token Bucket Pattern",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms2omkkmbur"
+    },
+    "createdAt": "2026-03-15T18:13:02.763Z",
+    "updatedAt": "2026-03-15T18:14:01.413Z",
+    "output": "Research Token Bucket Pattern: ## Token Bucket Rate Limiting Pattern\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms2omkkmbur.md"
+    ]
+  },
+  {
+    "id": "mms2ogyc9qtl",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Privacy Policy Template",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms2o002n1zm"
+    },
+    "createdAt": "2026-03-15T18:12:55.380Z",
+    "updatedAt": "2026-03-15T18:13:53.499Z",
+    "output": "Synthesize Privacy Policy Template: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/writing-{date}-privacy-policy-template.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms2o002n1zm.md"
+    ]
+  },
+  {
+    "id": "mms2oa4kbgcz",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Maintenance Schedule for Emergency Kits",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms2oa2c4exl"
+    },
+    "createdAt": "2026-03-15T18:12:46.532Z",
+    "updatedAt": "2026-03-15T18:13:43.489Z",
+    "output": "Research Maintenance Schedule for Emergency Kits: ## Finding 1: Daylight Saving Time Change (Spring Forward) as Key Trigger for Emergency Kit Checks\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms2oa2c4exl.md"
+    ]
+  },
+  {
+    "id": "mms2oa4fpgnz",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Emergency Documents and Communication Plan",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms2oa1zlnlb"
+    },
+    "createdAt": "2026-03-15T18:12:46.527Z",
+    "updatedAt": "2026-03-15T18:13:36.372Z",
+    "output": "Research Emergency Documents and Communication Plan: ## Important Documents for Emergencies\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms2oa1zlnlb.md"
+    ]
+  },
+  {
+    "id": "mms2oa49pwsa",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Emergency Kit Essentials",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms2oa1o1luz"
+    },
+    "createdAt": "2026-03-15T18:12:46.521Z",
+    "updatedAt": "2026-03-15T18:13:27.444Z",
+    "output": "Research Emergency Kit Essentials: - **1 gallon (3.8 liters) per person per day** for drinking and sanitation, totaling 3 gallons per person for 72 hours.[4]\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms2oa1o1luz.md"
+    ]
+  },
+  {
+    "id": "mms2o506gtin",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Debt Payoff Methods",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms2o4y8jxw1"
+    },
+    "createdAt": "2026-03-15T18:12:39.894Z",
+    "updatedAt": "2026-03-15T18:13:18.367Z",
+    "output": "Research Debt Payoff Methods: ## Debt Snowball Method\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms2o4y8jxw1.md"
+    ]
+  },
+  {
+    "id": "mms2o20zj45z",
+    "type": "deliberate",
+    "label": "Deliberate: Research the top 3 electric bikes for commuting under 2000 dollars. Include batt",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms2o20wcyhs",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T18:12:36.035Z",
+    "updatedAt": "2026-03-15T18:13:07.253Z",
+    "output": "Deliberation complete.\nObjective: Identify the top 3 foldable electric bikes for commuting under $2000, focusing on battery range, motor power, weight, and current pricing.\nStrategy: First, conduct a web search to gather current information on foldable electric bikes under $2000, focusing on battery range, motor power, weight, and pricing. Then, synthesize this information into a structured report highlighting the top 3 options.\nRisk: green\nSubtasks: 2\nTokens: 1953",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms2o0gvq1uq",
+    "type": "deliberate",
+    "label": "Deliberate: Teach me about API rate limiting patterns. Cover token bucket, sliding window, a",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms2o0gtjlr3",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T18:12:34.015Z",
+    "updatedAt": "2026-03-15T18:13:02.774Z",
+    "output": "Deliberation complete.\nObjective: Provide an educational overview of API rate limiting patterns with pseudocode examples.\nStrategy: Research each rate limiting pattern to gather detailed explanations and pseudocode examples. Compile these into a cohesive report that explains each pattern, provides pseudocode, and suggests when to use each approach.\nRisk: green\nSubtasks: 4\nTokens: 2183",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms2o0150nur",
+    "type": "execute-subtask",
+    "label": "Subtask: Research GDPR and CCPA Compliance",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mms2nzzj1t8x"
+    },
+    "createdAt": "2026-03-15T18:12:33.449Z",
+    "updatedAt": "2026-03-15T18:12:55.380Z",
+    "output": "Research GDPR and CCPA Compliance: ## GDPR Compliance Requirements for SaaS Applications\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms2nzzj1t8x.md"
+    ]
+  },
+  {
+    "id": "mms2nywr2ijo",
+    "type": "deliberate",
+    "label": "Deliberate: Build a comprehensive home emergency kit checklist. Include supplies for 72 hour",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms2nywpd178",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T18:12:31.995Z",
+    "updatedAt": "2026-03-15T18:12:46.533Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed checklist for a 72-hour home emergency kit.\nStrategy: Research current best practices for emergency preparedness to create a detailed checklist. Include specific items, documents, and a communication plan. Develop a maintenance schedule based on expert recommendations.\nRisk: green\nSubtasks: 4\nTokens: 2243",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms2nxcmuc7p",
+    "type": "deliberate",
+    "label": "Deliberate: Create a debt payoff strategy for someone with 45k in student loans at 5.5%, 8k ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms2nxci5k5q",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T18:12:29.974Z",
+    "updatedAt": "2026-03-15T18:12:39.894Z",
+    "output": "Deliberation complete.\nObjective: Develop a debt payoff strategy comparing avalanche and snowball methods for a specific debt profile.\nStrategy: Research the specifics of the avalanche and snowball methods, then analyze the debt profile to calculate timelines and interest savings for each method. Finally, synthesize the findings into a report with actionable recommendations.\nRisk: green\nSubtasks: 3\nTokens: 2383",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mms2nvs0ehf0",
+    "type": "deliberate",
+    "label": "Deliberate: Write a privacy policy template for a SaaS application that handles user data. I",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mms2nvrxgmg4",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-15T18:12:27.936Z",
+    "updatedAt": "2026-03-15T18:12:33.449Z",
+    "output": "Deliberation complete.\nObjective: Create a GDPR and CCPA compliant privacy policy template for a SaaS application.\nStrategy: Conduct research on GDPR and CCPA compliance requirements for SaaS applications. Synthesize findings into a structured privacy policy template, ensuring clarity and compliance. Tailor the template to address typical SaaS data handling practices.\nRisk: green\nSubtasks: 2\nTokens: 1830",
+    "error": null,
+    "filesWritten": []
+  },
+  {
     "id": "mms2ki5g4zt3",
     "type": "execute-subtask",
     "label": "Subtask: Synthesize CRM System Design",
@@ -1275,324 +1593,5 @@
       "03-Operations/Reports/screenwriting-{date}-character-sheet.md",
       "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms0xv023jya.md"
     ]
-  },
-  {
-    "id": "mms0z5minq78",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize System Design Document Guide",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms0xk39gpo5"
-    },
-    "createdAt": "2026-03-15T17:25:14.682Z",
-    "updatedAt": "2026-03-15T17:26:21.074Z",
-    "output": "Synthesize System Design Document Guide: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/learning-{date}-system-design-documents.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms0xk39gpo5.md"
-    ]
-  },
-  {
-    "id": "mms0yxq4borh",
-    "type": "execute-subtask",
-    "label": "Subtask: Compile Renovation Plan",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms0xgkoel3b"
-    },
-    "createdAt": "2026-03-15T17:25:04.444Z",
-    "updatedAt": "2026-03-15T17:26:10.296Z",
-    "output": "Compile Renovation Plan: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/shopping-{date}-home-office-renovation.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms0xgkoel3b.md"
-    ]
-  },
-  {
-    "id": "mms0y2vshtwc",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Sleep Recommendations",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms0y2tj9xk0"
-    },
-    "createdAt": "2026-03-15T17:24:24.472Z",
-    "updatedAt": "2026-03-15T17:26:01.234Z",
-    "output": "Research Sleep Recommendations: # Evidence-Based Sleep Recommendations After Workouts\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms0y2tj9xk0.md"
-    ]
-  },
-  {
-    "id": "mms0y2vo2d16",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Stretching Sequences",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms0y2t8ljy0"
-    },
-    "createdAt": "2026-03-15T17:24:24.468Z",
-    "updatedAt": "2026-03-15T17:25:51.854Z",
-    "output": "Research Stretching Sequences: ## Finding 1: Daily Burn Evidence-Based Static Stretching Routine Post-Workout\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms0y2t8ljy0.md"
-    ]
-  },
-  {
-    "id": "mms0y2vjg39p",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Hydration Strategies",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms0y2swbusi"
-    },
-    "createdAt": "2026-03-15T17:24:24.463Z",
-    "updatedAt": "2026-03-15T17:25:46.731Z",
-    "output": "Research Hydration Strategies: ## Finding 1: DrOracle AI Evidence-Based Post-Exercise Recovery Protocol\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms0y2swbusi.md"
-    ]
-  },
-  {
-    "id": "mms0y2vesuvk",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Post-Workout Nutrition Timing",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms0y2sili7d"
-    },
-    "createdAt": "2026-03-15T17:24:24.458Z",
-    "updatedAt": "2026-03-15T17:25:38.183Z",
-    "output": "Research Post-Workout Nutrition Timing: ## Finding 1: Cleveland Clinic on Protein Shake Timing Post-Workout\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms0y2sili7d.md"
-    ]
-  },
-  {
-    "id": "mms0xv0ttrec",
-    "type": "execute-subtask",
-    "label": "Subtask: Research RPG character sheets",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms0xuzrwzg4"
-    },
-    "createdAt": "2026-03-15T17:24:14.285Z",
-    "updatedAt": "2026-03-15T17:25:32.756Z",
-    "output": "Research RPG character sheets: ## Common Formats and Elements of Tabletop RPG Character Sheets\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms0xuzrwzg4.md"
-    ]
-  },
-  {
-    "id": "mms0xpfkjd5h",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Monetization Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms0x20v9nwg"
-    },
-    "createdAt": "2026-03-15T17:24:07.040Z",
-    "updatedAt": "2026-03-15T17:25:22.519Z",
-    "output": "Synthesize Monetization Report: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/wealthresearch-{date}-data-engineering-blog-monetization.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms0x20v9nwg.md"
-    ]
-  },
-  {
-    "id": "mms0xk48akqz",
-    "type": "execute-subtask",
-    "label": "Subtask: Research System Design Document Best Practices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms0xk2tfq66"
-    },
-    "createdAt": "2026-03-15T17:24:00.152Z",
-    "updatedAt": "2026-03-15T17:25:14.683Z",
-    "output": "Research System Design Document Best Practices: ## Best Practices for Writing System Design Documents\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms0xk2tfq66.md"
-    ]
-  },
-  {
-    "id": "mms0xgmasg5o",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Cost Estimates",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms0xgkcka0w"
-    },
-    "createdAt": "2026-03-15T17:23:55.618Z",
-    "updatedAt": "2026-03-15T17:25:04.444Z",
-    "output": "Research Cost Estimates: ## Finding 1: Garage to Bedroom Conversion Costs (Proxy for Bedroom to Office, as Direct Data Limited)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms0xgkcka0w.md"
-    ]
-  },
-  {
-    "id": "mms0xgm68hlb",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Electrical Requirements",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms0xgjz24ar"
-    },
-    "createdAt": "2026-03-15T17:23:55.614Z",
-    "updatedAt": "2026-03-15T17:24:55.580Z",
-    "output": "Research Electrical Requirements: ## Finding 1: Outlet Placement and Quantity for Home Offices\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms0xgjz24ar.md"
-    ]
-  },
-  {
-    "id": "mms0xgm11ggj",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Home Office Design Trends",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms0xgjivzem"
-    },
-    "createdAt": "2026-03-15T17:23:55.609Z",
-    "updatedAt": "2026-03-15T17:24:46.007Z",
-    "output": "Research Home Office Design Trends: # Home Office Renovation Design Trends for 2026\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms0xgjivzem.md"
-    ]
-  },
-  {
-    "id": "mms0xav7koks",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Retrospective Template",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms0wy4x3hpj"
-    },
-    "createdAt": "2026-03-15T17:23:48.163Z",
-    "updatedAt": "2026-03-15T17:24:33.462Z",
-    "output": "Synthesize Retrospective Template: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/writing-{date}-sprint-retrospective-template.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms0wy4x3hpj.md"
-    ]
-  },
-  {
-    "id": "mms0x5mxanlw",
-    "type": "deliberate",
-    "label": "Deliberate: Build a recovery protocol for after a tough workout. Include nutrition timing, h",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms0x5musbvd",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T17:23:41.385Z",
-    "updatedAt": "2026-03-15T17:24:24.473Z",
-    "output": "Deliberation complete.\nObjective: Develop an evidence-based recovery protocol for post-workout recovery.\nStrategy: Conduct research to gather current evidence-based practices for post-workout recovery, focusing on nutrition, hydration, stretching, and sleep. Synthesize findings into a cohesive protocol. Ensure recommendations are actionable and include safety disclaimers where necessary.\nRisk: green\nSubtasks: 5\nTokens: 2374",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms0x3alhojx",
-    "type": "deliberate",
-    "label": "Deliberate: Create a character sheet for a tabletop RPG character: a data engineer who becam",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms0x3ajn5sa",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T17:23:38.349Z",
-    "updatedAt": "2026-03-15T17:24:14.285Z",
-    "output": "Deliberation complete.\nObjective: Create a detailed character sheet for a tabletop RPG character who is a data engineer turned adventurer.\nStrategy: Research common character sheet formats and requirements for tabletop RPGs, focusing on integrating a tech background into special abilities. Then, synthesize this information into a cohesive character sheet that includes stats, backstory, and personality traits. Ensure the character's tech background is creatively tied to their abilities.\nRisk: green\nSubtasks: 2\nTokens: 1959",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms0x21yi9k5",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Monetization Strategies",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms0x20abb40"
-    },
-    "createdAt": "2026-03-15T17:23:36.742Z",
-    "updatedAt": "2026-03-15T17:24:07.041Z",
-    "output": "Research Monetization Strategies: No specific data engineering blogs using ads found in recent searches. General blog monetization reports average affiliate conversion rates of 3–5% wh\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms0x20abb40.md"
-    ]
-  },
-  {
-    "id": "mms0x0y72fpk",
-    "type": "deliberate",
-    "label": "Deliberate: Teach me how to write effective system design documents. Include the structure, ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms0x0y5cxzn",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T17:23:35.311Z",
-    "updatedAt": "2026-03-15T17:24:00.152Z",
-    "output": "Deliberation complete.\nObjective: Teach Rahul how to write effective system design documents.\nStrategy: Research best practices and structures for system design documents, including common mistakes. Synthesize this information into a clear, actionable guide with a real example outline. Ensure the content is concise and directly applicable to Rahul's needs.\nRisk: green\nSubtasks: 2\nTokens: 1851",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms0wym32skk",
-    "type": "deliberate",
-    "label": "Deliberate: Plan a home renovation project: convert a spare bedroom into a home office. Incl",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms0wym13jw5",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T17:23:32.283Z",
-    "updatedAt": "2026-03-15T17:23:55.618Z",
-    "output": "Deliberation complete.\nObjective: Plan a comprehensive home renovation project to convert a spare bedroom into a functional home office.\nStrategy: Conduct thorough research on current home office design trends and electrical requirements. Gather cost estimates from reliable sources and create a realistic timeline. Synthesize findings into a comprehensive report.\nRisk: yellow\nSubtasks: 4\nTokens: 2072",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms0wy5wketl",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Best Practices for Async Sprint Retrospectives",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms0wy4clhpp"
-    },
-    "createdAt": "2026-03-15T17:23:31.700Z",
-    "updatedAt": "2026-03-15T17:23:48.164Z",
-    "output": "Research Best Practices for Async Sprint Retrospectives: ## Effective Structures for Asynchronous Sprint Retrospectives\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms0wy4clhpp.md"
-    ]
-  },
-  {
-    "id": "mms0ww9v9omu",
-    "type": "deliberate",
-    "label": "Deliberate: Research the best ways to passively earn from a data engineering blog. Include m",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms0ww9skalk",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T17:23:29.251Z",
-    "updatedAt": "2026-03-15T17:23:36.742Z",
-    "output": "Deliberation complete.\nObjective: Research and identify the best passive income strategies for a data engineering blog, including realistic income estimates.\nStrategy: First, research current monetization strategies for blogs in the data engineering niche using Perplexity. Then, use OpenAI to synthesize the findings into a comprehensive report with specific income estimates and examples. Finally, compile the report for Rahul's review.\nRisk: green\nSubtasks: 2\nTokens: 2274",
-    "error": null,
-    "filesWritten": []
   }
 ]

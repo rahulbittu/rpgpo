@@ -2541,5 +2541,80 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-15T18:08:46.662Z"
+  },
+  "t_mms2nvrxgmg4": {
+    "task_id": "t_mms2nvrxgmg4",
+    "deliverable_id": "dlv_rpgpo_tmms2nvrxgmg4_document_aa435be4",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:12:33.374Z"
+  },
+  "t_mms2nxci5k5q": {
+    "task_id": "t_mms2nxci5k5q",
+    "deliverable_id": "dlv_rpgpo_tmms2nxci5k5q_document_6209d198",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:12:39.807Z"
+  },
+  "t_mms2nywpd178": {
+    "task_id": "t_mms2nywpd178",
+    "deliverable_id": "dlv_rpgpo_tmms2nywpd178_action_plan_46593b2f",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:12:46.420Z"
+  },
+  "t_mms2o0gtjlr3": {
+    "task_id": "t_mms2o0gtjlr3",
+    "deliverable_id": "dlv_rpgpo_tmms2o0gtjlr3_document_59dafb1f",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:13:02.647Z"
+  },
+  "t_mms2o20wcyhs": {
+    "task_id": "t_mms2o20wcyhs",
+    "deliverable_id": "dlv_rpgpo_tmms2o20wcyhs_shopping_5dc684ea",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T18:13:07.179Z"
   }
 }

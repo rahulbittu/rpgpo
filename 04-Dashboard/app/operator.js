@@ -307,7 +307,7 @@ function renderChiefOfStaffBrief(brief) {
       </div>
       <div class="cos-action-why">${esc(a.why)}</div>
       <div class="cos-action-meta">
-        <span class="cos-scope">${esc(a.domain || a.scope_id)}</span>
+        <span class="cos-scope">${esc(typeof domainLabel === 'function' ? domainLabel(a.domain || a.scope_id) : (a.domain || a.scope_id))}</span>
         <span class="cos-alignment">${esc(a.mission_alignment)}</span>
         ${a.suggested_capability ? '<span class="cos-cap">' + esc(a.suggested_capability) + '</span>' : ''}
       </div>
@@ -327,7 +327,7 @@ function renderChiefOfStaffBrief(brief) {
     const healthClass = { healthy: 'eng-healthy', needs_attention: 'eng-attention', blocked: 'eng-blocked', idle: 'eng-idle' };
     return `<div class="cos-engine">
       <div class="cos-engine-header">
-        <span class="cos-engine-name">${esc(e.engine_name)}</span>
+        <span class="cos-engine-name">${esc(typeof domainLabel === 'function' ? domainLabel(e.domain || e.engine_name) : e.engine_name)}</span>
         <span class="cos-engine-health ${healthClass[e.health] || ''}">${esc(e.health.replace('_', ' '))}</span>
       </div>
       ${e.mission_statement ? '<div class="cos-engine-mission">' + esc(e.mission_statement.slice(0, 80)) + '</div>' : ''}

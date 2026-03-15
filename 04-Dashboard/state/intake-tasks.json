@@ -1,5 +1,410 @@
 [
   {
+    "task_id": "t_mms2o20wcyhs",
+    "title": "Research the top 3 electric bikes for commuting under 2000 dollars. Include batt",
+    "raw_request": "Research the top 3 electric bikes for commuting under 2000 dollars. Include battery range, motor power, weight, and current pricing. Must fold for apartment storage.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:12:36.033Z",
+    "updated_at": "2026-03-15T18:15:09.580Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:13:07.168Z",
+      "interpreted_objective": "Identify the top 3 foldable electric bikes for commuting under $2000, focusing on battery range, motor power, weight, and current pricing.",
+      "expected_outcome": "A detailed report listing the top 3 foldable electric bikes for commuting under $2000, including their specifications and pricing.",
+      "key_unknowns": [
+        "Current market offerings for foldable electric bikes under $2000",
+        "Specific specifications like battery range, motor power, and weight for these bikes",
+        "Availability and pricing of these bikes"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on foldable electric bikes under $2000, focusing on battery range, motor power, weight, and pricing. Then, synthesize this information into a structured report highlighting the top 3 options.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Foldable Electric Bikes",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current market data on foldable electric bikes under $2000, including specifications and prices.",
+          "prompt": "Search the web for current information about foldable electric bikes for commuting under $2000. Include battery range, motor power, weight, and current pricing. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Electric Bike Data",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing the top 3 foldable electric bikes for commuting under $2000, with specifications and pricing.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for the top 3 foldable electric bikes under $2000. Include specific names, specifications like battery range, motor power, weight, and pricing.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-foldable-electric-bikes.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1953
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms2o0gtjlr3",
+    "title": "Teach me about API rate limiting patterns. Cover token bucket, sliding window, a",
+    "raw_request": "Teach me about API rate limiting patterns. Cover token bucket, sliding window, and fixed window approaches. Include pseudocode examples and when to use each.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:12:34.013Z",
+    "updated_at": "2026-03-15T18:14:59.337Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:13:02.640Z",
+      "interpreted_objective": "Provide an educational overview of API rate limiting patterns with pseudocode examples.",
+      "expected_outcome": "A comprehensive report explaining token bucket, sliding window, and fixed window rate limiting patterns, including pseudocode and use cases.",
+      "key_unknowns": [
+        "Rahul's specific level of familiarity with API rate limiting",
+        "Preferred depth of technical detail"
+      ],
+      "recommended_strategy": "Research each rate limiting pattern to gather detailed explanations and pseudocode examples. Compile these into a cohesive report that explains each pattern, provides pseudocode, and suggests when to use each approach.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Token Bucket Pattern",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information about the token bucket rate limiting pattern.",
+          "prompt": "Search the web for current, specific information about the token bucket rate limiting pattern. Include pseudocode examples, use cases, and advantages.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Sliding Window Pattern",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information about the sliding window rate limiting pattern.",
+          "prompt": "Search the web for current, specific information about the sliding window rate limiting pattern. Include pseudocode examples, use cases, and advantages.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Fixed Window Pattern",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information about the fixed window rate limiting pattern.",
+          "prompt": "Search the web for current, specific information about the fixed window rate limiting pattern. Include pseudocode examples, use cases, and advantages.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Rate Limiting Patterns Report",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report on API rate limiting patterns with pseudocode and use cases.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a report explaining token bucket, sliding window, and fixed window rate limiting patterns. Include pseudocode examples and recommend when to use each approach.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2183
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms2nywpd178",
+    "title": "Build a comprehensive home emergency kit checklist. Include supplies for 72 hour",
+    "raw_request": "Build a comprehensive home emergency kit checklist. Include supplies for 72 hours, documents to have ready, communication plan, and periodic maintenance schedule.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:12:31.993Z",
+    "updated_at": "2026-03-15T18:14:50.024Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:12:46.416Z",
+      "interpreted_objective": "Create a detailed checklist for a 72-hour home emergency kit.",
+      "expected_outcome": "A comprehensive, evidence-based checklist that includes supplies, documents, a communication plan, and a maintenance schedule.",
+      "key_unknowns": [
+        "Specific items to include in the checklist",
+        "Best practices for emergency preparedness",
+        "Frequency of maintenance checks"
+      ],
+      "recommended_strategy": "Research current best practices for emergency preparedness to create a detailed checklist. Include specific items, documents, and a communication plan. Develop a maintenance schedule based on expert recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Emergency Kit Essentials",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of essential items for a 72-hour home emergency kit.",
+          "prompt": "Search the web for current, specific information about essential items for a 72-hour home emergency kit. Include real names, numbers, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Emergency Documents and Communication Plan",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of important documents to have ready and a communication plan for emergencies.",
+          "prompt": "Search the web for current, specific information about important documents to have ready and effective communication plans for emergencies. Include real names, numbers, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Maintenance Schedule for Emergency Kits",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A recommended maintenance schedule for checking and updating a home emergency kit.",
+          "prompt": "Search the web for current, specific information about recommended maintenance schedules for checking and updating home emergency kits. Include real names, numbers, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Comprehensive Emergency Kit Checklist",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive checklist for a 72-hour home emergency kit, including supplies, documents, communication plan, and maintenance schedule.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive checklist for a 72-hour home emergency kit. Include specific items, documents, a communication plan, and a maintenance schedule.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2243
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms2nxci5k5q",
+    "title": "Create a debt payoff strategy for someone with 45k in student loans at 5.5%, 8k ",
+    "raw_request": "Create a debt payoff strategy for someone with 45k in student loans at 5.5%, 8k credit card at 22%, and 15k car loan at 6.5%. Monthly available: 1500. Compare avalanche vs snowball method.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:12:29.970Z",
+    "updated_at": "2026-03-15T18:15:17.579Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:12:39.795Z",
+      "interpreted_objective": "Develop a debt payoff strategy comparing avalanche and snowball methods for a specific debt profile.",
+      "expected_outcome": "A detailed comparison of the avalanche and snowball debt payoff methods, including specific timelines and interest savings for each approach.",
+      "key_unknowns": [
+        "Exact monthly interest rates for each debt type",
+        "Any additional fees or penalties associated with early payoff",
+        "Rahul's preference for risk versus speed of debt reduction"
+      ],
+      "recommended_strategy": "Research the specifics of the avalanche and snowball methods, then analyze the debt profile to calculate timelines and interest savings for each method. Finally, synthesize the findings into a report with actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Debt Payoff Methods",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on the avalanche and snowball debt payoff methods, including pros and cons.",
+          "prompt": "Search the web for current, specific information about the avalanche and snowball debt payoff methods. Include real examples, pros and cons, and any recent studies or expert opinions.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Analyze Debt Profile",
+          "stage": "strategy",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "Strategic analysis of the debt profile using both avalanche and snowball methods.",
+          "prompt": "Analyze the given debt profile with $45,000 in student loans at 5.5%, $8,000 in credit card debt at 22%, and $15,000 in car loans at 6.5%, with $1,500 available monthly. Compare the avalanche and snowball methods, calculating timelines and interest savings for each.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Synthesize Debt Payoff Strategy Report",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report detailing the debt payoff strategy using both methods, with recommendations.",
+          "prompt": "Based on the research and analysis, synthesize a report comparing the avalanche and snowball methods for the given debt profile. Include specific timelines, interest savings, and a recommendation on which method to choose.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-debt-strategy.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            1
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2383
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms2nvrxgmg4",
+    "title": "Write a privacy policy template for a SaaS application that handles user data. I",
+    "raw_request": "Write a privacy policy template for a SaaS application that handles user data. Include data collection, usage, retention, sharing, and user rights sections. GDPR and CCPA compliant.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T18:12:27.933Z",
+    "updated_at": "2026-03-15T18:13:53.493Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T18:12:33.362Z",
+      "interpreted_objective": "Create a GDPR and CCPA compliant privacy policy template for a SaaS application.",
+      "expected_outcome": "A detailed privacy policy template covering data collection, usage, retention, sharing, and user rights, compliant with GDPR and CCPA.",
+      "key_unknowns": [
+        "Specific SaaS application features",
+        "Target audience of the SaaS application"
+      ],
+      "recommended_strategy": "Conduct research on GDPR and CCPA compliance requirements for SaaS applications. Synthesize findings into a structured privacy policy template, ensuring clarity and compliance. Tailor the template to address typical SaaS data handling practices.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research GDPR and CCPA Compliance",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current GDPR and CCPA compliance requirements for SaaS applications.",
+          "prompt": "Search the web for current, specific information about GDPR and CCPA compliance requirements for SaaS applications. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Privacy Policy Template",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured privacy policy template compliant with GDPR and CCPA.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a GDPR and CCPA compliant privacy policy template for a SaaS application. Include sections on data collection, usage, retention, sharing, and user rights.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-privacy-policy-template.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1830
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms2ilm7rxjc",
     "title": "Design a personal CRM system for networking. Track contacts, interactions, follo",
     "raw_request": "Design a personal CRM system for networking. Track contacts, interactions, follow-ups, and relationship strength. Include tool recommendations and workflow.",
