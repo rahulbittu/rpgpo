@@ -816,5 +816,47 @@
       "domain_routed": "learning",
       "subtask_count": 2
     }
+  },
+  {
+    "test_case_id": "GPO-CAR-03",
+    "global_rank": 32,
+    "engine": "Career & Job Search",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:19:45.015Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "careeregine"
+    }
+  },
+  {
+    "test_case_id": "GPO-CAR-04",
+    "global_rank": 40,
+    "engine": "Career & Job Search",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:19:45.016Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "careeregine"
+    }
+  },
+  {
+    "test_case_id": "GPO-FIN-04",
+    "global_rank": 42,
+    "engine": "Personal Finance & Investing",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:19:45.016Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done",
+      "domain_routed": "shopping",
+      "issues": [
+        "Routed to shopping instead of wealthresearch"
+      ]
+    }
   }
 ]
