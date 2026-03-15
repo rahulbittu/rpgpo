@@ -3355,6 +3355,11 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 99: Changelog Generator
+  if (req.url?.match(/^\/api\/changelog(\?.*)?$/) && req.method === 'GET') {
+    try { const cg = require('./lib/changelog-generator'); const params = new URL(req.url, 'http://x').searchParams; const md = cg.generateChangelog(parseInt(params.get('days') || '7')); res.writeHead(200, { 'Content-Type': 'text/markdown' }); res.end(md); return; } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 98: Search
   if (req.url?.match(/^\/api\/search(\?.*)?$/) && req.method === 'GET') {
     try { const si = require('./lib/search-index'); const params = new URL(req.url, 'http://x').searchParams; return json(res, { results: si.search(params.get('q') || '', parseInt(params.get('limit') || '20')) }); } catch (e) { return json(res, { error: e.message }, 500); }
