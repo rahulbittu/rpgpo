@@ -1,4 +1,4 @@
-// GPO Command Center v7 — Premium Private Operations Console
+// GPO Command Center — Premium Private Operations Console
 
 // Domain name display mapping — aligned to 15-engine harness model
 const DOMAIN_LABELS = {
@@ -30,8 +30,7 @@ const DOMAIN_LABELS = {
   careeregine: 'Career & Job Search',
   careerengine: 'Career & Job Search',
   personalops: 'Scheduling & Life Ops',
-  founder2founder: 'Filmmaking & Video',
-  founder2founder: 'Startup & Business Builder',
+  founder2founder: 'Filmmaking & Video Production',
 };
 function domainLabel(d) { return DOMAIN_LABELS[d] || d; }
 
@@ -1103,7 +1102,7 @@ function renderLogs() {
 
     // Detect mission badges
     let missionBadges = '';
-    if (lc.includes('topranker')) missionBadges += '<span class="badge-flagship" style="font-size:8px;padding:1px 5px">TopRanker</span>';
+    // Legacy badge removed — use canonical engine names instead
 
     // Detect outcome
     let outcomeBadge = '';
@@ -1185,9 +1184,7 @@ function renderTopRanker() {
 
   // Operating summary
   const sum = document.getElementById('trSummary');
-  if (DATA.toprankerSummary) {
-    sum.innerHTML = '<h3 style="margin-bottom:8px">Operating Summary</h3>' + md2html(DATA.toprankerSummary);
-  }
+  // Operating summary removed — engine-specific summaries via deliverables
 }
 
 // ═══════════════════════════════════════════
@@ -2768,7 +2765,7 @@ setInterval(loadCurrentTaskFocus, 8000);
 document.addEventListener('keydown', (e) => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') return;
   if (e.key === 'Escape') document.getElementById('taskModal').classList.remove('open');
-  const tabs = ['home', 'tasks', 'intake', 'channels', 'missions', 'topranker', 'approvals', 'costs', 'logs', 'controls', 'settings'];
+  const tabs = ['home', 'tasks', 'intake', 'channels', 'missions', 'approvals', 'costs', 'logs', 'controls', 'settings'];
   const n = parseInt(e.key);
   if (n >= 1 && n <= 9 && !e.metaKey && !e.ctrlKey && !e.altKey) switchTab(tabs[n - 1]);
   if (e.key === '0' && !e.metaKey && !e.ctrlKey && !e.altKey) switchTab(tabs[9]);

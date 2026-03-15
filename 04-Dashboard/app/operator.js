@@ -1,5 +1,5 @@
-// GPO Operator Product Layer
-// Enhances the base app with product-grade operator features.
+// GPO Admin Product Layer
+// Enhances the base app with admin-grade operator features.
 // Loaded after app.js — extends existing functions, does not replace them.
 
 // ═══════════════════════════════════════════
@@ -242,16 +242,16 @@ function renderEnhancedMissionSnapshot() {
   if (!missions.length) { grid.innerHTML = '<div style="color:var(--text-faint);font-size:11px;padding:4px">No missions</div>'; return; }
 
   grid.innerHTML = missions.map(m => {
-    const isTR = m.mission === 'TopRanker';
+    const displayName = typeof domainLabel === 'function' ? domainLabel(m.mission.toLowerCase().replace(/\s+/g, '').replace('engine','egine')) : m.mission;
     const blocker = m.blockers && m.blockers.trim() && !m.blockers.toLowerCase().includes('none') ? m.blockers.split('\n')[0].replace(/^-\s*/, '').slice(0, 60) : '';
     const next = m.nextActions ? m.nextActions.split('\n').find(l => l.startsWith('- ') || /^\d+\./.test(l)) : '';
     const nextText = next ? next.replace(/^[-\d.]+\s*/, '').slice(0, 50) : '';
     const progress = m.progress ? m.progress.split('\n').find(l => l.startsWith('- ')) : '';
     const progressText = progress ? progress.replace(/^-\s*/, '').slice(0, 50) : '';
 
-    return `<div class="mission-card-enhanced" onclick="switchTab('${isTR ? 'topranker' : 'missions'}')" style="${isTR ? 'border-color:rgba(212,170,40,.25)' : ''}">
+    return `<div class="mission-card-enhanced" onclick="switchTab('missions')">
       <div class="mce-header">
-        <span class="mce-name">${isTR ? '<strong style="color:var(--accent-text)">' + esc(m.mission) + '</strong>' : esc(m.mission)}</span>
+        <span class="mce-name">${esc(displayName)}</span>
         <span class="mission-badge ${badgeClass(m.status)}">${esc(m.status)}</span>
       </div>
       ${m.objective ? `<div class="mce-objective">${esc(m.objective.slice(0, 80))}</div>` : ''}
@@ -344,8 +344,8 @@ function renderChiefOfStaffBrief(brief) {
       { label: 'AI News', desc: 'Get today\'s AI headlines', domain: 'newsroom', prompt: 'Search the web for today\'s most important AI news. Include headlines, sources, and relevance.', urgency: 'high' },
       { label: 'Job Market', desc: 'Data eng jobs $180k+ remote', domain: 'careeregine', prompt: 'Find the highest-paying remote data engineering jobs right now. Include salary, company, requirements, and application links.', urgency: 'normal' },
       { label: 'Income Ideas', desc: 'Passive income for engineers', domain: 'wealthresearch', prompt: 'Research the top passive income opportunities for a senior data engineer in 2026. Include revenue estimates and concrete first steps.', urgency: 'normal' },
-      { label: 'TopRanker Growth', desc: 'Competitive analysis & strategy', domain: 'topranker', prompt: 'Analyze TopRanker\'s competitive position as a community-ranked local business leaderboard in Austin, TX. Include competitor data and growth tactics.', urgency: 'normal' },
-      { label: 'Weekly Plan', desc: 'Plan your week ahead', domain: 'personalops', prompt: 'Help me plan the upcoming week balancing TopRanker development, career growth, and passive income research. Create a day-by-day plan.', urgency: 'normal' },
+      { label: 'Startup Strategy', desc: 'Competitive analysis & GTM', domain: 'topranker', prompt: 'Analyze my startup competitive position. Include competitor data and growth tactics.', urgency: 'normal' },
+      { label: 'Weekly Plan', desc: 'Plan your week ahead', domain: 'personalops', prompt: 'Help me plan the upcoming week balancing startup development, career growth, and passive income research. Create a day-by-day plan.', urgency: 'normal' },
     ];
     proactiveSuggestionsHtml = `<div class="cos-section">
       <div class="cos-section-title">Suggested Tasks</div>
