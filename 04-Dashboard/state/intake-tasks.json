@@ -1,5 +1,1076 @@
 [
   {
+    "task_id": "t_mms6ofax6lau",
+    "title": "Create a framework for making build-vs-buy technology decisions. Include evaluat",
+    "raw_request": "Create a framework for making build-vs-buy technology decisions. Include evaluation criteria, total cost of ownership analysis, and decision tree.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:04:51.705Z",
+    "updated_at": "2026-03-15T20:11:22.812Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:07:18.085Z",
+      "interpreted_objective": "Create a framework for making build-vs-buy technology decisions, including evaluation criteria, total cost of ownership analysis, and a decision tree.",
+      "expected_outcome": "A comprehensive framework that helps in making informed build-vs-buy technology decisions, complete with evaluation criteria, cost analysis, and a decision tree.",
+      "key_unknowns": [
+        "Specific criteria to include in the evaluation",
+        "Methods for calculating total cost of ownership",
+        "Structure and format of the decision tree"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and methodologies for build-vs-buy decisions. Synthesize this information into a structured framework, ensuring it includes detailed evaluation criteria, a comprehensive cost analysis method, and a clear decision tree. Use web research to gather data and OpenAI for synthesis and report generation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Build-vs-Buy Decisions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and methodologies for build-vs-buy technology decisions.",
+          "prompt": "Search the web for current best practices and methodologies for making build-vs-buy technology decisions. Include evaluation criteria, total cost of ownership analysis methods, and decision tree structures. Provide specific names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Framework for Build-vs-Buy Decisions",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A synthesized framework for build-vs-buy technology decisions, including evaluation criteria, cost analysis, and a decision tree.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive framework for making build-vs-buy technology decisions. Include detailed evaluation criteria, a method for total cost of ownership analysis, and a structured decision tree. Provide specific recommendations and next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2203
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mms6odpxglgj",
+    "title": "Design a home office lighting plan for video calls AND deep work. Include task l",
+    "raw_request": "Design a home office lighting plan for video calls AND deep work. Include task lighting, ambient lighting, and camera-friendly setup. Budget 200 dollars.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:04:49.653Z",
+    "updated_at": "2026-03-15T20:11:12.258Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:07:11.232Z",
+      "interpreted_objective": "Design an affordable home office lighting plan optimized for video calls and deep work.",
+      "expected_outcome": "A detailed lighting plan within a $200 budget, including task, ambient, and camera-friendly lighting setups.",
+      "key_unknowns": [
+        "Specific dimensions and layout of the home office",
+        "Current lighting setup and equipment",
+        "Preferences for lighting style (e.g., warm vs. cool lighting)"
+      ],
+      "recommended_strategy": "Conduct research on affordable lighting solutions suitable for both video calls and deep work. Synthesize findings into a practical plan that includes specific product recommendations and setup instructions. Ensure the plan adheres to the $200 budget constraint.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research affordable lighting solutions",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of affordable lighting options suitable for video calls and deep work, with prices and sources.",
+          "prompt": "Search the web for current, affordable lighting solutions that are effective for both video calls and deep work. Include specific product names, prices, and sources. Ensure the total cost does not exceed $200.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize lighting plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed lighting plan with product recommendations and setup instructions.",
+          "prompt": "Based on the research results, synthesize a detailed lighting plan for a home office that is optimized for video calls and deep work. Include specific product recommendations, setup instructions, and ensure the total cost stays within the $200 budget.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-2023-10-20-home-office-lighting-plan.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1929
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms6oc5d5l2r",
+    "title": "Explain how GraphQL subscriptions work under the hood. Cover WebSocket transport",
+    "raw_request": "Explain how GraphQL subscriptions work under the hood. Cover WebSocket transport, PubSub patterns, and scaling considerations. Include Node.js implementation.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:04:47.617Z",
+    "updated_at": "2026-03-15T20:11:05.000Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:06:57.272Z",
+      "interpreted_objective": "Explain how GraphQL subscriptions work, including WebSocket transport, PubSub patterns, and scaling considerations, with a Node.js implementation.",
+      "expected_outcome": "A detailed explanation of GraphQL subscriptions, covering technical aspects and implementation details in Node.js.",
+      "key_unknowns": [
+        "Specific scaling challenges in GraphQL subscriptions",
+        "Best practices for implementing PubSub in Node.js",
+        "How WebSocket transport is specifically handled in GraphQL"
+      ],
+      "recommended_strategy": "Conduct research on GraphQL subscriptions focusing on WebSocket transport, PubSub patterns, and scaling. Then, compile a comprehensive report explaining these concepts with Node.js implementation details.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research GraphQL Subscriptions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on how GraphQL subscriptions work, including WebSocket transport, PubSub patterns, and scaling considerations.",
+          "prompt": "Search the web for current, specific information about GraphQL subscriptions, focusing on WebSocket transport, PubSub patterns, and scaling considerations. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Report on GraphQL Subscriptions",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report explaining how GraphQL subscriptions work, including technical details and a Node.js implementation guide.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a report explaining how GraphQL subscriptions work under the hood, covering WebSocket transport, PubSub patterns, and scaling considerations. Include specific Node.js implementation details.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1982
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms6oakfrqo9",
+    "title": "Create a year-end financial review template. Include income analysis, expense au",
+    "raw_request": "Create a year-end financial review template. Include income analysis, expense audit, investment performance, tax planning, and goals for next year.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:04:45.567Z",
+    "updated_at": "2026-03-15T20:10:54.674Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:06:50.951Z",
+      "interpreted_objective": "Create a comprehensive year-end financial review template for wealth management.",
+      "expected_outcome": "A detailed template covering income analysis, expense audit, investment performance, tax planning, and next year's goals.",
+      "key_unknowns": [
+        "Specific format or sections preferred by Rahul",
+        "Any existing templates or frameworks to build upon",
+        "Rahul's specific financial goals and priorities"
+      ],
+      "recommended_strategy": "Research best practices for financial review templates, synthesize findings into a structured template, and ensure it aligns with Rahul's financial goals and priorities. The template should provide actionable insights and clear next steps for each section.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Financial Review Templates",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices and common sections in financial review templates.",
+          "prompt": "Search the web for current best practices and common sections included in year-end financial review templates. Include real examples, names, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Financial Review Template",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured year-end financial review template tailored to Rahul's needs.",
+          "prompt": "Based on the research results, synthesize a comprehensive year-end financial review template. Include sections for income analysis, expense audit, investment performance, tax planning, and goals for next year. Ensure the template is actionable and aligns with Rahul's financial priorities.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2325
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms6o8zkyvmp",
+    "title": "Write a comprehensive guide to database indexing anti-patterns. Include over-ind",
+    "raw_request": "Write a comprehensive guide to database indexing anti-patterns. Include over-indexing, wrong column order, and unused indexes. With PostgreSQL query plan examples.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:04:43.520Z",
+    "updated_at": "2026-03-15T20:10:45.738Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:05:51.964Z",
+      "interpreted_objective": "Create a detailed guide on database indexing anti-patterns with PostgreSQL examples.",
+      "expected_outcome": "A comprehensive, well-structured guide that educates readers on common database indexing mistakes and includes practical PostgreSQL examples.",
+      "key_unknowns": [
+        "Specific depth of technical detail required",
+        "Target audience's familiarity with PostgreSQL"
+      ],
+      "recommended_strategy": "Conduct research on database indexing anti-patterns, focusing on over-indexing, wrong column order, and unused indexes. Use PostgreSQL query plan examples to illustrate these concepts. Compile the findings into a clear and concise guide tailored for database professionals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Database Indexing Anti-Patterns",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gathered research data on database indexing anti-patterns including over-indexing, wrong column order, and unused indexes with PostgreSQL examples.",
+          "prompt": "Search the web for current, specific information about database indexing anti-patterns. Focus on over-indexing, wrong column order, and unused indexes, and include PostgreSQL query plan examples. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Indexing Anti-Patterns",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on database indexing anti-patterns with PostgreSQL examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on database indexing anti-patterns. Include sections on over-indexing, wrong column order, and unused indexes, with practical PostgreSQL query plan examples. Ensure the guide is clear, educational, and tailored for database professionals.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-database-indexing-anti-patterns.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1887
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mms6o7eob3tp",
+    "title": "Research the best under-desk treadmills for walking while working. Compare Walki",
+    "raw_request": "Research the best under-desk treadmills for walking while working. Compare WalkingPad, Goplus, and Sperax. Include noise levels and max speed.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:04:41.472Z",
+    "updated_at": "2026-03-15T20:10:38.183Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:05:45.522Z",
+      "interpreted_objective": "Research and compare the best under-desk treadmills for walking while working, focusing on WalkingPad, Goplus, and Sperax, including noise levels and max speed.",
+      "expected_outcome": "A detailed comparison report of WalkingPad, Goplus, and Sperax under-desk treadmills, highlighting their noise levels, max speed, and overall performance, leading to a clear recommendation.",
+      "key_unknowns": [
+        "Current pricing of each treadmill",
+        "Noise levels of each treadmill",
+        "Max speed of each treadmill",
+        "User reviews and ratings"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current data on WalkingPad, Goplus, and Sperax under-desk treadmills, focusing on noise levels and max speed. Then, synthesize the findings into a structured comparison report with pros, cons, and a recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Under-Desk Treadmills",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on WalkingPad, Goplus, and Sperax treadmills including noise levels, max speed, pricing, and reviews.",
+          "prompt": "Search the web for current, specific information about WalkingPad, Goplus, and Sperax under-desk treadmills. Include noise levels, max speed, pricing, user reviews, and ratings. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Treadmill Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the three treadmills with pros, cons, and a recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing WalkingPad, Goplus, and Sperax under-desk treadmills. Include specific noise levels, max speeds, pros, cons, and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-2023-10-11-under-desk-treadmills.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1981
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms6o5ttztpp",
+    "title": "Create a personal operations dashboard design. Track goals, habits, finances, he",
+    "raw_request": "Create a personal operations dashboard design. Track goals, habits, finances, health, and projects. Include KPIs and weekly review format.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:04:39.425Z",
+    "updated_at": "2026-03-15T20:10:31.104Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:05:39.232Z",
+      "interpreted_objective": "Design a personal operations dashboard to track goals, habits, finances, health, and projects with KPIs and a weekly review format.",
+      "expected_outcome": "A detailed design document for a personal operations dashboard that includes specific sections for tracking goals, habits, finances, health, and projects, along with KPIs and a weekly review format.",
+      "key_unknowns": [
+        "Specific KPIs to track for each area (goals, habits, finances, health, projects)",
+        "Preferred tools or platforms for dashboard implementation",
+        "Rahul's specific preferences for dashboard layout and features"
+      ],
+      "recommended_strategy": "Conduct research on current best practices and tools for personal operations dashboards. Synthesize findings into a design proposal that includes layout, features, and KPI recommendations. Ensure alignment with Rahul's priorities and recent work in personalops.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final design proposal approval by Rahul"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Personal Operations Dashboards",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and tools for personal operations dashboards with citations.",
+          "prompt": "Search the web for current best practices and tools for creating personal operations dashboards. Focus on tracking goals, habits, finances, health, and projects. Include specific KPIs used, popular tools, and design elements. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Dashboard Design Proposal",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured design proposal for the personal operations dashboard.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a design proposal for a personal operations dashboard. Include layout suggestions, feature recommendations, specific KPIs for tracking goals, habits, finances, health, and projects, and a weekly review format.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-dashboard-design.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1980
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mms6o494d6jb",
+    "title": "Write a treatment for a 30-minute documentary about the hidden labor behind AI t",
+    "raw_request": "Write a treatment for a 30-minute documentary about the hidden labor behind AI training data. Include interview subjects and visual storytelling approach.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:04:37.384Z",
+    "updated_at": "2026-03-15T20:10:21.888Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:05:33.387Z",
+      "interpreted_objective": "Create a detailed treatment for a 30-minute documentary exploring the hidden labor behind AI training data.",
+      "expected_outcome": "A comprehensive treatment document that outlines the documentary's structure, key interview subjects, and visual storytelling techniques.",
+      "key_unknowns": [
+        "Specific interview subjects who have expertise or experience in AI training data labor",
+        "Effective visual storytelling methods to convey the unseen aspects of AI data labor",
+        "Current trends or controversies related to AI training data labor"
+      ],
+      "recommended_strategy": "Conduct research to identify potential interview subjects and gather insights into the hidden labor behind AI training data. Use this information to develop a treatment that includes a narrative structure, key visual elements, and interview segments. Ensure the treatment aligns with current trends and issues in the AI industry.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research AI Training Data Labor",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of potential interview subjects and insights into the hidden labor behind AI training data.",
+          "prompt": "Search the web for current, specific information about the hidden labor involved in AI training data. Include real names of experts or workers, current trends, controversies, and any relevant statistics or case studies.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Documentary Treatment",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed treatment document for the documentary, including narrative structure, interview subjects, and visual storytelling techniques.",
+          "prompt": "Based on the research results, synthesize a treatment for a 30-minute documentary about the hidden labor behind AI training data. Include a narrative structure, proposed interview subjects, and visual storytelling approaches. Ensure the treatment addresses current trends and issues.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-AI-training-data-labor.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1928
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mms6o2okr6xe",
+    "title": "Research coworking and coliving spaces in Lisbon Portugal for a 1-month digital ",
+    "raw_request": "Research coworking and coliving spaces in Lisbon Portugal for a 1-month digital nomad stay. Include costs, community vibe, and visa requirements.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:04:35.348Z",
+    "updated_at": "2026-03-15T20:10:11.596Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:05:27.904Z",
+      "interpreted_objective": "Research coworking and coliving spaces in Lisbon, Portugal for a 1-month digital nomad stay, including costs, community vibe, and visa requirements.",
+      "expected_outcome": "A comprehensive report detailing coworking and coliving options in Lisbon, including pricing, community atmosphere, and visa requirements for a 1-month stay.",
+      "key_unknowns": [
+        "Current costs of coworking and coliving spaces in Lisbon",
+        "Community vibe and amenities of these spaces",
+        "Visa requirements for a 1-month stay in Portugal"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on coworking and coliving spaces in Lisbon, focusing on costs, community vibe, and visa requirements. Then, synthesize this information into a structured report, providing actionable insights and recommendations for digital nomads considering a stay in Lisbon.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research coworking and coliving spaces in Lisbon",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on coworking and coliving spaces in Lisbon, including costs, community vibe, and visa requirements.",
+          "prompt": "Search the web for current, specific information about coworking and coliving spaces in Lisbon, Portugal. Include details on costs, community vibe, and visa requirements for a 1-month stay. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize research into a structured report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with actionable insights on coworking and coliving options in Lisbon, including costs, community vibe, and visa requirements.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for coworking and coliving spaces in Lisbon. Include specific names, numbers, and concrete next steps for digital nomads considering a 1-month stay.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-lisbon-coworking-coliving.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1974
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mms6o146yy0a",
+    "title": "Design a stress management toolkit for tech workers. Include breathing technique",
+    "raw_request": "Design a stress management toolkit for tech workers. Include breathing techniques, cognitive reframing, and when to seek professional help. Evidence-based.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:04:33.318Z",
+    "updated_at": "2026-03-15T20:10:05.136Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:05:09.574Z",
+      "interpreted_objective": "Create a comprehensive, evidence-based stress management toolkit for tech workers.",
+      "expected_outcome": "A detailed guide that includes breathing techniques, cognitive reframing strategies, and guidance on when to seek professional help, tailored specifically for tech workers.",
+      "key_unknowns": [
+        "Specific stressors faced by tech workers",
+        "Most effective breathing techniques for stress management",
+        "Evidence-based cognitive reframing techniques",
+        "Criteria for seeking professional help"
+      ],
+      "recommended_strategy": "Conduct research to identify effective stress management techniques specifically for tech workers. Compile findings into a structured toolkit that includes practical exercises and guidelines. Ensure the toolkit is evidence-based and includes safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Stressors and Techniques",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on stressors faced by tech workers and effective stress management techniques.",
+          "prompt": "Search the web for current, specific information about stressors faced by tech workers and evidence-based stress management techniques, including breathing techniques and cognitive reframing. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Stress Management Toolkit",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable stress management toolkit for tech workers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable stress management toolkit for tech workers. Include specific breathing techniques, cognitive reframing strategies, and guidelines on when to seek professional help. Ensure the recommendations are evidence-based and include safety disclaimers where appropriate.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-stress-management-toolkit.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1843
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mms6nzjsucdk",
+    "title": "Create a guide for contributing to open source as a senior engineer. Include fin",
+    "raw_request": "Create a guide for contributing to open source as a senior engineer. Include finding projects, making impactful contributions, and building reputation.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:04:31.288Z",
+    "updated_at": "2026-03-15T20:11:29.741Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:05:02.098Z",
+      "interpreted_objective": "Create a comprehensive guide for senior engineers to effectively contribute to open source projects.",
+      "expected_outcome": "A detailed guide that helps senior engineers find suitable open source projects, make impactful contributions, and build their professional reputation.",
+      "key_unknowns": [
+        "Specific open source projects that are relevant to data engineering",
+        "Criteria for evaluating the impact of contributions",
+        "Strategies for building a professional reputation through open source"
+      ],
+      "recommended_strategy": "Research current open source projects relevant to data engineering and identify criteria for impactful contributions. Develop a guide that includes step-by-step instructions and tips for building a professional reputation through open source contributions.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Open Source Projects",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of open source projects relevant to data engineering with details on their contribution guidelines.",
+          "prompt": "Search the web for current open source projects that are relevant to data engineering. Include details on their contribution guidelines, project goals, and how senior engineers can get involved. Provide real names, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Identify Impactful Contribution Criteria",
+          "stage": "strategy",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "Criteria and strategies for making impactful contributions to open source projects.",
+          "prompt": "Analyze the characteristics of impactful contributions to open source projects, specifically in the context of data engineering. Provide criteria and strategies that senior engineers can use to ensure their contributions are valuable and recognized.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Guide on Building Reputation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A guide that includes steps and tips for building a professional reputation through open source contributions.",
+          "prompt": "Based on the research and strategies identified, compile a guide for senior engineers on how to build their professional reputation through open source contributions. Include specific steps, examples, and tips.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2464
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mms6nxza8fmc",
+    "title": "Compare the best mechanical keyboards for Mac users. Must have wireless, aluminu",
+    "raw_request": "Compare the best mechanical keyboards for Mac users. Must have wireless, aluminum build, and good typing feel. Under 200 dollars. Include switch options.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:04:29.254Z",
+    "updated_at": "2026-03-15T20:09:25.325Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:04:48.269Z",
+      "interpreted_objective": "Compare the best mechanical keyboards for Mac users under $200 with specific features.",
+      "expected_outcome": "A detailed comparison report of mechanical keyboards meeting the specified criteria, including recommendations.",
+      "key_unknowns": [
+        "Current market options for mechanical keyboards under $200",
+        "Specific switch options available",
+        "User reviews and ratings"
+      ],
+      "recommended_strategy": "Conduct web research to identify mechanical keyboards that meet the specified criteria. Analyze and compare these options based on features, pricing, and user reviews. Compile a report with a clear recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Mechanical Keyboards",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of mechanical keyboards under $200 with wireless connectivity, aluminum build, and good typing feel.",
+          "prompt": "Search the web for current mechanical keyboards for Mac users that are under $200, have wireless connectivity, an aluminum build, and are known for good typing feel. Include specific models, prices, and switch options.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Analyze and Compare Keyboards",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A strategic comparison of the identified keyboards with pros/cons and a recommendation.",
+          "prompt": "Based on the research results, analyze the identified mechanical keyboards. Compare them based on features, pricing, switch options, and user reviews. Provide a strategic recommendation with pros and cons for each option.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1944
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mms6nweuwys5",
+    "title": "Teach me about Linux performance tuning for database servers. Cover kernel param",
+    "raw_request": "Teach me about Linux performance tuning for database servers. Cover kernel parameters, I/O schedulers, memory management, and monitoring tools.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:04:27.222Z",
+    "updated_at": "2026-03-15T20:08:58.561Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:04:44.277Z",
+      "interpreted_objective": "Create a comprehensive learning module on Linux performance tuning for database servers.",
+      "expected_outcome": "A detailed educational resource covering kernel parameters, I/O schedulers, memory management, and monitoring tools for Linux database servers.",
+      "key_unknowns": [
+        "Specific level of detail required for each topic",
+        "Preferred format for the learning module",
+        "Existing knowledge level of the learner"
+      ],
+      "recommended_strategy": "Research the key areas of Linux performance tuning relevant to database servers. Compile a detailed report that explains kernel parameters, I/O schedulers, memory management, and monitoring tools, using clear analogies and structured progression from simple to complex. Ensure the content is adaptable to different learning levels.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Linux Kernel Parameters",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed list of Linux kernel parameters relevant to database performance tuning.",
+          "prompt": "Search the web for current, specific information about Linux kernel parameters that impact database server performance. Include real names, descriptions, and recommended settings.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research I/O Schedulers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "An overview of I/O schedulers in Linux and their impact on database server performance.",
+          "prompt": "Search the web for current, specific information about I/O schedulers in Linux. Explain their role and how they affect database server performance. Include examples and recommended configurations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Memory Management Techniques",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Information on memory management techniques in Linux relevant to database performance.",
+          "prompt": "Search the web for current, specific information about memory management techniques in Linux that are relevant to database performance. Include descriptions and best practices.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Monitoring Tools",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of monitoring tools for Linux database servers with descriptions and use cases.",
+          "prompt": "Search the web for current, specific information about monitoring tools for Linux database servers. Include tool names, features, and how they can be used to monitor and improve performance.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Linux Performance Tuning Report",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report on Linux performance tuning for database servers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report on Linux performance tuning for database servers. Include sections on kernel parameters, I/O schedulers, memory management, and monitoring tools with clear explanations and practical recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2368
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mms6nuuf1i7j",
+    "title": "Create a guide to real estate crowdfunding platforms. Compare Fundrise, CrowdStr",
+    "raw_request": "Create a guide to real estate crowdfunding platforms. Compare Fundrise, CrowdStreet, and RealtyMogul. Include minimum investments, returns, and liquidity.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:04:25.191Z",
+    "updated_at": "2026-03-15T20:07:57.475Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:04:34.963Z",
+      "interpreted_objective": "Create a detailed guide comparing real estate crowdfunding platforms Fundrise, CrowdStreet, and RealtyMogul, focusing on minimum investments, returns, and liquidity.",
+      "expected_outcome": "A comprehensive guide that provides specific comparisons and actionable insights on Fundrise, CrowdStreet, and RealtyMogul, aiding Rahul in making informed investment decisions.",
+      "key_unknowns": [
+        "Current minimum investment requirements for each platform",
+        "Expected returns from each platform",
+        "Liquidity options available on each platform"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on Fundrise, CrowdStreet, and RealtyMogul regarding their minimum investments, returns, and liquidity. Then, synthesize this information into a structured guide with actionable insights. Finally, compile the findings into a detailed report.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Real Estate Crowdfunding Platforms",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Fundrise, CrowdStreet, and RealtyMogul including minimum investments, returns, and liquidity with citations.",
+          "prompt": "Search the web for current, specific information about real estate crowdfunding platforms Fundrise, CrowdStreet, and RealtyMogul. Include details on minimum investments, expected returns, and liquidity options. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Crowdfunding Platform Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide comparing Fundrise, CrowdStreet, and RealtyMogul, including specific details on minimum investments, returns, and liquidity.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Fundrise, CrowdStreet, and RealtyMogul. Include specific names, numbers, and concrete next steps for potential investors.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-real-estate-crowdfunding-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2278
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mms6nt9r5m36",
+    "title": "Write an architecture decision record for choosing between monorepo and polyrepo",
+    "raw_request": "Write an architecture decision record for choosing between monorepo and polyrepo for a microservices architecture. Include team size considerations.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T20:04:23.151Z",
+    "updated_at": "2026-03-15T20:07:27.307Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T20:04:29.203Z",
+      "interpreted_objective": "Create an architecture decision record comparing monorepo and polyrepo for microservices, considering team size.",
+      "expected_outcome": "A comprehensive document that outlines the pros and cons of monorepo vs polyrepo, tailored to microservices architecture with team size considerations.",
+      "key_unknowns": [
+        "Current industry trends in monorepo vs polyrepo usage",
+        "Specific team size impacts on repository choice"
+      ],
+      "recommended_strategy": "Conduct a web search to gather current data on monorepo and polyrepo usage in microservices. Synthesize this information into a structured decision record, highlighting team size considerations. Deliver a clear recommendation based on findings.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research monorepo vs polyrepo",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on monorepo and polyrepo usage in microservices, with team size considerations.",
+          "prompt": "Search the web for current, specific information about monorepo and polyrepo usage in microservices architecture. Include considerations for team size, real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize research into decision record",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured architecture decision record with pros and cons of monorepo vs polyrepo, including team size considerations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for choosing between monorepo and polyrepo in microservices architecture. Include specific pros and cons, team size considerations, and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-monorepo-vs-polyrepo.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1860
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mms6edovqc6t",
     "title": "Create a comprehensive comparison of Austin vs Portland for a tech worker. Inclu",
     "raw_request": "Create a comprehensive comparison of Austin vs Portland for a tech worker. Include job market, cost of living, weather, culture, and outdoor activities.",
