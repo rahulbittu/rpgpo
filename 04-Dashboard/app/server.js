@@ -3355,6 +3355,15 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Parts 118-119: Mission Alignment + Quick Actions
+  if (req.url === '/api/alignment-check' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const ma = require('./lib/mission-alignment'); return json(res, ma.checkAlignment(body.raw_request || '', body.domain || 'general')); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/quick-actions' && req.method === 'GET') {
+    try { const qa = require('./lib/quick-actions'); return json(res, { actions: qa.getQuickActions() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 117: Config Validator
   if (req.url === '/api/config/validate' && req.method === 'GET') {
     try { const cv = require('./lib/config-validator'); return json(res, cv.validateAllConfigs()); } catch (e) { return json(res, { error: e.message }, 500); }
