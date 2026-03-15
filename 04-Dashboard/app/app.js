@@ -1499,8 +1499,14 @@ function startIntakeDetailPoll() {
             pushActivity('Auto-approved plan for: ' + d.task.title);
           }
         }
+        // Update detail view with latest progress
+        if (d.task?.status !== _lastKnownIntakeStatus) {
+          _lastKnownIntakeStatus = d.task?.status;
+          showIntakeDetail(selectedIntakeTaskId);
+        }
         if (d.task?.status === 'done' || d.task?.status === 'failed') {
           stopIntakeDetailPoll();
+          showToast(d.task?.status === 'done' ? 'Task completed!' : 'Task failed', d.task?.status === 'done' ? 'success' : 'error');
           showIntakeDetail(selectedIntakeTaskId);
         }
       }
