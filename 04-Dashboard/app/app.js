@@ -1435,7 +1435,7 @@ async function submitIntakeTask() {
     });
     const d = await r.json();
     if (d.ok) {
-      showToast('Task submitted: ' + d.task.title, 'success');
+      showToast('Task submitted — starting Board deliberation...', 'success');
       document.getElementById('intakeRequest').value = '';
       document.getElementById('intakeOutcome').value = '';
       // Auto-focus the new task
@@ -1444,6 +1444,11 @@ async function submitIntakeTask() {
       await loadIntakeTasks();
       showIntakeDetail(d.task.task_id);
       startIntakeDetailPoll();
+      // Auto-deliberate: immediately send to Board
+      try {
+        await fetch('/api/intake/task/' + d.task.task_id + '/deliberate', { method: 'POST' });
+        pushActivity('Board deliberation started for: ' + d.task.title);
+      } catch { /* manual deliberation fallback */ }
     } else {
       showToast('Error: ' + d.error, 'error');
     }
