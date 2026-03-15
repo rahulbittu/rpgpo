@@ -92,20 +92,20 @@ function getBuilderTimeoutMs() {
 
 // Classify changed files by project scope
 function classifyFiles(files) {
-  const rpgpo = []; const topranker = []; const other = [];
+  const infra = []; const project = []; const other = [];
   for (const f of files) {
     const fl = f.toLowerCase();
-    if (fl.startsWith('04-dashboard/') || fl.startsWith('03-operations/') || fl.startsWith('01-') || fl.startsWith('02-')) rpgpo.push(f);
-    else if (fl.includes('topranker') || fl.startsWith('apps/') || fl.startsWith('packages/') || fl.startsWith('src/')) topranker.push(f);
+    if (fl.startsWith('04-dashboard/') || fl.startsWith('03-operations/') || fl.startsWith('01-') || fl.startsWith('00-')) infra.push(f);
+    else if (fl.startsWith('02-projects/') || fl.startsWith('apps/') || fl.startsWith('packages/') || fl.startsWith('src/')) project.push(f);
     else other.push(f);
   }
   const parts = [];
-  if (topranker.length) parts.push(`${topranker.length} TopRanker file(s)`);
-  if (rpgpo.length) parts.push(`${rpgpo.length} RPGPO infra file(s)`);
+  if (project.length) parts.push(`${project.length} project file(s)`);
+  if (infra.length) parts.push(`${infra.length} GPO infra file(s)`);
   if (other.length) parts.push(`${other.length} other file(s)`);
   const summary = parts.join(', ') || 'No files';
-  const onlyRpgpo = rpgpo.length > 0 && topranker.length === 0 && other.length === 0;
-  return { rpgpo, topranker, other, summary, onlyRpgpo };
+  const onlyRpgpo = infra.length > 0 && project.length === 0 && other.length === 0;
+  return { rpgpo: infra, topranker: project, other, summary, onlyRpgpo };
 }
 
 function broadcastBuilderPhase(taskQueueId, subtaskId, phase, detail) {
@@ -171,14 +171,17 @@ async function runBuilder(task, subtaskId, st, userPrompt) {
   }
 
   // ── Phase 2: LAUNCHING — Async Claude CLI execution ──
-  // Determine working directory: use TopRanker source repo for TopRanker tasks
+  // Determine working directory: use project-specific source repo if identified
   let builderCwd = RPGPO_ROOT;
-  const isTopRankerTask = (st.domain === 'topranker') ||
-    (targetFiles.some(f => f.toLowerCase().includes('topranker') || f.startsWith('02-Projects/TopRanker')));
-  const topRankerRepo = path.join(RPGPO_ROOT, '02-Projects/TopRanker/source-repo');
-  if (isTopRankerTask && fs.existsSync(topRankerRepo)) {
-    builderCwd = topRankerRepo;
-    console.log(`[worker][builder] TopRanker task — using cwd: ${builderCwd}`);
+  // Check if any target files point to a project subdirectory
+  const projectMatch = targetFiles.find(f => f.startsWith('02-Projects/'));
+  if (projectMatch) {
+    const projectDir = projectMatch.split('/').slice(0, 3).join('/');
+    const sourceRepo = path.join(RPGPO_ROOT, projectDir, 'source-repo');
+    if (fs.existsSync(sourceRepo)) {
+      builderCwd = sourceRepo;
+      console.log(`[worker][builder] Project task — using cwd: ${builderCwd}`);
+    }
   }
 
   const hardTimeoutMs = getBuilderTimeoutMs();

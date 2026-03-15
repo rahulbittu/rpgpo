@@ -29,11 +29,8 @@ function isStructuredEnabled() {
 }
 const DOMAIN_CONTEXT = {
     topranker: {
-        description: 'TopRanker is a community-ranked local business leaderboard app. Stack: Expo/React Native + Express + PostgreSQL. It is the flagship RPGPO mission.',
-        key_files: [
-            '03-Operations/MissionStatus/TopRanker.md',
-            '03-Operations/Reports/TopRanker-Operating-Summary.md',
-        ],
+        description: 'Startup and business builder engine. Handles product strategy, competitive analysis, GTM planning, code architecture, and feature implementation for the operator\'s startup projects.',
+        key_files: [],
         governed_loop: ['audit', 'decide', 'implement', 'report'],
         specialists: ['builder', 'strategy'],
     },

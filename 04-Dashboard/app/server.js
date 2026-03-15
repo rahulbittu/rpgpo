@@ -187,16 +187,13 @@ function buildApiData() {
     const aOrd = statusOrder[(a.status || '').toLowerCase().replace(/\s+/g, '-')] ?? 4;
     const bOrd = statusOrder[(b.status || '').toLowerCase().replace(/\s+/g, '-')] ?? 4;
     if (aOrd !== bOrd) return aOrd - bOrd;
-    // TopRanker always first within same status
-    if (a.mission === 'TopRanker') return -1;
-    if (b.mission === 'TopRanker') return 1;
     return 0;
   });
 
   const briefs = readAllInDir('03-Operations/DailyBriefs');
   const approvals = readAllInDir('03-Operations/Approvals/Pending');
   const logs = readAllInDir('03-Operations/Logs/AgentRuns');
-  const toprankerSummary = readFile('03-Operations/Reports/TopRanker-Operating-Summary.md');
+  const toprankerSummary = ''; // TopRanker-specific summary removed — use engine-generic approach
   const decisionLogs = readAllInDir('03-Operations/Logs/Decisions');
 
   // Cost summary for home
