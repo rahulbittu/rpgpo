@@ -6889,3 +6889,52 @@ export interface LearningStoreMeta {
     knowledgeEntries: number;
   };
 }
+
+// ── Part 76: Conversational Task Refinement + Task Chaining ──
+
+export type ConversationRole = 'operator' | 'assistant' | 'system' | 'tool' | 'policy';
+
+export interface ConversationMessage {
+  id: string;
+  taskId: string;
+  createdAt: string;
+  role: ConversationRole;
+  content: string;
+  contentFormat: 'text' | 'json' | 'markdown';
+  meta?: { provider?: string; model?: string; cost?: number; latencyMs?: number; subtaskId?: string };
+}
+
+export interface ConversationThread {
+  taskId: string;
+  openedAt: string;
+  messages: ConversationMessage[];
+  status: 'open' | 'closed';
+}
+
+export interface TaskChainSpec {
+  id: string;
+  taskId: string;
+  createdAt: string;
+  rules: ChainRule[];
+  autoExecute: boolean;
+  requireApproval: boolean;
+  name?: string;
+  description?: string;
+}
+
+export interface ChainRule {
+  id: string;
+  condition: 'on_complete' | 'on_approve' | 'on_specific_output';
+  nextTaskTemplate: {
+    raw_request: string;
+    domain?: string;
+    urgency?: string;
+    desired_outcome?: string;
+  };
+  inputMapping?: Record<string, string>;
+}
+
+export interface ChainEvaluationResult {
+  triggered: boolean;
+  tasksToCreate: Array<{ template: ChainRule['nextTaskTemplate']; ruleId: string; parentOutputRef?: string }>;
+}

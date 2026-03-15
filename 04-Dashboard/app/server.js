@@ -3352,6 +3352,29 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Part 76: Conversations + Task Chaining
+  if (req.url?.match(/^\/api\/conversations\/([^/]+)$/) && req.method === 'GET') {
+    const taskId = req.url.match(/^\/api\/conversations\/([^/]+)$/)[1];
+    try { const conv = require('./lib/conversation'); const thread = conv.getConversation(taskId); return thread ? json(res, thread) : json(res, { error: 'No conversation' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/conversations\/([^/]+)\/messages$/) && req.method === 'POST') {
+    const taskId = req.url.match(/^\/api\/conversations\/([^/]+)\/messages$/)[1];
+    const body = await parseBody(req);
+    try { const conv = require('./lib/conversation'); const msg = conv.appendMessage(taskId, body.role || 'operator', body.content || ''); return json(res, { ok: true, message: msg }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/conversations' && req.method === 'GET') {
+    try { const conv = require('./lib/conversation'); return json(res, { taskIds: conv.listConversations() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/chains\/([^/]+)$/) && req.method === 'GET') {
+    const taskId = req.url.match(/^\/api\/chains\/([^/]+)$/)[1];
+    try { const tc = require('./lib/task-chaining'); const spec = tc.getChainSpec(taskId); return spec ? json(res, spec) : json(res, { error: 'No chain spec' }, 404); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url?.match(/^\/api\/chains\/([^/]+)$/) && req.method === 'POST') {
+    const taskId = req.url.match(/^\/api\/chains\/([^/]+)$/)[1];
+    const body = await parseBody(req);
+    try { const tc = require('./lib/task-chaining'); const spec = tc.upsertChainSpec(taskId, body); return json(res, { ok: true, spec }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Part 75: Learning Store APIs
   if (req.url === '/api/learning/meta' && req.method === 'GET') {
     try { const ls = require('./lib/learning-store'); return json(res, ls.getLearningMeta()); } catch (e) { return json(res, { error: e.message }, 500); }
