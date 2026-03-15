@@ -497,5 +497,67 @@
         "Domain routed to health instead of personalops (keyword overlap)"
       ]
     }
+  },
+  {
+    "test_case_id": "GPO-CAR-02",
+    "global_rank": 31,
+    "engine": "Career & Job Search",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:54:08.471Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrxni5gn4br",
+      "domain_routed": "careeregine",
+      "subtask_count": 3,
+      "completion": "done",
+      "output_quality": "Good — 3-subtask chain with resume optimization advice",
+      "issues": [
+        "Operator profile context was injected — salary target and experience used",
+        "No actual resume file to review — text-based advice only"
+      ]
+    }
+  },
+  {
+    "test_case_id": "GPO-FIN-02",
+    "global_rank": 35,
+    "engine": "Personal Finance & Investing",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:54:08.471Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrxni5e70d5",
+      "domain_routed": "wealthresearch",
+      "subtask_count": 2,
+      "completion": "done",
+      "output_quality": "Good — personalized allocation based on age/income/risk",
+      "issues": [
+        "Operator profile salary data used correctly",
+        "No spreadsheet output — text only"
+      ]
+    }
+  },
+  {
+    "test_case_id": "GPO-WRI-07",
+    "global_rank": 22,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:54:08.471Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrxni5i26k8",
+      "domain_routed": "writing",
+      "subtask_count": 2,
+      "completion": "done",
+      "output_quality": "Good — structured blog post about multi-agent AI. Auto-approved.",
+      "issues": [
+        "Domain correct, auto-approved (GAP-002 fix working)"
+      ]
+    }
   }
 ]
