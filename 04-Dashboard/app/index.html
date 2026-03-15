@@ -380,9 +380,18 @@
           </button>
         </div>
 
+        <!-- Quick prompts -->
+        <div style="display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap">
+          <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='What are the top AI news stories from the last 24 hours?';document.getElementById('channelPrompt').focus()" style="font-size:10px">AI News</button>
+          <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='Research passive income ideas for data engineers with specific revenue estimates';document.getElementById('channelPrompt').focus()" style="font-size:10px">Income Ideas</button>
+          <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='What are the highest paying data engineering jobs available right now?';document.getElementById('channelPrompt').focus()" style="font-size:10px">Job Search</button>
+          <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='Analyze TopRanker competitive landscape and suggest growth strategies';document.getElementById('channelPrompt').focus()" style="font-size:10px">TopRanker</button>
+          <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='Create a weekly plan for balancing startup work and career growth';document.getElementById('channelPrompt').focus()" style="font-size:10px">Weekly Plan</button>
+        </div>
+
         <div class="channel-panel">
           <div class="channel-input-area">
-            <textarea id="channelPrompt" class="channel-textarea" placeholder="Enter your prompt..." rows="4"></textarea>
+            <textarea id="channelPrompt" class="channel-textarea" placeholder="Ask anything — research, analysis, strategy, news, career advice..." rows="4"></textarea>
             <div class="channel-input-bar">
               <select id="channelRole" class="channel-select">
                 <option value="general">General</option>
