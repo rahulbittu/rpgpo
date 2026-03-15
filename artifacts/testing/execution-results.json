@@ -1759,5 +1759,77 @@
       "completion": "done",
       "domain_routed": "health"
     }
+  },
+  {
+    "test_case_id": "GPO-WRI-22",
+    "global_rank": 158,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:17:49.747Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-FIN-13",
+    "global_rank": 160,
+    "engine": "Personal Finance & Investing",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:17:49.748Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-TRA-07",
+    "global_rank": 162,
+    "engine": "Travel & Relocation Planner",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:17:49.748Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-LEA-12",
+    "global_rank": 164,
+    "engine": "Learning & Tutoring",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:17:49.748Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-SHO-09",
+    "global_rank": 166,
+    "engine": "Shopping & Buying Advisor",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:17:49.748Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done"
+    }
+  },
+  {
+    "test_case_id": "GPO-WRI-23",
+    "global_rank": 168,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T17:17:49.748Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "execution_evidence": {
+      "completion": "done"
+    }
   }
 ]
