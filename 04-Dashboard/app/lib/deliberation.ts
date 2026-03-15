@@ -172,7 +172,9 @@ Rules:
 - Mark subtasks that change external state or involve risk as approval_required: true
 - For "implement" stage subtasks on code changes, assign to "claude" model (local execution)
 - For "locate_files" stage subtasks, assign to "openai" model (identifies exact files from the repo structure)
-- Assign the best model for each subtask: openai for synthesis/analysis, perplexity for research, gemini for strategy, claude for implementation
+- Assign the best model for each subtask: openai for synthesis/analysis/report-compilation, perplexity for research/web-search, gemini for strategy/comparison, claude ONLY for code implementation tasks
+- NEVER assign claude to report compilation, research, or analysis subtasks — use openai instead
+- For "report" stage subtasks, always use openai (not claude)
 - Risk levels: green (safe, reversible), yellow (needs review), red (needs explicit approval)
 
 CRITICAL PROMPT QUALITY RULES FOR SUBTASKS:
