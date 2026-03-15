@@ -428,22 +428,35 @@ function renderHomeRecent() {
 function renderLatest() {
   const el = document.getElementById('homeLatestTask');
   if (!el) return;
-  const done = TASKS.filter(t => t.status === 'done' || t.status === 'failed');
-  if (!done.length) { el.innerHTML = '<div class="task-empty">No completed tasks yet</div>'; return; }
-  const t = done[0];
-  const tm = fmtTime(t.updatedAt);
-  el.innerHTML = `<div class="latest-task-card" onclick="showTask('${t.id}')" style="${t.status === 'failed' ? 'border-color:var(--red-border)' : ''}">
-    <div class="completed-label" style="${t.status === 'failed' ? 'color:var(--red)' : ''}">
-      ${t.status === 'failed' ? 'Failed' : 'Completed'} at ${tm}
-    </div>
-    <div style="display:flex;align-items:center;gap:8px">
-      <span class="task-title">${esc(t.label)}</span>
-      <span class="task-status-badge ${t.status}" style="font-size:8px">${t.status}</span>
-    </div>
-    ${t.output ? '<pre>' + esc(t.output.slice(0, 200)) + '</pre>' : ''}
-    ${t.error ? '<pre style="color:var(--red)">' + esc(t.error.slice(0, 150)) + '</pre>' : ''}
-    ${t.filesWritten && t.filesWritten.length ? '<div class="task-files" style="margin-top:4px">' + t.filesWritten.map(f => `<span class="task-file-tag">${esc(f.split('/').pop())}</span>`).join('') + '</div>' : ''}
-  </div>`;
+
+  // Try to show latest intake task first (more relevant)
+  fetch('/api/intake/tasks').then(r => r.ok ? r.json() : null).then(data => {
+    const tasks = (data?.tasks || data || []).filter(t => t.status === 'done');
+    if (tasks.length > 0) {
+      tasks.sort((a, b) => (b.updated_at || b.created_at || '').localeCompare(a.updated_at || a.created_at || ''));
+      const t = tasks[0];
+      el.innerHTML = `<div class="latest-task-card" onclick="switchTab('intake');showIntakeDetail('${t.task_id}')">
+        <div class="completed-label">Latest completed</div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="task-title">${esc((t.title || t.raw_request || '').slice(0, 60))}</span>
+          <span class="task-status-badge done" style="font-size:8px">done</span>
+        </div>
+        <div style="font-size:11px;color:var(--text-dim);margin-top:4px">${esc(t.domain || '')} &middot; ${esc(t.board_deliberation?.interpreted_objective?.slice(0, 100) || '')}</div>
+      </div>`;
+      return;
+    }
+    // Fall back to queue tasks
+    const done = TASKS.filter(t => t.status === 'done' || t.status === 'failed');
+    if (!done.length) { el.innerHTML = '<div class="task-empty">No completed tasks yet</div>'; return; }
+    const qt = done[0];
+    el.innerHTML = `<div class="latest-task-card" onclick="showTask('${qt.id}')">
+      <div class="completed-label">${qt.status === 'failed' ? 'Failed' : 'Completed'}</div>
+      <div class="task-title">${esc(qt.label)}</div>
+      ${qt.output ? '<pre>' + esc(qt.output.slice(0, 200)) + '</pre>' : ''}
+    </div>`;
+  }).catch(() => {
+    el.innerHTML = '<div class="task-empty">No completed tasks yet</div>';
+  });
 }
 
 function renderNavBadges() {
