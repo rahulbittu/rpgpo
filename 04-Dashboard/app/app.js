@@ -1600,6 +1600,20 @@ function closeIntakeDetail() {
   updateFlowExplainer();
 }
 
+function toggleInlineReport(elId, encodedPath) {
+  const el = document.getElementById(elId);
+  if (!el) return;
+  if (el.style.display !== 'none') { el.style.display = 'none'; return; }
+  el.style.display = 'block';
+  if (el.dataset.loaded) return;
+  el.dataset.loaded = '1';
+  el.textContent = 'Loading...';
+  fetch('/api/file/' + encodedPath).then(r => r.ok ? r.text() : 'File not found').then(text => {
+    el.textContent = text.slice(0, 5000);
+    if (text.length > 5000) el.textContent += '\n\n... [truncated]';
+  }).catch(() => { el.textContent = 'Error loading file'; });
+}
+
 function renderIntakeDetail(data) {
   const panel = document.getElementById('intakeDetailPanel');
   if (!panel) return;
@@ -2250,7 +2264,9 @@ function renderTaskTimeline(task, subtasks) {
 
       // Report link — clickable to view
       if (ev.report_file) {
-        html += `<div class="tl-report-link">Report: <a href="/api/file/${encodeURIComponent(ev.report_file)}" target="_blank" style="color:var(--accent-text);text-decoration:none;font-family:var(--mono);font-size:10px">${esc(ev.report_file.split('/').pop())}</a></div>`;
+        const rId = 'rpt_' + ev.report_file.replace(/[^a-zA-Z0-9]/g, '_');
+        html += `<div class="tl-report-link">Report: <a href="/api/file/${encodeURIComponent(ev.report_file)}" target="_blank" style="color:var(--accent-text);text-decoration:none;font-family:var(--mono);font-size:10px">${esc(ev.report_file.split('/').pop())}</a> <button onclick="toggleInlineReport('${rId}','${encodeURIComponent(ev.report_file)}')" style="font-size:9px;padding:1px 6px;background:var(--bg-inset);border:1px solid var(--border);border-radius:3px;color:var(--text-dim);cursor:pointer;margin-left:4px">Preview</button></div>`;
+        html += `<div id="${rId}" style="display:none;margin-top:6px;padding:10px;background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);max-height:300px;overflow-y:auto;font-size:11px;white-space:pre-wrap;color:var(--text-secondary);line-height:1.5"></div>`;
       }
 
       html += `</div>`;
