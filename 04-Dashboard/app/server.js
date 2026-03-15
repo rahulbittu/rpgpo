@@ -3355,6 +3355,18 @@ const server = http.createServer(async (req, res) => {
     try { const notif = require('./lib/in-app-notifications'); return json(res, notif.markRead(body.ids || [])); } catch (e) { return json(res, { error: e.message }, 500); }
   }
 
+  // Parts 120-122: Context Window + Startup Optimizer + Feature Flags
+  if (req.url === '/api/feature-flags' && req.method === 'GET') {
+    try { const ff = require('./lib/feature-flags'); return json(res, { flags: ff.getAllFlags() }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/feature-flags' && req.method === 'POST') {
+    const body = await parseBody(req);
+    try { const ff = require('./lib/feature-flags'); ff.setFlag(body.key, body.enabled); return json(res, { ok: true }); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+  if (req.url === '/api/startup-report' && req.method === 'GET') {
+    try { const so = require('./lib/startup-optimizer'); return json(res, so.getStartupReport()); } catch (e) { return json(res, { error: e.message }, 500); }
+  }
+
   // Parts 118-119: Mission Alignment + Quick Actions
   if (req.url === '/api/alignment-check' && req.method === 'POST') {
     const body = await parseBody(req);
