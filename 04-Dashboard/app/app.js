@@ -582,10 +582,11 @@ function renderHome() {
   document.getElementById('homeDate').textContent =
     new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
-  // Priorities
+  // Priorities — clickable to create task
   const ul = document.getElementById('homePriorities');
-  ul.innerHTML = (s.top_priorities || []).map(p => `<li>${esc(p)}</li>`).join('')
-    || '<li style="color:var(--text-faint)">None set</li>';
+  ul.innerHTML = (s.top_priorities || []).map(p =>
+    `<li style="cursor:pointer" onclick="switchTab('intake');document.getElementById('intakeRequest').value='${esc(p).replace(/'/g, "\\'")}';document.getElementById('intakeRequest').focus()" title="Click to create task">${esc(p)}</li>`
+  ).join('') || '<li style="color:var(--text-faint)">None set</li>';
 
   // TopRanker flagship card on home
   const trm = DATA.missions.find(x => x.mission === 'TopRanker');
