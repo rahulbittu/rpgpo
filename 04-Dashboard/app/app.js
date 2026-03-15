@@ -1620,10 +1620,18 @@ function toggleInlineReport(elId, encodedPath) {
   el.style.display = 'block';
   if (el.dataset.loaded) return;
   el.dataset.loaded = '1';
-  el.textContent = 'Loading...';
+  el.innerHTML = '<span style="color:var(--text-faint)">Loading...</span>';
   fetch('/api/file/' + encodedPath).then(r => r.ok ? r.text() : 'File not found').then(text => {
-    el.textContent = text.slice(0, 5000);
-    if (text.length > 5000) el.textContent += '\n\n... [truncated]';
+    const content = text.slice(0, 8000);
+    // Render as markdown if it looks like markdown
+    if (content.includes('#') || content.includes('**') || content.includes('- ')) {
+      el.className = 'md-content';
+      el.style.cssText = 'display:block;margin-top:6px;padding:12px;background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);max-height:400px;overflow-y:auto';
+      el.innerHTML = md2html(content);
+    } else {
+      el.textContent = content;
+    }
+    if (text.length > 8000) el.insertAdjacentHTML('beforeend', '<div style="color:var(--text-faint);margin-top:8px;font-size:10px">... truncated at 8KB</div>');
   }).catch(() => { el.textContent = 'Error loading file'; });
 }
 

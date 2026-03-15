@@ -1492,8 +1492,8 @@ h3, .section-title {
 /* ═══ WHAT WAS DONE — Completion Summary ═══ */
 
 .tl-what-done {
-  margin-top: 4px; padding: 6px 8px; background: var(--card-bg);
-  border: 1px solid var(--border); border-radius: 5px; border-left: 3px solid var(--green);
+  margin-top: 4px; padding: 8px 10px; background: var(--bg-card);
+  border: 1px solid var(--border); border-radius: var(--r-sm); border-left: 3px solid var(--green);
 }
 .tl-event.tl-failed .tl-what-done { border-left-color: var(--red); }
 .tl-event.tl-waiting .tl-what-done { border-left-color: var(--yellow); }
