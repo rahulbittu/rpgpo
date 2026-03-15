@@ -64,5 +64,16 @@
     "l2_rate": 99.7,
     "avg_confidence": 90,
     "changes": "Re-graded 6 PARTIAL cases as PASS: template placeholders are expected in template/letter tasks. 1 genuine PARTIAL remains (thin output on meeting transcript extraction)."
+  },
+  {
+    "timestamp": "2026-03-15T22:08:10.319Z",
+    "batch": "truth-reconciliation-v3",
+    "canonical_cases": 361,
+    "pass_rate": 91.4,
+    "partial_rate": 8.6,
+    "l1_rate": 99.7,
+    "l2_rate": 99.7,
+    "avg_confidence": 89,
+    "changes": "Stricter grading applied: search_failure_or_generic flag catches 18 cases where Perplexity returned weak data. single_subtask_for_complex_request catches 10 cases where Board under-decomposed. Previous 99.7% PASS was over-permissive. Honest rate: 91.4%."
   }
 ]

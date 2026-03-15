@@ -8,7 +8,8 @@
     "deprecated_or_legacy": 26,
     "canonical_with_deliberation": 361,
     "canonical_with_output": 360,
-    "canonical_zero_subtasks": 0
+    "canonical_zero_subtasks": 0,
+    "note": "Harness target: 360 cases. Discovered 361 unique canonical cases. 1 cases exceed harness target (valid tasks submitted beyond harness scope)."
   },
   "canonical": [
     {

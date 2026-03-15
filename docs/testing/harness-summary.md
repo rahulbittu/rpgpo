@@ -1,51 +1,49 @@
-# GPO V2 Harness Summary
+# GPO V2 Harness Execution Summary
 
 ## Harness Specification
-- **Version**: V2
-- **Total cases**: 360 (Core 150 + Expansion 150 + Stretch 60)
-- **Engines**: 15
-- **Source**: docs/testing/gpo_test_harness_v2_cases.json
 
-## Execution Results
+- **Source**: `docs/testing/gpo_test_harness_v2_cases.json`
+- **Target cases**: 360 (Core 150, Expansion 150, Stretch 60)
+- **Engines**: 15 (24 cases each)
 
-| Metric | Count |
-|---|---|
-| Total reports in system | 400 |
-| Canonical harness cases | 361 |
-| Retries/reruns (excluded) | 9 |
-| Ad-hoc tests (excluded) | 4 |
-| Legacy tasks (excluded) | 26 |
+## What Was Executed
 
-## Official Strict Results (canonical only)
+361 unique tasks were submitted and completed through the full GPO pipeline. This exceeds the 360-case target by 1 (one additional task submitted beyond harness scope).
+
+39 additional reports exist but are excluded from official counting:
+- 9 retries of earlier prompts
+- 4 ad-hoc/debug tasks
+- 26 legacy pre-validation tasks
+
+## Strict Results
 
 | Verdict | Count | Rate |
 |---|---|---|
-| PASS | 354 | 98.1% |
-| PARTIAL | 7 | 1.9% |
+| PASS | 330 | 91.4% |
+| PARTIAL | 31 | 8.6% |
 | FAIL | 0 | 0% |
-| BLOCKED | 0 | 0% |
-| MISSING_EVIDENCE | 0 | 0% |
 
-## Level Assessment
+**Average confidence: 89/100**
 
-| Level | Pass | Rate |
-|---|---|---|
-| L1 (Prompt) | 360 | 99.7% |
-| L2 (Context) | 360 | 99.7% |
-| L3 (GPO Grade) | 0 | 0% |
+## PARTIAL Breakdown
 
-**Avg Confidence**: 90/100
+- 18 cases: Perplexity search returned weak or generic results
+- 10 cases: Board assigned only 1 subtask to a complex request
+- 1 case: Output under 200 characters total
+- 2 cases: Both weak search and single subtask
 
-## L3 Blockers
-1. No structured JSON output schema enforcement
-2. No interactive session mode
-3. No file attachment support
-4. No audio/video generation
-5. No calendar API integration
+## Provider Usage
 
-## Evidence Locations
-- Machine-readable verdicts: `artifacts/testing/strict-case-verdicts.json`
-- Case classification: `artifacts/testing/canonical-case-classification.json`
-- Individual case reports: `docs/testing/case-reports/`
-- Score improvement log: `artifacts/testing/score-improvement-log.json`
-- Verdict rubric: `docs/testing/strict-verdict-rubric.md`
+| Provider | Tasks | Subtasks | Role |
+|---|---|---|---|
+| Perplexity Sonar | 345 | 409 | Web search |
+| OpenAI GPT-4o | 354 | 390 | Synthesis |
+| Gemini Flash | 22 | 23 | Strategy |
+| Claude | 0 | 0 | Code (untested) |
+
+## Evidence
+
+- Verdicts: `artifacts/testing/strict-case-verdicts.json`
+- Classification: `artifacts/testing/canonical-case-classification.json`
+- Case reports: `docs/testing/case-reports/` (361 files)
+- Deliverables: `04-Dashboard/state/deliverables/`

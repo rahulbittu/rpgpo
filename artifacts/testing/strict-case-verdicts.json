@@ -1,16 +1,19 @@
 {
-  "generated_at": "2026-03-15T21:15:37.984Z",
+  "generated_at": "2026-03-15T22:05:40.064Z",
+  "grading_version": "v3-strict",
   "summary": {
-    "total_canonical": 361,
-    "safe_to_count": 361,
+    "harness_target": 360,
+    "discovered_canonical": 361,
+    "note": "Harness specifies 360 cases. 361 unique tasks were executed (1 extra beyond scope).",
     "verdicts": {
-      "PASS": 360,
-      "PARTIAL": 1
+      "PASS": 330,
+      "PARTIAL": 31
     },
     "l1_pass": 360,
     "l2_pass": 360,
     "l3_pass": 0,
-    "avg_confidence": 90
+    "avg_confidence": 89,
+    "safe_to_count": 361
   },
   "cases": [
     {
@@ -22,12 +25,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -39,12 +37,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -56,12 +49,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -73,12 +61,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 5,
-      "subtasks_total": 5,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -90,12 +73,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -107,12 +85,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -124,12 +97,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -141,12 +109,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -158,12 +121,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -175,12 +133,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -192,12 +145,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -209,12 +157,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -226,29 +169,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms6ysrvrqus",
       "title": "Write a guide to managing technical debt in a startup. Include identification, p",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -260,12 +195,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -273,20 +203,12 @@
       "title": "Create a networking event survival guide for introverted engineers. Include conv",
       "engine": "careeregine",
       "strict_verdict": "PASS",
-      "confidence": 85,
+      "confidence": 90,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [
-        "Contains template placeholders (expected for template task)"
-      ],
-      "missing_evidence": [],
-      "safe_to_count": true,
-      "verdict_note": "Upgraded: placeholders are intentional in template/letter outputs"
+      "anomalies": [],
+      "safe_to_count": true
     },
     {
       "case_id": "t_mms6yqcwffmp",
@@ -297,12 +219,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -314,12 +231,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -331,12 +243,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -348,12 +255,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -365,12 +267,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -382,29 +279,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms6ylh8960j",
       "title": "Write dialogue for a scene where a startup founder fires their CTO who is also t",
       "engine": "screenwriting",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 80,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 1,
-      "subtasks_total": 1,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Single subtask for complex request"
+      ],
       "safe_to_count": true
     },
     {
@@ -416,12 +305,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -433,12 +317,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -450,12 +329,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -467,12 +341,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -484,12 +353,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -501,12 +365,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -518,12 +377,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -535,12 +389,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -552,12 +401,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -569,12 +413,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -586,12 +425,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -603,12 +437,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -620,12 +449,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -637,12 +461,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -654,12 +473,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -671,12 +485,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -688,12 +497,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -705,12 +509,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -722,12 +521,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -739,12 +533,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 5,
-      "subtasks_total": 5,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -756,12 +545,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -773,29 +557,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms6edovqc6t",
       "title": "Create a comprehensive comparison of Austin vs Portland for a tech worker. Inclu",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -807,12 +583,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -824,12 +595,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -841,12 +607,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -858,12 +619,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -875,12 +631,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -892,12 +643,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -909,12 +655,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -926,12 +667,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -943,12 +679,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -960,12 +691,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -977,12 +703,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -994,12 +715,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1011,12 +727,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1028,12 +739,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1045,29 +751,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms66c8m40p2",
       "title": "Write a comedic monologue from the perspective of a legacy codebase that refuses",
       "engine": "screenwriting",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 80,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 1,
-      "subtasks_total": 1,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Single subtask for complex request"
+      ],
       "safe_to_count": true
     },
     {
@@ -1079,12 +777,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1096,12 +789,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1113,12 +801,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1130,12 +813,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1147,12 +825,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1164,12 +837,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1181,12 +849,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1198,29 +861,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms5yis3xu2n",
       "title": "Research the best project management tools for solo developers in 2026. Compare ",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -1232,12 +887,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1249,12 +899,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1266,12 +911,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1283,12 +923,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1300,12 +935,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1317,12 +947,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1334,12 +959,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1351,12 +971,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1368,12 +983,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1385,12 +995,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1402,29 +1007,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms5q41rwbml",
       "title": "Write a cold open for a tech documentary about the first AI to pass the Turing t",
       "engine": "screenwriting",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 80,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 1,
-      "subtasks_total": 1,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Single subtask for complex request"
+      ],
       "safe_to_count": true
     },
     {
@@ -1436,12 +1033,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1453,12 +1045,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1470,12 +1057,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1487,12 +1069,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1504,12 +1081,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1521,12 +1093,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1538,12 +1105,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1555,29 +1117,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms5ipqzglo4",
       "title": "Research the best electric vehicle charging solutions for apartment dwellers. Co",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -1589,12 +1143,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1606,12 +1155,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1623,12 +1167,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1640,12 +1179,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1657,12 +1191,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1674,12 +1203,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1691,29 +1215,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms5id8vo179",
       "title": "Write a comprehensive guide to setting up Playwright for end-to-end testing of a",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -1725,12 +1241,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1742,12 +1253,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1759,12 +1265,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1776,12 +1277,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1793,12 +1289,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1810,29 +1301,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms57zt61c7u",
       "title": "Teach me about WebAssembly (WASM) for backend developers. Cover use cases, perfo",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -1844,12 +1327,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1861,12 +1339,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1878,12 +1351,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1895,12 +1363,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1912,12 +1375,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1929,12 +1387,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1946,12 +1399,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1963,12 +1411,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1980,12 +1423,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -1997,12 +1435,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2014,12 +1447,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2031,12 +1459,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2048,12 +1471,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2065,12 +1483,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2082,12 +1495,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2099,12 +1507,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2116,12 +1519,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2133,12 +1531,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2150,12 +1543,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2167,12 +1555,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2184,12 +1567,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2201,12 +1579,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2218,12 +1591,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2235,12 +1603,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2252,12 +1615,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2269,29 +1627,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms4nldshyur",
       "title": "Write a comprehensive employee handbook section on remote work policies. Include",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -2303,12 +1653,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2320,12 +1665,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2337,12 +1677,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2354,12 +1689,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2371,12 +1701,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2388,12 +1713,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2405,12 +1725,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2422,12 +1737,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2439,12 +1749,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2456,12 +1761,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2473,12 +1773,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2490,12 +1785,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2507,12 +1797,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2524,12 +1809,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2541,12 +1821,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2558,12 +1833,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2575,12 +1845,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2592,12 +1857,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2609,12 +1869,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2626,12 +1881,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2643,12 +1893,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2660,12 +1905,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2677,12 +1917,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2694,12 +1929,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2711,12 +1941,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2728,12 +1953,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2745,12 +1965,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2762,12 +1977,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2779,12 +1989,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2796,12 +2001,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2813,12 +2013,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2830,29 +2025,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms3rlevxh8h",
       "title": "Create a sustainable energy management plan for someone who works 12-hour days. ",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -2860,36 +2047,25 @@
       "title": "Write a cold email to a potential angel investor. Keep it under 150 words. Inclu",
       "engine": "general",
       "strict_verdict": "PASS",
-      "confidence": 85,
+      "confidence": 90,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [
-        "Contains template placeholders (expected for template task)"
-      ],
-      "missing_evidence": [],
-      "safe_to_count": true,
-      "verdict_note": "Upgraded: placeholders are intentional in template/letter outputs"
+      "anomalies": [],
+      "safe_to_count": true
     },
     {
       "case_id": "t_mms3riahavv2",
       "title": "Research the best mechanical keyboard switches for coding. Compare Cherry MX Bro",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -2901,12 +2077,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2918,12 +2089,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2935,12 +2101,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2952,12 +2113,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2969,12 +2125,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -2986,12 +2137,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3003,12 +2149,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3020,12 +2161,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3037,12 +2173,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3054,29 +2185,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms3d9kdtdk3",
       "title": "Write a professional bio in 3 lengths: 1 sentence, 1 paragraph, and full page. F",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -3088,12 +2211,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3105,12 +2223,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3122,12 +2235,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3139,12 +2247,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3156,12 +2259,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3173,12 +2271,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3190,12 +2283,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3207,12 +2295,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3224,12 +2307,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3237,20 +2315,12 @@
       "title": "Write a comprehensive onboarding email sequence for a new SaaS customer. 5 email",
       "engine": "general",
       "strict_verdict": "PASS",
-      "confidence": 85,
+      "confidence": 90,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [
-        "Contains template placeholders (expected for template task)"
-      ],
-      "missing_evidence": [],
-      "safe_to_count": true,
-      "verdict_note": "Upgraded: placeholders are intentional in template/letter outputs"
+      "anomalies": [],
+      "safe_to_count": true
     },
     {
       "case_id": "t_mms38x2l82x3",
@@ -3261,12 +2331,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3278,29 +2343,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms2xy2ots62",
       "title": "Write a dialogue scene between a CEO and CTO disagreeing about technical debt vs",
       "engine": "screenwriting",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -3312,12 +2369,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3329,12 +2381,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3346,12 +2393,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3363,12 +2405,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3380,12 +2417,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3397,12 +2429,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3414,12 +2441,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3431,12 +2453,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3448,12 +2465,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3465,12 +2477,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3482,12 +2489,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3499,12 +2501,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3516,12 +2513,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3533,12 +2525,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3550,12 +2537,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3567,12 +2549,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3584,29 +2561,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms2igxljn6p",
       "title": "Research the best ways to automate personal finances. Compare tools like Monarch",
       "engine": "wealthresearch",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -3614,20 +2583,12 @@
       "title": "Create a weekly newsletter template for a tech community. Include sections for t",
       "engine": "general",
       "strict_verdict": "PASS",
-      "confidence": 85,
+      "confidence": 90,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [
-        "Contains template placeholders (expected for template task)"
-      ],
-      "missing_evidence": [],
-      "safe_to_count": true,
-      "verdict_note": "Upgraded: placeholders are intentional in template/letter outputs"
+      "anomalies": [],
+      "safe_to_count": true
     },
     {
       "case_id": "t_mms1qkbv4tci",
@@ -3638,12 +2599,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3655,12 +2611,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3672,12 +2623,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3689,33 +2635,22 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms1qaz0z0ww",
       "title": "Write a resignation letter template that is professional and bridges-burning-fre",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 85,
+      "strict_verdict": "PARTIAL",
+      "confidence": 80,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 1,
-      "subtasks_total": 1,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [
-        "Contains template placeholders (expected for template task)"
+        "Single subtask for complex request"
       ],
-      "missing_evidence": [],
-      "safe_to_count": true,
-      "verdict_note": "Upgraded: placeholders are intentional in template/letter outputs"
+      "safe_to_count": true
     },
     {
       "case_id": "t_mms1ld83v1cg",
@@ -3726,29 +2661,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms1law1iaif",
       "title": "Create a 30-day journaling challenge with daily prompts. Focus on self-reflectio",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -3760,12 +2687,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3777,12 +2699,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3794,12 +2711,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3811,12 +2723,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3828,12 +2735,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3845,12 +2747,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3862,12 +2759,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3879,12 +2771,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3896,12 +2783,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 5,
-      "subtasks_total": 5,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3913,12 +2795,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3930,12 +2807,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3947,29 +2819,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms0ww9skalk",
       "title": "Research the best ways to passively earn from a data engineering blog. Include m",
       "engine": "wealthresearch",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -3981,12 +2845,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -3998,29 +2857,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms0q9ivi5qu",
       "title": "Write a story outline for a sci-fi novella about a programmer who discovers that",
       "engine": "screenwriting",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 80,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 1,
-      "subtasks_total": 1,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Single subtask for complex request"
+      ],
       "safe_to_count": true
     },
     {
@@ -4032,12 +2883,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4049,12 +2895,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4066,12 +2907,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4083,29 +2919,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mms0m8qjgjj9",
       "title": "Write a series of 5 LinkedIn posts about lessons learned building a startup whil",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 80,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 1,
-      "subtasks_total": 1,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Single subtask for complex request"
+      ],
       "safe_to_count": true
     },
     {
@@ -4117,12 +2945,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4134,12 +2957,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4151,12 +2969,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4168,12 +2981,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4185,12 +2993,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4202,12 +3005,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4219,12 +3017,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4236,12 +3029,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4253,12 +3041,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4270,12 +3053,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4287,12 +3065,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4304,12 +3077,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4321,12 +3089,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4338,12 +3101,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4355,12 +3113,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4372,12 +3125,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4389,12 +3137,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4406,12 +3149,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4423,12 +3161,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4440,12 +3173,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4457,12 +3185,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4474,12 +3197,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4491,12 +3209,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4508,12 +3221,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4525,12 +3233,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4542,12 +3245,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4559,12 +3257,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4576,12 +3269,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4593,12 +3281,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4610,12 +3293,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4627,12 +3305,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4644,12 +3317,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4661,12 +3329,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4678,29 +3341,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mmrzvehsx0l5",
       "title": "Calculate the total cost of owning a Tesla Model 3 vs a Honda Civic over 5 years",
       "engine": "wealthresearch",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -4712,12 +3367,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 5,
-      "subtasks_total": 5,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4729,12 +3379,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4746,29 +3391,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mmrzroe2z2g0",
       "title": "Plan a weekend road trip from Austin to Big Bend National Park. Include route op",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -4780,12 +3417,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4797,12 +3429,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4814,12 +3441,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4831,12 +3453,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4848,29 +3465,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mmrzntjepcvk",
       "title": "Research the best cities in the US for tech startups in 2026. Compare Austin, Mi",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 5,
-      "subtasks_total": 5,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -4882,12 +3491,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4899,12 +3503,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4916,12 +3515,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4933,12 +3527,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4950,12 +3539,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4967,12 +3551,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -4984,12 +3563,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5001,29 +3575,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mmrzgtndk835",
       "title": "Build a morning routine that takes exactly 60 minutes and includes exercise, pla",
       "engine": "personalops",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 80,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 1,
-      "subtasks_total": 1,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Single subtask for complex request"
+      ],
       "safe_to_count": true
     },
     {
@@ -5035,12 +3601,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5052,12 +3613,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5069,12 +3625,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5086,12 +3637,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5103,12 +3649,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5120,12 +3661,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5137,12 +3673,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5154,12 +3685,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5171,12 +3697,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5188,12 +3709,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5205,12 +3721,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5222,12 +3733,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5239,12 +3745,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5256,12 +3757,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5273,12 +3769,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5286,20 +3777,12 @@
       "title": "Optimize my LinkedIn profile for staff-level data engineering roles. Current hea",
       "engine": "careeregine",
       "strict_verdict": "PASS",
-      "confidence": 85,
+      "confidence": 90,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [
-        "Contains template placeholders (expected for template task)"
-      ],
-      "missing_evidence": [],
-      "safe_to_count": true,
-      "verdict_note": "Upgraded: placeholders are intentional in template/letter outputs"
+      "anomalies": [],
+      "safe_to_count": true
     },
     {
       "case_id": "t_mmryti1ue1k4",
@@ -5310,29 +3793,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mmrytfpm8idp",
       "title": "Generate a step-by-step migration plan from Express.js 4 to Express.js 5 for Top",
       "engine": "newsroom",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -5344,12 +3819,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5361,12 +3831,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5378,12 +3843,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5395,29 +3855,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mmryi7ozszxv",
       "title": "Rewrite this text to sound executive-ready but still precise: TopRanker is an ap",
       "engine": "general",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 80,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 1,
-      "subtasks_total": 1,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Single subtask for complex request"
+      ],
       "safe_to_count": true
     },
     {
@@ -5429,12 +3881,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5446,12 +3893,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5463,12 +3905,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5476,17 +3913,13 @@
       "title": "Turn this messy meeting transcript into action items with owners and deadlines: ",
       "engine": "topranker",
       "strict_verdict": "PARTIAL",
-      "confidence": 60,
+      "confidence": 50,
       "l1_pass": false,
       "l2_pass": false,
       "l3_pass": false,
-      "subtasks_done": 1,
-      "subtasks_total": 1,
-      "has_deliberation": true,
-      "has_substantial_output": false,
-      "anomalies": [],
-      "missing_evidence": [
-        "No substantial output (>200 chars) in any subtask"
+      "anomalies": [
+        "Thin output: 86 chars",
+        "Single subtask for complex request"
       ],
       "safe_to_count": true
     },
@@ -5499,29 +3932,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mmry7rlsumbg",
       "title": "Create a 30-day learning roadmap for system design interviews. I have 10 years o",
       "engine": "careeregine",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 80,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 1,
-      "subtasks_total": 1,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Single subtask for complex request"
+      ],
       "safe_to_count": true
     },
     {
@@ -5533,12 +3958,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5550,12 +3970,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5567,12 +3982,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5584,12 +3994,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5601,12 +4006,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5618,12 +4018,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5635,12 +4030,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5652,12 +4042,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 4,
-      "subtasks_total": 4,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5669,12 +4054,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5686,12 +4066,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5703,12 +4078,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5720,12 +4090,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5737,12 +4102,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5754,12 +4114,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5771,12 +4126,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5788,12 +4138,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5805,29 +4150,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mmrxjw2l3nul",
       "title": "Create board-level documentation for TopRanker with goals, metrics, open questio",
       "engine": "wealthresearch",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -5839,12 +4176,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5856,12 +4188,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5873,12 +4200,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5890,12 +4212,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5907,12 +4224,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5924,12 +4236,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5941,12 +4248,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -5958,29 +4260,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mmrx9glahr65",
       "title": "Write a go-to-market plan for TopRanker launching in Austin. Include user acquis",
       "engine": "topranker",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -5992,12 +4286,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -6009,12 +4298,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -6026,12 +4310,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -6043,12 +4322,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -6060,12 +4334,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -6077,12 +4346,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -6094,12 +4358,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -6111,12 +4370,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
@@ -6128,29 +4382,21 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     },
     {
       "case_id": "t_mmrwm1arvt4n",
       "title": "Research the market for community-driven local business review platforms and tel",
       "engine": "topranker",
-      "strict_verdict": "PASS",
-      "confidence": 90,
+      "strict_verdict": "PARTIAL",
+      "confidence": 75,
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 3,
-      "subtasks_total": 3,
-      "has_deliberation": true,
-      "has_substantial_output": true,
-      "anomalies": [],
-      "missing_evidence": [],
+      "anomalies": [
+        "Search returned weak/no results"
+      ],
       "safe_to_count": true
     },
     {
@@ -6162,12 +4408,7 @@
       "l1_pass": true,
       "l2_pass": true,
       "l3_pass": false,
-      "subtasks_done": 2,
-      "subtasks_total": 2,
-      "has_deliberation": true,
-      "has_substantial_output": true,
       "anomalies": [],
-      "missing_evidence": [],
       "safe_to_count": true
     }
   ]

@@ -1,6 +1,6 @@
 # GPO — Governed Personal Office
 
-A privacy-first, AI-powered personal operating system with governed multi-agent execution across 15 specialized engines.
+A privacy-first AI operating system that executes tasks across 15 specialized engines using a multi-agent Board of AI deliberation pattern.
 
 ## Quick Start
 
@@ -11,77 +11,62 @@ pm2 start ecosystem.config.js
 open http://localhost:3200
 ```
 
-## Architecture
+## How It Works
 
-GPO uses a **Board of AI** deliberation pattern: tasks are submitted, analyzed by AI from three perspectives (Chief of Staff, Critic, Domain Specialist), broken into provider-specific subtasks, and executed with governance gates.
-
-**Stack**: Node.js + TypeScript + JSON file state | **UI**: Dashboard at localhost:3200
+1. You submit a request (natural language)
+2. GPO detects the right engine and routes it
+3. A Board of AI deliberates: objective, strategy, risk, subtask plan
+4. Providers execute each subtask (web search, synthesis, strategy, code)
+5. Output is delivered as a downloadable markdown or JSON file
 
 ## 15 Engines
 
-| Engine | Domain ID |
-|---|---|
-| Code & Product Engineering | `startup` |
-| Writing & Documentation | `writing` |
-| Research & Analysis | `research` |
-| Learning & Tutoring | `learning` |
-| Scheduling & Life Operations | `personalops` |
-| Health & Wellness Coach | `health` |
-| Shopping & Buying Advisor | `shopping` |
-| Travel & Relocation Planner | `travel` |
-| Personal Finance & Investing | `wealthresearch` |
-| Startup & Business Builder | `topranker` |
-| Career & Job Search | `careeregine` |
-| Screenwriting & Story Development | `screenwriting` |
-| Filmmaking & Video Production | `founder2founder` |
-| Music & Audio Creation | `music` |
-| Home & Lifestyle Design | `home` |
+| # | Engine |
+|---|--------|
+| 1 | Code & Product Engineering |
+| 2 | Writing & Documentation |
+| 3 | Research & Analysis |
+| 4 | Learning & Tutoring |
+| 5 | Scheduling & Life Operations |
+| 6 | Health & Wellness Coach |
+| 7 | Shopping & Buying Advisor |
+| 8 | Travel & Relocation Planner |
+| 9 | Personal Finance & Investing |
+| 10 | Startup & Business Builder |
+| 11 | Career & Job Search |
+| 12 | Screenwriting & Story Development |
+| 13 | Filmmaking & Video Production |
+| 14 | Music & Audio Creation |
+| 15 | Home & Lifestyle Design |
 
-## Validation Results
+## Validation
 
-360-case test harness executed across all 15 engines:
+A 360-case test harness was executed across all 15 engines.
 
 | Metric | Result |
 |---|---|
-| Canonical cases | 361 |
-| **PASS** | **360 (99.7%)** |
-| PARTIAL | 1 (0.3%) |
+| Harness target | 360 cases |
+| Unique cases executed | 361 |
+| PASS (strict) | 330 (91.4%) |
+| PARTIAL | 31 (8.6%) |
 | FAIL | 0 |
-| L1 (Prompt Pass) | 99.7% |
-| L2 (Context Pass) | 99.7% |
-| Avg Confidence | 90/100 |
+| Average confidence | 89/100 |
 
-See `docs/testing/engine-maturity-scoreboard.md` for details.
+31 PARTIAL cases had anomalies: weak search results, single-subtask plans for complex requests, or thin output. See `docs/testing/engine-maturity-scoreboard.md`.
 
-## Repository Structure
+## Stack
 
-See `docs/repo-map.md` for the complete directory map.
+- **Runtime**: Node.js, TypeScript, raw HTTP server (port 3200)
+- **State**: JSON files (no database)
+- **UI**: Single-page HTML/CSS/JS dashboard
+- **Providers**: OpenAI (synthesis), Perplexity (web search), Gemini (strategy), Claude (code)
 
 ## Documentation
 
-| Document | Purpose |
-|---|---|
-| [System Overview](docs/system-overview.md) | Architecture and components |
-| [Repo Map](docs/repo-map.md) | Directory structure |
-| [Task Lifecycle](docs/task-lifecycle.md) | Request → execution flow |
-| [Board of AI Guide](docs/board-of-ai-guide.md) | Deliberation process |
-| [Operator Guide](docs/operator-guide.md) | How to use GPO |
-| [Test Results](docs/testing/engine-maturity-scoreboard.md) | Validation scoreboard |
-| [Review Guide](docs/testing/test-review-guide.md) | How to review test cases |
-
-## Providers
-
-| Provider | Role | Model |
-|---|---|---|
-| OpenAI | Synthesis, reports | gpt-4o |
-| Perplexity | Web search, research | sonar |
-| Gemini | Strategy, comparison | gemini-2.5-flash-lite |
-| Claude | Code implementation | claude (local CLI) |
-
-## Principles
-
-- Board of AI deliberation before execution
-- Privacy-first: tenant isolation, project isolation
-- Governed execution with approval gates
-- Evidence-driven development via test harness
-- Operator is final authority
+- [System Overview](docs/system-overview.md)
+- [Repository Map](docs/repo-map.md)
+- [Task Lifecycle](docs/task-lifecycle.md)
+- [Board of AI Guide](docs/board-of-ai-guide.md)
+- [Operator Guide](docs/operator-guide.md)
+- [Test Results](docs/testing/engine-maturity-scoreboard.md)
+- [How to Review a Test Case](docs/testing/test-review-guide.md)
