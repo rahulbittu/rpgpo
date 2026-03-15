@@ -391,5 +391,53 @@
         "GAP-008: Perplexity search failure for product queries"
       ]
     }
+  },
+  {
+    "test_case_id": "GPO-RES-03",
+    "global_rank": 16,
+    "engine": "Research & Analysis",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:48:08.063Z",
+    "level_1_prompt_pass": true,
+    "execution_evidence": {
+      "task_id": "t_mmrxfoapzuia",
+      "domain_routed": "newsroom",
+      "completion": "done",
+      "output_quality": "Excellent — real product data, technical depth",
+      "issues": [
+        "Routed to newsroom (keyword collision)"
+      ]
+    }
+  },
+  {
+    "test_case_id": "GPO-WRI-05",
+    "global_rank": 13,
+    "engine": "Writing & Documentation",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:48:08.064Z",
+    "level_1_prompt_pass": true,
+    "execution_evidence": {
+      "task_id": "t_mmrxfoat38yk",
+      "domain_routed": "writing",
+      "completion": "done",
+      "output_quality": "Good — structured SOP, auto-approved correctly"
+    }
+  },
+  {
+    "test_case_id": "GPO-LEA-03",
+    "global_rank": 18,
+    "engine": "Learning & Tutoring",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T15:48:08.064Z",
+    "level_1_prompt_pass": true,
+    "execution_evidence": {
+      "task_id": "t_mmrxfoas9217",
+      "domain_routed": "learning",
+      "completion": "done",
+      "output_quality": "Good strategy doc but NOT interactive quiz",
+      "issues": [
+        "No interactive session mode"
+      ]
+    }
   }
 ]
