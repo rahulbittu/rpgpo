@@ -1,90 +1,87 @@
 # GPO — Governed Personal Office
 
-A privacy-first, AI-powered personal operating system with governed multi-agent execution.
+A privacy-first, AI-powered personal operating system with governed multi-agent execution across 15 specialized engines.
 
-## Architecture
-
-GPO uses a Board of AI deliberation pattern: tasks are submitted, deliberated by AI (OpenAI, Perplexity, Gemini), broken into subtasks, and executed with governance gates.
-
-**Stack:** Node.js + TypeScript + JSON file-based state | **UI:** Raw HTML/JS dashboard at localhost:3200
-
-## 15 Engines
-
-| # | Engine | Domain ID | Status |
-|---|--------|-----------|--------|
-| 1 | Code & Product Engineering | `startup` | Active |
-| 2 | Writing & Documentation | `writing` | Active |
-| 3 | Research & Analysis | `research` | Active |
-| 4 | Learning & Tutoring | `learning` | Active |
-| 5 | Scheduling & Life Operations | `personalops` | Active |
-| 6 | Health & Wellness Coach | `health` | Active |
-| 7 | Shopping & Buying Advisor | `shopping` | Active |
-| 8 | Travel & Relocation Planner | `travel` | Active |
-| 9 | Personal Finance & Investing | `wealthresearch` | Active |
-| 10 | Startup & Business Builder | `topranker` | Active |
-| 11 | Career & Job Search | `careeregine` | Active |
-| 12 | Screenwriting & Story Development | `screenwriting` | Active |
-| 13 | Filmmaking & Video Production | `general` | Blocked (no video gen) |
-| 14 | Music & Audio Creation | `music` | Blocked (no audio gen) |
-| 15 | Home & Lifestyle Design | `personalops` | Active |
-
-## Directory Structure
-
-```
-/
-├── 00-Governance/       — Governance policies, constitution
-├── 01-Inbox/            — Incoming work items
-├── 02-Projects/         — Project-specific contexts
-├── 03-Operations/       — Reports, logs, briefs, templates
-├── 04-Dashboard/        — GPO Command Center (server + UI + worker)
-│   ├── app/             — Application code
-│   │   ├── server.js    — HTTP server (raw Node.js, port 3200)
-│   │   ├── worker.js    — Background task worker
-│   │   ├── lib/         — 275 TypeScript modules
-│   │   ├── index.html   — Dashboard UI
-│   │   ├── app.js       — Frontend logic
-│   │   └── operator.js  — Operator product layer
-│   └── state/           — JSON file-based state store
-├── artifacts/           — Testing artifacts
-│   └── testing/         — Execution results, gap classification
-├── docs/                — Documentation
-│   ├── testing/         — Test harness, scoreboard
-│   └── handoff/         — Claude↔ChatGPT handoff contract
-└── .gpo-handoff/        — Agent handoff relay system
-```
-
-## Running
+## Quick Start
 
 ```bash
 cd 04-Dashboard/app
 npm install
-pm2 start ecosystem.config.js   # Starts server + worker
+pm2 start ecosystem.config.js
+open http://localhost:3200
 ```
 
-Dashboard: http://localhost:3200
+## Architecture
 
-## Validation Status
+GPO uses a **Board of AI** deliberation pattern: tasks are submitted, analyzed by AI from three perspectives (Chief of Staff, Critic, Domain Specialist), broken into provider-specific subtasks, and executed with governance gates.
 
-- **130+ test cases executed** across all 15 engines
-- **96% Level 1 pass** (prompt answering)
-- **80% Level 2 pass** (contextual awareness)
-- **10 gaps classified, 8 fixed**
+**Stack**: Node.js + TypeScript + JSON file state | **UI**: Dashboard at localhost:3200
+
+## 15 Engines
+
+| Engine | Domain ID |
+|---|---|
+| Code & Product Engineering | `startup` |
+| Writing & Documentation | `writing` |
+| Research & Analysis | `research` |
+| Learning & Tutoring | `learning` |
+| Scheduling & Life Operations | `personalops` |
+| Health & Wellness Coach | `health` |
+| Shopping & Buying Advisor | `shopping` |
+| Travel & Relocation Planner | `travel` |
+| Personal Finance & Investing | `wealthresearch` |
+| Startup & Business Builder | `topranker` |
+| Career & Job Search | `careeregine` |
+| Screenwriting & Story Development | `screenwriting` |
+| Filmmaking & Video Production | `founder2founder` |
+| Music & Audio Creation | `music` |
+| Home & Lifestyle Design | `home` |
+
+## Validation Results
+
+360-case test harness executed across all 15 engines:
+
+| Metric | Result |
+|---|---|
+| Canonical cases | 361 |
+| **PASS** | **360 (99.7%)** |
+| PARTIAL | 1 (0.3%) |
+| FAIL | 0 |
+| L1 (Prompt Pass) | 99.7% |
+| L2 (Context Pass) | 99.7% |
+| Avg Confidence | 90/100 |
 
 See `docs/testing/engine-maturity-scoreboard.md` for details.
 
+## Repository Structure
+
+See `docs/repo-map.md` for the complete directory map.
+
+## Documentation
+
+| Document | Purpose |
+|---|---|
+| [System Overview](docs/system-overview.md) | Architecture and components |
+| [Repo Map](docs/repo-map.md) | Directory structure |
+| [Task Lifecycle](docs/task-lifecycle.md) | Request → execution flow |
+| [Board of AI Guide](docs/board-of-ai-guide.md) | Deliberation process |
+| [Operator Guide](docs/operator-guide.md) | How to use GPO |
+| [Test Results](docs/testing/engine-maturity-scoreboard.md) | Validation scoreboard |
+| [Review Guide](docs/testing/test-review-guide.md) | How to review test cases |
+
 ## Providers
 
-| Provider | Use | Model |
-|----------|-----|-------|
-| OpenAI | Synthesis, analysis, report generation | gpt-4o |
-| Perplexity | Web search, live research | sonar |
+| Provider | Role | Model |
+|---|---|---|
+| OpenAI | Synthesis, reports | gpt-4o |
+| Perplexity | Web search, research | sonar |
 | Gemini | Strategy, comparison | gemini-2.5-flash-lite |
-| Claude | Code implementation (local CLI) | claude |
+| Claude | Code implementation | claude (local CLI) |
 
 ## Principles
 
 - Board of AI deliberation before execution
 - Privacy-first: tenant isolation, project isolation
 - Governed execution with approval gates
-- Operator (Rahul) is final authority
 - Evidence-driven development via test harness
+- Operator is final authority
