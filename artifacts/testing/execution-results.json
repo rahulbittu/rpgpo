@@ -858,5 +858,75 @@
         "Routed to shopping instead of wealthresearch"
       ]
     }
+  },
+  {
+    "test_case_id": "GPO-COD-05",
+    "global_rank": 11,
+    "engine": "Code & Product Engineering",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:27:46.027Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrytfpm8idp",
+      "domain_routed": "newsroom",
+      "subtask_count": 4,
+      "completion": "done",
+      "output_quality": "Good — 4-subtask chain produced detailed migration plan",
+      "issues": [
+        "Routed to newsroom (no code/migration keywords)",
+        "Output as text plan not code"
+      ]
+    }
+  },
+  {
+    "test_case_id": "GPO-SCH-04",
+    "global_rank": 28,
+    "engine": "Scheduling & Life Operations",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:27:46.027Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmryti1ue1k4",
+      "domain_routed": "personalops",
+      "completion": "done",
+      "output_quality": "Good — day-by-day plan with effort/impact prioritization"
+    }
+  },
+  {
+    "test_case_id": "GPO-CAR-05",
+    "global_rank": 44,
+    "engine": "Career & Job Search",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:27:46.027Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrytke1hi2k",
+      "domain_routed": "careeregine",
+      "completion": "done",
+      "output_quality": "Good — rewritten headline, about section, experience descriptions"
+    }
+  },
+  {
+    "test_case_id": "GPO-RES-07",
+    "global_rank": 36,
+    "engine": "Research & Analysis",
+    "execution_status": "PARTIAL",
+    "execution_timestamp": "2026-03-15T16:27:46.027Z",
+    "level_1_prompt_pass": true,
+    "level_2_context_pass": true,
+    "level_3_gpo_grade": false,
+    "execution_evidence": {
+      "task_id": "t_mmrytmq2bqlh",
+      "domain_routed": "topranker",
+      "subtask_count": 4,
+      "completion": "done",
+      "output_quality": "Good — 4-subtask chain with Redis benchmarks and go/no-go recommendation"
+    }
   }
 ]
