@@ -1527,20 +1527,17 @@ async function submitIntakeTask() {
     const d = await r.json();
     if (d.ok) {
       _autoApproved = false;
-      showToast('Task submitted — starting Board deliberation...', 'success');
+      showToast('Task submitted — Board deliberation starting...', 'success');
       document.getElementById('intakeRequest').value = '';
       document.getElementById('intakeOutcome').value = '';
       // Auto-focus the new task
       selectedIntakeTaskId = d.task.task_id;
       _lastKnownIntakeStatus = 'intake';
+      _autoApproved = false;
       await loadIntakeTasks();
       showIntakeDetail(d.task.task_id);
       startIntakeDetailPoll();
-      // Auto-deliberate: immediately send to Board
-      try {
-        await fetch('/api/intake/task/' + d.task.task_id + '/deliberate', { method: 'POST' });
-        pushActivity('Board deliberation started for: ' + d.task.title);
-      } catch { /* manual deliberation fallback */ }
+      // Server auto-deliberates — no need to trigger from UI
     } else {
       showToast('Error: ' + d.error, 'error');
     }
@@ -1551,29 +1548,30 @@ function startIntakeDetailPoll() {
   stopIntakeDetailPoll();
   _intakeDetailPollTimer = setInterval(async () => {
     if (!selectedIntakeTaskId) { stopIntakeDetailPoll(); return; }
-    await loadIntakeTasks();
-    // Auto-approve plan when deliberation completes (for non-code research tasks)
+    // Only fetch the selected task — don't reload entire list (causes scroll jump)
     try {
       const r = await fetch('/api/intake/task/' + selectedIntakeTaskId);
       if (r.ok) {
         const d = await r.json();
+        // Auto-approve plan for non-code tasks (only once)
         if (d.task?.status === 'planned' && !_autoApproved) {
           _autoApproved = true;
           const isCodeTask = d.task.board_deliberation?.is_code_task;
           if (!isCodeTask) {
-            showToast('Plan approved — executing subtasks...', 'success');
+            showToast('Plan approved — executing...', 'success');
             await fetch('/api/intake/task/' + selectedIntakeTaskId + '/approve-plan', { method: 'POST' });
-            pushActivity('Auto-approved plan for: ' + d.task.title);
           }
         }
-        // Update detail view with latest progress
+        // Only refresh detail view when status changes (prevents scroll jump)
         if (d.task?.status !== _lastKnownIntakeStatus) {
           _lastKnownIntakeStatus = d.task?.status;
-          showIntakeDetail(selectedIntakeTaskId);
+          renderIntakeDetail(d);
         }
         if (d.task?.status === 'done' || d.task?.status === 'failed') {
           stopIntakeDetailPoll();
           showToast(d.task?.status === 'done' ? 'Task completed!' : 'Task failed', d.task?.status === 'done' ? 'success' : 'error');
+          renderIntakeDetail(d);
+          loadIntakeTasks(); // Only reload list when task is finished
           showIntakeDetail(selectedIntakeTaskId);
         }
       }

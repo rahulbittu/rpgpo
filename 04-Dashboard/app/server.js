@@ -4095,3 +4095,5 @@ server.listen(PORT, '0.0.0.0', () => {
   console.log(`  Binding 0.0.0.0 for remote access`);
   console.log(`  Keys: OpenAI=${keyDiag('OPENAI_API_KEY')} Perplexity=${keyDiag('PERPLEXITY_API_KEY')} Gemini=${keyDiag('GEMINI_API_KEY')}\n`);
 });
+
+  // Parts 126-128 batch routes injected at EOF

@@ -69,5 +69,21 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-15T06:18:16.480Z"
+  },
+  "t_mmrs5o8z7nbd": {
+    "task_id": "t_mmrs5o8z7nbd",
+    "deliverable_id": "dlv_rpgpo_tmmrs5o8z7nbd_newsroom_d75f3f8e",
+    "engine_id": "newsroom",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "rankedItems",
+      "summaries",
+      "source_links"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-15T13:18:26.844Z"
   }
 }

@@ -868,17 +868,8 @@ RULES:
         );
       } catch { /* learning non-fatal */ }
 
-      // Emit in-app notification on subtask completion
-      try {
-        const notif = require('./lib/in-app-notifications');
-        notif.emitNotification({
-          type: 'system.info',
-          severity: 'low',
-          title: `Subtask complete: ${st.title?.slice(0, 50) || subtaskId}`,
-          message: whatDone.slice(0, 200),
-          actions: [{ label: 'View Task', action: 'viewWorkflow', ref: { kind: 'task', id: st.parent_task || '' } }],
-        });
-      } catch { /* non-fatal */ }
+      // Note: per-subtask notifications removed to prevent spam
+      // Task-level notification is emitted by workflow.onSubtaskComplete when all subtasks done
 
       // Auto-continue workflow
       const wfResult = workflow.onSubtaskComplete(subtaskId);

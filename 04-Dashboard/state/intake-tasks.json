@@ -1,5 +1,70 @@
 [
   {
+    "task_id": "t_mmrs5o8z7nbd",
+    "title": "Give me the top news in Hyderabad today, March 15, 2026",
+    "raw_request": "Give me the top news in Hyderabad today, March 15, 2026",
+    "domain": "newsroom",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-15T13:18:22.211Z",
+    "updated_at": "2026-03-15T13:18:46.713Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-15T13:18:30.729Z",
+      "interpreted_objective": "Provide the top news in Hyderabad for March 15, 2026.",
+      "expected_outcome": "A concise report containing the top news stories in Hyderabad on March 15, 2026, with source information.",
+      "key_unknowns": [
+        "Reliable sources for Hyderabad news",
+        "Current top news stories in Hyderabad on March 15, 2026"
+      ],
+      "recommended_strategy": "Use Perplexity to search for the latest news in Hyderabad as of March 15, 2026. Analyze and synthesize the findings using OpenAI to create a concise report. Ensure each news item is relevant and includes source information.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Search Hyderabad News",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of top news stories in Hyderabad on March 15, 2026, with source links.",
+          "prompt": "Find the top news stories in Hyderabad for March 15, 2026.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize News Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A concise report summarizing the top news stories in Hyderabad on March 15, 2026, including source information.",
+          "prompt": "Using the list of news stories and sources, synthesize a concise report summarizing the top news in Hyderabad on March 15, 2026.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/Hyderabad_News_March_15_2026.json"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1584
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelm412"
+  },
+  {
     "task_id": "t_mmrd57n5bvzj",
     "title": "Research the top 10 passive income opportunities for a senior data engineer / en",
     "raw_request": "Research the top 10 passive income opportunities for a senior data engineer / entrepreneur in 2025-2026. Focus on: SaaS micro-products, API-as-a-service, data pipeline consulting, digital products, and automated tools. For each opportunity, provide: estimated monthly income potential, startup cost, time to first revenue, and 3 concrete first steps. Use real examples of people who have succeeded.",

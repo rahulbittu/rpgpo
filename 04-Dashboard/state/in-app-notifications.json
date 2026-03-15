@@ -43,5 +43,41 @@
         }
       }
     ]
+  },
+  {
+    "id": "notif_mmrs5y8a_61da5b23",
+    "type": "system.info",
+    "severity": "low",
+    "title": "Subtask complete: Search Hyderabad News",
+    "message": "# Top News Stories in Hyderabad - March 15, 2026",
+    "createdAt": 1773580715146,
+    "actions": [
+      {
+        "label": "View Task",
+        "action": "viewWorkflow",
+        "ref": {
+          "kind": "task",
+          "id": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "notif_mmrs6754_5c7d7e44",
+    "type": "system.info",
+    "severity": "low",
+    "title": "Subtask complete: Synthesize News Report",
+    "message": "I'm unable to access real-time data or future-specific information beyond October 2023. Therefore, I can't provide the exact news stories from Hyderab",
+    "createdAt": 1773580726696,
+    "actions": [
+      {
+        "label": "View Task",
+        "action": "viewWorkflow",
+        "ref": {
+          "kind": "task",
+          "id": ""
+        }
+      }
+    ]
   }
 ]
