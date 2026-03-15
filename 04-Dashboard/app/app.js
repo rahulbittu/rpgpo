@@ -1430,6 +1430,19 @@ function renderIntakeTasks() {
   const list = document.getElementById('intakeTaskList');
   if (!list) return;
 
+  // Update filter badges with counts
+  const counts = { all: INTAKE_TASKS.length };
+  INTAKE_TASKS.forEach(t => { counts[t.status] = (counts[t.status] || 0) + 1; });
+  document.querySelectorAll('#intakeFilters .filter-btn').forEach(b => {
+    const f = b.dataset.filter;
+    const c = counts[f] || 0;
+    const existing = b.querySelector('.filter-count');
+    if (c > 0 && f !== 'all') {
+      if (existing) existing.textContent = c;
+      else b.insertAdjacentHTML('beforeend', ` <span class="filter-count" style="font-size:9px;opacity:0.6">${c}</span>`);
+    } else if (existing) existing.remove();
+  });
+
   // Exclude the current active task from the list (it's in the hero)
   const activeTask = getActiveIntakeTask();
   const activeId = activeTask ? activeTask.task_id : null;
