@@ -60,6 +60,8 @@ export interface BehaviorEvent {
 // ─── Signal Types ──────────────────────────────────────
 export type SignalScope = 'global' | 'engine' | 'project' | 'workflow';
 
+export type SignalProvenance = 'explicit_profile' | 'seeded_historical' | 'live_observed';
+
 export interface BehaviorSignal {
   name: string;
   value: any;
@@ -69,6 +71,7 @@ export interface BehaviorSignal {
   sourceEventCount: number;
   lastUpdated: string;
   active: boolean;           // false = advisory only
+  provenance?: SignalProvenance; // where this signal came from — set by post-processing if not explicit
   explanation: string;
 }
 
@@ -131,6 +134,17 @@ function readEventsByEngine(engine: string): BehaviorEvent[] {
 // ─── Signal Derivation ────────────────────────────────
 
 /**
+ * Determine provenance for event-based signals.
+ * If all source events are seeded, provenance is seeded_historical.
+ * If any live events exist, provenance is live_observed.
+ */
+function determineProvenance(sourceEvents: BehaviorEvent[]): SignalProvenance {
+  if (sourceEvents.length === 0) return 'seeded_historical';
+  const hasLive = sourceEvents.some(e => !e.metadata?.source || e.metadata.source !== 'historical_seed');
+  return hasLive ? 'live_observed' : 'seeded_historical';
+}
+
+/**
  * Derive all behavioral signals from the event log.
  * Called periodically or after significant event batches.
  */
@@ -154,6 +168,7 @@ function deriveSignals(): BehaviorSignal[] {
       sourceEventCount: totalDecisions,
       lastUpdated: new Date().toISOString(),
       active: totalDecisions >= MIN_EVENTS_FOR_SIGNAL * 2,
+      provenance: determineProvenance([...approvals, ...denials]),
       explanation: `Based on ${totalDecisions} decisions: ${approvals.length} approved, ${denials.length} denied (${(approvalRate * 100).toFixed(0)}% approval rate)`,
     });
   }
@@ -340,6 +355,7 @@ function deriveSignals(): BehaviorSignal[] {
           sourceEventCount: 1,
           lastUpdated: new Date().toISOString(),
           active: true,
+          provenance: 'explicit_profile' as SignalProvenance,
           explanation: `From operator profile: communication_style = ${profile.communication_style}`,
         });
       }
@@ -352,6 +368,7 @@ function deriveSignals(): BehaviorSignal[] {
           sourceEventCount: 1,
           lastUpdated: new Date().toISOString(),
           active: true,
+          provenance: 'explicit_profile' as SignalProvenance,
           explanation: `From operator profile: stated output preferences`,
         });
       }
@@ -364,11 +381,21 @@ function deriveSignals(): BehaviorSignal[] {
           sourceEventCount: 1,
           lastUpdated: new Date().toISOString(),
           active: true,
+          provenance: 'explicit_profile' as SignalProvenance,
           explanation: `From operator profile: risk_tolerance = ${profile.risk_tolerance}`,
         });
       }
     }
   } catch { /* profile not available */ }
+
+  // Post-process: ensure all signals have provenance
+  // Event-based signals without explicit provenance default to seeded_historical
+  // (all current events are from historical seeding)
+  for (const sig of signals) {
+    if (!sig.provenance) {
+      sig.provenance = 'seeded_historical';
+    }
+  }
 
   return signals;
 }

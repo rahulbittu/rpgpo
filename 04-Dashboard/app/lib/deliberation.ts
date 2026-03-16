@@ -281,6 +281,16 @@ ${filePathRules}
     }
   } catch { /* non-fatal */ }
 
+  // Phase B: Inject learned operator preferences (conservative, additive only)
+  let behaviorSection = '';
+  try {
+    const behaviorModule = require('./behavior') as { getScopedContext(opts: { engine?: string }): { summary: string } };
+    const ctx = behaviorModule.getScopedContext({ engine: task.domain });
+    if (ctx.summary && ctx.summary !== 'No learned preferences available.') {
+      behaviorSection = `\n## Operator Preferences (from learned behavior — additive context only)\n${ctx.summary}\nUse these preferences to shape output style and depth. These are advisory signals, not overrides.\n`;
+    }
+  } catch { /* behavior module not available — non-fatal */ }
+
   const userPrompt = `Deliberate on this task:
 
 ## Raw Request
@@ -300,6 +310,7 @@ ${task.constraints || 'Standard RPGPO safety rules apply'}
 ${contextSection}
 ${knowledgeSection}
 ${recentWorkSection}
+${behaviorSection}
 ${domainFiles ? '## Domain Files\n' + domainFiles : ''}
 ${repoSection}
 

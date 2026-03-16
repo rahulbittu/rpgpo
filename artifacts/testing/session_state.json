@@ -1,30 +1,38 @@
 {
-  "current_phase": "reliability_hardening_phase_a_complete",
-  "phase_description": "MANDATORY REVIEW CHECKPOINT — awaiting operator approval for Phase B",
-  "batch": 6,
-  "total_tasks": 1230,
-  "done_tasks": 1178,
+  "current_phase": "reliability_hardening_phase_b",
+  "phase_description": "Restricted Phase B — conservative additive context injection",
+  "batch": 7,
+  "operator_restrictions": {
+    "approved": [
+      "session caching of operator profile/context",
+      "scoped context summary injection into deliberation prompts",
+      "synthesis shaping from explicit profile/output preferences",
+      "keyword/BM25-style retrieval for local context lookup",
+      "read-only additive context enrichment"
+    ],
+    "not_approved": [
+      "engine satisfaction → auto-approve influence",
+      "approval relaxation from learned signals",
+      "provider preference from weak historical evidence",
+      "noisy general domain as strong behavior truth",
+      "behavior-based execution overrides"
+    ]
+  },
   "behavior_learning": {
-    "status": "phase_a_complete",
-    "total_events": 3432,
+    "status": "phase_b_batch_7_complete",
     "total_signals": 26,
-    "active_signals": 24,
-    "advisory_signals": 2,
-    "signal_types": ["output_satisfaction", "task_volume", "communication_style", "output_preferences", "risk_tolerance"],
-    "scoped_memory": "implemented (global + engine)",
-    "scoped_context_api": "GET /api/behavior/context?engine=X"
+    "provenance_breakdown": {
+      "explicit_profile": 3,
+      "seeded_historical": 23,
+      "live_observed": 0
+    },
+    "context_injection": {
+      "deliberation_prompts": "active — additive only",
+      "synthesis_prompts": "active — additive only",
+      "approval_logic": "NOT influenced",
+      "provider_routing": "NOT influenced"
+    }
   },
-  "retrieval": {
-    "status": "designed — awaiting Phase B implementation",
-    "policy": "artifacts/retrieval/retrieval-policy.json",
-    "index_manifest": "artifacts/retrieval/index-manifest.json"
-  },
-  "tools": {
-    "status": "designed — awaiting Phase B integration",
-    "registry": "artifacts/tools/tool-registry.json",
-    "active_tools": 5,
-    "planned_tools": 3
-  },
-  "next_phase": "Phase B — retrieval implementation + conservative execution influence (REQUIRES OPERATOR APPROVAL)",
-  "updated_at": "2026-03-16T22:00:00.000Z"
+  "next_batch": "Batch 8 — regression validation + additional docs",
+  "updated_at": "2026-03-16T22:30:00.000Z"
 }

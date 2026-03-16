@@ -125,6 +125,17 @@ function readEventsByEngine(engine) {
 }
 // ─── Signal Derivation ────────────────────────────────
 /**
+ * Determine provenance for event-based signals.
+ * If all source events are seeded, provenance is seeded_historical.
+ * If any live events exist, provenance is live_observed.
+ */
+function determineProvenance(sourceEvents) {
+    if (sourceEvents.length === 0)
+        return 'seeded_historical';
+    var hasLive = sourceEvents.some(function (e) { var _a; return !((_a = e.metadata) === null || _a === void 0 ? void 0 : _a.source) || e.metadata.source !== 'historical_seed'; });
+    return hasLive ? 'live_observed' : 'seeded_historical';
+}
+/**
  * Derive all behavioral signals from the event log.
  * Called periodically or after significant event batches.
  */
@@ -147,6 +158,7 @@ function deriveSignals() {
             sourceEventCount: totalDecisions,
             lastUpdated: new Date().toISOString(),
             active: totalDecisions >= MIN_EVENTS_FOR_SIGNAL * 2,
+            provenance: determineProvenance(__spreadArray(__spreadArray([], approvals, true), denials, true)),
             explanation: "Based on ".concat(totalDecisions, " decisions: ").concat(approvals.length, " approved, ").concat(denials.length, " denied (").concat((approvalRate * 100).toFixed(0), "% approval rate)"),
         });
     }
@@ -338,6 +350,7 @@ function deriveSignals() {
                     sourceEventCount: 1,
                     lastUpdated: new Date().toISOString(),
                     active: true,
+                    provenance: 'explicit_profile',
                     explanation: "From operator profile: communication_style = ".concat(profile.communication_style),
                 });
             }
@@ -350,6 +363,7 @@ function deriveSignals() {
                     sourceEventCount: 1,
                     lastUpdated: new Date().toISOString(),
                     active: true,
+                    provenance: 'explicit_profile',
                     explanation: "From operator profile: stated output preferences",
                 });
             }
@@ -362,12 +376,22 @@ function deriveSignals() {
                     sourceEventCount: 1,
                     lastUpdated: new Date().toISOString(),
                     active: true,
+                    provenance: 'explicit_profile',
                     explanation: "From operator profile: risk_tolerance = ".concat(profile.risk_tolerance),
                 });
             }
         }
     }
     catch ( /* profile not available */_k) { /* profile not available */ }
+    // Post-process: ensure all signals have provenance
+    // Event-based signals without explicit provenance default to seeded_historical
+    // (all current events are from historical seeding)
+    for (var _l = 0, signals_1 = signals; _l < signals_1.length; _l++) {
+        var sig = signals_1[_l];
+        if (!sig.provenance) {
+            sig.provenance = 'seeded_historical';
+        }
+    }
     return signals;
 }
 /**

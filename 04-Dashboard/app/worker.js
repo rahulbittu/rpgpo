@@ -779,6 +779,15 @@ SEARCH INSTRUCTIONS (YOU HAVE LIVE WEB SEARCH — USE IT):
       const domain = st.domain || task.meta?.domain || 'general';
       const structureHint = engineStructure[domain] || 'Structure: ## Key Findings → ## Detailed Analysis → ## Recommended Actions';
 
+      // Phase B: Inject learned operator preferences into synthesis
+      let behaviorHint = '';
+      try {
+        const bCtx = behavior.getScopedContext({ engine: domain });
+        if (bCtx.summary && bCtx.summary !== 'No learned preferences available.') {
+          behaviorHint = `\nOPERATOR PREFERENCES (advisory — shape style, not override content):\n${bCtx.summary}\n`;
+        }
+      } catch { /* non-fatal */ }
+
       modelRules = `
 SYNTHESIS INSTRUCTIONS:
 - You MUST use the "Prior Subtask Results" data provided below as your PRIMARY source of information.
@@ -786,7 +795,7 @@ SYNTHESIS INSTRUCTIONS:
 - If prior subtask results are provided, base your entire response on that data — use specific names, numbers, and sources from the research.
 - ${structureHint}
 - Every recommendation must include: what to do, why, expected outcome, and first step.
-- If no prior results are provided, state that clearly and provide only general guidance.
+- If no prior results are provided, state that clearly and provide only general guidance.${behaviorHint}
 - NEVER say "I cannot access real-time data" if prior subtask results contain real data — USE that data.
 - NEVER produce placeholder text like "[Insert Title]" or "[Company Name]" — use the actual data.`;
     } else if (model === 'gemini') {
