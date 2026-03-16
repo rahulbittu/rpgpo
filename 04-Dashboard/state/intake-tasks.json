@@ -1,5 +1,676 @@
 [
   {
+    "task_id": "t_mmthm3chnqzb",
+    "title": "Design a comprehensive conflict resolution framework for engineering teams. Incl",
+    "raw_request": "Design a comprehensive conflict resolution framework for engineering teams. Include early detection signals, one-on-one mediation scripts, team retrospective formats for recurring conflicts, escalation criteria, and post-resolution follow-up.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:58:44.849Z",
+    "updated_at": "2026-03-16T18:04:09.636Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:00:01.102Z",
+      "interpreted_objective": "Create a detailed conflict resolution framework for engineering teams.",
+      "expected_outcome": "A comprehensive document outlining conflict resolution strategies, including detection, mediation, retrospectives, escalation, and follow-up.",
+      "key_unknowns": [
+        "Specific conflict scenarios common in engineering teams",
+        "Preferred communication styles within the team",
+        "Existing conflict resolution practices in place"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and frameworks for conflict resolution in engineering teams. Synthesize this research into a structured framework document, ensuring it is tailored to engineering contexts and includes all specified components.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Conflict Resolution Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and frameworks for conflict resolution in engineering teams.",
+          "prompt": "Search the web for current, specific information about conflict resolution frameworks for engineering teams. Include early detection signals, mediation scripts, team retrospective formats, escalation criteria, and follow-up practices. Provide real examples, names, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Conflict Resolution Framework",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured document outlining a conflict resolution framework tailored for engineering teams.",
+          "prompt": "Based on the research results, synthesize a comprehensive conflict resolution framework for engineering teams. Include sections on early detection signals, one-on-one mediation scripts, team retrospective formats for recurring conflicts, escalation criteria, and post-resolution follow-up. Ensure the framework is clear, actionable, and tailored to engineering contexts.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-conflict-resolution-framework.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1908
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmthm39owe3y",
+    "title": "Create a guide to building a comprehensive vehicle maintenance system for multip",
+    "raw_request": "Create a guide to building a comprehensive vehicle maintenance system for multiple cars. Include maintenance scheduling, cost tracking, DIY vs professional service decisions, part sourcing strategies, and record-keeping for resale value.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:58:44.748Z",
+    "updated_at": "2026-03-16T18:03:59.908Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:59:56.799Z",
+      "interpreted_objective": "Create a detailed guide for building a vehicle maintenance system for multiple cars.",
+      "expected_outcome": "A comprehensive guide that includes maintenance scheduling, cost tracking, service decisions, part sourcing, and record-keeping strategies.",
+      "key_unknowns": [
+        "Specific features and functionalities required in the system",
+        "Target audience and their technical expertise",
+        "Budget constraints for implementing the system"
+      ],
+      "recommended_strategy": "Research current best practices in vehicle maintenance systems and compile a guide that addresses the specific areas mentioned in the request. Ensure the guide is practical and actionable for users with varying levels of expertise. Consider including examples or case studies to illustrate key points.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Vehicle Maintenance Systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices and common features in vehicle maintenance systems.",
+          "prompt": "Search the web for current, specific information about vehicle maintenance systems for multiple cars. Focus on maintenance scheduling, cost tracking, DIY vs professional service decisions, part sourcing strategies, and record-keeping for resale value. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Comprehensive Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide on building a vehicle maintenance system, incorporating research findings.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comprehensive guide for building a vehicle maintenance system for multiple cars. Include sections on maintenance scheduling, cost tracking, DIY vs professional service decisions, part sourcing strategies, and record-keeping for resale value. Provide actionable recommendations and examples where applicable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2019
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmthm367xm54",
+    "title": "Write a complete concept for a narrative game about a lighthouse keeper on a rem",
+    "raw_request": "Write a complete concept for a narrative game about a lighthouse keeper on a remote island who receives mysterious radio transmissions that seem to predict future events. Include gameplay mechanics and branching story structure.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:58:44.623Z",
+    "updated_at": "2026-03-16T18:03:47.812Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:59:48.808Z",
+      "interpreted_objective": "Develop a detailed concept for a narrative game about a lighthouse keeper receiving mysterious radio transmissions.",
+      "expected_outcome": "A comprehensive game concept document including storyline, gameplay mechanics, and branching story structure.",
+      "key_unknowns": [
+        "Specific setting and time period for the game",
+        "Details of the mysterious radio transmissions",
+        "Intended target audience for the game"
+      ],
+      "recommended_strategy": "First, research narrative game design and examples of similar games to gather insights and inspiration. Then, synthesize this information into a detailed game concept that includes storyline, gameplay mechanics, and a branching story structure.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Narrative Game Design",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gathered insights and examples of narrative games with branching storylines.",
+          "prompt": "Search the web for current information about narrative game design, focusing on games with branching storylines and unique mechanics. Include real examples, design principles, and any relevant trends.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Game Concept",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed game concept document including storyline, gameplay mechanics, and branching story structure.",
+          "prompt": "Based on the research results, develop a comprehensive concept for a narrative game about a lighthouse keeper who receives mysterious radio transmissions predicting future events. Include a detailed storyline, gameplay mechanics, and a branching story structure.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-narrative-game-concept.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1890
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmthm333bp1e",
+    "title": "Plan a 10-day music, food, and history tour through Cuba. Include Havana jazz cl",
+    "raw_request": "Plan a 10-day music, food, and history tour through Cuba. Include Havana jazz clubs, vintage car tours, tobacco farm visits, Trinidad colonial town, Vinales valley hiking, and beach time at Varadero.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:58:44.511Z",
+    "updated_at": "2026-03-16T18:03:36.773Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:59:40.415Z",
+      "interpreted_objective": "Plan a detailed 10-day itinerary for a music, food, and history tour through Cuba.",
+      "expected_outcome": "A comprehensive itinerary that includes Havana jazz clubs, vintage car tours, tobacco farm visits, Trinidad colonial town, Vinales valley hiking, and beach time at Varadero.",
+      "key_unknowns": [
+        "Specific jazz clubs in Havana",
+        "Best vintage car tour operators",
+        "Top tobacco farms to visit",
+        "Best hiking trails in Vinales valley",
+        "Optimal beach spots in Varadero"
+      ],
+      "recommended_strategy": "Conduct research to identify top attractions and experiences in each specified location in Cuba. Then, synthesize this information into a structured 10-day itinerary that balances music, food, history, and leisure activities.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Cuban Attractions",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of top attractions and experiences in Havana, Trinidad, Vinales, and Varadero with citations.",
+          "prompt": "Search the web for current, specific information about top jazz clubs in Havana, vintage car tour operators, notable tobacco farms, hiking trails in Vinales valley, and beach spots in Varadero. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Cuban Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 10-day itinerary for a music, food, and history tour through Cuba.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 10-day itinerary for a music, food, and history tour through Cuba. Include specific jazz clubs in Havana, vintage car tours, tobacco farm visits, Trinidad colonial town, Vinales valley hiking, and beach time at Varadero.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-CubanTourItinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2022
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmthm31l6ihv",
+    "title": "Design a comprehensive migraine prevention and management protocol. Include trig",
+    "raw_request": "Design a comprehensive migraine prevention and management protocol. Include trigger identification methodology, preventive supplement evaluation (magnesium, B2, CoQ10), acute treatment decision tree, and lifestyle modification framework.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:58:44.457Z",
+    "updated_at": "2026-03-16T18:03:22.327Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:59:33.875Z",
+      "interpreted_objective": "Design a comprehensive migraine prevention and management protocol.",
+      "expected_outcome": "A detailed protocol including trigger identification, preventive supplement evaluation, acute treatment decision tree, and lifestyle modification framework.",
+      "key_unknowns": [
+        "Current best practices for migraine management",
+        "Efficacy of specific supplements like magnesium, B2, and CoQ10",
+        "Lifestyle modifications most effective for migraine prevention"
+      ],
+      "recommended_strategy": "First, research current methodologies and best practices for migraine management, focusing on trigger identification and preventive supplements. Then, synthesize this information into a comprehensive protocol, including an acute treatment decision tree and lifestyle modification framework.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Migraine Management Best Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed report on current best practices for migraine management, including trigger identification and supplement efficacy.",
+          "prompt": "Search the web for current, specific information about migraine management best practices, focusing on trigger identification and the efficacy of supplements like magnesium, B2, and CoQ10. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Migraine Management Protocol",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive protocol for migraine prevention and management.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive migraine prevention and management protocol. Include trigger identification methodology, preventive supplement evaluation, an acute treatment decision tree, and a lifestyle modification framework.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2582
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmthm2yeuhwi",
+    "title": "Create a guide to building a culture of code review excellence. Include review c",
+    "raw_request": "Create a guide to building a culture of code review excellence. Include review checklist by change type, timing expectations, constructive feedback language, reviewer skill development, and metrics for review effectiveness.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:58:44.342Z",
+    "updated_at": "2026-03-16T18:03:09.998Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:59:27.912Z",
+      "interpreted_objective": "Create a comprehensive guide for building a culture of code review excellence in a startup environment.",
+      "expected_outcome": "A detailed guide that includes a review checklist by change type, timing expectations, constructive feedback language, reviewer skill development, and metrics for review effectiveness.",
+      "key_unknowns": [
+        "Specific company culture and current code review practices",
+        "Preferred format for the guide",
+        "Target audience's current skill level"
+      ],
+      "recommended_strategy": "Conduct research on best practices for code review excellence, focusing on startups. Synthesize findings into a structured guide that addresses all specified components, ensuring practical applicability. Use examples and case studies where possible to illustrate points.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Code Review Excellence",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices and guidelines for code review excellence in startups.",
+          "prompt": "Search the web for current, specific information about best practices for building a culture of code review excellence in startups. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Code Review Excellence",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide for building a culture of code review excellence, including checklists, timing expectations, feedback language, skill development, and effectiveness metrics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building a culture of code review excellence. Include a review checklist by change type, timing expectations, constructive feedback language, reviewer skill development, and metrics for review effectiveness.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2008
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmthm2wn50k2",
+    "title": "Research the best wireless mesh networking solutions for smart homes with 100+ I",
+    "raw_request": "Research the best wireless mesh networking solutions for smart homes with 100+ IoT devices. Compare Thread, Zigbee, Z-Wave, and Matter with latency requirements, power consumption, and hub interoperability.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:58:44.279Z",
+    "updated_at": "2026-03-16T18:02:57.469Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:59:21.770Z",
+      "interpreted_objective": "Research and compare wireless mesh networking solutions for smart homes with 100+ IoT devices, focusing on Thread, Zigbee, Z-Wave, and Matter.",
+      "expected_outcome": "A comprehensive report comparing Thread, Zigbee, Z-Wave, and Matter based on latency, power consumption, and hub interoperability, with actionable recommendations for smart home networking.",
+      "key_unknowns": [
+        "Current performance metrics for each protocol",
+        "Compatibility and interoperability with existing smart home hubs",
+        "Specific power consumption figures for each protocol"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on Thread, Zigbee, Z-Wave, and Matter, focusing on their performance in smart home environments with over 100 IoT devices. Then, synthesize this data into a detailed comparative report, highlighting key differences and recommending the best solution based on specific criteria.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Wireless Mesh Networking Solutions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on Thread, Zigbee, Z-Wave, and Matter, including performance metrics, power consumption, and hub interoperability.",
+          "prompt": "Search the web for current, specific information about Thread, Zigbee, Z-Wave, and Matter protocols for smart homes with 100+ IoT devices. Include data on latency, power consumption, and hub interoperability, with real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Networking Solutions Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Thread, Zigbee, Z-Wave, and Matter, with recommendations based on latency, power consumption, and hub interoperability.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Thread, Zigbee, Z-Wave, and Matter for smart homes with 100+ IoT devices. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-wireless_mesh_networking.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2229
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmthm2vs8rxp",
+    "title": "Explain how PostgreSQL MVCC (Multi-Version Concurrency Control) works. Cover tra",
+    "raw_request": "Explain how PostgreSQL MVCC (Multi-Version Concurrency Control) works. Cover transaction isolation levels, snapshot visibility rules, vacuum and autovacuum internals, bloat management, and how to diagnose wraparound prevention.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:58:44.248Z",
+    "updated_at": "2026-03-16T18:02:45.326Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:59:13.350Z",
+      "interpreted_objective": "Explain the workings of PostgreSQL MVCC in detail, covering specific aspects like transaction isolation levels, snapshot visibility rules, vacuum processes, bloat management, and wraparound prevention diagnosis.",
+      "expected_outcome": "A comprehensive and clear explanation of PostgreSQL MVCC that can be used for educational purposes, detailing the specified components.",
+      "key_unknowns": [
+        "Current best practices for bloat management",
+        "Latest tools for diagnosing wraparound prevention"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current and comprehensive information on PostgreSQL MVCC, focusing on the specified topics. Then, synthesize this information into a structured and detailed report that explains each component clearly and concisely.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research PostgreSQL MVCC",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current and comprehensive information on PostgreSQL MVCC, including transaction isolation levels, snapshot visibility rules, vacuum processes, bloat management, and wraparound prevention diagnosis.",
+          "prompt": "Search the web for current, specific information about PostgreSQL MVCC, focusing on transaction isolation levels, snapshot visibility rules, vacuum and autovacuum internals, bloat management, and diagnosing wraparound prevention. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize PostgreSQL MVCC Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and detailed report explaining PostgreSQL MVCC, covering transaction isolation levels, snapshot visibility rules, vacuum processes, bloat management, and wraparound prevention diagnosis.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comprehensive and clear explanation of PostgreSQL MVCC. Cover transaction isolation levels, snapshot visibility rules, vacuum and autovacuum internals, bloat management, and how to diagnose wraparound prevention.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-PostgreSQL_MVCC.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1981
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmthm2updy93",
+    "title": "Create a guide to estate planning essentials for tech professionals with RSUs. I",
+    "raw_request": "Create a guide to estate planning essentials for tech professionals with RSUs. Include revocable trust setup, beneficiary designation for brokerage accounts, digital asset inventory, power of attorney, and advanced healthcare directive.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:58:44.209Z",
+    "updated_at": "2026-03-16T18:02:32.851Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:59:04.053Z",
+      "interpreted_objective": "Create a comprehensive guide on estate planning essentials tailored for tech professionals with RSUs.",
+      "expected_outcome": "A detailed, actionable guide covering revocable trust setup, beneficiary designation, digital asset inventory, power of attorney, and advanced healthcare directives for tech professionals.",
+      "key_unknowns": [
+        "Specific estate planning needs unique to tech professionals",
+        "Current best practices for handling RSUs in estate planning"
+      ],
+      "recommended_strategy": "Conduct thorough research on estate planning essentials specific to tech professionals, focusing on RSUs. Synthesize this information into a clear, actionable guide. Ensure the guide is evidence-based and includes safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research estate planning essentials for tech professionals",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data on estate planning essentials for tech professionals, including RSUs management.",
+          "prompt": "Search the web for current, specific information about estate planning essentials for tech professionals, focusing on RSUs management, revocable trust setup, beneficiary designation, digital asset inventory, power of attorney, and advanced healthcare directives. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize estate planning guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable guide on estate planning essentials for tech professionals with RSUs.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable guide on estate planning essentials for tech professionals. Include sections on revocable trust setup, beneficiary designation for brokerage accounts, digital asset inventory, power of attorney, and advanced healthcare directive. Ensure the guide is evidence-based and includes safety disclaimers where necessary.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-estate-planning-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1925
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmthm2tzao8h",
+    "title": "Design a comprehensive multi-cloud networking strategy. Include VPN mesh between",
+    "raw_request": "Design a comprehensive multi-cloud networking strategy. Include VPN mesh between AWS, GCP, and Azure, DNS-based failover, latency-based routing, cost comparison of inter-cloud data transfer, and security group harmonization.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:58:44.183Z",
+    "updated_at": "2026-03-16T18:02:14.637Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:58:54.606Z",
+      "interpreted_objective": "Design a multi-cloud networking strategy incorporating VPN mesh, DNS failover, latency-based routing, cost analysis, and security group harmonization.",
+      "expected_outcome": "A detailed strategic report outlining a practical multi-cloud networking solution with specific technical recommendations and cost analysis.",
+      "key_unknowns": [
+        "Current inter-cloud data transfer costs for AWS, GCP, and Azure",
+        "Specific latency metrics for routing between these cloud providers",
+        "Compatibility issues in security group configurations across different clouds"
+      ],
+      "recommended_strategy": "Conduct web research to gather current data on inter-cloud networking costs, latency, and security practices. Synthesize findings into a comprehensive strategy report with actionable recommendations for implementing the multi-cloud networking solution.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the strategic report before implementation"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Inter-Cloud Networking Costs and Latency",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on inter-cloud data transfer costs, latency metrics, and security practices for AWS, GCP, and Azure.",
+          "prompt": "Search the web for current, specific information about inter-cloud data transfer costs, latency metrics, and security practices for AWS, GCP, and Azure. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Multi-Cloud Networking Strategy",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report detailing a multi-cloud networking strategy with VPN mesh, DNS failover, latency-based routing, cost analysis, and security group harmonization.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a multi-cloud networking strategy. Include specific names, numbers, and concrete next steps for implementing VPN mesh, DNS-based failover, latency-based routing, cost comparison, and security group harmonization.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-multi-cloud-networking-strategy.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2218
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
     "task_id": "t_mmth883zvkuu",
     "title": "Design a comprehensive weekend reset and recharge protocol. Include Friday wind-",
     "raw_request": "Design a comprehensive weekend reset and recharge protocol. Include Friday wind-down routine, Saturday adventure and rest balance, Sunday preparation ritual, digital sabbath framework, and social energy management.",
