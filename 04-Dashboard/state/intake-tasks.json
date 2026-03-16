@@ -1,5 +1,690 @@
 [
   {
+    "task_id": "t_mmsnwql24hrb",
+    "title": "Design a personal knowledge capture system for work. Include meeting notes, deci",
+    "raw_request": "Design a personal knowledge capture system for work. Include meeting notes, decision logs, technical learnings, and searchable retrieval.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:07:13.046Z",
+    "updated_at": "2026-03-16T04:11:02.506Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:08:10.433Z",
+      "interpreted_objective": "Design a comprehensive personal knowledge capture system for work-related information.",
+      "expected_outcome": "A detailed plan for a system that efficiently captures, organizes, and retrieves work-related knowledge including meeting notes, decision logs, and technical learnings.",
+      "key_unknowns": [
+        "Specific tools or platforms currently used by Rahul for knowledge capture",
+        "Rahul's preferred method of retrieving information",
+        "Any existing systems or frameworks Rahul is using"
+      ],
+      "recommended_strategy": "First, conduct research to identify best practices and tools for personal knowledge capture systems. Then, synthesize these findings into a detailed plan outlining the system's components, how they integrate, and how information can be retrieved effectively.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Knowledge Capture Systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and tools for designing personal knowledge capture systems.",
+          "prompt": "Search the web for current best practices and tools for personal knowledge capture systems. Include real names, features, and examples of systems that effectively capture meeting notes, decision logs, and technical learnings.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Knowledge Capture System Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed plan for a personal knowledge capture system tailored to Rahul's needs.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed plan for a personal knowledge capture system. Include specific components, how they integrate, and methods for effective retrieval of information.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-knowledge-capture-system.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1966
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsnwps89j1n",
+    "title": "Create a guide to building a productive home workshop for electronics and 3D pri",
+    "raw_request": "Create a guide to building a productive home workshop for electronics and 3D printing. Include tool list, safety equipment, ventilation, and budget under 1000 dollars.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:07:12.008Z",
+    "updated_at": "2026-03-16T04:10:55.328Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:08:05.223Z",
+      "interpreted_objective": "Create a detailed guide for setting up a productive home workshop for electronics and 3D printing with a budget under 1000 dollars.",
+      "expected_outcome": "A comprehensive guide that includes a tool list, safety equipment, ventilation considerations, and budget management for a home workshop.",
+      "key_unknowns": [
+        "Specific tools and equipment required for electronics and 3D printing",
+        "Safety equipment necessary for a home workshop",
+        "Ventilation requirements for electronics and 3D printing",
+        "Cost estimates for the tools and equipment within the budget"
+      ],
+      "recommended_strategy": "Conduct research to identify essential tools and safety equipment for electronics and 3D printing. Analyze cost-effective options to fit within the budget. Compile findings into a structured guide that addresses safety and ventilation considerations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tools and Equipment",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of essential tools and equipment for a home workshop focused on electronics and 3D printing.",
+          "prompt": "Search the web for current, specific information about essential tools and equipment needed for a home workshop focused on electronics and 3D printing. Include real names, specifications, and cost estimates.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Safety Equipment and Ventilation",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Information on necessary safety equipment and ventilation requirements for a home workshop.",
+          "prompt": "Search the web for current, specific information about safety equipment and ventilation requirements for a home workshop focused on electronics and 3D printing. Include real names, specifications, and cost estimates.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide for building a productive home workshop including tool list, safety equipment, ventilation, and budget management.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building a productive home workshop for electronics and 3D printing. Include a detailed tool list, safety equipment, ventilation considerations, and budget management strategies.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2278
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsnwoz7liw2",
+    "title": "Write a detailed treatment for a documentary series about the evolution of progr",
+    "raw_request": "Write a detailed treatment for a documentary series about the evolution of programming languages. 4 episodes. Include interview subjects and visual approach.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:07:10.963Z",
+    "updated_at": "2026-03-16T04:10:48.686Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:08:00.362Z",
+      "interpreted_objective": "Create a detailed treatment for a four-episode documentary series about the evolution of programming languages, including interview subjects and visual approach.",
+      "expected_outcome": "A comprehensive treatment document outlining the structure, content, and visual style for each episode, along with potential interview subjects.",
+      "key_unknowns": [
+        "Specific programming languages to focus on in each episode",
+        "Potential interview subjects and their availability",
+        "Visual style preferences or constraints"
+      ],
+      "recommended_strategy": "First, conduct research to gather information on the history and evolution of programming languages, identifying key milestones and influential figures. Then, synthesize this information into a structured treatment document, outlining episode themes, potential interviewees, and visual approaches.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Evolution of Programming Languages",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of key programming languages, milestones in their development, and influential figures in the field.",
+          "prompt": "Search the web for current, specific information about the evolution of programming languages. Include key languages, milestones, influential figures, and any notable trends. Provide real names, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Documentary Treatment",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured treatment document for a four-episode documentary series on programming languages, including episode themes, interview subjects, and visual style.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a detailed treatment for a four-episode documentary series about the evolution of programming languages. Include specific episode themes, potential interview subjects, and visual approach recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-programming_languages_treatment.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1977
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsnwo6b0kkr",
+    "title": "Plan a 2-week digital nomad stay in Medellin Colombia. Include neighborhoods, co",
+    "raw_request": "Plan a 2-week digital nomad stay in Medellin Colombia. Include neighborhoods, coworking spaces, safety tips, local SIM cards, and budget breakdown.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:07:09.923Z",
+    "updated_at": "2026-03-16T04:10:39.688Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:07:55.296Z",
+      "interpreted_objective": "Create a comprehensive 2-week digital nomad plan for Medellin, Colombia, covering neighborhoods, coworking spaces, safety, SIM cards, and budget.",
+      "expected_outcome": "A detailed itinerary and guide for a 2-week stay in Medellin, including logistical information and cost estimates.",
+      "key_unknowns": [
+        "Current cost of living in Medellin",
+        "Availability of coworking spaces",
+        "Safety conditions in specific neighborhoods",
+        "SIM card options and prices"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on Medellin's neighborhoods, coworking spaces, safety tips, local SIM card options, and budget considerations. Then, synthesize this data into a structured report with actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Medellin Digital Nomad Information",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on neighborhoods, coworking spaces, safety tips, SIM cards, and budget estimates in Medellin.",
+          "prompt": "Search the web for current, specific information about digital nomad life in Medellin, Colombia. Include details on neighborhoods, coworking spaces, safety tips, local SIM card options, and budget breakdowns. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Medellin Digital Nomad Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with a detailed plan for a 2-week digital nomad stay in Medellin, including neighborhoods, coworking spaces, safety tips, SIM cards, and budget.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a 2-week digital nomad stay in Medellin, Colombia. Include specific neighborhoods, coworking spaces, safety tips, local SIM card options, and a budget breakdown with concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-medellin-digital-nomad-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1959
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsnwndlg4dr",
+    "title": "Design a comprehensive hydration and nutrition timing guide for cognitive perfor",
+    "raw_request": "Design a comprehensive hydration and nutrition timing guide for cognitive performance. Include water intake, meal timing, and caffeine cycling.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:07:08.889Z",
+    "updated_at": "2026-03-16T04:10:31.626Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:07:49.691Z",
+      "interpreted_objective": "Create a detailed guide on hydration and nutrition timing to enhance cognitive performance.",
+      "expected_outcome": "A comprehensive, evidence-based guide with specific recommendations for water intake, meal timing, and caffeine cycling to optimize cognitive function.",
+      "key_unknowns": [
+        "Specific cognitive performance metrics to focus on",
+        "Target audience for the guide",
+        "Existing research on hydration and nutrition timing for cognitive performance"
+      ],
+      "recommended_strategy": "Research current scientific literature on hydration and nutrition timing related to cognitive performance. Synthesize findings into a practical guide with actionable recommendations. Ensure all advice is evidence-based and includes safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Hydration and Nutrition Timing",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research findings on the impact of hydration, meal timing, and caffeine cycling on cognitive performance.",
+          "prompt": "Search the web for current, specific information about hydration and nutrition timing for cognitive performance. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Hydration and Nutrition Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide with actionable recommendations for hydration, meal timing, and caffeine cycling to enhance cognitive performance.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a hydration and nutrition timing guide focused on cognitive performance. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1992
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsnwmkx8t9e",
+    "title": "Create a guide for data engineers looking to move into staff/principal roles. In",
+    "raw_request": "Create a guide for data engineers looking to move into staff/principal roles. Include technical depth requirements, organizational influence, and promotion packet tips.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:07:07.857Z",
+    "updated_at": "2026-03-16T04:10:25.076Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:07:31.834Z",
+      "interpreted_objective": "Create a detailed guide for data engineers aiming to transition into staff or principal roles, focusing on technical depth, organizational influence, and promotion strategies.",
+      "expected_outcome": "A comprehensive guide that provides actionable insights and strategies for data engineers to advance into higher-level roles, including specific technical skills, influence tactics, and promotion packet tips.",
+      "key_unknowns": [
+        "Specific technical skills required for staff/principal roles",
+        "Best practices for demonstrating organizational influence",
+        "Effective content for promotion packets"
+      ],
+      "recommended_strategy": "Conduct research to identify the key technical skills and organizational influence strategies required for staff/principal roles. Synthesize these findings into a structured guide with actionable recommendations and specific examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Technical and Organizational Requirements",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of specific technical skills and organizational influence strategies required for data engineers to advance to staff/principal roles, with citations.",
+          "prompt": "Search the web for current, specific information about the technical skills and organizational influence strategies required for data engineers to move into staff or principal roles. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Career Advancement",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide with actionable recommendations for data engineers to advance into staff/principal roles, including specific technical skills, influence strategies, and promotion packet tips.",
+          "prompt": "Based on the research results, synthesize actionable recommendations for data engineers looking to move into staff/principal roles. Include specific technical skills, organizational influence strategies, and tips for promotion packets.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-2023-11-01-StaffPrincipalGuide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2185
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsnwlsbodix",
+    "title": "Research the best mesh WiFi systems for a 3000 sq ft home with smart devices. Mu",
+    "raw_request": "Research the best mesh WiFi systems for a 3000 sq ft home with smart devices. Must support WiFi 6E. Compare Eero Pro, TP-Link Deco, and Ubiquiti.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:07:06.827Z",
+    "updated_at": "2026-03-16T04:10:16.681Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:07:26.018Z",
+      "interpreted_objective": "Research and compare the best mesh WiFi systems for a 3000 sq ft home, focusing on WiFi 6E support and evaluating Eero Pro, TP-Link Deco, and Ubiquiti.",
+      "expected_outcome": "A detailed comparison report of Eero Pro, TP-Link Deco, and Ubiquiti mesh WiFi systems with recommendations for a 3000 sq ft home.",
+      "key_unknowns": [
+        "Current pricing and availability of Eero Pro, TP-Link Deco, and Ubiquiti systems",
+        "Specific features and performance of these systems in a 3000 sq ft home",
+        "User reviews and expert opinions on these systems"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current data on Eero Pro, TP-Link Deco, and Ubiquiti mesh WiFi systems, focusing on features, pricing, and reviews. Then, synthesize this information into a comprehensive comparison report with specific recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Mesh WiFi Systems",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Eero Pro, TP-Link Deco, and Ubiquiti mesh WiFi systems, including features, pricing, and reviews.",
+          "prompt": "Search the web for current, specific information about Eero Pro, TP-Link Deco, and Ubiquiti mesh WiFi systems that support WiFi 6E. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive comparison report with recommendations for the best mesh WiFi system for a 3000 sq ft home.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps for Eero Pro, TP-Link Deco, and Ubiquiti mesh WiFi systems.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-mesh-wifi-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2047
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsnwkzj2e4y",
+    "title": "Teach me about data lake architecture on AWS. Cover S3 organization, Glue catalo",
+    "raw_request": "Teach me about data lake architecture on AWS. Cover S3 organization, Glue catalog, Athena queries, and cost optimization. With practical examples.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:07:05.791Z",
+    "updated_at": "2026-03-16T04:10:08.505Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:07:19.277Z",
+      "interpreted_objective": "Educate Rahul on AWS data lake architecture with practical examples.",
+      "expected_outcome": "A comprehensive, practical guide on AWS data lake architecture covering S3 organization, Glue catalog, Athena queries, and cost optimization.",
+      "key_unknowns": [
+        "Rahul's current knowledge level on AWS services",
+        "Specific use cases Rahul is interested in"
+      ],
+      "recommended_strategy": "First, gather current and detailed information on AWS data lake architecture, focusing on S3, Glue, Athena, and cost optimization. Then, synthesize this information into a structured guide with practical examples tailored to data engineering professionals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research AWS Data Lake Architecture",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research notes on AWS data lake architecture, including S3 organization, Glue catalog, Athena queries, and cost optimization with citations.",
+          "prompt": "Search the web for current, specific information about AWS data lake architecture. Focus on S3 organization, Glue catalog, Athena queries, and cost optimization. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize AWS Data Lake Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on AWS data lake architecture with practical examples, covering S3 organization, Glue catalog, Athena queries, and cost optimization.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on AWS data lake architecture. Include practical examples and cover S3 organization, Glue catalog, Athena queries, and cost optimization. Tailor the content for data engineering professionals.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-aws-data-lake.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1913
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsnwk65ijqa",
+    "title": "Create a comprehensive guide to real estate syndication investing. Include minim",
+    "raw_request": "Create a comprehensive guide to real estate syndication investing. Include minimum investment, fee structures, tax benefits, and due diligence checklist.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:07:04.733Z",
+    "updated_at": "2026-03-16T04:10:00.461Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:07:12.991Z",
+      "interpreted_objective": "Create a comprehensive guide on real estate syndication investing, covering key aspects such as minimum investment, fee structures, tax benefits, and a due diligence checklist.",
+      "expected_outcome": "A detailed and actionable guide that provides Rahul with a clear understanding of real estate syndication investing, including specific investment requirements, financial benefits, and a checklist for due diligence.",
+      "key_unknowns": [
+        "Current minimum investment amounts for real estate syndications",
+        "Typical fee structures in the industry",
+        "Specific tax benefits associated with real estate syndications",
+        "Key components of a due diligence checklist for potential investors"
+      ],
+      "recommended_strategy": "Conduct web research to gather current data on real estate syndication investing, including investment requirements, fee structures, and tax benefits. Synthesize this information into a structured guide, ensuring it includes a practical due diligence checklist.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Real Estate Syndication Investing",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on real estate syndication investing, including minimum investment, fee structures, tax benefits, and due diligence practices.",
+          "prompt": "Search the web for current, specific information about real estate syndication investing. Include details on minimum investment amounts, fee structures, tax benefits, and a due diligence checklist. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Real Estate Syndication Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on real estate syndication investing, including investment requirements, fee structures, tax benefits, and a due diligence checklist.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for real estate syndication investing. Include specific names, numbers, and concrete next steps for creating a comprehensive guide.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-real-estate-syndication-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2295
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsnwjczcasl",
+    "title": "Write a complete guide to implementing graceful degradation in distributed syste",
+    "raw_request": "Write a complete guide to implementing graceful degradation in distributed systems. Include circuit breakers, fallback strategies, bulkhead patterns, and monitoring.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:07:03.683Z",
+    "updated_at": "2026-03-16T04:08:52.249Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:07:08.351Z",
+      "interpreted_objective": "Create a comprehensive guide on implementing graceful degradation in distributed systems.",
+      "expected_outcome": "A detailed, actionable guide covering circuit breakers, fallback strategies, bulkhead patterns, and monitoring in distributed systems.",
+      "key_unknowns": [
+        "Specific audience for the guide",
+        "Depth of technical detail required",
+        "Preferred format or structure for the guide"
+      ],
+      "recommended_strategy": "Conduct research on current best practices and examples of graceful degradation in distributed systems. Then, synthesize this information into a structured guide that includes sections on circuit breakers, fallback strategies, bulkhead patterns, and monitoring. Ensure the guide is clear, actionable, and tailored to a technical audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research graceful degradation in distributed systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A comprehensive overview of current best practices and examples of graceful degradation techniques in distributed systems.",
+          "prompt": "Search the web for current, specific information about implementing graceful degradation in distributed systems. Focus on circuit breakers, fallback strategies, bulkhead patterns, and monitoring. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize guide on graceful degradation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide on implementing graceful degradation in distributed systems, covering circuit breakers, fallback strategies, bulkhead patterns, and monitoring.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed guide on implementing graceful degradation in distributed systems. Include sections on circuit breakers, fallback strategies, bulkhead patterns, and monitoring. Ensure the guide is clear, actionable, and tailored to a technical audience.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2053
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsnokezy7fc",
     "title": "Design a decision journal system for tracking important life and career decision",
     "raw_request": "Design a decision journal system for tracking important life and career decisions. Include decision template, review cadence, and pattern recognition methodology.",
