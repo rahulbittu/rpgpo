@@ -1,5 +1,483 @@
 [
   {
+    "id": "mmsn5vtpwjcj",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize energy audit system design",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn448daavb"
+    },
+    "createdAt": "2026-03-16T03:46:20.125Z",
+    "updatedAt": "2026-03-16T03:47:15.349Z",
+    "output": "Synthesize energy audit system design: ### Objective\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsn448daavb.md"
+    ]
+  },
+  {
+    "id": "mmsn5ltdmbw0",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Balcony Gardening Guide",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn3rf20hn8"
+    },
+    "createdAt": "2026-03-16T03:46:07.153Z",
+    "updatedAt": "2026-03-16T03:47:10.415Z",
+    "output": "Synthesize Balcony Gardening Guide: ### Objective\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/personalops-{date}-balcony-gardening-guide.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsn3rf20hn8.md"
+    ]
+  },
+  {
+    "id": "mmsn5gmzxnen",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Character Breakdowns",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn3ogo6cvj"
+    },
+    "createdAt": "2026-03-16T03:46:00.443Z",
+    "updatedAt": "2026-03-16T03:47:05.404Z",
+    "output": "Synthesize Character Breakdowns: ### Drama Series Character Breakdown: \"The Founders\"\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/screenwriting-{date}-character-breakdown.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsn3ogo6cvj.md"
+    ]
+  },
+  {
+    "id": "mmsn56jlt428",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Oaxaca Itinerary",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn3kvmt753"
+    },
+    "createdAt": "2026-03-16T03:45:47.361Z",
+    "updatedAt": "2026-03-16T03:46:56.078Z",
+    "output": "Synthesize Oaxaca Itinerary: ## Itinerary (day-by-day)\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/travel-{date}-Oaxaca-itinerary.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsn3kvmt753.md"
+    ]
+  },
+  {
+    "id": "mmsn507pt46g",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Gut Health Protocol",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn3h2roayx"
+    },
+    "createdAt": "2026-03-16T03:45:39.157Z",
+    "updatedAt": "2026-03-16T03:46:48.306Z",
+    "output": "Synthesize Gut Health Protocol: ## 8-Week Gut Health Improvement Protocol\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/health-{date}-gut-health-protocol.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsn3h2roayx.md"
+    ]
+  },
+  {
+    "id": "mmsn4m3e82il",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Influence Guide",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn37501czl"
+    },
+    "createdAt": "2026-03-16T03:45:20.858Z",
+    "updatedAt": "2026-03-16T03:46:41.001Z",
+    "output": "Synthesize Influence Guide: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsn37501czl.md"
+    ]
+  },
+  {
+    "id": "mmsn4ht9ut23",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Product Recommendations",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn32icb9o9"
+    },
+    "createdAt": "2026-03-16T03:45:15.309Z",
+    "updatedAt": "2026-03-16T03:46:34.792Z",
+    "output": "Synthesize Product Recommendations: ## Comparison Table\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/shopping-{date}-standing-desk-accessories.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsn32icb9o9.md"
+    ]
+  },
+  {
+    "id": "mmsn4a5t3sdj",
+    "type": "execute-subtask",
+    "label": "Subtask: Compile PostgreSQL Query Optimization Guide",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn2zld3v4s"
+    },
+    "createdAt": "2026-03-16T03:45:05.393Z",
+    "updatedAt": "2026-03-16T03:46:29.146Z",
+    "output": "Compile PostgreSQL Query Optimization Guide: ## Explanation\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/learning-{date}-database-query-optimization.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsn2zld3v4s.md"
+    ]
+  },
+  {
+    "id": "mmsn44aqaqxv",
+    "type": "execute-subtask",
+    "label": "Subtask: Research existing energy tracking methods",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn447e02wy"
+    },
+    "createdAt": "2026-03-16T03:44:57.794Z",
+    "updatedAt": "2026-03-16T03:46:20.126Z",
+    "output": "Research existing energy tracking methods: ## Finding 1: Amazfit Balance Fitness Tracker for Energy and Wellness Tracking\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsn447e02wy.md"
+    ]
+  },
+  {
+    "id": "mmsn40dsap34",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Automation Guide",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn2wl1phpw"
+    },
+    "createdAt": "2026-03-16T03:44:52.720Z",
+    "updatedAt": "2026-03-16T03:46:13.771Z",
+    "output": "Synthesize Automation Guide: ## Analysis\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/wealthresearch-{date}-automation-guide.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsn2wl1phpw.md"
+    ]
+  },
+  {
+    "id": "mmsn3rhi5q4c",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Balcony Gardening Best Practices",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn3re4cpjl"
+    },
+    "createdAt": "2026-03-16T03:44:41.190Z",
+    "updatedAt": "2026-03-16T03:46:07.153Z",
+    "output": "Research Balcony Gardening Best Practices: ## Container Selection\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsn3re4cpjl.md"
+    ]
+  },
+  {
+    "id": "mmsn3oj1t0zf",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Character Breakdowns",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn3ofq5nzz"
+    },
+    "createdAt": "2026-03-16T03:44:37.357Z",
+    "updatedAt": "2026-03-16T03:46:00.444Z",
+    "output": "Research Character Breakdowns: ## Silicon Valley (HBO, 2014-2019)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsn3ofq5nzz.md"
+    ]
+  },
+  {
+    "id": "mmsn3kxy7fqb",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Oaxaca Travel Options",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn3kuomtii"
+    },
+    "createdAt": "2026-03-16T03:44:32.710Z",
+    "updatedAt": "2026-03-16T03:45:47.361Z",
+    "output": "Research Oaxaca Travel Options: ## Cooking Classes in Oaxaca\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsn3kuomtii.md"
+    ]
+  },
+  {
+    "id": "mmsn3h538rq0",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Gut Health Protocol Components",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn3h1r1gnh"
+    },
+    "createdAt": "2026-03-16T03:44:27.783Z",
+    "updatedAt": "2026-03-16T03:45:39.158Z",
+    "output": "Research Gut Health Protocol Components: ## Finding 1: ISAPP Consensus Definition of Gut Health (Published Feb 18, 2026)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsn3h1r1gnh.md"
+    ]
+  },
+  {
+    "id": "mmsn3dru9tnl",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Guide on Microservice Communication Patterns",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn2tjw4omw"
+    },
+    "createdAt": "2026-03-16T03:44:23.418Z",
+    "updatedAt": "2026-03-16T03:45:29.898Z",
+    "output": "Synthesize Guide on Microservice Communication Patterns: ## Comprehensive Guide on Microservice Communication Patterns\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/writing-{date}-microservice-communication-patterns.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsn2tjw4omw.md"
+    ]
+  },
+  {
+    "id": "mmsn377emojd",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Influence Strategies",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn37449oht"
+    },
+    "createdAt": "2026-03-16T03:44:14.906Z",
+    "updatedAt": "2026-03-16T03:45:20.858Z",
+    "output": "Research Influence Strategies: ## Finding 1: Uber Senior Director's Strategies for Technical and Managerial Influence\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsn37449oht.md"
+    ]
+  },
+  {
+    "id": "mmsn32kq7igh",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Standing Desk Accessories",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn32hclc6u"
+    },
+    "createdAt": "2026-03-16T03:44:08.906Z",
+    "updatedAt": "2026-03-16T03:45:15.309Z",
+    "output": "Research Standing Desk Accessories: ## Monitor Arms\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsn32hclc6u.md"
+    ]
+  },
+  {
+    "id": "mmsn2znr66ng",
+    "type": "execute-subtask",
+    "label": "Subtask: Research PostgreSQL Query Optimization Techniques",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn2zkcut7p"
+    },
+    "createdAt": "2026-03-16T03:44:05.127Z",
+    "updatedAt": "2026-03-16T03:45:05.394Z",
+    "output": "Research PostgreSQL Query Optimization Techniques: ## EXPLAIN Plans\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsn2zkcut7p.md"
+    ]
+  },
+  {
+    "id": "mmsn2x7fdpss",
+    "type": "deliberate",
+    "label": "Deliberate: Design a personal energy audit system. Track energy levels throughout the day, i",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsn2x77obu8",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:44:01.947Z",
+    "updatedAt": "2026-03-16T03:44:57.795Z",
+    "output": "Deliberation complete.\nObjective: Design a system to track and optimize personal energy levels throughout the day.\nStrategy: First, research existing methods and tools for tracking personal energy levels. Next, synthesize a plan for implementing a system that integrates these methods, identifies patterns, and suggests optimizations. Finally, propose a method for measuring improvements in energy management.\nRisk: yellow\nSubtasks: 2\nTokens: 2114",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsn2wnef26m",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Automation Strategies",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn2wk5bdh3"
+    },
+    "createdAt": "2026-03-16T03:44:01.226Z",
+    "updatedAt": "2026-03-16T03:44:52.721Z",
+    "output": "Research Automation Strategies: ## Finding 1: Acorns Round-Up Savings Strategy with Specific Numbers and Automation\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsn2wk5bdh3.md"
+    ]
+  },
+  {
+    "id": "mmsn2weke3wn",
+    "type": "deliberate",
+    "label": "Deliberate: Create a comprehensive guide to setting up a productive balcony garden. Include ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsn2wefkkdd",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:44:00.908Z",
+    "updatedAt": "2026-03-16T03:44:41.190Z",
+    "output": "Deliberation complete.\nObjective: Create a comprehensive guide to setting up a productive balcony garden.\nStrategy: Conduct research on current best practices for balcony gardening, focusing on container selection, soil types, suitable herbs and vegetables, and watering automation. Synthesize this information into a comprehensive guide tailored for personal use.\nRisk: green\nSubtasks: 2\nTokens: 1972",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsn2vlx9cbs",
+    "type": "deliberate",
+    "label": "Deliberate: Write a full character breakdown for a drama series about 5 engineers who leave ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsn2vlqffrw",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:43:59.877Z",
+    "updatedAt": "2026-03-16T03:44:37.358Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed character breakdown for a drama series about five engineers starting a company.\nStrategy: First, research existing character breakdowns in similar drama series to gather insights on structure and depth. Then, synthesize this information to create unique and compelling character profiles tailored to the series' premise.\nRisk: green\nSubtasks: 2\nTokens: 1925",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsn2utcq9yd",
+    "type": "deliberate",
+    "label": "Deliberate: Plan a cultural immersion trip to Oaxaca Mexico for 1 week. Include cooking clas",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsn2ut5qd2t",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:43:58.848Z",
+    "updatedAt": "2026-03-16T03:44:32.710Z",
+    "output": "Deliberation complete.\nObjective: Plan a culturally immersive and budget-friendly one-week trip to Oaxaca, Mexico.\nStrategy: Conduct research to gather current information on prices and availability for cultural activities in Oaxaca. Then, synthesize this data into a comprehensive itinerary that balances cultural immersion with budget constraints.\nRisk: yellow\nSubtasks: 2\nTokens: 1903",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsn2u0rqj2g",
+    "type": "deliberate",
+    "label": "Deliberate: Design a comprehensive gut health improvement protocol. 8 weeks. Include diet ch",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsn2u0l9oq7",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:43:57.819Z",
+    "updatedAt": "2026-03-16T03:44:27.784Z",
+    "output": "Deliberation complete.\nObjective: Design an 8-week gut health improvement protocol incorporating diet, probiotics, stress reduction, and progress tracking.\nStrategy: Conduct research on current evidence-based practices for gut health improvement, including dietary changes, probiotics, and stress management. Synthesize findings into a structured 8-week protocol with actionable steps and progress tracking methods. Ensure safety and effectiveness by referencing credible sources.\nRisk: yellow\nSubtasks: 2\nTokens: 1940",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsn2tmd6ty4",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Microservice Communication Patterns",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsn2tiz0r4h"
+    },
+    "createdAt": "2026-03-16T03:43:57.301Z",
+    "updatedAt": "2026-03-16T03:44:23.418Z",
+    "output": "Research Microservice Communication Patterns: ## Synchronous REST/HTTP\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsn2tiz0r4h.md"
+    ]
+  },
+  {
+    "id": "mmsn2t8alomz",
+    "type": "deliberate",
+    "label": "Deliberate: Create a comprehensive guide to building influence at work as a senior individua",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsn2t84v7v6",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:43:56.794Z",
+    "updatedAt": "2026-03-16T03:44:14.906Z",
+    "output": "Deliberation complete.\nObjective: Create a guide for senior individual contributors to build influence at work, focusing on technical influence, cross-team impact, and visibility tactics.\nStrategy: Research best practices and case studies on building influence as a senior individual contributor. Synthesize these findings into a structured guide with actionable steps tailored to data engineering and leadership contexts. Focus on technical influence, cross-team impact, and visibility.\nRisk: green\nSubtasks: 2\nTokens: 2300",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsn2sfujcpt",
+    "type": "deliberate",
+    "label": "Deliberate: Research the best standing desk accessories bundle for a developer. Include moni",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsn2sfogn2e",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:43:55.770Z",
+    "updatedAt": "2026-03-16T03:44:08.907Z",
+    "output": "Deliberation complete.\nObjective: Identify and recommend a bundle of standing desk accessories for developers, under $300.\nStrategy: First, research current standing desk accessories that meet the specified criteria using Perplexity. Then, synthesize the findings into a comprehensive report with product recommendations, ensuring the total cost does not exceed $300.\nRisk: green\nSubtasks: 2\nTokens: 1959",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsn2rndvkz8",
+    "type": "deliberate",
+    "label": "Deliberate: Teach me about database query optimization techniques. Cover EXPLAIN plans, inde",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsn2rn3v50h",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:43:54.745Z",
+    "updatedAt": "2026-03-16T03:44:05.128Z",
+    "output": "Deliberation complete.\nObjective: Provide a detailed learning guide on database query optimization techniques with PostgreSQL examples.\nStrategy: Conduct research on the latest database query optimization techniques specific to PostgreSQL. Synthesize findings into a structured guide that includes practical examples and explanations of key concepts like EXPLAIN plans, index strategies, query rewriting, and materialized views.\nRisk: green\nSubtasks: 2\nTokens: 1936",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsn2qu60l35",
+    "type": "deliberate",
+    "label": "Deliberate: Create a comprehensive guide to automating savings and investments. Include rule",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsn2qtx3ivr",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:43:53.694Z",
+    "updatedAt": "2026-03-16T03:44:01.227Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed guide on automating savings and investments with specific strategies and examples.\nStrategy: Conduct research to gather current information on automation strategies for savings and investments, focusing on rules-based transfers, round-up strategies, and emergency fund auto-refill. Synthesize this information into a structured guide with actionable steps and examples.\nRisk: green\nSubtasks: 2\nTokens: 2248",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsn2q17vo49",
+    "type": "deliberate",
+    "label": "Deliberate: Write a complete microservice communication patterns guide. Cover synchronous RE",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsn2q12s0ci",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:43:52.651Z",
+    "updatedAt": "2026-03-16T03:43:57.301Z",
+    "output": "Deliberation complete.\nObjective: Create a comprehensive guide on microservice communication patterns.\nStrategy: First, conduct web research to gather current information and best practices on microservice communication patterns. Then, synthesize this information into a structured guide that explains each pattern and provides guidance on when to use them.\nRisk: green\nSubtasks: 2\nTokens: 1930",
+    "error": null,
+    "filesWritten": []
+  },
+  {
     "id": "mmsmz70n5imc",
     "type": "execute-subtask",
     "label": "Subtask: Synthesize Templates for Personal Retrospectives",
@@ -1120,482 +1598,5 @@
     "filesWritten": [
       "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmi8klfd0c.md"
     ]
-  },
-  {
-    "id": "mmsmi7s0s2kb",
-    "type": "deliberate",
-    "label": "Deliberate: Design a weekly reflection and planning system. Include Sunday review template, ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsmi7rex14p",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:27:55.872Z",
-    "updatedAt": "2026-03-16T03:28:43.736Z",
-    "output": "Deliberation complete.\nObjective: Design a system for weekly reflection, planning, and habit tracking.\nStrategy: Conduct research on existing weekly reflection and planning systems to gather best practices. Synthesize findings into a structured system including a Sunday review template and a week-ahead planning guide. Ensure the system includes a method for habit tracking integration.\nRisk: green\nSubtasks: 2\nTokens: 1937",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsmi6wzo3zc",
-    "type": "deliberate",
-    "label": "Deliberate: Create a sustainable home cleaning system for a busy professional. Weekly schedu",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsmi6wmb44y",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:27:54.755Z",
-    "updatedAt": "2026-03-16T03:28:39.726Z",
-    "output": "Deliberation complete.\nObjective: Develop a sustainable and efficient home cleaning system tailored for a busy professional.\nStrategy: Research effective home cleaning schedules and products suitable for busy professionals. Synthesize findings into a comprehensive plan that includes weekly and monthly cleaning tasks, product recommendations, and time-saving tips. Ensure the plan is practical and easy to follow.\nRisk: green\nSubtasks: 2\nTokens: 1956",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsmi632ttw8",
-    "type": "deliberate",
-    "label": "Deliberate: Write a pitch document for a narrative podcast about the human stories behind ma",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsmi62pvnx6",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:27:53.678Z",
-    "updatedAt": "2026-03-16T03:28:35.224Z",
-    "output": "Deliberation complete.\nObjective: Create a pitch document for a narrative podcast exploring human stories behind tech company pivots, including five episode concepts with research angles.\nStrategy: Conduct research to identify tech company pivots and associated human stories. Synthesize findings into episode concepts and compile them into a cohesive pitch document. Ensure each episode concept includes a clear research angle.\nRisk: green\nSubtasks: 2\nTokens: 1934",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsmi59fi1dt",
-    "type": "deliberate",
-    "label": "Deliberate: Plan a 5-day immersive tech conference experience at CES in Las Vegas. Include b",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsmi58zgncn",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:27:52.611Z",
-    "updatedAt": "2026-03-16T03:28:30.524Z",
-    "output": "Deliberation complete.\nObjective: Plan a comprehensive 5-day tech conference experience at CES in Las Vegas, focusing on booth priorities, networking, evening events, and recovery schedule.\nStrategy: Research the latest CES schedule and events to identify key booths and networking opportunities. Develop a daily plan that balances conference activities with evening events and recovery periods. Ensure alignment with Rahul's priorities and constraints.\nRisk: yellow\nSubtasks: 2\nTokens: 1907",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsmi4w4yi2m",
-    "type": "execute-subtask",
-    "label": "Subtask: Research API Security Topics",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmi4nhl9ay"
-    },
-    "createdAt": "2026-03-16T03:27:52.132Z",
-    "updatedAt": "2026-03-16T03:28:24.012Z",
-    "output": "Research API Security Topics: ## OWASP Top 10 Security Risks (2026)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmi4nhl9ay.md"
-    ]
-  },
-  {
-    "id": "mmsmi4fk1uy8",
-    "type": "deliberate",
-    "label": "Deliberate: Design a comprehensive eye health program for heavy screen users. Include exerci",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsmi4fc3dnk",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:27:51.536Z",
-    "updatedAt": "2026-03-16T03:28:13.392Z",
-    "output": "Deliberation complete.\nObjective: Design a comprehensive eye health program tailored for individuals who frequently use screens.\nStrategy: Conduct research to gather current evidence-based practices for eye health related to screen use. Synthesize findings into a structured program that includes exercises, blinking protocols, screen settings, and checkup schedules. Ensure all recommendations are actionable and include safety disclaimers where necessary.\nRisk: green\nSubtasks: 2\nTokens: 1904",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsmi3mp2nyj",
-    "type": "deliberate",
-    "label": "Deliberate: Create a guide for writing technical blog posts that actually get read. Include ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsmi3mea9gp",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:27:50.497Z",
-    "updatedAt": "2026-03-16T03:28:09.234Z",
-    "output": "Deliberation complete.\nObjective: Create a comprehensive guide for writing technical blog posts that attract and engage readers.\nStrategy: Conduct web research to gather the latest insights on technical blogging, SEO, promotion, and analytics. Synthesize these findings into a structured guide with actionable steps and examples.\nRisk: green\nSubtasks: 2\nTokens: 2162",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsmi2tlfqa6",
-    "type": "deliberate",
-    "label": "Deliberate: Research the best home office chairs for people over 6 feet tall. Compare Herman",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsmi2tdv6sq",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:27:49.449Z",
-    "updatedAt": "2026-03-16T03:28:05.697Z",
-    "output": "Deliberation complete.\nObjective: Research and compare the best home office chairs for people over 6 feet tall from Herman Miller, Steelcase, and Autonomous, focusing on seat depth and height range.\nStrategy: First, conduct web research to gather current information on home office chairs from Herman Miller, Steelcase, and Autonomous, focusing on models suitable for people over 6 feet tall. Then, synthesize this information into a comparative report that highlights pros and cons, seat depth, height range, and provides a recommendation.\nRisk: green\nSubtasks: 2\nTokens: 2057",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsmi20qwngb",
-    "type": "deliberate",
-    "label": "Deliberate: Teach me about chaos engineering. Cover principles, tools (Chaos Monkey, Litmus,",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsmi20dqv1i",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:27:48.410Z",
-    "updatedAt": "2026-03-16T03:28:01.205Z",
-    "output": "Deliberation complete.\nObjective: Provide an educational overview of chaos engineering, including principles, tools, experiment design, and safe production implementation.\nStrategy: Conduct research to gather current information on chaos engineering principles and tools. Synthesize this information into a detailed report that includes practical steps for safely starting chaos engineering in production environments.\nRisk: green\nSubtasks: 2\nTokens: 1907",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsmi179e6mv",
-    "type": "deliberate",
-    "label": "Deliberate: Create a guide to building wealth through index fund investing on autopilot. Inc",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsmi16xki92",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:27:47.349Z",
-    "updatedAt": "2026-03-16T03:27:57.205Z",
-    "output": "Deliberation complete.\nObjective: Create a comprehensive guide on building wealth through index fund investing, focusing on fund selection, rebalancing strategy, and tax-efficient withdrawals.\nStrategy: Conduct research on current best practices and strategies for index fund investing, including fund selection, rebalancing, and tax-efficient withdrawals. Synthesize findings into a comprehensive guide with actionable steps and specific examples.\nRisk: green\nSubtasks: 2\nTokens: 2321",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsmi0dtf1c4",
-    "type": "deliberate",
-    "label": "Deliberate: Write a comprehensive API security checklist. Include OWASP top 10, JWT best pra",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsmi0dn9jr2",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:27:46.289Z",
-    "updatedAt": "2026-03-16T03:27:52.133Z",
-    "output": "Deliberation complete.\nObjective: Create a detailed API security checklist including OWASP top 10, JWT best practices, input validation, and security header configuration.\nStrategy: First, research the latest information on the OWASP top 10, JWT best practices, input validation, and security header configuration. Then, synthesize this information into a structured checklist, ensuring clarity and practicality for developers and security teams.\nRisk: green\nSubtasks: 2\nTokens: 2043",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsmepjk2qdj",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize CRM Design Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmcohneqq6"
-    },
-    "createdAt": "2026-03-16T03:25:12.272Z",
-    "updatedAt": "2026-03-16T03:26:31.495Z",
-    "output": "Synthesize CRM Design Report: ### Objective\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/personalops-{date}-personal-crm.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmcohneqq6.md"
-    ]
-  },
-  {
-    "id": "mmsmeazg663f",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Smart Home Automation Playbook",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmcbjgdp23"
-    },
-    "createdAt": "2026-03-16T03:24:53.404Z",
-    "updatedAt": "2026-03-16T03:26:25.267Z",
-    "output": "Synthesize Smart Home Automation Playbook: ### Objective\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/personalops-{date}-smart-home-automation-playbook.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmcbjgdp23.md"
-    ]
-  },
-  {
-    "id": "mmsmdvz3zsc6",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize series bible",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmc7t88rx6"
-    },
-    "createdAt": "2026-03-16T03:24:33.951Z",
-    "updatedAt": "2026-03-16T03:26:16.249Z",
-    "output": "Synthesize series bible: ## Series Bible for \"Unionized Intelligence\"\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/screenwriting-series-bible-animated-ai-union.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmc7t88rx6.md"
-    ]
-  },
-  {
-    "id": "mmsmdqnl5gcf",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Itinerary and Budget",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmc4v2i2f3"
-    },
-    "createdAt": "2026-03-16T03:24:27.057Z",
-    "updatedAt": "2026-03-16T03:26:04.696Z",
-    "output": "Synthesize Itinerary and Budget: ## Itinerary\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/travel-{date}-roadtrip-itinerary.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmc4v2i2f3.md"
-    ]
-  },
-  {
-    "id": "mmsmdg6xoabc",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Cold and Flu Prevention Protocol",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmc1qqprsv"
-    },
-    "createdAt": "2026-03-16T03:24:13.497Z",
-    "updatedAt": "2026-03-16T03:25:55.531Z",
-    "output": "Synthesize Cold and Flu Prevention Protocol: ### Week 1: Foundation Building\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/health-{date}-cold-flu-prevention.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmc1qqprsv.md"
-    ]
-  },
-  {
-    "id": "mmsmd56r3qm2",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Guide for Building a Personal Advisory Board",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmbs7xdwlt"
-    },
-    "createdAt": "2026-03-16T03:23:59.235Z",
-    "updatedAt": "2026-03-16T03:25:46.060Z",
-    "output": "Synthesize Guide for Building a Personal Advisory Board: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmbs7xdwlt.md"
-    ]
-  },
-  {
-    "id": "mmsmczdyl0bh",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Air Quality Monitor Comparison",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmbpf2drl9"
-    },
-    "createdAt": "2026-03-16T03:23:51.718Z",
-    "updatedAt": "2026-03-16T03:25:38.219Z",
-    "output": "Synthesize Air Quality Monitor Comparison: ## Comparison Table\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/shopping-{date}-air-quality-monitors.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmbpf2drl9.md"
-    ]
-  },
-  {
-    "id": "mmsmcv59foze",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Database Comparison Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmbm2dndet"
-    },
-    "createdAt": "2026-03-16T03:23:46.221Z",
-    "updatedAt": "2026-03-16T03:25:31.439Z",
-    "output": "Synthesize Database Comparison Report: ## Explanation\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/learning-{date}-time_series_databases_comparison.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmbm2dndet.md"
-    ]
-  },
-  {
-    "id": "mmsmcoll8o9p",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Personal CRM Systems",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmcoggrrwb"
-    },
-    "createdAt": "2026-03-16T03:23:37.737Z",
-    "updatedAt": "2026-03-16T03:25:12.272Z",
-    "output": "Research Personal CRM Systems: ## Top Personal CRM Systems in 2026\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmcoggrrwb.md"
-    ]
-  },
-  {
-    "id": "mmsmcl2d63y5",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Guide on Lease Negotiation",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmbino9b4b"
-    },
-    "createdAt": "2026-03-16T03:23:33.157Z",
-    "updatedAt": "2026-03-16T03:25:01.846Z",
-    "output": "Synthesize Guide on Lease Negotiation: ## Analysis\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmbino9b4b.md"
-    ]
-  },
-  {
-    "id": "mmsmcblszwct",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Home Assistant Automation Best Practices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmcbifkpdr"
-    },
-    "createdAt": "2026-03-16T03:23:20.896Z",
-    "updatedAt": "2026-03-16T03:24:53.405Z",
-    "output": "Research Home Assistant Automation Best Practices: ## Best Practices for Home Assistant Automation (Feb-Mar 2026)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmcbifkpdr.md"
-    ]
-  },
-  {
-    "id": "mmsmc7w6hg96",
-    "type": "execute-subtask",
-    "label": "Subtask: Research existing animated AI series",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmc7s53svl"
-    },
-    "createdAt": "2026-03-16T03:23:16.086Z",
-    "updatedAt": "2026-03-16T03:24:33.951Z",
-    "output": "Research existing animated AI series: ## Finding 1: GDC 2026 Talk on AI-Driven Game Characters (Prototypes, Not Full Series)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmc7s53svl.md"
-    ]
-  },
-  {
-    "id": "mmsmc4xbohq4",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Scenic Routes and Activities",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmc4u8odf9"
-    },
-    "createdAt": "2026-03-16T03:23:12.239Z",
-    "updatedAt": "2026-03-16T03:24:27.057Z",
-    "output": "Research Scenic Routes and Activities: ## Finding 1: Vancouver Olympic Loop Road Trip (Portland to Vancouver Alternative via Parks and Islands)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmc4u8odf9.md"
-    ]
-  },
-  {
-    "id": "mmsmc1t412wg",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Cold and Flu Prevention Strategies",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmc1pvgp3u"
-    },
-    "createdAt": "2026-03-16T03:23:08.200Z",
-    "updatedAt": "2026-03-16T03:24:13.497Z",
-    "output": "Research Cold and Flu Prevention Strategies: ## Sleep Optimization\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmc1pvgp3u.md"
-    ]
-  },
-  {
-    "id": "mmsmbxiv8pia",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Technical Design Document",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmbfp4ci3n"
-    },
-    "createdAt": "2026-03-16T03:23:02.647Z",
-    "updatedAt": "2026-03-16T03:24:07.240Z",
-    "output": "Synthesize Technical Design Document: # Technical Design Document: Real-Time Analytics Pipeline\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/writing-{date}-real-time-analytics-pipeline.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmbfp4ci3n.md"
-    ]
-  },
-  {
-    "id": "mmsmbsa4az8i",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Best Practices for Building a Personal Advisory Board",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmbs743158"
-    },
-    "createdAt": "2026-03-16T03:22:55.852Z",
-    "updatedAt": "2026-03-16T03:23:59.236Z",
-    "output": "Research Best Practices for Building a Personal Advisory Board: ## Search Summary\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmbs743158.md"
-    ]
-  },
-  {
-    "id": "mmsmbphbasr5",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Air Quality Monitors",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmbpe2vfmf"
-    },
-    "createdAt": "2026-03-16T03:22:52.223Z",
-    "updatedAt": "2026-03-16T03:23:51.718Z",
-    "output": "Research Air Quality Monitors: ## Awair Air Quality Monitors\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmbpe2vfmf.md"
-    ]
-  },
-  {
-    "id": "mmsmbm7nwz4m",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Time Series Databases",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsmbm0lsm5x"
-    },
-    "createdAt": "2026-03-16T03:22:47.987Z",
-    "updatedAt": "2026-03-16T03:23:46.221Z",
-    "output": "Research Time Series Databases: ## Data Model Differences\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmbm0lsm5x.md"
-    ]
-  },
-  {
-    "id": "mmsmbjbqtznx",
-    "type": "deliberate",
-    "label": "Deliberate: Design a comprehensive personal CRM for maintaining professional relationships. ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsmbjbaopld",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:22:44.246Z",
-    "updatedAt": "2026-03-16T03:23:37.738Z",
-    "output": "Deliberation complete.\nObjective: Design a personal CRM system to manage professional relationships effectively.\nStrategy: Conduct research on existing personal CRM systems and best practices for managing professional relationships. Synthesize findings into a comprehensive report with actionable recommendations tailored to Rahul's priorities and context.\nRisk: yellow\nSubtasks: 2\nTokens: 1943",
-    "error": null,
-    "filesWritten": []
   }
 ]
