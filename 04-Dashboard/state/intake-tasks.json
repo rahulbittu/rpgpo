@@ -1,5 +1,678 @@
 [
   {
+    "task_id": "t_mmtg3d84nu39",
+    "title": "Design a comprehensive reading system for knowledge workers. Include book select",
+    "raw_request": "Design a comprehensive reading system for knowledge workers. Include book selection criteria, active reading methodology, note-taking for retention, synthesis across multiple sources, and sharing insights effectively.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:16:11.572Z",
+    "updated_at": "2026-03-16T17:23:04.021Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:17:51.760Z",
+      "interpreted_objective": "Design a comprehensive reading system for knowledge workers.",
+      "expected_outcome": "A detailed guide that includes book selection criteria, active reading methodology, note-taking for retention, synthesis across multiple sources, and effective sharing of insights.",
+      "key_unknowns": [
+        "Current best practices for book selection and active reading",
+        "Effective note-taking techniques for retention",
+        "Methods for synthesizing information from multiple sources",
+        "Strategies for sharing insights effectively"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and methodologies in each component of the reading system. Synthesize these findings into a cohesive guide that knowledge workers can implement to enhance their reading and information retention capabilities.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Reading Systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and methodologies for book selection, active reading, note-taking, synthesis, and sharing insights.",
+          "prompt": "Search the web for current, specific information about best practices in book selection criteria, active reading methodologies, note-taking techniques for retention, synthesizing information across multiple sources, and sharing insights effectively. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Reading System Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for knowledge workers on designing a reading system, including book selection, active reading, note-taking, synthesis, and sharing insights.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a comprehensive reading system for knowledge workers. Include specific methodologies, techniques, and strategies for each component: book selection, active reading, note-taking, synthesis, and sharing insights.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-reading-system-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2475
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtg3d49uo98",
+    "title": "Create a guide to building a productive home office tech stack. Include monitor ",
+    "raw_request": "Create a guide to building a productive home office tech stack. Include monitor arm setup, cable management systems, USB-C hub selection, webcam and microphone for meetings, and backup power solutions.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:16:11.433Z",
+    "updated_at": "2026-03-16T17:22:30.448Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:17:42.470Z",
+      "interpreted_objective": "Create a comprehensive guide for building a productive home office tech stack.",
+      "expected_outcome": "A detailed guide covering monitor arm setup, cable management, USB-C hub selection, webcam and microphone for meetings, and backup power solutions.",
+      "key_unknowns": [
+        "Specific preferences or constraints for each component",
+        "Target audience's technical proficiency",
+        "Budget considerations"
+      ],
+      "recommended_strategy": "Conduct research on the latest and most effective home office tech solutions for each component. Synthesize this information into a clear and actionable guide. Ensure the guide is accessible to a broad audience and covers a range of options for different needs and budgets.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Office Tech Solutions",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A comprehensive list of current tech solutions for home office setups, including monitor arms, cable management systems, USB-C hubs, webcams, microphones, and backup power solutions.",
+          "prompt": "Search the web for current, specific information about tech solutions for building a productive home office. Include details on monitor arm setups, cable management systems, USB-C hub selection, webcams and microphones for meetings, and backup power solutions. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Home Office Tech Stack",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide for building a productive home office tech stack, including actionable recommendations and specific product suggestions.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a guide for building a productive home office tech stack. Include detailed recommendations for monitor arm setup, cable management systems, USB-C hub selection, webcams and microphones for meetings, and backup power solutions. Provide specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2043
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmtg3d1paeo8",
+    "title": "Write a complete world-building document for a fantasy novel set in a civilizati",
+    "raw_request": "Write a complete world-building document for a fantasy novel set in a civilization built around living architecture — buildings that grow, heal, and die. Include history, magic system, social structure, and map overview.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:16:11.341Z",
+    "updated_at": "2026-03-16T17:22:13.347Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:17:35.007Z",
+      "interpreted_objective": "Create a comprehensive world-building document for a fantasy novel featuring living architecture.",
+      "expected_outcome": "A detailed document outlining the history, magic system, social structure, and a map overview of the fantasy world.",
+      "key_unknowns": [
+        "Specific historical events of the civilization",
+        "Details of the magic system",
+        "Social hierarchy and structure",
+        "Geographical layout and map specifics"
+      ],
+      "recommended_strategy": "First, conduct research to gather ideas and existing concepts related to living architecture in fantasy settings. Then, synthesize this information to create a cohesive document that includes history, magic system, social structure, and a map overview. Ensure all elements are interconnected and contribute to a believable and immersive world.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Living Architecture in Fantasy Settings",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of ideas and concepts related to living architecture in fantasy settings.",
+          "prompt": "Search the web for current, specific information about living architecture in fantasy settings. Include real examples, concepts, and how they are integrated into world-building.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize World-Building Document",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete world-building document detailing the history, magic system, social structure, and map overview.",
+          "prompt": "Based on the research results, synthesize a comprehensive world-building document for a fantasy novel set in a civilization built around living architecture. Include detailed sections on history, magic system, social structure, and a map overview. Ensure all elements are interconnected and contribute to a believable and immersive world.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2065
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtg3czmim8n",
+    "title": "Plan a 7-day culinary and cultural tour through Lisbon and the Algarve. Include ",
+    "raw_request": "Plan a 7-day culinary and cultural tour through Lisbon and the Algarve. Include pasteis de nata masterclass, seafood market tours, tile workshop, Sintra palace visits, Algarve cave kayaking, and Fado dinner shows.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:16:11.266Z",
+    "updated_at": "2026-03-16T17:21:58.154Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:17:25.077Z",
+      "interpreted_objective": "Plan a detailed 7-day culinary and cultural tour in Lisbon and the Algarve.",
+      "expected_outcome": "A comprehensive itinerary that includes culinary classes, cultural tours, and entertainment activities.",
+      "key_unknowns": [
+        "Specific locations and providers for each activity",
+        "Logistics and scheduling for each day",
+        "Cost estimates for each activity"
+      ],
+      "recommended_strategy": "Conduct research to identify top-rated providers and experiences for each activity in Lisbon and the Algarve. Synthesize this information into a detailed daily itinerary, ensuring a balance of culinary and cultural experiences. Include logistical details and cost estimates for each activity.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Culinary and Cultural Activities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of recommended providers and experiences for each activity with citations.",
+          "prompt": "Search the web for current, specific information about top-rated culinary and cultural activities in Lisbon and the Algarve, including pasteis de nata masterclasses, seafood market tours, tile workshops, Sintra palace visits, Algarve cave kayaking, and Fado dinner shows. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize 7-Day Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 7-day itinerary for the tour, including activities, logistics, and cost estimates.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 7-day culinary and cultural itinerary for Lisbon and the Algarve. Include specific activities, providers, logistics, and cost estimates for each day.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-culinary-cultural-tour.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2471
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtg3cy48n28",
+    "title": "Design a comprehensive stretching and flexibility routine for people over 40. In",
+    "raw_request": "Design a comprehensive stretching and flexibility routine for people over 40. Include dynamic warm-up sequences, static hold progressions, PNF stretching techniques, foam rolling protocols, and weekly scheduling.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:16:11.212Z",
+    "updated_at": "2026-03-16T17:21:38.364Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:17:12.471Z",
+      "interpreted_objective": "Design a stretching and flexibility routine tailored for individuals over 40, incorporating various techniques and scheduling.",
+      "expected_outcome": "A detailed, actionable stretching and flexibility routine that includes dynamic warm-up sequences, static hold progressions, PNF techniques, foam rolling protocols, and a weekly schedule.",
+      "key_unknowns": [
+        "Specific health considerations for individuals over 40",
+        "Preferred duration for each stretching session",
+        "Any existing injuries or conditions common in this age group"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices for stretching routines for individuals over 40. Synthesize this information into a comprehensive routine that includes dynamic warm-ups, static holds, PNF stretching, and foam rolling, with a suggested weekly schedule.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Stretching Techniques for Over 40",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and techniques for stretching and flexibility routines tailored for individuals over 40.",
+          "prompt": "Search the web for current, specific information about stretching and flexibility routines for people over 40. Include dynamic warm-up sequences, static hold progressions, PNF stretching techniques, foam rolling protocols, and weekly scheduling. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Stretching Routine",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive stretching and flexibility routine document for individuals over 40.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive stretching and flexibility routine for people over 40. Include dynamic warm-up sequences, static hold progressions, PNF stretching techniques, foam rolling protocols, and a suggested weekly schedule. Provide specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-stretching-routine.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2024
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmtg3cvdxx9q",
+    "title": "Create a guide to building psychological safety in engineering teams. Include tr",
+    "raw_request": "Create a guide to building psychological safety in engineering teams. Include trust-building exercises, failure celebration practices, feedback culture establishment, speaking-up incentives, and measuring safety over time.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:16:11.113Z",
+    "updated_at": "2026-03-16T17:21:26.149Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:17:01.602Z",
+      "interpreted_objective": "Create a comprehensive guide for building psychological safety in engineering teams.",
+      "expected_outcome": "A detailed, actionable guide that includes trust-building exercises, failure celebration practices, feedback culture establishment, speaking-up incentives, and methods for measuring safety over time.",
+      "key_unknowns": [
+        "Specific trust-building exercises suitable for engineering teams",
+        "Effective practices for celebrating failures",
+        "Methods to establish a feedback culture",
+        "Incentives that encourage speaking up",
+        "Metrics for measuring psychological safety over time"
+      ],
+      "recommended_strategy": "Research current best practices in psychological safety within engineering teams and synthesize these into a cohesive guide. The guide should be evidence-based and include specific exercises and practices that can be easily implemented by team leaders. Ensure the guide includes methods for measuring psychological safety over time to track progress.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Psychological Safety Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices and exercises for building psychological safety in engineering teams.",
+          "prompt": "Search the web for current, specific information about building psychological safety in engineering teams. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Psychological Safety",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on building psychological safety in engineering teams, including exercises, practices, and measurement methods.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for building psychological safety in engineering teams. Include specific trust-building exercises, failure celebration practices, feedback culture establishment, speaking-up incentives, and methods for measuring safety over time.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2045
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmtg3ctnu65a",
+    "title": "Research the best indoor cycling bikes for home fitness. Compare Peloton Bike+, ",
+    "raw_request": "Research the best indoor cycling bikes for home fitness. Compare Peloton Bike+, Bowflex VeloCore, and Schwinn IC4 with resistance systems, connectivity, content ecosystem, and long-term cost of ownership.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:16:11.051Z",
+    "updated_at": "2026-03-16T17:21:12.529Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:16:51.520Z",
+      "interpreted_objective": "Research and compare the best indoor cycling bikes for home fitness, focusing on Peloton Bike+, Bowflex VeloCore, and Schwinn IC4.",
+      "expected_outcome": "A comprehensive comparison report detailing resistance systems, connectivity, content ecosystem, and long-term cost of ownership for the specified indoor cycling bikes.",
+      "key_unknowns": [
+        "Specific features and specifications of each bike",
+        "Current pricing and cost of ownership details",
+        "User reviews and expert opinions on each bike"
+      ],
+      "recommended_strategy": "First, conduct web research to gather detailed information on the Peloton Bike+, Bowflex VeloCore, and Schwinn IC4, focusing on their resistance systems, connectivity options, content ecosystems, and long-term costs. Then, synthesize this data into a comparative report with actionable insights and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Indoor Cycling Bikes",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information and data on Peloton Bike+, Bowflex VeloCore, and Schwinn IC4, including resistance systems, connectivity, content ecosystem, and cost of ownership.",
+          "prompt": "Search the web for current, specific information about Peloton Bike+, Bowflex VeloCore, and Schwinn IC4 indoor cycling bikes. Include details on their resistance systems, connectivity options, content ecosystems, long-term cost of ownership, and provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report with actionable insights on the best indoor cycling bikes for home fitness.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comprehensive comparison report on Peloton Bike+, Bowflex VeloCore, and Schwinn IC4. Include specific details on resistance systems, connectivity, content ecosystems, long-term costs, and provide actionable recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-indoor-cycling-bikes.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2226
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtg3csu94v8",
+    "title": "Explain how async/await works under the hood in JavaScript. Cover the event loop",
+    "raw_request": "Explain how async/await works under the hood in JavaScript. Cover the event loop, microtask queue, generator-based desugaring, Promise resolution, unhandled rejection handling, and common pitfalls with concurrent operations.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:16:11.022Z",
+    "updated_at": "2026-03-16T17:21:01.140Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:16:41.661Z",
+      "interpreted_objective": "Explain the internal workings of async/await in JavaScript, including related concepts like the event loop and Promise handling.",
+      "expected_outcome": "A comprehensive explanation document that details how async/await operates in JavaScript, suitable for educational purposes.",
+      "key_unknowns": [
+        "Current best practices for handling unhandled rejections",
+        "Common pitfalls in concurrent JavaScript operations"
+      ],
+      "recommended_strategy": "First, conduct research to gather the latest information on async/await, event loop, and related concepts. Then, synthesize this information into a detailed explanation document, ensuring it covers all specified areas and is suitable for learners with a technical background.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research async/await and related concepts",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data on async/await, event loop, microtask queue, Promise resolution, and common pitfalls.",
+          "prompt": "Search the web for current, specific information about how async/await works under the hood in JavaScript, including the event loop, microtask queue, generator-based desugaring, Promise resolution, unhandled rejection handling, and common pitfalls with concurrent operations. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize explanation of async/await",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed explanation document on async/await in JavaScript.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive explanation of how async/await works under the hood in JavaScript. Cover the event loop, microtask queue, generator-based desugaring, Promise resolution, unhandled rejection handling, and common pitfalls with concurrent operations. Ensure the explanation is clear and suitable for learners with a technical background.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-async-await.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1965
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmtg3crsgho3",
+    "title": "Create a guide to understanding and optimizing property tax assessments. Include",
+    "raw_request": "Create a guide to understanding and optimizing property tax assessments. Include appeal process, comparable sales analysis, exemption eligibility, assessment methodology, and timeline for different jurisdictions.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:16:10.984Z",
+    "updated_at": "2026-03-16T17:20:46.019Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:16:30.186Z",
+      "interpreted_objective": "Create a comprehensive guide on understanding and optimizing property tax assessments.",
+      "expected_outcome": "A detailed guide covering appeal processes, comparable sales analysis, exemption eligibility, assessment methodologies, and timelines for various jurisdictions.",
+      "key_unknowns": [
+        "Current property tax assessment methodologies across different jurisdictions",
+        "Specific appeal processes and timelines in various regions",
+        "Criteria for exemption eligibility in different areas",
+        "How comparable sales are analyzed for tax assessments"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on property tax assessment methodologies, appeal processes, exemption criteria, and timelines across different jurisdictions. Then, synthesize this information into a structured guide that provides actionable insights and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Property Tax Assessments",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on property tax assessment methodologies, appeal processes, exemption criteria, and timelines across different jurisdictions.",
+          "prompt": "Search the web for current, specific information about property tax assessments, including methodologies, appeal processes, exemption eligibility, and timelines for different jurisdictions. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Property Tax Assessment Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on understanding and optimizing property tax assessments.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations into a comprehensive guide on property tax assessments. Include appeal processes, comparable sales analysis, exemption eligibility, assessment methodologies, and timelines for different jurisdictions.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-property-tax-assessments.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2081
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtg3cr496gv",
+    "title": "Design a comprehensive container security scanning pipeline. Include image vulne",
+    "raw_request": "Design a comprehensive container security scanning pipeline. Include image vulnerability scanning with Trivy, runtime security with Falco, network policies, secrets detection in Dockerfiles, and compliance baseline enforcement.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:16:10.960Z",
+    "updated_at": "2026-03-16T17:20:30.926Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:16:23.113Z",
+      "interpreted_objective": "Design a comprehensive container security scanning pipeline integrating multiple security tools and practices.",
+      "expected_outcome": "A detailed plan for a container security scanning pipeline that includes image vulnerability scanning, runtime security, network policies, secrets detection, and compliance enforcement.",
+      "key_unknowns": [
+        "Specific compliance standards to enforce",
+        "Current best practices for integrating Trivy and Falco",
+        "Existing network policy frameworks"
+      ],
+      "recommended_strategy": "Conduct research on the latest practices and tools for container security. Synthesize findings into a comprehensive report detailing a step-by-step pipeline implementation. Ensure the plan aligns with current security standards and includes actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Container Security Tools and Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research findings on current container security tools and best practices.",
+          "prompt": "Search the web for current, specific information about container security tools and practices, including Trivy, Falco, network policies, secrets detection, and compliance enforcement. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Container Security Pipeline Plan",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report detailing a container security scanning pipeline.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive plan for a container security scanning pipeline. Include specific tools, steps for implementation, and compliance standards. Provide actionable recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-10-container-security-pipeline.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2435
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
     "task_id": "t_mmtfsm02vzvq",
     "title": "Design a comprehensive sleep environment optimization guide. Include mattress se",
     "raw_request": "Design a comprehensive sleep environment optimization guide. Include mattress selection science, pillow ergonomics by sleep position, blackout solutions, white noise comparison, temperature regulation, and partner accommodation strategies.",
