@@ -1,5 +1,703 @@
 [
   {
+    "task_id": "t_mmstkm5qov9q",
+    "title": "Design a comprehensive personal productivity audit framework. Include time track",
+    "raw_request": "Design a comprehensive personal productivity audit framework. Include time tracking methodology, energy audit process, distraction analysis, tool stack evaluation, workflow optimization, and quarterly review process.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:45:45.134Z",
+    "updated_at": "2026-03-16T06:50:26.459Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:46:49.116Z",
+      "interpreted_objective": "Design a comprehensive framework for auditing personal productivity, covering various aspects such as time management, energy levels, distractions, tools, workflows, and review processes.",
+      "expected_outcome": "A detailed framework document that outlines methodologies and processes for conducting a personal productivity audit.",
+      "key_unknowns": [
+        "Specific tools and methodologies currently used for personal productivity audits",
+        "Best practices in time tracking and energy management",
+        "Effective methods for distraction analysis and workflow optimization"
+      ],
+      "recommended_strategy": "First, conduct research to gather current methodologies and best practices in personal productivity audits. Then, synthesize this information into a comprehensive framework document that includes specific methodologies and processes for each component of the audit.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Productivity Audit Methodologies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current methodologies and best practices for personal productivity audits.",
+          "prompt": "Search the web for current, specific information about personal productivity audit methodologies, including time tracking, energy audits, distraction analysis, tool stack evaluation, workflow optimization, and quarterly review processes. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Productivity Audit Framework",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive framework document for personal productivity audits.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive personal productivity audit framework. Include methodologies for time tracking, energy audits, distraction analysis, tool stack evaluation, workflow optimization, and quarterly review processes. Provide actionable recommendations and structured guidelines.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-productivity-audit-framework.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2465
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmstkm1cfygk",
+    "title": "Create a guide to building a backyard pizza oven. Include material comparison (b",
+    "raw_request": "Create a guide to building a backyard pizza oven. Include material comparison (brick vs prefab vs Ooni portable), foundation requirements, insulation techniques, curing process, and dough recipes optimized for each oven type.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:45:44.976Z",
+    "updated_at": "2026-03-16T06:50:19.024Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:46:41.238Z",
+      "interpreted_objective": "Create a comprehensive guide for building a backyard pizza oven.",
+      "expected_outcome": "A detailed guide covering material comparison, foundation requirements, insulation techniques, curing process, and dough recipes for different oven types.",
+      "key_unknowns": [
+        "Specific materials and techniques for each oven type",
+        "Optimal dough recipes for each oven type"
+      ],
+      "recommended_strategy": "Research current best practices and materials for building backyard pizza ovens, including brick, prefab, and portable options. Synthesize findings into a structured guide with sections on materials, construction, and recipes.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Materials and Techniques",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research on materials (brick, prefab, Ooni portable), foundation requirements, insulation techniques, and curing processes.",
+          "prompt": "Search the web for current, specific information about building backyard pizza ovens, including material comparisons (brick vs prefab vs Ooni portable), foundation requirements, insulation techniques, and curing processes. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Dough Recipes",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Research on dough recipes optimized for different types of pizza ovens.",
+          "prompt": "Search the web for dough recipes optimized for different types of pizza ovens (brick, prefab, Ooni portable). Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide that includes material comparison, foundation requirements, insulation techniques, curing process, and dough recipes for each oven type.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide to building a backyard pizza oven. Include sections on material comparison (brick vs prefab vs Ooni portable), foundation requirements, insulation techniques, curing process, and dough recipes optimized for each oven type.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2142
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmstklzd0sg0",
+    "title": "Write a complete outline for a documentary series about abandoned megaprojects a",
+    "raw_request": "Write a complete outline for a documentary series about abandoned megaprojects around the world. Include 8 episodes covering different countries, interview subjects, archival footage needs, and narrative structure.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:45:44.905Z",
+    "updated_at": "2026-03-16T06:50:05.719Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:46:34.731Z",
+      "interpreted_objective": "Create a detailed outline for an 8-episode documentary series on abandoned megaprojects worldwide.",
+      "expected_outcome": "A comprehensive outline that includes episode themes, interview subjects, archival footage needs, and narrative structure for each episode.",
+      "key_unknowns": [
+        "Specific countries and megaprojects to be covered",
+        "Potential interview subjects",
+        "Availability of archival footage"
+      ],
+      "recommended_strategy": "Conduct research to identify notable abandoned megaprojects across different countries. Develop an episode structure that includes expert interviews and archival footage. Synthesize findings into a cohesive outline for the series.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Abandoned Megaprojects",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of notable abandoned megaprojects across various countries with relevant details.",
+          "prompt": "Search the web for current, specific information about notable abandoned megaprojects around the world. Include real names, locations, reasons for abandonment, and any available archival footage or interviews.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Documentary Outline",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured outline for an 8-episode documentary series, including episode themes, interview subjects, archival footage needs, and narrative structure.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed outline for an 8-episode documentary series on abandoned megaprojects. Include episode themes, potential interview subjects, archival footage needs, and narrative structure for each episode.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-documentary-outline.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1911
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmstklwcgpzp",
+    "title": "Plan a 10-day historical and culinary tour through Morocco. Include Marrakech me",
+    "raw_request": "Plan a 10-day historical and culinary tour through Morocco. Include Marrakech medina navigation, Atlas Mountains trekking, Sahara desert camping, Fez leather tanneries, and authentic cooking class experiences.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:45:44.796Z",
+    "updated_at": "2026-03-16T06:49:49.160Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:46:29.133Z",
+      "interpreted_objective": "Plan a detailed 10-day historical and culinary tour through Morocco, covering key cultural and culinary experiences.",
+      "expected_outcome": "A comprehensive itinerary that includes Marrakech medina navigation, Atlas Mountains trekking, Sahara desert camping, Fez leather tanneries, and authentic cooking class experiences.",
+      "key_unknowns": [
+        "Specific locations and guides for trekking in the Atlas Mountains",
+        "Availability and booking details for Sahara desert camping",
+        "Authentic cooking class options in Morocco",
+        "Navigational tips for Marrakech medina"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on key historical and culinary experiences in Morocco. Synthesize this information into a detailed itinerary, ensuring it includes practical travel tips and booking recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Moroccan Historical and Culinary Experiences",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gathered information on historical sites, culinary experiences, and travel logistics in Morocco.",
+          "prompt": "Search the web for current, specific information about historical and culinary experiences in Morocco, including Marrakech medina navigation, Atlas Mountains trekking, Sahara desert camping, Fez leather tanneries, and authentic cooking classes. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Moroccan Tour Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 10-day itinerary for a historical and culinary tour through Morocco.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 10-day itinerary for a historical and culinary tour through Morocco. Include specific names, locations, activities, and booking recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-10-moroccan-tour-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2484
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmstklt4ale4",
+    "title": "Design an evidence-based morning routine for peak mental performance. Include ch",
+    "raw_request": "Design an evidence-based morning routine for peak mental performance. Include chronobiology-based wake timing, cold exposure protocols, morning sunlight benefits, caffeine timing optimization, and movement sequences.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:45:44.680Z",
+    "updated_at": "2026-03-16T06:49:42.352Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:46:22.794Z",
+      "interpreted_objective": "Design a detailed morning routine for peak mental performance based on scientific evidence.",
+      "expected_outcome": "A comprehensive, evidence-based morning routine that optimizes mental performance through chronobiology, cold exposure, sunlight, caffeine timing, and movement.",
+      "key_unknowns": [
+        "Specific scientific studies or evidence supporting each component of the routine",
+        "Current best practices in chronobiology for wake timing",
+        "Optimal protocols for cold exposure",
+        "Benefits and timing of morning sunlight",
+        "Caffeine timing optimization strategies",
+        "Effective movement sequences for mental performance"
+      ],
+      "recommended_strategy": "Conduct research to gather current scientific evidence and best practices for each component of the morning routine. Synthesize this information into a cohesive plan that can be easily followed. Ensure that each element of the routine is supported by credible sources and practical for implementation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Components of Morning Routine",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of evidence-based practices and scientific findings for each component of the morning routine.",
+          "prompt": "Search the web for current, specific information about evidence-based practices for chronobiology-based wake timing, cold exposure protocols, morning sunlight benefits, caffeine timing optimization, and movement sequences for mental performance. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Morning Routine Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed morning routine plan that integrates all researched components into a cohesive and actionable guide.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable morning routine plan for peak mental performance. Include specific recommendations for wake timing, cold exposure, sunlight, caffeine timing, and movement sequences, supported by scientific evidence.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2151
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmstklqks752",
+    "title": "Create a comprehensive guide to asking for and receiving a raise. Include timing",
+    "raw_request": "Create a comprehensive guide to asking for and receiving a raise. Include timing strategies, market data preparation, accomplishment documentation, script templates for different scenarios, and handling rejection gracefully.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:45:44.588Z",
+    "updated_at": "2026-03-16T06:49:34.633Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:46:12.589Z",
+      "interpreted_objective": "Create a detailed guide for professionals on effectively asking for and receiving a raise.",
+      "expected_outcome": "A comprehensive, actionable guide that includes timing strategies, market data preparation, accomplishment documentation, script templates, and guidance on handling rejection.",
+      "key_unknowns": [
+        "Current best practices for negotiating raises",
+        "Effective timing strategies",
+        "Market data sources for salary benchmarks",
+        "Common scenarios and appropriate scripts",
+        "Strategies for handling rejection"
+      ],
+      "recommended_strategy": "Conduct web research to gather current best practices and data on salary negotiation. Synthesize this information into a structured guide, ensuring it covers all requested elements with practical advice and examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices and Data",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gathered data on current best practices, timing strategies, and market data sources for salary negotiation.",
+          "prompt": "Search the web for current best practices in asking for a raise, including timing strategies, market data preparation, and handling rejection. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide Content",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on asking for and receiving a raise, including strategies, data preparation, documentation, and scripts.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comprehensive guide for asking for and receiving a raise. Include timing strategies, market data preparation, accomplishment documentation, script templates for different scenarios, and guidance on handling rejection gracefully.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-raise-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1911
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmstklop6set",
+    "title": "Research the best home NAS devices for media storage and backup. Compare Synolog",
+    "raw_request": "Research the best home NAS devices for media storage and backup. Compare Synology DS923+, QNAP TS-464, and TerraMaster F4-423 with RAID configuration, Docker support, and Plex transcoding performance.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:45:44.521Z",
+    "updated_at": "2026-03-16T06:49:23.926Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:46:06.808Z",
+      "interpreted_objective": "Research and compare the best home NAS devices for media storage and backup, focusing on Synology DS923+, QNAP TS-464, and TerraMaster F4-423.",
+      "expected_outcome": "A detailed comparison report of the Synology DS923+, QNAP TS-464, and TerraMaster F4-423 NAS devices, highlighting RAID configuration, Docker support, and Plex transcoding performance.",
+      "key_unknowns": [
+        "Current specifications and performance metrics for each NAS device",
+        "Comparative analysis of RAID configuration, Docker support, and Plex transcoding performance",
+        "Up-to-date pricing and availability"
+      ],
+      "recommended_strategy": "First, conduct web research to gather the latest specifications, features, and performance data for the Synology DS923+, QNAP TS-464, and TerraMaster F4-423. Then, synthesize this data into a comprehensive comparison report, focusing on RAID configuration, Docker support, and Plex transcoding performance.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research NAS Device Specifications",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed specifications and performance data for Synology DS923+, QNAP TS-464, and TerraMaster F4-423.",
+          "prompt": "Search the web for current, specific information about Synology DS923+, QNAP TS-464, and TerraMaster F4-423 NAS devices. Include details on RAID configuration, Docker support, Plex transcoding performance, pricing, and availability. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize NAS Device Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive comparison report of the Synology DS923+, QNAP TS-464, and TerraMaster F4-423, focusing on RAID configuration, Docker support, and Plex transcoding performance.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific comparisons of RAID configuration, Docker support, and Plex transcoding performance for Synology DS923+, QNAP TS-464, and TerraMaster F4-423. Provide concrete next steps and recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2398
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmstklm9w55r",
+    "title": "Explain how neural network training works from forward pass to backpropagation. ",
+    "raw_request": "Explain how neural network training works from forward pass to backpropagation. Cover gradient descent variants (SGD, Adam, AdaGrad), learning rate scheduling, batch normalization, and vanishing gradient solutions.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:45:44.433Z",
+    "updated_at": "2026-03-16T06:49:15.299Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:46:00.932Z",
+      "interpreted_objective": "Explain neural network training processes and techniques in a comprehensive manner.",
+      "expected_outcome": "A detailed explanation document covering neural network training, gradient descent variants, learning rate scheduling, batch normalization, and solutions to vanishing gradients.",
+      "key_unknowns": [
+        "Specific depth of explanation required",
+        "Preferred format or structure of the explanation"
+      ],
+      "recommended_strategy": "First, gather current and detailed information on neural network training techniques and associated concepts using web research. Then, synthesize this information into a structured report that covers each aspect comprehensively.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Neural Network Training Techniques",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed and current information on neural network training, gradient descent variants, learning rate scheduling, batch normalization, and vanishing gradient solutions.",
+          "prompt": "Search the web for current, specific information about neural network training processes including forward pass, backpropagation, gradient descent variants (SGD, Adam, AdaGrad), learning rate scheduling, batch normalization, and solutions to vanishing gradients. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Neural Network Training Explanation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report explaining neural network training processes and techniques.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive explanation of neural network training, covering forward pass, backpropagation, gradient descent variants (SGD, Adam, AdaGrad), learning rate scheduling, batch normalization, and solutions to vanishing gradients. Include specific names, numbers, and concrete examples.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-neural-network-training.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1930
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmstkllunbkp",
+    "title": "Create a guide to building passive income through digital products. Include onli",
+    "raw_request": "Create a guide to building passive income through digital products. Include online course creation, ebook publishing, template marketplace strategies, membership site models, and revenue scaling from $0 to $10K monthly.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:45:44.418Z",
+    "updated_at": "2026-03-16T06:49:04.876Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:45:54.974Z",
+      "interpreted_objective": "Create a detailed guide on building passive income through digital products, focusing on online courses, ebooks, templates, membership sites, and scaling revenue.",
+      "expected_outcome": "A comprehensive guide with specific revenue estimates, real examples, market data, and concrete steps to achieve $0 to $10K monthly income.",
+      "key_unknowns": [
+        "Current market trends for digital products",
+        "Successful case studies or examples",
+        "Specific revenue models and strategies for each digital product type"
+      ],
+      "recommended_strategy": "Research current trends and successful examples for each digital product type. Synthesize findings into a detailed guide with actionable steps and revenue projections. Ensure the guide is practical and grounded in real-world data.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Trends and Examples",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current trends, successful examples, and revenue models for digital products like online courses, ebooks, templates, and membership sites.",
+          "prompt": "Search the web for current, specific information about building passive income through digital products, including online courses, ebook publishing, template marketplaces, and membership sites. Include real examples, revenue models, and market data.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Building Passive Income",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide on building passive income through digital products, with specific strategies, revenue estimates, and steps to scale income.",
+          "prompt": "Based on the research results, synthesize a detailed guide for building passive income through digital products. Include specific strategies for online courses, ebooks, templates, and membership sites, with revenue estimates and steps to scale from $0 to $10K monthly.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2427
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmstkllb88v9",
+    "title": "Design a comprehensive load testing strategy for a high-traffic REST API. Includ",
+    "raw_request": "Design a comprehensive load testing strategy for a high-traffic REST API. Include k6 vs Locust vs Gatling comparison, realistic traffic simulation, performance baselines, bottleneck identification, and capacity planning methodology.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:45:44.399Z",
+    "updated_at": "2026-03-16T06:48:57.006Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:45:50.039Z",
+      "interpreted_objective": "Design a comprehensive load testing strategy for a high-traffic REST API.",
+      "expected_outcome": "A detailed strategy document that includes tool comparison, traffic simulation methods, performance baselines, bottleneck identification, and capacity planning.",
+      "key_unknowns": [
+        "Specific API details and expected traffic patterns",
+        "Current infrastructure and performance metrics",
+        "Budget and resources available for load testing"
+      ],
+      "recommended_strategy": "Conduct a comparative analysis of k6, Locust, and Gatling to determine the best tool for the API's requirements. Develop a realistic traffic simulation plan based on expected usage patterns. Establish performance baselines and identify bottlenecks through testing. Finally, create a capacity planning methodology to ensure scalability.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Selection of the load testing tool",
+        "Finalization of the capacity planning methodology"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Load Testing Tools",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on k6, Locust, and Gatling including pros, cons, and use cases.",
+          "prompt": "Search the web for current, specific information about k6, Locust, and Gatling as load testing tools. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Load Testing Strategy",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive load testing strategy document.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive load testing strategy for a high-traffic REST API. Include a comparison of k6, Locust, and Gatling, methods for realistic traffic simulation, performance baselines, bottleneck identification, and a capacity planning methodology.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2041
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
     "task_id": "t_mmstapqws8ud",
     "title": "Design a comprehensive decision-making framework for major life choices. Include",
     "raw_request": "Design a comprehensive decision-making framework for major life choices. Include weighted matrix analysis, pre-mortem technique, reversibility assessment, opportunity cost calculation, and emotional decision audit.",
