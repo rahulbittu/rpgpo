@@ -643,24 +643,14 @@
     },
     "providerId": "perplexity",
     "ewma": {
-      "n": 636,
-      "lastTimestamp": 1773649115746,
-      "latencyMsEwma": 674.0569907936558,
+      "n": 637,
+      "lastTimestamp": 1773649348463,
+      "latencyMsEwma": 730.9455926349248,
       "successRateEwma": 0.9999999999999998,
       "qualityEwma": 0.8000000000000002,
       "costPerTokenEwma": 0
     },
     "lastSamples": [
-      {
-        "timestamp": 1773644984347,
-        "providerId": "perplexity",
-        "latencyMs": 607,
-        "inputTokens": 541,
-        "outputTokens": 673,
-        "totalCostUsd": 0,
-        "success": true,
-        "qualityScore": 0.8
-      },
       {
         "timestamp": 1773644993289,
         "providerId": "perplexity",
@@ -947,6 +937,16 @@
         "latencyMs": 556.5,
         "inputTokens": 552,
         "outputTokens": 561,
+        "totalCostUsd": 0,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773649348463,
+        "providerId": "perplexity",
+        "latencyMs": 958.5,
+        "inputTokens": 551,
+        "outputTokens": 1366,
         "totalCostUsd": 0,
         "success": true,
         "qualityScore": 0.8
