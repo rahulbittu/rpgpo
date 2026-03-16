@@ -31,8 +31,13 @@
 │       ├── costs.json           API cost tracking
 │       ├── deliverables/        Completed task outputs
 │       └── context/             Operator profile + mission context
-├── artifacts/            Testing artifacts
-│   └── testing/          Execution results, verdicts, classification
+├── artifacts/            Testing and behavior artifacts
+│   ├── testing/          Execution results, verdicts, classification
+│   └── behavior/         Operator behavior learning data
+│       ├── operator-events.jsonl   Append-only event log
+│       ├── operator-signals.json   Derived behavioral signals
+│       ├── engine-preferences.json Engine-specific preferences
+│       └── behavior-learning-log.md Signal derivation history
 ├── docs/                 Documentation
 │   ├── testing/          Test harness, case reports, scoreboard
 │   │   └── case-reports/ Individual case report files
@@ -53,4 +58,8 @@
 | `04-Dashboard/app/server.js` | Main server (~4000 lines) |
 | `04-Dashboard/app/worker.js` | Task execution worker |
 | `04-Dashboard/app/lib/deliberation.ts` | Board of AI logic |
+| `04-Dashboard/app/lib/behavior.ts` | Behavior learning system |
 | `04-Dashboard/state/context/operator-profile.json` | Operator context |
+| `artifacts/behavior/operator-events.jsonl` | Operator behavior events |
+| `artifacts/behavior/operator-signals.json` | Derived behavioral signals |
+| `docs/behavior-learning.md` | Behavior learning documentation |

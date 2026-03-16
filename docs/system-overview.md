@@ -30,6 +30,7 @@ Output synthesis → Deliverable saved → Operator notified
 | Workflow | `04-Dashboard/app/lib/workflow.ts` | Subtask orchestration |
 | Intake | `04-Dashboard/app/lib/intake.ts` | Task creation + domain detection |
 | Engines | `04-Dashboard/app/lib/engines.ts` | 15 engine definitions |
+| Behavior | `04-Dashboard/app/lib/behavior.ts` | Operator behavior learning |
 | Dashboard | `04-Dashboard/app/index.html` | Operator UI |
 
 ## 15 Engines

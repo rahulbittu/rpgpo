@@ -9,6 +9,7 @@
 | Use GPO as an operator | [Operator Guide](operator-guide.md) |
 | Understand how tasks execute | [Task Lifecycle](task-lifecycle.md) |
 | Understand the Board of AI | [Board of AI Guide](board-of-ai-guide.md) |
+| Understand behavior learning | [Behavior Learning](behavior-learning.md) |
 | Manage the system (admin) | [Admin Guide](admin-guide.md) |
 | Review test results | [Validation Scoreboard](testing/engine-maturity-scoreboard.md) |
 | Review a specific test case | [Test Review Guide](testing/test-review-guide.md) |
@@ -20,6 +21,7 @@
 - [Repo Map](repo-map.md) — Every directory and key file explained
 - [Task Lifecycle](task-lifecycle.md) — Submit → Route → Deliberate → Execute → Deliver
 - [Board of AI Guide](board-of-ai-guide.md) — Three perspectives, provider selection, context injection
+- [Behavior Learning](behavior-learning.md) — How GPO learns from operator actions
 - [Operator Guide](operator-guide.md) — Dashboard navigation, submitting tasks, keyboard shortcuts
 - [Admin Guide](admin-guide.md) — System management, API keys, costs, monitoring, troubleshooting
 - [Canonical Naming](product/canonical-naming-map.md) — Internal domain IDs → canonical engine names
@@ -28,6 +30,11 @@
 
 - [Component Index](architecture/component-index.md) — Server, Worker, Dashboard, pipeline explained
 - [Module Map](architecture/module-map.md) — All 251 TypeScript modules categorized
+
+## Intelligence
+
+- [Behavior Learning](behavior-learning.md) — Event capture, signal derivation, execution guidance
+- [Operator Adaptation](behavior-learning.md#execution-guidance) — How signals influence task routing and approval
 
 ## Validation & Testing
 

@@ -38,6 +38,7 @@ Intake → Domain Router → Board Deliberation → Workflow → Worker → Prov
 | Workflow | `workflow.ts` | Manages subtask state machine, auto-continues |
 | Execution | `worker.js` | Calls AI providers for each subtask |
 | Output | `workflow.ts` | Saves deliverables, emits notifications |
+| Behavior | `behavior.ts` | Captures operator events, derives behavioral signals |
 
 ## State Management
 
@@ -48,6 +49,14 @@ All state is stored as JSON files in `04-Dashboard/state/`:
 - `costs.json` — API cost ledger
 - `deliverables/` — Completed task output files
 - `context/operator-profile.json` — Operator preferences
+
+## Behavior Learning
+
+The behavior system (`behavior.ts`) captures operator actions as events and derives behavioral signals. See [Behavior Learning](../behavior-learning.md).
+
+- **Events:** Append-only JSONL at `artifacts/behavior/operator-events.jsonl`
+- **Signals:** Derived JSON at `artifacts/behavior/operator-signals.json`
+- **API:** `/api/behavior/stats`, `/api/behavior/signals`, `/api/behavior/guidance`
 
 ## AI Providers
 
