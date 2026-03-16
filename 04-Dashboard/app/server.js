@@ -32,6 +32,8 @@ const costs = require('./lib/costs');
 const intake = require('./lib/intake');
 const workflow = require('./lib/workflow');
 const behavior = require('./lib/behavior');
+let canonicalEngines;
+try { canonicalEngines = require('./lib/canonical-engines'); } catch { canonicalEngines = { toCanonical: (id) => id, getDisplayName: (id) => id }; }
 
 const PORT = process.env.PORT || 3200;
 const startTime = Date.now();
@@ -517,9 +519,19 @@ const server = http.createServer(async (req, res) => {
     return json(res, { ok: true, task, message: 'Task submitted and deliberation started' });
   }
 
-  // List all intake tasks
+  // Canonical engine registry
+  if (req.url === '/api/engines' && req.method === 'GET') {
+    return json(res, { engines: canonicalEngines.getAllEngines ? canonicalEngines.getAllEngines() : [] });
+  }
+
+  // List all intake tasks (with canonical engine IDs)
   if (req.url === '/api/intake/tasks') {
-    return json(res, intake.getAllTasks());
+    const tasks = intake.getAllTasks().map(t => ({
+      ...t,
+      engine: canonicalEngines.toCanonical(t.domain),
+      engine_display: canonicalEngines.getDisplayName(t.domain),
+    }));
+    return json(res, tasks);
   }
 
   // Get a specific intake task with its subtasks
@@ -527,6 +539,8 @@ const server = http.createServer(async (req, res) => {
     const taskId = req.url.match(/^\/api\/intake\/task\/([^/]+)$/)[1];
     const task = intake.getTask(taskId);
     if (!task) return json(res, { error: 'Not found' }, 404);
+    task.engine = canonicalEngines.toCanonical(task.domain);
+    task.engine_display = canonicalEngines.getDisplayName(task.domain);
     const subtasks = intake.getSubtasksForTask(taskId);
     const progress = intake.getTaskProgress(taskId);
     return json(res, { task, subtasks, progress });

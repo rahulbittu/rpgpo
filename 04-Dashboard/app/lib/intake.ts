@@ -64,12 +64,16 @@ const INTAKE_ALIASES: Record<string, string> = {
 };
 
 function detectDomain(text: string): Domain {
-  // Use the domain-router's scored matching instead of simple first-match
+  // Primary: canonical-first router (returns canonical IDs like 'career', 'finance')
   try {
-    const router = require('./domain-router') as { routeRequest(req: string): { domain: string; confidence: number } };
+    const router = require('./domain-router') as { routeRequest(req: string): { domain: string; legacyDomain: string; confidence: number } };
     const result = router.routeRequest(text);
-    if (result.confidence > 0.2) return result.domain as Domain;
+    if (result.confidence > 0.2) {
+      // Return legacy domain for type system compat (types.ts still uses legacy IDs)
+      return (result.legacyDomain || result.domain) as Domain;
+    }
   } catch { /* fallback to simple matching */ }
+  // Fallback: simple keyword match (still uses legacy IDs)
   const lower = (text || '').toLowerCase();
   for (const [domain, keywords] of Object.entries(DOMAIN_KEYWORDS)) {
     if (keywords.some((k: string) => lower.includes(k))) return domain as Domain;

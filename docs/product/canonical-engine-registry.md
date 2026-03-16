@@ -63,16 +63,45 @@ isLegacyId('careeregine')   // → true
 - `intake-tasks.json` — 1,200+ stored tasks
 - `operator-signals.json` — existing signal scopeKeys
 
-### Migration plan
-1. **Phase 1 (done):** Canonical mapping layer + behavior events use canonical IDs
-2. **Phase 2 (next):** Migrate routing layer to canonical-first with legacy adapter
-3. **Phase 3 (future):** Update types.ts Domain union to canonical IDs
-4. **Phase 4 (future):** Migrate stored tasks (add canonical_domain field alongside legacy domain)
+### Migration status
 
-Historical tasks in `intake-tasks.json` will retain their legacy domain field permanently. They can be read through the `toCanonical()` adapter.
+| Phase | Scope | Status |
+|---|---|---|
+| Phase 1 | Canonical mapping layer + behavior events | **Done** |
+| Phase 2 | Routing layer canonical-first | **Done** — `domain-router.ts` keyword tables use canonical IDs, returns both `domain` (canonical) and `legacyDomain` (compat) |
+| Phase 3 | Types system | **Done** — `types.ts` now defines `CanonicalEngineId`, `LegacyDomain`, and `Domain` (union of both) |
+| Phase 4 | API responses | **Done** — `/api/intake/tasks` and `/api/intake/task/:id` now include `engine` (canonical) and `engine_display` fields |
+| Phase 5 | Stored task migration | **Deferred** — historical tasks retain legacy `domain` field, readable via `toCanonical()` adapter |
+
+### What is canonical-first now
+- **Routing keyword tables** (domain-router.ts) — keyed by canonical IDs
+- **Behavior events** — engine field normalized to canonical on write
+- **Behavior signal retrieval** — accepts both canonical and legacy
+- **API responses** — include canonical `engine` field alongside legacy `domain`
+- **Types** — `CanonicalEngineId` type defined as the target
+- **Engine registry** — GET `/api/engines` returns canonical definitions
+
+### What still uses legacy IDs (transitional)
+- `intake.ts` fallback keywords — keyed by legacy IDs (used only when domain-router fails)
+- `deliberation.ts` — DOMAIN_CONTEXT keys
+- `worker.js` — engineStructure keys
+- `app.js` — DOMAIN_LABELS keys (UI display adapter)
+- `intake-tasks.json` — stored `domain` field on 1,300+ historical tasks
+
+### What is historical-only
+- Tasks stored before the migration retain their legacy `domain` field permanently
+- Old seeded behavior events retain legacy engine field
+- These are readable through the `toCanonical()` adapter and will not be rewritten
+
+### Final target state
+All new code should use `CanonicalEngineId`. Legacy IDs should only appear in:
+1. The `toCanonical()` / `toLegacy()` adapter functions
+2. Reading historical stored data
+3. Transitional compatibility layers (to be removed over time)
 
 ## Artifacts
 
 - `artifacts/testing/canonical-engine-mapping.json` — Machine-readable mapping
 - `artifacts/testing/legacy-engine-id-audit.json` — Where every legacy ID appears
 - `04-Dashboard/app/lib/canonical-engines.ts` — Runtime mapping layer
+- `04-Dashboard/app/lib/domain-router.ts` — Canonical-first routing

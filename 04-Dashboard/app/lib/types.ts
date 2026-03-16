@@ -38,25 +38,40 @@ export type RiskLevel = 'green' | 'yellow' | 'red';
 /** Urgency levels for intake tasks */
 export type Urgency = 'low' | 'normal' | 'high' | 'critical';
 
-/** Mission domains — aligned to 15-engine harness model */
-export type Domain =
-  | 'topranker'      // Startup & Business Builder
-  | 'startup'        // Code & Product Engineering
-  | 'careeregine'    // Career & Job Search
-  | 'wealthresearch' // Personal Finance & Investing
-  | 'newsroom'       // News & Intelligence
+/**
+ * Mission domains — canonical 15-engine model.
+ * Canonical IDs are the target. Legacy IDs kept for backward compat with stored data.
+ */
+export type CanonicalEngineId =
+  | 'code'           // Code & Product Engineering
   | 'writing'        // Writing & Documentation
   | 'research'       // Research & Analysis
   | 'learning'       // Learning & Tutoring
+  | 'ops'            // Scheduling & Life Operations
+  | 'health'         // Health & Wellness Coach
   | 'shopping'       // Shopping & Buying Advisor
   | 'travel'         // Travel & Relocation Planner
-  | 'health'         // Health & Wellness Coach
-  | 'home'           // Home & Lifestyle Design
+  | 'finance'        // Personal Finance & Investing
+  | 'startup'        // Startup & Business Builder
+  | 'career'         // Career & Job Search
   | 'screenwriting'  // Screenwriting & Story Development
+  | 'film'           // Filmmaking & Video Production
   | 'music'          // Music & Audio Creation
-  | 'founder2founder' // Filmmaking & Video Production
-  | 'personalops'    // Scheduling & Life Operations
+  | 'news'           // News & Intelligence
   | 'general';
+
+/** Legacy domain IDs — kept for reading stored tasks. Use CanonicalEngineId for new code. */
+export type LegacyDomain =
+  | 'topranker'      // → startup
+  | 'careeregine'    // → career
+  | 'wealthresearch' // → finance
+  | 'newsroom'       // → news
+  | 'founder2founder' // → film
+  | 'personalops'    // → ops
+  | 'home';          // → ops (alias)
+
+/** Domain type — accepts both canonical and legacy IDs for transition period */
+export type Domain = CanonicalEngineId | LegacyDomain | string;
 
 /** AI provider identifiers */
 export type Provider = 'claude' | 'openai' | 'perplexity' | 'gemini';

@@ -52,14 +52,17 @@ var INTAKE_ALIASES = {
     home: 'personalops',
 };
 function detectDomain(text) {
-    // Use the domain-router's scored matching instead of simple first-match
+    // Primary: canonical-first router (returns canonical IDs like 'career', 'finance')
     try {
         var router = require('./domain-router');
         var result = router.routeRequest(text);
-        if (result.confidence > 0.2)
-            return result.domain;
+        if (result.confidence > 0.2) {
+            // Return legacy domain for type system compat (types.ts still uses legacy IDs)
+            return (result.legacyDomain || result.domain);
+        }
     }
     catch ( /* fallback to simple matching */_a) { /* fallback to simple matching */ }
+    // Fallback: simple keyword match (still uses legacy IDs)
     var lower = (text || '').toLowerCase();
     for (var _i = 0, _b = Object.entries(DOMAIN_KEYWORDS); _i < _b.length; _i++) {
         var _c = _b[_i], domain = _c[0], keywords = _c[1];
