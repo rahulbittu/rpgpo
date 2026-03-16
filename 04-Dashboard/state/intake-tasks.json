@@ -1,5 +1,549 @@
 [
   {
+    "task_id": "t_mmsiixhsr28c",
+    "title": "Write a cold open for a podcast about failed tech startups. Include dramatic nar",
+    "raw_request": "Write a cold open for a podcast about failed tech startups. Include dramatic narration, sound design notes, and hook for the first episode about a social media startup.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:36:30.736Z",
+    "updated_at": "2026-03-16T01:39:22.525Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:37:18.760Z",
+      "interpreted_objective": "Create a compelling cold open for a podcast about failed tech startups, focusing on a social media startup.",
+      "expected_outcome": "A dramatic and engaging cold open script with sound design notes and a hook for the first episode.",
+      "key_unknowns": [
+        "Specific details about the social media startup to be featured",
+        "Tone and style preferences for the podcast",
+        "Audience demographic and preferences"
+      ],
+      "recommended_strategy": "First, research common elements of successful podcast cold opens and gather information on notable failed social media startups. Then, synthesize this information to draft a cold open script that includes dramatic narration, sound design notes, and a strong hook to engage listeners.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Successful Podcast Cold Opens",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of common elements and techniques used in successful podcast cold opens.",
+          "prompt": "Search the web for information on successful podcast cold opens, focusing on techniques and elements that make them engaging. Include examples from popular podcasts.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Notable Failed Social Media Startups",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of notable failed social media startups with brief descriptions of their stories.",
+          "prompt": "Search the web for notable failed social media startups. Include brief descriptions of their rise and fall, focusing on dramatic elements that could be used in a podcast.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Draft Cold Open Script",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A draft script for the podcast cold open, including narration, sound design notes, and a hook.",
+          "prompt": "Based on the research results, draft a cold open script for a podcast about failed tech startups. Include dramatic narration, sound design notes, and a hook for the first episode about a social media startup.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2224
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsiivxcyzoz",
+    "title": "Plan a tech-free camping weekend near Austin. No electronics except for safety. ",
+    "raw_request": "Plan a tech-free camping weekend near Austin. No electronics except for safety. Include campground selection, activities, meal planning, and digital detox protocol.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:36:28.704Z",
+    "updated_at": "2026-03-16T01:39:15.457Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:37:11.744Z",
+      "interpreted_objective": "Plan a tech-free camping weekend near Austin with a focus on campground selection, activities, meal planning, and a digital detox protocol.",
+      "expected_outcome": "A comprehensive plan for a tech-free camping weekend near Austin, including a selected campground, a list of activities, a meal plan, and a digital detox protocol.",
+      "key_unknowns": [
+        "Specific campgrounds near Austin that support tech-free experiences",
+        "Suitable activities that align with a tech-free weekend",
+        "Meal options that are easy to prepare without electronics",
+        "Effective digital detox strategies"
+      ],
+      "recommended_strategy": "Conduct research to identify campgrounds near Austin that support tech-free experiences. Gather information on activities and meal options suitable for a tech-free weekend. Develop a digital detox protocol to enhance the experience. Compile findings into a structured plan.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Campgrounds and Activities",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of campgrounds near Austin that support tech-free experiences, along with potential activities.",
+          "prompt": "Search the web for campgrounds near Austin that are conducive to a tech-free experience. Include details on location, amenities, and activities available. Provide URLs and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Camping Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed plan for a tech-free camping weekend including selected campground, activities, meal plan, and digital detox protocol.",
+          "prompt": "Based on the research results, synthesize a detailed plan for a tech-free camping weekend near Austin. Include campground selection, activities, meal planning, and a digital detox protocol. Provide specific names, dates, and steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-tech-free-camping.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1915
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsiiucwpfvy",
+    "title": "Design an anti-inflammatory diet plan for a tech worker. 2 weeks. Include specif",
+    "raw_request": "Design an anti-inflammatory diet plan for a tech worker. 2 weeks. Include specific foods, meal timing, and expected energy improvements.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:36:26.672Z",
+    "updated_at": "2026-03-16T01:39:06.419Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:36:57.624Z",
+      "interpreted_objective": "Create a detailed 2-week anti-inflammatory diet plan for a tech worker, including specific foods, meal timing, and expected energy improvements.",
+      "expected_outcome": "A comprehensive, evidence-based diet plan that tech workers can follow to reduce inflammation and improve energy levels over two weeks.",
+      "key_unknowns": [
+        "Specific dietary preferences or restrictions of the tech worker",
+        "Current health status of the tech worker",
+        "Baseline energy levels"
+      ],
+      "recommended_strategy": "Conduct research on anti-inflammatory foods and their benefits, focusing on those suitable for tech workers. Develop a structured meal plan with specific foods and timing, and outline expected energy improvements. Ensure the plan is evidence-based and includes safety disclaimers.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Anti-inflammatory Foods and Benefits",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of anti-inflammatory foods with their benefits, focusing on suitability for tech workers.",
+          "prompt": "Search the web for current, specific information about anti-inflammatory foods and their benefits, especially for tech workers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Anti-inflammatory Diet Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 2-week anti-inflammatory diet plan with specific foods, meal timing, and expected energy improvements.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 2-week anti-inflammatory diet plan for a tech worker. Include specific foods, meal timing, and expected energy improvements. Ensure the plan is evidence-based and includes safety disclaimers.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-anti-inflammatory-diet-plan.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1894
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsiissjkrjm",
+    "title": "Create a framework for evaluating whether to accept a counter-offer from your cu",
+    "raw_request": "Create a framework for evaluating whether to accept a counter-offer from your current employer. Include risk factors, statistics, and decision matrix.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:36:24.643Z",
+    "updated_at": "2026-03-16T01:38:59.760Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:36:53.491Z",
+      "interpreted_objective": "Create a framework to evaluate the acceptance of a counter-offer from a current employer.",
+      "expected_outcome": "A structured decision-making framework with risk factors, statistics, and a decision matrix to help Rahul evaluate counter-offers effectively.",
+      "key_unknowns": [
+        "Current trends and statistics on counter-offers in the tech industry",
+        "Specific risk factors associated with accepting counter-offers",
+        "Effective decision matrix models for career decisions"
+      ],
+      "recommended_strategy": "Research current trends and statistics on counter-offers in the tech industry. Synthesize findings into a structured framework that includes risk factors and a decision matrix. Ensure the framework is tailored to data engineering and leadership roles.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Counter-Offer Trends",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current statistics and trends related to counter-offers in the tech industry, with sources.",
+          "prompt": "Search the web for current, specific information about counter-offer trends and statistics in the tech industry, especially for data engineering roles. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Framework for Counter-Offer Evaluation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured framework document including risk factors, a decision matrix, and statistics for evaluating counter-offers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a framework for evaluating counter-offers. Include specific risk factors, a decision matrix, and relevant statistics tailored to data engineering and leadership roles.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-counter-offer-evaluation.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2155
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsiir8f6ef9",
+    "title": "Research the best task lighting for a standing desk. Compare desk lamps with scr",
+    "raw_request": "Research the best task lighting for a standing desk. Compare desk lamps with screen bars. Include glare prevention and eye strain reduction. Under 60 dollars.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:36:22.623Z",
+    "updated_at": "2026-03-16T01:38:52.003Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:36:40.002Z",
+      "interpreted_objective": "Identify the best task lighting options for a standing desk under $60, focusing on glare prevention and eye strain reduction.",
+      "expected_outcome": "A detailed comparison report of desk lamps and screen bars, including specific product recommendations with prices, pros/cons, and a final recommendation.",
+      "key_unknowns": [
+        "Current prices and reviews of desk lamps and screen bars",
+        "Specific features related to glare prevention and eye strain reduction"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on desk lamps and screen bars under $60, focusing on features that prevent glare and reduce eye strain. Then, synthesize this information into a comparative analysis with product recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Task Lighting Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on desk lamps and screen bars under $60, focusing on glare prevention and eye strain reduction with prices and reviews.",
+          "prompt": "Search the web for current information about desk lamps and screen bars for standing desks under $60. Include features related to glare prevention and eye strain reduction, along with prices, reviews, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Lighting Comparison Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report with product recommendations, prices, pros/cons, and a final recommendation.",
+          "prompt": "Based on the research results, synthesize a comparison report of desk lamps and screen bars under $60. Include specific product recommendations with prices, pros/cons, and a clear recommendation focusing on glare prevention and eye strain reduction.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-task-lighting-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1963
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsiipo3oo59",
+    "title": "Teach me about edge computing architecture. Compare edge vs cloud vs fog computi",
+    "raw_request": "Teach me about edge computing architecture. Compare edge vs cloud vs fog computing. Include IoT use cases, latency requirements, and deployment patterns.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:36:20.595Z",
+    "updated_at": "2026-03-16T01:38:44.434Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:36:34.117Z",
+      "interpreted_objective": "Provide a comprehensive comparison of edge, cloud, and fog computing architectures, including IoT use cases, latency requirements, and deployment patterns.",
+      "expected_outcome": "A detailed report that educates on edge computing architecture and compares it with cloud and fog computing, highlighting IoT use cases, latency requirements, and deployment patterns.",
+      "key_unknowns": [
+        "Current trends in edge, cloud, and fog computing",
+        "Specific IoT use cases for each architecture",
+        "Latency requirements and deployment patterns for each architecture"
+      ],
+      "recommended_strategy": "First, conduct research to gather current information on edge, cloud, and fog computing architectures, focusing on IoT use cases, latency, and deployment patterns. Then, synthesize this information into a structured report that provides a clear comparison and educational insights.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Edge, Cloud, and Fog Computing",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and insights on edge, cloud, and fog computing architectures, including IoT use cases, latency requirements, and deployment patterns.",
+          "prompt": "Search the web for current, specific information about edge, cloud, and fog computing architectures. Include IoT use cases, latency requirements, and deployment patterns. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Computing Architecture Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing edge, cloud, and fog computing architectures, highlighting IoT use cases, latency requirements, and deployment patterns.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed comparison of edge, cloud, and fog computing architectures. Include specific IoT use cases, latency requirements, and deployment patterns. Provide actionable insights and educational content.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-edge-cloud-fog-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1954
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsiio3m0k1b",
+    "title": "Create a personal tax optimization calendar. Monthly actions for a W2 employee w",
+    "raw_request": "Create a personal tax optimization calendar. Monthly actions for a W2 employee with side income. Include estimated tax deadlines, HSA contributions, and 401k milestones.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:36:18.562Z",
+    "updated_at": "2026-03-16T01:38:11.670Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:36:28.446Z",
+      "interpreted_objective": "Create a monthly tax optimization calendar for a W2 employee with side income.",
+      "expected_outcome": "A detailed calendar outlining monthly tax-related actions, deadlines, and milestones for HSA and 401k contributions.",
+      "key_unknowns": [
+        "Specific tax deadlines for the current year",
+        "Contribution limits for HSA and 401k",
+        "Any recent tax law changes affecting W2 employees with side income"
+      ],
+      "recommended_strategy": "First, research current tax deadlines, HSA, and 401k contribution limits, and any relevant tax law changes for W2 employees with side income. Then, synthesize this information into a structured calendar with actionable monthly tasks.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tax Deadlines and Contribution Limits",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current tax deadlines, HSA and 401k contribution limits, and relevant tax law changes.",
+          "prompt": "Search the web for current tax deadlines for W2 employees with side income, HSA and 401k contribution limits for the current year, and any recent tax law changes affecting these areas. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Tax Optimization Calendar",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured calendar with monthly tax-related actions, deadlines, and milestones.",
+          "prompt": "Based on the research results, synthesize a monthly tax optimization calendar for a W2 employee with side income. Include specific tax deadlines, HSA contributions, and 401k milestones. Provide actionable tasks for each month.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-tax-optimization-calendar.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2265
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsiimits8rc",
+    "title": "Write a comprehensive guide to Git branching strategies for teams. Compare GitFl",
+    "raw_request": "Write a comprehensive guide to Git branching strategies for teams. Compare GitFlow, trunk-based, and GitHub Flow. Include CI/CD integration patterns.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:36:16.517Z",
+    "updated_at": "2026-03-16T01:37:46.804Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:36:22.647Z",
+      "interpreted_objective": "Create a comprehensive guide comparing Git branching strategies and their CI/CD integration patterns.",
+      "expected_outcome": "A clear, detailed guide that helps teams choose the right Git branching strategy with CI/CD integration insights.",
+      "key_unknowns": [
+        "Specific CI/CD integration patterns for each strategy",
+        "Current trends in Git branching strategies"
+      ],
+      "recommended_strategy": "First, conduct research to gather current information on GitFlow, trunk-based, and GitHub Flow strategies, including their CI/CD integration patterns. Then, synthesize this information into a structured guide that compares the strategies, highlighting their pros and cons.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Git Branching Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Research data on GitFlow, trunk-based, and GitHub Flow strategies with CI/CD integration patterns.",
+          "prompt": "Search the web for current, specific information about GitFlow, trunk-based, and GitHub Flow branching strategies, including their integration with CI/CD practices. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Git Branching Strategies",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide comparing GitFlow, trunk-based, and GitHub Flow strategies, including CI/CD integration patterns.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide comparing GitFlow, trunk-based, and GitHub Flow branching strategies. Include specific CI/CD integration patterns, pros and cons, and actionable recommendations for teams.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-git-branching-strategies.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1911
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsid6ipzpbb",
     "title": "Create a comprehensive home network security hardening guide. Include router set",
     "raw_request": "Create a comprehensive home network security hardening guide. Include router settings, VLAN setup, DNS filtering, and IoT device isolation.",

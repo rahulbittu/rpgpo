@@ -1,5 +1,404 @@
 [
   {
+    "id": "mmsilllpud2r",
+    "type": "execute-subtask",
+    "label": "Subtask: Draft Cold Open Script",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsijylygi71"
+    },
+    "createdAt": "2026-03-16T01:38:35.293Z",
+    "updatedAt": "2026-03-16T01:39:22.537Z",
+    "output": "Draft Cold Open Script: ## Cold Open Script for Podcast: \"Tech Tombstones\"\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsijylygi71.md"
+    ]
+  },
+  {
+    "id": "mmsil6xtuh8k",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Camping Plan",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsijt6aq0yr"
+    },
+    "createdAt": "2026-03-16T01:38:16.289Z",
+    "updatedAt": "2026-03-16T01:39:15.468Z",
+    "output": "Synthesize Camping Plan: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/travel-{date}-tech-free-camping.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsijt6aq0yr.md"
+    ]
+  },
+  {
+    "id": "mmsikxl60pec",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Anti-inflammatory Diet Plan",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsijianh038"
+    },
+    "createdAt": "2026-03-16T01:38:04.170Z",
+    "updatedAt": "2026-03-16T01:39:06.431Z",
+    "output": "Synthesize Anti-inflammatory Diet Plan: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/health-{date}-anti-inflammatory-diet-plan.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsijianh038.md"
+    ]
+  },
+  {
+    "id": "mmsikqfv5a6c",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Framework for Counter-Offer Evaluation",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsijf3vtuti"
+    },
+    "createdAt": "2026-03-16T01:37:54.907Z",
+    "updatedAt": "2026-03-16T01:38:59.772Z",
+    "output": "Synthesize Framework for Counter-Offer Evaluation: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/careeregine-{date}-counter-offer-evaluation.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsijf3vtuti.md"
+    ]
+  },
+  {
+    "id": "mmsikdja0y3w",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Lighting Comparison Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsij4peewuk"
+    },
+    "createdAt": "2026-03-16T01:37:38.182Z",
+    "updatedAt": "2026-03-16T01:38:52.014Z",
+    "output": "Synthesize Lighting Comparison Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/shopping-{date}-task-lighting-comparison.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsij4peewuk.md"
+    ]
+  },
+  {
+    "id": "mmsik84vn26s",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Computing Architecture Comparison",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsij05vns2m"
+    },
+    "createdAt": "2026-03-16T01:37:31.183Z",
+    "updatedAt": "2026-03-16T01:38:44.445Z",
+    "output": "Synthesize Computing Architecture Comparison: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/learning-{date}-edge-cloud-fog-comparison.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsij05vns2m.md"
+    ]
+  },
+  {
+    "id": "mmsijyp0rfdi",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Notable Failed Social Media Startups",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsijyl8t2b3"
+    },
+    "createdAt": "2026-03-16T01:37:18.948Z",
+    "updatedAt": "2026-03-16T01:38:35.294Z",
+    "output": "Research Notable Failed Social Media Startups: ## Quibi: $1.7B Streaming Flameout\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsijyl8t2b3.md"
+    ]
+  },
+  {
+    "id": "mmsijyoo54fg",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Successful Podcast Cold Opens",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsijykgmc3l"
+    },
+    "createdAt": "2026-03-16T01:37:18.936Z",
+    "updatedAt": "2026-03-16T01:38:25.793Z",
+    "output": "Research Successful Podcast Cold Opens: ## Key Techniques for Engaging Podcast Cold Opens\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsijykgmc3l.md"
+    ]
+  },
+  {
+    "id": "mmsijt8a14fn",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Campgrounds and Activities",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsijt5kes68"
+    },
+    "createdAt": "2026-03-16T01:37:11.866Z",
+    "updatedAt": "2026-03-16T01:38:16.290Z",
+    "output": "Research Campgrounds and Activities: ## McKinney Falls State Park\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsijt5kes68.md"
+    ]
+  },
+  {
+    "id": "mmsijpcirbyc",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Tax Optimization Calendar",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsiivsc1xfo"
+    },
+    "createdAt": "2026-03-16T01:37:06.834Z",
+    "updatedAt": "2026-03-16T01:38:11.681Z",
+    "output": "Synthesize Tax Optimization Calendar: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/wealthresearch-{date}-tax-optimization-calendar.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsiivsc1xfo.md"
+    ]
+  },
+  {
+    "id": "mmsijid37j8w",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Anti-inflammatory Foods and Benefits",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsiji9rf7if"
+    },
+    "createdAt": "2026-03-16T01:36:57.783Z",
+    "updatedAt": "2026-03-16T01:38:04.170Z",
+    "output": "Research Anti-inflammatory Foods and Benefits: ## Key Anti-Inflammatory Foods\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsiji9rf7if.md"
+    ]
+  },
+  {
+    "id": "mmsijf5xrx8c",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Counter-Offer Trends",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsijf31snhh"
+    },
+    "createdAt": "2026-03-16T01:36:53.637Z",
+    "updatedAt": "2026-03-16T01:37:54.908Z",
+    "output": "Research Counter-Offer Trends: ## Finding 1: Counteroffer Acceptance Failure Rates\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsijf31snhh.md"
+    ]
+  },
+  {
+    "id": "mmsijc4n53ud",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Guide on Git Branching Strategies",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsiirahr0m7"
+    },
+    "createdAt": "2026-03-16T01:36:49.703Z",
+    "updatedAt": "2026-03-16T01:37:46.815Z",
+    "output": "Synthesize Guide on Git Branching Strategies: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/writing-{date}-git-branching-strategies.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsiirahr0m7.md"
+    ]
+  },
+  {
+    "id": "mmsij4rhbwsu",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Task Lighting Options",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsij4oiciyc"
+    },
+    "createdAt": "2026-03-16T01:36:40.157Z",
+    "updatedAt": "2026-03-16T01:37:38.182Z",
+    "output": "Research Task Lighting Options: ## Finding 1: Macy's Simple Designs Nauru 8.66\" Ceramic Orb Desk Lamp (Two-Pack)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsij4oiciyc.md"
+    ]
+  },
+  {
+    "id": "mmsij07wjcay",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Edge, Cloud, and Fog Computing",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsij04ycyyj"
+    },
+    "createdAt": "2026-03-16T01:36:34.268Z",
+    "updatedAt": "2026-03-16T01:37:31.184Z",
+    "output": "Research Edge, Cloud, and Fog Computing: ## Fog Computing Market Overview\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsij04ycyyj.md"
+    ]
+  },
+  {
+    "id": "mmsiixhxd18w",
+    "type": "deliberate",
+    "label": "Deliberate: Write a cold open for a podcast about failed tech startups. Include dramatic nar",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsiixhsr28c",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:36:30.741Z",
+    "updatedAt": "2026-03-16T01:37:18.948Z",
+    "output": "Deliberation complete.\nObjective: Create a compelling cold open for a podcast about failed tech startups, focusing on a social media startup.\nStrategy: First, research common elements of successful podcast cold opens and gather information on notable failed social media startups. Then, synthesize this information to draft a cold open script that includes dramatic narration, sound design notes, and a strong hook to engage listeners.\nRisk: green\nSubtasks: 3\nTokens: 2224",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsiivxi3wrw",
+    "type": "deliberate",
+    "label": "Deliberate: Plan a tech-free camping weekend near Austin. No electronics except for safety. ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsiivxcyzoz",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:36:28.710Z",
+    "updatedAt": "2026-03-16T01:37:11.867Z",
+    "output": "Deliberation complete.\nObjective: Plan a tech-free camping weekend near Austin with a focus on campground selection, activities, meal planning, and a digital detox protocol.\nStrategy: Conduct research to identify campgrounds near Austin that support tech-free experiences. Gather information on activities and meal options suitable for a tech-free weekend. Develop a digital detox protocol to enhance the experience. Compile findings into a structured plan.\nRisk: green\nSubtasks: 2\nTokens: 1915",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsiivufhexe",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Tax Deadlines and Contribution Limits",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsiivrgm12t"
+    },
+    "createdAt": "2026-03-16T01:36:28.599Z",
+    "updatedAt": "2026-03-16T01:37:06.835Z",
+    "output": "Research Tax Deadlines and Contribution Limits: ## Finding 1: W-2 Deadlines for Employees (Employers Provide by Feb 2, 2026; Individual Filing by April 15, 2026)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsiivrgm12t.md"
+    ]
+  },
+  {
+    "id": "mmsiiud1e620",
+    "type": "deliberate",
+    "label": "Deliberate: Design an anti-inflammatory diet plan for a tech worker. 2 weeks. Include specif",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsiiucwpfvy",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:36:26.677Z",
+    "updatedAt": "2026-03-16T01:36:57.784Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed 2-week anti-inflammatory diet plan for a tech worker, including specific foods, meal timing, and expected energy improvements.\nStrategy: Conduct research on anti-inflammatory foods and their benefits, focusing on those suitable for tech workers. Develop a structured meal plan with specific foods and timing, and outline expected energy improvements. Ensure the plan is evidence-based and includes safety disclaimers.\nRisk: yellow\nSubtasks: 2\nTokens: 1894",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsiisso3rr8",
+    "type": "deliberate",
+    "label": "Deliberate: Create a framework for evaluating whether to accept a counter-offer from your cu",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsiissjkrjm",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:36:24.648Z",
+    "updatedAt": "2026-03-16T01:36:53.638Z",
+    "output": "Deliberation complete.\nObjective: Create a framework to evaluate the acceptance of a counter-offer from a current employer.\nStrategy: Research current trends and statistics on counter-offers in the tech industry. Synthesize findings into a structured framework that includes risk factors and a decision matrix. Ensure the framework is tailored to data engineering and leadership roles.\nRisk: green\nSubtasks: 2\nTokens: 2155",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsiirci2gd2",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Git Branching Strategies",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsiir9qokm2"
+    },
+    "createdAt": "2026-03-16T01:36:22.770Z",
+    "updatedAt": "2026-03-16T01:36:49.703Z",
+    "output": "Research Git Branching Strategies: ## GitFlow Branching Strategy\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsiir9qokm2.md"
+    ]
+  },
+  {
+    "id": "mmsiir8kt57i",
+    "type": "deliberate",
+    "label": "Deliberate: Research the best task lighting for a standing desk. Compare desk lamps with scr",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsiir8f6ef9",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:36:22.628Z",
+    "updatedAt": "2026-03-16T01:36:40.158Z",
+    "output": "Deliberation complete.\nObjective: Identify the best task lighting options for a standing desk under $60, focusing on glare prevention and eye strain reduction.\nStrategy: First, conduct web research to gather current information on desk lamps and screen bars under $60, focusing on features that prevent glare and reduce eye strain. Then, synthesize this information into a comparative analysis with product recommendations.\nRisk: green\nSubtasks: 2\nTokens: 1963",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsiipo8kzyk",
+    "type": "deliberate",
+    "label": "Deliberate: Teach me about edge computing architecture. Compare edge vs cloud vs fog computi",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsiipo3oo59",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:36:20.600Z",
+    "updatedAt": "2026-03-16T01:36:34.269Z",
+    "output": "Deliberation complete.\nObjective: Provide a comprehensive comparison of edge, cloud, and fog computing architectures, including IoT use cases, latency requirements, and deployment patterns.\nStrategy: First, conduct research to gather current information on edge, cloud, and fog computing architectures, focusing on IoT use cases, latency, and deployment patterns. Then, synthesize this information into a structured report that provides a clear comparison and educational insights.\nRisk: green\nSubtasks: 2\nTokens: 1954",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsiio3u4ix8",
+    "type": "deliberate",
+    "label": "Deliberate: Create a personal tax optimization calendar. Monthly actions for a W2 employee w",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsiio3m0k1b",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:36:18.570Z",
+    "updatedAt": "2026-03-16T01:36:28.599Z",
+    "output": "Deliberation complete.\nObjective: Create a monthly tax optimization calendar for a W2 employee with side income.\nStrategy: First, research current tax deadlines, HSA, and 401k contribution limits, and any relevant tax law changes for W2 employees with side income. Then, synthesize this information into a structured calendar with actionable monthly tasks.\nRisk: green\nSubtasks: 2\nTokens: 2265",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsiimiylhkd",
+    "type": "deliberate",
+    "label": "Deliberate: Write a comprehensive guide to Git branching strategies for teams. Compare GitFl",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsiimits8rc",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:36:16.522Z",
+    "updatedAt": "2026-03-16T01:36:22.771Z",
+    "output": "Deliberation complete.\nObjective: Create a comprehensive guide comparing Git branching strategies and their CI/CD integration patterns.\nStrategy: First, conduct research to gather current information on GitFlow, trunk-based, and GitHub Flow strategies, including their CI/CD integration patterns. Then, synthesize this information into a structured guide that compares the strategies, highlighting their pros and cons.\nRisk: green\nSubtasks: 2\nTokens: 1911",
+    "error": null,
+    "filesWritten": []
+  },
+  {
     "id": "mmsifjza3iog",
     "type": "execute-subtask",
     "label": "Subtask: Synthesize Security Hardening Guide",
@@ -1188,411 +1587,6 @@
     "error": null,
     "filesWritten": [
       "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsgys9g01sl.md"
-    ]
-  },
-  {
-    "id": "mmsgyoj3wwau",
-    "type": "execute-subtask",
-    "label": "Subtask: Context Gathering",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsgyoga0uwa"
-    },
-    "createdAt": "2026-03-16T00:52:46.383Z",
-    "updatedAt": "2026-03-16T00:52:58.052Z",
-    "output": "Context Gathering: ## Search Summary\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsgyoga0uwa.md"
-    ]
-  },
-  {
-    "id": "mmsgym94z73f",
-    "type": "deliberate",
-    "label": "Deliberate: Turn this messy meeting transcript into action items with owners and deadlines: ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsgym8ylqwj",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T00:52:43.432Z",
-    "updatedAt": "2026-03-16T00:52:51.322Z",
-    "output": "Deliberation complete.\nObjective: Transform the meeting transcript into actionable items with assigned owners and deadlines.\nStrategy: First, extract and organize the key points from the meeting transcript into a structured format. Then, assign owners and deadlines to each action item based on the provided information. Ensure clarity and specificity in each action item to facilitate accountability and follow-through.\nRisk: green\nSubtasks: 2\nTokens: 2499",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsgyjwzonrc",
-    "type": "deliberate",
-    "label": "Deliberate: Rewrite this text to sound executive-ready but still precise and concrete: Our a",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsgyjwurpzf",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T00:52:40.403Z",
-    "updatedAt": "2026-03-16T00:52:46.383Z",
-    "output": "Deliberation complete.\nObjective: Rewrite the provided text to sound executive-ready while maintaining precision and concreteness.\nStrategy: First, gather any additional context or information about the app, its scoring system, and the upcoming launch. Then, rewrite the text to emphasize the app's strengths and strategic goals in an executive tone, ensuring clarity and persuasiveness.\nRisk: green\nSubtasks: 2\nTokens: 1920",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsg1ru246l8",
-    "type": "execute-subtask",
-    "label": "Subtask: Propose Testing Approach",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfxo7ntb6h"
-    },
-    "createdAt": "2026-03-16T00:27:11.018Z",
-    "updatedAt": "2026-03-16T00:27:26.931Z",
-    "output": "Propose Testing Approach: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfxo7ntb6h.md"
-    ]
-  },
-  {
-    "id": "mmsg1rtqthr8",
-    "type": "execute-subtask",
-    "label": "Subtask: Develop Rollback Strategy",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfxo6y1mqe"
-    },
-    "createdAt": "2026-03-16T00:27:11.006Z",
-    "updatedAt": "2026-03-16T00:27:18.767Z",
-    "output": "Develop Rollback Strategy: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfxo6y1mqe.md"
-    ]
-  },
-  {
-    "id": "mmsg05bi6i6r",
-    "type": "execute-subtask",
-    "label": "Subtask: Identify Code Patterns Needing Updates",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfxo6655zl"
-    },
-    "createdAt": "2026-03-16T00:25:55.182Z",
-    "updatedAt": "2026-03-16T00:27:11.018Z",
-    "output": "Identify Code Patterns Needing Updates: ## Key Findings\n\nAuto-queued 2 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfxo6655zl.md"
-    ]
-  },
-  {
-    "id": "mmsg00lb12pj",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Monetization Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfxelpaigz"
-    },
-    "createdAt": "2026-03-16T00:25:49.055Z",
-    "updatedAt": "2026-03-16T00:27:02.328Z",
-    "output": "Synthesize Monetization Report: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/careeregine-{date}-blog-monetization.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfxelpaigz.md"
-    ]
-  },
-  {
-    "id": "mmsfzuonzu80",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize 30-Day Journaling Challenge",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfxaap5480"
-    },
-    "createdAt": "2026-03-16T00:25:41.399Z",
-    "updatedAt": "2026-03-16T00:26:52.910Z",
-    "output": "Synthesize 30-Day Journaling Challenge: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/general-{date}-journaling-challenge.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfxaap5480.md"
-    ]
-  },
-  {
-    "id": "mmsfzpshodnc",
-    "type": "execute-subtask",
-    "label": "Subtask: Write dialogue scene between CEO and CTO",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfx6fn6aox"
-    },
-    "createdAt": "2026-03-16T00:25:35.057Z",
-    "updatedAt": "2026-03-16T00:26:46.380Z",
-    "output": "Write dialogue scene between CEO and CTO: ## Dialogue Scene\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/screenwriting-{date}-dialogue-scene.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfx6fn6aox.md"
-    ]
-  },
-  {
-    "id": "mmsfzhv2xqn2",
-    "type": "execute-subtask",
-    "label": "Subtask: Draft Professional Bios",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfx22sck1p"
-    },
-    "createdAt": "2026-03-16T00:25:24.782Z",
-    "updatedAt": "2026-03-16T00:26:36.283Z",
-    "output": "Draft Professional Bios: ## Version 1: Technical Innovator and Entrepreneur\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfx22sck1p.md"
-    ]
-  },
-  {
-    "id": "mmsfz7rifyvb",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Energy Management Plan",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfwsbdqtcr"
-    },
-    "createdAt": "2026-03-16T00:25:11.694Z",
-    "updatedAt": "2026-03-16T00:26:31.597Z",
-    "output": "Synthesize Energy Management Plan: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/health-{date}-energy-management-plan.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfwsbdqtcr.md"
-    ]
-  },
-  {
-    "id": "mmsfz3gmkg6h",
-    "type": "execute-subtask",
-    "label": "Subtask: Write Remote Work Policies Section",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfwntdlcjj"
-    },
-    "createdAt": "2026-03-16T00:25:06.118Z",
-    "updatedAt": "2026-03-16T00:26:25.355Z",
-    "output": "Write Remote Work Policies Section: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfwntdlcjj.md"
-    ]
-  },
-  {
-    "id": "mmsfyny86q28",
-    "type": "execute-subtask",
-    "label": "Subtask: Compile Report on WebAssembly for Backend Developers",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfw6iu98nj"
-    },
-    "createdAt": "2026-03-16T00:24:46.016Z",
-    "updatedAt": "2026-03-16T00:26:18.544Z",
-    "output": "Compile Report on WebAssembly for Backend Developers: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfw6iu98nj.md"
-    ]
-  },
-  {
-    "id": "mmsfyhowcf6n",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Guide for Playwright Setup",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfw3ipd8dq"
-    },
-    "createdAt": "2026-03-16T00:24:37.904Z",
-    "updatedAt": "2026-03-16T00:26:12.217Z",
-    "output": "Synthesize Guide for Playwright Setup: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfw3ipd8dq.md"
-    ]
-  },
-  {
-    "id": "mmsfybrreaz9",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Charging Solutions Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfvz0u13ga"
-    },
-    "createdAt": "2026-03-16T00:24:30.231Z",
-    "updatedAt": "2026-03-16T00:26:03.615Z",
-    "output": "Synthesize Charging Solutions Report: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/research-2023-ev-charging-solutions.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfvz0u13ga.md"
-    ]
-  },
-  {
-    "id": "mmsfxo9jtocc",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Breaking Changes in Express 5",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfxo5ckhb8"
-    },
-    "createdAt": "2026-03-16T00:23:59.767Z",
-    "updatedAt": "2026-03-16T00:25:55.183Z",
-    "output": "Research Breaking Changes in Express 5: ## Finding 1: No Current Specific Information on Express 5 Breaking Changes or New Features Found in Recent Searches\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfxo5ckhb8.md"
-    ]
-  },
-  {
-    "id": "mmsfxenm46oc",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Monetization Strategies",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfxekw4mlz"
-    },
-    "createdAt": "2026-03-16T00:23:47.314Z",
-    "updatedAt": "2026-03-16T00:25:49.056Z",
-    "output": "Research Monetization Strategies: Display ads via networks like Google AdSense or Mediavine yield $5-20 per 1,000 pageviews for niche tech blogs, scaling to $10,000+ monthly at 500,000\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfxekw4mlz.md"
-    ]
-  },
-  {
-    "id": "mmsfxaclajmq",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Existing Journaling Challenges",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfxa9vxiwb"
-    },
-    "createdAt": "2026-03-16T00:23:41.733Z",
-    "updatedAt": "2026-03-16T00:25:41.399Z",
-    "output": "Research Existing Journaling Challenges: ## Finding 1: MyLifeNote.ai Self-Help Journal Guide (2026 Edition)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfxa9vxiwb.md"
-    ]
-  },
-  {
-    "id": "mmsfx6hi1647",
-    "type": "execute-subtask",
-    "label": "Subtask: Research common arguments on technical debt vs new features",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfx6etdjpg"
-    },
-    "createdAt": "2026-03-16T00:23:36.726Z",
-    "updatedAt": "2026-03-16T00:25:35.058Z",
-    "output": "Research common arguments on technical debt vs new features: ## Finding 1: Technical Debt as Business Cost vs. Feature Velocity Trade-off\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfx6etdjpg.md"
-    ]
-  },
-  {
-    "id": "mmsfx24nx004",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Rahul's Professional Background",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfx21vgkl9"
-    },
-    "createdAt": "2026-03-16T00:23:31.079Z",
-    "updatedAt": "2026-03-16T00:25:24.783Z",
-    "output": "Research Rahul's Professional Background: ## Finding 1: Rahul Thomas Jacob - Senior Satellite GNC Engineer at Amazon\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfx21vgkl9.md"
-    ]
-  },
-  {
-    "id": "mmsfwx9zki2y",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Comparison Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfvh4ow4zr"
-    },
-    "createdAt": "2026-03-16T00:23:24.791Z",
-    "updatedAt": "2026-03-16T00:25:19.046Z",
-    "output": "Synthesize Comparison Report: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/research-2026-project-management-tools.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfvh4ow4zr.md"
-    ]
-  },
-  {
-    "id": "mmsfwsd8lrsb",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Energy Management Strategies",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfwsano63r"
-    },
-    "createdAt": "2026-03-16T00:23:18.428Z",
-    "updatedAt": "2026-03-16T00:25:11.695Z",
-    "output": "Research Energy Management Strategies: ## Finding 1: 90-Minute Work Sprints Aligned with Ultradian Rhythms for Energy Management\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfwsano63r.md"
-    ]
-  },
-  {
-    "id": "mmsfwnv8w8ks",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Remote Work Policies",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfwnskyblu"
-    },
-    "createdAt": "2026-03-16T00:23:12.596Z",
-    "updatedAt": "2026-03-16T00:25:06.118Z",
-    "output": "Research Remote Work Policies: ## Communication Expectations\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfwnskyblu.md"
-    ]
-  },
-  {
-    "id": "mmsfwjoo6vzx",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Comparison Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfvd20aw3i"
-    },
-    "createdAt": "2026-03-16T00:23:07.176Z",
-    "updatedAt": "2026-03-16T00:24:55.390Z",
-    "output": "Synthesize Comparison Report: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/careeregine-{date}-Austin_vs_Portland_Comparison.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfvd20aw3i.md"
-    ]
-  },
-  {
-    "id": "mmsfw6krag0y",
-    "type": "execute-subtask",
-    "label": "Subtask: Research WebAssembly Use Cases and Performance",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfw6i1opnb"
-    },
-    "createdAt": "2026-03-16T00:22:50.187Z",
-    "updatedAt": "2026-03-16T00:24:46.016Z",
-    "output": "Research WebAssembly Use Cases and Performance: ## WebAssembly Use Cases in Backend Development\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfw6i1opnb.md"
     ]
   }
 ]
