@@ -1,5 +1,70 @@
 [
   {
+    "review_id": "rc_mmsqmryd9ky6",
+    "graph_id": "eg_mmsqmrxwjyrm",
+    "review_type": "quality",
+    "title": "quality review",
+    "description": "quality review for execution graph",
+    "checklist": [
+      {
+        "item_id": "ci_mmsqmrydtxx0",
+        "label": "Output meets expected quality standard",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmsqmrydkq24",
+        "label": "No regressions introduced",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmsqmryd7idv",
+        "label": "Tests pass (where applicable)",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmsqmrydzc3k",
+        "label": "Code is readable and maintainable",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmsqmrydhl4s",
+        "label": "Performance is acceptable",
+        "checked": false
+      }
+    ],
+    "created_at": "2026-03-16T05:23:27.109Z"
+  },
+  {
+    "review_id": "rc_mmsqmrydipko",
+    "graph_id": "eg_mmsqmrxwjyrm",
+    "review_type": "mission_alignment",
+    "title": "mission alignment review",
+    "description": "mission_alignment review for execution graph",
+    "checklist": [
+      {
+        "item_id": "ci_mmsqmrydknul",
+        "label": "Work directly supports stated mission objectives",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmsqmrydtzgm",
+        "label": "No scope creep beyond original task",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmsqmrydnc3a",
+        "label": "Outputs match expected outcome from deliberation",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmsqmrydgnw8",
+        "label": "Success criteria from mission statement are addressed",
+        "checked": false
+      }
+    ],
+    "created_at": "2026-03-16T05:23:27.109Z"
+  },
+  {
     "review_id": "rc_mmrd6uxbt732",
     "graph_id": "eg_mmrd6uwzuah8",
     "review_type": "quality",

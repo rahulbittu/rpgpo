@@ -1,5 +1,30 @@
 [
   {
+    "graph_id": "eg_mmsqmrxwjyrm",
+    "task_id": "t_mmsj8wz9261s",
+    "domain": "general",
+    "project_id": "prj_mmrx6pusf2fv",
+    "lane": "dev",
+    "status": "draft",
+    "execution_mode": "mixed",
+    "title": "Plan a 7-day healthy eating reset focused on whole foods. Include daily menus, g",
+    "board_rationale": "Create a 7-day whole foods eating plan with menus, grocery list, prep schedule, and benefits timeline.. Conduct research to gather current, evidence-based information on whole foods diets and their benefits. Then, synthesize this information into a structured 7-day plan with specific menus, a grocery list, a prep schedule, and a timeline of expected benefits.",
+    "chief_of_staff_plan": "Objective: Create a 7-day whole foods eating plan with menus, grocery list, prep schedule, and benefits timeline.\nStrategy: Conduct research to gather current, evidence-based information on whole foods diets and their benefits. Then, synthesize this information into a structured 7-day plan with specific menus, a grocery list, a prep schedule, and a timeline of expected benefits.\nRoute: Low-risk research/analysis — can auto-execute green subtasks\nConcerns: Specific dietary preferences or restrictions of the target audience; Exact format and depth of detail expected for each component (menus, grocery list, etc.)\nRisk: green",
+    "nodes": [
+      "en_mmsqmrxx8lkq",
+      "en_mmsqmrxysowu"
+    ],
+    "approval_gates": [
+      "ag_mmsqmry5q6hl"
+    ],
+    "review_contracts": [
+      "rc_mmsqmrydipko",
+      "rc_mmsqmryd9ky6"
+    ],
+    "created_at": "2026-03-16T05:23:27.092Z",
+    "updated_at": "2026-03-16T05:23:27.109Z"
+  },
+  {
     "graph_id": "eg_mmrd6uwzuah8",
     "task_id": "t_mmrd57n5bvzj",
     "domain": "general",

@@ -1,5 +1,680 @@
 [
   {
+    "task_id": "t_mmsqkmguayuc",
+    "title": "Design a comprehensive meeting hygiene system. Include pre-meeting prep, during-",
+    "raw_request": "Design a comprehensive meeting hygiene system. Include pre-meeting prep, during-meeting protocols, post-meeting follow-up, and meeting-free time protection.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:21:46.686Z",
+    "updated_at": "2026-03-16T05:25:07.296Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:22:36.581Z",
+      "interpreted_objective": "Design a comprehensive system for effective meeting management, including preparation, execution, and follow-up protocols.",
+      "expected_outcome": "A detailed report outlining a structured meeting hygiene system that enhances productivity and protects meeting-free time.",
+      "key_unknowns": [
+        "Current best practices for meeting hygiene",
+        "Specific needs and preferences of the operator regarding meetings",
+        "Existing tools or systems in use by the operator for meetings"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices for meeting hygiene, then synthesize these findings into a structured system tailored to the operator's context. Ensure the system includes pre-meeting preparation, during-meeting protocols, post-meeting follow-up, and strategies for protecting meeting-free time.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Meeting Hygiene Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices and strategies for meeting hygiene, with citations.",
+          "prompt": "Search the web for current, specific information about best practices in meeting hygiene, including pre-meeting preparation, during-meeting protocols, post-meeting follow-up, and meeting-free time protection. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Meeting Hygiene System",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing a comprehensive meeting hygiene system.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a comprehensive meeting hygiene system. Include specific protocols for pre-meeting preparation, during-meeting execution, post-meeting follow-up, and strategies for protecting meeting-free time.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-meeting-hygiene-system.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2002
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsqklni1u1b",
+    "title": "Create a guide to building a productive home library corner. Include shelving de",
+    "raw_request": "Create a guide to building a productive home library corner. Include shelving design, reading light, comfortable seating, and organization by theme vs author.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:21:45.630Z",
+    "updated_at": "2026-03-16T05:24:56.406Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:22:31.220Z",
+      "interpreted_objective": "Create a detailed guide for setting up a productive home library corner.",
+      "expected_outcome": "A comprehensive guide that includes shelving design, reading light, comfortable seating, and organization methods.",
+      "key_unknowns": [
+        "Specific preferences or constraints Rahul might have for the home library setup",
+        "The size and layout of the space available for the library corner"
+      ],
+      "recommended_strategy": "Research best practices and current trends in home library setups, focusing on shelving, lighting, seating, and organization. Synthesize this information into a structured guide that provides actionable steps and recommendations for each component of the library corner.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Library Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and current trends for setting up a home library corner.",
+          "prompt": "Search the web for current best practices and trends in setting up a home library corner. Focus on shelving design, reading light, comfortable seating, and organization methods. Include real examples, sources, and URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Home Library Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide with actionable steps for creating a productive home library corner.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for setting up a productive home library corner. Include specific recommendations for shelving design, reading light, comfortable seating, and organization by theme vs. author.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2097
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsqkkucthzi",
+    "title": "Write a complete treatment for a sci-fi limited series where humanity discovers ",
+    "raw_request": "Write a complete treatment for a sci-fi limited series where humanity discovers that the universe is a training simulation for an AI, and they are the training data.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:21:44.580Z",
+    "updated_at": "2026-03-16T05:24:49.839Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:22:26.513Z",
+      "interpreted_objective": "Write a complete treatment for a sci-fi limited series where humanity discovers they are part of an AI training simulation.",
+      "expected_outcome": "A detailed treatment document outlining the plot, characters, and themes of the sci-fi series.",
+      "key_unknowns": [
+        "Specific plot points and character arcs",
+        "The tone and style of the series",
+        "How the discovery of being a simulation affects humanity"
+      ],
+      "recommended_strategy": "First, research existing sci-fi series and films with similar themes to gather inspiration and avoid clichés. Then, synthesize this research into a unique treatment that highlights original plot elements and character development.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Similar Sci-Fi Themes",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of existing sci-fi series and films with similar themes, including their plot summaries and unique elements.",
+          "prompt": "Search the web for current, specific information about sci-fi series and films where humanity discovers they are part of a simulation. Include real names, plot summaries, and unique elements.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Sci-Fi Treatment",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed treatment document for the sci-fi limited series.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a complete treatment for a sci-fi limited series where humanity discovers they are part of an AI training simulation. Include plot, characters, themes, and how the discovery impacts humanity.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-sci-fi-treatment.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1955
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsqkk1luelv",
+    "title": "Plan a 3-day wellness retreat near Austin TX. Include yoga, meditation, healthy ",
+    "raw_request": "Plan a 3-day wellness retreat near Austin TX. Include yoga, meditation, healthy cooking class, nature hikes, and digital detox. For 2 adults.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:21:43.545Z",
+    "updated_at": "2026-03-16T05:24:39.320Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:22:22.606Z",
+      "interpreted_objective": "Plan a detailed 3-day wellness retreat itinerary near Austin, TX, for two adults.",
+      "expected_outcome": "A comprehensive itinerary including yoga, meditation, healthy cooking class, nature hikes, and digital detox activities with specific options, dates, and costs.",
+      "key_unknowns": [
+        "Specific venues or locations near Austin, TX, offering these activities",
+        "Current availability and pricing for these activities",
+        "Transportation and accommodation options"
+      ],
+      "recommended_strategy": "First, research current options and pricing for wellness activities near Austin, TX. Then, synthesize this information into a detailed itinerary with specific recommendations and costs. Ensure all activities align with the wellness theme and are feasible within a 3-day timeframe.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Wellness Retreat Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of wellness retreat options near Austin, TX, including yoga, meditation, cooking classes, hikes, and digital detox activities with pricing and availability.",
+          "prompt": "Search the web for current wellness retreat options near Austin, TX, that include yoga, meditation, healthy cooking classes, nature hikes, and digital detox activities. Provide details on specific venues, pricing, availability, and any package deals for two adults.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary and Costs",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 3-day itinerary for a wellness retreat near Austin, TX, including specific activities, venues, dates, and costs.",
+          "prompt": "Based on the research results, synthesize a detailed 3-day itinerary for a wellness retreat near Austin, TX, for two adults. Include specific activities like yoga, meditation, healthy cooking classes, nature hikes, and digital detox, along with venues, dates, and costs.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-wellness-retreat.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1948
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsqkj8qg50e",
+    "title": "Design a comprehensive stress inoculation training program for high-pressure tec",
+    "raw_request": "Design a comprehensive stress inoculation training program for high-pressure tech workers. Include progressive exposure, coping strategies, and performance under pressure.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:21:42.506Z",
+    "updated_at": "2026-03-16T05:24:30.388Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:22:06.956Z",
+      "interpreted_objective": "Create a stress inoculation training program for tech workers to improve coping and performance under pressure.",
+      "expected_outcome": "A detailed, evidence-based program that tech workers can follow to build resilience to stress.",
+      "key_unknowns": [
+        "Specific stressors faced by tech workers",
+        "Current coping strategies used by tech workers",
+        "Evidence-based methods for stress inoculation"
+      ],
+      "recommended_strategy": "Research current stressors and coping strategies specific to tech workers. Develop a program that includes progressive exposure to stress, coping mechanisms, and techniques for maintaining performance under pressure. Ensure all recommendations are evidence-based and actionable.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Stressors and Coping Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of common stressors and coping strategies used by tech workers.",
+          "prompt": "Search the web for current, specific information about stressors and coping strategies among tech workers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Stress Inoculation Program",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive stress inoculation training program tailored for tech workers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a stress inoculation training program for tech workers. Include progressive exposure techniques, coping strategies, and methods to maintain performance under pressure. Ensure recommendations are evidence-based and actionable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1991
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsqkiftazhx",
+    "title": "Create a guide to building thought leadership through conference speaking. Inclu",
+    "raw_request": "Create a guide to building thought leadership through conference speaking. Include CFP writing, talk design, delivery practice, and post-talk networking.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:21:41.465Z",
+    "updated_at": "2026-03-16T05:24:22.715Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:22:01.018Z",
+      "interpreted_objective": "Create a detailed guide for building thought leadership through conference speaking.",
+      "expected_outcome": "A comprehensive guide covering CFP writing, talk design, delivery practice, and post-talk networking.",
+      "key_unknowns": [
+        "Specific conferences relevant to data engineering and leadership",
+        "Best practices for CFP writing in the tech industry",
+        "Effective strategies for talk design and delivery",
+        "Networking opportunities post-conference"
+      ],
+      "recommended_strategy": "Research current best practices and trends in conference speaking within the tech industry. Synthesize findings into a structured guide with actionable steps for each stage of the conference speaking process. Ensure the guide is tailored to data engineering leadership and entrepreneurship contexts.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Conference Speaking Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices for CFP writing, talk design, delivery, and networking in the tech industry.",
+          "prompt": "Search the web for current best practices in conference speaking, specifically focusing on CFP writing, talk design, delivery practice, and post-talk networking within the tech industry. Include specific examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Conference Speaking",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on building thought leadership through conference speaking, tailored to data engineering leadership.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for building thought leadership through conference speaking. Include sections on CFP writing, talk design, delivery practice, and post-talk networking, with actionable steps and examples relevant to data engineering leadership.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2296
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsqkhn5wyh7",
+    "title": "Research the best ergonomic footrests for standing desk users. Compare active vs",
+    "raw_request": "Research the best ergonomic footrests for standing desk users. Compare active vs passive, rocker vs flat. Include height adjustability and build quality. Under 80 dollars.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:21:40.433Z",
+    "updated_at": "2026-03-16T05:24:15.960Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:21:56.512Z",
+      "interpreted_objective": "Research and compare ergonomic footrests under $80 for standing desk users, focusing on active vs passive types, rocker vs flat designs, height adjustability, and build quality.",
+      "expected_outcome": "A detailed comparison report of ergonomic footrests including specific product recommendations, prices, pros/cons, and a clear buying recommendation.",
+      "key_unknowns": [
+        "Current market offerings for ergonomic footrests under $80",
+        "Differences in user experience between active and passive footrests",
+        "Availability of rocker vs flat designs with height adjustability"
+      ],
+      "recommended_strategy": "Conduct web research to gather current data on ergonomic footrests under $80, focusing on the specified features. Then, synthesize this information into a comparative analysis to provide actionable buying recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Ergonomic Footrests",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on ergonomic footrests under $80, including product names, prices, and features.",
+          "prompt": "Search the web for current, specific information about ergonomic footrests for standing desk users under $80. Include details on active vs passive types, rocker vs flat designs, height adjustability, and build quality. Provide product names, prices, and URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Footrest Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comparative analysis report of ergonomic footrests with specific product recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comparison report of ergonomic footrests under $80. Include specific product names, prices, pros/cons, and provide a clear buying recommendation.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2111
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsqkgua91oj",
+    "title": "Teach me about the CAP theorem extensions. Cover PACELC, harvest and yield, and ",
+    "raw_request": "Teach me about the CAP theorem extensions. Cover PACELC, harvest and yield, and how modern databases like CockroachDB and YugabyteDB handle these tradeoffs.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:21:39.394Z",
+    "updated_at": "2026-03-16T05:24:10.219Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:21:52.290Z",
+      "interpreted_objective": "Provide an educational overview of CAP theorem extensions and how modern databases handle these tradeoffs.",
+      "expected_outcome": "A comprehensive report explaining PACELC, harvest and yield, and the handling of these tradeoffs by CockroachDB and YugabyteDB.",
+      "key_unknowns": [
+        "Current handling of CAP theorem extensions by CockroachDB and YugabyteDB",
+        "Specifics of PACELC, harvest, and yield in modern databases"
+      ],
+      "recommended_strategy": "First, conduct research to gather current information on CAP theorem extensions and how they are applied in modern databases like CockroachDB and YugabyteDB. Then, synthesize this information into a structured report that explains these concepts clearly.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research CAP theorem extensions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, specific information about PACELC, harvest and yield, and their handling by CockroachDB and YugabyteDB.",
+          "prompt": "Search the web for current, specific information about CAP theorem extensions including PACELC, harvest and yield, and how modern databases like CockroachDB and YugabyteDB handle these tradeoffs. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize CAP theorem extensions report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining PACELC, harvest and yield, and the handling of these tradeoffs by CockroachDB and YugabyteDB.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report explaining PACELC, harvest and yield, and how modern databases like CockroachDB and YugabyteDB handle these tradeoffs. Include specific names, numbers, and concrete examples.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-CAP_theorem_extensions.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1948
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsqkg0vxlta",
+    "title": "Create a guide to optimizing tax efficiency across multiple investment accounts.",
+    "raw_request": "Create a guide to optimizing tax efficiency across multiple investment accounts. Include asset location strategy, tax-loss harvesting coordination, and Roth conversion ladder.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:21:38.335Z",
+    "updated_at": "2026-03-16T05:24:02.265Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:21:47.172Z",
+      "interpreted_objective": "Create a detailed guide on optimizing tax efficiency across multiple investment accounts.",
+      "expected_outcome": "A comprehensive guide that includes strategies for asset location, tax-loss harvesting, and Roth conversion ladders with specific examples and actionable steps.",
+      "key_unknowns": [
+        "Current best practices for asset location strategy",
+        "Latest tools and methods for tax-loss harvesting coordination",
+        "Recent changes in regulations affecting Roth conversion ladders"
+      ],
+      "recommended_strategy": "First, conduct web research to gather the latest information on tax efficiency strategies for investment accounts. Then, synthesize this data into a structured guide with actionable steps and examples. Ensure the guide is detailed and practical, tailored for Rahul's use.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Tax Efficiency Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on asset location strategies, tax-loss harvesting, and Roth conversion ladders with citations.",
+          "prompt": "Search the web for current, specific information about optimizing tax efficiency across multiple investment accounts. Focus on asset location strategy, tax-loss harvesting coordination, and Roth conversion ladder. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Tax Efficiency Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide on optimizing tax efficiency across multiple investment accounts, including specific strategies and examples.",
+          "prompt": "Based on the research results, synthesize actionable recommendations for optimizing tax efficiency across multiple investment accounts. Include specific strategies for asset location, tax-loss harvesting, and Roth conversion ladders with examples and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-2023-10-31-tax-efficiency-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2270
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsqkf7n5wqd",
+    "title": "Write a comprehensive guide to implementing distributed tracing across microserv",
+    "raw_request": "Write a comprehensive guide to implementing distributed tracing across microservices. Include context propagation, sampling strategies, and trace analysis with Jaeger and Zipkin.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:21:37.283Z",
+    "updated_at": "2026-03-16T05:23:22.050Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:21:42.286Z",
+      "interpreted_objective": "Create a detailed guide on implementing distributed tracing in microservices using Jaeger and Zipkin.",
+      "expected_outcome": "A comprehensive, clear, and actionable guide for implementing distributed tracing, including context propagation, sampling strategies, and trace analysis.",
+      "key_unknowns": [
+        "Current best practices for distributed tracing",
+        "Specific features of Jaeger and Zipkin relevant to the task"
+      ],
+      "recommended_strategy": "First, research the current best practices and features of Jaeger and Zipkin for distributed tracing. Then, synthesize this information into a structured guide that covers context propagation, sampling strategies, and trace analysis. Ensure the guide is tailored for a technical audience and includes practical examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Distributed Tracing Best Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed report on current best practices for distributed tracing, including context propagation and sampling strategies.",
+          "prompt": "Search the web for current best practices in implementing distributed tracing across microservices. Focus on context propagation, sampling strategies, and the use of tools like Jaeger and Zipkin. Include specific examples, real-world applications, and any recent updates or trends.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Distributed Tracing",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on implementing distributed tracing with Jaeger and Zipkin, including context propagation, sampling strategies, and trace analysis.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed guide on implementing distributed tracing across microservices. Include sections on context propagation, sampling strategies, and trace analysis with Jaeger and Zipkin. Provide practical examples and ensure the guide is clear and actionable for a technical audience.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2073
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsqbqaexdfr",
     "title": "Design a comprehensive time-blocking system optimized for makers who also need t",
     "raw_request": "Design a comprehensive time-blocking system optimized for makers who also need to attend meetings. Include focus blocks, buffer zones, and context switching protocols.",
@@ -47119,8 +47794,8 @@
     "risk_level": "yellow",
     "success_criteria": "",
     "created_at": "2026-03-15T15:07:32.375Z",
-    "updated_at": "2026-03-15T15:07:37.856Z",
-    "status": "planned",
+    "updated_at": "2026-03-16T05:25:21.756Z",
+    "status": "waiting_approval",
     "board_deliberation": {
       "timestamp": "2026-03-15T15:07:37.855Z",
       "interpreted_objective": "Identify and detail top passive income opportunities for senior data engineers in 2025-2026.",

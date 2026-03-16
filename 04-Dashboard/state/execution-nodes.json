@@ -1,5 +1,37 @@
 [
   {
+    "node_id": "en_mmsqmrxysowu",
+    "graph_id": "eg_mmsqmrxwjyrm",
+    "title": "Synthesize 7-Day Whole Foods Eating Plan",
+    "description": "A structured 7-day whole foods eating plan including daily menus, a grocery list, a prep schedule, and a timeline of expected benefits.",
+    "stage": "report",
+    "assigned_agent": "openai",
+    "execution_mode": "sequential",
+    "depends_on": [
+      "en_mmsqmrxx8lkq"
+    ],
+    "status": "pending",
+    "risk_level": "green",
+    "gate_ids": [],
+    "created_at": "2026-03-16T05:23:27.094Z",
+    "updated_at": "2026-03-16T05:23:27.094Z"
+  },
+  {
+    "node_id": "en_mmsqmrxx8lkq",
+    "graph_id": "eg_mmsqmrxwjyrm",
+    "title": "Research Whole Foods Diet",
+    "description": "Current, evidence-based information on whole foods diets, including benefits and meal ideas.",
+    "stage": "research",
+    "assigned_agent": "perplexity",
+    "execution_mode": "sequential",
+    "depends_on": [],
+    "status": "pending",
+    "risk_level": "green",
+    "gate_ids": [],
+    "created_at": "2026-03-16T05:23:27.093Z",
+    "updated_at": "2026-03-16T05:23:27.093Z"
+  },
+  {
     "node_id": "en_mmrd6ux1rbm5",
     "graph_id": "eg_mmrd6uwzuah8",
     "title": "Synthesize Research Findings",
