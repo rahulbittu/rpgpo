@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "backlog": [
+    {
+      "id": "P1-session-persistence",
+      "title": "Session lifecycle persistence",
+      "ecc_pattern": "session-start.js / pre-compact.js / session-end.js",
+      "gpo_implementation": "Save active behavior signals, operator profile cache, and routing stats to a session state file on server shutdown. Restore on startup. Track session duration and task count.",
+      "files_to_change": ["04-Dashboard/app/server.js", "04-Dashboard/app/lib/behavior.ts"],
+      "new_files": ["artifacts/behavior/session-cache.json"],
+      "risk": "low",
+      "effort": "small",
+      "batch": 3
+    },
+    {
+      "id": "P2-verification-metrics",
+      "title": "Running verification metrics (pass@1 equivalent)",
+      "ecc_pattern": "eval-harness pass@k metrics",
+      "gpo_implementation": "Track first-pass clean rate as a running behavior signal. On task completion, score output quality: length adequacy, structure presence, source citations. Store as verification_metrics signal.",
+      "files_to_change": ["04-Dashboard/app/lib/behavior.ts", "04-Dashboard/app/lib/workflow.ts"],
+      "new_files": ["artifacts/behavior/verification-metrics.json"],
+      "risk": "low",
+      "effort": "medium",
+      "batch": 3
+    },
+    {
+      "id": "P2-workflow-pattern-extraction",
+      "title": "Periodic workflow pattern extraction from completed tasks",
+      "ecc_pattern": "evaluate-session.js / continuous-learning",
+      "gpo_implementation": "After every N completed tasks, analyze patterns: which engines are used together, common task sequences, preferred output structures. Update workflow-patterns.json.",
+      "files_to_change": ["04-Dashboard/app/lib/behavior.ts"],
+      "risk": "low",
+      "effort": "medium",
+      "batch": 4
+    },
+    {
+      "id": "P3-pre-execution-safety",
+      "title": "Lightweight pre-execution prompt validation",
+      "ecc_pattern": "insaits-security-monitor.py (conceptual only)",
+      "gpo_implementation": "Before each provider API call, check: no API keys in prompt text, prompt length within bounds, cost estimate within threshold. Log violations. Do NOT block — warn only for now.",
+      "files_to_change": ["04-Dashboard/app/worker.js"],
+      "risk": "low",
+      "effort": "small",
+      "batch": 4
+    },
+    {
+      "id": "P3-signal-reinforcement",
+      "title": "Add reinforcement tracking to behavior signals",
+      "ecc_pattern": "instinct confidence/versioning",
+      "gpo_implementation": "Add reinforced_count, last_contradicted, and created_at fields to BehaviorSignal. Signals strengthen when corroborating events arrive, weaken on contradiction.",
+      "files_to_change": ["04-Dashboard/app/lib/behavior.ts"],
+      "risk": "low",
+      "effort": "small",
+      "batch": 4
+    }
+  ],
+  "rejected": [
+    "command-registry-sprawl",
+    "multi-agent-orchestration",
+    "mcp-server-configs",
+    "language-specific-rules",
+    "cost-tracking-hooks"
+  ],
+  "deferred": [
+    "hook-lifecycle-architecture",
+    "ci-artifact-validation"
+  ]
+}
