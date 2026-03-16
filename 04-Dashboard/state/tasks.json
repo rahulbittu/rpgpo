@@ -1,5 +1,387 @@
 [
   {
+    "id": "mmsi9j4u2l2w",
+    "type": "execute-subtask",
+    "label": "Subtask: Write Monologue",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi7zwqnnty"
+    },
+    "createdAt": "2026-03-16T01:29:12.222Z",
+    "updatedAt": "2026-03-16T01:30:01.436Z",
+    "output": "Write Monologue: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/screenwriting-{date}-monologue.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsi7zwqnnty.md"
+    ]
+  },
+  {
+    "id": "mmsi9dxujzg8",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Food Tour Itinerary",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi7wb5omuo"
+    },
+    "createdAt": "2026-03-16T01:29:05.490Z",
+    "updatedAt": "2026-03-16T01:29:51.940Z",
+    "output": "Synthesize Food Tour Itinerary: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/travel-{date}-austin-food-tour.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsi7wb5omuo.md"
+    ]
+  },
+  {
+    "id": "mmsi97dgsm1r",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize flexibility program",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi7setgflc"
+    },
+    "createdAt": "2026-03-16T01:28:56.980Z",
+    "updatedAt": "2026-03-16T01:29:42.639Z",
+    "output": "Synthesize flexibility program: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/health-{date}-flexibility-program.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsi7setgflc.md"
+    ]
+  },
+  {
+    "id": "mmsi8taz63lr",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Exit Interview Template for Engineering Teams",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi7i59t2nh"
+    },
+    "createdAt": "2026-03-16T01:28:38.747Z",
+    "updatedAt": "2026-03-16T01:29:36.461Z",
+    "output": "Synthesize Exit Interview Template for Engineering Teams: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/careeregine-{date}-exit-interview-template.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsi7i59t2nh.md"
+    ]
+  },
+  {
+    "id": "mmsi8onb1jbm",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize SSD Comparison",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi7erfqodh"
+    },
+    "createdAt": "2026-03-16T01:28:32.711Z",
+    "updatedAt": "2026-03-16T01:29:27.673Z",
+    "output": "Synthesize SSD Comparison: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/shopping-2026-external-ssd-comparison.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsi7erfqodh.md"
+    ]
+  },
+  {
+    "id": "mmsi85xlo7b7",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Comparison Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi74etk7dt"
+    },
+    "createdAt": "2026-03-16T01:28:08.457Z",
+    "updatedAt": "2026-03-16T01:29:20.770Z",
+    "output": "Synthesize Comparison Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/learning-{date}-consensus-algorithms.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsi74etk7dt.md"
+    ]
+  },
+  {
+    "id": "mmsi7zypum3o",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Technical Leadership Insights",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi7zvux05b"
+    },
+    "createdAt": "2026-03-16T01:28:00.721Z",
+    "updatedAt": "2026-03-16T01:29:12.223Z",
+    "output": "Research Technical Leadership Insights: ## AI-Driven Throughput Gains Not Reaching Production (Waydev, 2026)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsi7zvux05b.md"
+    ]
+  },
+  {
+    "id": "mmsi7wd3xp8z",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Austin Food Spots",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi7wad2gtm"
+    },
+    "createdAt": "2026-03-16T01:27:56.055Z",
+    "updatedAt": "2026-03-16T01:29:05.490Z",
+    "output": "Research Austin Food Spots: - **Terry Black’s BBQ**: 1003 Barton Springs Rd, Austin, TX. Rated 8.8/10 in 2026 review for Texas smoked brisket, giant beef ribs, pork ribs, house-m\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsi7wad2gtm.md"
+    ]
+  },
+  {
+    "id": "mmsi7sgrkpck",
+    "type": "execute-subtask",
+    "label": "Subtask: Research flexibility exercises for desk workers",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi7sdy2pva"
+    },
+    "createdAt": "2026-03-16T01:27:51.003Z",
+    "updatedAt": "2026-03-16T01:28:56.980Z",
+    "output": "Research flexibility exercises for desk workers: # Flexibility Exercises for Desk Workers\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsi7sdy2pva.md"
+    ]
+  },
+  {
+    "id": "mmsi7p6kbdxv",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Equity Negotiation Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi70lz36en"
+    },
+    "createdAt": "2026-03-16T01:27:46.748Z",
+    "updatedAt": "2026-03-16T01:28:45.606Z",
+    "output": "Synthesize Equity Negotiation Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsi70lz36en.md"
+    ]
+  },
+  {
+    "id": "mmsi7i77c05o",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Best Practices for Exit Interviews in Engineering Teams",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi7i4daja1"
+    },
+    "createdAt": "2026-03-16T01:27:37.699Z",
+    "updatedAt": "2026-03-16T01:28:38.747Z",
+    "output": "Research Best Practices for Exit Interviews in Engineering Teams: ## Timing Best Practices\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsi7i4daja1.md"
+    ]
+  },
+  {
+    "id": "mmsi7etfbgar",
+    "type": "execute-subtask",
+    "label": "Subtask: Research SSD Options",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi7eqoi9wg"
+    },
+    "createdAt": "2026-03-16T01:27:33.315Z",
+    "updatedAt": "2026-03-16T01:28:32.711Z",
+    "output": "Research SSD Options: ## Search Summary\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsi7eqoi9wg.md"
+    ]
+  },
+  {
+    "id": "mmsi7b9kn9gp",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize REST API Guide",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi6wpslmpi"
+    },
+    "createdAt": "2026-03-16T01:27:28.712Z",
+    "updatedAt": "2026-03-16T01:28:16.638Z",
+    "output": "Synthesize REST API Guide: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsi6wpslmpi.md"
+    ]
+  },
+  {
+    "id": "mmsi74gr6gof",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Consensus Algorithms",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi74dyj3c1"
+    },
+    "createdAt": "2026-03-16T01:27:19.899Z",
+    "updatedAt": "2026-03-16T01:28:08.457Z",
+    "output": "Research Consensus Algorithms: ## Proof of Work (PoW)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsi74dyj3c1.md"
+    ]
+  },
+  {
+    "id": "mmsi73ypq5a9",
+    "type": "deliberate",
+    "label": "Deliberate: Write a monologue from the perspective of a senior engineer explaining to their ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsi73yjm3h2",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:27:19.249Z",
+    "updatedAt": "2026-03-16T01:28:00.721Z",
+    "output": "Deliberation complete.\nObjective: Create a humorous yet sincere monologue from a senior engineer's perspective on technical leadership for their past self.\nStrategy: First, research common challenges and insights related to technical leadership in engineering. Then, synthesize these insights into a humorous and sincere monologue, drawing on typical experiences and lessons learned by technical leaders.\nRisk: green\nSubtasks: 2\nTokens: 1929",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsi72egqs7a",
+    "type": "deliberate",
+    "label": "Deliberate: Plan a food tour of Austin TX for out-of-town visitors. Include 8 must-visit spo",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsi72ea8av9",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:27:17.224Z",
+    "updatedAt": "2026-03-16T01:27:56.056Z",
+    "output": "Deliberation complete.\nObjective: Plan a comprehensive food tour in Austin, TX, for out-of-town visitors including 8 must-visit spots with timing and logistics.\nStrategy: Conduct research to identify top food spots in Austin across the specified categories. Synthesize this information into an itinerary that includes timing and logistics. Ensure the tour is feasible within a day or weekend visit.\nRisk: green\nSubtasks: 2\nTokens: 1956",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsi70u22czc",
+    "type": "deliberate",
+    "label": "Deliberate: Design a progressive flexibility program for desk workers. 4 weeks from stiff to",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsi70txhtzj",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:27:15.194Z",
+    "updatedAt": "2026-03-16T01:27:51.003Z",
+    "output": "Deliberation complete.\nObjective: Develop a 4-week flexibility program for desk workers with specific daily routines.\nStrategy: Conduct research to identify effective flexibility exercises specifically for desk workers. Synthesize this information into a structured program with clear, actionable routines for different times of the day. Ensure the program is safe and evidence-based.\nRisk: green\nSubtasks: 2\nTokens: 1863",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsi70nz912m",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Equity Negotiation Strategies",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi70l49cyq"
+    },
+    "createdAt": "2026-03-16T01:27:14.975Z",
+    "updatedAt": "2026-03-16T01:27:46.748Z",
+    "output": "Research Equity Negotiation Strategies: ## Key Negotiation Strategies for Early Employee Equity\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsi70l49cyq.md"
+    ]
+  },
+  {
+    "id": "mmsi6z8jzvjp",
+    "type": "deliberate",
+    "label": "Deliberate: Create a comprehensive exit interview question template for engineering teams. I",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsi6z8ft3nr",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:27:13.123Z",
+    "updatedAt": "2026-03-16T01:27:37.700Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed exit interview question template for engineering teams focusing on culture, management, growth, and feedback.\nStrategy: First, research current best practices and specific needs for exit interviews in engineering teams. Then, synthesize this information into a structured template that includes questions on culture, management, growth, and feedback. Ensure the questions are actionable and relevant to engineering contexts.\nRisk: green\nSubtasks: 2\nTokens: 2258",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsi6xod8f5b",
+    "type": "deliberate",
+    "label": "Deliberate: Find the best external SSD for a developer in 2026. Must be Thunderbolt 4, at le",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsi6xo80jjn",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:27:11.101Z",
+    "updatedAt": "2026-03-16T01:27:33.316Z",
+    "output": "Deliberation complete.\nObjective: Identify the best external SSD for developers in 2026 that meets specific criteria.\nStrategy: Conduct a web search to gather current data on Thunderbolt 4 SSDs from Samsung, SanDisk, and Crucial that meet the specified criteria. Then, synthesize this information to provide a comparative analysis and recommendation.\nRisk: green\nSubtasks: 2\nTokens: 1929",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsi6wrqjgfx",
+    "type": "execute-subtask",
+    "label": "Subtask: Research REST API Best Practices",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsi6wovjfxe"
+    },
+    "createdAt": "2026-03-16T01:27:09.926Z",
+    "updatedAt": "2026-03-16T01:27:28.712Z",
+    "output": "Research REST API Best Practices: ## REST API Error Handling Best Practices\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsi6wovjfxe.md"
+    ]
+  },
+  {
+    "id": "mmsi6w467y26",
+    "type": "deliberate",
+    "label": "Deliberate: Teach me about consensus algorithms in blockchain. Compare Proof of Work, Proof ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsi6w42c68j",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:27:09.078Z",
+    "updatedAt": "2026-03-16T01:27:19.900Z",
+    "output": "Deliberation complete.\nObjective: Provide a comprehensive comparison of consensus algorithms in blockchain, focusing on Proof of Work, Proof of Stake, and Delegated Proof of Stake, with emphasis on energy and security tradeoffs.\nStrategy: First, gather the most recent and relevant data on Proof of Work, Proof of Stake, and Delegated Proof of Stake consensus algorithms, focusing on energy consumption and security. Then, synthesize this information into a clear, concise report that compares the algorithms and highlights key tradeoffs.\nRisk: green\nSubtasks: 2\nTokens: 1966",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsi6ujz19ln",
+    "type": "deliberate",
+    "label": "Deliberate: Research the best strategies for negotiating equity in a startup as an early emp",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsi6ujrm6jr",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:27:07.055Z",
+    "updatedAt": "2026-03-16T01:27:14.975Z",
+    "output": "Deliberation complete.\nObjective: Research and provide actionable strategies for negotiating equity as an early employee in a startup.\nStrategy: Conduct web research to gather current information on equity negotiation strategies in startups. Synthesize findings into a report that includes specific examples and actionable recommendations for early employees.\nRisk: green\nSubtasks: 2\nTokens: 2432",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsi6sza7cn3",
+    "type": "deliberate",
+    "label": "Deliberate: Create a comprehensive guide to building a REST API with proper error handling. ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsi6sz5le8f",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:27:05.014Z",
+    "updatedAt": "2026-03-16T01:27:09.927Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed guide on building a REST API with error handling and client SDK patterns.\nStrategy: Conduct research to gather current best practices and examples of REST API development focusing on error handling and client SDK patterns. Then, synthesize this information into a structured guide that is clear and actionable for developers.\nRisk: green\nSubtasks: 2\nTokens: 2049",
+    "error": null,
+    "filesWritten": []
+  },
+  {
     "id": "mmsi2wwk7kpd",
     "type": "execute-subtask",
     "label": "Subtask: Write the co-founders celebration scene",
@@ -1204,391 +1586,6 @@
     "filesWritten": [
       "03-Operations/Reports/research-{date}-keyboard-switches.md",
       "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfp5xgb9j7.md"
-    ]
-  },
-  {
-    "id": "mmsfpquyf497",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Personal Finance Automation Tools",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfpqsa7mbi"
-    },
-    "createdAt": "2026-03-16T00:17:49.882Z",
-    "updatedAt": "2026-03-16T00:19:02.306Z",
-    "output": "Research Personal Finance Automation Tools: # Personal Finance Automation: Monarch, YNAB, Copilot, and Spreadsheets Comparison\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfpqsa7mbi.md"
-    ]
-  },
-  {
-    "id": "mmsfpml6iocx",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Funding Activity and Quality of Life",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfpmhou7et"
-    },
-    "createdAt": "2026-03-16T00:17:44.346Z",
-    "updatedAt": "2026-03-16T00:18:52.061Z",
-    "output": "Research Funding Activity and Quality of Life: # Funding Activity & Quality of Life: Austin, Miami, Denver, Nashville, Raleigh (March 2026)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfpmhou7et.md"
-    ]
-  },
-  {
-    "id": "mmsfpmkvjmnm",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Cost of Living and Talent Pool",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfpmh0lcb1"
-    },
-    "createdAt": "2026-03-16T00:17:44.335Z",
-    "updatedAt": "2026-03-16T00:18:34.507Z",
-    "output": "Research Cost of Living and Talent Pool: I need to conduct additional searches to provide comprehensive data on tech talent availability and quality for these cities, as the current results f\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfpmh0lcb1.md"
-    ]
-  },
-  {
-    "id": "mmsfphca3vhe",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Cost Comparison Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfp1yxcey3"
-    },
-    "createdAt": "2026-03-16T00:17:37.546Z",
-    "updatedAt": "2026-03-16T00:18:26.275Z",
-    "output": "Synthesize Cost Comparison Report: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/shopping-{date}-tesla-vs-honda-cost-comparison.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfp1yxcey3.md"
-    ]
-  },
-  {
-    "id": "mmsfpaovb5b3",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Campsite Reservations and Hiking Trails",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfpald28qi"
-    },
-    "createdAt": "2026-03-16T00:17:28.927Z",
-    "updatedAt": "2026-03-16T00:18:16.401Z",
-    "output": "Research Campsite Reservations and Hiking Trails: ## Campsite Availability in Big Bend National Park (as of March 16, 2026)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfpald28qi.md"
-    ]
-  },
-  {
-    "id": "mmsfpaojtdq6",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Route Options and Gas Stops",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfpakindq4"
-    },
-    "createdAt": "2026-03-16T00:17:28.915Z",
-    "updatedAt": "2026-03-16T00:18:07.402Z",
-    "output": "Research Route Options and Gas Stops: ## Primary Driving Routes from Austin to Big Bend National Park\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfpakindq4.md"
-    ]
-  },
-  {
-    "id": "mmsfp5zbkovs",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Mechanical Keyboard Switches",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfp5wp6osc"
-    },
-    "createdAt": "2026-03-16T00:17:22.823Z",
-    "updatedAt": "2026-03-16T00:17:57.364Z",
-    "output": "Research Mechanical Keyboard Switches: ## Cherry MX Brown\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfp5wp6osc.md"
-    ]
-  },
-  {
-    "id": "mmsfp5x1tuco",
-    "type": "deliberate",
-    "label": "Deliberate: Research the best ways to automate personal finances. Compare tools like Monarch",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsfp5wwd10e",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T00:17:22.741Z",
-    "updatedAt": "2026-03-16T00:17:49.882Z",
-    "output": "Deliberation complete.\nObjective: Research and compare automation tools for personal finance, including Monarch, YNAB, Copilot, and manual spreadsheets.\nStrategy: First, conduct web research to gather detailed information about Monarch, YNAB, Copilot, and manual spreadsheet approaches regarding their pricing, features, and automation capabilities. Then, synthesize this information into a structured report that compares these tools and provides actionable recommendations.\nRisk: green\nSubtasks: 2\nTokens: 2167",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsfp3l1phqt",
-    "type": "deliberate",
-    "label": "Deliberate: Research the best cities in the US for tech startups in 2026. Compare Austin, Mi",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsfp3kwv2df",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T00:17:19.717Z",
-    "updatedAt": "2026-03-16T00:17:44.346Z",
-    "output": "Deliberation complete.\nObjective: Research and compare the best cities in the US for tech startups in 2026, focusing on Austin, Miami, Denver, Nashville, and Raleigh.\nStrategy: Use Perplexity to gather current data on cost of living, talent pool, funding activity, and quality of life for each city. Then, use OpenAI to synthesize this data into a comparative report with actionable insights.\nRisk: green\nSubtasks: 3\nTokens: 2496",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsfp20uavm2",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Current Costs",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsfp1y330pf"
-    },
-    "createdAt": "2026-03-16T00:17:17.694Z",
-    "updatedAt": "2026-03-16T00:17:37.546Z",
-    "output": "Research Current Costs: ## Tesla Model 3 (Austin, TX Area)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfp1y330pf.md"
-    ]
-  },
-  {
-    "id": "mmsfp1919im6",
-    "type": "deliberate",
-    "label": "Deliberate: Plan a weekend road trip from Austin to Big Bend National Park. Include route op",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsfp18w4p1k",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T00:17:16.693Z",
-    "updatedAt": "2026-03-16T00:17:28.928Z",
-    "output": "Deliberation complete.\nObjective: Plan a detailed 3-day road trip itinerary from Austin to Big Bend National Park.\nStrategy: First, gather current data on route options, gas stops, campsite availability, and hiking trails using web research. Then, synthesize this information into a structured travel itinerary with specific recommendations for each aspect of the trip.\nRisk: green\nSubtasks: 3\nTokens: 2086",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsfoywyywr0",
-    "type": "deliberate",
-    "label": "Deliberate: Research the best mechanical keyboard switches for coding. Compare Cherry MX Bro",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsfoywsdsth",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T00:17:13.666Z",
-    "updatedAt": "2026-03-16T00:17:22.824Z",
-    "output": "Deliberation complete.\nObjective: Research and compare Cherry MX Brown, Gateron Brown, and Boba U4T mechanical keyboard switches for coding, focusing on sound profiles and typing feel.\nStrategy: First, conduct web research to gather detailed information about the sound profiles and typing feel of Cherry MX Brown, Gateron Brown, and Boba U4T switches. Then, synthesize this data into a structured report, providing a clear comparison and recommendations for coding use.\nRisk: green\nSubtasks: 2\nTokens: 2194",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsfowkuhqkf",
-    "type": "deliberate",
-    "label": "Deliberate: Calculate the total cost of owning a Tesla Model 3 vs a Honda Civic over 5 years",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsfowkpho2n",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T00:17:10.638Z",
-    "updatedAt": "2026-03-16T00:17:17.694Z",
-    "output": "Deliberation complete.\nObjective: Compare the total cost of owning a Tesla Model 3 vs a Honda Civic over 5 years in Austin, TX.\nStrategy: First, gather current data on purchase prices, financing, insurance, fuel/electricity, maintenance, and depreciation for both vehicles using Perplexity. Then, synthesize this data into a comprehensive report comparing the total cost of ownership over 5 years.\nRisk: green\nSubtasks: 2\nTokens: 2020",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms7cb77yw3u",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Dividend Investing Strategy Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms70b1841m0"
-    },
-    "createdAt": "2026-03-15T20:23:26.131Z",
-    "updatedAt": "2026-03-15T20:25:51.362Z",
-    "output": "Synthesize Dividend Investing Strategy Report: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms70b1841m0.md"
-    ]
-  },
-  {
-    "id": "mms7aycihncz",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Meal Prep Guide",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms72ygwd95r"
-    },
-    "createdAt": "2026-03-15T20:22:22.818Z",
-    "updatedAt": "2026-03-15T20:25:43.742Z",
-    "output": "Synthesize Meal Prep Guide: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/health-{date}-meal-prep-guide.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms72ygwd95r.md"
-    ]
-  },
-  {
-    "id": "mms7alpn84z9",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize City Comparison Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms72txldjpr"
-    },
-    "createdAt": "2026-03-15T20:22:06.443Z",
-    "updatedAt": "2026-03-15T20:25:34.715Z",
-    "output": "Synthesize City Comparison Report: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms72txldjpr.md"
-    ]
-  },
-  {
-    "id": "mms7afwymr3y",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Negotiation Guide",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms72pdnapfq"
-    },
-    "createdAt": "2026-03-15T20:21:58.930Z",
-    "updatedAt": "2026-03-15T20:25:27.947Z",
-    "output": "Synthesize Negotiation Guide: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms72pdnapfq.md"
-    ]
-  },
-  {
-    "id": "mms7aa8w06wl",
-    "type": "execute-subtask",
-    "label": "Subtask: Compile Blog Launch Checklist",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms72j30r4zb"
-    },
-    "createdAt": "2026-03-15T20:21:51.584Z",
-    "updatedAt": "2026-03-15T20:25:19.685Z",
-    "output": "Compile Blog Launch Checklist: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/writing-{date}-blog-launch-checklist.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms72j30r4zb.md"
-    ]
-  },
-  {
-    "id": "mms78m700xpb",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize RSI Prevention Guide",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms72d0q5kn9"
-    },
-    "createdAt": "2026-03-15T20:20:33.756Z",
-    "updatedAt": "2026-03-15T20:25:12.343Z",
-    "output": "Synthesize RSI Prevention Guide: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/health-{date}-RSI-prevention-guide.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms72d0q5kn9.md"
-    ]
-  },
-  {
-    "id": "mms78izo9r04",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Findings into a Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms728befkd1"
-    },
-    "createdAt": "2026-03-15T20:20:29.604Z",
-    "updatedAt": "2026-03-15T20:25:04.810Z",
-    "output": "Synthesize Findings into a Report: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms728befkd1.md"
-    ]
-  },
-  {
-    "id": "mms78448saci",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Guide on Building an Emergency Fund",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms724x9mu69"
-    },
-    "createdAt": "2026-03-15T20:20:10.328Z",
-    "updatedAt": "2026-03-15T20:24:58.245Z",
-    "output": "Synthesize Guide on Building an Emergency Fund: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms724x9mu69.md"
-    ]
-  },
-  {
-    "id": "mms77wn88r25",
-    "type": "execute-subtask",
-    "label": "Subtask: Analyze and Compare Credit Cards",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms720eq1m21"
-    },
-    "createdAt": "2026-03-15T20:20:00.644Z",
-    "updatedAt": "2026-03-15T20:24:51.761Z",
-    "output": "Analyze and Compare Credit Cards: ## Strategic Analysis: Travel Credit Card Selection for Tech Workers\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-gemini-2026-03-15-st_mms720eq1m21.md"
-    ]
-  },
-  {
-    "id": "mms77gvj9wi2",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Comedy Sketch",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms71q6ayguo"
-    },
-    "createdAt": "2026-03-15T20:19:40.207Z",
-    "updatedAt": "2026-03-15T20:24:45.498Z",
-    "output": "Synthesize Comedy Sketch: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/screenwriting-{date}-comedy-sketch.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms71q6ayguo.md"
-    ]
-  },
-  {
-    "id": "mms779jl877s",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Work-from-Home Friday Plan",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms71ljp2pcm"
-    },
-    "createdAt": "2026-03-15T20:19:30.705Z",
-    "updatedAt": "2026-03-15T20:24:34.771Z",
-    "output": "Synthesize Work-from-Home Friday Plan: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/personalops-{date}-work-from-home-friday-plan.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms71ljp2pcm.md"
     ]
   }
 ]

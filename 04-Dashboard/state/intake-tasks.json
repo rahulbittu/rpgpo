@@ -1,5 +1,539 @@
 [
   {
+    "task_id": "t_mmsi73yjm3h2",
+    "title": "Write a monologue from the perspective of a senior engineer explaining to their ",
+    "raw_request": "Write a monologue from the perspective of a senior engineer explaining to their past self what they wish they knew about technical leadership. 5 minutes. Sincere but with humor.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:27:19.243Z",
+    "updated_at": "2026-03-16T01:30:01.425Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:28:00.575Z",
+      "interpreted_objective": "Create a humorous yet sincere monologue from a senior engineer's perspective on technical leadership for their past self.",
+      "expected_outcome": "A 5-minute monologue that effectively combines humor and sincerity, providing insights into technical leadership.",
+      "key_unknowns": [
+        "Specific humorous anecdotes to include",
+        "The tone balance between humor and sincerity",
+        "Key insights on technical leadership to highlight"
+      ],
+      "recommended_strategy": "First, research common challenges and insights related to technical leadership in engineering. Then, synthesize these insights into a humorous and sincere monologue, drawing on typical experiences and lessons learned by technical leaders.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Technical Leadership Insights",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of insights and common challenges faced by technical leaders.",
+          "prompt": "Search the web for common challenges and insights related to technical leadership in engineering. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Monologue",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A 5-minute monologue that is humorous and sincere, providing insights into technical leadership.",
+          "prompt": "Based on the research results, write a 5-minute monologue from the perspective of a senior engineer explaining to their past self what they wish they knew about technical leadership. Include humor and sincerity.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-monologue.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1929
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsi72ea8av9",
+    "title": "Plan a food tour of Austin TX for out-of-town visitors. Include 8 must-visit spo",
+    "raw_request": "Plan a food tour of Austin TX for out-of-town visitors. Include 8 must-visit spots covering BBQ, Tex-Mex, breakfast tacos, food trucks, and fine dining. With timing and logistics.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:27:17.218Z",
+    "updated_at": "2026-03-16T01:29:51.929Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:27:55.934Z",
+      "interpreted_objective": "Plan a comprehensive food tour in Austin, TX, for out-of-town visitors including 8 must-visit spots with timing and logistics.",
+      "expected_outcome": "A detailed itinerary covering BBQ, Tex-Mex, breakfast tacos, food trucks, and fine dining in Austin, with specific recommendations, timing, and logistics.",
+      "key_unknowns": [
+        "Current top-rated food spots in Austin",
+        "Optimal timing for visiting each type of eatery",
+        "Logistics for traveling between locations"
+      ],
+      "recommended_strategy": "Conduct research to identify top food spots in Austin across the specified categories. Synthesize this information into an itinerary that includes timing and logistics. Ensure the tour is feasible within a day or weekend visit.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Austin Food Spots",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of top food spots in Austin for BBQ, Tex-Mex, breakfast tacos, food trucks, and fine dining with details such as names, addresses, and any notable reviews.",
+          "prompt": "Search the web for current, specific information about the top-rated food spots in Austin, TX, for BBQ, Tex-Mex, breakfast tacos, food trucks, and fine dining. Include real names, addresses, reviews, and any notable features.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Food Tour Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured itinerary for an Austin food tour including specific spots, timing, and logistics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed food tour itinerary for Austin, TX. Include specific names of eateries, recommended times to visit, and logistics for traveling between locations. Ensure the itinerary covers BBQ, Tex-Mex, breakfast tacos, food trucks, and fine dining.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-austin-food-tour.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1956
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsi70txhtzj",
+    "title": "Design a progressive flexibility program for desk workers. 4 weeks from stiff to",
+    "raw_request": "Design a progressive flexibility program for desk workers. 4 weeks from stiff to functional. Include morning, midday, and evening routines with specific stretches.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:27:15.189Z",
+    "updated_at": "2026-03-16T01:29:42.628Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:27:50.861Z",
+      "interpreted_objective": "Develop a 4-week flexibility program for desk workers with specific daily routines.",
+      "expected_outcome": "A detailed, evidence-based flexibility program that includes morning, midday, and evening routines, tailored for desk workers to improve their flexibility over four weeks.",
+      "key_unknowns": [
+        "Specific stretches suitable for desk workers",
+        "Optimal duration and frequency of routines",
+        "Evidence supporting the effectiveness of the proposed stretches"
+      ],
+      "recommended_strategy": "Conduct research to identify effective flexibility exercises specifically for desk workers. Synthesize this information into a structured program with clear, actionable routines for different times of the day. Ensure the program is safe and evidence-based.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research flexibility exercises for desk workers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of evidence-based flexibility exercises suitable for desk workers, including sources and citations.",
+          "prompt": "Search the web for current, specific information about flexibility exercises tailored for desk workers. Include real names, numbers, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize flexibility program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 4-week flexibility program with morning, midday, and evening routines for desk workers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable 4-week flexibility program for desk workers. Include specific stretches for morning, midday, and evening routines, with evidence-based recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-flexibility-program.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1863
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsi6z8ft3nr",
+    "title": "Create a comprehensive exit interview question template for engineering teams. I",
+    "raw_request": "Create a comprehensive exit interview question template for engineering teams. Include questions about culture, management, growth, and honest feedback collection.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:27:13.119Z",
+    "updated_at": "2026-03-16T01:29:36.450Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:27:37.553Z",
+      "interpreted_objective": "Create a detailed exit interview question template for engineering teams focusing on culture, management, growth, and feedback.",
+      "expected_outcome": "A comprehensive and actionable exit interview template tailored for engineering teams that can be used to gather insights on team culture, management effectiveness, growth opportunities, and honest feedback.",
+      "key_unknowns": [
+        "Specific needs or preferences of engineering teams regarding exit interviews",
+        "Current best practices in exit interviews for engineering teams"
+      ],
+      "recommended_strategy": "First, research current best practices and specific needs for exit interviews in engineering teams. Then, synthesize this information into a structured template that includes questions on culture, management, growth, and feedback. Ensure the questions are actionable and relevant to engineering contexts.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Exit Interviews in Engineering Teams",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and key considerations for conducting exit interviews specifically for engineering teams, including sources.",
+          "prompt": "Search the web for current, specific information about best practices for exit interviews in engineering teams. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Exit Interview Template for Engineering Teams",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured exit interview question template for engineering teams, covering culture, management, growth, and feedback.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive exit interview question template for engineering teams. Include specific questions on culture, management, growth, and feedback.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-exit-interview-template.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2258
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsi6xo80jjn",
+    "title": "Find the best external SSD for a developer in 2026. Must be Thunderbolt 4, at le",
+    "raw_request": "Find the best external SSD for a developer in 2026. Must be Thunderbolt 4, at least 2TB, and under 250 dollars. Compare Samsung, SanDisk, and Crucial.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:27:11.096Z",
+    "updated_at": "2026-03-16T01:29:27.663Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:27:33.194Z",
+      "interpreted_objective": "Identify the best external SSD for developers in 2026 that meets specific criteria.",
+      "expected_outcome": "A detailed comparison of Samsung, SanDisk, and Crucial external SSDs with Thunderbolt 4, at least 2TB, and under $250, leading to a clear recommendation.",
+      "key_unknowns": [
+        "Availability and pricing of SSDs in 2026",
+        "Performance and reliability of specific SSD models from Samsung, SanDisk, and Crucial"
+      ],
+      "recommended_strategy": "Conduct a web search to gather current data on Thunderbolt 4 SSDs from Samsung, SanDisk, and Crucial that meet the specified criteria. Then, synthesize this information to provide a comparative analysis and recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research SSD Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on SSDs from Samsung, SanDisk, and Crucial that meet the specified criteria.",
+          "prompt": "Search the web for current, specific information about external SSDs from Samsung, SanDisk, and Crucial that are Thunderbolt 4, at least 2TB, and under $250. Include product names, prices, and reviews.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize SSD Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the SSDs, including a recommendation.",
+          "prompt": "Based on the research results, synthesize an actionable comparison of Samsung, SanDisk, and Crucial SSDs that meet the specified criteria. Include specific product names, prices, pros/cons, and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-2026-external-ssd-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1929
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsi6w42c68j",
+    "title": "Teach me about consensus algorithms in blockchain. Compare Proof of Work, Proof ",
+    "raw_request": "Teach me about consensus algorithms in blockchain. Compare Proof of Work, Proof of Stake, and Delegated Proof of Stake with energy and security tradeoffs.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:27:09.074Z",
+    "updated_at": "2026-03-16T01:29:20.759Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:27:19.758Z",
+      "interpreted_objective": "Provide a comprehensive comparison of consensus algorithms in blockchain, focusing on Proof of Work, Proof of Stake, and Delegated Proof of Stake, with emphasis on energy and security tradeoffs.",
+      "expected_outcome": "A detailed report that educates about the differences, energy consumption, and security implications of the three consensus algorithms.",
+      "key_unknowns": [
+        "Current energy consumption statistics for each algorithm",
+        "Security tradeoffs specific to each algorithm",
+        "Recent developments or trends in blockchain consensus algorithms"
+      ],
+      "recommended_strategy": "First, gather the most recent and relevant data on Proof of Work, Proof of Stake, and Delegated Proof of Stake consensus algorithms, focusing on energy consumption and security. Then, synthesize this information into a clear, concise report that compares the algorithms and highlights key tradeoffs.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Consensus Algorithms",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data and statistics on energy consumption and security tradeoffs for Proof of Work, Proof of Stake, and Delegated Proof of Stake.",
+          "prompt": "Search the web for current, specific information about Proof of Work, Proof of Stake, and Delegated Proof of Stake consensus algorithms in blockchain. Include real names, numbers, dates, URLs, and sources, focusing on energy consumption and security tradeoffs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Proof of Work, Proof of Stake, and Delegated Proof of Stake, focusing on energy and security tradeoffs.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps in a report comparing Proof of Work, Proof of Stake, and Delegated Proof of Stake consensus algorithms, focusing on energy consumption and security tradeoffs.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-consensus-algorithms.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1966
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsi6ujrm6jr",
+    "title": "Research the best strategies for negotiating equity in a startup as an early emp",
+    "raw_request": "Research the best strategies for negotiating equity in a startup as an early employee. Include vesting schedules, cliff periods, and acceleration clauses.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:27:07.047Z",
+    "updated_at": "2026-03-16T01:28:45.595Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:27:14.831Z",
+      "interpreted_objective": "Research and provide actionable strategies for negotiating equity as an early employee in a startup.",
+      "expected_outcome": "A comprehensive report detailing effective equity negotiation strategies, including vesting schedules, cliff periods, and acceleration clauses.",
+      "key_unknowns": [
+        "Current best practices for equity negotiation in startups",
+        "Specific examples of vesting schedules, cliff periods, and acceleration clauses",
+        "Market data or trends affecting equity negotiations in startups"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on equity negotiation strategies in startups. Synthesize findings into a report that includes specific examples and actionable recommendations for early employees.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Equity Negotiation Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed list of current strategies for negotiating equity in startups, including vesting schedules, cliff periods, and acceleration clauses.",
+          "prompt": "Search the web for current, specific information about the best strategies for negotiating equity in a startup as an early employee. Include details on vesting schedules, cliff periods, and acceleration clauses. Provide real examples, numbers, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Equity Negotiation Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report with actionable recommendations for negotiating equity in startups, including specific examples and strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for negotiating equity in a startup as an early employee. Include specific examples of vesting schedules, cliff periods, and acceleration clauses, along with concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2432
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsi6sz5le8f",
+    "title": "Create a comprehensive guide to building a REST API with proper error handling. ",
+    "raw_request": "Create a comprehensive guide to building a REST API with proper error handling. Include error codes, response format, retry logic, and client SDK patterns.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:27:05.009Z",
+    "updated_at": "2026-03-16T01:28:16.627Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:27:09.777Z",
+      "interpreted_objective": "Create a detailed guide on building a REST API with error handling and client SDK patterns.",
+      "expected_outcome": "A comprehensive, clear, and actionable guide that outlines best practices for REST API development, including error handling, response formats, retry logic, and client SDK patterns.",
+      "key_unknowns": [
+        "Specific audience for the guide",
+        "Level of technical detail required",
+        "Preferred programming language or framework for examples"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and examples of REST API development focusing on error handling and client SDK patterns. Then, synthesize this information into a structured guide that is clear and actionable for developers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research REST API Best Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices for REST API development, focusing on error handling, response formats, retry logic, and client SDK patterns.",
+          "prompt": "Search the web for current best practices in building REST APIs, including error handling, response formats, retry logic, and client SDK patterns. Include real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize REST API Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on building a REST API with proper error handling, response formats, retry logic, and client SDK patterns.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide on building a REST API. Include sections on error codes, response format, retry logic, and client SDK patterns. Ensure the guide is clear, actionable, and tailored for developers.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2049
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsi1cu9i8vq",
     "title": "Write a scene where two co-founders celebrate their first paying customer. Inclu",
     "raw_request": "Write a scene where two co-founders celebrate their first paying customer. Include realistic dialogue, emotion, and a callback to an earlier struggle. 3 minutes.",

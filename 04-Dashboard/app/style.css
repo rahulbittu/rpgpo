@@ -706,14 +706,14 @@ h3, .section-title {
 .ctrl-btn {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r);
-  padding: 16px 12px; color: var(--text); cursor: pointer;
+  padding: 18px 14px; color: var(--text); cursor: pointer;
   font-family: inherit; font-size: 12px; font-weight: 600;
   transition: all var(--transition); text-align: center;
-  box-shadow: var(--shadow-sm); min-height: 80px;
+  min-height: 80px;
 }
 .ctrl-btn:hover {
-  border-color: var(--accent); background: var(--accent-glow);
-  box-shadow: var(--shadow-md), 0 0 20px rgba(212,170,40,.05);
+  border-color: var(--border-bright); background: var(--bg-card-hover);
+  box-shadow: var(--shadow-md); transform: translateY(-1px);
 }
 .ctrl-btn:active { transform: scale(.98); }
 .ctrl-icon { font-size: 22px; margin-bottom: 5px; }
@@ -721,8 +721,8 @@ h3, .section-title {
 
 .board-btn {
   width: 100%;
-  border-color: var(--border-glow) !important;
-  background: linear-gradient(135deg, rgba(212,170,40,.06), rgba(212,170,40,.01)) !important;
+  border-color: var(--border-mid) !important;
+  background: var(--bg-card) !important;
   padding: 18px 12px !important;
 }
 .board-btn:hover {
@@ -775,8 +775,8 @@ h3, .section-title {
 
 /* SETTINGS */
 .settings-row {
-  padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.025);
-  font-size: 12px; display: flex; align-items: center; gap: 8px;
+  padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.03);
+  font-size: 12px; display: flex; align-items: center; gap: 10px;
 }
 .settings-row:last-child { border-bottom: none; }
 .settings-label {
@@ -948,9 +948,8 @@ h3, .section-title {
 /* COST CENTER */
 .cost-card {
   background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: var(--r); padding: 14px;
-  display: flex; flex-direction: column; gap: 2px;
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--r); padding: 16px 18px;
+  display: flex; flex-direction: column; gap: 3px;
 }
 .cost-card-label {
   font-size: 9px; text-transform: uppercase;
