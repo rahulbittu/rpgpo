@@ -1,116 +1,267 @@
-# Write a comprehensive guide to implementing API gateway patterns. Cover rate lim
+# Write a comprehensive guide to implementing OpenTelemetry in a Node.js microserv
 
 **Domain:** writing | **Date:** 2026-03-16 | **Subtasks:** 2
 
 
 
-## Research API Gateway Patterns
-## Kong API Gateway Patterns
+## Research OpenTelemetry and Jaeger Integration
+# OpenTelemetry Implementation in Node.js Microservices
 
-### Rate Limiting
-Kong implements rate limiting via its **rate-limiting plugin**, configurable to limit requests per time window (e.g., 100 requests per minute) with policies like local storage or Redis/Cassandra backend. On limit exceed, it returns HTTP 429 status and exposes headers like X-RateLimit-Remaining.[1][2]
-- **Configuration example** (from Kong 3.5 declarative YAML): `minute: 100`, `policy: local`, `header_by: X-Consumer-ID`.[1][2]
-- **AI-specific extension** (Kong AI Gateway, version 3.8+): Combines with semantic caching using vector databases like Redis; cache hits reduce latency by up to 20x via embedding similarity matching.[5]
+## Auto-Instrumentation Setup
 
-**Source**: https://codewithyoha.com/blogs/api-gateway-patterns-authentication-rate-limiting-and-traffic-management-demystified[1]; https://oneuptime.com/blog/post/2026-02-21-how-to-use-ansible-to-configure-api-gateways-kong/view[2]; https://dev.to/kuldeep_paul/top-ai-gateways-with-semantic-caching-and-dynamic-routing-2026-guide-4a0g[5]
+**Auto-instrumentation** provides zero-code observability by automatically capturing telemetry from popular Node.js libraries and frameworks without modifying application code[1]. The simplest approach uses the `@opentelemetry/auto-instrumentations-node` package, which instruments Express, Fastify, HTTP clients, and database drivers automatically[1][2].
 
-### Authentication
-Kong uses a **plugin-based architecture** for authentication, supporting API keys, JWT, OAuth, and custom headers (e.g., X-Consumer-ID from auth plugins). Plugins chain with rate limiting for consumer identification.[1][3]
-- Integrates with enterprise RBAC, audit logging, and PII detection in Kong AI Gateway for AI workloads.[7]
+To enable auto-instrumentation, load the module before your application starts:
 
-**Source**: https://codewithyoha.com/blogs/api-gateway-patterns-authentication-rate-limiting-and-traffic-management-demystified[1]; https://www.digitalapi.ai/blogs/best-api-gateway[3]; https://www.getmaxim.ai/articles/top-5-enterprise-ai-gateways-in-2026-3/[7]
+```bash
+node --require '@opentelemetry/auto-instrumentations-node/register' app.js
+```
 
-### Request Routing
-Kong supports **weighted routing** for canary (e.g., 90% to v1, 10% to v2) and blue/green deployments, plus dynamic algorithms like round-robin, lowest-latency, consistent hashing, usage-based, and semantic routing (prompt analysis for AI models like OpenAI, AWS Bedrock).[1][5]
-- **Declarative config example** (Kong 3.0+): Routes by paths (e.g., /api/v1/orders) to services with strip_path: true.[2]
-- Kubernetes-native with multi-protocol (REST, gRPC, GraphQL) support.[3]
+Alternatively, set it via environment variable:
 
-**Source**: https://codewithyoha.com/blogs/api-gateway-patterns-authentication-rate-limiting-and-traffic-management-demystified[1]; https://oneuptime.com/blog/post/2026-02-21-how-to-use-ansible-to-configure-api-gateways-kong/view[2]; https://dev.to/kuldeep_paul/top-ai-gateways-with-semantic-caching-and-dynamic-routing-2026-guide-4a0g[5]; https://www.digitalapi.ai/blogs/best-api-gateway[3]
+```bash
+export NODE_OPTIONS="--require @opentelemetry/auto-instrumentations-node/register"
+node app.js
+```
 
-### Response Caching
-Kong AI Gateway (3.8+) provides **semantic caching** via AI plugin: Generates embeddings for prompts, stores in Redis vector DB, matches new requests within threshold to return cached responses (up to 20x latency reduction). Traditional caching via plugins, but no non-AI specifics in recent results.[5]
+The module is highly configurable through environment variables[1]:
 
-**Source**: https://dev.to/kuldeep_paul/top-ai-gateways-with-semantic-caching-and-dynamic-routing-2026-guide-4a0g[5]
+```bash
+export OTEL_EXPORTER_OTLP_ENDPOINT="http://collector:4318"
+export OTEL_SERVICE_NAME="my-api"
+export OTEL_RESOURCE_ATTRIBUTES="service.namespace=my-namespace"
+export OTEL_NODE_RESOURCE_DETECTORS="env,host,os,serviceinstance"
+node --require '@opentelemetry/auto-instrumentations-node/register' app.js
+```
 
-## AWS API Gateway Patterns
-No specific configurations, numbers, or examples for **rate limiting, authentication, request routing, or response caching** in AWS API Gateway from results (focus heavily on Kong). General patterns like weighted routing apply conceptually, but AWS details absent.[1]
+## Custom Spans for Business Logic
 
-**Next Steps**:
-- Test Kong rate limiting: Deploy via Ansible (kong_version: "3.5", postgres on port 5432) using configs from [2].
-- For AWS comparison: Search "AWS API Gateway rate limiting config 2026 examples" for service quotas (default 10,000 RPS) and caching (TTL up to 3600s, 0.5-1.5s min).
+**Auto-instrumentation alone lacks business-level context**[4]. You must implement manual spans to capture domain-specific logic, database queries, and external API calls that reveal performance bottlenecks[4].
 
-**Note**: Results skewed to Kong (8/9 sources); AWS info insufficient—live search yielded no direct matches for queried patterns in last 30 days.
+Create an instrumentation file that initializes the SDK before application code loads[2]:
 
-## Write Guide on API Gateway Patterns
-## Comprehensive Guide on Implementing API Gateway Patterns with Kong and AWS API Gateway
+```javascript
+// src/instrumentation.js
+const { NodeSDK } = require('@opentelemetry/sdk-node');
+const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
+const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-http');
+const { Resource } = require('@opentelemetry/resources');
+const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
 
-This guide provides detailed, actionable steps for implementing API gateway patterns, focusing on rate limiting, authentication, request routing, and response caching using Kong and AWS API Gateway.
+const resource = Resource.default().merge(
+  new Resource({
+    [SemanticResourceAttributes.SERVICE_NAME]: 'my-microservice',
+    [SemanticResourceAttributes.SERVICE_NAMESPACE]: 'production',
+  }),
+);
 
-### 1. Rate Limiting
+const traceExporter = new OTLPTraceExporter({
+  url: 'http://localhost:4318/v1/traces',
+});
 
-#### Kong API Gateway
-- **Plugin**: Use the **rate-limiting plugin** to control the request rate per consumer.
-- **Configuration**:
-  - Set limits such as `minute: 100` requests.
-  - Choose a storage policy: `local`, `Redis`, or `Cassandra`.
-  - Use headers like `X-RateLimit-Remaining` to inform clients of their remaining quota.
-- **AI-Specific Extension**: For AI workloads, consider Kong AI Gateway's integration with semantic caching using vector databases like Redis, which can dramatically reduce latency by up to 20x through embedding similarity matching.
+const sdk = new NodeSDK({
+  resource: resource,
+  traceExporter: traceExporter,
+  instrumentations: [getNodeAutoInstrumentations()],
+});
 
-**First Step**: Deploy the rate-limiting plugin via a declarative YAML file in Kong (e.g., `minute: 100`, `policy: local`). Verify configuration by checking response headers for rate limit information.
+sdk.start();
+process.on('SIGTERM', () => sdk.shutdown());
+```
 
-#### AWS API Gateway
-- **Throttling**: Configure usage plans to limit requests per second and burst limits.
-- **Steps**:
-  - Create a usage plan in the AWS console.
-  - Associate API keys with the usage plan.
-  - Set throttle and quota limits (e.g., 1000 requests per day, 500 requests per second).
+Load this before your application:
 
-**First Step**: Create a usage plan in AWS API Gateway and associate it with your API stage and API keys. Monitor usage via CloudWatch metrics.
+```bash
+node --require ./src/instrumentation.js src/index.js
+```
 
-### 2. Authentication
+Add custom spans in your application code:
 
-#### Kong API Gateway
-- **Plugins**: Supports API keys, JWT, OAuth, and custom headers.
-- **Integration**: Combine with rate limiting for consumer identification and integrate with enterprise RBAC and audit logging for enhanced security.
+```javascript
+const { trace } = require('@opentelemetry/api');
+const tracer = trace.getTracer('my-service');
 
-**First Step**: Enable and configure the appropriate authentication plugin (e.g., JWT) in Kong. Test by accessing a protected endpoint with valid and invalid tokens.
+app.get('/api/users/:id', async (req, res) => {
+  const span = tracer.startSpan('fetch-user-from-db');
+  
+  try {
+    const user = await db.query('SELECT * FROM users WHERE id = ?', [req.params.id]);
+    span.setAttributes({
+      'db.operation': 'SELECT',
+      'db.rows_returned': user.length,
+    });
+    res.json(user);
+  } finally {
+    span.end();
+  }
+});
+```
 
-#### AWS API Gateway
-- **Options**: Supports AWS IAM, Cognito user pools, Lambda authorizers, and API keys.
-- **Implementation**: Use Cognito for user management and authentication, or Lambda authorizers for custom logic.
+## Fastify-Specific Integration
 
-**First Step**: Set up AWS Cognito user pool and integrate it with your API Gateway. Test by signing up a user and accessing a protected endpoint.
+For Fastify applications, use the dedicated `@fastify/otel` instrumentation plugin[3], which automatically wraps request handlers and instruments all route hooks (onRequest, preParsing, preValidation, preHandler, preSerialization, onSend, onResponse, onError)[3]:
 
-### 3. Request Routing
+```javascript
+import { NodeSDK } from '@opentelemetry/sdk-node';
+import FastifyOtelInstrumentation from '@fastify/otel';
 
-#### Kong API Gateway
-- **Dynamic Routing**: Use plugins for request transformation and routing based on headers, paths, or query parameters.
-- **AI Workloads**: Utilize Kong AI Gateway's dynamic routing capabilities for AI-specific requests.
+const sdk = new NodeSDK({
+  resource: resource,
+  traceExporter: traceExporter,
+  instrumentations: [
+    new FastifyOtelInstrumentation({ registerOnInitialization: true })
+  ],
+});
 
-**First Step**: Define routes in Kong with conditions based on request attributes (e.g., path, method). Test routing by sending requests that match different conditions.
+sdk.start();
 
-#### AWS API Gateway
-- **Stage Variables and Mapping Templates**: Use these to route requests to different backend services or environments.
-- **Implementation**: Define stage variables and use them in mapping templates to direct traffic.
+const app = fastify();
+// Routes are automatically instrumented
+app.get('/', (req, reply) => 'hello world');
+```
 
-**First Step**: Create stage variables in AWS API Gateway and use them in your integration request mapping templates. Validate by deploying to different stages and verifying routing logic.
+## Collector Architecture for Jaeger Integration
 
-### 4. Response Caching
+**Decouple your microservices from the final storage backend** using the OpenTelemetry Collector[4]. This architecture enables batching, transformation, and routing telemetry data to multiple destinations (Prometheus, Jaeger, cloud APM tools) without overloading your application[4].
 
-#### Kong API Gateway
-- **Caching Plugin**: Use the caching plugin to store responses and reduce backend load.
-- **Semantic Caching**: For AI applications, leverage semantic caching to cache responses based on content similarity.
+Configure your Node.js application to export to the Collector:
 
-**First Step**: Configure the caching plugin in Kong with appropriate cache keys and TTL. Test by sending repeated requests and observing cache hits.
+```bash
+export OTEL_EXPORTER_OTLP_ENDPOINT="http://otel-collector:4318"
+export OTEL_SERVICE_NAME="order-service"
+node --require ./src/instrumentation.js src/index.js
+```
 
-#### AWS API Gateway
-- **Built-in Caching**: Enable caching at the stage level to store responses.
-- **Configuration**: Set cache size and TTL in the stage settings.
+The Collector then routes traces to Jaeger for distributed trace visualization. This setup is essential for microservices architectures where multiple services generate traces that need correlation and analysis[4].
 
-**First Step**: Enable caching in AWS API Gateway for your API stage. Monitor cache performance using CloudWatch metrics.
+## Key Best Practices
 
-### Conclusion
+- **Load instrumentation first**: The instrumentation file must execute before any application code to properly patch libraries[2]
+- **Use environment variables for configuration**: Avoid hardcoding endpoints and service names; use `OTEL_EXPORTER_OTLP_ENDPOINT`, `OTEL_SERVICE_NAME`, and `OTEL_RESOURCE_ATTRIBUTES`[1]
+- **Combine auto-instrumentation with manual spans**: Auto-instrumentation captures infrastructure-level data; cus
 
-Implementing these API gateway patterns with Kong and AWS API Gateway ensures robust API management, enhancing security, performance, and scalability. Start by configuring one pattern at a time, testing thoroughly, and monitoring performance metrics to optimize your setup.
+## Synthesize Guide on OpenTelemetry Implementation
+# Comprehensive Guide to Implementing OpenTelemetry in Node.js Microservices
 
-**Word Count**: 648
+Implementing OpenTelemetry in a Node.js microservices architecture can significantly enhance observability by providing detailed insights into application performance and behavior. This guide covers auto-instrumentation, creating custom spans, and integrating with Jaeger for trace visualization.
+
+## Auto-Instrumentation Setup
+
+Auto-instrumentation in Node.js allows you to collect telemetry data without modifying your application code. This is achieved using the `@opentelemetry/auto-instrumentations-node` package, which supports popular frameworks and libraries like Express, Fastify, HTTP clients, and database drivers.
+
+### Steps to Enable Auto-Instrumentation
+
+1. **Install the Package**:
+   Ensure you have the package installed in your project:
+   ```bash
+   npm install @opentelemetry/auto-instrumentations-node
+   ```
+
+2. **Configure Auto-Instrumentation**:
+   Load the auto-instrumentation module before your application starts. This can be done via command line or environment variables.
+
+   **Command Line**:
+   ```bash
+   node --require '@opentelemetry/auto-instrumentations-node/register' app.js
+   ```
+
+   **Environment Variable**:
+   ```bash
+   export NODE_OPTIONS="--require @opentelemetry/auto-instrumentations-node/register"
+   node app.js
+   ```
+
+3. **Set Configuration Options**:
+   Configure the telemetry exporter and service details using environment variables:
+   ```bash
+   export OTEL_EXPORTER_OTLP_ENDPOINT="http://collector:4318"
+   export OTEL_SERVICE_NAME="my-api"
+   export OTEL_RESOURCE_ATTRIBUTES="service.namespace=my-namespace"
+   export OTEL_NODE_RESOURCE_DETECTORS="env,host,os,serviceinstance"
+   ```
+
+### Expected Outcome
+By enabling auto-instrumentation, you can automatically capture telemetry data from supported libraries, providing a baseline of observability with minimal setup.
+
+## Creating Custom Spans for Business Logic
+
+While auto-instrumentation captures standard telemetry, custom spans are necessary to gain insights into specific business logic and application-specific operations.
+
+### Steps to Create Custom Spans
+
+1. **Initialize OpenTelemetry SDK**:
+   Create an instrumentation file to initialize the OpenTelemetry SDK before your application code executes.
+
+   ```javascript
+   const { NodeTracerProvider } = require('@opentelemetry/sdk-trace-node');
+   const { SimpleSpanProcessor } = require('@opentelemetry/sdk-trace-base');
+   const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-http');
+
+   const provider = new NodeTracerProvider();
+   const exporter = new OTLPTraceExporter({ url: 'http://collector:4318/v1/traces' });
+   provider.addSpanProcessor(new SimpleSpanProcessor(exporter));
+   provider.register();
+   ```
+
+2. **Create Custom Spans**:
+   Use the tracer to create spans around critical business logic, database queries, or external API calls.
+
+   ```javascript
+   const tracer = provider.getTracer('my-service');
+
+   function myBusinessFunction() {
+     const span = tracer.startSpan('myBusinessFunction');
+     try {
+       // Business logic here
+     } catch (error) {
+       span.recordException(error);
+     } finally {
+       span.end();
+     }
+   }
+   ```
+
+### Expected Outcome
+Custom spans provide detailed insights into specific parts of your application, helping to identify performance bottlenecks and optimize business logic.
+
+## Integrating with Jaeger
+
+Jaeger is a popular tool for tracing and visualizing distributed systems. Integrating OpenTelemetry with Jaeger allows you to visualize traces collected from your Node.js microservices.
+
+### Steps to Integrate with Jaeger
+
+1. **Set Up Jaeger**:
+   Deploy Jaeger in your environment. You can use Docker for a quick setup:
+
+   ```bash
+   docker run -d --name jaeger \
+     -e COLLECTOR_ZIPKIN_HTTP_PORT=9411 \
+     -p 5775:5775/udp \
+     -p 6831:6831/udp \
+     -p 6832:6832/udp \
+     -p 5778:5778 \
+     -p 16686:16686 \
+     -p 14268:14268 \
+     -p 14250:14250 \
+     -p 9411:9411 \
+     jaegertracing/all-in-one:1.22
+   ```
+
+2. **Configure OpenTelemetry Exporter**:
+   Ensure your OpenTelemetry setup exports traces to Jaeger. Modify the exporter configuration in your SDK initialization:
+
+   ```javascript
+   const { JaegerExporter } = require('@opentelemetry/exporter-jaeger');
+
+   const exporter = new JaegerExporter({
+     serviceName: 'my-service',
+     endpoint: 'http://localhost:14268/api/traces',
+   });
+   ```
+
+### Expected Outcome
+Integrating with Jaeger allows you to visualize and analyze traces, providing a comprehensive view of your microservices architecture and helping to identify and resolve issues efficiently.
+
+## Conclusion
+
+By following this guide, you can effectively implement OpenTelemetry in your Node.js microservices architecture, leveraging auto-instrumentation for baseline observability, custom spans for detailed insights, and Jaeger for trace visualization. This setup enhances your ability to monitor, debug, and opt
