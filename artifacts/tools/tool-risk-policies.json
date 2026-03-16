@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "risk_classes": {
+    "low": {
+      "description": "Read-only operations, local file generation, text synthesis",
+      "approval_policy": "auto",
+      "examples": ["web search", "text synthesis", "local file export"],
+      "audit_level": "log_only"
+    },
+    "medium": {
+      "description": "Draft creation, restricted writes, sandboxed external access",
+      "approval_policy": "operator_review_first_use",
+      "examples": ["email draft", "calendar read", "sandboxed browser"],
+      "audit_level": "log_and_notify"
+    },
+    "high": {
+      "description": "Outbound communication, financial transactions, account modifications",
+      "approval_policy": "explicit_per_action",
+      "examples": ["email send", "API key rotation", "payment processing"],
+      "audit_level": "log_notify_confirm"
+    },
+    "critical": {
+      "description": "Irreversible actions, data deletion, credential changes",
+      "approval_policy": "double_confirmation",
+      "examples": ["account deletion", "data purge", "credential revocation"],
+      "audit_level": "full_audit_trail"
+    }
+  },
+  "default_risk_class": "medium",
+  "principle": "When in doubt, require approval. Irreversible actions always require explicit confirmation."
+}

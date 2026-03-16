@@ -1,0 +1,150 @@
+{
+  "schema_version": "2.0",
+  "description": "Maps signal types to their source events, derivation rules, and activation criteria",
+  "signal_definitions": [
+    {
+      "signal_id": "output_satisfaction_global",
+      "name": "output_satisfaction",
+      "scope": "global",
+      "source_events": ["output_accepted", "output_abandoned"],
+      "derivation": "accepted / (accepted + abandoned)",
+      "min_events": 10,
+      "min_confidence_for_active": 0.6,
+      "staleness_days": 30,
+      "category": "quality"
+    },
+    {
+      "signal_id": "output_satisfaction_by_engine",
+      "name": "output_satisfaction",
+      "scope": "engine",
+      "source_events": ["output_accepted", "output_abandoned"],
+      "derivation": "accepted / (accepted + abandoned) grouped by engine",
+      "min_events": 5,
+      "min_confidence_for_active": 0.6,
+      "staleness_days": 30,
+      "category": "quality"
+    },
+    {
+      "signal_id": "approval_strictness_global",
+      "name": "approval_strictness",
+      "scope": "global",
+      "source_events": ["approval_granted", "approval_denied"],
+      "derivation": "denied / (granted + denied) → strict/moderate/permissive",
+      "min_events": 10,
+      "min_confidence_for_active": 0.6,
+      "staleness_days": 30,
+      "category": "governance"
+    },
+    {
+      "signal_id": "approval_strictness_by_engine",
+      "name": "approval_strictness",
+      "scope": "engine",
+      "source_events": ["approval_granted", "approval_denied"],
+      "derivation": "denied / (granted + denied) grouped by engine",
+      "min_events": 5,
+      "min_confidence_for_active": 0.6,
+      "staleness_days": 30,
+      "category": "governance"
+    },
+    {
+      "signal_id": "rewrite_frequency_global",
+      "name": "rewrite_frequency",
+      "scope": "global",
+      "source_events": ["rewrite_requested", "task_created"],
+      "derivation": "rewrite_count / task_count",
+      "min_events": 5,
+      "min_confidence_for_active": 0.6,
+      "staleness_days": 30,
+      "category": "quality"
+    },
+    {
+      "signal_id": "rewrite_frequency_by_engine",
+      "name": "rewrite_frequency",
+      "scope": "engine",
+      "source_events": ["rewrite_requested", "task_created"],
+      "derivation": "rewrite_count / task_count grouped by engine",
+      "min_events": 3,
+      "min_confidence_for_active": 0.6,
+      "staleness_days": 30,
+      "category": "quality"
+    },
+    {
+      "signal_id": "preferred_provider_by_engine",
+      "name": "preferred_provider",
+      "scope": "engine",
+      "source_events": ["task_routed", "provider_overridden"],
+      "derivation": "most-used provider per engine, weighted by override signals",
+      "min_events": 5,
+      "min_confidence_for_active": 0.7,
+      "staleness_days": 60,
+      "category": "routing"
+    },
+    {
+      "signal_id": "engine_override_tendency",
+      "name": "routing_override_tendency",
+      "scope": "global",
+      "source_events": ["engine_overridden", "task_created"],
+      "derivation": "override_count / task_count → frequent/occasional/rare",
+      "min_events": 5,
+      "min_confidence_for_active": 0.6,
+      "staleness_days": 30,
+      "category": "routing"
+    },
+    {
+      "signal_id": "task_volume_by_engine",
+      "name": "task_volume",
+      "scope": "engine",
+      "source_events": ["task_created"],
+      "derivation": "count of tasks per engine → indicates operator priority",
+      "min_events": 3,
+      "min_confidence_for_active": 0.5,
+      "staleness_days": 60,
+      "category": "priority"
+    },
+    {
+      "signal_id": "followup_intensity_global",
+      "name": "followup_intensity",
+      "scope": "global",
+      "source_events": ["followup_requested"],
+      "derivation": "count → high/moderate/low",
+      "min_events": 5,
+      "min_confidence_for_active": 0.6,
+      "staleness_days": 30,
+      "category": "interaction"
+    },
+    {
+      "signal_id": "export_format_preference",
+      "name": "preferred_export_format",
+      "scope": "global",
+      "source_events": ["deliverable_downloaded", "export_generated"],
+      "derivation": "most-used format from download/export metadata",
+      "min_events": 3,
+      "min_confidence_for_active": 0.6,
+      "staleness_days": 60,
+      "category": "preference"
+    },
+    {
+      "signal_id": "response_depth_preference",
+      "name": "preferred_response_depth",
+      "scope": "global",
+      "source_events": ["depth_preference", "rewrite_requested"],
+      "derivation": "explicit depth signals or inferred from rewrite patterns (too_short/too_long)",
+      "min_events": 3,
+      "min_confidence_for_active": 0.6,
+      "staleness_days": 30,
+      "category": "preference"
+    }
+  ],
+  "activation_rules": {
+    "advisory": "Signal exists but fewer than min_events corroborating, or stale > staleness_days, or confidence < min_confidence_for_active",
+    "active": "Signal has >= min_events, confidence >= min_confidence_for_active, not contradicted recently, not stale",
+    "degradation": "Signal becomes advisory if not reinforced within staleness_days or if contradicted by 2+ recent events"
+  },
+  "privacy_rules": {
+    "no_sensitive_inference": true,
+    "operator_can_delete": true,
+    "operator_can_suppress": true,
+    "all_signals_inspectable": true,
+    "no_hidden_adaptation": true
+  }
+}

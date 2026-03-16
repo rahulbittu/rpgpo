@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "description": "GPO local retrieval index manifest — tracks what is indexed and when",
+  "indexes": [
+    {
+      "index_id": "operator-profile",
+      "type": "structured_json",
+      "source": "04-Dashboard/state/context/operator-profile.json",
+      "scope": "global",
+      "strategy": "full_load_cache",
+      "refresh": "on_change",
+      "status": "planned"
+    },
+    {
+      "index_id": "behavior-signals",
+      "type": "structured_json",
+      "source": "artifacts/behavior/operator-signals.json",
+      "scope": "global",
+      "strategy": "full_load_cache",
+      "refresh": "after_derivation",
+      "status": "planned"
+    },
+    {
+      "index_id": "mission-contexts",
+      "type": "structured_json",
+      "source": "04-Dashboard/state/context/missions/*/context.json",
+      "scope": "engine",
+      "strategy": "load_by_engine",
+      "refresh": "on_change",
+      "status": "planned"
+    },
+    {
+      "index_id": "recent-task-outputs",
+      "type": "text_chunks",
+      "source": "04-Dashboard/state/deliverables/*.md",
+      "scope": "engine",
+      "strategy": "keyword_search",
+      "refresh": "append_only",
+      "status": "planned"
+    },
+    {
+      "index_id": "case-reports",
+      "type": "text_chunks",
+      "source": "docs/testing/case-reports/*.md",
+      "scope": "engine",
+      "strategy": "keyword_search",
+      "refresh": "on_demand",
+      "status": "planned"
+    }
+  ],
+  "retrieval_method": "keyword_bm25_first",
+  "fallback": "full_file_read",
+  "max_context_tokens": 2000,
+  "note": "Semantic/vector retrieval deferred until keyword retrieval proves insufficient"
+}

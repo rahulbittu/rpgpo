@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "description": "GPO private curated tool registry — no public marketplace, all tools reviewed",
+  "tools": [
+    {
+      "tool_id": "perplexity-web-search",
+      "name": "Perplexity Web Search",
+      "description": "Real-time web search via Perplexity sonar model",
+      "source_type": "internal",
+      "permissions": ["read_web"],
+      "risk_class": "low",
+      "scope": "read_only",
+      "required_credentials": ["PERPLEXITY_API_KEY"],
+      "approval_policy": "auto",
+      "supported_engines": "all",
+      "audit_logging": true,
+      "trust_status": "trusted",
+      "enabled": true,
+      "sandbox_required": false
+    },
+    {
+      "tool_id": "openai-synthesis",
+      "name": "OpenAI Synthesis",
+      "description": "Content synthesis and deliberation via GPT-4o",
+      "source_type": "internal",
+      "permissions": ["read_context", "generate_text"],
+      "risk_class": "low",
+      "scope": "read_generate",
+      "required_credentials": ["OPENAI_API_KEY"],
+      "approval_policy": "auto",
+      "supported_engines": "all",
+      "audit_logging": true,
+      "trust_status": "trusted",
+      "enabled": true,
+      "sandbox_required": false
+    },
+    {
+      "tool_id": "gemini-strategy",
+      "name": "Gemini Strategy",
+      "description": "Strategic analysis via Gemini 2.5 Flash",
+      "source_type": "internal",
+      "permissions": ["read_context", "generate_text"],
+      "risk_class": "low",
+      "scope": "read_generate",
+      "required_credentials": ["GEMINI_API_KEY"],
+      "approval_policy": "auto",
+      "supported_engines": "all",
+      "audit_logging": true,
+      "trust_status": "trusted",
+      "enabled": true,
+      "sandbox_required": false
+    },
+    {
+      "tool_id": "file-export-md",
+      "name": "Markdown Export",
+      "description": "Export task deliverables as Markdown files",
+      "source_type": "internal",
+      "permissions": ["write_local_file"],
+      "risk_class": "low",
+      "scope": "write_local",
+      "required_credentials": [],
+      "approval_policy": "auto",
+      "supported_engines": "all",
+      "audit_logging": true,
+      "trust_status": "trusted",
+      "enabled": true,
+      "sandbox_required": false
+    },
+    {
+      "tool_id": "file-export-json",
+      "name": "JSON Export",
+      "description": "Export task deliverables as structured JSON",
+      "source_type": "internal",
+      "permissions": ["write_local_file"],
+      "risk_class": "low",
+      "scope": "write_local",
+      "required_credentials": [],
+      "approval_policy": "auto",
+      "supported_engines": "all",
+      "audit_logging": true,
+      "trust_status": "trusted",
+      "enabled": true,
+      "sandbox_required": false
+    }
+  ],
+  "registry_rules": {
+    "no_public_marketplace": true,
+    "no_unreviewed_tools": true,
+    "no_hidden_side_effects": true,
+    "external_actions_require_approval": true,
+    "all_tools_audited": true
+  },
+  "planned_tools": [
+    {
+      "tool_id": "email-draft",
+      "name": "Email Draft (Read-Only/Draft)",
+      "status": "planned",
+      "risk_class": "medium",
+      "notes": "Draft-only mode, no auto-send. Requires explicit approval to send."
+    },
+    {
+      "tool_id": "calendar-read",
+      "name": "Calendar Reader",
+      "status": "planned",
+      "risk_class": "low",
+      "notes": "Read-only calendar access for scheduling engine."
+    },
+    {
+      "tool_id": "browser-search",
+      "name": "Sandboxed Browser Search",
+      "status": "planned",
+      "risk_class": "medium",
+      "notes": "Sandboxed browser automation for research tasks. No login, no form submission."
+    }
+  ]
+}

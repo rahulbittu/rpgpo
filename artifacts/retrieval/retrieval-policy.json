@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "description": "GPO local retrieval policy — governs how context is retrieved, cached, and reused",
+  "principles": [
+    "Retrieve only relevant chunks, not whole files",
+    "Prefer fast keyword/BM25 retrieval first",
+    "Scope retrieval by project, engine, and artifact class",
+    "Do not flood prompts with excessive context",
+    "Cache stable truths, refresh time-sensitive facts",
+    "Make retrieval behavior visible and reviewable"
+  ],
+  "context_categories": {
+    "stable_user_truths": {
+      "description": "Operator preferences, style, dislikes — reuse unless contradicted",
+      "refresh_strategy": "on_contradiction_only",
+      "ttl_days": null,
+      "source": "operator-profile.json + derived signals"
+    },
+    "semi_stable_context": {
+      "description": "Current project priorities, engine focus, active goals",
+      "refresh_strategy": "freshness_check_weekly",
+      "ttl_days": 14,
+      "source": "session_state.json + mission contexts"
+    },
+    "time_sensitive_facts": {
+      "description": "News, prices, schedules, market data",
+      "refresh_strategy": "always_refresh",
+      "ttl_days": 0,
+      "source": "live API calls (Perplexity)"
+    },
+    "one_off_requests": {
+      "description": "Temporary instructions, session-only formatting",
+      "refresh_strategy": "do_not_persist",
+      "ttl_days": 0,
+      "source": "current session only"
+    }
+  },
+  "retrieval_scopes": {
+    "global": "Operator profile, global signals, system docs",
+    "engine": "Engine-specific signals, mission context, engine case history",
+    "project": "Project-specific preferences, prior task outputs in project",
+    "task": "Prior subtask outputs within current task"
+  },
+  "cost_reduction_targets": {
+    "avoid_rereading_operator_profile": "Cache in memory per session",
+    "avoid_rereading_mission_context": "Index once, retrieve relevant sections",
+    "avoid_redundant_web_search": "Check if recent similar search exists before calling Perplexity",
+    "avoid_full_file_reads": "Use chunked retrieval for large state files"
+  }
+}

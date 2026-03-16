@@ -1,0 +1,76 @@
+{
+  "captured_at": "2026-03-16T21:11:13.311Z",
+  "task_metrics": {
+    "total_tasks": 1230,
+    "done": 1178,
+    "failed": 51,
+    "success_rate": "95.8%"
+  },
+  "event_metrics": {
+    "total_events": 3432,
+    "events_by_type": {
+      "task_created": 1229,
+      "task_routed": 1229,
+      "output_accepted": 923,
+      "output_abandoned": 51
+    },
+    "events_with_approval": 0,
+    "events_with_rewrite": 0,
+    "events_with_override": 0
+  },
+  "signal_metrics": {
+    "total_signals": 1,
+    "active_signals": 1
+  },
+  "engine_distribution": {
+    "personalops": 261,
+    "general": 1902,
+    "wealthresearch": 331,
+    "newsroom": 48,
+    "screenwriting": 197,
+    "careeregine": 266,
+    "topranker": 81,
+    "music": 10,
+    "startup": 56,
+    "learning": 42,
+    "research": 82,
+    "writing": 104,
+    "health": 34,
+    "travel": 12,
+    "shopping": 6
+  },
+  "provider_distribution": {},
+  "output_metrics": {
+    "accepted": 923,
+    "abandoned": 51,
+    "acceptance_rate": "94.8%",
+    "downloaded": 0
+  },
+  "repeated_question_proxy": {
+    "note": "Cannot measure directly — all tasks are auto-approved with no human deliberation logged",
+    "approval_events_logged": 0,
+    "rewrite_events_logged": 0,
+    "followup_events_logged": 0
+  },
+  "cost_proxy": {
+    "note": "Cost data exists in costs.json but not yet linked to behavior signals"
+  },
+  "gaps_identified": [
+    "Only 1 signal derived from 3432 events",
+    "Zero approval/denial events despite instrumentation existing",
+    "Zero rewrite/followup events captured",
+    "Zero engine/provider override events captured",
+    "No engine-specific signals derived",
+    "No provider preference signals derived",
+    "No cost-efficiency signals derived",
+    "Operator profile not connected to signal derivation",
+    "No freshness/staleness tracking on signals",
+    "No scoped memory (engine/project/workflow) implemented"
+  ],
+  "bootstrappable_signals": [
+    "output_satisfaction_by_engine (from existing accepted/abandoned events)",
+    "task_volume_by_engine (from task_created events)",
+    "provider_affinity_by_engine (from task_routed events)",
+    "operator_priority_alignment (from profile + task volume)"
+  ]
+}

@@ -1,31 +1,52 @@
 {
-  "current_phase": "product_hardening",
-  "grading_version": "v3.1",
-  "validation_results": {
-    "strict_pass": 338,
-    "strict_partial": 23,
-    "strict_fail": 0,
-    "avg_confidence": 89
-  },
-  "total_tasks": 975,
-  "done_tasks": 920,
-  "failed_tasks": 35,
-  "clean_rate_recent": "100%",
-  "consecutive_clean_batches": 19,
+  "current_phase": "reliability_hardening_phase_a",
+  "phase_description": "Foundation + Audit + Signal Infrastructure",
+  "batch": 1,
+  "total_tasks": 1230,
+  "done_tasks": 1178,
+  "failed_tasks": 51,
+  "consecutive_clean_batches": 45,
   "behavior_learning": {
-    "status": "batch_2_complete",
-    "event_capture": "fully instrumented",
-    "signal_derivation": "implemented",
-    "execution_guidance": "implemented",
-    "instrumented_events": [
-      "task_created", "task_routed", "engine_overridden",
-      "approval_granted", "approval_denied",
-      "rewrite_requested", "deliverable_downloaded",
-      "output_accepted", "output_abandoned",
-      "export_generated"
-    ],
-    "pending_instrumentation": []
+    "status": "phase_a_batch_1_complete",
+    "baseline_captured": true,
+    "signal_schema_version": "2.0",
+    "defined_signals": 12,
+    "active_signals": 1,
+    "total_events": 3432,
+    "event_types_captured": 4,
+    "event_types_defined": 17,
+    "gaps": [
+      "Zero approval/denial events logged (auto-approve bypasses)",
+      "Zero rewrite/followup events",
+      "Zero engine/provider overrides",
+      "Only 1 signal derived from 3432 events",
+      "No engine-level or project-level signals",
+      "No scoped memory layers"
+    ]
   },
-  "next_batch": "Batch 3 — Run signal derivation on existing data, connect to execution, update docs",
-  "updated_at": "2026-03-16T11:10:00.000Z"
+  "retrieval": {
+    "status": "designed",
+    "index_manifest": "created",
+    "retrieval_policy": "created",
+    "implementation": "pending_batch_5"
+  },
+  "tools": {
+    "status": "designed",
+    "registry": "created",
+    "risk_policies": "created",
+    "active_tools": 5,
+    "planned_tools": 3
+  },
+  "documentation": {
+    "new_docs": [
+      "docs/behavior-baseline.md",
+      "docs/product/gpo-operating-doctrine.md",
+      "docs/governance/human-control-boundaries.md",
+      "docs/governance/automation-safety-rules.md",
+      "docs/tools/private-tool-registry.md",
+      "docs/retrieval/local-retrieval-guide.md"
+    ]
+  },
+  "next_batch": "Batch 2 — Expand event capture with new event types, improve signal derivation",
+  "updated_at": "2026-03-16T21:15:00.000Z"
 }
