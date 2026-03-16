@@ -1,38 +1,39 @@
 // GPO Command Center — Premium Private Operations Console
 
 // Domain name display mapping — aligned to 15-engine harness model
-const DOMAIN_LABELS = {
-  startup: 'Code & Product Engineering',
-  topranker: 'Startup & Business Builder',
+// Canonical-first engine labels. Legacy IDs mapped for reading historical tasks.
+const ENGINE_LABELS = {
+  // Canonical IDs (primary truth)
+  code: 'Code & Product Engineering',
   writing: 'Writing & Documentation',
   research: 'Research & Analysis',
   learning: 'Learning & Tutoring',
-  personalops: 'Scheduling & Life Ops',
-  health: 'Health & Wellness',
-  shopping: 'Shopping & Buying',
-  travel: 'Travel & Relocation',
-  careeregine: 'Career & Job Search',
-  wealthresearch: 'Personal Finance',
-  screenwriting: 'Screenwriting & Story',
-  music: 'Music & Audio',
-  newsroom: 'News & Intelligence',
-  general: 'General',
-  // Legacy aliases + mission name mappings
+  ops: 'Scheduling & Life Operations',
+  health: 'Health & Wellness Coach',
+  shopping: 'Shopping & Buying Advisor',
+  travel: 'Travel & Relocation Planner',
+  finance: 'Personal Finance & Investing',
+  startup: 'Startup & Business Builder',
   career: 'Career & Job Search',
-  finance: 'Personal Finance',
-  home: 'Home & Lifestyle',
-  communications: 'Writing & Documentation',
-  chief_of_staff: 'Scheduling & Life Ops',
-  calendar: 'Scheduling & Life Ops',
-  legal: 'Writing & Documentation',
-  // Mission status file names (lowercase, no spaces)
-  wealthresearch: 'Personal Finance',
+  screenwriting: 'Screenwriting & Story Development',
+  film: 'Filmmaking & Video Production',
+  music: 'Music & Audio Creation',
+  news: 'News & Intelligence',
+  general: 'General',
+  // Legacy IDs (backward compat for stored tasks)
+  topranker: 'Startup & Business Builder',
   careeregine: 'Career & Job Search',
-  careerengine: 'Career & Job Search',
-  personalops: 'Scheduling & Life Ops',
+  wealthresearch: 'Personal Finance & Investing',
+  personalops: 'Scheduling & Life Operations',
+  newsroom: 'News & Intelligence',
   founder2founder: 'Filmmaking & Video Production',
+  // Form aliases
+  home: 'Home & Lifestyle Design',
+  communications: 'Writing & Documentation',
+  chief_of_staff: 'Scheduling & Life Operations',
 };
-function domainLabel(d) { return DOMAIN_LABELS[d] || d; }
+const DOMAIN_LABELS = ENGINE_LABELS; // backward compat alias
+function domainLabel(d) { return ENGINE_LABELS[d] || d; }
 
 let DATA = null, TASKS = [], STATUS = null, COSTS = null, COST_SETTINGS = null;
 let INTAKE_TASKS = [];

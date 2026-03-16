@@ -63,22 +63,34 @@ const INTAKE_ALIASES: Record<string, string> = {
   home: 'personalops',
 };
 
+// Track fallback usage for migration monitoring
+let _routerHits = 0;
+let _fallbackHits = 0;
+
 function detectDomain(text: string): Domain {
   // Primary: canonical-first router (returns canonical IDs like 'career', 'finance')
   try {
     const router = require('./domain-router') as { routeRequest(req: string): { domain: string; legacyDomain: string; confidence: number } };
     const result = router.routeRequest(text);
     if (result.confidence > 0.2) {
+      _routerHits++;
       // Return legacy domain for type system compat (types.ts still uses legacy IDs)
       return (result.legacyDomain || result.domain) as Domain;
     }
   } catch { /* fallback to simple matching */ }
-  // Fallback: simple keyword match (still uses legacy IDs)
+  // Fallback: simple keyword match (still uses legacy IDs) — should rarely trigger
+  _fallbackHits++;
+  console.log(`[intake] Fallback routing triggered for: "${(text || '').substring(0, 60)}"`);
   const lower = (text || '').toLowerCase();
   for (const [domain, keywords] of Object.entries(DOMAIN_KEYWORDS)) {
     if (keywords.some((k: string) => lower.includes(k))) return domain as Domain;
   }
   return 'general';
+}
+
+/** Get routing stats for migration monitoring */
+function getRoutingStats(): { routerHits: number; fallbackHits: number } {
+  return { routerHits: _routerHits, fallbackHits: _fallbackHits };
 }
 
 function resolveDomainAlias(domain: string): Domain {
@@ -220,4 +232,5 @@ module.exports = {
   createTask, getTask, getAllTasks, updateTask,
   createSubtask, getSubtask, getSubtasksForTask, getAllSubtasks, updateSubtask,
   getTaskProgress,
+  getRoutingStats,
 };

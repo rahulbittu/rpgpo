@@ -763,26 +763,34 @@ SEARCH INSTRUCTIONS (YOU HAVE LIVE WEB SEARCH — USE IT):
 - Today's date: ${new Date().toISOString().slice(0, 10)}. Focus on information from the last 30 days unless asked otherwise.`;
     } else if (model === 'openai') {
       // Engine-specific output structure hints
+      // Canonical engine ID → output structure hints
       const engineStructure = {
         research: 'Structure: ## Key Findings → ## Detailed Analysis → ## Recommendations → ## Sources',
         writing: 'Structure: produce the complete document/email/spec as requested. Include word count at end.',
         learning: 'Structure: ## Explanation (simple to complex) → ## Examples → ## Practice Questions → ## Further Reading',
-        careeregine: 'Structure: ## Key Findings → ## Recommendations → ## Action Items (numbered with timeline) → ## Resources',
-        wealthresearch: 'Structure: ## Analysis (with specific numbers) → ## Comparison → ## Recommendation → ## Risks & Disclaimers',
+        career: 'Structure: ## Key Findings → ## Recommendations → ## Action Items (numbered with timeline) → ## Resources',
+        finance: 'Structure: ## Analysis (with specific numbers) → ## Comparison → ## Recommendation → ## Risks & Disclaimers',
         shopping: 'Structure: ## Comparison Table → ## Top Pick & Why → ## Detailed Reviews → ## Current Pricing',
         health: 'Structure: ## Plan (day-by-day or week-by-week) → ## Evidence Basis → ## Progression → ## Safety Notes',
         travel: 'Structure: ## Itinerary (day-by-day) → ## Costs & Budget → ## Logistics → ## Tips',
-        personalops: 'Structure: ## Plan → ## Implementation Steps → ## Tools/Resources → ## Review Schedule',
+        ops: 'Structure: ## Plan → ## Implementation Steps → ## Tools/Resources → ## Review Schedule',
         screenwriting: 'Structure: produce the creative content as requested (scene, treatment, outline, dialogue)',
-        topranker: 'Structure: ## Analysis → ## Strategy → ## Action Plan → ## Success Metrics',
+        startup: 'Structure: ## Analysis → ## Strategy → ## Action Plan → ## Success Metrics',
+        code: 'Structure: ## Architecture → ## Implementation → ## Testing → ## Deployment',
+        news: 'Structure: ## Headlines → ## Analysis → ## Impact → ## Sources',
+        film: 'Structure: produce the creative concept, narrative structure, and production notes',
+        music: 'Structure: produce the musical concept, arrangement notes, and production plan',
       };
-      const domain = st.domain || task.meta?.domain || 'general';
-      const structureHint = engineStructure[domain] || 'Structure: ## Key Findings → ## Detailed Analysis → ## Recommended Actions';
+      const rawDomain = st.domain || task.meta?.domain || 'general';
+      // Resolve to canonical for structure hint lookup
+      let canonicalDomain;
+      try { canonicalDomain = require('./lib/canonical-engines').toCanonical(rawDomain); } catch { canonicalDomain = rawDomain; }
+      const structureHint = engineStructure[canonicalDomain] || engineStructure[rawDomain] || 'Structure: ## Key Findings → ## Detailed Analysis → ## Recommended Actions';
 
       // Phase B: Inject learned operator preferences into synthesis
       let behaviorHint = '';
       try {
-        const bCtx = behavior.getScopedContext({ engine: domain });
+        const bCtx = behavior.getScopedContext({ engine: canonicalDomain || rawDomain });
         if (bCtx.summary && bCtx.summary !== 'No learned preferences available.') {
           behaviorHint = `\nOPERATOR PREFERENCES (advisory — shape style, not override content):\n${bCtx.summary}\n`;
         }

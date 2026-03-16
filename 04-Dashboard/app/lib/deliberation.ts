@@ -44,36 +44,43 @@ interface DomainContextEntry {
   specialists: string[];
 }
 
-const DOMAIN_CONTEXT: Record<string, DomainContextEntry> = {
-  topranker: {
+// Canonical engine ID → context. Board reasoning uses canonical IDs.
+const ENGINE_CONTEXT: Record<string, DomainContextEntry> = {
+  startup: {
     description: 'Startup and business builder engine. Handles product strategy, competitive analysis, GTM planning, code architecture, and feature implementation for the operator\'s startup projects.',
     key_files: [],
     governed_loop: ['audit', 'decide', 'implement', 'report'],
     specialists: ['builder', 'strategy'],
   },
-  careeregine: {
+  career: {
     description: 'Career intelligence engine for Rahul (Senior Data Engineer / Entrepreneur). Covers job search, salary benchmarking, interview prep, career strategy, and skill development. Outputs must include specific companies, salary ranges, job listings, and actionable next steps — never generic career advice.',
     key_files: ['03-Operations/MissionStatus/CareerEngine.md'],
     governed_loop: ['research', 'strategy', 'report'],
     specialists: ['research', 'strategy'],
   },
-  newsroom: {
+  news: {
     description: 'News intelligence engine. Produces curated news digests from live web search. Outputs must include real headlines, source URLs, publication dates, and relevance analysis. ALWAYS use Perplexity for research (it has web search). NEVER produce template text or placeholders.',
     key_files: [],
     governed_loop: ['research', 'audit', 'report'],
     specialists: ['research'],
   },
-  wealthresearch: {
-    description: 'Wealth and income research engine for Rahul. Covers passive income ideas, investment opportunities, side project analysis, and financial strategy. Outputs must include specific revenue estimates, real examples, market data, and concrete first steps — not generic financial advice.',
+  finance: {
+    description: 'Personal finance and investing engine for Rahul. Covers passive income ideas, investment opportunities, tax strategy, retirement planning, and financial strategy. Outputs must include specific revenue estimates, real examples, market data, and concrete first steps — not generic financial advice.',
     key_files: [],
     governed_loop: ['research', 'strategy', 'report'],
     specialists: ['research', 'strategy'],
   },
-  personalops: {
-    description: 'Personal operations and planning engine. Weekly planning, time management, priority setting. Outputs should be specific daily/weekly plans with time blocks, not abstract productivity frameworks.',
+  ops: {
+    description: 'Scheduling and life operations engine. Weekly planning, time management, priority setting, routines, habit building. Outputs should be specific daily/weekly plans with time blocks, not abstract productivity frameworks.',
     key_files: [],
     governed_loop: ['audit', 'decide', 'report'],
     specialists: ['chief'],
+  },
+  code: {
+    description: 'Code and product engineering engine. Architecture design, infrastructure, deployment, monitoring, database, API development. Uses Claude for code implementation tasks.',
+    key_files: [],
+    governed_loop: ['audit', 'decide', 'implement', 'report'],
+    specialists: ['builder', 'strategy'],
   },
   writing: {
     description: 'Writing and documentation engine. Produces professional emails, PRDs, SOPs, memos, board docs, summaries, and proposals. Outputs must be clear, tailored to audience, structurally sound, and immediately usable. Match the requested tone (executive, casual, technical). Never produce generic boilerplate.',
@@ -111,16 +118,43 @@ const DOMAIN_CONTEXT: Record<string, DomainContextEntry> = {
     governed_loop: ['research', 'report'],
     specialists: ['research'],
   },
+  screenwriting: {
+    description: 'Screenwriting and story development engine. Produces creative concepts, series bibles, character studies, game designs, and narrative treatments. Outputs should be imaginative, structurally complete, and ready for further development.',
+    key_files: [],
+    governed_loop: ['research', 'report'],
+    specialists: ['creative'],
+  },
+  film: {
+    description: 'Filmmaking and video production engine. Documentary concepts, video essay outlines, and production planning.',
+    key_files: [],
+    governed_loop: ['research', 'report'],
+    specialists: ['creative'],
+  },
+  music: {
+    description: 'Music and audio creation engine. Musical concepts, composition, audio production planning.',
+    key_files: [],
+    governed_loop: ['research', 'report'],
+    specialists: ['creative'],
+  },
   general: {
-    description: 'General RPGPO task.',
+    description: 'General GPO task.',
     key_files: [],
     governed_loop: ['audit', 'decide', 'implement', 'report'],
     specialists: ['chief'],
   },
 };
 
+// Resolve domain context: accepts both canonical and legacy IDs
+let _toCanonicalDelib: (id: string) => string;
+try { const ce = require('./canonical-engines'); _toCanonicalDelib = ce.toCanonical; } catch { _toCanonicalDelib = (id: string) => id; }
+
+// Legacy alias for backward compat (old code references DOMAIN_CONTEXT)
+const DOMAIN_CONTEXT = ENGINE_CONTEXT;
+
 function getDomainContext(domain: Domain | string): DomainContextEntry {
-  return DOMAIN_CONTEXT[domain] || DOMAIN_CONTEXT.general;
+  // Try canonical ID first, then legacy ID, then general fallback
+  const canonical = _toCanonicalDelib(domain);
+  return ENGINE_CONTEXT[canonical] || ENGINE_CONTEXT[domain] || ENGINE_CONTEXT.general;
 }
 
 // Read domain key files to provide context to the deliberation

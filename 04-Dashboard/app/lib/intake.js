@@ -51,18 +51,24 @@ var INTAKE_ALIASES = {
     finance: 'wealthresearch',
     home: 'personalops',
 };
+// Track fallback usage for migration monitoring
+var _routerHits = 0;
+var _fallbackHits = 0;
 function detectDomain(text) {
     // Primary: canonical-first router (returns canonical IDs like 'career', 'finance')
     try {
         var router = require('./domain-router');
         var result = router.routeRequest(text);
         if (result.confidence > 0.2) {
+            _routerHits++;
             // Return legacy domain for type system compat (types.ts still uses legacy IDs)
             return (result.legacyDomain || result.domain);
         }
     }
     catch ( /* fallback to simple matching */_a) { /* fallback to simple matching */ }
-    // Fallback: simple keyword match (still uses legacy IDs)
+    // Fallback: simple keyword match (still uses legacy IDs) — should rarely trigger
+    _fallbackHits++;
+    console.log("[intake] Fallback routing triggered for: \"".concat((text || '').substring(0, 60), "\""));
     var lower = (text || '').toLowerCase();
     for (var _i = 0, _b = Object.entries(DOMAIN_KEYWORDS); _i < _b.length; _i++) {
         var _c = _b[_i], domain = _c[0], keywords = _c[1];
@@ -70,6 +76,10 @@ function detectDomain(text) {
             return domain;
     }
     return 'general';
+}
+/** Get routing stats for migration monitoring */
+function getRoutingStats() {
+    return { routerHits: _routerHits, fallbackHits: _fallbackHits };
 }
 function resolveDomainAlias(domain) {
     return (INTAKE_ALIASES[domain] || domain);
@@ -209,4 +219,5 @@ module.exports = {
     getAllSubtasks: getAllSubtasks,
     updateSubtask: updateSubtask,
     getTaskProgress: getTaskProgress,
+    getRoutingStats: getRoutingStats,
 };
