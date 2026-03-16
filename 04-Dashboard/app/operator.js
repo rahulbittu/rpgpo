@@ -530,10 +530,11 @@ function renderMemoryViewer(data) {
     { key: 'reports', label: 'Reports', icon: 'R', docs: (data.reports || []).slice(0, 15) },
   ];
 
-  // Add engine docs
+  // Add engine docs with canonical names
   for (const [domain, docs] of Object.entries(data.engines || {})) {
     if (docs.length > 0) {
-      categories.push({ key: 'engine_' + domain, label: domain, icon: 'E', docs });
+      const label = typeof domainLabel === 'function' ? domainLabel(domain) : domain;
+      categories.push({ key: 'engine_' + domain, label: label, icon: 'E', docs });
     }
   }
 

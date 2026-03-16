@@ -9,8 +9,10 @@
 | Use GPO as an operator | [Operator Guide](operator-guide.md) |
 | Understand how tasks execute | [Task Lifecycle](task-lifecycle.md) |
 | Understand the Board of AI | [Board of AI Guide](board-of-ai-guide.md) |
+| Manage the system (admin) | [Admin Guide](admin-guide.md) |
 | Review test results | [Validation Scoreboard](testing/engine-maturity-scoreboard.md) |
 | Review a specific test case | [Test Review Guide](testing/test-review-guide.md) |
+| Understand the architecture | [Component Index](architecture/component-index.md) |
 
 ## Product
 
@@ -19,7 +21,13 @@
 - [Task Lifecycle](task-lifecycle.md) — Submit → Route → Deliberate → Execute → Deliver
 - [Board of AI Guide](board-of-ai-guide.md) — Three perspectives, provider selection, context injection
 - [Operator Guide](operator-guide.md) — Dashboard navigation, submitting tasks, keyboard shortcuts
+- [Admin Guide](admin-guide.md) — System management, API keys, costs, monitoring, troubleshooting
 - [Canonical Naming](product/canonical-naming-map.md) — Internal domain IDs → canonical engine names
+
+## Architecture
+
+- [Component Index](architecture/component-index.md) — Server, Worker, Dashboard, pipeline explained
+- [Module Map](architecture/module-map.md) — All 251 TypeScript modules categorized
 
 ## Validation & Testing
 
