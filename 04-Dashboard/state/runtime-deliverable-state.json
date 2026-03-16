@@ -18397,5 +18397,156 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-16T22:29:29.131Z"
+  },
+  "t_mmtrjba1se7i": {
+    "task_id": "t_mmtrjba1se7i",
+    "deliverable_id": "dlv_rpgpo_tmmtrjba1se7i_document_bd8fb625",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T22:36:42.625Z"
+  },
+  "t_mmtrjbawrfqt": {
+    "task_id": "t_mmtrjbawrfqt",
+    "deliverable_id": "dlv_rpgpo_tmmtrjbawrfqt_shopping_e641ee5c",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T22:36:49.125Z"
+  },
+  "t_mmtrjbc7zgcl": {
+    "task_id": "t_mmtrjbc7zgcl",
+    "deliverable_id": "dlv_rpgpo_tmmtrjbc7zgcl_document_85e5db56",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T22:36:54.497Z"
+  },
+  "t_mmtrjbd91s9i": {
+    "task_id": "t_mmtrjbd91s9i",
+    "deliverable_id": "dlv_rpgpo_tmmtrjbd91s9i_recommendation_3d61e39f",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T22:37:03.441Z"
+  },
+  "t_mmtrjbkk9uad": {
+    "task_id": "t_mmtrjbkk9uad",
+    "deliverable_id": "dlv_rpgpo_tmmtrjbkk9uad_action_plan_00649732",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T22:37:09.952Z"
+  },
+  "t_mmtrjbngamrf": {
+    "task_id": "t_mmtrjbngamrf",
+    "deliverable_id": "dlv_rpgpo_tmmtrjbngamrf_creative_draft_cd61829c",
+    "engine_id": "screenwriting",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "artifacts",
+      "premise",
+      "beat_sheet"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T22:37:17.870Z"
+  },
+  "t_mmtrjbqnf898": {
+    "task_id": "t_mmtrjbqnf898",
+    "deliverable_id": "dlv_rpgpo_tmmtrjbqnf898_document_4837b6a9",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T22:37:26.119Z"
+  },
+  "t_mmtrjbs78em7": {
+    "task_id": "t_mmtrjbs78em7",
+    "deliverable_id": "dlv_rpgpo_tmmtrjbs78em7_recommendation_d6544bad",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T22:37:38.472Z"
+  },
+  "t_mmtrjbvtk0wo": {
+    "task_id": "t_mmtrjbvtk0wo",
+    "deliverable_id": "dlv_rpgpo_tmmtrjbvtk0wo_document_e2ce74bf",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T22:37:46.557Z"
+  },
+  "t_mmtrjc0a74y9": {
+    "task_id": "t_mmtrjc0a74y9",
+    "deliverable_id": "dlv_rpgpo_tmmtrjc0a74y9_document_0930ddcb",
+    "engine_id": "general",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T22:37:55.624Z"
   }
 }
