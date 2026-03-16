@@ -1,0 +1,26 @@
+[
+  {
+    "id": "err_4e4cc4f6",
+    "timestamp": 1773648537860,
+    "category": "system",
+    "severity": "high",
+    "source": "worker",
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+    "providerId": "openai",
+    "retryable": false,
+    "resolved": false,
+    "occurrences": 5
+  },
+  {
+    "id": "err_115891a8",
+    "timestamp": 1773649128543,
+    "category": "system",
+    "severity": "high",
+    "source": "worker",
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+    "providerId": "openai",
+    "retryable": false,
+    "resolved": false,
+    "occurrences": 2
+  }
+]

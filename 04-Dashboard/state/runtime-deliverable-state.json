@@ -13543,5 +13543,138 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-16T07:49:59.535Z"
+  },
+  "t_mmswgf2fjr1j": {
+    "task_id": "t_mmswgf2fjr1j",
+    "deliverable_id": "dlv_rpgpo_tmmswgf2fjr1j_document_110198ae",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [],
+    "contract_status": "pending",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T08:06:33.985Z"
+  },
+  "t_mmswgf301jh4": {
+    "task_id": "t_mmswgf301jh4",
+    "deliverable_id": "dlv_rpgpo_tmmswgf301jh4_recommendation_97d75511",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [],
+    "contract_status": "pending",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T08:06:41.464Z"
+  },
+  "t_mmswgf5gtz5h": {
+    "task_id": "t_mmswgf5gtz5h",
+    "deliverable_id": "dlv_rpgpo_tmmswgf5gtz5h_document_9f30dc06",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [],
+    "contract_status": "pending",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T08:06:50.099Z"
+  },
+  "t_mmswgf7gkkdp": {
+    "task_id": "t_mmswgf7gkkdp",
+    "deliverable_id": "dlv_rpgpo_tmmswgf7gkkdp_recommendation_de9ea47e",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [],
+    "contract_status": "pending",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T08:06:56.963Z"
+  },
+  "t_mmswgf9m3f8a": {
+    "task_id": "t_mmswgf9m3f8a",
+    "deliverable_id": "dlv_rpgpo_tmmswgf9m3f8a_code_change_4123d343",
+    "engine_id": "startup",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "diffs",
+      "implementation_plan",
+      "changed_files",
+      "diff_preview"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T08:07:01.906Z"
+  },
+  "t_mmswgfdii9wo": {
+    "task_id": "t_mmswgfdii9wo",
+    "deliverable_id": "dlv_rpgpo_tmmswgfdii9wo_action_plan_dc2eabdc",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T08:07:07.283Z"
+  },
+  "t_mmswgfh4mb7z": {
+    "task_id": "t_mmswgfh4mb7z",
+    "deliverable_id": "dlv_rpgpo_tmmswgfh4mb7z_shopping_82c1a6df",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [],
+    "contract_status": "pending",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T08:07:12.078Z"
+  },
+  "t_mmswgfq2dzht": {
+    "task_id": "t_mmswgfq2dzht",
+    "deliverable_id": "dlv_rpgpo_tmmswgfq2dzht_creative_draft_abb9d1d5",
+    "engine_id": "screenwriting",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [],
+    "contract_status": "pending",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T08:15:02.237Z"
+  },
+  "t_mmswgfoawgn2": {
+    "task_id": "t_mmswgfoawgn2",
+    "deliverable_id": "dlv_rpgpo_tmmswgfoawgn2_code_change_63c33131",
+    "engine_id": "startup",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "diffs",
+      "implementation_plan",
+      "changed_files",
+      "diff_preview"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T08:15:09.147Z"
+  },
+  "t_mmswgfkfqd64": {
+    "task_id": "t_mmswgfkfqd64",
+    "deliverable_id": "dlv_rpgpo_tmmswgfkfqd64_document_10038d05",
+    "engine_id": "careeregine",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [],
+    "contract_status": "pending",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T08:15:15.636Z"
   }
 }

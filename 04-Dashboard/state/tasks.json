@@ -1,5 +1,504 @@
 [
   {
+    "id": "mmsww0kku5sr",
+    "type": "execute-subtask",
+    "label": "Subtask: Develop Podcast Episode Outlines",
+    "status": "failed",
+    "meta": {
+      "subtaskId": "st_mmswrq4r08zx"
+    },
+    "createdAt": "2026-03-16T08:18:35.876Z",
+    "updatedAt": "2026-03-16T08:18:48.644Z",
+    "output": "Running subtask: Develop Podcast Episode Outlines",
+    "error": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+    "filesWritten": []
+  },
+  {
+    "id": "mmswvvojut96",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Guide for Home Mail and Package Management System",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmswrl4litm2"
+    },
+    "createdAt": "2026-03-16T08:18:29.539Z",
+    "updatedAt": "2026-03-16T08:18:46.697Z",
+    "output": "Synthesize Guide for Home Mail and Package Management System: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmswrl4litm2.md"
+    ]
+  },
+  {
+    "id": "mmswvnoiguk2",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Comprehensive Management System",
+    "status": "failed",
+    "meta": {
+      "subtaskId": "st_mmswrft0x6br"
+    },
+    "createdAt": "2026-03-16T08:18:19.170Z",
+    "updatedAt": "2026-03-16T08:18:37.043Z",
+    "output": "Running subtask: Synthesize Comprehensive Management System",
+    "error": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+    "filesWritten": []
+  },
+  {
+    "id": "mmswvhpps4eo",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Online Communities",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmswrq3aiaym"
+    },
+    "createdAt": "2026-03-16T08:18:11.437Z",
+    "updatedAt": "2026-03-16T08:18:35.876Z",
+    "output": "Research Online Communities: ## Janja Lalich's Cult Characteristics\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmswrq3aiaym.md"
+    ]
+  },
+  {
+    "id": "mmswvhi80v01",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Mail and Package Management Best Practices",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmswrl33kw78"
+    },
+    "createdAt": "2026-03-16T08:18:11.168Z",
+    "updatedAt": "2026-03-16T08:18:29.539Z",
+    "output": "Research Mail and Package Management Best Practices: ## Mail Sorting Workflows\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmswrl33kw78.md"
+    ]
+  },
+  {
+    "id": "mmswvhem1kni",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Subscription Management Best Practices",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmswrfrb5mo3"
+    },
+    "createdAt": "2026-03-16T08:18:11.038Z",
+    "updatedAt": "2026-03-16T08:18:19.171Z",
+    "output": "Research Subscription Management Best Practices: ## Top Tools for Managing Personal Subscriptions and Recurring Expenses\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmswrfrb5mo3.md"
+    ]
+  },
+  {
+    "id": "mmswrc19g2za",
+    "type": "deliberate",
+    "label": "Deliberate: Write a complete concept for a limited podcast series investigating the psycholo",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmswgfkfqd64"
+    },
+    "createdAt": "2026-03-16T08:14:57.453Z",
+    "updatedAt": "2026-03-16T08:15:15.753Z",
+    "output": "Deliberation complete.\nObjective: Create a podcast series concept exploring the psychological and social dynamics of cult-like online communities.\nStrategy: Research current trends and psychological theories related to online communities with cult-like characteristics. Develop episode outlines that explore different aspects of these communities, and identify potential experts for interviews. Compile findings into a structured report.\nRisk: green\nSubtasks: 2\nTokens: 2131",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmswrbz26sl6",
+    "type": "deliberate",
+    "label": "Deliberate: Create a guide to building an efficient home mail and package management system.",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmswgfoawgn2"
+    },
+    "createdAt": "2026-03-16T08:14:57.374Z",
+    "updatedAt": "2026-03-16T08:15:09.268Z",
+    "output": "Deliberation complete.\nObjective: Create a comprehensive guide for building an efficient home mail and package management system.\nStrategy: Research current best practices and technologies for each component of the mail and package management system. Synthesize this information into a structured guide that addresses each aspect comprehensively. Ensure the guide is actionable and includes recommendations for tools and processes.\nRisk: green\nSubtasks: 2\nTokens: 2047",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmswrbx806dh",
+    "type": "deliberate",
+    "label": "Deliberate: Design a comprehensive system for managing personal subscriptions and recurring ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmswgfq2dzht"
+    },
+    "createdAt": "2026-03-16T08:14:57.308Z",
+    "updatedAt": "2026-03-16T08:15:02.375Z",
+    "output": "Deliberation complete.\nObjective: Design a system to manage personal subscriptions and recurring expenses efficiently.\nStrategy: First, research current best practices and tools for managing personal subscriptions and recurring expenses. Then, synthesize this information into a detailed report that includes audit methodologies, negotiation scripts, and alternative service discovery strategies.\nRisk: green\nSubtasks: 2\nTokens: 1919",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmswizw00vo4",
+    "type": "execute-subtask",
+    "label": "Subtask: Compile 10-day road trip itinerary",
+    "status": "failed",
+    "meta": {
+      "subtaskId": "st_mmswhd0nxq1f"
+    },
+    "createdAt": "2026-03-16T08:08:28.464Z",
+    "updatedAt": "2026-03-16T08:08:57.966Z",
+    "output": "Running subtask: Compile 10-day road trip itinerary",
+    "error": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+    "filesWritten": []
+  },
+  {
+    "id": "mmswisbgoqud",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Voice Health Protocol",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmswh9beoyxd"
+    },
+    "createdAt": "2026-03-16T08:08:18.652Z",
+    "updatedAt": "2026-03-16T08:08:56.612Z",
+    "output": "Synthesize Voice Health Protocol: ### Day 1: Vocal Warm-Ups and Hydration\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/health-{date}-voice-health-protocol.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmswh9beoyxd.md"
+    ]
+  },
+  {
+    "id": "mmswil09zi1s",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Guide for Technical Mentoring Program",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmswh562vtao"
+    },
+    "createdAt": "2026-03-16T08:08:09.177Z",
+    "updatedAt": "2026-03-16T08:08:48.781Z",
+    "output": "Synthesize Guide for Technical Mentoring Program: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmswh562vtao.md"
+    ]
+  },
+  {
+    "id": "mmswidsh11nq",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize projector comparison report",
+    "status": "failed",
+    "meta": {
+      "subtaskId": "st_mmswh1cxovgj"
+    },
+    "createdAt": "2026-03-16T08:07:59.825Z",
+    "updatedAt": "2026-03-16T08:08:36.129Z",
+    "output": "Running subtask: Synthesize projector comparison report",
+    "error": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+    "filesWritten": []
+  },
+  {
+    "id": "mmswi1ghp3uy",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize and Write Document",
+    "status": "failed",
+    "meta": {
+      "subtaskId": "st_mmswgw2dc92x"
+    },
+    "createdAt": "2026-03-16T08:07:43.841Z",
+    "updatedAt": "2026-03-16T08:08:33.989Z",
+    "output": "Running subtask: Synthesize and Write Document",
+    "error": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+    "filesWritten": []
+  },
+  {
+    "id": "mmswhw5vss4k",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Retirement Account Guide",
+    "status": "failed",
+    "meta": {
+      "subtaskId": "st_mmswgpeh89wz"
+    },
+    "createdAt": "2026-03-16T08:07:36.979Z",
+    "updatedAt": "2026-03-16T08:08:31.915Z",
+    "output": "Running subtask: Synthesize Retirement Account Guide",
+    "error": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+    "filesWritten": []
+  },
+  {
+    "id": "mmswhpobxex3",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Event-Driven Architecture Document",
+    "status": "failed",
+    "meta": {
+      "subtaskId": "st_mmswgjmkh86z"
+    },
+    "createdAt": "2026-03-16T08:07:28.571Z",
+    "updatedAt": "2026-03-16T08:08:30.227Z",
+    "output": "Running subtask: Synthesize Event-Driven Architecture Document",
+    "error": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+    "filesWritten": []
+  },
+  {
+    "id": "mmswhd4qrx6o",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Route 66 attractions and accommodations",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmswhcz2mawn"
+    },
+    "createdAt": "2026-03-16T08:07:12.314Z",
+    "updatedAt": "2026-03-16T08:08:28.464Z",
+    "output": "Research Route 66 attractions and accommodations: ## Quirky Roadside Attractions\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmswhcz2mawn.md"
+    ]
+  },
+  {
+    "id": "mmswh9ff9e3t",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Vocal Health Practices",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmswh99xntmn"
+    },
+    "createdAt": "2026-03-16T08:07:07.515Z",
+    "updatedAt": "2026-03-16T08:08:18.652Z",
+    "output": "Research Vocal Health Practices: ## Vocal Warm-Ups\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmswh99xntmn.md"
+    ]
+  },
+  {
+    "id": "mmswh5a4gvqe",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Technical Mentoring Programs",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmswh54kevfj"
+    },
+    "createdAt": "2026-03-16T08:07:02.140Z",
+    "updatedAt": "2026-03-16T08:08:09.177Z",
+    "output": "Research Technical Mentoring Programs: ## Mentor Matching\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmswh54kevfj.md"
+    ]
+  },
+  {
+    "id": "mmswh1gyttyq",
+    "type": "execute-subtask",
+    "label": "Subtask: Research projector specifications and reviews",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmswh1bfck4x"
+    },
+    "createdAt": "2026-03-16T08:06:57.202Z",
+    "updatedAt": "2026-03-16T08:07:59.825Z",
+    "output": "Research projector specifications and reviews: I need to conduct a web search to provide current, specific information about these three projectors, as the provided search results only contain limi\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmswh1bfck4x.md"
+    ]
+  },
+  {
+    "id": "mmswgw6ecal0",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Password Hashing Algorithms",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmswgw0rkf38"
+    },
+    "createdAt": "2026-03-16T08:06:50.342Z",
+    "updatedAt": "2026-03-16T08:07:43.842Z",
+    "output": "Research Password Hashing Algorithms: ## Memory-Hardness Properties\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmswgw0rkf38.md"
+    ]
+  },
+  {
+    "id": "mmswgpis441f",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Retirement Accounts",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmswgpcw2i2n"
+    },
+    "createdAt": "2026-03-16T08:06:41.716Z",
+    "updatedAt": "2026-03-16T08:07:36.979Z",
+    "output": "Research Retirement Accounts: ## Solo 401(k) for Self-Employed (2026 Limits)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmswgpcw2i2n.md"
+    ]
+  },
+  {
+    "id": "mmswgjqnau46",
+    "type": "execute-subtask",
+    "label": "Subtask: Research AWS EventBridge Best Practices",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmswgjl1ls3j"
+    },
+    "createdAt": "2026-03-16T08:06:34.223Z",
+    "updatedAt": "2026-03-16T08:07:28.572Z",
+    "output": "Research AWS EventBridge Best Practices: ## Event Schema Registry\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmswgjl1ls3j.md"
+    ]
+  },
+  {
+    "id": "mmswgfqbpk9y",
+    "type": "deliberate",
+    "label": "Deliberate: Design a comprehensive system for managing personal subscriptions and recurring ",
+    "status": "failed",
+    "meta": {
+      "taskId": "t_mmswgfq2dzht",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T08:06:29.027Z",
+    "updatedAt": "2026-03-16T08:07:18.013Z",
+    "output": "Deliberating...",
+    "error": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+    "filesWritten": []
+  },
+  {
+    "id": "mmswgfojp2ss",
+    "type": "deliberate",
+    "label": "Deliberate: Create a guide to building an efficient home mail and package management system.",
+    "status": "failed",
+    "meta": {
+      "taskId": "t_mmswgfoawgn2",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T08:06:28.963Z",
+    "updatedAt": "2026-03-16T08:07:15.862Z",
+    "output": "Deliberating...",
+    "error": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+    "filesWritten": []
+  },
+  {
+    "id": "mmswgfkpcmi9",
+    "type": "deliberate",
+    "label": "Deliberate: Write a complete concept for a limited podcast series investigating the psycholo",
+    "status": "failed",
+    "meta": {
+      "taskId": "t_mmswgfkfqd64",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T08:06:28.825Z",
+    "updatedAt": "2026-03-16T08:07:13.814Z",
+    "output": "Deliberating...",
+    "error": "You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+    "filesWritten": []
+  },
+  {
+    "id": "mmswgfhcl3i6",
+    "type": "deliberate",
+    "label": "Deliberate: Plan a 10-day classic American road trip from Chicago to Los Angeles on Route 66",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmswgfh4mb7z",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T08:06:28.704Z",
+    "updatedAt": "2026-03-16T08:07:12.315Z",
+    "output": "Deliberation complete.\nObjective: Plan a detailed 10-day road trip itinerary from Chicago to Los Angeles on Route 66, highlighting key attractions, dining, and accommodations.\nStrategy: Conduct web research to gather current information on Route 66 attractions, dining, and accommodations. Synthesize this data into a structured itinerary, ensuring a mix of classic and quirky stops, with recommendations for overnight stays and entertainment.\nRisk: green\nSubtasks: 2\nTokens: 1937",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmswgfdr6jku",
+    "type": "deliberate",
+    "label": "Deliberate: Design a comprehensive voice health protocol for people who present and teach fr",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmswgfdii9wo",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T08:06:28.575Z",
+    "updatedAt": "2026-03-16T08:07:07.515Z",
+    "output": "Deliberation complete.\nObjective: Design a comprehensive voice health protocol for frequent presenters and teachers.\nStrategy: Conduct research to gather current, evidence-based practices in vocal health for presenters and teachers. Synthesize this information into a structured protocol document. Ensure the protocol is actionable and includes safety disclaimers where necessary.\nRisk: green\nSubtasks: 2\nTokens: 1923",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmswgf9v7oy7",
+    "type": "deliberate",
+    "label": "Deliberate: Create a guide to building a technical mentoring program within an engineering o",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmswgf9m3f8a",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T08:06:28.435Z",
+    "updatedAt": "2026-03-16T08:07:02.140Z",
+    "output": "Deliberation complete.\nObjective: Create a comprehensive guide for building a technical mentoring program within an engineering organization.\nStrategy: Research best practices and existing frameworks for technical mentoring programs. Synthesize this information into a structured guide that addresses each requested component. Ensure the guide is actionable and scalable for various organizational sizes.\nRisk: green\nSubtasks: 2\nTokens: 1995",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmswgf7phq15",
+    "type": "deliberate",
+    "label": "Deliberate: Research the best home projectors for a dedicated theater room. Compare Epson Ho",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmswgf7gkkdp",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T08:06:28.357Z",
+    "updatedAt": "2026-03-16T08:06:57.202Z",
+    "output": "Deliberation complete.\nObjective: Research and compare the best home projectors for a dedicated theater room, focusing on Epson Home Cinema 5050UB, BenQ HT3560, and Sony VPL-XW5000ES.\nStrategy: Conduct web research to gather current data on each projector's specifications and performance. Analyze the data to compare the projectors based on screen pairing, ambient light rejection, and HDR performance. Synthesize findings into a detailed report with recommendations.\nRisk: green\nSubtasks: 2\nTokens: 2377",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmswgf5pg9lm",
+    "type": "deliberate",
+    "label": "Deliberate: Explain how modern password hashing algorithms work. Compare bcrypt, scrypt, and",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmswgf5gtz5h",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T08:06:28.285Z",
+    "updatedAt": "2026-03-16T08:06:50.342Z",
+    "output": "Deliberation complete.\nObjective: Explain and compare modern password hashing algorithms focusing on bcrypt, scrypt, and Argon2id.\nStrategy: First, conduct research on the technical aspects of bcrypt, scrypt, and Argon2id, focusing on memory-hardness, parameter tuning, and migration strategies. Then, synthesize this information into a comprehensive document that includes practical implementation advice, such as pepper usage.\nRisk: green\nSubtasks: 2\nTokens: 2093",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmswgf3a93rf",
+    "type": "deliberate",
+    "label": "Deliberate: Create a guide to optimizing retirement accounts for self-employed individuals. ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmswgf301jh4",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T08:06:28.198Z",
+    "updatedAt": "2026-03-16T08:06:41.717Z",
+    "output": "Deliberation complete.\nObjective: Create a comprehensive guide comparing retirement account options for self-employed individuals, focusing on Solo 401(k), SEP IRA, and SIMPLE IRA.\nStrategy: Conduct web research to gather the latest information on Solo 401(k), SEP IRA, and SIMPLE IRA. Synthesize this data into a structured guide with comparisons and recommendations for self-employed individuals.\nRisk: green\nSubtasks: 2\nTokens: 2158",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmswgf2ocud5",
+    "type": "deliberate",
+    "label": "Deliberate: Design a comprehensive event-driven architecture using AWS EventBridge. Include ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmswgf2fjr1j",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T08:06:28.176Z",
+    "updatedAt": "2026-03-16T08:06:34.223Z",
+    "output": "Deliberation complete.\nObjective: Design a detailed event-driven architecture using AWS EventBridge.\nStrategy: Conduct research on best practices and current capabilities of AWS EventBridge. Synthesize findings into a detailed document that covers all requested components of the architecture. Ensure the document is clear, actionable, and tailored to the audience's technical level.\nRisk: green\nSubtasks: 2\nTokens: 2071",
+    "error": null,
+    "filesWritten": []
+  },
+  {
     "id": "mmswcsshbm1u",
     "type": "execute-subtask",
     "label": "Subtask: Synthesize Async Communication Guidelines",
@@ -1018,527 +1517,6 @@
     "createdAt": "2026-03-16T07:25:29.589Z",
     "updatedAt": "2026-03-16T07:25:49.172Z",
     "output": "Deliberation complete.\nObjective: Research and compare the best sous vide systems for home cooks, focusing on Anova Precision Cooker Pro, Breville Joule Turbo, and Instant Pot Accu Slim, along with container recommendations, vacuum sealer pairings, and temperature guides for common proteins.\nStrategy: First, conduct web research to gather current information on the three sous vide systems, including market reviews, recommended accessories, and temperature guides. Then, synthesize the findings into a comprehensive comparison report with actionable recommendations.\nRisk: green\nSubtasks: 2\nTokens: 2244",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsuzpzqjt22",
-    "type": "deliberate",
-    "label": "Deliberate: Explain how memory allocators work in systems programming. Cover arena allocatio",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsuzpzhn5jt",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T07:25:29.558Z",
-    "updatedAt": "2026-03-16T07:25:43.439Z",
-    "output": "Deliberation complete.\nObjective: Explain the workings of memory allocators in systems programming, focusing on specific types and comparisons.\nStrategy: First, research current information on memory allocators, focusing on arena allocation, slab allocators, buddy systems, jemalloc vs tcmalloc, and memory fragmentation. Then, synthesize this research into a detailed, structured explanation. Ensure the content is tailored to a systems programming audience.\nRisk: green\nSubtasks: 2\nTokens: 1976",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsuzpwydcgs",
-    "type": "deliberate",
-    "label": "Deliberate: Create a guide to optimizing employee stock purchase plan (ESPP) benefits. Inclu",
-    "status": "failed",
-    "meta": {
-      "taskId": "t_mmsuzpwpgbyo",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T07:25:29.458Z",
-    "updatedAt": "2026-03-16T07:25:35.469Z",
-    "output": null,
-    "error": "Intake task not found: t_mmsuzpwpgbyo",
-    "filesWritten": []
-  },
-  {
-    "id": "mmsuzpwdzccj",
-    "type": "deliberate",
-    "label": "Deliberate: Design a comprehensive API versioning strategy for long-lived REST APIs. Compare",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsuzpw43c39",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T07:25:29.437Z",
-    "updatedAt": "2026-03-16T07:25:34.027Z",
-    "output": "Deliberation complete.\nObjective: Design a comprehensive API versioning strategy for long-lived REST APIs.\nStrategy: Research and compare the three versioning strategies: URL path, header, and query param. Evaluate each for backward compatibility, deprecation communication, and sunset header implementation. Synthesize findings into a strategic report with recommendations.\nRisk: green\nSubtasks: 2\nTokens: 1972",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsuwzro0gax",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Meeting Effectiveness Guide",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsutttt0qwe"
-    },
-    "createdAt": "2026-03-16T07:23:22.260Z",
-    "updatedAt": "2026-03-16T07:24:54.295Z",
-    "output": "Synthesize Meeting Effectiveness Guide: # Comprehensive Guide on Meeting Effectiveness for Engineering Teams\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/writing-{date}-meeting-effectiveness-guide.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsutttt0qwe.md"
-    ]
-  },
-  {
-    "id": "mmsuwnnyhi0t",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize a comprehensive pantry organization guide",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsuto04vesh"
-    },
-    "createdAt": "2026-03-16T07:23:06.574Z",
-    "updatedAt": "2026-03-16T07:24:45.400Z",
-    "output": "Synthesize a comprehensive pantry organization guide: ## Comparison Table\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsuto04vesh.md"
-    ]
-  },
-  {
-    "id": "mmsuwbiqv5vf",
-    "type": "execute-subtask",
-    "label": "Subtask: Develop Series Concept and Pilot Outline",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsutje9mdeh"
-    },
-    "createdAt": "2026-03-16T07:22:50.834Z",
-    "updatedAt": "2026-03-16T07:24:37.190Z",
-    "output": "Develop Series Concept and Pilot Outline: ## Series Concept: \"Final Frontier Consulting\"\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/writing-{date}-series_concept.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsutje9mdeh.md"
-    ]
-  },
-  {
-    "id": "mmsuvkmm6csg",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Tour Itinerary",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsuteywi1ko"
-    },
-    "createdAt": "2026-03-16T07:22:15.982Z",
-    "updatedAt": "2026-03-16T07:24:25.358Z",
-    "output": "Synthesize Tour Itinerary: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/general-{date}-architecture_design_tour.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsuteywi1ko.md"
-    ]
-  },
-  {
-    "id": "mmsuv7os64i4",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize hand and wrist health protocol",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsut9a189al"
-    },
-    "createdAt": "2026-03-16T07:21:59.212Z",
-    "updatedAt": "2026-03-16T07:24:17.026Z",
-    "output": "Synthesize hand and wrist health protocol: ### Week 1: Foundation and Ergonomics\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/health-{date}-hand-wrist-protocol.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsut9a189al.md"
-    ]
-  },
-  {
-    "id": "mmsuv1aaghxi",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Guide on Executive Communication",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsut4cwk2a0"
-    },
-    "createdAt": "2026-03-16T07:21:50.914Z",
-    "updatedAt": "2026-03-16T07:24:06.986Z",
-    "output": "Synthesize Guide on Executive Communication: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsut4cwk2a0.md"
-    ]
-  },
-  {
-    "id": "mmsuurzk68tp",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Smart Scale Comparison",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsuszsomfn2"
-    },
-    "createdAt": "2026-03-16T07:21:38.864Z",
-    "updatedAt": "2026-03-16T07:23:57.503Z",
-    "output": "Synthesize Smart Scale Comparison: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/research-2023-10-smart-scales.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsuszsomfn2.md"
-    ]
-  },
-  {
-    "id": "mmsuunm3bz27",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Findings into Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsusv1x6f1t"
-    },
-    "createdAt": "2026-03-16T07:21:33.195Z",
-    "updatedAt": "2026-03-16T07:23:49.085Z",
-    "output": "Synthesize Findings into Report: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsusv1x6f1t.md"
-    ]
-  },
-  {
-    "id": "mmsuucgncoki",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Investment Guide",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsuspsupycq"
-    },
-    "createdAt": "2026-03-16T07:21:18.743Z",
-    "updatedAt": "2026-03-16T07:23:42.773Z",
-    "output": "Synthesize Investment Guide: ## Analysis\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsuspsupycq.md"
-    ]
-  },
-  {
-    "id": "mmsuu6o4p030",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Chaos Engineering Program",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsusman160z"
-    },
-    "createdAt": "2026-03-16T07:21:11.236Z",
-    "updatedAt": "2026-03-16T07:23:31.376Z",
-    "output": "Synthesize Chaos Engineering Program: ## Comparison Table\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/shopping-{date}-chaos-engineering-program.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsusman160z.md"
-    ]
-  },
-  {
-    "id": "mmsuttxrymd2",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Meeting Best Practices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsuttsbz2k0"
-    },
-    "createdAt": "2026-03-16T07:20:54.735Z",
-    "updatedAt": "2026-03-16T07:23:22.260Z",
-    "output": "Research Meeting Best Practices: I need to conduct additional web searches to find specific, current information on engineering team meeting best practices, as the provided results co\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsuttsbz2k0.md"
-    ]
-  },
-  {
-    "id": "mmsuto41kwlc",
-    "type": "execute-subtask",
-    "label": "Subtask: Research current pantry organization strategies",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsutnypss7p"
-    },
-    "createdAt": "2026-03-16T07:20:47.185Z",
-    "updatedAt": "2026-03-16T07:23:06.575Z",
-    "output": "Research current pantry organization strategies: # Pantry Organization Strategies: Current Research & Actionable Insights\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsutnypss7p.md"
-    ]
-  },
-  {
-    "id": "mmsutji9lz5z",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Comedy-Drama Series",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsutjcrb2yg"
-    },
-    "createdAt": "2026-03-16T07:20:41.217Z",
-    "updatedAt": "2026-03-16T07:22:50.835Z",
-    "output": "Research Comedy-Drama Series: # Current Trends in Comedy-Drama Television\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsutjcrb2yg.md"
-    ]
-  },
-  {
-    "id": "mmsutf2w8ztx",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Barcelona and Valencia Highlights",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsutexfuevw"
-    },
-    "createdAt": "2026-03-16T07:20:35.480Z",
-    "updatedAt": "2026-03-16T07:22:15.982Z",
-    "output": "Research Barcelona and Valencia Highlights: I'll search for current, specific information about these Barcelona and Valencia attractions and services.\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsutexfuevw.md"
-    ]
-  },
-  {
-    "id": "mmsut9dxqg91",
-    "type": "execute-subtask",
-    "label": "Subtask: Research hand and wrist health practices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsut98kdsje"
-    },
-    "createdAt": "2026-03-16T07:20:28.101Z",
-    "updatedAt": "2026-03-16T07:21:59.213Z",
-    "output": "Research hand and wrist health practices: ## Search Summary\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsut98kdsje.md"
-    ]
-  },
-  {
-    "id": "mmsut4gu0e99",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Executive Communication Skills",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsut4bh1h61"
-    },
-    "createdAt": "2026-03-16T07:20:21.726Z",
-    "updatedAt": "2026-03-16T07:21:50.914Z",
-    "output": "Research Executive Communication Skills: ## Pyramid Principle Writing\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsut4bh1h61.md"
-    ]
-  },
-  {
-    "id": "mmsuszwlebln",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Smart Scales",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsuszr7qw8c"
-    },
-    "createdAt": "2026-03-16T07:20:15.813Z",
-    "updatedAt": "2026-03-16T07:21:38.864Z",
-    "output": "Research Smart Scales: ## Withings Body Comp\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsuszr7qw8c.md"
-    ]
-  },
-  {
-    "id": "mmsusv5xav4m",
-    "type": "execute-subtask",
-    "label": "Subtask: Research HTTP/3 and QUIC vs HTTP/2 over TCP",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsusv0gtif6"
-    },
-    "createdAt": "2026-03-16T07:20:09.669Z",
-    "updatedAt": "2026-03-16T07:21:33.195Z",
-    "output": "Research HTTP/3 and QUIC vs HTTP/2 over TCP: # HTTP/3 with QUIC vs HTTP/2 over TCP: Technical Comparison\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsusv0gtif6.md"
-    ]
-  },
-  {
-    "id": "mmsuspwq6agr",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Alternative Investments",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsusprdr51q"
-    },
-    "createdAt": "2026-03-16T07:20:02.858Z",
-    "updatedAt": "2026-03-16T07:21:18.743Z",
-    "output": "Research Alternative Investments: ## Finding 1: AcreTrader Launches Proterra AcreTrader Farmland Fund LP\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsusprdr51q.md"
-    ]
-  },
-  {
-    "id": "mmsusmemfkhy",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Chaos Engineering Tools",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsusm93cvlw"
-    },
-    "createdAt": "2026-03-16T07:19:58.318Z",
-    "updatedAt": "2026-03-16T07:21:11.237Z",
-    "output": "Research Chaos Engineering Tools: # Litmus Chaos vs. Chaos Monkey: Capabilities, Limitations, and Kubernetes Use Cases\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsusm93cvlw.md"
-    ]
-  },
-  {
-    "id": "mmsusgx18box",
-    "type": "deliberate",
-    "label": "Deliberate: Design a comprehensive meeting effectiveness system for engineering teams. Inclu",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsusgwsx60b",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T07:19:51.205Z",
-    "updatedAt": "2026-03-16T07:20:54.735Z",
-    "output": "Deliberation complete.\nObjective: Develop a system to enhance the effectiveness of engineering team meetings.\nStrategy: First, research best practices and current trends in meeting effectiveness for engineering teams. Then, synthesize this information into a comprehensive guide that includes all requested components. Ensure the guide is practical and immediately applicable.\nRisk: green\nSubtasks: 2\nTokens: 1939",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsusguchauj",
-    "type": "deliberate",
-    "label": "Deliberate: Create a comprehensive guide to building a pantry organization system. Include z",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsusgu3qopw",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T07:19:51.108Z",
-    "updatedAt": "2026-03-16T07:20:47.185Z",
-    "output": "Deliberation complete.\nObjective: Create a detailed guide on setting up an organized pantry system incorporating zone-based layout, FIFO rotation, bulk buying, expiration tracking, and meal prep integration.\nStrategy: Conduct research to gather current best practices and tools for pantry organization, focusing on zone-based layouts, FIFO rotation, and bulk buying strategies. Synthesize this information into a structured guide with actionable steps and examples. Ensure the guide includes practical tips for expiration tracking and integrating meal prep with pantry inventory.\nRisk: green\nSubtasks: 2\nTokens: 2072",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsusgr2f60w",
-    "type": "deliberate",
-    "label": "Deliberate: Write a complete series concept for a comedy drama about four retired astronauts",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsusgqu6164",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T07:19:50.990Z",
-    "updatedAt": "2026-03-16T07:20:41.217Z",
-    "output": "Deliberation complete.\nObjective: Create a detailed series concept for a comedy-drama about retired astronauts starting a space tourism consulting firm.\nStrategy: Conduct research on existing comedy-drama series for inspiration and trends. Develop character profiles and a pilot episode outline based on this research, ensuring originality and alignment with the series concept.\nRisk: green\nSubtasks: 2\nTokens: 1879",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsusgoyr1pc",
-    "type": "deliberate",
-    "label": "Deliberate: Plan an 8-day architecture and design tour through Barcelona and Valencia. Inclu",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsusgop5zor",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T07:19:50.914Z",
-    "updatedAt": "2026-03-16T07:20:35.480Z",
-    "output": "Deliberation complete.\nObjective: Plan an 8-day architecture and design tour in Barcelona and Valencia, focusing on specific cultural and architectural highlights.\nStrategy: Conduct web research to gather current information on each site and its accessibility. Synthesize this data into a coherent itinerary, ensuring a balanced mix of activities each day. Consider transportation logistics and local dining options to enhance the tour experience.\nRisk: green\nSubtasks: 2\nTokens: 2507",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsusglc9l1g",
-    "type": "deliberate",
-    "label": "Deliberate: Design a comprehensive hand and wrist health protocol for developers. Include ca",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsusgl49y08",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T07:19:50.784Z",
-    "updatedAt": "2026-03-16T07:20:28.101Z",
-    "output": "Deliberation complete.\nObjective: Design a comprehensive hand and wrist health protocol for developers, focusing on prevention and ergonomic practices.\nStrategy: Conduct research to identify evidence-based exercises and ergonomic practices. Synthesize this information into a comprehensive protocol. Ensure the protocol is actionable and includes safety disclaimers where necessary.\nRisk: green\nSubtasks: 2\nTokens: 1956",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsusgj81rp8",
-    "type": "deliberate",
-    "label": "Deliberate: Create a comprehensive guide to building executive communication skills. Include",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsusgizbmce",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T07:19:50.708Z",
-    "updatedAt": "2026-03-16T07:20:21.726Z",
-    "output": "Deliberation complete.\nObjective: Create a comprehensive guide on building executive communication skills.\nStrategy: Research current best practices and strategies in executive communication. Synthesize the findings into a structured guide that covers each requested topic comprehensively. Ensure the guide is actionable and relevant to startup leaders.\nRisk: green\nSubtasks: 2\nTokens: 1975",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsusgh9zde4",
-    "type": "deliberate",
-    "label": "Deliberate: Research the best smart scales for health tracking beyond weight. Compare Within",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsusgh1aro2",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T07:19:50.637Z",
-    "updatedAt": "2026-03-16T07:20:15.813Z",
-    "output": "Deliberation complete.\nObjective: Research and compare the best smart scales for health tracking beyond weight, focusing on Withings Body Comp, Garmin Index S2, and Renpho Elis Dream.\nStrategy: First, conduct web research to gather current data on the specified smart scales, focusing on body composition accuracy, trend tracking, and health ecosystem integration. Then, synthesize this information into a structured report with comparisons and recommendations.\nRisk: green\nSubtasks: 2\nTokens: 2185",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsusgezx2um",
-    "type": "deliberate",
-    "label": "Deliberate: Explain how HTTP/3 and QUIC work compared to HTTP/2 over TCP. Cover connection e",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsusgeqzb3h",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T07:19:50.555Z",
-    "updatedAt": "2026-03-16T07:20:09.669Z",
-    "output": "Deliberation complete.\nObjective: Explain the differences between HTTP/3 with QUIC and HTTP/2 over TCP, focusing on key technical aspects.\nStrategy: First, conduct web research to gather detailed and current information on HTTP/3 and QUIC compared to HTTP/2 over TCP. Then, synthesize this information into a clear and concise report that highlights the key differences and technical aspects.\nRisk: green\nSubtasks: 2\nTokens: 2319",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsusgehqitc",
-    "type": "deliberate",
-    "label": "Deliberate: Create a guide to alternative investments for accredited investors. Include priv",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsusge8od24",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T07:19:50.537Z",
-    "updatedAt": "2026-03-16T07:20:02.858Z",
-    "output": "Deliberation complete.\nObjective: Create a comprehensive guide on alternative investments for accredited investors.\nStrategy: Conduct research to gather current market data and trends for each specified alternative investment. Analyze liquidity and correlation to public markets for each investment type. Synthesize findings into a comprehensive guide with actionable insights and real examples.\nRisk: green\nSubtasks: 2\nTokens: 2401",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsusgdwe8ly",
-    "type": "deliberate",
-    "label": "Deliberate: Design a comprehensive chaos engineering program for a production Kubernetes clu",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsusgdnjert",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T07:19:50.516Z",
-    "updatedAt": "2026-03-16T07:19:58.318Z",
-    "output": "Deliberation complete.\nObjective: Design a chaos engineering program for Kubernetes clusters, comparing Litmus Chaos and Chaos Monkey, and including strategies for organizational adoption.\nStrategy: Conduct a comprehensive analysis of Litmus Chaos and Chaos Monkey to identify their strengths and weaknesses. Develop a detailed plan for implementing chaos engineering in Kubernetes clusters, focusing on hypothesis design, blast radius containment, and game day facilitation. Include strategies for securing organizational buy-in.\nRisk: yellow\nSubtasks: 2\nTokens: 1962",
     "error": null,
     "filesWritten": []
   }

@@ -1,5 +1,684 @@
 [
   {
+    "task_id": "t_mmswgfq2dzht",
+    "title": "Design a comprehensive system for managing personal subscriptions and recurring ",
+    "raw_request": "Design a comprehensive system for managing personal subscriptions and recurring expenses. Include audit methodology, negotiation scripts for price reductions, alternative service discovery, and automated tracking tools.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T08:06:29.018Z",
+    "updated_at": "2026-03-16T08:18:37.025Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T08:15:02.204Z",
+      "interpreted_objective": "Design a system to manage personal subscriptions and recurring expenses efficiently.",
+      "expected_outcome": "A comprehensive report detailing an audit methodology, negotiation scripts, alternative service discovery, and automated tracking tools.",
+      "key_unknowns": [
+        "Current best practices for subscription management",
+        "Effective negotiation strategies for price reductions",
+        "Tools available for automated tracking of expenses"
+      ],
+      "recommended_strategy": "First, research current best practices and tools for managing personal subscriptions and recurring expenses. Then, synthesize this information into a detailed report that includes audit methodologies, negotiation scripts, and alternative service discovery strategies.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Subscription Management Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices and tools for managing subscriptions and recurring expenses.",
+          "prompt": "Search the web for current best practices and tools for managing personal subscriptions and recurring expenses. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comprehensive Management System",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report detailing audit methodologies, negotiation scripts, alternative service discovery, and automated tracking tools.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a system to manage personal subscriptions and recurring expenses. Include audit methodologies, negotiation scripts for price reductions, alternative service discovery, and automated tracking tools.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-subscription-management.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1919
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmswgfoawgn2",
+    "title": "Create a guide to building an efficient home mail and package management system.",
+    "raw_request": "Create a guide to building an efficient home mail and package management system. Include mail sorting workflow, digital scanning process, package tracking integration, return management, and identity theft prevention.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T08:06:28.954Z",
+    "updated_at": "2026-03-16T08:18:46.672Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T08:15:09.124Z",
+      "interpreted_objective": "Create a comprehensive guide for building an efficient home mail and package management system.",
+      "expected_outcome": "A detailed guide that includes workflows for mail sorting, digital scanning, package tracking integration, return management, and identity theft prevention.",
+      "key_unknowns": [
+        "Specific technologies or tools to recommend for each component",
+        "Current best practices in mail and package management",
+        "Potential legal or privacy considerations"
+      ],
+      "recommended_strategy": "Research current best practices and technologies for each component of the mail and package management system. Synthesize this information into a structured guide that addresses each aspect comprehensively. Ensure the guide is actionable and includes recommendations for tools and processes.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Mail and Package Management Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices and technologies for mail sorting, digital scanning, package tracking, return management, and identity theft prevention.",
+          "prompt": "Search the web for current, specific information about best practices and technologies for building an efficient home mail and package management system. Include details on mail sorting workflows, digital scanning processes, package tracking integration, return management, and identity theft prevention. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Home Mail and Package Management System",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide detailing the workflow and tools for an efficient home mail and package management system.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed guide for building an efficient home mail and package management system. Include sections on mail sorting workflow, digital scanning process, package tracking integration, return management, and identity theft prevention. Provide actionable recommendations and specific tools or technologies to use.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2047
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmswgfkfqd64",
+    "title": "Write a complete concept for a limited podcast series investigating the psycholo",
+    "raw_request": "Write a complete concept for a limited podcast series investigating the psychological and social dynamics of online communities that develop cult-like characteristics. Include 8 episode outlines with expert interview targets.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T08:06:28.815Z",
+    "updated_at": "2026-03-16T08:18:48.626Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T08:15:15.614Z",
+      "interpreted_objective": "Create a podcast series concept exploring the psychological and social dynamics of cult-like online communities.",
+      "expected_outcome": "A detailed concept for an 8-episode podcast series, including episode outlines and expert interview targets.",
+      "key_unknowns": [
+        "Specific online communities to be featured",
+        "Experts available for interviews",
+        "Psychological and social theories to be included"
+      ],
+      "recommended_strategy": "Research current trends and psychological theories related to online communities with cult-like characteristics. Develop episode outlines that explore different aspects of these communities, and identify potential experts for interviews. Compile findings into a structured report.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Online Communities",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of online communities with cult-like characteristics and relevant psychological theories.",
+          "prompt": "Search the web for current information about online communities that exhibit cult-like characteristics. Include specific community names, psychological theories, and relevant social dynamics. Provide sources and URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Podcast Episode Outlines",
+          "stage": "synthesis",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "Eight detailed episode outlines with themes, topics, and expert interview targets.",
+          "prompt": "Based on the research results, create detailed outlines for an 8-episode podcast series investigating the psychological and social dynamics of online communities with cult-like characteristics. Include specific themes, topics, and potential experts for interviews.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-podcast-concept.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2131
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmswgfh4mb7z",
+    "title": "Plan a 10-day classic American road trip from Chicago to Los Angeles on Route 66",
+    "raw_request": "Plan a 10-day classic American road trip from Chicago to Los Angeles on Route 66. Include must-stop diners, quirky roadside attractions, national park detours, live music venues, and overnight stay recommendations.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T08:06:28.696Z",
+    "updated_at": "2026-03-16T08:08:57.949Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T08:07:12.059Z",
+      "interpreted_objective": "Plan a detailed 10-day road trip itinerary from Chicago to Los Angeles on Route 66, highlighting key attractions, dining, and accommodations.",
+      "expected_outcome": "A comprehensive itinerary with specific stops, attractions, dining options, and accommodations for each day of the trip.",
+      "key_unknowns": [
+        "Current status of Route 66 attractions",
+        "Availability and pricing of accommodations",
+        "Live music venue schedules"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on Route 66 attractions, dining, and accommodations. Synthesize this data into a structured itinerary, ensuring a mix of classic and quirky stops, with recommendations for overnight stays and entertainment.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Route 66 attractions and accommodations",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Route 66 attractions, diners, accommodations, and live music venues.",
+          "prompt": "Search the web for current, specific information about Route 66 from Chicago to Los Angeles. Include must-stop diners, quirky roadside attractions, national park detours, live music venues, and overnight stay recommendations. Provide real names, locations, prices, and URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile 10-day road trip itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 10-day itinerary with specific recommendations for each day.",
+          "prompt": "Based on the research results, synthesize a 10-day road trip itinerary from Chicago to Los Angeles on Route 66. Include specific attractions, dining options, national park detours, live music venues, and overnight accommodations for each day. Ensure the itinerary is balanced and provides a mix of classic and quirky experiences.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-route66-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1937
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmswgfdii9wo",
+    "title": "Design a comprehensive voice health protocol for people who present and teach fr",
+    "raw_request": "Design a comprehensive voice health protocol for people who present and teach frequently. Include vocal warm-ups, hydration science, microphone technique, vocal rest scheduling, and when to see a laryngologist.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T08:06:28.566Z",
+    "updated_at": "2026-03-16T08:08:56.587Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T08:07:07.265Z",
+      "interpreted_objective": "Design a comprehensive voice health protocol for frequent presenters and teachers.",
+      "expected_outcome": "A detailed, evidence-based protocol that includes vocal warm-ups, hydration advice, microphone technique, vocal rest scheduling, and guidelines for consulting a laryngologist.",
+      "key_unknowns": [
+        "Specific vocal warm-up exercises that are most effective",
+        "Optimal hydration practices for vocal health",
+        "Best practices for microphone technique",
+        "Recommended vocal rest schedules",
+        "Criteria for when to see a laryngologist"
+      ],
+      "recommended_strategy": "Conduct research to gather current, evidence-based practices in vocal health for presenters and teachers. Synthesize this information into a structured protocol document. Ensure the protocol is actionable and includes safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Vocal Health Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive data on vocal health practices with citations.",
+          "prompt": "Search the web for current, evidence-based practices in vocal health for frequent presenters and teachers. Include information on vocal warm-ups, hydration, microphone technique, vocal rest, and when to see a laryngologist. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Voice Health Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable voice health protocol document.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive voice health protocol for frequent presenters and teachers. Include specific vocal warm-ups, hydration advice, microphone techniques, vocal rest schedules, and guidelines for consulting a laryngologist. Ensure the protocol is evidence-based and actionable.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-voice-health-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1923
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmswgf9m3f8a",
+    "title": "Create a guide to building a technical mentoring program within an engineering o",
+    "raw_request": "Create a guide to building a technical mentoring program within an engineering organization. Include mentor matching, structured conversation templates, goal setting frameworks, progress tracking, and scaling beyond 1:1.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T08:06:28.426Z",
+    "updated_at": "2026-03-16T08:08:48.755Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T08:07:01.886Z",
+      "interpreted_objective": "Create a comprehensive guide for building a technical mentoring program within an engineering organization.",
+      "expected_outcome": "A detailed guide that includes mentor matching, structured conversation templates, goal setting frameworks, progress tracking, and strategies for scaling beyond 1:1 interactions.",
+      "key_unknowns": [
+        "Specific organizational context or constraints",
+        "Preferred formats for the guide",
+        "Existing resources or frameworks within the organization"
+      ],
+      "recommended_strategy": "Research best practices and existing frameworks for technical mentoring programs. Synthesize this information into a structured guide that addresses each requested component. Ensure the guide is actionable and scalable for various organizational sizes.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Technical Mentoring Programs",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research on best practices for technical mentoring programs.",
+          "prompt": "Search the web for current, specific information about building technical mentoring programs within engineering organizations. Focus on mentor matching, structured conversation templates, goal setting frameworks, progress tracking, and scaling strategies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Technical Mentoring Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide for building a technical mentoring program, including all specified components.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building a technical mentoring program within an engineering organization. Include sections on mentor matching, structured conversation templates, goal setting frameworks, progress tracking, and scaling beyond 1:1 interactions.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1995
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmswgf7gkkdp",
+    "title": "Research the best home projectors for a dedicated theater room. Compare Epson Ho",
+    "raw_request": "Research the best home projectors for a dedicated theater room. Compare Epson Home Cinema 5050UB, BenQ HT3560, and Sony VPL-XW5000ES with screen pairing, ambient light rejection, and HDR performance.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T08:06:28.348Z",
+    "updated_at": "2026-03-16T08:08:36.112Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T08:06:56.929Z",
+      "interpreted_objective": "Research and compare the best home projectors for a dedicated theater room, focusing on Epson Home Cinema 5050UB, BenQ HT3560, and Sony VPL-XW5000ES.",
+      "expected_outcome": "A comprehensive comparison report of the three projectors, including screen pairing, ambient light rejection, and HDR performance, with actionable recommendations.",
+      "key_unknowns": [
+        "Current market performance and reviews of Epson Home Cinema 5050UB, BenQ HT3560, and Sony VPL-XW5000ES",
+        "Best screen pairings for each projector",
+        "Details on ambient light rejection capabilities",
+        "HDR performance comparison"
+      ],
+      "recommended_strategy": "Conduct web research to gather current data on each projector's specifications and performance. Analyze the data to compare the projectors based on screen pairing, ambient light rejection, and HDR performance. Synthesize findings into a detailed report with recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research projector specifications and reviews",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Epson Home Cinema 5050UB, BenQ HT3560, and Sony VPL-XW5000ES, including specifications, reviews, and performance metrics.",
+          "prompt": "Search the web for current, specific information about Epson Home Cinema 5050UB, BenQ HT3560, and Sony VPL-XW5000ES projectors. Include specifications, user reviews, performance metrics, and any relevant URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize projector comparison report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed comparison report of the three projectors with recommendations on screen pairing, ambient light rejection, and HDR performance.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comparison report for Epson Home Cinema 5050UB, BenQ HT3560, and Sony VPL-XW5000ES. Include analysis of screen pairing, ambient light rejection, HDR performance, and provide actionable recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2377
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmswgf5gtz5h",
+    "title": "Explain how modern password hashing algorithms work. Compare bcrypt, scrypt, and",
+    "raw_request": "Explain how modern password hashing algorithms work. Compare bcrypt, scrypt, and Argon2id with memory-hardness properties, parameter tuning for different hardware, migration strategies, and pepper implementation.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T08:06:28.276Z",
+    "updated_at": "2026-03-16T08:08:33.970Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T08:06:50.067Z",
+      "interpreted_objective": "Explain and compare modern password hashing algorithms focusing on bcrypt, scrypt, and Argon2id.",
+      "expected_outcome": "A detailed document explaining the workings, comparisons, and strategies related to bcrypt, scrypt, and Argon2id.",
+      "key_unknowns": [
+        "Specific details about the memory-hardness properties of each algorithm",
+        "Parameter tuning strategies for different hardware",
+        "Migration strategies between algorithms",
+        "Details on implementing pepper in password hashing"
+      ],
+      "recommended_strategy": "First, conduct research on the technical aspects of bcrypt, scrypt, and Argon2id, focusing on memory-hardness, parameter tuning, and migration strategies. Then, synthesize this information into a comprehensive document that includes practical implementation advice, such as pepper usage.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Password Hashing Algorithms",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research on bcrypt, scrypt, and Argon2id including memory-hardness properties, parameter tuning, migration strategies, and pepper implementation.",
+          "prompt": "Search the web for current, specific information about bcrypt, scrypt, and Argon2id. Include details on memory-hardness properties, parameter tuning for different hardware, migration strategies, and pepper implementation. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize and Write Document",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive document explaining and comparing bcrypt, scrypt, and Argon2id with practical implementation advice.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations and comparisons for bcrypt, scrypt, and Argon2id. Include specific details on memory-hardness, parameter tuning, migration strategies, and pepper implementation.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2093
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmswgf301jh4",
+    "title": "Create a guide to optimizing retirement accounts for self-employed individuals. ",
+    "raw_request": "Create a guide to optimizing retirement accounts for self-employed individuals. Compare Solo 401(k), SEP IRA, and SIMPLE IRA with contribution limits, catch-up provisions, Roth options, and mega backdoor strategies.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T08:06:28.188Z",
+    "updated_at": "2026-03-16T08:08:31.897Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T08:06:41.427Z",
+      "interpreted_objective": "Create a comprehensive guide comparing retirement account options for self-employed individuals, focusing on Solo 401(k), SEP IRA, and SIMPLE IRA.",
+      "expected_outcome": "A detailed report that compares Solo 401(k), SEP IRA, and SIMPLE IRA, including contribution limits, catch-up provisions, Roth options, and mega backdoor strategies, with actionable recommendations for self-employed individuals.",
+      "key_unknowns": [
+        "Current contribution limits for each retirement account type",
+        "Availability of Roth options for each account",
+        "Details on mega backdoor strategies for each account type"
+      ],
+      "recommended_strategy": "Conduct web research to gather the latest information on Solo 401(k), SEP IRA, and SIMPLE IRA. Synthesize this data into a structured guide with comparisons and recommendations for self-employed individuals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Retirement Accounts",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Solo 401(k), SEP IRA, and SIMPLE IRA, including contribution limits, catch-up provisions, Roth options, and mega backdoor strategies, with citations.",
+          "prompt": "Search the web for current, specific information about Solo 401(k), SEP IRA, and SIMPLE IRA for self-employed individuals. Include details on contribution limits, catch-up provisions, Roth options, and mega backdoor strategies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Retirement Account Guide",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide comparing Solo 401(k), SEP IRA, and SIMPLE IRA, with specific recommendations for self-employed individuals.",
+          "prompt": "Based on the research results, synthesize a guide comparing Solo 401(k), SEP IRA, and SIMPLE IRA. Include details on contribution limits, catch-up provisions, Roth options, and mega backdoor strategies. Provide actionable recommendations for self-employed individuals.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-retirement-accounts-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2158
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmswgf2fjr1j",
+    "title": "Design a comprehensive event-driven architecture using AWS EventBridge. Include ",
+    "raw_request": "Design a comprehensive event-driven architecture using AWS EventBridge. Include event schema registry, dead letter queue handling, cross-account event routing, replay capabilities, and testing strategies for event-driven systems.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T08:06:28.167Z",
+    "updated_at": "2026-03-16T08:08:30.208Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T08:06:33.962Z",
+      "interpreted_objective": "Design a detailed event-driven architecture using AWS EventBridge.",
+      "expected_outcome": "A comprehensive document outlining the architecture including event schema registry, dead letter queue handling, cross-account event routing, replay capabilities, and testing strategies.",
+      "key_unknowns": [
+        "Specific use cases or requirements for the event-driven architecture",
+        "The level of detail required for each component",
+        "Any existing constraints or integrations with other systems"
+      ],
+      "recommended_strategy": "Conduct research on best practices and current capabilities of AWS EventBridge. Synthesize findings into a detailed document that covers all requested components of the architecture. Ensure the document is clear, actionable, and tailored to the audience's technical level.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research AWS EventBridge Best Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices and current capabilities of AWS EventBridge.",
+          "prompt": "Search the web for current best practices and capabilities of AWS EventBridge, focusing on event schema registry, dead letter queue handling, cross-account event routing, replay capabilities, and testing strategies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Event-Driven Architecture Document",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed document outlining the event-driven architecture using AWS EventBridge.",
+          "prompt": "Based on the research results, synthesize a comprehensive document that outlines an event-driven architecture using AWS EventBridge. Include sections on event schema registry, dead letter queue handling, cross-account event routing, replay capabilities, and testing strategies. Ensure the document is clear, actionable, and tailored for a technical audience.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2071
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsvu0dj7sxs",
     "title": "Write a complete concept for an interactive fiction game about a journalist inve",
     "raw_request": "Write a complete concept for an interactive fiction game about a journalist investigating a tech company whose AI assistant has been subtly influencing user behavior. Include branching narrative structure and 4 distinct endings.",
