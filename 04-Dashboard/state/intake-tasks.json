@@ -1,5 +1,140 @@
 [
   {
+    "task_id": "t_mmsgym8ylqwj",
+    "title": "Turn this messy meeting transcript into action items with owners and deadlines: ",
+    "raw_request": "Turn this messy meeting transcript into action items with owners and deadlines: We discussed launching push notifications next week, fixing the ranking algorithm edge case where new entries get unfairly low scores, deciding on pricing strategy for premium features, and scheduling user testing sessions. Alex handles notifications, Maria does ranking fixes, I handle pricing research, testing is TBD.",
+    "domain": "topranker",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:52:43.426Z",
+    "updated_at": "2026-03-16T00:53:15.075Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:52:51.179Z",
+      "interpreted_objective": "Transform the meeting transcript into actionable items with assigned owners and deadlines.",
+      "expected_outcome": "A clear list of action items with responsible individuals and deadlines for each task.",
+      "key_unknowns": [
+        "Exact deadline for scheduling user testing sessions",
+        "Specific details or criteria for the pricing strategy"
+      ],
+      "recommended_strategy": "First, extract and organize the key points from the meeting transcript into a structured format. Then, assign owners and deadlines to each action item based on the provided information. Ensure clarity and specificity in each action item to facilitate accountability and follow-through.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Extract Action Items from Transcript",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "openai",
+          "expected_output": "A list of action items derived from the meeting transcript.",
+          "prompt": "Transform the following meeting transcript into a list of clear action items with assigned owners and deadlines: 'We discussed launching push notifications next week, fixing the ranking algorithm edge case where new entries get unfairly low scores, deciding on pricing strategy for premium features, and scheduling user testing sessions. Alex handles notifications, Maria does ranking fixes, I handle pricing research, testing is TBD.'",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Assign Owners and Deadlines",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured list of action items with assigned owners and deadlines.",
+          "prompt": "Based on the extracted action items, assign the appropriate owners and deadlines to each task: 1. Launch push notifications - Alex, deadline: next week. 2. Fix ranking algorithm edge case - Maria, deadline: TBD. 3. Decide on pricing strategy for premium features - Rahul, deadline: TBD. 4. Schedule user testing sessions - Owner: TBD, deadline: TBD. Ensure each action item is clear and actionable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2499
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmqn1d6vm0li"
+  },
+  {
+    "task_id": "t_mmsgyjwurpzf",
+    "title": "Rewrite this text to sound executive-ready but still precise and concrete: Our a",
+    "raw_request": "Rewrite this text to sound executive-ready but still precise and concrete: Our app lets people vote on businesses. It uses a scoring system. We are launching in a new city soon. We need more investment. The tech is solid but we need more users to prove traction.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:52:40.398Z",
+    "updated_at": "2026-03-16T00:53:09.790Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:52:46.235Z",
+      "interpreted_objective": "Rewrite the provided text to sound executive-ready while maintaining precision and concreteness.",
+      "expected_outcome": "A polished, executive-level text that effectively communicates the app's value proposition, upcoming launch, and investment needs.",
+      "key_unknowns": [
+        "Specific details about the scoring system",
+        "Exact launch date and city",
+        "Current user base and growth metrics",
+        "Investment target amount"
+      ],
+      "recommended_strategy": "First, gather any additional context or information about the app, its scoring system, and the upcoming launch. Then, rewrite the text to emphasize the app's strengths and strategic goals in an executive tone, ensuring clarity and persuasiveness.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Context Gathering",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Additional context about the app, its scoring system, launch details, and investment needs.",
+          "prompt": "Search the web for current, specific information about the app's scoring system, upcoming city launch, and investment needs. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Executive Text Rewrite",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "An executive-ready text that clearly and persuasively communicates the app's value proposition, launch plans, and investment needs.",
+          "prompt": "Based on the research results from prior subtasks, rewrite the text to sound executive-ready while maintaining precision and concreteness. Emphasize the app's strengths, upcoming launch, and strategic investment needs.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-executive-text-rewrite.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1920
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsfvnmz6cef",
     "title": "Generate a step-by-step migration plan from Express 4 to Express 5. Include brea",
     "raw_request": "Generate a step-by-step migration plan from Express 4 to Express 5. Include breaking changes, code patterns that need updating, rollback strategy, and testing approach.",
