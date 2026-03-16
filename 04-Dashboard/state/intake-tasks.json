@@ -1,5 +1,687 @@
 [
   {
+    "task_id": "t_mmsomon4vt6b",
+    "title": "Design a comprehensive habit stacking system for building 5 new habits simultane",
+    "raw_request": "Design a comprehensive habit stacking system for building 5 new habits simultaneously. Include trigger identification, tracking, and recovery from broken chains.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:27:23.584Z",
+    "updated_at": "2026-03-16T04:31:00.354Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:28:28.533Z",
+      "interpreted_objective": "Design a system for habit stacking that supports building multiple habits simultaneously with mechanisms for triggers, tracking, and recovery.",
+      "expected_outcome": "A detailed plan for a habit stacking system that includes specific strategies for identifying triggers, tracking progress, and recovering from broken habit chains.",
+      "key_unknowns": [
+        "Specific habits the operator wants to build",
+        "Preferred tools or platforms for tracking habits",
+        "Criteria for successful habit formation"
+      ],
+      "recommended_strategy": "First, research effective habit stacking methods and tools that facilitate simultaneous habit formation. Then, synthesize a comprehensive plan that includes trigger identification, habit tracking mechanisms, and strategies for recovering from broken chains. Ensure the plan is actionable and aligns with the operator's productivity goals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Habit Stacking Methods",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of effective habit stacking methods and tools.",
+          "prompt": "Search the web for current, specific information about effective habit stacking methods and tools for building multiple habits simultaneously. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Design Habit Stacking System",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive plan for a habit stacking system including trigger identification, tracking, and recovery strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a habit stacking system. Include specific strategies for trigger identification, habit tracking, and recovery from broken chains.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2089
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsomntz1wda",
+    "title": "Create a guide to building a productive vertical garden for small spaces. Includ",
+    "raw_request": "Create a guide to building a productive vertical garden for small spaces. Include wall-mounted systems, lighting, automatic watering, and best plants for air quality.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:27:22.535Z",
+    "updated_at": "2026-03-16T04:30:55.061Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:28:23.617Z",
+      "interpreted_objective": "Create a detailed guide for building a productive vertical garden in small spaces.",
+      "expected_outcome": "A comprehensive guide that includes information on wall-mounted systems, lighting, automatic watering, and best plants for air quality.",
+      "key_unknowns": [
+        "Specific types of wall-mounted systems available",
+        "Optimal lighting setups for indoor vertical gardens",
+        "Automatic watering systems suitable for small spaces",
+        "Best plants for air quality in vertical gardens"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on vertical garden systems, lighting, watering, and plant options. Synthesize this information into a practical guide that addresses each aspect specifically for small spaces. Ensure the guide is actionable and detailed enough for readers to implement.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Vertical Garden Systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on wall-mounted vertical garden systems, lighting, and automatic watering options.",
+          "prompt": "Search the web for current, specific information about wall-mounted vertical garden systems, optimal lighting setups, and automatic watering systems for small spaces. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Identify Best Plants for Air Quality",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of best plants for improving air quality in vertical gardens.",
+          "prompt": "Search the web for information on the best plants for improving air quality that are suitable for vertical gardens. Include specific plant names, benefits, and care requirements.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Vertical Garden Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on building a productive vertical garden for small spaces.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed guide for building a productive vertical garden in small spaces. Include sections on wall-mounted systems, lighting, automatic watering, and best plants for air quality. Provide actionable steps and tips.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2244
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsomn0sqqi4",
+    "title": "Write a series of interconnected short story premises for an anthology about AI ",
+    "raw_request": "Write a series of interconnected short story premises for an anthology about AI and human connection. 5 stories with a shared universe. Include themes and character connections.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:27:21.484Z",
+    "updated_at": "2026-03-16T04:30:48.386Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:28:04.045Z",
+      "interpreted_objective": "Create a series of interconnected short story premises for an anthology about AI and human connection.",
+      "expected_outcome": "Five cohesive short story premises set in a shared universe with interconnected themes and characters.",
+      "key_unknowns": [
+        "Specific themes to explore",
+        "Character connections across stories",
+        "Unique elements of the shared universe"
+      ],
+      "recommended_strategy": "Conduct research on current themes in AI and human connection to gather inspiration. Then, synthesize this information to develop five interconnected story premises with shared themes and character connections.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research AI and Human Connection Themes",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current themes and trends in AI and human connection.",
+          "prompt": "Search the web for current themes and trends in AI and human connection. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Interconnected Story Premises",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "Five interconnected short story premises with shared themes and character connections.",
+          "prompt": "Based on the research results, synthesize five interconnected short story premises for an anthology about AI and human connection. Include shared themes and character connections.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-AI-human-connection-anthology.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1897
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsomm7xatek",
+    "title": "Plan a 5-day photography trip to Iceland. Include the Golden Circle, Northern Li",
+    "raw_request": "Plan a 5-day photography trip to Iceland. Include the Golden Circle, Northern Lights spots, glacier hikes, and camera settings for landscape photography. Winter season.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:27:20.445Z",
+    "updated_at": "2026-03-16T04:30:40.537Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:27:58.803Z",
+      "interpreted_objective": "Plan a detailed 5-day photography itinerary for Iceland focusing on key attractions and photography tips.",
+      "expected_outcome": "A comprehensive itinerary with specific locations, activities, and photography settings for a winter trip to Iceland.",
+      "key_unknowns": [
+        "Exact locations for Northern Lights viewing",
+        "Current glacier hike availability",
+        "Recommended camera settings for winter landscape photography"
+      ],
+      "recommended_strategy": "Conduct research to identify key photography spots and activities in Iceland during winter. Synthesize this information into a detailed itinerary, including specific camera settings for landscape photography.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Iceland Winter Photography Spots",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of top photography locations in Iceland during winter, including the Golden Circle, Northern Lights spots, and glacier hikes.",
+          "prompt": "Search the web for current, specific information about top photography locations in Iceland during winter. Include details on the Golden Circle, Northern Lights spots, and glacier hikes. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Iceland Photography Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 5-day itinerary for a photography trip to Iceland, including specific locations, activities, and recommended camera settings for winter landscape photography.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 5-day itinerary for a photography trip to Iceland. Include specific locations, activities, and recommended camera settings for landscape photography in winter.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-2023-iceland-photography-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1892
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsomlf3i36i",
+    "title": "Design a comprehensive cardiovascular health program for sedentary tech workers.",
+    "raw_request": "Design a comprehensive cardiovascular health program for sedentary tech workers. Include zone-based training, resting heart rate optimization, and blood pressure management.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:27:19.407Z",
+    "updated_at": "2026-03-16T04:30:30.186Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:27:52.761Z",
+      "interpreted_objective": "Design a cardiovascular health program tailored for sedentary tech workers focusing on zone-based training, resting heart rate optimization, and blood pressure management.",
+      "expected_outcome": "A detailed, evidence-based cardiovascular health program that tech workers can follow to improve their heart health, including specific training zones, strategies for optimizing resting heart rate, and managing blood pressure.",
+      "key_unknowns": [
+        "Current best practices for zone-based training specifically for sedentary individuals",
+        "Effective methods for optimizing resting heart rate in tech workers",
+        "Strategies for managing blood pressure that are suitable for a sedentary lifestyle"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and evidence-based methods for cardiovascular health improvements in sedentary individuals. Synthesize this information into a comprehensive program that includes specific training and health management strategies.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Cardiovascular Health Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and evidence-based methods for zone-based training, resting heart rate optimization, and blood pressure management for sedentary tech workers.",
+          "prompt": "Search the web for current, specific information about cardiovascular health strategies for sedentary individuals, focusing on zone-based training, resting heart rate optimization, and blood pressure management. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Cardiovascular Health Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive cardiovascular health program tailored for sedentary tech workers, including zone-based training, resting heart rate optimization, and blood pressure management strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a cardiovascular health program tailored for sedentary tech workers. Include specific training zones, methods for optimizing resting heart rate, and strategies for managing blood pressure.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-cardiovascular-health-program.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1943
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsomkmblixx",
+    "title": "Create a comprehensive guide to running effective engineering sprints. Include s",
+    "raw_request": "Create a comprehensive guide to running effective engineering sprints. Include sprint planning, standups, retros, and velocity tracking best practices.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:27:18.371Z",
+    "updated_at": "2026-03-16T04:30:25.361Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:27:48.476Z",
+      "interpreted_objective": "Create a comprehensive guide for running effective engineering sprints, including best practices for sprint planning, standups, retrospectives, and velocity tracking.",
+      "expected_outcome": "A detailed guide that provides actionable insights and best practices for engineering teams to run efficient and effective sprints.",
+      "key_unknowns": [
+        "Current best practices in sprint planning, standups, retrospectives, and velocity tracking",
+        "Specific challenges faced by engineering teams in these areas"
+      ],
+      "recommended_strategy": "First, conduct research to gather current best practices and challenges in sprint management. Then, synthesize this information into a structured guide with actionable recommendations for engineering teams.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Sprint Management Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and challenges in sprint planning, standups, retrospectives, and velocity tracking with citations.",
+          "prompt": "Search the web for current best practices and challenges in sprint planning, standups, retrospectives, and velocity tracking for engineering teams. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Effective Engineering Sprints",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide with actionable recommendations for running effective engineering sprints.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide on running effective engineering sprints. Include best practices for sprint planning, standups, retrospectives, and velocity tracking with specific recommendations and actionable steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-engineering-sprints-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2164
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsomjtnrbb5",
+    "title": "Research the best home espresso grinders for under 300 dollars. Compare flat bur",
+    "raw_request": "Research the best home espresso grinders for under 300 dollars. Compare flat burr vs conical burr. Include Eureka, Baratza, and Niche. Focus on espresso consistency.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:27:17.339Z",
+    "updated_at": "2026-03-16T04:30:19.006Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:27:33.099Z",
+      "interpreted_objective": "Research and compare the best home espresso grinders under $300, focusing on espresso consistency and including brands Eureka, Baratza, and Niche.",
+      "expected_outcome": "A detailed comparison report of home espresso grinders under $300, highlighting differences between flat burr and conical burr grinders, and recommending the best options for espresso consistency.",
+      "key_unknowns": [
+        "Current prices of specific grinder models",
+        "Performance and consistency of flat burr vs conical burr grinders",
+        "Specific models from Eureka, Baratza, and Niche that fit the criteria"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on espresso grinders under $300, focusing on the specified brands and burr types. Then, synthesize the findings into a comprehensive report, comparing the grinders based on espresso consistency and providing a clear recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Espresso Grinders",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on espresso grinders under $300, including prices, reviews, and comparisons of flat vs conical burr types.",
+          "prompt": "Search the web for current information on home espresso grinders under $300. Focus on models from Eureka, Baratza, and Niche. Compare flat burr vs conical burr grinders in terms of espresso consistency. Include specific models, prices, pros/cons, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Grinder Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing espresso grinders under $300, with a focus on espresso consistency. Includes specific product recommendations.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comparison report of espresso grinders under $300. Include specific models from Eureka, Baratza, and Niche, compare flat burr vs conical burr grinders, and provide a clear recommendation for the best grinder based on espresso consistency.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-espresso-grinders.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2033
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsomj11td9k",
+    "title": "Teach me about graph neural networks and their applications. Cover message passi",
+    "raw_request": "Teach me about graph neural networks and their applications. Cover message passing, GCN, GAT, and real-world use cases in recommendation systems and drug discovery.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:27:16.309Z",
+    "updated_at": "2026-03-16T04:30:11.309Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:27:26.749Z",
+      "interpreted_objective": "Provide a comprehensive overview of graph neural networks, focusing on message passing, GCN, GAT, and their applications in recommendation systems and drug discovery.",
+      "expected_outcome": "A detailed report that explains graph neural networks and their applications, suitable for someone with a technical background.",
+      "key_unknowns": [
+        "Current state of research in graph neural networks",
+        "Specific real-world examples of GCN and GAT in recommendation systems",
+        "Applications of graph neural networks in drug discovery"
+      ],
+      "recommended_strategy": "Conduct web research to gather the latest information on graph neural networks, focusing on message passing, GCN, GAT, and their applications. Then, synthesize this information into a structured report that highlights key concepts and real-world use cases.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Graph Neural Networks",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and citations about graph neural networks, message passing, GCN, GAT, and their applications in recommendation systems and drug discovery.",
+          "prompt": "Search the web for current, specific information about graph neural networks, including message passing, GCN, GAT, and their applications in recommendation systems and drug discovery. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Graph Neural Network Information",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining graph neural networks, message passing, GCN, GAT, and their applications in recommendation systems and drug discovery.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-2023-graph_neural_networks.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1931
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsomi7ob7ry",
+    "title": "Create a guide to tax-efficient charitable giving strategies. Include donor-advi",
+    "raw_request": "Create a guide to tax-efficient charitable giving strategies. Include donor-advised funds, appreciated stock donations, and bunching strategies with specific tax savings examples.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:27:15.252Z",
+    "updated_at": "2026-03-16T04:29:35.098Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:27:21.981Z",
+      "interpreted_objective": "Create a guide on tax-efficient charitable giving strategies, including specific examples of tax savings.",
+      "expected_outcome": "A comprehensive guide that outlines strategies like donor-advised funds, appreciated stock donations, and bunching strategies with specific tax savings examples.",
+      "key_unknowns": [
+        "Current tax laws affecting charitable giving",
+        "Specific examples of tax savings for each strategy",
+        "Recent trends in charitable giving strategies"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on tax-efficient charitable giving strategies, including donor-advised funds, appreciated stock donations, and bunching strategies. Synthesize the findings into a detailed guide with specific examples of tax savings.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Charitable Giving Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data and examples of tax-efficient charitable giving strategies.",
+          "prompt": "Search the web for current, specific information about tax-efficient charitable giving strategies, including donor-advised funds, appreciated stock donations, and bunching strategies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Charitable Giving Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide on tax-efficient charitable giving strategies with specific tax savings examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for tax-efficient charitable giving strategies. Include donor-advised funds, appreciated stock donations, and bunching strategies with specific tax savings examples.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-charitable-giving-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2243
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsomheg8ray",
+    "title": "Write a comprehensive guide to implementing end-to-end encryption in a messaging",
+    "raw_request": "Write a comprehensive guide to implementing end-to-end encryption in a messaging application. Include key exchange, message encryption, and key rotation.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:27:14.200Z",
+    "updated_at": "2026-03-16T04:28:49.699Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:27:17.748Z",
+      "interpreted_objective": "Create a detailed guide on implementing end-to-end encryption in messaging apps.",
+      "expected_outcome": "A comprehensive, clear guide covering key exchange, message encryption, and key rotation for messaging applications.",
+      "key_unknowns": [
+        "Specific messaging application context or requirements",
+        "Preferred encryption algorithms or protocols"
+      ],
+      "recommended_strategy": "Conduct research on current best practices for implementing end-to-end encryption in messaging applications. Then, synthesize the information into a comprehensive guide that includes key exchange, message encryption, and key rotation. Ensure the guide is clear and actionable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research End-to-End Encryption Best Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices for end-to-end encryption in messaging applications.",
+          "prompt": "Search the web for current best practices and standards for implementing end-to-end encryption in messaging applications. Focus on key exchange, message encryption, and key rotation. Include specific protocols, algorithms, and any recent advancements.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comprehensive Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on implementing end-to-end encryption in messaging applications.",
+          "prompt": "Based on the research results, write a comprehensive guide on implementing end-to-end encryption in messaging applications. Include sections on key exchange, message encryption, and key rotation. Ensure the guide is clear, detailed, and actionable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2011
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsoezhu6x43",
     "title": "Design a personal productivity audit system. Include time tracking, energy mappi",
     "raw_request": "Design a personal productivity audit system. Include time tracking, energy mapping, distraction analysis, and monthly optimization reviews.",
