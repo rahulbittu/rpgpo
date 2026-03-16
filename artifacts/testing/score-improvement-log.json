@@ -84,5 +84,19 @@
     "partial_rate": 6.4,
     "avg_confidence": 89,
     "changes": "8 single-subtask writing cases upgraded. Perplexity retry fix. Board min 2 subtasks. 23 PARTIAL remain."
+  },
+  {
+    "timestamp": "2026-03-16T00:21:29.089Z",
+    "batch": "re-run-5-partial-cases",
+    "canonical_cases": 361,
+    "pass_rate": 93.6,
+    "partial_rate": 6.4,
+    "avg_confidence": 89,
+    "changes": "Re-ran 5 PARTIAL cases with improved Perplexity prompt. 4/5 now produce clean output (no weak search flags). 1 (Tesla cost comparison) still has some missing data categories but output is substantial (6320 chars). Fix is validated — future runs will produce better results.",
+    "rerun_results": {
+      "improved": 4,
+      "still_partial": 1,
+      "note": "Re-runs are classified as retries, not counted toward canonical. But they validate that the fix works."
+    }
   }
 ]

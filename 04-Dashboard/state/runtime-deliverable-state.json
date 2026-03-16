@@ -5697,5 +5697,88 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-15T20:16:09.689Z"
+  },
+  "t_mmsfowkpho2n": {
+    "task_id": "t_mmsfowkpho2n",
+    "deliverable_id": "dlv_rpgpo_tmmsfowkpho2n_shopping_d7a878dd",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T00:17:17.573Z"
+  },
+  "t_mmsfoywsdsth": {
+    "task_id": "t_mmsfoywsdsth",
+    "deliverable_id": "dlv_rpgpo_tmmsfoywsdsth_recommendation_5bfeff13",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T00:17:22.713Z"
+  },
+  "t_mmsfp18w4p1k": {
+    "task_id": "t_mmsfp18w4p1k",
+    "deliverable_id": "dlv_rpgpo_tmmsfp18w4p1k_action_plan_a0edb1eb",
+    "engine_id": "travel",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "itinerary",
+      "options",
+      "cost_comparison"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T00:17:28.748Z"
+  },
+  "t_mmsfp3kwv2df": {
+    "task_id": "t_mmsfp3kwv2df",
+    "deliverable_id": "dlv_rpgpo_tmmsfp3kwv2df_recommendation_208c75b0",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T00:17:44.181Z"
+  },
+  "t_mmsfp5wwd10e": {
+    "task_id": "t_mmsfp5wwd10e",
+    "deliverable_id": "dlv_rpgpo_tmmsfp5wwd10e_recommendation_5689f35c",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T00:17:49.765Z"
   }
 }

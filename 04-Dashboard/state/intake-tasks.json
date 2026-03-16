@@ -1,5 +1,374 @@
 [
   {
+    "task_id": "t_mmsfp5wwd10e",
+    "title": "Research the best ways to automate personal finances. Compare tools like Monarch",
+    "raw_request": "Research the best ways to automate personal finances. Compare tools like Monarch, YNAB, Copilot, and manual spreadsheet approaches. Include pricing and automation capabilities.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:17:22.736Z",
+    "updated_at": "2026-03-16T00:19:35.286Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:17:49.750Z",
+      "interpreted_objective": "Research and compare automation tools for personal finance, including Monarch, YNAB, Copilot, and manual spreadsheets.",
+      "expected_outcome": "A comprehensive report comparing the automation capabilities, pricing, and features of Monarch, YNAB, Copilot, and manual spreadsheet approaches.",
+      "key_unknowns": [
+        "Current pricing of each tool",
+        "Specific automation features of each tool",
+        "User reviews and satisfaction levels",
+        "Comparative advantages of each tool over manual spreadsheets"
+      ],
+      "recommended_strategy": "First, conduct web research to gather detailed information about Monarch, YNAB, Copilot, and manual spreadsheet approaches regarding their pricing, features, and automation capabilities. Then, synthesize this information into a structured report that compares these tools and provides actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Personal Finance Automation Tools",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on Monarch, YNAB, Copilot, and manual spreadsheet approaches, including pricing, features, and user reviews.",
+          "prompt": "Search the web for current, specific information about Monarch, YNAB, Copilot, and manual spreadsheet approaches for personal finance automation. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Monarch, YNAB, Copilot, and manual spreadsheet approaches, with specific recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Monarch, YNAB, Copilot, and manual spreadsheet approaches. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-automation-tools-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2167
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsfp3kwv2df",
+    "title": "Research the best cities in the US for tech startups in 2026. Compare Austin, Mi",
+    "raw_request": "Research the best cities in the US for tech startups in 2026. Compare Austin, Miami, Denver, Nashville, and Raleigh. Include cost of living, talent pool, funding activity, and quality of life.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:17:19.712Z",
+    "updated_at": "2026-03-16T00:19:27.760Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:17:44.174Z",
+      "interpreted_objective": "Research and compare the best cities in the US for tech startups in 2026, focusing on Austin, Miami, Denver, Nashville, and Raleigh.",
+      "expected_outcome": "A comprehensive report comparing Austin, Miami, Denver, Nashville, and Raleigh on cost of living, talent pool, funding activity, and quality of life for tech startups in 2026.",
+      "key_unknowns": [
+        "Current and projected cost of living in each city",
+        "Availability and quality of tech talent in each city",
+        "Funding activity levels in each city",
+        "Quality of life metrics for each city"
+      ],
+      "recommended_strategy": "Use Perplexity to gather current data on cost of living, talent pool, funding activity, and quality of life for each city. Then, use OpenAI to synthesize this data into a comparative report with actionable insights.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Cost of Living and Talent Pool",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current and projected data on cost of living and talent pool for Austin, Miami, Denver, Nashville, and Raleigh.",
+          "prompt": "Search the web for current and projected data on cost of living and the availability and quality of tech talent in Austin, Miami, Denver, Nashville, and Raleigh for 2026. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Funding Activity and Quality of Life",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on funding activity and quality of life metrics for Austin, Miami, Denver, Nashville, and Raleigh.",
+          "prompt": "Search the web for current data on funding activity levels and quality of life metrics for tech startups in Austin, Miami, Denver, Nashville, and Raleigh. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize and Compare City Data",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comparative report on Austin, Miami, Denver, Nashville, and Raleigh for tech startups in 2026.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comparative report on Austin, Miami, Denver, Nashville, and Raleigh. Include specific data on cost of living, talent pool, funding activity, and quality of life, and provide actionable insights.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2496
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsfp18w4p1k",
+    "title": "Plan a weekend road trip from Austin to Big Bend National Park. Include route op",
+    "raw_request": "Plan a weekend road trip from Austin to Big Bend National Park. Include route options, gas stops, campsite reservations, hiking trails by difficulty, and packing list. 3 days total.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:17:16.688Z",
+    "updated_at": "2026-03-16T00:19:18.648Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:17:28.731Z",
+      "interpreted_objective": "Plan a detailed 3-day road trip itinerary from Austin to Big Bend National Park.",
+      "expected_outcome": "A comprehensive travel plan including route options, gas stops, campsite reservations, hiking trails by difficulty, and a packing list.",
+      "key_unknowns": [
+        "Current road conditions and route options from Austin to Big Bend",
+        "Availability of campsites in Big Bend National Park",
+        "Current gas prices and locations of gas stations along the route",
+        "Difficulty levels and accessibility of hiking trails in Big Bend",
+        "Essential items for a 3-day road trip to Big Bend"
+      ],
+      "recommended_strategy": "First, gather current data on route options, gas stops, campsite availability, and hiking trails using web research. Then, synthesize this information into a structured travel itinerary with specific recommendations for each aspect of the trip.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Route Options and Gas Stops",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on route options from Austin to Big Bend, including gas stops and prices.",
+          "prompt": "Search the web for current route options from Austin to Big Bend National Park, including gas station locations and prices. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Campsite Reservations and Hiking Trails",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current availability of campsites in Big Bend National Park and information on hiking trails by difficulty.",
+          "prompt": "Search the web for current campsite availability in Big Bend National Park and details on hiking trails categorized by difficulty. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Road Trip Itinerary",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured travel itinerary including route options, gas stops, campsite reservations, hiking trails, and a packing list.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 3-day road trip itinerary from Austin to Big Bend National Park. Include route options, gas stops, campsite reservations, hiking trails by difficulty, and a packing list.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-big-bend-road-trip.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2086
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsfoywsdsth",
+    "title": "Research the best mechanical keyboard switches for coding. Compare Cherry MX Bro",
+    "raw_request": "Research the best mechanical keyboard switches for coding. Compare Cherry MX Brown, Gateron Brown, and Boba U4T. Include sound profiles and typing feel.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:17:13.660Z",
+    "updated_at": "2026-03-16T00:19:10.128Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:17:22.703Z",
+      "interpreted_objective": "Research and compare Cherry MX Brown, Gateron Brown, and Boba U4T mechanical keyboard switches for coding, focusing on sound profiles and typing feel.",
+      "expected_outcome": "A comprehensive comparison report detailing the sound profiles and typing feel of Cherry MX Brown, Gateron Brown, and Boba U4T switches, with specific recommendations for coding.",
+      "key_unknowns": [
+        "Detailed sound profiles of each switch",
+        "Typing feel descriptions",
+        "User preferences for coding",
+        "Current market trends for these switches"
+      ],
+      "recommended_strategy": "First, conduct web research to gather detailed information about the sound profiles and typing feel of Cherry MX Brown, Gateron Brown, and Boba U4T switches. Then, synthesize this data into a structured report, providing a clear comparison and recommendations for coding use.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Mechanical Keyboard Switches",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on sound profiles and typing feel for Cherry MX Brown, Gateron Brown, and Boba U4T switches, including citations.",
+          "prompt": "Search the web for current, specific information about Cherry MX Brown, Gateron Brown, and Boba U4T mechanical keyboard switches. Focus on sound profiles and typing feel. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Keyboard Switch Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Cherry MX Brown, Gateron Brown, and Boba U4T switches, with recommendations for coding.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for Cherry MX Brown, Gateron Brown, and Boba U4T switches. Include specific names, numbers, and concrete next steps for coding use.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-keyboard-switches.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2194
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsfowkpho2n",
+    "title": "Calculate the total cost of owning a Tesla Model 3 vs a Honda Civic over 5 years",
+    "raw_request": "Calculate the total cost of owning a Tesla Model 3 vs a Honda Civic over 5 years in Austin TX. Include purchase price, financing, insurance, fuel/electricity, maintenance, and depreciation.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:17:10.633Z",
+    "updated_at": "2026-03-16T00:18:26.260Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:17:17.548Z",
+      "interpreted_objective": "Compare the total cost of owning a Tesla Model 3 vs a Honda Civic over 5 years in Austin, TX.",
+      "expected_outcome": "A detailed comparison report with specific costs for each car, including purchase price, financing, insurance, fuel/electricity, maintenance, and depreciation.",
+      "key_unknowns": [
+        "Current purchase prices of Tesla Model 3 and Honda Civic",
+        "Financing terms and interest rates",
+        "Insurance costs in Austin, TX",
+        "Fuel costs for Honda Civic and electricity costs for Tesla Model 3",
+        "Maintenance costs for both vehicles",
+        "Depreciation rates over 5 years"
+      ],
+      "recommended_strategy": "First, gather current data on purchase prices, financing, insurance, fuel/electricity, maintenance, and depreciation for both vehicles using Perplexity. Then, synthesize this data into a comprehensive report comparing the total cost of ownership over 5 years.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Costs",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on purchase prices, financing, insurance, fuel/electricity, maintenance, and depreciation for Tesla Model 3 and Honda Civic.",
+          "prompt": "Search the web for current, specific information about the purchase prices, financing options, insurance costs, fuel/electricity costs, maintenance costs, and depreciation rates for Tesla Model 3 and Honda Civic in Austin, TX. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Cost Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the total cost of owning a Tesla Model 3 vs a Honda Civic over 5 years in Austin, TX.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report comparing the total cost of ownership for Tesla Model 3 and Honda Civic over 5 years in Austin, TX. Include specific costs for purchase price, financing, insurance, fuel/electricity, maintenance, and depreciation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-tesla-vs-honda-cost-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2020
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
     "task_id": "t_mms6z369l0xj",
     "title": "Create a weekly meal prep workflow that takes under 2 hours. Include shopping li",
     "raw_request": "Create a weekly meal prep workflow that takes under 2 hours. Include shopping list template, prep order, and storage tips.",
