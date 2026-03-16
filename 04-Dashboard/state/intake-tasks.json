@@ -1,5 +1,692 @@
 [
   {
+    "task_id": "t_mmsrtjkt5r5s",
+    "title": "Design a personal finance dashboard that tracks net worth, cash flow, and invest",
+    "raw_request": "Design a personal finance dashboard that tracks net worth, cash flow, and investment performance. Include data sources, key metrics, visualization recommendations, and alert thresholds.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:56:42.461Z",
+    "updated_at": "2026-03-16T06:00:47.546Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:57:36.898Z",
+      "interpreted_objective": "Design a personal finance dashboard to track net worth, cash flow, and investment performance with specific data sources and visualization recommendations.",
+      "expected_outcome": "A detailed plan for a personal finance dashboard including data sources, key metrics, visualization recommendations, and alert thresholds.",
+      "key_unknowns": [
+        "Specific data sources available for integration",
+        "Preferred visualization tools or platforms",
+        "Exact metrics and alert thresholds desired by Rahul"
+      ],
+      "recommended_strategy": "Research current best practices and tools for personal finance dashboards. Analyze key metrics and visualization strategies used in existing solutions. Synthesize findings into a detailed plan with actionable recommendations for Rahul.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Personal Finance Dashboards",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices, tools, and metrics used in personal finance dashboards.",
+          "prompt": "Search the web for current, specific information about personal finance dashboards. Include real names, numbers, dates, URLs, and sources. Focus on tools, metrics, visualization strategies, and alert systems.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Dashboard Design Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed plan for a personal finance dashboard including data sources, key metrics, visualization recommendations, and alert thresholds.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for designing a personal finance dashboard. Include specific data sources, key metrics, visualization recommendations, and alert thresholds.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2367
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsrtjkdwe9x",
+    "title": "Create a guide to building a smart home automation system from scratch. Compare ",
+    "raw_request": "Create a guide to building a smart home automation system from scratch. Compare Home Assistant, Apple HomeKit, and Matter protocol with device compatibility matrices and automation recipes.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:56:42.445Z",
+    "updated_at": "2026-03-16T06:00:41.690Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:57:31.567Z",
+      "interpreted_objective": "Create a comprehensive guide for building a smart home automation system, comparing Home Assistant, Apple HomeKit, and the Matter protocol.",
+      "expected_outcome": "A detailed guide that includes device compatibility matrices and automation recipes for Home Assistant, Apple HomeKit, and Matter protocol.",
+      "key_unknowns": [
+        "Current compatibility of devices with Home Assistant, Apple HomeKit, and Matter",
+        "Specific automation recipes for each platform",
+        "Latest updates or changes in the Matter protocol"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on Home Assistant, Apple HomeKit, and Matter protocol, focusing on device compatibility and automation capabilities. Then, synthesize the findings into a comprehensive guide with comparisons and practical automation recipes.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Smart Home Platforms",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Home Assistant, Apple HomeKit, and Matter protocol, including device compatibility and automation capabilities.",
+          "prompt": "Search the web for current, specific information about Home Assistant, Apple HomeKit, and the Matter protocol. Include real names, numbers, dates, URLs, and sources, focusing on device compatibility and automation capabilities.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Smart Home Automation Guide",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide comparing Home Assistant, Apple HomeKit, and Matter protocol with device compatibility matrices and automation recipes.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building a smart home automation system. Include comparisons of Home Assistant, Apple HomeKit, and Matter protocol, with device compatibility matrices and practical automation recipes.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2231
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsrtjjz2gjq",
+    "title": "Write a detailed series bible for an anthology sci-fi show where each episode ex",
+    "raw_request": "Write a detailed series bible for an anthology sci-fi show where each episode explores a different ethical dilemma of AI consciousness. Include 6 episode loglines with unique settings.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:56:42.431Z",
+    "updated_at": "2026-03-16T06:00:29.817Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:57:26.292Z",
+      "interpreted_objective": "Create a detailed series bible for an anthology sci-fi show exploring AI consciousness ethics.",
+      "expected_outcome": "A comprehensive series bible with six unique episode loglines, each set in a different environment, focusing on AI ethical dilemmas.",
+      "key_unknowns": [
+        "Specific ethical dilemmas to be explored",
+        "Unique settings for each episode",
+        "Tone and style preferences for the series"
+      ],
+      "recommended_strategy": "First, research existing sci-fi anthologies and AI ethical dilemmas to gather inspiration and context. Then, synthesize this information to create a detailed series bible with episode loglines, ensuring each story is unique and thought-provoking.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Sci-Fi Anthologies and AI Ethical Dilemmas",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of insights and examples from existing sci-fi anthologies and AI ethical dilemmas.",
+          "prompt": "Search the web for information on popular sci-fi anthology shows and common ethical dilemmas related to AI consciousness. Include specific examples, themes, and settings used in these shows.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Series Bible and Episode Loglines",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed series bible with six episode loglines, each with a unique setting and ethical dilemma.",
+          "prompt": "Based on the research results, create a series bible for an anthology sci-fi show. Include six episode loglines, each exploring a different ethical dilemma of AI consciousness, with unique settings and engaging plot summaries.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-series-bible.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1913
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsrtjjl7by8",
+    "title": "Plan a 10-day road trip through Iceland Ring Road. Include glacier hikes, hot sp",
+    "raw_request": "Plan a 10-day road trip through Iceland Ring Road. Include glacier hikes, hot springs, whale watching in Husavik, and Northern Lights viewing spots with seasonal timing.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:56:42.417Z",
+    "updated_at": "2026-03-16T06:00:16.513Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:57:20.979Z",
+      "interpreted_objective": "Plan a detailed 10-day road trip itinerary for Iceland's Ring Road, including specific activities and seasonal recommendations.",
+      "expected_outcome": "A comprehensive itinerary with specific activities, dates, costs, and logistics for a 10-day road trip around Iceland's Ring Road.",
+      "key_unknowns": [
+        "Current availability and pricing for activities like glacier hikes, hot springs, whale watching, and Northern Lights tours",
+        "Best seasonal timing for Northern Lights viewing",
+        "Exact locations and logistics for each activity"
+      ],
+      "recommended_strategy": "First, gather current information on the availability and pricing of the specified activities along Iceland's Ring Road. Then, synthesize this data into a detailed itinerary with specific dates, costs, and logistics. Ensure the itinerary aligns with seasonal opportunities for activities like Northern Lights viewing.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Iceland Road Trip Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on availability and pricing for glacier hikes, hot springs, whale watching, and Northern Lights tours in Iceland.",
+          "prompt": "Search the web for current, specific information about availability and pricing for glacier hikes, hot springs, whale watching in Husavik, and Northern Lights tours along Iceland's Ring Road. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Iceland Road Trip Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 10-day itinerary for a road trip around Iceland's Ring Road, including specific activities, dates, costs, and logistics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 10-day road trip itinerary for Iceland's Ring Road. Include specific activities like glacier hikes, hot springs, whale watching in Husavik, and Northern Lights viewing. Provide specific dates, costs, and logistics.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-iceland-road-trip.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1967
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsrtjj2hcs2",
+    "title": "Design a 12-week marathon training plan for intermediate runners (sub-4 hour goa",
+    "raw_request": "Design a 12-week marathon training plan for intermediate runners (sub-4 hour goal). Include periodization, cross-training days, nutrition timing, and injury prevention protocols.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:56:42.398Z",
+    "updated_at": "2026-03-16T06:00:05.312Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:57:16.271Z",
+      "interpreted_objective": "Create a comprehensive 12-week marathon training plan for intermediate runners aiming for a sub-4 hour finish.",
+      "expected_outcome": "A detailed, evidence-based training plan that includes periodization, cross-training, nutrition timing, and injury prevention strategies.",
+      "key_unknowns": [
+        "Specific evidence-based sources for periodization and injury prevention",
+        "Optimal nutrition timing strategies for marathon training",
+        "Best practices for cross-training for intermediate marathon runners"
+      ],
+      "recommended_strategy": "Conduct research to gather current evidence-based practices for marathon training. Synthesize this information into a structured plan that includes all requested components. Ensure safety disclaimers are included where necessary.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final review of the synthesized training plan"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Marathon Training Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current evidence-based practices for marathon training, including periodization, cross-training, nutrition timing, and injury prevention.",
+          "prompt": "Search the web for current, specific information about marathon training practices for intermediate runners aiming for a sub-4 hour finish. Include periodization, cross-training, nutrition timing, and injury prevention. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Marathon Training Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 12-week marathon training plan with all components detailed.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 12-week marathon training plan for intermediate runners aiming for a sub-4 hour finish. Include periodization, cross-training days, nutrition timing, and injury prevention protocols. Ensure the plan is specific, evidence-based, and actionable.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-marathon-training-plan.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1918
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsrtjioscpm",
+    "title": "Create a comprehensive guide to negotiating a tech job offer. Include base salar",
+    "raw_request": "Create a comprehensive guide to negotiating a tech job offer. Include base salary benchmarking, equity valuation for pre-IPO vs public companies, signing bonus strategies, and counter-offer scripting.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:56:42.384Z",
+    "updated_at": "2026-03-16T05:59:55.902Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:57:09.925Z",
+      "interpreted_objective": "Create a comprehensive guide for negotiating a tech job offer, covering salary benchmarking, equity valuation, signing bonus strategies, and counter-offer scripting.",
+      "expected_outcome": "A detailed guide that provides actionable strategies and insights for negotiating tech job offers, tailored to data engineering roles.",
+      "key_unknowns": [
+        "Current salary benchmarks for data engineering roles",
+        "Differences in equity valuation for pre-IPO vs public companies",
+        "Effective signing bonus negotiation strategies",
+        "Successful counter-offer scripts"
+      ],
+      "recommended_strategy": "Conduct research to gather current data on salary benchmarks and equity valuation. Synthesize this information into a comprehensive guide, including practical negotiation strategies and scripts. Ensure the guide is tailored to data engineering roles and includes specific examples and actionable steps.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Salary and Equity Information",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on salary benchmarks for data engineers, equity valuation differences for pre-IPO vs public companies, and signing bonus trends.",
+          "prompt": "Search the web for current salary benchmarks for senior data engineers, differences in equity valuation between pre-IPO and public companies, and trends in signing bonuses in the tech industry. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Negotiation Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide to negotiating tech job offers, including salary benchmarking, equity valuation, signing bonus strategies, and counter-offer scripting.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for negotiating tech job offers. Include sections on salary benchmarking, equity valuation for pre-IPO vs public companies, signing bonus strategies, and counter-offer scripting. Provide specific examples and actionable steps tailored to data engineering roles.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-negotiation-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2215
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsrtji9wwkh",
+    "title": "Research the best noise-canceling headphones for open office environments under ",
+    "raw_request": "Research the best noise-canceling headphones for open office environments under $350. Compare Sony WH-1000XM5, Bose QC Ultra, and Apple AirPods Max with microphone quality for calls.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:56:42.369Z",
+    "updated_at": "2026-03-16T05:59:47.013Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:57:04.163Z",
+      "interpreted_objective": "Research and compare the best noise-canceling headphones under $350 for open office environments, focusing on Sony WH-1000XM5, Bose QC Ultra, and Apple AirPods Max, with an emphasis on microphone quality for calls.",
+      "expected_outcome": "A comprehensive comparison report detailing the strengths and weaknesses of each headphone model in terms of noise-canceling capabilities and microphone quality, with specific recommendations.",
+      "key_unknowns": [
+        "Current market prices for each headphone model",
+        "Specific microphone quality ratings for calls",
+        "Overall performance in open office environments"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on the specified headphone models, focusing on noise-canceling features, microphone quality, and pricing. Then, synthesize this information into a comparative analysis report with recommendations based on the findings.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Headphone Features and Pricing",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on noise-canceling capabilities, microphone quality, and pricing for Sony WH-1000XM5, Bose QC Ultra, and Apple AirPods Max.",
+          "prompt": "Search the web for current, specific information about the Sony WH-1000XM5, Bose QC Ultra, and Apple AirPods Max headphones. Focus on noise-canceling capabilities, microphone quality for calls, and pricing under $350. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Headphone Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the Sony WH-1000XM5, Bose QC Ultra, and Apple AirPods Max, with recommendations based on noise-canceling and microphone quality.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing the Sony WH-1000XM5, Bose QC Ultra, and Apple AirPods Max. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-noise-canceling-headphones.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2239
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsrtjht45hr",
+    "title": "Explain how modern CPU branch prediction works including speculative execution, ",
+    "raw_request": "Explain how modern CPU branch prediction works including speculative execution, branch target buffers, and the performance implications of mispredictions. Include Spectre-class vulnerability mitigations.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:56:42.353Z",
+    "updated_at": "2026-03-16T05:59:38.286Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:56:57.716Z",
+      "interpreted_objective": "Explain modern CPU branch prediction and its implications, including vulnerabilities and mitigations.",
+      "expected_outcome": "A detailed, clear explanation of CPU branch prediction mechanisms and their performance and security implications.",
+      "key_unknowns": [
+        "Depth of technical detail required",
+        "Specific audience knowledge level"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on CPU branch prediction, speculative execution, branch target buffers, and Spectre-class vulnerabilities. Synthesize this information into a concise, informative document tailored to a technically aware audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research CPU Branch Prediction",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data on modern CPU branch prediction, speculative execution, branch target buffers, and Spectre-class vulnerabilities.",
+          "prompt": "Search the web for current, specific information about modern CPU branch prediction techniques, including speculative execution, branch target buffers, and Spectre-class vulnerabilities. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Explanation Document",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A clear and informative document explaining modern CPU branch prediction, its performance implications, and Spectre-class vulnerability mitigations.",
+          "prompt": "Based on the research results, synthesize a detailed explanation of modern CPU branch prediction, including speculative execution, branch target buffers, and the performance implications of mispredictions. Discuss Spectre-class vulnerability mitigations. Tailor the explanation to a technically aware audience.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2027
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsrtjhez991",
+    "title": "Create a guide to building a diversified dividend portfolio for passive income. ",
+    "raw_request": "Create a guide to building a diversified dividend portfolio for passive income. Include DRIP strategies, sector allocation, ex-dividend date optimization, and tax-efficient withdrawal sequencing.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:56:42.338Z",
+    "updated_at": "2026-03-16T05:59:30.351Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:56:53.267Z",
+      "interpreted_objective": "Create a detailed guide on building a diversified dividend portfolio for passive income.",
+      "expected_outcome": "A comprehensive guide including DRIP strategies, sector allocation, ex-dividend date optimization, and tax-efficient withdrawal sequencing.",
+      "key_unknowns": [
+        "Current best practices for DRIP strategies",
+        "Optimal sector allocation for dividend portfolios",
+        "How to optimize ex-dividend dates for maximum income",
+        "Tax-efficient withdrawal sequencing specific to dividend income"
+      ],
+      "recommended_strategy": "Research current best practices and strategies for building a diversified dividend portfolio. Synthesize findings into a detailed guide that includes specific strategies, examples, and actionable steps for implementation. Focus on DRIP strategies, sector allocation, ex-dividend date optimization, and tax-efficient withdrawal sequencing.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Dividend Portfolio Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and strategies for building a diversified dividend portfolio.",
+          "prompt": "Search the web for current, specific information about building a diversified dividend portfolio for passive income. Include DRIP strategies, sector allocation, ex-dividend date optimization, and tax-efficient withdrawal sequencing. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Dividend Portfolio Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on building a diversified dividend portfolio for passive income.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed guide on building a diversified dividend portfolio for passive income. Include DRIP strategies, sector allocation, ex-dividend date optimization, and tax-efficient withdrawal sequencing. Provide specific examples and actionable steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2410
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsrtjeirrxb",
+    "title": "Design a comprehensive API rate limiting strategy for a multi-tenant SaaS platfo",
+    "raw_request": "Design a comprehensive API rate limiting strategy for a multi-tenant SaaS platform. Include token bucket vs sliding window algorithms, per-tenant quotas, and graceful degradation patterns.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:56:42.234Z",
+    "updated_at": "2026-03-16T05:59:22.627Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:56:47.635Z",
+      "interpreted_objective": "Design an API rate limiting strategy for a SaaS platform with a focus on multi-tenancy and algorithm comparison.",
+      "expected_outcome": "A detailed strategy document outlining API rate limiting techniques, including token bucket vs sliding window algorithms, per-tenant quotas, and graceful degradation patterns.",
+      "key_unknowns": [
+        "Specific requirements or constraints of the SaaS platform",
+        "Current API usage patterns and load",
+        "Existing infrastructure and technology stack"
+      ],
+      "recommended_strategy": "Conduct research to understand the differences between token bucket and sliding window algorithms. Analyze how these can be applied to a multi-tenant SaaS platform with per-tenant quotas and graceful degradation. Synthesize findings into a comprehensive strategy document.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Choice of rate limiting algorithm",
+        "Implementation plan for per-tenant quotas"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Rate Limiting Algorithms",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on token bucket and sliding window algorithms, including pros, cons, and use cases.",
+          "prompt": "Search the web for current, specific information about token bucket and sliding window algorithms for API rate limiting. Include real examples, pros and cons, and use cases.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Rate Limiting Strategy",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive strategy document detailing API rate limiting techniques for a multi-tenant SaaS platform.",
+          "prompt": "Based on the research results, synthesize a comprehensive API rate limiting strategy for a multi-tenant SaaS platform. Include comparisons between token bucket and sliding window algorithms, per-tenant quotas, and graceful degradation patterns.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2404
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
     "task_id": "t_mmsrecw8z83x",
     "title": "Design a comprehensive system for managing personal knowledge and notes. Compare Obsidian, Notion, and Logseq workflows with templates for daily notes, project tracking, and literature reviews.",
     "raw_request": "",
