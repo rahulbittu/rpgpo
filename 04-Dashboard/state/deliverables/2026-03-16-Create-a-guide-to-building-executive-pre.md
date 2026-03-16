@@ -1,94 +1,96 @@
-# Create a guide to building executive presence as a senior engineer. Include comm
+# Create a guide to building executive presence as a senior engineer presenting to
 
-**Domain:** careeregine | **Date:** 2026-03-16 | **Subtasks:** 2
+**Domain:** general | **Date:** 2026-03-16 | **Subtasks:** 2
 
 
 
-## Research Executive Presence for Senior Engineers
-## Defining Executive Presence for Senior Engineers
+## Research Communication Strategies
+## Finding 1: Tandem Coach Diagnostic Framework for Executive Presence (Expression and Authority Gaps)
+- Targets **expression gaps** with three exercises: (1) Decision narration (e.g., "I’m weighing two factors here" to show real-time reasoning); (2) Expression calibration (voice initial reactions like "That surprises me"); (3) Checking-in protocol (ask direct reports: “What are you reading from me right now?” for feedback data).
+- Addresses **authority gaps** via: (1) Restraint practice (speak last in meetings to increase statement weight); (2) Position-first communication (state recommendation first, e.g., "Delay launch by two weeks," before data); (3) Meeting contribution audit (track speaks, asks, and outcome impact over two weeks).
+- Published without specific date; framework emphasizes diagnosis over generic confidence-building.
+Source: https://tandemcoach.co/developing-executive-presence/[1]
 
-Executive presence for senior technology leaders, including engineers, involves communicating complex ideas clearly, holding authority without defensiveness, navigating challenges calmly, thinking strategically, and staying steady under pressure—distinct from charisma or loudness.[1]
+## Finding 2: Onrec 2026 Executive Communication Skills for Non-Technical Audiences
+- Key techniques for **adapting to non-technical stakeholders**: Adjust language (technical vs. nontechnical), focus on outcomes/strategic value, emphasize relevant priorities; e.g., employees get practical guidance, investors get high-level strategy with measurable outcomes.
+- **Clear communication of complex data**: Use strategic storytelling, persuasive presentations, stakeholder-focused messaging in MBA-style programs with feedback and case studies.
+- For remote/hybrid: Set clear expectations, regular updates, transparent decisions to align non-technical teams.
+- Article dated for 2026 trends; no specific names or numbers beyond skill lists.
+Source: https://www.onrec.com/news/news-archive/the-executive-communication-skills-employers-will-demand-in-2026[2]
 
-## Real Techniques and Best Practices
+## Finding 3: Talk About Talk Podcast on Leadership Presence Hierarchy (Episode 207)
+- Dr. Andrea Wojnicki redefines **executive presence as "leadership presence"** via four-tier hierarchy: Starts with foundational communication (public speaking, body language), builds to impact; download framework at https://www.talkabouttalk.com/leadershippresence.
+- References Sylvia Ann Hewlett's definition: Executive presence = communication + gravitas (confidence, integrity) + appearance; all learnable communication skills to inspire confidence.
+- Episode released around 2025 (i=1000752655648 indicates recent); stresses authenticity over 1980s CEO stereotypes for non-technical respect-building.
+Source: https://podcasts.apple.com/kn/podcast/rethinking-executive-presence-how-to-show-up-with-real/id1447267503?i=1000752655648[3]
 
-Targeted strategies address three gap types: authority, context, and expression. Examples include:
+## Finding 4: Stanford GSB Think Fast, Talk Smart Video on Presumptuous Executive Communication
+- Matt Abrahams advises **strategic self-advocacy** for presence: Schedule 10-15 minute intro meetings with senior leaders (e.g., "I want to learn about your work"); offer observations after rapport, not directives.
+- Distinguishes presumptuous from strategic: Build via 30-day plans reaching unknown executives; negotiate salary/title confidently by knowing when to push/pause.
+- Video from Stanford series, transcript timestamps (e.g., ts:385-753) highlight normal conversation rules for executive communication to non-technical audiences.
+Source: https://www.youtube.com/watch?v=8f9eZouWREQ[4]
 
-- **Decision narration**: Narrate reasoning in real time, e.g., "I’m weighing two factors here" or "My concern is the timeline risk," to make thinking visible instead of silent decisions.[2]
-- **Expression calibration**: Voice reactions immediately in meetings, e.g., "That surprises me" or "My first reaction is positive," for readable signals.[2]
-- **Checking-in protocol**: Ask direct reports at intervals, "What are you reading from me right now?" to measure intent vs. perception gaps.[2]
-- **Restraint practice**: In meetings, speak last instead of first/most to increase statement weight, as senior influence differs from individual contributor style.[2]
-- **Position-first communication**: State position before data, e.g., "I recommend delaying launch by two weeks" then reasons, reversing analyst patterns.[2]
-- **Meeting contribution audit**: Track for two weeks: speak frequency, solicited vs. volunteered input, outcome impact from your input.[2]
-- **Clarity of thought**: Articulate strategic direction succinctly, identify signals amid noise, anchor in long-term priorities to minimize over-explaining.[1]
+## Actionable Next Steps for Senior Engineer
+- **Week 1**: Run meeting audit (track 3 data points per meeting) and practice position-first in 2 presentations to non-tech stakeholders[1].
+- **Week 2**: Test expression exercises (decision narration, calibration) in team meetings; ask "What are you reading from me?" of 3 direct reports[1].
+- **Ongoing**: Download Wojnicki hierarchy framework; adapt 1 presentation using Onrec tailoring (outcomes-first for executives)[2][3].
+- **Measure**: After 30 days, review if stakeholder feedback improved (target 20% more outcome influence per audit)[1][4].
 
-These shift adaptive patterns like over-explaining or softening authority, developed via internal alignment on thought patterns, strategic identity, energy, and power dynamics.[1]
-
-## Real Examples and Programs
-
-- **Yale Global Executive Leadership Program (YGELP)**: For executives with 20+ years experience (e.g., heads of functions, senior advisory groups), includes 360 assessments, executive coaching, CEO conversations, and modules on executive voice/presence, influence, resilience. Features Yale CEO Summit for candid CEO insights; held on-campus with virtual follow-ups.[3] Source: https://som.yale.edu/executive-education/for-individuals/yale-global-executive-leadership-program
-- **Tandem Coach Framework**: Used for leaders where career-accelerating behaviors create presence gaps; authority gaps require renegotiating role identity via restraint and audits.[2] Source: https://tandemcoach.co/developing-executive-presence/
-- **Ideara Coaching**: For tech directors/VPs/founders/C-suite; confidential calls assess current experience, strong/stretched presence areas, next-level requirements.[1] Source: https://www.ideara.co.uk/executive-presence-technology-leadership
-
-## Actionable Next Steps for Senior Engineers
-
-- Conduct a 2-week meeting audit today: Log speaks, solicitations, impacts in a spreadsheet for pattern data.[2]
-- Practice position-first in next team meeting: State recommendation upfront, follow with data.[2]
-- Schedule a free coaching call via Ideara or similar for presence diagnosis.[1]
-- Apply to YGELP if 20+ years experience matches; next cohort details on site.[3]
-- Listen to "Speak Up" podcast episode on executive presence for meeting participation techniques (host Laura Camacho, 20+ years coaching).[4] Source: https://podcasts.apple.com/np/podcast/speak-up:-develop-your-executive-presence-&-leadership-communication-style/id1368646965
-
-## Synthesize Guide on Executive Presence
+## Synthesize Guide
 ## Key Findings
 
-### Executive Presence for Senior Engineers
-Executive presence for senior engineers is characterized by the ability to communicate complex ideas clearly, maintain authority without defensiveness, navigate challenges with calmness, think strategically, and remain composed under pressure. This presence is not about charisma or being loud but about the strategic use of authority and communication.[1]
+1. **Tandem Coach Diagnostic Framework**: This framework addresses expression and authority gaps in executive presence. It provides exercises like decision narration, expression calibration, and checking-in protocols to improve expression. Authority gaps are tackled through restraint practice, position-first communication, and meeting contribution audits.
 
-### Techniques and Best Practices
-Several targeted strategies help senior engineers build executive presence by addressing gaps in authority, context, and expression:
+2. **Onrec 2026 Executive Communication Skills**: Focuses on adapting communication for non-technical audiences by adjusting language, emphasizing strategic value, and using storytelling techniques. It also highlights the importance of setting clear expectations in remote or hybrid settings.
 
-1. **Decision Narration**: Make your decision-making process transparent by verbalizing your reasoning in real-time during discussions. For instance, saying, "I’m weighing two factors here," helps others understand your thought process.[2]
+## Detailed Analysis
 
-2. **Expression Calibration**: Immediately voice your reactions in meetings to provide clear signals, such as, "That surprises me," or "My first reaction is positive."[2]
+### Tandem Coach Diagnostic Framework
 
-3. **Checking-in Protocol**: Regularly ask your team, "What are you reading from me right now?" to ensure your intent matches their perception.[2]
+- **Expression Gaps**:
+  - **Decision Narration**: Helps articulate thought processes in real-time, making reasoning transparent to non-technical audiences. This builds trust and clarity.
+  - **Expression Calibration**: Encourages voicing initial reactions to engage audiences and invite dialogue, making presentations more interactive.
+  - **Checking-in Protocol**: Collects real-time feedback to adjust communication style, ensuring the message is received as intended.
 
-4. **Restraint Practice**: Speak last in meetings to give your statements more weight, as this approach is more influential than speaking first or most often.[2]
+- **Authority Gaps**:
+  - **Restraint Practice**: Speaking last in meetings can enhance perceived authority and ensure that contributions are impactful.
+  - **Position-First Communication**: Leading with recommendations provides clarity and focuses the audience on key outcomes.
+  - **Meeting Contribution Audit**: Tracking contributions can help identify patterns and areas for improvement in communication style.
 
-5. **Position-First Communication**: Begin with your recommendation or decision before presenting the supporting data, e.g., "I recommend delaying the launch by two weeks," then explain the reasoning.[2]
+### Onrec 2026 Executive Communication Skills
 
-6. **Meeting Contribution Audit**: Track your speaking frequency and the impact of your contributions over two weeks to assess and adjust your influence in meetings.[2]
+- **Adapting Language**: Tailoring language to match the audience's technical understanding ensures clarity and engagement. For example, using layman's terms when explaining technical concepts to non-technical stakeholders.
+  
+- **Outcome and Strategic Value Focus**: Highlighting the strategic impact and measurable outcomes of technical decisions helps align with the audience's priorities, whether they are employees or investors.
 
-7. **Clarity of Thought**: Clearly articulate strategic directions succinctly to ensure understanding and alignment.
+- **Strategic Storytelling**: Using narratives to convey complex data makes information relatable and memorable. This technique is particularly effective in persuasive presentations.
 
-## Recommendations
+- **Remote/Hybrid Communication**: Setting clear expectations and maintaining consistent communication channels are crucial in these settings to ensure alignment and understanding.
 
-### Communication Style
-- **Use Decision Narration**: This helps to clarify your thought process and engage others in your reasoning. Begin practicing in smaller meetings before applying it to larger forums.
+## Recommended Actions
 
-### Meeting Behavior
-- **Practice Restraint**: Speaking last can enhance your influence. Start by observing meetings and noting when your input would be most impactful.
+1. **Implement Decision Narration and Expression Calibration**:
+   - **What to Do**: Practice these exercises in team meetings to refine real-time reasoning and engage audiences.
+   - **Why**: Enhances clarity and builds trust with non-technical stakeholders.
+   - **Expected Outcome**: Improved audience engagement and understanding of technical decisions.
+   - **First Step**: Schedule a practice session with peers to simulate decision narration scenarios.
 
-### Stakeholder Management
-- **Implement Checking-in Protocol**: Regularly solicit feedback from your team to align perceptions. This can prevent misunderstandings and build trust.
+2. **Adopt Position-First Communication**:
+   - **What to Do**: Begin presentations with clear, concise recommendations before diving into supporting data.
+   - **Why**: Provides clarity and focuses attention on key outcomes.
+   - **Expected Outcome**: More effective communication and decision-making alignment.
+   - **First Step**: Revise an upcoming presentation to lead with key recommendations.
 
-### Visibility
-- **Conduct a Meeting Contribution Audit**: Analyze your participation in meetings to ensure your contributions are both strategic and impactful. Adjust your approach based on this analysis.
+3. **Utilize Strategic Storytelling**:
+   - **What to Do**: Develop narrative-driven presentations that simplify complex data.
+   - **Why**: Makes technical information relatable and memorable for non-technical audiences.
+   - **Expected Outcome**: Increased audience retention and engagement.
+   - **First Step**: Identify a complex project and draft a narrative outline to present the data.
 
-## Action Items
+4. **Conduct a Meeting Contribution Audit**:
+   - **What to Do**: Track your contributions in meetings over two weeks to identify patterns and areas for improvement.
+   - **Why**: Provides insights into communication effectiveness and areas for development.
+   - **Expected Outcome**: Enhanced meeting presence and authority.
+   - **First Step**: Set up a tracking system (e.g., spreadsheet) to log contributions and outcomes in meetings.
 
-1. **Week 1-2**: Start practicing decision narration in team meetings. Begin with smaller, less formal meetings to build confidence.
-   
-2. **Week 3**: Implement the checking-in protocol with your direct reports. Schedule one-on-one meetings to discuss perceptions and align on goals.
-
-3. **Week 4**: Conduct a two-week meeting contribution audit. Track your input and its outcomes to identify areas for improvement.
-
-4. **Week 5**: Begin practicing speaking last in meetings. Observe the dynamics and choose strategic moments for your input.
-
-5. **Ongoing**: Regularly use position-first communication in all professional interactions to enhance clarity and decisiveness.
-
-## Resources
-
-- [1] "Executive Presence: The Missing Link Between Merit and Success" by Sylvia Ann Hewlett.
-- [2] "The Executive Presence Framework" by Joel Garfinkle, which provides practical strategies for enhancing executive presence.
-
-By following these structured techniques and recommendations, senior engineers can effectively build their executive presence, thereby enhancing their leadership capabilities and influence within their organizations.
+By implementing these strategies, senior engineers can enhance their executive presence, effectively communicate with non-technical audiences, and drive strategic outcomes.
