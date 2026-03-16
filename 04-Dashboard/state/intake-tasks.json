@@ -1,5 +1,691 @@
 [
   {
+    "task_id": "t_mmsshrg9h84t",
+    "title": "Design a systematic freelancing income diversification strategy. Include service",
+    "raw_request": "Design a systematic freelancing income diversification strategy. Include service packaging, passive income streams, pricing psychology, client acquisition funnels, and financial buffer planning.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:15:32.409Z",
+    "updated_at": "2026-03-16T06:19:45.728Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:16:25.857Z",
+      "interpreted_objective": "Develop a comprehensive strategy for diversifying freelancing income, including service packaging, passive income streams, pricing psychology, client acquisition, and financial planning.",
+      "expected_outcome": "A detailed strategy report outlining actionable steps for diversifying freelancing income with specific examples and financial projections.",
+      "key_unknowns": [
+        "Current trends in freelancing income diversification",
+        "Effective service packaging strategies",
+        "Optimal pricing psychology for freelancers",
+        "Best practices for client acquisition funnels",
+        "Financial buffer planning techniques"
+      ],
+      "recommended_strategy": "Conduct research to gather current data on freelancing income diversification strategies. Synthesize findings into a comprehensive report with actionable insights and examples. Focus on specific strategies like service packaging, passive income, and client acquisition funnels.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Freelancing Income Diversification",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data and examples of freelancing income diversification strategies.",
+          "prompt": "Search the web for current, specific information about freelancing income diversification strategies, including service packaging, passive income streams, pricing psychology, client acquisition funnels, and financial buffer planning. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Freelancing Income Strategy Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report with actionable steps for freelancing income diversification.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for freelancing income diversification. Include specific names, numbers, and concrete next steps for service packaging, passive income streams, pricing psychology, client acquisition funnels, and financial buffer planning.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-freelancing-income-strategy.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2267
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsshrdkag9d",
+    "title": "Create a comprehensive guide to indoor air quality optimization. Include HEPA fi",
+    "raw_request": "Create a comprehensive guide to indoor air quality optimization. Include HEPA filtration, CO2 monitoring, humidity control, VOC reduction strategies, and plant-based air purification assessment.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:15:32.312Z",
+    "updated_at": "2026-03-16T06:19:38.762Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:16:20.680Z",
+      "interpreted_objective": "Create a comprehensive guide on optimizing indoor air quality.",
+      "expected_outcome": "A detailed report covering HEPA filtration, CO2 monitoring, humidity control, VOC reduction, and plant-based air purification.",
+      "key_unknowns": [
+        "Current best practices for each air quality optimization strategy",
+        "Latest technologies and products available for each strategy",
+        "Effectiveness and limitations of plant-based air purification"
+      ],
+      "recommended_strategy": "Conduct thorough research on each aspect of indoor air quality optimization using reliable sources. Synthesize findings into a comprehensive guide with actionable recommendations and evidence-based assessments.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Indoor Air Quality Optimization",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and insights on HEPA filtration, CO2 monitoring, humidity control, VOC reduction, and plant-based air purification with citations.",
+          "prompt": "Search the web for current, specific information about indoor air quality optimization, focusing on HEPA filtration, CO2 monitoring, humidity control, VOC reduction strategies, and plant-based air purification. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Indoor Air Quality Guide",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on indoor air quality optimization with actionable recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on indoor air quality optimization. Include actionable recommendations for HEPA filtration, CO2 monitoring, humidity control, VOC reduction, and plant-based air purification. Provide specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-15-indoor-air-quality-optimization.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2095
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsshrary8cr",
+    "title": "Write a complete character bible for an ensemble cast workplace comedy set in a ",
+    "raw_request": "Write a complete character bible for an ensemble cast workplace comedy set in a struggling AI startup. Include 6 main characters with detailed backstories, relationship dynamics, and running gags.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:15:32.211Z",
+    "updated_at": "2026-03-16T06:19:30.136Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:16:16.084Z",
+      "interpreted_objective": "Create a detailed character bible for a workplace comedy set in an AI startup.",
+      "expected_outcome": "A comprehensive document with detailed backstories, relationship dynamics, and running gags for six main characters.",
+      "key_unknowns": [
+        "Specific character traits desired",
+        "Tone and style of the comedy",
+        "Any existing plot elements or themes"
+      ],
+      "recommended_strategy": "First, gather insights on typical character archetypes and dynamics in workplace comedies. Then, synthesize this information to develop unique characters with detailed backstories and interactions tailored to an AI startup setting.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Workplace Comedy Archetypes",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of common character archetypes and dynamics in workplace comedies.",
+          "prompt": "Search the web for information on common character archetypes and dynamics in workplace comedies. Include examples from popular shows and any unique elements that could be adapted to an AI startup setting.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Character Bible",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed character bible with backstories, relationship dynamics, and running gags for six main characters.",
+          "prompt": "Based on the research results, create a detailed character bible for a workplace comedy set in an AI startup. Include six main characters with distinct backstories, relationship dynamics, and running gags. Ensure the characters fit the startup setting and reflect the comedic tone.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2022
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsshr8bmiry",
+    "title": "Plan a 9-day cultural deep-dive into Kyoto and rural Japan. Include temple stays",
+    "raw_request": "Plan a 9-day cultural deep-dive into Kyoto and rural Japan. Include temple stays, tea ceremony experiences, sake brewery tours, pottery workshops in Shigaraki, and seasonal festival timing.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:15:32.123Z",
+    "updated_at": "2026-03-16T06:19:15.920Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:16:11.629Z",
+      "interpreted_objective": "Plan a 9-day cultural itinerary in Kyoto and rural Japan focusing on traditional experiences.",
+      "expected_outcome": "A detailed itinerary including temple stays, tea ceremonies, sake tours, pottery workshops, and festival timings.",
+      "key_unknowns": [
+        "Specific dates for seasonal festivals",
+        "Availability and locations of temple stays",
+        "Current tea ceremony experiences available",
+        "Sake brewery tour options in rural Japan",
+        "Pottery workshop schedules in Shigaraki"
+      ],
+      "recommended_strategy": "First, conduct research on current cultural offerings and festival timings in Kyoto and rural Japan using Perplexity. Then, synthesize this information into a detailed 9-day itinerary using OpenAI, ensuring all experiences are included and well-organized.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Cultural Experiences in Kyoto and Rural Japan",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current data on temple stays, tea ceremonies, sake brewery tours, pottery workshops, and festival timings.",
+          "prompt": "Search the web for current, specific information about cultural experiences in Kyoto and rural Japan. Include temple stays, tea ceremony experiences, sake brewery tours, pottery workshops in Shigaraki, and seasonal festival timings. Provide real names, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary for 9-Day Cultural Deep-Dive",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 9-day itinerary for a cultural deep-dive into Kyoto and rural Japan.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 9-day itinerary for a cultural deep-dive into Kyoto and rural Japan. Include temple stays, tea ceremonies, sake brewery tours, pottery workshops, and seasonal festival timings. Ensure the itinerary is well-organized and actionable.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-kyoto-cultural-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2146
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsshr5mtdm2",
+    "title": "Design an evidence-based cognitive performance protocol for knowledge workers. I",
+    "raw_request": "Design an evidence-based cognitive performance protocol for knowledge workers. Include nootropic stack evaluation, focus session design, ultradian rhythm optimization, and cognitive load management.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:15:32.026Z",
+    "updated_at": "2026-03-16T06:19:07.243Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:16:04.975Z",
+      "interpreted_objective": "Design a comprehensive cognitive performance protocol for knowledge workers.",
+      "expected_outcome": "A detailed protocol that includes evaluations of nootropic stacks, focus session designs, ultradian rhythm optimizations, and cognitive load management strategies.",
+      "key_unknowns": [
+        "Current best practices in cognitive performance for knowledge workers",
+        "Effective nootropic stacks and their evaluations",
+        "Optimal designs for focus sessions",
+        "Methods for ultradian rhythm optimization",
+        "Strategies for managing cognitive load"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and scientific evidence on cognitive performance enhancement for knowledge workers. Synthesize findings into a structured protocol. Evaluate nootropic stacks, focus session designs, ultradian rhythm optimization, and cognitive load management strategies based on the latest research. Compile these into a comprehensive report.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Best Practices in Cognitive Performance",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices and scientific evidence in cognitive performance for knowledge workers.",
+          "prompt": "Search the web for current, specific information about best practices in cognitive performance for knowledge workers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Cognitive Performance Protocol",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive protocol including nootropic stack evaluation, focus session design, ultradian rhythm optimization, and cognitive load management strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a cognitive performance protocol. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2589
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsshr2to157",
+    "title": "Create a guide to building a tech conference talk from scratch. Include topic se",
+    "raw_request": "Create a guide to building a tech conference talk from scratch. Include topic selection frameworks, narrative arc design, slide design principles, speaker notes strategy, and handling Q&A effectively.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:15:31.925Z",
+    "updated_at": "2026-03-16T06:18:59.329Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:16:00.120Z",
+      "interpreted_objective": "Create a comprehensive guide for building a tech conference talk from scratch.",
+      "expected_outcome": "A detailed guide covering topic selection, narrative arc, slide design, speaker notes, and Q&A handling.",
+      "key_unknowns": [
+        "Specific frameworks for topic selection",
+        "Best practices for narrative arc design",
+        "Slide design principles",
+        "Strategies for speaker notes",
+        "Effective Q&A handling techniques"
+      ],
+      "recommended_strategy": "Research best practices and frameworks for each component of a tech conference talk. Synthesize these findings into a cohesive guide. Ensure the guide is actionable and includes examples where possible.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Topic Selection Frameworks",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of frameworks and best practices for selecting a tech conference talk topic.",
+          "prompt": "Search the web for current, specific information about frameworks and best practices for selecting a tech conference talk topic. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Tech Conference Talk",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide covering topic selection, narrative arc, slide design, speaker notes, and Q&A handling.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building a tech conference talk from scratch. Include sections on topic selection frameworks, narrative arc design, slide design principles, speaker notes strategy, and handling Q&A effectively. Provide specific examples and actionable recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1986
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmsshr00d2l4",
+    "title": "Research the best home mesh Wi-Fi systems for a 3000 sq ft house with 50+ device",
+    "raw_request": "Research the best home mesh Wi-Fi systems for a 3000 sq ft house with 50+ devices. Compare Ubiquiti UniFi, Eero Pro 6E, and TP-Link Deco with wired backhaul recommendations.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:15:31.824Z",
+    "updated_at": "2026-03-16T06:18:48.263Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:15:55.752Z",
+      "interpreted_objective": "Research and compare the best home mesh Wi-Fi systems for a 3000 sq ft house with 50+ devices, focusing on Ubiquiti UniFi, Eero Pro 6E, and TP-Link Deco, including wired backhaul recommendations.",
+      "expected_outcome": "A detailed comparison report of Ubiquiti UniFi, Eero Pro 6E, and TP-Link Deco mesh Wi-Fi systems with specific recommendations for a 3000 sq ft house with 50+ devices.",
+      "key_unknowns": [
+        "Current performance metrics and user reviews for each Wi-Fi system",
+        "Specific features and pricing for each system",
+        "Effectiveness of wired backhaul options for each system"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on Ubiquiti UniFi, Eero Pro 6E, and TP-Link Deco, focusing on performance, features, pricing, and wired backhaul options. Then, synthesize this information into a comparative analysis with actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Mesh Wi-Fi Systems",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Ubiquiti UniFi, Eero Pro 6E, and TP-Link Deco, including performance, features, pricing, and wired backhaul options.",
+          "prompt": "Search the web for current, specific information about Ubiquiti UniFi, Eero Pro 6E, and TP-Link Deco mesh Wi-Fi systems for a 3000 sq ft house with 50+ devices. Include performance metrics, features, pricing, and wired backhaul recommendations. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Wi-Fi System Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Ubiquiti UniFi, Eero Pro 6E, and TP-Link Deco with recommendations for a 3000 sq ft house with 50+ devices.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed comparison of Ubiquiti UniFi, Eero Pro 6E, and TP-Link Deco mesh Wi-Fi systems. Include specific performance metrics, features, pricing, and wired backhaul recommendations. Provide concrete recommendations for a 3000 sq ft house with 50+ devices.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-mesh-wifi-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2320
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsshqyahfnu",
+    "title": "Explain how consensus algorithms work in distributed systems. Compare Raft, Paxo",
+    "raw_request": "Explain how consensus algorithms work in distributed systems. Compare Raft, Paxos, and PBFT with leader election mechanics, log replication, and split-brain handling scenarios.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:15:31.762Z",
+    "updated_at": "2026-03-16T06:18:40.304Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:15:49.830Z",
+      "interpreted_objective": "Explain and compare consensus algorithms Raft, Paxos, and PBFT in distributed systems.",
+      "expected_outcome": "A detailed report explaining how Raft, Paxos, and PBFT work, with comparisons on leader election, log replication, and split-brain handling.",
+      "key_unknowns": [
+        "Current implementations and variations of Raft, Paxos, and PBFT",
+        "Real-world examples of each algorithm in use",
+        "Recent advancements or criticisms of these algorithms"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on Raft, Paxos, and PBFT, focusing on their mechanics and use cases. Then, synthesize this data into a comparative report highlighting key differences and scenarios.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Consensus Algorithms",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on Raft, Paxos, and PBFT with citations.",
+          "prompt": "Search the web for current, specific information about consensus algorithms Raft, Paxos, and PBFT. Include their leader election mechanics, log replication processes, and split-brain handling scenarios with real-world examples, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report comparing Raft, Paxos, and PBFT, highlighting their differences and use cases.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Raft, Paxos, and PBFT. Include specific details on leader election mechanics, log replication, and split-brain handling, with concrete examples and scenarios.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-consensus-algorithms.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2103
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsshqw3plgo",
+    "title": "Create a guide to tax-loss harvesting strategies for a taxable brokerage account",
+    "raw_request": "Create a guide to tax-loss harvesting strategies for a taxable brokerage account. Include wash sale rule navigation, direct indexing benefits, optimal harvesting frequency, and pairing with Roth conversions.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:15:31.683Z",
+    "updated_at": "2026-03-16T06:18:31.257Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:15:42.989Z",
+      "interpreted_objective": "Create a comprehensive guide on tax-loss harvesting strategies for taxable brokerage accounts.",
+      "expected_outcome": "A detailed guide that includes strategies for tax-loss harvesting, wash sale rule navigation, benefits of direct indexing, optimal harvesting frequency, and pairing with Roth conversions.",
+      "key_unknowns": [
+        "Current best practices for tax-loss harvesting",
+        "Details on navigating the wash sale rule",
+        "Benefits and methods of direct indexing",
+        "Optimal frequency for tax-loss harvesting",
+        "Strategies for pairing tax-loss harvesting with Roth conversions"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on tax-loss harvesting strategies, including wash sale rules, direct indexing, and Roth conversions. Synthesize findings into a comprehensive guide with actionable steps and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tax-Loss Harvesting Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information and best practices on tax-loss harvesting strategies, including wash sale rules, direct indexing, and Roth conversions.",
+          "prompt": "Search the web for current, specific information about tax-loss harvesting strategies for taxable brokerage accounts. Include details on navigating the wash sale rule, benefits of direct indexing, optimal harvesting frequency, and pairing with Roth conversions. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Tax-Loss Harvesting Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on tax-loss harvesting strategies, including wash sale rule navigation, direct indexing benefits, optimal harvesting frequency, and pairing with Roth conversions.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on tax-loss harvesting strategies for taxable brokerage accounts. Include wash sale rule navigation, direct indexing benefits, optimal harvesting frequency, and pairing with Roth conversions. Provide actionable recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-tax-loss-harvesting-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2520
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsshqvkxbpx",
+    "title": "Design a comprehensive CI/CD pipeline for a monorepo with 5 services. Include bu",
+    "raw_request": "Design a comprehensive CI/CD pipeline for a monorepo with 5 services. Include build caching, selective testing, canary deployments, rollback automation, and cost optimization for GitHub Actions.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:15:31.664Z",
+    "updated_at": "2026-03-16T06:18:22.378Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:15:38.039Z",
+      "interpreted_objective": "Design a CI/CD pipeline for a monorepo with 5 services, including advanced features like build caching, selective testing, canary deployments, rollback automation, and cost optimization for GitHub Actions.",
+      "expected_outcome": "A detailed plan outlining the CI/CD pipeline components and strategies for the monorepo, ensuring efficient, reliable, and cost-effective deployments.",
+      "key_unknowns": [
+        "Specific technologies and frameworks used in the monorepo",
+        "Current infrastructure and deployment environment",
+        "Budget constraints for cost optimization",
+        "Existing CI/CD tools and practices in use"
+      ],
+      "recommended_strategy": "Conduct research to gather best practices for implementing CI/CD pipelines in monorepos with multiple services. Synthesize this information into a comprehensive plan that addresses the specific features requested, ensuring alignment with startup priorities and constraints. Identify potential tools and configurations that optimize for cost and performance.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the CI/CD pipeline design",
+        "Decisions on specific tools and technologies to implement"
+      ],
+      "subtasks": [
+        {
+          "title": "Research CI/CD Best Practices for Monorepos",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and tools for implementing CI/CD pipelines in monorepos with multiple services.",
+          "prompt": "Search the web for current, specific information about best practices and tools for implementing CI/CD pipelines in monorepos with multiple services. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize CI/CD Pipeline Plan",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive CI/CD pipeline plan for the monorepo, including build caching, selective testing, canary deployments, rollback automation, and cost optimization strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive CI/CD pipeline plan for a monorepo with 5 services. Include strategies for build caching, selective testing, canary deployments, rollback automation, and cost optimization for GitHub Actions.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2096
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
     "task_id": "t_mmssammea0oy",
     "title": "Design a personal CRM system for networking and relationship management. Include",
     "raw_request": "Design a personal CRM system for networking and relationship management. Include contact categorization, interaction tracking, follow-up automation, and integration with LinkedIn and email.",
