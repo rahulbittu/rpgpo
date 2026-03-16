@@ -1,5 +1,341 @@
 [
   {
+    "task_id": "t_mmtdvolnhfml",
+    "title": "Create a guide to effective one-on-one meetings as an engineering manager. Inclu",
+    "raw_request": "Create a guide to effective one-on-one meetings as an engineering manager. Include agenda templates, career conversation frameworks, difficult feedback delivery, remote 1:1 adaptations, and tracking development goals over time.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:14:13.835Z",
+    "updated_at": "2026-03-16T16:17:17.465Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:14:57.478Z",
+      "interpreted_objective": "Create a comprehensive guide for engineering managers on conducting effective one-on-one meetings.",
+      "expected_outcome": "A detailed guide with specific templates and strategies for one-on-one meetings, including agenda templates, career conversation frameworks, and adaptations for remote settings.",
+      "key_unknowns": [
+        "Specific challenges engineering managers face in one-on-one meetings",
+        "Best practices for remote one-on-one meetings",
+        "Effective methods for tracking development goals over time"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and frameworks for one-on-one meetings in engineering management. Synthesize this information into a structured guide, including templates and actionable strategies. Focus on remote adaptations and career development tracking.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for One-on-One Meetings",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices, templates, and strategies for conducting effective one-on-one meetings as an engineering manager.",
+          "prompt": "Search the web for current best practices, templates, and strategies for conducting effective one-on-one meetings as an engineering manager. Include information on agenda templates, career conversation frameworks, difficult feedback delivery, remote adaptations, and tracking development goals. Provide real examples, names, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for One-on-One Meetings",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for engineering managers on effective one-on-one meetings, including agenda templates, career conversation frameworks, difficult feedback delivery, remote adaptations, and tracking development goals.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for engineering managers on conducting effective one-on-one meetings. Include specific agenda templates, career conversation frameworks, strategies for delivering difficult feedback, adaptations for remote meetings, and methods for tracking development goals over time.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-one-on-one-meetings-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2225
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmtdvol3cd8v",
+    "title": "Research the best budget turntables for vinyl enthusiasts under three hundred do",
+    "raw_request": "Research the best budget turntables for vinyl enthusiasts under three hundred dollars. Compare Audio-Technica AT-LP120XUSB, U-Turn Orbit Plus, and Fluance RT82 with cartridge quality, speed accuracy, and upgrade paths.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:14:13.815Z",
+    "updated_at": "2026-03-16T16:17:05.205Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:14:48.610Z",
+      "interpreted_objective": "Research and compare the best budget turntables under $300, focusing on Audio-Technica AT-LP120XUSB, U-Turn Orbit Plus, and Fluance RT82, considering cartridge quality, speed accuracy, and upgrade paths.",
+      "expected_outcome": "A comprehensive comparison report of the three turntables, highlighting their strengths and weaknesses in terms of cartridge quality, speed accuracy, and upgrade options, with actionable recommendations for vinyl enthusiasts.",
+      "key_unknowns": [
+        "Current market prices for each turntable",
+        "Specific cartridge models used in each turntable",
+        "Speed accuracy specifications",
+        "Available upgrade paths for each turntable"
+      ],
+      "recommended_strategy": "First, conduct web research to gather detailed specifications, reviews, and expert opinions on the three turntables. Then, synthesize this information into a structured comparison report, highlighting key differences and providing recommendations based on user needs.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Turntable Specifications and Reviews",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed data on cartridge quality, speed accuracy, and upgrade paths for each turntable, with citations.",
+          "prompt": "Search the web for current, specific information about the Audio-Technica AT-LP120XUSB, U-Turn Orbit Plus, and Fluance RT82 turntables. Include details on cartridge quality, speed accuracy, and upgrade paths. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Turntable Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the three turntables, including pros/cons and recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comparison of the Audio-Technica AT-LP120XUSB, U-Turn Orbit Plus, and Fluance RT82 turntables. Include specific details on cartridge quality, speed accuracy, and upgrade paths, and provide actionable recommendations for vinyl enthusiasts.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-turntable-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2230
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtdvokkdilt",
+    "title": "Explain how modern CPU caches work from L1 to L3. Cover cache lines, associativi",
+    "raw_request": "Explain how modern CPU caches work from L1 to L3. Cover cache lines, associativity, write policies, coherence protocols (MESI), false sharing, and practical optimization patterns for cache-friendly code.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:14:13.796Z",
+    "updated_at": "2026-03-16T16:16:55.447Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:14:40.575Z",
+      "interpreted_objective": "Explain the workings of modern CPU caches, covering key concepts and optimization strategies.",
+      "expected_outcome": "A comprehensive, clear, and concise explanation of CPU caches that includes cache lines, associativity, write policies, coherence protocols, false sharing, and optimization patterns.",
+      "key_unknowns": [
+        "Current trends in CPU cache optimization",
+        "Specific examples of cache-friendly code patterns"
+      ],
+      "recommended_strategy": "Conduct research to gather detailed information on CPU cache mechanisms and optimization patterns. Synthesize this information into a clear, structured explanation that is informative and accessible to the target audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research CPU Cache Mechanisms",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on CPU cache mechanisms including cache lines, associativity, write policies, coherence protocols, and false sharing.",
+          "prompt": "Search the web for current, specific information about how modern CPU caches work, including cache lines, associativity, write policies, coherence protocols (MESI), and false sharing. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Explanation of CPU Caches",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A clear and structured explanation of CPU caches, including practical optimization patterns for cache-friendly code.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive explanation of modern CPU caches. Cover cache lines, associativity, write policies, coherence protocols (MESI), false sharing, and practical optimization patterns for cache-friendly code.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2049
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtdvok0acmp",
+    "title": "Create a guide to understanding and managing student loan repayment strategies. ",
+    "raw_request": "Create a guide to understanding and managing student loan repayment strategies. Include income-driven repayment plans, PSLF qualification, refinancing timing, tax implications of forgiveness, and optimal payoff ordering.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:14:13.776Z",
+    "updated_at": "2026-03-16T16:16:39.061Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:14:33.226Z",
+      "interpreted_objective": "Create a comprehensive guide to managing student loan repayment strategies.",
+      "expected_outcome": "A detailed guide covering income-driven repayment plans, PSLF qualification, refinancing timing, tax implications of forgiveness, and optimal payoff ordering.",
+      "key_unknowns": [
+        "Current trends and changes in student loan repayment options",
+        "Specific tax implications of loan forgiveness",
+        "Optimal strategies for refinancing and payoff ordering"
+      ],
+      "recommended_strategy": "Conduct thorough research on each aspect of student loan repayment strategies using up-to-date information. Synthesize findings into a structured guide that provides actionable advice for managing student loans effectively.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Student Loan Repayment Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, specific information about student loan repayment strategies including income-driven plans, PSLF, refinancing, and tax implications.",
+          "prompt": "Search the web for current, specific information about student loan repayment strategies. Include details on income-driven repayment plans, PSLF qualification, refinancing timing, tax implications of forgiveness, and optimal payoff ordering. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Student Loan Repayment",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide to understanding and managing student loan repayment strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide to understanding and managing student loan repayment strategies. Include sections on income-driven repayment plans, PSLF qualification, refinancing timing, tax implications of forgiveness, and optimal payoff ordering. Provide actionable recommendations and structured advice.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-student-loan-repayment-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2480
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtdvojc9crw",
+    "title": "Design a comprehensive WebSocket implementation strategy for real-time features.",
+    "raw_request": "Design a comprehensive WebSocket implementation strategy for real-time features. Include connection lifecycle, heartbeat protocols, reconnection with exponential backoff, message ordering guarantees, and horizontal scaling with Redis pub/sub.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:14:13.752Z",
+    "updated_at": "2026-03-16T16:16:20.607Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:14:23.654Z",
+      "interpreted_objective": "Develop a strategy for implementing WebSocket features with lifecycle management, reliability, and scalability.",
+      "expected_outcome": "A detailed plan outlining the WebSocket implementation strategy including lifecycle, reliability, and scaling components.",
+      "key_unknowns": [
+        "Specific technology stack and existing infrastructure",
+        "Current WebSocket usage and requirements",
+        "Integration points with existing systems"
+      ],
+      "recommended_strategy": "Research best practices for WebSocket implementation focusing on lifecycle management, reliability through heartbeats and reconnection strategies, and scalability using Redis pub/sub. Synthesize findings into a comprehensive strategy document.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research WebSocket Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices for WebSocket implementation including lifecycle management, heartbeat protocols, reconnection strategies, and scaling with Redis pub/sub.",
+          "prompt": "Search the web for current, specific information about best practices for WebSocket implementation, focusing on connection lifecycle, heartbeat protocols, reconnection with exponential backoff, message ordering guarantees, and horizontal scaling with Redis pub/sub. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize WebSocket Implementation Strategy",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive strategy document for WebSocket implementation covering lifecycle management, reliability, and scaling.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a WebSocket implementation strategy. Include specific practices for connection lifecycle, heartbeat protocols, reconnection strategies, message ordering guarantees, and horizontal scaling with Redis pub/sub.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2009
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
     "task_id": "t_mmtdjz65e07j",
     "title": "Design a personal disaster preparedness plan for a family of four. Include emerg",
     "raw_request": "Design a personal disaster preparedness plan for a family of four. Include emergency supply lists, communication plans, evacuation routes, financial document protection, and 72-hour self-sufficiency protocols.",
