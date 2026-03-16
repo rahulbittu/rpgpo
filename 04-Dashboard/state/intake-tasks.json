@@ -1,5 +1,681 @@
 [
   {
+    "task_id": "t_mmso7hvz7ykp",
+    "title": "Design a personal finance automation stack using modern tools. Include bank acco",
+    "raw_request": "Design a personal finance automation stack using modern tools. Include bank accounts, investment accounts, bill payments, and reporting. Zero-maintenance goal.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:15:34.991Z",
+    "updated_at": "2026-03-16T04:19:09.697Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:16:27.487Z",
+      "interpreted_objective": "Design an automated personal finance system using modern tools for zero maintenance.",
+      "expected_outcome": "A comprehensive plan detailing tools and processes for automating personal finance, including accounts, payments, and reporting.",
+      "key_unknowns": [
+        "Specific tools and integrations currently available for personal finance automation",
+        "Compatibility of these tools with various bank and investment accounts",
+        "User preferences for specific financial institutions or services"
+      ],
+      "recommended_strategy": "Conduct research on current tools and technologies for automating personal finance. Synthesize findings into a detailed plan that includes specific tools, processes, and integration strategies to achieve a zero-maintenance system.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research modern personal finance automation tools",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of modern tools and technologies for automating personal finance with citations.",
+          "prompt": "Search the web for current, specific information about modern tools and technologies for automating personal finance, including bank accounts, investment accounts, bill payments, and reporting. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize personal finance automation plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed plan for automating personal finance using modern tools, including specific recommendations for tools and integration processes.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a personal finance automation stack. Include specific tools, processes, and integration strategies for bank accounts, investment accounts, bill payments, and reporting to achieve zero maintenance.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-finance-automation.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1980
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmso7h2vtyap",
+    "title": "Create a comprehensive guide to setting up a productive outdoor workspace. Inclu",
+    "raw_request": "Create a comprehensive guide to setting up a productive outdoor workspace. Include shade solutions, power, WiFi range extension, and weather protection.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:15:33.943Z",
+    "updated_at": "2026-03-16T04:19:03.685Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:16:21.589Z",
+      "interpreted_objective": "Create a comprehensive guide for setting up a productive outdoor workspace.",
+      "expected_outcome": "A detailed guide that includes solutions for shade, power, WiFi extension, and weather protection for outdoor workspaces.",
+      "key_unknowns": [
+        "Specific types of shade solutions available",
+        "Options for outdoor power sources",
+        "Methods to extend WiFi range outdoors",
+        "Effective weather protection solutions"
+      ],
+      "recommended_strategy": "First, conduct research to gather current and specific information about outdoor workspace setup solutions. Then, synthesize this information into a structured and actionable guide. Ensure the guide covers all aspects mentioned in the request comprehensively.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research outdoor workspace solutions",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current information and solutions for outdoor workspace setup, including shade, power, WiFi, and weather protection.",
+          "prompt": "Search the web for current, specific information about setting up a productive outdoor workspace. Include solutions for shade, power, WiFi range extension, and weather protection. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize guide for outdoor workspace setup",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on setting up a productive outdoor workspace, covering shade solutions, power, WiFi range extension, and weather protection.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for setting up a productive outdoor workspace. Include specific solutions for shade, power, WiFi range extension, and weather protection.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-outdoor-workspace-setup.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1985
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmso7g9seyxa",
+    "title": "Write a complete pilot episode treatment for a satirical workplace drama set in ",
+    "raw_request": "Write a complete pilot episode treatment for a satirical workplace drama set in a big tech company during layoffs. Include A-plot, B-plot, cold open, and tag. 30 minutes.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:15:32.896Z",
+    "updated_at": "2026-03-16T04:18:57.390Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:16:16.308Z",
+      "interpreted_objective": "Create a pilot episode treatment for a satirical workplace drama set in a tech company during layoffs.",
+      "expected_outcome": "A detailed treatment including A-plot, B-plot, cold open, and tag for a 30-minute episode.",
+      "key_unknowns": [
+        "Specific characters involved",
+        "Tone and style specifics",
+        "Any particular themes to highlight"
+      ],
+      "recommended_strategy": "Research current trends and narratives in tech industry layoffs to ensure relevance and satire. Synthesize these insights into a structured episode treatment with clear plotlines and character dynamics.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tech Industry Layoffs",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current trends and narratives in tech industry layoffs with citations.",
+          "prompt": "Search the web for current, specific information about recent tech industry layoffs. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Episode Treatment",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete pilot episode treatment including A-plot, B-plot, cold open, and tag.",
+          "prompt": "Based on the research results from the previous subtask, create a detailed pilot episode treatment for a satirical workplace drama set in a tech company during layoffs. Include A-plot, B-plot, cold open, and tag for a 30-minute episode.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-pilot-episode-treatment.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1941
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmso7fgsblmd",
+    "title": "Plan an adventure trip to Costa Rica for an active tech worker. 10 days. Include",
+    "raw_request": "Plan an adventure trip to Costa Rica for an active tech worker. 10 days. Include volcano hiking, surfing, zip-lining, hot springs, and wildlife spotting. Moderate budget.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:15:31.852Z",
+    "updated_at": "2026-03-16T04:18:48.941Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:16:02.096Z",
+      "interpreted_objective": "Plan a 10-day adventure trip to Costa Rica for an active tech worker with activities like volcano hiking, surfing, zip-lining, hot springs, and wildlife spotting on a moderate budget.",
+      "expected_outcome": "A detailed itinerary with specific activities, locations, dates, and costs that align with the adventure theme and budget constraints.",
+      "key_unknowns": [
+        "Exact budget range for 'moderate budget'",
+        "Preferred travel dates",
+        "Specific interests or preferences within the listed activities",
+        "Current travel restrictions or requirements to Costa Rica"
+      ],
+      "recommended_strategy": "Conduct research to identify current options and pricing for each activity in Costa Rica. Then synthesize this information into a comprehensive itinerary that balances adventure with cost-effectiveness, ensuring all activities are feasible within the time frame and budget.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Confirmation of budget range",
+        "Approval of final itinerary"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Adventure Activities in Costa Rica",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of available options for volcano hiking, surfing, zip-lining, hot springs, and wildlife spotting in Costa Rica, including costs and availability.",
+          "prompt": "Search the web for current, specific information about adventure activities in Costa Rica, focusing on volcano hiking, surfing, zip-lining, hot springs, and wildlife spotting. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary and Budget",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured itinerary with specific activities, dates, and costs for a 10-day adventure trip to Costa Rica.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable itinerary for a 10-day adventure trip to Costa Rica. Include specific names, numbers, and concrete next steps, ensuring alignment with a moderate budget.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-2023-10-CostaRicaAdventure.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1961
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmso7eo3j51p",
+    "title": "Design a comprehensive hearing protection protocol for music-loving developers w",
+    "raw_request": "Design a comprehensive hearing protection protocol for music-loving developers who use headphones 8+ hours daily. Include volume guidelines, rest periods, and audiologist recommendations.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:15:30.819Z",
+    "updated_at": "2026-03-16T04:18:40.947Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:15:57.272Z",
+      "interpreted_objective": "Create a hearing protection protocol for developers using headphones extensively.",
+      "expected_outcome": "A detailed protocol including volume guidelines, rest periods, and audiologist recommendations to protect hearing health.",
+      "key_unknowns": [
+        "Current best practices for hearing protection",
+        "Specific volume guidelines for safe listening",
+        "Recommended rest periods for headphone users",
+        "Audiologist recommendations for frequent headphone use"
+      ],
+      "recommended_strategy": "Research current best practices and guidelines for hearing protection related to prolonged headphone use. Synthesize these findings into a comprehensive protocol that includes specific volume guidelines, recommended rest periods, and audiologist advice. Ensure the protocol is evidence-based and actionable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Hearing Protection Guidelines",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices, volume guidelines, rest periods, and audiologist recommendations for hearing protection with headphone use.",
+          "prompt": "Search the web for current, specific information about hearing protection guidelines for prolonged headphone use. Include volume limits, recommended rest periods, and audiologist advice. Provide sources and citations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Hearing Protection Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive hearing protection protocol document.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive hearing protection protocol for developers using headphones extensively. Include specific volume guidelines, rest periods, and audiologist recommendations. Ensure the protocol is evidence-based and actionable.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-hearing-protection-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1871
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmso7dvccuc6",
+    "title": "Create a guide for engineers who want to start angel investing while keeping the",
+    "raw_request": "Create a guide for engineers who want to start angel investing while keeping their day job. Include deal sourcing, evaluation framework, and time commitment.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:15:29.784Z",
+    "updated_at": "2026-03-16T04:18:35.424Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:15:51.613Z",
+      "interpreted_objective": "Create a guide for engineers to start angel investing while maintaining their day job, covering deal sourcing, evaluation framework, and time commitment.",
+      "expected_outcome": "A comprehensive guide that helps engineers understand how to effectively start angel investing without disrupting their current employment.",
+      "key_unknowns": [
+        "Specific challenges engineers face when starting angel investing",
+        "Common deal sourcing methods suitable for engineers",
+        "Evaluation frameworks that can be applied by engineers with limited time"
+      ],
+      "recommended_strategy": "Conduct research to identify current best practices and challenges in angel investing for engineers. Synthesize findings into a structured guide that includes practical steps and frameworks. Ensure the guide addresses time management and integrates smoothly with a full-time job.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Angel Investing for Engineers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices, challenges, and strategies for engineers starting in angel investing.",
+          "prompt": "Search the web for current, specific information about engineers starting angel investing. Include real names, numbers, dates, URLs, and sources. Focus on deal sourcing, evaluation frameworks, and time management strategies.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Angel Investing Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide for engineers on starting angel investing, covering deal sourcing, evaluation frameworks, and time commitment.",
+          "prompt": "Based on the research results from the prior subtask, synthesize actionable recommendations into a guide for engineers starting angel investing. Include specific names, numbers, and concrete next steps. Highlight deal sourcing methods, evaluation frameworks, and time management strategies.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-angel-investing-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2175
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmso7d2otw56",
+    "title": "Research the best smart home security systems for a tech-savvy homeowner. Compar",
+    "raw_request": "Research the best smart home security systems for a tech-savvy homeowner. Compare Ring, SimpliSafe, and Abode. Include professional monitoring costs and self-monitoring options.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:15:28.752Z",
+    "updated_at": "2026-03-16T04:18:29.847Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:15:45.773Z",
+      "interpreted_objective": "Research and compare the best smart home security systems for a tech-savvy homeowner, focusing on Ring, SimpliSafe, and Abode.",
+      "expected_outcome": "A detailed comparison report of Ring, SimpliSafe, and Abode smart home security systems, including professional monitoring costs and self-monitoring options, with a clear recommendation.",
+      "key_unknowns": [
+        "Current pricing and features of Ring, SimpliSafe, and Abode",
+        "Professional monitoring costs for each system",
+        "Self-monitoring options available for each system"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on Ring, SimpliSafe, and Abode smart home security systems, focusing on their features, pricing, and monitoring options. Then, synthesize this data into a comprehensive comparison report with recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Smart Home Security Systems",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Ring, SimpliSafe, and Abode security systems, including features, pricing, and monitoring options.",
+          "prompt": "Search the web for current, specific information about Ring, SimpliSafe, and Abode smart home security systems. Include details on their features, professional monitoring costs, and self-monitoring options, with real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Security Systems Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of Ring, SimpliSafe, and Abode, with specific recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed comparison report of Ring, SimpliSafe, and Abode smart home security systems. Include specific features, pricing, professional monitoring costs, self-monitoring options, and provide a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-smart-home-security-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2017
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmso7c9uounp",
+    "title": "Teach me about memory management in modern programming languages. Compare garbag",
+    "raw_request": "Teach me about memory management in modern programming languages. Compare garbage collection strategies in Go, Java, and Rust. Include performance implications.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:15:27.714Z",
+    "updated_at": "2026-03-16T04:18:23.832Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:15:40.428Z",
+      "interpreted_objective": "Provide a comparative analysis of memory management and garbage collection strategies in Go, Java, and Rust, including performance implications.",
+      "expected_outcome": "A comprehensive report detailing memory management techniques in Go, Java, and Rust, highlighting their garbage collection strategies and performance impacts.",
+      "key_unknowns": [
+        "Specific details on memory management strategies in Go, Java, and Rust",
+        "Performance implications of these strategies in different programming scenarios"
+      ],
+      "recommended_strategy": "Conduct research on memory management and garbage collection strategies in Go, Java, and Rust. Synthesize findings into a detailed report that compares these strategies and discusses their performance implications.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Memory Management Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on memory management and garbage collection strategies in Go, Java, and Rust.",
+          "prompt": "Search the web for current, specific information about memory management and garbage collection strategies in Go, Java, and Rust. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Comparative Analysis Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A synthesized report comparing memory management and garbage collection strategies in Go, Java, and Rust, including performance implications.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed report comparing memory management and garbage collection strategies in Go, Java, and Rust. Include specific names, numbers, and concrete performance implications.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2017
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmso7bgedaqc",
+    "title": "Create a guide to building a diversified income portfolio. Include W2 salary opt",
+    "raw_request": "Create a guide to building a diversified income portfolio. Include W2 salary optimization, freelancing, investments, real estate, and digital products with allocation percentages.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:15:26.654Z",
+    "updated_at": "2026-03-16T04:18:17.298Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:15:36.827Z",
+      "interpreted_objective": "Create a detailed guide on building a diversified income portfolio with specific allocation percentages.",
+      "expected_outcome": "A comprehensive guide that includes strategies for W2 salary optimization, freelancing, investments, real estate, and digital products with clear allocation percentages.",
+      "key_unknowns": [
+        "Current trends and data on optimal allocation percentages for diversified income portfolios",
+        "Specific strategies for optimizing W2 salaries",
+        "Market data on freelancing opportunities and digital products"
+      ],
+      "recommended_strategy": "Conduct research to gather current data on diversified income portfolios and allocation strategies. Synthesize findings into a detailed guide with specific recommendations and examples. Ensure the guide includes actionable steps and real-world examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Diversified Income Portfolio Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data and strategies for building a diversified income portfolio, including allocation percentages.",
+          "prompt": "Search the web for current, specific information about diversified income portfolio strategies. Include data on W2 salary optimization, freelancing, investments, real estate, and digital products with allocation percentages. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Diversified Income Portfolio",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide with specific strategies and allocation percentages for a diversified income portfolio.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed guide on building a diversified income portfolio. Include specific strategies for W2 salary optimization, freelancing, investments, real estate, and digital products. Provide allocation percentages, real-world examples, and actionable steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2412
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmso7angldlk",
+    "title": "Write a comprehensive guide to implementing blue-green deployments for a Node.js",
+    "raw_request": "Write a comprehensive guide to implementing blue-green deployments for a Node.js application. Include load balancer configuration, database migrations, and rollback procedures.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:15:25.612Z",
+    "updated_at": "2026-03-16T04:17:35.061Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:15:31.762Z",
+      "interpreted_objective": "Create a detailed guide on blue-green deployments for Node.js applications.",
+      "expected_outcome": "A comprehensive, actionable guide covering all aspects of blue-green deployments, including load balancer configuration, database migrations, and rollback procedures.",
+      "key_unknowns": [
+        "Specific load balancer technologies involved",
+        "Current database systems in use",
+        "Existing rollback procedures"
+      ],
+      "recommended_strategy": "First, conduct research to gather current best practices and detailed steps for blue-green deployments specific to Node.js applications. Then, synthesize this information into a clear, structured guide that includes all necessary technical details and procedures.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Blue-Green Deployment Best Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed report on current best practices for blue-green deployments in Node.js applications.",
+          "prompt": "Search the web for current, specific information about blue-green deployment best practices for Node.js applications. Include details on load balancer configuration, database migration strategies, and rollback procedures. Provide real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Comprehensive Guide on Blue-Green Deployments",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on implementing blue-green deployments for Node.js applications.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on implementing blue-green deployments for Node.js applications. Include sections on load balancer configuration, database migrations, and rollback procedures. Ensure the guide is clear, actionable, and includes specific technical details.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2031
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmso40vgqjk0",
     "title": "Create a product roadmap for GPO v2. Include structured output, interactive sess",
     "raw_request": "Create a product roadmap for GPO v2. Include structured output, interactive sessions, file attachments, calendar integration, and mobile app. Prioritize by user value and technical feasibility.",
