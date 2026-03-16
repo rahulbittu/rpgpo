@@ -1,5 +1,684 @@
 [
   {
+    "task_id": "t_mmsu6d6hny5h",
+    "title": "Design a comprehensive system for managing creative projects as a side hustle. I",
+    "raw_request": "Design a comprehensive system for managing creative projects as a side hustle. Include idea capture, project selection framework, time allocation strategy, portfolio building, and transition planning from hobby to income.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:02:39.929Z",
+    "updated_at": "2026-03-16T07:07:25.312Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:03:40.724Z",
+      "interpreted_objective": "Design a system for managing creative projects as a side hustle.",
+      "expected_outcome": "A detailed plan that includes idea capture, project selection, time allocation, portfolio building, and transition planning.",
+      "key_unknowns": [
+        "Specific tools or platforms Rahul prefers for managing projects",
+        "Rahul's current experience with side hustles",
+        "Any specific creative fields Rahul is interested in"
+      ],
+      "recommended_strategy": "Research current best practices for managing creative projects as side hustles. Synthesize findings into a comprehensive plan that includes actionable steps for idea capture, project selection, time management, portfolio building, and transitioning from hobby to income. Ensure the plan is tailored to Rahul's context and priorities.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Managing Creative Projects",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and strategies for managing creative projects as side hustles.",
+          "prompt": "Search the web for current best practices and strategies for managing creative projects as side hustles. Include real examples, tools, and methodologies used by successful individuals or companies.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comprehensive Plan for Creative Project Management",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed plan that includes idea capture, project selection framework, time allocation strategy, portfolio building, and transition planning.",
+          "prompt": "Based on the research results, synthesize a comprehensive plan for managing creative projects as a side hustle. Include specific steps for idea capture, project selection framework, time allocation strategy, portfolio building, and transition planning from hobby to income.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2395
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsu6d612l3k",
+    "title": "Create a guide to DIY home weatherization for energy efficiency. Include air sea",
+    "raw_request": "Create a guide to DIY home weatherization for energy efficiency. Include air sealing priorities, insulation R-value selection by climate zone, window assessment, draft detection methods, and expected ROI calculations.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:02:39.913Z",
+    "updated_at": "2026-03-16T07:07:16.678Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:03:33.348Z",
+      "interpreted_objective": "Create a comprehensive DIY guide for home weatherization focused on energy efficiency.",
+      "expected_outcome": "A detailed, actionable guide that includes air sealing priorities, insulation selection by climate zone, window assessment, draft detection methods, and ROI calculations.",
+      "key_unknowns": [
+        "Specific climate zones and their corresponding insulation R-values",
+        "Methods for assessing window efficiency",
+        "Effective draft detection techniques",
+        "ROI calculation methods for energy efficiency improvements"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on home weatherization techniques, focusing on air sealing, insulation, window assessment, and draft detection. Synthesize this information into a structured guide with clear ROI calculations for energy efficiency improvements.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Weatherization Techniques",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of data on air sealing, insulation R-values by climate zone, window assessment, draft detection methods, and ROI calculations.",
+          "prompt": "Search the web for current, specific information about DIY home weatherization techniques for energy efficiency. Include air sealing priorities, insulation R-value selection by climate zone, window assessment methods, draft detection techniques, and expected ROI calculations. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Weatherization Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on DIY home weatherization for energy efficiency, including all specified components.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on DIY home weatherization for energy efficiency. Include air sealing priorities, insulation R-value selection by climate zone, window assessment, draft detection methods, and expected ROI calculations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-home-weatherization-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1954
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsu6d5k9oi3",
+    "title": "Write a complete concept document for a video game that combines city building w",
+    "raw_request": "Write a complete concept document for a video game that combines city building with mystery solving — players build a medieval town while uncovering a supernatural conspiracy hidden in the town layout. Include gameplay loops and narrative structure.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:02:39.897Z",
+    "updated_at": "2026-03-16T07:07:08.730Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:03:27.264Z",
+      "interpreted_objective": "Create a detailed concept document for a video game that combines city building with mystery solving.",
+      "expected_outcome": "A comprehensive concept document outlining gameplay mechanics, loops, and narrative structure for the game.",
+      "key_unknowns": [
+        "Specific gameplay mechanics for city building and mystery solving",
+        "Narrative structure details",
+        "Target audience and platform for the game"
+      ],
+      "recommended_strategy": "First, gather information on existing games that combine city building and mystery solving to understand successful mechanics and narratives. Then, synthesize this research to develop a unique concept document that includes gameplay loops and narrative structure tailored to a medieval town setting with a supernatural conspiracy.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Existing Games",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report on existing games that combine city building and mystery solving, including successful mechanics and narratives.",
+          "prompt": "Search the web for current, specific information about video games that combine city building and mystery solving. Include real names, gameplay mechanics, narrative structures, and any unique features. Provide sources and URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Game Concept Document",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete concept document for the video game, including gameplay loops and narrative structure.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed concept document for a video game that combines city building with mystery solving. Include specific gameplay loops, narrative structure, and how the supernatural conspiracy is integrated into the town layout.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2049
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsu6d55x2gr",
+    "title": "Plan a 9-day food and wine tour through Bordeaux and the French Basque Country. ",
+    "raw_request": "Plan a 9-day food and wine tour through Bordeaux and the French Basque Country. Include Grand Cru chateau visits, Bayonne ham and chocolate tours, surfing in Biarritz, pintxos crawls in Saint-Jean-de-Luz, and farm-to-table dining.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:02:39.881Z",
+    "updated_at": "2026-03-16T07:07:00.662Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:03:21.640Z",
+      "interpreted_objective": "Plan a detailed 9-day food and wine tour through Bordeaux and the French Basque Country.",
+      "expected_outcome": "A comprehensive itinerary that includes Grand Cru chateau visits, Bayonne ham and chocolate tours, surfing in Biarritz, pintxos crawls in Saint-Jean-de-Luz, and farm-to-table dining.",
+      "key_unknowns": [
+        "Specific Grand Cru chateaux to visit",
+        "Availability and scheduling of Bayonne ham and chocolate tours",
+        "Surfing conditions and best locations in Biarritz",
+        "Pintxos crawl options in Saint-Jean-de-Luz",
+        "Farm-to-table dining experiences available"
+      ],
+      "recommended_strategy": "Conduct research to identify the best options for each activity and location. Synthesize this information into a structured 9-day itinerary that balances travel, activities, and dining experiences. Ensure the itinerary is feasible and includes all requested elements.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Bordeaux and Basque Country Tour Options",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of potential activities, locations, and dining options for the tour.",
+          "prompt": "Search the web for current, specific information about Grand Cru chateau visits in Bordeaux, Bayonne ham and chocolate tours, surfing in Biarritz, pintxos crawls in Saint-Jean-de-Luz, and farm-to-table dining in the French Basque Country. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize 9-Day Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 9-day itinerary for the food and wine tour.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 9-day itinerary for a food and wine tour through Bordeaux and the French Basque Country. Include specific names, numbers, and concrete next steps for Grand Cru chateau visits, Bayonne ham and chocolate tours, surfing in Biarritz, pintxos crawls in Saint-Jean-de-Luz, and farm-to-table dining.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-bordeaux-basque-tour.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2601
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsu6d4qzkv9",
+    "title": "Design a comprehensive dental care optimization program. Include electric toothb",
+    "raw_request": "Design a comprehensive dental care optimization program. Include electric toothbrush comparison, flossing alternatives (water flosser vs string), whitening method safety analysis, night guard considerations, and preventive care scheduling.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:02:39.866Z",
+    "updated_at": "2026-03-16T07:06:40.217Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:03:15.019Z",
+      "interpreted_objective": "Design a comprehensive dental care optimization program covering various aspects of dental hygiene and preventive care.",
+      "expected_outcome": "A detailed report outlining comparisons, safety analyses, and scheduling recommendations for optimal dental care.",
+      "key_unknowns": [
+        "Current leading electric toothbrush models and their features",
+        "Effectiveness and safety of different flossing methods",
+        "Safety and efficacy of various teeth whitening methods",
+        "Considerations for using night guards",
+        "Best practices for preventive dental care scheduling"
+      ],
+      "recommended_strategy": "Conduct research on each aspect of dental care mentioned in the request. Compare and analyze the findings to provide a comprehensive report with actionable recommendations. Ensure the report covers all specified areas including comparisons, safety analyses, and scheduling advice.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Dental Care Aspects",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and insights on electric toothbrushes, flossing alternatives, whitening methods, night guards, and preventive care scheduling.",
+          "prompt": "Search the web for current, specific information about electric toothbrush models, flossing alternatives (water flosser vs string), whitening method safety, night guard considerations, and preventive care scheduling. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Dental Care Optimization Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report with comparisons, safety analyses, and scheduling recommendations for dental care optimization.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a comprehensive dental care optimization program. Include specific names, numbers, and concrete next steps for electric toothbrush comparison, flossing alternatives, whitening method safety analysis, night guard considerations, and preventive care scheduling.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-dental-care-optimization.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2508
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsu6d4a1xmc",
+    "title": "Create a comprehensive guide to surviving and thriving in your first 100 days at",
+    "raw_request": "Create a comprehensive guide to surviving and thriving in your first 100 days at a new company. Include onboarding strategy, relationship mapping, quick win identification, learning plan, and political landscape navigation.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:02:39.850Z",
+    "updated_at": "2026-03-16T07:06:31.196Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:03:08.579Z",
+      "interpreted_objective": "Create a guide for new employees to effectively integrate and excel in their first 100 days at a new company.",
+      "expected_outcome": "A comprehensive guide that helps new employees navigate onboarding, build relationships, identify quick wins, develop a learning plan, and understand the political landscape.",
+      "key_unknowns": [
+        "Specific industry or company type",
+        "Target audience's prior experience level",
+        "Cultural nuances or political dynamics specific to different companies"
+      ],
+      "recommended_strategy": "Conduct research on best practices for onboarding and early career success. Synthesize findings into a structured guide that includes actionable steps and strategies. Ensure the guide is adaptable to various industries and roles.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Onboarding and Early Career Success Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of best practices and strategies for onboarding and early career success with citations.",
+          "prompt": "Search the web for current, specific information about best practices for onboarding, relationship building, quick win identification, learning plans, and navigating company politics in the first 100 days. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for First 100 Days Success",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide with actionable steps for new employees to thrive in their first 100 days at a new company.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for new employees to survive and thrive in their first 100 days at a new company. Include onboarding strategy, relationship mapping, quick win identification, learning plan, and political landscape navigation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-first-100-days-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1941
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsu6d3t8cp4",
+    "title": "Research the best home weather stations for garden planning. Compare Davis Vanta",
+    "raw_request": "Research the best home weather stations for garden planning. Compare Davis Vantage Vue, Ambient Weather WS-5000, and Ecowitt HP2560 with soil moisture sensors, UV index tracking, and smart home integration.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:02:39.833Z",
+    "updated_at": "2026-03-16T07:06:21.390Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:03:03.348Z",
+      "interpreted_objective": "Research and compare three specific home weather stations for garden planning.",
+      "expected_outcome": "A comprehensive comparison report on Davis Vantage Vue, Ambient Weather WS-5000, and Ecowitt HP2560, focusing on soil moisture sensors, UV index tracking, and smart home integration.",
+      "key_unknowns": [
+        "Current specifications and features of each weather station",
+        "Pricing and availability",
+        "User reviews and expert opinions"
+      ],
+      "recommended_strategy": "First, conduct web research to gather detailed information on the Davis Vantage Vue, Ambient Weather WS-5000, and Ecowitt HP2560 weather stations, focusing on their features related to garden planning. Then, synthesize this information into a comparative report highlighting the strengths and weaknesses of each model.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Weather Stations",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on Davis Vantage Vue, Ambient Weather WS-5000, and Ecowitt HP2560, including features, pricing, and reviews.",
+          "prompt": "Search the web for current, specific information about the Davis Vantage Vue, Ambient Weather WS-5000, and Ecowitt HP2560 home weather stations. Focus on features like soil moisture sensors, UV index tracking, and smart home integration. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report on the three weather stations, highlighting their pros and cons for garden planning.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comprehensive comparison report on the Davis Vantage Vue, Ambient Weather WS-5000, and Ecowitt HP2560. Include specific features, pricing, pros and cons, and recommendations for garden planning.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-weather-stations.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2214
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsu6d3e9jbj",
+    "title": "Explain how modern compilers optimize code. Cover SSA form transformation, dead ",
+    "raw_request": "Explain how modern compilers optimize code. Cover SSA form transformation, dead code elimination, loop unrolling, function inlining decisions, vectorization (SIMD), and link-time optimization with practical examples.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:02:39.818Z",
+    "updated_at": "2026-03-16T07:06:14.208Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:02:57.217Z",
+      "interpreted_objective": "Explain how modern compilers optimize code with specific techniques and examples.",
+      "expected_outcome": "A comprehensive explanation of compiler optimization techniques with practical examples, suitable for a learning context.",
+      "key_unknowns": [
+        "The specific depth of explanation required for each optimization technique",
+        "The preferred format for practical examples"
+      ],
+      "recommended_strategy": "Conduct research to gather detailed information on each optimization technique mentioned, then synthesize this information into a clear, concise explanation with practical examples. Ensure the explanation is accessible and informative for learners with a technical background.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Compiler Optimization Techniques",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on SSA form transformation, dead code elimination, loop unrolling, function inlining, vectorization, and link-time optimization.",
+          "prompt": "Search the web for current, specific information about modern compiler optimization techniques including SSA form transformation, dead code elimination, loop unrolling, function inlining decisions, vectorization (SIMD), and link-time optimization. Include real examples, names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Explanation of Compiler Optimizations",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive explanation of compiler optimization techniques with practical examples.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comprehensive explanation of modern compiler optimization techniques. Cover SSA form transformation, dead code elimination, loop unrolling, function inlining decisions, vectorization (SIMD), and link-time optimization with practical examples. Ensure clarity and accessibility for learners with a technical background.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2061
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsu6d2x1esz",
+    "title": "Create a guide to I-Bond investing strategy for inflation protection. Include pu",
+    "raw_request": "Create a guide to I-Bond investing strategy for inflation protection. Include purchase limit workarounds (trust, business, gift box), rate composition (fixed + variable), tax deferral benefits, and optimal holding period analysis.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:02:39.801Z",
+    "updated_at": "2026-03-16T07:05:56.298Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:02:51.968Z",
+      "interpreted_objective": "Create a comprehensive guide on I-Bond investing strategies for inflation protection.",
+      "expected_outcome": "A detailed guide that covers I-Bond purchase limits, rate composition, tax benefits, and optimal holding periods, providing actionable strategies for investors.",
+      "key_unknowns": [
+        "Current I-Bond interest rates and how they are composed",
+        "Specific details on purchase limit workarounds",
+        "Tax implications and benefits of I-Bonds",
+        "Optimal holding periods for maximizing returns"
+      ],
+      "recommended_strategy": "First, gather current information on I-Bond rates, purchase limits, and tax benefits. Then, synthesize this data into a structured guide, providing clear strategies and recommendations for investors.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research I-Bond Details",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on I-Bond rates, purchase limits, tax benefits, and optimal holding periods with sources.",
+          "prompt": "Search the web for current, specific information about I-Bond investing strategies, including rate composition (fixed + variable), purchase limit workarounds (trust, business, gift box), tax deferral benefits, and optimal holding periods. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize I-Bond Investment Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on I-Bond investing strategies, including specific recommendations and analysis.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for I-Bond investing strategies. Include specific names, numbers, and concrete next steps for investors. Address rate composition, purchase limits, tax benefits, and optimal holding periods.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-i-bond-investing-strategy.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1953
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsu6d2cqbtx",
+    "title": "Design a comprehensive multi-region database replication strategy. Compare activ",
+    "raw_request": "Design a comprehensive multi-region database replication strategy. Compare active-active vs active-passive, conflict resolution approaches, consistency models (eventual vs strong), latency optimization, and disaster recovery RPO/RTO targets.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:02:39.780Z",
+    "updated_at": "2026-03-16T07:05:48.431Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:02:45.125Z",
+      "interpreted_objective": "Design a comprehensive multi-region database replication strategy, comparing active-active vs active-passive, conflict resolution, consistency models, latency optimization, and disaster recovery targets.",
+      "expected_outcome": "A detailed report that provides a clear comparison and recommendation for a multi-region database replication strategy, addressing key aspects like conflict resolution, consistency models, and disaster recovery.",
+      "key_unknowns": [
+        "Current best practices for multi-region database replication",
+        "Specific advantages and disadvantages of active-active vs active-passive replication",
+        "Effective conflict resolution techniques in multi-region setups",
+        "Trade-offs between eventual and strong consistency models",
+        "Latency optimization strategies in multi-region databases",
+        "Industry standards for disaster recovery RPO/RTO targets"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on multi-region database replication strategies, focusing on the specified comparison points. Synthesize findings into a structured report that includes recommendations based on identified best practices and trade-offs.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Multi-Region Database Replication",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and insights on multi-region database replication strategies, including conflict resolution, consistency models, latency optimization, and disaster recovery.",
+          "prompt": "Search the web for current, specific information about multi-region database replication strategies, comparing active-active vs active-passive, conflict resolution approaches, consistency models (eventual vs strong), latency optimization, and disaster recovery RPO/RTO targets. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Database Replication Strategy Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report with actionable recommendations for a multi-region database replication strategy, including comparisons and trade-offs.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a multi-region database replication strategy. Include specific comparisons of active-active vs active-passive, conflict resolution techniques, consistency models, latency optimization strategies, and disaster recovery RPO/RTO targets.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-multi-region-database-replication.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2191
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
     "task_id": "t_mmstz4vrib06",
     "title": "Design a comprehensive personal reflection and journaling system. Include struct",
     "raw_request": "Design a comprehensive personal reflection and journaling system. Include structured prompts for different contexts (daily, weekly, monthly, annual), gratitude practices, cognitive reframing exercises, and digital vs analog tradeoffs.",
