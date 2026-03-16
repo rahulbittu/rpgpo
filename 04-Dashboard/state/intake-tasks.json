@@ -1,5 +1,677 @@
 [
   {
+    "task_id": "t_mmsn99h8o495",
+    "title": "Design a personal learning system for acquiring new technical skills efficiently",
+    "raw_request": "Design a personal learning system for acquiring new technical skills efficiently. Include spaced repetition, project-based learning, and progress tracking.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:48:57.788Z",
+    "updated_at": "2026-03-16T03:52:52.776Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:49:49.524Z",
+      "interpreted_objective": "Design a system to efficiently acquire new technical skills using spaced repetition, project-based learning, and progress tracking.",
+      "expected_outcome": "A comprehensive plan outlining a personal learning system with specific techniques and tools for skill acquisition.",
+      "key_unknowns": [
+        "Specific technical skills targeted",
+        "Preferred tools for spaced repetition and project tracking",
+        "Current level of expertise in technical skills"
+      ],
+      "recommended_strategy": "Research current best practices and tools for spaced repetition, project-based learning, and progress tracking. Synthesize this into a detailed plan that can be implemented for personal skill development.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research best practices for learning systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices and tools for spaced repetition, project-based learning, and progress tracking.",
+          "prompt": "Search the web for current best practices and tools for designing personal learning systems that incorporate spaced repetition, project-based learning, and progress tracking. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize learning system plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed plan for a personal learning system incorporating spaced repetition, project-based learning, and progress tracking.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a detailed plan for a personal learning system. Include specific techniques, tools, and steps for implementing spaced repetition, project-based learning, and progress tracking.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-learning-system.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1949
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsn98ntfv7d",
+    "title": "Create a guide to building a productive home library and reading nook. Include s",
+    "raw_request": "Create a guide to building a productive home library and reading nook. Include shelving, lighting, seating, and organization system for physical and digital books.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:48:56.729Z",
+    "updated_at": "2026-03-16T03:52:46.726Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:49:44.142Z",
+      "interpreted_objective": "Create a detailed guide for setting up a productive home library and reading nook.",
+      "expected_outcome": "A comprehensive guide that includes specific recommendations for shelving, lighting, seating, and organization for both physical and digital books.",
+      "key_unknowns": [
+        "Specific preferences or constraints Rahul might have for the home library setup",
+        "Any existing resources or tools Rahul uses for book organization"
+      ],
+      "recommended_strategy": "First, gather research on best practices for setting up a home library and reading nook, focusing on shelving, lighting, seating, and organization systems. Then, synthesize this information into a detailed guide with actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research best practices for home library setup",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices and recommendations for home library setups.",
+          "prompt": "Search the web for current best practices and recommendations for setting up a productive home library and reading nook. Focus on shelving, lighting, seating, and organization systems for both physical and digital books. Include specific examples, sources, and URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize guide for home library setup",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide with actionable recommendations for setting up a home library and reading nook.",
+          "prompt": "Based on the research results, synthesize a detailed guide for setting up a productive home library and reading nook. Include specific recommendations for shelving, lighting, seating, and organization systems for both physical and digital books.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2088
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsn97uo2f5t",
+    "title": "Write a detailed series proposal for a sci-fi anthology where each episode explo",
+    "raw_request": "Write a detailed series proposal for a sci-fi anthology where each episode explores a different ethical dilemma of AI. Include 4 episode premises with moral cores.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:48:55.680Z",
+    "updated_at": "2026-03-16T03:52:38.727Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:49:39.489Z",
+      "interpreted_objective": "Create a detailed series proposal for a sci-fi anthology focusing on AI ethics, including four episode premises.",
+      "expected_outcome": "A comprehensive proposal with four distinct episode premises, each exploring a unique ethical dilemma related to AI.",
+      "key_unknowns": [
+        "Specific ethical dilemmas to be explored",
+        "Target audience for the series",
+        "Tone and style of the anthology"
+      ],
+      "recommended_strategy": "Conduct research on current ethical dilemmas in AI to gather a wide range of potential topics. Then, synthesize this information into four distinct episode premises, each with a clear moral core. Ensure the premises are engaging and thought-provoking to appeal to a broad audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research AI Ethical Dilemmas",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current ethical dilemmas in AI with sources.",
+          "prompt": "Search the web for current, specific information about ethical dilemmas in AI. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Episode Premises",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed series proposal with four episode premises, each focusing on a different AI ethical dilemma.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable episode premises for a sci-fi anthology. Each premise should explore a different ethical dilemma of AI with a clear moral core.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-sci-fi-anthology-proposal.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1949
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsn9721fdi7",
+    "title": "Plan a long weekend in Nashville for a music and food lover. Include live music ",
+    "raw_request": "Plan a long weekend in Nashville for a music and food lover. Include live music venues, hot chicken spots, record shops, and a bourbon distillery tour.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:48:54.649Z",
+    "updated_at": "2026-03-16T03:52:29.127Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:49:25.980Z",
+      "interpreted_objective": "Plan a detailed itinerary for a long weekend in Nashville focused on music and food experiences.",
+      "expected_outcome": "A comprehensive itinerary including live music venues, hot chicken spots, record shops, and a bourbon distillery tour, with specific options, dates, costs, and logistics.",
+      "key_unknowns": [
+        "Specific dates for the trip",
+        "Budget constraints",
+        "Personal preferences for music genres",
+        "Dietary restrictions"
+      ],
+      "recommended_strategy": "Research current Nashville attractions related to music and food, focusing on live music venues, hot chicken spots, record shops, and bourbon distilleries. Synthesize this information into a structured itinerary with specific recommendations, including logistics and costs.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Nashville Music and Food Attractions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current live music venues, hot chicken spots, record shops, and bourbon distillery tours in Nashville with details on availability, costs, and any special events.",
+          "prompt": "Search the web for current, specific information about live music venues, hot chicken spots, record shops, and bourbon distillery tours in Nashville. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Nashville Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured itinerary for a long weekend in Nashville, including specific options for live music venues, hot chicken spots, record shops, and a bourbon distillery tour, with dates, costs, and logistics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a long weekend itinerary in Nashville. Include specific names, numbers, and concrete next steps for live music venues, hot chicken spots, record shops, and a bourbon distillery tour.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-nashville-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1945
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsn966hxo36",
+    "title": "Design a comprehensive dental health protocol for someone who drinks too much co",
+    "raw_request": "Design a comprehensive dental health protocol for someone who drinks too much coffee. Include cleaning schedule, whitening options, and dietary adjustments.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:48:53.513Z",
+    "updated_at": "2026-03-16T03:52:21.803Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:49:21.360Z",
+      "interpreted_objective": "Design a dental health protocol for coffee drinkers to maintain oral hygiene and address coffee-related dental issues.",
+      "expected_outcome": "A detailed, evidence-based dental health protocol that includes cleaning schedules, whitening options, and dietary adjustments for coffee drinkers.",
+      "key_unknowns": [
+        "Specific dental health issues caused by excessive coffee consumption",
+        "Effective whitening options for coffee stains",
+        "Dietary adjustments that can mitigate coffee's effects on dental health"
+      ],
+      "recommended_strategy": "Research current dental health practices and recommendations for coffee drinkers, focusing on cleaning schedules, whitening methods, and dietary changes. Synthesize findings into a comprehensive protocol that is actionable and evidence-based.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Dental Health Effects of Coffee",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report on the dental health effects of excessive coffee consumption, including common issues and recommended practices.",
+          "prompt": "Search the web for current, specific information about the dental health effects of excessive coffee consumption. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Dental Health Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive dental health protocol for coffee drinkers, including cleaning schedules, whitening options, and dietary adjustments.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a dental health protocol for coffee drinkers. Include specific cleaning schedules, whitening options, and dietary adjustments.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-dental-health-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1876
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsn95dn41fd",
+    "title": "Create a guide for writing effective performance reviews as an engineering manag",
+    "raw_request": "Create a guide for writing effective performance reviews as an engineering manager. Include calibration, feedback frameworks, and growth planning templates.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:48:52.475Z",
+    "updated_at": "2026-03-16T03:52:16.436Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:49:17.170Z",
+      "interpreted_objective": "Create a detailed guide for engineering managers on writing effective performance reviews.",
+      "expected_outcome": "A comprehensive guide that includes calibration processes, feedback frameworks, and growth planning templates for engineering managers.",
+      "key_unknowns": [
+        "Specific calibration methods applicable to engineering teams",
+        "Effective feedback frameworks tailored for engineering contexts",
+        "Templates for growth planning specific to engineering roles"
+      ],
+      "recommended_strategy": "Research current best practices in performance reviews for engineering managers, focusing on calibration, feedback, and growth planning. Synthesize these findings into a structured guide with actionable templates and frameworks.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Performance Review Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices for performance reviews in engineering management, including calibration, feedback frameworks, and growth planning.",
+          "prompt": "Search the web for current best practices in performance reviews for engineering managers. Focus on calibration methods, feedback frameworks, and growth planning templates. Include specific examples, frameworks, and any available templates.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Performance Review Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide for engineering managers on writing effective performance reviews, including calibration, feedback frameworks, and growth planning templates.",
+          "prompt": "Based on the research results, synthesize a guide for engineering managers on writing effective performance reviews. Include sections on calibration methods, feedback frameworks, and growth planning templates with specific examples and actionable steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2281
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsn94kxhobn",
+    "title": "Research the best Bluetooth speakers for a home office. Must have great call qua",
+    "raw_request": "Research the best Bluetooth speakers for a home office. Must have great call quality, music playback, and USB-C charging. Under 150 dollars.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:48:51.441Z",
+    "updated_at": "2026-03-16T03:52:09.674Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:49:11.747Z",
+      "interpreted_objective": "Identify the best Bluetooth speakers for a home office with specific features under $150.",
+      "expected_outcome": "A detailed report recommending Bluetooth speakers with great call quality, music playback, and USB-C charging, all within the budget of $150.",
+      "key_unknowns": [
+        "Current market prices of Bluetooth speakers",
+        "Availability of specific features like USB-C charging",
+        "User reviews and ratings for call quality and music playback"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on Bluetooth speakers that meet the specified criteria. Then, synthesize this data into a structured report highlighting the best options, including specific product names, prices, pros/cons, and a clear recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Bluetooth Speakers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Bluetooth speakers with great call quality, music playback, and USB-C charging under $150.",
+          "prompt": "Search the web for current, specific information about Bluetooth speakers with great call quality, music playback, and USB-C charging under $150. Include real names, numbers, prices, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Speaker Recommendations",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with specific product recommendations, prices, pros/cons, and a clear recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for Bluetooth speakers with great call quality, music playback, and USB-C charging under $150. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-bluetooth-speakers.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1966
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsn93s95pd8",
+    "title": "Teach me about software architecture decision records. Include template, example",
+    "raw_request": "Teach me about software architecture decision records. Include template, examples, and how to maintain an ADR log. Cover when to create and when to update.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:48:50.409Z",
+    "updated_at": "2026-03-16T03:52:03.593Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:49:05.904Z",
+      "interpreted_objective": "Provide a comprehensive guide on software architecture decision records (ADRs).",
+      "expected_outcome": "A detailed report including an ADR template, examples, maintenance tips, and guidelines on when to create or update ADRs.",
+      "key_unknowns": [
+        "Specific ADR templates commonly used",
+        "Best practices in maintaining an ADR log",
+        "Criteria for creating or updating ADRs"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on ADRs, including templates and examples. Synthesize this information into a structured report that also covers maintenance and update guidelines. Ensure the report is practical and actionable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research ADRs",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on ADRs, including templates, examples, and maintenance practices.",
+          "prompt": "Search the web for current, specific information about software architecture decision records (ADRs). Include real ADR templates, examples, best practices for maintaining an ADR log, and guidelines on when to create or update ADRs. Provide sources and citations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile ADR Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on ADRs including a template, examples, maintenance tips, and guidelines for creation and updates.",
+          "prompt": "Based on the research results, synthesize a detailed guide on software architecture decision records (ADRs). Include a practical template, examples, best practices for maintaining an ADR log, and clear guidelines on when to create or update ADRs.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-ADRs.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1895
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsn92xagw9e",
+    "title": "Create a complete guide to cryptocurrency tax reporting in the US. Include cost ",
+    "raw_request": "Create a complete guide to cryptocurrency tax reporting in the US. Include cost basis methods, DeFi taxation, NFT sales, and Form 8949 filing.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:48:49.294Z",
+    "updated_at": "2026-03-16T03:51:56.734Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:49:00.447Z",
+      "interpreted_objective": "Create a comprehensive guide on cryptocurrency tax reporting in the US.",
+      "expected_outcome": "A detailed guide covering cost basis methods, DeFi taxation, NFT sales, and Form 8949 filing, complete with examples and actionable steps.",
+      "key_unknowns": [
+        "Current IRS guidelines on cryptocurrency taxation",
+        "Specific cost basis methods applicable to cryptocurrencies",
+        "Taxation rules for DeFi and NFTs",
+        "Detailed instructions for filing Form 8949"
+      ],
+      "recommended_strategy": "Conduct thorough research on current IRS guidelines and taxation rules for cryptocurrencies, DeFi, and NFTs. Synthesize this information into a comprehensive guide with specific examples and steps for filing Form 8949. Ensure the guide is actionable and up-to-date.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Cryptocurrency Tax Guidelines",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current IRS guidelines and rules on cryptocurrency taxation, including cost basis methods, DeFi, and NFT taxation.",
+          "prompt": "Search the web for current IRS guidelines and rules on cryptocurrency taxation in the US. Include information on cost basis methods, DeFi taxation, NFT sales, and Form 8949 filing. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Cryptocurrency Tax Reporting Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on cryptocurrency tax reporting in the US, including cost basis methods, DeFi taxation, NFT sales, and Form 8949 filing.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide on cryptocurrency tax reporting in the US. Include detailed sections on cost basis methods, DeFi taxation, NFT sales, and Form 8949 filing, with examples and actionable steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-2023-cryptocurrency-tax-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2280
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsn9241ngko",
+    "title": "Write a complete runbook for deploying a new microservice to production. Include",
+    "raw_request": "Write a complete runbook for deploying a new microservice to production. Include pre-deployment, deployment steps, smoke tests, rollback, and monitoring verification.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:48:48.241Z",
+    "updated_at": "2026-03-16T03:51:10.878Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:48:55.100Z",
+      "interpreted_objective": "Create a comprehensive runbook for deploying a new microservice to production.",
+      "expected_outcome": "A detailed, step-by-step guide covering pre-deployment, deployment, smoke tests, rollback, and monitoring verification.",
+      "key_unknowns": [
+        "Specific microservice architecture details",
+        "Current deployment tools and processes",
+        "Monitoring tools and metrics used"
+      ],
+      "recommended_strategy": "Conduct research to gather best practices for microservice deployment. Then, synthesize this information into a structured runbook tailored to a generic deployment scenario. Ensure the runbook is detailed and includes all necessary steps and contingencies.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Microservice Deployment",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices for deploying microservices, including tools and processes.",
+          "prompt": "Search the web for current best practices in deploying microservices to production. Include information on pre-deployment checks, deployment processes, smoke testing, rollback strategies, and monitoring verification. Provide specific examples and tools commonly used.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Runbook for Microservice Deployment",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete runbook document for deploying a microservice to production.",
+          "prompt": "Based on the research results, write a comprehensive runbook for deploying a new microservice to production. Include sections on pre-deployment checks, deployment steps, smoke tests, rollback procedures, and monitoring verification. Ensure the document is clear, detailed, and actionable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2038
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsn2x77obu8",
     "title": "Design a personal energy audit system. Track energy levels throughout the day, i",
     "raw_request": "Design a personal energy audit system. Track energy levels throughout the day, identify patterns, optimize schedule accordingly, and measure improvement.",
