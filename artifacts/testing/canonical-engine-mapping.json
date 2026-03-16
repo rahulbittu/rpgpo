@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "description": "Canonical 15-engine model — maps legacy internal IDs to canonical engine IDs and display names",
+  "engines": [
+    {
+      "canonical_id": "code",
+      "display_name": "Code & Product Engineering",
+      "legacy_ids": ["startup"],
+      "status": "canonical_id_acceptable"
+    },
+    {
+      "canonical_id": "writing",
+      "display_name": "Writing & Documentation",
+      "legacy_ids": [],
+      "status": "canonical_id_acceptable"
+    },
+    {
+      "canonical_id": "research",
+      "display_name": "Research & Analysis",
+      "legacy_ids": [],
+      "status": "canonical_id_acceptable"
+    },
+    {
+      "canonical_id": "learning",
+      "display_name": "Learning & Tutoring",
+      "legacy_ids": [],
+      "status": "canonical_id_acceptable"
+    },
+    {
+      "canonical_id": "ops",
+      "display_name": "Scheduling & Life Operations",
+      "legacy_ids": ["personalops"],
+      "status": "legacy_id_active"
+    },
+    {
+      "canonical_id": "health",
+      "display_name": "Health & Wellness Coach",
+      "legacy_ids": [],
+      "status": "canonical_id_acceptable"
+    },
+    {
+      "canonical_id": "shopping",
+      "display_name": "Shopping & Buying Advisor",
+      "legacy_ids": [],
+      "status": "canonical_id_acceptable"
+    },
+    {
+      "canonical_id": "travel",
+      "display_name": "Travel & Relocation Planner",
+      "legacy_ids": [],
+      "status": "canonical_id_acceptable"
+    },
+    {
+      "canonical_id": "finance",
+      "display_name": "Personal Finance & Investing",
+      "legacy_ids": ["wealthresearch"],
+      "status": "legacy_id_active"
+    },
+    {
+      "canonical_id": "startup",
+      "display_name": "Startup & Business Builder",
+      "legacy_ids": ["topranker"],
+      "status": "legacy_id_active"
+    },
+    {
+      "canonical_id": "career",
+      "display_name": "Career & Job Search",
+      "legacy_ids": ["careeregine"],
+      "status": "legacy_id_active"
+    },
+    {
+      "canonical_id": "screenwriting",
+      "display_name": "Screenwriting & Story Development",
+      "legacy_ids": [],
+      "status": "canonical_id_acceptable"
+    },
+    {
+      "canonical_id": "film",
+      "display_name": "Filmmaking & Video Production",
+      "legacy_ids": ["founder2founder"],
+      "status": "legacy_id_active"
+    },
+    {
+      "canonical_id": "music",
+      "display_name": "Music & Audio Creation",
+      "legacy_ids": [],
+      "status": "canonical_id_acceptable"
+    },
+    {
+      "canonical_id": "news",
+      "display_name": "News & Intelligence",
+      "legacy_ids": ["newsroom"],
+      "status": "legacy_id_active"
+    }
+  ],
+  "special_domains": [
+    {
+      "id": "general",
+      "display_name": "General",
+      "notes": "Catch-all for unrouted tasks. Not a real engine. Should be minimized."
+    }
+  ],
+  "legacy_ids_requiring_migration": [
+    "careeregine → career",
+    "wealthresearch → finance",
+    "personalops → ops",
+    "topranker → startup",
+    "newsroom → news",
+    "founder2founder → film"
+  ]
+}

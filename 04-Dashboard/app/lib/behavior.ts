@@ -14,6 +14,15 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
+// ─── Canonical Engine Mapping ──────────────────────────
+let _toCanonical: (id: string) => string;
+try {
+  const ce = require('./canonical-engines');
+  _toCanonical = ce.toCanonical;
+} catch {
+  _toCanonical = (id: string) => id; // fallback: identity
+}
+
 // ─── Paths ─────────────────────────────────────────────
 const ARTIFACTS_DIR = path.resolve(__dirname, '..', '..', '..', 'artifacts', 'behavior');
 const EVENTS_FILE = path.join(ARTIFACTS_DIR, 'operator-events.jsonl');
@@ -97,7 +106,7 @@ function recordEvent(type: BehaviorEventType, metadata: Record<string, any> = {}
     timestamp: new Date().toISOString(),
     taskId: context.taskId,
     subtaskId: context.subtaskId,
-    engine: context.engine,
+    engine: context.engine ? _toCanonical(context.engine) : undefined,
     provider: context.provider,
     metadata,
   };
@@ -485,8 +494,10 @@ function getScopedContext(opts: { engine?: string; project?: string; workflow?: 
   const active = signals.filter(s => s.active && s.confidence >= MIN_CONFIDENCE_FOR_ACTIVE);
 
   const globalSignals = active.filter(s => s.scope === 'global');
-  const engineSignals = opts.engine
-    ? active.filter(s => s.scope === 'engine' && s.scopeKey === opts.engine)
+  // Match engine signals by canonical ID (also check legacy ID for backward compat)
+  const canonicalEngine = opts.engine ? _toCanonical(opts.engine) : undefined;
+  const engineSignals = canonicalEngine
+    ? active.filter(s => s.scope === 'engine' && (s.scopeKey === canonicalEngine || s.scopeKey === opts.engine))
     : [];
   // project/workflow scopes will be populated as those layers are built
 

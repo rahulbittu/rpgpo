@@ -1,0 +1,103 @@
+{
+  "audit_date": "2026-03-16",
+  "summary": "6 legacy internal IDs still active across 12 files with 500+ occurrences",
+  "legacy_ids": {
+    "careeregine": {
+      "canonical_replacement": "career",
+      "locations": [
+        "domain-router.ts (DOMAIN_KEYWORDS key, DOMAIN_ALIASES value)",
+        "intake.ts (DOMAIN_KEYWORDS key, INTAKE_ALIASES value)",
+        "types.ts (Domain type union)",
+        "engines.ts (defineEngine domain)",
+        "deliberation.ts (DOMAIN_CONTEXT key)",
+        "app.js (DOMAIN_LABELS key, 2 occurrences)",
+        "intake-tasks.json (103 stored tasks)",
+        "operator-signals.json (signal scopeKeys)",
+        "engine-preferences.json (engine key)"
+      ],
+      "stored_task_count": 103,
+      "signal_count": 2
+    },
+    "wealthresearch": {
+      "canonical_replacement": "finance",
+      "locations": [
+        "domain-router.ts (DOMAIN_KEYWORDS key, DOMAIN_ALIASES value)",
+        "intake.ts (DOMAIN_KEYWORDS key, INTAKE_ALIASES value)",
+        "types.ts (Domain type union)",
+        "engines.ts (defineEngine domain)",
+        "deliberation.ts (DOMAIN_CONTEXT key)",
+        "app.js (DOMAIN_LABELS key, 2 occurrences)",
+        "intake-tasks.json (122 stored tasks)",
+        "operator-signals.json (signal scopeKeys)",
+        "engine-preferences.json (engine key)"
+      ],
+      "stored_task_count": 122,
+      "signal_count": 2
+    },
+    "personalops": {
+      "canonical_replacement": "ops",
+      "locations": [
+        "domain-router.ts (DOMAIN_KEYWORDS key)",
+        "intake.ts (DOMAIN_KEYWORDS key, INTAKE_ALIASES value)",
+        "types.ts (Domain type union)",
+        "engines.ts (defineEngine domain)",
+        "deliberation.ts (DOMAIN_CONTEXT key)",
+        "app.js (DOMAIN_LABELS key, 2 occurrences)",
+        "intake-tasks.json (93 stored tasks)",
+        "operator-signals.json (signal scopeKeys)",
+        "engine-preferences.json (engine key)"
+      ],
+      "stored_task_count": 93,
+      "signal_count": 2
+    },
+    "topranker": {
+      "canonical_replacement": "startup",
+      "locations": [
+        "domain-router.ts (DOMAIN_KEYWORDS key)",
+        "intake.ts (DOMAIN_KEYWORDS key)",
+        "types.ts (Domain type union)",
+        "engines.ts (defineEngine domain)",
+        "deliberation.ts (DOMAIN_CONTEXT key)",
+        "worker.js (classifyFiles)",
+        "app.js (DOMAIN_LABELS key)",
+        "intake-tasks.json (27 stored tasks)",
+        "operator-signals.json (signal scopeKeys)",
+        "engine-preferences.json (engine key)"
+      ],
+      "stored_task_count": 27,
+      "signal_count": 2
+    },
+    "newsroom": {
+      "canonical_replacement": "news",
+      "locations": [
+        "domain-router.ts (DOMAIN_KEYWORDS key)",
+        "intake.ts (DOMAIN_KEYWORDS key)",
+        "types.ts (Domain type union)",
+        "engines.ts (defineEngine domain)",
+        "deliberation.ts (DOMAIN_CONTEXT key)",
+        "intake-tasks.json (16 stored tasks)",
+        "operator-signals.json (signal scopeKeys)",
+        "engine-preferences.json (engine key)"
+      ],
+      "stored_task_count": 16,
+      "signal_count": 2
+    },
+    "founder2founder": {
+      "canonical_replacement": "film",
+      "locations": [
+        "intake.ts (DOMAIN_KEYWORDS key)",
+        "types.ts (Domain type union)",
+        "engines.ts (defineEngine domain)",
+        "app.js (DOMAIN_LABELS key)"
+      ],
+      "stored_task_count": 0,
+      "signal_count": 0
+    }
+  },
+  "migration_risk": {
+    "high_risk": "intake-tasks.json (1200+ stored tasks with legacy domain field — requires data migration or adapter)",
+    "medium_risk": "behavior signals and engine preferences keyed by legacy IDs",
+    "low_risk": "code references (can be renamed with search-replace + recompile)"
+  },
+  "recommended_approach": "Canonical-first routing layer with legacy adapter. New tasks get canonical IDs. Old tasks read through adapter. Signals store canonical IDs going forward."
+}
