@@ -1,5 +1,721 @@
 [
   {
+    "task_id": "t_mmsswbw78uhj",
+    "title": "Design a comprehensive weekly review and planning system. Include GTD-style proj",
+    "raw_request": "Design a comprehensive weekly review and planning system. Include GTD-style project review, energy-based scheduling, quarterly goal alignment, reflection prompts, and tool recommendations (Notion, Obsidian, Todoist).",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:26:52.087Z",
+    "updated_at": "2026-03-16T06:31:30.249Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:27:52.707Z",
+      "interpreted_objective": "Design a system for weekly review and planning incorporating GTD, energy scheduling, and tool recommendations.",
+      "expected_outcome": "A detailed framework for weekly planning that aligns with quarterly goals and includes tool suggestions.",
+      "key_unknowns": [
+        "Specific requirements for GTD-style project review",
+        "Details on energy-based scheduling preferences",
+        "Specific quarterly goals to align with",
+        "Preferred tools and features within Notion, Obsidian, Todoist"
+      ],
+      "recommended_strategy": "Research best practices for GTD-style project reviews and energy-based scheduling. Synthesize a weekly review framework that aligns with quarterly goals and includes reflection prompts. Recommend tools like Notion, Obsidian, and Todoist based on their features and suitability for the framework.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research GTD and energy-based scheduling",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices for GTD-style reviews and energy-based scheduling.",
+          "prompt": "Search the web for current best practices and methodologies for GTD-style project reviews and energy-based scheduling. Include real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize weekly review framework",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive weekly review framework that includes GTD, energy scheduling, goal alignment, and tool recommendations.",
+          "prompt": "Based on the research results, synthesize a comprehensive weekly review and planning framework. Include GTD-style project review, energy-based scheduling, quarterly goal alignment, reflection prompts, and tool recommendations for Notion, Obsidian, and Todoist.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2047
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsswbu42b3e",
+    "title": "Create a guide to building a home composting system for suburban properties. Inc",
+    "raw_request": "Create a guide to building a home composting system for suburban properties. Include bin selection, carbon-nitrogen ratios, troubleshooting common problems, vermicomposting setup, and using compost in raised beds.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:26:52.012Z",
+    "updated_at": "2026-03-16T06:31:22.163Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:27:47.908Z",
+      "interpreted_objective": "Create a comprehensive guide for building a home composting system tailored for suburban properties.",
+      "expected_outcome": "A detailed, actionable guide that includes bin selection, carbon-nitrogen ratios, troubleshooting, vermicomposting setup, and using compost in raised beds.",
+      "key_unknowns": [
+        "Specific preferences or constraints for suburban properties",
+        "Current best practices in composting",
+        "Common problems faced in home composting"
+      ],
+      "recommended_strategy": "Research current best practices and common issues in home composting. Synthesize this information into a structured guide that addresses all specified topics. Ensure the guide is practical and accessible for suburban homeowners.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Composting Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices and common issues in home composting.",
+          "prompt": "Search the web for current, specific information about home composting best practices, including bin selection, carbon-nitrogen ratios, troubleshooting common problems, vermicomposting setup, and using compost in raised beds. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Home Composting Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide to building a home composting system for suburban properties.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building a home composting system for suburban properties. Include sections on bin selection, carbon-nitrogen ratios, troubleshooting common problems, vermicomposting setup, and using compost in raised beds. Provide actionable recommendations and practical tips.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2022
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmsswbsbce45",
+    "title": "Write a complete screenplay outline for a heist film set inside a virtual realit",
+    "raw_request": "Write a complete screenplay outline for a heist film set inside a virtual reality MMORPG where the crew must steal a one-of-a-kind digital artifact worth millions. Include act structure and key scene descriptions.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:26:51.947Z",
+    "updated_at": "2026-03-16T06:31:11.063Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:27:43.365Z",
+      "interpreted_objective": "Create a detailed screenplay outline for a heist film set in a virtual reality MMORPG.",
+      "expected_outcome": "A structured screenplay outline with act structure and key scene descriptions for a heist film set in a virtual reality MMORPG.",
+      "key_unknowns": [
+        "Specific elements of the virtual reality MMORPG setting",
+        "Details of the digital artifact to be stolen",
+        "Character roles within the heist crew"
+      ],
+      "recommended_strategy": "First, gather information on popular virtual reality MMORPG settings and heist film structures. Then, synthesize this information to create a detailed screenplay outline, ensuring to include act structure and key scene descriptions.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research VR MMORPG settings and heist film structures",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of popular virtual reality MMORPG settings and common heist film structures.",
+          "prompt": "Search the web for current, specific information about popular virtual reality MMORPG settings and common structures of heist films. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write screenplay outline",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete screenplay outline with act structure and key scene descriptions for a heist film set in a virtual reality MMORPG.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed screenplay outline for a heist film set in a virtual reality MMORPG. Include act structure, key scene descriptions, and details about the digital artifact and crew roles.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-heist-film-outline.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1963
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsswbq7znia",
+    "title": "Plan an 8-day wine and gastronomy tour through Tuscany. Include Brunello di Mont",
+    "raw_request": "Plan an 8-day wine and gastronomy tour through Tuscany. Include Brunello di Montalcino tastings, truffle hunting in San Miniato, cooking classes in Florence, olive oil mill tours, and agriturismo stays.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:26:51.871Z",
+    "updated_at": "2026-03-16T06:31:00.649Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:27:36.792Z",
+      "interpreted_objective": "Plan a detailed 8-day wine and gastronomy tour in Tuscany, including specific activities like wine tastings, truffle hunting, cooking classes, and agriturismo stays.",
+      "expected_outcome": "A comprehensive itinerary for an 8-day tour in Tuscany that includes all specified activities and provides a memorable culinary and cultural experience.",
+      "key_unknowns": [
+        "Current availability and pricing of activities",
+        "Exact locations and recommendations for agriturismo stays",
+        "Travel logistics between activities"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on wine tastings, truffle hunting, cooking classes, and agriturismo options in Tuscany. Synthesize this information into a detailed daily itinerary that balances activities, travel, and relaxation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tuscany Wine and Gastronomy Activities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on wine tastings, truffle hunting, cooking classes, olive oil mill tours, and agriturismo stays in Tuscany.",
+          "prompt": "Search the web for current, specific information about wine tastings, truffle hunting, cooking classes, olive oil mill tours, and agriturismo stays in Tuscany. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Tuscany Tour Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 8-day itinerary for a wine and gastronomy tour in Tuscany.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 8-day itinerary for a wine and gastronomy tour in Tuscany. Include specific activities, locations, travel logistics, and recommendations for each day.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-10-19-tuscany-tour-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2511
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsswbpb2hby",
+    "title": "Design a comprehensive recovery and regeneration protocol for amateur athletes. ",
+    "raw_request": "Design a comprehensive recovery and regeneration protocol for amateur athletes. Include active recovery techniques, contrast therapy, sleep optimization for recovery, periodized deload weeks, and injury prevention screening.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:26:51.839Z",
+    "updated_at": "2026-03-16T06:30:49.828Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:27:30.589Z",
+      "interpreted_objective": "Design a recovery and regeneration protocol for amateur athletes focusing on various recovery techniques and injury prevention.",
+      "expected_outcome": "A comprehensive protocol document detailing strategies for recovery, including active recovery, contrast therapy, sleep optimization, periodized deload weeks, and injury prevention screening.",
+      "key_unknowns": [
+        "Current best practices for each recovery technique",
+        "Specific needs of amateur athletes compared to professionals",
+        "Evidence-based methods for injury prevention"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and evidence-based methods for each component of the recovery protocol. Synthesize the findings into a structured document that outlines actionable strategies for amateur athletes. Ensure the protocol is comprehensive and easy to follow.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Recovery Techniques",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gather current information on active recovery techniques, contrast therapy, sleep optimization, periodized deload weeks, and injury prevention screening.",
+          "prompt": "Search the web for current, specific information about active recovery techniques, contrast therapy, sleep optimization for recovery, periodized deload weeks, and injury prevention screening for amateur athletes. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Recovery Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured document detailing a comprehensive recovery protocol for amateur athletes.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a recovery and regeneration protocol for amateur athletes. Include specific techniques and methods for active recovery, contrast therapy, sleep optimization, periodized deload weeks, and injury prevention screening.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-recovery-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2486
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsswbmepat3",
+    "title": "Create a comprehensive guide to salary negotiation for women in tech. Include ge",
+    "raw_request": "Create a comprehensive guide to salary negotiation for women in tech. Include gender pay gap data, negotiation scripts, equity leverage tactics, competing offer strategies, and dealing with lowball responses.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:26:51.734Z",
+    "updated_at": "2026-03-16T06:30:42.311Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:27:24.508Z",
+      "interpreted_objective": "Create a detailed guide to salary negotiation for women in tech, focusing on gender pay gap data, negotiation strategies, and handling lowball offers.",
+      "expected_outcome": "A comprehensive guide that empowers women in tech with effective salary negotiation strategies, supported by data and actionable scripts.",
+      "key_unknowns": [
+        "Current gender pay gap statistics specific to the tech industry",
+        "Effective negotiation scripts tailored for women",
+        "Best practices for leveraging equity and handling competing offers"
+      ],
+      "recommended_strategy": "First, conduct thorough research on the gender pay gap in tech, negotiation tactics, and strategies for leveraging equity and competing offers. Then, synthesize this information into a structured guide with practical scripts and advice.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Gender Pay Gap and Negotiation Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on gender pay gap in tech, negotiation strategies, and equity leverage tactics.",
+          "prompt": "Search the web for current, specific information about the gender pay gap in the tech industry, effective salary negotiation strategies for women, and tactics for leveraging equity and handling competing offers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Salary Negotiation Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide with actionable negotiation strategies and scripts for women in tech.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide to salary negotiation for women in tech. Include gender pay gap data, negotiation scripts, equity leverage tactics, competing offer strategies, and handling lowball responses.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-salary-negotiation-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2172
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsswbjcu0un",
+    "title": "Research the best portable monitors for remote workers who travel. Compare ASUS ",
+    "raw_request": "Research the best portable monitors for remote workers who travel. Compare ASUS ZenScreen, Lenovo ThinkVision M14, and ViewSonic TD1655 with USB-C power delivery and color accuracy analysis.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:26:51.624Z",
+    "updated_at": "2026-03-16T06:30:34.133Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:27:19.111Z",
+      "interpreted_objective": "Research and compare the ASUS ZenScreen, Lenovo ThinkVision M14, and ViewSonic TD1655 portable monitors for remote workers, focusing on USB-C power delivery and color accuracy.",
+      "expected_outcome": "A detailed comparison report of the three portable monitors, highlighting their features, pros and cons, and suitability for remote workers who travel.",
+      "key_unknowns": [
+        "Current market reviews and ratings for each monitor",
+        "Specific color accuracy metrics for each model",
+        "Comparative analysis of USB-C power delivery effectiveness"
+      ],
+      "recommended_strategy": "First, gather current market data and reviews for each monitor model using Perplexity to ensure the latest information. Then, synthesize this data into a comprehensive report using OpenAI, focusing on USB-C power delivery and color accuracy. Highlight the pros and cons of each model for remote workers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Portable Monitors",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current market data, reviews, and color accuracy metrics for ASUS ZenScreen, Lenovo ThinkVision M14, and ViewSonic TD1655.",
+          "prompt": "Search the web for current, specific information about ASUS ZenScreen, Lenovo ThinkVision M14, and ViewSonic TD1655 portable monitors. Focus on USB-C power delivery, color accuracy, and user reviews. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Monitor Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the ASUS ZenScreen, Lenovo ThinkVision M14, and ViewSonic TD1655, with recommendations for remote workers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for ASUS ZenScreen, Lenovo ThinkVision M14, and ViewSonic TD1655 portable monitors. Include specific names, numbers, and concrete next steps, focusing on USB-C power delivery and color accuracy.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-portable-monitors.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2230
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsswbgkqsk5",
+    "title": "Explain how modern garbage collectors handle concurrent collection without stop-",
+    "raw_request": "Explain how modern garbage collectors handle concurrent collection without stop-the-world pauses. Cover G1 concurrent marking, ZGC load barriers, Shenandoah forwarding pointers, and pause time guarantees.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:26:51.524Z",
+    "updated_at": "2026-03-16T06:30:25.494Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:27:10.580Z",
+      "interpreted_objective": "Explain how modern garbage collectors manage concurrent collection without stop-the-world pauses.",
+      "expected_outcome": "A detailed report explaining G1 concurrent marking, ZGC load barriers, Shenandoah forwarding pointers, and pause time guarantees.",
+      "key_unknowns": [
+        "Current implementations of G1, ZGC, and Shenandoah in modern JVMs",
+        "Specific techniques used to minimize pause times"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather the latest information on how G1, ZGC, and Shenandoah garbage collectors handle concurrent collection and minimize pause times. Then, synthesize this information into a clear and concise report, explaining each technique and its impact on pause time guarantees.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Modern Garbage Collection Techniques",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on G1, ZGC, and Shenandoah garbage collectors with citations.",
+          "prompt": "Search the web for current, specific information about how G1 concurrent marking, ZGC load barriers, and Shenandoah forwarding pointers handle concurrent garbage collection without stop-the-world pauses. Include information on pause time guarantees and real-world implementations in modern JVMs. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Garbage Collection Techniques Report",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining how modern garbage collectors handle concurrent collection.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a detailed report explaining how G1 concurrent marking, ZGC load barriers, and Shenandoah forwarding pointers manage concurrent garbage collection without stop-the-world pauses. Include explanations of pause time guarantees and the impact of these techniques on performance.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-garbage-collection.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1951
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsswbg5gba4",
+    "title": "Create a comprehensive guide to international real estate investing for US-based",
+    "raw_request": "Create a comprehensive guide to international real estate investing for US-based investors. Include tax treaty implications, currency hedging strategies, property management at distance, and top markets for 2026.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:26:51.509Z",
+    "updated_at": "2026-03-16T06:30:15.674Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:27:05.680Z",
+      "interpreted_objective": "Create a comprehensive guide for US-based investors on international real estate investing, covering tax treaties, currency hedging, remote property management, and top markets for 2026.",
+      "expected_outcome": "A detailed and actionable guide that helps US investors understand international real estate investing, including tax implications, currency strategies, and market insights.",
+      "key_unknowns": [
+        "Current tax treaty implications for US investors in international real estate",
+        "Effective currency hedging strategies for real estate investments",
+        "Best practices for managing properties remotely",
+        "Top international real estate markets for 2026"
+      ],
+      "recommended_strategy": "Conduct thorough research on each aspect of international real estate investing using credible sources. Synthesize findings into a cohesive guide that addresses each component clearly and provides actionable insights. Ensure the guide is accessible and practical for US-based investors.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tax Treaty Implications",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on tax treaty implications for US investors in international real estate.",
+          "prompt": "Search the web for current, specific information about tax treaty implications for US investors in international real estate. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Currency Hedging Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current strategies for currency hedging in international real estate investments.",
+          "prompt": "Search the web for current, specific information about currency hedging strategies for international real estate investments. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Remote Property Management",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Best practices for managing properties remotely in international real estate.",
+          "prompt": "Search the web for current, specific information about best practices for managing properties remotely in international real estate. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Identify Top Markets for 2026",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of top international real estate markets for 2026 with supporting data.",
+          "prompt": "Search the web for current, specific information about the top international real estate markets for 2026. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comprehensive Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on international real estate investing for US investors.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations into a comprehensive guide for US investors on international real estate investing. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-international-real-estate-investing-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2894
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsswbfmbjh3",
+    "title": "Design a feature flag system architecture for a SaaS product. Include gradual ro",
+    "raw_request": "Design a feature flag system architecture for a SaaS product. Include gradual rollouts, A/B testing integration, kill switches, targeting rules engine, and audit logging for compliance.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:26:51.490Z",
+    "updated_at": "2026-03-16T06:30:05.623Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:26:55.419Z",
+      "interpreted_objective": "Design a feature flag system architecture for a SaaS product with specific capabilities.",
+      "expected_outcome": "A detailed architecture plan for a feature flag system that includes gradual rollouts, A/B testing, kill switches, targeting rules, and audit logging.",
+      "key_unknowns": [
+        "Specific requirements or constraints for the SaaS product",
+        "Existing infrastructure or technology stack of the SaaS product",
+        "Compliance standards that need to be met"
+      ],
+      "recommended_strategy": "Research existing feature flag systems and their architectures to understand best practices. Develop a strategic plan that outlines the architecture, including components for gradual rollouts, A/B testing, kill switches, targeting rules, and audit logging. Ensure the plan aligns with potential compliance requirements.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final architecture design approval"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Feature Flag Systems",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices and common architectures for feature flag systems.",
+          "prompt": "Search the web for current, specific information about feature flag systems used in SaaS products. Include details on gradual rollouts, A/B testing integration, kill switches, targeting rules engines, and audit logging. Provide real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Feature Flag System Architecture",
+          "stage": "strategy",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "A strategic architecture plan for a feature flag system tailored to a SaaS product.",
+          "prompt": "Analyze the research results to develop a strategic architecture plan for a feature flag system. Include components for gradual rollouts, A/B testing, kill switches, targeting rules, and audit logging. Consider compliance requirements and provide recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2419
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
     "task_id": "t_mmssozp1n5nx",
     "title": "Design a comprehensive personal energy management system. Include chronotype ass",
     "raw_request": "Design a comprehensive personal energy management system. Include chronotype assessment, energy mapping throughout the day, task-energy matching, recovery protocols, and weekly planning templates.",

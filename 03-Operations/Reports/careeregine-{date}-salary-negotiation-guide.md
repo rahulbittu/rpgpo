@@ -1,48 +1,73 @@
 ## Key Findings
 
-1. **Negotiate the Full Compensation System**
-   - Focus on the entire compensation package, not just the base salary. Understand the flexibility of each component such as equity, bonuses, and benefits[1].
+### Gender Pay Gap in Tech
+- Women in tech earn 84 cents for every dollar men earn, resulting in a $15,000 annual gap. In engineering roles, the gap is reduced to 90 cents per dollar. [1][2]
+- Pay transparency can reduce the gender pay gap by 7%. [3][5]
+- Latina and Black women face larger disparities, earning 54 cents and 63 cents per dollar, respectively. [1][2]
 
-2. **Avoid Anchoring to Current Compensation**
-   - Do not use your current salary as a reference point. Instead, use market data to frame your expectations and keep negotiations flexible[1].
+### Workforce and Pay Statistics
+- Women constitute 26.7% of the global tech workforce. [2]
+- At the director level, women earn 92 cents for every dollar men earn. [2]
+- 61% of women report being paid less than their male counterparts in similar roles. [2]
 
-3. **Understand Company-Specific Compensation Structures**
-   - Gain insights into how your target company structures its compensation and which components have the most flexibility[1].
+## Recommendations
 
-## Detailed Analysis
+1. **Leverage Pay Transparency**
+   - **What to Do:** Advocate for pay transparency in your organization or seek companies that practice it.
+   - **Why:** Transparency has been shown to reduce the gender pay gap by 7%.
+   - **Expected Outcome:** More equitable pay and potentially higher earnings.
+   - **First Step:** Research and apply to companies known for their transparency policies.
 
-### Full Compensation System
-- **Base Salary** is often the most visible component, but bonuses and equity can significantly impact total earnings. For instance, equity refreshers can provide substantial long-term gains, especially in tech companies with rising stock values.
-- **Sign-on Bonuses** can be used to bridge gaps between offers or compensate for lost bonuses from a previous employer.
-- **Benefits** such as health insurance, retirement contributions, and paid time off can add significant value.
+2. **Prepare Negotiation Scripts**
+   - **What to Do:** Develop and practice negotiation scripts tailored to your role and industry.
+   - **Why:** Having a prepared script can help you confidently articulate your value and counter lowball offers.
+   - **Expected Outcome:** Increased likelihood of securing a better salary offer.
+   - **First Step:** Use data from sources like Metana and WomenHack to benchmark your salary expectations.
 
-### Avoiding Anchors
-- **Market Data**: Use platforms like Glassdoor, Levels.fyi, and Payscale to gather data on typical compensation for similar roles[1].
-- **Role Scope and Level**: Understand the responsibilities and expectations of the new role to better assess its value.
+3. **Utilize Competing Offers**
+   - **What to Do:** Obtain and leverage competing job offers during negotiations.
+   - **Why:** Competing offers can strengthen your negotiation position and demonstrate your market value.
+   - **Expected Outcome:** Higher salary or improved benefits.
+   - **First Step:** Network and apply to multiple positions to increase the likelihood of receiving multiple offers.
 
-### Company-Specific Structures
-- **Flexibility**: Some companies may offer more flexibility in equity rather than base salary, especially startups or rapidly growing tech firms.
-- **Level Impact**: Higher levels often come with better compensation packages and more frequent equity refresh cycles.
+4. **Equity Leverage Tactics**
+   - **What to Do:** Negotiate for equity as part of your compensation package.
+   - **Why:** Equity can provide significant long-term financial benefits and align your interests with the company's growth.
+   - **Expected Outcome:** Potential for increased wealth through company stock or options.
+   - **First Step:** Research the company's financial health and growth prospects to assess the value of equity offers.
 
-## Recommended Actions
+5. **Handling Lowball Offers**
+   - **What to Do:** Respond to lowball offers with data-driven counteroffers.
+   - **Why:** Demonstrating knowledge of industry standards and your worth can lead to better offers.
+   - **Expected Outcome:** Improved initial offers and respect for your negotiation skills.
+   - **First Step:** Prepare a detailed list of your achievements and market salary data to support your counteroffer.
 
-1. **Script for Recruiter Calls**
-   - **Objective**: Gather information on compensation structure and flexibility.
-   - **Script**: "I'm excited about the opportunity to join [Company]. Could you help me understand how compensation is structured at this level? Specifically, which components tend to have the most flexibility?"
+## Action Items
 
-2. **Counter-Offer Strategy**
-   - **Objective**: Leverage competing offers to improve your package.
-   - **Action**: Present competing offers without disclosing specific numbers. Emphasize your enthusiasm for the role but express a need for a competitive package.
-   - **Script**: "I have received other offers that are compelling, but I am very interested in [Company]. Could we explore ways to make this offer more competitive?"
+1. **Research and Apply to Transparent Companies** (1-2 weeks)
+   - Identify companies with strong pay transparency policies.
+   - Apply to roles that align with your skills and career goals.
 
-3. **Leveraging Competing Offers**
-   - **Objective**: Use competing offers to negotiate better terms.
-   - **Action**: Highlight specific areas where the competing offer is stronger and ask if the company can match or exceed those terms.
-   - **Script**: "Another offer I received includes a higher equity component. Is there room to adjust the equity portion of this offer to align more closely with that?"
+2. **Develop and Practice Negotiation Scripts** (1 week)
+   - Write and rehearse scripts for various negotiation scenarios.
+   - Include specific data points and personal achievements.
 
-4. **First Step in Negotiation**
-   - **Objective**: Set the stage for successful negotiation.
-   - **Action**: Delay discussing specific numbers until you have a clear understanding of the role's scope and the company's compensation structure.
-   - **Script**: "Before we dive into numbers, could we discuss the role's responsibilities and how compensation is typically structured for this position?"
+3. **Network for Competing Offers** (Ongoing)
+   - Attend industry events and engage with recruiters.
+   - Apply to multiple positions to increase your chances of receiving offers.
 
-By implementing these strategies, you can effectively navigate salary negotiations and secure a comprehensive compensation package that reflects your market value and career goals.
+4. **Evaluate Equity Offers** (As Offers Arise)
+   - Analyze the potential value of equity offers.
+   - Consider the company's growth potential and your career goals.
+
+5. **Prepare for Lowball Offers** (Before Negotiations)
+   - Gather industry salary data and personal performance metrics.
+   - Plan your response strategy for lowball offers.
+
+## Resources
+
+- **Metana Blog on Women in Tech Statistics**: [Metana Blog](https://metana.io/blog/women-in-tech-statistics-2026/)
+- **WomenHack Statistics Update**: [WomenHack](https://womenhack.com/women-in-tech-statistics/)
+- **AAUW Report on Gender Pay Gap**: [AAUW Report](https://www.aauw.org/resources/research/the-simple-truth-about-the-gender-pay-gap/)
+
+These resources provide valuable data and insights to support your salary negotiation strategies.
