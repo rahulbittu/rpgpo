@@ -16602,5 +16602,156 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-16T18:42:16.982Z"
+  },
+  "t_mmtjh7qjsaii": {
+    "task_id": "t_mmtjh7qjsaii",
+    "deliverable_id": "dlv_rpgpo_tmmtjh7qjsaii_document_9ecfd792",
+    "engine_id": "general",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:51:08.566Z"
+  },
+  "t_mmtjh7r9d4py": {
+    "task_id": "t_mmtjh7r9d4py",
+    "deliverable_id": "dlv_rpgpo_tmmtjh7r9d4py_action_plan_959158d5",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:51:17.969Z"
+  },
+  "t_mmtjh7scdbzg": {
+    "task_id": "t_mmtjh7scdbzg",
+    "deliverable_id": "dlv_rpgpo_tmmtjh7scdbzg_code_change_46537800",
+    "engine_id": "startup",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "diffs",
+      "implementation_plan",
+      "changed_files",
+      "diff_preview"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:51:26.361Z"
+  },
+  "t_mmtjh7t7lery": {
+    "task_id": "t_mmtjh7t7lery",
+    "deliverable_id": "dlv_rpgpo_tmmtjh7t7lery_recommendation_75bc8e41",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:51:36.880Z"
+  },
+  "t_mmtjh7uslloo": {
+    "task_id": "t_mmtjh7uslloo",
+    "deliverable_id": "dlv_rpgpo_tmmtjh7uslloo_document_7a1d6119",
+    "engine_id": "careeregine",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:51:46.685Z"
+  },
+  "t_mmtjh7xxmrxc": {
+    "task_id": "t_mmtjh7xxmrxc",
+    "deliverable_id": "dlv_rpgpo_tmmtjh7xxmrxc_document_9e00e4d6",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:51:55.548Z"
+  },
+  "t_mmtjh7ziftx8": {
+    "task_id": "t_mmtjh7ziftx8",
+    "deliverable_id": "dlv_rpgpo_tmmtjh7ziftx8_document_0742cef5",
+    "engine_id": "general",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:52:04.922Z"
+  },
+  "t_mmtjh81nwy5d": {
+    "task_id": "t_mmtjh81nwy5d",
+    "deliverable_id": "dlv_rpgpo_tmmtjh81nwy5d_document_346b85cc",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:52:15.492Z"
+  },
+  "t_mmtjh84x1lwy": {
+    "task_id": "t_mmtjh84x1lwy",
+    "deliverable_id": "dlv_rpgpo_tmmtjh84x1lwy_code_change_8ae91d52",
+    "engine_id": "startup",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "diffs",
+      "implementation_plan",
+      "changed_files",
+      "diff_preview"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:52:23.798Z"
+  },
+  "t_mmtjh87v5ud9": {
+    "task_id": "t_mmtjh87v5ud9",
+    "deliverable_id": "dlv_rpgpo_tmmtjh87v5ud9_recommendation_0bfee4ad",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:52:31.874Z"
   }
 }

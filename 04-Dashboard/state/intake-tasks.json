@@ -1,5 +1,688 @@
 [
   {
+    "task_id": "t_mmtjh87v5ud9",
+    "title": "Design a comprehensive team topologies implementation guide. Include stream-alig",
+    "raw_request": "Design a comprehensive team topologies implementation guide. Include stream-aligned teams, platform teams, enabling teams, complicated-subsystem teams, interaction modes, and cognitive load assessment.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:50:57.115Z",
+    "updated_at": "2026-03-16T18:57:36.927Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:52:31.836Z",
+      "interpreted_objective": "Create a detailed guide on implementing team topologies in organizations.",
+      "expected_outcome": "A comprehensive guide covering team topologies with practical examples and strategies.",
+      "key_unknowns": [
+        "Specific examples of successful implementations of team topologies.",
+        "Current best practices in cognitive load assessment for teams.",
+        "Interaction modes best suited for different team types."
+      ],
+      "recommended_strategy": "First, research current information on team topologies, focusing on stream-aligned, platform, enabling, and complicated-subsystem teams. Then, analyze interaction modes and cognitive load assessment techniques. Finally, synthesize this information into a comprehensive guide with actionable insights.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Team Topologies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on team topologies, including types, interaction modes, and cognitive load assessment.",
+          "prompt": "Search the web for current, specific information about team topologies, including stream-aligned teams, platform teams, enabling teams, complicated-subsystem teams, interaction modes, and cognitive load assessment. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Team Topologies Guide",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on implementing team topologies with examples and strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on implementing team topologies. Include practical examples, strategies, interaction modes, and cognitive load assessment techniques.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2201
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtjh84x1lwy",
+    "title": "Create a guide to building an efficient home filing system going fully digital. ",
+    "raw_request": "Create a guide to building an efficient home filing system going fully digital. Include scanner selection, OCR accuracy, folder structure, naming conventions, backup strategy, and transition timeline from paper.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:50:57.009Z",
+    "updated_at": "2026-03-16T18:57:17.088Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:52:23.760Z",
+      "interpreted_objective": "Create a comprehensive guide for transitioning to a fully digital home filing system.",
+      "expected_outcome": "A detailed guide covering scanner selection, OCR accuracy, folder structure, naming conventions, backup strategy, and a transition timeline from paper to digital.",
+      "key_unknowns": [
+        "Specific scanner models and their features",
+        "Best practices for OCR accuracy",
+        "Optimal folder structure and naming conventions",
+        "Effective backup strategies",
+        "Steps and timeline for transitioning from paper to digital"
+      ],
+      "recommended_strategy": "Research current best practices and technologies for digital filing systems. Synthesize findings into a structured guide that addresses each component of the task request. Ensure the guide is practical and actionable for users looking to transition from paper to digital.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Scanner Selection and OCR Accuracy",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on current scanner models and OCR technologies.",
+          "prompt": "Search the web for current, specific information about the best scanner models for home use and technologies that ensure high OCR accuracy. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Digital Filing System",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on building an efficient digital home filing system.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for creating a digital home filing system. Include sections on scanner selection, OCR accuracy, folder structure, naming conventions, backup strategy, and a transition timeline from paper to digital.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2002
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmtjh81nwy5d",
+    "title": "Write a complete concept for a dystopian novella about a city where citizens mus",
+    "raw_request": "Write a complete concept for a dystopian novella about a city where citizens must contribute a dream to the communal dream bank each night or face exile. Include world rules, main character arc, and thematic exploration.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:50:56.891Z",
+    "updated_at": "2026-03-16T18:56:59.827Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:52:15.453Z",
+      "interpreted_objective": "Develop a detailed concept for a dystopian novella involving a communal dream bank.",
+      "expected_outcome": "A comprehensive concept document outlining world rules, character arcs, and thematic elements for the novella.",
+      "key_unknowns": [
+        "Specific themes to explore",
+        "Character details",
+        "World-building specifics"
+      ],
+      "recommended_strategy": "First, research existing dystopian literature and communal dream concepts to gather inspiration and context. Then, synthesize this information into a detailed novella concept, focusing on world rules, character development, and thematic exploration.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Dystopian Literature and Communal Dream Concepts",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of insights and examples from existing dystopian literature and communal dream concepts.",
+          "prompt": "Search the web for current, specific information about dystopian literature that involves communal or shared dreams. Include real examples, thematic elements, and world-building techniques used in these stories.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Novella Concept",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed concept document for the novella, including world rules, main character arc, and thematic exploration.",
+          "prompt": "Based on the research results, synthesize a complete concept for a dystopian novella about a city where citizens must contribute a dream to the communal dream bank each night or face exile. Include detailed world rules, a compelling main character arc, and thematic exploration.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-dystopian-novella-concept.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1904
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtjh7ziftx8",
+    "title": "Plan a 9-day culinary and wine tour through the Basque Country spanning both Fre",
+    "raw_request": "Plan a 9-day culinary and wine tour through the Basque Country spanning both French and Spanish sides. Include pintxos bars in San Sebastian, Rioja wine cellars, Biarritz seafood, Bilbao Guggenheim, and cider house visits.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:50:56.814Z",
+    "updated_at": "2026-03-16T18:56:43.117Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:52:04.887Z",
+      "interpreted_objective": "Plan a detailed 9-day culinary and wine tour through the Basque Country, covering both French and Spanish regions.",
+      "expected_outcome": "A comprehensive itinerary that includes pintxos bars in San Sebastian, Rioja wine cellars, Biarritz seafood, Bilbao Guggenheim, and cider house visits.",
+      "key_unknowns": [
+        "Current popular pintxos bars in San Sebastian",
+        "Availability and best Rioja wine cellars for visits",
+        "Top seafood experiences in Biarritz",
+        "Operating hours and visitor information for Bilbao Guggenheim",
+        "Recommended cider houses in the Basque Country"
+      ],
+      "recommended_strategy": "Conduct thorough research to identify the best culinary and wine experiences in the Basque Country. Synthesize this information into a structured itinerary that balances cultural experiences with culinary delights. Ensure logistical feasibility and include travel tips.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Basque Country Culinary and Wine Highlights",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of top culinary and wine experiences in the Basque Country with sources.",
+          "prompt": "Search the web for current, specific information about top culinary and wine experiences in the Basque Country, including pintxos bars in San Sebastian, Rioja wine cellars, seafood in Biarritz, Bilbao Guggenheim, and cider houses. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Basque Country Tour Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 9-day itinerary for a culinary and wine tour through the Basque Country.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 9-day itinerary for a culinary and wine tour through the Basque Country. Include specific names, locations, activities, and travel tips.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-BasqueCountryTour.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2532
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtjh7xxmrxc",
+    "title": "Design a comprehensive balance and proprioception training program for injury pr",
+    "raw_request": "Design a comprehensive balance and proprioception training program for injury prevention. Include single-leg progressions, unstable surface training, vestibular exercises, sport-specific balance challenges, and progress measurement.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:50:56.757Z",
+    "updated_at": "2026-03-16T18:56:22.687Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:51:55.510Z",
+      "interpreted_objective": "Create a detailed balance and proprioception training program for injury prevention.",
+      "expected_outcome": "A structured and comprehensive training program document that includes exercises, progressions, and measurement strategies.",
+      "key_unknowns": [
+        "Specific sports targeted",
+        "Level of participants (beginner, intermediate, advanced)",
+        "Available equipment for training"
+      ],
+      "recommended_strategy": "Conduct research on current best practices in balance and proprioception training. Synthesize findings into a structured program that includes single-leg progressions, unstable surface training, vestibular exercises, sport-specific challenges, and progress measurement techniques.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Balance and Proprioception Training",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and techniques in balance and proprioception training with citations.",
+          "prompt": "Search the web for current, specific information about balance and proprioception training programs for injury prevention. Include single-leg progressions, unstable surface training, vestibular exercises, sport-specific balance challenges, and progress measurement. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Training Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured training program document that includes exercises, progressions, and measurement strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive balance and proprioception training program for injury prevention. Include single-leg progressions, unstable surface training, vestibular exercises, sport-specific balance challenges, and methods for progress measurement.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-balance-proprioception-training.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1916
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtjh7uslloo",
+    "title": "Create a guide to building a technical advisory board for a startup. Include adv",
+    "raw_request": "Create a guide to building a technical advisory board for a startup. Include advisor selection criteria, compensation structures (equity grants), meeting cadence, information sharing protocols, and measuring advisory impact.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:50:56.644Z",
+    "updated_at": "2026-03-16T18:56:07.328Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:51:46.647Z",
+      "interpreted_objective": "Create a comprehensive guide for building a technical advisory board for a startup.",
+      "expected_outcome": "A detailed guide that includes advisor selection criteria, compensation structures, meeting cadence, information sharing protocols, and methods for measuring advisory impact.",
+      "key_unknowns": [
+        "Specific criteria for selecting advisors relevant to Rahul's startup",
+        "Industry-standard compensation structures for advisory roles",
+        "Optimal meeting frequency for advisory boards",
+        "Best practices for information sharing with advisors",
+        "Effective metrics for measuring the impact of an advisory board"
+      ],
+      "recommended_strategy": "Research industry best practices for building a technical advisory board. Synthesize findings into a guide that addresses advisor selection, compensation, meeting cadence, information sharing, and impact measurement. Ensure the guide is tailored to the context of a startup, particularly in the tech industry.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Advisory Boards",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices for building a technical advisory board, including selection criteria, compensation, meeting cadence, information sharing, and impact measurement.",
+          "prompt": "Search the web for current, specific information about best practices for building a technical advisory board for startups. Include advisor selection criteria, compensation structures (equity grants), meeting cadence, information sharing protocols, and methods for measuring advisory impact. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Building a Technical Advisory Board",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for building a technical advisory board for a startup, tailored to the tech industry.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for building a technical advisory board for a startup. Include specific advisor selection criteria, compensation structures (equity grants), meeting cadence, information sharing protocols, and methods for measuring advisory impact. Ensure the guide is actionable and relevant to the tech industry.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2388
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmtjh7t7lery",
+    "title": "Research the best smart home water leak detectors. Compare Flo by Moen, Phyn Plu",
+    "raw_request": "Research the best smart home water leak detectors. Compare Flo by Moen, Phyn Plus, and YoLink with whole-home vs point-of-use detection, automatic shutoff capability, and insurance discount eligibility.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:50:56.587Z",
+    "updated_at": "2026-03-16T18:55:47.339Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:51:36.842Z",
+      "interpreted_objective": "Research and compare the best smart home water leak detectors, focusing on Flo by Moen, Phyn Plus, and YoLink, with specific criteria including whole-home vs point-of-use detection, automatic shutoff capability, and insurance discount eligibility.",
+      "expected_outcome": "A comprehensive report detailing the strengths and weaknesses of each water leak detector, with specific recommendations based on detection type, shutoff capability, and insurance benefits.",
+      "key_unknowns": [
+        "Current market performance of each product",
+        "Specific insurance companies offering discounts for each device",
+        "User reviews and reliability data"
+      ],
+      "recommended_strategy": "First, gather current and specific information about Flo by Moen, Phyn Plus, and YoLink using Perplexity to identify features, pricing, and insurance discount eligibility. Then, synthesize this information into a comparative analysis using OpenAI, highlighting key differences and making recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Smart Home Water Leak Detectors",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gathered data on Flo by Moen, Phyn Plus, and YoLink, including detection type, automatic shutoff capability, and insurance discount eligibility.",
+          "prompt": "Search the web for current, specific information about Flo by Moen, Phyn Plus, and YoLink smart home water leak detectors. Include details on whole-home vs point-of-use detection, automatic shutoff capability, insurance discount eligibility, and provide URLs and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparative Analysis",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Flo by Moen, Phyn Plus, and YoLink, with recommendations based on detection type, shutoff capability, and insurance benefits.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comparative analysis of Flo by Moen, Phyn Plus, and YoLink. Highlight key differences in detection type, automatic shutoff capability, and insurance discount eligibility, and provide concrete recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-smart-home-water-leak-detectors.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2237
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtjh7scdbzg",
+    "title": "Explain how modern compilers implement register allocation. Cover graph coloring",
+    "raw_request": "Explain how modern compilers implement register allocation. Cover graph coloring algorithms, live range analysis, spilling strategies, move coalescing, and how register pressure affects compiled code performance.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:50:56.556Z",
+    "updated_at": "2026-03-16T18:55:36.286Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:51:26.324Z",
+      "interpreted_objective": "Explain how modern compilers implement register allocation, covering specific techniques and their impact on performance.",
+      "expected_outcome": "A comprehensive explanation of register allocation techniques in modern compilers, including graph coloring algorithms, live range analysis, spilling strategies, move coalescing, and register pressure effects.",
+      "key_unknowns": [
+        "Specific compiler implementations to reference",
+        "Depth of technical detail required",
+        "Target audience's existing knowledge level"
+      ],
+      "recommended_strategy": "Conduct research on modern compiler techniques for register allocation, focusing on the requested topics. Synthesize findings into a detailed explanation that is accessible to the target audience. Ensure the explanation includes practical examples or case studies where possible.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Register Allocation Techniques",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research findings on register allocation techniques in modern compilers.",
+          "prompt": "Search the web for current, specific information about how modern compilers implement register allocation. Focus on graph coloring algorithms, live range analysis, spilling strategies, move coalescing, and how register pressure affects compiled code performance. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Explanation of Register Allocation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive explanation of register allocation techniques in modern compilers, ready for presentation or publication.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed explanation of how modern compilers implement register allocation. Cover graph coloring algorithms, live range analysis, spilling strategies, move coalescing, and how register pressure affects compiled code performance. Include specific names, numbers, and concrete examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2021
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmtjh7r9d4py",
+    "title": "Create a guide to understanding and optimizing vesting schedules for startup equ",
+    "raw_request": "Create a guide to understanding and optimizing vesting schedules for startup equity. Include 4-year cliff vesting, double trigger acceleration, early exercise 83(b) elections, and negotiation strategies for equity refreshers.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:50:56.517Z",
+    "updated_at": "2026-03-16T18:55:21.272Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:51:17.932Z",
+      "interpreted_objective": "Create a comprehensive guide on startup equity vesting schedules, including specific strategies and options.",
+      "expected_outcome": "A detailed, actionable guide that explains vesting schedules, acceleration clauses, early exercise elections, and negotiation strategies for startup equity.",
+      "key_unknowns": [
+        "Specific audience for the guide",
+        "Level of detail required for each topic",
+        "Integration with existing materials or platforms"
+      ],
+      "recommended_strategy": "Research current best practices and legal considerations for startup equity vesting. Synthesize this information into a clear, structured guide that covers all requested topics. Ensure the guide is accessible to a non-expert audience while providing actionable insights.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Startup Equity Vesting Schedules",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research notes on 4-year cliff vesting, double trigger acceleration, early exercise 83(b) elections, and negotiation strategies.",
+          "prompt": "Search the web for current, specific information about startup equity vesting schedules, including 4-year cliff vesting, double trigger acceleration, early exercise 83(b) elections, and negotiation strategies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Startup Equity Vesting",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and detailed guide on startup equity vesting schedules, covering all specified topics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on startup equity vesting schedules. Include sections on 4-year cliff vesting, double trigger acceleration, early exercise 83(b) elections, and negotiation strategies. Ensure the guide is clear, actionable, and accessible to a non-expert audience.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2075
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmtjh7qjsaii",
+    "title": "Design a comprehensive SLO and error budget framework for a platform engineering",
+    "raw_request": "Design a comprehensive SLO and error budget framework for a platform engineering team. Include SLI selection, SLO negotiation, error budget policies, burn rate alerting, and monthly SLO review process.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:50:56.491Z",
+    "updated_at": "2026-03-16T18:55:06.804Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:51:08.527Z",
+      "interpreted_objective": "Design a comprehensive framework for SLO and error budget management for a platform engineering team.",
+      "expected_outcome": "A detailed framework document outlining SLI selection, SLO negotiation, error budget policies, burn rate alerting, and a monthly SLO review process.",
+      "key_unknowns": [
+        "Current SLO practices of the platform engineering team",
+        "Specific SLIs relevant to the team's services",
+        "Existing error budget policies and alerting mechanisms"
+      ],
+      "recommended_strategy": "First, research current best practices in SLO and error budget management, focusing on platform engineering. Then, synthesize these findings into a structured framework tailored to the team's needs. Finally, draft a comprehensive document outlining the framework, ensuring it includes all necessary components for effective SLO management.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research SLO and Error Budget Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and examples of SLO and error budget frameworks in platform engineering.",
+          "prompt": "Search the web for current best practices and examples of SLO and error budget frameworks specifically for platform engineering teams. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Framework for SLO and Error Budget Management",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured framework document for SLO and error budget management tailored to a platform engineering team.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive framework for SLO and error budget management for a platform engineering team. Include sections on SLI selection, SLO negotiation, error budget policies, burn rate alerting, and a monthly SLO review process.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-SLO_Error_Budget_Framework.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2499
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
     "task_id": "t_mmtj39pwhzii",
     "title": "Design a comprehensive personal knowledge graph system. Include entity extractio",
     "raw_request": "Design a comprehensive personal knowledge graph system. Include entity extraction from notes, relationship mapping, query interface design, visualization approaches, and integration with existing note-taking tools.",
