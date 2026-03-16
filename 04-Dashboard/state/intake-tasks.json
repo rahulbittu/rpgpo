@@ -1,5 +1,691 @@
 [
   {
+    "task_id": "t_mmst3j3fc80t",
+    "title": "Design a comprehensive system for tracking and improving personal habits. Includ",
+    "raw_request": "Design a comprehensive system for tracking and improving personal habits. Include habit stacking methodology, environmental design, accountability structures, streak psychology, and recovery protocols for broken chains.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:32:28.011Z",
+    "updated_at": "2026-03-16T06:36:28.258Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:33:16.861Z",
+      "interpreted_objective": "Design a system to track and enhance personal habits using various methodologies.",
+      "expected_outcome": "A comprehensive report detailing a system that integrates habit stacking, environmental design, accountability, streak psychology, and recovery protocols.",
+      "key_unknowns": [
+        "Current best practices in habit stacking",
+        "Effective environmental design strategies",
+        "Optimal accountability structures",
+        "Psychological insights on streaks",
+        "Best recovery protocols for broken habits"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and insights on each component of the habit improvement system. Synthesize this information into a structured report that outlines a comprehensive approach to habit tracking and improvement.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Habit Improvement Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research data on habit stacking, environmental design, accountability structures, streak psychology, and recovery protocols.",
+          "prompt": "Search the web for current, specific information about habit stacking, environmental design, accountability structures, streak psychology, and recovery protocols. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Habit Improvement System",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing a comprehensive system for tracking and improving personal habits.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a habit improvement system. Include specific methodologies for habit stacking, environmental design, accountability structures, streak psychology, and recovery protocols.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-habit-improvement-system.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1958
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmst3j30wcea",
+    "title": "Create a comprehensive guide to bathroom renovation planning. Include fixture se",
+    "raw_request": "Create a comprehensive guide to bathroom renovation planning. Include fixture selection, tile layout design, waterproofing best practices, ventilation requirements, universal design considerations, and cost breakdowns by tier.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:32:27.996Z",
+    "updated_at": "2026-03-16T06:36:20.930Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:33:12.669Z",
+      "interpreted_objective": "Create a comprehensive guide for bathroom renovation planning.",
+      "expected_outcome": "A detailed guide covering fixture selection, tile layout design, waterproofing best practices, ventilation requirements, universal design considerations, and cost breakdowns by tier.",
+      "key_unknowns": [
+        "Specific cost tiers for bathroom renovation",
+        "Current best practices in waterproofing and ventilation",
+        "Universal design considerations specific to bathrooms"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on each aspect of bathroom renovation. Synthesize findings into a cohesive guide that includes practical recommendations and cost breakdowns. Ensure the guide is comprehensive and accessible to a wide audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Bathroom Renovation Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices in bathroom renovation, including fixture selection, tile layout, waterproofing, ventilation, and universal design.",
+          "prompt": "Search the web for current, specific information about bathroom renovation best practices, including fixture selection, tile layout design, waterproofing, ventilation, and universal design. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comprehensive Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide to bathroom renovation planning.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide to bathroom renovation planning. Include sections on fixture selection, tile layout design, waterproofing best practices, ventilation requirements, universal design considerations, and cost breakdowns by tier.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2595
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmst3j2k8d4a",
+    "title": "Write a complete outline for a podcast series exploring the hidden mathematics i",
+    "raw_request": "Write a complete outline for a podcast series exploring the hidden mathematics in everyday life. Include 12 episode concepts with interview guest profiles, segment structures, and listener engagement hooks.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:32:27.980Z",
+    "updated_at": "2026-03-16T06:36:10.071Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:33:08.364Z",
+      "interpreted_objective": "Create a detailed outline for a podcast series exploring the hidden mathematics in everyday life.",
+      "expected_outcome": "A comprehensive podcast series outline with 12 episode concepts, including guest profiles, segment structures, and engagement hooks.",
+      "key_unknowns": [
+        "Specific areas of mathematics to cover",
+        "Potential guests for interviews",
+        "Effective segment structures for a podcast format",
+        "Best practices for listener engagement in a podcast series"
+      ],
+      "recommended_strategy": "Research current popular topics in mathematics and podcasting trends to identify engaging episode concepts. Develop a structure for each episode that includes a guest profile, segment breakdown, and engagement strategies. Ensure the series aligns with Rahul's career and entrepreneurial interests.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Mathematics Topics and Podcast Trends",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of popular mathematics topics and podcast trends that could be explored in the series.",
+          "prompt": "Search the web for current, specific information about popular mathematics topics and podcast trends. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Podcast Series Outline",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed podcast series outline with 12 episode concepts, including guest profiles, segment structures, and engagement hooks.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed podcast series outline exploring the hidden mathematics in everyday life. Include 12 episode concepts with specific guest profiles, segment structures, and listener engagement hooks.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2299
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmst3j26xx27",
+    "title": "Plan a 10-day music and history tour through Vienna, Prague, and Budapest. Inclu",
+    "raw_request": "Plan a 10-day music and history tour through Vienna, Prague, and Budapest. Include opera performances, jazz clubs, historical walking tours, thermal baths, and local craft beer scenes.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:32:27.966Z",
+    "updated_at": "2026-03-16T06:36:01.311Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:33:04.789Z",
+      "interpreted_objective": "Create a detailed 10-day itinerary for a music and history tour through Vienna, Prague, and Budapest.",
+      "expected_outcome": "A comprehensive itinerary that includes opera performances, jazz clubs, historical walking tours, thermal baths, and local craft beer scenes.",
+      "key_unknowns": [
+        "Specific dates for the tour",
+        "Availability of opera performances and jazz club events",
+        "Locations of historical sites and thermal baths",
+        "Local craft beer recommendations"
+      ],
+      "recommended_strategy": "Research the cultural and historical highlights of Vienna, Prague, and Budapest, focusing on music, history, and local experiences. Compile a day-by-day itinerary that balances these elements, ensuring a mix of planned activities and free exploration time. Verify the availability and scheduling of key events and locations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research cultural highlights and events in Vienna, Prague, and Budapest",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of cultural events, historical sites, and local experiences in Vienna, Prague, and Budapest.",
+          "prompt": "Search the web for current information about cultural highlights and events in Vienna, Prague, and Budapest. Include opera performances, jazz clubs, historical walking tours, thermal baths, and local craft beer scenes. Provide specific names, dates, and locations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile a detailed 10-day itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 10-day itinerary for a music and history tour through Vienna, Prague, and Budapest.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 10-day itinerary for a music and history tour through Vienna, Prague, and Budapest. Include opera performances, jazz clubs, historical walking tours, thermal baths, and local craft beer scenes, with specific names, dates, and locations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2159
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmst3j1rr7fl",
+    "title": "Design a comprehensive stress management program for high-pressure tech roles. I",
+    "raw_request": "Design a comprehensive stress management program for high-pressure tech roles. Include HRV training, box breathing protocols, progressive muscle relaxation, nature exposure prescriptions, and boundary setting frameworks.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:32:27.951Z",
+    "updated_at": "2026-03-16T06:35:54.139Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:33:00.262Z",
+      "interpreted_objective": "Design a comprehensive stress management program tailored for high-pressure tech roles.",
+      "expected_outcome": "A detailed program document outlining stress management techniques including HRV training, box breathing, progressive muscle relaxation, nature exposure, and boundary setting.",
+      "key_unknowns": [
+        "Specific needs and stressors of high-pressure tech roles",
+        "Current best practices in HRV training and box breathing",
+        "Effective nature exposure prescriptions for stress management",
+        "Frameworks for boundary setting in tech environments"
+      ],
+      "recommended_strategy": "Conduct research on current stress management techniques and their effectiveness, focusing on high-pressure tech roles. Synthesize findings into a comprehensive program, ensuring each component is actionable and evidence-based.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Stress Management Techniques",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current, evidence-based stress management techniques with citations.",
+          "prompt": "Search the web for current, specific information about stress management techniques such as HRV training, box breathing, progressive muscle relaxation, nature exposure, and boundary setting. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Stress Management Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive document outlining a stress management program for high-pressure tech roles.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive stress management program for high-pressure tech roles. Include HRV training, box breathing protocols, progressive muscle relaxation, nature exposure prescriptions, and boundary setting frameworks. Ensure each component is actionable and evidence-based.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-stress-management-program.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1974
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmst3j1c4abm",
+    "title": "Create a guide to building a professional portfolio that stands out. Include cas",
+    "raw_request": "Create a guide to building a professional portfolio that stands out. Include case study structure, metrics-driven storytelling, visual design principles, hosting options, and SEO optimization for job searches.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:32:27.936Z",
+    "updated_at": "2026-03-16T06:35:45.834Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:32:53.074Z",
+      "interpreted_objective": "Create a comprehensive guide for building a standout professional portfolio.",
+      "expected_outcome": "A detailed guide that includes case study structure, metrics-driven storytelling, visual design principles, hosting options, and SEO optimization, tailored for job searches.",
+      "key_unknowns": [
+        "Specific visual design principles applicable to professional portfolios",
+        "Current best hosting options for portfolios",
+        "Effective SEO strategies specifically for job search purposes"
+      ],
+      "recommended_strategy": "Research current best practices and trends in professional portfolio creation. Synthesize findings into a structured guide that addresses each component: case studies, storytelling, design, hosting, and SEO. Ensure the guide is actionable with specific examples and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Professional Portfolios",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research on best practices for creating professional portfolios, including case studies, storytelling, design, hosting, and SEO.",
+          "prompt": "Search the web for current best practices and trends in building professional portfolios. Include information on structuring case studies, metrics-driven storytelling, visual design principles, hosting options, and SEO strategies for job searches. Provide specific examples, names, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Portfolio Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide on building a standout professional portfolio, including actionable steps and specific recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building a professional portfolio that stands out. Include sections on case study structure, metrics-driven storytelling, visual design principles, hosting options, and SEO optimization. Provide specific examples and actionable next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2332
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmst3j0xybx5",
+    "title": "Research the best mechanical keyboards for programming with split ergonomic desi",
+    "raw_request": "Research the best mechanical keyboards for programming with split ergonomic designs. Compare ZSA Moonlander, Kinesis Advantage 360, and Dygma Raise with switch recommendations and tent/tilt options.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:32:27.921Z",
+    "updated_at": "2026-03-16T06:35:37.120Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:32:48.040Z",
+      "interpreted_objective": "Research and compare split ergonomic mechanical keyboards for programming, focusing on ZSA Moonlander, Kinesis Advantage 360, and Dygma Raise, including switch recommendations and tent/tilt options.",
+      "expected_outcome": "A comprehensive report comparing the ZSA Moonlander, Kinesis Advantage 360, and Dygma Raise keyboards, detailing their ergonomic features, switch options, and tent/tilt capabilities, with actionable recommendations.",
+      "key_unknowns": [
+        "Current market reviews and comparisons of the specified keyboards",
+        "Specific switch recommendations for each keyboard",
+        "Details on tent/tilt options for each model"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather detailed information about the ZSA Moonlander, Kinesis Advantage 360, and Dygma Raise keyboards, focusing on ergonomic design, switch options, and tent/tilt features. Then, synthesize these findings into a structured report with comparisons and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Mechanical Keyboards",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on ZSA Moonlander, Kinesis Advantage 360, and Dygma Raise keyboards, including ergonomic features, switch options, and tent/tilt capabilities with citations.",
+          "prompt": "Search the web for current, specific information about ZSA Moonlander, Kinesis Advantage 360, and Dygma Raise mechanical keyboards for programming. Focus on ergonomic design, switch recommendations, and tent/tilt options. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Keyboard Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the ZSA Moonlander, Kinesis Advantage 360, and Dygma Raise keyboards with specific recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing the ZSA Moonlander, Kinesis Advantage 360, and Dygma Raise keyboards. Include specific ergonomic features, switch options, tent/tilt capabilities, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-30-mechanical-keyboards.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2257
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmst3j0ipg0m",
+    "title": "Explain how modern JIT compilers work from bytecode to native machine code. Cove",
+    "raw_request": "Explain how modern JIT compilers work from bytecode to native machine code. Cover tiered compilation (C1/C2 in HotSpot), profile-guided optimization, deoptimization traps, and OSR compilation.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:32:27.906Z",
+    "updated_at": "2026-03-16T06:35:26.131Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:32:42.664Z",
+      "interpreted_objective": "Explain how modern JIT compilers work, covering specific topics like tiered compilation and profile-guided optimization.",
+      "expected_outcome": "A detailed explanation of modern JIT compilers, including tiered compilation, profile-guided optimization, deoptimization traps, and OSR compilation.",
+      "key_unknowns": [
+        "Specific depth of explanation required",
+        "Preferred format or medium for the explanation"
+      ],
+      "recommended_strategy": "Research the current state of JIT compilers, focusing on HotSpot's tiered compilation, profile-guided optimization, deoptimization traps, and OSR compilation. Then, synthesize this information into a concise, educational explanation suitable for someone with a technical background.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Modern JIT Compilers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current and specific information about modern JIT compilers, including tiered compilation, profile-guided optimization, deoptimization traps, and OSR compilation.",
+          "prompt": "Search the web for current, specific information about modern JIT compilers, focusing on tiered compilation (C1/C2 in HotSpot), profile-guided optimization, deoptimization traps, and OSR compilation. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize JIT Compiler Explanation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive explanation of how modern JIT compilers work, including tiered compilation, profile-guided optimization, deoptimization traps, and OSR compilation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an explanation of how modern JIT compilers work. Cover tiered compilation (C1/C2 in HotSpot), profile-guided optimization, deoptimization traps, and OSR compilation in a way that is clear and educational for someone with a technical background.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2111
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmst3j01seoe",
+    "title": "Create a guide to optimizing Social Security benefits for couples. Include claim",
+    "raw_request": "Create a guide to optimizing Social Security benefits for couples. Include claiming age strategies, spousal benefit coordination, break-even analysis, impact of continued work, and integration with pension income.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:32:27.889Z",
+    "updated_at": "2026-03-16T06:35:19.073Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:32:37.032Z",
+      "interpreted_objective": "Create a comprehensive guide to optimizing Social Security benefits for couples.",
+      "expected_outcome": "A detailed guide that includes strategies for claiming age, spousal benefit coordination, break-even analysis, impact of continued work, and integration with pension income.",
+      "key_unknowns": [
+        "Current best practices for Social Security claiming strategies",
+        "Specific impact of continued work on Social Security benefits",
+        "Effective methods for integrating pension income with Social Security"
+      ],
+      "recommended_strategy": "Conduct thorough research on current Social Security optimization strategies for couples. Synthesize the findings into a structured guide that addresses each specified area. Ensure the guide is actionable and includes specific examples and scenarios.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Social Security Optimization Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data on Social Security optimization strategies for couples, including claiming age, spousal benefits, and integration with pension income.",
+          "prompt": "Search the web for current, specific information about Social Security optimization strategies for couples. Include details on claiming age strategies, spousal benefit coordination, break-even analysis, impact of continued work, and integration with pension income. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Social Security Benefits",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on optimizing Social Security benefits for couples, including actionable strategies and examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on optimizing Social Security benefits for couples. Include strategies for claiming age, spousal benefit coordination, break-even analysis, impact of continued work, and integration with pension income. Provide specific examples and scenarios.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-SocialSecurityGuide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2503
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmst3izivlji",
+    "title": "Design a comprehensive data pipeline architecture using Apache Kafka. Include ev",
+    "raw_request": "Design a comprehensive data pipeline architecture using Apache Kafka. Include event schema design with Avro, exactly-once semantics, consumer group management, dead letter queues, and monitoring with Kafka Lag Exporter.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:32:27.870Z",
+    "updated_at": "2026-03-16T06:35:08.561Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:32:32.732Z",
+      "interpreted_objective": "Design a detailed data pipeline architecture using Apache Kafka.",
+      "expected_outcome": "A comprehensive document outlining the data pipeline architecture with specific components and configurations.",
+      "key_unknowns": [
+        "The specific use case or domain for the data pipeline",
+        "Any existing infrastructure or constraints to consider",
+        "The level of detail required for each component"
+      ],
+      "recommended_strategy": "First, gather detailed information on best practices for each component of the Kafka data pipeline. Then, synthesize this information into a coherent architecture document, ensuring clarity and specificity for implementation. Address each component such as event schema design, exactly-once semantics, consumer group management, dead letter queues, and monitoring with Kafka Lag Exporter.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Kafka Data Pipeline Best Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed report on best practices for designing a data pipeline using Apache Kafka.",
+          "prompt": "Search the web for current best practices and guidelines for designing a data pipeline architecture using Apache Kafka. Include information on event schema design with Avro, exactly-once semantics, consumer group management, dead letter queues, and monitoring with Kafka Lag Exporter. Provide specific examples and references.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Kafka Data Pipeline Architecture Document",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive document outlining the Kafka data pipeline architecture.",
+          "prompt": "Based on the research results, synthesize a detailed data pipeline architecture document using Apache Kafka. Include specific components such as event schema design with Avro, exactly-once semantics, consumer group management, dead letter queues, and monitoring with Kafka Lag Exporter. Ensure clarity and specificity for practical implementation.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2080
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsswbw78uhj",
     "title": "Design a comprehensive weekly review and planning system. Include GTD-style proj",
     "raw_request": "Design a comprehensive weekly review and planning system. Include GTD-style project review, energy-based scheduling, quarterly goal alignment, reflection prompts, and tool recommendations (Notion, Obsidian, Todoist).",
