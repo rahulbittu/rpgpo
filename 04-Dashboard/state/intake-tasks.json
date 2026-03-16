@@ -1,5 +1,697 @@
 [
   {
+    "task_id": "t_mmsph1oqml51",
+    "title": "Design a comprehensive information diet protocol. Include news consumption rules",
+    "raw_request": "Design a comprehensive information diet protocol. Include news consumption rules, social media boundaries, book selection framework, and podcast curation.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:51:00.170Z",
+    "updated_at": "2026-03-16T04:54:43.475Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:51:53.277Z",
+      "interpreted_objective": "Create a structured protocol for managing information intake across various media.",
+      "expected_outcome": "A detailed report outlining rules and frameworks for news, social media, books, and podcasts consumption.",
+      "key_unknowns": [
+        "Specific preferences or constraints Rahul might have for each media type",
+        "Current trends or best practices in information diet management"
+      ],
+      "recommended_strategy": "First, conduct research to gather current best practices and trends in information diet management. Then, synthesize this information into a comprehensive protocol, ensuring alignment with Rahul's priorities and risk tolerance.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final review of the comprehensive information diet protocol"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Information Diet Trends",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and trends in information diet management.",
+          "prompt": "Search the web for current best practices and trends in managing information intake across news, social media, books, and podcasts. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Information Diet Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing a comprehensive information diet protocol.",
+          "prompt": "Based on the research results, synthesize a comprehensive information diet protocol. Include specific rules for news consumption, social media boundaries, book selection framework, and podcast curation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-information-diet-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1927
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsph0vbdzb4",
+    "title": "Create a guide to building an efficient home pantry system. Include bulk buying ",
+    "raw_request": "Create a guide to building an efficient home pantry system. Include bulk buying strategy, storage solutions, rotation system, and meal prep integration.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:50:59.111Z",
+    "updated_at": "2026-03-16T04:54:37.398Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:51:49.341Z",
+      "interpreted_objective": "Create a detailed guide for building an efficient home pantry system.",
+      "expected_outcome": "A comprehensive guide that includes strategies for bulk buying, storage solutions, rotation systems, and meal prep integration.",
+      "key_unknowns": [
+        "Specific preferences or constraints Rahul might have for the pantry system",
+        "The size and layout of the typical home pantry to be considered",
+        "Any dietary preferences or restrictions to consider"
+      ],
+      "recommended_strategy": "Conduct research on current best practices for home pantry systems, focusing on bulk buying, storage solutions, rotation systems, and meal prep integration. Synthesize the findings into a detailed guide that is practical and easy to follow.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Home Pantry Systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and strategies for building an efficient home pantry system.",
+          "prompt": "Search the web for current, specific information about best practices for building an efficient home pantry system. Include strategies for bulk buying, storage solutions, rotation systems, and meal prep integration. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Home Pantry System",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide for building an efficient home pantry system, including bulk buying strategy, storage solutions, rotation system, and meal prep integration.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building an efficient home pantry system. Include specific strategies for bulk buying, storage solutions, rotation systems, and meal prep integration. Ensure the guide is practical and easy to follow.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2118
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsph025em88",
+    "title": "Write a complete character-driven pilot outline for a drama about a diverse team",
+    "raw_request": "Write a complete character-driven pilot outline for a drama about a diverse team of crisis negotiators who also struggle with their own personal crises. 60 minutes.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:50:58.061Z",
+    "updated_at": "2026-03-16T04:54:31.743Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:51:44.390Z",
+      "interpreted_objective": "Create a detailed pilot outline for a drama series about crisis negotiators dealing with personal and professional challenges.",
+      "expected_outcome": "A comprehensive character-driven pilot outline that sets up the series' premise, introduces main characters, and outlines key plot points.",
+      "key_unknowns": [
+        "Specific character backgrounds and personal crises",
+        "Setting and tone of the series",
+        "Key plot points for the pilot episode"
+      ],
+      "recommended_strategy": "Research successful drama series with similar themes to understand effective character development and plot structure. Use this research to create a detailed pilot outline, focusing on character arcs and the interplay between personal and professional crises.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research successful drama series",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of successful drama series with similar themes, including character development techniques and plot structures.",
+          "prompt": "Search the web for successful drama series about crisis negotiators or similar themes. Include information on character development, plot structure, and how personal and professional crises are interwoven. Provide real names, examples, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Create pilot outline",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed pilot outline for the drama series, including character introductions, plot setup, and key scenes.",
+          "prompt": "Based on the research results, create a detailed pilot outline for a drama series about a diverse team of crisis negotiators. Focus on character introductions, their personal crises, and how these intersect with their professional roles. Include key plot points and scenes for a 60-minute episode.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-pilot-outline.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1973
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmspgz9a28vi",
+    "title": "Plan a 5-day adventure trip to Patagonia Argentina. Include Torres del Paine, gl",
+    "raw_request": "Plan a 5-day adventure trip to Patagonia Argentina. Include Torres del Paine, glacier trekking, wildlife viewing, and estancia stays. For an active solo traveler.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:50:57.022Z",
+    "updated_at": "2026-03-16T04:54:23.068Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:51:37.787Z",
+      "interpreted_objective": "Plan a detailed 5-day adventure trip itinerary to Patagonia, Argentina for an active solo traveler.",
+      "expected_outcome": "A comprehensive itinerary including activities like glacier trekking, wildlife viewing, estancia stays, and visiting Torres del Paine, with specific dates, costs, and logistics.",
+      "key_unknowns": [
+        "Current availability and pricing for activities and accommodations in Patagonia",
+        "Weather conditions and best travel times",
+        "Travel restrictions or requirements for entering Argentina"
+      ],
+      "recommended_strategy": "First, gather current information on activities, accommodations, and travel logistics in Patagonia using Perplexity for web research. Then, synthesize this data into a structured itinerary with specific recommendations for the traveler.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Patagonia Travel Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on activities, accommodations, and travel logistics in Patagonia with citations.",
+          "prompt": "Search the web for current, specific information about travel options in Patagonia, Argentina. Include details on glacier trekking, wildlife viewing, estancia stays, and visiting Torres del Paine. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Patagonia Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 5-day itinerary for an adventure trip to Patagonia, including specific activities, accommodations, dates, costs, and logistics.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a 5-day adventure trip itinerary for a solo traveler in Patagonia, Argentina. Include specific activities like glacier trekking, wildlife viewing, estancia stays, and visiting Torres del Paine, with dates, costs, and logistics.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-patagonia-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1929
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmspgygcbepm",
+    "title": "Design a comprehensive circadian rhythm optimization protocol. Include light exp",
+    "raw_request": "Design a comprehensive circadian rhythm optimization protocol. Include light exposure timing, meal timing, exercise timing, and sleep architecture improvement.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:50:55.980Z",
+    "updated_at": "2026-03-16T04:54:16.760Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:51:18.763Z",
+      "interpreted_objective": "Design a protocol to optimize circadian rhythm through strategic timing of light exposure, meals, exercise, and sleep improvements.",
+      "expected_outcome": "A detailed, evidence-based protocol that individuals can follow to enhance their circadian rhythm, leading to improved sleep quality and overall well-being.",
+      "key_unknowns": [
+        "Current best practices for circadian rhythm optimization",
+        "Specific timing recommendations for light, meals, exercise, and sleep",
+        "Potential risks or contraindications"
+      ],
+      "recommended_strategy": "Conduct research to gather the latest scientific insights on circadian rhythm optimization. Synthesize this information into a comprehensive protocol, ensuring it is actionable and includes safety disclaimers where necessary.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Circadian Rhythm Optimization",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gathered data on circadian rhythm optimization with citations.",
+          "prompt": "Search the web for current, specific information about circadian rhythm optimization, including light exposure timing, meal timing, exercise timing, and sleep architecture improvement. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Circadian Rhythm Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive, actionable protocol for circadian rhythm optimization.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a circadian rhythm optimization protocol. Include specific timing for light exposure, meals, exercise, and sleep, and add safety disclaimers where appropriate.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-circadian-rhythm-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1874
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmspgxnpzws3",
+    "title": "Create a guide to building a technical advisory practice on the side. Include fi",
+    "raw_request": "Create a guide to building a technical advisory practice on the side. Include finding clients, pricing models, time management, and legal structure.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:50:54.949Z",
+    "updated_at": "2026-03-16T04:54:10.064Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:51:13.950Z",
+      "interpreted_objective": "Create a guide for Rahul to build a technical advisory practice on the side.",
+      "expected_outcome": "A comprehensive guide detailing steps to establish a technical advisory practice, including client acquisition, pricing models, time management, and legal considerations.",
+      "key_unknowns": [
+        "Rahul's specific areas of expertise for advisory services",
+        "Preferred client types or industries",
+        "Rahul's current availability and time constraints",
+        "Legal requirements specific to Rahul's location"
+      ],
+      "recommended_strategy": "First, research successful technical advisory practices to gather insights on client acquisition, pricing models, time management, and legal structures. Then, synthesize this information into a detailed guide tailored to Rahul's context, focusing on actionable steps and considerations for each aspect.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Technical Advisory Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current insights on successful technical advisory practices, including client acquisition strategies, pricing models, time management techniques, and legal structures.",
+          "prompt": "Search the web for current, specific information about successful technical advisory practices. Focus on client acquisition strategies, pricing models, time management techniques, and legal structures. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Building a Technical Advisory Practice",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide for Rahul on building a technical advisory practice, including steps for finding clients, pricing models, time management, and legal structure.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for Rahul to build a technical advisory practice. Include specific steps for finding clients, pricing models, time management, and legal structure. Tailor the guide to Rahul's context and constraints.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2327
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmspgwv5e0yw",
+    "title": "Research the best home coffee subscriptions for specialty coffee lovers. Compare",
+    "raw_request": "Research the best home coffee subscriptions for specialty coffee lovers. Compare Trade, Atlas, and Blue Bottle. Include bean quality, variety, and value per bag.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:50:53.921Z",
+    "updated_at": "2026-03-16T04:54:00.667Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:51:08.980Z",
+      "interpreted_objective": "Research and compare the best home coffee subscriptions for specialty coffee lovers, focusing on Trade, Atlas, and Blue Bottle.",
+      "expected_outcome": "A comprehensive report detailing the bean quality, variety, and value per bag for Trade, Atlas, and Blue Bottle coffee subscriptions, with a clear recommendation.",
+      "key_unknowns": [
+        "Current pricing and subscription details for Trade, Atlas, and Blue Bottle",
+        "Specific bean quality and variety offered by each service",
+        "Value per bag for each subscription"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on Trade, Atlas, and Blue Bottle coffee subscriptions, focusing on bean quality, variety, and value per bag. Then, synthesize this information into a structured report with a clear comparison and recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Coffee Subscriptions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Trade, Atlas, and Blue Bottle coffee subscriptions, including bean quality, variety, and value per bag.",
+          "prompt": "Search the web for current, specific information about Trade, Atlas, and Blue Bottle coffee subscriptions. Include details on bean quality, variety, and value per bag, with real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Coffee Subscription Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Trade, Atlas, and Blue Bottle coffee subscriptions, with a recommendation based on bean quality, variety, and value per bag.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Trade, Atlas, and Blue Bottle coffee subscriptions. Include specific names, numbers, and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-coffee-subscriptions.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1987
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmspgw2ccegt",
+    "title": "Teach me about WebAssembly System Interface (WASI) and its implications for serv",
+    "raw_request": "Teach me about WebAssembly System Interface (WASI) and its implications for server-side computing. Cover sandboxing, capabilities, and how it compares to containers.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:50:52.884Z",
+    "updated_at": "2026-03-16T04:53:52.695Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:51:05.309Z",
+      "interpreted_objective": "Explain the WebAssembly System Interface (WASI) and its implications for server-side computing, focusing on sandboxing, capabilities, and comparison to containers.",
+      "expected_outcome": "A comprehensive report that educates on WASI's role in server-side computing, its security features, and how it compares to traditional containerization methods.",
+      "key_unknowns": [
+        "Current adoption and use cases of WASI in industry",
+        "Specific technical differences between WASI and containers",
+        "Security implications of using WASI"
+      ],
+      "recommended_strategy": "First, conduct research to gather current information about WASI, focusing on its features, security aspects, and industry adoption. Then, synthesize this information into a detailed report that compares WASI to containers and highlights its implications for server-side computing.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research WebAssembly System Interface (WASI)",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, detailed information about WASI, including its features, security aspects, and industry adoption.",
+          "prompt": "Search the web for current, specific information about the WebAssembly System Interface (WASI), focusing on its features, sandboxing capabilities, security implications, and how it is being used in the industry. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize WASI Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report that explains WASI, its implications for server-side computing, and compares it to containers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report about the WebAssembly System Interface (WASI). Include its features, sandboxing capabilities, security implications, and compare it to containers in terms of server-side computing. Highlight key differences and potential use cases.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-WASI.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1958
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmspgv8qetrb",
+    "title": "Create a guide to building generational wealth through systematic investing. Inc",
+    "raw_request": "Create a guide to building generational wealth through systematic investing. Include age-based allocation, tax-advantaged accounts, and legacy planning for a family.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:50:51.818Z",
+    "updated_at": "2026-03-16T04:53:44.031Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:51:01.136Z",
+      "interpreted_objective": "Create a comprehensive guide for building generational wealth through systematic investing, including age-based allocation, tax-advantaged accounts, and legacy planning.",
+      "expected_outcome": "A detailed guide that provides actionable advice on building generational wealth, tailored to different age groups, with specific strategies for tax efficiency and legacy planning.",
+      "key_unknowns": [
+        "Specific age groups to target",
+        "Current best practices in tax-advantaged accounts",
+        "Effective legacy planning strategies for families"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on age-based investment strategies, tax-advantaged accounts, and legacy planning. Synthesize this information into a comprehensive guide with specific, actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Age-Based Investment Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on age-based investment strategies, including specific allocations and examples.",
+          "prompt": "Search the web for current, specific information about age-based investment strategies for building generational wealth. Include real examples, specific allocations, and expert recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Tax-Advantaged Accounts and Legacy Planning",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and strategies for using tax-advantaged accounts and legacy planning for wealth building.",
+          "prompt": "Search the web for current, specific information on tax-advantaged accounts and legacy planning strategies for building generational wealth. Include real examples, specific account types, and planning techniques.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Building Generational Wealth",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide that includes age-based allocation strategies, tax-advantaged accounts, and legacy planning for building generational wealth.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on building generational wealth through systematic investing. Include age-based allocation strategies, tax-advantaged accounts, and legacy planning. Provide specific, actionable recommendations and examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2535
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmspgufgqmyg",
+    "title": "Write a comprehensive guide to implementing CQRS pattern in a Node.js applicatio",
+    "raw_request": "Write a comprehensive guide to implementing CQRS pattern in a Node.js application. Include command handlers, event store, read model projections, and eventual consistency handling.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:50:50.764Z",
+    "updated_at": "2026-03-16T04:53:01.392Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:50:56.401Z",
+      "interpreted_objective": "Create a detailed guide on implementing the CQRS pattern in Node.js applications.",
+      "expected_outcome": "A comprehensive document that explains how to implement CQRS in Node.js, including command handlers, event store, read model projections, and handling eventual consistency.",
+      "key_unknowns": [
+        "Specific audience for the guide (e.g., beginners, intermediate developers)",
+        "Preferred depth of technical detail",
+        "Any specific libraries or frameworks to use"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and examples of CQRS implementations in Node.js. Synthesize this information into a clear, step-by-step guide that includes practical examples and explanations of key concepts such as command handlers, event store, read model projections, and eventual consistency handling.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research CQRS Implementation in Node.js",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices and examples of CQRS implementations in Node.js.",
+          "prompt": "Search the web for current, specific information about implementing the CQRS pattern in Node.js applications. Include details on command handlers, event store, read model projections, and eventual consistency handling. Provide real examples, libraries, and frameworks used.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Comprehensive Guide on CQRS in Node.js",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide on implementing CQRS in Node.js, including practical examples and explanations for each component.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide on implementing the CQRS pattern in Node.js applications. Include sections on command handlers, event store, read model projections, and handling eventual consistency. Ensure the guide is clear and includes practical examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2078
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsp91xvehql",
     "title": "Design a monthly deep work retreat protocol. Include preparation, environment se",
     "raw_request": "Design a monthly deep work retreat protocol. Include preparation, environment setup, work blocks, breaks, and post-retreat review.",
