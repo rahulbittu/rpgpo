@@ -1,5 +1,684 @@
 [
   {
+    "task_id": "t_mmsqbqaexdfr",
+    "title": "Design a comprehensive time-blocking system optimized for makers who also need t",
+    "raw_request": "Design a comprehensive time-blocking system optimized for makers who also need to attend meetings. Include focus blocks, buffer zones, and context switching protocols.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:14:51.734Z",
+    "updated_at": "2026-03-16T05:18:28.270Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:15:44.693Z",
+      "interpreted_objective": "Design a time-blocking system for makers that accommodates meetings and includes focus blocks, buffer zones, and context switching protocols.",
+      "expected_outcome": "A detailed plan outlining a time-blocking system that effectively balances focused work and meetings for makers.",
+      "key_unknowns": [
+        "Specific needs and constraints of makers in terms of time management",
+        "Best practices for context switching in a maker's schedule",
+        "Optimal length and frequency of focus blocks and buffer zones"
+      ],
+      "recommended_strategy": "Research current best practices and challenges in time management for makers who attend meetings. Synthesize findings into a comprehensive time-blocking system that includes focus blocks, buffer zones, and context switching protocols. Ensure the plan is actionable and detailed enough for immediate implementation.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research best practices for time-blocking for makers",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices and challenges in time management for makers.",
+          "prompt": "Search the web for current best practices and challenges in time management for makers who need to attend meetings. Include real examples, strategies, and any relevant statistics or studies.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize a comprehensive time-blocking system",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed time-blocking system plan optimized for makers, including focus blocks, buffer zones, and context switching protocols.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive time-blocking system for makers. Include specific recommendations for focus blocks, buffer zones, and context switching protocols.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2126
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsqbph589dw",
+    "title": "Create a guide to building an energy-efficient smart home. Include solar panels,",
+    "raw_request": "Create a guide to building an energy-efficient smart home. Include solar panels, battery storage, smart appliances, and monitoring systems. ROI analysis included.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:14:50.681Z",
+    "updated_at": "2026-03-16T05:18:20.958Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:15:39.883Z",
+      "interpreted_objective": "Create a comprehensive guide to building an energy-efficient smart home, including ROI analysis.",
+      "expected_outcome": "A detailed guide that outlines steps to implement solar panels, battery storage, smart appliances, and monitoring systems, with an ROI analysis.",
+      "key_unknowns": [
+        "Specific technologies or brands to recommend for each component",
+        "Current cost and ROI data for solar panels and battery storage",
+        "Integration strategies for smart appliances and monitoring systems"
+      ],
+      "recommended_strategy": "Conduct research to gather current data on technologies and costs for smart home components. Synthesize this information into a guide that includes an ROI analysis. Ensure the guide is actionable and specific, providing clear steps and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Smart Home Technologies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current technologies, brands, and costs for solar panels, battery storage, smart appliances, and monitoring systems.",
+          "prompt": "Search the web for current, specific information about solar panels, battery storage, smart appliances, and monitoring systems for smart homes. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Smart Home Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide to building an energy-efficient smart home, including ROI analysis.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide to building an energy-efficient smart home. Include detailed steps for implementing solar panels, battery storage, smart appliances, and monitoring systems, along with an ROI analysis. Provide specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2135
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsqbonz6n1n",
+    "title": "Write a complete pitch for a mockumentary web series about a team building the w",
+    "raw_request": "Write a complete pitch for a mockumentary web series about a team building the worst app ever made, filmed as if they are building the next unicorn.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:14:49.631Z",
+    "updated_at": "2026-03-16T05:18:12.676Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:15:34.762Z",
+      "interpreted_objective": "Create a complete pitch for a mockumentary web series about a team building the worst app ever made.",
+      "expected_outcome": "A detailed and engaging pitch document for a mockumentary web series, ready for presentation.",
+      "key_unknowns": [
+        "Specific tone and style preferences for the pitch",
+        "Target audience for the web series",
+        "Any existing ideas or themes to incorporate"
+      ],
+      "recommended_strategy": "First, research successful mockumentary series to understand their structure and elements. Then, synthesize this research into a creative pitch that highlights the comedic and satirical elements of building a terrible app as if it were a groundbreaking tech startup.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research successful mockumentary series",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of key elements and structures of successful mockumentary series.",
+          "prompt": "Search the web for current, specific information about successful mockumentary series. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Create pitch for mockumentary web series",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete and engaging pitch for the mockumentary web series.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a complete pitch for a mockumentary web series about a team building the worst app ever made. Include specific comedic elements, character archetypes, and plot points that highlight the absurdity of their endeavor.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2079
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsqbnv1x76g",
+    "title": "Plan a 7-day cultural and nature trip to Japan beyond Tokyo. Include Kyoto templ",
+    "raw_request": "Plan a 7-day cultural and nature trip to Japan beyond Tokyo. Include Kyoto temples, Hiroshima peace memorial, rural ryokans, and hot spring towns.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:14:48.589Z",
+    "updated_at": "2026-03-16T05:18:05.040Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:15:29.613Z",
+      "interpreted_objective": "Plan a detailed 7-day cultural and nature itinerary in Japan beyond Tokyo.",
+      "expected_outcome": "A comprehensive travel itinerary including specific locations, activities, costs, and logistics for Kyoto, Hiroshima, rural ryokans, and hot spring towns.",
+      "key_unknowns": [
+        "Current travel restrictions or requirements for Japan",
+        "Availability and pricing of accommodations and activities",
+        "Transportation options between destinations"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on travel options, accommodations, and activities in the specified regions of Japan. Synthesize this data into a detailed itinerary with costs and logistics. Ensure the plan aligns with cultural experiences and nature exploration.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Travel Options and Costs in Japan",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current travel options, accommodation availability, and costs for Kyoto, Hiroshima, rural ryokans, and hot spring towns.",
+          "prompt": "Search the web for current travel options, accommodation availability, and costs for a 7-day trip in Japan focusing on Kyoto, Hiroshima, rural ryokans, and hot spring towns. Include specific names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary and Logistics",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 7-day itinerary including specific locations, activities, costs, and logistics.",
+          "prompt": "Based on the research results, synthesize a detailed 7-day itinerary for a cultural and nature trip in Japan beyond Tokyo. Include specific locations, activities, costs, and logistics for Kyoto, Hiroshima, rural ryokans, and hot spring towns.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-2023-11-07-japan-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1926
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsqbn29ohv7",
+    "title": "Design a comprehensive metabolic health optimization protocol. Include fasting w",
+    "raw_request": "Design a comprehensive metabolic health optimization protocol. Include fasting windows, exercise timing, glucose monitoring, and hormone balance for tech workers.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:14:47.553Z",
+    "updated_at": "2026-03-16T05:17:56.291Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:15:11.483Z",
+      "interpreted_objective": "Design a comprehensive protocol for optimizing metabolic health tailored for tech workers.",
+      "expected_outcome": "A detailed, evidence-based protocol that includes fasting windows, exercise timing, glucose monitoring, and hormone balance strategies.",
+      "key_unknowns": [
+        "Specific metabolic health challenges faced by tech workers",
+        "Current evidence-based practices for metabolic health optimization",
+        "Potential risks associated with fasting and exercise timing for tech workers"
+      ],
+      "recommended_strategy": "Conduct research to identify current best practices and evidence-based strategies for metabolic health optimization. Synthesize these findings into a comprehensive protocol tailored for tech workers, considering their unique lifestyle and health challenges.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Metabolic Health Challenges for Tech Workers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on metabolic health challenges specific to tech workers, including sources.",
+          "prompt": "Search the web for current, specific information about metabolic health challenges faced by tech workers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Metabolic Health Optimization Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive metabolic health optimization protocol tailored for tech workers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive metabolic health optimization protocol. Include specific recommendations for fasting windows, exercise timing, glucose monitoring, and hormone balance. Ensure the protocol is evidence-based and actionable.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-metabolic-health-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1863
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsqbm9k56qa",
+    "title": "Create a guide to transitioning from contractor to full-time employee at the sam",
+    "raw_request": "Create a guide to transitioning from contractor to full-time employee at the same company. Include negotiation tactics, benefits comparison, and timeline expectations.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:14:46.520Z",
+    "updated_at": "2026-03-16T05:17:47.409Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:15:06.398Z",
+      "interpreted_objective": "Create a comprehensive guide for transitioning from a contractor to a full-time employee at the same company, including negotiation tactics, benefits comparison, and timeline expectations.",
+      "expected_outcome": "A detailed guide that provides actionable steps and insights for contractors looking to become full-time employees, covering negotiation strategies, benefits analysis, and realistic timelines.",
+      "key_unknowns": [
+        "Specific negotiation tactics relevant to current industry standards",
+        "Detailed benefits comparison for contractors vs. full-time employees",
+        "Typical timeline expectations for such transitions"
+      ],
+      "recommended_strategy": "First, conduct research to gather current information on negotiation strategies, benefits comparisons, and timeline expectations for transitioning from contractor to full-time. Then, synthesize this information into a structured guide tailored for data engineering professionals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Transition Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on negotiation tactics, benefits comparison, and timeline expectations for transitioning from contractor to full-time employee.",
+          "prompt": "Search the web for current, specific information about transitioning from a contractor to a full-time employee at the same company. Include negotiation tactics, benefits comparison, and timeline expectations. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Transition Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide with actionable recommendations for transitioning from contractor to full-time employee, including negotiation strategies, benefits analysis, and timeline expectations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for transitioning from contractor to full-time employee. Include specific negotiation strategies, benefits analysis, and timeline expectations. Structure the output as a comprehensive guide.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-2023-transition-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2167
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsqblh5sj67",
+    "title": "Research the best home networking equipment for a developer who needs low latenc",
+    "raw_request": "Research the best home networking equipment for a developer who needs low latency and high throughput. Include router, switch, and access point recommendations. Budget 500 dollars.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:14:45.497Z",
+    "updated_at": "2026-03-16T05:17:41.665Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:15:01.611Z",
+      "interpreted_objective": "Identify the best home networking equipment for a developer prioritizing low latency and high throughput within a $500 budget.",
+      "expected_outcome": "A detailed report recommending specific routers, switches, and access points with pricing, pros/cons, and a clear purchasing recommendation.",
+      "key_unknowns": [
+        "Current pricing of recommended equipment",
+        "Availability of recommended products",
+        "Specific technical needs of the developer beyond low latency and high throughput"
+      ],
+      "recommended_strategy": "First, conduct web research to identify current top-rated home networking equipment suitable for developers with a focus on low latency and high throughput. Then, synthesize this data into a comprehensive report with specific product recommendations, including prices and pros/cons.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Networking Equipment",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on current top-rated routers, switches, and access points with pricing and reviews.",
+          "prompt": "Search the web for current, specific information about the best home networking equipment for developers focusing on low latency and high throughput. Include routers, switches, and access points within a $500 budget. Provide real names, prices, pros/cons, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Networking Recommendations",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with specific product recommendations including names, prices, pros/cons, and a purchasing recommendation.",
+          "prompt": "Based on the research results, synthesize actionable recommendations for home networking equipment suitable for developers. Include specific product names, prices, pros/cons, and a clear purchasing recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-2023-10-14-home-networking.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1966
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsqbkobcjh3",
+    "title": "Teach me about the internals of garbage collection algorithms. Cover mark-and-sw",
+    "raw_request": "Teach me about the internals of garbage collection algorithms. Cover mark-and-sweep, generational GC, concurrent marking, and G1 vs ZGC in Java. With performance tuning tips.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:14:44.459Z",
+    "updated_at": "2026-03-16T05:17:35.408Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:14:56.433Z",
+      "interpreted_objective": "Provide an in-depth explanation of garbage collection algorithms, including mark-and-sweep, generational GC, concurrent marking, and G1 vs ZGC in Java, with performance tuning tips.",
+      "expected_outcome": "Rahul gains a comprehensive understanding of various garbage collection algorithms and performance tuning in Java.",
+      "key_unknowns": [
+        "Rahul's current knowledge level on garbage collection algorithms",
+        "Specific areas of interest within garbage collection"
+      ],
+      "recommended_strategy": "First, research the internals of each garbage collection algorithm mentioned, focusing on their mechanisms and differences. Then, compile a detailed report that explains each algorithm, compares G1 and ZGC, and provides performance tuning tips specific to Java.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Garbage Collection Algorithms",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on mark-and-sweep, generational GC, concurrent marking, G1 vs ZGC in Java.",
+          "prompt": "Search the web for current, specific information about garbage collection algorithms including mark-and-sweep, generational GC, concurrent marking, and a comparison of G1 vs ZGC in Java. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Report on Garbage Collection",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report explaining garbage collection algorithms, their differences, and performance tuning tips for Java.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps to explain mark-and-sweep, generational GC, concurrent marking, and compare G1 vs ZGC in Java with performance tuning tips.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2068
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsqbjv2ehzf",
+    "title": "Create a guide to building a financial model for a SaaS business. Include MRR pr",
+    "raw_request": "Create a guide to building a financial model for a SaaS business. Include MRR projections, churn modeling, CAC/LTV calculations, and runway estimation with spreadsheet formulas.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:14:43.406Z",
+    "updated_at": "2026-03-16T05:17:30.201Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:14:51.853Z",
+      "interpreted_objective": "Create a detailed guide on building a financial model for a SaaS business, including specific financial metrics and spreadsheet formulas.",
+      "expected_outcome": "A comprehensive guide that includes MRR projections, churn modeling, CAC/LTV calculations, and runway estimation with actionable spreadsheet formulas.",
+      "key_unknowns": [
+        "Specific SaaS business model assumptions",
+        "Current best practices for each financial metric",
+        "Spreadsheet software or tools to be used"
+      ],
+      "recommended_strategy": "Research current best practices and examples of financial modeling for SaaS businesses. Synthesize this information into a structured guide with clear explanations and spreadsheet formulas. Ensure the guide is actionable and provides concrete steps for implementation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research SaaS Financial Modeling Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and examples for SaaS financial modeling.",
+          "prompt": "Search the web for current best practices and examples of financial modeling for SaaS businesses. Focus on MRR projections, churn modeling, CAC/LTV calculations, and runway estimation. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for SaaS Financial Modeling",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide on SaaS financial modeling with spreadsheet formulas.",
+          "prompt": "Based on the research results, synthesize a detailed guide on building a financial model for a SaaS business. Include sections on MRR projections, churn modeling, CAC/LTV calculations, and runway estimation. Provide actionable spreadsheet formulas and concrete steps for implementation.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2402
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsqbj1tb2ei",
+    "title": "Write a comprehensive guide to implementing zero-downtime deployments for statef",
+    "raw_request": "Write a comprehensive guide to implementing zero-downtime deployments for stateful applications. Include database migration coordination, session handling, and websocket reconnection.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:14:42.353Z",
+    "updated_at": "2026-03-16T05:16:46.319Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:14:47.491Z",
+      "interpreted_objective": "Create a detailed guide on implementing zero-downtime deployments for stateful applications.",
+      "expected_outcome": "A comprehensive, clear, and actionable guide covering database migration coordination, session handling, and websocket reconnection.",
+      "key_unknowns": [
+        "Specific technologies or platforms to focus on",
+        "Current best practices in zero-downtime deployments",
+        "Potential challenges unique to stateful applications"
+      ],
+      "recommended_strategy": "First, conduct research to gather current best practices and challenges in zero-downtime deployments for stateful applications. Then, synthesize this information into a structured guide that includes specific techniques for database migration coordination, session handling, and websocket reconnection.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research zero-downtime deployment best practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices and challenges in zero-downtime deployments for stateful applications.",
+          "prompt": "Search the web for current, specific information about best practices and challenges in implementing zero-downtime deployments for stateful applications. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write guide on zero-downtime deployments",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on implementing zero-downtime deployments for stateful applications, including database migration coordination, session handling, and websocket reconnection.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comprehensive guide on implementing zero-downtime deployments for stateful applications. Include specific techniques for database migration coordination, session handling, and websocket reconnection.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2050
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsq3ujkn2it",
     "title": "Design a comprehensive skill acquisition framework for learning new programming ",
     "raw_request": "Design a comprehensive skill acquisition framework for learning new programming languages. Include the 80/20 approach, project-based milestones, and fluency metrics.",
