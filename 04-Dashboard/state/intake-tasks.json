@@ -1,5 +1,692 @@
 [
   {
+    "task_id": "t_mmth883zvkuu",
+    "title": "Design a comprehensive weekend reset and recharge protocol. Include Friday wind-",
+    "raw_request": "Design a comprehensive weekend reset and recharge protocol. Include Friday wind-down routine, Saturday adventure and rest balance, Sunday preparation ritual, digital sabbath framework, and social energy management.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:47:57.839Z",
+    "updated_at": "2026-03-16T17:55:23.378Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:49:56.045Z",
+      "interpreted_objective": "Create a detailed weekend reset and recharge protocol with specific routines for each day.",
+      "expected_outcome": "A structured plan that includes a Friday wind-down routine, a balanced Saturday of adventure and rest, a Sunday preparation ritual, a digital sabbath framework, and social energy management strategies.",
+      "key_unknowns": [
+        "Specific preferences and constraints of the target audience",
+        "Existing routines and habits of the user",
+        "Potential obstacles to implementing the protocol"
+      ],
+      "recommended_strategy": "Conduct research on effective weekend reset routines and digital sabbath practices. Synthesize this information into a comprehensive protocol tailored to balance relaxation, adventure, and preparation for the upcoming week. Ensure the plan is practical and adaptable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research weekend reset and recharge routines",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current, effective practices for weekend reset routines, digital sabbath, and social energy management.",
+          "prompt": "Search the web for current, specific information about weekend reset and recharge routines, digital sabbath practices, and social energy management strategies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize weekend reset protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive weekend reset and recharge protocol document.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a weekend reset and recharge protocol. Include specific routines for Friday wind-down, Saturday adventure and rest balance, Sunday preparation ritual, digital sabbath framework, and social energy management.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-weekend-reset-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1978
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmth881cgsjb",
+    "title": "Create a comprehensive guide to building a home automation system that respects ",
+    "raw_request": "Create a comprehensive guide to building a home automation system that respects privacy. Include local-only processing options, camera-free security alternatives, voice assistant privacy settings, and data minimization strategies.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:47:57.744Z",
+    "updated_at": "2026-03-16T17:55:10.390Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:49:46.362Z",
+      "interpreted_objective": "Create a detailed guide on building a privacy-focused home automation system.",
+      "expected_outcome": "A comprehensive and actionable guide that outlines privacy-respecting home automation options, including local processing, camera-free security, voice assistant settings, and data minimization strategies.",
+      "key_unknowns": [
+        "Specific local-only processing technologies available",
+        "Current camera-free security alternatives",
+        "Effective voice assistant privacy settings",
+        "Data minimization strategies in the context of home automation"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on privacy-focused home automation technologies. Synthesize this information into a structured guide that addresses each aspect of the request, ensuring clarity and actionable advice for the reader.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Privacy-Focused Home Automation Technologies",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report detailing current privacy-respecting home automation options, including local processing, camera-free security, voice assistant privacy settings, and data minimization strategies.",
+          "prompt": "Search the web for current, specific information about privacy-focused home automation systems. Include local-only processing options, camera-free security alternatives, voice assistant privacy settings, and data minimization strategies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Privacy-Focused Home Automation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide that outlines privacy-respecting home automation options, structured for clarity and actionability.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on building a home automation system that respects privacy. Include detailed sections on local-only processing options, camera-free security alternatives, voice assistant privacy settings, and data minimization strategies.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2086
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmth87yqhs6s",
+    "title": "Write a complete concept for a speculative fiction anthology where each story ex",
+    "raw_request": "Write a complete concept for a speculative fiction anthology where each story explores a different way humanity might achieve first contact with alien life. Include 10 story premises with unique scientific premises and tonal approaches.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:47:57.650Z",
+    "updated_at": "2026-03-16T17:54:57.896Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:49:25.759Z",
+      "interpreted_objective": "Develop a speculative fiction anthology concept with 10 unique story premises about first contact with alien life.",
+      "expected_outcome": "A comprehensive anthology concept with diverse scientific premises and tonal approaches for each story.",
+      "key_unknowns": [
+        "Specific scientific premises for each story",
+        "Unique tonal approaches for each story",
+        "Overall thematic cohesion of the anthology"
+      ],
+      "recommended_strategy": "Conduct research on speculative fiction themes and scientific theories related to first contact scenarios. Then, synthesize this research into 10 distinct story premises, each with a unique scientific premise and tonal approach, ensuring variety and cohesion in the anthology.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Speculative Fiction Themes",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of speculative fiction themes and scientific theories related to first contact scenarios.",
+          "prompt": "Search the web for current, specific information about speculative fiction themes and scientific theories related to first contact with alien life. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Story Premises",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed anthology concept with 10 distinct story premises, each with a unique scientific premise and tonal approach.",
+          "prompt": "Based on the research results from prior subtasks, synthesize 10 distinct story premises for a speculative fiction anthology. Each story should explore a different way humanity might achieve first contact with alien life, with unique scientific premises and tonal approaches.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-speculative-fiction-anthology.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1905
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmth87wrtyar",
+    "title": "Plan a 12-day food, nature, and cultural tour through Thailand beyond Bangkok. I",
+    "raw_request": "Plan a 12-day food, nature, and cultural tour through Thailand beyond Bangkok. Include Chiang Rai white temple, Pai mountain town, Koh Lanta beach life, Khao Sok National Park treehouse stay, and Isaan street food exploration.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:47:57.579Z",
+    "updated_at": "2026-03-16T17:54:39.877Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:49:13.906Z",
+      "interpreted_objective": "Plan a comprehensive 12-day tour through Thailand focusing on food, nature, and culture beyond Bangkok.",
+      "expected_outcome": "A detailed itinerary covering key attractions such as Chiang Rai, Pai, Koh Lanta, Khao Sok, and Isaan with specific activities and logistics.",
+      "key_unknowns": [
+        "Current travel restrictions or requirements in Thailand",
+        "Availability and booking options for accommodations and activities",
+        "Local transportation options between destinations"
+      ],
+      "recommended_strategy": "Conduct research to gather current travel information and insights on each destination. Synthesize this information into a detailed itinerary, ensuring a balance of activities that cover food, nature, and cultural experiences. Consider logistical aspects like transportation and accommodation availability.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Travel Information",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current travel information for Thailand, including restrictions, accommodation options, and transportation logistics.",
+          "prompt": "Search the web for current, specific information about travel to Thailand, focusing on Chiang Rai, Pai, Koh Lanta, Khao Sok National Park, and Isaan. Include details on travel restrictions, accommodation availability, transportation options, and key attractions. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Detailed Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive 12-day itinerary for a tour through Thailand, including activities, logistics, and cultural experiences.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 12-day itinerary for a tour through Thailand. Include specific activities, transportation logistics, accommodation options, and cultural experiences for each location: Chiang Rai, Pai, Koh Lanta, Khao Sok National Park, and Isaan. Ensure the itinerary balances food, nature, and cultural experiences.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-thailand-tour-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2533
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmth87uajoos",
+    "title": "Design a comprehensive plantar fascia recovery and foot strength program. Includ",
+    "raw_request": "Design a comprehensive plantar fascia recovery and foot strength program. Include tissue loading progressions, calf raise protocols, intrinsic foot muscle exercises, orthotic selection guide, and return-to-activity criteria.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:47:57.490Z",
+    "updated_at": "2026-03-16T17:54:17.496Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:49:04.097Z",
+      "interpreted_objective": "Design a detailed recovery and strengthening program for plantar fascia and foot health.",
+      "expected_outcome": "A comprehensive program document outlining exercises, protocols, orthotic guidance, and return-to-activity criteria.",
+      "key_unknowns": [
+        "Specific evidence-based protocols for tissue loading and calf raises",
+        "Current best practices for intrinsic foot muscle exercises",
+        "Criteria for orthotic selection",
+        "Return-to-activity guidelines"
+      ],
+      "recommended_strategy": "Conduct research to gather current evidence-based practices for each component of the program. Synthesize this information into a structured recovery and strengthening plan. Ensure the plan is actionable and includes safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Plantar Fascia Recovery Protocols",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current evidence-based practices for plantar fascia recovery, including tissue loading, calf raises, and intrinsic foot muscle exercises.",
+          "prompt": "Search the web for current, specific information about evidence-based plantar fascia recovery protocols, including tissue loading progressions, calf raise protocols, and intrinsic foot muscle exercises. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Orthotic Selection and Return-to-Activity Criteria",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current guidelines for orthotic selection and return-to-activity criteria for plantar fascia recovery.",
+          "prompt": "Search the web for current, specific information about orthotic selection guides and return-to-activity criteria for plantar fascia recovery. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Plantar Fascia Recovery Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and comprehensive plantar fascia recovery and foot strength program document.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive plantar fascia recovery and foot strength program. Include tissue loading progressions, calf raise protocols, intrinsic foot muscle exercises, orthotic selection guide, and return-to-activity criteria. Ensure the program is actionable and includes safety disclaimers where necessary.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-plantar-fascia-recovery-program.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2069
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmth87rd49k4",
+    "title": "Create a guide to running effective all-hands meetings at engineering organizati",
+    "raw_request": "Create a guide to running effective all-hands meetings at engineering organizations of 50-200 people. Include agenda design, Q&A facilitation, remote inclusion, measuring engagement, and cadence optimization.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:47:57.385Z",
+    "updated_at": "2026-03-16T17:53:57.411Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:48:54.165Z",
+      "interpreted_objective": "Create a comprehensive guide for running effective all-hands meetings in engineering organizations with 50-200 people.",
+      "expected_outcome": "A detailed guide that includes agenda design, Q&A facilitation, remote inclusion, measuring engagement, and cadence optimization for all-hands meetings.",
+      "key_unknowns": [
+        "Current best practices for agenda design in all-hands meetings",
+        "Effective methods for facilitating Q&A sessions",
+        "Strategies for remote inclusion in meetings",
+        "Metrics for measuring engagement during meetings",
+        "Optimal frequency for holding all-hands meetings"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and strategies for each component of the guide. Synthesize the findings into a structured and actionable guide tailored for engineering organizations of 50-200 people.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for All-Hands Meetings",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and strategies for all-hands meetings, including agenda design, Q&A facilitation, remote inclusion, measuring engagement, and cadence optimization.",
+          "prompt": "Search the web for current best practices and strategies for running effective all-hands meetings in engineering organizations with 50-200 people. Focus on agenda design, Q&A facilitation, remote inclusion, measuring engagement, and cadence optimization. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Effective All-Hands Meetings",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and actionable guide for running effective all-hands meetings in engineering organizations with 50-200 people.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comprehensive guide for running effective all-hands meetings in engineering organizations with 50-200 people. Include sections on agenda design, Q&A facilitation, remote inclusion, measuring engagement, and cadence optimization.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-all-hands-meetings-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2535
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmth87pvfq5t",
+    "title": "Research the best noise-canceling headphones for musicians and audio professiona",
+    "raw_request": "Research the best noise-canceling headphones for musicians and audio professionals. Compare Audeze Maxwell, Sennheiser Momentum 4, and Focal Bathys with frequency response accuracy, spatial audio, and low-latency codec support.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:47:57.331Z",
+    "updated_at": "2026-03-16T17:53:40.694Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:48:44.323Z",
+      "interpreted_objective": "Research and compare the best noise-canceling headphones for musicians and audio professionals, focusing on Audeze Maxwell, Sennheiser Momentum 4, and Focal Bathys.",
+      "expected_outcome": "A detailed comparison report highlighting frequency response accuracy, spatial audio capabilities, and low-latency codec support for the specified headphones.",
+      "key_unknowns": [
+        "Current specifications and reviews of Audeze Maxwell, Sennheiser Momentum 4, and Focal Bathys",
+        "Specific features relevant to musicians and audio professionals",
+        "Availability of low-latency codec support in these models"
+      ],
+      "recommended_strategy": "First, gather detailed specifications and user reviews for each headphone model, focusing on frequency response, spatial audio, and codec support. Then, synthesize this information into a comparative analysis with specific recommendations for musicians and audio professionals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Headphone Specifications and Reviews",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed specifications and user reviews for Audeze Maxwell, Sennheiser Momentum 4, and Focal Bathys.",
+          "prompt": "Search the web for current, specific information about Audeze Maxwell, Sennheiser Momentum 4, and Focal Bathys headphones. Focus on frequency response accuracy, spatial audio capabilities, and low-latency codec support. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comparative analysis report with recommendations for musicians and audio professionals.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Audeze Maxwell, Sennheiser Momentum 4, and Focal Bathys. Include specific names, numbers, and concrete next steps for musicians and audio professionals.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2347
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmth87p04s7h",
+    "title": "Explain how TLS 1.3 handshake works compared to TLS 1.2. Cover key exchange with",
+    "raw_request": "Explain how TLS 1.3 handshake works compared to TLS 1.2. Cover key exchange with ECDHE, 0-RTT resumption, certificate verification, cipher suite selection, and common misconfiguration vulnerabilities.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:47:57.300Z",
+    "updated_at": "2026-03-16T17:53:28.851Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:48:34.602Z",
+      "interpreted_objective": "Explain the differences between TLS 1.3 and TLS 1.2 handshakes, focusing on key exchange, 0-RTT resumption, certificate verification, cipher suite selection, and common misconfiguration vulnerabilities.",
+      "expected_outcome": "A detailed report that clearly outlines and compares the TLS 1.3 and TLS 1.2 handshake processes, highlighting improvements and vulnerabilities.",
+      "key_unknowns": [
+        "Specific differences in ECDHE key exchange between TLS 1.3 and TLS 1.2",
+        "Details of 0-RTT resumption in TLS 1.3",
+        "Common misconfiguration vulnerabilities in TLS 1.3"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current, specific information on TLS 1.3 and TLS 1.2 handshakes, focusing on the specified areas. Then, synthesize this information into a comprehensive report that compares the two protocols, highlighting key differences, improvements, and vulnerabilities.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research TLS 1.3 and TLS 1.2 Handshakes",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research data on TLS 1.3 and TLS 1.2 handshakes with citations.",
+          "prompt": "Search the web for current, specific information about TLS 1.3 and TLS 1.2 handshakes, focusing on ECDHE key exchange, 0-RTT resumption, certificate verification, cipher suite selection, and common misconfiguration vulnerabilities. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize TLS Handshake Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report comparing TLS 1.3 and TLS 1.2 handshakes, highlighting key differences, improvements, and vulnerabilities.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps. Focus on comparing TLS 1.3 and TLS 1.2 handshakes, covering ECDHE key exchange, 0-RTT resumption, certificate verification, cipher suite selection, and common misconfiguration vulnerabilities.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-tls_handshake_comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2236
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmth87nx49mo",
+    "title": "Create a guide to understanding required minimum distributions from retirement a",
+    "raw_request": "Create a guide to understanding required minimum distributions from retirement accounts. Include RMD calculation for traditional IRAs and 401ks, inherited IRA rules under SECURE Act 2.0, QCD strategies, and penalty avoidance.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:47:57.261Z",
+    "updated_at": "2026-03-16T17:53:13.882Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:48:19.587Z",
+      "interpreted_objective": "Create a comprehensive guide to understanding required minimum distributions from retirement accounts.",
+      "expected_outcome": "A detailed guide covering RMD calculations for traditional IRAs and 401ks, inherited IRA rules under SECURE Act 2.0, QCD strategies, and penalty avoidance.",
+      "key_unknowns": [
+        "Latest regulations under SECURE Act 2.0",
+        "Current strategies for QCDs",
+        "Updated penalty avoidance measures"
+      ],
+      "recommended_strategy": "First, conduct research to gather the most current information on RMDs, SECURE Act 2.0, QCD strategies, and penalty avoidance. Then, synthesize this information into a comprehensive guide. Ensure the guide is clear and actionable, providing specific examples and calculations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current RMD Regulations and Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on RMD calculations, SECURE Act 2.0 rules, QCD strategies, and penalty avoidance.",
+          "prompt": "Search the web for current, specific information about required minimum distributions (RMDs) for traditional IRAs and 401ks, rules under SECURE Act 2.0 for inherited IRAs, qualified charitable distributions (QCD) strategies, and penalty avoidance measures. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on RMDs and Related Strategies",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on understanding required minimum distributions and related strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for understanding required minimum distributions (RMDs) from retirement accounts. Include RMD calculation for traditional IRAs and 401ks, inherited IRA rules under SECURE Act 2.0, QCD strategies, and penalty avoidance. Provide specific examples and calculations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-RMD_Guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2536
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmth87n9lg0x",
+    "title": "Design a comprehensive serverless architecture using AWS Lambda, API Gateway, an",
+    "raw_request": "Design a comprehensive serverless architecture using AWS Lambda, API Gateway, and DynamoDB. Include cold start mitigation, function composition patterns, observability with X-Ray, cost optimization, and local development workflow with SAM.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:47:57.237Z",
+    "updated_at": "2026-03-16T17:52:47.226Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:48:07.915Z",
+      "interpreted_objective": "Design a serverless architecture using AWS services with specific features like cold start mitigation and cost optimization.",
+      "expected_outcome": "A detailed plan for a serverless architecture leveraging AWS Lambda, API Gateway, and DynamoDB, addressing cold start mitigation, function composition, observability, cost optimization, and local development workflow.",
+      "key_unknowns": [
+        "Specific requirements or constraints for the architecture",
+        "Current level of expertise with AWS services",
+        "Existing infrastructure or tools in use"
+      ],
+      "recommended_strategy": "First, gather detailed information on best practices for each component of the architecture, including cold start mitigation, function composition, and observability. Then, synthesize this information into a comprehensive architectural design. Finally, outline a local development workflow using AWS SAM.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research AWS Serverless Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices for AWS Lambda, API Gateway, DynamoDB, and related services.",
+          "prompt": "Search the web for current best practices in designing serverless architectures using AWS Lambda, API Gateway, and DynamoDB. Include strategies for cold start mitigation, function composition patterns, observability with AWS X-Ray, cost optimization, and local development workflows with AWS SAM.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Serverless Architecture Design",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed design document for a serverless architecture using AWS services.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive serverless architecture design using AWS Lambda, API Gateway, and DynamoDB. Address cold start mitigation, function composition patterns, observability with AWS X-Ray, cost optimization, and a local development workflow with AWS SAM. Include specific recommendations and steps for implementation.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2054
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
     "task_id": "t_mmtgsihmklrj",
     "title": "Design a comprehensive focus and deep work protocol for knowledge workers. Inclu",
     "raw_request": "Design a comprehensive focus and deep work protocol for knowledge workers. Include environment design, time-blocking methods, distraction elimination, cognitive warm-up routines, and measuring focus quality over time.",
