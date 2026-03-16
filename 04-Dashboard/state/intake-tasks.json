@@ -1,5 +1,216 @@
 [
   {
+    "task_id": "t_mmshrdujuiu5",
+    "title": "Research the market for community-driven local business review platforms and tel",
+    "raw_request": "Research the market for community-driven local business review platforms and tell me whether it is actually worth building one in 2026. Include market size, competitors, their funding, user numbers, and honest assessment of viability.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:15:05.563Z",
+    "updated_at": "2026-03-16T01:16:04.340Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:15:23.249Z",
+      "interpreted_objective": "Determine the viability of building a community-driven local business review platform by 2026.",
+      "expected_outcome": "A comprehensive report detailing market size, competitors, their funding, user numbers, and an assessment of the platform's viability.",
+      "key_unknowns": [
+        "Current market size for local business review platforms",
+        "Key competitors and their market positions",
+        "Funding and user numbers for existing platforms",
+        "Trends and projections for 2026"
+      ],
+      "recommended_strategy": "Conduct a thorough market analysis by researching current data on local business review platforms, including market size, key competitors, and their funding. Then, synthesize this information to evaluate the viability of launching a new platform in 2026. Provide a detailed report with findings and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Market for Local Business Review Platforms",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on market size, key competitors, their funding, and user numbers.",
+          "prompt": "Search the web for current, specific information about the market for community-driven local business review platforms. Include market size, key competitors, their funding, user numbers, and any trends or projections for 2026. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Market Viability Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed report assessing the viability of launching a community-driven local business review platform in 2026.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations on the viability of building a community-driven local business review platform by 2026. Include specific names, numbers, and concrete next steps. Assess market size, competition, funding, and user trends.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2322
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmshrbiemfso",
+    "title": "Write a go-to-market plan for a local community app launching in Austin. Include",
+    "raw_request": "Write a go-to-market plan for a local community app launching in Austin. Include user acquisition channels, cost per acquisition estimates, launch timeline, and first 90 days milestone targets.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:15:02.534Z",
+    "updated_at": "2026-03-16T01:15:55.971Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:15:10.975Z",
+      "interpreted_objective": "Develop a comprehensive go-to-market plan for a local community app launching in Austin.",
+      "expected_outcome": "A detailed plan outlining user acquisition channels, cost per acquisition estimates, a launch timeline, and milestone targets for the first 90 days.",
+      "key_unknowns": [
+        "Specific user demographics in Austin",
+        "Current market competition",
+        "Potential partners or influencers in Austin",
+        "Budget constraints for marketing"
+      ],
+      "recommended_strategy": "Conduct research on effective user acquisition channels and cost per acquisition for similar apps in Austin. Synthesize findings into a structured go-to-market plan with a clear timeline and milestones. Ensure the plan aligns with Rahul's priorities on building passive income streams and automating routine decisions.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the go-to-market plan"
+      ],
+      "subtasks": [
+        {
+          "title": "Research User Acquisition Channels and Costs",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report on effective user acquisition channels and cost per acquisition for community apps in Austin.",
+          "prompt": "Search the web for current, specific information about user acquisition channels and cost per acquisition for local community apps in Austin. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Go-to-Market Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured go-to-market plan document.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive go-to-market plan for a local community app launching in Austin. Include user acquisition channels, cost per acquisition estimates, a launch timeline, and first 90 days milestone targets.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-go-to-market-plan.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1923
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmshr967mdc9",
+    "title": "Create board-level documentation for a startup with goals, metrics, open questio",
+    "raw_request": "Create board-level documentation for a startup with goals, metrics, open questions, and investor-ready status update. Include MAU targets, revenue projections, and competitive positioning.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:14:59.503Z",
+    "updated_at": "2026-03-16T01:15:39.528Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:15:05.052Z",
+      "interpreted_objective": "Create a comprehensive board-level document for a startup, including goals, metrics, and investor-ready status updates.",
+      "expected_outcome": "A detailed document that outlines startup goals, MAU targets, revenue projections, competitive positioning, and open questions for board-level review.",
+      "key_unknowns": [
+        "Specific startup goals and metrics",
+        "Current MAU targets and revenue projections",
+        "Competitive landscape details",
+        "Open questions that need addressing"
+      ],
+      "recommended_strategy": "First, gather information on the startup's current goals, metrics, and competitive landscape. Then, synthesize this data into a structured board-level document that includes all required elements. Ensure the document is investor-ready with clear revenue projections and MAU targets.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Startup Goals and Metrics",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current goals, metrics, and competitive positioning for the startup.",
+          "prompt": "Search the web for current, specific information about startup goals, metrics, and competitive positioning. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Board-Level Document",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive board-level document with goals, metrics, MAU targets, revenue projections, competitive positioning, and open questions.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a board-level document that includes startup goals, metrics, MAU targets, revenue projections, competitive positioning, and open questions. Ensure the document is investor-ready.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2388
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
     "task_id": "t_mmsgym8ylqwj",
     "title": "Turn this messy meeting transcript into action items with owners and deadlines: ",
     "raw_request": "Turn this messy meeting transcript into action items with owners and deadlines: We discussed launching push notifications next week, fixing the ranking algorithm edge case where new entries get unfairly low scores, deciding on pricing strategy for premium features, and scheduling user testing sessions. Alex handles notifications, Maria does ranking fixes, I handle pricing research, testing is TBD.",

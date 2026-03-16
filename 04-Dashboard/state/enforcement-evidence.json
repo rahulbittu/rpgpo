@@ -1,5 +1,41 @@
 [
   {
+    "record_id": "ee_mmshsn6yesyw",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing recommendations, thesis",
+    "scope_type": "task",
+    "scope_id": "t_mmshrdujuiu5",
+    "route": "research",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T01:16:04.330Z"
+  },
+  {
+    "record_id": "ee_mmshsgqotgja",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmshrbiemfso",
+    "route": "writing",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T01:15:55.968Z"
+  },
+  {
+    "record_id": "ee_mmshs41xu6vi",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmshr967mdc9",
+    "route": "wealthresearch",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T01:15:39.525Z"
+  },
+  {
     "record_id": "ee_mmsgzao0yjmm",
     "area": "runtime_deliverable",
     "middleware_ran": "runtime-deliverable-pipeline",

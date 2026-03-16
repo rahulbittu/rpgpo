@@ -1,5 +1,147 @@
 [
   {
+    "id": "mmshs9hzpmv0",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Market Viability Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmshrrjqnn9r"
+    },
+    "createdAt": "2026-03-16T01:15:46.583Z",
+    "updatedAt": "2026-03-16T01:16:04.350Z",
+    "output": "Synthesize Market Viability Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmshrrjqnn9r.md"
+    ]
+  },
+  {
+    "id": "mmshrx5ao8ae",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Go-to-Market Plan",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmshri2xc07q"
+    },
+    "createdAt": "2026-03-16T01:15:30.574Z",
+    "updatedAt": "2026-03-16T01:15:55.981Z",
+    "output": "Synthesize Go-to-Market Plan: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/writing-{date}-go-to-market-plan.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmshri2xc07q.md"
+    ]
+  },
+  {
+    "id": "mmshrrlnfprh",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Market for Local Business Review Platforms",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmshrriv42oo"
+    },
+    "createdAt": "2026-03-16T01:15:23.387Z",
+    "updatedAt": "2026-03-16T01:15:46.583Z",
+    "output": "Research Market for Local Business Review Platforms: ## Finding 1: Google Reviews Market Influence and Usage Stats (2026)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmshrriv42oo.md"
+    ]
+  },
+  {
+    "id": "mmshrnz0nxuk",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Board-Level Document",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmshrdigqpxw"
+    },
+    "createdAt": "2026-03-16T01:15:18.684Z",
+    "updatedAt": "2026-03-16T01:15:39.538Z",
+    "output": "Synthesize Board-Level Document: ## Board-Level Document: AI Startup Strategy and Projections\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmshrdigqpxw.md"
+    ]
+  },
+  {
+    "id": "mmshri4v3vzm",
+    "type": "execute-subtask",
+    "label": "Subtask: Research User Acquisition Channels and Costs",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmshri22patd"
+    },
+    "createdAt": "2026-03-16T01:15:11.119Z",
+    "updatedAt": "2026-03-16T01:15:30.575Z",
+    "output": "Research User Acquisition Channels and Costs: ## Finding 1: Main Street Hub's Local Marketing Platform for Customer Acquisition in Austin\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmshri22patd.md"
+    ]
+  },
+  {
+    "id": "mmshrduos6u3",
+    "type": "deliberate",
+    "label": "Deliberate: Research the market for community-driven local business review platforms and tel",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmshrdujuiu5",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:15:05.568Z",
+    "updatedAt": "2026-03-16T01:15:23.387Z",
+    "output": "Deliberation complete.\nObjective: Determine the viability of building a community-driven local business review platform by 2026.\nStrategy: Conduct a thorough market analysis by researching current data on local business review platforms, including market size, key competitors, and their funding. Then, synthesize this information to evaluate the viability of launching a new platform in 2026. Provide a detailed report with findings and recommendations.\nRisk: green\nSubtasks: 2\nTokens: 2322",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmshrdkf11c9",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Startup Goals and Metrics",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmshrdhk9aw1"
+    },
+    "createdAt": "2026-03-16T01:15:05.199Z",
+    "updatedAt": "2026-03-16T01:15:18.685Z",
+    "output": "Research Startup Goals and Metrics: ## AI Startup Revenue Metrics\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmshrdhk9aw1.md"
+    ]
+  },
+  {
+    "id": "mmshrbil20n1",
+    "type": "deliberate",
+    "label": "Deliberate: Write a go-to-market plan for a local community app launching in Austin. Include",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmshrbiemfso",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:15:02.541Z",
+    "updatedAt": "2026-03-16T01:15:11.120Z",
+    "output": "Deliberation complete.\nObjective: Develop a comprehensive go-to-market plan for a local community app launching in Austin.\nStrategy: Conduct research on effective user acquisition channels and cost per acquisition for similar apps in Austin. Synthesize findings into a structured go-to-market plan with a clear timeline and milestones. Ensure the plan aligns with Rahul's priorities on building passive income streams and automating routine decisions.\nRisk: yellow\nSubtasks: 2\nTokens: 1923",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmshr96cbouq",
+    "type": "deliberate",
+    "label": "Deliberate: Create board-level documentation for a startup with goals, metrics, open questio",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmshr967mdc9",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T01:14:59.508Z",
+    "updatedAt": "2026-03-16T01:15:05.200Z",
+    "output": "Deliberation complete.\nObjective: Create a comprehensive board-level document for a startup, including goals, metrics, and investor-ready status updates.\nStrategy: First, gather information on the startup's current goals, metrics, and competitive landscape. Then, synthesize this data into a structured board-level document that includes all required elements. Ensure the document is investor-ready with clear revenue projections and MAU targets.\nRisk: green\nSubtasks: 2\nTokens: 2388",
+    "error": null,
+    "filesWritten": []
+  },
+  {
     "id": "mmsgz0p8s7ld",
     "type": "execute-subtask",
     "label": "Subtask: Assign Owners and Deadlines",
@@ -1461,150 +1603,6 @@
     "filesWritten": [
       "03-Operations/Reports/careeregine-{date}-conference-proposals-guide.md",
       "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms6z4fdkmex.md"
-    ]
-  },
-  {
-    "id": "mms72yinofj5",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Efficient Meal Prep Strategies",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms72yg9r4n8"
-    },
-    "createdAt": "2026-03-15T20:16:09.791Z",
-    "updatedAt": "2026-03-15T20:22:22.818Z",
-    "output": "Research Efficient Meal Prep Strategies: ## Finding 1: FoodieCrush Weekly Meal Plan for March 15, 2026 – Includes Grocery Lists and Prep Tips Under 2 Hours\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms72yg9r4n8.md"
-    ]
-  },
-  {
-    "id": "mms72tzc6ob2",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Best Cities for SaaS Startups",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms72twulknu"
-    },
-    "createdAt": "2026-03-15T20:16:03.912Z",
-    "updatedAt": "2026-03-15T20:22:06.444Z",
-    "output": "Research Best Cities for SaaS Startups: ## Finding 1: New York City - Strong SaaS Startup Density with YC Backing\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms72twulknu.md"
-    ]
-  },
-  {
-    "id": "mms72pff57mi",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Salary Negotiation Practices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms72pct7iki"
-    },
-    "createdAt": "2026-03-15T20:15:58.011Z",
-    "updatedAt": "2026-03-15T20:21:58.930Z",
-    "output": "Research Salary Negotiation Practices: ## Finding 1: Startup vs Enterprise Salary Structures for Engineers in Q1 2026\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms72pct7iki.md"
-    ]
-  },
-  {
-    "id": "mms72j7it37h",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Promotion Strategies",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms72j2dja05"
-    },
-    "createdAt": "2026-03-15T20:15:49.950Z",
-    "updatedAt": "2026-03-15T20:21:51.584Z",
-    "output": "Research Promotion Strategies: # Effective Promotion Strategies for Technical Blogs\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms72j2dja05.md"
-    ]
-  },
-  {
-    "id": "mms72j777h4o",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Content Calendar Formats",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms72j1qpsdl"
-    },
-    "createdAt": "2026-03-15T20:15:49.939Z",
-    "updatedAt": "2026-03-15T20:21:16.428Z",
-    "output": "Research Content Calendar Formats: ## Finding 1: ClickUp Content Calendar Template\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms72j1qpsdl.md"
-    ]
-  },
-  {
-    "id": "mms72j6x5j4u",
-    "type": "execute-subtask",
-    "label": "Subtask: Research SEO Best Practices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms72j123ccs"
-    },
-    "createdAt": "2026-03-15T20:15:49.929Z",
-    "updatedAt": "2026-03-15T20:21:03.953Z",
-    "output": "Research SEO Best Practices: ## Finding 1: Topic Clusters and Pillar Pages for Technical Authority\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms72j123ccs.md"
-    ]
-  },
-  {
-    "id": "mms72j6n0o41",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Blog Platform Options",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms72j09pv98"
-    },
-    "createdAt": "2026-03-15T20:15:49.919Z",
-    "updatedAt": "2026-03-15T20:20:45.535Z",
-    "output": "Research Blog Platform Options: ## Hashnode\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms72j09pv98.md"
-    ]
-  },
-  {
-    "id": "mms72d2fr81h",
-    "type": "execute-subtask",
-    "label": "Subtask: Research RSI Prevention Best Practices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms72d02g946"
-    },
-    "createdAt": "2026-03-15T20:15:41.991Z",
-    "updatedAt": "2026-03-15T20:20:33.757Z",
-    "output": "Research RSI Prevention Best Practices: ## Ergonomic Setups for Programmers to Prevent RSI\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms72d02g946.md"
-    ]
-  },
-  {
-    "id": "mms728e1hu0b",
-    "type": "execute-subtask",
-    "label": "Subtask: Compare Datahub, Apache Atlas, and Amundsen",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms728aq4alp"
-    },
-    "createdAt": "2026-03-15T20:15:35.929Z",
-    "updatedAt": "2026-03-15T20:20:29.605Z",
-    "output": "Compare Datahub, Apache Atlas, and Amundsen: ## Finding 1: Apache Atlas Features, Pros, and Cons\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms728aq4alp.md"
     ]
   }
 ]

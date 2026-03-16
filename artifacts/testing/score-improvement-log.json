@@ -113,5 +113,20 @@
       "still_weak": 3,
       "fix_rate": "83%"
     }
+  },
+  {
+    "timestamp": "2026-03-16T01:16:43.047Z",
+    "batch": "re-run-3-topranker-cases-clean",
+    "canonical_cases": 361,
+    "pass_rate": 93.6,
+    "partial_rate": 6.4,
+    "avg_confidence": 89,
+    "changes": "Re-ran 3 TopRanker-referencing PARTIAL cases with clean prompts. All 3 now clean (no weak flags, 6700-7800ch output). Total re-run validation: 21/23 cases re-run, 18/21 improved (86% fix rate). Pipeline fixes validated.",
+    "total_reruns": {
+      "run": 21,
+      "improved": 18,
+      "still_weak": 3,
+      "fix_rate": "86%"
+    }
   }
 ]
