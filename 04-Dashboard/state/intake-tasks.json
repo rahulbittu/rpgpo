@@ -1,5 +1,683 @@
 [
   {
+    "task_id": "t_mmsusgwsx60b",
+    "title": "Design a comprehensive meeting effectiveness system for engineering teams. Inclu",
+    "raw_request": "Design a comprehensive meeting effectiveness system for engineering teams. Include meeting type taxonomy, agenda templates, facilitation techniques, async alternatives, decision documentation, and meeting cost calculator.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:19:51.196Z",
+    "updated_at": "2026-03-16T07:24:54.271Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:20:54.464Z",
+      "interpreted_objective": "Develop a system to enhance the effectiveness of engineering team meetings.",
+      "expected_outcome": "A detailed guide that includes meeting types, agenda templates, facilitation techniques, async alternatives, decision documentation, and a meeting cost calculator.",
+      "key_unknowns": [
+        "Specific meeting types relevant to engineering teams",
+        "Effective facilitation techniques for engineering contexts",
+        "Current best practices for async alternatives",
+        "Methods for calculating meeting costs"
+      ],
+      "recommended_strategy": "First, research best practices and current trends in meeting effectiveness for engineering teams. Then, synthesize this information into a comprehensive guide that includes all requested components. Ensure the guide is practical and immediately applicable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Meeting Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and trends in meeting effectiveness for engineering teams.",
+          "prompt": "Search the web for current best practices and trends in meeting effectiveness specifically for engineering teams. Include information on meeting types, agenda templates, facilitation techniques, async alternatives, decision documentation, and meeting cost calculators. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Meeting Effectiveness Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on meeting effectiveness for engineering teams, structured and ready for immediate use.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on meeting effectiveness for engineering teams. Include specific sections on meeting type taxonomy, agenda templates, facilitation techniques, async alternatives, decision documentation, and a meeting cost calculator. Ensure the guide is practical and immediately applicable.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-meeting-effectiveness-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1939
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsusgu3qopw",
+    "title": "Create a comprehensive guide to building a pantry organization system. Include z",
+    "raw_request": "Create a comprehensive guide to building a pantry organization system. Include zone-based layout, FIFO rotation methodology, bulk buying optimization, expiration tracking, and meal prep integration with pantry inventory.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:19:51.099Z",
+    "updated_at": "2026-03-16T07:24:45.376Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:20:46.937Z",
+      "interpreted_objective": "Create a detailed guide on setting up an organized pantry system incorporating zone-based layout, FIFO rotation, bulk buying, expiration tracking, and meal prep integration.",
+      "expected_outcome": "A comprehensive, actionable guide that helps users efficiently organize and manage their pantry with specific strategies and methods.",
+      "key_unknowns": [
+        "Specific preferences or constraints of the target audience",
+        "Current popular methods or tools for pantry organization",
+        "Integration techniques for meal prep with pantry inventory"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and tools for pantry organization, focusing on zone-based layouts, FIFO rotation, and bulk buying strategies. Synthesize this information into a structured guide with actionable steps and examples. Ensure the guide includes practical tips for expiration tracking and integrating meal prep with pantry inventory.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research current pantry organization strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current strategies, tools, and best practices for pantry organization.",
+          "prompt": "Search the web for current, specific information about pantry organization strategies, including zone-based layouts, FIFO rotation, bulk buying optimization, expiration tracking, and meal prep integration. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize a comprehensive pantry organization guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed, structured guide on pantry organization with actionable steps and examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide to building a pantry organization system. Include zone-based layout, FIFO rotation methodology, bulk buying optimization, expiration tracking, and meal prep integration with pantry inventory. Provide specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2072
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsusgqu6164",
+    "title": "Write a complete series concept for a comedy drama about four retired astronauts",
+    "raw_request": "Write a complete series concept for a comedy drama about four retired astronauts who open a space tourism consulting firm but keep getting drawn back into actual space missions. Include character profiles and pilot episode outline.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:19:50.982Z",
+    "updated_at": "2026-03-16T07:24:37.166Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:20:40.951Z",
+      "interpreted_objective": "Create a detailed series concept for a comedy-drama about retired astronauts starting a space tourism consulting firm.",
+      "expected_outcome": "A comprehensive document that includes a series concept, character profiles, and a pilot episode outline.",
+      "key_unknowns": [
+        "Specific character traits and backgrounds",
+        "Tone and style of the series",
+        "Plot details for the pilot episode"
+      ],
+      "recommended_strategy": "Conduct research on existing comedy-drama series for inspiration and trends. Develop character profiles and a pilot episode outline based on this research, ensuring originality and alignment with the series concept.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Comedy-Drama Series",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of trends and successful elements in comedy-drama series.",
+          "prompt": "Search the web for current trends and successful elements in comedy-drama television series. Include specific examples, character dynamics, and narrative structures.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Series Concept and Pilot Outline",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed series concept document with character profiles and a pilot episode outline.",
+          "prompt": "Based on the research results, create a detailed series concept for a comedy-drama about retired astronauts starting a space tourism consulting firm. Include character profiles for the four main characters and an outline for the pilot episode.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-series_concept.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1879
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsusgop5zor",
+    "title": "Plan an 8-day architecture and design tour through Barcelona and Valencia. Inclu",
+    "raw_request": "Plan an 8-day architecture and design tour through Barcelona and Valencia. Include Gaudi masterpieces, City of Arts and Sciences, Gothic Quarter walking tour, La Boqueria food market, and modernist interior design studios.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:19:50.905Z",
+    "updated_at": "2026-03-16T07:24:25.334Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:20:35.211Z",
+      "interpreted_objective": "Plan an 8-day architecture and design tour in Barcelona and Valencia, focusing on specific cultural and architectural highlights.",
+      "expected_outcome": "A detailed itinerary for an 8-day tour featuring Gaudi masterpieces, the City of Arts and Sciences, Gothic Quarter, La Boqueria, and modernist design studios.",
+      "key_unknowns": [
+        "Current opening hours and ticket availability for each site",
+        "Transportation options between Barcelona and Valencia",
+        "Availability of guided tours or local experts"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on each site and its accessibility. Synthesize this data into a coherent itinerary, ensuring a balanced mix of activities each day. Consider transportation logistics and local dining options to enhance the tour experience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Barcelona and Valencia Highlights",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Gaudi masterpieces, City of Arts and Sciences, Gothic Quarter, La Boqueria, and modernist design studios.",
+          "prompt": "Search the web for current, specific information about the Gaudi masterpieces, City of Arts and Sciences, Gothic Quarter walking tours, La Boqueria food market, and modernist interior design studios in Barcelona and Valencia. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Tour Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 8-day itinerary for the architecture and design tour.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an 8-day itinerary for an architecture and design tour in Barcelona and Valencia. Include specific sites, daily activities, transportation options, and dining recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-architecture_design_tour.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2507
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsusgl49y08",
+    "title": "Design a comprehensive hand and wrist health protocol for developers. Include ca",
+    "raw_request": "Design a comprehensive hand and wrist health protocol for developers. Include carpal tunnel prevention exercises, tendon gliding routines, ergonomic keyboard/mouse positioning, cold therapy protocols, and when to seek medical intervention.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:19:50.776Z",
+    "updated_at": "2026-03-16T07:24:17.002Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:20:27.837Z",
+      "interpreted_objective": "Design a comprehensive hand and wrist health protocol for developers, focusing on prevention and ergonomic practices.",
+      "expected_outcome": "A detailed, evidence-based protocol document outlining exercises, ergonomic setups, and interventions for hand and wrist health in developers.",
+      "key_unknowns": [
+        "Specific exercises most effective for carpal tunnel prevention",
+        "Current best practices for ergonomic keyboard/mouse positioning",
+        "Effective cold therapy protocols for hand/wrist health"
+      ],
+      "recommended_strategy": "Conduct research to identify evidence-based exercises and ergonomic practices. Synthesize this information into a comprehensive protocol. Ensure the protocol is actionable and includes safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research hand and wrist health practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current, evidence-based practices for hand and wrist health, including exercises, ergonomic setups, and cold therapy.",
+          "prompt": "Search the web for current, specific information about hand and wrist health practices for developers. Focus on carpal tunnel prevention exercises, tendon gliding routines, ergonomic keyboard/mouse positioning, cold therapy protocols, and guidelines for when to seek medical intervention. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize hand and wrist health protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive protocol document outlining exercises, ergonomic setups, and interventions for hand and wrist health in developers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive hand and wrist health protocol for developers. Include specific exercises for carpal tunnel prevention, tendon gliding routines, ergonomic keyboard/mouse positioning, cold therapy protocols, and guidelines for when to seek medical intervention. Ensure the protocol is evidence-based, actionable, and includes safety disclaimers where appropriate.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-hand-wrist-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1956
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsusgizbmce",
+    "title": "Create a comprehensive guide to building executive communication skills. Include",
+    "raw_request": "Create a comprehensive guide to building executive communication skills. Include pyramid principle writing, data storytelling, boardroom presentation techniques, written vs verbal communication optimization, and managing difficult conversations up.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:19:50.699Z",
+    "updated_at": "2026-03-16T07:24:06.962Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:20:21.484Z",
+      "interpreted_objective": "Create a comprehensive guide on building executive communication skills.",
+      "expected_outcome": "A detailed guide covering pyramid principle writing, data storytelling, boardroom presentation techniques, communication optimization, and managing difficult conversations.",
+      "key_unknowns": [
+        "Specific format or length of the guide",
+        "Any particular audience focus within the startup context"
+      ],
+      "recommended_strategy": "Research current best practices and strategies in executive communication. Synthesize the findings into a structured guide that covers each requested topic comprehensively. Ensure the guide is actionable and relevant to startup leaders.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Executive Communication Skills",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research findings on executive communication skills.",
+          "prompt": "Search the web for current, specific information about executive communication skills, including pyramid principle writing, data storytelling, boardroom presentation techniques, written vs verbal communication optimization, and managing difficult conversations. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Executive Communication",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and comprehensive guide on building executive communication skills.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on building executive communication skills. Include sections on pyramid principle writing, data storytelling, boardroom presentation techniques, written vs verbal communication optimization, and managing difficult conversations. Ensure the guide is actionable and relevant to startup leaders.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1975
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmsusgh1aro2",
+    "title": "Research the best smart scales for health tracking beyond weight. Compare Within",
+    "raw_request": "Research the best smart scales for health tracking beyond weight. Compare Withings Body Comp, Garmin Index S2, and Renpho Elis Dream with body composition accuracy, trend tracking, and health ecosystem integration.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:19:50.629Z",
+    "updated_at": "2026-03-16T07:23:57.480Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:20:15.549Z",
+      "interpreted_objective": "Research and compare the best smart scales for health tracking beyond weight, focusing on Withings Body Comp, Garmin Index S2, and Renpho Elis Dream.",
+      "expected_outcome": "A comprehensive report comparing the three smart scales based on body composition accuracy, trend tracking, and health ecosystem integration, with actionable recommendations.",
+      "key_unknowns": [
+        "Current market data on smart scales",
+        "Specific features and integrations of each scale",
+        "Accuracy of body composition measurements for each scale"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on the specified smart scales, focusing on body composition accuracy, trend tracking, and health ecosystem integration. Then, synthesize this information into a structured report with comparisons and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Smart Scales",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Withings Body Comp, Garmin Index S2, and Renpho Elis Dream, including body composition accuracy, trend tracking, and health ecosystem integration.",
+          "prompt": "Search the web for current, specific information about Withings Body Comp, Garmin Index S2, and Renpho Elis Dream smart scales. Include details on body composition accuracy, trend tracking features, and health ecosystem integration. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Smart Scale Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the three smart scales with actionable recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for Withings Body Comp, Garmin Index S2, and Renpho Elis Dream smart scales. Include specific comparisons on body composition accuracy, trend tracking, and health ecosystem integration, with concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-smart-scales.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2185
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsusgeqzb3h",
+    "title": "Explain how HTTP/3 and QUIC work compared to HTTP/2 over TCP. Cover connection e",
+    "raw_request": "Explain how HTTP/3 and QUIC work compared to HTTP/2 over TCP. Cover connection establishment, stream multiplexing without head-of-line blocking, connection migration, 0-RTT resumption, and congestion control differences.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:19:50.546Z",
+    "updated_at": "2026-03-16T07:23:49.061Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:20:09.403Z",
+      "interpreted_objective": "Explain the differences between HTTP/3 with QUIC and HTTP/2 over TCP, focusing on key technical aspects.",
+      "expected_outcome": "A comprehensive explanation that covers connection establishment, stream multiplexing, connection migration, 0-RTT resumption, and congestion control differences between HTTP/3 with QUIC and HTTP/2 over TCP.",
+      "key_unknowns": [
+        "Detailed technical differences in connection establishment between HTTP/3 and HTTP/2",
+        "How stream multiplexing without head-of-line blocking is achieved in HTTP/3",
+        "Mechanisms of connection migration in HTTP/3",
+        "Implementation of 0-RTT resumption in HTTP/3",
+        "Differences in congestion control mechanisms between HTTP/3 and HTTP/2"
+      ],
+      "recommended_strategy": "First, conduct web research to gather detailed and current information on HTTP/3 and QUIC compared to HTTP/2 over TCP. Then, synthesize this information into a clear and concise report that highlights the key differences and technical aspects.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research HTTP/3 and QUIC vs HTTP/2 over TCP",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on the technical differences between HTTP/3 with QUIC and HTTP/2 over TCP.",
+          "prompt": "Search the web for current, specific information about how HTTP/3 with QUIC works compared to HTTP/2 over TCP. Focus on connection establishment, stream multiplexing without head-of-line blocking, connection migration, 0-RTT resumption, and congestion control differences. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Findings into Report",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "openai",
+          "expected_output": "A report that explains the differences between HTTP/3 with QUIC and HTTP/2 over TCP, covering all specified technical aspects.",
+          "prompt": "Based on the research results, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2319
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsusge8od24",
+    "title": "Create a guide to alternative investments for accredited investors. Include priv",
+    "raw_request": "Create a guide to alternative investments for accredited investors. Include private credit, farmland (AcreTrader), art (Masterworks), wine futures, and startup secondaries with liquidity analysis and correlation to public markets.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:19:50.528Z",
+    "updated_at": "2026-03-16T07:23:42.749Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:20:02.605Z",
+      "interpreted_objective": "Create a comprehensive guide on alternative investments for accredited investors.",
+      "expected_outcome": "A detailed guide covering private credit, farmland, art, wine futures, and startup secondaries with liquidity analysis and correlation to public markets.",
+      "key_unknowns": [
+        "Current market data and trends for each investment type",
+        "Specific liquidity analysis for each investment",
+        "Correlation data of these investments to public markets"
+      ],
+      "recommended_strategy": "Conduct research to gather current market data and trends for each specified alternative investment. Analyze liquidity and correlation to public markets for each investment type. Synthesize findings into a comprehensive guide with actionable insights and real examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Alternative Investments",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current market data and trends for private credit, farmland, art, wine futures, and startup secondaries.",
+          "prompt": "Search the web for current, specific information about private credit, farmland (AcreTrader), art (Masterworks), wine futures, and startup secondaries. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Investment Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on alternative investments for accredited investors, including liquidity analysis and correlation to public markets.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on alternative investments for accredited investors. Include private credit, farmland (AcreTrader), art (Masterworks), wine futures, and startup secondaries with liquidity analysis and correlation to public markets. Provide specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2401
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsusgdnjert",
+    "title": "Design a comprehensive chaos engineering program for a production Kubernetes clu",
+    "raw_request": "Design a comprehensive chaos engineering program for a production Kubernetes cluster. Include Litmus Chaos vs Chaos Monkey comparison, steady-state hypothesis design, blast radius containment, game day facilitation, and organizational buy-in strategies.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:19:50.507Z",
+    "updated_at": "2026-03-16T07:23:31.351Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:19:58.042Z",
+      "interpreted_objective": "Design a chaos engineering program for Kubernetes clusters, comparing Litmus Chaos and Chaos Monkey, and including strategies for organizational adoption.",
+      "expected_outcome": "A detailed report outlining a chaos engineering program with comparisons, strategies, and implementation steps.",
+      "key_unknowns": [
+        "Current capabilities and limitations of Litmus Chaos and Chaos Monkey",
+        "Best practices for designing steady-state hypotheses in Kubernetes",
+        "Effective strategies for blast radius containment",
+        "Approaches to facilitate game day exercises",
+        "Methods to achieve organizational buy-in for chaos engineering"
+      ],
+      "recommended_strategy": "Conduct a comprehensive analysis of Litmus Chaos and Chaos Monkey to identify their strengths and weaknesses. Develop a detailed plan for implementing chaos engineering in Kubernetes clusters, focusing on hypothesis design, blast radius containment, and game day facilitation. Include strategies for securing organizational buy-in.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Chaos Engineering Tools",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Litmus Chaos and Chaos Monkey, including features, limitations, and use cases.",
+          "prompt": "Search the web for current, specific information about Litmus Chaos and Chaos Monkey, focusing on their capabilities, limitations, and typical use cases in Kubernetes environments. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Chaos Engineering Program",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report detailing a chaos engineering program for Kubernetes, including comparisons, strategies, and implementation steps.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed chaos engineering program for Kubernetes clusters. Include specific comparisons of Litmus Chaos and Chaos Monkey, strategies for steady-state hypothesis design, blast radius containment, game day facilitation, and organizational buy-in.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-chaos-engineering-program.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1962
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
     "task_id": "t_mmsukvmi5x0i",
     "title": "Design a comprehensive personal risk management framework. Include insurance aud",
     "raw_request": "Design a comprehensive personal risk management framework. Include insurance audit methodology, emergency fund sizing, identity theft prevention, digital security posture, and estate document checklist.",

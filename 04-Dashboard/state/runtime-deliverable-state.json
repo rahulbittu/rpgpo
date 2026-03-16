@@ -13049,5 +13049,161 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-16T07:14:57.781Z"
+  },
+  "t_mmsusgdnjert": {
+    "task_id": "t_mmsusgdnjert",
+    "deliverable_id": "dlv_rpgpo_tmmsusgdnjert_shopping_34db10eb",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:19:58.079Z"
+  },
+  "t_mmsusge8od24": {
+    "task_id": "t_mmsusge8od24",
+    "deliverable_id": "dlv_rpgpo_tmmsusge8od24_document_7a6b7872",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:20:02.629Z"
+  },
+  "t_mmsusgeqzb3h": {
+    "task_id": "t_mmsusgeqzb3h",
+    "deliverable_id": "dlv_rpgpo_tmmsusgeqzb3h_recommendation_75e5a042",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:20:09.433Z"
+  },
+  "t_mmsusgh1aro2": {
+    "task_id": "t_mmsusgh1aro2",
+    "deliverable_id": "dlv_rpgpo_tmmsusgh1aro2_recommendation_a45b666e",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:20:15.580Z"
+  },
+  "t_mmsusgizbmce": {
+    "task_id": "t_mmsusgizbmce",
+    "deliverable_id": "dlv_rpgpo_tmmsusgizbmce_code_change_ba29f3ac",
+    "engine_id": "startup",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "diffs",
+      "implementation_plan",
+      "changed_files",
+      "diff_preview"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:20:21.501Z"
+  },
+  "t_mmsusgl49y08": {
+    "task_id": "t_mmsusgl49y08",
+    "deliverable_id": "dlv_rpgpo_tmmsusgl49y08_action_plan_56e241c9",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:20:27.869Z"
+  },
+  "t_mmsusgop5zor": {
+    "task_id": "t_mmsusgop5zor",
+    "deliverable_id": "dlv_rpgpo_tmmsusgop5zor_document_bac929ee",
+    "engine_id": "general",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:20:35.244Z"
+  },
+  "t_mmsusgqu6164": {
+    "task_id": "t_mmsusgqu6164",
+    "deliverable_id": "dlv_rpgpo_tmmsusgqu6164_document_a5970007",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:20:40.980Z"
+  },
+  "t_mmsusgu3qopw": {
+    "task_id": "t_mmsusgu3qopw",
+    "deliverable_id": "dlv_rpgpo_tmmsusgu3qopw_shopping_0acf14ba",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:20:46.958Z"
+  },
+  "t_mmsusgwsx60b": {
+    "task_id": "t_mmsusgwsx60b",
+    "deliverable_id": "dlv_rpgpo_tmmsusgwsx60b_document_3b3cfa8f",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:20:54.498Z"
   }
 }
