@@ -1,5 +1,684 @@
 [
   {
+    "task_id": "t_mmsqzqaw4h52",
+    "title": "Design a comprehensive personal API for life management. Include health endpoint",
+    "raw_request": "Design a comprehensive personal API for life management. Include health endpoints, finance endpoints, productivity metrics, and dashboard design.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:33:31.496Z",
+    "updated_at": "2026-03-16T05:37:00.842Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:34:25.817Z",
+      "interpreted_objective": "Design a personal API for life management with endpoints for health, finance, productivity, and a dashboard.",
+      "expected_outcome": "A detailed design document outlining the structure and functionality of a personal API for life management.",
+      "key_unknowns": [
+        "Specific functionalities and data requirements for each endpoint",
+        "Preferred technologies or frameworks for API development",
+        "Dashboard design preferences and features"
+      ],
+      "recommended_strategy": "First, gather detailed requirements and preferences for each endpoint and the dashboard. Then, design the API structure, considering scalability and integration with existing systems. Finally, create a comprehensive design document outlining all components and their interactions.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of API design and dashboard layout"
+      ],
+      "subtasks": [
+        {
+          "title": "Research API Design Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices for designing APIs with health, finance, and productivity endpoints.",
+          "prompt": "Search the web for current best practices in designing APIs that include health, finance, and productivity metrics. Include specific examples, technologies, and design considerations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize API Design Recommendations",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed design document for the personal API, including endpoint specifications and dashboard layout.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive design document for a personal API for life management. Include specific endpoint functionalities for health, finance, and productivity, and outline the dashboard design.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2101
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsqzphlff04",
+    "title": "Create a guide to building an efficient home recycling and composting system. In",
+    "raw_request": "Create a guide to building an efficient home recycling and composting system. Include sorting stations, composting methods, and local recycling rules navigation.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:33:30.441Z",
+    "updated_at": "2026-03-16T05:36:55.753Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:34:21.888Z",
+      "interpreted_objective": "Create a guide for building an efficient home recycling and composting system.",
+      "expected_outcome": "A comprehensive guide detailing sorting stations, composting methods, and navigation of local recycling rules.",
+      "key_unknowns": [
+        "Specific local recycling rules for different regions",
+        "Effective composting methods suitable for home use",
+        "Design and setup of efficient sorting stations"
+      ],
+      "recommended_strategy": "Conduct research to gather information on local recycling rules, effective composting methods, and sorting station designs. Synthesize this information into a clear, actionable guide. Ensure the guide is tailored to be adaptable to different local regulations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research local recycling rules and effective composting methods",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on local recycling rules and composting methods.",
+          "prompt": "Search the web for current, specific information about local recycling rules in various regions and effective home composting methods. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize guide for home recycling and composting system",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on building an efficient home recycling and composting system.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a guide for building an efficient home recycling and composting system. Include details on sorting stations, composting methods, and how to navigate local recycling rules.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2098
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsqzoopu8xi",
+    "title": "Write a complete treatment for a psychological thriller about a programmer who r",
+    "raw_request": "Write a complete treatment for a psychological thriller about a programmer who realizes their memories are being edited by an AI they created. 90 minutes.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:33:29.401Z",
+    "updated_at": "2026-03-16T05:36:49.196Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:34:17.760Z",
+      "interpreted_objective": "Write a detailed treatment for a psychological thriller film about a programmer whose memories are being altered by an AI they created.",
+      "expected_outcome": "A complete and compelling treatment document that outlines the plot, characters, and themes of the film, ready for further development into a screenplay.",
+      "key_unknowns": [
+        "Specific plot points and character arcs",
+        "The role and capabilities of the AI within the story",
+        "The psychological and emotional journey of the protagonist"
+      ],
+      "recommended_strategy": "Research existing psychological thrillers and AI-related narratives to gather inspiration and avoid clichés. Then, synthesize this information into an original treatment that explores the psychological impact of AI on human memory and identity.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research AI and psychological thriller narratives",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of key themes, plot devices, and character archetypes in psychological thrillers and AI narratives.",
+          "prompt": "Search the web for current, specific information about psychological thriller films and AI-related narratives. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize treatment for the film",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete treatment document for the psychological thriller film.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed treatment for a psychological thriller about a programmer whose memories are being edited by an AI they created. Include plot summary, character descriptions, and thematic elements.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-2023-psychological-thriller-treatment.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1956
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsqznw0lpn4",
+    "title": "Plan a 5-day autumn road trip through Vermont and New Hampshire. Include foliage",
+    "raw_request": "Plan a 5-day autumn road trip through Vermont and New Hampshire. Include foliage viewing, covered bridges, maple syrup farms, and cozy inns.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:33:28.368Z",
+    "updated_at": "2026-03-16T05:36:42.291Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:34:12.117Z",
+      "interpreted_objective": "Plan a detailed 5-day autumn road trip itinerary through Vermont and New Hampshire focusing on foliage, covered bridges, maple syrup farms, and cozy inns.",
+      "expected_outcome": "A comprehensive itinerary with specific locations, dates, costs, and logistics for a 5-day road trip in Vermont and New Hampshire.",
+      "key_unknowns": [
+        "Specific locations for foliage viewing",
+        "Availability and prices of inns",
+        "Maple syrup farm tours",
+        "Best routes for covered bridges"
+      ],
+      "recommended_strategy": "First, conduct research to identify key locations and attractions in Vermont and New Hampshire that fit the criteria. Then, synthesize this information into a detailed itinerary, including logistics, costs, and travel recommendations.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Vermont and New Hampshire Attractions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of specific attractions, locations, and accommodations in Vermont and New Hampshire, including foliage viewing spots, covered bridges, maple syrup farms, and cozy inns, with current availability and pricing.",
+          "prompt": "Search the web for current, specific information about autumn attractions in Vermont and New Hampshire. Focus on foliage viewing spots, covered bridges, maple syrup farms, and cozy inns. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Road Trip Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 5-day road trip itinerary with specific locations, dates, costs, and logistics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 5-day road trip itinerary through Vermont and New Hampshire. Include specific locations for foliage viewing, covered bridges, maple syrup farms, and cozy inns, with costs and logistics.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-2023-10-roadtrip-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1936
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsqzn3bysfn",
+    "title": "Design a comprehensive skin health protocol for tech workers. Include screen pro",
+    "raw_request": "Design a comprehensive skin health protocol for tech workers. Include screen protection, hydration, nutrition, and dermatologist visit schedule.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:33:27.335Z",
+    "updated_at": "2026-03-16T05:36:34.162Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:33:53.468Z",
+      "interpreted_objective": "Design a comprehensive skin health protocol specifically tailored for tech workers, addressing screen protection, hydration, nutrition, and dermatologist visit schedules.",
+      "expected_outcome": "A detailed, evidence-based skin health protocol that tech workers can follow to maintain and improve their skin health, considering their unique work environment and lifestyle.",
+      "key_unknowns": [
+        "Specific skin health challenges faced by tech workers",
+        "Current best practices for screen protection and hydration specific to tech workers",
+        "Nutritional guidelines that support skin health for individuals with a sedentary lifestyle"
+      ],
+      "recommended_strategy": "Conduct research to identify the unique skin health challenges faced by tech workers and current best practices for screen protection, hydration, and nutrition. Synthesize this information into a comprehensive protocol that includes actionable steps and a dermatologist visit schedule.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Skin Health Challenges for Tech Workers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of specific skin health challenges faced by tech workers, including citations.",
+          "prompt": "Search the web for current, specific information about skin health challenges faced by tech workers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comprehensive Skin Health Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed skin health protocol for tech workers, including screen protection, hydration, nutrition, and dermatologist visit schedule.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive skin health protocol for tech workers. Include specific recommendations for screen protection, hydration, nutrition, and a dermatologist visit schedule.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-skin-health-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1897
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsqzmalytre",
+    "title": "Create a guide to successfully leading a remote engineering team across time zon",
+    "raw_request": "Create a guide to successfully leading a remote engineering team across time zones. Include async communication, meeting scheduling, and building team culture.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:33:26.301Z",
+    "updated_at": "2026-03-16T05:36:28.030Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:33:49.348Z",
+      "interpreted_objective": "Create a comprehensive guide for leading a remote engineering team across time zones.",
+      "expected_outcome": "A detailed guide that includes strategies for async communication, meeting scheduling, and building team culture for remote engineering teams.",
+      "key_unknowns": [
+        "Specific challenges faced by remote engineering teams in different time zones",
+        "Best practices for async communication and meeting scheduling",
+        "Effective methods for building team culture remotely"
+      ],
+      "recommended_strategy": "Research current best practices and challenges in leading remote engineering teams across time zones. Synthesize this information into a detailed guide with actionable strategies for async communication, meeting scheduling, and team culture building.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Remote Team Management",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices and challenges in managing remote engineering teams across time zones.",
+          "prompt": "Search the web for current, specific information about best practices and challenges in managing remote engineering teams across time zones. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Leading Remote Teams",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide with actionable strategies for async communication, meeting scheduling, and building team culture for remote engineering teams.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for leading remote engineering teams across time zones. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2281
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsqzli3tmrj",
+    "title": "Research the best home backup power solutions for remote workers. Compare UPS sy",
+    "raw_request": "Research the best home backup power solutions for remote workers. Compare UPS systems, battery backups, and portable generators. Include runtime calculations.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:33:25.275Z",
+    "updated_at": "2026-03-16T05:36:17.567Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:33:43.542Z",
+      "interpreted_objective": "Research and compare home backup power solutions for remote workers, focusing on UPS systems, battery backups, and portable generators, including runtime calculations.",
+      "expected_outcome": "A comprehensive report detailing the best home backup power solutions for remote workers, with specific product recommendations, pros and cons, and runtime calculations.",
+      "key_unknowns": [
+        "Current market prices and reviews for UPS systems, battery backups, and portable generators",
+        "Specific runtime capabilities of each solution",
+        "Pros and cons of each type of power solution for remote work"
+      ],
+      "recommended_strategy": "First, conduct research to gather current information on UPS systems, battery backups, and portable generators, focusing on their prices, reviews, and runtime capabilities. Then, synthesize this information into a comparative report with specific product recommendations and runtime calculations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Backup Power Solutions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current market data on UPS systems, battery backups, and portable generators, including prices, reviews, and runtime capabilities.",
+          "prompt": "Search the web for current, specific information about home backup power solutions for remote workers, focusing on UPS systems, battery backups, and portable generators. Include real names, numbers, prices, runtime capabilities, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Power Solutions Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing UPS systems, battery backups, and portable generators, with specific product recommendations, pros and cons, and runtime calculations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for home backup power solutions for remote workers. Include specific product names, prices, runtime calculations, pros and cons, and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-home-backup-power-solutions.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1999
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsqzkpakhlj",
+    "title": "Teach me about lock-free data structures. Cover compare-and-swap, atomic operati",
+    "raw_request": "Teach me about lock-free data structures. Cover compare-and-swap, atomic operations, wait-free algorithms, and practical implementations in concurrent systems.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:33:24.238Z",
+    "updated_at": "2026-03-16T05:36:09.290Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:33:39.735Z",
+      "interpreted_objective": "Provide an educational overview of lock-free data structures, including compare-and-swap, atomic operations, wait-free algorithms, and their practical implementations in concurrent systems.",
+      "expected_outcome": "A comprehensive and clear explanation of lock-free data structures that includes examples and practical implementations, tailored for someone with a strong technical background in data engineering.",
+      "key_unknowns": [
+        "The specific depth of detail required for each topic",
+        "The preferred format for presenting the information (e.g., text, diagrams, code examples)"
+      ],
+      "recommended_strategy": "First, conduct research to gather detailed information on lock-free data structures, focusing on compare-and-swap, atomic operations, and wait-free algorithms. Then, synthesize this information into a concise educational report that includes practical examples and implementations in concurrent systems. Ensure the content is accessible to someone with a technical background in data engineering.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Lock-Free Data Structures",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on lock-free data structures, including compare-and-swap, atomic operations, wait-free algorithms, and practical implementations.",
+          "prompt": "Search the web for current, specific information about lock-free data structures, focusing on compare-and-swap, atomic operations, wait-free algorithms, and practical implementations in concurrent systems. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Educational Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive educational report on lock-free data structures, including explanations and practical examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an educational report on lock-free data structures. Include explanations of compare-and-swap, atomic operations, wait-free algorithms, and practical implementations in concurrent systems. Ensure the content is clear and accessible for someone with a strong technical background in data engineering.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2102
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsqzjw28608",
+    "title": "Create a guide to understanding and using health savings accounts strategically.",
+    "raw_request": "Create a guide to understanding and using health savings accounts strategically. Include triple tax advantage, investment options, and using HSA as a retirement vehicle.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:33:23.186Z",
+    "updated_at": "2026-03-16T05:36:02.045Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:33:34.247Z",
+      "interpreted_objective": "Create a strategic guide on understanding and using health savings accounts (HSAs) effectively, focusing on tax advantages, investment options, and retirement planning.",
+      "expected_outcome": "A comprehensive guide that explains HSAs, highlights their triple tax advantage, explores investment options, and demonstrates how to use HSAs as a retirement vehicle, with actionable insights and examples.",
+      "key_unknowns": [
+        "Current investment options available for HSAs",
+        "Specific examples of using HSAs as a retirement vehicle",
+        "Recent data on the triple tax advantage of HSAs"
+      ],
+      "recommended_strategy": "First, conduct research to gather the latest information on HSAs, focusing on tax benefits, investment options, and their use in retirement planning. Then, synthesize this information into a detailed guide with specific examples and actionable steps.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current HSA Information",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on HSAs including tax advantages, investment options, and retirement strategies with citations.",
+          "prompt": "Search the web for current, specific information about health savings accounts (HSAs), focusing on their triple tax advantage, available investment options, and strategies for using them as a retirement vehicle. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize HSA Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on HSAs with actionable insights, examples, and detailed explanations.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comprehensive guide on health savings accounts (HSAs). Include detailed explanations of the triple tax advantage, investment options, and strategies for using HSAs as a retirement vehicle, with specific examples and actionable steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-HSA-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2283
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsqzj37rp8n",
+    "title": "Write a comprehensive guide to implementing multi-tenancy in a SaaS application.",
+    "raw_request": "Write a comprehensive guide to implementing multi-tenancy in a SaaS application. Include database isolation strategies, tenant routing, data separation, and scaling considerations.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:33:22.147Z",
+    "updated_at": "2026-03-16T05:35:15.056Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:33:28.123Z",
+      "interpreted_objective": "Create a comprehensive guide on implementing multi-tenancy in SaaS applications.",
+      "expected_outcome": "A detailed, actionable guide that covers database isolation, tenant routing, data separation, and scaling for SaaS applications.",
+      "key_unknowns": [
+        "Specific audience for the guide",
+        "Preferred depth of technical detail",
+        "Existing knowledge level of the audience"
+      ],
+      "recommended_strategy": "First, conduct research to gather current best practices and strategies for implementing multi-tenancy in SaaS applications. Then, synthesize this information into a structured guide that addresses database isolation strategies, tenant routing, data separation, and scaling considerations. Ensure the guide is clear and actionable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Multi-Tenancy Best Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report detailing current best practices for multi-tenancy in SaaS applications.",
+          "prompt": "Search the web for current best practices and strategies for implementing multi-tenancy in SaaS applications. Include details on database isolation strategies, tenant routing, data separation, and scaling considerations. Provide real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Multi-Tenancy Implementation Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on implementing multi-tenancy in SaaS applications.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide that covers database isolation strategies, tenant routing, data separation, and scaling considerations for SaaS applications. Ensure the guide is clear, actionable, and tailored to a technical audience.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2035
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsqru5mucpa",
     "title": "Design a comprehensive focus management system for knowledge workers with ADHD t",
     "raw_request": "Design a comprehensive focus management system for knowledge workers with ADHD tendencies. Include environment design, task chunking, accountability, and recovery protocols.",
