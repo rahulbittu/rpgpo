@@ -7,13 +7,13 @@
     "strict_fail": 0,
     "avg_confidence": 89
   },
-  "commits": 81,
+  "commits": 82,
   "docs_rewritten": [
     "README.md",
     "engine-maturity-scoreboard.md",
     "harness-summary.md"
   ],
   "legacy_ids_in_public_docs": 0,
-  "updated_at": "2026-03-16T01:31:27.379Z",
-  "last_action": "8 fresh tests: 8/8 clean. CSS round 3: controls, costs, settings, board button."
+  "updated_at": "2026-03-16T01:35:53.791Z",
+  "last_action": "8 tests: 5/8 fully clean, 3/8 have minor search gaps but substantial output. MissionStatus files renamed to canonical names. TopRanker reports archived."
 }
