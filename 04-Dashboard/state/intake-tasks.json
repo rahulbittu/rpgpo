@@ -1,5 +1,681 @@
 [
   {
+    "task_id": "t_mmtifxye8lb6",
+    "title": "Design a comprehensive mentorship matching and program management system for eng",
+    "raw_request": "Design a comprehensive mentorship matching and program management system for engineering organizations. Include matching criteria, structured conversation guides, milestone tracking, program evaluation metrics, and scaling beyond 50 pairs.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:21:57.542Z",
+    "updated_at": "2026-03-16T18:28:21.442Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:23:24.158Z",
+      "interpreted_objective": "Design a mentorship matching and management system for engineering organizations.",
+      "expected_outcome": "A detailed blueprint for a scalable mentorship program with defined criteria, guides, tracking, and evaluation metrics.",
+      "key_unknowns": [
+        "Specific matching criteria for engineering mentorship",
+        "Effective program evaluation metrics",
+        "Strategies for scaling beyond 50 mentorship pairs"
+      ],
+      "recommended_strategy": "Conduct research to identify best practices in mentorship programs, focusing on matching criteria and evaluation metrics. Then, synthesize findings into a structured program design with scalability considerations.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices in Mentorship Programs",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of best practices and strategies for mentorship programs in engineering organizations.",
+          "prompt": "Search the web for current best practices in mentorship programs for engineering organizations. Include specific matching criteria, conversation guides, milestone tracking methods, and evaluation metrics. Provide real examples, names, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Mentorship Program Design",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing a comprehensive mentorship program design.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive mentorship program design for engineering organizations. Include matching criteria, structured conversation guides, milestone tracking, program evaluation metrics, and strategies for scaling beyond 50 pairs.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-mentorship_program_design.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2420
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtifxw5ue37",
+    "title": "Create a guide to building a home seed starting setup for vegetable gardening. I",
+    "raw_request": "Create a guide to building a home seed starting setup for vegetable gardening. Include grow light selection, heat mat requirements, seed starting mix, hardening off schedule, and transplanting timeline by climate zone.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:21:57.461Z",
+    "updated_at": "2026-03-16T18:28:03.126Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:23:16.301Z",
+      "interpreted_objective": "Create a comprehensive guide for setting up a home seed starting system for vegetable gardening.",
+      "expected_outcome": "A detailed guide covering grow light selection, heat mat requirements, seed starting mix, hardening off schedule, and transplanting timeline by climate zone.",
+      "key_unknowns": [
+        "Specific climate zones to cover",
+        "Preferred format for the guide",
+        "Level of detail required for each section"
+      ],
+      "recommended_strategy": "Research current best practices for home seed starting setups, focusing on grow lights, heat mats, seed starting mixes, hardening off schedules, and transplanting timelines. Synthesize this information into a clear and actionable guide tailored to different climate zones.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Seed Starting Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices for home seed starting setups, including grow light selection, heat mat requirements, seed starting mix, hardening off schedule, and transplanting timeline.",
+          "prompt": "Search the web for current, specific information about best practices for home seed starting setups for vegetable gardening. Include details on grow light selection, heat mat requirements, seed starting mix, hardening off schedule, and transplanting timeline by climate zone. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Seed Starting Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for building a home seed starting setup for vegetable gardening.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building a home seed starting setup for vegetable gardening. Include sections on grow light selection, heat mat requirements, seed starting mix, hardening off schedule, and transplanting timeline by climate zone. Provide actionable recommendations and specific details.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2153
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmtifxu3apen",
+    "title": "Write a complete concept for a podcast fiction series about a family that discov",
+    "raw_request": "Write a complete concept for a podcast fiction series about a family that discovers their house exists in multiple dimensions simultaneously. Include episode structure, sound design approach, and season one arc.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:21:57.387Z",
+    "updated_at": "2026-03-16T18:27:49.728Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:23:08.420Z",
+      "interpreted_objective": "Develop a detailed concept for a podcast fiction series about a multidimensional family home.",
+      "expected_outcome": "A comprehensive concept document including episode structure, sound design, and season one arc.",
+      "key_unknowns": [
+        "Specific themes or tones desired for the series",
+        "Target audience demographics",
+        "Any existing podcast series with similar themes"
+      ],
+      "recommended_strategy": "Conduct research on existing multidimensional fiction series for inspiration and market positioning. Synthesize this research into a structured concept document detailing the series' unique elements, episode structure, sound design, and season arc.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research existing multidimensional fiction series",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of existing fiction series that explore multidimensional themes, with summaries and key elements.",
+          "prompt": "Search the web for current, specific information about existing fiction series that explore multidimensional themes. Include real names, summaries, key elements, and URLs for further reference.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize podcast concept",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed concept document for the podcast series, including episode structure, sound design approach, and season one arc.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed concept for a podcast fiction series about a family that discovers their house exists in multiple dimensions simultaneously. Include specific episode structure, sound design approach, and a season one arc.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-podcast_concept.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1901
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtifxsbgjyn",
+    "title": "Plan a 10-day wine and history tour through the Rhone Valley and Provence in sou",
+    "raw_request": "Plan a 10-day wine and history tour through the Rhone Valley and Provence in southern France. Include Chateauneuf-du-Pape tastings, lavender fields, Avignon papal palace, Marseille bouillabaisse, and Roman ruins in Arles.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:21:57.323Z",
+    "updated_at": "2026-03-16T18:27:28.965Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:22:56.514Z",
+      "interpreted_objective": "Plan a detailed 10-day wine and history tour itinerary through the Rhone Valley and Provence, focusing on key cultural and culinary experiences.",
+      "expected_outcome": "A comprehensive itinerary that includes wine tastings, historical site visits, culinary experiences, and scenic tours, specifically highlighting Chateauneuf-du-Pape, Avignon, Marseille, and Arles.",
+      "key_unknowns": [
+        "Exact locations and schedules for wine tastings",
+        "Availability and timing for visiting lavender fields",
+        "Specific historical sites to include in Avignon and Arles",
+        "Dining options for bouillabaisse in Marseille"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on key attractions and experiences in the Rhone Valley and Provence. Synthesize this information into a detailed itinerary, ensuring a balance of wine, history, and cultural experiences. Consider logistics such as travel times and accommodation options.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Wine and Historical Attractions",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current wine and historical attractions in the Rhone Valley and Provence, including Chateauneuf-du-Pape, Avignon, Marseille, and Arles, with details on availability and visitor information.",
+          "prompt": "Search the web for current information about wine tastings, historical sites, and culinary experiences in the Rhone Valley and Provence. Include Chateauneuf-du-Pape tastings, lavender fields, Avignon papal palace, Marseille bouillabaisse, and Roman ruins in Arles. Provide real names, dates, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 10-day itinerary for a wine and history tour through the Rhone Valley and Provence, incorporating research findings.",
+          "prompt": "Based on the research results, synthesize a 10-day itinerary for a wine and history tour through the Rhone Valley and Provence. Include specific activities, locations, and logistics for Chateauneuf-du-Pape tastings, lavender fields, Avignon papal palace, Marseille bouillabaisse, and Roman ruins in Arles.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-rhone-valley-provence-tour.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2113
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmtifxqs53tu",
+    "title": "Design a comprehensive nutrition periodization plan for recreational athletes tr",
+    "raw_request": "Design a comprehensive nutrition periodization plan for recreational athletes training for a half marathon. Include carb cycling, pre/post workout nutrition, hydration strategy, supplement timing, and race week fueling.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:21:57.268Z",
+    "updated_at": "2026-03-16T18:27:16.660Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:22:48.657Z",
+      "interpreted_objective": "Create a detailed nutrition periodization plan for recreational athletes training for a half marathon.",
+      "expected_outcome": "A comprehensive, evidence-based nutrition plan that includes carb cycling, pre/post workout nutrition, hydration strategy, supplement timing, and race week fueling, tailored for recreational half marathon runners.",
+      "key_unknowns": [
+        "Specific dietary preferences or restrictions of the athletes",
+        "Current fitness and nutritional status of the athletes",
+        "Environmental conditions of the race location"
+      ],
+      "recommended_strategy": "Conduct research on current best practices for nutrition periodization in endurance sports, focusing on half marathon training. Synthesize findings into a structured plan that includes carb cycling, hydration, and supplement strategies. Ensure recommendations are evidence-based and include safety disclaimers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Nutrition Periodization for Half Marathon",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and evidence-based strategies for nutrition periodization in half marathon training.",
+          "prompt": "Search the web for current, specific information about nutrition periodization for recreational athletes training for a half marathon. Include details on carb cycling, pre/post workout nutrition, hydration strategies, supplement timing, and race week fueling. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Nutrition Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable nutrition periodization plan for recreational athletes training for a half marathon.",
+          "prompt": "Based on the research results, synthesize an actionable nutrition periodization plan for recreational athletes training for a half marathon. Include specific recommendations for carb cycling, pre/post workout nutrition, hydration strategy, supplement timing, and race week fueling. Ensure the plan is evidence-based and includes safety disclaimers.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-nutrition-periodization.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1932
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmtifxno3lr4",
+    "title": "Create a guide to navigating organizational politics as a staff engineer. Includ",
+    "raw_request": "Create a guide to navigating organizational politics as a staff engineer. Include influence mapping, coalition building, managing up and sideways, navigating reorgs, and protecting technical vision during leadership changes.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:21:57.156Z",
+    "updated_at": "2026-03-16T18:27:04.021Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:22:40.525Z",
+      "interpreted_objective": "Create a comprehensive guide for staff engineers on navigating organizational politics.",
+      "expected_outcome": "A detailed guide that helps staff engineers effectively manage organizational politics, including influence mapping, coalition building, managing relationships, navigating reorgs, and maintaining technical vision.",
+      "key_unknowns": [
+        "Specific organizational contexts or examples to include",
+        "Preferred format or length for the guide",
+        "Any existing resources or frameworks to reference"
+      ],
+      "recommended_strategy": "Conduct research to gather insights on navigating organizational politics as a staff engineer. Synthesize these insights into a structured guide, ensuring it covers all requested topics comprehensively. Highlight practical strategies and real-world examples where possible.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Organizational Politics for Staff Engineers",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of insights and strategies on navigating organizational politics as a staff engineer.",
+          "prompt": "Search the web for current, specific information about navigating organizational politics as a staff engineer. Include strategies for influence mapping, coalition building, managing up and sideways, navigating reorgs, and protecting technical vision during leadership changes. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Navigating Organizational Politics",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide for staff engineers on navigating organizational politics, covering influence mapping, coalition building, managing up and sideways, navigating reorgs, and protecting technical vision.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations into a guide for staff engineers. Include strategies for influence mapping, coalition building, managing up and sideways, navigating reorgs, and protecting technical vision during leadership changes. Ensure the guide is practical and includes real-world examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2046
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmtifxm5a6m8",
+    "title": "Research the best home laser printers for small businesses. Compare Brother HL-L",
+    "raw_request": "Research the best home laser printers for small businesses. Compare Brother HL-L2395DW, HP LaserJet Pro M404dn, and Canon imageCLASS LBP226dw with toner cost per page, duplex printing speed, and mobile connectivity.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:21:57.101Z",
+    "updated_at": "2026-03-16T18:26:48.359Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:22:31.493Z",
+      "interpreted_objective": "Research and compare the Brother HL-L2395DW, HP LaserJet Pro M404dn, and Canon imageCLASS LBP226dw printers for small businesses, focusing on toner cost per page, duplex printing speed, and mobile connectivity.",
+      "expected_outcome": "A detailed comparison report of the three printers with specific data on toner cost per page, duplex printing speed, and mobile connectivity, including recommendations for small businesses.",
+      "key_unknowns": [
+        "Current toner cost per page for each printer",
+        "Duplex printing speed for each printer",
+        "Mobile connectivity features for each printer"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on the specified printers, focusing on toner costs, duplex printing speeds, and mobile connectivity. Then, synthesize this information into a comparative report with actionable insights and recommendations for small businesses.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Printer Specifications",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on toner cost per page, duplex printing speed, and mobile connectivity for each printer with citations.",
+          "prompt": "Search the web for current, specific information about the Brother HL-L2395DW, HP LaserJet Pro M404dn, and Canon imageCLASS LBP226dw printers. Focus on toner cost per page, duplex printing speed, and mobile connectivity. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Printer Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the three printers with specific data and recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed comparison of the Brother HL-L2395DW, HP LaserJet Pro M404dn, and Canon imageCLASS LBP226dw printers. Include specific data on toner cost per page, duplex printing speed, and mobile connectivity, and provide recommendations for small businesses.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-printer-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2232
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtifxlacj74",
+    "title": "Explain how the V8 JavaScript engine optimizes code execution. Cover hidden clas",
+    "raw_request": "Explain how the V8 JavaScript engine optimizes code execution. Cover hidden classes, inline caching, TurboFan optimizing compiler, deoptimization bailouts, and practical patterns that trigger faster execution paths.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:21:57.070Z",
+    "updated_at": "2026-03-16T18:26:36.311Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:22:20.794Z",
+      "interpreted_objective": "Explain how the V8 JavaScript engine optimizes code execution.",
+      "expected_outcome": "A detailed explanation covering hidden classes, inline caching, TurboFan optimizing compiler, deoptimization bailouts, and practical patterns for faster execution.",
+      "key_unknowns": [
+        "Current practical patterns for V8 optimization",
+        "Specifics of deoptimization bailouts"
+      ],
+      "recommended_strategy": "Research the V8 JavaScript engine's optimization techniques and gather current information on each specified topic. Then, synthesize this information into a comprehensive explanation suitable for a learning context.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research V8 Optimization Techniques",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on V8 optimization techniques including hidden classes, inline caching, TurboFan, and deoptimization bailouts.",
+          "prompt": "Search the web for current, specific information about the V8 JavaScript engine's optimization techniques, including hidden classes, inline caching, the TurboFan optimizing compiler, deoptimization bailouts, and practical patterns that trigger faster execution paths. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Explanation of V8 Optimization",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive explanation of how the V8 JavaScript engine optimizes code execution, covering all specified topics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed explanation of how the V8 JavaScript engine optimizes code execution. Cover hidden classes, inline caching, the TurboFan optimizing compiler, deoptimization bailouts, and practical patterns that trigger faster execution paths.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2057
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmtifxk7rs49",
+    "title": "Create a guide to building a systematic approach to angel investing due diligenc",
+    "raw_request": "Create a guide to building a systematic approach to angel investing due diligence. Include founder evaluation criteria, market sizing validation, technical audit checklist, cap table analysis, and post-investment monitoring.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:21:57.031Z",
+    "updated_at": "2026-03-16T18:26:19.728Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:22:13.242Z",
+      "interpreted_objective": "Create a comprehensive guide for systematic angel investing due diligence.",
+      "expected_outcome": "A detailed guide that includes founder evaluation criteria, market sizing validation, technical audit checklist, cap table analysis, and post-investment monitoring strategies.",
+      "key_unknowns": [
+        "Specific criteria and metrics used in founder evaluation",
+        "Current best practices for market sizing validation",
+        "Technical audit checklist specifics",
+        "Standard practices for cap table analysis",
+        "Effective post-investment monitoring strategies"
+      ],
+      "recommended_strategy": "Research current best practices and methodologies in angel investing due diligence. Synthesize this information into a structured guide with actionable steps and real-world examples. Ensure the guide covers all requested areas comprehensively.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Angel Investing Due Diligence Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and methodologies in angel investing due diligence.",
+          "prompt": "Search the web for current, specific information about best practices in angel investing due diligence. Include founder evaluation criteria, market sizing validation techniques, technical audit checklists, cap table analysis methods, and post-investment monitoring strategies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Angel Investing Due Diligence Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on systematic angel investing due diligence.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comprehensive guide for systematic angel investing due diligence. Include founder evaluation criteria, market sizing validation, technical audit checklist, cap table analysis, and post-investment monitoring strategies. Provide actionable steps and real-world examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2405
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmtifxjhzyrg",
+    "title": "Design a comprehensive FinOps cloud cost optimization strategy. Include resource",
+    "raw_request": "Design a comprehensive FinOps cloud cost optimization strategy. Include resource right-sizing, reserved instance planning, spot instance automation, cost allocation tagging, and chargeback model for multi-team organizations.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:21:57.005Z",
+    "updated_at": "2026-03-16T18:26:05.489Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:22:05.611Z",
+      "interpreted_objective": "Design a comprehensive FinOps cloud cost optimization strategy for multi-team organizations.",
+      "expected_outcome": "A detailed report outlining strategies for resource right-sizing, reserved instance planning, spot instance automation, cost allocation tagging, and a chargeback model.",
+      "key_unknowns": [
+        "Current best practices for each component of the strategy",
+        "Specific tools and technologies available for implementing these strategies",
+        "Potential challenges and limitations in multi-team organizations"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and tools for each component of the FinOps strategy. Synthesize findings into a structured report that provides actionable recommendations tailored to multi-team organizations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research FinOps Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and tools for FinOps strategies.",
+          "prompt": "Search the web for current best practices and tools for FinOps strategies, focusing on resource right-sizing, reserved instance planning, spot instance automation, cost allocation tagging, and chargeback models in multi-team organizations. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize FinOps Strategy Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report detailing actionable FinOps strategies for multi-team organizations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a FinOps cloud cost optimization strategy. Include specific strategies for resource right-sizing, reserved instance planning, spot instance automation, cost allocation tagging, and chargeback models.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-FinOpsStrategy.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2459
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
     "task_id": "t_mmti385g3v87",
     "title": "Design a comprehensive personal accountability system. Include commitment device",
     "raw_request": "Design a comprehensive personal accountability system. Include commitment devices, progress tracking methods, accountability partner frameworks, streak management psychology, and recovering from accountability breaks.",
