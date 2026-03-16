@@ -1,5 +1,777 @@
 [
   {
+    "task_id": "t_mmstapqws8ud",
+    "title": "Design a comprehensive decision-making framework for major life choices. Include",
+    "raw_request": "Design a comprehensive decision-making framework for major life choices. Include weighted matrix analysis, pre-mortem technique, reversibility assessment, opportunity cost calculation, and emotional decision audit.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:38:03.224Z",
+    "updated_at": "2026-03-16T06:43:15.422Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:38:59.697Z",
+      "interpreted_objective": "Design a decision-making framework for major life choices using specific analytical techniques.",
+      "expected_outcome": "A comprehensive framework document that includes a weighted matrix analysis, pre-mortem technique, reversibility assessment, opportunity cost calculation, and emotional decision audit.",
+      "key_unknowns": [
+        "Specific methodologies for each analytical technique",
+        "Examples of major life choices to apply the framework",
+        "Current best practices in decision-making frameworks"
+      ],
+      "recommended_strategy": "First, research current methodologies and best practices for each component of the decision-making framework using Perplexity. Then, synthesize this information into a structured framework document using OpenAI. Ensure the framework is practical and includes examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Decision-Making Techniques",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on current methodologies and best practices for weighted matrix analysis, pre-mortem technique, reversibility assessment, opportunity cost calculation, and emotional decision audit.",
+          "prompt": "Search the web for current methodologies and best practices for weighted matrix analysis, pre-mortem technique, reversibility assessment, opportunity cost calculation, and emotional decision audit. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Decision-Making Framework",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured framework document that integrates research findings into a comprehensive decision-making framework.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive decision-making framework for major life choices. Include weighted matrix analysis, pre-mortem technique, reversibility assessment, opportunity cost calculation, and emotional decision audit. Provide examples and practical applications.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-decision-making-framework.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2111
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmstapocxqiu",
+    "title": "Create a guide to designing a productive home library and reading room. Include ",
+    "raw_request": "Create a guide to designing a productive home library and reading room. Include shelving systems, reading chair selection, lighting design for reducing eye strain, organization methods, and atmosphere design.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:38:03.132Z",
+    "updated_at": "2026-03-16T06:43:07.114Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:38:54.068Z",
+      "interpreted_objective": "Create a comprehensive guide for designing a productive home library and reading room.",
+      "expected_outcome": "A detailed guide covering shelving systems, reading chair selection, lighting design, organization methods, and atmosphere design.",
+      "key_unknowns": [
+        "Current trends in home library design",
+        "Best practices for reducing eye strain with lighting",
+        "Effective organization methods for books"
+      ],
+      "recommended_strategy": "Conduct research on current trends and best practices for designing home libraries and reading rooms. Synthesize findings into a structured guide that addresses shelving, seating, lighting, organization, and atmosphere.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Library Design Trends",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current trends and best practices in home library and reading room design.",
+          "prompt": "Search the web for current, specific information about home library and reading room design trends, including shelving systems, reading chair selection, lighting for reducing eye strain, organization methods, and atmosphere design. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Home Library Design Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for designing a productive home library and reading room.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a guide for designing a productive home library and reading room. Include specific recommendations for shelving systems, reading chair selection, lighting design for reducing eye strain, organization methods, and atmosphere design.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-home-library-design-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2448
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmstapljels0",
+    "title": "Write a complete pilot script treatment for a mystery series where a retired che",
+    "raw_request": "Write a complete pilot script treatment for a mystery series where a retired chess grandmaster solves cold cases using game theory and pattern recognition. Include character profiles and first season arc.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:38:03.031Z",
+    "updated_at": "2026-03-16T06:42:57.853Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:38:49.459Z",
+      "interpreted_objective": "Create a detailed pilot script treatment for a mystery series featuring a retired chess grandmaster solving cold cases.",
+      "expected_outcome": "A comprehensive script treatment including character profiles and a first season arc that is engaging and coherent.",
+      "key_unknowns": [
+        "Specific character traits and backgrounds",
+        "The overarching plot of the first season",
+        "Tone and style of the series"
+      ],
+      "recommended_strategy": "First, gather information on successful mystery series and the use of game theory in storytelling to inform the script's development. Then, synthesize this research into a detailed script treatment that includes character profiles and a season arc. Ensure the treatment is engaging and aligns with the mystery genre's conventions.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research successful mystery series and game theory in storytelling",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of insights and examples from successful mystery series and the application of game theory in storytelling.",
+          "prompt": "Search the web for current, specific information about successful mystery series and how game theory is used in storytelling. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop script treatment with character profiles and season arc",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed pilot script treatment including character profiles and a first season arc.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed pilot script treatment for a mystery series where a retired chess grandmaster solves cold cases using game theory and pattern recognition. Include character profiles and a first season arc.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-mystery-series-treatment.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1924
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmstapidfhkp",
+    "title": "Plan a 14-day Southeast Asia trip covering Bangkok, Chiang Mai, and Siem Reap. I",
+    "raw_request": "Plan a 14-day Southeast Asia trip covering Bangkok, Chiang Mai, and Siem Reap. Include street food tours, temple etiquette guide, cooking classes, trekking options, and budget optimization strategies.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:38:02.917Z",
+    "updated_at": "2026-03-16T06:42:46.858Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:38:44.138Z",
+      "interpreted_objective": "Plan a comprehensive 14-day Southeast Asia trip itinerary focusing on cultural experiences and budget optimization.",
+      "expected_outcome": "A detailed itinerary with activities, budget strategies, and cultural guides for Bangkok, Chiang Mai, and Siem Reap.",
+      "key_unknowns": [
+        "Current travel restrictions or requirements for each location",
+        "Availability and pricing of street food tours, cooking classes, and trekking options",
+        "Specific budget constraints or preferences"
+      ],
+      "recommended_strategy": "Conduct research to gather current travel information and pricing for the specified activities. Synthesize this data into a structured itinerary with budget optimization strategies. Ensure cultural guides are included for temple visits.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Travel Information",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current travel information, activity pricing, and availability for Bangkok, Chiang Mai, and Siem Reap.",
+          "prompt": "Search the web for current travel information for Bangkok, Chiang Mai, and Siem Reap, focusing on street food tours, cooking classes, trekking options, and budget travel strategies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary and Budget Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 14-day itinerary with activities, budget strategies, and cultural guides.",
+          "prompt": "Based on the research results, synthesize a 14-day itinerary for Bangkok, Chiang Mai, and Siem Reap. Include specific activities like street food tours, cooking classes, trekking options, temple etiquette guides, and budget optimization strategies.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-southeast-asia-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1921
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmstapf2fxkx",
+    "title": "Design a comprehensive eye health protocol for screen-heavy workers. Include blu",
+    "raw_request": "Design a comprehensive eye health protocol for screen-heavy workers. Include blue light management evidence review, 20-20-20 rule implementation, dry eye prevention, ergonomic monitor positioning, and annual exam schedule.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:38:02.798Z",
+    "updated_at": "2026-03-16T06:42:36.144Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:38:38.800Z",
+      "interpreted_objective": "Develop a detailed eye health protocol for individuals with screen-heavy work to prevent eye strain and related issues.",
+      "expected_outcome": "A comprehensive, evidence-based eye health protocol that includes strategies for blue light management, the 20-20-20 rule, dry eye prevention, ergonomic monitor positioning, and an annual exam schedule.",
+      "key_unknowns": [
+        "Current evidence on blue light management",
+        "Best practices for implementing the 20-20-20 rule",
+        "Effective strategies for dry eye prevention",
+        "Optimal ergonomic monitor positioning",
+        "Recommended frequency for eye exams"
+      ],
+      "recommended_strategy": "Conduct research on each component of the eye health protocol to gather current evidence and best practices. Synthesize this information into a cohesive protocol that can be easily followed by screen-heavy workers. Ensure all recommendations are actionable and include necessary safety disclaimers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Blue Light Management",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current evidence and strategies for managing blue light exposure from screens.",
+          "prompt": "Search the web for current, specific information about blue light management for screen-heavy workers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research 20-20-20 Rule Implementation",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Best practices for implementing the 20-20-20 rule to reduce eye strain.",
+          "prompt": "Search the web for current, specific information about implementing the 20-20-20 rule for screen-heavy workers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Dry Eye Prevention",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Effective strategies for preventing dry eye syndrome in screen-heavy workers.",
+          "prompt": "Search the web for current, specific information about preventing dry eye syndrome for screen-heavy workers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Ergonomic Monitor Positioning",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Optimal ergonomic monitor positioning to reduce eye strain.",
+          "prompt": "Search the web for current, specific information about ergonomic monitor positioning for screen-heavy workers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Annual Eye Exam Recommendations",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Recommended frequency and guidelines for annual eye exams for screen-heavy workers.",
+          "prompt": "Search the web for current, specific information about recommended frequency and guidelines for annual eye exams for screen-heavy workers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Eye Health Protocol",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive, evidence-based eye health protocol for screen-heavy workers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for an eye health protocol for screen-heavy workers. Include specific strategies for blue light management, the 20-20-20 rule, dry eye prevention, ergonomic monitor positioning, and an annual exam schedule.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2591
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmstapd39aln",
+    "title": "Create a comprehensive guide to transitioning from a traditional job to full-tim",
+    "raw_request": "Create a comprehensive guide to transitioning from a traditional job to full-time consulting. Include rate calculation, LLC vs S-Corp formation, contract templates, insurance gaps, and pipeline management.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:38:02.727Z",
+    "updated_at": "2026-03-16T06:42:29.058Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:38:31.438Z",
+      "interpreted_objective": "Create a comprehensive guide for transitioning from a traditional job to full-time consulting, covering key aspects like rate calculation, business formation, contract templates, insurance, and pipeline management.",
+      "expected_outcome": "A detailed, actionable guide that Rahul can use to confidently transition to consulting, with specific steps, examples, and resources.",
+      "key_unknowns": [
+        "Current market rates for consulting in data engineering",
+        "Differences in tax implications between LLC and S-Corp for Rahul's situation",
+        "Availability of contract templates suitable for data engineering consulting",
+        "Insurance requirements and options for independent consultants",
+        "Effective pipeline management strategies for consulting"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on consulting rates, business formation options, contract templates, insurance, and pipeline management. Synthesize findings into a structured guide with actionable steps and resources tailored for a data engineering consultant.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Consulting Rates and Business Formation",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current consulting rates for data engineers and comparison of LLC vs S-Corp formation.",
+          "prompt": "Search the web for current consulting rates for data engineers and detailed comparisons of LLC vs S-Corp formation, including tax implications and benefits.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Contract Templates and Insurance Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Sources for contract templates and information on insurance options for consultants.",
+          "prompt": "Search the web for sources of contract templates suitable for data engineering consulting and information on insurance options for independent consultants.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Pipeline Management Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Effective pipeline management strategies for consulting businesses.",
+          "prompt": "Search the web for effective pipeline management strategies for consulting businesses, focusing on maintaining a steady flow of projects and clients.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Transitioning to Consulting",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide with actionable steps and resources for transitioning to full-time consulting.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for transitioning from a traditional job to full-time consulting. Include sections on rate calculation, business formation, contract templates, insurance, and pipeline management, with specific examples and resources.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-consulting-transition-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2436
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmstapbbd6l5",
+    "title": "Research the best home security camera systems with local storage. Compare Reoli",
+    "raw_request": "Research the best home security camera systems with local storage. Compare Reolink, Eufy, and Amcrest with NVR setups, AI person detection, HomeKit Secure Video support, and privacy considerations.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:38:02.663Z",
+    "updated_at": "2026-03-16T06:42:22.069Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:38:23.738Z",
+      "interpreted_objective": "Research and compare Reolink, Eufy, and Amcrest home security camera systems with local storage, focusing on NVR setups, AI person detection, HomeKit Secure Video support, and privacy considerations.",
+      "expected_outcome": "A comprehensive report comparing the specified home security camera systems, highlighting their features, advantages, and privacy considerations.",
+      "key_unknowns": [
+        "Current features and specifications of Reolink, Eufy, and Amcrest systems",
+        "Availability of NVR setups, AI person detection, and HomeKit Secure Video support",
+        "Privacy considerations for each brand"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on Reolink, Eufy, and Amcrest home security systems, focusing on the specified features. Then, synthesize this information into a comparative analysis, highlighting the strengths and weaknesses of each system.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Security Systems",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Reolink, Eufy, and Amcrest home security systems, including features, specifications, and privacy considerations.",
+          "prompt": "Search the web for current, specific information about Reolink, Eufy, and Amcrest home security camera systems with local storage. Focus on NVR setups, AI person detection, HomeKit Secure Video support, and privacy considerations. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Security Systems Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Reolink, Eufy, and Amcrest home security systems, highlighting their features, advantages, and privacy considerations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for Reolink, Eufy, and Amcrest home security systems. Include specific names, numbers, and concrete next steps. Highlight NVR setups, AI person detection, HomeKit Secure Video support, and privacy considerations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-home-security-systems.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2248
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmstap90ymak",
+    "title": "Explain how modern SSDs work at the firmware level. Cover NAND flash architectur",
+    "raw_request": "Explain how modern SSDs work at the firmware level. Cover NAND flash architecture, wear leveling algorithms, garbage collection, TRIM support, over-provisioning, and why write amplification affects endurance.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:38:02.580Z",
+    "updated_at": "2026-03-16T06:42:11.082Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:38:17.581Z",
+      "interpreted_objective": "Explain the firmware-level operations of modern SSDs, focusing on specific technical components and processes.",
+      "expected_outcome": "A comprehensive, structured explanation of SSD firmware operations, covering NAND flash architecture, wear leveling, garbage collection, TRIM, over-provisioning, and write amplification.",
+      "key_unknowns": [
+        "Current advancements in SSD firmware",
+        "Specific algorithms used in wear leveling and garbage collection",
+        "Impact of write amplification on SSD endurance"
+      ],
+      "recommended_strategy": "First, conduct a detailed web search to gather current information on SSD firmware operations and related technologies. Then, synthesize this information into a structured report that explains each component and process clearly and concisely.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research SSD Firmware Operations",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, detailed information about SSD firmware operations, including NAND flash architecture, wear leveling algorithms, garbage collection, TRIM support, over-provisioning, and write amplification.",
+          "prompt": "Search the web for current, specific information about SSD firmware operations, focusing on NAND flash architecture, wear leveling algorithms, garbage collection, TRIM support, over-provisioning, and write amplification. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize SSD Firmware Explanation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, detailed explanation of SSD firmware operations, covering all specified components and processes.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed explanation of SSD firmware operations. Cover NAND flash architecture, wear leveling algorithms, garbage collection, TRIM support, over-provisioning, and the impact of write amplification on endurance.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-ssd-firmware-explanation.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1954
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmstap8kxid7",
+    "title": "Create a comprehensive guide to backdoor Roth IRA contributions. Include the pro",
+    "raw_request": "Create a comprehensive guide to backdoor Roth IRA contributions. Include the pro-rata rule, Form 8606 filing, mega backdoor Roth through employer plans, aggregation rules, and step-by-step execution timeline.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:38:02.564Z",
+    "updated_at": "2026-03-16T06:42:03.497Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:38:12.908Z",
+      "interpreted_objective": "Create a comprehensive guide on backdoor Roth IRA contributions, including detailed steps and rules.",
+      "expected_outcome": "A detailed, actionable guide on backdoor Roth IRA contributions, covering all specified areas.",
+      "key_unknowns": [
+        "Current best practices for backdoor Roth IRA contributions",
+        "Specific details on the pro-rata rule and aggregation rules",
+        "Steps for filing Form 8606",
+        "Mega backdoor Roth options through employer plans"
+      ],
+      "recommended_strategy": "Conduct thorough research on backdoor Roth IRA contributions, focusing on the pro-rata rule, Form 8606 filing, and mega backdoor Roth through employer plans. Synthesize the findings into a comprehensive guide with clear, step-by-step instructions and considerations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Backdoor Roth IRA Contributions",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research data on backdoor Roth IRA contributions, including pro-rata rule, Form 8606, and mega backdoor Roth options.",
+          "prompt": "Search the web for current, specific information about backdoor Roth IRA contributions, including the pro-rata rule, Form 8606 filing, mega backdoor Roth through employer plans, and aggregation rules. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comprehensive Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on backdoor Roth IRA contributions with step-by-step instructions.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on backdoor Roth IRA contributions. Include details on the pro-rata rule, Form 8606 filing, mega backdoor Roth through employer plans, aggregation rules, and a step-by-step execution timeline.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-backdoor-roth-ira-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2511
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmstap81iwir",
+    "title": "Design a GraphQL API with federation for a microservices e-commerce platform. In",
+    "raw_request": "Design a GraphQL API with federation for a microservices e-commerce platform. Include schema stitching vs federation v2, DataLoader batching, query complexity analysis, and persisted query security.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:38:02.545Z",
+    "updated_at": "2026-03-16T06:43:29.324Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:38:08.395Z",
+      "interpreted_objective": "Design a GraphQL API with federation for a microservices e-commerce platform, addressing schema stitching vs federation v2, DataLoader batching, query complexity analysis, and persisted query security.",
+      "expected_outcome": "A comprehensive design plan for a GraphQL API that integrates microservices effectively, ensuring optimal performance and security.",
+      "key_unknowns": [
+        "The specific microservices architecture currently in use",
+        "The existing technology stack and tools available",
+        "Rahul's preference for schema stitching vs federation v2"
+      ],
+      "recommended_strategy": "Conduct a detailed analysis of schema stitching vs federation v2 to determine the best approach for the API design. Evaluate the use of DataLoader for batching and analyze query complexity to ensure performance efficiency. Address persisted query security to protect against potential vulnerabilities.",
+      "risk_level": "yellow",
+      "is_code_task": true,
+      "target_files_identified": [],
+      "approval_points": [
+        "Decision on schema stitching vs federation v2"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Schema Stitching vs Federation v2",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed comparison of schema stitching and federation v2 with pros and cons.",
+          "prompt": "Search the web for current, specific information about schema stitching vs federation v2 in GraphQL API design. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Analyze DataLoader Batching and Query Complexity",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "Strategic analysis of using DataLoader for batching and handling query complexity.",
+          "prompt": "Analyze the benefits and challenges of using DataLoader for batching in a GraphQL API. Provide strategic recommendations for managing query complexity effectively.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Evaluate Persisted Query Security",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "Recommendations for securing persisted queries in a GraphQL API.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for securing persisted queries in a GraphQL API. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2142
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
     "task_id": "t_mmst3j3fc80t",
     "title": "Design a comprehensive system for tracking and improving personal habits. Includ",
     "raw_request": "Design a comprehensive system for tracking and improving personal habits. Include habit stacking methodology, environmental design, accountability structures, streak psychology, and recovery protocols for broken chains.",
