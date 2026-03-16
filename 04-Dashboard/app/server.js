@@ -508,6 +508,7 @@ const server = http.createServer(async (req, res) => {
     logAction('Intake submit', task.task_id, task.title);
     behavior.recordEvent('task_created', { title: task.title, source: 'submit' }, { taskId: task.task_id, engine: task.domain });
     behavior.recordEvent('task_routed', { engine: task.domain, autoRouted: !body.domain }, { taskId: task.task_id, engine: task.domain });
+    if (body.domain) behavior.recordEvent('engine_overridden', { selectedEngine: body.domain, autoDetected: task.domain !== body.domain ? intake.detectDomain(body.raw_request || '') : body.domain }, { taskId: task.task_id, engine: body.domain });
     // Auto-queue deliberation with auto-approve so task runs without clicks
     try {
       queue.addTask('deliberate', `Deliberate: ${task.title}`, { taskId: task.task_id, autoApprove: true });
@@ -558,6 +559,7 @@ const server = http.createServer(async (req, res) => {
       if (st) queue.addTask('execute-subtask', `Subtask: ${st.title}`, { subtaskId: stId });
     }
 
+    behavior.recordEvent('approval_granted', { approvalType: 'plan', subtaskCount: queuedIds.length }, { taskId, engine: task.domain });
     events.broadcast('activity', { action: `Plan approved, ${queuedIds.length} subtasks queued`, ts: new Date().toISOString() });
     logAction('Plan approved', taskId, `${queuedIds.length} subtasks queued`);
     return json(res, { ok: true, queued: queuedIds.length });
@@ -740,6 +742,7 @@ const server = http.createServer(async (req, res) => {
       revisionNotes: body.notes,
     });
 
+    behavior.recordEvent('rewrite_requested', { subtaskTitle: st.title, notes: body.notes }, { taskId: st.parent_task_id, subtaskId, engine: intake.getTask(st.parent_task_id)?.domain });
     events.broadcast('activity', { action: `Builder revision queued: ${st.title}`, ts: new Date().toISOString() });
     events.broadcast('intake-update', { taskId: st.parent_task_id, subtaskId, action: 'revised' });
     return json(res, { ok: true, revised: st.title, queueTask: qTask });
@@ -2167,6 +2170,7 @@ const server = http.createServer(async (req, res) => {
     try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/compliance-export', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* guard not available — allow */ }
     const body = await parseBody(req);
     if (!body.scope_type || !body.related_id) return json(res, { error: 'Missing scope_type or related_id' }, 400);
+    behavior.recordEvent('export_generated', { scope: body.scope_type, relatedId: body.related_id }, {});
     try { const cos = require('./lib/chief-of-staff'); return json(res, { ok: true, export: cos.exportComplianceBundle(body.scope_type, body.related_id, body) }); } catch (e) { return json(res, { error: e.message }, 500); }
   }
   if (req.url?.match(/^\/api\/compliance-export\/([^/]+)$/) && req.method === 'GET') {
@@ -3367,12 +3371,14 @@ const server = http.createServer(async (req, res) => {
     const id = req.url.match(/^\/api\/deliverables\/([^/]+)\/approve$/)[1];
     try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/deliverables', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
     const body = await parseBody(req);
+    behavior.recordEvent('output_accepted', { deliverableId: id, approver: body.approver || 'operator' }, {});
     try { const cos = require('./lib/chief-of-staff'); return json(res, cos.approveDeliverable(id, body.version || 1, body.approver || 'operator')); } catch (e) { return json(res, { error: e.message }, 500); }
   }
   if (req.url?.match(/^\/api\/deliverables\/([^/]+)\/reject$/) && req.method === 'POST') {
     const id = req.url.match(/^\/api\/deliverables\/([^/]+)\/reject$/)[1];
     try { const hrg = require('./lib/http-response-guard'); const gd = hrg.guard('/api/deliverables', _tenantId, _projectId); if (!gd.allowed) return json(res, gd.payload, gd.status); } catch { /* */ }
     const body = await parseBody(req);
+    behavior.recordEvent('output_abandoned', { deliverableId: id, reason: body.reason || 'Rejected' }, {});
     try { const cos = require('./lib/chief-of-staff'); return json(res, cos.rejectDeliverable(id, body.version || 1, body.reviewer || 'operator', body.reason || 'Rejected')); } catch (e) { return json(res, { error: e.message }, 500); }
   }
   if (req.url?.match(/^\/api\/deliverables\/([^/]+)\/evidence\/(\d+)$/) && req.method === 'GET') {
@@ -3893,6 +3899,7 @@ const server = http.createServer(async (req, res) => {
     try {
       const task = intake.getTask(taskId);
       if (!task) return json(res, { error: 'Task not found' }, 404);
+      behavior.recordEvent('deliverable_downloaded', { format: fmt, taskTitle: task.title }, { taskId, engine: task.domain });
       const subtasks = intake.getSubtasksForTask(taskId);
       const doneSubs = subtasks.filter(s => s.status === 'done' && s.output);
       const delib = task.board_deliberation;

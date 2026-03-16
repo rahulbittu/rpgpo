@@ -13,13 +13,19 @@
   "clean_rate_recent": "100%",
   "consecutive_clean_batches": 19,
   "behavior_learning": {
-    "status": "batch_1_complete",
-    "event_capture": "implemented",
+    "status": "batch_2_complete",
+    "event_capture": "fully instrumented",
     "signal_derivation": "implemented",
     "execution_guidance": "implemented",
-    "instrumented_events": ["task_created", "task_routed", "approval_granted", "approval_denied"],
-    "pending_instrumentation": ["deliverable_downloaded", "export_generated", "rewrite_requested", "engine_overridden", "output_accepted", "output_abandoned"]
+    "instrumented_events": [
+      "task_created", "task_routed", "engine_overridden",
+      "approval_granted", "approval_denied",
+      "rewrite_requested", "deliverable_downloaded",
+      "output_accepted", "output_abandoned",
+      "export_generated"
+    ],
+    "pending_instrumentation": []
   },
-  "next_batch": "Batch 2 — Complete remaining event instrumentation + revise endpoint tracking",
-  "updated_at": "2026-03-16T10:45:00.000Z"
+  "next_batch": "Batch 3 — Run signal derivation on existing data, connect to execution, update docs",
+  "updated_at": "2026-03-16T11:10:00.000Z"
 }

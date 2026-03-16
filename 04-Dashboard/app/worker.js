@@ -32,6 +32,8 @@ const costs = require('./lib/costs');
 const intake = require('./lib/intake');
 const { deliberate } = require('./lib/deliberation');
 const workflow = require('./lib/workflow');
+let behavior;
+try { behavior = require('./lib/behavior'); } catch { behavior = { recordEvent: () => {} }; }
 
 const POLL_INTERVAL = 2000;
 let running = false;
