@@ -1,5 +1,733 @@
 [
   {
+    "task_id": "t_mmslohptb7qc",
+    "title": "Design a quarterly personal finance review system. Include net worth tracking, s",
+    "raw_request": "Design a quarterly personal finance review system. Include net worth tracking, spending analysis, investment rebalancing, and goal progress assessment.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:04:49.073Z",
+    "updated_at": "2026-03-16T03:09:30.829Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:05:54.872Z",
+      "interpreted_objective": "Design a quarterly review system for personal finance management.",
+      "expected_outcome": "A structured system for tracking net worth, analyzing spending, rebalancing investments, and assessing goal progress on a quarterly basis.",
+      "key_unknowns": [
+        "Specific tools or platforms to integrate with the system",
+        "Detailed metrics or KPIs for each financial aspect",
+        "Rahul's specific financial goals and preferences"
+      ],
+      "recommended_strategy": "Research existing personal finance review systems to identify best practices and tools. Then, synthesize this information into a comprehensive, actionable plan tailored to Rahul's priorities and risk tolerance. Ensure the plan includes specific steps for tracking, analysis, and decision-making.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Selection of specific tools or platforms to use",
+        "Final approval of the proposed review system structure"
+      ],
+      "subtasks": [
+        {
+          "title": "Research existing personal finance review systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices and tools for personal finance review systems.",
+          "prompt": "Search the web for current, specific information about personal finance review systems. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize a quarterly personal finance review system",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed report outlining a quarterly personal finance review system, including net worth tracking, spending analysis, investment rebalancing, and goal progress assessment.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a quarterly personal finance review system. Include specific steps for net worth tracking, spending analysis, investment rebalancing, and goal progress assessment.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-2023-10-finance-review-system.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2015
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmslogvpefi1",
+    "title": "Create a comprehensive guide to home composting for apartment dwellers. Include ",
+    "raw_request": "Create a comprehensive guide to home composting for apartment dwellers. Include vermicomposting setup, maintenance schedule, and troubleshooting common problems.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:04:47.989Z",
+    "updated_at": "2026-03-16T03:09:23.471Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:05:49.428Z",
+      "interpreted_objective": "Create a detailed guide on home composting for apartment dwellers, covering vermicomposting setup, maintenance, and troubleshooting.",
+      "expected_outcome": "A comprehensive, actionable guide that apartment dwellers can use to start and maintain a composting system.",
+      "key_unknowns": [
+        "Current best practices for apartment vermicomposting",
+        "Common problems faced by apartment composters",
+        "Effective maintenance schedules for small-space composting"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and common issues in apartment vermicomposting. Then, synthesize this information into a structured guide with actionable steps and troubleshooting advice.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research current practices in apartment vermicomposting",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices, common problems, and maintenance tips for apartment vermicomposting.",
+          "prompt": "Search the web for current, specific information about vermicomposting in apartments. Include best practices, common issues, and maintenance schedules. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize a comprehensive guide to apartment vermicomposting",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable guide on vermicomposting for apartment dwellers, including setup, maintenance, and troubleshooting.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide to vermicomposting for apartment dwellers. Include setup instructions, maintenance schedules, and troubleshooting tips.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-apartment-vermicomposting-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1983
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmslog2kzx7l",
+    "title": "Write a full pilot script outline for a workplace comedy set in an AI startup. I",
+    "raw_request": "Write a full pilot script outline for a workplace comedy set in an AI startup. Include cold open, A-plot, B-plot, tag, and character descriptions. 22 minutes.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:04:46.940Z",
+    "updated_at": "2026-03-16T03:09:15.456Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:05:44.107Z",
+      "interpreted_objective": "Create a detailed pilot script outline for a workplace comedy set in an AI startup.",
+      "expected_outcome": "A comprehensive script outline including cold open, A-plot, B-plot, tag, and character descriptions.",
+      "key_unknowns": [
+        "Specific character dynamics",
+        "Unique comedic elements of the AI startup setting",
+        "Tone and style preferences"
+      ],
+      "recommended_strategy": "Research successful workplace comedies to identify common elements and unique twists. Then, synthesize this information to create a detailed, engaging script outline that leverages the unique aspects of an AI startup setting.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research successful workplace comedies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of common elements and unique twists in successful workplace comedies.",
+          "prompt": "Search the web for information on successful workplace comedies. Identify common elements, character archetypes, and unique twists that make them engaging. Include specific examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Create pilot script outline",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed pilot script outline for a workplace comedy set in an AI startup, including cold open, A-plot, B-plot, tag, and character descriptions.",
+          "prompt": "Based on the research results, create a detailed pilot script outline for a workplace comedy set in an AI startup. Include a cold open, A-plot, B-plot, tag, and character descriptions. Ensure the outline leverages unique aspects of the AI startup setting.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2085
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmslof0kiqxz",
+    "title": "Plan an ideal remote work setup for traveling between Austin and Denver. Include",
+    "raw_request": "Plan an ideal remote work setup for traveling between Austin and Denver. Include coworking memberships, flight strategies, and tax implications of dual-state work.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:04:45.572Z",
+    "updated_at": "2026-03-16T03:09:05.553Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:05:40.218Z",
+      "interpreted_objective": "Plan a comprehensive remote work setup for traveling between Austin and Denver, including coworking memberships, flight strategies, and tax implications.",
+      "expected_outcome": "A detailed plan that outlines coworking options, optimal flight strategies, and an understanding of tax implications for dual-state work.",
+      "key_unknowns": [
+        "Current coworking space options and memberships in Austin and Denver",
+        "Optimal flight strategies between Austin and Denver",
+        "Tax implications of working remotely across state lines"
+      ],
+      "recommended_strategy": "Research current coworking memberships available in Austin and Denver, analyze flight strategies for frequent travel between these cities, and investigate tax implications for dual-state work. Synthesize findings into a comprehensive report.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the comprehensive plan by Rahul"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Coworking Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current coworking membership options in Austin and Denver, including names, costs, and benefits.",
+          "prompt": "Search the web for current coworking membership options in Austin and Denver. Include specific names, costs, benefits, and any available reviews.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Analyze Flight Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Optimal flight strategies for frequent travel between Austin and Denver, including airlines, costs, and scheduling tips.",
+          "prompt": "Search the web for optimal flight strategies for frequent travel between Austin and Denver. Include airline options, typical costs, scheduling tips, and any loyalty programs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Investigate Tax Implications",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Tax implications of working remotely between Austin and Denver, including relevant laws and potential tax benefits or liabilities.",
+          "prompt": "Search the web for tax implications of working remotely between Austin and Denver. Include relevant state laws, potential tax benefits, and liabilities.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Remote Work Plan",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report detailing coworking options, flight strategies, and tax implications for traveling between Austin and Denver.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive remote work plan for traveling between Austin and Denver. Include coworking options, flight strategies, and tax implications.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-remote-work-setup.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2163
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsloe7ztafx",
+    "title": "Design a comprehensive posture correction program. 6 weeks. Include assessment, ",
+    "raw_request": "Design a comprehensive posture correction program. 6 weeks. Include assessment, corrective exercises, workspace adjustments, and habit formation.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:04:44.543Z",
+    "updated_at": "2026-03-16T03:09:00.516Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:05:18.311Z",
+      "interpreted_objective": "Design a 6-week comprehensive posture correction program including assessment, corrective exercises, workspace adjustments, and habit formation.",
+      "expected_outcome": "A detailed, evidence-based posture correction program that participants can follow to improve their posture effectively over six weeks.",
+      "key_unknowns": [
+        "Specific exercises to include",
+        "Effective habit formation strategies",
+        "Workspace adjustment recommendations",
+        "Assessment criteria for posture"
+      ],
+      "recommended_strategy": "First, conduct research to gather current evidence-based practices for posture correction, including exercises, workspace ergonomics, and habit formation. Then, synthesize this information into a structured 6-week program with specific, actionable steps for users.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Posture Correction Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A comprehensive list of current evidence-based practices for posture correction, including exercises, workspace ergonomics, and habit formation strategies.",
+          "prompt": "Search the web for current, specific information about evidence-based posture correction practices. Include corrective exercises, workspace adjustments, and habit formation strategies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Posture Correction Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 6-week posture correction program with specific exercises, workspace adjustments, and habit formation strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 6-week posture correction program. Include specific exercises, workspace adjustments, and habit formation strategies. Ensure the program is actionable and evidence-based.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-posture-correction-program.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1884
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmslodfclsd8",
+    "title": "Create a comprehensive guide for engineers transitioning to product management. ",
+    "raw_request": "Create a comprehensive guide for engineers transitioning to product management. Include skill mapping, interview prep, and first 90 days playbook.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:04:43.512Z",
+    "updated_at": "2026-03-16T03:08:51.097Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:05:12.317Z",
+      "interpreted_objective": "Create a comprehensive guide for engineers transitioning to product management, including skill mapping, interview preparation, and a first 90 days playbook.",
+      "expected_outcome": "A detailed guide that helps engineers successfully transition to product management, covering essential skills, interview strategies, and a plan for the first 90 days in the role.",
+      "key_unknowns": [
+        "Specific skills required for engineers transitioning to product management",
+        "Common interview questions and preparation strategies for product management roles",
+        "Key activities and goals for the first 90 days as a new product manager"
+      ],
+      "recommended_strategy": "First, research the skills and competencies needed for engineers to transition into product management roles. Next, gather information on interview preparation specific to product management. Finally, compile a playbook for the first 90 days in a product management position. Structure the guide into a cohesive document.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Skills for Transition",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of skills and competencies required for engineers transitioning to product management.",
+          "prompt": "Search the web for current, specific information about the skills and competencies needed for engineers transitioning to product management roles. Include real names, numbers, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Interview Preparation",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of common interview questions and preparation strategies for product management roles.",
+          "prompt": "Search the web for specific information on interview preparation for product management roles, including common questions and effective strategies. Include real names, numbers, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research First 90 Days Playbook",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Key activities and goals for the first 90 days in a product management role.",
+          "prompt": "Search the web for specific guidance on the first 90 days in a product management role. Include key activities, goals, and strategies. Provide real names, numbers, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comprehensive Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for engineers transitioning to product management, including skill mapping, interview prep, and a first 90 days playbook.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for engineers transitioning to product management. Include specific skills mapping, interview preparation strategies, and a detailed first 90 days playbook with actionable steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-transition-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2463
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmslocmwup0e",
+    "title": "Compare the best ultrawide monitors for coding in 2026. 34 inch, curved, USB-C. ",
+    "raw_request": "Compare the best ultrawide monitors for coding in 2026. 34 inch, curved, USB-C. Include Dell, LG, and Samsung options under 800 dollars.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:04:42.488Z",
+    "updated_at": "2026-03-16T03:08:40.931Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:05:03.049Z",
+      "interpreted_objective": "Compare the best ultrawide monitors for coding in 2026 that are 34 inches, curved, USB-C, and under 800 dollars, focusing on Dell, LG, and Samsung options.",
+      "expected_outcome": "A detailed comparison report of ultrawide monitors from Dell, LG, and Samsung, highlighting the best options under 800 dollars for coding in 2026, including specific models, prices, pros, and cons.",
+      "key_unknowns": [
+        "Current models available in 2026",
+        "Pricing and availability of models under 800 dollars",
+        "Specific features and reviews of each model"
+      ],
+      "recommended_strategy": "Conduct web research to gather current data on available ultrawide monitors from Dell, LG, and Samsung that fit the criteria. Then, synthesize this data into a structured comparison report highlighting the best options with specific recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Ultrawide Monitors",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on 34-inch curved ultrawide monitors with USB-C from Dell, LG, and Samsung under 800 dollars.",
+          "prompt": "Search the web for current, specific information about 34-inch curved ultrawide monitors with USB-C from Dell, LG, and Samsung that are available in 2026 and priced under 800 dollars. Include specific models, prices, features, and reviews with sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Monitor Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the best ultrawide monitors for coding in 2026, including specific models, prices, pros and cons, and a clear recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for the best 34-inch curved ultrawide monitors with USB-C from Dell, LG, and Samsung under 800 dollars for coding in 2026. Include specific models, prices, pros, cons, and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-2026-ultrawide-monitors.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2000
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmslobudpbnx",
+    "title": "Teach me about vector embeddings and similarity search from scratch. Cover word2",
+    "raw_request": "Teach me about vector embeddings and similarity search from scratch. Cover word2vec, sentence transformers, FAISS, and pgvector. With Python code examples.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:04:41.461Z",
+    "updated_at": "2026-03-16T03:08:33.058Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:04:56.781Z",
+      "interpreted_objective": "Teach the user about vector embeddings and similarity search using Python, covering word2vec, sentence transformers, FAISS, and pgvector.",
+      "expected_outcome": "The user gains a comprehensive understanding of vector embeddings and similarity search, with practical Python code examples for each concept.",
+      "key_unknowns": [
+        "The user's current knowledge level on vector embeddings and similarity search",
+        "Specific Python libraries the user is familiar with",
+        "The depth of explanation required for each topic"
+      ],
+      "recommended_strategy": "First, gather detailed information on vector embeddings and similarity search, focusing on word2vec, sentence transformers, FAISS, and pgvector. Then, synthesize this information into a structured learning guide with Python code examples, ensuring clarity and progression from simple to complex concepts.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Vector Embeddings and Similarity Search",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research on vector embeddings, similarity search, word2vec, sentence transformers, FAISS, and pgvector.",
+          "prompt": "Search the web for current, specific information about vector embeddings and similarity search, including word2vec, sentence transformers, FAISS, and pgvector. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Learning Guide with Python Examples",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured learning guide on vector embeddings and similarity search with Python code examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a learning guide on vector embeddings and similarity search. Cover word2vec, sentence transformers, FAISS, and pgvector, including Python code examples. Ensure explanations build from simple to complex concepts.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2075
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmslob1fz7r5",
+    "title": "Create a comprehensive guide to tax-advantaged accounts for tech workers. Compar",
+    "raw_request": "Create a comprehensive guide to tax-advantaged accounts for tech workers. Compare 401k, Roth IRA, HSA, 529, and backdoor Roth strategies with contribution limits.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:04:40.419Z",
+    "updated_at": "2026-03-16T03:08:23.774Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:04:50.137Z",
+      "interpreted_objective": "Create a comprehensive guide comparing tax-advantaged accounts for tech workers.",
+      "expected_outcome": "A detailed guide that compares 401k, Roth IRA, HSA, 529, and backdoor Roth strategies, including contribution limits and practical insights for tech workers.",
+      "key_unknowns": [
+        "Current contribution limits for each account type",
+        "Specific benefits and drawbacks for tech workers",
+        "Latest strategies for maximizing tax advantages"
+      ],
+      "recommended_strategy": "First, research the current contribution limits and specific benefits of each tax-advantaged account type. Then, synthesize this information into a comprehensive guide tailored for tech workers, highlighting practical strategies and considerations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tax-Advantaged Accounts",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on 401k, Roth IRA, HSA, 529, and backdoor Roth strategies, including contribution limits and specific benefits for tech workers.",
+          "prompt": "Search the web for current, specific information about 401k, Roth IRA, HSA, 529, and backdoor Roth strategies. Include contribution limits, specific benefits for tech workers, and any recent changes or strategies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Tech Workers",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide comparing tax-advantaged accounts for tech workers, including practical strategies and considerations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide comparing 401k, Roth IRA, HSA, 529, and backdoor Roth strategies. Include specific contribution limits, benefits, drawbacks, and practical strategies for tech workers. Format the guide for clarity and actionable insights.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-tax_advantaged_accounts_guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2309
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsloa8hxo2y",
+    "title": "Write a complete incident communication template set. Include internal alert, cu",
+    "raw_request": "Write a complete incident communication template set. Include internal alert, customer notification, status page update, and post-incident email. For a SaaS outage.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:04:39.377Z",
+    "updated_at": "2026-03-16T03:07:14.655Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:04:44.796Z",
+      "interpreted_objective": "Create a comprehensive set of communication templates for a SaaS outage incident.",
+      "expected_outcome": "A set of four distinct communication templates tailored for internal alerts, customer notifications, status page updates, and post-incident emails.",
+      "key_unknowns": [
+        "Specific SaaS service details",
+        "Target audience characteristics",
+        "Preferred communication tone"
+      ],
+      "recommended_strategy": "Research best practices for incident communication in the SaaS industry. Use findings to draft clear, concise, and audience-appropriate templates for each communication type. Ensure templates are immediately usable and cover all necessary information for an outage scenario.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research SaaS Incident Communication Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and examples for SaaS incident communication.",
+          "prompt": "Search the web for current best practices and examples of incident communication in the SaaS industry. Focus on internal alerts, customer notifications, status page updates, and post-incident emails. Include sources and any specific recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Draft SaaS Outage Communication Templates",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A set of four communication templates for a SaaS outage.",
+          "prompt": "Based on the research results, draft a set of communication templates for a SaaS outage. Include an internal alert, customer notification, status page update, and post-incident email. Ensure each template is clear, concise, and tailored to its intended audience.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-saas-outage-templates.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1900
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsj8wz9261s",
     "title": "Plan a 7-day healthy eating reset focused on whole foods. Include daily menus, g",
     "raw_request": "Plan a 7-day healthy eating reset focused on whole foods. Include daily menus, grocery list, prep schedule, and expected benefits timeline.",
