@@ -54,13 +54,37 @@ Active signals produce guidance that can influence:
 
 Guidance is always advisory. The system never silently changes behavior — all guidance is explainable.
 
+## Signal Provenance
+
+Every signal is tagged with its source:
+
+| Provenance | Meaning | Trust Level |
+|---|---|---|
+| `explicit_profile` | Operator explicitly stated in profile | High — use confidently |
+| `seeded_historical` | Bootstrapped from task history | Provisional — best guess, not proven |
+| `live_observed` | Captured from real-time operator actions | Strong — genuine behavior |
+
+Current state: 3 explicit_profile, 23 seeded_historical, 0 live_observed.
+
+## How Signals Influence Execution (Phase B)
+
+Learned signals are injected as **additive context** into:
+- Board of AI deliberation prompts (shapes subtask planning)
+- OpenAI synthesis prompts (shapes output style)
+
+Signals do **NOT** influence: auto-approve logic, provider selection, risk levels, or approval gates.
+
+See [Phase B details](phase-b-conservative-influence.md) for full constraints.
+
 ## Safety Rules
 
 1. **Minimum event threshold** — No signal activates below 5 events
 2. **Confidence gating** — Signals below 60% confidence are advisory only
-3. **Traceability** — Every signal links to its source event count
-4. **No hidden drift** — All active signals are visible via `/api/behavior/signals`
-5. **Conservative defaults** — If unsure, the system does nothing
+3. **Provenance tracking** — Every signal marked as explicit_profile, seeded_historical, or live_observed
+4. **Traceability** — Every signal links to its source event count
+5. **No hidden drift** — All active signals are visible via `/api/behavior/signals`
+6. **Conservative defaults** — If unsure, the system does nothing
+7. **Seeded signals are provisional** — Not treated as strong operator truth
 
 ## API Endpoints
 
@@ -71,6 +95,7 @@ Guidance is always advisory. The system never silently changes behavior — all 
 | `/api/behavior/guidance` | GET | Current execution guidance |
 | `/api/behavior/events` | GET | Recent 50 events |
 | `/api/behavior/derive` | POST | Trigger signal re-derivation |
+| `/api/behavior/context?engine=X` | GET | Scoped context summary for an engine |
 
 ## File Locations
 

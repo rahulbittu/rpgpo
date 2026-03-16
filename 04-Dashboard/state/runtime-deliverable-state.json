@@ -17710,5 +17710,79 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-16T21:40:03.667Z"
+  },
+  "t_mmtpqlx829yu": {
+    "task_id": "t_mmtpqlx829yu",
+    "deliverable_id": "dlv_rpgpo_tmmtpqlx829yu_action_plan_5f878aba",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T21:46:19.280Z"
+  },
+  "t_mmtpqly3qyiz": {
+    "task_id": "t_mmtpqly3qyiz",
+    "deliverable_id": "dlv_rpgpo_tmmtpqly3qyiz_action_plan_6ff1403a",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T21:46:27.731Z"
+  },
+  "t_mmtpqm0ls6ui": {
+    "task_id": "t_mmtpqm0ls6ui",
+    "deliverable_id": "dlv_rpgpo_tmmtpqm0ls6ui_document_7ca00870",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T21:46:35.228Z"
+  },
+  "t_mmtpqm4fwfpp": {
+    "task_id": "t_mmtpqm4fwfpp",
+    "deliverable_id": "dlv_rpgpo_tmmtpqm4fwfpp_recommendation_ff0f7455",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T21:46:43.746Z"
+  },
+  "t_mmtpqm6qoqux": {
+    "task_id": "t_mmtpqm6qoqux",
+    "deliverable_id": "dlv_rpgpo_tmmtpqm6qoqux_document_b0c023a3",
+    "engine_id": "careeregine",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T21:46:51.826Z"
   }
 }
