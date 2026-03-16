@@ -6962,5 +6962,155 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-16T03:05:54.895Z"
+  },
+  "t_mmslvonw9fyp": {
+    "task_id": "t_mmslvonw9fyp",
+    "deliverable_id": "dlv_rpgpo_tmmslvonw9fyp_document_6fa88578",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:10:28.775Z"
+  },
+  "t_mmslvpgfh61m": {
+    "task_id": "t_mmslvpgfh61m",
+    "deliverable_id": "dlv_rpgpo_tmmslvpgfh61m_document_9ebe1e56",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:10:32.997Z"
+  },
+  "t_mmslvq986ugi": {
+    "task_id": "t_mmslvq986ugi",
+    "deliverable_id": "dlv_rpgpo_tmmslvq986ugi_document_bf483655",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:10:38.920Z"
+  },
+  "t_mmslvr1pno0c": {
+    "task_id": "t_mmslvr1pno0c",
+    "deliverable_id": "dlv_rpgpo_tmmslvr1pno0c_shopping_4be09732",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:10:42.785Z"
+  },
+  "t_mmslvru3iv49": {
+    "task_id": "t_mmslvru3iv49",
+    "deliverable_id": "dlv_rpgpo_tmmslvru3iv49_document_d096e9ba",
+    "engine_id": "careeregine",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:10:47.569Z"
+  },
+  "t_mmslvsph0xv9": {
+    "task_id": "t_mmslvsph0xv9",
+    "deliverable_id": "dlv_rpgpo_tmmslvsph0xv9_action_plan_3fae4e1f",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:11:01.963Z"
+  },
+  "t_mmslvti65f0e": {
+    "task_id": "t_mmslvti65f0e",
+    "deliverable_id": "dlv_rpgpo_tmmslvti65f0e_action_plan_cbb8fe16",
+    "engine_id": "travel",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "itinerary",
+      "options",
+      "cost_comparison"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:11:06.735Z"
+  },
+  "t_mmslvub2m1jg": {
+    "task_id": "t_mmslvub2m1jg",
+    "deliverable_id": "dlv_rpgpo_tmmslvub2m1jg_creative_draft_144113c5",
+    "engine_id": "screenwriting",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "artifacts",
+      "premise",
+      "beat_sheet"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:11:11.270Z"
+  },
+  "t_mmslvv3qf7tm": {
+    "task_id": "t_mmslvv3qf7tm",
+    "deliverable_id": "dlv_rpgpo_tmmslvv3qf7tm_document_edbe4019",
+    "engine_id": "personalops",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:11:17.131Z"
+  },
+  "t_mmslvvwiojr9": {
+    "task_id": "t_mmslvvwiojr9",
+    "deliverable_id": "dlv_rpgpo_tmmslvvwiojr9_document_3a78c135",
+    "engine_id": "personalops",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:11:39.884Z"
   }
 }

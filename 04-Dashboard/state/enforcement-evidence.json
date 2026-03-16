@@ -1,5 +1,125 @@
 [
   {
+    "record_id": "ee_mmsm0ztyvxum",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmslvvwiojr9",
+    "route": "personalops",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T03:14:32.422Z"
+  },
+  {
+    "record_id": "ee_mmsm0w09fx1x",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmslvv3qf7tm",
+    "route": "personalops",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T03:14:27.465Z"
+  },
+  {
+    "record_id": "ee_mmsm0r11djef",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing artifacts, premise, bea",
+    "scope_type": "task",
+    "scope_id": "t_mmslvub2m1jg",
+    "route": "screenwriting",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T03:14:21.013Z"
+  },
+  {
+    "record_id": "ee_mmsm0kehv93e",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing steps, itinerary, optio",
+    "scope_type": "task",
+    "scope_id": "t_mmslvti65f0e",
+    "route": "travel",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T03:14:12.425Z"
+  },
+  {
+    "record_id": "ee_mmsm0fi6q7fo",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing steps, recommendations",
+    "scope_type": "task",
+    "scope_id": "t_mmslvsph0xv9",
+    "route": "health",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T03:14:06.078Z"
+  },
+  {
+    "record_id": "ee_mmsm0bca80h7",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmslvru3iv49",
+    "route": "careeregine",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T03:14:00.682Z"
+  },
+  {
+    "record_id": "ee_mmsm06eauk8w",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing items, comparisonKeys, ",
+    "scope_type": "task",
+    "scope_id": "t_mmslvr1pno0c",
+    "route": "shopping",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T03:13:54.274Z"
+  },
+  {
+    "record_id": "ee_mmsm02gc95jq",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmslvq986ugi",
+    "route": "learning",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T03:13:49.164Z"
+  },
+  {
+    "record_id": "ee_mmslzp3bszn4",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmslvpgfh61m",
+    "route": "wealthresearch",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T03:13:31.847Z"
+  },
+  {
+    "record_id": "ee_mmsly8kpuy5o",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmslvonw9fyp",
+    "route": "writing",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T03:12:23.785Z"
+  },
+  {
     "record_id": "ee_mmsluj49ji2k",
     "area": "runtime_deliverable",
     "middleware_ran": "runtime-deliverable-pipeline",
@@ -5878,29 +5998,5 @@
     "route": "/api/tenant-admin",
     "linked_path_id": "pp_cross_tenant_isolation",
     "created_at": "2026-03-14T20:31:29.489Z"
-  },
-  {
-    "record_id": "ee_mmqs6ths4ihq",
-    "area": "boundary_enforcement",
-    "middleware_ran": "boundary-enforcement",
-    "decision_made": "blocked",
-    "response_effect": "boundary_blocked",
-    "scope_type": "project",
-    "scope_id": "project:A",
-    "route": "/api/audit-hub",
-    "linked_path_id": "pp_cross_project_boundary",
-    "created_at": "2026-03-14T20:31:29.488Z"
-  },
-  {
-    "record_id": "ee_mmqs6thr0kjx",
-    "area": "api_entitlements",
-    "middleware_ran": "api-entitlement-enforcement",
-    "decision_made": "denied_upgrade_required",
-    "response_effect": "request_denied",
-    "scope_type": "tenant",
-    "scope_id": "free_tenant",
-    "route": "/api/compliance-export",
-    "linked_path_id": "pp_entitlement_deny",
-    "created_at": "2026-03-14T20:31:29.487Z"
   }
 ]
