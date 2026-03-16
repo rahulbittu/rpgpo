@@ -15848,5 +15848,163 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-16T18:00:01.136Z"
+  },
+  "t_mmthugy2x5h7": {
+    "task_id": "t_mmthugy2x5h7",
+    "deliverable_id": "dlv_rpgpo_tmmthugy2x5h7_recommendation_5a4a5e38",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:05:25.716Z"
+  },
+  "t_mmthugyr1mtm": {
+    "task_id": "t_mmthugyr1mtm",
+    "deliverable_id": "dlv_rpgpo_tmmthugyr1mtm_code_change_758b6e64",
+    "engine_id": "startup",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "diffs",
+      "implementation_plan",
+      "changed_files",
+      "diff_preview"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:05:32.731Z"
+  },
+  "t_mmthugzt40c1": {
+    "task_id": "t_mmthugzt40c1",
+    "deliverable_id": "dlv_rpgpo_tmmthugzt40c1_document_c0f94ae6",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:05:49.218Z"
+  },
+  "t_mmthuh0p9ymb": {
+    "task_id": "t_mmthuh0p9ymb",
+    "deliverable_id": "dlv_rpgpo_tmmthuh0p9ymb_recommendation_1ea21595",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:05:58.099Z"
+  },
+  "t_mmthuh29fsdi": {
+    "task_id": "t_mmthuh29fsdi",
+    "deliverable_id": "dlv_rpgpo_tmmthuh29fsdi_document_b37c5397",
+    "engine_id": "careeregine",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:06:05.658Z"
+  },
+  "t_mmthuh53w6s2": {
+    "task_id": "t_mmthuh53w6s2",
+    "deliverable_id": "dlv_rpgpo_tmmthuh53w6s2_action_plan_a33aa6b5",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:06:13.680Z"
+  },
+  "t_mmthuh6kb7mx": {
+    "task_id": "t_mmthuh6kb7mx",
+    "deliverable_id": "dlv_rpgpo_tmmthuh6kb7mx_creative_draft_81027f64",
+    "engine_id": "screenwriting",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "artifacts",
+      "premise",
+      "beat_sheet"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:06:21.243Z"
+  },
+  "t_mmthuh825nbn": {
+    "task_id": "t_mmthuh825nbn",
+    "deliverable_id": "dlv_rpgpo_tmmthuh825nbn_creative_draft_7abc7368",
+    "engine_id": "music",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "artifacts",
+      "composition_draft",
+      "lyrics_or_structure"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:06:29.824Z"
+  },
+  "t_mmthuha6sna9": {
+    "task_id": "t_mmthuha6sna9",
+    "deliverable_id": "dlv_rpgpo_tmmthuha6sna9_shopping_8226b794",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:06:37.213Z"
+  },
+  "t_mmthuhbwwlok": {
+    "task_id": "t_mmthuhbwwlok",
+    "deliverable_id": "dlv_rpgpo_tmmthuhbwwlok_recommendation_2492b97c",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T18:06:46.722Z"
   }
 }

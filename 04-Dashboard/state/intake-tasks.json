@@ -1,5 +1,676 @@
 [
   {
+    "task_id": "t_mmthuhbwwlok",
+    "title": "Design a comprehensive delegation framework for engineering managers. Include ta",
+    "raw_request": "Design a comprehensive delegation framework for engineering managers. Include task categorization, capability assessment, accountability structures, feedback loops, and progressive responsibility expansion.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:05:16.220Z",
+    "updated_at": "2026-03-16T18:11:12.361Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:06:46.697Z",
+      "interpreted_objective": "Design a delegation framework for engineering managers that includes task categorization, capability assessment, accountability structures, feedback loops, and progressive responsibility expansion.",
+      "expected_outcome": "A comprehensive report detailing a delegation framework for engineering managers with actionable steps and structures.",
+      "key_unknowns": [
+        "Current best practices in delegation frameworks for engineering managers",
+        "Specific tools or methodologies used in capability assessment",
+        "Effective accountability structures in engineering management",
+        "Feedback loop mechanisms in engineering teams",
+        "Methods for progressive responsibility expansion"
+      ],
+      "recommended_strategy": "Conduct web research to gather current best practices and methodologies related to delegation frameworks for engineering managers. Synthesize the findings into a structured report that provides actionable recommendations and frameworks.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Delegation Frameworks",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gathered data on current best practices and methodologies for delegation frameworks in engineering management.",
+          "prompt": "Search the web for current, specific information about delegation frameworks for engineering managers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Delegation Framework Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing a comprehensive delegation framework for engineering managers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a delegation framework for engineering managers. Include specific structures for task categorization, capability assessment, accountability, feedback loops, and progressive responsibility expansion.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-delegation-framework.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2066
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmthuha6sna9",
+    "title": "Create a guide to building a home workshop for electronics hobbyists. Include so",
+    "raw_request": "Create a guide to building a home workshop for electronics hobbyists. Include soldering station setup, oscilloscope selection, component organization, ESD protection, ventilation, and beginner project recommendations.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:05:16.158Z",
+    "updated_at": "2026-03-16T18:11:00.157Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:06:37.175Z",
+      "interpreted_objective": "Create a comprehensive guide for setting up a home electronics workshop.",
+      "expected_outcome": "A detailed guide including equipment setup, organization, and project recommendations for electronics hobbyists.",
+      "key_unknowns": [
+        "Specific products and prices for soldering stations, oscilloscopes, and other equipment.",
+        "Current best practices for ESD protection and ventilation.",
+        "Beginner project recommendations for electronics hobbyists."
+      ],
+      "recommended_strategy": "Conduct research to gather current information on the best equipment and practices for a home electronics workshop. Synthesize this information into a comprehensive guide, including specific product recommendations with prices, pros and cons, and practical setup advice.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Equipment and Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on soldering stations, oscilloscopes, component organization, ESD protection, ventilation, and beginner project ideas.",
+          "prompt": "Search the web for current, specific information about soldering station setups, oscilloscope selection, component organization, ESD protection, ventilation, and beginner project recommendations for electronics hobbyists. Include real names, numbers, prices, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Electronics Workshop Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for setting up a home electronics workshop, including specific product recommendations, setup tips, and beginner project ideas.",
+          "prompt": "Based on the research results, synthesize a detailed guide for setting up a home electronics workshop. Include specific product recommendations with prices, pros and cons, practical setup advice, and beginner project ideas.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2048
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmthuh825nbn",
+    "title": "Write a complete concept for a musical about the rivalry between two competing c",
+    "raw_request": "Write a complete concept for a musical about the rivalry between two competing coffee shops on the same street, where the baristas fall in love. Include song list, character descriptions, and act structure.",
+    "domain": "music",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:05:16.082Z",
+    "updated_at": "2026-03-16T18:10:48.193Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:06:29.789Z",
+      "interpreted_objective": "Create a detailed concept for a musical about the rivalry and romance between baristas at two competing coffee shops.",
+      "expected_outcome": "A comprehensive document including a song list, character descriptions, and act structure that outlines the musical's concept.",
+      "key_unknowns": [
+        "Specific themes or messages the musical should convey",
+        "Target audience for the musical",
+        "Preferred musical style or genre"
+      ],
+      "recommended_strategy": "First, research existing musicals with similar themes to gather inspiration and identify successful elements. Then, synthesize this information to create a detailed concept for the musical, including a song list, character descriptions, and act structure. Ensure the concept is cohesive and engaging.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Existing Musicals",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of existing musicals with similar themes and successful elements.",
+          "prompt": "Search the web for current, specific information about musicals that focus on rivalry and romance themes, particularly those involving workplace settings. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Musical Concept",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed concept for the musical including song list, character descriptions, and act structure.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed concept for a musical about the rivalry between two competing coffee shops where the baristas fall in love. Include a song list, character descriptions, and act structure. Ensure the concept is cohesive and engaging.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/music-{date}-musical-concept.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1976
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelnba2"
+  },
+  {
+    "task_id": "t_mmthuh6kb7mx",
+    "title": "Plan a 10-day ancient history and natural wonders tour through Jordan and Egypt.",
+    "raw_request": "Plan a 10-day ancient history and natural wonders tour through Jordan and Egypt. Include Petra treasury hike, Wadi Rum desert camp, Dead Sea float, Pyramids of Giza, Luxor temples, and Red Sea snorkeling.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:05:16.028Z",
+    "updated_at": "2026-03-16T18:10:32.157Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:06:21.204Z",
+      "interpreted_objective": "Plan a 10-day itinerary for a tour through Jordan and Egypt focusing on ancient history and natural wonders.",
+      "expected_outcome": "A detailed, engaging itinerary that includes key attractions in Jordan and Egypt, appealing to tourists interested in history and natural beauty.",
+      "key_unknowns": [
+        "Specific travel logistics between locations",
+        "Accommodation options near each attraction",
+        "Local guides or tours available at each site",
+        "Entry requirements and costs for each attraction"
+      ],
+      "recommended_strategy": "Conduct research on the key attractions in Jordan and Egypt, including Petra, Wadi Rum, the Dead Sea, Pyramids of Giza, Luxor, and the Red Sea. Gather information on travel logistics, accommodation, and local tours. Synthesize this data into a coherent 10-day itinerary that balances historical exploration with natural experiences.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Key Attractions and Logistics",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive data on attractions, logistics, accommodations, and tours in Jordan and Egypt.",
+          "prompt": "Search the web for current, specific information about key attractions in Jordan and Egypt, including Petra, Wadi Rum, the Dead Sea, Pyramids of Giza, Luxor, and the Red Sea. Include travel logistics, accommodation options, local tours, entry requirements, and costs. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 10-day itinerary for a tour through Jordan and Egypt.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 10-day itinerary for a tour through Jordan and Egypt. Include key attractions, travel logistics, accommodations, and local tours. Ensure the itinerary balances historical exploration with natural experiences.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-2023-10-ancient-history-tour.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2042
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmthuh53w6s2",
+    "title": "Design a comprehensive recovery protocol for marathon runners. Include immediate",
+    "raw_request": "Design a comprehensive recovery protocol for marathon runners. Include immediate post-race care, week-by-week return-to-running plan, nutrition for recovery, sleep optimization, and psychological decompression strategies.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:05:15.975Z",
+    "updated_at": "2026-03-16T18:10:20.329Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:06:13.655Z",
+      "interpreted_objective": "Design a comprehensive recovery protocol for marathon runners covering physical, nutritional, and psychological aspects.",
+      "expected_outcome": "A detailed, evidence-based recovery plan that marathon runners can follow to ensure optimal recovery post-race.",
+      "key_unknowns": [
+        "Current best practices in marathon recovery",
+        "Specific nutritional requirements post-marathon",
+        "Effective psychological decompression strategies for athletes"
+      ],
+      "recommended_strategy": "Conduct research to gather the latest evidence-based practices in marathon recovery. Synthesize this information into a structured recovery protocol that includes immediate post-race care, a return-to-running plan, nutritional guidance, sleep optimization, and psychological strategies.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Marathon Recovery Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and guidelines for marathon recovery, including citations.",
+          "prompt": "Search the web for current, specific information about best practices in marathon recovery. Include immediate post-race care, week-by-week return-to-running plans, nutritional guidance, sleep optimization, and psychological decompression strategies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Recovery Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive, structured recovery protocol for marathon runners.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive recovery protocol for marathon runners. Include specific recommendations for immediate post-race care, a week-by-week return-to-running plan, nutritional guidance, sleep optimization, and psychological decompression strategies. Ensure the protocol is evidence-based and actionable.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-marathon-recovery-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1904
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmthuh29fsdi",
+    "title": "Create a guide to running effective engineering hiring pipelines. Include job de",
+    "raw_request": "Create a guide to running effective engineering hiring pipelines. Include job description optimization, structured interview design, take-home vs live coding tradeoffs, interviewer calibration, and reducing bias in evaluation.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:05:15.873Z",
+    "updated_at": "2026-03-16T18:10:06.094Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:06:05.633Z",
+      "interpreted_objective": "Create a guide for running effective engineering hiring pipelines with a focus on job description optimization, structured interview design, coding tradeoffs, interviewer calibration, and bias reduction.",
+      "expected_outcome": "A comprehensive and actionable guide that provides specific strategies and steps for optimizing engineering hiring processes, tailored to data engineering roles.",
+      "key_unknowns": [
+        "Current best practices in job description optimization for engineering roles",
+        "Effective methods for structured interview design",
+        "Pros and cons of take-home versus live coding assessments",
+        "Techniques for interviewer calibration",
+        "Strategies for reducing bias in the evaluation process"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and insights on each aspect of the hiring pipeline. Synthesize these findings into a structured guide that includes specific recommendations and actionable steps for implementation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Engineering Hiring Pipelines",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices, strategies, and insights on optimizing engineering hiring pipelines.",
+          "prompt": "Search the web for current, specific information about best practices in job description optimization, structured interview design, take-home vs live coding assessments, interviewer calibration, and reducing bias in evaluation for engineering roles. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Effective Engineering Hiring Pipelines",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and actionable guide for running effective engineering hiring pipelines.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for creating a guide on running effective engineering hiring pipelines. Include specific strategies for job description optimization, structured interview design, coding tradeoffs, interviewer calibration, and bias reduction. Provide concrete next steps for implementation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-hiring-pipeline-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2207
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmthuh0p9ymb",
+    "title": "Research the best home weather-proofing solutions for drafty older homes. Compar",
+    "raw_request": "Research the best home weather-proofing solutions for drafty older homes. Compare spray foam vs fiberglass insulation, weatherstripping types, storm window options, and thermal curtain effectiveness with cost-benefit analysis.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:05:15.817Z",
+    "updated_at": "2026-03-16T18:09:55.518Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:05:58.061Z",
+      "interpreted_objective": "Research and compare the best weather-proofing solutions for drafty older homes, focusing on spray foam vs fiberglass insulation, weatherstripping types, storm window options, and thermal curtain effectiveness with a cost-benefit analysis.",
+      "expected_outcome": "A comprehensive report detailing the most effective weather-proofing solutions for older homes, including a comparison of costs and benefits for each option.",
+      "key_unknowns": [
+        "Current market prices for spray foam and fiberglass insulation",
+        "Effectiveness of different weatherstripping types",
+        "Cost and effectiveness of storm windows",
+        "Benefits of thermal curtains in energy savings"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on each weather-proofing solution, including effectiveness, costs, and benefits. Then, synthesize this information into a structured report with a clear comparison and recommendations for homeowners.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Weather-Proofing Solutions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on spray foam and fiberglass insulation, weatherstripping types, storm window options, and thermal curtain effectiveness with citations.",
+          "prompt": "Search the web for current, specific information about weather-proofing solutions for drafty older homes. Include data on spray foam vs fiberglass insulation, weatherstripping types, storm window options, and thermal curtain effectiveness. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Weather-Proofing Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing weather-proofing solutions with cost-benefit analysis.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for weather-proofing drafty older homes. Include specific names, numbers, and concrete next steps for spray foam vs fiberglass insulation, weatherstripping types, storm window options, and thermal curtain effectiveness.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-weather-proofing.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2210
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmthugzt40c1",
+    "title": "Explain how Rust ownership and borrowing system works. Cover move semantics, ref",
+    "raw_request": "Explain how Rust ownership and borrowing system works. Cover move semantics, reference lifetimes, the borrow checker, interior mutability patterns, and how Rc/Arc enable shared ownership without garbage collection.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:05:15.785Z",
+    "updated_at": "2026-03-16T18:09:41.409Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:05:49.181Z",
+      "interpreted_objective": "Explain Rust's ownership and borrowing system in detail.",
+      "expected_outcome": "A comprehensive explanation of Rust's ownership and borrowing system, including move semantics, reference lifetimes, the borrow checker, interior mutability patterns, and shared ownership with Rc/Arc.",
+      "key_unknowns": [
+        "Current best practices for teaching Rust's ownership model",
+        "Common misconceptions about Rust's borrowing system"
+      ],
+      "recommended_strategy": "First, conduct research to gather the latest information and best practices on Rust's ownership and borrowing system. Then, synthesize this information into a clear, structured explanation suitable for learners with a technical background.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Rust Ownership and Borrowing",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on Rust's ownership and borrowing system, including move semantics, reference lifetimes, the borrow checker, interior mutability, and Rc/Arc.",
+          "prompt": "Search the web for current, specific information about Rust's ownership and borrowing system. Include details on move semantics, reference lifetimes, the borrow checker, interior mutability patterns, and how Rc/Arc enable shared ownership without garbage collection. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Explanation of Rust Ownership and Borrowing",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured explanation of Rust's ownership and borrowing system, suitable for learners with a technical background.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive explanation of Rust's ownership and borrowing system. Cover move semantics, reference lifetimes, the borrow checker, interior mutability patterns, and how Rc/Arc enable shared ownership without garbage collection. Ensure the explanation is clear and structured for a technical audience.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-rust-ownership-borrowing.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1962
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmthugyr1mtm",
+    "title": "Create a guide to building a charitable giving strategy that maximizes tax benef",
+    "raw_request": "Create a guide to building a charitable giving strategy that maximizes tax benefits and impact. Include donor-advised fund mechanics, appreciated asset donations, impact measurement frameworks, and giving circle participation.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:05:15.747Z",
+    "updated_at": "2026-03-16T18:09:26.899Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:05:32.695Z",
+      "interpreted_objective": "Create a comprehensive guide on building a charitable giving strategy that maximizes tax benefits and impact.",
+      "expected_outcome": "A detailed guide covering donor-advised fund mechanics, appreciated asset donations, impact measurement frameworks, and giving circle participation.",
+      "key_unknowns": [
+        "Specific tax laws and benefits related to charitable giving",
+        "Current best practices for impact measurement",
+        "Details about donor-advised funds and giving circles"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on the key components of a charitable giving strategy. Synthesize this information into a structured guide that includes practical steps and considerations for maximizing tax benefits and impact.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Charitable Giving Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current information on donor-advised funds, appreciated asset donations, impact measurement frameworks, and giving circle participation.",
+          "prompt": "Search the web for current, specific information about donor-advised fund mechanics, appreciated asset donations, impact measurement frameworks, and giving circle participation. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Charitable Giving Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on building a charitable giving strategy that maximizes tax benefits and impact.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for building a charitable giving strategy. Include specific names, numbers, and concrete next steps for donor-advised fund mechanics, appreciated asset donations, impact measurement frameworks, and giving circle participation.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2001
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmthugy2x5h7",
+    "title": "Design a comprehensive zero-trust network architecture for a remote-first compan",
+    "raw_request": "Design a comprehensive zero-trust network architecture for a remote-first company. Include identity verification, device posture assessment, micro-segmentation, continuous authorization, and SASE integration with Cloudflare or Zscaler.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:05:15.722Z",
+    "updated_at": "2026-03-16T18:09:14.403Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:05:25.678Z",
+      "interpreted_objective": "Design a zero-trust network architecture for a remote-first company including key components like identity verification and SASE integration.",
+      "expected_outcome": "A detailed report outlining a zero-trust network architecture with specific recommendations for identity verification, device posture assessment, micro-segmentation, continuous authorization, and SASE integration.",
+      "key_unknowns": [
+        "Specific requirements or constraints of the company",
+        "Current network infrastructure and tools in use",
+        "Preferred vendors or technologies"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current best practices and technologies for zero-trust network architectures, focusing on identity verification, device posture assessment, micro-segmentation, continuous authorization, and SASE integration with Cloudflare or Zscaler. Then, synthesize this information into a comprehensive report with actionable recommendations tailored for a remote-first company.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Zero-Trust Network Architecture",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices, technologies, and vendor information for zero-trust network architecture.",
+          "prompt": "Search the web for current, specific information about zero-trust network architecture, including identity verification, device posture assessment, micro-segmentation, continuous authorization, and SASE integration with Cloudflare and Zscaler. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Zero-Trust Architecture Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with actionable recommendations for a zero-trust network architecture tailored for a remote-first company.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report on zero-trust network architecture. Include specific recommendations for identity verification, device posture assessment, micro-segmentation, continuous authorization, and SASE integration with Cloudflare or Zscaler.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-zero-trust-architecture.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2154
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
     "task_id": "t_mmthm3chnqzb",
     "title": "Design a comprehensive conflict resolution framework for engineering teams. Incl",
     "raw_request": "Design a comprehensive conflict resolution framework for engineering teams. Include early detection signals, one-on-one mediation scripts, team retrospective formats for recurring conflicts, escalation criteria, and post-resolution follow-up.",
