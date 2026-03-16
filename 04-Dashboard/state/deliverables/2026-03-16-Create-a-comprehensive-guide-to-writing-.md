@@ -1,71 +1,94 @@
-# Create a comprehensive guide to writing winning promotion packets for engineerin
+# Create a comprehensive guide to writing an effective engineering RFC/design docu
 
-**Domain:** careeregine | **Date:** 2026-03-16 | **Subtasks:** 2
+**Domain:** writing | **Date:** 2026-03-16 | **Subtasks:** 2
 
 
 
-## Research Best Practices for Promotion Packets
-## Finding 1: Fonzi AI's Documentation Signals for Senior Engineer Identification
-Fonzi AI evaluates senior engineers using documentation artifacts like design docs, Architecture Decision Records (ADRs), runbooks, and incident reports as key promotion signals. These demonstrate leadership through mentorship (materials enabling system understanding without one-on-one explanations), cross-team alignment (docs as contracts reducing coordination), and asynchronous effectiveness for distributed teams.  
-**Impact Documentation Example**: Documented evaluation protocols, dataset notes, and experiment logs for model retraining prevent costly mistakes like guessing dataset versions or rediscovering metrics, accelerating improvements.  
-**Next Steps**: Create 3-5 ADRs for recent projects; share in next 1:1 with manager to build promo packet evidence.  
-Source: https://fonzi.ai/blog/engineering-documentation
+## Research Current Best Practices for Engineering RFCs
+## Best Practices for Engineering RFCs and Design Documents
 
-## Finding 2: Asana's SMART Project Objectives for Engineering Impact Measurement
-Asana recommends SMART (Specific, Measurable, Achievable, Relevant, Time-bound) objectives for engineering projects, e.g., "Increase user engagement with the new dashboard by 15% in the first quarter after launch" or "Reduce operational waste by 5% and increase recycled products by 20% in the next 12 weeks." Involve team in goal-setting for buy-in, check progress in status reports to link individual work to org value (employees 2x more motivated per studies).  
-**Narrative Structure**: Tie objectives to broader goals in promo packets; use in status reports to show on-track/at-risk status.  
-**Peer Feedback Tie-In**: Frequent check-ins align team, providing natural feedback loops.  
-**Next Steps**: Quantify last quarter's projects with 2-3 SMART metrics (e.g., 15% engagement lift); solicit peer input via Asana comments for packet.  
-Source: https://asana.com/resources/how-project-objectives
+**Core structure of effective RFCs includes six mandatory sections: Problem Statement, Proposed Solution, Constraints, Non-Goals, Open Questions, and Acceptance Criteria.** This model, validated across Uber (scaled from tens to thousands of engineers), Google (design docs), Facebook, Microsoft, and Amazon, prevents failures like scope creep by defining the "why" first and clear finish lines via acceptance criteria.[2] Use RFC 2119 keywords in uppercase—MUST/REQUIRED for hard rules (e.g., output formats), SHOULD/RECOMMENDED for strong preferences with deviation allowed, MAY/OPTIONAL for nice-to-haves (often omit to keep specs clean)—to eliminate ambiguity, as practiced in technical documentation and AI agent prompts.[1]
 
-## Finding 3: No Direct Matches for Engineering Promotion Packets
-Searches for "engineering promotion packet best practices 2026", "successful promo kits senior engineer impact peer feedback", and "company guidelines staff engineer promotion narrative" yielded no specific examples of promotion packets, peer feedback templates, or company practices (e.g., Google, Meta, Amazon) from last 30 days. Results focused on general documentation, AI tools, and project mgmt instead.  
-**Disclaimer**: Used pre-provided results and live search equivalents; falling back to synthesized best practices from [1] and [4] as closest proxies for data engineering leadership promo evidence.  
-**Concrete Action**: Adapt Fonzi signals—draft a 1-page impact narrative with 3 metrics (e.g., "Shortened onboarding 30% via runbooks") + 2 peer endorsements; target Q2 2026 promo cycle.  
-Source: [no URL available; based on aggregate search with zero direct hits as of 2026-03-16]
+**Incorporate diagrams, plain language, and visual aids to communicate across teams.** Avoid jargon excluding cross-team reviewers; visuals like diagrams clarify complex ideas faster than text.[6]
 
-## Synthesize Guide on Writing Promotion Packets
-## Key Findings
+**Treat specs as durable infrastructure, not disposable docs.** In AI-native workflows, specs guide both humans and agents by anchoring implementation (e.g., phased PR plans, architectural boundaries for refactors); anticipate pitfalls via agent-assisted exploration during drafting.[3]
 
-### Documentation Signals for Senior Engineer Identification
-- **Key Artifacts**: Design documents, Architecture Decision Records (ADRs), runbooks, and incident reports are critical for demonstrating leadership and technical expertise.
-- **Impact Documentation**: Effective documentation can prevent costly mistakes and accelerate project improvements. For example, maintaining detailed ADRs and experiment logs can streamline processes and enhance team alignment.
-- **Actionable Example**: Create and maintain 3-5 ADRs for recent projects and discuss them in your next 1:1 meeting with your manager to build evidence for your promotion packet.
+## Real-World Examples
 
-### SMART Project Objectives
-- **SMART Framework**: Use Specific, Measurable, Achievable, Relevant, and Time-bound objectives to measure and communicate engineering impact effectively.
-- **Example Objectives**: "Increase user engagement with the new dashboard by 15% in the first quarter after launch" or "Reduce operational waste by 5% and increase recycled products by 20% in the next 12 weeks."
-- **Narrative Structure**: Clearly link these objectives to organizational value and personal contributions to demonstrate impact and leadership.
+**Uber's five-step RFC process: (1) plan before building, (2) document, (3) seek approval, (4) distribute for feedback, (5) iterate.** Scaled successfully to thousands of engineers; Gergely Orosz at The Pragmatic Engineer documented this.[2]
 
-## Recommendations
+**IETF RFC guidelines (draft-ietf-opsawg-rfc5706bis-03, updated 2026-03-02):** Authors follow specific instructions for clarity/completeness; drafts gain traction via feedback before review by experts like Benoit Claise, Joe Clarke; intended as Best Current Practice for operations/management in specs.[4][7]
 
-1. **Develop Comprehensive Documentation**:
-   - **What to Do**: Regularly create and update key documentation artifacts such as ADRs, design docs, and runbooks.
-   - **Why**: These documents serve as evidence of your leadership and technical contributions, crucial for promotion considerations.
-   - **Expected Outcome**: Enhanced visibility of your contributions and leadership capabilities.
-   - **First Step**: Identify recent projects and draft 3-5 ADRs to document decisions and their impacts.
+**Agent SOPs at Amazon (Senior Principal Engineer level):** Apply 3-level communication—Level 1 vetoes (hard rules), Level 2 advisory (references), Level 3 optional—mirroring RFC 2119 for precise instructions to teams/AI.[1]
 
-2. **Set and Track SMART Objectives**:
-   - **What to Do**: Define clear, SMART objectives for your projects and track progress regularly.
-   - **Why**: Demonstrates your ability to deliver measurable results and align with organizational goals.
-   - **Expected Outcome**: Stronger case for promotion by showcasing your contributions to key business outcomes.
-   - **First Step**: Collaborate with your team to set SMART objectives for ongoing projects.
+## Common Challenges and Solutions
 
-3. **Collect and Incorporate Peer Feedback**:
-   - **What to Do**: Actively seek feedback from peers and stakeholders to incorporate into your promotion packet.
-   - **Why**: Provides a holistic view of your performance and areas of impact.
-   - **Expected Outcome**: A well-rounded promotion packet that highlights your strengths and contributions from multiple perspectives.
-   - **First Step**: Schedule feedback sessions with peers and document their input.
+- **Missing Problem Statement:** Leads to endless projects without "why," affecting stakeholders/costs; solution: Start with "What problem? Who? Cost of inaction?"[2]
+- **Design-Implementation Gap:** Theoretical specs fail at scale (e.g., bad APIs/data models); hits junior engineers hardest as they can't predict pitfalls; solution: Spike prototypes first (2 days), then document learnings (constraints, surprises).[3][5]
+- **Over-Specification for Internal Teams:** 200-page docs unnecessary without IETF-style interoperability; wastes time vs. direct Slack/repo collaboration; solution: One-paragraph problem statement + post-spike doc.[5]
+- **Ambiguity in Coordination:** Strangers (e.g., Mozilla/Google/Siberia dev) need detailed RFCs for compatibility; internal teams don't; solution: Match doc depth to coordination needs (e.g., public APIs yes, 8-person team no).[5]
 
-## Action Items
+**Next Steps:** Draft your next RFC using the 6-section template from Iago Cavalcante (adapt for prompts: problem=context, constraints=rules).[2] Prototype via AI agent for 48 hours, then iterate per Uber process.[2][3] Review against RFC 2119 keywords.[1]
 
-1. **Within 1 Week**: Draft 3-5 ADRs for recent projects and discuss them in your next 1:1 meeting with your manager.
-2. **Within 2 Weeks**: Collaborate with your team to set SMART objectives for ongoing projects and begin tracking progress.
-3. **Within 3 Weeks**: Schedule and conduct feedback sessions with peers and document their input for your promotion packet.
+## Synthesize Guide for Writing Engineering RFCs
+## Comprehensive Guide for Writing Effective Engineering RFCs
 
-## Resources
+### RFC Template Structure
 
-- **Fonzi AI Blog on Engineering Documentation**: [Fonzi AI Blog](https://fonzi.ai/blog/engineering-documentation)
-- **Asana on SMART Objectives**: [Asana SMART Objectives Guide](https://asana.com/resources/smart-goals)
+1. **Problem Statement**
+   - Clearly define the issue or opportunity the RFC addresses.
+   - **First Step**: Gather data and metrics to quantify the problem.
 
-These steps and resources will help you craft a compelling promotion packet that effectively communicates your contributions and leadership within your engineering role.
+2. **Proposed Solution**
+   - Detail the solution, including technical specifics and how it resolves the problem.
+   - **First Step**: Draft a high-level overview and refine through iterations.
+
+3. **Constraints**
+   - List any limitations or requirements that the solution must adhere to.
+   - **First Step**: Identify technical, resource, or time constraints.
+
+4. **Non-Goals**
+   - Specify what is out of scope to prevent scope creep.
+   - **First Step**: Discuss with stakeholders to align on priorities.
+
+5. **Open Questions**
+   - Highlight unresolved issues or areas needing further research.
+   - **First Step**: Engage with experts or stakeholders to address these questions.
+
+6. **Acceptance Criteria**
+   - Define clear, measurable outcomes that signify the RFC's success.
+   - **First Step**: Collaborate with QA and stakeholders to set realistic criteria.
+
+### Stakeholder Identification
+
+- **Identify Key Stakeholders**: Include team leads, engineers, product managers, and cross-functional team members.
+- **First Step**: Create a stakeholder map to ensure all relevant parties are engaged early.
+
+### Trade-off Analysis Format
+
+- **Criteria**: List the factors to evaluate (e.g., cost, time, performance).
+- **Options**: Present different approaches with pros and cons.
+- **Decision**: Recommend a course of action based on the analysis.
+- **First Step**: Gather data for each criterion to support objective decision-making.
+
+### Decision Record
+
+- **Document Decisions**: Record the rationale, alternatives considered, and final decision.
+- **First Step**: Use a decision log template to maintain consistency and clarity.
+
+### Strategies for Fostering Productive Review Discussions
+
+- **Use Clear Language**: Avoid jargon; ensure the document is accessible to all reviewers.
+- **Visual Aids**: Incorporate diagrams and flowcharts to simplify complex concepts.
+- **Feedback Loops**: Implement structured feedback sessions with clear timelines.
+- **First Step**: Schedule a kickoff meeting to align on review expectations and timelines.
+
+### Additional Best Practices
+
+- **Use RFC 2119 Keywords**: Apply MUST, SHOULD, and MAY to clarify requirements and preferences.
+- **Durable Documentation**: Treat RFCs as living documents that evolve with the project.
+- **First Step**: Establish a version control system to track changes and updates.
+
+By following this guide, engineering teams can create effective RFCs that facilitate clear communication, align stakeholders, and drive successful project outcomes. [Sources: 1, 2, 3, 6]
+
+**Word Count: 448**

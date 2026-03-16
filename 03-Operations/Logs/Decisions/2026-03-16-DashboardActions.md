@@ -7855,3 +7855,563 @@
 - **Action:** Worker: execute-subtask
 - **Result:** Done
 - **File:** 03-Operations/Reports/writing-{date}-meeting-effectiveness-guide.md, 03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsutttt0qwe.md
+
+## 2026-03-16T07:25:34.027Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:25:35.469Z
+- **Action:** Worker: deliberate
+- **Result:** Failed: Intake task not found: t_mmsuzpwpgbyo
+- **File:** n/a
+
+## 2026-03-16T07:25:43.439Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:25:49.172Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:25:53.957Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:25:59.797Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:26:08.195Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:26:15.856Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:26:22.859Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:26:28.701Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:26:37.961Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsuzta9fwdv.md
+
+## 2026-03-16T07:26:47.586Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsv00jqp1q1.md
+
+## 2026-03-16T07:27:10.692Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsv04z5q6jw.md
+
+## 2026-03-16T07:27:22.414Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsuztbui699.md
+
+## 2026-03-16T07:27:31.884Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/writing-{date}-memory_allocators.md, 03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsv00l8z7v5.md
+
+## 2026-03-16T07:27:40.016Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/research-2023-10-sous-vide-comparison.md, 03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsv050lp0kp.md
+
+## 2026-03-16T07:30:45.804Z
+- **Action:** Plan approved
+- **Result:** t_mmsuzqgrg1t1
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:30:45.839Z
+- **Action:** Plan approved
+- **Result:** t_mmsuzqd9lrcq
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:30:45.871Z
+- **Action:** Plan approved
+- **Result:** t_mmsuzq9kjigv
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:30:45.901Z
+- **Action:** Plan approved
+- **Result:** t_mmsuzq69j2xk
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:30:45.932Z
+- **Action:** Plan approved
+- **Result:** t_mmsuzq4bsst2
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:30:45.962Z
+- **Action:** Plan approved
+- **Result:** t_mmsuzq1zbpfn
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:34:05.045Z
+- **Action:** Deliberation queued
+- **Result:** t_mmsuzqgrg1t1
+- **File:** Design a comprehensive async communication system for distributed teams. Include
+
+## 2026-03-16T07:34:05.113Z
+- **Action:** Deliberation queued
+- **Result:** t_mmsuzqd9lrcq
+- **File:** Create a guide to building a home bar for craft cocktail enthusiasts. Include es
+
+## 2026-03-16T07:34:05.169Z
+- **Action:** Deliberation queued
+- **Result:** t_mmsuzq9kjigv
+- **File:** Write a complete series bible for a satirical comedy set in a coworking space wh
+
+## 2026-03-16T07:34:05.259Z
+- **Action:** Deliberation queued
+- **Result:** t_mmsuzq69j2xk
+- **File:** Plan a 10-day Northern Lights and winter adventure trip through Norway. Include 
+
+## 2026-03-16T07:34:05.393Z
+- **Action:** Deliberation queued
+- **Result:** t_mmsuzq4bsst2
+- **File:** Design a comprehensive back health protocol for desk workers. Include McGill Big
+
+## 2026-03-16T07:34:05.418Z
+- **Action:** Deliberation queued
+- **Result:** t_mmsuzq1zbpfn
+- **File:** Create a comprehensive guide to writing an effective engineering RFC/design docu
+
+## 2026-03-16T07:34:11.142Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:34:17.646Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:34:22.967Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:34:30.300Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:34:37.575Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:34:42.435Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:35:59.145Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:36:04.271Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:36:11.341Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:36:18.911Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:36:24.321Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:36:30.281Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:41:22.373Z
+- **Action:** Worker: execute-subtask
+- **Result:** Failed: Subtask not found: st_mmsvk3kjrwqg
+- **File:** n/a
+
+## 2026-03-16T07:41:24.403Z
+- **Action:** Worker: execute-subtask
+- **Result:** Failed: Subtask not found: st_mmsvk3m3jrmz
+- **File:** n/a
+
+## 2026-03-16T07:41:26.387Z
+- **Action:** Worker: execute-subtask
+- **Result:** Failed: Subtask not found: st_mmsvk3o8zlye
+- **File:** n/a
+
+## 2026-03-16T07:41:28.400Z
+- **Action:** Worker: execute-subtask
+- **Result:** Failed: Subtask not found: st_mmsvk3ppdfsm
+- **File:** n/a
+
+## 2026-03-16T07:41:30.373Z
+- **Action:** Worker: execute-subtask
+- **Result:** Failed: Subtask not found: st_mmsvk3rt2x24
+- **File:** n/a
+
+## 2026-03-16T07:41:32.399Z
+- **Action:** Worker: execute-subtask
+- **Result:** Failed: Subtask not found: st_mmsvk3tbedc1
+- **File:** n/a
+
+## 2026-03-16T07:41:34.407Z
+- **Action:** Worker: execute-subtask
+- **Result:** Failed: Subtask not found: st_mmsvk3vf0r6e
+- **File:** n/a
+
+## 2026-03-16T07:41:36.381Z
+- **Action:** Worker: execute-subtask
+- **Result:** Failed: Subtask not found: st_mmsvk3wv2xcm
+- **File:** n/a
+
+## 2026-03-16T07:41:38.407Z
+- **Action:** Worker: execute-subtask
+- **Result:** Failed: Subtask not found: st_mmsvk3yzj9o7
+- **File:** n/a
+
+## 2026-03-16T07:41:40.410Z
+- **Action:** Worker: execute-subtask
+- **Result:** Failed: Subtask not found: st_mmsvk40f8kud
+- **File:** n/a
+
+## 2026-03-16T07:41:42.409Z
+- **Action:** Worker: execute-subtask
+- **Result:** Failed: Subtask not found: st_mmsvk42ksiq2
+- **File:** n/a
+
+## 2026-03-16T07:41:44.396Z
+- **Action:** Worker: execute-subtask
+- **Result:** Failed: Subtask not found: st_mmsvk4421bsb
+- **File:** n/a
+
+## 2026-03-16T07:49:07.667Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:49:12.892Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:49:18.244Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:49:23.554Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:49:31.181Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:49:36.923Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:49:42.759Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:49:47.694Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:49:53.617Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:49:59.678Z
+- **Action:** Worker: deliberate
+- **Result:** Done
+- **File:** no files changed
+
+## 2026-03-16T07:55:13.332Z
+- **Action:** Plan approved
+- **Result:** t_mmsvu0dj7sxs
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:55:13.366Z
+- **Action:** Plan approved
+- **Result:** t_mmsvu0a3i6mv
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:55:13.398Z
+- **Action:** Plan approved
+- **Result:** t_mmsvu070294h
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:55:13.431Z
+- **Action:** Plan approved
+- **Result:** t_mmsvu03qfn4d
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:55:13.462Z
+- **Action:** Plan approved
+- **Result:** t_mmsvu00cje2j
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:55:13.492Z
+- **Action:** Plan approved
+- **Result:** t_mmsvtzwvvjzq
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:55:13.523Z
+- **Action:** Plan approved
+- **Result:** t_mmsvtzuijgqw
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:55:13.608Z
+- **Action:** Plan approved
+- **Result:** t_mmsvtztnithe
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:55:13.639Z
+- **Action:** Plan approved
+- **Result:** t_mmsvtznqhjre
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:55:13.669Z
+- **Action:** Plan approved
+- **Result:** t_mmsvtzn5lrbh
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:59:53.689Z
+- **Action:** Plan approved
+- **Result:** t_mmsvu0dj7sxs
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:59:53.724Z
+- **Action:** Plan approved
+- **Result:** t_mmsvu0a3i6mv
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:59:53.757Z
+- **Action:** Plan approved
+- **Result:** t_mmsvu070294h
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:59:53.788Z
+- **Action:** Plan approved
+- **Result:** t_mmsvu03qfn4d
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:59:53.819Z
+- **Action:** Plan approved
+- **Result:** t_mmsvu00cje2j
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:59:53.850Z
+- **Action:** Plan approved
+- **Result:** t_mmsvtzwvvjzq
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:59:53.881Z
+- **Action:** Plan approved
+- **Result:** t_mmsvtzuijgqw
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:59:53.912Z
+- **Action:** Plan approved
+- **Result:** t_mmsvtztnithe
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:59:53.943Z
+- **Action:** Plan approved
+- **Result:** t_mmsvtznqhjre
+- **File:** 0 subtasks queued
+
+## 2026-03-16T07:59:53.974Z
+- **Action:** Plan approved
+- **Result:** t_mmsvtzn5lrbh
+- **File:** 0 subtasks queued
+
+## 2026-03-16T08:00:43.169Z
+- **Action:** Plan approved
+- **Result:** t_mmsvu0dj7sxs
+- **File:** 1 subtasks queued
+
+## 2026-03-16T08:00:43.295Z
+- **Action:** Plan approved
+- **Result:** t_mmsvu0a3i6mv
+- **File:** 1 subtasks queued
+
+## 2026-03-16T08:00:43.591Z
+- **Action:** Plan approved
+- **Result:** t_mmsvu070294h
+- **File:** 1 subtasks queued
+
+## 2026-03-16T08:00:43.735Z
+- **Action:** Plan approved
+- **Result:** t_mmsvu03qfn4d
+- **File:** 1 subtasks queued
+
+## 2026-03-16T08:00:43.944Z
+- **Action:** Plan approved
+- **Result:** t_mmsvu00cje2j
+- **File:** 1 subtasks queued
+
+## 2026-03-16T08:00:44.109Z
+- **Action:** Plan approved
+- **Result:** t_mmsvtzwvvjzq
+- **File:** 1 subtasks queued
+
+## 2026-03-16T08:00:44.294Z
+- **Action:** Plan approved
+- **Result:** t_mmsvtzuijgqw
+- **File:** 1 subtasks queued
+
+## 2026-03-16T08:00:44.492Z
+- **Action:** Plan approved
+- **Result:** t_mmsvtztnithe
+- **File:** 1 subtasks queued
+
+## 2026-03-16T08:00:44.748Z
+- **Action:** Plan approved
+- **Result:** t_mmsvtznqhjre
+- **File:** 1 subtasks queued
+
+## 2026-03-16T08:00:44.984Z
+- **Action:** Plan approved
+- **Result:** t_mmsvtzn5lrbh
+- **File:** 1 subtasks queued
+
+## 2026-03-16T08:00:53.884Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsw8qgazee1.md
+
+## 2026-03-16T08:01:38.718Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsw8qjodbld.md
+
+## 2026-03-16T08:01:48.182Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsw8qmvj8wr.md
+
+## 2026-03-16T08:01:57.528Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsw8qq4ergj.md
+
+## 2026-03-16T08:02:07.442Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsw8qt8wqll.md
+
+## 2026-03-16T08:02:18.927Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsw8qwelia8.md
+
+## 2026-03-16T08:02:33.579Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsw8qzjf2pe.md
+
+## 2026-03-16T08:02:43.922Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsw8r2nn6n1.md
+
+## 2026-03-16T08:03:00.654Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsw8r5rchw1.md
+
+## 2026-03-16T08:03:39.330Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsw8r8ucjvg.md
+
+## 2026-03-16T08:03:51.698Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/writing-2023-10-26-game_concept.md, 03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsw8qhxjho0.md
+
+## 2026-03-16T08:04:07.082Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/general-2023-10-culinary-tour-mexico-city.md, 03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsw8ql7fsk4.md
+
+## 2026-03-16T08:04:16.378Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsw8qofmstl.md
+
+## 2026-03-16T08:04:26.795Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/writing-{date}-observability_workflow.md, 03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsw8qrlfccc.md
+
+## 2026-03-16T08:04:33.277Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/writing-{date}-engineering-rfc-guide.md, 03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsw8qup0es6.md
+
+## 2026-03-16T08:04:40.996Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/health-{date}-back-health-protocol.md, 03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsw8qxvhxxj.md
+
+## 2026-03-16T08:04:50.888Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/travel-{date}-norway-itinerary.md, 03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsw8r10sz13.md
+
+## 2026-03-16T08:05:03.865Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsw8r42xeg1.md
+
+## 2026-03-16T08:05:14.339Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsw8r770uiy.md
+
+## 2026-03-16T08:05:24.974Z
+- **Action:** Worker: execute-subtask
+- **Result:** Done
+- **File:** 03-Operations/Reports/writing-async-communication-{date}.md, 03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsw8raaqi0m.md

@@ -1,5 +1,1691 @@
 [
   {
+    "task_id": "t_mmsvu0dj7sxs",
+    "title": "Write a complete concept for an interactive fiction game about a journalist inve",
+    "raw_request": "Write a complete concept for an interactive fiction game about a journalist investigating a tech company whose AI assistant has been subtly influencing user behavior. Include branching narrative structure and 4 distinct endings.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:49:02.695Z",
+    "updated_at": "2026-03-16T08:03:51.672Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:49:59.506Z",
+      "interpreted_objective": "Develop a detailed concept for an interactive fiction game involving a journalist investigating a tech company's AI assistant influencing user behavior.",
+      "expected_outcome": "A comprehensive game concept document with a branching narrative structure, including four distinct endings, ready for potential development.",
+      "key_unknowns": [
+        "Specific mechanics of how the AI assistant influences user behavior",
+        "The journalist's background and motivations",
+        "Possible settings and environments within the game",
+        "Details of the four distinct endings"
+      ],
+      "recommended_strategy": "First, conduct research to gather insights on existing interactive fiction games and narrative structures. Then, synthesize this information to create a detailed concept with branching paths and distinct endings. Ensure the narrative is engaging and aligns with the theme of AI influence.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Interactive Fiction Games",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current trends and examples of interactive fiction games, focusing on narrative structures and themes related to AI.",
+          "prompt": "Search the web for current examples and trends in interactive fiction games, particularly those involving AI themes. Include details on narrative structures, gameplay mechanics, and any notable examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Game Concept and Narrative",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed game concept document with a branching narrative structure and four distinct endings.",
+          "prompt": "Based on the research results, create a detailed concept for an interactive fiction game where a journalist investigates a tech company's AI assistant influencing user behavior. Include a branching narrative structure and four distinct endings, ensuring the narrative is engaging and thematically consistent.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-2023-10-26-game_concept.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1934
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsvu0a3i6mv",
+    "title": "Plan a 7-day food tour through Mexico City. Include street food markets, high-en",
+    "raw_request": "Plan a 7-day food tour through Mexico City. Include street food markets, high-end tasting menus, mezcalerias, cooking classes in local homes, Xochimilco boat tours, and neighborhood-by-neighborhood restaurant guides.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:49:02.571Z",
+    "updated_at": "2026-03-16T08:04:07.057Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:49:53.438Z",
+      "interpreted_objective": "Plan a comprehensive 7-day culinary tour of Mexico City.",
+      "expected_outcome": "A detailed itinerary including street food markets, high-end restaurants, mezcalerias, cooking classes, Xochimilco tours, and neighborhood restaurant guides.",
+      "key_unknowns": [
+        "Current popular street food markets in Mexico City",
+        "High-end restaurants offering tasting menus",
+        "Recommended mezcalerias",
+        "Availability of cooking classes in local homes",
+        "Details of Xochimilco boat tours",
+        "Neighborhood-specific restaurant recommendations"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on culinary attractions in Mexico City. Synthesize findings into a detailed 7-day itinerary covering diverse culinary experiences.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Mexico City's Culinary Attractions",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current data on Mexico City's culinary attractions with citations.",
+          "prompt": "Search the web for current, specific information about culinary attractions in Mexico City, including street food markets, high-end tasting menu restaurants, mezcalerias, cooking classes in local homes, and Xochimilco boat tours. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize 7-Day Culinary Tour Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 7-day itinerary for a culinary tour of Mexico City.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 7-day itinerary for a culinary tour of Mexico City. Include visits to street food markets, high-end tasting menu restaurants, mezcalerias, cooking classes in local homes, Xochimilco boat tours, and neighborhood-specific restaurant recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-10-culinary-tour-mexico-city.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2516
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsvu070294h",
+    "title": "Create a guide to building generational wealth through index fund investing. Inc",
+    "raw_request": "Create a guide to building generational wealth through index fund investing. Include asset allocation by age, rebalancing strategies, tax-location optimization, international diversification, and behavioral pitfalls to avoid.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:49:02.460Z",
+    "updated_at": "2026-03-16T08:04:16.352Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:49:47.511Z",
+      "interpreted_objective": "Create a detailed guide on building generational wealth through index fund investing.",
+      "expected_outcome": "A comprehensive guide that includes asset allocation by age, rebalancing strategies, tax-location optimization, international diversification, and behavioral pitfalls to avoid.",
+      "key_unknowns": [
+        "Specific asset allocation strategies by age",
+        "Effective rebalancing strategies",
+        "Tax-location optimization techniques",
+        "Best practices for international diversification",
+        "Common behavioral pitfalls in index fund investing"
+      ],
+      "recommended_strategy": "Conduct research on each component of index fund investing to gather current, specific information. Synthesize findings into a cohesive guide with actionable recommendations and real-world examples. Ensure the guide is practical and easy to understand for a broad audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Index Fund Investing Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, specific information on index fund investing strategies including asset allocation by age, rebalancing, tax optimization, international diversification, and behavioral pitfalls.",
+          "prompt": "Search the web for current, specific information about index fund investing strategies. Include asset allocation by age, rebalancing strategies, tax-location optimization, international diversification, and behavioral pitfalls to avoid. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Index Fund Investing",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide on building generational wealth through index fund investing, including actionable recommendations and real-world examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed guide on building generational wealth through index fund investing. Include specific recommendations for asset allocation by age, rebalancing strategies, tax-location optimization, international diversification, and behavioral pitfalls to avoid. Provide real-world examples and actionable next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2433
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsvu03qfn4d",
+    "title": "Design a comprehensive observability-driven development workflow. Include struct",
+    "raw_request": "Design a comprehensive observability-driven development workflow. Include structured logging standards, distributed tracing instrumentation, custom metric design, alerting philosophy, and SLO-based reliability engineering.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:49:02.342Z",
+    "updated_at": "2026-03-16T08:04:26.771Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:49:42.579Z",
+      "interpreted_objective": "Design a detailed workflow for observability-driven development, including logging, tracing, metrics, alerting, and reliability engineering.",
+      "expected_outcome": "A comprehensive document outlining a structured observability-driven development workflow that can be immediately implemented by a development team.",
+      "key_unknowns": [
+        "Specific industry or technology stack the workflow should target",
+        "Existing tools and practices currently in use by the team",
+        "Level of expertise of the intended audience"
+      ],
+      "recommended_strategy": "Conduct research on current best practices in observability-driven development, focusing on structured logging, distributed tracing, custom metrics, alerting philosophies, and SLO-based reliability engineering. Synthesize findings into a structured document tailored to general development teams, ensuring clarity and usability.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Observability Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and standards in observability-driven development.",
+          "prompt": "Search the web for current best practices in observability-driven development, focusing on structured logging standards, distributed tracing instrumentation, custom metric design, alerting philosophies, and SLO-based reliability engineering. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Observability Workflow Document",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured document detailing a comprehensive observability-driven development workflow.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive observability-driven development workflow. Include sections on structured logging standards, distributed tracing instrumentation, custom metric design, alerting philosophy, and SLO-based reliability engineering. Ensure the document is clear, actionable, and tailored for general development teams.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-observability_workflow.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1950
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsvu00cje2j",
+    "title": "Create a comprehensive guide to writing an effective engineering RFC/design docu",
+    "raw_request": "Create a comprehensive guide to writing an effective engineering RFC/design document. Include template structure, stakeholder identification, trade-off analysis format, decision record, and fostering productive review discussions.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:49:02.220Z",
+    "updated_at": "2026-03-16T08:04:33.252Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:49:36.743Z",
+      "interpreted_objective": "Create a comprehensive guide for writing effective engineering RFC/design documents.",
+      "expected_outcome": "A detailed guide that includes template structure, stakeholder identification, trade-off analysis format, decision record, and review discussion strategies.",
+      "key_unknowns": [
+        "Current best practices for engineering RFCs",
+        "Common challenges in RFC review discussions",
+        "Effective formats for trade-off analysis"
+      ],
+      "recommended_strategy": "First, conduct research to gather current best practices and examples of effective engineering RFCs. Then, synthesize this information into a structured guide that includes templates and strategies for stakeholder engagement and review discussions.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Best Practices for Engineering RFCs",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices, examples, and challenges in engineering RFCs.",
+          "prompt": "Search the web for current best practices, examples, and common challenges in writing engineering RFCs and design documents. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Writing Engineering RFCs",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on writing effective engineering RFCs, including templates and strategies.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for writing effective engineering RFCs. Include a template structure, stakeholder identification, trade-off analysis format, decision record, and strategies for fostering productive review discussions.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-engineering-rfc-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1891
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsvtzwvvjzq",
+    "title": "Design a comprehensive back health protocol for desk workers. Include McGill Big",
+    "raw_request": "Design a comprehensive back health protocol for desk workers. Include McGill Big 3 exercises, neutral spine training, herniated disc prevention, decompression techniques, and ergonomic setup for different body types.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:49:02.095Z",
+    "updated_at": "2026-03-16T08:04:40.971Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:49:30.999Z",
+      "interpreted_objective": "Design a comprehensive back health protocol for desk workers, incorporating specific exercises, training, prevention techniques, and ergonomic setups.",
+      "expected_outcome": "A detailed, evidence-based protocol document that guides desk workers on maintaining back health through exercises, posture training, and ergonomic adjustments.",
+      "key_unknowns": [
+        "Specific ergonomic needs for different body types",
+        "Current best practices for herniated disc prevention and decompression techniques"
+      ],
+      "recommended_strategy": "Conduct thorough research on back health protocols, focusing on McGill Big 3 exercises, neutral spine training, herniated disc prevention, decompression techniques, and ergonomic setups. Synthesize findings into a comprehensive, actionable guide tailored for desk workers.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Back Health Protocols",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current, evidence-based information on back health protocols for desk workers, including exercises and ergonomic setups.",
+          "prompt": "Search the web for current, specific information about back health protocols for desk workers. Include details on McGill Big 3 exercises, neutral spine training, herniated disc prevention, decompression techniques, and ergonomic setups for different body types. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Back Health Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and actionable back health protocol document for desk workers.",
+          "prompt": "Based on the research results, synthesize a comprehensive back health protocol for desk workers. Include McGill Big 3 exercises, neutral spine training, herniated disc prevention, decompression techniques, and ergonomic setup guidance for different body types. Ensure the protocol is specific, evidence-based, and actionable.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-back-health-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1937
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsvtzuijgqw",
+    "title": "Plan a 10-day Northern Lights and winter adventure trip through Norway. Include ",
+    "raw_request": "Plan a 10-day Northern Lights and winter adventure trip through Norway. Include Tromso aurora chasing, Lofoten Islands fishing villages, dog sledding experiences, ice hotel stay, and coastal steamer cruise along the fjords.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:49:02.010Z",
+    "updated_at": "2026-03-16T08:04:50.862Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:49:23.371Z",
+      "interpreted_objective": "Plan a detailed 10-day winter adventure trip in Norway focusing on Northern Lights and unique experiences.",
+      "expected_outcome": "A comprehensive itinerary with specific activities, dates, costs, and logistics for a 10-day trip in Norway.",
+      "key_unknowns": [
+        "Current availability and pricing for activities in Norway",
+        "Best travel dates for Northern Lights visibility",
+        "Logistics and transportation options between destinations"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on travel options, pricing, and availability for each activity. Synthesize this data into a detailed itinerary with specific recommendations for each day of the trip.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Norway Travel Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on travel options, pricing, and availability for activities in Norway.",
+          "prompt": "Search the web for current, specific information about travel options, pricing, and availability for a 10-day winter adventure trip in Norway. Include Tromso aurora chasing, Lofoten Islands fishing villages, dog sledding experiences, ice hotel stay, and coastal steamer cruise along the fjords. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Norway Trip Itinerary",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "A detailed itinerary for a 10-day winter adventure trip in Norway, including specific activities, dates, costs, and logistics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed itinerary for a 10-day winter adventure trip in Norway. Include specific activities, dates, costs, and logistics for Tromso aurora chasing, Lofoten Islands fishing villages, dog sledding experiences, ice hotel stay, and coastal steamer cruise along the fjords.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-norway-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1966
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsvtztnithe",
+    "title": "Write a complete series bible for a satirical comedy set in a coworking space wh",
+    "raw_request": "Write a complete series bible for a satirical comedy set in a coworking space where every startup is solving increasingly absurd problems with AI. Include 8 recurring company concepts and pilot episode structure.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:49:01.979Z",
+    "updated_at": "2026-03-16T08:05:03.841Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:49:18.077Z",
+      "interpreted_objective": "Create a detailed series bible for a satirical comedy set in a coworking space with absurd AI startups.",
+      "expected_outcome": "A comprehensive series bible including 8 unique startup concepts and a structured pilot episode outline.",
+      "key_unknowns": [
+        "Specific tone and style preferences for the series",
+        "Any particular themes or messages to highlight",
+        "Character details and dynamics"
+      ],
+      "recommended_strategy": "First, research existing satirical comedies and coworking space dynamics to gather relevant context. Then, synthesize this information to create unique startup concepts and a pilot episode structure that fits the comedic and satirical tone desired.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Satirical Comedies and Coworking Dynamics",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report on existing satirical comedies and coworking space dynamics.",
+          "prompt": "Search the web for information on successful satirical comedies and dynamics of coworking spaces. Include examples of shows, themes, and common comedic elements, as well as insights into coworking culture.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Create Series Bible and Pilot Episode Structure",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete series bible with 8 startup concepts and a pilot episode outline.",
+          "prompt": "Based on the research results, synthesize a series bible for a satirical comedy set in a coworking space. Include 8 unique startup concepts with absurd AI solutions and a structured outline for the pilot episode.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2033
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsvtznqhjre",
+    "title": "Create a guide to building a home bar for craft cocktail enthusiasts. Include es",
+    "raw_request": "Create a guide to building a home bar for craft cocktail enthusiasts. Include essential spirits list by tier, barware selection, ice program, bitters and syrup production, cocktail menu design, and storage solutions.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:49:01.766Z",
+    "updated_at": "2026-03-16T08:05:14.312Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:49:12.708Z",
+      "interpreted_objective": "Create a comprehensive guide for building a home bar tailored for craft cocktail enthusiasts.",
+      "expected_outcome": "A detailed and actionable guide covering spirits, barware, ice, bitters, syrups, menu design, and storage solutions.",
+      "key_unknowns": [
+        "Specific preferences or style of the target audience",
+        "Budget constraints for building the home bar",
+        "Level of expertise assumed for the reader"
+      ],
+      "recommended_strategy": "Conduct research on essential components of a home bar for craft cocktail enthusiasts. Synthesize findings into a structured guide that includes detailed sections on spirits, barware, ice, bitters, syrups, menu design, and storage solutions. Ensure the guide is practical and accessible for a range of skill levels.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Essential Components for a Home Bar",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of essential spirits, barware, ice program details, bitters and syrup production methods, cocktail menu design tips, and storage solutions.",
+          "prompt": "Search the web for current, specific information about building a home bar for craft cocktail enthusiasts. Include essential spirits by tier, barware selection, ice program, bitters and syrup production, cocktail menu design, and storage solutions. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Building a Home Bar",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for building a home bar for craft cocktail enthusiasts, including all researched components.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations into a guide for building a home bar for craft cocktail enthusiasts. Include sections on essential spirits by tier, barware selection, ice program, bitters and syrup production, cocktail menu design, and storage solutions with specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2068
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmsvtzn5lrbh",
+    "title": "Design a comprehensive async communication system for distributed teams. Include",
+    "raw_request": "Design a comprehensive async communication system for distributed teams. Include written communication standards, video message guidelines, documentation-first culture, response time expectations, and meeting reduction strategies.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:49:01.745Z",
+    "updated_at": "2026-03-16T08:05:24.948Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:49:07.494Z",
+      "interpreted_objective": "Design an effective async communication system for distributed teams with clear guidelines and strategies.",
+      "expected_outcome": "A comprehensive document outlining standards and strategies for async communication in distributed teams, reducing the need for meetings and improving productivity.",
+      "key_unknowns": [
+        "Specific team sizes and structures",
+        "Current communication tools in use",
+        "Cultural differences affecting communication",
+        "Existing documentation practices"
+      ],
+      "recommended_strategy": "Conduct research on best practices for async communication in distributed teams, focusing on written standards, video guidelines, and documentation culture. Synthesize findings into a structured report with actionable strategies and guidelines.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Async Communication Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of best practices and guidelines for async communication in distributed teams.",
+          "prompt": "Search the web for current best practices in async communication for distributed teams, including written communication standards, video message guidelines, documentation-first culture, response time expectations, and meeting reduction strategies. Include real examples, names, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Async Communication Guidelines",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with guidelines and strategies for async communication in distributed teams.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comprehensive document outlining async communication guidelines for distributed teams. Include sections on written communication standards, video message guidelines, documentation-first culture, response time expectations, and meeting reduction strategies.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-async-communication-{date}.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1912
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsvd2zf4ggm",
+    "title": "Create a comprehensive guide to writing an effective engineering RFC/design docu",
+    "raw_request": "Create a comprehensive guide to writing an effective engineering RFC/design document. Include template structure, stakeholder identification, trade-off analysis format, decision record, and fostering productive review discussions.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:35:52.923Z",
+    "updated_at": "2026-03-16T07:48:03.516Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:36:30.099Z",
+      "interpreted_objective": "Create a comprehensive guide on writing effective engineering RFC/design documents.",
+      "expected_outcome": "A detailed guide that includes template structure, stakeholder identification, trade-off analysis format, decision record, and strategies for productive review discussions.",
+      "key_unknowns": [
+        "Specific template structures commonly used in the industry",
+        "Best practices for stakeholder identification in RFCs",
+        "Effective formats for trade-off analysis",
+        "Methods to foster productive review discussions"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and examples of engineering RFCs. Synthesize this information into a structured guide that includes all requested elements. Ensure the guide is clear, actionable, and tailored to the audience's needs.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Engineering RFC Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Collection of best practices and examples for engineering RFCs.",
+          "prompt": "Search the web for current best practices and examples of engineering RFC/design documents. Include information on template structures, stakeholder identification, trade-off analysis formats, decision records, and methods for fostering productive review discussions. Provide real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Writing Engineering RFCs",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on writing effective engineering RFCs.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on writing effective engineering RFC/design documents. Include template structure, stakeholder identification, trade-off analysis format, decision record, and strategies for fostering productive review discussions.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-engineering-rfc-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1918
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsvd2xfgd83",
+    "title": "Design a comprehensive back health protocol for desk workers. Include McGill Big",
+    "raw_request": "Design a comprehensive back health protocol for desk workers. Include McGill Big 3 exercises, neutral spine training, herniated disc prevention, decompression techniques, and ergonomic setup for different body types.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:35:52.851Z",
+    "updated_at": "2026-03-16T07:48:03.543Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:36:24.140Z",
+      "interpreted_objective": "Design a back health protocol for desk workers incorporating specific exercises and ergonomic strategies.",
+      "expected_outcome": "A comprehensive, evidence-based protocol for back health that desk workers can follow to prevent issues and improve posture.",
+      "key_unknowns": [
+        "Specific ergonomic needs for different body types",
+        "Latest research on McGill Big 3 exercises and their efficacy",
+        "Effective decompression techniques for desk workers"
+      ],
+      "recommended_strategy": "Conduct research on the latest back health strategies for desk workers, focusing on McGill Big 3 exercises, neutral spine training, and ergonomic setups. Synthesize findings into a structured protocol document.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Back Health Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report with current information on back health strategies for desk workers.",
+          "prompt": "Search the web for current, specific information about back health strategies for desk workers, including McGill Big 3 exercises, neutral spine training, herniated disc prevention, decompression techniques, and ergonomic setups for different body types. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Back Health Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable protocol document for back health tailored to desk workers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a back health protocol for desk workers. Include specific exercises, ergonomic adjustments, and decompression techniques tailored to different body types.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-back_health_protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1897
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsvd2vgyuu9",
+    "title": "Plan a 10-day Northern Lights and winter adventure trip through Norway. Include ",
+    "raw_request": "Plan a 10-day Northern Lights and winter adventure trip through Norway. Include Tromso aurora chasing, Lofoten Islands fishing villages, dog sledding experiences, ice hotel stay, and coastal steamer cruise along the fjords.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:35:52.780Z",
+    "updated_at": "2026-03-16T07:48:03.566Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:36:18.729Z",
+      "interpreted_objective": "Plan a detailed 10-day winter adventure itinerary in Norway focusing on Northern Lights and unique experiences.",
+      "expected_outcome": "A comprehensive itinerary with specific activities, dates, costs, and logistics for a 10-day trip in Norway, including Tromso aurora chasing, Lofoten Islands, dog sledding, ice hotel stay, and fjord cruise.",
+      "key_unknowns": [
+        "Current availability and pricing of activities",
+        "Best travel dates for Northern Lights visibility",
+        "Logistics and travel times between locations"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on availability, pricing, and logistics for the specified activities and locations. Then, synthesize this data into a detailed itinerary, ensuring all elements are feasible and well-coordinated.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Norway Winter Adventure Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on availability, pricing, and logistics for Tromso aurora chasing, Lofoten Islands, dog sledding, ice hotel stay, and coastal steamer cruise.",
+          "prompt": "Search the web for current, specific information about winter adventure activities in Norway, including Tromso aurora chasing, Lofoten Islands fishing villages, dog sledding experiences, ice hotel stay, and coastal steamer cruise along the fjords. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Norway Winter Adventure Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 10-day itinerary for a winter adventure trip in Norway, including specific activities, dates, costs, and logistics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 10-day itinerary for a winter adventure trip in Norway. Include specific activities, dates, costs, and logistics for Tromso aurora chasing, Lofoten Islands, dog sledding, ice hotel stay, and coastal steamer cruise.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-norway-winter-adventure.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2001
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsvd2t3r73e",
+    "title": "Write a complete series bible for a satirical comedy set in a coworking space wh",
+    "raw_request": "Write a complete series bible for a satirical comedy set in a coworking space where every startup is solving increasingly absurd problems with AI. Include 8 recurring company concepts and pilot episode structure.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:35:52.695Z",
+    "updated_at": "2026-03-16T07:48:03.589Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:36:11.165Z",
+      "interpreted_objective": "Create a detailed series bible for a satirical comedy set in a coworking space with absurd AI startups.",
+      "expected_outcome": "A comprehensive series bible including 8 recurring company concepts and a pilot episode structure.",
+      "key_unknowns": [
+        "Specific tone and style preferences for the series",
+        "Any particular themes or messages to emphasize",
+        "Target audience demographics"
+      ],
+      "recommended_strategy": "First, research existing satirical comedies and coworking culture to gather relevant context and inspiration. Then, synthesize this information into a structured series bible, ensuring it includes unique and humorous company concepts and a coherent pilot episode outline.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Satirical Comedies and Coworking Culture",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report on existing satirical comedies and coworking culture.",
+          "prompt": "Search the web for information on popular satirical comedies and the culture of coworking spaces. Include examples, themes, and any notable elements that could inspire a new series.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Series Bible",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete series bible including 8 recurring company concepts and a pilot episode structure.",
+          "prompt": "Based on the research results, create a series bible for a satirical comedy set in a coworking space. Include detailed descriptions of 8 recurring company concepts, each solving absurd problems with AI, and outline the structure of a pilot episode.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2038
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsvd2smx2sg",
+    "title": "Create a guide to building a home bar for craft cocktail enthusiasts. Include es",
+    "raw_request": "Create a guide to building a home bar for craft cocktail enthusiasts. Include essential spirits list by tier, barware selection, ice program, bitters and syrup production, cocktail menu design, and storage solutions.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:35:52.678Z",
+    "updated_at": "2026-03-16T07:48:03.612Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:36:04.086Z",
+      "interpreted_objective": "Create a comprehensive guide for building a home bar tailored for craft cocktail enthusiasts.",
+      "expected_outcome": "A detailed guide that includes an essential spirits list by tier, barware selection, ice program, bitters and syrup production, cocktail menu design, and storage solutions.",
+      "key_unknowns": [
+        "Specific preferences of the target audience for spirits and cocktails",
+        "Current trends in home bar setups",
+        "Optimal storage solutions for home bars"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on home bar essentials and trends. Synthesize this information into a structured guide that addresses each component of the request. Ensure the guide is actionable and tailored to craft cocktail enthusiasts.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Bar Essentials",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current data and trends on home bar essentials.",
+          "prompt": "Search the web for current, specific information about building a home bar for craft cocktail enthusiasts. Include essential spirits lists by tier, barware selection, ice programs, bitters and syrup production, cocktail menu design, and storage solutions. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Home Bar Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide for building a home bar, including all specified elements.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building a home bar for craft cocktail enthusiasts. Include sections on essential spirits list by tier, barware selection, ice program, bitters and syrup production, cocktail menu design, and storage solutions. Provide actionable recommendations and specific details.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2028
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmsvd2s2qf8z",
+    "title": "Design a comprehensive async communication system for distributed teams. Include",
+    "raw_request": "Design a comprehensive async communication system for distributed teams. Include written communication standards, video message guidelines, documentation-first culture, response time expectations, and meeting reduction strategies.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:35:52.658Z",
+    "updated_at": "2026-03-16T07:48:03.635Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:35:58.962Z",
+      "interpreted_objective": "Create a detailed asynchronous communication system for distributed teams.",
+      "expected_outcome": "A comprehensive document outlining standards and strategies for effective async communication, reducing meetings, and setting clear response expectations.",
+      "key_unknowns": [
+        "Specific needs and challenges of the target teams",
+        "Current communication tools and practices in use",
+        "Preferred communication styles and cultural considerations"
+      ],
+      "recommended_strategy": "Conduct research on current best practices for asynchronous communication in distributed teams. Synthesize findings into a structured report that includes guidelines for written communication, video messages, documentation practices, response times, and meeting reduction strategies.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Async Communication Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and guidelines for asynchronous communication in distributed teams.",
+          "prompt": "Search the web for current best practices in asynchronous communication for distributed teams. Include guidelines for written communication, video messages, documentation-first culture, response time expectations, and strategies for reducing meetings. Provide specific examples, tools, and citations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Async Communication System Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with actionable recommendations for an async communication system.",
+          "prompt": "Based on the research results, synthesize a comprehensive report detailing an asynchronous communication system for distributed teams. Include specific guidelines for written communication standards, video message protocols, a documentation-first culture, response time expectations, and strategies to reduce meetings.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-async-communication-system.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1905
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsuzqgrg1t1",
+    "title": "Design a comprehensive async communication system for distributed teams. Include",
+    "raw_request": "Design a comprehensive async communication system for distributed teams. Include written communication standards, video message guidelines, documentation-first culture, response time expectations, and meeting reduction strategies.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:25:30.171Z",
+    "updated_at": "2026-03-16T07:35:52.521Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:34:10.999Z",
+      "interpreted_objective": "Design an effective asynchronous communication system for distributed teams.",
+      "expected_outcome": "A detailed report outlining standards and strategies for async communication, including communication standards, video guidelines, documentation practices, response times, and meeting reduction techniques.",
+      "key_unknowns": [
+        "Current best practices in async communication for distributed teams",
+        "Specific challenges faced by distributed teams in communication",
+        "Innovative tools or technologies that facilitate async communication"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and challenges in async communication for distributed teams. Synthesize this information into a comprehensive report that includes guidelines and strategies tailored to the needs of distributed teams. Ensure the report addresses all components specified in the request.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Async Communication Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices, challenges, and tools for async communication in distributed teams.",
+          "prompt": "Search the web for current best practices, challenges, and tools related to asynchronous communication in distributed teams. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Async Communication Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing async communication standards, video message guidelines, documentation-first culture, response time expectations, and meeting reduction strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report on asynchronous communication for distributed teams. Include communication standards, video message guidelines, documentation-first culture, response time expectations, and meeting reduction strategies.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-async-communication.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1918
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsuzqd9lrcq",
+    "title": "Create a guide to building a home bar for craft cocktail enthusiasts. Include es",
+    "raw_request": "Create a guide to building a home bar for craft cocktail enthusiasts. Include essential spirits list by tier, barware selection, ice program, bitters and syrup production, cocktail menu design, and storage solutions.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:25:30.045Z",
+    "updated_at": "2026-03-16T07:35:52.539Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:34:17.487Z",
+      "interpreted_objective": "Create a comprehensive guide for building a home bar tailored to craft cocktail enthusiasts.",
+      "expected_outcome": "A detailed guide that includes an essential spirits list by tier, barware selection, ice program, bitters and syrup production, cocktail menu design, and storage solutions.",
+      "key_unknowns": [
+        "Specific preferences of the target audience for spirits and barware",
+        "Current trends in cocktail menu design",
+        "Optimal storage solutions for home bars"
+      ],
+      "recommended_strategy": "Research current trends and best practices in home bar setup for cocktail enthusiasts. Synthesize this information into a structured guide that covers all requested aspects, ensuring it is accessible and actionable for the target audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Bar Essentials",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research on essential spirits, barware, ice programs, bitters and syrup production, cocktail menu design, and storage solutions.",
+          "prompt": "Search the web for current, specific information about building a home bar for craft cocktail enthusiasts. Include real names, numbers, dates, URLs, and sources for essential spirits by tier, barware selection, ice program, bitters and syrup production, cocktail menu design, and storage solutions.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Home Bar Setup",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide covering all aspects of building a home bar for craft cocktail enthusiasts.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for building a home bar for craft cocktail enthusiasts. Include specific names, numbers, and concrete next steps for essential spirits by tier, barware selection, ice program, bitters and syrup production, cocktail menu design, and storage solutions.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2042
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmsuzq9kjigv",
+    "title": "Write a complete series bible for a satirical comedy set in a coworking space wh",
+    "raw_request": "Write a complete series bible for a satirical comedy set in a coworking space where every startup is solving increasingly absurd problems with AI. Include 8 recurring company concepts and pilot episode structure.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:25:29.912Z",
+    "updated_at": "2026-03-16T07:35:52.555Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:34:22.812Z",
+      "interpreted_objective": "Create a detailed series bible for a satirical comedy set in a coworking space with absurd AI-driven startup concepts.",
+      "expected_outcome": "A comprehensive series bible including 8 recurring company concepts and a structured pilot episode outline.",
+      "key_unknowns": [
+        "Specific tone and style preferences for the comedy",
+        "Target audience demographics",
+        "Any specific themes or messages to emphasize"
+      ],
+      "recommended_strategy": "First, research popular satirical comedies and coworking space dynamics to gather inspiration and context. Then, synthesize this information to create a series bible that includes detailed descriptions of 8 recurring company concepts and a structured pilot episode outline.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Satirical Comedies and Coworking Spaces",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report on popular satirical comedies and dynamics of coworking spaces.",
+          "prompt": "Search the web for information on popular satirical comedies and the dynamics of coworking spaces. Include examples, themes, and any relevant insights that could inform a comedy series set in a coworking space.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Series Bible",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete series bible with 8 recurring company concepts and a pilot episode structure.",
+          "prompt": "Based on the research results, create a detailed series bible for a satirical comedy set in a coworking space. Include descriptions of 8 recurring company concepts that solve absurd problems with AI, and outline the structure of a pilot episode.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2049
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsuzq69j2xk",
+    "title": "Plan a 10-day Northern Lights and winter adventure trip through Norway. Include ",
+    "raw_request": "Plan a 10-day Northern Lights and winter adventure trip through Norway. Include Tromso aurora chasing, Lofoten Islands fishing villages, dog sledding experiences, ice hotel stay, and coastal steamer cruise along the fjords.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:25:29.793Z",
+    "updated_at": "2026-03-16T07:35:52.571Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:34:30.143Z",
+      "interpreted_objective": "Plan a detailed 10-day itinerary for a Northern Lights and winter adventure trip in Norway, including specific activities and logistics.",
+      "expected_outcome": "A comprehensive travel itinerary with specific activities, dates, costs, and logistics for a 10-day trip to Norway, focusing on Northern Lights and winter adventures.",
+      "key_unknowns": [
+        "Current availability and pricing of activities in Norway",
+        "Exact dates for the trip",
+        "Preferred budget range",
+        "Travel restrictions or requirements due to seasonality or COVID-19"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on the availability and pricing of the specified activities in Norway. Then, synthesize this information into a detailed itinerary that includes specific dates, costs, and logistical considerations. Ensure the itinerary aligns with the client's preferences and constraints.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the proposed itinerary by Rahul"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Current Availability and Pricing in Norway",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on availability and pricing for Tromso aurora chasing, Lofoten Islands fishing villages, dog sledding, ice hotel stay, and coastal steamer cruise.",
+          "prompt": "Search the web for current, specific information about the availability and pricing of Tromso aurora chasing, Lofoten Islands fishing villages, dog sledding experiences, ice hotel stays, and coastal steamer cruises in Norway. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary and Logistics",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 10-day itinerary for a winter adventure trip in Norway, including specific activities, dates, costs, and logistics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 10-day itinerary for a Northern Lights and winter adventure trip in Norway. Include specific activities, dates, costs, and logistics for Tromso aurora chasing, Lofoten Islands fishing villages, dog sledding experiences, ice hotel stay, and coastal steamer cruise.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-norway-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2010
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsuzq4bsst2",
+    "title": "Design a comprehensive back health protocol for desk workers. Include McGill Big",
+    "raw_request": "Design a comprehensive back health protocol for desk workers. Include McGill Big 3 exercises, neutral spine training, herniated disc prevention, decompression techniques, and ergonomic setup for different body types.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:25:29.723Z",
+    "updated_at": "2026-03-16T07:35:52.586Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:34:37.420Z",
+      "interpreted_objective": "Design a comprehensive back health protocol for desk workers that includes exercises, training, prevention techniques, and ergonomic setups.",
+      "expected_outcome": "A detailed, evidence-based protocol that desk workers can follow to maintain back health, prevent injuries, and improve ergonomics.",
+      "key_unknowns": [
+        "Specific ergonomic needs for different body types",
+        "Current best practices for herniated disc prevention",
+        "Latest decompression techniques"
+      ],
+      "recommended_strategy": "Conduct research on current back health practices for desk workers, focusing on McGill Big 3 exercises, neutral spine training, herniated disc prevention, decompression techniques, and ergonomic setups. Synthesize findings into a comprehensive protocol document.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Back Health Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A comprehensive overview of current back health practices for desk workers, including McGill Big 3 exercises, neutral spine training, herniated disc prevention, decompression techniques, and ergonomic setup recommendations.",
+          "prompt": "Search the web for current, specific information about back health practices for desk workers. Focus on McGill Big 3 exercises, neutral spine training, herniated disc prevention, decompression techniques, and ergonomic setups for different body types. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Back Health Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable back health protocol document for desk workers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive back health protocol for desk workers. Include McGill Big 3 exercises, neutral spine training, herniated disc prevention, decompression techniques, and ergonomic setup recommendations. Provide specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-back-health-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1955
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsuzq1zbpfn",
+    "title": "Create a comprehensive guide to writing an effective engineering RFC/design docu",
+    "raw_request": "Create a comprehensive guide to writing an effective engineering RFC/design document. Include template structure, stakeholder identification, trade-off analysis format, decision record, and fostering productive review discussions.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:25:29.639Z",
+    "updated_at": "2026-03-16T07:35:52.602Z",
+    "status": "failed",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:34:42.306Z",
+      "interpreted_objective": "Create a detailed guide for writing effective engineering RFC/design documents.",
+      "expected_outcome": "A comprehensive guide including template structure, stakeholder identification, trade-off analysis format, decision record, and fostering productive review discussions.",
+      "key_unknowns": [
+        "Current best practices for engineering RFCs",
+        "Common challenges in RFC review discussions",
+        "Effective template structures"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and examples of effective RFCs. Synthesize this information into a structured guide, ensuring it covers all specified elements like template structure and stakeholder identification.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Engineering RFCs",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and examples for engineering RFCs.",
+          "prompt": "Search the web for current best practices and examples of effective engineering RFC/design documents. Include information on template structures, stakeholder identification, trade-off analysis formats, decision records, and fostering productive review discussions. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comprehensive Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide for writing effective engineering RFCs, covering all specified elements.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for writing effective engineering RFC/design documents. Include detailed sections on template structure, stakeholder identification, trade-off analysis format, decision record, and fostering productive review discussions.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-engineering-rfc-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1895
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsuzq0cfaxz",
+    "title": "Research the best sous vide systems for home cooks. Compare Anova Precision Cook",
+    "raw_request": "Research the best sous vide systems for home cooks. Compare Anova Precision Cooker Pro, Breville Joule Turbo, and Instant Pot Accu Slim with container recommendations, vacuum sealer pairings, and temperature guides for common proteins.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:25:29.580Z",
+    "updated_at": "2026-03-16T07:27:39.992Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:25:48.926Z",
+      "interpreted_objective": "Research and compare the best sous vide systems for home cooks, focusing on Anova Precision Cooker Pro, Breville Joule Turbo, and Instant Pot Accu Slim, along with container recommendations, vacuum sealer pairings, and temperature guides for common proteins.",
+      "expected_outcome": "A detailed comparison report of the three sous vide systems with specific recommendations on containers, vacuum sealers, and temperature settings for proteins.",
+      "key_unknowns": [
+        "Current market ratings and reviews for each sous vide system",
+        "Optimal container and vacuum sealer pairings for each system",
+        "Temperature guides for cooking common proteins with each system"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on the three sous vide systems, including market reviews, recommended accessories, and temperature guides. Then, synthesize the findings into a comprehensive comparison report with actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Sous Vide Systems",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on Anova Precision Cooker Pro, Breville Joule Turbo, and Instant Pot Accu Slim, including reviews, container and vacuum sealer recommendations, and temperature guides.",
+          "prompt": "Search the web for current, specific information about Anova Precision Cooker Pro, Breville Joule Turbo, and Instant Pot Accu Slim. Include reviews, container and vacuum sealer recommendations, and temperature guides for common proteins. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive comparison report of the three sous vide systems with recommendations on containers, vacuum sealers, and temperature settings.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a detailed comparison of the Anova Precision Cooker Pro, Breville Joule Turbo, and Instant Pot Accu Slim. Include specific recommendations on container and vacuum sealer pairings, and temperature guides for proteins.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-sous-vide-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2244
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsuzpzhn5jt",
+    "title": "Explain how memory allocators work in systems programming. Cover arena allocatio",
+    "raw_request": "Explain how memory allocators work in systems programming. Cover arena allocation, slab allocators, buddy systems, jemalloc vs tcmalloc internals, memory fragmentation mitigation, and when to use custom allocators.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:25:29.550Z",
+    "updated_at": "2026-03-16T07:27:31.859Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:25:43.163Z",
+      "interpreted_objective": "Explain the workings of memory allocators in systems programming, focusing on specific types and comparisons.",
+      "expected_outcome": "A comprehensive, well-structured explanation of memory allocators, including specific types, comparisons, and practical applications.",
+      "key_unknowns": [
+        "Current best practices for memory allocation",
+        "Specific differences between jemalloc and tcmalloc",
+        "Recent advancements in memory fragmentation mitigation"
+      ],
+      "recommended_strategy": "First, research current information on memory allocators, focusing on arena allocation, slab allocators, buddy systems, jemalloc vs tcmalloc, and memory fragmentation. Then, synthesize this research into a detailed, structured explanation. Ensure the content is tailored to a systems programming audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Memory Allocators",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research data on memory allocators, including arena allocation, slab allocators, buddy systems, jemalloc vs tcmalloc, and fragmentation mitigation.",
+          "prompt": "Search the web for current, specific information about memory allocators in systems programming. Focus on arena allocation, slab allocators, buddy systems, jemalloc vs tcmalloc internals, and memory fragmentation mitigation. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Memory Allocator Explanation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured explanation of memory allocators, covering all specified topics and comparisons.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive explanation of memory allocators in systems programming. Cover arena allocation, slab allocators, buddy systems, jemalloc vs tcmalloc internals, memory fragmentation mitigation, and when to use custom allocators. Ensure the explanation is detailed and tailored to a systems programming audience.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-memory_allocators.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1976
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsuzpw43c39",
+    "title": "Design a comprehensive API versioning strategy for long-lived REST APIs. Compare",
+    "raw_request": "Design a comprehensive API versioning strategy for long-lived REST APIs. Compare URL path vs header vs query param versioning, backward compatibility testing, deprecation communication, and sunset header implementation.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:25:29.428Z",
+    "updated_at": "2026-03-16T07:27:22.390Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:25:33.748Z",
+      "interpreted_objective": "Design a comprehensive API versioning strategy for long-lived REST APIs.",
+      "expected_outcome": "A detailed report comparing different API versioning strategies and recommendations for implementation.",
+      "key_unknowns": [
+        "Specific requirements or constraints of the startup's API",
+        "Current API versioning practices in use, if any",
+        "Stakeholder preferences for versioning methods"
+      ],
+      "recommended_strategy": "Research and compare the three versioning strategies: URL path, header, and query param. Evaluate each for backward compatibility, deprecation communication, and sunset header implementation. Synthesize findings into a strategic report with recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research API Versioning Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on URL path, header, and query param versioning methods.",
+          "prompt": "Search the web for current, specific information about API versioning strategies, focusing on URL path, header, and query param methods. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize API Versioning Strategy Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report comparing API versioning strategies with recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for API versioning strategies. Include specific pros/cons, backward compatibility, deprecation communication, and sunset header implementation.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1972
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
     "task_id": "t_mmsusgwsx60b",
     "title": "Design a comprehensive meeting effectiveness system for engineering teams. Inclu",
     "raw_request": "Design a comprehensive meeting effectiveness system for engineering teams. Include meeting type taxonomy, agenda templates, facilitation techniques, async alternatives, decision documentation, and meeting cost calculator.",

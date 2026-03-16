@@ -32,7 +32,7 @@ function readStore<T = any>(file: string): T[] {
 
 function writeStore<T>(file: string, data: T[]): void {
   ensureFile(file);
-  if (data.length > 2000) data = data.slice(-2000);
+  if (data.length > 5000) data = data.slice(-5000);
   fs.writeFileSync(file, JSON.stringify(data, null, 2));
 }
 
