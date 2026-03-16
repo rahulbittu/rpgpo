@@ -1,5 +1,680 @@
 [
   {
+    "task_id": "t_mmsoezhu6x43",
+    "title": "Design a personal productivity audit system. Include time tracking, energy mappi",
+    "raw_request": "Design a personal productivity audit system. Include time tracking, energy mapping, distraction analysis, and monthly optimization reviews.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:21:24.402Z",
+    "updated_at": "2026-03-16T04:25:17.414Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:22:52.003Z",
+      "interpreted_objective": "Design a system to audit personal productivity by tracking time, mapping energy levels, analyzing distractions, and conducting monthly optimization reviews.",
+      "expected_outcome": "A comprehensive report detailing the setup and execution of a personal productivity audit system, including practical tools and methods for time tracking, energy mapping, distraction analysis, and monthly reviews.",
+      "key_unknowns": [
+        "Specific tools or software for time tracking and energy mapping",
+        "Methods for analyzing distractions effectively",
+        "Criteria for conducting monthly optimization reviews"
+      ],
+      "recommended_strategy": "First, research current tools and methods for time tracking, energy mapping, and distraction analysis. Then, synthesize this information into a structured plan for implementing a personal productivity audit system. Finally, compile the findings into a comprehensive report.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Productivity Tools and Methods",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current tools and methods for time tracking, energy mapping, and distraction analysis with citations.",
+          "prompt": "Search the web for current, specific information about tools and methods for time tracking, energy mapping, and distraction analysis. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Productivity Audit System Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured plan for implementing a personal productivity audit system, including recommendations for tools and methods.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a personal productivity audit system. Include specific tools, methods, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-productivity-audit-system.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1961
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsoeyoj35j8",
+    "title": "Create a comprehensive guide to building a home photography studio on a budget. ",
+    "raw_request": "Create a comprehensive guide to building a home photography studio on a budget. Include lighting, backdrops, camera settings, and post-processing workflow. Under 500 dollars.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:21:23.347Z",
+    "updated_at": "2026-03-16T04:25:12.353Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:22:36.132Z",
+      "interpreted_objective": "Create a comprehensive guide for setting up a budget home photography studio.",
+      "expected_outcome": "A detailed guide that includes information on lighting, backdrops, camera settings, and post-processing workflow within a $500 budget.",
+      "key_unknowns": [
+        "Specific equipment recommendations for lighting and backdrops",
+        "Optimal camera settings for a home studio",
+        "Effective post-processing tools and techniques within budget"
+      ],
+      "recommended_strategy": "Conduct research to identify cost-effective equipment and techniques for setting up a home photography studio. Synthesize this information into a clear, actionable guide that includes specific product recommendations and workflow tips, ensuring all components fit within the $500 budget constraint.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Budget Home Photography Studio Setup",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, specific information on affordable lighting, backdrops, camera settings, and post-processing tools for a home photography studio.",
+          "prompt": "Search the web for current, specific information about affordable equipment and techniques for setting up a home photography studio on a budget. Include real names, numbers, prices, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize and Write Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide to building a home photography studio on a budget, including lighting, backdrops, camera settings, and post-processing workflow.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for setting up a home photography studio on a budget. Include specific product recommendations, camera settings, and post-processing tips, ensuring all components fit within a $500 budget.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2112
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsoexvjywhs",
+    "title": "Write a detailed outline for a thriller screenplay about a cybersecurity expert ",
+    "raw_request": "Write a detailed outline for a thriller screenplay about a cybersecurity expert who discovers a backdoor in critical infrastructure. 3-act structure with key scenes.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:21:22.303Z",
+    "updated_at": "2026-03-16T04:25:04.251Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:22:32.087Z",
+      "interpreted_objective": "Create a detailed outline for a thriller screenplay about a cybersecurity expert discovering a backdoor in critical infrastructure, using a 3-act structure with key scenes.",
+      "expected_outcome": "A comprehensive and engaging screenplay outline that clearly defines the 3-act structure, key scenes, and character arcs.",
+      "key_unknowns": [
+        "Specific cybersecurity technologies involved",
+        "The nature of the critical infrastructure",
+        "The antagonist's motivations and background",
+        "The setting and geopolitical context"
+      ],
+      "recommended_strategy": "First, gather information on recent cybersecurity threats and critical infrastructure vulnerabilities to ensure realism and relevance. Then, synthesize this information into a detailed screenplay outline, focusing on plot development, character arcs, and key scenes in a 3-act structure.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Recent Cybersecurity Threats",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of recent cybersecurity threats and vulnerabilities in critical infrastructure.",
+          "prompt": "Search the web for current, specific information about recent cybersecurity threats and vulnerabilities in critical infrastructure. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Screenplay Outline",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed outline for a thriller screenplay in a 3-act structure, including key scenes and character arcs.",
+          "prompt": "Based on the research results from the previous subtask, create a detailed outline for a thriller screenplay about a cybersecurity expert who discovers a backdoor in critical infrastructure. Include a 3-act structure with key scenes, character arcs, and plot development.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-thriller-outline.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1979
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsoex2mky6q",
+    "title": "Plan a 4-day cultural trip to New Orleans. Include live jazz venues, Cajun cooki",
+    "raw_request": "Plan a 4-day cultural trip to New Orleans. Include live jazz venues, Cajun cooking classes, historic neighborhoods, and a swamp tour. For 2 adults.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:21:21.262Z",
+    "updated_at": "2026-03-16T04:24:54.830Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:22:26.235Z",
+      "interpreted_objective": "Plan a detailed 4-day cultural itinerary for New Orleans, focusing on jazz, Cajun cooking, historic neighborhoods, and a swamp tour for two adults.",
+      "expected_outcome": "A comprehensive itinerary including specific venues, class options, tour details, and cost estimates for a 4-day trip to New Orleans.",
+      "key_unknowns": [
+        "Current availability and pricing of jazz venues and Cajun cooking classes",
+        "Tour options and costs for swamp tours",
+        "Historic neighborhoods to visit",
+        "Accommodation options and costs"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on jazz venues, Cajun cooking classes, historic neighborhoods, and swamp tours in New Orleans. Then, synthesize this data into a structured itinerary with specific recommendations for each day, including logistics and costs.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research New Orleans cultural attractions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on live jazz venues, Cajun cooking classes, historic neighborhoods, and swamp tours in New Orleans, including names, locations, availability, and costs.",
+          "prompt": "Search the web for current, specific information about live jazz venues, Cajun cooking classes, historic neighborhoods, and swamp tours in New Orleans. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize New Orleans itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 4-day itinerary for New Orleans, including specific venues, classes, tours, logistics, and cost estimates.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 4-day itinerary for New Orleans. Include specific names, numbers, concrete next steps, logistics, and cost estimates.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-new-orleans-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1945
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsoewa0t9cv",
+    "title": "Design a comprehensive joint health program for people who exercise regularly. I",
+    "raw_request": "Design a comprehensive joint health program for people who exercise regularly. Include warm-up protocols, supplementation, recovery, and injury prevention.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:21:20.232Z",
+    "updated_at": "2026-03-16T04:24:45.092Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:22:20.777Z",
+      "interpreted_objective": "Design a joint health program for regular exercisers, covering warm-up, supplementation, recovery, and injury prevention.",
+      "expected_outcome": "A comprehensive, evidence-based joint health program that is actionable and safe for regular exercisers.",
+      "key_unknowns": [
+        "Specific needs of the target demographic",
+        "Current best practices in joint health for exercisers",
+        "Evidence-based supplementation options"
+      ],
+      "recommended_strategy": "Conduct research on current best practices in joint health for regular exercisers, including warm-up protocols, supplementation, recovery strategies, and injury prevention. Synthesize findings into a comprehensive program with actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Joint Health Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research on joint health practices for regular exercisers, including warm-up, supplementation, recovery, and injury prevention.",
+          "prompt": "Search the web for current, specific information about joint health practices for people who exercise regularly. Include details on warm-up protocols, supplementation, recovery strategies, and injury prevention, with real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Joint Health Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive, evidence-based joint health program for regular exercisers, including specific recommendations and safety disclaimers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive joint health program for people who exercise regularly. Include specific recommendations for warm-up protocols, supplementation, recovery strategies, and injury prevention, along with safety disclaimers.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-joint-health-program.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1885
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsoevha8rhx",
+    "title": "Create a guide for engineers preparing for system design interviews at FAANG com",
+    "raw_request": "Create a guide for engineers preparing for system design interviews at FAANG companies. Include 10 common problems with solution frameworks and time management.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:21:19.198Z",
+    "updated_at": "2026-03-16T04:24:37.857Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:21:38.317Z",
+      "interpreted_objective": "Create a comprehensive guide for engineers preparing for system design interviews at FAANG companies, including common problems, solutions, and time management strategies.",
+      "expected_outcome": "A detailed guide that helps engineers effectively prepare for system design interviews at FAANG companies, enhancing their chances of success.",
+      "key_unknowns": [
+        "Specific common system design problems frequently asked in FAANG interviews",
+        "Effective solution frameworks for these problems",
+        "Best practices for managing time during these interviews"
+      ],
+      "recommended_strategy": "Conduct research to identify common system design problems in FAANG interviews and gather solution frameworks. Develop time management strategies specific to these interviews. Synthesize this information into a structured guide.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Common System Design Problems",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of common system design problems asked in FAANG interviews with sources.",
+          "prompt": "Search the web for current, specific information about common system design problems frequently asked in FAANG interviews. Include real names, problem descriptions, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for System Design Interviews",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide that includes common system design problems, solution frameworks, and time management strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a guide for engineers preparing for system design interviews at FAANG companies. Include 10 common problems with solution frameworks and time management strategies. Provide actionable recommendations with specific names and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-system-design-interview-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2167
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsoeuom1pwf",
+    "title": "Research the best robot vacuums for pet owners in 2026. Compare Roomba, Roborock",
+    "raw_request": "Research the best robot vacuums for pet owners in 2026. Compare Roomba, Roborock, and Ecovacs. Include suction power, self-emptying, and pet hair performance.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:21:18.166Z",
+    "updated_at": "2026-03-16T04:24:29.298Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:21:32.547Z",
+      "interpreted_objective": "Research and compare the best robot vacuums for pet owners in 2026, focusing on Roomba, Roborock, and Ecovacs, including suction power, self-emptying, and pet hair performance.",
+      "expected_outcome": "A detailed comparison report of Roomba, Roborock, and Ecovacs robot vacuums for pet owners in 2026, highlighting suction power, self-emptying capabilities, and pet hair performance, leading to a clear recommendation.",
+      "key_unknowns": [
+        "Current models and features of Roomba, Roborock, and Ecovacs in 2026",
+        "Specific suction power metrics for each model",
+        "Self-emptying capabilities of each model",
+        "Performance on pet hair for each model"
+      ],
+      "recommended_strategy": "First, conduct research to gather current information on the latest models of Roomba, Roborock, and Ecovacs available in 2026, focusing on their suction power, self-emptying features, and pet hair performance. Then, synthesize this information into a comprehensive comparison report with specific product recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Robot Vacuums for Pet Owners in 2026",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Roomba, Roborock, and Ecovacs models in 2026, including suction power, self-emptying features, and pet hair performance.",
+          "prompt": "Search the web for current, specific information about the best robot vacuums for pet owners in 2026, focusing on Roomba, Roborock, and Ecovacs. Include details on suction power, self-emptying capabilities, and performance on pet hair. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Comparison Report on Robot Vacuums",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive comparison report of Roomba, Roborock, and Ecovacs robot vacuums for pet owners in 2026, including pros/cons and a clear recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive comparison report of Roomba, Roborock, and Ecovacs robot vacuums for pet owners in 2026. Include specific details on suction power, self-emptying capabilities, and pet hair performance, along with pros/cons and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2281
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsoetvuklt8",
+    "title": "Teach me about compiler design fundamentals. Cover lexing, parsing, AST construc",
+    "raw_request": "Teach me about compiler design fundamentals. Cover lexing, parsing, AST construction, and code generation. With a simple expression evaluator example.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:21:17.130Z",
+    "updated_at": "2026-03-16T04:24:23.251Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:21:27.837Z",
+      "interpreted_objective": "Create a learning module on compiler design fundamentals including lexing, parsing, AST construction, and code generation, with a simple expression evaluator example.",
+      "expected_outcome": "A comprehensive educational resource that explains compiler design fundamentals with clear examples and analogies, suitable for learners with a technical background.",
+      "key_unknowns": [
+        "Rahul's current understanding of compiler design",
+        "Specific format or medium for the learning module"
+      ],
+      "recommended_strategy": "First, gather detailed information on the key components of compiler design: lexing, parsing, AST construction, and code generation. Then, synthesize this information into a structured learning module, including a simple expression evaluator example. Ensure the content is clear and builds from simple to complex concepts.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Compiler Design Fundamentals",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on lexing, parsing, AST construction, and code generation.",
+          "prompt": "Search the web for current, specific information about compiler design fundamentals, focusing on lexing, parsing, AST construction, and code generation. Include real examples and analogies.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Learning Module",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured learning module on compiler design fundamentals with a simple expression evaluator example.",
+          "prompt": "Based on the research results, synthesize a learning module that explains compiler design fundamentals. Include sections on lexing, parsing, AST construction, and code generation, and provide a simple expression evaluator example. Use clear analogies and build from simple to complex concepts.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2034
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsoet2fd2bh",
+    "title": "Create a comprehensive guide to understanding and using Treasury I-Bonds. Includ",
+    "raw_request": "Create a comprehensive guide to understanding and using Treasury I-Bonds. Include current rates, purchase limits, tax advantages, and optimal redemption timing.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:21:16.071Z",
+    "updated_at": "2026-03-16T04:24:02.186Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:21:23.945Z",
+      "interpreted_objective": "Create a comprehensive guide on Treasury I-Bonds, including current rates, purchase limits, tax advantages, and optimal redemption timing.",
+      "expected_outcome": "A detailed guide that provides actionable insights on Treasury I-Bonds, aiding Rahul in making informed investment decisions.",
+      "key_unknowns": [
+        "Current Treasury I-Bond rates",
+        "Purchase limits for Treasury I-Bonds",
+        "Tax advantages of Treasury I-Bonds",
+        "Optimal redemption timing for Treasury I-Bonds"
+      ],
+      "recommended_strategy": "First, conduct research to gather the most current data on Treasury I-Bonds, including rates, limits, tax benefits, and redemption strategies. Then, synthesize this information into a structured guide that provides clear, actionable insights.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Treasury I-Bond Information",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Treasury I-Bonds including rates, purchase limits, tax advantages, and redemption timing.",
+          "prompt": "Search the web for current, specific information about Treasury I-Bonds. Include current rates, purchase limits, tax advantages, optimal redemption timing, and any recent changes or news. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Treasury I-Bond Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on Treasury I-Bonds with actionable insights.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for understanding and using Treasury I-Bonds. Include specific rates, purchase limits, tax advantages, optimal redemption timing, and concrete next steps for investors.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-treasury-i-bonds-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2263
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsoes9l9lw8",
+    "title": "Write a complete guide to implementing content security policies for web applica",
+    "raw_request": "Write a complete guide to implementing content security policies for web applications. Include CSP headers, nonce-based scripts, and reporting endpoints.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:21:15.033Z",
+    "updated_at": "2026-03-16T04:23:23.892Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:21:19.683Z",
+      "interpreted_objective": "Create a comprehensive guide on implementing content security policies for web applications.",
+      "expected_outcome": "A detailed, clear, and actionable guide that covers CSP headers, nonce-based scripts, and reporting endpoints for web applications.",
+      "key_unknowns": [
+        "Specific audience for the guide",
+        "Level of technical detail required",
+        "Preferred format or length of the guide"
+      ],
+      "recommended_strategy": "First, gather detailed information about content security policies, including CSP headers, nonce-based scripts, and reporting endpoints. Then, synthesize this information into a clear and structured guide tailored for developers implementing these policies in web applications.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Content Security Policies",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research notes on CSP headers, nonce-based scripts, and reporting endpoints.",
+          "prompt": "Search the web for current, specific information about implementing content security policies for web applications. Include details on CSP headers, nonce-based scripts, and reporting endpoints. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Guide on Implementing CSP",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete guide on implementing content security policies for web applications.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comprehensive guide on implementing content security policies for web applications. Include sections on CSP headers, nonce-based scripts, and reporting endpoints. Ensure the guide is clear, detailed, and actionable for developers.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2030
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmso7hvz7ykp",
     "title": "Design a personal finance automation stack using modern tools. Include bank acco",
     "raw_request": "Design a personal finance automation stack using modern tools. Include bank accounts, investment accounts, bill payments, and reporting. Zero-maintenance goal.",
