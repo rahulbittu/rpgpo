@@ -1,5 +1,620 @@
 [
   {
+    "task_id": "t_mmssozp1n5nx",
+    "title": "Design a comprehensive personal energy management system. Include chronotype ass",
+    "raw_request": "Design a comprehensive personal energy management system. Include chronotype assessment, energy mapping throughout the day, task-energy matching, recovery protocols, and weekly planning templates.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:21:09.685Z",
+    "updated_at": "2026-03-16T06:25:33.627Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:22:10.778Z",
+      "interpreted_objective": "Design a comprehensive system for managing personal energy, including assessment, mapping, task matching, recovery, and planning.",
+      "expected_outcome": "A detailed report with actionable strategies and templates for personal energy management.",
+      "key_unknowns": [
+        "Current best practices for chronotype assessment",
+        "Effective methods for energy mapping",
+        "Strategies for task-energy matching",
+        "Proven recovery protocols",
+        "Templates for weekly planning"
+      ],
+      "recommended_strategy": "Begin with researching current best practices and tools available for each component of personal energy management. Then, synthesize this information into a comprehensive report that includes practical recommendations and templates. Focus on actionable insights and evidence-based strategies.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and tools for each component of personal energy management.",
+          "prompt": "Search the web for current, specific information about best practices in chronotype assessment, energy mapping, task-energy matching, recovery protocols, and weekly planning templates. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Energy Management Report",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report with actionable strategies and templates for personal energy management.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a personal energy management system. Include specific strategies for chronotype assessment, energy mapping, task-energy matching, recovery protocols, and weekly planning templates.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-personal-energy-management.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2075
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmssozm6zxk5",
+    "title": "Create a comprehensive guide to garage workshop setup for hobbyist woodworking. ",
+    "raw_request": "Create a comprehensive guide to garage workshop setup for hobbyist woodworking. Include tool prioritization, dust collection systems, workbench design, electrical requirements, and safety equipment.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:21:09.582Z",
+    "updated_at": "2026-03-16T06:25:26.217Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:22:04.819Z",
+      "interpreted_objective": "Create a comprehensive guide for setting up a garage workshop for hobbyist woodworking.",
+      "expected_outcome": "A detailed guide covering tool prioritization, dust collection systems, workbench design, electrical requirements, and safety equipment.",
+      "key_unknowns": [
+        "Current trends in woodworking tools and equipment",
+        "Best practices for dust collection systems",
+        "Optimal workbench designs for small spaces",
+        "Electrical requirements specific to woodworking tools",
+        "Essential safety equipment for woodworking"
+      ],
+      "recommended_strategy": "First, conduct research to gather current information on woodworking tools, dust collection systems, workbench designs, electrical requirements, and safety equipment. Then, synthesize this information into a comprehensive guide tailored for hobbyist woodworkers setting up a garage workshop.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Woodworking Workshop Setup",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and insights on woodworking tools, dust collection systems, workbench designs, electrical requirements, and safety equipment.",
+          "prompt": "Search the web for current, specific information about setting up a garage workshop for hobbyist woodworking. Include details on tool prioritization, dust collection systems, workbench design, electrical requirements, and safety equipment. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Garage Workshop Setup",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for hobbyist woodworking garage workshop setup.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for setting up a garage workshop for hobbyist woodworking. Include sections on tool prioritization, dust collection systems, workbench design, electrical requirements, and safety equipment. Provide actionable recommendations and specific details.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-garage-workshop-setup.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2486
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmssozjnj8oi",
+    "title": "Write a complete story treatment for a graphic novel about an AI that develops s",
+    "raw_request": "Write a complete story treatment for a graphic novel about an AI that develops synesthesia and starts creating art that humans find emotionally overwhelming. Include visual style guide and 12-chapter outline.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:21:09.491Z",
+    "updated_at": "2026-03-16T06:25:17.822Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:21:58.869Z",
+      "interpreted_objective": "Create a detailed story treatment for a graphic novel about an AI with synesthesia, including a visual style guide and a 12-chapter outline.",
+      "expected_outcome": "A comprehensive document that includes a story treatment, visual style guide, and chapter outline for the graphic novel.",
+      "key_unknowns": [
+        "Specific themes or messages the story should convey",
+        "Target audience for the graphic novel",
+        "Preferred visual style or artistic influences"
+      ],
+      "recommended_strategy": "First, research existing graphic novels and AI-related narratives to gather inspiration and identify trends. Then, synthesize this information to create a unique story treatment, visual style guide, and chapter outline that align with the inferred themes and audience. Ensure the narrative explores the emotional impact of AI-created art.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research AI themes in graphic novels",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report on existing graphic novels featuring AI themes and synesthesia.",
+          "prompt": "Search the web for current, specific information about graphic novels that explore AI themes and synesthesia. Include real names, authors, publication dates, and any notable artistic styles or themes.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize story treatment and style guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed story treatment, visual style guide, and 12-chapter outline for the graphic novel.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a story treatment for a graphic novel about an AI that develops synesthesia and creates emotionally overwhelming art. Include a visual style guide and a 12-chapter outline. Ensure the narrative explores the emotional impact of AI-created art and aligns with current trends and audience expectations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2085
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmssozdh0149",
+    "title": "Design a comprehensive longevity-focused nutrition protocol. Include time-restri",
+    "raw_request": "Design a comprehensive longevity-focused nutrition protocol. Include time-restricted eating windows, anti-inflammatory food frameworks, micronutrient optimization, hydration science, and meal prep systems for busy professionals.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:21:09.269Z",
+    "updated_at": "2026-03-16T06:25:06.851Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:21:50.803Z",
+      "interpreted_objective": "Design a detailed nutrition protocol focused on longevity, incorporating time-restricted eating, anti-inflammatory foods, micronutrient optimization, hydration, and meal prep for busy professionals.",
+      "expected_outcome": "A comprehensive, evidence-based nutrition plan that is actionable and tailored for longevity, with specific guidelines on eating windows, food choices, nutrient intake, hydration, and meal preparation.",
+      "key_unknowns": [
+        "Current scientific consensus on optimal time-restricted eating windows for longevity",
+        "Specific anti-inflammatory foods and their impact on longevity",
+        "Micronutrients critical for longevity and their recommended intake",
+        "Best practices in hydration science for longevity",
+        "Effective meal prep systems for busy professionals"
+      ],
+      "recommended_strategy": "Conduct thorough research on each component of the protocol using up-to-date scientific literature and expert opinions. Synthesize this information into a structured, actionable plan. Ensure all recommendations are evidence-based and include safety disclaimers where necessary.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Longevity Nutrition Components",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data on time-restricted eating, anti-inflammatory foods, micronutrients, hydration, and meal prep for longevity.",
+          "prompt": "Search the web for current, specific information about optimal time-restricted eating windows, anti-inflammatory foods, micronutrient optimization, hydration science, and meal prep systems for longevity. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Longevity Nutrition Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and actionable longevity-focused nutrition protocol.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a longevity-focused nutrition protocol. Include specific guidelines on time-restricted eating, anti-inflammatory foods, micronutrient optimization, hydration, and meal prep systems for busy professionals.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-longevity-nutrition-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1966
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmssozaxpo2l",
+    "title": "Create a guide to navigating layoff anxiety and career resilience. Include emerg",
+    "raw_request": "Create a guide to navigating layoff anxiety and career resilience. Include emergency financial planning, network activation strategies, skills gap analysis, interview readiness maintenance, and mental health resources.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:21:09.177Z",
+    "updated_at": "2026-03-16T06:24:59.278Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:21:45.215Z",
+      "interpreted_objective": "Create a comprehensive guide to help individuals navigate layoff anxiety and build career resilience.",
+      "expected_outcome": "A structured guide that includes emergency financial planning, network activation strategies, skills gap analysis, interview readiness maintenance, and mental health resources.",
+      "key_unknowns": [
+        "Specific financial planning strategies relevant to layoffs",
+        "Current best practices for network activation",
+        "Effective methods for skills gap analysis",
+        "Resources for maintaining interview readiness",
+        "Available mental health resources for professionals facing layoffs"
+      ],
+      "recommended_strategy": "Conduct research on each component of the guide to gather current and specific information. Synthesize this data into actionable steps and resources that can help individuals manage layoff anxiety and maintain career resilience. Ensure the guide is tailored to the needs of data engineers and entrepreneurs.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Layoff Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current strategies and resources for financial planning, network activation, skills gap analysis, interview readiness, and mental health support.",
+          "prompt": "Search the web for current, specific information about navigating layoff anxiety and building career resilience. Include strategies for emergency financial planning, network activation, skills gap analysis, interview readiness maintenance, and mental health resources. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide with actionable recommendations for navigating layoff anxiety and building career resilience.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for navigating layoff anxiety and building career resilience. Include specific strategies for emergency financial planning, network activation, skills gap analysis, interview readiness, and mental health resources. Provide concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-layoff-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2206
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmssoz971d49",
+    "title": "Research the best robot vacuums for homes with pets and hardwood floors. Compare",
+    "raw_request": "Research the best robot vacuums for homes with pets and hardwood floors. Compare Roborock S8 MaxV Ultra, iRobot Roomba j9+, and Ecovacs X2 Omni with self-emptying and mopping capabilities.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:21:09.115Z",
+    "updated_at": "2026-03-16T06:24:50.778Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:21:35.081Z",
+      "interpreted_objective": "Research and compare the best robot vacuums for homes with pets and hardwood floors, focusing on the Roborock S8 MaxV Ultra, iRobot Roomba j9+, and Ecovacs X2 Omni, specifically their self-emptying and mopping capabilities.",
+      "expected_outcome": "A detailed comparison report of the three robot vacuums, highlighting their strengths and weaknesses, with specific focus on features relevant to homes with pets and hardwood floors.",
+      "key_unknowns": [
+        "Current market performance and reviews of the Roborock S8 MaxV Ultra, iRobot Roomba j9+, and Ecovacs X2 Omni",
+        "Specific features and capabilities of each model related to self-emptying and mopping",
+        "Pricing and availability of these models"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on the specified robot vacuums, focusing on their features, performance, and user reviews. Then, synthesize this data into a comparative analysis report, highlighting pros and cons for each model in the context of homes with pets and hardwood floors.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Robot Vacuums",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on the features, performance, and reviews of the Roborock S8 MaxV Ultra, iRobot Roomba j9+, and Ecovacs X2 Omni.",
+          "prompt": "Search the web for current, specific information about the Roborock S8 MaxV Ultra, iRobot Roomba j9+, and Ecovacs X2 Omni robot vacuums. Include details on their self-emptying and mopping capabilities, performance in homes with pets and hardwood floors, pricing, and user reviews. Provide URLs and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report detailing the pros and cons of each robot vacuum model, with recommendations for homes with pets and hardwood floors.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comparison report of the Roborock S8 MaxV Ultra, iRobot Roomba j9+, and Ecovacs X2 Omni. Include specific features, performance metrics, pricing, and user feedback. Highlight the strengths and weaknesses of each model for homes with pets and hardwood floors.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-robot-vacuums.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2320
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmssoz745zt0",
+    "title": "Explain how WebAssembly works from source code to execution. Cover compilation t",
+    "raw_request": "Explain how WebAssembly works from source code to execution. Cover compilation targets (Rust, C++, Go), WASI runtime, memory model, JavaScript interop, and real-world performance benchmarks vs native.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:21:09.040Z",
+    "updated_at": "2026-03-16T06:24:43.213Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:21:26.313Z",
+      "interpreted_objective": "Explain the workings of WebAssembly from source code to execution, including specific technical aspects and performance benchmarks.",
+      "expected_outcome": "A comprehensive, clear, and concise explanation of WebAssembly that covers compilation targets, WASI runtime, memory model, JavaScript interop, and performance benchmarks.",
+      "key_unknowns": [
+        "Specific real-world performance benchmarks for WebAssembly vs native execution",
+        "Detailed examples of JavaScript interop with WebAssembly"
+      ],
+      "recommended_strategy": "Conduct research to gather detailed information on WebAssembly's compilation process, runtime environment, and performance metrics. Then, synthesize this information into a structured explanation that highlights key technical aspects and real-world applications.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research WebAssembly Compilation and Execution",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on WebAssembly's compilation targets, WASI runtime, memory model, JavaScript interop, and performance benchmarks.",
+          "prompt": "Search the web for current, specific information about how WebAssembly works from source code to execution. Include details on compilation targets (Rust, C++, Go), WASI runtime, memory model, JavaScript interop, and real-world performance benchmarks compared to native execution. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize WebAssembly Explanation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and clear explanation of WebAssembly from source code to execution, including all specified technical aspects and performance benchmarks.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive explanation of how WebAssembly works from source code to execution. Include details on compilation targets (Rust, C++, Go), WASI runtime, memory model, JavaScript interop, and performance benchmarks compared to native execution.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2107
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmssoz6opyq7",
+    "title": "Create a comprehensive guide to 529 education savings plans. Include state tax d",
+    "raw_request": "Create a comprehensive guide to 529 education savings plans. Include state tax deduction comparison, investment option analysis, superfunding strategies, grandparent-owned plan rules, and financial aid impact.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:21:09.024Z",
+    "updated_at": "2026-03-16T06:24:35.348Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:21:20.429Z",
+      "interpreted_objective": "Create a comprehensive guide on 529 education savings plans covering tax deductions, investment options, superfunding strategies, grandparent-owned plan rules, and financial aid impact.",
+      "expected_outcome": "A detailed guide that provides actionable insights and comparisons for 529 education savings plans, aiding in informed decision-making.",
+      "key_unknowns": [
+        "Current state-specific tax deduction benefits for 529 plans",
+        "Available investment options and their performance",
+        "Superfunding strategies and their legal implications",
+        "Rules for grandparent-owned 529 plans",
+        "Impact of 529 plans on financial aid eligibility"
+      ],
+      "recommended_strategy": "Conduct thorough research on each aspect of 529 plans using credible sources. Synthesize findings into a comprehensive guide with specific examples and actionable advice. Ensure the guide is detailed and practical for users considering 529 plans.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research 529 Plan Details",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive data on 529 plans including tax deductions, investment options, superfunding strategies, grandparent-owned plan rules, and financial aid impact.",
+          "prompt": "Search the web for current, specific information about 529 education savings plans. Include details on state tax deductions, investment options, superfunding strategies, rules for grandparent-owned plans, and the impact on financial aid. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize 529 Plan Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on 529 plans with actionable insights and comparisons.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comprehensive guide on 529 education savings plans. Include state tax deduction comparisons, investment option analysis, superfunding strategies, grandparent-owned plan rules, and financial aid impact. Provide specific examples and actionable advice.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-2023-529-education-savings-plans.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2328
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmssoz6693tn",
+    "title": "Design a database migration strategy for zero-downtime schema changes in Postgre",
+    "raw_request": "Design a database migration strategy for zero-downtime schema changes in PostgreSQL. Include expand-contract pattern, backfill strategies, foreign key considerations, and rollback procedures for failed migrations.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:21:09.006Z",
+    "updated_at": "2026-03-16T06:24:26.429Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:21:13.545Z",
+      "interpreted_objective": "Design a strategy for zero-downtime schema changes in PostgreSQL using the expand-contract pattern.",
+      "expected_outcome": "A detailed, actionable database migration strategy that minimizes downtime and includes rollback procedures.",
+      "key_unknowns": [
+        "Specific PostgreSQL version and features in use",
+        "Current database schema and its complexity",
+        "Operational constraints and SLAs for downtime",
+        "Existing tools and processes for database management"
+      ],
+      "recommended_strategy": "Research best practices for zero-downtime migrations in PostgreSQL, focusing on the expand-contract pattern. Analyze and document strategies for backfilling data, managing foreign keys, and implementing rollback procedures. Compile these into a comprehensive strategy document.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the migration strategy document"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Zero-Downtime Migration Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and strategies for zero-downtime migrations in PostgreSQL.",
+          "prompt": "Search the web for current, specific information about zero-downtime schema changes in PostgreSQL. Include details on the expand-contract pattern, backfill strategies, foreign key management, and rollback procedures. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Migration Strategy Document",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive document detailing the migration strategy, including steps for implementation and rollback.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed migration strategy for zero-downtime schema changes in PostgreSQL. Include specific steps for the expand-contract pattern, backfill strategies, foreign key considerations, and rollback procedures.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2606
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
     "task_id": "t_mmsshrg9h84t",
     "title": "Design a systematic freelancing income diversification strategy. Include service",
     "raw_request": "Design a systematic freelancing income diversification strategy. Include service packaging, passive income streams, pricing psychology, client acquisition funnels, and financial buffer planning.",
