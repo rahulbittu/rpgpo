@@ -1,5 +1,98 @@
 {
-  "description": "Engine-specific behavior preferences derived from operator actions",
-  "preferences": {},
-  "lastUpdated": null
+  "schema_version": "2.0",
+  "description": "Engine-specific behavior preferences derived from operator actions and task outcomes",
+  "generated_at": "2026-03-16T21:30:00.000Z",
+  "provenance": "bootstrapped from historical events + operator-profile.json",
+  "engines": {
+    "general": {
+      "task_volume": 650,
+      "task_share": "53%",
+      "output_satisfaction": "high",
+      "notes": "Catch-all engine — high volume, high satisfaction. Many tasks route here when domain keywords don't match a specific engine."
+    },
+    "wealthresearch": {
+      "task_volume": 113,
+      "task_share": "9%",
+      "output_satisfaction": "high",
+      "notes": "Strong alignment with operator priority: passive income, investing, financial planning."
+    },
+    "careeregine": {
+      "task_volume": 93,
+      "task_share": "8%",
+      "output_satisfaction": "high",
+      "notes": "Strong alignment with operator priority: career growth, job search, compensation."
+    },
+    "personalops": {
+      "task_volume": 90,
+      "task_share": "7%",
+      "output_satisfaction": "high",
+      "notes": "Life operations, routines, productivity systems."
+    },
+    "screenwriting": {
+      "task_volume": 68,
+      "task_share": "6%",
+      "output_satisfaction": "high",
+      "notes": "Story concepts, series bibles, screenplays."
+    },
+    "writing": {
+      "task_volume": 52,
+      "task_share": "4%",
+      "output_satisfaction": "high",
+      "notes": "Technical writing, documentation, guides."
+    },
+    "research": {
+      "task_volume": 41,
+      "task_share": "3%",
+      "output_satisfaction": "high",
+      "notes": "Product comparisons, market analysis, deep research."
+    },
+    "startup": {
+      "task_volume": 28,
+      "task_share": "2%",
+      "output_satisfaction": "high",
+      "notes": "Business strategy, product engineering, entrepreneurship."
+    },
+    "topranker": {
+      "task_volume": 27,
+      "task_share": "2%",
+      "output_satisfaction": "high",
+      "notes": "Legacy engine — many early tasks. Now mapped to Startup & Business Builder."
+    },
+    "learning": {
+      "task_volume": 21,
+      "task_share": "2%",
+      "output_satisfaction": "high",
+      "notes": "Technical deep dives, tutorials, educational content."
+    },
+    "health": {
+      "task_volume": 17,
+      "task_share": "1%",
+      "output_satisfaction": "high",
+      "notes": "Health protocols, fitness programs, wellness."
+    },
+    "newsroom": {
+      "task_volume": 16,
+      "task_share": "1%",
+      "output_satisfaction": "high",
+      "notes": "News intelligence, current events analysis."
+    },
+    "travel": {
+      "task_volume": 6,
+      "task_share": "0%",
+      "output_satisfaction": "insufficient_data",
+      "notes": "Trip planning. Low volume but growing."
+    },
+    "music": {
+      "task_volume": 4,
+      "task_share": "0%",
+      "output_satisfaction": "insufficient_data",
+      "notes": "Musical concepts, audio. Very low usage."
+    },
+    "shopping": {
+      "task_volume": 3,
+      "task_share": "0%",
+      "output_satisfaction": "insufficient_data",
+      "notes": "Product comparisons. Low usage, may overlap with research engine."
+    }
+  }
 }

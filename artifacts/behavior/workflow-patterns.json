@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "description": "Recurring workflow patterns observed from operator task history",
+  "generated_at": "2026-03-16T21:30:00.000Z",
+  "provenance": "inferred from task titles and engine routing patterns",
+  "patterns": [
+    {
+      "pattern_id": "technical_deep_dive",
+      "description": "Operator frequently requests deep technical explanations of systems internals",
+      "examples": ["How TCP congestion control works", "How JIT compilers work", "How PostgreSQL MVCC works", "How transformer architecture works"],
+      "typical_engine": "learning",
+      "frequency": "high",
+      "confidence": 0.9,
+      "implied_preferences": {
+        "depth": "deep",
+        "structure": "cover X, explain Y, compare Z",
+        "format": "sections with examples"
+      }
+    },
+    {
+      "pattern_id": "product_comparison",
+      "description": "Operator frequently requests comparison research for specific products",
+      "examples": ["Best standing desks under $400", "Best noise-canceling headphones", "Best home espresso machines"],
+      "typical_engine": "research",
+      "frequency": "high",
+      "confidence": 0.9,
+      "implied_preferences": {
+        "depth": "detailed",
+        "structure": "comparison table + top pick + detailed reviews + pricing",
+        "format": "structured with prices and specs"
+      }
+    },
+    {
+      "pattern_id": "career_strategy",
+      "description": "Operator frequently requests career advancement strategies",
+      "examples": ["IC to manager transition", "Salary negotiation", "Building executive presence", "Career pivot planning"],
+      "typical_engine": "careeregine",
+      "frequency": "medium",
+      "confidence": 0.8,
+      "implied_preferences": {
+        "depth": "actionable",
+        "structure": "frameworks + scripts + timelines",
+        "format": "practical with templates"
+      }
+    },
+    {
+      "pattern_id": "travel_planning",
+      "description": "Operator requests detailed multi-day travel itineraries",
+      "examples": ["14-day Italy lakes", "10-day Iceland Ring Road", "9-day Kyoto tea tour"],
+      "typical_engine": "travel",
+      "frequency": "medium",
+      "confidence": 0.8,
+      "implied_preferences": {
+        "depth": "day-by-day",
+        "structure": "itinerary + food + activities + logistics",
+        "format": "day-by-day with alternatives"
+      }
+    },
+    {
+      "pattern_id": "creative_concept",
+      "description": "Operator requests complete creative concepts for stories, games, series",
+      "examples": ["Sci-fi thriller treatment", "Board game concept", "Podcast series", "Graphic novel"],
+      "typical_engine": "screenwriting",
+      "frequency": "medium",
+      "confidence": 0.8,
+      "implied_preferences": {
+        "depth": "comprehensive",
+        "structure": "concept + characters + episode/chapter outline + tone",
+        "format": "narrative document with structure"
+      }
+    },
+    {
+      "pattern_id": "health_protocol",
+      "description": "Operator requests evidence-based health/fitness protocols",
+      "examples": ["Sleep optimization", "Knee prehab", "Back health for desk workers", "Marathon recovery"],
+      "typical_engine": "health",
+      "frequency": "medium",
+      "confidence": 0.7,
+      "implied_preferences": {
+        "depth": "evidence-backed",
+        "structure": "assessment + exercises + programming + prevention",
+        "format": "structured protocol with progressions"
+      }
+    },
+    {
+      "pattern_id": "financial_strategy",
+      "description": "Operator requests detailed financial planning strategies",
+      "examples": ["Roth IRA ladders", "Tax-loss harvesting", "529 plans", "Estate planning"],
+      "typical_engine": "wealthresearch",
+      "frequency": "high",
+      "confidence": 0.9,
+      "implied_preferences": {
+        "depth": "comprehensive with numbers",
+        "structure": "strategy + tax implications + calculations + timeline",
+        "format": "detailed with specific dollar amounts and scenarios"
+      }
+    }
+  ]
+}

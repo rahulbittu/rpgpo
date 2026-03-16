@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "captured_at": "2026-03-16T21:30:00.000Z",
+  "metrics": {
+    "total_events": 3432,
+    "total_signals": 26,
+    "active_signals": 24,
+    "advisory_signals": 2,
+    "signals_by_scope": {
+      "global": 4,
+      "engine": 22,
+      "project": 0,
+      "workflow": 0,
+      "session": 0
+    },
+    "signal_types": {
+      "output_satisfaction": 8,
+      "task_volume": 13,
+      "communication_style": 1,
+      "output_preferences": 1,
+      "risk_tolerance": 1,
+      "approval_strictness": 0,
+      "rewrite_frequency": 0,
+      "preferred_provider": 0,
+      "routing_override_tendency": 0,
+      "followup_intensity": 0
+    },
+    "coverage": {
+      "engines_with_signals": 13,
+      "engines_without_signals": 2,
+      "engines_missing": ["music (4 tasks)", "shopping (3 tasks)"]
+    },
+    "provenance": {
+      "bootstrapped_from_history": 3432,
+      "live_observed": 0,
+      "from_operator_profile": 3
+    }
+  },
+  "improvement_from_baseline": {
+    "signals_before": 1,
+    "signals_after": 26,
+    "increase": "2500%",
+    "reason": "Expanded derivation to include engine-level satisfaction, task volume, and operator profile signals"
+  }
+}
