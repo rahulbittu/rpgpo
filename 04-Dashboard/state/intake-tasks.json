@@ -1,5 +1,649 @@
 [
   {
+    "task_id": "t_mmspoe5gf1bb",
+    "title": "Design a comprehensive annual planning system. Include vision setting, goal deco",
+    "raw_request": "Design a comprehensive annual planning system. Include vision setting, goal decomposition, quarterly milestones, monthly reviews, and adaptation protocols.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:56:42.916Z",
+    "updated_at": "2026-03-16T05:00:36.444Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:57:37.157Z",
+      "interpreted_objective": "Design a comprehensive annual planning system with structured components for vision setting, goal decomposition, and adaptive reviews.",
+      "expected_outcome": "A detailed annual planning framework document that includes vision setting, goal breakdown, quarterly milestones, monthly reviews, and adaptation protocols.",
+      "key_unknowns": [
+        "Specific preferences Rahul might have for the planning system",
+        "Existing tools or systems Rahul currently uses for planning",
+        "Any specific constraints or requirements for the adaptation protocols"
+      ],
+      "recommended_strategy": "Conduct research on best practices for annual planning systems, focusing on vision setting and goal decomposition. Synthesize findings into a structured framework document, ensuring alignment with Rahul's priorities and recent work. Propose a draft for Rahul's review and feedback.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Review and feedback on the draft annual planning framework"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Annual Planning Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of best practices for annual planning systems, including vision setting, goal decomposition, and adaptation protocols.",
+          "prompt": "Search the web for current best practices in designing comprehensive annual planning systems. Focus on vision setting, goal decomposition, quarterly milestones, monthly reviews, and adaptation protocols. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Annual Planning Framework",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured framework document for an annual planning system, ready for review.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive annual planning framework. Include vision setting, goal decomposition, quarterly milestones, monthly reviews, and adaptation protocols. Ensure the framework aligns with Rahul's priorities and recent work.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-annual-planning-framework.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1990
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmspodc4fuk5",
+    "title": "Create a guide to building an efficient home mail and document management system",
+    "raw_request": "Create a guide to building an efficient home mail and document management system. Include scanning, digital organization, shredding schedule, and important document storage.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:56:41.860Z",
+    "updated_at": "2026-03-16T05:00:27.742Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:57:21.543Z",
+      "interpreted_objective": "Create a comprehensive guide for setting up an efficient home mail and document management system.",
+      "expected_outcome": "A detailed guide that includes steps for scanning, digital organization, shredding schedule, and important document storage.",
+      "key_unknowns": [
+        "Specific tools or software preferences for scanning and digital organization",
+        "Frequency and criteria for shredding documents",
+        "Types of documents considered important for storage"
+      ],
+      "recommended_strategy": "First, research best practices and tools for home mail and document management, including scanning, digital organization, and shredding schedules. Then, synthesize this information into a structured guide that outlines each component clearly and provides actionable steps.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research best practices for home mail and document management",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices and tools for scanning, digital organization, shredding schedules, and document storage.",
+          "prompt": "Search the web for current best practices and tools for building an efficient home mail and document management system. Include information on scanning, digital organization, shredding schedules, and important document storage. Provide specific names, tools, and recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize guide for home mail and document management system",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide detailing steps for scanning, digital organization, shredding schedule, and important document storage.",
+          "prompt": "Based on the research results, synthesize a detailed guide for building an efficient home mail and document management system. Include specific steps for scanning, digital organization, shredding schedules, and important document storage. Make the guide actionable and easy to follow.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2111
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmspocj53oa7",
+    "title": "Write a complete story bible for an animated series about AI assistants in a sha",
+    "raw_request": "Write a complete story bible for an animated series about AI assistants in a shared apartment learning to be human. Include world rules, character sheets, and 8 episode loglines.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:56:40.817Z",
+    "updated_at": "2026-03-16T05:00:17.578Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:57:17.940Z",
+      "interpreted_objective": "Create a detailed story bible for an animated series about AI assistants learning to be human.",
+      "expected_outcome": "A comprehensive story bible including world rules, character sheets, and 8 episode loglines for the series.",
+      "key_unknowns": [
+        "Specific themes or tones desired for the series",
+        "Target audience for the series",
+        "Any existing story elements or constraints"
+      ],
+      "recommended_strategy": "Conduct research on existing animated series with similar themes to gather inspiration and identify successful elements. Then, synthesize this information to create a unique story bible that includes world rules, character sheets, and episode loglines.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Similar Animated Series",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Research findings on animated series with AI or similar themes, including successful elements and audience reception.",
+          "prompt": "Search the web for information about animated series that feature AI characters or similar themes. Include details on their world-building, character development, and audience reception. Provide specific examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Story Bible",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete story bible with world rules, character sheets, and 8 episode loglines.",
+          "prompt": "Based on the research results, create a detailed story bible for an animated series about AI assistants in a shared apartment learning to be human. Include world rules, character sheets for each AI assistant, and loglines for 8 episodes. Ensure the content is engaging and suitable for the target audience.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-AI-animated-series-bible.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1974
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmspobq993xv",
+    "title": "Plan a 6-day food and culture trip to Barcelona. Include tapas crawls, La Boquer",
+    "raw_request": "Plan a 6-day food and culture trip to Barcelona. Include tapas crawls, La Boqueria market, Gaudi architecture, day trips to wine country, and beach time.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:56:39.777Z",
+    "updated_at": "2026-03-16T05:00:07.292Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:57:12.718Z",
+      "interpreted_objective": "Plan a detailed 6-day itinerary for a food and culture trip to Barcelona, including specific activities and logistics.",
+      "expected_outcome": "A comprehensive itinerary that includes tapas crawls, visits to La Boqueria market, Gaudi architecture tours, day trips to wine country, and beach time, with specific dates, costs, and logistics.",
+      "key_unknowns": [
+        "Current availability and pricing for activities in Barcelona",
+        "Best transportation options for day trips",
+        "Optimal scheduling for each day to maximize experience"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on activities, costs, and availability. Synthesize this information into a structured itinerary that balances cultural exploration, culinary experiences, and relaxation. Ensure logistical feasibility and cost-effectiveness.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Barcelona Activities and Costs",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on availability, pricing, and logistics for Barcelona activities.",
+          "prompt": "Search the web for current, specific information about tapas crawls, La Boqueria market visits, Gaudi architecture tours, day trips to wine country, and beach activities in Barcelona. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Barcelona Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 6-day itinerary for a food and culture trip to Barcelona, including specific activities, dates, costs, and logistics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 6-day itinerary for a food and culture trip to Barcelona. Include specific names, numbers, and concrete next steps for each day, ensuring a balance of activities and relaxation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-2023-10-Barcelona-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1935
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmspoaxgasqa",
+    "title": "Design a comprehensive brain health optimization protocol. Include cognitive exe",
+    "raw_request": "Design a comprehensive brain health optimization protocol. Include cognitive exercises, nutrition for neuroplasticity, sleep quality, and stress management.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:56:38.740Z",
+    "updated_at": "2026-03-16T04:59:56.986Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:57:07.344Z",
+      "interpreted_objective": "Design a detailed protocol to optimize brain health, focusing on cognitive exercises, nutrition, sleep, and stress management.",
+      "expected_outcome": "A comprehensive, evidence-based protocol that enhances brain health through specific strategies in cognitive exercises, nutrition, sleep quality, and stress management.",
+      "key_unknowns": [
+        "Current leading research on cognitive exercises for brain health",
+        "Nutritional guidelines that support neuroplasticity",
+        "Best practices for improving sleep quality",
+        "Effective stress management techniques"
+      ],
+      "recommended_strategy": "Conduct thorough research on each component of brain health optimization using current scientific literature and expert recommendations. Synthesize findings into a cohesive protocol that is actionable and evidence-based. Ensure safety and efficacy by including disclaimers where necessary.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Cognitive Exercises",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on effective cognitive exercises for brain health, including sources.",
+          "prompt": "Search the web for current, specific information about effective cognitive exercises for optimizing brain health. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Nutrition for Neuroplasticity",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on nutritional guidelines that support neuroplasticity, including sources.",
+          "prompt": "Search the web for current, specific information about nutritional guidelines that support neuroplasticity. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Sleep Quality Improvement",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices for improving sleep quality, including sources.",
+          "prompt": "Search the web for current, specific information about best practices for improving sleep quality. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Stress Management Techniques",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current effective stress management techniques, including sources.",
+          "prompt": "Search the web for current, specific information about effective stress management techniques. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Brain Health Optimization Protocol",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive brain health optimization protocol document.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive brain health optimization protocol. Include specific cognitive exercises, nutritional guidelines, sleep improvement strategies, and stress management techniques. Ensure the protocol is evidence-based and actionable.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-brain-health-optimization.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2261
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmspo9bt53wt",
+    "title": "Research the best home office cable management solutions. Compare cable trays, r",
+    "raw_request": "Research the best home office cable management solutions. Compare cable trays, raceways, and under-desk organizers. Include installation difficulty and aesthetic quality.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:56:36.665Z",
+    "updated_at": "2026-03-16T04:59:48.517Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:56:49.860Z",
+      "interpreted_objective": "Research and compare home office cable management solutions focusing on cable trays, raceways, and under-desk organizers.",
+      "expected_outcome": "A detailed comparison report of cable management solutions with installation difficulty and aesthetic quality, leading to a clear recommendation.",
+      "key_unknowns": [
+        "Current market options for cable trays, raceways, and under-desk organizers",
+        "Installation difficulty for each solution",
+        "Aesthetic quality of each solution"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on cable management solutions, focusing on cable trays, raceways, and under-desk organizers. Then, synthesize this information into a structured report that compares these solutions based on installation difficulty and aesthetic quality.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Cable Management Solutions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on cable trays, raceways, and under-desk organizers, including installation difficulty and aesthetic quality.",
+          "prompt": "Search the web for current, specific information about home office cable management solutions, focusing on cable trays, raceways, and under-desk organizers. Include details on installation difficulty and aesthetic quality, with real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Cable Management Comparison Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing cable trays, raceways, and under-desk organizers, highlighting installation difficulty and aesthetic quality.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed comparison report of home office cable management solutions. Include specific names, installation difficulty, aesthetic quality, pros/cons, and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-cable-management.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1979
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmspo8iyese8",
+    "title": "Teach me about probabilistic data structures. Cover Bloom filters, HyperLogLog, ",
+    "raw_request": "Teach me about probabilistic data structures. Cover Bloom filters, HyperLogLog, Count-Min Sketch, and Skip Lists. Include space-time tradeoffs and real-world applications.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:56:35.626Z",
+    "updated_at": "2026-03-16T04:59:41.590Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:56:45.997Z",
+      "interpreted_objective": "Provide an educational overview of probabilistic data structures including Bloom filters, HyperLogLog, Count-Min Sketch, and Skip Lists, focusing on space-time tradeoffs and real-world applications.",
+      "expected_outcome": "A comprehensive report that explains each probabilistic data structure, discusses their space-time tradeoffs, and provides examples of real-world applications.",
+      "key_unknowns": [
+        "Specific real-world applications for each data structure",
+        "Detailed space-time tradeoffs for each data structure"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on each probabilistic data structure, including their space-time tradeoffs and applications. Synthesize this information into a structured report that is informative and accessible.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Probabilistic Data Structures",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Web research results with citations on Bloom filters, HyperLogLog, Count-Min Sketch, and Skip Lists, including space-time tradeoffs and real-world applications.",
+          "prompt": "Search the web for current, specific information about probabilistic data structures: Bloom filters, HyperLogLog, Count-Min Sketch, and Skip Lists. Include details on their space-time tradeoffs and real-world applications. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Educational Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and comprehensive report that explains each probabilistic data structure, discusses their space-time tradeoffs, and provides examples of real-world applications.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an educational report on probabilistic data structures. Explain Bloom filters, HyperLogLog, Count-Min Sketch, and Skip Lists, focusing on their space-time tradeoffs and real-world applications.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-probabilistic_data_structures.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1956
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmspo7psdk80",
+    "title": "Create a comprehensive guide to asset allocation across life stages. Include 20s",
+    "raw_request": "Create a comprehensive guide to asset allocation across life stages. Include 20s aggressive growth, 30s balanced, 40s preservation, with specific fund recommendations.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:56:34.576Z",
+    "updated_at": "2026-03-16T04:59:24.762Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:56:41.968Z",
+      "interpreted_objective": "Create a comprehensive guide on asset allocation across different life stages with specific fund recommendations.",
+      "expected_outcome": "A detailed guide that includes asset allocation strategies for individuals in their 20s, 30s, and 40s, with specific fund recommendations.",
+      "key_unknowns": [
+        "Specific funds that are recommended for each life stage",
+        "Current market data on asset allocation strategies",
+        "How recent economic conditions affect asset allocation strategies"
+      ],
+      "recommended_strategy": "Conduct research to gather current data on asset allocation strategies and specific fund recommendations for each life stage. Synthesize this information into a comprehensive guide, ensuring it includes actionable insights and specific fund names.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Asset Allocation Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on asset allocation strategies and specific fund recommendations for different life stages.",
+          "prompt": "Search the web for current information about asset allocation strategies for individuals in their 20s, 30s, and 40s, including specific fund recommendations. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Asset Allocation Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on asset allocation across life stages with specific fund recommendations.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide on asset allocation strategies for individuals in their 20s, 30s, and 40s. Include specific fund recommendations, actionable insights, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-asset-allocation-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2258
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmspo6wh4tln",
+    "title": "Write a comprehensive guide to implementing database schema versioning. Include ",
+    "raw_request": "Write a comprehensive guide to implementing database schema versioning. Include Flyway conventions, backward compatibility, zero-downtime migrations, and rollback safety.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:56:33.521Z",
+    "updated_at": "2026-03-16T04:58:06.476Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:56:37.697Z",
+      "interpreted_objective": "Create a detailed guide on implementing database schema versioning with specific focus on Flyway, backward compatibility, zero-downtime migrations, and rollback safety.",
+      "expected_outcome": "A comprehensive, actionable, and clear guide on database schema versioning tailored for developers and database administrators.",
+      "key_unknowns": [
+        "Specific audience expertise level",
+        "Preferred database management system",
+        "Existing knowledge of Flyway and versioning practices"
+      ],
+      "recommended_strategy": "First, gather detailed information on Flyway conventions, backward compatibility strategies, zero-downtime migration techniques, and rollback safety measures. Then, synthesize this information into a structured guide that includes practical examples and best practices.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Flyway and Database Versioning",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research notes on Flyway conventions, backward compatibility, zero-downtime migrations, and rollback safety.",
+          "prompt": "Search the web for current, specific information about Flyway conventions, backward compatibility in database versioning, zero-downtime migration techniques, and rollback safety measures. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comprehensive Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and comprehensive guide on implementing database schema versioning.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on implementing database schema versioning. Include detailed sections on Flyway conventions, backward compatibility, zero-downtime migrations, and rollback safety, with practical examples and best practices.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2052
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsph1oqml51",
     "title": "Design a comprehensive information diet protocol. Include news consumption rules",
     "raw_request": "Design a comprehensive information diet protocol. Include news consumption rules, social media boundaries, book selection framework, and podcast curation.",
