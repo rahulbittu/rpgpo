@@ -526,25 +526,28 @@ h3, .section-title {
 .channel-section:last-child { margin-bottom: 0; }
 .channel-output-area {
   background: var(--bg-inset); border: 1px solid var(--border);
-  border-radius: var(--r-sm); padding: 12px;
-  font-family: var(--mono); font-size: 11px; color: var(--text-dim);
-  white-space: pre-wrap; line-height: 1.55;
-  max-height: 300px; overflow-y: auto;
+  border-radius: var(--r); padding: 16px 18px;
+  font-size: 12px; color: var(--text-secondary);
+  line-height: 1.65;
+  max-height: 400px; overflow-y: auto;
+}
+.channel-output-area.md-content {
+  font-family: var(--font);
+}
+.channel-output-area:not(.md-content) {
+  font-family: var(--mono); font-size: 11px;
+  white-space: pre-wrap;
 }
 
-/* MISSION CARDS */
+/* MISSION / ENGINE CARDS */
 .mission-card {
   background: var(--bg-card); border: 1px solid var(--border);
-  border-radius: var(--r); padding: 14px;
-  box-shadow: var(--shadow-sm); transition: all var(--transition);
+  border-radius: var(--r); padding: 16px 18px;
+  transition: all var(--transition);
 }
-.mission-card:hover { border-color: var(--border-mid); }
-.mission-card.flagship {
-  border-color: var(--border-glow);
-  background: linear-gradient(135deg, rgba(212,170,40,.04), var(--bg-card) 50%);
-}
-.mission-card.planned { opacity: .65; }
-.mission-name { font-size: 14px; font-weight: 700; margin-bottom: 3px; }
+.mission-card:hover { border-color: var(--border-mid); box-shadow: var(--shadow-sm); }
+.mission-card.planned { opacity: .55; }
+.mission-name { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
 .mission-badge {
   display: inline-flex; align-items: center; gap: 4px;
   padding: 2px 8px; border-radius: var(--r-xs);

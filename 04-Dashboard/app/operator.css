@@ -86,8 +86,8 @@
    ═══════════════════════════════════════════ */
 
 .template-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 8px; margin-bottom: 14px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 10px; margin-bottom: 16px;
 }
 .template-card {
   background: var(--bg-card); border: 1px solid var(--border);
