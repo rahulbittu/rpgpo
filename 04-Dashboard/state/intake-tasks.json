@@ -1,5 +1,692 @@
 [
   {
+    "task_id": "t_mmtgfd9wuezq",
+    "title": "Design a comprehensive email management and inbox zero system. Include processin",
+    "raw_request": "Design a comprehensive email management and inbox zero system. Include processing workflow, folder/label structure, automation rules, batch processing schedule, and strategies for reducing incoming volume.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:25:31.508Z",
+    "updated_at": "2026-03-16T17:32:41.254Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:27:16.940Z",
+      "interpreted_objective": "Design a system for efficient email management and achieving inbox zero.",
+      "expected_outcome": "A detailed document outlining a comprehensive email management system with clear workflows, folder structures, automation rules, and strategies to reduce email volume.",
+      "key_unknowns": [
+        "Current best practices in email management",
+        "Specific automation tools available",
+        "Rahul's current email management setup"
+      ],
+      "recommended_strategy": "Conduct research on current best practices and tools for email management. Synthesize findings into a structured system proposal including workflows, folder structures, and automation rules. Ensure the proposal aligns with Rahul's productivity goals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Email Management Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices, tools, and strategies for email management.",
+          "prompt": "Search the web for current best practices, tools, and strategies for email management, focusing on achieving inbox zero, effective folder/label structures, automation rules, and strategies for reducing incoming email volume. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Email Management System Proposal",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured proposal for an email management system including workflows, folder structures, automation rules, and strategies to reduce email volume.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comprehensive email management system proposal. Include processing workflows, folder/label structures, automation rules, batch processing schedules, and strategies for reducing incoming email volume. Ensure the proposal is actionable and aligns with Rahul's productivity goals.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-email-management-system.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1925
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtgfd7bssv0",
+    "title": "Create a guide to building an effective personal finance dashboard using free to",
+    "raw_request": "Create a guide to building an effective personal finance dashboard using free tools. Include account aggregation, net worth tracking, spending categorization, investment performance monitoring, and goal progress visualization.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:25:31.415Z",
+    "updated_at": "2026-03-16T17:32:26.408Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:27:08.385Z",
+      "interpreted_objective": "Create a guide to building a personal finance dashboard using free tools.",
+      "expected_outcome": "A detailed guide that includes steps for account aggregation, net worth tracking, spending categorization, investment performance monitoring, and goal progress visualization using free tools.",
+      "key_unknowns": [
+        "Which free tools are most effective for each component of the dashboard?",
+        "What are the specific steps to integrate these tools into a cohesive dashboard?",
+        "Are there any limitations or challenges associated with using free tools for this purpose?"
+      ],
+      "recommended_strategy": "Research the most popular free tools for personal finance management and their capabilities. Synthesize a step-by-step guide that integrates these tools into a comprehensive dashboard. Ensure the guide includes specific examples and practical tips for implementation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Free Tools for Personal Finance Management",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of popular free tools for account aggregation, net worth tracking, spending categorization, investment performance monitoring, and goal progress visualization.",
+          "prompt": "Search the web for current, specific information about free tools available for personal finance management. Include tools that offer account aggregation, net worth tracking, spending categorization, investment performance monitoring, and goal progress visualization. Provide real names, features, and URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Building a Personal Finance Dashboard",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide detailing how to build a personal finance dashboard using the researched free tools.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a step-by-step guide for building a personal finance dashboard using free tools. Include specific recommendations for account aggregation, net worth tracking, spending categorization, investment performance monitoring, and goal progress visualization. Provide examples and practical tips for implementation.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2440
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmtgfd4aewz2",
+    "title": "Write a complete concept for a comedy web series about a retired spy who becomes",
+    "raw_request": "Write a complete concept for a comedy web series about a retired spy who becomes a substitute teacher and keeps accidentally using espionage techniques to solve mundane school problems. Include character profiles and 6 episode outlines.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:25:31.306Z",
+    "updated_at": "2026-03-16T17:32:13.653Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:27:00.184Z",
+      "interpreted_objective": "Create a detailed concept for a comedy web series about a retired spy turned substitute teacher.",
+      "expected_outcome": "A comprehensive concept document including character profiles and episode outlines for a comedy web series.",
+      "key_unknowns": [
+        "Specific character traits",
+        "Episode themes",
+        "Tone and style of humor"
+      ],
+      "recommended_strategy": "First, conduct research on existing comedy series with similar themes to gather inspiration and understand common tropes. Then, synthesize this information to create unique character profiles and episode outlines that fit the concept. Ensure the humor aligns with the premise of a retired spy using espionage techniques in a school setting.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Comedy Series",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of comedy series with similar themes and their key characteristics.",
+          "prompt": "Search the web for comedy series featuring characters with unusual jobs or backgrounds, especially those involving espionage or teaching. Include series names, themes, and notable character traits.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Series Concept",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed concept document for the web series, including character profiles and episode outlines.",
+          "prompt": "Based on the research results, create a detailed concept for a comedy web series about a retired spy who becomes a substitute teacher. Include character profiles and outlines for six episodes, ensuring the humor derives from the spy's use of espionage techniques in solving school problems.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-comedy-web-series-concept.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1903
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtgfd2coljg",
+    "title": "Plan an 11-day cultural and outdoor adventure through New Zealand North Island. ",
+    "raw_request": "Plan an 11-day cultural and outdoor adventure through New Zealand North Island. Include Rotorua geothermal parks, Hobbiton, Tongariro Alpine Crossing, Bay of Islands sailing, Wellington food scene, and Maori cultural experiences.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:25:31.236Z",
+    "updated_at": "2026-03-16T17:31:54.761Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:26:49.404Z",
+      "interpreted_objective": "Create an 11-day cultural and outdoor adventure itinerary for New Zealand's North Island.",
+      "expected_outcome": "A detailed itinerary covering key cultural and outdoor experiences in New Zealand's North Island, ready for use in screenwriting or travel planning.",
+      "key_unknowns": [
+        "Specific travel logistics for each location",
+        "Availability of activities during the planned period",
+        "Cultural events or festivals occurring at the time of travel"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on each destination and activity. Then, synthesize this information into a structured itinerary that balances cultural experiences with outdoor adventures. Ensure the itinerary is engaging and feasible for travelers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research New Zealand North Island Destinations",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive data on Rotorua geothermal parks, Hobbiton, Tongariro Alpine Crossing, Bay of Islands sailing, Wellington food scene, and Maori cultural experiences including logistics, availability, and highlights.",
+          "prompt": "Search the web for current, specific information about Rotorua geothermal parks, Hobbiton, Tongariro Alpine Crossing, Bay of Islands sailing, Wellington food scene, and Maori cultural experiences in New Zealand's North Island. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize New Zealand Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 11-day itinerary for New Zealand's North Island, incorporating researched destinations and activities.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an 11-day itinerary for New Zealand's North Island. Include Rotorua geothermal parks, Hobbiton, Tongariro Alpine Crossing, Bay of Islands sailing, Wellington food scene, and Maori cultural experiences. Ensure the itinerary is engaging, balanced, and feasible.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-NZ-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2025
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmtgfd0e4p1t",
+    "title": "Design a comprehensive core strength program for desk workers with lower back pa",
+    "raw_request": "Design a comprehensive core strength program for desk workers with lower back pain. Include McGill curl-up progressions, anti-rotation exercises, hip hinge patterns, breathing mechanics, and weekly programming.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:25:31.166Z",
+    "updated_at": "2026-03-16T17:31:42.690Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:26:35.672Z",
+      "interpreted_objective": "Design a core strength program tailored for desk workers with lower back pain, incorporating specific exercises and weekly programming.",
+      "expected_outcome": "A detailed, evidence-based core strength program that desk workers can follow to alleviate lower back pain, complete with exercise descriptions and a weekly schedule.",
+      "key_unknowns": [
+        "Specific needs and limitations of desk workers with lower back pain",
+        "The latest research on core exercises for lower back pain",
+        "Optimal weekly programming structure for these exercises"
+      ],
+      "recommended_strategy": "Conduct research on effective core exercises for lower back pain, focusing on McGill curl-up progressions, anti-rotation exercises, hip hinge patterns, and breathing mechanics. Synthesize this information into a comprehensive weekly program tailored for desk workers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research core exercises for lower back pain",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current, evidence-based information on core exercises for lower back pain, including McGill curl-up progressions, anti-rotation exercises, hip hinge patterns, and breathing mechanics.",
+          "prompt": "Search the web for current, specific information about core exercises effective for lower back pain, focusing on McGill curl-up progressions, anti-rotation exercises, hip hinge patterns, and breathing mechanics. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize core strength program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive core strength program for desk workers with lower back pain, including exercise descriptions, progressions, and a weekly schedule.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive core strength program for desk workers with lower back pain. Include specific exercise descriptions, progressions for McGill curl-ups, anti-rotation exercises, hip hinge patterns, breathing mechanics, and a detailed weekly programming schedule.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-core-strength-program.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1961
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmtgfcy8q24u",
+    "title": "Create a guide to setting and communicating technical vision as a principal engi",
+    "raw_request": "Create a guide to setting and communicating technical vision as a principal engineer. Include vision document templates, stakeholder alignment, roadmap integration, measuring progress, and handling vision disagreements.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:25:31.088Z",
+    "updated_at": "2026-03-16T17:31:17.183Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:26:25.488Z",
+      "interpreted_objective": "Create a comprehensive guide for principal engineers on setting and communicating technical vision.",
+      "expected_outcome": "A detailed guide that includes templates, strategies for stakeholder alignment, roadmap integration, progress measurement, and handling disagreements.",
+      "key_unknowns": [
+        "Specific templates preferred by principal engineers",
+        "Common challenges faced in aligning stakeholders",
+        "Best practices for integrating vision into roadmaps",
+        "Effective methods for measuring progress"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and templates used by principal engineers. Synthesize this information into a structured guide that includes actionable steps and examples for each component. Address common challenges and provide solutions for handling disagreements.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Technical Vision Setting",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of best practices, templates, and strategies used by principal engineers for setting technical vision.",
+          "prompt": "Search the web for current best practices, templates, and strategies used by principal engineers to set and communicate technical vision. Include information on stakeholder alignment, roadmap integration, measuring progress, and handling disagreements. Provide real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Setting Technical Vision",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide for principal engineers on setting and communicating technical vision, including templates and strategies.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for principal engineers on setting and communicating technical vision. Include sections on vision document templates, stakeholder alignment, roadmap integration, measuring progress, and handling disagreements. Provide actionable steps and examples.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-technical-vision-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1927
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtgfcw5e7ks",
+    "title": "Research the best home air fryers for health-conscious cooking. Compare Ninja Fo",
+    "raw_request": "Research the best home air fryers for health-conscious cooking. Compare Ninja Foodi DualZone, Philips Premium XXL, and Cosori Pro III with basket size, cooking evenness, cleaning ease, and recipe versatility.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:25:31.013Z",
+    "updated_at": "2026-03-16T17:30:57.947Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:26:15.103Z",
+      "interpreted_objective": "Research and compare the Ninja Foodi DualZone, Philips Premium XXL, and Cosori Pro III air fryers based on basket size, cooking evenness, cleaning ease, and recipe versatility.",
+      "expected_outcome": "A comprehensive report comparing the three air fryers with specific data on basket size, cooking evenness, cleaning ease, and recipe versatility, including citations and recommendations.",
+      "key_unknowns": [
+        "Current specifications and reviews of Ninja Foodi DualZone",
+        "Current specifications and reviews of Philips Premium XXL",
+        "Current specifications and reviews of Cosori Pro III",
+        "How these models compare in terms of cooking evenness, cleaning ease, and recipe versatility"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on the three air fryer models, focusing on basket size, cooking evenness, cleaning ease, and recipe versatility. Then, synthesize the findings into a structured report with specific comparisons and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Air Fryer Specifications",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gathered data with citations on the specifications and reviews of Ninja Foodi DualZone, Philips Premium XXL, and Cosori Pro III.",
+          "prompt": "Search the web for current, specific information about Ninja Foodi DualZone, Philips Premium XXL, and Cosori Pro III air fryers. Focus on basket size, cooking evenness, cleaning ease, and recipe versatility. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Air Fryer Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the Ninja Foodi DualZone, Philips Premium XXL, and Cosori Pro III air fryers with specific recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Ninja Foodi DualZone, Philips Premium XXL, and Cosori Pro III air fryers. Include specific data on basket size, cooking evenness, cleaning ease, and recipe versatility, along with concrete recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-air-fryer-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2256
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtgfcrayo5q",
+    "title": "Explain how content delivery networks (CDNs) work end-to-end. Cover DNS-level ro",
+    "raw_request": "Explain how content delivery networks (CDNs) work end-to-end. Cover DNS-level routing, edge caching, cache invalidation, origin shielding, DDoS protection, and how to configure CDN for a dynamic application.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:25:30.838Z",
+    "updated_at": "2026-03-16T17:30:34.910Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:26:06.590Z",
+      "interpreted_objective": "Explain the end-to-end functioning of CDNs, including technical components and configuration for dynamic applications.",
+      "expected_outcome": "A comprehensive, structured explanation of CDN operations and configuration strategies for dynamic applications, suitable for a learning context.",
+      "key_unknowns": [
+        "Current best practices for configuring CDNs for dynamic applications",
+        "Latest advancements in CDN technology related to DDoS protection"
+      ],
+      "recommended_strategy": "Conduct a detailed web search to gather current information on CDN operations and configuration. Then synthesize the findings into a structured explanation covering all specified aspects. Ensure the explanation is clear and suitable for educational purposes.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research CDN Operations and Configuration",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information about CDN operations, including DNS-level routing, edge caching, cache invalidation, origin shielding, DDoS protection, and configuration for dynamic applications.",
+          "prompt": "Search the web for current, specific information about how Content Delivery Networks (CDNs) work, covering DNS-level routing, edge caching, cache invalidation, origin shielding, DDoS protection, and configuration for dynamic applications. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize CDN Explanation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured explanation of CDN operations and configuration strategies for dynamic applications, formatted for educational purposes.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comprehensive explanation of how Content Delivery Networks (CDNs) work end-to-end. Cover DNS-level routing, edge caching, cache invalidation, origin shielding, DDoS protection, and how to configure CDNs for dynamic applications. Ensure the explanation is clear, structured, and suitable for a learning context.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-CDN-Explanation.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1968
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmtgfcqpcu3m",
+    "title": "Create a guide to understanding fiduciary financial advisors vs commission-based",
+    "raw_request": "Create a guide to understanding fiduciary financial advisors vs commission-based. Include fee structure comparison, conflict of interest analysis, credential verification (CFP, CFA, RIA), and interview questions for selecting an advisor.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:25:30.817Z",
+    "updated_at": "2026-03-16T17:30:19.467Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:25:52.983Z",
+      "interpreted_objective": "Create a comprehensive guide comparing fiduciary financial advisors to commission-based advisors, including fee structures, conflicts of interest, credential verification, and interview questions.",
+      "expected_outcome": "A detailed guide that helps individuals understand the differences and make informed decisions when selecting a financial advisor.",
+      "key_unknowns": [
+        "Current fee structures for fiduciary and commission-based advisors",
+        "Potential conflicts of interest in each advisor type",
+        "Verification process for credentials like CFP, CFA, and RIA",
+        "Effective interview questions for selecting advisors"
+      ],
+      "recommended_strategy": "First, conduct research to gather current data on fee structures, conflicts of interest, and credential verification for financial advisors. Then, synthesize this information into a structured guide that includes actionable interview questions. This will ensure the guide is both informative and practical.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Financial Advisor Fee Structures and Conflicts",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on fee structures and conflicts of interest for fiduciary and commission-based advisors.",
+          "prompt": "Search the web for current information about fee structures and conflicts of interest for fiduciary vs commission-based financial advisors. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Credential Verification for Financial Advisors",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Information on how to verify credentials like CFP, CFA, and RIA for financial advisors.",
+          "prompt": "Search the web for information on verifying financial advisor credentials such as CFP, CFA, and RIA. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Financial Advisors",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide comparing fiduciary and commission-based financial advisors, including fee structures, conflicts of interest, credential verification, and interview questions.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide comparing fiduciary and commission-based financial advisors. Include sections on fee structures, conflicts of interest, credential verification, and effective interview questions.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-financial-advisor-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2335
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmtgfcpze47q",
+    "title": "Design a comprehensive Kubernetes RBAC strategy for a multi-team organization. I",
+    "raw_request": "Design a comprehensive Kubernetes RBAC strategy for a multi-team organization. Include namespace-level roles, cluster roles, service account management, audit logging, and principle of least privilege implementation.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:25:30.791Z",
+    "updated_at": "2026-03-16T17:29:49.117Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:25:39.967Z",
+      "interpreted_objective": "Design a Kubernetes RBAC strategy for a multi-team organization.",
+      "expected_outcome": "A detailed RBAC strategy document that includes namespace-level roles, cluster roles, service account management, audit logging, and principle of least privilege.",
+      "key_unknowns": [
+        "Specific teams and their access requirements",
+        "Existing Kubernetes infrastructure details",
+        "Current RBAC policies in place, if any",
+        "Audit logging requirements and tools in use"
+      ],
+      "recommended_strategy": "Conduct research on best practices for Kubernetes RBAC in multi-team environments. Synthesize findings into a comprehensive strategy document. Ensure the strategy aligns with the principle of least privilege and includes detailed role definitions and audit logging mechanisms.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Approval of the final RBAC strategy document"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Kubernetes RBAC best practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices for Kubernetes RBAC in multi-team organizations.",
+          "prompt": "Search the web for current, specific information about Kubernetes RBAC best practices for multi-team organizations. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize RBAC strategy document",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive RBAC strategy document tailored for a multi-team organization.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive Kubernetes RBAC strategy document. Include namespace-level roles, cluster roles, service account management, audit logging, and principle of least privilege implementation.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1998
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
     "task_id": "t_mmtg3d84nu39",
     "title": "Design a comprehensive reading system for knowledge workers. Include book select",
     "raw_request": "Design a comprehensive reading system for knowledge workers. Include book selection criteria, active reading methodology, note-taking for retention, synthesis across multiple sources, and sharing insights effectively.",
