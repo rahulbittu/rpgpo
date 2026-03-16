@@ -1,5 +1,716 @@
 [
   {
+    "task_id": "t_mmtd8j8mzzwq",
+    "title": "Design a comprehensive personal data backup strategy. Include 3-2-1 backup rule ",
+    "raw_request": "Design a comprehensive personal data backup strategy. Include 3-2-1 backup rule implementation, cloud vs local trade-offs, encryption, automated scheduling, and disaster recovery testing.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:56:13.798Z",
+    "updated_at": "2026-03-16T16:03:28.053Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:57:29.751Z",
+      "interpreted_objective": "Design a comprehensive personal data backup strategy for a startup.",
+      "expected_outcome": "A detailed backup strategy that includes the 3-2-1 backup rule, cloud vs local storage analysis, encryption methods, automated scheduling, and disaster recovery testing.",
+      "key_unknowns": [
+        "Specific data types to be backed up",
+        "Current infrastructure for data storage",
+        "Budget constraints for cloud services",
+        "Preferred cloud service providers"
+      ],
+      "recommended_strategy": "Research best practices for implementing a 3-2-1 backup strategy. Analyze trade-offs between cloud and local storage, considering encryption and automation. Develop a disaster recovery plan and test it to ensure effectiveness.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Decision on preferred cloud service provider",
+        "Approval of budget for backup solutions"
+      ],
+      "subtasks": [
+        {
+          "title": "Research 3-2-1 Backup Strategy",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices for implementing the 3-2-1 backup rule.",
+          "prompt": "Search the web for current, specific information about implementing the 3-2-1 backup rule. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Analyze Cloud vs Local Storage Trade-offs",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "gemini",
+          "expected_output": "A strategic comparison of cloud vs local storage options, including pros/cons and recommendations.",
+          "prompt": "Analyze the data and provide strategic comparison of cloud vs local storage for backup. Include specific pros/cons and recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Develop Encryption and Automation Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed plan for encryption and automated scheduling of backups.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for encryption and automated scheduling of backups. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        },
+        {
+          "title": "Design Disaster Recovery Testing Plan",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive disaster recovery testing plan.",
+          "prompt": "Develop a comprehensive disaster recovery testing plan based on the backup strategy. Include specific steps, timelines, and metrics for success.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2240
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmtd8j7yol8a",
+    "title": "Create a guide to building a functional entryway for small apartments. Include v",
+    "raw_request": "Create a guide to building a functional entryway for small apartments. Include vertical storage solutions, shoe organization, key/mail station, mirror placement, and lighting design.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:56:13.774Z",
+    "updated_at": "2026-03-16T16:02:46.982Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:57:22.566Z",
+      "interpreted_objective": "Create a comprehensive guide for designing functional entryways in small apartments.",
+      "expected_outcome": "A detailed, actionable guide that includes vertical storage solutions, shoe organization, key/mail station, mirror placement, and lighting design for small apartment entryways.",
+      "key_unknowns": [
+        "Specific constraints or preferences for the guide",
+        "Target audience details",
+        "Format and length of the guide"
+      ],
+      "recommended_strategy": "Conduct research on current trends and best practices for small apartment entryway design. Synthesize the findings into a structured guide that addresses each specified element. Ensure the guide is practical and easy to implement for the target audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Entryway Design Trends",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current trends and best practices for designing entryways in small apartments.",
+          "prompt": "Search the web for current, specific information about designing functional entryways for small apartments. Focus on vertical storage solutions, shoe organization, key/mail stations, mirror placement, and lighting design. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Entryway Design Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for building a functional entryway in small apartments, including all specified elements.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a guide for building a functional entryway for small apartments. Include vertical storage solutions, shoe organization, key/mail station, mirror placement, and lighting design. Provide actionable recommendations and practical tips.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1997
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmtd8j79vwze",
+    "title": "Write a complete concept for a board game that teaches systems thinking through ",
+    "raw_request": "Write a complete concept for a board game that teaches systems thinking through managing a simulated city facing climate change. Include game mechanics, victory conditions, and expansion pack ideas.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:56:13.749Z",
+    "updated_at": "2026-03-16T16:01:59.037Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:57:15.768Z",
+      "interpreted_objective": "Create a detailed concept for a board game that teaches systems thinking through city management and climate change challenges.",
+      "expected_outcome": "A comprehensive board game concept including mechanics, victory conditions, and expansion ideas, ready for potential development or presentation.",
+      "key_unknowns": [
+        "Specific target audience for the game",
+        "Level of complexity desired for game mechanics",
+        "Preferred style or theme for the game design"
+      ],
+      "recommended_strategy": "First, research existing board games and educational tools that focus on systems thinking and climate change to gather inspiration and identify gaps. Then, synthesize this information into a detailed game concept, ensuring it aligns with the educational objectives and includes innovative mechanics and expansion possibilities.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Existing Educational Board Games",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of existing board games and educational tools that focus on systems thinking and climate change.",
+          "prompt": "Search the web for current, specific information about board games and educational tools that focus on systems thinking and climate change. Include real names, mechanics, themes, and educational outcomes.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Board Game Concept",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed board game concept including mechanics, victory conditions, and expansion pack ideas.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed board game concept that teaches systems thinking through managing a simulated city facing climate change. Include specific game mechanics, victory conditions, and ideas for expansion packs.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-board-game-concept.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1914
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtd8j6l8aln",
+    "title": "Plan a 10-day literary and pub tour through Dublin and the Irish countryside. In",
+    "raw_request": "Plan a 10-day literary and pub tour through Dublin and the Irish countryside. Include Trinity College Book of Kells, literary pubs, Cliffs of Moher, Aran Islands, and traditional music sessions.",
+    "domain": "music",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:56:13.725Z",
+    "updated_at": "2026-03-16T16:01:40.627Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:57:10.203Z",
+      "interpreted_objective": "Plan a detailed 10-day literary and pub tour through Dublin and the Irish countryside, focusing on key cultural and historical sites.",
+      "expected_outcome": "A comprehensive itinerary that includes visits to Trinity College Book of Kells, literary pubs, Cliffs of Moher, Aran Islands, and traditional music sessions, providing a rich cultural experience.",
+      "key_unknowns": [
+        "Current availability and schedules of literary pubs and traditional music sessions",
+        "Transportation options between destinations",
+        "Accommodation options near key sites"
+      ],
+      "recommended_strategy": "Conduct research to gather current information about the key sites and activities mentioned in the request. Synthesize this information into a structured itinerary, ensuring that logistical details such as transportation and accommodation are included. Highlight opportunities for traditional music experiences to align with the mission context.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Key Sites and Activities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information about the availability, schedules, and features of the key sites and activities mentioned in the request.",
+          "prompt": "Search the web for current, specific information about visiting Trinity College Book of Kells, literary pubs in Dublin, the Cliffs of Moher, Aran Islands, and traditional music sessions in the Irish countryside. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 10-day itinerary for a literary and pub tour through Dublin and the Irish countryside.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a detailed 10-day itinerary for a literary and pub tour through Dublin and the Irish countryside. Include visits to Trinity College Book of Kells, literary pubs, Cliffs of Moher, Aran Islands, and traditional music sessions. Provide logistical details such as transportation options and accommodation recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/music-{date}-literary-pub-tour.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2025
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelnba2"
+  },
+  {
+    "task_id": "t_mmtd8j5yk4qs",
+    "title": "Design a comprehensive eye strain prevention protocol for programmers. Include m",
+    "raw_request": "Design a comprehensive eye strain prevention protocol for programmers. Include monitor settings, ambient lighting ratios, blink rate training, eye exercises, and when to see a specialist.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:56:13.702Z",
+    "updated_at": "2026-03-16T16:01:23.322Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:57:00.406Z",
+      "interpreted_objective": "Develop a detailed protocol to prevent eye strain for programmers.",
+      "expected_outcome": "A comprehensive document outlining strategies and practices for programmers to prevent eye strain, including actionable steps and guidelines.",
+      "key_unknowns": [
+        "Current best practices for monitor settings to reduce eye strain",
+        "Optimal ambient lighting ratios for computer work",
+        "Effective blink rate training techniques",
+        "Recommended eye exercises for programmers",
+        "Criteria for when to consult a specialist"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and guidelines on eye strain prevention for programmers. Synthesize this information into a structured protocol document that includes specific recommendations for monitor settings, lighting, exercises, and specialist consultations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Eye Strain Prevention Techniques",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive data on best practices for preventing eye strain among programmers, including monitor settings, ambient lighting, blink rate training, eye exercises, and specialist consultation guidelines.",
+          "prompt": "Search the web for current, specific information about eye strain prevention techniques for programmers. Include best practices for monitor settings, ambient lighting ratios, blink rate training, eye exercises, and when to see a specialist. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Eye Strain Prevention Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured document outlining a comprehensive eye strain prevention protocol for programmers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive eye strain prevention protocol for programmers. Include specific recommendations for monitor settings, ambient lighting, blink rate training, eye exercises, and criteria for consulting a specialist.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-eye-strain-prevention-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1949
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtd8j5bsw4t",
+    "title": "Create a guide to conducting effective skip-level meetings as a director of engi",
+    "raw_request": "Create a guide to conducting effective skip-level meetings as a director of engineering. Include question frameworks, trust building, pattern recognition, and action item follow-through.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:56:13.679Z",
+    "updated_at": "2026-03-16T16:01:08.383Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:56:51.652Z",
+      "interpreted_objective": "Create a comprehensive guide for conducting effective skip-level meetings as a director of engineering.",
+      "expected_outcome": "A detailed guide that includes frameworks for questions, trust-building techniques, pattern recognition strategies, and methods for action item follow-through.",
+      "key_unknowns": [
+        "Specific frameworks for questions",
+        "Effective trust-building techniques",
+        "Strategies for pattern recognition",
+        "Methods for action item follow-through"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and frameworks for skip-level meetings. Synthesize the findings into a structured guide that addresses each component of the request. Ensure the guide is actionable and relevant to directors of engineering.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Skip-Level Meetings",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices and frameworks for conducting skip-level meetings.",
+          "prompt": "Search the web for current, specific information about best practices and frameworks for conducting effective skip-level meetings as a director of engineering. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Skip-Level Meetings",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for conducting effective skip-level meetings.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a guide for conducting effective skip-level meetings as a director of engineering. Include question frameworks, trust-building techniques, pattern recognition strategies, and methods for action item follow-through.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1974
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmtd8j4oaec5",
+    "title": "Research the best home security systems for renters. Compare SimpliSafe, Ring Al",
+    "raw_request": "Research the best home security systems for renters. Compare SimpliSafe, Ring Alarm Pro, and Abode with wireless installation, no-contract options, and smart home integration.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:56:13.656Z",
+    "updated_at": "2026-03-16T16:00:54.029Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:56:44.882Z",
+      "interpreted_objective": "Research and compare the best home security systems for renters focusing on SimpliSafe, Ring Alarm Pro, and Abode with wireless installation, no-contract options, and smart home integration.",
+      "expected_outcome": "A detailed comparison report of SimpliSafe, Ring Alarm Pro, and Abode home security systems, highlighting their features, pricing, installation options, and smart home integration capabilities.",
+      "key_unknowns": [
+        "Current pricing and features of SimpliSafe, Ring Alarm Pro, and Abode",
+        "Specific no-contract options available",
+        "Extent of smart home integration for each system"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather up-to-date information on SimpliSafe, Ring Alarm Pro, and Abode home security systems, focusing on wireless installation, no-contract options, and smart home integration. Then, synthesize this information into a comprehensive comparison report.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Security Systems",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on SimpliSafe, Ring Alarm Pro, and Abode including features, pricing, installation options, and smart home integration.",
+          "prompt": "Search the web for current, specific information about SimpliSafe, Ring Alarm Pro, and Abode home security systems. Focus on wireless installation, no-contract options, and smart home integration. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Security Systems Comparison",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of SimpliSafe, Ring Alarm Pro, and Abode home security systems.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing SimpliSafe, Ring Alarm Pro, and Abode. Include specific features, pricing, installation options, and smart home integration capabilities.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-home-security-systems.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2204
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtd8j4078wu",
+    "title": "Explain how HTTP caching works end-to-end. Cover Cache-Control headers, ETags, c",
+    "raw_request": "Explain how HTTP caching works end-to-end. Cover Cache-Control headers, ETags, conditional requests, CDN edge caching, stale-while-revalidate, and cache invalidation strategies.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:56:13.632Z",
+    "updated_at": "2026-03-16T16:00:39.391Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:56:36.136Z",
+      "interpreted_objective": "Explain the end-to-end process of HTTP caching, including key components and strategies.",
+      "expected_outcome": "A comprehensive report that clearly explains HTTP caching mechanisms and strategies, suitable for educational purposes.",
+      "key_unknowns": [
+        "Current best practices for each caching component",
+        "Recent updates or changes in HTTP caching standards"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather the latest information on HTTP caching, including Cache-Control headers, ETags, conditional requests, CDN edge caching, stale-while-revalidate, and cache invalidation strategies. Then, synthesize these findings into a clear, structured report that explains each component and their interactions.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research HTTP Caching",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and citations on HTTP caching mechanisms and strategies.",
+          "prompt": "Search the web for current, specific information about HTTP caching. Include details on Cache-Control headers, ETags, conditional requests, CDN edge caching, stale-while-revalidate, and cache invalidation strategies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize HTTP Caching Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining HTTP caching mechanisms and strategies.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comprehensive report explaining HTTP caching. Cover Cache-Control headers, ETags, conditional requests, CDN edge caching, stale-while-revalidate, and cache invalidation strategies. Ensure the explanation is clear and structured for educational purposes.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-HTTP-Caching.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1919
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmtd8j3doddq",
+    "title": "Create a guide to understanding and optimizing capital gains taxes. Include shor",
+    "raw_request": "Create a guide to understanding and optimizing capital gains taxes. Include short vs long-term rates, wash sale rules, opportunity zone investing, and tax-gain harvesting in low-income years.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:56:13.609Z",
+    "updated_at": "2026-03-16T16:00:21.240Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:56:28.192Z",
+      "interpreted_objective": "Create a comprehensive guide on understanding and optimizing capital gains taxes.",
+      "expected_outcome": "A detailed guide covering capital gains tax topics such as short vs long-term rates, wash sale rules, opportunity zone investing, and tax-gain harvesting in low-income years.",
+      "key_unknowns": [
+        "Specific format or length of the guide",
+        "Target audience's level of understanding",
+        "Any specific jurisdiction or country focus"
+      ],
+      "recommended_strategy": "Conduct thorough research on each of the specified topics related to capital gains taxes. Synthesize the findings into a clear, concise guide that provides actionable insights for optimizing capital gains taxes. Ensure the guide is accessible to a broad audience, potentially with varying levels of prior knowledge.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Capital Gains Tax Topics",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data on capital gains tax topics.",
+          "prompt": "Search the web for current, specific information about capital gains taxes, including short vs long-term rates, wash sale rules, opportunity zone investing, and tax-gain harvesting in low-income years. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Capital Gains Tax Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A synthesized guide on understanding and optimizing capital gains taxes.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a guide on understanding and optimizing capital gains taxes. Include sections on short vs long-term rates, wash sale rules, opportunity zone investing, and tax-gain harvesting in low-income years. Ensure the guide is clear, actionable, and accessible to a broad audience.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2019
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmtd8j2jfpct",
+    "title": "Design a comprehensive database sharding strategy for a social media platform. I",
+    "raw_request": "Design a comprehensive database sharding strategy for a social media platform. Include horizontal partitioning, consistent hashing, shard rebalancing, cross-shard queries, and monitoring for hot spots.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:56:13.579Z",
+    "updated_at": "2026-03-16T16:00:10.710Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:56:22.081Z",
+      "interpreted_objective": "Design a comprehensive database sharding strategy for a social media platform.",
+      "expected_outcome": "A detailed report outlining a database sharding strategy, including horizontal partitioning, consistent hashing, shard rebalancing, cross-shard queries, and monitoring for hot spots.",
+      "key_unknowns": [
+        "Current database architecture of the social media platform",
+        "Specific requirements and constraints of the platform",
+        "Expected data growth and user traffic patterns"
+      ],
+      "recommended_strategy": "Conduct research on best practices for database sharding in social media platforms, focusing on horizontal partitioning, consistent hashing, shard rebalancing, cross-shard queries, and monitoring. Synthesize findings into a comprehensive strategy report.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Database Sharding Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and examples of database sharding strategies.",
+          "prompt": "Search the web for current, specific information about database sharding strategies for social media platforms. Focus on horizontal partitioning, consistent hashing, shard rebalancing, cross-shard queries, and monitoring for hot spots. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Sharding Strategy Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report detailing a database sharding strategy for a social media platform.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a database sharding strategy for a social media platform. Include specific techniques for horizontal partitioning, consistent hashing, shard rebalancing, cross-shard queries, and monitoring for hot spots.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-database-sharding-strategy.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2486
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
     "task_id": "t_mmtchs4uwksj",
     "title": "Design a comprehensive personal growth tracking system. Include OKR goal-setting",
     "raw_request": "Design a comprehensive personal growth tracking system. Include OKR goal-setting, skill acquisition tracking, habit monitoring, and quarterly reviews.",
