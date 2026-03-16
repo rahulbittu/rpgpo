@@ -1,5 +1,689 @@
 [
   {
+    "task_id": "t_mmtiqpcpkrwv",
+    "title": "Design a comprehensive system for managing technical debt in a growing codebase.",
+    "raw_request": "Design a comprehensive system for managing technical debt in a growing codebase. Include debt classification, impact scoring, prioritization framework, sprint allocation strategy, and organizational buy-in techniques.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:30:19.609Z",
+    "updated_at": "2026-03-16T18:37:19.408Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:32:07.491Z",
+      "interpreted_objective": "Design a system to manage technical debt in a shopping codebase.",
+      "expected_outcome": "A structured framework for identifying, scoring, prioritizing, and addressing technical debt, along with strategies for organizational buy-in.",
+      "key_unknowns": [
+        "Current state of the codebase",
+        "Existing technical debt issues",
+        "Organizational priorities and constraints",
+        "Available resources for addressing technical debt"
+      ],
+      "recommended_strategy": "Research best practices for managing technical debt in software development. Develop a classification and scoring system tailored to a shopping platform. Propose a prioritization and sprint allocation strategy, and outline techniques for gaining organizational support.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the proposed framework and strategies"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Technical Debt Management Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices for managing technical debt in software development.",
+          "prompt": "Search the web for current best practices in managing technical debt in software development. Include information on debt classification, impact scoring, prioritization frameworks, sprint allocation strategies, and organizational buy-in techniques.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Technical Debt Management Framework",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive framework for managing technical debt, including classification, scoring, prioritization, and buy-in strategies.",
+          "prompt": "Based on the research results, synthesize a comprehensive framework for managing technical debt in a shopping codebase. Include specific methods for debt classification, impact scoring, prioritization, sprint allocation, and gaining organizational buy-in.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2038
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmtiqpa5su0t",
+    "title": "Create a guide to building an effective personal CRM for career networking. Incl",
+    "raw_request": "Create a guide to building an effective personal CRM for career networking. Include contact categorization, interaction tracking, follow-up scheduling, LinkedIn integration workflow, and measuring networking ROI.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:30:19.517Z",
+    "updated_at": "2026-03-16T18:37:01.675Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:31:57.832Z",
+      "interpreted_objective": "Create a comprehensive guide for building an effective personal CRM for career networking.",
+      "expected_outcome": "A detailed guide outlining steps for contact categorization, interaction tracking, follow-up scheduling, LinkedIn integration, and measuring networking ROI.",
+      "key_unknowns": [
+        "Specific tools or platforms Rahul prefers for CRM",
+        "Rahul's current networking practices and tools"
+      ],
+      "recommended_strategy": "Conduct research on best practices for building a personal CRM, focusing on career networking. Then, synthesize this information into a guide that includes actionable steps and workflows, specifically addressing contact categorization, interaction tracking, follow-up scheduling, LinkedIn integration, and measuring networking ROI.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Personal CRM in Career Networking",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and tools for building a personal CRM tailored to career networking.",
+          "prompt": "Search the web for current, specific information about best practices and tools for building a personal CRM for career networking. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Building an Effective Personal CRM",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for building an effective personal CRM for career networking, including actionable steps and workflows.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for building an effective personal CRM for career networking. Include specific steps for contact categorization, interaction tracking, follow-up scheduling, LinkedIn integration, and measuring networking ROI.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2309
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmtiqp7wzyov",
+    "title": "Write a complete concept for an animated short film about a bookshop that magica",
+    "raw_request": "Write a complete concept for an animated short film about a bookshop that magically reorganizes itself each night based on the emotional states of its visitors. Include storyboard outline and art direction.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:30:19.436Z",
+    "updated_at": "2026-03-16T18:36:46.809Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:31:50.664Z",
+      "interpreted_objective": "Create a detailed concept for an animated short film about a magical bookshop, including a storyboard outline and art direction.",
+      "expected_outcome": "A comprehensive concept document that outlines the animated short film's plot, storyboard, and art direction, ready for further development or pitching.",
+      "key_unknowns": [
+        "Specific emotional states to be featured",
+        "Target audience for the film",
+        "Artistic style preferences"
+      ],
+      "recommended_strategy": "First, research existing animated shorts and magical realism themes to gather inspiration and context. Then, synthesize this research into a detailed concept document, including a storyboard outline and specific art direction recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Animated Shorts and Magical Realism",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gathered data on existing animated shorts and magical realism themes with citations.",
+          "prompt": "Search the web for current, specific information about animated short films and the use of magical realism in storytelling. Include real examples, artistic styles, and thematic elements with sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Film Concept",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed concept document for the animated short film, including plot, storyboard outline, and art direction.",
+          "prompt": "Based on the research results, synthesize a detailed concept for an animated short film about a bookshop that magically reorganizes itself each night based on the emotional states of its visitors. Include a storyboard outline and art direction.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-animated_short_concept.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1904
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtiqp4fsy6f",
+    "title": "Plan a 10-day adventure and cultural tour through Patagonia and Buenos Aires. In",
+    "raw_request": "Plan a 10-day adventure and cultural tour through Patagonia and Buenos Aires. Include glacier trekking at Perito Moreno, Torres del Paine W Trek, tango shows, Argentine steak tour, and wine tasting in Mendoza.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:30:19.311Z",
+    "updated_at": "2026-03-16T18:36:28.553Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:31:41.401Z",
+      "interpreted_objective": "Plan a detailed 10-day adventure and cultural tour through Patagonia and Buenos Aires.",
+      "expected_outcome": "A comprehensive itinerary including cultural and adventure activities like glacier trekking, tango shows, and wine tasting.",
+      "key_unknowns": [
+        "Current availability and booking details for activities",
+        "Optimal travel routes and logistics",
+        "Local COVID-19 restrictions or guidelines"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on the specified activities and locations. Synthesize this information into a detailed itinerary, ensuring all logistical aspects are covered. Consider potential travel restrictions and local guidelines.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Patagonia and Buenos Aires Activities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current information and details about the specified activities in Patagonia and Buenos Aires.",
+          "prompt": "Search the web for current, specific information about glacier trekking at Perito Moreno, Torres del Paine W Trek, tango shows, Argentine steak tours, and wine tasting in Mendoza. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary for 10-Day Tour",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 10-day itinerary for the adventure and cultural tour through Patagonia and Buenos Aires.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 10-day itinerary for a tour through Patagonia and Buenos Aires. Include specific activities like glacier trekking at Perito Moreno, Torres del Paine W Trek, tango shows, Argentine steak tours, and wine tasting in Mendoza. Ensure logistical details and travel routes are covered.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-Patagonia_Buenos_Aires_Tour.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2479
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtiqp2xsedi",
+    "title": "Design a comprehensive mobility routine for golfers to improve swing mechanics. ",
+    "raw_request": "Design a comprehensive mobility routine for golfers to improve swing mechanics. Include thoracic rotation drills, hip internal rotation exercises, wrist mobility, dynamic warm-up sequence, and post-round recovery.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:30:19.257Z",
+    "updated_at": "2026-03-16T18:36:12.633Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:31:30.876Z",
+      "interpreted_objective": "Design a mobility routine for golfers to enhance swing mechanics with specific exercises and recovery strategies.",
+      "expected_outcome": "A detailed and actionable mobility routine for golfers that includes specific exercises and drills to improve swing mechanics.",
+      "key_unknowns": [
+        "Specific evidence-based exercises for thoracic rotation, hip internal rotation, and wrist mobility",
+        "Optimal dynamic warm-up sequence for golfers",
+        "Effective post-round recovery strategies"
+      ],
+      "recommended_strategy": "Conduct research to identify evidence-based exercises and routines for golfers focusing on thoracic rotation, hip internal rotation, wrist mobility, dynamic warm-up, and recovery. Synthesize this information into a comprehensive routine that is actionable and safe.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Golf Mobility Exercises",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of evidence-based exercises and routines for improving golf swing mechanics.",
+          "prompt": "Search the web for current, specific information about mobility exercises for golfers, focusing on thoracic rotation, hip internal rotation, wrist mobility, dynamic warm-up sequences, and post-round recovery. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Mobility Routine",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and comprehensive mobility routine for golfers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive mobility routine for golfers. Include specific exercises for thoracic rotation, hip internal rotation, wrist mobility, a dynamic warm-up sequence, and post-round recovery strategies. Ensure the routine is actionable and includes safety disclaimers where appropriate.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-golf-mobility-routine.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1905
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmtiqp0wleas",
+    "title": "Create a guide to building engineering team onboarding that gets new hires produ",
+    "raw_request": "Create a guide to building engineering team onboarding that gets new hires productive in 30 days. Include buddy system, structured learning path, first PR milestones, cultural integration, and feedback checkpoints.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:30:19.184Z",
+    "updated_at": "2026-03-16T18:35:57.354Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:31:16.769Z",
+      "interpreted_objective": "Create a comprehensive guide for onboarding engineering teams to ensure new hires become productive within 30 days.",
+      "expected_outcome": "A detailed guide that includes a buddy system, structured learning path, first PR milestones, cultural integration, and feedback checkpoints, leading to efficient onboarding and productivity.",
+      "key_unknowns": [
+        "Specific company culture and values to integrate into the onboarding",
+        "Existing tools and resources available for onboarding",
+        "Current onboarding process and its effectiveness"
+      ],
+      "recommended_strategy": "Research best practices for engineering team onboarding, focusing on rapid productivity. Synthesize findings into a structured guide that includes practical steps and checkpoints. Ensure the guide is adaptable to different company cultures and technical environments.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Engineering Onboarding",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and strategies for engineering team onboarding.",
+          "prompt": "Search the web for current best practices and strategies for onboarding engineering teams to ensure new hires are productive within 30 days. Include details on buddy systems, learning paths, PR milestones, cultural integration, and feedback checkpoints.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Onboarding Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide for onboarding engineering teams, incorporating research findings.",
+          "prompt": "Based on the research results, create a detailed guide for onboarding engineering teams that includes a buddy system, structured learning path, first PR milestones, cultural integration, and feedback checkpoints. Ensure the guide is practical and adaptable to various company settings.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2043
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmtiqoykzkg4",
+    "title": "Research the best home coffee subscription services. Compare Trade Coffee, Atlas",
+    "raw_request": "Research the best home coffee subscription services. Compare Trade Coffee, Atlas Coffee Club, and Mistobox with roast freshness, variety, customization, pricing per cup, and gifting options.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:30:19.100Z",
+    "updated_at": "2026-03-16T18:35:43.250Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:31:06.255Z",
+      "interpreted_objective": "Research and compare the best home coffee subscription services, focusing on Trade Coffee, Atlas Coffee Club, and Mistobox.",
+      "expected_outcome": "A detailed comparison report of the three coffee subscription services, highlighting roast freshness, variety, customization, pricing per cup, and gifting options.",
+      "key_unknowns": [
+        "Current pricing per cup for each service",
+        "Specific customization options available",
+        "Variety and freshness of coffee roasts",
+        "Gifting options offered by each service"
+      ],
+      "recommended_strategy": "First, use Perplexity to gather current, specific information about Trade Coffee, Atlas Coffee Club, and Mistobox, focusing on the criteria mentioned. Then, use OpenAI to synthesize this information into a structured comparison report, highlighting key differences and advantages.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Coffee Subscription Services",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Trade Coffee, Atlas Coffee Club, and Mistobox, including roast freshness, variety, customization, pricing per cup, and gifting options, with citations.",
+          "prompt": "Search the web for current, specific information about Trade Coffee, Atlas Coffee Club, and Mistobox. Include details on roast freshness, variety, customization options, pricing per cup, and gifting options. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Coffee Subscription Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of Trade Coffee, Atlas Coffee Club, and Mistobox, including specific recommendations based on the research.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a detailed comparison report of Trade Coffee, Atlas Coffee Club, and Mistobox. Highlight roast freshness, variety, customization, pricing per cup, and gifting options. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-coffee-subscription-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2209
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtiqowpiswa",
+    "title": "Explain how SSR hydration works in modern frameworks like Next.js and Remix. Cov",
+    "raw_request": "Explain how SSR hydration works in modern frameworks like Next.js and Remix. Cover server rendering, client hydration, selective hydration, streaming SSR, and common hydration mismatch debugging techniques.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:30:19.033Z",
+    "updated_at": "2026-03-16T18:35:25.894Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:30:53.985Z",
+      "interpreted_objective": "Explain SSR hydration in modern frameworks like Next.js and Remix.",
+      "expected_outcome": "A comprehensive explanation covering server rendering, client hydration, selective hydration, streaming SSR, and debugging techniques for hydration mismatches.",
+      "key_unknowns": [
+        "Specific techniques used in Next.js and Remix for SSR hydration",
+        "Common issues and debugging strategies for hydration mismatches"
+      ],
+      "recommended_strategy": "First, research how SSR hydration works in Next.js and Remix, focusing on key areas like server rendering and client hydration. Then, compile a detailed explanation, including common debugging techniques for hydration mismatches. Ensure the explanation is clear and builds from simple to complex concepts.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research SSR Hydration in Next.js and Remix",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on SSR hydration in Next.js and Remix, including server rendering, client hydration, selective hydration, streaming SSR, and debugging techniques.",
+          "prompt": "Search the web for current, specific information about how SSR hydration works in modern frameworks like Next.js and Remix. Include details on server rendering, client hydration, selective hydration, streaming SSR, and common debugging techniques for hydration mismatches. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Explanation of SSR Hydration",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A clear and comprehensive explanation of SSR hydration in Next.js and Remix, covering server rendering, client hydration, selective hydration, streaming SSR, and debugging techniques.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive explanation of how SSR hydration works in modern frameworks like Next.js and Remix. Cover server rendering, client hydration, selective hydration, streaming SSR, and common debugging techniques for hydration mismatches. Ensure the explanation builds from simple to complex concepts.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2096
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmtiqovcxlaf",
+    "title": "Create a guide to building a bond allocation strategy for different life stages.",
+    "raw_request": "Create a guide to building a bond allocation strategy for different life stages. Include duration management, credit quality assessment, Treasury vs corporate vs municipal selection, and how to ladder bonds for income.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:30:18.984Z",
+    "updated_at": "2026-03-16T18:35:09.003Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:30:43.284Z",
+      "interpreted_objective": "Create a comprehensive guide on bond allocation strategies for different life stages, including duration management, credit quality assessment, and bond laddering.",
+      "expected_outcome": "A detailed guide that helps individuals understand how to allocate bonds effectively at different life stages, using specific strategies and considerations.",
+      "key_unknowns": [
+        "Specific life stages to focus on",
+        "Current trends in bond markets",
+        "Detailed strategies for bond laddering"
+      ],
+      "recommended_strategy": "First, conduct research to gather current information on bond allocation strategies, focusing on duration management, credit quality, and bond types. Then, synthesize this information into a structured guide that outlines strategies for different life stages. Ensure to include practical examples and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Bond Allocation Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on bond allocation strategies, including duration management, credit quality, and bond types.",
+          "prompt": "Search the web for current, specific information about bond allocation strategies for different life stages. Include details on duration management, credit quality assessment, Treasury vs corporate vs municipal bond selection, and bond laddering strategies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Bond Allocation Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on bond allocation strategies for different life stages.",
+          "prompt": "Based on the research results, synthesize a detailed guide on bond allocation strategies for different life stages. Include sections on duration management, credit quality assessment, Treasury vs corporate vs municipal bond selection, and bond laddering. Provide specific examples and actionable recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2234
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtiqoulhquh",
+    "title": "Design a comprehensive infrastructure as code testing strategy. Include unit tes",
+    "raw_request": "Design a comprehensive infrastructure as code testing strategy. Include unit testing with Terratest, policy testing with OPA/Conftest, integration testing with LocalStack, drift detection, and cost estimation in CI pipelines.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:30:18.957Z",
+    "updated_at": "2026-03-16T18:34:45.816Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:30:30.200Z",
+      "interpreted_objective": "Develop a robust infrastructure as code testing strategy incorporating various testing methodologies.",
+      "expected_outcome": "A detailed strategy document outlining the implementation of unit, policy, and integration testing, along with drift detection and cost estimation in CI pipelines.",
+      "key_unknowns": [
+        "Specific CI/CD tools currently in use",
+        "Existing infrastructure as code setup",
+        "Current testing frameworks in place"
+      ],
+      "recommended_strategy": "Conduct a thorough analysis of current infrastructure and CI/CD pipelines. Develop a strategy document that outlines the integration of Terratest for unit testing, OPA/Conftest for policy testing, LocalStack for integration testing, alongside drift detection and cost estimation mechanisms. Ensure the strategy is feasible within the current tech stack.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Approval of the final testing strategy document"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Current Infrastructure and CI/CD Tools",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report detailing the current infrastructure setup and CI/CD tools in use.",
+          "prompt": "Search the web for information on common CI/CD tools and practices used in startups for infrastructure as code. Include details on how these tools integrate with testing frameworks like Terratest, OPA/Conftest, and LocalStack.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Testing Strategy Document",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive document outlining the infrastructure as code testing strategy.",
+          "prompt": "Based on the research results, synthesize a detailed infrastructure as code testing strategy. Include specific recommendations for using Terratest, OPA/Conftest, LocalStack, drift detection, and cost estimation in CI pipelines. Provide concrete steps and considerations for implementation.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2031
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
     "task_id": "t_mmtifxye8lb6",
     "title": "Design a comprehensive mentorship matching and program management system for eng",
     "raw_request": "Design a comprehensive mentorship matching and program management system for engineering organizations. Include matching criteria, structured conversation guides, milestone tracking, program evaluation metrics, and scaling beyond 50 pairs.",
