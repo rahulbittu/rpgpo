@@ -1,5 +1,337 @@
 [
   {
+    "id": "mmsms4tuj0yl",
+    "type": "execute-subtask",
+    "label": "Subtask: Write Cold Open and First Act",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsmqtzmkqis"
+    },
+    "createdAt": "2026-03-16T03:35:38.610Z",
+    "updatedAt": "2026-03-16T03:36:26.598Z",
+    "output": "Write Cold Open and First Act: ## Cold Open\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmqtzmkqis.md"
+    ]
+  },
+  {
+    "id": "mmsmryolggru",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Recovery Protocol Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsmqr9bzixw"
+    },
+    "createdAt": "2026-03-16T03:35:30.645Z",
+    "updatedAt": "2026-03-16T03:36:15.934Z",
+    "output": "Synthesize Recovery Protocol Report: ### Day 1: Active Recovery\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/health-{date}-recovery-protocol.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmqr9bzixw.md"
+    ]
+  },
+  {
+    "id": "mmsmrntt333y",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Layoff Guide",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsmqfe64qe1"
+    },
+    "createdAt": "2026-03-16T03:35:16.577Z",
+    "updatedAt": "2026-03-16T03:36:07.531Z",
+    "output": "Synthesize Layoff Guide: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/careeregine-{date}-layoff-guide.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmqfe64qe1.md"
+    ]
+  },
+  {
+    "id": "mmsmri5ndvgg",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Comparison Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsmqblms7aq"
+    },
+    "createdAt": "2026-03-16T03:35:09.227Z",
+    "updatedAt": "2026-03-16T03:36:00.799Z",
+    "output": "Synthesize Comparison Report: ## Comparison Table\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/shopping-{date}-portable-power-stations.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmqblms7aq.md"
+    ]
+  },
+  {
+    "id": "mmsmr30pt9p4",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize comparison report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsmq7huba57"
+    },
+    "createdAt": "2026-03-16T03:34:49.609Z",
+    "updatedAt": "2026-03-16T03:35:53.747Z",
+    "output": "Synthesize comparison report: ## Explanation\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmq7huba57.md"
+    ]
+  },
+  {
+    "id": "mmsmqy2katab",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Financial Independence Roadmap",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsmq39tfjds"
+    },
+    "createdAt": "2026-03-16T03:34:43.196Z",
+    "updatedAt": "2026-03-16T03:35:44.776Z",
+    "output": "Synthesize Financial Independence Roadmap: ## Analysis\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmq39tfjds.md"
+    ]
+  },
+  {
+    "id": "mmsmqu5akl5o",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Dark Comedy and Startup Culture",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsmqtxvmyc9"
+    },
+    "createdAt": "2026-03-16T03:34:38.110Z",
+    "updatedAt": "2026-03-16T03:35:38.611Z",
+    "output": "Research Dark Comedy and Startup Culture: ## Dark Comedy Themes and Tropes\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmqtxvmyc9.md"
+    ]
+  },
+  {
+    "id": "mmsmqrbzjjw1",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Current Recovery Protocols",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsmqr8arydu"
+    },
+    "createdAt": "2026-03-16T03:34:34.463Z",
+    "updatedAt": "2026-03-16T03:35:30.646Z",
+    "output": "Research Current Recovery Protocols: ## Finding 1: Accelerated TMS Protocol as 5-Day Recovery for Treatment-Resistant Depression (Mental Recovery)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmqr8arydu.md"
+    ]
+  },
+  {
+    "id": "mmsmqnqb18rp",
+    "type": "execute-subtask",
+    "label": "Subtask: Write Comprehensive Guide on Idempotent APIs",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsmpuvqxdtj"
+    },
+    "createdAt": "2026-03-16T03:34:29.795Z",
+    "updatedAt": "2026-03-16T03:35:23.667Z",
+    "output": "Write Comprehensive Guide on Idempotent APIs: # Comprehensive Guide on Designing Idempotent APIs\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsmpuvqxdtj.md"
+    ]
+  },
+  {
+    "id": "mmsmqfhpqgyk",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Layoff Navigation Strategies",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsmqfd0kn1s"
+    },
+    "createdAt": "2026-03-16T03:34:19.117Z",
+    "updatedAt": "2026-03-16T03:35:16.577Z",
+    "output": "Research Layoff Navigation Strategies: ## Severance Negotiation\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmqfd0kn1s.md"
+    ]
+  },
+  {
+    "id": "mmsmqbo7fej7",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Portable Power Stations",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsmqbkl5wca"
+    },
+    "createdAt": "2026-03-16T03:34:14.167Z",
+    "updatedAt": "2026-03-16T03:35:09.229Z",
+    "output": "Research Portable Power Stations: # Portable Power Stations: Jackery, EcoFlow, and Bluetti Comparison\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmqbkl5wca.md"
+    ]
+  },
+  {
+    "id": "mmsmq7kma87g",
+    "type": "execute-subtask",
+    "label": "Subtask: Research data quality testing frameworks",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsmq7gtcazm"
+    },
+    "createdAt": "2026-03-16T03:34:08.854Z",
+    "updatedAt": "2026-03-16T03:34:49.610Z",
+    "output": "Research data quality testing frameworks: ## Great Expectations (GX)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmq7gtcazm.md"
+    ]
+  },
+  {
+    "id": "mmsmq3c3yjtq",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Financial Independence Strategies",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsmq38uverv"
+    },
+    "createdAt": "2026-03-16T03:34:03.363Z",
+    "updatedAt": "2026-03-16T03:34:43.197Z",
+    "output": "Research Financial Independence Strategies: ## Savings Rate Priority Over Income\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmq38uverv.md"
+    ]
+  },
+  {
+    "id": "mmsmpwks8ttp",
+    "type": "deliberate",
+    "label": "Deliberate: Write a cold open and first act for a dark comedy about a startup that accidenta",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsmpwkff6dv",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:33:54.604Z",
+    "updatedAt": "2026-03-16T03:34:38.111Z",
+    "output": "Deliberation complete.\nObjective: Write a cold open and first act for a dark comedy screenplay about a startup accidentally creating AGI during a hackathon.\nStrategy: Begin by researching common themes and tropes in dark comedies and startup culture. Use this research to inform the writing of a cold open and first act that effectively introduce the setting, characters, and central conflict. Ensure the humor aligns with the dark comedy genre while establishing the narrative arc.\nRisk: green\nSubtasks: 2\nTokens: 2087",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsmpvrb67f5",
+    "type": "deliberate",
+    "label": "Deliberate: Design a science-based recovery day protocol. Include active recovery, nutrition",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsmpvqv8pzn",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:33:53.543Z",
+    "updatedAt": "2026-03-16T03:34:34.464Z",
+    "output": "Deliberation complete.\nObjective: Design a comprehensive recovery day protocol based on scientific principles for individuals after intense work weeks.\nStrategy: Conduct research to gather current scientific data on recovery protocols. Synthesize the findings into a structured, actionable report that includes specific recommendations for active recovery, nutrition, sleep, and mental recovery. Ensure all recommendations are evidence-based and include safety disclaimers where necessary.\nRisk: green\nSubtasks: 2\nTokens: 1901",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsmpv0geu79",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Idempotent API Design",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsmpuu7fhag"
+    },
+    "createdAt": "2026-03-16T03:33:52.576Z",
+    "updatedAt": "2026-03-16T03:34:29.796Z",
+    "output": "Research Idempotent API Design: ## Finding 1: Idempotent Processing for Pub/Sub Message Deduplication\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsmpuu7fhag.md"
+    ]
+  },
+  {
+    "id": "mmsmpurq2hlj",
+    "type": "deliberate",
+    "label": "Deliberate: Create a comprehensive guide to navigating a layoff as a senior engineer. Includ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsmpurhlxss",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:33:52.262Z",
+    "updatedAt": "2026-03-16T03:34:19.118Z",
+    "output": "Deliberation complete.\nObjective: Create a comprehensive guide for senior engineers to navigate layoffs, focusing on severance negotiation, unemployment, networking, and emotional recovery.\nStrategy: Conduct research to gather current information on severance negotiation, unemployment benefits, and networking strategies specifically for senior engineers. Synthesize this information into a structured guide with actionable advice and resources. Include emotional recovery strategies to support mental well-being.\nRisk: green\nSubtasks: 2\nTokens: 2178",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsmptyvk9l2",
+    "type": "deliberate",
+    "label": "Deliberate: Research the best portable power stations for remote work outdoors. Compare Jack",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsmptyp0giw",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:33:51.223Z",
+    "updatedAt": "2026-03-16T03:34:14.168Z",
+    "output": "Deliberation complete.\nObjective: Research and compare the best portable power stations for remote work outdoors, focusing on Jackery, EcoFlow, and Bluetti.\nStrategy: First, conduct a web search to gather current data on Jackery, EcoFlow, and Bluetti portable power stations, focusing on wattage, battery capacity, and charging time. Then, synthesize this information into a comprehensive comparison report with a recommendation.\nRisk: green\nSubtasks: 2\nTokens: 2019",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsmpt6731q2",
+    "type": "deliberate",
+    "label": "Deliberate: Teach me about data quality testing frameworks. Compare Great Expectations, dbt ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsmpt5u1pcr",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:33:50.191Z",
+    "updatedAt": "2026-03-16T03:34:08.854Z",
+    "output": "Deliberation complete.\nObjective: Compare data quality testing frameworks Great Expectations, dbt tests, and Soda Core, including setup and common test patterns.\nStrategy: Conduct web research to gather current information on Great Expectations, dbt tests, and Soda Core. Synthesize findings into a detailed comparison report that includes setup instructions and common test patterns for each framework.\nRisk: green\nSubtasks: 2\nTokens: 2029",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsmpschjp45",
+    "type": "deliberate",
+    "label": "Deliberate: Create a complete financial independence roadmap for a 32-year-old earning 200k.",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsmpsc5lywx",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:33:49.121Z",
+    "updatedAt": "2026-03-16T03:34:03.364Z",
+    "output": "Deliberation complete.\nObjective: Develop a detailed financial independence roadmap for a 32-year-old earning $200k annually.\nStrategy: Conduct research on financial independence strategies tailored to high-income individuals. Synthesize findings into a detailed roadmap that includes savings targets, investment options, and lifestyle adjustments. Ensure the plan is actionable and includes concrete steps for implementation.\nRisk: green\nSubtasks: 2\nTokens: 2367",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsmprizadci",
+    "type": "deliberate",
+    "label": "Deliberate: Write a comprehensive guide to designing idempotent APIs. Include retry handling",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsmpriuourc",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T03:33:48.059Z",
+    "updatedAt": "2026-03-16T03:33:52.576Z",
+    "output": "Deliberation complete.\nObjective: Create a comprehensive guide on designing idempotent APIs.\nStrategy: First, research current best practices and strategies for designing idempotent APIs, focusing on retry handling, deduplication, and distributed transaction patterns. Then, synthesize this information into a comprehensive guide tailored to a technical audience, ensuring clarity and practical applicability.\nRisk: green\nSubtasks: 2\nTokens: 2031",
+    "error": null,
+    "filesWritten": []
+  },
+  {
     "id": "mmsml1o4yffo",
     "type": "execute-subtask",
     "label": "Subtask: Design Weekly Reflection and Planning System",
@@ -1263,340 +1595,6 @@
     "error": null,
     "filesWritten": [
       "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsm3rcz08ja.md"
-    ]
-  },
-  {
-    "id": "mmsm3rk0pr8a",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Rental Property Financing Strategies",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsm3rbzi8w5"
-    },
-    "createdAt": "2026-03-16T03:16:41.664Z",
-    "updatedAt": "2026-03-16T03:17:35.383Z",
-    "output": "Research Rental Property Financing Strategies: ## Construction-to-Permanent Loans for Build-to-Rent\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsm3rbzi8w5.md"
-    ]
-  },
-  {
-    "id": "mmsm3nzchumr",
-    "type": "deliberate",
-    "label": "Deliberate: Design a personal knowledge management workflow using Obsidian. Include daily no",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsm3nyz2r85",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:16:37.032Z",
-    "updatedAt": "2026-03-16T03:17:28.137Z",
-    "output": "Deliberation complete.\nObjective: Design a structured workflow for personal knowledge management using Obsidian.\nStrategy: Research best practices and current strategies for using Obsidian as a personal knowledge management tool. Synthesize these findings into a comprehensive workflow document that includes specific note types and linking strategies. Ensure the workflow aligns with Rahul's productivity goals and existing systems.\nRisk: green\nSubtasks: 2\nTokens: 2006",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsm3n5s1hb7",
-    "type": "deliberate",
-    "label": "Deliberate: Create a minimalist wardrobe guide for a tech professional. 25 items that cover ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsm3n5mbit3",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:16:35.968Z",
-    "updatedAt": "2026-03-16T03:17:23.123Z",
-    "output": "Deliberation complete.\nObjective: Create a minimalist wardrobe guide for a tech professional with 25 items covering work, casual, and exercise, including brands and estimated costs.\nStrategy: First, research current popular brands and estimated costs for wardrobe items suitable for work, casual, and exercise for tech professionals. Then, synthesize this information into a structured guide listing 25 items with specific recommendations.\nRisk: green\nSubtasks: 2\nTokens: 1885",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsm3mdxucpg",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Data Governance Best Practices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmsm3mats2mz"
-    },
-    "createdAt": "2026-03-16T03:16:34.965Z",
-    "updatedAt": "2026-03-16T03:17:18.497Z",
-    "output": "Research Data Governance Best Practices: ## Data Classification Best Practices\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsm3mats2mz.md"
-    ]
-  },
-  {
-    "id": "mmsm3mdf7j7r",
-    "type": "deliberate",
-    "label": "Deliberate: Write a spec document for a 6-episode true crime podcast about cybersecurity bre",
-    "status": "failed",
-    "meta": {
-      "taskId": "t_mmsm3mda9zjp",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:16:34.947Z",
-    "updatedAt": "2026-03-16T03:17:09.746Z",
-    "output": null,
-    "error": "Intake task not found: t_mmsm3mda9zjp",
-    "filesWritten": []
-  },
-  {
-    "id": "mmsm3lkubk6t",
-    "type": "deliberate",
-    "label": "Deliberate: Plan a working holiday in Bali for a remote tech worker. 2 weeks. Include cowork",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsm3lkmbjz2",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:16:33.918Z",
-    "updatedAt": "2026-03-16T03:17:09.045Z",
-    "output": "Deliberation complete.\nObjective: Plan a detailed two-week working holiday in Bali for a remote tech worker, including logistics and budget.\nStrategy: First, gather current information about coworking spaces, accommodation, visa requirements, internet reliability, and budget estimates for a two-week stay in Bali. Then, synthesize this information into a structured plan that includes specific recommendations and logistics.\nRisk: green\nSubtasks: 2\nTokens: 1947",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsm3krv5rj8",
-    "type": "deliberate",
-    "label": "Deliberate: Design a comprehensive sleep optimization system. Include bedroom setup, pre-sle",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsm3krmfuwh",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:16:32.875Z",
-    "updatedAt": "2026-03-16T03:17:01.999Z",
-    "output": "Deliberation complete.\nObjective: Design an evidence-based sleep optimization system covering bedroom setup, pre-sleep routine, wake optimization, and tracking metrics.\nStrategy: Conduct research to identify current evidence-based practices for sleep optimization. Synthesize findings into a structured report covering bedroom setup, pre-sleep routine, wake optimization, and tracking metrics. Ensure all recommendations are actionable and include safety disclaimers where necessary.\nRisk: green\nSubtasks: 2\nTokens: 1893",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsm3jyxs4yv",
-    "type": "deliberate",
-    "label": "Deliberate: Create a technical interview question bank for senior data engineers. 20 questio",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsm3jyre0jc",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:16:31.833Z",
-    "updatedAt": "2026-03-16T03:16:57.175Z",
-    "output": "Deliberation complete.\nObjective: Create a bank of 20 technical interview questions for senior data engineers across SQL, system design, data modeling, and behavioral categories.\nStrategy: Research current trends and common interview questions for senior data engineers in SQL, system design, data modeling, and behavioral categories. Synthesize this information into a structured question bank with a balanced mix of question types and difficulties.\nRisk: green\nSubtasks: 2\nTokens: 2171",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsm3j68ycy0",
-    "type": "deliberate",
-    "label": "Deliberate: Research the best smart home hubs in 2026. Compare Apple HomeKit, Google Home, A",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsm3j63d593",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:16:30.800Z",
-    "updatedAt": "2026-03-16T03:16:52.085Z",
-    "output": "Deliberation complete.\nObjective: Compare the best smart home hubs in 2026, focusing on Apple HomeKit, Google Home, Amazon Alexa, and Home Assistant, including Matter protocol support.\nStrategy: First, conduct a web search to gather current information on the smart home hubs Apple HomeKit, Google Home, Amazon Alexa, and Home Assistant, focusing on their features and Matter protocol support in 2026. Next, synthesize this information into a comprehensive report, comparing their pros and cons.\nRisk: green\nSubtasks: 2\nTokens: 2032",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsm3idmv0kj",
-    "type": "deliberate",
-    "label": "Deliberate: Teach me about Kubernetes operators and custom resources. Cover CRDs, controller",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsm3idhpwj7",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:16:29.770Z",
-    "updatedAt": "2026-03-16T03:16:45.030Z",
-    "output": "Deliberation complete.\nObjective: Educate Rahul on Kubernetes operators, custom resources, CRDs, controller pattern, operator framework, and decision-making for building vs using existing operators.\nStrategy: Conduct research to gather comprehensive information on Kubernetes operators, CRDs, controller pattern, and operator framework. Synthesize this information into a concise, informative report that includes decision-making guidelines for building vs using existing operators.\nRisk: green\nSubtasks: 2\nTokens: 2074",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsm3hjglxzc",
-    "type": "deliberate",
-    "label": "Deliberate: Create a guide to building a rental property portfolio. Include financing strate",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsm3hj4omoz",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:16:28.684Z",
-    "updatedAt": "2026-03-16T03:16:41.703Z",
-    "output": "Deliberation complete.\nObjective: Create a comprehensive guide on building a rental property portfolio.\nStrategy: Conduct research on current trends and best practices in rental property investment. Synthesize findings into a structured guide with actionable insights on financing, property selection, management, and cash flow projections.\nRisk: green\nSubtasks: 5\nTokens: 2723",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmsm3gpqrc9f",
-    "type": "deliberate",
-    "label": "Deliberate: Write a comprehensive data governance policy for a startup. Include data classif",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmsm3gpkurdi",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T03:16:27.614Z",
-    "updatedAt": "2026-03-16T03:16:34.965Z",
-    "output": "Deliberation complete.\nObjective: Create a comprehensive data governance policy for a startup.\nStrategy: First, gather information on best practices for data governance, focusing on data classification, access controls, retention, and compliance with GDPR and CCPA. Then, synthesize this information into a comprehensive policy document tailored for a startup environment.\nRisk: green\nSubtasks: 2\nTokens: 2055",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmslzx32xegd",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize research into a structured accountability system plan",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmslxaqw14p6"
-    },
-    "createdAt": "2026-03-16T03:13:42.206Z",
-    "updatedAt": "2026-03-16T03:14:32.437Z",
-    "output": "Synthesize research into a structured accountability system plan: ### Weekly Check-Ins\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/personalops-{date}-accountability-system.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmslxaqw14p6.md"
-    ]
-  },
-  {
-    "id": "mmslzgrk61sx",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Home Energy Audit Checklist",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmslwt74d673"
-    },
-    "createdAt": "2026-03-16T03:13:21.056Z",
-    "updatedAt": "2026-03-16T03:14:27.480Z",
-    "output": "Synthesize Home Energy Audit Checklist: ### Insulation Assessment\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/personalops-{date}-home-energy-audit-checklist.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmslwt74d673.md"
-    ]
-  },
-  {
-    "id": "mmslz9qfujvh",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Film Treatment",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmslwooei6qg"
-    },
-    "createdAt": "2026-03-16T03:13:11.943Z",
-    "updatedAt": "2026-03-16T03:14:21.037Z",
-    "output": "Synthesize Film Treatment: **Title: \"Awake\"**\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/screenwriting-{date}-ai-insomnia-treatment.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmslwooei6qg.md"
-    ]
-  },
-  {
-    "id": "mmslyngmeex0",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize City Comparisons",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmslwl5qpxyp"
-    },
-    "createdAt": "2026-03-16T03:12:43.078Z",
-    "updatedAt": "2026-03-16T03:14:12.449Z",
-    "output": "Synthesize City Comparisons: ## Itinerary (day-by-day)\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/travel-{date}-digital-nomad-cities.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmslwl5qpxyp.md"
-    ]
-  },
-  {
-    "id": "mmslyf5eeb5h",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize micro-workout plan",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmslwhh8y4lx"
-    },
-    "createdAt": "2026-03-16T03:12:32.306Z",
-    "updatedAt": "2026-03-16T03:14:06.094Z",
-    "output": "Synthesize micro-workout plan: ### Day 1: Introduction and Upper Body Focus\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/health-{date}-micro-workout-plan.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmslwhh8y4lx.md"
-    ]
-  },
-  {
-    "id": "mmsly0n0qhbn",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Onboarding Checklist",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmslw6dvin2z"
-    },
-    "createdAt": "2026-03-16T03:12:13.500Z",
-    "updatedAt": "2026-03-16T03:14:00.699Z",
-    "output": "Synthesize Onboarding Checklist: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/careeregine-onboarding-checklist.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmslw6dvin2z.md"
-    ]
-  },
-  {
-    "id": "mmslxrfiak6q",
-    "type": "execute-subtask",
-    "label": "Subtask: Compare and Recommend",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmslw2p3asg5"
-    },
-    "createdAt": "2026-03-16T03:12:01.566Z",
-    "updatedAt": "2026-03-16T03:13:54.297Z",
-    "output": "Compare and Recommend: ## Comparison Table\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/shopping-{date}-headphones-comparison.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmslw2p3asg5.md"
-    ]
-  },
-  {
-    "id": "mmslxj03qm8w",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Replication Patterns Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmslvzpo72cs"
-    },
-    "createdAt": "2026-03-16T03:11:50.643Z",
-    "updatedAt": "2026-03-16T03:13:49.180Z",
-    "output": "Synthesize Replication Patterns Report: ## Explanation\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/learning-{date}-database_replication_patterns.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmslvzpo72cs.md"
-    ]
-  },
-  {
-    "id": "mmslxat5nztx",
-    "type": "execute-subtask",
-    "label": "Subtask: Research best practices for personal accountability systems",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmslxapysrce"
-    },
-    "createdAt": "2026-03-16T03:11:40.025Z",
-    "updatedAt": "2026-03-16T03:13:42.207Z",
-    "output": "Research best practices for personal accountability systems: ## Weekly Check-Ins\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmslxapysrce.md"
     ]
   }
 ]

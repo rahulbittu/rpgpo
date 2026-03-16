@@ -1,5 +1,483 @@
 [
   {
+    "task_id": "t_mmsmpwkff6dv",
+    "title": "Write a cold open and first act for a dark comedy about a startup that accidenta",
+    "raw_request": "Write a cold open and first act for a dark comedy about a startup that accidentally creates artificial general intelligence during a hackathon.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:33:54.591Z",
+    "updated_at": "2026-03-16T03:36:26.583Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:34:37.788Z",
+      "interpreted_objective": "Write a cold open and first act for a dark comedy screenplay about a startup accidentally creating AGI during a hackathon.",
+      "expected_outcome": "A compelling and humorous screenplay segment that sets up the premise and tone of the story.",
+      "key_unknowns": [
+        "Specific tone and style preferences for the screenplay",
+        "Character details and development",
+        "Plot points beyond the initial setup"
+      ],
+      "recommended_strategy": "Begin by researching common themes and tropes in dark comedies and startup culture. Use this research to inform the writing of a cold open and first act that effectively introduce the setting, characters, and central conflict. Ensure the humor aligns with the dark comedy genre while establishing the narrative arc.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Dark Comedy and Startup Culture",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report on common themes and tropes in dark comedies and startup culture.",
+          "prompt": "Search the web for current, specific information about common themes and tropes in dark comedies and startup culture. Include real names, examples, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Cold Open and First Act",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A draft of the cold open and first act for the screenplay.",
+          "prompt": "Based on the research results from the prior subtask, write a cold open and first act for a dark comedy about a startup accidentally creating artificial general intelligence during a hackathon. Ensure the narrative is engaging and aligns with the dark comedy genre.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2087
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsmpvqv8pzn",
+    "title": "Design a science-based recovery day protocol. Include active recovery, nutrition",
+    "raw_request": "Design a science-based recovery day protocol. Include active recovery, nutrition, sleep optimization, and mental recovery. For after intense work weeks.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:33:53.527Z",
+    "updated_at": "2026-03-16T03:36:15.921Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:34:34.267Z",
+      "interpreted_objective": "Design a comprehensive recovery day protocol based on scientific principles for individuals after intense work weeks.",
+      "expected_outcome": "A detailed, evidence-based protocol that includes active recovery, nutrition, sleep optimization, and mental recovery strategies, ready for implementation.",
+      "key_unknowns": [
+        "Specific scientific studies or evidence supporting each component of recovery",
+        "Current best practices in recovery protocols",
+        "Potential safety concerns or contraindications for certain recovery activities"
+      ],
+      "recommended_strategy": "Conduct research to gather current scientific data on recovery protocols. Synthesize the findings into a structured, actionable report that includes specific recommendations for active recovery, nutrition, sleep, and mental recovery. Ensure all recommendations are evidence-based and include safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Recovery Protocols",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current scientific data and best practices related to recovery protocols.",
+          "prompt": "Search the web for current, specific information about science-based recovery protocols after intense work weeks. Include data on active recovery, nutrition, sleep optimization, and mental recovery. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Recovery Protocol Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable report detailing a science-based recovery day protocol.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a recovery day protocol. Include specific strategies for active recovery, nutrition, sleep optimization, and mental recovery. Ensure recommendations are evidence-based and include safety disclaimers where necessary.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-recovery-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1901
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsmpurhlxss",
+    "title": "Create a comprehensive guide to navigating a layoff as a senior engineer. Includ",
+    "raw_request": "Create a comprehensive guide to navigating a layoff as a senior engineer. Include severance negotiation, unemployment, networking strategy, and emotional recovery.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:33:52.253Z",
+    "updated_at": "2026-03-16T03:36:07.517Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:34:18.912Z",
+      "interpreted_objective": "Create a comprehensive guide for senior engineers to navigate layoffs, focusing on severance negotiation, unemployment, networking, and emotional recovery.",
+      "expected_outcome": "A detailed guide that provides actionable steps and strategies for senior engineers facing layoffs, including specific advice on severance, unemployment benefits, networking, and managing emotional well-being.",
+      "key_unknowns": [
+        "Current best practices for severance negotiation",
+        "Specific unemployment benefits available for senior engineers",
+        "Effective networking strategies post-layoff",
+        "Resources for emotional recovery"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on severance negotiation, unemployment benefits, and networking strategies specifically for senior engineers. Synthesize this information into a structured guide with actionable advice and resources. Include emotional recovery strategies to support mental well-being.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Layoff Navigation Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on severance negotiation, unemployment benefits, networking strategies, and emotional recovery for senior engineers.",
+          "prompt": "Search the web for current, specific information about navigating layoffs as a senior engineer. Include details on severance negotiation, unemployment benefits, effective networking strategies, and resources for emotional recovery. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Layoff Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide with actionable steps and strategies for senior engineers facing layoffs.",
+          "prompt": "Based on the research results, synthesize actionable recommendations for navigating a layoff as a senior engineer. Include specific advice on severance negotiation, unemployment benefits, networking strategies, and emotional recovery. Provide concrete next steps and resources.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-layoff-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2178
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsmptyp0giw",
+    "title": "Research the best portable power stations for remote work outdoors. Compare Jack",
+    "raw_request": "Research the best portable power stations for remote work outdoors. Compare Jackery, EcoFlow, and Bluetti. Include wattage, battery capacity, and charging time.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:33:51.217Z",
+    "updated_at": "2026-03-16T03:36:00.780Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:34:14.007Z",
+      "interpreted_objective": "Research and compare the best portable power stations for remote work outdoors, focusing on Jackery, EcoFlow, and Bluetti.",
+      "expected_outcome": "A detailed comparison report including wattage, battery capacity, and charging time of the top portable power stations from Jackery, EcoFlow, and Bluetti, with a clear recommendation.",
+      "key_unknowns": [
+        "Current specifications and pricing for Jackery, EcoFlow, and Bluetti power stations",
+        "User reviews and expert opinions on these products",
+        "Availability and shipping options"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current data on Jackery, EcoFlow, and Bluetti portable power stations, focusing on wattage, battery capacity, and charging time. Then, synthesize this information into a comprehensive comparison report with a recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Portable Power Stations",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Jackery, EcoFlow, and Bluetti power stations including wattage, battery capacity, charging time, prices, and reviews.",
+          "prompt": "Search the web for current, specific information about portable power stations from Jackery, EcoFlow, and Bluetti. Include details on wattage, battery capacity, charging time, prices, and user reviews. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report with specific product details, pros/cons, and a recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps. Compare Jackery, EcoFlow, and Bluetti in terms of wattage, battery capacity, and charging time, and provide a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-portable-power-stations.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2019
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsmpt5u1pcr",
+    "title": "Teach me about data quality testing frameworks. Compare Great Expectations, dbt ",
+    "raw_request": "Teach me about data quality testing frameworks. Compare Great Expectations, dbt tests, and Soda Core. Include setup and common test patterns.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:33:50.178Z",
+    "updated_at": "2026-03-16T03:35:53.732Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:34:08.655Z",
+      "interpreted_objective": "Compare data quality testing frameworks Great Expectations, dbt tests, and Soda Core, including setup and common test patterns.",
+      "expected_outcome": "A comprehensive comparison report of Great Expectations, dbt tests, and Soda Core, detailing setup processes and test patterns.",
+      "key_unknowns": [
+        "Current features and capabilities of each framework",
+        "Specific setup steps for each framework",
+        "Common test patterns used in each framework"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on Great Expectations, dbt tests, and Soda Core. Synthesize findings into a detailed comparison report that includes setup instructions and common test patterns for each framework.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research data quality testing frameworks",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Great Expectations, dbt tests, and Soda Core including features, setup, and test patterns.",
+          "prompt": "Search the web for current, specific information about data quality testing frameworks Great Expectations, dbt tests, and Soda Core. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize comparison report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed comparison report of Great Expectations, dbt tests, and Soda Core, covering setup and test patterns.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps for comparing Great Expectations, dbt tests, and Soda Core, focusing on setup and common test patterns.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2029
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsmpsc5lywx",
+    "title": "Create a complete financial independence roadmap for a 32-year-old earning 200k.",
+    "raw_request": "Create a complete financial independence roadmap for a 32-year-old earning 200k. Include savings milestones, investment strategy, and lifestyle design.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:33:49.109Z",
+    "updated_at": "2026-03-16T03:35:44.759Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:34:03.181Z",
+      "interpreted_objective": "Develop a detailed financial independence roadmap for a 32-year-old earning $200k annually.",
+      "expected_outcome": "A comprehensive plan outlining savings milestones, investment strategies, and lifestyle design for achieving financial independence.",
+      "key_unknowns": [
+        "Specific financial goals and timelines of the individual",
+        "Current savings and investment portfolio",
+        "Risk tolerance and preferred investment types",
+        "Lifestyle preferences and cost of living"
+      ],
+      "recommended_strategy": "Conduct research on financial independence strategies tailored to high-income individuals. Synthesize findings into a detailed roadmap that includes savings targets, investment options, and lifestyle adjustments. Ensure the plan is actionable and includes concrete steps for implementation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Financial Independence Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current strategies and examples of financial independence plans for high-income earners.",
+          "prompt": "Search the web for current, specific information about financial independence strategies for individuals earning $200k annually. Include real examples, savings milestones, investment strategies, and lifestyle design tips.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Financial Independence Roadmap",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed financial independence roadmap with specific savings milestones, investment strategies, and lifestyle design recommendations.",
+          "prompt": "Based on the research results, synthesize a comprehensive financial independence roadmap for a 32-year-old earning $200k annually. Include specific savings milestones, investment strategies, and lifestyle design recommendations with concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2367
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsmpriuourc",
+    "title": "Write a comprehensive guide to designing idempotent APIs. Include retry handling",
+    "raw_request": "Write a comprehensive guide to designing idempotent APIs. Include retry handling, deduplication strategies, and distributed transaction patterns.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:33:48.054Z",
+    "updated_at": "2026-03-16T03:35:23.654Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:33:52.305Z",
+      "interpreted_objective": "Create a comprehensive guide on designing idempotent APIs.",
+      "expected_outcome": "A detailed document covering strategies for idempotent API design, including retry handling, deduplication, and distributed transactions.",
+      "key_unknowns": [
+        "Specific audience for the guide",
+        "Depth of technical detail required",
+        "Preferred format for the guide"
+      ],
+      "recommended_strategy": "First, research current best practices and strategies for designing idempotent APIs, focusing on retry handling, deduplication, and distributed transaction patterns. Then, synthesize this information into a comprehensive guide tailored to a technical audience, ensuring clarity and practical applicability.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Idempotent API Design",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices and strategies for designing idempotent APIs.",
+          "prompt": "Search the web for current best practices and strategies for designing idempotent APIs, including retry handling, deduplication strategies, and distributed transaction patterns. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Comprehensive Guide on Idempotent APIs",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on designing idempotent APIs, incorporating research findings.",
+          "prompt": "Based on the research results from the prior subtask, write a comprehensive guide on designing idempotent APIs. Include sections on retry handling, deduplication strategies, and distributed transaction patterns. Ensure the guide is clear, detailed, and tailored to a technical audience.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2031
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsmi7rex14p",
     "title": "Design a weekly reflection and planning system. Include Sunday review template, ",
     "raw_request": "Design a weekly reflection and planning system. Include Sunday review template, week-ahead planning, and habit tracking integration.",
