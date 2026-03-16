@@ -1,5 +1,680 @@
 [
   {
+    "task_id": "t_mmtfsm02vzvq",
+    "title": "Design a comprehensive sleep environment optimization guide. Include mattress se",
+    "raw_request": "Design a comprehensive sleep environment optimization guide. Include mattress selection science, pillow ergonomics by sleep position, blackout solutions, white noise comparison, temperature regulation, and partner accommodation strategies.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:07:49.730Z",
+    "updated_at": "2026-03-16T17:14:10.646Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:09:14.727Z",
+      "interpreted_objective": "Create a comprehensive guide on optimizing sleep environments.",
+      "expected_outcome": "A detailed, actionable guide covering mattress selection, pillow ergonomics, blackout solutions, white noise options, temperature regulation, and partner accommodation strategies.",
+      "key_unknowns": [
+        "Latest research on mattress selection science",
+        "Current best practices in pillow ergonomics by sleep position",
+        "Effective blackout solutions",
+        "Comparative analysis of white noise options",
+        "Strategies for temperature regulation",
+        "Partner accommodation strategies for sleep"
+      ],
+      "recommended_strategy": "Conduct thorough research on each aspect of sleep environment optimization using credible sources. Synthesize findings into a structured guide that provides actionable recommendations for each component. Ensure the guide is comprehensive and easy to understand.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Sleep Environment Optimization",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data with citations on sleep environment optimization.",
+          "prompt": "Search the web for current, specific information about mattress selection science, pillow ergonomics by sleep position, blackout solutions, white noise comparison, temperature regulation, and partner accommodation strategies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Sleep Optimization Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and actionable guide on optimizing sleep environments.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a comprehensive sleep environment optimization guide. Include specific names, numbers, and concrete next steps for mattress selection, pillow ergonomics, blackout solutions, white noise options, temperature regulation, and partner accommodation strategies.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-11-01-sleep-optimization-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2486
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtfslwxn7eg",
+    "title": "Create a guide to building an efficient home recycling and waste reduction syste",
+    "raw_request": "Create a guide to building an efficient home recycling and waste reduction system. Include sorting station design, composting integration, hazardous waste handling, recycling myth debunking, and zero-waste transition roadmap.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:07:49.617Z",
+    "updated_at": "2026-03-16T17:13:59.884Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:09:06.676Z",
+      "interpreted_objective": "Create a comprehensive guide for building an efficient home recycling and waste reduction system.",
+      "expected_outcome": "A detailed, actionable guide that includes sorting station design, composting integration, hazardous waste handling, recycling myth debunking, and a zero-waste transition roadmap.",
+      "key_unknowns": [
+        "Specific design elements for sorting stations",
+        "Best practices for composting integration",
+        "Effective methods for hazardous waste handling",
+        "Common recycling myths to debunk",
+        "Steps for a zero-waste transition"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and expert recommendations on each component of the recycling and waste reduction system. Synthesize this information into a cohesive guide that addresses each aspect comprehensively. Ensure the guide is practical and easy to follow for home implementation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Home Recycling Systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of best practices and expert recommendations for home recycling systems.",
+          "prompt": "Search the web for current, specific information about best practices in home recycling systems, including sorting station design, composting integration, hazardous waste handling, recycling myth debunking, and zero-waste transition. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Home Recycling and Waste Reduction",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for building an efficient home recycling and waste reduction system.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building an efficient home recycling and waste reduction system. Include detailed sections on sorting station design, composting integration, hazardous waste handling, recycling myth debunking, and a zero-waste transition roadmap.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2051
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmtfslv4jlwl",
+    "title": "Write a complete concept for an episodic adventure game where players are librar",
+    "raw_request": "Write a complete concept for an episodic adventure game where players are librarians in a magical library where every book is a portal to its world, and they must retrieve overdue items from inside the stories.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:07:49.552Z",
+    "updated_at": "2026-03-16T17:13:41.063Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:08:58.975Z",
+      "interpreted_objective": "Create a detailed concept for an episodic adventure game set in a magical library.",
+      "expected_outcome": "A compelling game concept document that outlines the setting, gameplay mechanics, episodic structure, and narrative elements.",
+      "key_unknowns": [
+        "Specific audience for the game",
+        "Preferred tone and style for the game's narrative",
+        "Technical constraints or platforms for the game"
+      ],
+      "recommended_strategy": "First, gather information on successful episodic adventure games and magical library settings to understand current trends and best practices. Then, synthesize this research into a detailed game concept, focusing on unique gameplay mechanics and engaging storylines for each episode.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research successful episodic adventure games",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of key elements from successful episodic adventure games and magical library settings.",
+          "prompt": "Search the web for information on successful episodic adventure games and settings involving magical libraries. Include specific examples, gameplay mechanics, narrative styles, and audience reception.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize game concept",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed game concept document with setting, gameplay mechanics, episodic structure, and narrative elements.",
+          "prompt": "Based on the research results, create a detailed concept for an episodic adventure game where players are librarians in a magical library. Include the setting, unique gameplay mechanics, episodic structure, and engaging narrative elements for each episode.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-game-concept.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1908
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtfsltamaht",
+    "title": "Plan a 10-day Scandinavian design and nature tour through Copenhagen, Stockholm,",
+    "raw_request": "Plan a 10-day Scandinavian design and nature tour through Copenhagen, Stockholm, and Helsinki. Include design museums, furniture showrooms, sauna culture, archipelago day trips, and Nordic food hall experiences.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:07:49.486Z",
+    "updated_at": "2026-03-16T17:13:27.708Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:08:48.528Z",
+      "interpreted_objective": "Plan a detailed 10-day Scandinavian tour focusing on design, nature, and cultural experiences in Copenhagen, Stockholm, and Helsinki.",
+      "expected_outcome": "A comprehensive itinerary including specific museums, showrooms, cultural experiences, day trips, and dining options with costs and logistics.",
+      "key_unknowns": [
+        "Current availability and pricing of attractions and accommodations",
+        "Specific dates for the tour",
+        "Traveler preferences and budget constraints"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on Scandinavian design and nature attractions in Copenhagen, Stockholm, and Helsinki. Synthesize this information into a detailed itinerary that includes logistics, costs, and cultural highlights. Ensure the plan aligns with the mission's focus on productivity and automation by including efficient travel and booking options.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Scandinavian Tour Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Scandinavian design and nature attractions, including museums, showrooms, sauna experiences, and food halls.",
+          "prompt": "Search the web for current, specific information about Scandinavian design and nature attractions in Copenhagen, Stockholm, and Helsinki. Include design museums, furniture showrooms, sauna culture, archipelago day trips, and Nordic food hall experiences. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Tour Itinerary",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 10-day itinerary for a Scandinavian tour, including specific attractions, costs, and logistics.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a detailed 10-day itinerary for a Scandinavian tour through Copenhagen, Stockholm, and Helsinki. Include specific design museums, furniture showrooms, sauna experiences, archipelago day trips, and Nordic food hall experiences. Provide costs, logistics, and cultural highlights.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-2023-ScandinavianTour.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1966
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmtfslru2m3t",
+    "title": "Design a comprehensive TMJ and jaw tension relief protocol. Include self-massage",
+    "raw_request": "Design a comprehensive TMJ and jaw tension relief protocol. Include self-massage techniques, jaw strengthening exercises, stress-related bruxism management, mouth guard selection guide, and dietary modifications.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:07:49.434Z",
+    "updated_at": "2026-03-16T17:13:09.282Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:08:38.321Z",
+      "interpreted_objective": "Develop a comprehensive protocol for TMJ and jaw tension relief, including exercises, stress management, and dietary advice.",
+      "expected_outcome": "A detailed, evidence-based protocol for TMJ and jaw tension relief that includes practical techniques and guidance.",
+      "key_unknowns": [
+        "Specific self-massage techniques for TMJ relief",
+        "Effective jaw strengthening exercises",
+        "Best practices for stress-related bruxism management",
+        "Criteria for selecting appropriate mouth guards",
+        "Dietary modifications to alleviate jaw tension"
+      ],
+      "recommended_strategy": "First, research current best practices and evidence-based techniques for TMJ and jaw tension relief. Then, synthesize this information into a structured protocol that includes self-massage, exercises, stress management, mouth guard selection, and dietary advice. Ensure all recommendations are actionable and safe.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research TMJ and Jaw Tension Relief Techniques",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A comprehensive list of current, evidence-based techniques for TMJ and jaw tension relief, including self-massage, exercises, stress management, mouth guard selection, and dietary advice.",
+          "prompt": "Search the web for current, specific information about TMJ and jaw tension relief techniques. Include self-massage techniques, jaw strengthening exercises, stress-related bruxism management, mouth guard selection guide, and dietary modifications. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize TMJ and Jaw Tension Relief Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable protocol for TMJ and jaw tension relief, including specific techniques and guidance.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable TMJ and jaw tension relief protocol. Include specific self-massage techniques, jaw strengthening exercises, stress-related bruxism management strategies, mouth guard selection criteria, and dietary modifications. Ensure all recommendations are evidence-based and include safety disclaimers where appropriate.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-TMJ-jaw-tension-relief.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1987
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmtfslp3oixi",
+    "title": "Create a comprehensive guide to giving effective technical presentations at conf",
+    "raw_request": "Create a comprehensive guide to giving effective technical presentations at conferences. Include abstract writing, narrative arc design, demo preparation, audience engagement techniques, and handling hostile questions.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:07:49.335Z",
+    "updated_at": "2026-03-16T17:12:56.407Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:08:30.351Z",
+      "interpreted_objective": "Create a comprehensive guide for giving effective technical presentations at conferences.",
+      "expected_outcome": "A detailed guide covering abstract writing, narrative arc design, demo preparation, audience engagement techniques, and handling hostile questions.",
+      "key_unknowns": [
+        "Current best practices for technical presentations",
+        "Effective techniques for audience engagement",
+        "Strategies for handling hostile questions"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and techniques for technical presentations. Synthesize this information into a structured guide that addresses all specified areas. Ensure the guide is actionable and includes real-world examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Technical Presentations",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and techniques for technical presentations, including abstract writing, narrative arc design, demo preparation, audience engagement, and handling hostile questions.",
+          "prompt": "Search the web for current, specific information about best practices for giving technical presentations at conferences. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Technical Presentations",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for giving effective technical presentations at conferences, covering abstract writing, narrative arc design, demo preparation, audience engagement techniques, and handling hostile questions.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for giving effective technical presentations at conferences. Include sections on abstract writing, narrative arc design, demo preparation, audience engagement techniques, and handling hostile questions.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-technical_presentation_guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2453
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtfslnijsfh",
+    "title": "Research the best home bread machines for sourdough and artisan baking. Compare ",
+    "raw_request": "Research the best home bread machines for sourdough and artisan baking. Compare Zojirushi Virtuoso Plus, Breville Custom Loaf, and Cuisinart CBK-200 with crust quality, custom cycle flexibility, and noise levels.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:07:49.278Z",
+    "updated_at": "2026-03-16T17:12:36.726Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:08:21.814Z",
+      "interpreted_objective": "Compare Zojirushi Virtuoso Plus, Breville Custom Loaf, and Cuisinart CBK-200 bread machines for sourdough and artisan baking based on crust quality, custom cycle flexibility, and noise levels.",
+      "expected_outcome": "A detailed comparison report of the three bread machines with specific insights on crust quality, custom cycle flexibility, and noise levels, including recommendations.",
+      "key_unknowns": [
+        "Current user reviews and expert opinions on each bread machine",
+        "Specific measurements or data on noise levels for each machine",
+        "Details on custom cycle flexibility for each machine"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information and reviews about the three bread machines focusing on crust quality, custom cycle flexibility, and noise levels. Then, synthesize this data into a structured comparison report with actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Bread Machines",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and insights on Zojirushi Virtuoso Plus, Breville Custom Loaf, and Cuisinart CBK-200, focusing on crust quality, custom cycle flexibility, and noise levels.",
+          "prompt": "Search the web for current, specific information about Zojirushi Virtuoso Plus, Breville Custom Loaf, and Cuisinart CBK-200 bread machines. Focus on crust quality, custom cycle flexibility, and noise levels. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Bread Machine Comparison",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the three bread machines with recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for Zojirushi Virtuoso Plus, Breville Custom Loaf, and Cuisinart CBK-200. Include specific insights on crust quality, custom cycle flexibility, noise levels, and provide concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-bread-machines-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2246
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtfslmpqhz0",
+    "title": "Explain how WebRTC works for peer-to-peer communication. Cover ICE framework, ST",
+    "raw_request": "Explain how WebRTC works for peer-to-peer communication. Cover ICE framework, STUN/TURN servers, SDP negotiation, media tracks, data channels, and common NAT traversal challenges with solutions.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:07:49.249Z",
+    "updated_at": "2026-03-16T17:12:26.582Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:08:12.494Z",
+      "interpreted_objective": "Explain the workings of WebRTC for peer-to-peer communication, focusing on specific components and challenges.",
+      "expected_outcome": "A comprehensive explanation of WebRTC, including ICE framework, STUN/TURN servers, SDP negotiation, media tracks, data channels, and NAT traversal challenges with solutions.",
+      "key_unknowns": [
+        "Current best practices for NAT traversal",
+        "Latest updates on WebRTC components",
+        "Common issues faced in real-world implementations"
+      ],
+      "recommended_strategy": "First, research the current state and details of WebRTC components and challenges using web resources. Then, synthesize this information into a structured explanation that is clear and informative.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research WebRTC Components and Challenges",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on WebRTC components and NAT traversal challenges with sources.",
+          "prompt": "Search the web for current, specific information about WebRTC components such as ICE framework, STUN/TURN servers, SDP negotiation, media tracks, data channels, and NAT traversal challenges. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize WebRTC Explanation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured explanation of WebRTC for peer-to-peer communication.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive explanation of how WebRTC works for peer-to-peer communication. Cover ICE framework, STUN/TURN servers, SDP negotiation, media tracks, data channels, and common NAT traversal challenges with solutions.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-WebRTC.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1913
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmtfsllpa32z",
+    "title": "Create a guide to understanding long-term care insurance. Include when to buy, b",
+    "raw_request": "Create a guide to understanding long-term care insurance. Include when to buy, benefit period selection, inflation protection options, shared care riders, hybrid life/LTC policies, and how to evaluate insurer financial strength.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:07:49.213Z",
+    "updated_at": "2026-03-16T17:12:14.861Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:08:05.341Z",
+      "interpreted_objective": "Create a comprehensive guide to understanding long-term care insurance, covering key aspects such as timing, benefit period, inflation protection, shared care riders, hybrid policies, and insurer evaluation.",
+      "expected_outcome": "A detailed, well-researched guide that educates readers on long-term care insurance options and considerations, enabling informed decision-making.",
+      "key_unknowns": [
+        "Current trends and options in long-term care insurance",
+        "Specific benefits and drawbacks of different policy features",
+        "Criteria for evaluating insurer financial strength"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on long-term care insurance, focusing on the specified aspects. Then, synthesize this data into a structured guide, providing actionable insights and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Long-Term Care Insurance",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gathered data on long-term care insurance, including when to buy, benefit period selection, inflation protection, shared care riders, hybrid policies, and insurer evaluation criteria.",
+          "prompt": "Search the web for current, specific information about long-term care insurance. Include details on when to buy, benefit period selection, inflation protection options, shared care riders, hybrid life/LTC policies, and how to evaluate insurer financial strength. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Long-Term Care Insurance Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on long-term care insurance, structured with actionable insights and recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide to understanding long-term care insurance. Include sections on when to buy, benefit period selection, inflation protection options, shared care riders, hybrid life/LTC policies, and how to evaluate insurer financial strength. Provide specific recommendations and actionable insights.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-long-term-care-insurance.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2156
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtfsll1arpu",
+    "title": "Design a comprehensive data lake architecture on AWS using S3, Glue, and Athena.",
+    "raw_request": "Design a comprehensive data lake architecture on AWS using S3, Glue, and Athena. Include partitioning strategies, file format selection (Parquet vs ORC), data catalog design, cost optimization, and query performance tuning.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:07:49.189Z",
+    "updated_at": "2026-03-16T17:11:52.923Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:07:56.094Z",
+      "interpreted_objective": "Design a comprehensive data lake architecture on AWS using S3, Glue, and Athena.",
+      "expected_outcome": "A detailed architecture plan including partitioning strategies, file format selection, data catalog design, cost optimization, and query performance tuning.",
+      "key_unknowns": [
+        "Specific business requirements for the data lake",
+        "Current AWS account setup and permissions",
+        "Existing data sources and types"
+      ],
+      "recommended_strategy": "Conduct research on best practices for AWS data lake architecture, focusing on S3, Glue, and Athena. Synthesize findings into a comprehensive architecture plan that addresses partitioning, file formats, data catalog design, cost optimization, and query performance. Ensure alignment with AWS cost management and performance tuning strategies.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final architecture plan approval"
+      ],
+      "subtasks": [
+        {
+          "title": "Research AWS Data Lake Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research on AWS data lake best practices using S3, Glue, and Athena.",
+          "prompt": "Search the web for current best practices in designing a data lake architecture on AWS using S3, Glue, and Athena. Include information on partitioning strategies, file format selection (Parquet vs ORC), data catalog design, cost optimization, and query performance tuning. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Data Lake Architecture Plan",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed architecture plan for an AWS data lake using S3, Glue, and Athena.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive data lake architecture plan for AWS using S3, Glue, and Athena. Include partitioning strategies, file format selection (Parquet vs ORC), data catalog design, cost optimization, and query performance tuning. Provide specific recommendations and steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2662
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
     "task_id": "t_mmtfi0y7m26a",
     "title": "Design a comprehensive annual planning and goal-setting system. Include life are",
     "raw_request": "Design a comprehensive annual planning and goal-setting system. Include life area audit, vision-to-goals cascade, quarterly milestone design, monthly review process, and adaptation strategies when plans go off track.",
