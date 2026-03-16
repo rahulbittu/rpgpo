@@ -1,5 +1,670 @@
 [
   {
+    "task_id": "t_mmtfi0y7m26a",
+    "title": "Design a comprehensive annual planning and goal-setting system. Include life are",
+    "raw_request": "Design a comprehensive annual planning and goal-setting system. Include life area audit, vision-to-goals cascade, quarterly milestone design, monthly review process, and adaptation strategies when plans go off track.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:59:35.887Z",
+    "updated_at": "2026-03-16T17:05:51.511Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:01:08.557Z",
+      "interpreted_objective": "Design a comprehensive system for annual planning and goal-setting that includes auditing life areas, cascading visions to goals, and creating adaptive strategies.",
+      "expected_outcome": "A detailed framework and guide for annual planning and goal-setting that is actionable and adaptable.",
+      "key_unknowns": [
+        "Specific life areas to audit",
+        "How to effectively cascade vision into goals",
+        "Best practices for quarterly and monthly reviews",
+        "Effective adaptation strategies when plans go off track"
+      ],
+      "recommended_strategy": "First, research existing frameworks and best practices for annual planning and goal-setting. Then, synthesize this information to design a comprehensive system tailored to the needs of the target audience. Ensure the system includes mechanisms for adaptability and regular review.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Annual Planning",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and frameworks for annual planning and goal-setting.",
+          "prompt": "Search the web for current best practices and frameworks for annual planning and goal-setting. Include specific examples, methodologies, and expert recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comprehensive Planning System",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide and framework for a comprehensive annual planning and goal-setting system.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive annual planning and goal-setting system. Include sections on life area audits, vision-to-goals cascade, quarterly milestone design, monthly review process, and adaptation strategies.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-annual-planning-system.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2454
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtfi0uzp7nd",
+    "title": "Create a comprehensive guide to setting up a home coffee station. Include grinde",
+    "raw_request": "Create a comprehensive guide to setting up a home coffee station. Include grinder selection, brewing method comparison (pour-over, AeroPress, French press), water quality optimization, storage solutions, and cost-per-cup analysis.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:59:35.771Z",
+    "updated_at": "2026-03-16T17:05:36.155Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:00:57.372Z",
+      "interpreted_objective": "Create a comprehensive guide for setting up a home coffee station.",
+      "expected_outcome": "A detailed guide covering grinder selection, brewing methods, water quality, storage solutions, and cost analysis, ready for publication.",
+      "key_unknowns": [
+        "Current best practices for grinder selection",
+        "Comparative analysis of brewing methods",
+        "Optimal water quality standards for coffee",
+        "Effective storage solutions for coffee beans",
+        "Accurate cost-per-cup analysis"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on each component of a home coffee station. Synthesize this data into a comprehensive guide that provides actionable recommendations for each aspect, ensuring the guide is practical and informative for coffee enthusiasts.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Coffee Station Components",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gathered data on grinder selection, brewing methods, water quality, storage solutions, and cost analysis.",
+          "prompt": "Search the web for current, specific information about setting up a home coffee station. Include details on grinder selection, brewing methods (pour-over, AeroPress, French press), water quality optimization, storage solutions, and cost-per-cup analysis. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comprehensive Coffee Station Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for setting up a home coffee station, including actionable recommendations.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for setting up a home coffee station. Include sections on grinder selection, brewing methods comparison (pour-over, AeroPress, French press), water quality optimization, storage solutions, and cost-per-cup analysis. Provide specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-home-coffee-station-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2509
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtfi0ru44jc",
+    "title": "Write a complete concept for a cozy mystery novel series set in a specialty tea ",
+    "raw_request": "Write a complete concept for a cozy mystery novel series set in a specialty tea shop where the owner solves neighborhood crimes using her knowledge of herbs and human nature. Include first three book outlines.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:59:35.658Z",
+    "updated_at": "2026-03-16T17:05:19.254Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:00:48.806Z",
+      "interpreted_objective": "Develop a concept and outlines for the first three books of a cozy mystery novel series set in a specialty tea shop.",
+      "expected_outcome": "A detailed concept and structured outlines for the first three books in the series, ready for further development or pitching.",
+      "key_unknowns": [
+        "Specific themes or elements Rahul wants to include",
+        "Target audience specifics",
+        "Preferred tone or style beyond 'cozy mystery'"
+      ],
+      "recommended_strategy": "Conduct research on popular cozy mystery novel series to understand common themes and successful elements. Then, synthesize this information to create a unique series concept and detailed outlines for the first three books, ensuring they align with the cozy mystery genre and the tea shop setting.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Cozy Mystery Genre",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of popular themes, settings, and character archetypes in cozy mysteries.",
+          "prompt": "Search the web for current, specific information about popular cozy mystery novel series. Include common themes, settings, character archetypes, and what makes them successful. Provide real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Series Concept and Outlines",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed concept for the series and outlines for the first three books.",
+          "prompt": "Based on the research results from the previous task, create a unique concept for a cozy mystery series set in a specialty tea shop. Include detailed outlines for the first three books, focusing on the main plot, key characters, and how the protagonist uses her knowledge of herbs and human nature to solve neighborhood crimes.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-cozy-mystery-series.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1933
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtfi0qn7a5z",
+    "title": "Plan a 14-day cultural immersion trip through Colombia. Include Bogota street ar",
+    "raw_request": "Plan a 14-day cultural immersion trip through Colombia. Include Bogota street art tours, Cartagena old city exploration, coffee region farm stays, Medellin innovation district, San Agustin archaeological park, and salsa dancing lessons in Cali.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:59:35.615Z",
+    "updated_at": "2026-03-16T17:05:00.400Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:00:40.628Z",
+      "interpreted_objective": "Plan a detailed 14-day cultural immersion itinerary through Colombia, focusing on specific cultural and historical experiences.",
+      "expected_outcome": "A comprehensive itinerary with specific activities, dates, costs, and logistics for a 14-day cultural immersion trip in Colombia.",
+      "key_unknowns": [
+        "Exact costs and availability of tours and accommodations",
+        "Specific dates for the trip",
+        "Traveler preferences and budget constraints"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on tours, accommodations, and activities for each destination. Synthesize this data into a detailed itinerary, including logistics and cost estimates. Ensure the itinerary aligns with the cultural immersion theme.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Colombia Cultural Activities",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on tours, accommodations, and activities in Bogota, Cartagena, Medellin, San Agustin, and Cali, including costs and availability.",
+          "prompt": "Search the web for current, specific information about cultural tours and activities in Colombia, focusing on Bogota street art tours, Cartagena old city exploration, coffee region farm stays, Medellin innovation district, San Agustin archaeological park, and salsa dancing lessons in Cali. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Colombia Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 14-day itinerary for a cultural immersion trip in Colombia, including specific activities, dates, costs, and logistics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a 14-day cultural immersion trip through Colombia. Include specific activities, dates, costs, and logistics for Bogota, Cartagena, Medellin, San Agustin, and Cali.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-colombia-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1958
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmtfi0penuhi",
+    "title": "Design a comprehensive neck and upper back pain relief protocol for desk workers",
+    "raw_request": "Design a comprehensive neck and upper back pain relief protocol for desk workers. Include cervical spine assessment, chin tuck progressions, thoracic extension drills, ergonomic pillow selection, and sleep position optimization.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:59:35.570Z",
+    "updated_at": "2026-03-16T17:04:40.894Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:00:25.370Z",
+      "interpreted_objective": "Design a comprehensive protocol for relieving neck and upper back pain in desk workers.",
+      "expected_outcome": "A detailed protocol document including cervical spine assessment, chin tuck progressions, thoracic extension drills, ergonomic pillow selection, and sleep position optimization.",
+      "key_unknowns": [
+        "Current best practices for cervical spine assessment",
+        "Effective chin tuck progression exercises",
+        "Recommended thoracic extension drills",
+        "Criteria for selecting ergonomic pillows",
+        "Optimal sleep positions for neck and upper back relief"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and expert recommendations on each component of the protocol. Synthesize findings into a structured and actionable protocol document. Ensure the protocol is evidence-based and includes practical implementation steps.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Neck and Upper Back Pain Relief",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gather current, specific information about cervical spine assessment, chin tuck progressions, thoracic extension drills, ergonomic pillow selection, and sleep position optimization. Include real names, numbers, dates, URLs, and sources.",
+          "prompt": "Search the web for current best practices and expert recommendations for relieving neck and upper back pain in desk workers. Focus on cervical spine assessment, chin tuck progressions, thoracic extension drills, ergonomic pillow selection, and sleep position optimization. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Neck and Upper Back Pain Relief Protocol",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured and actionable protocol document for neck and upper back pain relief in desk workers.",
+          "prompt": "Based on the research results, synthesize a comprehensive neck and upper back pain relief protocol for desk workers. Include sections on cervical spine assessment, chin tuck progressions, thoracic extension drills, ergonomic pillow selection, and sleep position optimization. Provide specific recommendations and practical implementation steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-neck_back_pain_relief_protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2163
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtfi0nsneay",
+    "title": "Create a guide to running a successful engineering book club. Include book selec",
+    "raw_request": "Create a guide to running a successful engineering book club. Include book selection criteria, discussion facilitation, connecting concepts to team challenges, measuring learning impact, and sustaining participation over time.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:59:35.512Z",
+    "updated_at": "2026-03-16T17:04:27.130Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:00:15.730Z",
+      "interpreted_objective": "Create a comprehensive guide for running a successful engineering book club.",
+      "expected_outcome": "A detailed document that outlines criteria for book selection, discussion facilitation, connecting concepts to team challenges, measuring learning impact, and sustaining participation over time.",
+      "key_unknowns": [
+        "Current best practices for book clubs in engineering contexts",
+        "Effective methods for measuring learning impact",
+        "Strategies to sustain long-term participation"
+      ],
+      "recommended_strategy": "Research current best practices for engineering book clubs and synthesize these findings into a structured guide. Focus on practical application and real-world examples to ensure the guide is actionable and relevant.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Engineering Book Clubs",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of best practices and strategies for running engineering book clubs, with citations.",
+          "prompt": "Search the web for current, specific information about best practices for running engineering book clubs. Include book selection criteria, discussion facilitation techniques, strategies for connecting book content to team challenges, methods for measuring learning impact, and ways to sustain participation over time. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Engineering Book Club",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide for running a successful engineering book club.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations into a comprehensive guide for running a successful engineering book club. Include book selection criteria, discussion facilitation techniques, strategies for connecting book content to team challenges, methods for measuring learning impact, and ways to sustain participation over time.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-engineering-book-club-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1931
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmtfi0klexet",
+    "title": "Research the best home espresso grinders under four hundred dollars. Compare Bar",
+    "raw_request": "Research the best home espresso grinders under four hundred dollars. Compare Baratza Sette 270, Eureka Mignon Notte, and 1Zpresso J-Max with grind consistency, retention, and workflow speed for morning routines.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:59:35.397Z",
+    "updated_at": "2026-03-16T17:04:14.371Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:00:08.492Z",
+      "interpreted_objective": "Research and compare the best home espresso grinders under $400, focusing on grind consistency, retention, and workflow speed.",
+      "expected_outcome": "A detailed comparison report of the Baratza Sette 270, Eureka Mignon Notte, and 1Zpresso J-Max espresso grinders, highlighting their strengths and weaknesses.",
+      "key_unknowns": [
+        "Current market prices for each grinder",
+        "Specific performance metrics for grind consistency, retention, and workflow speed",
+        "User reviews and expert opinions on each grinder"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on the three espresso grinders, focusing on grind consistency, retention, and workflow speed. Then, synthesize the findings into a comprehensive comparison report, providing actionable insights and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Espresso Grinders",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on grind consistency, retention, and workflow speed for each grinder, including prices and expert reviews.",
+          "prompt": "Search the web for current, specific information about the Baratza Sette 270, Eureka Mignon Notte, and 1Zpresso J-Max espresso grinders. Focus on grind consistency, retention, workflow speed, and include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Grinder Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report with actionable insights and recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing the Baratza Sette 270, Eureka Mignon Notte, and 1Zpresso J-Max espresso grinders. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-espresso-grinders.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2188
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtfi0ikjp6f",
+    "title": "Explain how distributed tracing works with OpenTelemetry. Cover trace context pr",
+    "raw_request": "Explain how distributed tracing works with OpenTelemetry. Cover trace context propagation, span relationships, sampling strategies, collector architecture, and how to correlate traces with logs and metrics.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:59:35.324Z",
+    "updated_at": "2026-03-16T17:04:04.276Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:59:57.382Z",
+      "interpreted_objective": "Explain distributed tracing with OpenTelemetry, focusing on key components and integration with logs and metrics.",
+      "expected_outcome": "A comprehensive explanation document covering distributed tracing, trace context propagation, span relationships, sampling strategies, collector architecture, and trace-log-metric correlation.",
+      "key_unknowns": [
+        "Current best practices for OpenTelemetry integration",
+        "Latest updates on OpenTelemetry features"
+      ],
+      "recommended_strategy": "First, conduct research to gather the latest information on distributed tracing with OpenTelemetry. Then, synthesize the findings into a structured report that explains each component clearly, using analogies and building from simple to complex concepts.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Distributed Tracing with OpenTelemetry",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research notes on distributed tracing with OpenTelemetry, including trace context propagation, span relationships, sampling strategies, collector architecture, and trace-log-metric correlation.",
+          "prompt": "Search the web for current, specific information about distributed tracing with OpenTelemetry. Focus on trace context propagation, span relationships, sampling strategies, collector architecture, and how to correlate traces with logs and metrics. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Explanation of Distributed Tracing with OpenTelemetry",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured explanation document covering distributed tracing with OpenTelemetry, including trace context propagation, span relationships, sampling strategies, collector architecture, and trace-log-metric correlation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive explanation of distributed tracing with OpenTelemetry. Cover trace context propagation, span relationships, sampling strategies, collector architecture, and how to correlate traces with logs and metrics. Use clear analogies and build from simple to complex concepts.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-distributed_tracing_opentelemetry.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1960
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmtfi0i07tud",
+    "title": "Create a guide to understanding umbrella insurance and liability protection. Inc",
+    "raw_request": "Create a guide to understanding umbrella insurance and liability protection. Include coverage gap analysis, asset protection thresholds, policy stacking with auto and homeowners, and lawsuit risk assessment by profession.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:59:35.304Z",
+    "updated_at": "2026-03-16T17:03:53.252Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:59:52.024Z",
+      "interpreted_objective": "Create a comprehensive guide on umbrella insurance and liability protection.",
+      "expected_outcome": "A detailed report covering coverage gap analysis, asset protection thresholds, policy stacking, and lawsuit risk assessment by profession.",
+      "key_unknowns": [
+        "Current trends and data on umbrella insurance",
+        "Specifics of coverage gaps and asset protection thresholds",
+        "Details on policy stacking with auto and homeowners insurance",
+        "Lawsuit risk assessment data by profession"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on umbrella insurance and liability protection. Analyze the data to identify coverage gaps, asset protection thresholds, and policy stacking strategies. Assess lawsuit risks by profession and compile findings into a structured guide.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Umbrella Insurance and Liability Protection",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on umbrella insurance, coverage gaps, asset protection thresholds, policy stacking, and lawsuit risks by profession.",
+          "prompt": "Search the web for current, specific information about umbrella insurance and liability protection. Include details on coverage gaps, asset protection thresholds, policy stacking with auto and homeowners insurance, and lawsuit risk assessment by profession. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Umbrella Insurance",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on umbrella insurance and liability protection.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comprehensive guide on umbrella insurance and liability protection. Include coverage gap analysis, asset protection thresholds, policy stacking with auto and homeowners insurance, and lawsuit risk assessment by profession. Provide specific names, numbers, and concrete recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-umbrella-insurance-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2114
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtfi0hd5uu2",
+    "title": "Design a comprehensive GitOps workflow using ArgoCD for Kubernetes deployments. ",
+    "raw_request": "Design a comprehensive GitOps workflow using ArgoCD for Kubernetes deployments. Include repository structure, ApplicationSet patterns, sync policies, drift detection, multi-cluster management, and secret handling with Sealed Secrets.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:59:35.281Z",
+    "updated_at": "2026-03-16T17:03:40.554Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:59:42.866Z",
+      "interpreted_objective": "Design a comprehensive GitOps workflow using ArgoCD for Kubernetes deployments.",
+      "expected_outcome": "A detailed report outlining a GitOps workflow with ArgoCD, including repository structure, ApplicationSet patterns, sync policies, drift detection, multi-cluster management, and secret handling with Sealed Secrets.",
+      "key_unknowns": [
+        "Current best practices for ArgoCD in GitOps",
+        "Specific requirements for multi-cluster management",
+        "Integration details for Sealed Secrets"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and examples of GitOps workflows using ArgoCD. Synthesize this information into a structured report that outlines the workflow components, including repository structure, ApplicationSet patterns, and secret handling.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research GitOps Best Practices with ArgoCD",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and examples for implementing GitOps workflows with ArgoCD.",
+          "prompt": "Search the web for current, specific information about GitOps workflows using ArgoCD for Kubernetes deployments. Include details on repository structure, ApplicationSet patterns, sync policies, drift detection, multi-cluster management, and secret handling with Sealed Secrets. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize GitOps Workflow Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing a comprehensive GitOps workflow using ArgoCD, including all specified components.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for designing a GitOps workflow using ArgoCD. Include specific details on repository structure, ApplicationSet patterns, sync policies, drift detection, multi-cluster management, and secret handling with Sealed Secrets.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/startup-{date}-GitOpsWorkflowWithArgoCD.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1924
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
     "task_id": "t_mmtf6mm8zpzm",
     "title": "Design a comprehensive system for managing personal projects and side quests. In",
     "raw_request": "Design a comprehensive system for managing personal projects and side quests. Include project intake criteria, energy-based prioritization, momentum tracking, graceful project parking, and annual project portfolio review.",
