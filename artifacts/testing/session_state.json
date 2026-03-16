@@ -7,20 +7,19 @@
     "strict_fail": 0,
     "avg_confidence": 89
   },
-  "commits": 93,
+  "commits": 98,
   "docs_rewritten": [
     "README.md",
     "engine-maturity-scoreboard.md",
     "harness-summary.md"
   ],
   "legacy_ids_in_public_docs": 0,
-  "updated_at": "2026-03-16T03:37:28.161Z",
+  "updated_at": "2026-03-16T04:00:52.904Z",
   "last_action": "8 more fresh tests: 8/8 clean. Post-fix pipeline consistently producing quality output.",
   "post_fix_test_results": {
-    "total": 100,
-    "clean": 96,
-    "weak": 4,
-    "clean_rate": "96%"
+    "total": 150,
+    "clean": 146,
+    "clean_rate": "97%"
   },
   "enhancements": [
     "engine_structured_output",
