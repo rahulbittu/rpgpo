@@ -1,5 +1,29 @@
 [
   {
+    "record_id": "ee_mmso5hfk4050",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing recommendations, thesis",
+    "scope_type": "task",
+    "scope_id": "t_mmso40vgqjk0",
+    "route": "research",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T04:14:01.088Z"
+  },
+  {
+    "record_id": "ee_mmso5b41iahw",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmso3zajqzn2",
+    "route": "writing",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T04:13:52.897Z"
+  },
+  {
     "record_id": "ee_mmso1nmu7xqc",
     "area": "runtime_deliverable",
     "middleware_ran": "runtime-deliverable-pipeline",
@@ -5974,29 +5998,5 @@
     "route": "travel",
     "linked_path_id": "",
     "created_at": "2026-03-15T16:41:50.802Z"
-  },
-  {
-    "record_id": "ee_mmrzez5li7lw",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "partial",
-    "response_effect": "Partial: missing sections",
-    "scope_type": "task",
-    "scope_id": "t_mmrzdajj4yjq",
-    "route": "writing",
-    "linked_path_id": "",
-    "created_at": "2026-03-15T16:41:33.561Z"
-  },
-  {
-    "record_id": "ee_mmrzetdapysw",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "partial",
-    "response_effect": "Partial: missing sections",
-    "scope_type": "task",
-    "scope_id": "t_mmrzd877m6jc",
-    "route": "learning",
-    "linked_path_id": "",
-    "created_at": "2026-03-15T16:41:26.062Z"
   }
 ]
