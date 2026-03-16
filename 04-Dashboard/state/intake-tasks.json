@@ -1,5 +1,680 @@
 [
   {
+    "task_id": "t_mmstz4vrib06",
+    "title": "Design a comprehensive personal reflection and journaling system. Include struct",
+    "raw_request": "Design a comprehensive personal reflection and journaling system. Include structured prompts for different contexts (daily, weekly, monthly, annual), gratitude practices, cognitive reframing exercises, and digital vs analog tradeoffs.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:57:02.583Z",
+    "updated_at": "2026-03-16T07:01:15.109Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:57:53.692Z",
+      "interpreted_objective": "Design a personal reflection and journaling system with structured prompts and practices.",
+      "expected_outcome": "A comprehensive journaling system that includes structured prompts for various timeframes, gratitude practices, cognitive reframing exercises, and a comparison of digital vs analog journaling.",
+      "key_unknowns": [
+        "Specific journaling practices that are most effective",
+        "Current trends in journaling formats (digital vs analog)",
+        "Evidence-based cognitive reframing exercises"
+      ],
+      "recommended_strategy": "Research current best practices and trends in journaling and reflection. Develop structured prompts and exercises based on evidence-based practices. Compare digital and analog journaling to provide a balanced perspective.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research current journaling practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current journaling practices, including structured prompts, gratitude practices, and cognitive reframing exercises.",
+          "prompt": "Search the web for current, specific information about effective journaling practices, including structured prompts for daily, weekly, monthly, and annual reflections, gratitude practices, and cognitive reframing exercises. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize journaling system",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured journaling system with prompts, gratitude practices, cognitive reframing exercises, and a comparison of digital vs analog journaling.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a journaling system. Include structured prompts for different contexts (daily, weekly, monthly, annual), gratitude practices, cognitive reframing exercises, and a comparison of digital vs analog journaling.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-journaling-system.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1927
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmstz4rxjmxm",
+    "title": "Create a comprehensive guide to kitchen garden design for year-round production.",
+    "raw_request": "Create a comprehensive guide to kitchen garden design for year-round production. Include raised bed layout, companion planting charts, succession planting schedules, season extension techniques, and integrated pest management.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:57:02.445Z",
+    "updated_at": "2026-03-16T07:01:05.846Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:57:49.492Z",
+      "interpreted_objective": "Create a comprehensive guide for designing a kitchen garden that supports year-round production.",
+      "expected_outcome": "A detailed guide covering raised bed layout, companion planting, succession planting schedules, season extension techniques, and integrated pest management for a kitchen garden.",
+      "key_unknowns": [
+        "Specific regional climate considerations",
+        "Preferred plant types for the guide",
+        "Existing knowledge or resources Rahul might have"
+      ],
+      "recommended_strategy": "Research and gather information on kitchen garden design, focusing on the specified elements. Synthesize this information into a coherent guide that includes practical and actionable advice for year-round production. Ensure the guide is relevant to a broad audience by considering various climate zones.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Kitchen Garden Design",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, specific information about kitchen garden design, including raised bed layout, companion planting, succession planting, season extension, and pest management.",
+          "prompt": "Search the web for current, specific information about kitchen garden design for year-round production. Include details on raised bed layout, companion planting charts, succession planting schedules, season extension techniques, and integrated pest management. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Kitchen Garden Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide to kitchen garden design for year-round production.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide to kitchen garden design. Include detailed sections on raised bed layout, companion planting charts, succession planting schedules, season extension techniques, and integrated pest management. Ensure the guide is actionable and applicable to various climates.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2128
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmstz4ol1cq8",
+    "title": "Write a complete series concept for a workplace thriller set in a quantum comput",
+    "raw_request": "Write a complete series concept for a workplace thriller set in a quantum computing lab where researchers discover their quantum computer has been secretly solving a puzzle that could reshape geopolitics.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:57:02.325Z",
+    "updated_at": "2026-03-16T07:00:55.041Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:57:45.498Z",
+      "interpreted_objective": "Develop a series concept for a workplace thriller set in a quantum computing lab.",
+      "expected_outcome": "A detailed and engaging series concept that includes plot, characters, and potential episodes, ready for pitching or development.",
+      "key_unknowns": [
+        "Specific geopolitical implications of the puzzle",
+        "Character dynamics and backgrounds",
+        "Setting details and technological aspects of the quantum computing lab"
+      ],
+      "recommended_strategy": "First, conduct research on current trends in quantum computing and geopolitical issues to inform the series concept. Then, synthesize this information into a detailed series outline that includes plot, character arcs, and potential episode ideas.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Quantum Computing and Geopolitical Trends",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current trends in quantum computing and relevant geopolitical issues.",
+          "prompt": "Search the web for current, specific information about trends in quantum computing and geopolitical issues that could be relevant for a thriller series. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Series Concept",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive series concept including plot, characters, and potential episodes.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed series concept for a workplace thriller set in a quantum computing lab. Include plot details, character descriptions, and potential episode ideas.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-quantum-computing-thriller.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1896
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmstz4l0yock",
+    "title": "Plan a 7-day adventure trip through Costa Rica. Include cloud forest hiking in M",
+    "raw_request": "Plan a 7-day adventure trip through Costa Rica. Include cloud forest hiking in Monteverde, volcano hot springs in Arenal, surfing in Tamarindo, wildlife spotting in Manuel Antonio, and sustainable eco-lodge options.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:57:02.196Z",
+    "updated_at": "2026-03-16T07:00:39.246Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:57:41.244Z",
+      "interpreted_objective": "Create a detailed 7-day adventure itinerary for Costa Rica, focusing on specific activities and eco-lodge options.",
+      "expected_outcome": "A comprehensive travel itinerary including activities, accommodations, and logistics for a 7-day trip in Costa Rica.",
+      "key_unknowns": [
+        "Current availability and pricing for accommodations and activities",
+        "Specific eco-lodge options in each area",
+        "Transportation logistics between locations"
+      ],
+      "recommended_strategy": "First, gather current data on activities, accommodations, and transportation options in Costa Rica using Perplexity. Then, synthesize this information into a detailed itinerary, ensuring all logistics are covered and eco-friendly options are highlighted.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Costa Rica Adventure Trip Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on activities, accommodations, and transportation for the specified locations in Costa Rica.",
+          "prompt": "Search the web for current, specific information about cloud forest hiking in Monteverde, volcano hot springs in Arenal, surfing in Tamarindo, wildlife spotting in Manuel Antonio, and sustainable eco-lodge options in Costa Rica. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Costa Rica Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 7-day itinerary for Costa Rica including activities, accommodations, and transportation logistics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 7-day adventure itinerary for Costa Rica. Include specific activities, accommodation options, transportation logistics, and eco-friendly considerations. Ensure all elements are actionable and realistic.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-2023-10-07-costa-rica-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1929
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmstz4h488y2",
+    "title": "Design a comprehensive hearing health protocol. Include noise exposure guideline",
+    "raw_request": "Design a comprehensive hearing health protocol. Include noise exposure guidelines for headphone users, tinnitus prevention, ear hygiene best practices, hearing test frequency recommendations, and concert protection strategies.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:57:02.056Z",
+    "updated_at": "2026-03-16T07:00:28.188Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:57:35.767Z",
+      "interpreted_objective": "Design a hearing health protocol focusing on noise exposure, tinnitus prevention, ear hygiene, hearing tests, and concert protection.",
+      "expected_outcome": "A comprehensive protocol document with guidelines and recommendations for maintaining hearing health.",
+      "key_unknowns": [
+        "Current best practices and guidelines for hearing health",
+        "Specific noise exposure limits for headphone users",
+        "Effective tinnitus prevention strategies",
+        "Recommended frequency for hearing tests",
+        "Best practices for ear hygiene",
+        "Concert protection strategies"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on hearing health best practices. Synthesize this information into a comprehensive protocol document with actionable guidelines and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Hearing Health Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on hearing health best practices, including noise exposure, tinnitus prevention, ear hygiene, hearing test frequency, and concert protection.",
+          "prompt": "Search the web for current, specific information about hearing health best practices. Include guidelines for noise exposure for headphone users, tinnitus prevention strategies, ear hygiene best practices, recommended frequency for hearing tests, and concert protection strategies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Hearing Health Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive hearing health protocol document with specific guidelines and recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive hearing health protocol. Include specific guidelines for noise exposure for headphone users, tinnitus prevention strategies, ear hygiene best practices, recommended frequency for hearing tests, and concert protection strategies. Provide actionable recommendations with reasoning.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2056
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmstz4e7pn73",
+    "title": "Create a guide to building technical leadership skills without becoming a manage",
+    "raw_request": "Create a guide to building technical leadership skills without becoming a manager. Include Staff+ IC track navigation, technical vision documents, cross-team influence patterns, and mentoring at scale.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:57:01.951Z",
+    "updated_at": "2026-03-16T07:00:15.020Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:57:30.745Z",
+      "interpreted_objective": "Create a guide on building technical leadership skills for individual contributors without transitioning into management roles.",
+      "expected_outcome": "A comprehensive guide that includes strategies for navigating the Staff+ IC track, crafting technical vision documents, influencing across teams, and mentoring at scale.",
+      "key_unknowns": [
+        "Specific audience for the guide",
+        "Preferred format and length of the guide",
+        "Any existing resources or frameworks to reference"
+      ],
+      "recommended_strategy": "First, gather research on current best practices and frameworks related to technical leadership for individual contributors. Then, synthesize this information into a structured guide that addresses each component: Staff+ IC track navigation, technical vision documents, cross-team influence, and mentoring at scale. Ensure the guide is practical and actionable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Technical Leadership for ICs",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed research report on best practices and frameworks for technical leadership as an individual contributor.",
+          "prompt": "Search the web for current, specific information about building technical leadership skills without becoming a manager. Focus on Staff+ IC track navigation, technical vision documents, cross-team influence patterns, and mentoring at scale. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Technical Leadership",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on building technical leadership skills, incorporating research findings.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide on building technical leadership skills without becoming a manager. Include sections on Staff+ IC track navigation, technical vision documents, cross-team influence patterns, and mentoring at scale. Ensure the guide is practical and actionable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2078
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmstz4bm15zt",
+    "title": "Research the best air purifiers for allergy sufferers in open-plan homes. Compar",
+    "raw_request": "Research the best air purifiers for allergy sufferers in open-plan homes. Compare Blueair Blue Pure 211i Max, Coway Airmega 400, and Dyson Purifier Hot+Cool with CADR ratings and filter replacement costs.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:57:01.858Z",
+    "updated_at": "2026-03-16T07:00:06.091Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:57:25.109Z",
+      "interpreted_objective": "Research and compare the best air purifiers for allergy sufferers in open-plan homes, focusing on Blueair Blue Pure 211i Max, Coway Airmega 400, and Dyson Purifier Hot+Cool, including CADR ratings and filter replacement costs.",
+      "expected_outcome": "A comprehensive comparison report of the specified air purifiers with detailed information on CADR ratings and filter replacement costs, enabling informed purchasing decisions.",
+      "key_unknowns": [
+        "Current CADR ratings for each model",
+        "Filter replacement costs for each model",
+        "Performance and user reviews of each model"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on the CADR ratings, filter replacement costs, and user reviews for the specified air purifiers. Then, synthesize this information into a structured report comparing the models based on the gathered data.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Air Purifiers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on CADR ratings, filter replacement costs, and user reviews for Blueair Blue Pure 211i Max, Coway Airmega 400, and Dyson Purifier Hot+Cool.",
+          "prompt": "Search the web for current, specific information about Blueair Blue Pure 211i Max, Coway Airmega 400, and Dyson Purifier Hot+Cool. Include CADR ratings, filter replacement costs, and user reviews. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Air Purifier Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the specified air purifiers with detailed information on CADR ratings, filter replacement costs, and user reviews.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comprehensive comparison of Blueair Blue Pure 211i Max, Coway Airmega 400, and Dyson Purifier Hot+Cool. Include specific CADR ratings, filter replacement costs, and user reviews. Provide concrete recommendations for allergy sufferers in open-plan homes.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-air-purifiers-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2259
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmstz46hox9u",
+    "title": "Explain how vector databases work for AI applications. Cover embedding generatio",
+    "raw_request": "Explain how vector databases work for AI applications. Cover embedding generation, HNSW indexing, similarity search algorithms, metadata filtering, hybrid search combining vector and keyword, and scaling strategies.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:57:01.673Z",
+    "updated_at": "2026-03-16T06:59:58.081Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:57:18.361Z",
+      "interpreted_objective": "Explain the workings of vector databases for AI applications, covering specific technical aspects.",
+      "expected_outcome": "A comprehensive, structured report detailing vector databases, embedding generation, HNSW indexing, similarity search algorithms, metadata filtering, hybrid search, and scaling strategies.",
+      "key_unknowns": [
+        "Current best practices for embedding generation",
+        "Latest advancements in HNSW indexing",
+        "Common algorithms used for similarity search",
+        "Techniques for metadata filtering",
+        "Methods for hybrid search combining vector and keyword",
+        "Effective scaling strategies for vector databases"
+      ],
+      "recommended_strategy": "Conduct a web search to gather the latest information on vector databases and their components. Synthesize the findings into a detailed report, ensuring clarity and educational value for learners with a technical background.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Vector Databases",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and citations on vector databases and their components",
+          "prompt": "Search the web for current, specific information about vector databases for AI applications, focusing on embedding generation, HNSW indexing, similarity search algorithms, metadata filtering, hybrid search combining vector and keyword, and scaling strategies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Report on Vector Databases",
+          "stage": "report",
+          "assigned_role": "chief",
+          "assigned_model": "openai",
+          "expected_output": "Structured report explaining vector databases for AI applications",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations and explanations on vector databases, covering embedding generation, HNSW indexing, similarity search algorithms, metadata filtering, hybrid search combining vector and keyword, and scaling strategies. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-2023-10-VectorDatabases.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1943
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmstz45hr5sa",
+    "title": "Create a guide to tax-efficient charitable giving strategies for high earners. I",
+    "raw_request": "Create a guide to tax-efficient charitable giving strategies for high earners. Include donor-advised funds, qualified charitable distributions, appreciated stock donations, charitable remainder trusts, and bunching strategies.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:57:01.637Z",
+    "updated_at": "2026-03-16T06:59:49.446Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:57:12.251Z",
+      "interpreted_objective": "Create a guide on tax-efficient charitable giving strategies for high earners.",
+      "expected_outcome": "A comprehensive guide detailing various tax-efficient charitable giving strategies, including donor-advised funds, qualified charitable distributions, appreciated stock donations, charitable remainder trusts, and bunching strategies.",
+      "key_unknowns": [
+        "Specific recent changes in tax laws affecting charitable giving",
+        "Current trends in charitable giving among high earners",
+        "Detailed benefits and drawbacks of each strategy"
+      ],
+      "recommended_strategy": "First, conduct research to gather current information on tax-efficient charitable giving strategies. Then, synthesize this information into a comprehensive guide, highlighting the benefits and considerations for each strategy. Ensure the guide is actionable and relevant for high earners.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tax-Efficient Charitable Giving Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data and insights on tax-efficient charitable giving strategies, including recent changes in tax laws and trends.",
+          "prompt": "Search the web for current, specific information about tax-efficient charitable giving strategies for high earners. Include details on donor-advised funds, qualified charitable distributions, appreciated stock donations, charitable remainder trusts, and bunching strategies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Charitable Giving Strategies",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on tax-efficient charitable giving strategies for high earners, including actionable recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on tax-efficient charitable giving strategies for high earners. Include detailed explanations of donor-advised funds, qualified charitable distributions, appreciated stock donations, charitable remainder trusts, and bunching strategies, with specific benefits and considerations for each.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-charitable-giving-strategies.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2504
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmstz44xhs1n",
+    "title": "Design a comprehensive incident response playbook for a SaaS engineering team. I",
+    "raw_request": "Design a comprehensive incident response playbook for a SaaS engineering team. Include severity classification, communication templates, war room protocols, post-mortem structure, and action item tracking with SLA enforcement.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:57:01.617Z",
+    "updated_at": "2026-03-16T06:59:40.167Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:57:06.190Z",
+      "interpreted_objective": "Design a comprehensive incident response playbook for a SaaS engineering team.",
+      "expected_outcome": "A detailed playbook including severity classification, communication templates, war room protocols, post-mortem structure, and action item tracking with SLA enforcement.",
+      "key_unknowns": [
+        "Specific incident types relevant to the SaaS team",
+        "Current incident response practices in similar SaaS companies",
+        "Effective communication strategies for incident management"
+      ],
+      "recommended_strategy": "Conduct research on current best practices in incident response for SaaS teams. Synthesize findings into a structured playbook format. Include real-world examples and templates for practical application.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Incident Response Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices in incident response for SaaS teams, including severity classification, communication strategies, and post-mortem processes.",
+          "prompt": "Search the web for current best practices in incident response for SaaS engineering teams. Include information on severity classification, communication templates, war room protocols, post-mortem structures, and action item tracking with SLA enforcement. Provide real-world examples and citations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Incident Response Playbook",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive incident response playbook for a SaaS engineering team, structured with sections on severity classification, communication templates, war room protocols, post-mortem structure, and action item tracking.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive incident response playbook for a SaaS engineering team. Include sections on severity classification, communication templates, war room protocols, post-mortem structure, and action item tracking with SLA enforcement. Provide specific examples and templates.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-incident-response-playbook.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2299
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
     "task_id": "t_mmstrujzaeuz",
     "title": "Design a comprehensive personal knowledge management workflow using Obsidian. In",
     "raw_request": "Design a comprehensive personal knowledge management workflow using Obsidian. Include vault structure, plugin essentials, daily notes template, Zettelkasten implementation, spaced repetition with Anki integration, and publishing pipeline.",
