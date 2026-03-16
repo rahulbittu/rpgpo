@@ -1,5 +1,545 @@
 [
   {
+    "task_id": "t_mmsiouzl62sk",
+    "title": "Write a pitch for a documentary about remote work culture. Include thesis, visua",
+    "raw_request": "Write a pitch for a documentary about remote work culture. Include thesis, visual approach, interview subjects, and target audience.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:41:07.425Z",
+    "updated_at": "2026-03-16T01:44:13.061Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:41:54.134Z",
+      "interpreted_objective": "Create a comprehensive pitch for a documentary on remote work culture.",
+      "expected_outcome": "A detailed pitch document including thesis, visual approach, interview subjects, and target audience.",
+      "key_unknowns": [
+        "Specific trends in remote work culture",
+        "Potential interview subjects who are influential in remote work",
+        "Visual styles that best represent remote work culture"
+      ],
+      "recommended_strategy": "Conduct research on current trends and influential figures in remote work culture. Synthesize this information into a structured pitch that outlines the documentary's thesis, visual approach, potential interview subjects, and target audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Remote Work Culture",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current trends, influential figures, and visual styles in remote work culture with citations.",
+          "prompt": "Search the web for current, specific information about remote work culture. Include trends, influential figures, and visual styles. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Documentary Pitch",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured pitch document for a documentary on remote work culture.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a documentary pitch on remote work culture. Include a thesis, visual approach, potential interview subjects, and target audience.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-remote-work-culture-pitch.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1930
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsiotf8zohs",
+    "title": "Create a personal mission statement template with guided questions. Include life",
+    "raw_request": "Create a personal mission statement template with guided questions. Include life areas, values identification, and vision statement crafting.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:41:05.396Z",
+    "updated_at": "2026-03-16T01:44:03.117Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:41:49.972Z",
+      "interpreted_objective": "Create a guided personal mission statement template with questions covering life areas, values, and vision crafting.",
+      "expected_outcome": "A comprehensive template with guided questions that helps individuals craft their personal mission statement.",
+      "key_unknowns": [
+        "Specific life areas to include",
+        "Effective questions for values identification",
+        "Best practices for vision statement crafting"
+      ],
+      "recommended_strategy": "Conduct research to identify common life areas and effective questions used in personal mission statements. Then, synthesize this information into a structured template with guided questions. Ensure the template is actionable and easy to follow.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Life Areas and Questions",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of common life areas and effective questions for personal mission statements.",
+          "prompt": "Search the web for current, specific information about common life areas and effective questions used in crafting personal mission statements. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Mission Statement Template",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured template for a personal mission statement with guided questions.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a structured template for a personal mission statement. Include guided questions covering life areas, values identification, and vision statement crafting.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-mission-statement-template.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1935
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsioruutb3d",
+    "title": "Design a stress-recovery protocol for after intense work sprints. Include physic",
+    "raw_request": "Design a stress-recovery protocol for after intense work sprints. Include physical, mental, and social recovery strategies. Evidence-based.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:41:03.366Z",
+    "updated_at": "2026-03-16T01:43:53.902Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:41:34.086Z",
+      "interpreted_objective": "Design a comprehensive stress-recovery protocol for intense work sprints including physical, mental, and social strategies.",
+      "expected_outcome": "A detailed, evidence-based protocol that enhances recovery after intense work periods, improving overall well-being and productivity.",
+      "key_unknowns": [
+        "Specific evidence supporting each recovery strategy",
+        "Current best practices in stress recovery",
+        "Potential risks associated with each strategy"
+      ],
+      "recommended_strategy": "Conduct research to identify evidence-based physical, mental, and social recovery strategies. Synthesize findings into a comprehensive protocol, ensuring each strategy is actionable and supported by credible sources.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Evidence-Based Recovery Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of evidence-based physical, mental, and social recovery strategies with citations.",
+          "prompt": "Search the web for current, evidence-based recovery strategies after intense work sprints. Include physical, mental, and social strategies with real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Recovery Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable recovery protocol document.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive stress-recovery protocol. Include specific physical, mental, and social strategies with actionable steps and evidence-based support.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-stress-recovery-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1844
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsioqah3fqv",
+    "title": "Create a 90-day plan for a new engineering manager. Include first week, first mo",
+    "raw_request": "Create a 90-day plan for a new engineering manager. Include first week, first month, and first quarter milestones. Focus on building trust and understanding the team.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:41:01.337Z",
+    "updated_at": "2026-03-16T01:43:44.502Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:41:28.393Z",
+      "interpreted_objective": "Create a detailed 90-day plan for a new engineering manager focusing on building trust and understanding the team.",
+      "expected_outcome": "A comprehensive plan with specific milestones for the first week, first month, and first quarter to help a new engineering manager integrate effectively.",
+      "key_unknowns": [
+        "Specific team dynamics and challenges the new manager might face",
+        "Company culture and expectations",
+        "Existing team structure and roles"
+      ],
+      "recommended_strategy": "Research best practices for engineering management onboarding. Synthesize a 90-day plan with actionable steps and milestones tailored to building trust and understanding team dynamics. Focus on practical, real-world applications and include specific examples where applicable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Engineering Manager Onboarding",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and strategies for onboarding engineering managers, focusing on trust-building and team understanding.",
+          "prompt": "Search the web for current best practices and strategies for onboarding new engineering managers. Focus on methods for building trust and understanding team dynamics. Include real examples and references.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize 90-Day Plan for Engineering Manager",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 90-day plan with specific milestones for a new engineering manager, focusing on trust-building and team understanding.",
+          "prompt": "Based on the research results, synthesize a 90-day plan for a new engineering manager. Include specific milestones for the first week, first month, and first quarter. Focus on actionable steps to build trust and understand the team, using specific examples where applicable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2306
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsiooq53qx1",
+    "title": "Find the best ergonomic keyboard for Mac developers. Compare split, ortholinear,",
+    "raw_request": "Find the best ergonomic keyboard for Mac developers. Compare split, ortholinear, and traditional layouts. Must have Mac-specific keys. Under 200 dollars.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:40:59.309Z",
+    "updated_at": "2026-03-16T01:43:36.285Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:41:22.496Z",
+      "interpreted_objective": "Identify the best ergonomic keyboard for Mac developers under $200, comparing split, ortholinear, and traditional layouts with Mac-specific keys.",
+      "expected_outcome": "A detailed comparison report of ergonomic keyboards with specific product recommendations, prices, pros/cons, and reasoning.",
+      "key_unknowns": [
+        "Current market availability of ergonomic keyboards with Mac-specific keys",
+        "Pricing and reviews of these keyboards",
+        "Specific pros and cons of each keyboard layout type"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on ergonomic keyboards suitable for Mac developers, focusing on split, ortholinear, and traditional layouts. Synthesize the findings into a comparison report with specific product recommendations and pricing details.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Ergonomic Keyboards",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current market data on ergonomic keyboards for Mac, including product names, prices, and features.",
+          "prompt": "Search the web for current information about ergonomic keyboards for Mac developers under $200, focusing on split, ortholinear, and traditional layouts with Mac-specific keys. Include real product names, prices, URLs, and reviews.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comparison report detailing the best ergonomic keyboards for Mac developers, including specific recommendations, prices, pros/cons, and reasoning.",
+          "prompt": "Based on the research results, synthesize a comparison report of ergonomic keyboards for Mac developers under $200. Include specific product names, prices, pros/cons of each layout type, and a clear recommendation with reasoning.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2046
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsion5ti4cr",
+    "title": "Teach me about functional programming patterns in TypeScript. Cover immutability",
+    "raw_request": "Teach me about functional programming patterns in TypeScript. Cover immutability, pure functions, higher-order functions, and monads. With practical examples.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:40:57.281Z",
+    "updated_at": "2026-03-16T01:43:30.206Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:41:07.396Z",
+      "interpreted_objective": "Teach functional programming patterns in TypeScript with practical examples.",
+      "expected_outcome": "A comprehensive report explaining key functional programming concepts in TypeScript, including immutability, pure functions, higher-order functions, and monads, with practical examples.",
+      "key_unknowns": [
+        "Rahul's current knowledge level on functional programming",
+        "Specific learning preferences or constraints Rahul might have"
+      ],
+      "recommended_strategy": "First, gather current and comprehensive information on functional programming patterns in TypeScript from reliable sources. Then, synthesize this information into a structured report with clear explanations and practical examples. Ensure the content is accessible and builds from basic to complex concepts.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Functional Programming in TypeScript",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and insights on functional programming patterns in TypeScript, including immutability, pure functions, higher-order functions, and monads.",
+          "prompt": "Search the web for current, specific information about functional programming patterns in TypeScript. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Functional Programming Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining functional programming patterns in TypeScript with practical examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps. Explain immutability, pure functions, higher-order functions, and monads with practical examples in TypeScript.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-functional-programming-typescript.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1900
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsiollbruff",
+    "title": "Research the best high-yield savings accounts in 2026. Compare APY rates, withdr",
+    "raw_request": "Research the best high-yield savings accounts in 2026. Compare APY rates, withdrawal limits, FDIC coverage, and mobile app quality for major providers.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:40:55.247Z",
+    "updated_at": "2026-03-16T01:43:02.281Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:41:03.853Z",
+      "interpreted_objective": "Research and compare high-yield savings accounts in 2026 based on APY rates, withdrawal limits, FDIC coverage, and mobile app quality.",
+      "expected_outcome": "A detailed report comparing major high-yield savings account providers in 2026, including specific APY rates, withdrawal limits, FDIC coverage, and mobile app quality.",
+      "key_unknowns": [
+        "Current APY rates for high-yield savings accounts in 2026",
+        "Withdrawal limits for major providers",
+        "FDIC coverage specifics for each provider",
+        "Quality of mobile apps for each provider"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on high-yield savings accounts in 2026, focusing on APY rates, withdrawal limits, FDIC coverage, and mobile app quality. Then, synthesize this data into a structured report that provides a clear comparison of major providers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research High-Yield Savings Accounts 2026",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on high-yield savings accounts in 2026, including APY rates, withdrawal limits, FDIC coverage, and mobile app quality.",
+          "prompt": "Search the web for current, specific information about high-yield savings accounts in 2026. Include real names, numbers, dates, URLs, and sources. Focus on APY rates, withdrawal limits, FDIC coverage, and mobile app quality.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Savings Account Comparison Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing major high-yield savings account providers in 2026.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps. Focus on comparing APY rates, withdrawal limits, FDIC coverage, and mobile app quality.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-2026-high-yield-savings-accounts.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2381
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsiok0ew11w",
+    "title": "Create a comprehensive database backup strategy for PostgreSQL. Include WAL arch",
+    "raw_request": "Create a comprehensive database backup strategy for PostgreSQL. Include WAL archiving, point-in-time recovery, pg_basebackup, and testing procedures.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:40:53.198Z",
+    "updated_at": "2026-03-16T01:42:32.431Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:40:58.438Z",
+      "interpreted_objective": "Develop a comprehensive PostgreSQL backup strategy document.",
+      "expected_outcome": "A detailed document outlining a PostgreSQL backup strategy including WAL archiving, point-in-time recovery, pg_basebackup, and testing procedures.",
+      "key_unknowns": [
+        "Specific requirements or constraints for the backup strategy",
+        "Current infrastructure setup for PostgreSQL",
+        "Frequency of backups required",
+        "Storage limitations or preferences"
+      ],
+      "recommended_strategy": "Conduct research to gather best practices and current methodologies for PostgreSQL backup strategies. Synthesize this information into a structured document that includes all requested components. Ensure the document is clear, actionable, and tailored to a technical audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research PostgreSQL Backup Strategies",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research on PostgreSQL backup strategies, including WAL archiving, point-in-time recovery, and pg_basebackup.",
+          "prompt": "Search the web for current, specific information about PostgreSQL backup strategies, including WAL archiving, point-in-time recovery, and pg_basebackup. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Backup Strategy Document",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive document detailing a PostgreSQL backup strategy.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive PostgreSQL backup strategy document. Include sections on WAL archiving, point-in-time recovery, pg_basebackup, and testing procedures. Ensure the document is clear, actionable, and tailored to a technical audience.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2040
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsiixhsr28c",
     "title": "Write a cold open for a podcast about failed tech startups. Include dramatic nar",
     "raw_request": "Write a cold open for a podcast about failed tech startups. Include dramatic narration, sound design notes, and hook for the first episode about a social media startup.",
