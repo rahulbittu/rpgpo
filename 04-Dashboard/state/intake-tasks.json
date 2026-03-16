@@ -1,5 +1,541 @@
 [
   {
+    "task_id": "t_mmsiuwncvv26",
+    "title": "Write a 2-minute elevator pitch script for an AI-powered personal assistant prod",
+    "raw_request": "Write a 2-minute elevator pitch script for an AI-powered personal assistant product. Include problem, solution, traction, and ask. For a tech-savvy investor audience.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:45:49.512Z",
+    "updated_at": "2026-03-16T01:48:41.134Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:46:49.480Z",
+      "interpreted_objective": "Create a 2-minute elevator pitch script for an AI-powered personal assistant product targeting tech-savvy investors.",
+      "expected_outcome": "A compelling script that effectively communicates the problem, solution, traction, and ask to tech-savvy investors.",
+      "key_unknowns": [
+        "Specific features of the AI-powered personal assistant",
+        "Current market traction or user base",
+        "Specific investment ask or funding goal"
+      ],
+      "recommended_strategy": "First, research current AI-powered personal assistant products and their market positioning to understand competitive advantages. Then, synthesize this information into a concise and persuasive elevator pitch script that includes problem, solution, traction, and ask.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research AI Personal Assistant Market",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current AI-powered personal assistant products, their features, market positioning, and any available traction data.",
+          "prompt": "Search the web for current information about AI-powered personal assistant products. Include details on features, market positioning, user base, and any traction data. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Elevator Pitch Script",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A 2-minute elevator pitch script for an AI-powered personal assistant product, including problem, solution, traction, and ask.",
+          "prompt": "Based on the research results, synthesize a 2-minute elevator pitch script for an AI-powered personal assistant product. Include the problem it solves, the solution it offers, any traction data, and a clear investment ask.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-elevator-pitch.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1975
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsiuv31t2zm",
+    "title": "Plan a cultural weekend in San Antonio from Austin. Include the Riverwalk, missi",
+    "raw_request": "Plan a cultural weekend in San Antonio from Austin. Include the Riverwalk, missions, museums, food recommendations, and optimal timing. For 2 adults.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:45:47.485Z",
+    "updated_at": "2026-03-16T01:48:32.123Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:46:32.809Z",
+      "interpreted_objective": "Plan a detailed cultural weekend itinerary in San Antonio for two adults, including activities, dining, and optimal timing.",
+      "expected_outcome": "A comprehensive itinerary with specific recommendations for activities, dining, and timing for a cultural weekend in San Antonio.",
+      "key_unknowns": [
+        "Current availability and pricing for activities in San Antonio",
+        "Specific cultural events or exhibitions happening during the proposed weekend",
+        "Optimal travel times from Austin to San Antonio"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on cultural activities, dining options, and travel logistics between Austin and San Antonio. Synthesize this information into a detailed itinerary with recommendations for timing and activities.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research San Antonio Cultural Activities",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on cultural activities, events, and dining options in San Antonio.",
+          "prompt": "Search the web for current information about cultural activities, events, and dining options in San Antonio, including the Riverwalk, missions, museums, and local cuisine. Include specific names, dates, and URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary and Recommendations",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed itinerary for a cultural weekend in San Antonio, including activities, dining recommendations, and travel logistics.",
+          "prompt": "Based on the research results, synthesize a detailed itinerary for a cultural weekend in San Antonio. Include specific activities, dining recommendations, and optimal travel times from Austin. Provide concrete names, numbers, and next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-2023-10-20-san-antonio-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1903
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsiutiwodbk",
+    "title": "Design a dopamine-conscious daily routine for a knowledge worker. Include social",
+    "raw_request": "Design a dopamine-conscious daily routine for a knowledge worker. Include social media boundaries, reward scheduling, and deep work blocks. Based on neuroscience.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:45:45.464Z",
+    "updated_at": "2026-03-16T01:48:22.978Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:46:26.973Z",
+      "interpreted_objective": "Design a neuroscience-based daily routine for a knowledge worker that optimizes dopamine management.",
+      "expected_outcome": "A structured daily routine that enhances productivity and well-being by managing dopamine levels, including specific guidelines on social media use, reward scheduling, and deep work periods.",
+      "key_unknowns": [
+        "Specific neuroscience principles related to dopamine management in daily routines",
+        "Optimal duration and timing for deep work blocks",
+        "Effective strategies for setting social media boundaries"
+      ],
+      "recommended_strategy": "Conduct research on neuroscience principles related to dopamine and productivity. Synthesize findings into a structured daily routine with specific guidelines for social media boundaries, reward scheduling, and deep work blocks. Ensure recommendations are evidence-based and actionable.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Neuroscience Principles",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of neuroscience principles and studies related to dopamine management and productivity.",
+          "prompt": "Search the web for current, specific information about neuroscience principles related to dopamine management in daily routines for productivity. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Daily Routine",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, evidence-based daily routine for a knowledge worker, focusing on dopamine management.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable daily routine for a knowledge worker. Include specific guidelines on social media boundaries, reward scheduling, and deep work blocks, all based on neuroscience principles.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-dopamine-conscious-routine.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1883
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsiuryhew1n",
+    "title": "Create a comprehensive guide to conducting effective code reviews. Include what ",
+    "raw_request": "Create a comprehensive guide to conducting effective code reviews. Include what to look for, how to give feedback, and common anti-patterns in review culture.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:45:43.433Z",
+    "updated_at": "2026-03-16T01:48:16.772Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:46:10.897Z",
+      "interpreted_objective": "Create a guide for conducting effective code reviews.",
+      "expected_outcome": "A comprehensive guide that outlines best practices for code reviews, including what to look for, how to give feedback, and identifying common anti-patterns.",
+      "key_unknowns": [
+        "Specific audience for the guide",
+        "Preferred format and length of the guide"
+      ],
+      "recommended_strategy": "First, research best practices and common challenges in code reviews to gather comprehensive insights. Then, synthesize this information into a structured guide that includes actionable advice and examples. Ensure the tone is balanced and terse to align with Rahul's style preference.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Code Reviews",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed report on best practices, feedback methods, and common anti-patterns in code reviews.",
+          "prompt": "Search the web for current, specific information about best practices in code reviews. Include what to look for, effective feedback methods, and common anti-patterns. Provide real examples and references.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Code Review Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on conducting effective code reviews, including actionable advice and examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on conducting effective code reviews. Include sections on what to look for, how to give feedback, and common anti-patterns in review culture. Ensure the tone is balanced and terse.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2026
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsiuqdx1bpu",
+    "title": "Research the best wireless chargers for a desk setup. Must support iPhone and Ai",
+    "raw_request": "Research the best wireless chargers for a desk setup. Must support iPhone and AirPods simultaneously. Compare Anker, Belkin, and Mophie. Under 50 dollars.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:45:41.397Z",
+    "updated_at": "2026-03-16T01:48:07.349Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:46:05.196Z",
+      "interpreted_objective": "Identify and compare the best wireless chargers for a desk setup that support both iPhone and AirPods, focusing on Anker, Belkin, and Mophie, and are priced under $50.",
+      "expected_outcome": "A comprehensive comparison report detailing the best wireless chargers from Anker, Belkin, and Mophie under $50, including product names, prices, pros/cons, and a clear recommendation.",
+      "key_unknowns": [
+        "Current pricing of Anker, Belkin, and Mophie wireless chargers",
+        "Specific features and compatibility of each charger with iPhone and AirPods",
+        "Customer reviews and ratings for these products"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current pricing, features, and reviews of wireless chargers from Anker, Belkin, and Mophie. Then, synthesize this information into a structured report comparing these products, highlighting the best option under $50.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Wireless Chargers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current pricing, features, and customer reviews for Anker, Belkin, and Mophie wireless chargers.",
+          "prompt": "Search the web for current, specific information about wireless chargers from Anker, Belkin, and Mophie that support both iPhone and AirPods. Include real names, numbers, prices, reviews, and sources, focusing on products under $50.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Anker, Belkin, and Mophie wireless chargers, with a recommendation.",
+          "prompt": "Based on the research results, synthesize a comparison report of wireless chargers from Anker, Belkin, and Mophie that support both iPhone and AirPods. Include specific product names, prices, pros/cons, and a clear recommendation for the best option under $50.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-wireless-chargers.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2041
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsiuotkj6el",
+    "title": "Teach me about load balancing strategies for web applications. Compare round-rob",
+    "raw_request": "Teach me about load balancing strategies for web applications. Compare round-robin, least connections, IP hash, and weighted algorithms. Include HAProxy and Nginx configs.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:45:39.368Z",
+    "updated_at": "2026-03-16T01:47:49.928Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:45:49.217Z",
+      "interpreted_objective": "Provide a detailed comparison of load balancing strategies for web applications, including HAProxy and Nginx configurations.",
+      "expected_outcome": "A comprehensive report comparing round-robin, least connections, IP hash, and weighted algorithms, with practical examples of HAProxy and Nginx configurations.",
+      "key_unknowns": [
+        "Current best practices for each load balancing strategy",
+        "Specific HAProxy and Nginx configuration examples"
+      ],
+      "recommended_strategy": "First, gather current information on load balancing strategies, focusing on round-robin, least connections, IP hash, and weighted algorithms. Then, synthesize this information into a comparative report, including practical configuration examples for HAProxy and Nginx.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Load Balancing Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information and current best practices for round-robin, least connections, IP hash, and weighted algorithms, including configuration examples for HAProxy and Nginx.",
+          "prompt": "Search the web for current, specific information about load balancing strategies for web applications, focusing on round-robin, least connections, IP hash, and weighted algorithms. Include HAProxy and Nginx configuration examples, real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Load Balancing Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing load balancing strategies with HAProxy and Nginx config examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing round-robin, least connections, IP hash, and weighted algorithms. Include specific configuration examples for HAProxy and Nginx, and provide concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-load_balancing_strategies.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1945
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsiun93x0jj",
+    "title": "Create a guide to building passive income through digital products as a develope",
+    "raw_request": "Create a guide to building passive income through digital products as a developer. Include ebooks, courses, templates, and SaaS tools with revenue estimates.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:45:37.335Z",
+    "updated_at": "2026-03-16T01:47:28.636Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:45:44.020Z",
+      "interpreted_objective": "Create a detailed guide for developers to build passive income through digital products.",
+      "expected_outcome": "A comprehensive guide with specific revenue estimates and examples for ebooks, courses, templates, and SaaS tools.",
+      "key_unknowns": [
+        "Current market demand for each type of digital product",
+        "Revenue potential and pricing strategies for each product type",
+        "Real-world examples of successful digital products"
+      ],
+      "recommended_strategy": "Conduct research to gather current data on market demand and revenue potential for digital products. Synthesize findings into a guide with actionable steps and examples. Ensure the guide is specific to developers and includes concrete revenue estimates.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Market Demand and Revenue Potential",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current market demand and revenue potential for ebooks, courses, templates, and SaaS tools.",
+          "prompt": "Search the web for current, specific information about the market demand and revenue potential for digital products like ebooks, courses, templates, and SaaS tools. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Developers",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide for developers on building passive income through digital products with specific revenue estimates and examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a guide for developers on building passive income through digital products. Include specific revenue estimates, real-world examples, and concrete next steps for ebooks, courses, templates, and SaaS tools.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2398
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsiulo8rp9k",
+    "title": "Write a complete API documentation template using OpenAPI 3.0 conventions. Inclu",
+    "raw_request": "Write a complete API documentation template using OpenAPI 3.0 conventions. Include authentication, error handling, pagination, and rate limiting sections.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:45:35.288Z",
+    "updated_at": "2026-03-16T01:47:00.428Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:45:40.381Z",
+      "interpreted_objective": "Create a comprehensive API documentation template using OpenAPI 3.0 conventions.",
+      "expected_outcome": "A detailed and structured API documentation template that includes sections on authentication, error handling, pagination, and rate limiting.",
+      "key_unknowns": [
+        "Specific format preferences for the documentation",
+        "Any additional sections required beyond those mentioned"
+      ],
+      "recommended_strategy": "Research OpenAPI 3.0 documentation standards and best practices. Then, synthesize this information into a structured template that includes all necessary sections. Ensure the template is clear and immediately usable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research OpenAPI 3.0 Documentation Standards",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed report on OpenAPI 3.0 documentation standards and best practices.",
+          "prompt": "Search the web for current, specific information about OpenAPI 3.0 documentation standards and best practices. Include real examples, specific sections to include, and any relevant guidelines.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize API Documentation Template",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete API documentation template using OpenAPI 3.0 conventions.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive API documentation template using OpenAPI 3.0 conventions. Include sections on authentication, error handling, pagination, and rate limiting. Ensure the template is clear, structured, and immediately usable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2012
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsiouzl62sk",
     "title": "Write a pitch for a documentary about remote work culture. Include thesis, visua",
     "raw_request": "Write a pitch for a documentary about remote work culture. Include thesis, visual approach, interview subjects, and target audience.",
