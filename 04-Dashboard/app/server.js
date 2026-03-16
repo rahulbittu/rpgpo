@@ -31,6 +31,7 @@ const events = require('./lib/events');
 const costs = require('./lib/costs');
 const intake = require('./lib/intake');
 const workflow = require('./lib/workflow');
+const behavior = require('./lib/behavior');
 
 const PORT = process.env.PORT || 3200;
 const startTime = Date.now();
@@ -491,6 +492,8 @@ const server = http.createServer(async (req, res) => {
     try {
       const task = intake.createTask(body);
       events.broadcast('activity', { action: `Quick run: ${task.title}`, ts: new Date().toISOString() });
+      behavior.recordEvent('task_created', { title: task.title, source: 'quick_run' }, { taskId: task.task_id, engine: task.domain });
+      behavior.recordEvent('task_routed', { engine: task.domain, autoRouted: true }, { taskId: task.task_id, engine: task.domain });
       // Queue deliberation
       queue.addTask('deliberate', `Deliberate: ${task.title}`, { taskId: task.task_id, autoApprove: true });
       return json(res, { ok: true, task, message: 'Task submitted — auto-deliberation and execution started' });
@@ -503,6 +506,8 @@ const server = http.createServer(async (req, res) => {
     const task = intake.createTask(body);
     events.broadcast('activity', { action: `Task submitted: ${task.title}`, ts: new Date().toISOString() });
     logAction('Intake submit', task.task_id, task.title);
+    behavior.recordEvent('task_created', { title: task.title, source: 'submit' }, { taskId: task.task_id, engine: task.domain });
+    behavior.recordEvent('task_routed', { engine: task.domain, autoRouted: !body.domain }, { taskId: task.task_id, engine: task.domain });
     // Auto-queue deliberation with auto-approve so task runs without clicks
     try {
       queue.addTask('deliberate', `Deliberate: ${task.title}`, { taskId: task.task_id, autoApprove: true });
@@ -618,6 +623,7 @@ const server = http.createServer(async (req, res) => {
       const nextLabel = queuedNext.length > 0
         ? `Queued next: ${queuedNext.map(n => n.title).join(', ')}`
         : wfResult.action === 'complete' ? 'All subtasks complete' : wfResult.message;
+      behavior.recordEvent('approval_granted', { subtaskTitle: st.title, approvalType: 'completed_work', outcome: outcomeLabel }, { taskId: st.parent_task_id, subtaskId, engine: parentTask?.domain });
       events.broadcast('activity', {
         action: `Approved "${st.title}" — ${nextLabel}`,
         ts: new Date().toISOString(),
@@ -654,6 +660,7 @@ const server = http.createServer(async (req, res) => {
       }
     }
 
+    behavior.recordEvent('approval_granted', { subtaskTitle: st.title, approvalType: 'pre_execution' }, { taskId: st.parent_task_id, subtaskId, engine: parentTask?.domain });
     events.broadcast('activity', { action: `Subtask approved & queued: ${st.title}`, ts: new Date().toISOString() });
     events.broadcast('intake-update', { taskId: st.parent_task_id, subtaskId, action: 'approved' });
     return json(res, { ok: true, resumed: st.title, parentTask: parentTask?.title });
@@ -688,6 +695,7 @@ const server = http.createServer(async (req, res) => {
     });
     workflow.onSubtaskComplete(subtaskId);
 
+    behavior.recordEvent('approval_denied', { subtaskTitle: st.title, reason }, { taskId: st.parent_task_id, subtaskId, engine: intake.getTask(st.parent_task_id)?.domain });
     events.broadcast('activity', { action: `Subtask rejected: ${st.title}`, ts: new Date().toISOString() });
     events.broadcast('intake-update', { taskId: st.parent_task_id, subtaskId, action: 'rejected' });
     return json(res, { ok: true, rejected: st.title, reverted: st.files_changed || [] });
@@ -740,6 +748,27 @@ const server = http.createServer(async (req, res) => {
   // Get all subtasks
   if (req.url === '/api/subtasks') {
     return json(res, intake.getAllSubtasks());
+  }
+
+  // ── Behavior Learning API ──
+  if (req.url === '/api/behavior/stats' && req.method === 'GET') {
+    return json(res, behavior.getStats());
+  }
+  if (req.url === '/api/behavior/signals' && req.method === 'GET') {
+    return json(res, behavior.readSignals());
+  }
+  if (req.url === '/api/behavior/guidance' && req.method === 'GET') {
+    return json(res, behavior.getGuidance());
+  }
+  if (req.url === '/api/behavior/derive' && req.method === 'POST') {
+    const signals = behavior.deriveSignals();
+    behavior.persistSignals(signals);
+    behavior.logLearning(`Derived ${signals.length} signals (${signals.filter(s => s.active).length} active)`);
+    return json(res, { ok: true, signals: signals.length, active: signals.filter(s => s.active).length });
+  }
+  if (req.url === '/api/behavior/events' && req.method === 'GET') {
+    const allEvents = behavior.readEvents();
+    return json(res, { total: allEvents.length, recent: allEvents.slice(-50) });
   }
 
   // Global pending approvals — subtasks + tasks waiting approval

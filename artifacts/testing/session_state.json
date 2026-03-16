@@ -1,5 +1,5 @@
 {
-  "current_phase": "truth_reconciliation",
+  "current_phase": "product_hardening",
   "grading_version": "v3.1",
   "validation_results": {
     "strict_pass": 338,
@@ -7,24 +7,19 @@
     "strict_fail": 0,
     "avg_confidence": 89
   },
-  "commits": 100,
-  "docs_rewritten": [
-    "README.md",
-    "engine-maturity-scoreboard.md",
-    "harness-summary.md"
-  ],
-  "legacy_ids_in_public_docs": 0,
-  "updated_at": "2026-03-16T04:14:52.522Z",
-  "last_action": "8 more fresh tests: 8/8 clean. Post-fix pipeline consistently producing quality output.",
-  "post_fix_test_results": {
-    "total": 162,
-    "clean": 157,
-    "clean_rate": "97%"
+  "total_tasks": 975,
+  "done_tasks": 920,
+  "failed_tasks": 35,
+  "clean_rate_recent": "100%",
+  "consecutive_clean_batches": 19,
+  "behavior_learning": {
+    "status": "batch_1_complete",
+    "event_capture": "implemented",
+    "signal_derivation": "implemented",
+    "execution_guidance": "implemented",
+    "instrumented_events": ["task_created", "task_routed", "approval_granted", "approval_denied"],
+    "pending_instrumentation": ["deliverable_downloaded", "export_generated", "rewrite_requested", "engine_overridden", "output_accepted", "output_abandoned"]
   },
-  "enhancements": [
-    "engine_structured_output",
-    "enhanced_exports",
-    "canonical_mission_files"
-  ],
-  "milestone": "100 commits on main"
+  "next_batch": "Batch 2 — Complete remaining event instrumentation + revise endpoint tracking",
+  "updated_at": "2026-03-16T10:45:00.000Z"
 }
