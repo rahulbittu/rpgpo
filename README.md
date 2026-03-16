@@ -1,72 +1,96 @@
 # GPO — Governed Personal Office
 
-A privacy-first AI operating system that executes tasks across 15 specialized engines using a multi-agent Board of AI deliberation pattern.
+A privacy-first AI operating system for one operator. 15 specialized engines, governed execution pipeline, behavior learning that gets smarter over time.
+
+## What GPO Does
+
+You give GPO a request in plain language. GPO:
+
+1. **Routes** it to the right engine (finance, career, health, travel, etc.)
+2. **Deliberates** via a Board of AI (3 perspectives analyze the request)
+3. **Plans** subtasks (web search → synthesis → deliverable)
+4. **Executes** using AI providers (Perplexity for search, OpenAI for synthesis, Gemini for strategy)
+5. **Delivers** a structured output file (markdown or JSON)
+
+Everything runs locally. No data leaves your machine except API calls to providers.
 
 ## Quick Start
 
 ```bash
 cd 04-Dashboard/app
 npm install
-pm2 start ecosystem.config.js
+node server.js &     # HTTP server on port 3200
+node worker.js &     # Background task processor
 open http://localhost:3200
 ```
 
-## How It Works
-
-1. You submit a request (natural language)
-2. GPO detects the right engine and routes it
-3. A Board of AI deliberates: objective, strategy, risk, subtask plan
-4. Providers execute each subtask (web search, synthesis, strategy, code)
-5. Output is delivered as a downloadable markdown or JSON file
+Required: API keys in `04-Dashboard/app/.env`:
+```
+OPENAI_API_KEY=sk-...
+PERPLEXITY_API_KEY=pplx-...
+GEMINI_API_KEY=AIza...
+```
 
 ## 15 Engines
 
-| # | Engine |
-|---|--------|
-| 1 | Code & Product Engineering |
-| 2 | Writing & Documentation |
-| 3 | Research & Analysis |
-| 4 | Learning & Tutoring |
-| 5 | Scheduling & Life Operations |
-| 6 | Health & Wellness Coach |
-| 7 | Shopping & Buying Advisor |
-| 8 | Travel & Relocation Planner |
-| 9 | Personal Finance & Investing |
-| 10 | Startup & Business Builder |
-| 11 | Career & Job Search |
-| 12 | Screenwriting & Story Development |
-| 13 | Filmmaking & Video Production |
-| 14 | Music & Audio Creation |
-| 15 | Home & Lifestyle Design |
-
-## Validation
-
-A 360-case test harness was executed across all 15 engines.
-
-| Metric | Result |
+| Engine | What It Handles |
 |---|---|
-| Harness target | 360 cases |
-| Unique cases executed | 361 |
-| PASS (strict) | 338 (93.6%) |
-| PARTIAL | 23 (6.4%) |
-| FAIL | 0 |
-| Average confidence | 89/100 |
+| Code & Product Engineering | Architecture, deployment, infrastructure |
+| Writing & Documentation | Guides, specs, SOPs, creative writing |
+| Research & Analysis | Product comparisons, market analysis, deep dives |
+| Learning & Tutoring | Technical explanations, how things work |
+| Scheduling & Life Operations | Routines, productivity, organization |
+| Health & Wellness Coach | Fitness, nutrition, mobility, sleep |
+| Shopping & Buying Advisor | Product research, comparisons, reviews |
+| Travel & Relocation Planner | Trip planning, itineraries, logistics |
+| Personal Finance & Investing | Tax strategy, retirement, investing, insurance |
+| Startup & Business Builder | Business strategy, product development |
+| Career & Job Search | Job search, negotiation, leadership growth |
+| Screenwriting & Story Development | Creative concepts, series bibles, game design |
+| Filmmaking & Video Production | Documentary, video essay concepts |
+| Music & Audio Creation | Musical concepts, audio production |
+| Home & Lifestyle Design | Home improvement, garden, DIY |
 
-23 PARTIAL cases had anomalies: Perplexity web search returned weak data (18), thin output (1), or multiple issues (4). See `docs/testing/engine-maturity-scoreboard.md`.
+## How It's Built
 
-## Stack
+| Component | What It Is |
+|---|---|
+| `04-Dashboard/app/server.js` | HTTP server — API routes, SSE events, static files |
+| `04-Dashboard/app/worker.js` | Background processor — executes tasks via AI providers |
+| `04-Dashboard/app/lib/deliberation.ts` | Board of AI — analyzes requests, plans subtasks |
+| `04-Dashboard/app/lib/behavior.ts` | Behavior learning — captures events, derives operator signals |
+| `04-Dashboard/app/lib/intake.ts` | Task creation + domain routing |
+| `04-Dashboard/app/lib/workflow.ts` | Subtask state machine + deliverable generation |
+| `04-Dashboard/state/` | JSON state files (tasks, subtasks, costs, signals) |
+| `artifacts/behavior/` | Behavior learning data (events, signals, preferences) |
 
-- **Runtime**: Node.js, TypeScript, raw HTTP server (port 3200)
-- **State**: JSON files (no database)
-- **UI**: Single-page HTML/CSS/JS dashboard
-- **Providers**: OpenAI (synthesis), Perplexity (web search), Gemini (strategy), Claude (code)
+## Current State
+
+| Metric | Value |
+|---|---|
+| Total tasks executed | 1,316 |
+| Successfully completed | 1,264 (96%) |
+| Behavior signals | 26 (10 live_observed, 13 seeded, 3 explicit_profile) |
+| Engine attribution | Improved routing — reduced general catch-all from 76% to <10% on new tasks |
+| Consecutive clean batches | 50+ |
+
+## Key Principles
+
+1. **Reliability beats autonomy theater** — predictable execution over impressive demos
+2. **Only automate what is understood** — AI assists, human judges where risk is high
+3. **Memory reduces friction, not creates false certainty** — conservative behavior learning
+4. **Hunt for why it fails, not just proof it works** — honest evidence system
+
+See [Operating Doctrine](docs/product/gpo-operating-doctrine.md).
 
 ## Documentation
 
-- [System Overview](docs/system-overview.md)
-- [Repository Map](docs/repo-map.md)
-- [Task Lifecycle](docs/task-lifecycle.md)
-- [Board of AI Guide](docs/board-of-ai-guide.md)
-- [Operator Guide](docs/operator-guide.md)
-- [Test Results](docs/testing/engine-maturity-scoreboard.md)
-- [How to Review a Test Case](docs/testing/test-review-guide.md)
+| If you want to... | Read this |
+|---|---|
+| Understand the full system | [System Overview](docs/system-overview.md) |
+| Navigate the repository | [Repo Map](docs/repo-map.md) |
+| Understand task execution | [Task Lifecycle](docs/task-lifecycle.md) |
+| Understand behavior learning | [Behavior Learning](docs/behavior-learning.md) |
+| Understand governance | [Human Control Boundaries](docs/governance/human-control-boundaries.md) |
+| Review test results | [Validation Scoreboard](docs/testing/engine-maturity-scoreboard.md) |
+| See all docs | [Documentation Index](docs/README.md) |
