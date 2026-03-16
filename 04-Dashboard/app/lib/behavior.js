@@ -288,10 +288,19 @@ function deriveSignals() {
     // 8. Output satisfaction PER ENGINE
     var acceptedByEngine = {};
     var abandonedByEngine = {};
-    accepted.forEach(function (e) { if (e.engine)
-        acceptedByEngine[e.engine] = (acceptedByEngine[e.engine] || 0) + 1; });
-    abandoned.forEach(function (e) { if (e.engine)
-        abandonedByEngine[e.engine] = (abandonedByEngine[e.engine] || 0) + 1; });
+    var eventsByEngine = {};
+    accepted.forEach(function (e) { if (e.engine) {
+        acceptedByEngine[e.engine] = (acceptedByEngine[e.engine] || 0) + 1;
+        if (!eventsByEngine[e.engine])
+            eventsByEngine[e.engine] = [];
+        eventsByEngine[e.engine].push(e);
+    } });
+    abandoned.forEach(function (e) { if (e.engine) {
+        abandonedByEngine[e.engine] = (abandonedByEngine[e.engine] || 0) + 1;
+        if (!eventsByEngine[e.engine])
+            eventsByEngine[e.engine] = [];
+        eventsByEngine[e.engine].push(e);
+    } });
     var allEnginesArr = Object.keys(acceptedByEngine).concat(Object.keys(abandonedByEngine)).filter(function (v, i, a) { return a.indexOf(v) === i; });
     for (var _f = 0, allEnginesArr_1 = allEnginesArr; _f < allEnginesArr_1.length; _f++) {
         var engine = allEnginesArr_1[_f];
@@ -309,6 +318,7 @@ function deriveSignals() {
                 sourceEventCount: total,
                 lastUpdated: new Date().toISOString(),
                 active: total >= MIN_EVENTS_FOR_SIGNAL,
+                provenance: determineProvenance(eventsByEngine[engine] || []),
                 explanation: "Engine ".concat(engine, ": ").concat(acc, " accepted, ").concat(abn, " abandoned (").concat((rate * 100).toFixed(0), "% satisfaction)"),
             });
         }

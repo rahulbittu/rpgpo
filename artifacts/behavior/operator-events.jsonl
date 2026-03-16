@@ -3530,3 +3530,12 @@
 {"id":"evt_mmtqwyb5puvs","type":"task_routed","timestamp":"2026-03-16T22:19:08.081Z","taskId":"t_mmtqwyar8tcp","engine":"health","metadata":{"engine":"health","autoRouted":true}}
 {"id":"evt_mmtqwyeh1mx9","type":"task_created","timestamp":"2026-03-16T22:19:08.201Z","taskId":"t_mmtqwye4xlvh","engine":"careeregine","metadata":{"title":"Design a comprehensive system for managing engineering on-call rotations. Includ","source":"quick_run"}}
 {"id":"evt_mmtqwyeh8zzd","type":"task_routed","timestamp":"2026-03-16T22:19:08.201Z","taskId":"t_mmtqwye4xlvh","engine":"careeregine","metadata":{"engine":"careeregine","autoRouted":true}}
+{"id":"evt_mmtr9sqzehe9","type":"task_created","timestamp":"2026-03-16T22:29:07.403Z","taskId":"t_mmtr9sqm6jvw","engine":"wealthresearch","metadata":{"title":"Create a comprehensive guide to building passive income through dividend ETF inv","source":"quick_run"}}
+{"id":"evt_mmtr9sqzl9nr","type":"task_routed","timestamp":"2026-03-16T22:29:07.403Z","taskId":"t_mmtr9sqm6jvw","engine":"wealthresearch","metadata":{"engine":"wealthresearch","autoRouted":true}}
+{"id":"evt_mmtr9srs1zix","type":"task_created","timestamp":"2026-03-16T22:29:07.432Z","taskId":"t_mmtr9srg5j5c","engine":"careeregine","metadata":{"title":"Design a data engineering career progression roadmap from junior to staff level.","source":"quick_run"}}
+{"id":"evt_mmtr9srs12y3","type":"task_routed","timestamp":"2026-03-16T22:29:07.432Z","taskId":"t_mmtr9srg5j5c","engine":"careeregine","metadata":{"engine":"careeregine","autoRouted":true}}
+{"id":"evt_mmtr9st6jp5o","type":"task_created","timestamp":"2026-03-16T22:29:07.482Z","taskId":"t_mmtr9ssraz2z","engine":"research","metadata":{"title":"Explain how PostgreSQL query execution plans work. Cover sequential vs index sca","source":"quick_run"}}
+{"id":"evt_mmtr9st7nzlz","type":"task_routed","timestamp":"2026-03-16T22:29:07.483Z","taskId":"t_mmtr9ssraz2z","engine":"research","metadata":{"engine":"research","autoRouted":true}}
+{"id":"evt_mmtrb5brh7wy","type":"output_accepted","timestamp":"2026-03-16T22:30:10.359Z","taskId":"t_mmtr9sqm6jvw","engine":"wealthresearch","metadata":{"source":"workflow_completion"}}
+{"id":"evt_mmtrbe0mx01m","type":"output_accepted","timestamp":"2026-03-16T22:30:21.622Z","taskId":"t_mmtr9srg5j5c","engine":"careeregine","metadata":{"source":"workflow_completion"}}
+{"id":"evt_mmtrbom7vtta","type":"output_accepted","timestamp":"2026-03-16T22:30:35.359Z","taskId":"t_mmtr9ssraz2z","engine":"research","metadata":{"source":"workflow_completion"}}

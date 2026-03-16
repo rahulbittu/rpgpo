@@ -1,5 +1,148 @@
 [
   {
+    "id": "mmtrawm11quz",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize PostgreSQL Query Execution Plan Insights",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtra9m7xbs9"
+    },
+    "createdAt": "2026-03-16T22:29:59.065Z",
+    "updatedAt": "2026-03-16T22:30:35.379Z",
+    "output": "Synthesize PostgreSQL Query Execution Plan Insights: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/research-2023-11-02-postgresql-query-execution-plans.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtra9m7xbs9.md"
+    ]
+  },
+  {
+    "id": "mmtrapjoq3iq",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Career Progression Roadmap",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtra3nb2xjl"
+    },
+    "createdAt": "2026-03-16T22:29:49.908Z",
+    "updatedAt": "2026-03-16T22:30:21.644Z",
+    "output": "Synthesize Career Progression Roadmap: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/careeregine-2023-10-25-data-engineering-roadmap.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtra3nb2xjl.md"
+    ]
+  },
+  {
+    "id": "mmtrafllwa32",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize ETF Comparison Guide",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtr9yl0f8j8"
+    },
+    "createdAt": "2026-03-16T22:29:37.017Z",
+    "updatedAt": "2026-03-16T22:30:10.382Z",
+    "output": "Synthesize ETF Comparison Guide: ## Analysis\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtr9yl0f8j8.md"
+    ]
+  },
+  {
+    "id": "mmtra9rouidt",
+    "type": "execute-subtask",
+    "label": "Subtask: Research PostgreSQL Query Execution Plans",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtra9k2j4mf"
+    },
+    "createdAt": "2026-03-16T22:29:29.460Z",
+    "updatedAt": "2026-03-16T22:29:59.066Z",
+    "output": "Research PostgreSQL Query Execution Plans: ## Sequential vs Index Scans\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtra9k2j4mf.md"
+    ]
+  },
+  {
+    "id": "mmtra3spgv9e",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Data Engineering Career Progression",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtra3l7y4tz"
+    },
+    "createdAt": "2026-03-16T22:29:21.721Z",
+    "updatedAt": "2026-03-16T22:29:49.908Z",
+    "output": "Research Data Engineering Career Progression: ## Junior Data Engineer (0-2 Years Experience)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtra3l7y4tz.md"
+    ]
+  },
+  {
+    "id": "mmtr9yqbz3id",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Dividend ETF Data",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtr9yiwqjgi"
+    },
+    "createdAt": "2026-03-16T22:29:15.155Z",
+    "updatedAt": "2026-03-16T22:29:37.018Z",
+    "output": "Research Dividend ETF Data: ## SCHD ETF (Schwab U.S. Dividend Equity ETF)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtr9yiwqjgi.md"
+    ]
+  },
+  {
+    "id": "mmtr9st74wxm",
+    "type": "deliberate",
+    "label": "Deliberate: Explain how PostgreSQL query execution plans work. Cover sequential vs index sca",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtr9ssraz2z",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T22:29:07.483Z",
+    "updatedAt": "2026-03-16T22:29:29.461Z",
+    "output": "Deliberation complete.\nObjective: Explain PostgreSQL query execution plans and how to optimize them.\nStrategy: First, research the latest information on PostgreSQL query execution plans, focusing on sequential vs index scans, join algorithms, parallel execution, cost estimation, and EXPLAIN ANALYZE. Then, synthesize this information into a comprehensive report with actionable insights for optimization.\nRisk: green\nSubtasks: 2\nTokens: 2240",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmtr9srtg22l",
+    "type": "deliberate",
+    "label": "Deliberate: Design a data engineering career progression roadmap from junior to staff level.",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtr9srg5j5c",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T22:29:07.433Z",
+    "updatedAt": "2026-03-16T22:29:21.722Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed career progression roadmap for data engineers from junior to staff level, including skills, project expectations, and interview prep.\nStrategy: Conduct research to identify current trends and expectations in data engineering career progression. Synthesize this information into a structured roadmap with actionable steps and resources for each career level.\nRisk: yellow\nSubtasks: 2\nTokens: 2275",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmtr9sr0nqcj",
+    "type": "deliberate",
+    "label": "Deliberate: Create a comprehensive guide to building passive income through dividend ETF inv",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtr9sqm6jvw",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T22:29:07.404Z",
+    "updatedAt": "2026-03-16T22:29:15.156Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed guide for passive income through dividend ETF investing with a comparison of SCHD, VYM, and JEPI.\nStrategy: Conduct research to gather current data on SCHD, VYM, and JEPI. Analyze and compare their performance, yield, and tax efficiency. Synthesize this information into a detailed guide with specific portfolio allocation recommendations by age bracket.\nRisk: green\nSubtasks: 2\nTokens: 2527",
+    "error": null,
+    "filesWritten": []
+  },
+  {
     "id": "mmtr0q5ivymp",
     "type": "execute-subtask",
     "label": "Subtask: Synthesize On-Call Management System Guide",
@@ -1446,154 +1589,6 @@
     "filesWritten": [
       "03-Operations/Reports/careeregine-{date}-interview-management-framework.md",
       "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtq0ptjqlkw.md"
-    ]
-  },
-  {
-    "id": "mmtq2mkq98jr",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Guide for Home Command Center Setup",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtq0k6npdfu"
-    },
-    "createdAt": "2026-03-16T21:55:33.194Z",
-    "updatedAt": "2026-03-16T21:57:31.183Z",
-    "output": "Synthesize Guide for Home Command Center Setup: ### Objective\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtq0k6npdfu.md"
-    ]
-  },
-  {
-    "id": "mmtq2g9bund3",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize game concept",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtq0dbvl9u3"
-    },
-    "createdAt": "2026-03-16T21:55:25.007Z",
-    "updatedAt": "2026-03-16T21:57:20.123Z",
-    "output": "Synthesize game concept: ## Concept for \"Alien Mathematics: Decipher the Cosmos\"\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtq0dbvl9u3.md"
-    ]
-  },
-  {
-    "id": "mmtq25yz4h1g",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize 7-day music and culture tour itinerary",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtq0989fl29"
-    },
-    "createdAt": "2026-03-16T21:55:11.675Z",
-    "updatedAt": "2026-03-16T21:57:10.100Z",
-    "output": "Synthesize 7-day music and culture tour itinerary: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/music-tour-itinerary.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtq0989fl29.md"
-    ]
-  },
-  {
-    "id": "mmtq1v1dn75x",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Shoulder Rehabilitation Program",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtq04fa77bx"
-    },
-    "createdAt": "2026-03-16T21:54:57.505Z",
-    "updatedAt": "2026-03-16T21:56:39.337Z",
-    "output": "Synthesize Shoulder Rehabilitation Program: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/general-shoulder-rehabilitation-program.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtq04fa77bx.md"
-    ]
-  },
-  {
-    "id": "mmtq1nylou6o",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Guide for Performance Calibration Sessions",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtpzy52i547"
-    },
-    "createdAt": "2026-03-16T21:54:48.333Z",
-    "updatedAt": "2026-03-16T21:56:26.475Z",
-    "output": "Synthesize Guide for Performance Calibration Sessions: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtpzy52i547.md"
-    ]
-  },
-  {
-    "id": "mmtq1gskx5je",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize eBPF Explanation",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtpzrcy8y9q"
-    },
-    "createdAt": "2026-03-16T21:54:39.044Z",
-    "updatedAt": "2026-03-16T21:56:16.786Z",
-    "output": "Synthesize eBPF Explanation: ## Explanation\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/learning-{date}-eBPF.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtpzrcy8y9q.md"
-    ]
-  },
-  {
-    "id": "mmtq18yoizhu",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Guide on Catch-Up Contributions",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtpzli1qdrc"
-    },
-    "createdAt": "2026-03-16T21:54:28.896Z",
-    "updatedAt": "2026-03-16T21:56:06.358Z",
-    "output": "Synthesize Guide on Catch-Up Contributions: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/general-{date}-catch-up-contributions-guide.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtpzli1qdrc.md"
-    ]
-  },
-  {
-    "id": "mmtq104zsdx6",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Comprehensive Testing Strategy Document",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtpzg53kfnm"
-    },
-    "createdAt": "2026-03-16T21:54:17.459Z",
-    "updatedAt": "2026-03-16T21:55:56.903Z",
-    "output": "Synthesize Comprehensive Testing Strategy Document: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtpzg53kfnm.md"
-    ]
-  },
-  {
-    "id": "mmtq0pyt71lf",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Current Best Practices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtq0prlesn4"
-    },
-    "createdAt": "2026-03-16T21:54:04.277Z",
-    "updatedAt": "2026-03-16T21:55:42.665Z",
-    "output": "Research Current Best Practices: ## Platforms for Managing Technical Interviews\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtq0prlesn4.md"
     ]
   }
 ]

@@ -4,10 +4,10 @@
     "value": "high",
     "confidence": 1,
     "scope": "global",
-    "sourceEventCount": 974,
-    "lastUpdated": "2026-03-16T21:36:57.395Z",
+    "sourceEventCount": 977,
+    "lastUpdated": "2026-03-16T22:35:43.458Z",
     "active": true,
-    "explanation": "923 accepted, 51 abandoned, 0 downloaded",
+    "explanation": "926 accepted, 51 abandoned, 0 downloaded",
     "provenance": "seeded_historical"
   },
   {
@@ -17,10 +17,10 @@
     "scope": "engine",
     "scopeKey": "personalops",
     "sourceEventCount": 81,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine personalops: 80 accepted, 1 abandoned (99% satisfaction)",
-    "provenance": "seeded_historical"
+    "provenance": "seeded_historical",
+    "explanation": "Engine personalops: 80 accepted, 1 abandoned (99% satisfaction)"
   },
   {
     "name": "output_satisfaction",
@@ -29,10 +29,10 @@
     "scope": "engine",
     "scopeKey": "general",
     "sourceEventCount": 602,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine general: 562 accepted, 40 abandoned (93% satisfaction)",
-    "provenance": "seeded_historical"
+    "provenance": "seeded_historical",
+    "explanation": "Engine general: 562 accepted, 40 abandoned (93% satisfaction)"
   },
   {
     "name": "output_satisfaction",
@@ -40,11 +40,11 @@
     "confidence": 1,
     "scope": "engine",
     "scopeKey": "wealthresearch",
-    "sourceEventCount": 105,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "sourceEventCount": 106,
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine wealthresearch: 99 accepted, 6 abandoned (94% satisfaction)",
-    "provenance": "seeded_historical"
+    "provenance": "live_observed",
+    "explanation": "Engine wealthresearch: 100 accepted, 6 abandoned (94% satisfaction)"
   },
   {
     "name": "output_satisfaction",
@@ -52,11 +52,11 @@
     "confidence": 1,
     "scope": "engine",
     "scopeKey": "careeregine",
-    "sourceEventCount": 80,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "sourceEventCount": 81,
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine careeregine: 79 accepted, 1 abandoned (99% satisfaction)",
-    "provenance": "seeded_historical"
+    "provenance": "live_observed",
+    "explanation": "Engine careeregine: 80 accepted, 1 abandoned (99% satisfaction)"
   },
   {
     "name": "output_satisfaction",
@@ -65,10 +65,10 @@
     "scope": "engine",
     "scopeKey": "newsroom",
     "sourceEventCount": 16,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine newsroom: 15 accepted, 1 abandoned (94% satisfaction)",
-    "provenance": "seeded_historical"
+    "provenance": "seeded_historical",
+    "explanation": "Engine newsroom: 15 accepted, 1 abandoned (94% satisfaction)"
   },
   {
     "name": "output_satisfaction",
@@ -77,10 +77,10 @@
     "scope": "engine",
     "scopeKey": "screenwriting",
     "sourceEventCount": 61,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine screenwriting: 60 accepted, 1 abandoned (98% satisfaction)",
-    "provenance": "seeded_historical"
+    "provenance": "seeded_historical",
+    "explanation": "Engine screenwriting: 60 accepted, 1 abandoned (98% satisfaction)"
   },
   {
     "name": "output_satisfaction",
@@ -89,54 +89,54 @@
     "scope": "engine",
     "scopeKey": "topranker",
     "sourceEventCount": 27,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine topranker: 26 accepted, 1 abandoned (96% satisfaction)",
-    "provenance": "seeded_historical"
+    "provenance": "seeded_historical",
+    "explanation": "Engine topranker: 26 accepted, 1 abandoned (96% satisfaction)"
   },
   {
     "name": "task_volume",
     "value": {
-      "count": 90,
+      "count": 91,
       "share": "7%"
     },
     "confidence": 1,
     "scope": "engine",
     "scopeKey": "personalops",
-    "sourceEventCount": 90,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "sourceEventCount": 91,
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine personalops: 90 tasks (7.3% of total)",
+    "explanation": "Engine personalops: 91 tasks (7.1% of total)",
     "provenance": "seeded_historical"
   },
   {
     "name": "task_volume",
     "value": {
-      "count": 650,
-      "share": "53%"
+      "count": 661,
+      "share": "52%"
     },
     "confidence": 1,
     "scope": "engine",
     "scopeKey": "general",
-    "sourceEventCount": 650,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "sourceEventCount": 661,
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine general: 650 tasks (52.9% of total)",
+    "explanation": "Engine general: 661 tasks (51.6% of total)",
     "provenance": "seeded_historical"
   },
   {
     "name": "task_volume",
     "value": {
-      "count": 113,
+      "count": 117,
       "share": "9%"
     },
     "confidence": 1,
     "scope": "engine",
     "scopeKey": "wealthresearch",
-    "sourceEventCount": 113,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "sourceEventCount": 117,
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine wealthresearch: 113 tasks (9.2% of total)",
+    "explanation": "Engine wealthresearch: 117 tasks (9.1% of total)",
     "provenance": "seeded_historical"
   },
   {
@@ -149,39 +149,39 @@
     "scope": "engine",
     "scopeKey": "newsroom",
     "sourceEventCount": 16,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine newsroom: 16 tasks (1.3% of total)",
+    "explanation": "Engine newsroom: 16 tasks (1.2% of total)",
     "provenance": "seeded_historical"
   },
   {
     "name": "task_volume",
     "value": {
-      "count": 68,
-      "share": "6%"
+      "count": 69,
+      "share": "5%"
     },
     "confidence": 1,
     "scope": "engine",
     "scopeKey": "screenwriting",
-    "sourceEventCount": 68,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "sourceEventCount": 69,
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine screenwriting: 68 tasks (5.5% of total)",
+    "explanation": "Engine screenwriting: 69 tasks (5.4% of total)",
     "provenance": "seeded_historical"
   },
   {
     "name": "task_volume",
     "value": {
-      "count": 93,
+      "count": 102,
       "share": "8%"
     },
     "confidence": 1,
     "scope": "engine",
     "scopeKey": "careeregine",
-    "sourceEventCount": 93,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "sourceEventCount": 102,
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine careeregine: 93 tasks (7.6% of total)",
+    "explanation": "Engine careeregine: 102 tasks (8.0% of total)",
     "provenance": "seeded_historical"
   },
   {
@@ -194,99 +194,99 @@
     "scope": "engine",
     "scopeKey": "topranker",
     "sourceEventCount": 27,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine topranker: 27 tasks (2.2% of total)",
+    "explanation": "Engine topranker: 27 tasks (2.1% of total)",
     "provenance": "seeded_historical"
   },
   {
     "name": "task_volume",
     "value": {
-      "count": 4,
+      "count": 5,
       "share": "0%"
     },
-    "confidence": 0.2,
+    "confidence": 0.25,
     "scope": "engine",
     "scopeKey": "music",
-    "sourceEventCount": 4,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
-    "active": false,
-    "explanation": "Engine music: 4 tasks (0.3% of total)",
+    "sourceEventCount": 5,
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
+    "active": true,
+    "explanation": "Engine music: 5 tasks (0.4% of total)",
     "provenance": "seeded_historical"
   },
   {
     "name": "task_volume",
     "value": {
-      "count": 28,
+      "count": 32,
       "share": "2%"
     },
     "confidence": 1,
     "scope": "engine",
     "scopeKey": "startup",
-    "sourceEventCount": 28,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "sourceEventCount": 32,
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine startup: 28 tasks (2.3% of total)",
+    "explanation": "Engine startup: 32 tasks (2.5% of total)",
     "provenance": "seeded_historical"
   },
   {
     "name": "task_volume",
     "value": {
-      "count": 21,
+      "count": 26,
       "share": "2%"
     },
     "confidence": 1,
     "scope": "engine",
     "scopeKey": "learning",
-    "sourceEventCount": 21,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "sourceEventCount": 26,
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine learning: 21 tasks (1.7% of total)",
+    "explanation": "Engine learning: 26 tasks (2.0% of total)",
     "provenance": "seeded_historical"
   },
   {
     "name": "task_volume",
     "value": {
-      "count": 41,
-      "share": "3%"
-    },
-    "confidence": 1,
-    "scope": "engine",
-    "scopeKey": "research",
-    "sourceEventCount": 41,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
-    "active": true,
-    "explanation": "Engine research: 41 tasks (3.3% of total)",
-    "provenance": "seeded_historical"
-  },
-  {
-    "name": "task_volume",
-    "value": {
-      "count": 52,
+      "count": 49,
       "share": "4%"
     },
     "confidence": 1,
     "scope": "engine",
-    "scopeKey": "writing",
-    "sourceEventCount": 52,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "scopeKey": "research",
+    "sourceEventCount": 49,
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine writing: 52 tasks (4.2% of total)",
+    "explanation": "Engine research: 49 tasks (3.8% of total)",
     "provenance": "seeded_historical"
   },
   {
     "name": "task_volume",
     "value": {
-      "count": 17,
-      "share": "1%"
+      "count": 58,
+      "share": "5%"
     },
-    "confidence": 0.85,
+    "confidence": 1,
+    "scope": "engine",
+    "scopeKey": "writing",
+    "sourceEventCount": 58,
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
+    "active": true,
+    "explanation": "Engine writing: 58 tasks (4.5% of total)",
+    "provenance": "seeded_historical"
+  },
+  {
+    "name": "task_volume",
+    "value": {
+      "count": 20,
+      "share": "2%"
+    },
+    "confidence": 1,
     "scope": "engine",
     "scopeKey": "health",
-    "sourceEventCount": 17,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "sourceEventCount": 20,
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
-    "explanation": "Engine health: 17 tasks (1.4% of total)",
+    "explanation": "Engine health: 20 tasks (1.6% of total)",
     "provenance": "seeded_historical"
   },
   {
@@ -299,7 +299,7 @@
     "scope": "engine",
     "scopeKey": "travel",
     "sourceEventCount": 6,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
     "explanation": "Engine travel: 6 tasks (0.5% of total)",
     "provenance": "seeded_historical"
@@ -314,7 +314,7 @@
     "scope": "engine",
     "scopeKey": "shopping",
     "sourceEventCount": 3,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": false,
     "explanation": "Engine shopping: 3 tasks (0.2% of total)",
     "provenance": "seeded_historical"
@@ -325,7 +325,7 @@
     "confidence": 1,
     "scope": "global",
     "sourceEventCount": 1,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
     "provenance": "explicit_profile",
     "explanation": "From operator profile: communication_style = terse"
@@ -340,7 +340,7 @@
     "confidence": 1,
     "scope": "global",
     "sourceEventCount": 1,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
     "provenance": "explicit_profile",
     "explanation": "From operator profile: stated output preferences"
@@ -351,7 +351,7 @@
     "confidence": 1,
     "scope": "global",
     "sourceEventCount": 1,
-    "lastUpdated": "2026-03-16T21:36:57.397Z",
+    "lastUpdated": "2026-03-16T22:35:43.459Z",
     "active": true,
     "provenance": "explicit_profile",
     "explanation": "From operator profile: risk_tolerance = yellow"

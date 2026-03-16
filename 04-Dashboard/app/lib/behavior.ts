@@ -295,8 +295,9 @@ function deriveSignals(): BehaviorSignal[] {
   // 8. Output satisfaction PER ENGINE
   const acceptedByEngine: Record<string, number> = {};
   const abandonedByEngine: Record<string, number> = {};
-  accepted.forEach(e => { if (e.engine) acceptedByEngine[e.engine] = (acceptedByEngine[e.engine] || 0) + 1; });
-  abandoned.forEach(e => { if (e.engine) abandonedByEngine[e.engine] = (abandonedByEngine[e.engine] || 0) + 1; });
+  const eventsByEngine: Record<string, BehaviorEvent[]> = {};
+  accepted.forEach(e => { if (e.engine) { acceptedByEngine[e.engine] = (acceptedByEngine[e.engine] || 0) + 1; if (!eventsByEngine[e.engine]) eventsByEngine[e.engine] = []; eventsByEngine[e.engine].push(e); } });
+  abandoned.forEach(e => { if (e.engine) { abandonedByEngine[e.engine] = (abandonedByEngine[e.engine] || 0) + 1; if (!eventsByEngine[e.engine]) eventsByEngine[e.engine] = []; eventsByEngine[e.engine].push(e); } });
   const allEnginesArr = Object.keys(acceptedByEngine).concat(Object.keys(abandonedByEngine)).filter((v, i, a) => a.indexOf(v) === i);
   for (const engine of allEnginesArr) {
     const acc = acceptedByEngine[engine] || 0;
@@ -313,6 +314,7 @@ function deriveSignals(): BehaviorSignal[] {
         sourceEventCount: total,
         lastUpdated: new Date().toISOString(),
         active: total >= MIN_EVENTS_FOR_SIGNAL,
+        provenance: determineProvenance(eventsByEngine[engine] || []),
         explanation: `Engine ${engine}: ${acc} accepted, ${abn} abandoned (${(rate * 100).toFixed(0)}% satisfaction)`,
       });
     }

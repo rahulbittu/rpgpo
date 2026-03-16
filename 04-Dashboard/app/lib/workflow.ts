@@ -213,6 +213,17 @@ export function checkTaskCompletion(taskId: string, allSubs?: Subtask[]): void {
 
   intake.updateTask(taskId, { status: anyFailed ? 'failed' : 'done' });
 
+  // Behavior learning: record task outcome event (live_observed)
+  try {
+    const behaviorMod = require('./behavior') as { recordEvent(type: string, meta: Record<string, any>, ctx: Record<string, any>): void };
+    const intakeTask2 = intake.getTask(taskId) as unknown as { domain?: string; title?: string } | null;
+    if (anyFailed) {
+      behaviorMod.recordEvent('output_abandoned', { reason: 'task_failed', source: 'workflow_completion' }, { taskId, engine: intakeTask2?.domain });
+    } else {
+      behaviorMod.recordEvent('output_accepted', { source: 'workflow_completion' }, { taskId, engine: intakeTask2?.domain });
+    }
+  } catch { /* behavior module non-fatal */ }
+
   // Proactive delivery: emit notification on task completion so operator sees results
   try {
     const notif = require('./in-app-notifications') as {

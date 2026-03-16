@@ -2,6 +2,15 @@
 // RPGPO Workflow Engine — Auto-Continue Logic (TypeScript)
 // Manages subtask state machine and auto-queuing.
 // Safety: Yellow/Red subtasks stop for approval. No auto-external actions.
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.onSubtaskComplete = onSubtaskComplete;
 exports.findReadySubtasks = findReadySubtasks;
@@ -9,12 +18,12 @@ exports.blockDependents = blockDependents;
 exports.checkTaskCompletion = checkTaskCompletion;
 exports.materializeSubtasks = materializeSubtasks;
 exports.queueInitialSubtasks = queueInitialSubtasks;
-const state_machine_1 = require("./state-machine");
+var state_machine_1 = require("./state-machine");
 // ── Dependencies ──
 // All lib modules use module.exports (commonjs), so we require them.
 /* eslint-disable @typescript-eslint/no-var-requires */
-const intake = require('./intake');
-const repoScanner = require('./repo-scanner');
+var intake = require('./intake');
+var repoScanner = require('./repo-scanner');
 // ═══════════════════════════════════════════
 // Core Workflow
 // ═══════════════════════════════════════════
@@ -25,20 +34,20 @@ const repoScanner = require('./repo-scanner');
  * - Failed → block dependents, stop
  */
 function onSubtaskComplete(subtaskId) {
-    const st = intake.getSubtask(subtaskId);
+    var st = intake.getSubtask(subtaskId);
     if (!st)
         return { action: 'error', message: 'Subtask not found', next_subtask_ids: [] };
-    const parentTask = intake.getTask(st.parent_task_id);
+    var parentTask = intake.getTask(st.parent_task_id);
     if (!parentTask)
         return { action: 'error', message: 'Parent task not found', next_subtask_ids: [] };
-    const allSubs = intake.getSubtasksForTask(st.parent_task_id);
+    var allSubs = intake.getSubtasksForTask(st.parent_task_id);
     // Failed → block dependents and check completion
     if (st.status === 'failed') {
         blockDependents(subtaskId, allSubs);
         checkTaskCompletion(parentTask.task_id, allSubs);
         return {
             action: 'failed',
-            message: `Subtask "${st.title}" failed: ${st.error || 'Unknown error'}`,
+            message: "Subtask \"".concat(st.title, "\" failed: ").concat(st.error || 'Unknown error'),
             next_subtask_ids: [],
         };
     }
@@ -47,18 +56,19 @@ function onSubtaskComplete(subtaskId) {
         return { action: 'noop', message: 'Subtask not in terminal state', next_subtask_ids: [] };
     }
     // Find subtasks that depend on this one and are now unblocked
-    const nextReady = findReadySubtasks(subtaskId, allSubs);
+    var nextReady = findReadySubtasks(subtaskId, allSubs);
     if (!nextReady.length) {
         checkTaskCompletion(parentTask.task_id, allSubs);
         return { action: 'complete', message: 'No more subtasks to queue', next_subtask_ids: [] };
     }
-    const queued = [];
-    const needsApproval = [];
-    for (const next of nextReady) {
+    var queued = [];
+    var needsApproval = [];
+    for (var _i = 0, nextReady_1 = nextReady; _i < nextReady_1.length; _i++) {
+        var next = nextReady_1[_i];
         // Only require approval for: red risk, explicit approval_required, or code-writing tasks
         // Yellow risk research/analysis tasks should auto-execute to reduce friction
-        const isCodeTask = next.stage === 'implement' || next.assigned_model === 'claude';
-        const needsHumanApproval = next.risk_level === 'red' || next.approval_required || (next.risk_level === 'yellow' && isCodeTask);
+        var isCodeTask = next.stage === 'implement' || next.assigned_model === 'claude';
+        var needsHumanApproval = next.risk_level === 'red' || next.approval_required || (next.risk_level === 'yellow' && isCodeTask);
         if (needsHumanApproval) {
             intake.updateSubtask(next.subtask_id, { status: 'waiting_approval' });
             needsApproval.push(next.subtask_id);
@@ -76,8 +86,8 @@ function onSubtaskComplete(subtaskId) {
         next_subtask_ids: queued,
         approval_needed: needsApproval,
         message: queued.length > 0
-            ? `Auto-queued ${queued.length} subtask(s)`
-            : `${needsApproval.length} subtask(s) need approval`,
+            ? "Auto-queued ".concat(queued.length, " subtask(s)")
+            : "".concat(needsApproval.length, " subtask(s) need approval"),
     };
 }
 /**
@@ -85,16 +95,17 @@ function onSubtaskComplete(subtaskId) {
  * A subtask is ready when all its depends_on subtasks are done.
  */
 function findReadySubtasks(completedSubtaskId, allSubs) {
-    const ready = [];
-    for (const s of allSubs) {
+    var ready = [];
+    for (var _i = 0, allSubs_1 = allSubs; _i < allSubs_1.length; _i++) {
+        var s = allSubs_1[_i];
         if (s.status !== 'proposed')
             continue;
         if (!s.depends_on || !s.depends_on.length)
             continue;
         // Check if this subtask depends on the completed one
-        const dependsOnCompleted = s.depends_on.some((dep) => {
+        var dependsOnCompleted = s.depends_on.some(function (dep) {
             if (typeof dep === 'number') {
-                const depSub = allSubs[dep];
+                var depSub = allSubs[dep];
                 return depSub && depSub.subtask_id === completedSubtaskId;
             }
             return dep === completedSubtaskId;
@@ -102,13 +113,13 @@ function findReadySubtasks(completedSubtaskId, allSubs) {
         if (!dependsOnCompleted)
             continue;
         // Check if ALL dependencies are done
-        const allDepsDone = s.depends_on.every((dep) => {
-            let depSub;
+        var allDepsDone = s.depends_on.every(function (dep) {
+            var depSub;
             if (typeof dep === 'number') {
                 depSub = allSubs[dep];
             }
             else {
-                depSub = allSubs.find(x => x.subtask_id === dep);
+                depSub = allSubs.find(function (x) { return x.subtask_id === dep; });
             }
             return depSub && depSub.status === 'done';
         });
@@ -121,12 +132,13 @@ function findReadySubtasks(completedSubtaskId, allSubs) {
  * Block subtasks that depend on a failed subtask.
  */
 function blockDependents(failedSubtaskId, allSubs) {
-    for (const s of allSubs) {
+    for (var _i = 0, allSubs_2 = allSubs; _i < allSubs_2.length; _i++) {
+        var s = allSubs_2[_i];
         if (s.status !== 'proposed' && s.status !== 'queued')
             continue;
-        const depends = s.depends_on.some((dep) => {
+        var depends = s.depends_on.some(function (dep) {
             if (typeof dep === 'number') {
-                const depSub = allSubs[dep];
+                var depSub = allSubs[dep];
                 return depSub && depSub.subtask_id === failedSubtaskId;
             }
             return dep === failedSubtaskId;
@@ -134,7 +146,7 @@ function blockDependents(failedSubtaskId, allSubs) {
         if (depends) {
             intake.updateSubtask(s.subtask_id, {
                 status: 'blocked',
-                error: `Blocked: dependency "${failedSubtaskId}" failed`,
+                error: "Blocked: dependency \"".concat(failedSubtaskId, "\" failed"),
             });
         }
     }
@@ -143,19 +155,20 @@ function blockDependents(failedSubtaskId, allSubs) {
  * Check if all subtasks are in terminal state. If so, mark the parent task accordingly.
  */
 function checkTaskCompletion(taskId, allSubs) {
-    const subs = allSubs || intake.getSubtasksForTask(taskId);
+    var subs = allSubs || intake.getSubtasksForTask(taskId);
     if (!subs.length)
         return;
     // Don't finalize while any subtask needs human action
-    const anyStopped = subs.some(s => state_machine_1.SUBTASK_STOPPING.has(s.status));
+    var anyStopped = subs.some(function (s) { return state_machine_1.SUBTASK_STOPPING.has(s.status); });
     if (anyStopped)
         return;
     // Auto-block proposed subtasks whose dependencies are blocked/failed
-    for (const s of subs) {
+    for (var _i = 0, subs_1 = subs; _i < subs_1.length; _i++) {
+        var s = subs_1[_i];
         if (s.status !== 'proposed')
             continue;
-        const depsBlocked = (s.depends_on || []).some((dep) => {
-            const depIdx = typeof dep === 'number' ? dep : subs.findIndex(x => x.subtask_id === dep);
+        var depsBlocked = (s.depends_on || []).some(function (dep) {
+            var depIdx = typeof dep === 'number' ? dep : subs.findIndex(function (x) { return x.subtask_id === dep; });
             if (depIdx < 0 || depIdx >= subs.length)
                 return false;
             return subs[depIdx].status === 'blocked' || subs[depIdx].status === 'failed';
@@ -165,68 +178,79 @@ function checkTaskCompletion(taskId, allSubs) {
         }
     }
     // Re-check after auto-blocking
-    const refreshedSubs = intake.getSubtasksForTask(taskId);
-    const allTerminal = refreshedSubs.every(s => state_machine_1.SUBTASK_TERMINAL.has(s.status));
+    var refreshedSubs = intake.getSubtasksForTask(taskId);
+    var allTerminal = refreshedSubs.every(function (s) { return state_machine_1.SUBTASK_TERMINAL.has(s.status); });
     if (!allTerminal)
         return;
-    const anyFailed = subs.some(s => s.status === 'failed');
+    var anyFailed = subs.some(function (s) { return s.status === 'failed'; });
     // Part 66: Wire runtime deliverable pipeline — validate contract at task completion
     if (!anyFailed) {
         try {
-            const cos = require('./chief-of-staff');
-            const intakeTask = intake.getTask(taskId);
-            const engineId = intakeTask?.domain || 'general';
-            const result = cos.onRuntimeTaskComplete(taskId, engineId);
+            var cos = require('./chief-of-staff');
+            var intakeTask = intake.getTask(taskId);
+            var engineId = (intakeTask === null || intakeTask === void 0 ? void 0 : intakeTask.domain) || 'general';
+            var result = cos.onRuntimeTaskComplete(taskId, engineId);
             if (result && !result.gate_passed) {
                 // Contract violated — still mark done but record the violation
                 intake.updateTask(taskId, { status: 'done' });
             }
         }
-        catch { /* pipeline not critical for task completion */ }
+        catch ( /* pipeline not critical for task completion */_a) { /* pipeline not critical for task completion */ }
     }
     intake.updateTask(taskId, { status: anyFailed ? 'failed' : 'done' });
+    // Behavior learning: record task outcome event (live_observed)
+    try {
+        var behaviorMod = require('./behavior');
+        var intakeTask2 = intake.getTask(taskId);
+        if (anyFailed) {
+            behaviorMod.recordEvent('output_abandoned', { reason: 'task_failed', source: 'workflow_completion' }, { taskId: taskId, engine: intakeTask2 === null || intakeTask2 === void 0 ? void 0 : intakeTask2.domain });
+        }
+        else {
+            behaviorMod.recordEvent('output_accepted', { source: 'workflow_completion' }, { taskId: taskId, engine: intakeTask2 === null || intakeTask2 === void 0 ? void 0 : intakeTask2.domain });
+        }
+    }
+    catch ( /* behavior module non-fatal */_b) { /* behavior module non-fatal */ }
     // Proactive delivery: emit notification on task completion so operator sees results
     try {
-        const notif = require('./in-app-notifications');
-        const intakeTask = intake.getTask(taskId);
-        const taskTitle = intakeTask?.title || taskId;
-        const completedSubs = refreshedSubs.filter(s => s.status === 'done');
-        const outputPreview = completedSubs
-            .filter(s => s.output)
-            .map(s => s.what_done || s.output.slice(0, 100))
+        var notif = require('./in-app-notifications');
+        var intakeTask = intake.getTask(taskId);
+        var taskTitle = (intakeTask === null || intakeTask === void 0 ? void 0 : intakeTask.title) || taskId;
+        var completedSubs = refreshedSubs.filter(function (s) { return s.status === 'done'; });
+        var outputPreview = completedSubs
+            .filter(function (s) { return s.output; })
+            .map(function (s) { return s.what_done || s.output.slice(0, 100); })
             .slice(0, 3)
             .join(' | ');
         notif.emitNotification({
             type: anyFailed ? 'workflow.failed' : 'workflow.complete',
             severity: anyFailed ? 'high' : 'medium',
-            title: anyFailed ? `Task failed: ${taskTitle.slice(0, 60)}` : `Task complete: ${taskTitle.slice(0, 60)}`,
+            title: anyFailed ? "Task failed: ".concat(taskTitle.slice(0, 60)) : "Task complete: ".concat(taskTitle.slice(0, 60)),
             message: outputPreview.slice(0, 400) || (anyFailed ? 'One or more subtasks failed' : 'All subtasks completed successfully'),
         });
     }
-    catch { /* notification non-fatal */ }
+    catch ( /* notification non-fatal */_c) { /* notification non-fatal */ }
     // Save combined deliverable file for easy access
     if (!anyFailed) {
         try {
-            const fs = require('fs');
-            const path = require('path');
-            const intakeTask = intake.getTask(taskId);
-            const completedSubs = refreshedSubs.filter(s => s.status === 'done' && s.output);
+            var fs = require('fs');
+            var path = require('path');
+            var intakeTask = intake.getTask(taskId);
+            var completedSubs = refreshedSubs.filter(function (s) { return s.status === 'done' && s.output; });
             if (completedSubs.length > 0 && intakeTask) {
-                const today = new Date().toISOString().slice(0, 10);
-                const safeName = (intakeTask.title || 'task').replace(/[^a-zA-Z0-9-_]/g, '-').slice(0, 40);
-                const deliverableContent = [
-                    `# ${intakeTask.title}`,
-                    `**Domain:** ${intakeTask.domain} | **Date:** ${today} | **Subtasks:** ${completedSubs.length}`,
-                    '',
-                    ...completedSubs.map(s => `## ${s.title}\n${s.output || s.what_done || 'No output'}`),
-                ].join('\n\n');
-                const delivDir = path.resolve(__dirname, '..', '..', 'state', 'deliverables');
+                var today = new Date().toISOString().slice(0, 10);
+                var safeName = (intakeTask.title || 'task').replace(/[^a-zA-Z0-9-_]/g, '-').slice(0, 40);
+                var deliverableContent = __spreadArray([
+                    "# ".concat(intakeTask.title),
+                    "**Domain:** ".concat(intakeTask.domain, " | **Date:** ").concat(today, " | **Subtasks:** ").concat(completedSubs.length),
+                    ''
+                ], completedSubs.map(function (s) { return "## ".concat(s.title, "\n").concat(s.output || s.what_done || 'No output'); }), true).join('\n\n');
+                var delivDir = path.resolve(__dirname, '..', '..', 'state', 'deliverables');
                 if (!fs.existsSync(delivDir))
                     fs.mkdirSync(delivDir, { recursive: true });
-                fs.writeFileSync(path.join(delivDir, `${today}-${safeName}.md`), deliverableContent);
+                fs.writeFileSync(path.join(delivDir, "".concat(today, "-").concat(safeName, ".md")), deliverableContent);
             }
         }
-        catch { /* deliverable save non-fatal */ }
+        catch ( /* deliverable save non-fatal */_d) { /* deliverable save non-fatal */ }
     }
 }
 /**
@@ -234,35 +258,35 @@ function checkTaskCompletion(taskId, allSubs) {
  * Links them to the parent task and sets up dependency chains.
  */
 function materializeSubtasks(taskId, deliberation) {
-    const subtaskDefs = deliberation.subtasks || [];
-    const created = [];
-    const task = intake.getTask(taskId);
-    const domain = task?.domain || 'general';
-    const isCodeTask = deliberation.is_code_task || false;
-    for (let i = 0; i < subtaskDefs.length; i++) {
-        const def = subtaskDefs[i];
+    var subtaskDefs = deliberation.subtasks || [];
+    var created = [];
+    var task = intake.getTask(taskId);
+    var domain = (task === null || task === void 0 ? void 0 : task.domain) || 'general';
+    var isCodeTask = deliberation.is_code_task || false;
+    var _loop_1 = function (i) {
+        var def = subtaskDefs[i];
         // Path validation for implement/claude subtasks on code tasks
-        let validatedRead = def.files_to_read || [];
-        let validatedWrite = def.files_to_write || [];
-        let pathWarnings = [];
+        var validatedRead = def.files_to_read || [];
+        var validatedWrite = def.files_to_write || [];
+        var pathWarnings = [];
         if (isCodeTask && (def.stage === 'implement' || def.assigned_model === 'claude')) {
-            const allPaths = [...validatedRead, ...validatedWrite];
+            var allPaths = __spreadArray(__spreadArray([], validatedRead, true), validatedWrite, true);
             if (allPaths.length > 0) {
-                const validation = repoScanner.validatePaths(allPaths);
-                if (!validation.valid) {
-                    validatedRead = validatedRead.filter((f) => !validation.missing.includes(f));
-                    validatedWrite = validatedWrite.filter((f) => !validation.missing.includes(f));
-                    pathWarnings = validation.missing;
+                var validation_1 = repoScanner.validatePaths(allPaths);
+                if (!validation_1.valid) {
+                    validatedRead = validatedRead.filter(function (f) { return !validation_1.missing.includes(f); });
+                    validatedWrite = validatedWrite.filter(function (f) { return !validation_1.missing.includes(f); });
+                    pathWarnings = validation_1.missing;
                 }
             }
             if (validatedRead.length === 0 && validatedWrite.length === 0 && def.stage === 'implement') {
                 def._blocked_no_files = true;
             }
         }
-        const st = intake.createSubtask({
+        var st = intake.createSubtask({
             parent_task_id: taskId,
-            title: def.title || `Subtask ${i + 1}`,
-            domain,
+            title: def.title || "Subtask ".concat(i + 1),
+            domain: domain,
             stage: def.stage || 'audit',
             assigned_role: def.assigned_role || 'general',
             assigned_model: def.assigned_model || 'openai',
@@ -272,7 +296,7 @@ function materializeSubtasks(taskId, deliberation) {
             files_to_write: validatedWrite,
             risk_level: def.risk_level || 'green',
             approval_required: !!def.approval_required,
-            depends_on: (def.depends_on || []).map((dep) => {
+            depends_on: (def.depends_on || []).map(function (dep) {
                 if (typeof dep === 'number' && dep < created.length) {
                     return created[dep].subtask_id;
                 }
@@ -289,6 +313,9 @@ function materializeSubtasks(taskId, deliberation) {
             });
         }
         created.push(st);
+    };
+    for (var i = 0; i < subtaskDefs.length; i++) {
+        _loop_1(i);
     }
     return created;
 }
@@ -296,9 +323,10 @@ function materializeSubtasks(taskId, deliberation) {
  * Queue the first batch of subtasks that have no dependencies.
  */
 function queueInitialSubtasks(taskId) {
-    const subs = intake.getSubtasksForTask(taskId);
-    const queued = [];
-    for (const s of subs) {
+    var subs = intake.getSubtasksForTask(taskId);
+    var queued = [];
+    for (var _i = 0, subs_2 = subs; _i < subs_2.length; _i++) {
+        var s = subs_2[_i];
         if (s.status !== 'proposed')
             continue;
         if (!s.depends_on || !s.depends_on.length) {
@@ -316,4 +344,3 @@ function queueInitialSubtasks(taskId) {
     }
     return queued;
 }
-//# sourceMappingURL=workflow.js.map

@@ -18353,5 +18353,49 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-16T22:20:25.086Z"
+  },
+  "t_mmtr9sqm6jvw": {
+    "task_id": "t_mmtr9sqm6jvw",
+    "deliverable_id": "dlv_rpgpo_tmmtr9sqm6jvw_document_e8333b11",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T22:29:14.832Z"
+  },
+  "t_mmtr9srg5j5c": {
+    "task_id": "t_mmtr9srg5j5c",
+    "deliverable_id": "dlv_rpgpo_tmmtr9srg5j5c_document_a0219d5c",
+    "engine_id": "careeregine",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T22:29:21.400Z"
+  },
+  "t_mmtr9ssraz2z": {
+    "task_id": "t_mmtr9ssraz2z",
+    "deliverable_id": "dlv_rpgpo_tmmtr9ssraz2z_recommendation_621589b0",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T22:29:29.131Z"
   }
 }
