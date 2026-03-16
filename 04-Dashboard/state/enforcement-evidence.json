@@ -1,5 +1,65 @@
 [
   {
+    "record_id": "ee_mmsi3ks3rw89",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing artifacts, premise, bea",
+    "scope_type": "task",
+    "scope_id": "t_mmsi1cu9i8vq",
+    "route": "screenwriting",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T01:24:34.419Z"
+  },
+  {
+    "record_id": "ee_mmsi3gir0jgt",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmsi1ba1cw1z",
+    "route": "wealthresearch",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T01:24:28.899Z"
+  },
+  {
+    "record_id": "ee_mmsi3bfzugrd",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmsi19psq5r6",
+    "route": "learning",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T01:24:22.319Z"
+  },
+  {
+    "record_id": "ee_mmsi32zvk6rt",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmsi1852lrik",
+    "route": "writing",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T01:24:11.371Z"
+  },
+  {
+    "record_id": "ee_mmsi2gt49g38",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing recommendations, thesis",
+    "scope_type": "task",
+    "scope_id": "t_mmsi16k87n6f",
+    "route": "research",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T01:23:42.616Z"
+  },
+  {
     "record_id": "ee_mmshsn6yesyw",
     "area": "runtime_deliverable",
     "middleware_ran": "runtime-deliverable-pipeline",

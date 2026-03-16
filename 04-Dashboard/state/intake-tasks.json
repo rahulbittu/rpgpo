@@ -1,5 +1,347 @@
 [
   {
+    "task_id": "t_mmsi1cu9i8vq",
+    "title": "Write a scene where two co-founders celebrate their first paying customer. Inclu",
+    "raw_request": "Write a scene where two co-founders celebrate their first paying customer. Include realistic dialogue, emotion, and a callback to an earlier struggle. 3 minutes.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:22:50.817Z",
+    "updated_at": "2026-03-16T01:24:34.429Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:23:21.113Z",
+      "interpreted_objective": "Write a scene where two co-founders celebrate their first paying customer, including realistic dialogue, emotion, and a callback to an earlier struggle.",
+      "expected_outcome": "A well-crafted scene with engaging dialogue and emotional depth that highlights the co-founders' journey and success.",
+      "key_unknowns": [
+        "The specific earlier struggle to reference",
+        "The personalities and dynamics of the co-founders",
+        "The setting and context of the celebration"
+      ],
+      "recommended_strategy": "First, gather context on common struggles faced by startup co-founders to identify a realistic callback. Then, write the scene focusing on authentic dialogue and emotional resonance, ensuring it fits within a three-minute timeframe.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research common startup co-founder struggles",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of common struggles faced by startup co-founders with citations.",
+          "prompt": "Search the web for common struggles faced by startup co-founders. Include specific examples and citations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write the co-founders celebration scene",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A scene script with dialogue and emotional depth, highlighting the co-founders' celebration and referencing an earlier struggle.",
+          "prompt": "Based on the research results, write a scene where two co-founders celebrate their first paying customer. Include realistic dialogue, emotion, and a callback to an earlier struggle. Ensure the scene is engaging and fits within a three-minute timeframe.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-cofounders-celebration.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1960
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsi1ba1cw1z",
+    "title": "Design a personal financial dashboard that tracks net worth, investment performa",
+    "raw_request": "Design a personal financial dashboard that tracks net worth, investment performance, spending by category, and savings rate. Include data sources and update frequency.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:22:48.793Z",
+    "updated_at": "2026-03-16T01:24:28.902Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:23:15.089Z",
+      "interpreted_objective": "Design a personal financial dashboard for tracking net worth, investment performance, spending by category, and savings rate.",
+      "expected_outcome": "A detailed plan for a personal financial dashboard including data sources, update frequency, and implementation strategy.",
+      "key_unknowns": [
+        "Specific data sources to use",
+        "Preferred update frequency",
+        "Technical stack for implementation"
+      ],
+      "recommended_strategy": "Research existing financial dashboards to identify best practices and data sources. Develop a strategy for integrating these elements into a cohesive dashboard design. Provide a detailed report outlining the dashboard's features, data sources, update frequency, and next steps for implementation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Existing Financial Dashboards",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices, common features, and data sources used in existing financial dashboards.",
+          "prompt": "Search the web for current, specific information about existing personal financial dashboards. Include details on best practices, common features, data sources, and update frequencies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Dashboard Design Recommendations",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed report outlining the recommended design for a personal financial dashboard, including data sources, update frequency, and implementation strategy.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for designing a personal financial dashboard. Include specific data sources, update frequency, and a high-level implementation strategy with concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2368
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsi19psq5r6",
+    "title": "Create a 4-week plan to improve public speaking skills for an introvert engineer",
+    "raw_request": "Create a 4-week plan to improve public speaking skills for an introvert engineer. Include daily practice, feedback mechanisms, and confidence building techniques.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:22:46.768Z",
+    "updated_at": "2026-03-16T01:24:22.322Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:22:56.342Z",
+      "interpreted_objective": "Develop a 4-week plan to enhance public speaking skills for an introverted engineer.",
+      "expected_outcome": "A structured plan with daily practices, feedback mechanisms, and confidence-building techniques to improve public speaking skills.",
+      "key_unknowns": [
+        "Specific public speaking challenges faced by introverted engineers",
+        "Preferred feedback mechanisms for introverts",
+        "Effective confidence-building techniques tailored to engineers"
+      ],
+      "recommended_strategy": "Research effective public speaking improvement techniques, especially for introverts. Synthesize findings into a detailed 4-week plan that includes daily practice routines, feedback methods, and confidence-building activities. Ensure the plan is actionable and tailored to an engineer's context.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research public speaking improvement techniques for introverts",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of effective public speaking techniques and practices for introverts.",
+          "prompt": "Search the web for current, specific information about effective public speaking improvement techniques for introverts. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize a 4-week public speaking improvement plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 4-week plan for improving public speaking skills, including daily practices, feedback mechanisms, and confidence-building techniques.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 4-week plan to improve public speaking skills for an introverted engineer. Include daily practice routines, feedback mechanisms, and confidence-building techniques. Ensure the plan is actionable and tailored to an engineer's context.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2044
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsi1852lrik",
+    "title": "Write a technical specification for implementing WebSocket-based real-time colla",
+    "raw_request": "Write a technical specification for implementing WebSocket-based real-time collaboration in a document editor. Include conflict resolution strategy.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:22:44.726Z",
+    "updated_at": "2026-03-16T01:24:11.375Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:22:52.919Z",
+      "interpreted_objective": "Create a technical specification for implementing WebSocket-based real-time collaboration in a document editor, including conflict resolution strategies.",
+      "expected_outcome": "A comprehensive technical specification document that outlines the architecture, WebSocket integration, and conflict resolution strategies for real-time collaboration in a document editor.",
+      "key_unknowns": [
+        "Specific requirements or constraints for the document editor",
+        "Existing architecture of the document editor",
+        "Preferred conflict resolution strategies"
+      ],
+      "recommended_strategy": "First, gather information on WebSocket integration and conflict resolution strategies in real-time collaborative systems. Then, synthesize this information into a detailed technical specification document tailored to the document editor's needs. Ensure the document is clear, actionable, and aligns with industry best practices.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research WebSocket Integration for Real-Time Collaboration",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed report on best practices and strategies for integrating WebSocket for real-time collaboration in document editors.",
+          "prompt": "Search the web for current, specific information about WebSocket integration for real-time collaboration in document editors. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Technical Specification Document",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A technical specification document detailing the architecture, WebSocket integration, and conflict resolution strategies for real-time collaboration.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a technical specification document for implementing WebSocket-based real-time collaboration in a document editor. Include specific strategies for conflict resolution, architecture design, and integration steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2045
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsi16k87n6f",
+    "title": "Compare the best note-taking apps for developers in 2026. Evaluate Obsidian, Not",
+    "raw_request": "Compare the best note-taking apps for developers in 2026. Evaluate Obsidian, Notion, and Logseq on speed, offline support, plugin ecosystem, and data portability.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:22:42.680Z",
+    "updated_at": "2026-03-16T01:23:42.627Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:22:47.189Z",
+      "interpreted_objective": "Compare Obsidian, Notion, and Logseq for developers in 2026 focusing on speed, offline support, plugin ecosystem, and data portability.",
+      "expected_outcome": "A detailed comparison report of the three note-taking apps with actionable insights for developers.",
+      "key_unknowns": [
+        "Current speed benchmarks for each app in 2026",
+        "Extent of offline support for each app",
+        "Details of the plugin ecosystem for each app",
+        "Data portability features and limitations for each app"
+      ],
+      "recommended_strategy": "First, conduct a comprehensive web search to gather the latest information on Obsidian, Notion, and Logseq regarding the specified criteria. Then, synthesize the findings into a structured report highlighting the strengths and weaknesses of each app.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Note-Taking Apps",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on speed, offline support, plugin ecosystem, and data portability for Obsidian, Notion, and Logseq.",
+          "prompt": "Search the web for current, specific information about Obsidian, Notion, and Logseq in 2026. Focus on speed, offline support, plugin ecosystem, and data portability. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Obsidian, Notion, and Logseq based on the research findings.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for developers comparing Obsidian, Notion, and Logseq. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2026-note-taking-apps.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2122
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
     "task_id": "t_mmshrdujuiu5",
     "title": "Research the market for community-driven local business review platforms and tel",
     "raw_request": "Research the market for community-driven local business review platforms and tell me whether it is actually worth building one in 2026. Include market size, competitors, their funding, user numbers, and honest assessment of viability.",
