@@ -1,52 +1,30 @@
 {
-  "current_phase": "reliability_hardening_phase_a",
-  "phase_description": "Foundation + Audit + Signal Infrastructure",
-  "batch": 1,
+  "current_phase": "reliability_hardening_phase_a_complete",
+  "phase_description": "MANDATORY REVIEW CHECKPOINT — awaiting operator approval for Phase B",
+  "batch": 6,
   "total_tasks": 1230,
   "done_tasks": 1178,
-  "failed_tasks": 51,
-  "consecutive_clean_batches": 45,
   "behavior_learning": {
-    "status": "phase_a_batch_1_complete",
-    "baseline_captured": true,
-    "signal_schema_version": "2.0",
-    "defined_signals": 12,
-    "active_signals": 1,
+    "status": "phase_a_complete",
     "total_events": 3432,
-    "event_types_captured": 4,
-    "event_types_defined": 17,
-    "gaps": [
-      "Zero approval/denial events logged (auto-approve bypasses)",
-      "Zero rewrite/followup events",
-      "Zero engine/provider overrides",
-      "Only 1 signal derived from 3432 events",
-      "No engine-level or project-level signals",
-      "No scoped memory layers"
-    ]
+    "total_signals": 26,
+    "active_signals": 24,
+    "advisory_signals": 2,
+    "signal_types": ["output_satisfaction", "task_volume", "communication_style", "output_preferences", "risk_tolerance"],
+    "scoped_memory": "implemented (global + engine)",
+    "scoped_context_api": "GET /api/behavior/context?engine=X"
   },
   "retrieval": {
-    "status": "designed",
-    "index_manifest": "created",
-    "retrieval_policy": "created",
-    "implementation": "pending_batch_5"
+    "status": "designed — awaiting Phase B implementation",
+    "policy": "artifacts/retrieval/retrieval-policy.json",
+    "index_manifest": "artifacts/retrieval/index-manifest.json"
   },
   "tools": {
-    "status": "designed",
-    "registry": "created",
-    "risk_policies": "created",
+    "status": "designed — awaiting Phase B integration",
+    "registry": "artifacts/tools/tool-registry.json",
     "active_tools": 5,
     "planned_tools": 3
   },
-  "documentation": {
-    "new_docs": [
-      "docs/behavior-baseline.md",
-      "docs/product/gpo-operating-doctrine.md",
-      "docs/governance/human-control-boundaries.md",
-      "docs/governance/automation-safety-rules.md",
-      "docs/tools/private-tool-registry.md",
-      "docs/retrieval/local-retrieval-guide.md"
-    ]
-  },
-  "next_batch": "Batch 2 — Expand event capture with new event types, improve signal derivation",
-  "updated_at": "2026-03-16T21:15:00.000Z"
+  "next_phase": "Phase B — retrieval implementation + conservative execution influence (REQUIRES OPERATOR APPROVAL)",
+  "updated_at": "2026-03-16T22:00:00.000Z"
 }
