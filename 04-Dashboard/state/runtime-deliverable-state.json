@@ -12747,5 +12747,155 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-16T07:03:40.754Z"
+  },
+  "t_mmsudlwoo02n": {
+    "task_id": "t_mmsudlwoo02n",
+    "deliverable_id": "dlv_rpgpo_tmmsudlwoo02n_newsroom_180bccea",
+    "engine_id": "newsroom",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "rankedItems",
+      "summaries",
+      "source_links"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:08:25.374Z"
+  },
+  "t_mmsudlx8yebh": {
+    "task_id": "t_mmsudlx8yebh",
+    "deliverable_id": "dlv_rpgpo_tmmsudlx8yebh_document_5a48d8f7",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:08:32.471Z"
+  },
+  "t_mmsudlxpk42a": {
+    "task_id": "t_mmsudlxpk42a",
+    "deliverable_id": "dlv_rpgpo_tmmsudlxpk42a_document_1faa8a8b",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:08:36.742Z"
+  },
+  "t_mmsudm0qt66r": {
+    "task_id": "t_mmsudm0qt66r",
+    "deliverable_id": "dlv_rpgpo_tmmsudm0qt66r_recommendation_7fb1a7eb",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:08:42.100Z"
+  },
+  "t_mmsudm3hd1lr": {
+    "task_id": "t_mmsudm3hd1lr",
+    "deliverable_id": "dlv_rpgpo_tmmsudm3hd1lr_document_43d16233",
+    "engine_id": "careeregine",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:08:47.308Z"
+  },
+  "t_mmsudm6pl0hm": {
+    "task_id": "t_mmsudm6pl0hm",
+    "deliverable_id": "dlv_rpgpo_tmmsudm6pl0hm_action_plan_ff1e957b",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:08:56.257Z"
+  },
+  "t_mmsudm9q1qkp": {
+    "task_id": "t_mmsudm9q1qkp",
+    "deliverable_id": "dlv_rpgpo_tmmsudm9q1qkp_document_393a0d2d",
+    "engine_id": "general",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:09:02.042Z"
+  },
+  "t_mmsudmch089p": {
+    "task_id": "t_mmsudmch089p",
+    "deliverable_id": "dlv_rpgpo_tmmsudmch089p_document_d7cd626d",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:09:06.950Z"
+  },
+  "t_mmsudmfzrguf": {
+    "task_id": "t_mmsudmfzrguf",
+    "deliverable_id": "dlv_rpgpo_tmmsudmfzrguf_code_change_f4215ad9",
+    "engine_id": "startup",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "diffs",
+      "implementation_plan",
+      "changed_files",
+      "diff_preview"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:09:10.930Z"
+  },
+  "t_mmsudmjbiur4": {
+    "task_id": "t_mmsudmjbiur4",
+    "deliverable_id": "dlv_rpgpo_tmmsudmjbiur4_newsroom_0cde2ad9",
+    "engine_id": "newsroom",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "rankedItems",
+      "summaries",
+      "source_links"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:09:17.346Z"
   }
 }

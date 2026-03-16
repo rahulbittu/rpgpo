@@ -1,5 +1,711 @@
 [
   {
+    "task_id": "t_mmsudmjbiur4",
+    "title": "Design a comprehensive system for managing information overload. Include RSS fee",
+    "raw_request": "Design a comprehensive system for managing information overload. Include RSS feed curation, newsletter triage, social media time-boxing, read-later workflow, information diet principles, and weekly synthesis practice.",
+    "domain": "newsroom",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:08:18.647Z",
+    "updated_at": "2026-03-16T07:13:23.981Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:09:17.318Z",
+      "interpreted_objective": "Design a system to manage information overload with specific strategies for news curation and personal productivity.",
+      "expected_outcome": "A detailed report outlining a comprehensive system for managing information overload, including specific strategies for RSS feed curation, newsletter triage, social media time-boxing, read-later workflow, information diet principles, and weekly synthesis practice.",
+      "key_unknowns": [
+        "Current best practices for RSS feed curation",
+        "Effective methods for newsletter triage",
+        "Optimal strategies for social media time-boxing",
+        "Efficient read-later workflows",
+        "Principles of an effective information diet",
+        "Techniques for weekly synthesis practice"
+      ],
+      "recommended_strategy": "First, conduct research to gather current best practices and strategies for each component of the system. Then, synthesize this information into a cohesive report that provides actionable recommendations for managing information overload.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Information Overload Management Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and strategies for managing information overload, including details on RSS feed curation, newsletter triage, social media time-boxing, read-later workflows, information diet principles, and weekly synthesis practice.",
+          "prompt": "Search the web for current, specific information about best practices and strategies for managing information overload. Include details on RSS feed curation, newsletter triage, social media time-boxing, read-later workflows, information diet principles, and weekly synthesis practice. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Information Overload Management Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report outlining a system for managing information overload with actionable recommendations based on research findings.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report outlining a system for managing information overload. Include actionable recommendations for RSS feed curation, newsletter triage, social media time-boxing, read-later workflows, information diet principles, and weekly synthesis practice.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/newsroom-{date}-information-overload-management.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2458
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelm412"
+  },
+  {
+    "task_id": "t_mmsudmfzrguf",
+    "title": "Create a guide to building a functional mudroom for a busy family. Include stora",
+    "raw_request": "Create a guide to building a functional mudroom for a busy family. Include storage solutions, boot and coat organization, pet station, package receiving area, seasonal gear rotation, and material selection for durability.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:08:18.527Z",
+    "updated_at": "2026-03-16T07:13:14.977Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:09:10.901Z",
+      "interpreted_objective": "Create a comprehensive guide for building a functional mudroom tailored for a busy family.",
+      "expected_outcome": "A detailed guide that includes storage solutions, organization tips, a pet station, package receiving area, seasonal gear rotation, and material selection for durability.",
+      "key_unknowns": [
+        "Specific preferences of the target audience",
+        "Budget constraints",
+        "Available space for the mudroom"
+      ],
+      "recommended_strategy": "Conduct research on current trends and best practices for mudroom design. Synthesize findings into a practical guide that addresses storage, organization, and material durability. Ensure the guide is family-friendly and considers common needs such as pet and package areas.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Mudroom Design Trends",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current trends and best practices in mudroom design.",
+          "prompt": "Search the web for current, specific information about mudroom design trends for busy families. Include storage solutions, boot and coat organization, pet stations, package receiving areas, seasonal gear rotation, and material selection for durability. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Mudroom Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for building a functional mudroom.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a guide for building a functional mudroom for a busy family. Include sections on storage solutions, boot and coat organization, pet station, package receiving area, seasonal gear rotation, and material selection for durability. Provide specific recommendations and practical tips.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2010
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmsudmch089p",
+    "title": "Write a complete story bible for a sci-fi podcast drama about the last generatio",
+    "raw_request": "Write a complete story bible for a sci-fi podcast drama about the last generation ship to leave Earth discovering that every other ship has gone silent. Include crew manifest, ship layout, first season episode breakdown, and sound design notes.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:08:18.401Z",
+    "updated_at": "2026-03-16T07:13:05.249Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:09:06.916Z",
+      "interpreted_objective": "Create a comprehensive story bible for a sci-fi podcast drama.",
+      "expected_outcome": "A detailed document including crew manifest, ship layout, episode breakdown, and sound design notes.",
+      "key_unknowns": [
+        "Specific themes or tones desired for the podcast",
+        "Any existing story elements or constraints",
+        "Target audience for the podcast"
+      ],
+      "recommended_strategy": "First, gather research on successful sci-fi podcasts and story bibles to understand best practices. Next, synthesize this information to create a detailed story bible that includes all requested elements, ensuring it aligns with the inferred themes and tones. Finally, review for coherence and completeness.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research successful sci-fi podcasts and story bibles",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices and key elements from successful sci-fi podcasts and story bibles.",
+          "prompt": "Search the web for current, specific information about successful sci-fi podcasts and story bibles. Include real names, examples, and elements that contribute to their success.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize story bible for the sci-fi podcast",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete story bible including crew manifest, ship layout, episode breakdown, and sound design notes.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive story bible for a sci-fi podcast drama about the last generation ship to leave Earth discovering that every other ship has gone silent. Include a detailed crew manifest, ship layout, first season episode breakdown, and sound design notes.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2066
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsudm9q1qkp",
+    "title": "Plan a 2-week heritage and nature tour through Peru. Include Machu Picchu permit",
+    "raw_request": "Plan a 2-week heritage and nature tour through Peru. Include Machu Picchu permits and altitude acclimatization, Sacred Valley exploration, Lake Titicaca homestays, Colca Canyon trekking, and culinary tours in Lima.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:08:18.302Z",
+    "updated_at": "2026-03-16T07:12:54.545Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:09:02.026Z",
+      "interpreted_objective": "Plan a detailed 2-week heritage and nature tour through Peru, including key sites and activities.",
+      "expected_outcome": "A comprehensive itinerary for a 2-week tour in Peru, covering all specified locations and activities.",
+      "key_unknowns": [
+        "Exact requirements for Machu Picchu permits",
+        "Local accommodation options for Lake Titicaca homestays",
+        "Best culinary tour options in Lima",
+        "Altitude acclimatization strategies"
+      ],
+      "recommended_strategy": "Conduct thorough research on each specified location and activity to gather current information on permits, accommodations, and tours. Synthesize this information into a detailed itinerary that includes travel logistics, daily activities, and recommendations for each location.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Peru Tour Details",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data on Machu Picchu permits, Sacred Valley, Lake Titicaca homestays, Colca Canyon trekking, and culinary tours in Lima.",
+          "prompt": "Search the web for current, specific information about planning a 2-week heritage and nature tour in Peru. Include details on Machu Picchu permits, Sacred Valley exploration, Lake Titicaca homestays, Colca Canyon trekking, and culinary tours in Lima. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Peru Tour Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 2-week itinerary for a heritage and nature tour through Peru, including daily activities and logistics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive 2-week itinerary for a heritage and nature tour in Peru. Include specific recommendations for Machu Picchu permits, Sacred Valley exploration, Lake Titicaca homestays, Colca Canyon trekking, and culinary tours in Lima. Provide daily activities, travel logistics, and accommodation suggestions.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-Peru-Tour-Itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2546
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsudm6pl0hm",
+    "title": "Design a comprehensive respiratory health protocol for urban dwellers. Include a",
+    "raw_request": "Design a comprehensive respiratory health protocol for urban dwellers. Include air quality monitoring, breathing exercises for lung capacity, pollution exposure minimization, mask selection guide for AQI levels, and indoor air management.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:08:18.193Z",
+    "updated_at": "2026-03-16T07:12:38.412Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:08:56.221Z",
+      "interpreted_objective": "Design a comprehensive respiratory health protocol for urban dwellers focusing on air quality and lung health.",
+      "expected_outcome": "A detailed protocol that includes air quality monitoring, breathing exercises, pollution exposure minimization strategies, mask selection guide, and indoor air management tips.",
+      "key_unknowns": [
+        "Current best practices for air quality monitoring",
+        "Effective breathing exercises for lung capacity",
+        "Latest mask technology for different AQI levels",
+        "Optimal indoor air management strategies"
+      ],
+      "recommended_strategy": "Conduct thorough research on each component of the protocol, synthesizing findings into a cohesive guide. Ensure recommendations are evidence-based and actionable, with safety disclaimers as needed.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Air Quality Monitoring and Pollution Minimization",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive data on air quality monitoring tools and pollution exposure minimization strategies with sources.",
+          "prompt": "Search the web for current, specific information about air quality monitoring tools and strategies to minimize pollution exposure for urban dwellers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Breathing Exercises and Mask Selection",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on effective breathing exercises for lung capacity and mask selection guides for different AQI levels with sources.",
+          "prompt": "Search the web for current, specific information about effective breathing exercises for improving lung capacity and guidelines for selecting masks based on AQI levels. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Indoor Air Management Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Information on optimal strategies for managing indoor air quality with sources.",
+          "prompt": "Search the web for current, specific information about strategies for managing indoor air quality in urban environments. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comprehensive Respiratory Health Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and actionable respiratory health protocol document.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive respiratory health protocol for urban dwellers. Include sections on air quality monitoring, breathing exercises, pollution exposure minimization, mask selection guide, and indoor air management. Ensure recommendations are evidence-based and actionable, with safety disclaimers as needed.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-respiratory-health-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2197
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsudm3hd1lr",
+    "title": "Create a guide to building a personal brand on LinkedIn for career advancement. ",
+    "raw_request": "Create a guide to building a personal brand on LinkedIn for career advancement. Include content strategy, engagement tactics, profile optimization, thought leadership positioning, and measuring ROI of LinkedIn activity.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:08:18.077Z",
+    "updated_at": "2026-03-16T07:12:29.350Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:08:47.274Z",
+      "interpreted_objective": "Create a detailed guide for building a personal brand on LinkedIn for career advancement.",
+      "expected_outcome": "A comprehensive guide that includes strategies for content creation, engagement, profile optimization, thought leadership, and measuring ROI on LinkedIn.",
+      "key_unknowns": [
+        "Specific content strategy elements that are most effective on LinkedIn",
+        "Best practices for engagement and thought leadership on LinkedIn",
+        "Methods for measuring ROI specifically from LinkedIn activities"
+      ],
+      "recommended_strategy": "Research current best practices for LinkedIn branding and engagement. Synthesize findings into a structured guide covering content strategy, engagement tactics, profile optimization, thought leadership, and ROI measurement. Ensure the guide is actionable and specific to LinkedIn's platform.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research LinkedIn Branding Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices and strategies for building a personal brand on LinkedIn.",
+          "prompt": "Search the web for current, specific information about best practices for building a personal brand on LinkedIn. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize LinkedIn Branding Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide on building a personal brand on LinkedIn, including content strategy, engagement tactics, profile optimization, thought leadership positioning, and measuring ROI.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for building a personal brand on LinkedIn. Include specific strategies for content creation, engagement, profile optimization, thought leadership, and measuring ROI.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2313
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsudm0qt66r",
+    "title": "Research the best smart doorbells with local video storage. Compare Ring Battery",
+    "raw_request": "Research the best smart doorbells with local video storage. Compare Ring Battery Doorbell Plus, Google Nest Doorbell, and Eufy Video Doorbell S220 with package detection, privacy zones, and integration with existing smart home ecosystems.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:08:17.978Z",
+    "updated_at": "2026-03-16T07:12:16.016Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:08:42.085Z",
+      "interpreted_objective": "Research and compare the best smart doorbells with local video storage, focusing on Ring Battery Doorbell Plus, Google Nest Doorbell, and Eufy Video Doorbell S220.",
+      "expected_outcome": "A comprehensive comparison report detailing features like package detection, privacy zones, and smart home integration for the specified doorbells.",
+      "key_unknowns": [
+        "Current specifications and user reviews for each doorbell",
+        "Comparison of package detection capabilities",
+        "Details on privacy zones and smart home ecosystem integration"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current data on the specified smart doorbells, focusing on their features, reviews, and integration capabilities. Then, synthesize this information into a structured comparison report, highlighting pros, cons, and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Smart Doorbells",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on the Ring Battery Doorbell Plus, Google Nest Doorbell, and Eufy Video Doorbell S220, including features, reviews, and integration capabilities.",
+          "prompt": "Search the web for current, specific information about the Ring Battery Doorbell Plus, Google Nest Doorbell, and Eufy Video Doorbell S220. Focus on local video storage, package detection, privacy zones, and integration with smart home ecosystems. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Doorbell Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the specified smart doorbells, highlighting key features, pros, cons, and recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comparison report for the Ring Battery Doorbell Plus, Google Nest Doorbell, and Eufy Video Doorbell S220. Include details on package detection, privacy zones, and smart home integration. Provide specific pros, cons, and recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-11-02-smart-doorbells.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2235
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsudlxpk42a",
+    "title": "Explain how TCP congestion control works from slow start to advanced algorithms.",
+    "raw_request": "Explain how TCP congestion control works from slow start to advanced algorithms. Cover CUBIC, BBR, ECN-based approaches, buffer bloat, and how different algorithms perform on high-latency satellite links vs fiber.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:08:17.869Z",
+    "updated_at": "2026-03-16T07:12:07.804Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:08:36.718Z",
+      "interpreted_objective": "Explain TCP congestion control mechanisms from basic to advanced algorithms, including their performance on different network types.",
+      "expected_outcome": "A comprehensive report detailing TCP congestion control methods, including CUBIC, BBR, ECN-based approaches, buffer bloat, and performance on satellite vs fiber links.",
+      "key_unknowns": [
+        "Current performance metrics of TCP algorithms on satellite vs fiber links",
+        "Latest advancements in TCP congestion control"
+      ],
+      "recommended_strategy": "Conduct a web search to gather current information on TCP congestion control algorithms and their performance. Then, synthesize this information into a structured report, highlighting key differences and performance metrics.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research TCP Congestion Control",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on TCP congestion control algorithms, including CUBIC, BBR, ECN-based approaches, and their performance on different network types.",
+          "prompt": "Search the web for current, specific information about TCP congestion control algorithms such as CUBIC, BBR, and ECN-based approaches. Include their performance on high-latency satellite links versus fiber networks. Gather real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize TCP Congestion Control Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining TCP congestion control mechanisms, including CUBIC, BBR, ECN-based approaches, buffer bloat, and performance on satellite vs fiber links.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report detailing TCP congestion control mechanisms, including CUBIC, BBR, ECN-based approaches, buffer bloat, and their performance on high-latency satellite links versus fiber networks. Highlight key differences and performance metrics.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-TCP_Congestion_Control.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1971
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsudlx8yebh",
+    "title": "Create a comprehensive guide to health savings account (HSA) investment strategi",
+    "raw_request": "Create a comprehensive guide to health savings account (HSA) investment strategies. Include triple tax advantage optimization, investment menu selection, contribution maximization tactics, Medicare interaction rules, and using HSA as a stealth retirement account.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:08:17.852Z",
+    "updated_at": "2026-03-16T07:11:57.443Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:08:32.438Z",
+      "interpreted_objective": "Create a detailed guide on HSA investment strategies, including tax advantages and retirement planning.",
+      "expected_outcome": "A comprehensive, actionable guide on HSA investment strategies that includes specific tactics and real examples.",
+      "key_unknowns": [
+        "Current best practices for HSA investment",
+        "Specific investment options available in HSAs",
+        "Interaction rules between HSAs and Medicare",
+        "Real-world examples of using HSAs for retirement"
+      ],
+      "recommended_strategy": "Conduct thorough research on current HSA investment strategies, focusing on the triple tax advantage, investment options, and interaction with Medicare. Synthesize findings into a structured guide with actionable insights and examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research HSA Investment Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data and examples on HSA investment strategies, tax advantages, and Medicare rules.",
+          "prompt": "Search the web for current, specific information about health savings account (HSA) investment strategies. Include details on triple tax advantage optimization, investment menu selection, contribution maximization tactics, Medicare interaction rules, and using HSA as a stealth retirement account. Provide real examples, numbers, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize HSA Investment Guide",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on HSA investment strategies with actionable insights and examples.",
+          "prompt": "Based on the research results, synthesize actionable recommendations for HSA investment strategies. Include specific tactics for tax advantage optimization, investment selection, contribution maximization, and interaction with Medicare. Provide real-world examples and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-HSA-Investment-Guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2268
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsudlwoo02n",
+    "title": "Design a comprehensive service mesh architecture using Istio. Include traffic ma",
+    "raw_request": "Design a comprehensive service mesh architecture using Istio. Include traffic management with virtual services, mTLS enforcement, circuit breaking configuration, canary routing with weighted destinations, and observability with Kiali and Jaeger.",
+    "domain": "newsroom",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:08:17.832Z",
+    "updated_at": "2026-03-16T07:11:46.952Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:08:25.339Z",
+      "interpreted_objective": "Design a comprehensive service mesh architecture using Istio for a newsroom application.",
+      "expected_outcome": "A detailed architecture plan that includes traffic management, mTLS enforcement, circuit breaking, canary routing, and observability tools.",
+      "key_unknowns": [
+        "Specific requirements or constraints of the newsroom application",
+        "Current infrastructure and deployment environment",
+        "Level of expertise with Istio and related tools"
+      ],
+      "recommended_strategy": "First, gather information on best practices for implementing Istio in a service mesh architecture. Then, synthesize this information into a detailed architecture plan tailored to the newsroom context, considering traffic management, security, and observability. Finally, compile the findings into a comprehensive report.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the architecture plan"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Istio Service Mesh Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of best practices and guidelines for implementing Istio in a service mesh architecture.",
+          "prompt": "Search the web for current best practices and guidelines for implementing Istio in a service mesh architecture, focusing on traffic management, mTLS enforcement, circuit breaking, canary routing, and observability with Kiali and Jaeger. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Service Mesh Architecture Plan",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed architecture plan for implementing Istio in the newsroom application, including specific configurations and tools.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable architecture plan for implementing Istio in a service mesh for a newsroom application. Include specific configurations for traffic management with virtual services, mTLS enforcement, circuit breaking, canary routing with weighted destinations, and observability with Kiali and Jaeger.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/newsroom-{date}-istio-architecture.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2408
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelm412"
+  },
+  {
     "task_id": "t_mmsu6d6hny5h",
     "title": "Design a comprehensive system for managing creative projects as a side hustle. I",
     "raw_request": "Design a comprehensive system for managing creative projects as a side hustle. Include idea capture, project selection framework, time allocation strategy, portfolio building, and transition planning from hobby to income.",
