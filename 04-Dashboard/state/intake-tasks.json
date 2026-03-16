@@ -1,5 +1,675 @@
 [
   {
+    "task_id": "t_mmsmi7rex14p",
+    "title": "Design a weekly reflection and planning system. Include Sunday review template, ",
+    "raw_request": "Design a weekly reflection and planning system. Include Sunday review template, week-ahead planning, and habit tracking integration.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:27:55.850Z",
+    "updated_at": "2026-03-16T03:31:18.079Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:28:43.528Z",
+      "interpreted_objective": "Design a system for weekly reflection, planning, and habit tracking.",
+      "expected_outcome": "A structured weekly reflection and planning system with templates and habit tracking integration.",
+      "key_unknowns": [
+        "Specific habits to track",
+        "Preferred format for the Sunday review template",
+        "Integration method for habit tracking"
+      ],
+      "recommended_strategy": "Conduct research on existing weekly reflection and planning systems to gather best practices. Synthesize findings into a structured system including a Sunday review template and a week-ahead planning guide. Ensure the system includes a method for habit tracking integration.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Weekly Reflection and Planning Systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices and examples of weekly reflection and planning systems.",
+          "prompt": "Search the web for current, specific information about weekly reflection and planning systems. Include real names, examples, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Design Weekly Reflection and Planning System",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured system for weekly reflection and planning, including a Sunday review template, week-ahead planning guide, and habit tracking integration.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a structured weekly reflection and planning system. Include a Sunday review template, a week-ahead planning guide, and a method for habit tracking integration.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-weekly-reflection-planning.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1937
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsmi6wmb44y",
+    "title": "Create a sustainable home cleaning system for a busy professional. Weekly schedu",
+    "raw_request": "Create a sustainable home cleaning system for a busy professional. Weekly schedule, monthly deep cleans, product recommendations, and time optimization.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:27:54.742Z",
+    "updated_at": "2026-03-16T03:31:11.962Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:28:39.552Z",
+      "interpreted_objective": "Develop a sustainable and efficient home cleaning system tailored for a busy professional.",
+      "expected_outcome": "A detailed weekly cleaning schedule, monthly deep cleaning plan, recommended cleaning products, and strategies for time optimization.",
+      "key_unknowns": [
+        "Specific cleaning preferences or constraints of the professional",
+        "Current cleaning tools and products available",
+        "Time availability for cleaning tasks"
+      ],
+      "recommended_strategy": "Research effective home cleaning schedules and products suitable for busy professionals. Synthesize findings into a comprehensive plan that includes weekly and monthly cleaning tasks, product recommendations, and time-saving tips. Ensure the plan is practical and easy to follow.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Cleaning Schedules and Products",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of effective cleaning schedules and product recommendations for busy professionals, with sources.",
+          "prompt": "Search the web for current, specific information about effective home cleaning schedules and products for busy professionals. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Cleaning System Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with a weekly schedule, monthly deep clean plan, product recommendations, and time optimization strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a sustainable home cleaning system for a busy professional. Include a weekly schedule, monthly deep clean plan, product recommendations, and time optimization strategies.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-cleaning-system.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1956
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsmi62pvnx6",
+    "title": "Write a pitch document for a narrative podcast about the human stories behind ma",
+    "raw_request": "Write a pitch document for a narrative podcast about the human stories behind major tech company pivots. Include 5 episode concepts with research angles.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:27:53.665Z",
+    "updated_at": "2026-03-16T03:31:04.970Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:28:35.069Z",
+      "interpreted_objective": "Create a pitch document for a narrative podcast exploring human stories behind tech company pivots, including five episode concepts with research angles.",
+      "expected_outcome": "A compelling pitch document with well-researched episode concepts that highlight human stories in tech pivots, ready for presentation to potential stakeholders.",
+      "key_unknowns": [
+        "Specific tech company pivots to be featured",
+        "Unique human stories related to these pivots",
+        "Potential research sources for episode concepts"
+      ],
+      "recommended_strategy": "Conduct research to identify tech company pivots and associated human stories. Synthesize findings into episode concepts and compile them into a cohesive pitch document. Ensure each episode concept includes a clear research angle.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tech Company Pivots",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of tech company pivots with potential human stories and research sources.",
+          "prompt": "Search the web for current, specific information about major tech company pivots and the human stories behind them. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Episode Concepts",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured pitch document with five episode concepts, each with a research angle.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable episode concepts for a narrative podcast about tech company pivots. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-podcast-pitch.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1934
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsmi58zgncn",
+    "title": "Plan a 5-day immersive tech conference experience at CES in Las Vegas. Include b",
+    "raw_request": "Plan a 5-day immersive tech conference experience at CES in Las Vegas. Include booth priorities, networking strategy, evening events, and recovery schedule.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:27:52.595Z",
+    "updated_at": "2026-03-16T03:30:57.317Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:28:30.327Z",
+      "interpreted_objective": "Plan a comprehensive 5-day tech conference experience at CES in Las Vegas, focusing on booth priorities, networking, evening events, and recovery schedule.",
+      "expected_outcome": "A detailed itinerary and strategy for attending CES, including booth visits, networking opportunities, evening events, and a recovery plan.",
+      "key_unknowns": [
+        "Specific dates of CES",
+        "Availability of evening events",
+        "Networking opportunities and key contacts",
+        "Booth priorities and locations"
+      ],
+      "recommended_strategy": "Research the latest CES schedule and events to identify key booths and networking opportunities. Develop a daily plan that balances conference activities with evening events and recovery periods. Ensure alignment with Rahul's priorities and constraints.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the conference itinerary and strategy"
+      ],
+      "subtasks": [
+        {
+          "title": "Research CES Schedule and Events",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current CES schedule, booth priorities, and evening events information",
+          "prompt": "Search the web for the latest CES 2024 schedule, including key booths, networking events, and evening activities. Provide specific names, dates, and details.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize CES Conference Strategy",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing the 5-day CES conference strategy, including booth visits, networking, evening events, and recovery schedule.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 5-day CES conference strategy. Include specific booth priorities, networking strategies, evening events, and a recovery schedule. Align with Rahul's priorities and constraints.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-CES-conference-strategy.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1907
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsmi4fc3dnk",
+    "title": "Design a comprehensive eye health program for heavy screen users. Include exerci",
+    "raw_request": "Design a comprehensive eye health program for heavy screen users. Include exercises, blinking protocols, screen settings, and annual checkup schedule.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:27:51.528Z",
+    "updated_at": "2026-03-16T03:30:46.283Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:28:13.224Z",
+      "interpreted_objective": "Design a comprehensive eye health program tailored for individuals who frequently use screens.",
+      "expected_outcome": "A detailed program that includes exercises, blinking protocols, screen settings, and an annual checkup schedule to maintain eye health for heavy screen users.",
+      "key_unknowns": [
+        "Specific exercises effective for eye health",
+        "Optimal screen settings for eye comfort",
+        "Frequency and type of annual checkups recommended for screen users"
+      ],
+      "recommended_strategy": "Conduct research to gather current evidence-based practices for eye health related to screen use. Synthesize findings into a structured program that includes exercises, blinking protocols, screen settings, and checkup schedules. Ensure all recommendations are actionable and include safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Eye Health Practices for Screen Users",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current, evidence-based practices and recommendations for maintaining eye health while using screens.",
+          "prompt": "Search the web for current, specific information about eye health practices for heavy screen users. Include exercises, blinking protocols, screen settings, and annual checkup recommendations. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Eye Health Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable eye health program for screen users, including exercises, blinking protocols, screen settings, and checkup schedules.",
+          "prompt": "Based on the research results, synthesize an actionable eye health program for heavy screen users. Include specific exercises, blinking protocols, screen settings, and an annual checkup schedule. Ensure recommendations are evidence-based and include safety disclaimers.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-eye-health-program.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1904
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsmi3mea9gp",
+    "title": "Create a guide for writing technical blog posts that actually get read. Include ",
+    "raw_request": "Create a guide for writing technical blog posts that actually get read. Include topic selection, SEO basics, promotion strategy, and analytics tracking.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:27:50.486Z",
+    "updated_at": "2026-03-16T03:30:38.878Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:28:09.034Z",
+      "interpreted_objective": "Create a comprehensive guide for writing technical blog posts that attract and engage readers.",
+      "expected_outcome": "A detailed guide covering topic selection, SEO basics, promotion strategy, and analytics tracking, tailored for technical blogging.",
+      "key_unknowns": [
+        "Current best practices for SEO in technical blogging",
+        "Effective promotion strategies for technical content",
+        "Tools and methods for tracking blog analytics"
+      ],
+      "recommended_strategy": "Conduct web research to gather the latest insights on technical blogging, SEO, promotion, and analytics. Synthesize these findings into a structured guide with actionable steps and examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Technical Blogging Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and strategies for writing technical blog posts, including SEO, promotion, and analytics.",
+          "prompt": "Search the web for current, specific information about best practices in writing technical blog posts. Include strategies for topic selection, SEO basics, promotion, and analytics tracking. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Technical Blogging Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on writing technical blog posts, including sections on topic selection, SEO, promotion, and analytics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for writing technical blog posts. Include specific names, numbers, and concrete next steps for topic selection, SEO, promotion, and analytics tracking.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-technical-blogging-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2162
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsmi2tdv6sq",
+    "title": "Research the best home office chairs for people over 6 feet tall. Compare Herman",
+    "raw_request": "Research the best home office chairs for people over 6 feet tall. Compare Herman Miller, Steelcase, and Autonomous options. Include seat depth and height range.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:27:49.441Z",
+    "updated_at": "2026-03-16T03:30:31.016Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:28:05.515Z",
+      "interpreted_objective": "Research and compare the best home office chairs for people over 6 feet tall from Herman Miller, Steelcase, and Autonomous, focusing on seat depth and height range.",
+      "expected_outcome": "A detailed report comparing specific models of home office chairs from Herman Miller, Steelcase, and Autonomous, including seat depth and height range, with a clear recommendation.",
+      "key_unknowns": [
+        "Current models and prices of chairs from Herman Miller, Steelcase, and Autonomous",
+        "Specific seat depth and height range for each chair model",
+        "User reviews and expert opinions on these chair models"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on home office chairs from Herman Miller, Steelcase, and Autonomous, focusing on models suitable for people over 6 feet tall. Then, synthesize this information into a comparative report that highlights pros and cons, seat depth, height range, and provides a recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Office Chairs",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on home office chairs from Herman Miller, Steelcase, and Autonomous, including models, prices, seat depth, and height range.",
+          "prompt": "Search the web for current information about home office chairs from Herman Miller, Steelcase, and Autonomous. Focus on models suitable for people over 6 feet tall, including seat depth and height range. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Chair Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comparative report of home office chairs from Herman Miller, Steelcase, and Autonomous, including specific models, prices, seat depth, height range, pros/cons, and a recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for home office chairs from Herman Miller, Steelcase, and Autonomous. Include specific models, prices, seat depth, height range, pros/cons, and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-home-office-chairs.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2057
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsmi20dqv1i",
+    "title": "Teach me about chaos engineering. Cover principles, tools (Chaos Monkey, Litmus,",
+    "raw_request": "Teach me about chaos engineering. Cover principles, tools (Chaos Monkey, Litmus, Gremlin), experiment design, and how to start safely in production.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:27:48.397Z",
+    "updated_at": "2026-03-16T03:30:25.753Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:28:01.031Z",
+      "interpreted_objective": "Provide an educational overview of chaos engineering, including principles, tools, experiment design, and safe production implementation.",
+      "expected_outcome": "A comprehensive report that educates on chaos engineering, detailing principles, tools like Chaos Monkey, Litmus, and Gremlin, how to design experiments, and guidelines for safe production use.",
+      "key_unknowns": [
+        "Specific level of detail required for each tool",
+        "Rahul's current familiarity with chaos engineering"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on chaos engineering principles and tools. Synthesize this information into a detailed report that includes practical steps for safely starting chaos engineering in production environments.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Chaos Engineering",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on chaos engineering principles, tools, and experiment design.",
+          "prompt": "Search the web for current, specific information about chaos engineering. Include details on principles, tools like Chaos Monkey, Litmus, and Gremlin, experiment design, and safe production practices. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Chaos Engineering Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report on chaos engineering, covering principles, tools, experiment design, and safe production practices.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report on chaos engineering. Include sections on principles, tools like Chaos Monkey, Litmus, and Gremlin, experiment design, and guidelines for safe production use.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-chaos-engineering.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1907
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsmi16xki92",
+    "title": "Create a guide to building wealth through index fund investing on autopilot. Inc",
+    "raw_request": "Create a guide to building wealth through index fund investing on autopilot. Include fund selection, rebalancing strategy, and tax-efficient withdrawals.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:27:47.337Z",
+    "updated_at": "2026-03-16T03:30:15.795Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:27:56.835Z",
+      "interpreted_objective": "Create a comprehensive guide on building wealth through index fund investing, focusing on fund selection, rebalancing strategy, and tax-efficient withdrawals.",
+      "expected_outcome": "A detailed, actionable guide that provides specific steps and strategies for index fund investing on autopilot, including fund selection, rebalancing, and tax-efficient withdrawal methods.",
+      "key_unknowns": [
+        "Specific index funds to recommend",
+        "Optimal rebalancing strategies for different risk profiles",
+        "Tax-efficient withdrawal strategies for different jurisdictions"
+      ],
+      "recommended_strategy": "Conduct research on current best practices and strategies for index fund investing, including fund selection, rebalancing, and tax-efficient withdrawals. Synthesize findings into a comprehensive guide with actionable steps and specific examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Index Fund Investing Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and strategies for index fund investing, including fund selection, rebalancing, and tax-efficient withdrawals.",
+          "prompt": "Search the web for current, specific information about best practices in index fund investing, focusing on fund selection, rebalancing strategies, and tax-efficient withdrawals. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Index Fund Investing",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on building wealth through index fund investing, including specific recommendations for fund selection, rebalancing strategies, and tax-efficient withdrawals.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on index fund investing. Include specific fund recommendations, rebalancing strategies, and tax-efficient withdrawal methods with actionable steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2321
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsmi0dn9jr2",
+    "title": "Write a comprehensive API security checklist. Include OWASP top 10, JWT best pra",
+    "raw_request": "Write a comprehensive API security checklist. Include OWASP top 10, JWT best practices, input validation, and security header configuration.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:27:46.283Z",
+    "updated_at": "2026-03-16T03:29:42.152Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:27:51.774Z",
+      "interpreted_objective": "Create a detailed API security checklist including OWASP top 10, JWT best practices, input validation, and security header configuration.",
+      "expected_outcome": "A comprehensive, clear, and actionable API security checklist that can be used by developers and security teams.",
+      "key_unknowns": [
+        "Specific audience for the checklist",
+        "Level of detail required for each section",
+        "Any additional security topics to include beyond those listed"
+      ],
+      "recommended_strategy": "First, research the latest information on the OWASP top 10, JWT best practices, input validation, and security header configuration. Then, synthesize this information into a structured checklist, ensuring clarity and practicality for developers and security teams.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research API Security Topics",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research notes on OWASP top 10, JWT best practices, input validation, and security header configuration.",
+          "prompt": "Search the web for current, specific information about the OWASP top 10 security risks, JWT best practices, input validation techniques, and security header configurations. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize API Security Checklist",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive API security checklist document.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive API security checklist. Include sections on OWASP top 10, JWT best practices, input validation, and security header configuration. Ensure the checklist is clear, actionable, and suitable for developers and security teams.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2043
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsmbjbaopld",
     "title": "Design a comprehensive personal CRM for maintaining professional relationships. ",
     "raw_request": "Design a comprehensive personal CRM for maintaining professional relationships. Include contact tiers, touchpoint cadence, and birthday/milestone tracking.",
