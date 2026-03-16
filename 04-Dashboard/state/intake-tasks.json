@@ -1,5 +1,724 @@
 [
   {
+    "task_id": "t_mmspvy29c38o",
+    "title": "Design a comprehensive networking system for introverts. Include monthly targets",
+    "raw_request": "Design a comprehensive networking system for introverts. Include monthly targets, event selection criteria, follow-up automation, and relationship depth tracking.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:02:35.313Z",
+    "updated_at": "2026-03-16T05:07:11.869Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:03:32.773Z",
+      "interpreted_objective": "Design a networking system tailored for introverts with specific components for monthly targets, event selection, follow-up automation, and relationship tracking.",
+      "expected_outcome": "A detailed report outlining a structured networking system for introverts, including actionable steps and tools for implementation.",
+      "key_unknowns": [
+        "Specific preferences and challenges faced by introverts in networking",
+        "Existing tools and technologies for follow-up automation",
+        "Methods for tracking relationship depth effectively"
+      ],
+      "recommended_strategy": "First, research existing networking strategies and tools that cater to introverts, focusing on automation and relationship tracking. Then, synthesize this information into a comprehensive system with clear monthly targets and criteria for event selection.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Networking Strategies for Introverts",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current networking strategies and tools tailored for introverts, including automation and tracking solutions.",
+          "prompt": "Search the web for current, specific information about networking strategies for introverts. Include details on monthly targets, event selection criteria, follow-up automation, and relationship depth tracking. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Networking System for Introverts",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report outlining a networking system for introverts with actionable steps and tools.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a networking system tailored for introverts. Include specific monthly targets, event selection criteria, follow-up automation strategies, and methods for relationship depth tracking.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-networking-system-for-introverts.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1979
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmspvx8xavha",
+    "title": "Create a comprehensive guide to maximizing natural light in a home office. Inclu",
+    "raw_request": "Create a comprehensive guide to maximizing natural light in a home office. Include window treatments, mirror placement, paint colors, and desk positioning.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:02:34.257Z",
+    "updated_at": "2026-03-16T05:07:04.817Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:03:28.056Z",
+      "interpreted_objective": "Create a detailed guide on optimizing natural light in a home office.",
+      "expected_outcome": "A comprehensive guide that includes strategies for window treatments, mirror placement, paint colors, and desk positioning to maximize natural light in a home office.",
+      "key_unknowns": [
+        "Current trends in home office design for natural light optimization",
+        "Specific products or brands recommended for window treatments"
+      ],
+      "recommended_strategy": "Conduct research on current best practices and products for maximizing natural light in home offices. Then, synthesize this information into a structured guide that offers actionable advice on window treatments, mirror placement, paint colors, and desk positioning.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Natural Light Optimization",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices, products, and design trends for maximizing natural light in home offices.",
+          "prompt": "Search the web for current, specific information about maximizing natural light in home offices. Include strategies for window treatments, mirror placement, paint colors, and desk positioning. Provide specific names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Natural Light",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide with actionable recommendations for maximizing natural light in a home office.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a guide on maximizing natural light in a home office. Include specific advice on window treatments, mirror placement, paint colors, and desk positioning.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-natural-light-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1969
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmspvwfyjel6",
+    "title": "Write a complete show bible for a sci-fi podcast drama about the last human-oper",
+    "raw_request": "Write a complete show bible for a sci-fi podcast drama about the last human-operated space station after AI takes over Earth. 10 episode season.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:02:33.214Z",
+    "updated_at": "2026-03-16T05:06:57.947Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:03:20.548Z",
+      "interpreted_objective": "Create a detailed show bible for a sci-fi podcast drama about the last human-operated space station after AI takes over Earth.",
+      "expected_outcome": "A comprehensive show bible outlining the series concept, characters, episode summaries, and thematic elements for a 10-episode season.",
+      "key_unknowns": [
+        "Specific themes and tone of the podcast",
+        "Detailed character arcs and development",
+        "Episode-by-episode plot progression"
+      ],
+      "recommended_strategy": "Conduct research on existing sci-fi podcast dramas and their structure. Then, synthesize this research to create a detailed show bible, ensuring it aligns with the unique premise of human-operated space stations and AI dominance.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Sci-Fi Podcast Dramas",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of trends, structures, and successful elements in sci-fi podcast dramas.",
+          "prompt": "Search the web for current, specific information about successful sci-fi podcast dramas. Include real names, episode structures, themes, and narrative techniques used.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Show Bible",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed show bible that includes series concept, character descriptions, episode summaries, and thematic elements.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed show bible for a sci-fi podcast drama about the last human-operated space station after AI takes over Earth. Include series concept, character descriptions, episode summaries, and thematic elements.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-show-bible.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1953
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmspvvmxrxiq",
+    "title": "Plan a 4-day craft beer and outdoor adventure trip to Bend Oregon. Include brewe",
+    "raw_request": "Plan a 4-day craft beer and outdoor adventure trip to Bend Oregon. Include breweries, hiking trails, mountain biking, and river activities.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:02:32.169Z",
+    "updated_at": "2026-03-16T05:06:48.793Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:03:15.260Z",
+      "interpreted_objective": "Plan a 4-day itinerary for a craft beer and outdoor adventure trip to Bend, Oregon.",
+      "expected_outcome": "A detailed itinerary including specific breweries, hiking trails, mountain biking routes, and river activities with dates and logistics.",
+      "key_unknowns": [
+        "Current availability and opening hours of breweries",
+        "Conditions and accessibility of hiking trails",
+        "Availability of mountain biking routes",
+        "River activity options and safety conditions"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on Bend, Oregon's craft beer scene, outdoor activities, and logistics. Synthesize this data into a comprehensive and actionable 4-day itinerary. Ensure all activities are feasible and align with current conditions.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Bend, Oregon Craft Beer and Outdoor Activities",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on breweries, hiking trails, mountain biking, and river activities in Bend, Oregon.",
+          "prompt": "Search the web for current, specific information about craft beer breweries, hiking trails, mountain biking routes, and river activities in Bend, Oregon. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary for Bend, Oregon Trip",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 4-day itinerary for a craft beer and outdoor adventure trip to Bend, Oregon.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 4-day itinerary for a craft beer and outdoor adventure trip to Bend, Oregon. Include specific names, numbers, and concrete next steps for each day.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-bend-oregon-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1915
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmspvutzmxzv",
+    "title": "Design a 30-day mental clarity protocol. Include meditation progression, digital",
+    "raw_request": "Design a 30-day mental clarity protocol. Include meditation progression, digital minimalism, journaling prompts, and cognitive performance tracking.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:02:31.127Z",
+    "updated_at": "2026-03-16T05:06:37.813Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:02:58.941Z",
+      "interpreted_objective": "Design a comprehensive 30-day mental clarity protocol incorporating meditation, digital minimalism, journaling, and cognitive performance tracking.",
+      "expected_outcome": "A detailed, evidence-based 30-day plan that users can follow to improve mental clarity, including daily activities and tracking methods.",
+      "key_unknowns": [
+        "Specific meditation techniques to include",
+        "Metrics for cognitive performance tracking",
+        "Journaling prompts",
+        "Digital minimalism strategies"
+      ],
+      "recommended_strategy": "Conduct research on effective meditation progressions, digital minimalism practices, and cognitive performance tracking methods. Synthesize this information into a structured 30-day protocol with daily activities and tracking guidelines. Ensure all recommendations are evidence-based and include safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Meditation Progression",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, evidence-based meditation techniques suitable for a 30-day progression.",
+          "prompt": "Search the web for current, evidence-based meditation techniques that can be structured into a 30-day progression. Include specific techniques, durations, and any safety considerations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Digital Minimalism Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Effective strategies for digital minimalism that can be integrated into a 30-day plan.",
+          "prompt": "Search the web for effective digital minimalism strategies that can be incorporated into a 30-day mental clarity protocol. Include specific actions and benefits.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Journaling Prompts",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of journaling prompts that enhance mental clarity over 30 days.",
+          "prompt": "Search the web for journaling prompts that are designed to enhance mental clarity. Include prompts that can be used over a 30-day period.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Cognitive Performance Tracking",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Metrics and methods for tracking cognitive performance over 30 days.",
+          "prompt": "Search the web for metrics and methods to track cognitive performance over a 30-day period. Include specific tools or techniques and any safety considerations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile 30-Day Mental Clarity Protocol",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A synthesized 30-day mental clarity protocol including meditation, digital minimalism, journaling, and cognitive performance tracking.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 30-day mental clarity protocol. Include a structured daily plan with meditation progression, digital minimalism activities, journaling prompts, and cognitive performance tracking methods. Ensure all recommendations are evidence-based and include safety disclaimers where necessary.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2424
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmspvu182zq7",
+    "title": "Create a comprehensive guide to navigating corporate politics as a technical lea",
+    "raw_request": "Create a comprehensive guide to navigating corporate politics as a technical leader. Include building alliances, managing stakeholders, and handling organizational change.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:02:30.092Z",
+    "updated_at": "2026-03-16T05:06:30.098Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:02:51.875Z",
+      "interpreted_objective": "Create a comprehensive guide for technical leaders on navigating corporate politics.",
+      "expected_outcome": "A detailed guide that includes strategies for building alliances, managing stakeholders, and handling organizational change, tailored for technical leaders.",
+      "key_unknowns": [
+        "Specific challenges faced by technical leaders in corporate politics",
+        "Best practices for alliance building in technical environments",
+        "Effective stakeholder management techniques for technical leaders",
+        "Strategies for handling organizational change in technical roles"
+      ],
+      "recommended_strategy": "Conduct research to identify common challenges and strategies in corporate politics for technical leaders. Synthesize this information into a practical guide that includes actionable steps and real-world examples. Ensure the guide is tailored to the context of data engineering leadership.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Corporate Politics for Technical Leaders",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current challenges and strategies in corporate politics for technical leaders.",
+          "prompt": "Search the web for current, specific information about challenges and strategies in corporate politics for technical leaders. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Navigating Corporate Politics",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for technical leaders on navigating corporate politics, including building alliances, managing stakeholders, and handling organizational change.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a guide on navigating corporate politics as a technical leader. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2278
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmspvt8i5xdy",
+    "title": "Research the best home office plants that thrive in low light conditions. Includ",
+    "raw_request": "Research the best home office plants that thrive in low light conditions. Include air purification rating, watering frequency, and pet safety. Top 10 recommendations.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:02:29.058Z",
+    "updated_at": "2026-03-16T05:06:23.139Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:02:48.554Z",
+      "interpreted_objective": "Identify the top 10 home office plants that thrive in low light, with details on air purification, watering frequency, and pet safety.",
+      "expected_outcome": "A detailed report listing the top 10 low-light home office plants, including their air purification rating, watering frequency, and pet safety information.",
+      "key_unknowns": [
+        "Current best plants for low light conditions",
+        "Air purification ratings for these plants",
+        "Watering frequency for each plant",
+        "Pet safety information for each plant"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on low-light home office plants, focusing on air purification, watering needs, and pet safety. Then, synthesize this data into a structured report with specific plant recommendations and details.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Low-Light Home Office Plants",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on the top 10 low-light home office plants, including air purification ratings, watering frequency, and pet safety.",
+          "prompt": "Search the web for current, specific information about the best home office plants that thrive in low light conditions. Include details on air purification rating, watering frequency, and pet safety. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Plant Information",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report listing the top 10 low-light home office plants with details on air purification, watering frequency, and pet safety.",
+          "prompt": "Based on the research results from the prior subtask, synthesize actionable recommendations for the top 10 low-light home office plants. Include specific names, air purification ratings, watering frequency, and pet safety information.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-low-light-office-plants.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1993
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmspvsfnfuzx",
+    "title": "Teach me about modern CPU architecture for software developers. Cover caches, br",
+    "raw_request": "Teach me about modern CPU architecture for software developers. Cover caches, branch prediction, SIMD, memory ordering, and how to write cache-friendly code.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:02:28.019Z",
+    "updated_at": "2026-03-16T05:06:15.709Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:02:42.862Z",
+      "interpreted_objective": "Educate software developers about modern CPU architecture, focusing on caches, branch prediction, SIMD, memory ordering, and writing cache-friendly code.",
+      "expected_outcome": "A comprehensive, developer-oriented explanation of modern CPU architecture concepts, with practical guidance on writing cache-friendly code.",
+      "key_unknowns": [
+        "Rahul's specific level of prior knowledge on CPU architecture",
+        "Preferred depth of technical detail",
+        "Specific use cases or applications Rahul is interested in"
+      ],
+      "recommended_strategy": "Conduct research on modern CPU architecture focusing on caches, branch prediction, SIMD, and memory ordering. Then, synthesize this information into a detailed, yet accessible guide for software developers, including practical tips for writing cache-friendly code.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Modern CPU Architecture",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on modern CPU architecture, including caches, branch prediction, SIMD, and memory ordering.",
+          "prompt": "Search the web for current, specific information about modern CPU architecture for software developers, focusing on caches, branch prediction, SIMD, memory ordering, and techniques for writing cache-friendly code. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize CPU Architecture Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A developer-oriented guide on modern CPU architecture, including practical tips for writing cache-friendly code.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on modern CPU architecture for software developers. Cover caches, branch prediction, SIMD, memory ordering, and practical tips for writing cache-friendly code. Ensure the explanation is detailed yet accessible.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2054
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmspvrm6igic",
+    "title": "Create a guide to optimizing W2 income through pre-tax deductions. Include 401k ",
+    "raw_request": "Create a guide to optimizing W2 income through pre-tax deductions. Include 401k mega backdoor Roth, HSA triple tax advantage, FSA strategies, and commuter benefits.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:02:26.958Z",
+    "updated_at": "2026-03-16T05:06:06.696Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:02:37.090Z",
+      "interpreted_objective": "Create a guide to optimizing W2 income through pre-tax deductions with specific strategies and examples.",
+      "expected_outcome": "A comprehensive guide detailing strategies for optimizing W2 income through pre-tax deductions, including specific examples and actionable steps.",
+      "key_unknowns": [
+        "Current limits and regulations for 401k mega backdoor Roth contributions",
+        "Specific HSA, FSA, and commuter benefits strategies",
+        "Recent changes in tax laws affecting these deductions"
+      ],
+      "recommended_strategy": "Conduct web research to gather the latest information on pre-tax deduction strategies. Synthesize findings into a detailed guide with examples and actionable steps. Ensure the guide is tailored to current tax laws and includes specific revenue estimates.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Pre-Tax Deduction Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gathered data on current pre-tax deduction strategies, including 401k mega backdoor Roth, HSA, FSA, and commuter benefits.",
+          "prompt": "Search the web for current, specific information about optimizing W2 income through pre-tax deductions. Include details on 401k mega backdoor Roth, HSA triple tax advantage, FSA strategies, and commuter benefits. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Pre-Tax Deductions",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide with specific strategies, examples, and actionable steps for optimizing W2 income through pre-tax deductions.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for optimizing W2 income through pre-tax deductions. Include specific strategies for 401k mega backdoor Roth, HSA, FSA, and commuter benefits. Provide examples, revenue estimates, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-pre-tax-deductions-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2312
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmspvqsuvg81",
+    "title": "Write a comprehensive guide to implementing rate limiting patterns at scale. Cov",
+    "raw_request": "Write a comprehensive guide to implementing rate limiting patterns at scale. Cover distributed rate limiting with Redis, sliding window counters, and token bucket with cluster coordination.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:02:25.902Z",
+    "updated_at": "2026-03-16T05:05:27.360Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:02:31.376Z",
+      "interpreted_objective": "Create a detailed guide on implementing scalable rate limiting patterns using Redis, sliding window counters, and token bucket systems with cluster coordination.",
+      "expected_outcome": "A comprehensive and practical guide that provides clear, actionable steps for implementing distributed rate limiting patterns at scale.",
+      "key_unknowns": [
+        "Specific use cases or scenarios to focus on",
+        "Preferred level of technical detail",
+        "Target audience's familiarity with Redis and rate limiting concepts"
+      ],
+      "recommended_strategy": "First, gather detailed technical information on distributed rate limiting, sliding window counters, and token bucket algorithms, particularly focusing on their implementation using Redis. Then, synthesize this information into a structured guide, ensuring it is clear and actionable for the target audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Rate Limiting Patterns",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on distributed rate limiting, sliding window counters, and token bucket algorithms with Redis.",
+          "prompt": "Search the web for current, specific information about implementing distributed rate limiting patterns at scale using Redis, sliding window counters, and token bucket algorithms. Include real-world examples, best practices, and technical details.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Comprehensive Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and comprehensive guide on implementing rate limiting patterns at scale.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide on implementing distributed rate limiting patterns using Redis, sliding window counters, and token bucket systems with cluster coordination. Ensure the guide is clear, actionable, and tailored to an audience familiar with basic rate limiting concepts.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2052
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmspoe5gf1bb",
     "title": "Design a comprehensive annual planning system. Include vision setting, goal deco",
     "raw_request": "Design a comprehensive annual planning system. Include vision setting, goal decomposition, quarterly milestones, monthly reviews, and adaptation protocols.",
