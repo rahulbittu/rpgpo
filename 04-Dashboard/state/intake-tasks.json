@@ -1,5 +1,677 @@
 [
   {
+    "task_id": "t_mmsq3ujkn2it",
+    "title": "Design a comprehensive skill acquisition framework for learning new programming ",
+    "raw_request": "Design a comprehensive skill acquisition framework for learning new programming languages. Include the 80/20 approach, project-based milestones, and fluency metrics.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:08:44.000Z",
+    "updated_at": "2026-03-16T05:12:12.042Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:09:45.927Z",
+      "interpreted_objective": "Design a detailed framework for efficiently acquiring new programming languages using the 80/20 approach, project-based milestones, and fluency metrics.",
+      "expected_outcome": "A comprehensive, actionable framework document that guides users through learning new programming languages efficiently.",
+      "key_unknowns": [
+        "Specific programming languages to focus on",
+        "Current best practices in language learning",
+        "Effective fluency metrics for programming languages"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and effective strategies for learning programming languages. Then, synthesize this information into a structured framework that incorporates the 80/20 approach, project-based milestones, and fluency metrics.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research current best practices in programming language acquisition",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of data on best practices, strategies, and metrics for learning programming languages.",
+          "prompt": "Search the web for current, specific information about best practices and strategies for learning new programming languages. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize research into a comprehensive skill acquisition framework",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured framework document detailing the 80/20 approach, project-based milestones, and fluency metrics for learning programming languages.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations into a comprehensive skill acquisition framework for learning new programming languages. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-skill-acquisition-framework.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1977
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsq3tqgnmdc",
+    "title": "Create a guide to building a productive morning workspace ritual. Include coffee",
+    "raw_request": "Create a guide to building a productive morning workspace ritual. Include coffee station setup, ambient sound, lighting sequence, and task prioritization flow.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:08:42.952Z",
+    "updated_at": "2026-03-16T05:12:05.832Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:09:31.793Z",
+      "interpreted_objective": "Create a detailed guide for setting up a productive morning workspace ritual, including coffee station setup, ambient sound, lighting sequence, and task prioritization flow.",
+      "expected_outcome": "A comprehensive guide that provides actionable steps for setting up a morning workspace ritual, enhancing productivity through environment and task management.",
+      "key_unknowns": [
+        "Specific preferences or requirements Rahul might have for each component of the ritual",
+        "Any existing workspace constraints or tools Rahul uses"
+      ],
+      "recommended_strategy": "Research best practices for each component of the morning ritual (coffee station setup, ambient sound, lighting, and task prioritization). Then, synthesize these findings into a cohesive guide tailored to enhance productivity. Ensure the guide is actionable and specific.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Morning Workspace Ritual Components",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of best practices and current trends for coffee station setup, ambient sound, lighting, and task prioritization in a workspace.",
+          "prompt": "Search the web for current best practices and trends in setting up a productive morning workspace ritual. Focus on coffee station setup, ambient sound, lighting sequence, and task prioritization flow. Include real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Morning Workspace Ritual",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide outlining steps for setting up a productive morning workspace ritual, incorporating research findings.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for setting up a productive morning workspace ritual. Include specific steps for coffee station setup, ambient sound, lighting sequence, and task prioritization flow. Ensure the guide is actionable and tailored for enhancing productivity.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2136
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsq3sxg4goe",
+    "title": "Write a detailed series proposal for an episodic comedy about a tech support tea",
+    "raw_request": "Write a detailed series proposal for an episodic comedy about a tech support team that secretly runs the most advanced AI lab in the world from a basement.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:08:41.908Z",
+    "updated_at": "2026-03-16T05:11:58.986Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:09:25.710Z",
+      "interpreted_objective": "Develop a detailed series proposal for a comedy about a tech support team secretly running an advanced AI lab.",
+      "expected_outcome": "A comprehensive series proposal that includes the premise, character descriptions, episode ideas, and thematic elements.",
+      "key_unknowns": [
+        "Specific comedic tone and style",
+        "Target audience demographics",
+        "Unique selling points compared to existing tech comedies"
+      ],
+      "recommended_strategy": "First, conduct research on successful episodic comedies with tech themes to identify common elements and unique twists. Then, synthesize this information to create a detailed series proposal that includes the premise, character arcs, and potential episode plots. Ensure the proposal highlights the dual nature of the tech support team and the secret AI lab for comedic effect.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research successful tech-themed comedies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of successful tech-themed comedies with details about their themes, styles, and audience reception.",
+          "prompt": "Search the web for current, specific information about successful episodic comedies with tech themes. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize series proposal",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed series proposal including premise, character descriptions, episode ideas, and thematic elements.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed series proposal for a comedy about a tech support team secretly running an advanced AI lab. Include the premise, character descriptions, potential episode plots, and thematic elements.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-tech-comedy-series-proposal.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1975
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsq3s4mxrsk",
+    "title": "Plan a 5-day jazz and soul food trip to Memphis and New Orleans. Include Beale S",
+    "raw_request": "Plan a 5-day jazz and soul food trip to Memphis and New Orleans. Include Beale Street, French Quarter, live music venues, and signature restaurants.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:08:40.870Z",
+    "updated_at": "2026-03-16T05:11:48.618Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:09:21.031Z",
+      "interpreted_objective": "Plan a detailed 5-day itinerary focused on jazz music and soul food experiences in Memphis and New Orleans.",
+      "expected_outcome": "A comprehensive itinerary including specific venues, restaurants, and activities with dates, costs, and logistics.",
+      "key_unknowns": [
+        "Current availability of live music venues",
+        "Signature restaurants' operating hours",
+        "Exact costs for activities and dining"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on jazz venues and soul food restaurants in Memphis and New Orleans. Then, synthesize the findings into a detailed itinerary with specific venues, dates, and estimated costs.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Jazz and Soul Food in Memphis and New Orleans",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on jazz venues, live music events, and soul food restaurants in Memphis and New Orleans.",
+          "prompt": "Search the web for current information about jazz music venues, live events, and signature soul food restaurants in Memphis and New Orleans. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary for Jazz and Soul Food Trip",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 5-day itinerary including venues, restaurants, activities, dates, and estimated costs.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 5-day itinerary for a jazz and soul food trip to Memphis and New Orleans. Include specific venues, dates, estimated costs, and logistics.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-2023-10-jazz-soul-food-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1894
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsq3rbuaoh0",
+    "title": "Design a comprehensive digestive health protocol for tech workers with sedentary",
+    "raw_request": "Design a comprehensive digestive health protocol for tech workers with sedentary lifestyles. Include fiber intake, probiotics, meal spacing, and movement integration.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:08:39.834Z",
+    "updated_at": "2026-03-16T05:11:41.946Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:09:13.641Z",
+      "interpreted_objective": "Design a digestive health protocol for sedentary tech workers focusing on fiber, probiotics, meal spacing, and movement.",
+      "expected_outcome": "A detailed, evidence-based digestive health protocol tailored for tech workers with sedentary lifestyles.",
+      "key_unknowns": [
+        "Specific dietary preferences or restrictions of the target audience",
+        "Current scientific consensus on optimal fiber intake and probiotics for sedentary individuals",
+        "Effective strategies for integrating movement into a sedentary lifestyle"
+      ],
+      "recommended_strategy": "Conduct research to gather current evidence and recommendations on fiber intake, probiotics, meal spacing, and movement for sedentary lifestyles. Synthesize findings into a comprehensive protocol with actionable steps. Ensure safety disclaimers are included where necessary.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Digestive Health for Sedentary Lifestyles",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current evidence and recommendations on fiber intake, probiotics, meal spacing, and movement for sedentary tech workers.",
+          "prompt": "Search the web for current, specific information about digestive health for tech workers with sedentary lifestyles. Focus on fiber intake, probiotics, meal spacing, and movement integration. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Digestive Health Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive digestive health protocol for sedentary tech workers, including specific recommendations on fiber intake, probiotics, meal spacing, and movement.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a digestive health protocol for tech workers with sedentary lifestyles. Include specific names, numbers, and concrete next steps. Ensure to include safety disclaimers where appropriate.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2053
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsq3qj33mqk",
+    "title": "Create a comprehensive guide to writing winning promotion packets for engineerin",
+    "raw_request": "Create a comprehensive guide to writing winning promotion packets for engineering roles. Include impact documentation, peer feedback collection, and narrative structure.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:08:38.799Z",
+    "updated_at": "2026-03-16T05:11:34.254Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:08:58.954Z",
+      "interpreted_objective": "Create a detailed guide for writing effective promotion packets for engineering roles, focusing on impact documentation, peer feedback, and narrative structure.",
+      "expected_outcome": "A comprehensive guide that provides actionable steps and examples for engineers to create successful promotion packets.",
+      "key_unknowns": [
+        "Specific requirements or expectations of promotion packets in different engineering companies",
+        "Best practices for collecting and incorporating peer feedback",
+        "Effective narrative structures specific to engineering roles"
+      ],
+      "recommended_strategy": "First, research current best practices and examples of successful promotion packets in engineering roles. Then, synthesize this information into a structured guide that includes sections on impact documentation, peer feedback collection, and narrative structure. Ensure the guide is actionable and tailored to engineers seeking promotions.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Promotion Packets",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of best practices, examples, and guidelines for creating promotion packets in engineering roles.",
+          "prompt": "Search the web for current best practices and examples of successful promotion packets for engineering roles. Focus on impact documentation, peer feedback collection, and narrative structure. Include specific examples, company practices, and any available guidelines.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Writing Promotion Packets",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on writing effective promotion packets for engineering roles, including sections on impact documentation, peer feedback, and narrative structure.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for writing winning promotion packets for engineering roles. Include actionable steps and examples for impact documentation, peer feedback collection, and narrative structure.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-promotion-packet-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2161
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsq3pqf55lw",
+    "title": "Research the best smart thermostats for energy savings. Compare Ecobee, Nest, an",
+    "raw_request": "Research the best smart thermostats for energy savings. Compare Ecobee, Nest, and Honeywell. Include learning capabilities, geofencing, and integration options.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:08:37.767Z",
+    "updated_at": "2026-03-16T05:11:27.143Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:08:53.910Z",
+      "interpreted_objective": "Research and compare the best smart thermostats for energy savings, focusing on Ecobee, Nest, and Honeywell.",
+      "expected_outcome": "A comprehensive report detailing the comparison of Ecobee, Nest, and Honeywell smart thermostats, highlighting their learning capabilities, geofencing, and integration options.",
+      "key_unknowns": [
+        "Current pricing and reviews of Ecobee, Nest, and Honeywell thermostats",
+        "Specific learning capabilities of each thermostat",
+        "Geofencing features of each thermostat",
+        "Integration options for each thermostat"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on Ecobee, Nest, and Honeywell smart thermostats, focusing on their features, pricing, and reviews. Then, synthesize this data into a structured report that compares their learning capabilities, geofencing, and integration options.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Smart Thermostats",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Ecobee, Nest, and Honeywell smart thermostats, including features, pricing, and reviews.",
+          "prompt": "Search the web for current, specific information about Ecobee, Nest, and Honeywell smart thermostats. Include details on their learning capabilities, geofencing features, integration options, current pricing, and reviews. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Thermostat Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Ecobee, Nest, and Honeywell smart thermostats, focusing on their learning capabilities, geofencing, and integration options.",
+          "prompt": "Based on the research results from the prior subtask, synthesize actionable recommendations. Include specific comparisons of Ecobee, Nest, and Honeywell smart thermostats, detailing their learning capabilities, geofencing features, integration options, pricing, and reviews. Provide a clear recommendation with reasoning.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-smart-thermostats-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2049
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsq3oxoxwyg",
+    "title": "Teach me about modern compiler optimizations. Cover dead code elimination, loop ",
+    "raw_request": "Teach me about modern compiler optimizations. Cover dead code elimination, loop unrolling, inline expansion, and how JIT compilers work in V8 and JVM.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:08:36.732Z",
+    "updated_at": "2026-03-16T05:11:19.561Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:08:47.809Z",
+      "interpreted_objective": "Provide an educational overview of modern compiler optimizations and JIT compiler workings.",
+      "expected_outcome": "A comprehensive explanation of dead code elimination, loop unrolling, inline expansion, and JIT compilers in V8 and JVM.",
+      "key_unknowns": [
+        "Rahul's prior knowledge on compiler optimizations",
+        "Specific depth of explanation required",
+        "Preferred format for delivery"
+      ],
+      "recommended_strategy": "First, research each optimization technique and how JIT compilers function in V8 and JVM. Then, synthesize this information into a clear and concise educational report that builds from basic concepts to more complex details, using analogies and examples where appropriate.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Compiler Optimizations",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed notes on dead code elimination, loop unrolling, inline expansion, and JIT compilers in V8 and JVM.",
+          "prompt": "Search the web for current, specific information about modern compiler optimizations including dead code elimination, loop unrolling, inline expansion, and how JIT compilers work in V8 and JVM. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Educational Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured educational report explaining the compiler optimizations and JIT compiler workings.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an educational report on modern compiler optimizations. Cover dead code elimination, loop unrolling, inline expansion, and how JIT compilers work in V8 and JVM. Use clear analogies, build from simple to complex, and include examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2062
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsq3o4pgg47",
+    "title": "Create a guide to understanding and optimizing employer equity compensation. Inc",
+    "raw_request": "Create a guide to understanding and optimizing employer equity compensation. Include RSU vesting, ISO exercise strategies, and 83b election decision framework.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:08:35.689Z",
+    "updated_at": "2026-03-16T05:11:05.681Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:08:43.068Z",
+      "interpreted_objective": "Create a detailed guide to understanding and optimizing employer equity compensation, focusing on RSU vesting, ISO exercise strategies, and 83b election decision framework.",
+      "expected_outcome": "A comprehensive guide that provides actionable insights and strategies for optimizing employer equity compensation, including specific examples and decision frameworks.",
+      "key_unknowns": [
+        "Current trends and best practices in RSU vesting and ISO exercise strategies",
+        "Specific examples of 83b election decision frameworks",
+        "Recent changes in tax laws affecting equity compensation"
+      ],
+      "recommended_strategy": "Conduct thorough research on current trends and practices in equity compensation, focusing on RSU vesting, ISO exercise strategies, and 83b election decisions. Synthesize findings into a structured guide with actionable insights and examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Equity Compensation Trends",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data and examples on RSU vesting, ISO exercise strategies, and 83b election frameworks.",
+          "prompt": "Search the web for current, specific information about RSU vesting, ISO exercise strategies, and 83b election decision frameworks. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Equity Compensation Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide with actionable insights on optimizing employer equity compensation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for understanding and optimizing employer equity compensation. Include specific examples, decision frameworks, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-2023-11-01-equity-compensation-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2255
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsq3nbt6vw9",
+    "title": "Write a comprehensive guide to implementing event sourcing with PostgreSQL. Incl",
+    "raw_request": "Write a comprehensive guide to implementing event sourcing with PostgreSQL. Include event store design, projections, snapshots, and replay strategies.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:08:34.649Z",
+    "updated_at": "2026-03-16T05:10:26.364Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:08:39.326Z",
+      "interpreted_objective": "Create a detailed guide on implementing event sourcing with PostgreSQL.",
+      "expected_outcome": "A comprehensive, clear, and actionable guide covering event store design, projections, snapshots, and replay strategies using PostgreSQL.",
+      "key_unknowns": [
+        "Specific audience knowledge level",
+        "Preferred format or structure for the guide",
+        "Any specific constraints or requirements for the guide's content"
+      ],
+      "recommended_strategy": "First, conduct research to gather current best practices and methodologies for implementing event sourcing with PostgreSQL. Then, synthesize this information into a structured guide that covers all requested aspects, ensuring clarity and usability for the target audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Event Sourcing with PostgreSQL",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A comprehensive overview of current best practices and methodologies for event sourcing with PostgreSQL.",
+          "prompt": "Search the web for current, specific information about implementing event sourcing with PostgreSQL. Include details on event store design, projections, snapshots, and replay strategies. Provide real examples, methodologies, and any relevant tools or libraries.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Guide on Event Sourcing with PostgreSQL",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, comprehensive guide on implementing event sourcing with PostgreSQL, covering event store design, projections, snapshots, and replay strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed guide on implementing event sourcing with PostgreSQL. Include sections on event store design, projections, snapshots, and replay strategies, ensuring clarity and actionable steps for the reader.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2048
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmspvy29c38o",
     "title": "Design a comprehensive networking system for introverts. Include monthly targets",
     "raw_request": "Design a comprehensive networking system for introverts. Include monthly targets, event selection criteria, follow-up automation, and relationship depth tracking.",

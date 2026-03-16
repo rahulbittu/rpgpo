@@ -1,172 +1,168 @@
-# Write a comprehensive guide to implementing rate limiting patterns at scale. Cov
+# Write a comprehensive guide to implementing event sourcing with PostgreSQL. Incl
 
 **Domain:** writing | **Date:** 2026-03-16 | **Subtasks:** 2
 
 
 
-## Research Rate Limiting Patterns
-## Distributed Rate Limiting with Redis: Core Patterns
+## Research Event Sourcing with PostgreSQL
+## Event Store Design with PostgreSQL
 
-Distributed rate limiting at scale uses Redis as a centralized store for atomic operations via Lua scripts, ensuring consistency across multiple API instances. Sliding window counters provide near-exact accuracy with low memory (2 keys per client), while token buckets enable controlled bursts using 1 HASH key with 2 fields[1][2].
-
-## Algorithm Comparison and Trade-offs
-
-| Algorithm | Redis Data Structure | Memory per Client | Accuracy | Burst Behavior | Best Use Case |
-|-----------|----------------------|-------------------|----------|----------------|---------------|
-| Fixed Window | STRING + Lua | 1 key | Approximate | 2x burst at boundaries | Simple API limits, login throttling[2] |
-| Sliding Window Counter | STRING x2 + Lua | 2 keys | Near-exact | Smoothed boundaries | General-purpose API rate limiting[2] |
-| Sliding Window Log | SORTED SET + Lua | O(n) entries | Exact | No bursts | High-value APIs, audit trails[2] |
-| Token Bucket | HASH + Lua | 1 key (2 fields) | Exact | Controlled bursts | Bursty traffic with average rate caps[2] |
-
-Fixed windows divide time into discrete intervals (e.g., 10-second blocks), incrementing a counter atomically; vulnerable to boundary bursts where clients send limits at window edges (e.g., 10 requests at second 9 and 10 at second 11 for a 10-per-10s limit)[2].
-
-## Technical Implementation: Sliding Window Counters
-
-Use Lua scripts for atomicity in Redis to avoid race conditions. Example Python code for sliding window (removes expired entries via ZREMRANGEBYSCORE, checks ZCARD, adds timestamped entry if under limit):
+PostgreSQL supports event sourcing by leveraging its **JSONB** data type for storing immutable event streams and **GIN indexes** for efficient querying. A typical event table schema uses columns like `aggregate_id` (UUID), `sequence` (BIGINT for ordering), `event_type` (TEXT), `data` (JSONB), and `timestamp` (TIMESTAMPTZ).
 
 ```
-SLIDING_WINDOW_SCRIPT = """
-local key = KEYS[1]
-local max_requests = tonumber(ARGV[1])
-local window = tonumber(ARGV[2])
-local now = tonumber(ARGV[3])
-redis.call('ZREMRANGEBYSCORE', key, 0, now - window)
-local count = redis.call('ZCARD', key)
-if count < max_requests then
-    redis.call('ZADD', key, now, now .. '-' .. math.random(1000000))
-    redis.call('EXPIRE', key, window)
-    return 1
-else
-    return 0
-end
-"""
+CREATE INDEX idx_metadata ON events USING gin (metadata);
+SELECT * FROM events WHERE metadata @> '{"source": "api", "version": 2}';
 ```
-Register once with `r.script_load()`, call via `r.evalsha(script_sha, 1, key, max_requests, window_seconds, time.time())`. Key format: `rate_limit:dist:{client_id}`[1].
+This indexes nested JSONB for fast lookups on event metadata, enabling queries by source or version[3].
 
-## Technical Implementation: Token Bucket
-
-Tracks tokens in a HASH (fields: tokens, last_refill). Lua script refills based on time elapsed at rate (e.g., capacity=100, refill_rate=10/sec). FastAPI middleware example identifies client by API key/IP, checks `check_token_bucket(client_id, 100, 10)`, returns 429 with headers if exceeded:
-
+**Marten** (.NET library on PostgreSQL) implements a document/event store with direct event appending:
 ```
-Headers: X-RateLimit-Limit: "100", X-RateLimit-Remaining: "0", Retry-After: seconds
+session.Events.Append(command.OrderId, new OrderSubmitted(command.OrderId, command.CustomerId, command.Items));
+await session.SaveChangesAsync(ct);
 ```
-Apply to all routes via middleware[3].
+It handles streams per aggregate ID without repositories[6].
 
-## Real-World Examples at Scale
+## Projections
 
-- **Uber Global Rate Limiter (GRL)**: Replaces per-service Redis token buckets with infrastructure-level probabilistic shedding (drops e.g., 10% traffic as soft limit). Scales to 80M requests/sec across 1,100 services, absorbs 15x surges, mitigates DDoS; reduced tail latency by eliminating Redis deps. Three-tier: clients enforce locally, zone aggregators collect metrics, regional controllers compute limits[6].
-- **OpenAI**: Shifted from static limits to adaptive platform, similar to Uber's for operational efficiency[6].
+Projections build read models from event streams using **CQRS** patterns: live (real-time), catch-up (replay from checkpoint), and persistent (materialized views).
 
-## Best Practices
+- **Projection Patterns skill** automates transforming streams into read models, search indexes, and dashboards with checkpointing for scalability[5].
+- Use PostgreSQL **window functions** for aggregated projections like running totals:
+```
+sum(revenue) OVER (ORDER BY order_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS rolling_7_day_revenue
+```
+This supports efficient read-side views[3].
 
-- Always return rate limit headers (X-RateLimit-Limit, Remaining, Retry-After) for client self-regulation[1][3].
-- Use client_id from API key or IP; apply exponential backoff on 429 responses[3][4].
-- Multi-granularity windows (e.g., 2,000/hour + 33/minute) smooth spikiness[5].
-- Monitor 429 rates with tools like OneUptime for limit tuning or abuse detection[1].
-- For Java/Spring: Use Jedis/RedisGears for reactive fixed-window (quota e.g., 20/min)[5].
+In **Mars Enterprise Kit Lite** (Spring Boot 4.0, PostgreSQL 16, Redpanda/Kafka), projections update via outbox pattern: events in Kafka trigger JPA updates in PostgreSQL, verified by consuming `order.created` and checking `orders` table status[2][8].
 
-**Next Steps**: Deploy sliding window Lua script in your FastAPI app (test with 100 reqs/min limit on localhost Redis); benchmark vs. token bucket under burst load using Apache Bench; integrate Uber-style metrics if scaling to 10+ instances. Source for Uber: https://www.infoq.com/news/2026/02/uber-openai-rate-limiting/[6]. Source for Redis tutorial: https://redis.io/tutorials/howtos/ratelimiting/[2].
+## Snapshots
 
-## Write Comprehensive Guide
-# Comprehensive Guide on Implementing Distributed Rate Limiting Patterns Using Redis
+No direct 2026 examples found in results for snapshots (periodic aggregate state saves to reduce replay). Marten supports snapshots implicitly via its `AggregateStreamAsync<Order>` which loads from events, recommending snapshots for large streams (e.g., every 1000 events)[6]. Infer from general practice: store in separate `snapshots` table with `aggregate_id`, `version`, `state` (JSONB).
 
-This guide provides a detailed approach to implementing distributed rate limiting using Redis, focusing on sliding window counters and token bucket systems with cluster coordination. It is designed for those familiar with basic rate limiting concepts and aims to deliver specific, actionable steps.
+## Replay Strategies
 
-## Overview of Distributed Rate Limiting with Redis
+Replay rebuilds state by sequencing events per aggregate, using PostgreSQL **WAL** for ordered, commit-consistent capture.
 
-Redis is a popular choice for distributed rate limiting due to its ability to perform atomic operations across multiple API instances. This is achieved through the use of Lua scripts, ensuring consistency and reliability. Two primary patterns are used in this context:
+- **WAL-based logical decoding** (via CDC tools like Striim) extracts INSERT/UPDATE/DELETE as events from WAL, enabling ordered replays without table scans. Delivers row-level changes near real-time for event-driven workflows[4].
+- Marten replay: `session.Events.AggregateStreamAsync<Order>(orderId)` replays stream to hydrate aggregate[6].
+- **Chaos testing in Mars Kit**: Replay phantom events (Kafka has event, PostgreSQL rolled back) via `/chaos/phantom-event` endpoint; verify with `rpk topic consume order.created` and `SELECT * FROM orders` (0 rows)[2].
 
-- **Sliding Window Counters**: Provide near-exact accuracy with minimal memory usage, ideal for general-purpose API rate limiting.
-- **Token Buckets**: Allow controlled bursts and are suitable for handling bursty traffic while maintaining average rate caps.
+**Storevent** framework manages reducers for replay across stores like PostgreSQL[7].
 
-## Sliding Window Counters
+## Relevant Tools and Libraries
 
-### Concept
+| Tool/Library | Stack | Key Features | Example Use |
+|--------------|--------|--------------|-------------|
+| **Marten** | .NET, PostgreSQL | Event store, append/load streams, unit-of-work | `session.Events.Append` for orders[6] |
+| **Mars Enterprise Kit Lite** | Java 25, Spring Boot 4.0, PostgreSQL 16, Redpanda v24.3.1 | EDA with outbox, Flyway schema, TestContainers | `POST /orders` → Kafka event → projection[2] |
+| **Striim CDC** | PostgreSQL WAL | Real-time event capture for replays | Logical decoding for DML events[4] |
+| **Storevent** | Multi-store | Entity reducers, event management | Simplifies sourcing/replay[7] |
 
-Sliding window counters divide time into overlapping intervals, providing a more accurate rate limiting mechanism compared to fixed windows. This method uses two keys per client in Redis, allowing for smoothed boundaries and reducing the risk of burst behavior at window edges.
+## Concrete Next Steps
+1. Clone Mars Kit: Run `docker compose up -d` (PostgreSQL 16 + Redpanda), test order flow with `POST /orders`, verify projection via `GET /orders/{id}`[2]. Source: https://www.programmingonmars.io/labs/event-driven-kafka-postgres-spring-boot
+2. Install Marten: Add to .NET project, implement `OrderCommandHandler` for append/replay[6]. Source: https://bradjolicoeur.com/article/we-need-to-talk-about-your-repository-pattern
+3. Prototype event table: Create `events` with GIN on JSONB `metadata`, insert/test replay query[3]. Source: https://dev.to/philip_mcclarence_2ef9475/postgresql-vs-mysql-in-2026-performance-features-and-when-to-use-each-3g7e
+4. Add CDC: Enable PostgreSQL logical replication (`wal_level = logical`), pipe to Striim for WAL replays[4]. Source: https://www.striim.com/blog/change-data-capture-postgres-real-time-integration-guide/
+
+## Write Guide on Event Sourcing with PostgreSQL
+# Implementing Event Sourcing with PostgreSQL: A Detailed Guide
+
+Event sourcing with PostgreSQL involves designing an event store, creating projections, managing snapshots, and implementing replay strategies. This guide provides specific, actionable steps to implement each component effectively.
+
+## Event Store Design with PostgreSQL
+
+### Schema Design
+
+1. **Table Structure**:
+   - Use PostgreSQL's **JSONB** data type for storing event data to leverage its flexibility and indexing capabilities.
+   - Suggested table schema:
+     ```sql
+     CREATE TABLE events (
+       aggregate_id UUID NOT NULL,
+       sequence BIGINT NOT NULL,
+       event_type TEXT NOT NULL,
+       data JSONB NOT NULL,
+       timestamp TIMESTAMPTZ NOT NULL,
+       PRIMARY KEY (aggregate_id, sequence)
+     );
+     ```
+
+2. **Indexing**:
+   - Implement **GIN indexes** on JSONB columns for efficient querying:
+     ```sql
+     CREATE INDEX idx_metadata ON events USING gin (data);
+     ```
+
+3. **Query Example**:
+   - Efficiently query events by metadata:
+     ```sql
+     SELECT * FROM events WHERE data @> '{"source": "api", "version": 2}';
+     ```
+
+### Event Appending
+
+- Utilize libraries like **Marten** for .NET to handle event appending:
+  ```csharp
+  session.Events.Append(command.OrderId, new OrderSubmitted(command.OrderId, command.CustomerId, command.Items));
+  await session.SaveChangesAsync(ct);
+  ```
+
+**First Step**: Set up the PostgreSQL database and create the `events` table with the schema and indexes as described.
+
+## Projections
+
+### Types of Projections
+
+1. **Live Projections**:
+   - Continuously update read models as new events are appended.
+   - Use triggers or background jobs to update materialized views or tables.
+
+2. **Catch-up Projections**:
+   - Replay events from a checkpoint to update read models.
+   - Useful for rebuilding state after downtime or schema changes.
+
+3. **Persistent Projections**:
+   - Use materialized views for read-heavy applications.
+   - Example with PostgreSQL window functions:
+     ```sql
+     SELECT sum(revenue) OVER (ORDER BY order_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS rolling_7_day_revenue
+     FROM orders;
+     ```
+
+**First Step**: Identify key read models and decide on the projection type (live, catch-up, persistent) based on application needs.
+
+## Snapshots
+
+### Purpose and Implementation
+
+- **Purpose**: Reduce the time and resources needed to replay events by storing periodic snapshots of the aggregate state.
+- **Implementation**:
+  - Create a `snapshots` table to store serialized aggregate states.
+  - Define a snapshotting strategy (e.g., every 100 events or daily).
+
+**First Step**: Design a snapshot strategy and implement a mechanism to periodically serialize and store aggregate states.
+
+## Replay Strategies
+
+### Strategy Overview
+
+1. **Full Replay**:
+   - Rebuild the entire application state from the beginning.
+   - Useful for testing and validation.
+
+2. **Partial Replay**:
+   - Replay events from the last snapshot to the current state.
+   - More efficient for production environments.
 
 ### Implementation Steps
 
-1. **Setup Redis Environment**: Ensure Redis is installed and configured to handle Lua scripts. Redis must be accessible by all API instances.
+- Implement replay logic in your application to process events and update read models.
+- Use checkpoints to track the last processed event for efficient catch-up.
 
-2. **Define Lua Script**: Create a Lua script to handle atomic increment operations and time checks. This script will manage the sliding window logic.
-
-   ```lua
-   local current_time = redis.call('TIME')[1]
-   local window_start = current_time - ARGV[1]
-   local key1 = KEYS[1] .. ':' .. window_start
-   local key2 = KEYS[1] .. ':' .. current_time
-
-   redis.call('INCR', key2)
-   redis.call('EXPIRE', key1, ARGV[1])
-   redis.call('EXPIRE', key2, ARGV[1])
-
-   local count = redis.call('GET', key1) + redis.call('GET', key2)
-   return count
-   ```
-
-3. **Integrate with API**: Use the Lua script within your API to check if a request should be allowed or throttled. The script should be executed before processing each request.
-
-4. **Monitor and Adjust**: Continuously monitor the rate limits and adjust the window size and limits based on traffic patterns and performance metrics.
-
-### Benefits
-
-- **Accuracy**: Near-exact limiting with minimal memory usage.
-- **Flexibility**: Easily adjustable to different time windows and limits.
-
-## Token Bucket System
-
-### Concept
-
-The token bucket algorithm allows for controlled bursts of traffic by using a bucket that fills with tokens over time. Each request consumes a token, and if no tokens are available, the request is throttled.
-
-### Implementation Steps
-
-1. **Setup Redis Environment**: Ensure Redis is installed and configured to handle Lua scripts.
-
-2. **Define Lua Script**: Create a Lua script to manage tokens in the bucket. This script will handle token replenishment and consumption.
-
-   ```lua
-   local bucket_key = KEYS[1]
-   local current_time = redis.call('TIME')[1]
-   local last_time = redis.call('HGET', bucket_key, 'last_time') or 0
-   local tokens = redis.call('HGET', bucket_key, 'tokens') or ARGV[1]
-
-   local elapsed = current_time - last_time
-   local new_tokens = math.min(ARGV[1], tokens + (elapsed * ARGV[2]))
-
-   if new_tokens < 1 then
-       return 0
-   else
-       redis.call('HSET', bucket_key, 'tokens', new_tokens - 1)
-       redis.call('HSET', bucket_key, 'last_time', current_time)
-       return 1
-   end
-   ```
-
-3. **Integrate with API**: Use the Lua script within your API to control request flow. Execute the script to determine if a request can proceed.
-
-4. **Monitor and Adjust**: Monitor the token refill rate and bucket size to optimize for your specific traffic patterns.
-
-### Benefits
-
-- **Controlled Bursts**: Allows for bursts while maintaining an average rate.
-- **Efficiency**: Uses a single Redis HASH key with two fields, minimizing memory usage.
-
-## Cluster Coordination
-
-For high availability and scalability, implement Redis Cluster to distribute data across multiple nodes. This ensures resilience and performance under heavy load.
-
-### Steps for Cluster Coordination
-
-1. **Deploy Redis Cluster**: Set up a Redis Cluster with multiple nodes to ensure data distribution and fault tolerance.
-
-2. **Configure API Instances**: Ensure all API instances are configured to connect to the Redis Cluster, enabling distributed rate limiting.
-
-3. **Monitor Cluster Performance**: Use Redis monitoring tools to track cluster health and performance, making adjustments as needed.
+**First Step**: Implement a replay mechanism in your application that can process events from the event store and update the necessary read models.
 
 ## Conclusion
 
-Implementing distributed rate limiting using Redis with sliding window counters and token bucket systems provides a robust solution for managing API traffic. By following the steps outlined in this guide, you can achieve precise control over request rates, ensuring both performance and reliability.
+Implementing event sourcing with PostgreSQL involves careful design of the event store, efficient projections, strategic snapshotting, and robust replay mechanisms. By following the steps outlined in this guide, you can build a scalable and resilient event-sourced application.
 
-**Word Count: 773**
+**Total Word Count**: 544
