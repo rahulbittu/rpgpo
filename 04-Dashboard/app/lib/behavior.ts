@@ -277,6 +277,99 @@ function deriveSignals(): BehaviorSignal[] {
     });
   }
 
+  // 8. Output satisfaction PER ENGINE
+  const acceptedByEngine: Record<string, number> = {};
+  const abandonedByEngine: Record<string, number> = {};
+  accepted.forEach(e => { if (e.engine) acceptedByEngine[e.engine] = (acceptedByEngine[e.engine] || 0) + 1; });
+  abandoned.forEach(e => { if (e.engine) abandonedByEngine[e.engine] = (abandonedByEngine[e.engine] || 0) + 1; });
+  const allEnginesArr = Object.keys(acceptedByEngine).concat(Object.keys(abandonedByEngine)).filter((v, i, a) => a.indexOf(v) === i);
+  for (const engine of allEnginesArr) {
+    const acc = acceptedByEngine[engine] || 0;
+    const abn = abandonedByEngine[engine] || 0;
+    const total = acc + abn;
+    if (total >= 3) {
+      const rate = acc / total;
+      signals.push({
+        name: 'output_satisfaction',
+        value: rate > 0.9 ? 'high' : rate > 0.7 ? 'moderate' : 'low',
+        confidence: Math.min(1.0, total / 15),
+        scope: 'engine' as SignalScope,
+        scopeKey: engine,
+        sourceEventCount: total,
+        lastUpdated: new Date().toISOString(),
+        active: total >= MIN_EVENTS_FOR_SIGNAL,
+        explanation: `Engine ${engine}: ${acc} accepted, ${abn} abandoned (${(rate * 100).toFixed(0)}% satisfaction)`,
+      });
+    }
+  }
+
+  // 9. Task volume by engine (indicates operator priority)
+  const tasksByEngine: Record<string, number> = {};
+  events.filter(e => e.type === 'task_created' && e.engine).forEach(e => {
+    tasksByEngine[e.engine!] = (tasksByEngine[e.engine!] || 0) + 1;
+  });
+  const totalTasks = events.filter(e => e.type === 'task_created').length;
+  for (const [engine, count] of Object.entries(tasksByEngine)) {
+    if (count >= 3) {
+      const share = count / totalTasks;
+      signals.push({
+        name: 'task_volume',
+        value: { count, share: Math.round(share * 100) + '%' },
+        confidence: Math.min(1.0, count / 20),
+        scope: 'engine' as SignalScope,
+        scopeKey: engine,
+        sourceEventCount: count,
+        lastUpdated: new Date().toISOString(),
+        active: count >= MIN_EVENTS_FOR_SIGNAL,
+        explanation: `Engine ${engine}: ${count} tasks (${(share * 100).toFixed(1)}% of total)`,
+      });
+    }
+  }
+
+  // 10. Operator profile signals (from static profile if available)
+  try {
+    const profilePath = path.resolve(__dirname, '..', '..', 'state', 'context', 'operator-profile.json');
+    if (fs.existsSync(profilePath)) {
+      const profile = JSON.parse(fs.readFileSync(profilePath, 'utf-8'));
+      if (profile.communication_style) {
+        signals.push({
+          name: 'communication_style',
+          value: profile.communication_style,
+          confidence: 1.0,
+          scope: 'global' as SignalScope,
+          sourceEventCount: 1,
+          lastUpdated: new Date().toISOString(),
+          active: true,
+          explanation: `From operator profile: communication_style = ${profile.communication_style}`,
+        });
+      }
+      if (profile.output_preferences) {
+        signals.push({
+          name: 'output_preferences',
+          value: profile.output_preferences,
+          confidence: 1.0,
+          scope: 'global' as SignalScope,
+          sourceEventCount: 1,
+          lastUpdated: new Date().toISOString(),
+          active: true,
+          explanation: `From operator profile: stated output preferences`,
+        });
+      }
+      if (profile.risk_tolerance) {
+        signals.push({
+          name: 'risk_tolerance',
+          value: profile.risk_tolerance,
+          confidence: 1.0,
+          scope: 'global' as SignalScope,
+          sourceEventCount: 1,
+          lastUpdated: new Date().toISOString(),
+          active: true,
+          explanation: `From operator profile: risk_tolerance = ${profile.risk_tolerance}`,
+        });
+      }
+    }
+  } catch { /* profile not available */ }
+
   return signals;
 }
 

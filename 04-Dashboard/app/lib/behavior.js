@@ -273,6 +273,101 @@ function deriveSignals() {
             explanation: "".concat(followups.length, " follow-up requests recorded"),
         });
     }
+    // 8. Output satisfaction PER ENGINE
+    var acceptedByEngine = {};
+    var abandonedByEngine = {};
+    accepted.forEach(function (e) { if (e.engine)
+        acceptedByEngine[e.engine] = (acceptedByEngine[e.engine] || 0) + 1; });
+    abandoned.forEach(function (e) { if (e.engine)
+        abandonedByEngine[e.engine] = (abandonedByEngine[e.engine] || 0) + 1; });
+    var allEnginesArr = Object.keys(acceptedByEngine).concat(Object.keys(abandonedByEngine)).filter(function (v, i, a) { return a.indexOf(v) === i; });
+    for (var _f = 0, allEnginesArr_1 = allEnginesArr; _f < allEnginesArr_1.length; _f++) {
+        var engine = allEnginesArr_1[_f];
+        var acc = acceptedByEngine[engine] || 0;
+        var abn = abandonedByEngine[engine] || 0;
+        var total = acc + abn;
+        if (total >= 3) {
+            var rate = acc / total;
+            signals.push({
+                name: 'output_satisfaction',
+                value: rate > 0.9 ? 'high' : rate > 0.7 ? 'moderate' : 'low',
+                confidence: Math.min(1.0, total / 15),
+                scope: 'engine',
+                scopeKey: engine,
+                sourceEventCount: total,
+                lastUpdated: new Date().toISOString(),
+                active: total >= MIN_EVENTS_FOR_SIGNAL,
+                explanation: "Engine ".concat(engine, ": ").concat(acc, " accepted, ").concat(abn, " abandoned (").concat((rate * 100).toFixed(0), "% satisfaction)"),
+            });
+        }
+    }
+    // 9. Task volume by engine (indicates operator priority)
+    var tasksByEngine = {};
+    events.filter(function (e) { return e.type === 'task_created' && e.engine; }).forEach(function (e) {
+        tasksByEngine[e.engine] = (tasksByEngine[e.engine] || 0) + 1;
+    });
+    var totalTasks = events.filter(function (e) { return e.type === 'task_created'; }).length;
+    for (var _g = 0, _h = Object.entries(tasksByEngine); _g < _h.length; _g++) {
+        var _j = _h[_g], engine = _j[0], count = _j[1];
+        if (count >= 3) {
+            var share = count / totalTasks;
+            signals.push({
+                name: 'task_volume',
+                value: { count: count, share: Math.round(share * 100) + '%' },
+                confidence: Math.min(1.0, count / 20),
+                scope: 'engine',
+                scopeKey: engine,
+                sourceEventCount: count,
+                lastUpdated: new Date().toISOString(),
+                active: count >= MIN_EVENTS_FOR_SIGNAL,
+                explanation: "Engine ".concat(engine, ": ").concat(count, " tasks (").concat((share * 100).toFixed(1), "% of total)"),
+            });
+        }
+    }
+    // 10. Operator profile signals (from static profile if available)
+    try {
+        var profilePath = path.resolve(__dirname, '..', '..', 'state', 'context', 'operator-profile.json');
+        if (fs.existsSync(profilePath)) {
+            var profile = JSON.parse(fs.readFileSync(profilePath, 'utf-8'));
+            if (profile.communication_style) {
+                signals.push({
+                    name: 'communication_style',
+                    value: profile.communication_style,
+                    confidence: 1.0,
+                    scope: 'global',
+                    sourceEventCount: 1,
+                    lastUpdated: new Date().toISOString(),
+                    active: true,
+                    explanation: "From operator profile: communication_style = ".concat(profile.communication_style),
+                });
+            }
+            if (profile.output_preferences) {
+                signals.push({
+                    name: 'output_preferences',
+                    value: profile.output_preferences,
+                    confidence: 1.0,
+                    scope: 'global',
+                    sourceEventCount: 1,
+                    lastUpdated: new Date().toISOString(),
+                    active: true,
+                    explanation: "From operator profile: stated output preferences",
+                });
+            }
+            if (profile.risk_tolerance) {
+                signals.push({
+                    name: 'risk_tolerance',
+                    value: profile.risk_tolerance,
+                    confidence: 1.0,
+                    scope: 'global',
+                    sourceEventCount: 1,
+                    lastUpdated: new Date().toISOString(),
+                    active: true,
+                    explanation: "From operator profile: risk_tolerance = ".concat(profile.risk_tolerance),
+                });
+            }
+        }
+    }
+    catch ( /* profile not available */_k) { /* profile not available */ }
     return signals;
 }
 /**
