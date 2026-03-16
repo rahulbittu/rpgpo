@@ -1,5 +1,676 @@
 [
   {
+    "task_id": "t_mmsp91xvehql",
+    "title": "Design a monthly deep work retreat protocol. Include preparation, environment se",
+    "raw_request": "Design a monthly deep work retreat protocol. Include preparation, environment setup, work blocks, breaks, and post-retreat review.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:44:47.251Z",
+    "updated_at": "2026-03-16T04:48:21.701Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:45:35.269Z",
+      "interpreted_objective": "Design a comprehensive monthly deep work retreat protocol.",
+      "expected_outcome": "A detailed protocol document outlining preparation, environment setup, work blocks, breaks, and post-retreat review.",
+      "key_unknowns": [
+        "Specific preferences or constraints Rahul might have for the retreat",
+        "Any specific tools or resources Rahul has access to",
+        "Rahul's typical work environment and how it might influence the retreat setup"
+      ],
+      "recommended_strategy": "Conduct research on best practices for deep work retreats, including preparation, environment setup, work blocks, and breaks. Synthesize this information into a structured protocol document that can be easily followed for monthly retreats.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Deep Work Retreat Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and recommendations for conducting a deep work retreat.",
+          "prompt": "Search the web for current, specific information about best practices for conducting a deep work retreat, focusing on preparation, environment setup, work blocks, breaks, and post-retreat review. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Retreat Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured protocol document for a monthly deep work retreat.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations into a structured protocol for a monthly deep work retreat. Include specific steps for preparation, environment setup, work blocks, breaks, and post-retreat review.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-deep-work-retreat-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1970
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsp914g8el2",
+    "title": "Create a comprehensive guide to organizing a home garage workshop. Include tool ",
+    "raw_request": "Create a comprehensive guide to organizing a home garage workshop. Include tool storage, workbench design, lighting, and electrical layout.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:44:46.192Z",
+    "updated_at": "2026-03-16T04:48:13.606Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:45:29.225Z",
+      "interpreted_objective": "Create a detailed guide for organizing a home garage workshop.",
+      "expected_outcome": "A comprehensive guide covering tool storage, workbench design, lighting, and electrical layout for a home garage workshop.",
+      "key_unknowns": [
+        "Specific dimensions or constraints of the garage space",
+        "Types of tools and equipment to be stored",
+        "Budget constraints for the workshop setup"
+      ],
+      "recommended_strategy": "Research best practices and current trends in garage workshop organization. Synthesize findings into a detailed guide that includes practical recommendations for tool storage, workbench design, lighting, and electrical layout. Ensure the guide is actionable and considers various garage sizes and budgets.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Garage Workshop Organization",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research notes on current best practices for organizing a home garage workshop.",
+          "prompt": "Search the web for current, specific information about organizing a home garage workshop. Include best practices for tool storage, workbench design, lighting, and electrical layout. Provide real names, numbers, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Garage Workshop Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide to organizing a home garage workshop, including tool storage, workbench design, lighting, and electrical layout.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for organizing a home garage workshop. Include specific recommendations for tool storage, workbench design, lighting, and electrical layout, tailored to various garage sizes and budgets.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2110
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsp90bbjcbg",
+    "title": "Write a series of 3 interconnected podcast episode scripts about the ethics of A",
+    "raw_request": "Write a series of 3 interconnected podcast episode scripts about the ethics of AI in hiring. Include expert interviews, case studies, and listener questions.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:44:45.143Z",
+    "updated_at": "2026-03-16T04:48:04.834Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:45:24.858Z",
+      "interpreted_objective": "Create a series of three podcast episode scripts focusing on the ethics of AI in hiring, incorporating expert interviews, case studies, and listener questions.",
+      "expected_outcome": "Three interconnected podcast episode scripts that provide an engaging and informative exploration of AI ethics in hiring, featuring expert insights, real-world case studies, and audience interaction.",
+      "key_unknowns": [
+        "Specific experts to interview",
+        "Relevant case studies to include",
+        "Listener questions to address"
+      ],
+      "recommended_strategy": "Conduct research to identify current experts, case studies, and public opinions on the ethics of AI in hiring. Use this information to craft engaging scripts that include interviews, case studies, and listener questions. Ensure each episode is interconnected and builds on the previous one.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research AI Ethics in Hiring",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current experts, case studies, and public opinions on AI ethics in hiring.",
+          "prompt": "Search the web for current, specific information about the ethics of AI in hiring. Include real names of experts, relevant case studies, and public opinions. Provide URLs and sources for further reference.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Podcast Episode Scripts",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "Three interconnected podcast episode scripts about AI ethics in hiring.",
+          "prompt": "Based on the research results from the previous subtask, write three interconnected podcast episode scripts focusing on AI ethics in hiring. Include expert interviews, case studies, and listener questions. Ensure each episode builds on the previous one.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-AI_Ethics_in_Hiring.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1970
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsp8zif68ah",
+    "title": "Plan a 10-day road trip through the Scottish Highlands. Include castles, whisky ",
+    "raw_request": "Plan a 10-day road trip through the Scottish Highlands. Include castles, whisky distilleries, hiking, and scenic drives. For a couple in September.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:44:44.103Z",
+    "updated_at": "2026-03-16T04:47:55.312Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:45:20.950Z",
+      "interpreted_objective": "Plan a detailed 10-day road trip itinerary through the Scottish Highlands for a couple in September, including visits to castles, whisky distilleries, hiking trails, and scenic drives.",
+      "expected_outcome": "A comprehensive and actionable itinerary with specific destinations, activities, dates, and estimated costs for a 10-day road trip through the Scottish Highlands.",
+      "key_unknowns": [
+        "Specific castles and distilleries to visit",
+        "Optimal hiking trails and scenic drives",
+        "Availability and cost of accommodations",
+        "Weather conditions in September"
+      ],
+      "recommended_strategy": "Conduct research to identify popular castles, distilleries, hiking trails, and scenic drives in the Scottish Highlands. Then, synthesize this information into a detailed itinerary, ensuring it aligns with the couple's preferences and includes estimated costs and logistics.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Scottish Highlands Attractions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of popular castles, whisky distilleries, hiking trails, and scenic drives in the Scottish Highlands, including availability and cost information.",
+          "prompt": "Search the web for current, specific information about popular castles, whisky distilleries, hiking trails, and scenic drives in the Scottish Highlands. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary for Scottish Highlands Road Trip",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 10-day itinerary for a road trip through the Scottish Highlands, including specific destinations, activities, dates, and estimated costs.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable 10-day itinerary for a road trip through the Scottish Highlands. Include specific names, numbers, and concrete next steps for visiting castles, distilleries, hiking trails, and scenic drives.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-2023-09-scottish-highlands-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1964
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsp8ypnj4qn",
+    "title": "Design a comprehensive immune system support protocol for frequent travelers. In",
+    "raw_request": "Design a comprehensive immune system support protocol for frequent travelers. Include supplements, sleep strategies, hygiene practices, and vaccination schedule.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:44:43.067Z",
+    "updated_at": "2026-03-16T04:47:46.693Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:45:16.736Z",
+      "interpreted_objective": "Design a detailed immune support protocol for frequent travelers, including supplements, sleep strategies, hygiene practices, and vaccination schedules.",
+      "expected_outcome": "A comprehensive and evidence-based protocol that frequent travelers can follow to support their immune systems.",
+      "key_unknowns": [
+        "Current best practices for immune support",
+        "Specific supplements effective for travelers",
+        "Optimal sleep strategies for varying time zones",
+        "Recommended hygiene practices for travelers",
+        "Vaccination schedules relevant for frequent travelers"
+      ],
+      "recommended_strategy": "Conduct thorough research on immune support strategies for travelers, focusing on supplements, sleep, hygiene, and vaccinations. Synthesize findings into a structured protocol that is actionable and evidence-based.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Immune Support Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data on immune support strategies for frequent travelers.",
+          "prompt": "Search the web for current, specific information about immune system support strategies for frequent travelers. Include supplements, sleep strategies, hygiene practices, and vaccination schedules. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Immune Support Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and actionable immune support protocol for frequent travelers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive immune support protocol for frequent travelers. Include specific supplements, sleep strategies, hygiene practices, and vaccination schedules. Ensure recommendations are evidence-based and actionable.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-immune-support-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1870
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsp8xwxx3oj",
+    "title": "Create a guide to effective technical mentoring. Include setting expectations, s",
+    "raw_request": "Create a guide to effective technical mentoring. Include setting expectations, structuring sessions, giving feedback, and measuring mentee progress.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:44:42.033Z",
+    "updated_at": "2026-03-16T04:47:41.128Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:45:01.170Z",
+      "interpreted_objective": "Create a detailed guide on effective technical mentoring for data engineering leadership.",
+      "expected_outcome": "A structured guide that includes setting expectations, structuring sessions, giving feedback, and measuring mentee progress, tailored for data engineering leadership.",
+      "key_unknowns": [
+        "Current best practices in technical mentoring",
+        "Effective feedback mechanisms for technical roles",
+        "Metrics for measuring mentee progress"
+      ],
+      "recommended_strategy": "First, conduct research to gather current best practices and effective strategies in technical mentoring. Then, synthesize these findings into a structured guide tailored for data engineering leadership. The guide should include specific, actionable steps and metrics.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research best practices in technical mentoring",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices in technical mentoring with citations.",
+          "prompt": "Search the web for current, specific information about best practices in technical mentoring. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize guide on technical mentoring",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on effective technical mentoring tailored for data engineering leadership.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a guide on effective technical mentoring. Include specific names, numbers, and concrete next steps for setting expectations, structuring sessions, giving feedback, and measuring mentee progress.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-technical-mentoring-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2130
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsp8x4ajabh",
+    "title": "Research the best portable Bluetooth keyboards for iPad Pro. Compare Logitech, A",
+    "raw_request": "Research the best portable Bluetooth keyboards for iPad Pro. Compare Logitech, Apple, and Brydge options. Include typing feel, battery life, and case integration.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:44:41.002Z",
+    "updated_at": "2026-03-16T04:47:34.006Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:44:56.872Z",
+      "interpreted_objective": "Research and compare portable Bluetooth keyboards for iPad Pro from Logitech, Apple, and Brydge, focusing on typing feel, battery life, and case integration.",
+      "expected_outcome": "A detailed comparison report of Logitech, Apple, and Brydge portable Bluetooth keyboards for iPad Pro, highlighting their typing feel, battery life, and case integration, with a clear recommendation.",
+      "key_unknowns": [
+        "Current models available from Logitech, Apple, and Brydge",
+        "Specific features and user reviews of each keyboard model",
+        "Pricing and availability"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on Logitech, Apple, and Brydge portable Bluetooth keyboards for iPad Pro, focusing on typing feel, battery life, and case integration. Then, synthesize this data into a structured comparison report with a clear recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Bluetooth Keyboards",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Logitech, Apple, and Brydge Bluetooth keyboards for iPad Pro, including typing feel, battery life, case integration, prices, and user reviews.",
+          "prompt": "Search the web for current, specific information about portable Bluetooth keyboards for iPad Pro from Logitech, Apple, and Brydge. Focus on typing feel, battery life, case integration, and include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Keyboard Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the Logitech, Apple, and Brydge Bluetooth keyboards for iPad Pro, with a recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for portable Bluetooth keyboards for iPad Pro from Logitech, Apple, and Brydge. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-bluetooth-keyboards-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2019
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsp8wbfn0wh",
+    "title": "Teach me about memory-safe systems programming. Compare Rust ownership, Go garba",
+    "raw_request": "Teach me about memory-safe systems programming. Compare Rust ownership, Go garbage collection, and C++ smart pointers. Include performance benchmarks and use cases.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:44:39.963Z",
+    "updated_at": "2026-03-16T04:47:26.007Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:44:52.513Z",
+      "interpreted_objective": "Provide a comprehensive comparison of memory-safe systems programming techniques in Rust, Go, and C++.",
+      "expected_outcome": "A detailed report comparing Rust ownership, Go garbage collection, and C++ smart pointers with performance benchmarks and use cases.",
+      "key_unknowns": [
+        "Current performance benchmarks for Rust, Go, and C++",
+        "Specific use cases where each language's memory management shines"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on memory-safe programming in Rust, Go, and C++. Analyze the data to compare their memory management techniques, performance benchmarks, and use cases. Compile findings into a detailed report.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Memory-Safe Programming Techniques",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Rust ownership, Go garbage collection, and C++ smart pointers, including performance benchmarks and use cases.",
+          "prompt": "Search the web for current, specific information about memory-safe systems programming in Rust, Go, and C++. Include details on Rust ownership, Go garbage collection, and C++ smart pointers, along with performance benchmarks and use cases. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Comparison Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report comparing Rust ownership, Go garbage collection, and C++ smart pointers, including performance benchmarks and use cases.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Rust ownership, Go garbage collection, and C++ smart pointers. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2051
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsp8vhykp96",
+    "title": "Create a guide to estate planning essentials for tech workers with stock options",
+    "raw_request": "Create a guide to estate planning essentials for tech workers with stock options. Include vesting considerations, trust structures, and beneficiary optimization.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:44:38.902Z",
+    "updated_at": "2026-03-16T04:47:17.780Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:44:47.418Z",
+      "interpreted_objective": "Create a guide on estate planning essentials for tech workers with stock options, focusing on vesting, trust structures, and beneficiary optimization.",
+      "expected_outcome": "A comprehensive guide that provides actionable insights on estate planning for tech workers with stock options, including specific strategies and examples.",
+      "key_unknowns": [
+        "Current best practices in estate planning for stock options",
+        "Specific trust structures beneficial for tech workers",
+        "Optimal beneficiary designation strategies"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on estate planning for tech workers with stock options. Synthesize findings into a structured guide that includes vesting considerations, trust structures, and beneficiary optimization strategies.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Estate Planning for Tech Workers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on estate planning essentials for tech workers with stock options, including sources.",
+          "prompt": "Search the web for current, specific information about estate planning essentials for tech workers with stock options. Include vesting considerations, trust structures, and beneficiary optimization. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Estate Planning Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on estate planning essentials for tech workers with stock options.",
+          "prompt": "Based on the research results, synthesize a guide on estate planning essentials for tech workers with stock options. Include sections on vesting considerations, trust structures, and beneficiary optimization with specific examples and actionable steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-estate-planning-tech-workers.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2238
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsp8uol7vih",
+    "title": "Write a comprehensive guide to implementing feature toggles with LaunchDarkly or",
+    "raw_request": "Write a comprehensive guide to implementing feature toggles with LaunchDarkly or Unleash. Include progressive rollouts, A/B testing integration, and cleanup strategies.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:44:37.845Z",
+    "updated_at": "2026-03-16T04:46:21.498Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:44:42.603Z",
+      "interpreted_objective": "Create a comprehensive guide on implementing feature toggles with LaunchDarkly or Unleash.",
+      "expected_outcome": "A detailed, actionable guide that covers feature toggle implementation, progressive rollouts, A/B testing, and cleanup strategies.",
+      "key_unknowns": [
+        "Specific preferences for LaunchDarkly or Unleash",
+        "Level of detail required for each section",
+        "Target audience's technical expertise"
+      ],
+      "recommended_strategy": "First, conduct research to gather detailed information about implementing feature toggles with LaunchDarkly and Unleash, including progressive rollouts, A/B testing integration, and cleanup strategies. Then, synthesize this information into a comprehensive guide tailored to a technical audience, ensuring clarity and usability.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Feature Toggle Implementation",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research findings on implementing feature toggles with LaunchDarkly and Unleash.",
+          "prompt": "Search the web for current, specific information about implementing feature toggles with LaunchDarkly and Unleash. Include details on progressive rollouts, A/B testing integration, and cleanup strategies. Provide real examples, best practices, and any relevant URLs or sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Feature Toggle Implementation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on implementing feature toggles with LaunchDarkly and Unleash, including progressive rollouts, A/B testing, and cleanup strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on implementing feature toggles with LaunchDarkly and Unleash. Include sections on progressive rollouts, A/B testing integration, and cleanup strategies. Ensure the guide is clear, actionable, and tailored to a technical audience.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2089
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsp19dv5kp6",
     "title": "Design a personal brand audit system. Include online presence review, content qu",
     "raw_request": "Design a personal brand audit system. Include online presence review, content quality check, network analysis, and quarterly improvement plan.",
