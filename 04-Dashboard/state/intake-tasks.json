@@ -1,5 +1,680 @@
 [
   {
+    "task_id": "t_mmsmbjbaopld",
+    "title": "Design a comprehensive personal CRM for maintaining professional relationships. ",
+    "raw_request": "Design a comprehensive personal CRM for maintaining professional relationships. Include contact tiers, touchpoint cadence, and birthday/milestone tracking.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:22:44.230Z",
+    "updated_at": "2026-03-16T03:26:31.481Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:23:37.491Z",
+      "interpreted_objective": "Design a personal CRM system to manage professional relationships effectively.",
+      "expected_outcome": "A detailed report outlining a personal CRM system with contact tiers, touchpoint cadence, and birthday/milestone tracking.",
+      "key_unknowns": [
+        "Specific features or integrations desired by Rahul",
+        "Preferred tools or platforms for implementation",
+        "Current methods used for managing relationships"
+      ],
+      "recommended_strategy": "Conduct research on existing personal CRM systems and best practices for managing professional relationships. Synthesize findings into a comprehensive report with actionable recommendations tailored to Rahul's priorities and context.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final review of the CRM design report by Rahul"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Personal CRM Systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of data and insights on personal CRM systems, including features, benefits, and best practices.",
+          "prompt": "Search the web for current, specific information about personal CRM systems for managing professional relationships. Include real names, features, benefits, and best practices.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize CRM Design Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report outlining a personal CRM system with contact tiers, touchpoint cadence, and birthday/milestone tracking.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a personal CRM system. Include specific features like contact tiers, touchpoint cadence, and birthday/milestone tracking.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-personal-crm.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1943
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsmbicjj42h",
+    "title": "Create a smart home automation playbook. Include morning routines, away modes, e",
+    "raw_request": "Create a smart home automation playbook. Include morning routines, away modes, energy savings, and security automation. For Home Assistant users.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:22:42.979Z",
+    "updated_at": "2026-03-16T03:26:25.255Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:23:20.711Z",
+      "interpreted_objective": "Create a comprehensive playbook for smart home automation using Home Assistant, focusing on morning routines, away modes, energy savings, and security automation.",
+      "expected_outcome": "A detailed and actionable playbook that Home Assistant users can implement to automate their smart homes effectively.",
+      "key_unknowns": [
+        "Specific smart devices and integrations available for Home Assistant",
+        "Common user preferences for morning routines and security settings",
+        "Best practices for energy savings in smart homes"
+      ],
+      "recommended_strategy": "Conduct research on current best practices and popular integrations for Home Assistant related to smart home automation. Then, synthesize this information into a comprehensive playbook with specific routines and automation strategies.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Assistant Automation Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices, popular integrations, and user preferences for Home Assistant automation.",
+          "prompt": "Search the web for current best practices, popular integrations, and user preferences for automating smart homes using Home Assistant. Include specific examples of morning routines, away modes, energy savings, and security automation.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Smart Home Automation Playbook",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured playbook for smart home automation using Home Assistant.",
+          "prompt": "Based on the research results, synthesize a comprehensive playbook for smart home automation using Home Assistant. Include detailed routines and automation strategies for morning routines, away modes, energy savings, and security automation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-smart-home-automation-playbook.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1964
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsmbhj8yz3b",
+    "title": "Write a series bible for a animated web series about AI assistants who form a un",
+    "raw_request": "Write a series bible for a animated web series about AI assistants who form a union. Include world rules, character sheets, and first season arc.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:22:41.924Z",
+    "updated_at": "2026-03-16T03:26:16.236Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:23:15.900Z",
+      "interpreted_objective": "Create a comprehensive series bible for an animated web series about AI assistants forming a union.",
+      "expected_outcome": "A detailed series bible including world rules, character sheets, and a first season arc.",
+      "key_unknowns": [
+        "Specific themes to explore in the series",
+        "Target audience for the series",
+        "Tone and style of the animation"
+      ],
+      "recommended_strategy": "Conduct research on existing animated series about AI to gather insights on themes and styles. Then, synthesize this information to create a structured series bible with detailed world rules, character sheets, and a first season arc. Ensure the content aligns with current trends in animation and AI narratives.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research existing animated AI series",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of themes, styles, and audience engagement strategies from existing animated AI series.",
+          "prompt": "Search the web for current, specific information about existing animated series that feature AI characters. Include details on themes, styles, target audiences, and any notable successes or failures. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize series bible",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive series bible with world rules, character sheets, and a first season arc.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a series bible for an animated web series about AI assistants forming a union. Include detailed world rules, character sheets, and a first season arc. Ensure the content is engaging and aligns with current trends in animation and AI narratives.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-series-bible-animated-ai-union.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1973
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsmbgpbs2zm",
+    "title": "Plan a 10-day road trip through the Pacific Northwest from Portland to Vancouver",
+    "raw_request": "Plan a 10-day road trip through the Pacific Northwest from Portland to Vancouver. Include stops, scenic routes, outdoor activities, and budget breakdown.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:22:40.847Z",
+    "updated_at": "2026-03-16T03:26:04.680Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:23:12.097Z",
+      "interpreted_objective": "Plan a detailed 10-day road trip itinerary from Portland to Vancouver, including scenic routes, activities, and budget.",
+      "expected_outcome": "A comprehensive itinerary with specific stops, scenic routes, outdoor activities, and a detailed budget breakdown for the road trip.",
+      "key_unknowns": [
+        "Specific scenic routes available",
+        "Current outdoor activities and their availability",
+        "Budget estimates for travel, accommodation, and activities"
+      ],
+      "recommended_strategy": "First, gather current information on scenic routes, outdoor activities, and costs using web research. Then, synthesize this information into a detailed itinerary and budget breakdown. Ensure all recommendations are specific and actionable.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Scenic Routes and Activities",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on scenic routes, outdoor activities, and costs from Portland to Vancouver.",
+          "prompt": "Search the web for current, specific information about scenic routes, outdoor activities, and costs for a road trip from Portland to Vancouver. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary and Budget",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 10-day itinerary with stops, activities, and a budget breakdown for the road trip.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 10-day itinerary from Portland to Vancouver. Include specific stops, scenic routes, outdoor activities, and a budget breakdown with names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-roadtrip-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1889
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsmbfuf54ri",
+    "title": "Design a comprehensive cold and flu prevention protocol for the winter season. I",
+    "raw_request": "Design a comprehensive cold and flu prevention protocol for the winter season. Include supplements, hygiene practices, sleep optimization, and when to see a doctor.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:22:39.735Z",
+    "updated_at": "2026-03-16T03:25:55.515Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:23:08.055Z",
+      "interpreted_objective": "Design a comprehensive protocol for preventing cold and flu during winter, covering supplements, hygiene, sleep, and medical consultation guidelines.",
+      "expected_outcome": "A detailed, evidence-based protocol that individuals can follow to minimize the risk of cold and flu during winter.",
+      "key_unknowns": [
+        "Specific supplements that are most effective for cold and flu prevention",
+        "Current best practices in hygiene for flu prevention",
+        "Optimal sleep strategies for boosting immunity",
+        "Criteria for when to seek medical attention"
+      ],
+      "recommended_strategy": "Conduct research to gather the latest information on effective cold and flu prevention strategies, including supplements, hygiene practices, and sleep optimization. Synthesize this information into a clear, actionable protocol with guidelines on when to consult a doctor.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Cold and Flu Prevention Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data on cold and flu prevention, including supplements, hygiene, sleep, and medical consultation guidelines.",
+          "prompt": "Search the web for current, specific information about effective cold and flu prevention strategies, including supplements, hygiene practices, sleep optimization, and guidelines for when to see a doctor. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Cold and Flu Prevention Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, evidence-based cold and flu prevention protocol document.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable cold and flu prevention protocol for the winter season. Include specific recommendations for supplements, hygiene practices, sleep optimization, and guidelines for when to see a doctor.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-cold-flu-prevention.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1916
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsmbf1i3cs0",
+    "title": "Create a complete guide to building a personal advisory board for career growth.",
+    "raw_request": "Create a complete guide to building a personal advisory board for career growth. Include who to recruit, how to approach them, meeting cadence, and relationship maintenance.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:22:38.694Z",
+    "updated_at": "2026-03-16T03:25:46.044Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:22:55.713Z",
+      "interpreted_objective": "Create a detailed guide for building a personal advisory board focused on career growth.",
+      "expected_outcome": "A comprehensive guide that includes specific advice on recruiting advisors, approaching them, setting meeting cadence, and maintaining relationships.",
+      "key_unknowns": [
+        "Specific types of advisors beneficial for data engineering career growth",
+        "Effective strategies for approaching potential advisors",
+        "Optimal meeting frequency and format for advisory boards",
+        "Best practices for maintaining long-term advisory relationships"
+      ],
+      "recommended_strategy": "Research best practices for building a personal advisory board, focusing on data engineering and entrepreneurship. Synthesize findings into a structured guide with actionable steps tailored to Rahul's career context.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Building a Personal Advisory Board",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and strategies for building a personal advisory board.",
+          "prompt": "Search the web for current, specific information about best practices for building a personal advisory board for career growth. Focus on roles relevant to data engineering and entrepreneurship. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Building a Personal Advisory Board",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide with actionable steps for building a personal advisory board.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building a personal advisory board. Include specific advice on who to recruit, how to approach them, meeting cadence, and relationship maintenance, tailored to data engineering and entrepreneurship.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2316
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsmbe8qfei3",
+    "title": "Research the best air quality monitors for a home office. Compare Awair, Purple ",
+    "raw_request": "Research the best air quality monitors for a home office. Compare Awair, Purple Air, and Eve Room. Include VOC, CO2, and PM2.5 measurement accuracy.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:22:37.658Z",
+    "updated_at": "2026-03-16T03:25:38.206Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:22:52.047Z",
+      "interpreted_objective": "Identify and compare the best air quality monitors for a home office, focusing on Awair, Purple Air, and Eve Room, with emphasis on VOC, CO2, and PM2.5 measurement accuracy.",
+      "expected_outcome": "A comprehensive comparison report detailing the measurement accuracy of VOC, CO2, and PM2.5 for Awair, Purple Air, and Eve Room, with a clear recommendation on the best option for a home office.",
+      "key_unknowns": [
+        "Current market prices for each air quality monitor",
+        "Specific measurement accuracy data for VOC, CO2, and PM2.5 for each device",
+        "User reviews and expert opinions on each product"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on Awair, Purple Air, and Eve Room regarding their VOC, CO2, and PM2.5 measurement accuracy. Then, synthesize this information into a comparative analysis to determine the best air quality monitor for a home office.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Air Quality Monitors",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on VOC, CO2, and PM2.5 measurement accuracy for Awair, Purple Air, and Eve Room, including prices and reviews.",
+          "prompt": "Search the web for current, specific information about Awair, Purple Air, and Eve Room air quality monitors. Include details on VOC, CO2, and PM2.5 measurement accuracy, current prices, and user reviews. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Air Quality Monitor Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Awair, Purple Air, and Eve Room based on VOC, CO2, and PM2.5 measurement accuracy, with a recommendation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps for choosing the best air quality monitor for a home office.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-air-quality-monitors.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2068
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsmbdg1efet",
+    "title": "Teach me about time series databases. Compare InfluxDB, TimescaleDB, and Prometh",
+    "raw_request": "Teach me about time series databases. Compare InfluxDB, TimescaleDB, and Prometheus. Include data model differences, query languages, and scaling characteristics.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:22:36.625Z",
+    "updated_at": "2026-03-16T03:25:31.425Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:22:47.671Z",
+      "interpreted_objective": "Provide a comprehensive comparison of InfluxDB, TimescaleDB, and Prometheus focusing on data model differences, query languages, and scaling characteristics.",
+      "expected_outcome": "A detailed report that educates the reader on the differences between InfluxDB, TimescaleDB, and Prometheus, aiding in informed decision-making for time series database selection.",
+      "key_unknowns": [
+        "Current scaling capabilities of each database",
+        "Specific query language features",
+        "Latest data model updates"
+      ],
+      "recommended_strategy": "Conduct web research to gather the latest information about InfluxDB, TimescaleDB, and Prometheus. Synthesize this data into a structured report highlighting key differences in data models, query languages, and scaling characteristics.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Time Series Databases",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and insights on InfluxDB, TimescaleDB, and Prometheus with citations.",
+          "prompt": "Search the web for current, specific information about InfluxDB, TimescaleDB, and Prometheus. Focus on data model differences, query languages, and scaling characteristics. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Database Comparison Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing InfluxDB, TimescaleDB, and Prometheus in terms of data models, query languages, and scaling characteristics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps for understanding the differences between InfluxDB, TimescaleDB, and Prometheus.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-time_series_databases_comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1934
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsmbcmcivr7",
+    "title": "Create a comprehensive guide to negotiating commercial real estate leases for a ",
+    "raw_request": "Create a comprehensive guide to negotiating commercial real estate leases for a startup office. Include key terms, common traps, and negotiation tactics.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:22:35.556Z",
+    "updated_at": "2026-03-16T03:25:01.833Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:22:43.285Z",
+      "interpreted_objective": "Create a comprehensive guide for negotiating commercial real estate leases for startup offices.",
+      "expected_outcome": "A detailed guide that includes key terms, common traps, and negotiation tactics for commercial real estate leases.",
+      "key_unknowns": [
+        "Specific key terms relevant to commercial real estate leases",
+        "Common traps startups face when negotiating leases",
+        "Effective negotiation tactics for startups"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on commercial real estate lease negotiation. Synthesize findings into a comprehensive guide with actionable insights and examples. Ensure the guide is tailored for startups.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Commercial Real Estate Lease Negotiation",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on key terms, common traps, and negotiation tactics for commercial real estate leases.",
+          "prompt": "Search the web for current, specific information about negotiating commercial real estate leases for startups. Include key terms, common traps, and effective negotiation tactics. Provide real examples and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Lease Negotiation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on negotiating commercial real estate leases for startups.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for negotiating commercial real estate leases for startup offices. Include key terms, common traps, negotiation tactics, and real examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2340
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsmbbt5jww1",
+    "title": "Write a complete technical design document for a real-time analytics pipeline. I",
+    "raw_request": "Write a complete technical design document for a real-time analytics pipeline. Include event ingestion, stream processing, storage, and dashboard serving layers.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:22:34.505Z",
+    "updated_at": "2026-03-16T03:24:07.226Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:22:39.439Z",
+      "interpreted_objective": "Create a detailed technical design document for a real-time analytics pipeline.",
+      "expected_outcome": "A comprehensive document outlining the architecture and components of a real-time analytics pipeline, including event ingestion, stream processing, storage, and dashboard serving layers.",
+      "key_unknowns": [
+        "Specific technologies to be used",
+        "Scale of the pipeline",
+        "Target audience for the document",
+        "Integration requirements with existing systems"
+      ],
+      "recommended_strategy": "First, conduct research to gather current best practices and technologies used in real-time analytics pipelines. Then, synthesize this information into a structured document that outlines each component of the pipeline, ensuring clarity and technical accuracy.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Real-Time Analytics Pipeline Technologies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices, technologies, and architectural patterns for real-time analytics pipelines.",
+          "prompt": "Search the web for current best practices and technologies used in real-time analytics pipelines. Include information on event ingestion, stream processing, storage solutions, and dashboard serving technologies. Provide citations and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Technical Design Document",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured technical design document detailing the architecture and components of a real-time analytics pipeline.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a technical design document for a real-time analytics pipeline. Include sections on event ingestion, stream processing, storage, and dashboard serving layers. Ensure the document is clear, technically accurate, and tailored to a technical audience.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-real-time-analytics-pipeline.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1912
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsm3nyz2r85",
     "title": "Design a personal knowledge management workflow using Obsidian. Include daily no",
     "raw_request": "Design a personal knowledge management workflow using Obsidian. Include daily notes, project notes, meeting notes, and book notes with linking strategy.",
