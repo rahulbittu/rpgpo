@@ -1,5 +1,709 @@
 [
   {
+    "task_id": "t_mmtchs4uwksj",
+    "title": "Design a comprehensive personal growth tracking system. Include OKR goal-setting",
+    "raw_request": "Design a comprehensive personal growth tracking system. Include OKR goal-setting, skill acquisition tracking, habit monitoring, and quarterly reviews.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:35:25.614Z",
+    "updated_at": "2026-03-16T15:43:26.705Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:37:39.271Z",
+      "interpreted_objective": "Design a system for tracking personal growth with OKR goal-setting, skill acquisition, habit monitoring, and quarterly reviews.",
+      "expected_outcome": "A detailed, actionable plan for a personal growth tracking system that integrates OKR goals, skill tracking, habit monitoring, and quarterly reviews.",
+      "key_unknowns": [
+        "Specific tools or platforms preferred for tracking",
+        "Integration with existing systems",
+        "Level of automation desired"
+      ],
+      "recommended_strategy": "First, research current best practices and tools for personal growth tracking systems. Then, synthesize this information into a comprehensive plan that includes OKR goal-setting, skill acquisition tracking, habit monitoring, and quarterly reviews. Ensure the plan is actionable and aligns with Rahul's priorities.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the comprehensive plan"
+      ],
+      "subtasks": [
+        {
+          "title": "Research best practices for personal growth tracking systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices, tools, and methodologies for personal growth tracking with citations.",
+          "prompt": "Search the web for current best practices and tools for personal growth tracking systems, including OKR goal-setting, skill acquisition, habit monitoring, and quarterly reviews. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize a comprehensive personal growth tracking system plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed plan for a personal growth tracking system, integrating OKR goals, skill tracking, habit monitoring, and quarterly reviews.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive plan for a personal growth tracking system. Include OKR goal-setting, skill acquisition tracking, habit monitoring, and quarterly reviews. Ensure the plan is actionable and aligns with Rahul's priorities.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-growth-tracking-system.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2000
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmtchs4czuck",
+    "title": "Create a comprehensive guide to home electrical safety for homeowners. Include c",
+    "raw_request": "Create a comprehensive guide to home electrical safety for homeowners. Include circuit breaker management, GFCI requirements, and smart switch installation.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:35:25.596Z",
+    "updated_at": "2026-03-16T15:43:10.982Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:37:24.172Z",
+      "interpreted_objective": "Create a comprehensive guide on home electrical safety for homeowners.",
+      "expected_outcome": "A detailed guide covering circuit breaker management, GFCI requirements, and smart switch installation.",
+      "key_unknowns": [
+        "Latest safety standards for home electrical systems",
+        "Specific installation procedures for smart switches",
+        "Common homeowner mistakes in electrical safety"
+      ],
+      "recommended_strategy": "First, gather current information on home electrical safety standards, focusing on circuit breakers, GFCI, and smart switches. Then, synthesize this information into a clear, actionable guide for homeowners. Ensure the guide is easy to understand and includes practical tips.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Electrical Safety Standards",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on home electrical safety standards, including circuit breaker management, GFCI requirements, and smart switch installation.",
+          "prompt": "Search the web for current, specific information about home electrical safety standards, focusing on circuit breaker management, GFCI requirements, and smart switch installation. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Electrical Safety Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide to home electrical safety for homeowners.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations into a comprehensive guide. Include sections on circuit breaker management, GFCI requirements, and smart switch installation, with specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-home-electrical-safety-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2441
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtchs3vyfbt",
+    "title": "Write a complete screenplay treatment for a sci-fi thriller about a linguist dec",
+    "raw_request": "Write a complete screenplay treatment for a sci-fi thriller about a linguist decoding alien messages in an ancient human language.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:35:25.579Z",
+    "updated_at": "2026-03-16T15:42:57.226Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:37:14.742Z",
+      "interpreted_objective": "Create a screenplay treatment for a sci-fi thriller involving a linguist decoding alien messages in an ancient human language.",
+      "expected_outcome": "A detailed and engaging screenplay treatment that outlines the plot, characters, and key scenes of the sci-fi thriller.",
+      "key_unknowns": [
+        "Specific details about the alien messages",
+        "The ancient human language used",
+        "Character development and arcs",
+        "Plot twists and resolution"
+      ],
+      "recommended_strategy": "Conduct research on existing sci-fi thrillers and linguistic decoding to gather inspiration and context. Then, synthesize this information into a structured screenplay treatment that includes plot, character development, and key scenes.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Sci-Fi Thrillers and Linguistic Decoding",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gathered data on popular sci-fi thrillers and linguistic decoding techniques with citations.",
+          "prompt": "Search the web for current, specific information about popular sci-fi thrillers and linguistic decoding techniques. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Screenplay Treatment",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured screenplay treatment for the sci-fi thriller.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a screenplay treatment for a sci-fi thriller about a linguist decoding alien messages in an ancient human language. Include plot outline, character development, and key scenes.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-sci-fi-thriller-treatment.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1886
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtchs3dnxv6",
+    "title": "Plan a 14-day grand tour of the Italian lakes Como, Garda, and Maggiore. Include",
+    "raw_request": "Plan a 14-day grand tour of the Italian lakes Como, Garda, and Maggiore. Include villa visits, water sports, and wine tasting in Franciacorta.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:35:25.561Z",
+    "updated_at": "2026-03-16T15:42:35.877Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:36:56.964Z",
+      "interpreted_objective": "Plan a detailed 14-day itinerary for a grand tour of the Italian lakes including cultural and recreational activities.",
+      "expected_outcome": "A comprehensive itinerary that includes villa visits, water sports, and wine tasting in Franciacorta, ensuring a balanced mix of activities across the 14 days.",
+      "key_unknowns": [
+        "Specific villas to visit",
+        "Availability of water sports activities",
+        "Wine tasting options in Franciacorta"
+      ],
+      "recommended_strategy": "First, conduct research to identify popular villas, water sports, and wine tasting experiences in the Italian lakes region. Then, synthesize this information into a structured 14-day itinerary, ensuring a mix of activities each day.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Italian Lakes Activities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of popular villas, water sports, and wine tasting experiences in the Italian lakes region with sources.",
+          "prompt": "Search the web for current, specific information about popular villas, water sports, and wine tasting experiences in the Italian lakes region (Como, Garda, Maggiore) and Franciacorta. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize 14-Day Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 14-day itinerary for the Italian lakes tour, including villa visits, water sports, and wine tasting.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 14-day itinerary for a grand tour of the Italian lakes (Como, Garda, Maggiore) including villa visits, water sports, and wine tasting in Franciacorta. Ensure a balanced mix of activities each day.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-ItalianLakesTour.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2490
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtchs2uirxn",
+    "title": "Design a comprehensive hydration optimization protocol. Include water intake cal",
+    "raw_request": "Design a comprehensive hydration optimization protocol. Include water intake calculation, electrolyte balance, and effects on cognitive performance.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:35:25.542Z",
+    "updated_at": "2026-03-16T15:42:15.580Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:36:42.282Z",
+      "interpreted_objective": "Design a comprehensive hydration optimization protocol focusing on water intake calculation, electrolyte balance, and cognitive performance effects.",
+      "expected_outcome": "A detailed report outlining a hydration optimization protocol that includes specific guidelines for water intake, maintaining electrolyte balance, and understanding the impact on cognitive performance.",
+      "key_unknowns": [
+        "Optimal water intake calculations based on various factors",
+        "Methods to maintain electrolyte balance",
+        "Scientific evidence linking hydration to cognitive performance"
+      ],
+      "recommended_strategy": "Conduct research to gather current scientific data on hydration needs, electrolyte balance, and cognitive performance. Synthesize findings into a comprehensive protocol with actionable recommendations. Ensure the protocol is evidence-based and practical for implementation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Hydration Needs and Electrolyte Balance",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current scientific data on optimal water intake and methods to maintain electrolyte balance.",
+          "prompt": "Search the web for current, specific information about optimal water intake calculations based on factors like age, weight, and activity level, as well as methods to maintain electrolyte balance. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Analyze Impact of Hydration on Cognitive Performance",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Scientific evidence linking hydration levels to cognitive performance.",
+          "prompt": "Search the web for scientific studies and evidence linking hydration levels to cognitive performance. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Hydration Optimization Protocol",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive hydration optimization protocol with actionable recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive hydration optimization protocol. Include specific guidelines for water intake, maintaining electrolyte balance, and understanding the impact on cognitive performance.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2687
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtchs2c34e1",
+    "title": "Create a comprehensive guide to building a side business while employed full-tim",
+    "raw_request": "Create a comprehensive guide to building a side business while employed full-time. Include IP considerations, legal structure, and tax implications.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:35:25.524Z",
+    "updated_at": "2026-03-16T15:41:52.944Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:36:24.683Z",
+      "interpreted_objective": "Create a comprehensive guide for building a side business while employed full-time, covering IP, legal, and tax aspects.",
+      "expected_outcome": "A detailed, actionable guide that helps individuals start a side business with full understanding of IP, legal structures, and tax implications.",
+      "key_unknowns": [
+        "Specific IP considerations for different types of businesses",
+        "Legal structure options based on jurisdiction",
+        "Tax implications for side businesses"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on IP considerations, legal structures, and tax implications for side businesses. Synthesize this information into a comprehensive guide. Ensure the guide is actionable and relevant to individuals employed full-time.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research IP, Legal, and Tax Considerations",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research notes on IP, legal structures, and tax implications for side businesses.",
+          "prompt": "Search the web for current, specific information about IP considerations, legal structures, and tax implications for building a side business while employed full-time. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide to Building a Side Business",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on building a side business while employed full-time, including IP, legal, and tax considerations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations into a comprehensive guide for building a side business while employed full-time. Include specific IP considerations, legal structure options, and tax implications.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1989
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmtchs1udkmv",
+    "title": "Research the best home 3D printers for beginners under five hundred dollars. Com",
+    "raw_request": "Research the best home 3D printers for beginners under five hundred dollars. Compare Bambu Lab A1 Mini, Prusa Mini+, and Creality Ender-3 V3.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:35:25.506Z",
+    "updated_at": "2026-03-16T15:41:33.597Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:36:14.646Z",
+      "interpreted_objective": "Research and compare the best home 3D printers for beginners under $500, focusing on Bambu Lab A1 Mini, Prusa Mini+, and Creality Ender-3 V3.",
+      "expected_outcome": "A comprehensive comparison report detailing the features, pros, cons, and pricing of the three specified 3D printers, helping beginners make an informed purchasing decision.",
+      "key_unknowns": [
+        "Current pricing and availability of each 3D printer",
+        "Feature differences between the printers",
+        "User reviews and ratings for each printer"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on the three 3D printers, including pricing, features, and user feedback. Then, synthesize this information into a structured comparison report with actionable recommendations for beginners.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research 3D Printers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Bambu Lab A1 Mini, Prusa Mini+, and Creality Ender-3 V3 including pricing, features, and user reviews.",
+          "prompt": "Search the web for current, specific information about the Bambu Lab A1 Mini, Prusa Mini+, and Creality Ender-3 V3 3D printers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize 3D Printer Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the three 3D printers with actionable recommendations for beginners.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comparison report of the Bambu Lab A1 Mini, Prusa Mini+, and Creality Ender-3 V3 3D printers. Include specific features, pros, cons, pricing, and recommendations for beginners.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-3d-printers-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2215
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtchs1auqf8",
+    "title": "Explain how transformer architecture works in large language models. Cover self-",
+    "raw_request": "Explain how transformer architecture works in large language models. Cover self-attention, positional encoding, KV-cache optimization, and Flash Attention.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:35:25.486Z",
+    "updated_at": "2026-03-16T15:41:18.039Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:36:01.259Z",
+      "interpreted_objective": "Explain transformer architecture in large language models, focusing on key components and optimizations.",
+      "expected_outcome": "A comprehensive, clear explanation of transformer architecture, including self-attention, positional encoding, KV-cache optimization, and Flash Attention, suitable for a technically proficient audience.",
+      "key_unknowns": [
+        "Current advancements in Flash Attention",
+        "Latest optimizations in KV-cache"
+      ],
+      "recommended_strategy": "Conduct web research to gather the most recent and relevant information on transformer architecture components and optimizations. Then, synthesize this information into a detailed report that explains each component clearly and concisely, tailored for an audience with a strong technical background.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Transformer Architecture",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and citations on transformer architecture, self-attention, positional encoding, KV-cache optimization, and Flash Attention.",
+          "prompt": "Search the web for current, specific information about transformer architecture in large language models. Focus on self-attention, positional encoding, KV-cache optimization, and Flash Attention. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Transformer Architecture Explanation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed, structured explanation of transformer architecture, including self-attention, positional encoding, KV-cache optimization, and Flash Attention.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive explanation of transformer architecture in large language models. Include detailed descriptions of self-attention, positional encoding, KV-cache optimization, and Flash Attention. Ensure the explanation is clear and suitable for a technically proficient audience.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-transformer-architecture.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1922
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmtchs0riruq",
+    "title": "Create a guide to building a tax-efficient investment portfolio across multiple ",
+    "raw_request": "Create a guide to building a tax-efficient investment portfolio across multiple account types. Include asset location strategy and qualified dividend optimization.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:35:25.467Z",
+    "updated_at": "2026-03-16T15:40:49.255Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:35:49.653Z",
+      "interpreted_objective": "Create a guide on building a tax-efficient investment portfolio with asset location strategy and dividend optimization.",
+      "expected_outcome": "A detailed guide that provides actionable strategies for tax efficiency in investment portfolios, including specific asset location strategies and methods for optimizing qualified dividends.",
+      "key_unknowns": [
+        "Specific tax laws and regulations affecting investment strategies",
+        "Current best practices in asset location and dividend optimization",
+        "Examples of successful tax-efficient portfolios"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on tax laws and investment strategies related to asset location and dividend optimization. Synthesize this information into a comprehensive guide with actionable steps and real-world examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tax-Efficient Investment Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on tax-efficient investment strategies, including asset location and dividend optimization.",
+          "prompt": "Search the web for current, specific information about tax-efficient investment strategies, including asset location and qualified dividend optimization. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Tax-Efficient Investment Portfolios",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide detailing strategies for building a tax-efficient investment portfolio, with specific recommendations and examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for building a tax-efficient investment portfolio. Include specific asset location strategies, methods for optimizing qualified dividends, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2350
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmtchs04r1o0",
+    "title": "Design a comprehensive database connection pooling strategy. Compare PgBouncer, ",
+    "raw_request": "Design a comprehensive database connection pooling strategy. Compare PgBouncer, pgpool-II, and application-level pooling with connection lifecycle management and monitoring.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T15:35:25.444Z",
+    "updated_at": "2026-03-16T15:40:31.888Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T15:35:38.745Z",
+      "interpreted_objective": "Design a comprehensive database connection pooling strategy by comparing PgBouncer, pgpool-II, and application-level pooling.",
+      "expected_outcome": "A detailed report comparing the three pooling strategies with recommendations on the best approach based on connection lifecycle management and monitoring.",
+      "key_unknowns": [
+        "Current performance metrics and features of PgBouncer, pgpool-II, and application-level pooling",
+        "The specific needs and constraints of the database environment in question",
+        "Latest trends and updates in database connection pooling technologies"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on PgBouncer, pgpool-II, and application-level pooling. Then, synthesize this data into a comparative analysis, highlighting pros, cons, and monitoring capabilities. Finally, provide a strategic recommendation tailored to typical use cases.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Database Connection Pooling Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on PgBouncer, pgpool-II, and application-level pooling, including features, performance, and monitoring capabilities.",
+          "prompt": "Search the web for current, specific information about PgBouncer, pgpool-II, and application-level pooling. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparative Analysis and Recommendations",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing PgBouncer, pgpool-II, and application-level pooling, with recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-database-connection-pooling.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2099
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmt4t82rtpzn",
+    "title": "[Scheduled] Daily AI News Brief",
+    "raw_request": "Search the web for today's most important AI and technology news. Include specific headlines, sources, publication dates, and relevance analysis for a data engineer / startup founder. Focus on the last 24 hours.",
+    "domain": "newsroom",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "high",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T12:00:22.563Z",
+    "updated_at": "2026-03-16T15:35:25.220Z",
+    "status": "failed",
+    "board_deliberation": null,
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelm412"
+  },
+  {
     "task_id": "t_mmsxwzt082fm",
     "title": "Design a comprehensive personal growth tracking system. Include goal-setting fra",
     "raw_request": "Design a comprehensive personal growth tracking system. Include goal-setting frameworks like OKRs, skill acquisition tracking, habit formation monitoring, and quarterly review methodology.",
@@ -10,8 +714,8 @@
     "risk_level": "green",
     "success_criteria": "",
     "created_at": "2026-03-16T08:47:21.156Z",
-    "updated_at": "2026-03-16T08:47:38.496Z",
-    "status": "deliberating",
+    "updated_at": "2026-03-16T15:35:25.239Z",
+    "status": "failed",
     "board_deliberation": null,
     "execution_plan": null,
     "project_id": "prj_mmplwhelp1xs"
@@ -27,8 +731,8 @@
     "risk_level": "green",
     "success_criteria": "",
     "created_at": "2026-03-16T08:47:21.050Z",
-    "updated_at": "2026-03-16T08:47:36.479Z",
-    "status": "deliberating",
+    "updated_at": "2026-03-16T15:35:25.256Z",
+    "status": "failed",
     "board_deliberation": null,
     "execution_plan": null,
     "project_id": "prj_mmplwhelajyt"
@@ -44,8 +748,8 @@
     "risk_level": "green",
     "success_criteria": "",
     "created_at": "2026-03-16T08:47:20.977Z",
-    "updated_at": "2026-03-16T08:47:34.493Z",
-    "status": "deliberating",
+    "updated_at": "2026-03-16T15:35:25.272Z",
+    "status": "failed",
     "board_deliberation": null,
     "execution_plan": null,
     "project_id": "prj_mmrwwk015vlu"
@@ -61,8 +765,8 @@
     "risk_level": "green",
     "success_criteria": "",
     "created_at": "2026-03-16T08:47:20.877Z",
-    "updated_at": "2026-03-16T08:47:32.491Z",
-    "status": "deliberating",
+    "updated_at": "2026-03-16T15:35:25.289Z",
+    "status": "failed",
     "board_deliberation": null,
     "execution_plan": null,
     "project_id": "prj_mmplwhelajyt"
@@ -78,8 +782,8 @@
     "risk_level": "green",
     "success_criteria": "",
     "created_at": "2026-03-16T08:47:20.746Z",
-    "updated_at": "2026-03-16T08:47:30.475Z",
-    "status": "deliberating",
+    "updated_at": "2026-03-16T15:35:25.305Z",
+    "status": "failed",
     "board_deliberation": null,
     "execution_plan": null,
     "project_id": "prj_mmplwhelajyt"
@@ -95,8 +799,8 @@
     "risk_level": "green",
     "success_criteria": "",
     "created_at": "2026-03-16T08:47:20.656Z",
-    "updated_at": "2026-03-16T08:47:28.490Z",
-    "status": "deliberating",
+    "updated_at": "2026-03-16T15:35:25.322Z",
+    "status": "failed",
     "board_deliberation": null,
     "execution_plan": null,
     "project_id": "prj_mmplwhel73hc"
@@ -112,8 +816,8 @@
     "risk_level": "green",
     "success_criteria": "",
     "created_at": "2026-03-16T08:47:20.561Z",
-    "updated_at": "2026-03-16T08:47:26.479Z",
-    "status": "deliberating",
+    "updated_at": "2026-03-16T15:35:25.338Z",
+    "status": "failed",
     "board_deliberation": null,
     "execution_plan": null,
     "project_id": "prj_mmr8utczkr9d"
@@ -129,8 +833,8 @@
     "risk_level": "green",
     "success_criteria": "",
     "created_at": "2026-03-16T08:47:20.528Z",
-    "updated_at": "2026-03-16T08:47:24.476Z",
-    "status": "deliberating",
+    "updated_at": "2026-03-16T15:35:25.355Z",
+    "status": "failed",
     "board_deliberation": null,
     "execution_plan": null,
     "project_id": "prj_mmrxfoasuq8h"
@@ -146,8 +850,8 @@
     "risk_level": "green",
     "success_criteria": "",
     "created_at": "2026-03-16T08:47:20.429Z",
-    "updated_at": "2026-03-16T08:47:22.459Z",
-    "status": "deliberating",
+    "updated_at": "2026-03-16T15:35:25.371Z",
+    "status": "failed",
     "board_deliberation": null,
     "execution_plan": null,
     "project_id": "prj_mmplwhel73hc"
@@ -163,8 +867,8 @@
     "risk_level": "green",
     "success_criteria": "",
     "created_at": "2026-03-16T08:47:20.407Z",
-    "updated_at": "2026-03-16T08:47:20.462Z",
-    "status": "deliberating",
+    "updated_at": "2026-03-16T15:35:25.387Z",
+    "status": "failed",
     "board_deliberation": null,
     "execution_plan": null,
     "project_id": "prj_mmr8utczkr9d"
@@ -63782,8 +64486,8 @@
     "risk_level": "yellow",
     "success_criteria": "",
     "created_at": "2026-03-15T15:07:32.375Z",
-    "updated_at": "2026-03-16T05:25:21.756Z",
-    "status": "waiting_approval",
+    "updated_at": "2026-03-16T15:18:26.168Z",
+    "status": "failed",
     "board_deliberation": {
       "timestamp": "2026-03-15T15:07:37.855Z",
       "interpreted_objective": "Identify and detail top passive income opportunities for senior data engineers in 2025-2026.",

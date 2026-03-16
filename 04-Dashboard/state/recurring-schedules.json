@@ -10,8 +10,15 @@
     "concurrency": "skip_if_running",
     "createdAt": 1773586568950,
     "updatedAt": 1773586568950,
-    "runCount": 0,
-    "history": [],
-    "nextRunAt": 1773662400000
+    "runCount": 1,
+    "history": [
+      {
+        "runAt": 1773662422583,
+        "taskId": "t_mmt4t82rtpzn",
+        "status": "success"
+      }
+    ],
+    "nextRunAt": 1773748800000,
+    "lastRunAt": 1773662422582
   }
 ]
