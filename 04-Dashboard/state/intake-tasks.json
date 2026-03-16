@@ -1,5 +1,677 @@
 [
   {
+    "task_id": "t_mmssammea0oy",
+    "title": "Design a personal CRM system for networking and relationship management. Include",
+    "raw_request": "Design a personal CRM system for networking and relationship management. Include contact categorization, interaction tracking, follow-up automation, and integration with LinkedIn and email.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:09:59.558Z",
+    "updated_at": "2026-03-16T06:14:19.679Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:10:57.773Z",
+      "interpreted_objective": "Design a personal CRM system tailored for networking and relationship management, integrating LinkedIn and email functionalities.",
+      "expected_outcome": "A detailed report outlining the design of a personal CRM system with specific features like contact categorization, interaction tracking, follow-up automation, and integration with LinkedIn and email.",
+      "key_unknowns": [
+        "Specific CRM features preferred by Rahul",
+        "Preferred platforms or technologies for integration",
+        "Rahul's existing tools and workflows"
+      ],
+      "recommended_strategy": "First, research existing CRM systems and their features to identify best practices and potential integration points with LinkedIn and email. Then, synthesize this information into a comprehensive design proposal tailored to Rahul's needs, considering his career strategy and professional development goals.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the CRM design proposal"
+      ],
+      "subtasks": [
+        {
+          "title": "Research existing CRM systems",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current CRM systems with features relevant to networking and relationship management, including integration capabilities with LinkedIn and email.",
+          "prompt": "Search the web for current CRM systems that focus on networking and relationship management. Include specific features like contact categorization, interaction tracking, follow-up automation, and integration with LinkedIn and email. Provide real names, features, and URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize CRM design proposal",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive design proposal for a personal CRM system, including specific features and integration strategies.",
+          "prompt": "Based on the research results, synthesize a design proposal for a personal CRM system tailored to networking and relationship management. Include specific features like contact categorization, interaction tracking, follow-up automation, and integration with LinkedIn and email. Provide actionable recommendations and next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-2023-10-CRM-design.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2202
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmssamkk330h",
+    "title": "Create a guide to building a productive outdoor workspace. Include weather prote",
+    "raw_request": "Create a guide to building a productive outdoor workspace. Include weather protection options, power solutions, Wi-Fi extension, glare-reducing monitor setups, and insect management strategies.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:09:59.492Z",
+    "updated_at": "2026-03-16T06:14:12.506Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:10:51.953Z",
+      "interpreted_objective": "Create a comprehensive guide for setting up a productive outdoor workspace.",
+      "expected_outcome": "A detailed guide covering weather protection, power solutions, Wi-Fi extension, glare-reducing monitor setups, and insect management strategies.",
+      "key_unknowns": [
+        "Specific preferences or constraints for the guide",
+        "Target audience for the guide"
+      ],
+      "recommended_strategy": "Research current best practices and solutions for outdoor workspaces. Synthesize this information into a clear, actionable guide. Focus on practical, cost-effective solutions that can be implemented easily.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Outdoor Workspace Solutions",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and solutions for outdoor workspaces.",
+          "prompt": "Search the web for current, specific information about building productive outdoor workspaces. Include details on weather protection options, power solutions, Wi-Fi extension, glare-reducing monitor setups, and insect management strategies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Outdoor Workspace",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide for setting up a productive outdoor workspace.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building a productive outdoor workspace. Include specific recommendations for weather protection, power solutions, Wi-Fi extension, glare-reducing monitor setups, and insect management strategies.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1971
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmssamiux9pe",
+    "title": "Write a complete treatment for a limited series about the rise and fall of a fic",
+    "raw_request": "Write a complete treatment for a limited series about the rise and fall of a fictional social media company. Include 8 episode outlines, character dynamics, and themes of privacy, addiction, and algorithmic manipulation.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:09:59.430Z",
+    "updated_at": "2026-03-16T06:14:04.465Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:10:47.427Z",
+      "interpreted_objective": "Create a detailed treatment for a limited series about a fictional social media company's rise and fall, including episode outlines, character dynamics, and thematic exploration.",
+      "expected_outcome": "A comprehensive series treatment with eight episode outlines, character dynamics, and exploration of themes like privacy, addiction, and algorithmic manipulation.",
+      "key_unknowns": [
+        "Specific plot points for each episode",
+        "Character names and detailed backstories",
+        "How themes like privacy and algorithmic manipulation will be integrated into the storyline"
+      ],
+      "recommended_strategy": "Conduct research on current trends and issues related to social media companies to inform the series' themes. Then, synthesize this information into a structured treatment, ensuring the inclusion of detailed episode outlines and character dynamics.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Social Media Trends",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current trends and issues related to social media companies, focusing on privacy, addiction, and algorithmic manipulation.",
+          "prompt": "Search the web for current trends and issues related to social media companies, focusing on privacy, addiction, and algorithmic manipulation. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Series Treatment",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed treatment for a limited series, including eight episode outlines, character dynamics, and thematic exploration.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed treatment for a limited series about the rise and fall of a fictional social media company. Include eight episode outlines, character dynamics, and themes of privacy, addiction, and algorithmic manipulation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-series-treatment.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1947
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmssamgvohz7",
+    "title": "Plan a 12-day food and culture tour through Portugal from Lisbon to Porto. Inclu",
+    "raw_request": "Plan a 12-day food and culture tour through Portugal from Lisbon to Porto. Include Michelin-starred restaurants, wine regions (Douro Valley, Alentejo), surfing spots, and tile art workshops.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:09:59.359Z",
+    "updated_at": "2026-03-16T06:13:54.464Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:10:40.903Z",
+      "interpreted_objective": "Plan a detailed 12-day food and culture tour through Portugal from Lisbon to Porto.",
+      "expected_outcome": "A comprehensive itinerary including Michelin-starred restaurants, wine regions, surfing spots, and tile art workshops.",
+      "key_unknowns": [
+        "Specific Michelin-starred restaurants to include",
+        "Exact locations of surfing spots",
+        "Availability and details of tile art workshops"
+      ],
+      "recommended_strategy": "First, research the top Michelin-starred restaurants, wine regions, surfing spots, and tile art workshops in Portugal. Then, synthesize this information into a detailed day-by-day itinerary that balances culinary experiences, cultural activities, and leisure.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Food and Culture Spots in Portugal",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of top Michelin-starred restaurants, wine regions, surfing spots, and tile art workshops in Portugal with details and sources.",
+          "prompt": "Search the web for current, specific information about Michelin-starred restaurants, wine regions (Douro Valley, Alentejo), surfing spots, and tile art workshops in Portugal. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Create 12-Day Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 12-day itinerary for a food and culture tour through Portugal.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 12-day itinerary for a food and culture tour through Portugal from Lisbon to Porto. Include specific Michelin-starred restaurants, wine regions, surfing spots, and tile art workshops. Ensure the itinerary balances culinary experiences, cultural activities, and leisure.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-PortugalTourItinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2490
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmssamgho9g7",
+    "title": "Design a comprehensive joint mobility and flexibility program for desk workers. ",
+    "raw_request": "Design a comprehensive joint mobility and flexibility program for desk workers. Include morning flow routines, thoracic spine mobility drills, hip flexor recovery, and wrist health for heavy typists.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:09:59.345Z",
+    "updated_at": "2026-03-16T06:13:46.740Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:10:34.821Z",
+      "interpreted_objective": "Design a comprehensive joint mobility and flexibility program for desk workers focusing on specific areas of concern.",
+      "expected_outcome": "A detailed, evidence-based program that includes morning routines, thoracic spine mobility drills, hip flexor recovery exercises, and wrist health strategies, tailored for desk workers.",
+      "key_unknowns": [
+        "Specific evidence-based exercises for each focus area",
+        "Current best practices for desk worker mobility programs"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and evidence-based exercises for joint mobility and flexibility specific to desk workers. Synthesize this information into a structured program with clear instructions and safety disclaimers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Desk Worker Mobility",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and evidence-based exercises for joint mobility and flexibility tailored to desk workers.",
+          "prompt": "Search the web for current, evidence-based best practices and exercises for joint mobility and flexibility programs specifically designed for desk workers. Focus on morning flow routines, thoracic spine mobility drills, hip flexor recovery, and wrist health for heavy typists. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Joint Mobility Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive, structured program document with specific exercises and routines for joint mobility and flexibility for desk workers.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comprehensive joint mobility and flexibility program for desk workers. Include specific morning flow routines, thoracic spine mobility drills, hip flexor recovery exercises, and wrist health strategies. Provide clear instructions, safety disclaimers, and any necessary equipment recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-joint-mobility-program.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1931
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmssamg2hlcr",
+    "title": "Create a comprehensive guide to building executive presence as a senior engineer",
+    "raw_request": "Create a comprehensive guide to building executive presence as a senior engineer. Include communication frameworks, stakeholder management, conflict resolution, and presenting technical ideas to non-technical audiences.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:09:59.330Z",
+    "updated_at": "2026-03-16T06:13:38.404Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:10:30.040Z",
+      "interpreted_objective": "Create a detailed guide for senior engineers on building executive presence.",
+      "expected_outcome": "A comprehensive guide covering communication, stakeholder management, conflict resolution, and presenting technical ideas to non-technical audiences.",
+      "key_unknowns": [
+        "Specific frameworks to include",
+        "Preferred format for the guide",
+        "Any existing materials to incorporate"
+      ],
+      "recommended_strategy": "Conduct research to identify effective frameworks and strategies for building executive presence. Synthesize this information into a structured guide tailored for senior engineers, ensuring it aligns with startup contexts and priorities.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Executive Presence Frameworks",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of effective frameworks and strategies for building executive presence.",
+          "prompt": "Search the web for current, specific information about effective frameworks and strategies for building executive presence as a senior engineer. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Executive Presence",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for senior engineers on building executive presence.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for building executive presence as a senior engineer. Include communication frameworks, stakeholder management, conflict resolution, and presenting technical ideas to non-technical audiences.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1946
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmssamd3rbg3",
+    "title": "Research the best home espresso machines under $1000 for latte art. Compare Brev",
+    "raw_request": "Research the best home espresso machines under $1000 for latte art. Compare Breville Barista Express, Gaggia Classic Pro, and Rancilio Silvia with grinder pairing recommendations.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:09:59.223Z",
+    "updated_at": "2026-03-16T06:13:30.351Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:10:23.568Z",
+      "interpreted_objective": "Research and compare the best home espresso machines under $1000 for latte art, focusing on Breville Barista Express, Gaggia Classic Pro, and Rancilio Silvia, including grinder pairing recommendations.",
+      "expected_outcome": "A detailed report comparing the three espresso machines with grinder pairing recommendations, including specific pros and cons for each machine and links to sources.",
+      "key_unknowns": [
+        "Current market prices for each espresso machine",
+        "Specific features that make each machine suitable for latte art",
+        "Recommended grinders for each machine"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on the Breville Barista Express, Gaggia Classic Pro, and Rancilio Silvia, focusing on their suitability for latte art and recommended grinders. Then, synthesize this research into a comprehensive comparison report with actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Espresso Machines and Grinders",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on the Breville Barista Express, Gaggia Classic Pro, and Rancilio Silvia, including prices, features for latte art, and recommended grinders, with citations.",
+          "prompt": "Search the web for current, specific information about the Breville Barista Express, Gaggia Classic Pro, and Rancilio Silvia espresso machines under $1000, focusing on their suitability for latte art and recommended grinder pairings. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Espresso Machine Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the three espresso machines, including pros and cons, grinder recommendations, and actionable insights.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for the Breville Barista Express, Gaggia Classic Pro, and Rancilio Silvia, focusing on their suitability for latte art and recommended grinders. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-espresso-machines.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2218
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmssamae6qye",
+    "title": "Explain how modern database query optimizers work. Cover cost-based vs rule-base",
+    "raw_request": "Explain how modern database query optimizers work. Cover cost-based vs rule-based optimization, join ordering algorithms, statistics collection, query plan caching, and how to read EXPLAIN ANALYZE output.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:09:59.126Z",
+    "updated_at": "2026-03-16T06:13:24.695Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:10:17.941Z",
+      "interpreted_objective": "Explain the workings of modern database query optimizers, including cost-based vs rule-based optimization, join ordering algorithms, statistics collection, query plan caching, and interpreting EXPLAIN ANALYZE output.",
+      "expected_outcome": "A comprehensive explanation of modern database query optimizers, covering specified topics with detailed insights and practical examples.",
+      "key_unknowns": [
+        "Current trends and advancements in database query optimization",
+        "Specific algorithms and techniques used in cost-based and rule-based optimization",
+        "Methods for statistics collection and their impact on query optimization",
+        "Best practices for reading and interpreting EXPLAIN ANALYZE output"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on database query optimizers, focusing on cost-based vs rule-based optimization, join ordering algorithms, statistics collection, and query plan caching. Then, synthesize the findings into a detailed explanation, including how to interpret EXPLAIN ANALYZE output.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Modern Database Query Optimizers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, specific information about modern database query optimizers, including cost-based vs rule-based optimization, join ordering algorithms, statistics collection, query plan caching, and EXPLAIN ANALYZE.",
+          "prompt": "Search the web for current, specific information about modern database query optimizers. Include details on cost-based vs rule-based optimization, join ordering algorithms, statistics collection, query plan caching, and how to read EXPLAIN ANALYZE output. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Explanation of Database Query Optimizers",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed explanation of modern database query optimizers, covering cost-based vs rule-based optimization, join ordering algorithms, statistics collection, query plan caching, and interpreting EXPLAIN ANALYZE output.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an explanation of modern database query optimizers. Include details on cost-based vs rule-based optimization, join ordering algorithms, statistics collection, query plan caching, and how to interpret EXPLAIN ANALYZE output. Provide specific examples and practical insights.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2352
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmssam9zre41",
+    "title": "Create a guide to angel investing for first-time accredited investors. Include d",
+    "raw_request": "Create a guide to angel investing for first-time accredited investors. Include deal flow sourcing, due diligence checklist, term sheet analysis, portfolio construction (20-30 bets), and tax advantages of QSBS.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:09:59.111Z",
+    "updated_at": "2026-03-16T06:13:15.350Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:10:11.367Z",
+      "interpreted_objective": "Create a comprehensive guide to angel investing for first-time accredited investors.",
+      "expected_outcome": "A detailed, actionable guide covering deal flow sourcing, due diligence, term sheet analysis, portfolio construction, and tax advantages of QSBS.",
+      "key_unknowns": [
+        "Current best practices in deal flow sourcing",
+        "Comprehensive due diligence checklist",
+        "Key elements of term sheet analysis",
+        "Strategies for constructing a portfolio of 20-30 investments",
+        "Tax advantages of QSBS for investors"
+      ],
+      "recommended_strategy": "Conduct thorough research on each component of angel investing to gather current best practices and expert insights. Synthesize this information into a structured guide that is easy to understand and actionable for first-time accredited investors.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Angel Investing Components",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data on deal flow sourcing, due diligence, term sheet analysis, portfolio construction, and QSBS tax advantages.",
+          "prompt": "Search the web for current, specific information about deal flow sourcing, due diligence checklists, term sheet analysis, portfolio construction strategies, and tax advantages of QSBS for angel investors. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Angel Investing Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable guide for first-time accredited investors on angel investing.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a guide on angel investing. Include sections on deal flow sourcing, due diligence, term sheet analysis, portfolio construction, and QSBS tax advantages.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-angel-investing-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2485
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmssam9f3l1v",
+    "title": "Design a comprehensive observability stack for a production Node.js application.",
+    "raw_request": "Design a comprehensive observability stack for a production Node.js application. Compare OpenTelemetry, Datadog, and Grafana Cloud with distributed tracing, custom metrics, and alert routing strategies.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:09:59.091Z",
+    "updated_at": "2026-03-16T06:13:06.368Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:10:04.625Z",
+      "interpreted_objective": "Design a comprehensive observability stack for a Node.js application by comparing OpenTelemetry, Datadog, and Grafana Cloud.",
+      "expected_outcome": "A detailed report comparing OpenTelemetry, Datadog, and Grafana Cloud for observability in Node.js applications, including distributed tracing, custom metrics, and alert routing strategies.",
+      "key_unknowns": [
+        "Current features and capabilities of OpenTelemetry, Datadog, and Grafana Cloud",
+        "Specific use cases and integrations for Node.js applications",
+        "Pricing models and cost implications of each tool"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information about OpenTelemetry, Datadog, and Grafana Cloud, focusing on their features, integrations, and pricing. Then, synthesize this information into a comparative analysis with actionable recommendations for building an observability stack.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Observability Tools",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on OpenTelemetry, Datadog, and Grafana Cloud, including features, integrations, and pricing.",
+          "prompt": "Search the web for current, specific information about OpenTelemetry, Datadog, and Grafana Cloud for observability in Node.js applications. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Observability Stack Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report comparing OpenTelemetry, Datadog, and Grafana Cloud, with recommendations for an observability stack.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for designing an observability stack for a Node.js application. Include specific comparisons, pros and cons, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-observability-stack.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2128
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
     "task_id": "t_mmss1o9wddle",
     "title": "Design a systematic approach to building a second brain for knowledge workers. I",
     "raw_request": "Design a systematic approach to building a second brain for knowledge workers. Include capture workflows, progressive summarization, MOC structures, spaced repetition integration, and weekly review templates.",

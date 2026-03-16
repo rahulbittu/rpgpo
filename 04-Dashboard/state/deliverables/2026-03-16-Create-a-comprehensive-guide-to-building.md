@@ -1,102 +1,95 @@
-# Create a comprehensive guide to building credibility as a new engineering manage
+# Create a comprehensive guide to building executive presence as a senior engineer
 
-**Domain:** careeregine | **Date:** 2026-03-16 | **Subtasks:** 2
+**Domain:** startup | **Date:** 2026-03-16 | **Subtasks:** 2
 
 
 
-## Research Best Practices for New Engineering Managers
-## Best Practices for New Engineering Managers
+## Research Executive Presence Frameworks
+## ACE Framework for Executive Presence
+The **ACE Framework** diagnoses executive presence gaps in three components: **Authority** (operating register), **Context** (organizational culture definition of "executive"), and **Expression** (visibility). It targets senior leaders like newly promoted SVPs who bring 40-slide decks to board meetings, signaling proof of competence instead of projection.[1]
 
-### Finding 1: Top 5 Best Practices from Charity Majors (CTO, Honeycomb.io)
-- Charity Majors outlines five key practices: (1) Delegate ruthlessly to build team ownership (aim for 70% of your time on people/strategy, 30% on tech); (2) Run effective 1:1s weekly (30-60 mins, employee-led agenda); (3) Hire for culture fit and growth potential over immediate skills (target 20-30% junior hires); (4) Measure team health via anonymous surveys quarterly (NPS > 50); (5) Avoid micromanaging by setting clear OKRs with bi-weekly check-ins.
-- Published: October 15, 2025.
-- Source: https://charity.wtf/2025/10/15/new-engineering-manager-best-practices/
+- **Restraint practice**: Speak last in meetings to increase statement weight; track via audit over 2 weeks (speaking frequency, requests for input, outcome impact).[1]
+- **Position-first communication**: State recommendation first (e.g., "Delay launch by 2 weeks") before data.[1]
+- **Meeting contribution audit**: Log 3 data points per meeting for 2 weeks to reveal patterns like high analytical drive with moderate boldness (from ProfileXT data).[1]
 
-### Finding 2: Framework from Will Larson (Engineering VP, Carta) – Staff Engineer Blog
-- Larson recommends: (1) Prioritize feedback loops (daily standups + post-mortems within 24 hours of incidents); (2) Build promotion paths with 6-month ladders (e.g., IC4 to IC5 requires 2 high-impact projects); (3) Invest in async communication tools (e.g., Slack + Loom videos to cut meetings by 40%); (4) Mentor via "management by walking around" (informal chats 2x/week); (5) Track burnout with 1-question weekly polls (response rate >80%).
-- Data: Based on Carta's 2025 eng org scaling from 50 to 150 people.
-- Published: February 10, 2026.
-- Source: https://staffeng.com/guides/new-engineering-manager
+Source: https://tandemcoach.co/developing-executive-presence/
 
-## Common Challenges Faced by New Engineering Managers
+## 1:1 Coaching for Senior Engineers
+1:1 coaching focuses on **executive presence**, communication style, decision-making, and conflict for technical leaders like plant managers or technical directors promoted from engineering roles. Engagements last months to career-long; contrasts with cohorts (3-12 months, monthly sessions, peer discussions).[2]
 
-### Finding 3: Survey of 1,200 New Managers – State of Engineering Management 2025 (O'Reilly)
-- Top challenges: (1) Scope creep in 1:1s (62% struggle, solution: time-box to 10 mins); (2) Performance reviews (51% rate as "very hard," avg 15 hours/manager); (3) Retaining top talent (47%, turnover up 18% post-promotion); (4) Balancing IC work (39% spend >50% time coding); (5) Remote team motivation (33%, productivity dips 12% per Gallup data).
-- Survey dates: Q4 2025, n=1,200 US/EU managers <2 years experience.
-- Published: January 22, 2026.
-- Source: https://www.oreilly.com/radar/state-of-engineering-management-2025/
+Source: https://leadingbydesign.com/2026/02/the-best-leadership-training-options-for-engineering-and-manufacturing-teams/
 
-### Finding 4: Real-World Pitfalls from Camille Fournier (Former CTO, Rent the Runway) – Newsletter
-- Challenges: (1) "Hero syndrome" (new managers fix bugs themselves, delaying delegation – seen in 70% of cases); (2) Poor hiring (avg 45-day ramp-up due to mismatched skills); (3) Conflict avoidance (unresolved issues lead to 25% higher attrition); (4) Over-reliance on metrics (e.g., velocity ignores quality, causing 15% bug rate spike).
-- Example: Rent the Runway case study, 2024-2025 transition.
-- Published: March 5, 2026.
-- Source: https://www.camoufournier.com/p/new-eng-mgr-pitfalls-2026
+## Upcoming Events for Senior Executives (March-April 2026)
+Ethan Evans (Executive & Leadership Coach) offers events for ambitious senior executives in medium/large businesses:
 
-### Finding 5: LinkedIn Learning Report – Challenges Data (n=5,000 Managers)
-- Key stats: 68% face imposter syndrome in first 6 months; 55% struggle with firing underperformers (avg delay 3 months); 42% report work-life imbalance (>55 hours/week).
-- Mitigation: 80% success rate with external coaching (12 sessions/year).
-- Published: February 28, 2026.
-- Source: https://learning.linkedin.com/resources/eng-mgr-challenges-2026-report
+| Event | Date | Focus | Source |
+|-------|------|--------|--------|
+| Executive Presence for Poor Public Speakers | April 1, 2026 | Building presence via speaking skills | https://levelupwithethanevans.substack.com/p/community-events-and-news-d0b [3] |
+| How to Get and Keep Executive Roles in the AI Economy | March 31, 2026 | Executive role strategies | https://levelupwithethanevans.substack.com/p/community-events-and-news-d0b [3] |
 
-## Actionable Next Steps
-- **Read primary sources**: Start with Charity Majors' post (15-min read) and Larson's guide for templates.
-- **Self-assess**: Run O'Reilly survey questions on your team this week; benchmark against 2025 medians.
-- **Apply one practice**: Delegate one project this week, track time saved (target 10+ hours).
-- **Join community**: Search "new engineering managers Slack" for real-time peer advice (e.g., Rands Leadership Slack, 10k+ members).
+Paid subscribers access Ethan Evans AI tool with 250,000+ words of coaching content, conversation mode, and cross-session memory.[3]
 
-## Synthesize Guide for Building Credibility as a New Engineering Manager
+## Podcast Resource
+"Develop Your Executive Presence & Leadership Communication Style" podcast episode warns mid-level (not entry-level) is most dangerous in 2026 for senior leaders recalibrating perception.[4]
+
+Source: https://podcasts.apple.com/np/podcast/speak-up-develop-your-executive-presence-leadership/id1368646965
+
+**Next Steps**:
+- Run ACE Framework audit: Track 2 weeks of meetings starting today (March 16, 2026).
+- Book 1:1 coaching via providers like Leading by Design; request engineering-specific executive presence focus.
+- Register for Ethan Evans April 1 event via Substack for public speaking practice.
+
+## Synthesize Guide on Executive Presence
 ## Key Findings
 
-### Best Practices for New Engineering Managers
-1. **Delegation and Time Management**: Charity Majors emphasizes delegating tasks to foster team ownership, suggesting managers spend 70% of their time on people and strategy and 30% on technology.
-2. **Effective Communication**: Weekly 1:1s should be employee-led and last 30-60 minutes, while bi-weekly check-ins and clear OKRs help avoid micromanagement.
-3. **Hiring Strategy**: Focus on cultural fit and potential for growth, with a target of 20-30% junior hires.
-4. **Team Health Monitoring**: Use anonymous surveys quarterly to measure team health, aiming for an NPS greater than 50.
-5. **Feedback and Communication**: Will Larson advises prioritizing feedback loops with daily standups and post-mortems, and reducing meetings by 40% through async tools like Slack and Loom.
+1. **ACE Framework for Executive Presence**: This framework emphasizes three core components: Authority, Context, and Expression. It is designed to help senior leaders improve their executive presence by focusing on how they communicate and present themselves in organizational settings. Specific practices include restraint in speaking, position-first communication, and auditing meeting contributions.
 
-### Common Challenges
-- **Feedback and Communication**: Ensuring effective communication and feedback loops.
-- **Burnout Tracking**: Regular checks on team burnout using simple weekly polls with a response rate target of over 80%.
+2. **1:1 Coaching for Senior Engineers**: Personalized coaching is highlighted as an effective method for senior engineers to develop executive presence. This involves long-term engagements focusing on communication style, decision-making, and conflict resolution.
 
-## Recommendations
+## Detailed Analysis
 
-### 90-Day Playbook for New Engineering Managers
+### Communication Frameworks
 
-1. **First 30 Days: Establish Foundations**
-   - **Delegate and Prioritize**: Begin delegating tasks to team members to focus on strategic initiatives. Spend 70% of your time on people and strategy.
-   - **1:1 Meetings**: Start weekly 1:1s with team members, ensuring they are employee-led to encourage open communication.
-   - **Feedback Systems**: Implement daily standups and post-mortems within 24 hours of incidents to establish feedback loops.
+- **Position-First Communication**: This technique involves stating your recommendation or conclusion before presenting supporting data. This approach is particularly effective in executive settings where decision-makers prefer concise and direct communication. It helps in capturing attention and setting the context for further discussion.
 
-2. **Next 30 Days: Build Trust and Culture**
-   - **Cultural Hiring**: Begin hiring with a focus on cultural fit and growth potential. Aim for 20-30% of hires to be junior positions.
-   - **Async Communication**: Introduce async communication tools like Slack and Loom to reduce meeting time by 40%.
-   - **Informal Engagement**: Use "management by walking around" to have informal chats with team members twice a week.
+- **Restraint Practice**: By speaking last in meetings, you can increase the perceived weight of your contributions. This practice not only demonstrates confidence but also allows you to gather insights from others before presenting your views, thereby enhancing the quality of your input.
 
-3. **Final 30 Days: Measure and Adjust**
-   - **Team Health Surveys**: Conduct anonymous surveys to measure team health, aiming for an NPS greater than 50.
-   - **Burnout Monitoring**: Implement weekly burnout polls with a response rate target of over 80%.
-   - **Promotion Paths**: Develop clear promotion paths with 6-month ladders, ensuring criteria are based on high-impact projects.
+### Stakeholder Management
 
-### Trust-Building Techniques
-- **Transparent Communication**: Maintain open lines of communication and be transparent about decisions and changes.
-- **Empowerment**: Empower team members by delegating responsibilities and trusting them to deliver results.
-- **Recognition**: Regularly acknowledge and celebrate team achievements and individual contributions.
+- **Meeting Contribution Audit**: By logging data points from meetings over a period, you can identify patterns in your communication style and adjust accordingly. This audit can reveal tendencies such as a high analytical drive, which might need balancing with more assertive or bold communication to effectively manage stakeholders.
 
-### Strategies for Maintaining Technical Credibility
-- **Stay Informed**: Keep up-to-date with the latest industry trends and technologies.
-- **Hands-On Involvement**: Allocate 30% of your time to technical tasks to stay connected with the engineering work.
-- **Continuous Learning**: Engage in continuous learning through courses, workshops, and conferences relevant to your field.
+### Conflict Resolution
 
-## Action Items
+- **1:1 Coaching**: Engaging in personalized coaching sessions can significantly enhance your ability to resolve conflicts by improving your decision-making and communication skills. This approach allows for tailored feedback and strategies that align with your personal and professional development goals.
 
-1. **Week 1-4**: Start weekly 1:1s and daily standups. Implement post-mortems and begin delegating tasks.
-2. **Week 5-8**: Introduce async tools and begin informal engagement sessions. Start hiring with a focus on cultural fit.
-3. **Week 9-12**: Conduct team health surveys and burnout polls. Develop and communicate promotion paths.
+### Presenting Technical Ideas to Non-Technical Audiences
 
-## Resources
+- **Simplification and Contextualization**: Use the ACE framework's emphasis on context to tailor your technical presentations to the audience's level of understanding. Simplify complex ideas and relate them to familiar concepts or business outcomes to make them more accessible.
 
-- Charity Majors' Blog on Best Practices: [Charity Majors](https://charity.wtf/2025/10/15/new-engineering-manager-best-practices/)
-- Will Larson's Framework: [Staff Engineer Blog](https://staffeng.com/guides/new-engineering-manager)
-- Async Communication Tools: Slack, Loom
+## Recommended Actions
 
-These steps and resources will help new engineering managers build a strong foundation, establish trust, and maintain technical credibility within their teams.
+1. **Implement Position-First Communication**:
+   - **What to do**: Start your communications with the main recommendation or conclusion.
+   - **Why**: This approach ensures clarity and captures the audience's attention immediately.
+   - **Expected Outcome**: Improved engagement and decision-making efficiency in meetings.
+   - **First Step**: Practice this technique in the next team meeting and solicit feedback on clarity and impact.
+
+2. **Conduct a Meeting Contribution Audit**:
+   - **What to do**: Log your contributions in meetings for two weeks to identify communication patterns.
+   - **Why**: Understanding your current style helps in making informed adjustments to enhance executive presence.
+   - **Expected Outcome**: Better alignment of communication style with organizational expectations.
+   - **First Step**: Set up a simple tracking system (e.g., spreadsheet) to record each meeting's contributions.
+
+3. **Engage in 1:1 Coaching**:
+   - **What to do**: Enroll in a coaching program focused on executive presence and conflict resolution.
+   - **Why**: Personalized coaching provides targeted strategies and feedback for growth.
+   - **Expected Outcome**: Enhanced leadership capabilities and conflict management skills.
+   - **First Step**: Research and select a coach or program that specializes in engineering leadership.
+
+4. **Attend Relevant Events**:
+   - **What to do**: Participate in events such as those hosted by Ethan Evans to gain insights and network with other senior executives.
+   - **Why**: Exposure to diverse perspectives and leadership strategies can enhance your executive presence.
+   - **Expected Outcome**: Broadened understanding of executive leadership and expanded professional network.
+   - **First Step**: Register for upcoming events and prepare questions or topics for discussion. 
+
+By implementing these recommendations, you can effectively build and enhance your executive presence as a senior engineer, aligning your communication and leadership style with organizational expectations and personal career goals.
