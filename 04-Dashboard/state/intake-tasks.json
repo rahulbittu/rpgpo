@@ -1,5 +1,683 @@
 [
   {
+    "task_id": "t_mmsukvmi5x0i",
+    "title": "Design a comprehensive personal risk management framework. Include insurance aud",
+    "raw_request": "Design a comprehensive personal risk management framework. Include insurance audit methodology, emergency fund sizing, identity theft prevention, digital security posture, and estate document checklist.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:13:57.018Z",
+    "updated_at": "2026-03-16T07:18:28.728Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:14:57.750Z",
+      "interpreted_objective": "Create a detailed personal risk management framework covering various aspects of risk mitigation.",
+      "expected_outcome": "A comprehensive document outlining methodologies and checklists for personal risk management, including insurance audits, emergency funds, identity theft prevention, digital security, and estate planning.",
+      "key_unknowns": [
+        "Specific audience for the framework",
+        "Preferred level of detail for each section",
+        "Existing knowledge or frameworks to build upon"
+      ],
+      "recommended_strategy": "Conduct web-based research to gather current best practices and methodologies for each component of personal risk management. Synthesize these findings into a structured framework document tailored to individual needs. Ensure all sections are actionable and include specific checklists and methodologies.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Risk Management Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and methodologies for personal risk management.",
+          "prompt": "Search the web for current best practices and methodologies in personal risk management, including insurance audit methodologies, emergency fund sizing, identity theft prevention, digital security postures, and estate document checklists. Provide detailed information with real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Risk Management Framework",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and comprehensive personal risk management framework document.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive personal risk management framework. Include detailed sections on insurance audit methodology, emergency fund sizing, identity theft prevention, digital security posture, and estate document checklist. Ensure the document is actionable and tailored for individual use.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-personal-risk-management-framework.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1927
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsukvji81m1",
+    "title": "Create a guide to building a productive laundry system for a family of four. Inc",
+    "raw_request": "Create a guide to building a productive laundry system for a family of four. Include sorting workflow, stain treatment reference, machine settings optimization, folding station setup, and wardrobe capsule integration.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:13:56.910Z",
+    "updated_at": "2026-03-16T07:18:18.990Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:14:50.627Z",
+      "interpreted_objective": "Create a comprehensive guide for setting up an efficient laundry system for a family of four.",
+      "expected_outcome": "A detailed, actionable guide that includes sorting workflow, stain treatment, machine settings, folding station setup, and wardrobe capsule integration.",
+      "key_unknowns": [
+        "Specific preferences or constraints of the family",
+        "Existing laundry equipment and space",
+        "Budget for any new equipment or tools"
+      ],
+      "recommended_strategy": "Conduct research on best practices for laundry systems tailored to families, focusing on efficiency and ease of use. Synthesize findings into a structured guide that addresses each component of the laundry process, ensuring practical and actionable advice.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Family Laundry Systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices and tips for setting up a family laundry system.",
+          "prompt": "Search the web for current, specific information about best practices for creating a productive laundry system for a family of four. Include sorting workflow, stain treatment, machine settings optimization, folding station setup, and wardrobe capsule integration. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Family Laundry System",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for setting up a family laundry system, including all specified components.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a guide to building a productive laundry system for a family of four. Include detailed sections on sorting workflow, stain treatment reference, machine settings optimization, folding station setup, and wardrobe capsule integration. Provide actionable recommendations and practical steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2016
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmsukvhmdyn6",
+    "title": "Write a detailed concept for a true crime docuseries that examines cases where a",
+    "raw_request": "Write a detailed concept for a true crime docuseries that examines cases where advanced forensic technology overturned wrongful convictions. Include 6 episode concepts with real case research directions and ethical guidelines.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:13:56.842Z",
+    "updated_at": "2026-03-16T07:18:10.500Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:14:45.306Z",
+      "interpreted_objective": "Develop a concept for a true crime docuseries focusing on cases where advanced forensic technology overturned wrongful convictions.",
+      "expected_outcome": "A detailed concept document that includes six episode ideas, research directions for real cases, and ethical guidelines.",
+      "key_unknowns": [
+        "Specific cases where forensic technology overturned wrongful convictions",
+        "Current ethical guidelines in forensic technology",
+        "Availability of detailed case information"
+      ],
+      "recommended_strategy": "First, conduct research to identify relevant cases and gather information on forensic technology advancements. Then, synthesize this information into a structured docuseries concept with episode outlines and ethical considerations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Real Cases",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of real cases where advanced forensic technology overturned wrongful convictions, including sources and details.",
+          "prompt": "Search the web for real cases where advanced forensic technology has overturned wrongful convictions. Include case names, details, dates, the technology used, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Docuseries Concept",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed docuseries concept with six episode outlines, research directions, and ethical guidelines.",
+          "prompt": "Based on the research results, develop a detailed concept for a true crime docuseries. Include six episode outlines focusing on different cases, research directions for each, and ethical guidelines for the series.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-true-crime-docuseries.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1887
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsukvfs5gk8",
+    "title": "Plan a 10-day cultural and culinary tour through South Korea. Include Seoul stre",
+    "raw_request": "Plan a 10-day cultural and culinary tour through South Korea. Include Seoul street food markets, DMZ tour, Busan seafood markets, Jeonju hanok village, temple stays, K-beauty shopping guide, and seasonal festival timing.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:13:56.776Z",
+    "updated_at": "2026-03-16T07:18:00.078Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:14:38.594Z",
+      "interpreted_objective": "Plan a detailed 10-day cultural and culinary tour through South Korea, highlighting key attractions and activities.",
+      "expected_outcome": "A comprehensive itinerary that includes cultural sites, food markets, temple stays, and shopping guides, optimized for seasonal festivals.",
+      "key_unknowns": [
+        "Current seasonal festivals timing in South Korea",
+        "Specific K-beauty shopping locations",
+        "Details of temple stay experiences"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on South Korea's cultural and culinary attractions, including seasonal festivals. Synthesize this data into a detailed itinerary that includes specific locations and activities, ensuring a balance of cultural immersion and culinary experiences.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research South Korea's cultural and culinary attractions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on South Korea's cultural sites, food markets, temple stays, and seasonal festivals.",
+          "prompt": "Search the web for current, specific information about cultural and culinary attractions in South Korea, including Seoul street food markets, DMZ tours, Busan seafood markets, Jeonju hanok village, temple stays, K-beauty shopping, and seasonal festival timing. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize itinerary for a 10-day tour",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 10-day itinerary for a cultural and culinary tour through South Korea.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 10-day itinerary for a cultural and culinary tour through South Korea. Include specific locations, activities, and timing for Seoul street food markets, DMZ tours, Busan seafood markets, Jeonju hanok village, temple stays, K-beauty shopping, and seasonal festivals.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-south-korea-tour.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1977
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsukvdytiia",
+    "title": "Design a comprehensive foot health protocol for runners and standing desk users.",
+    "raw_request": "Design a comprehensive foot health protocol for runners and standing desk users. Include shoe selection science, arch support assessment, plantar fasciitis prevention, ankle mobility drills, and recovery techniques.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:13:56.710Z",
+    "updated_at": "2026-03-16T07:17:50.255Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:14:33.358Z",
+      "interpreted_objective": "Design a detailed foot health protocol for runners and standing desk users, covering shoe selection, arch support, plantar fasciitis prevention, ankle mobility, and recovery techniques.",
+      "expected_outcome": "A comprehensive report detailing evidence-based foot health practices for runners and standing desk users, including specific recommendations and techniques.",
+      "key_unknowns": [
+        "Current best practices in shoe selection for runners and standing desk users",
+        "Effective arch support assessment methods",
+        "Latest techniques for preventing plantar fasciitis",
+        "Recommended ankle mobility drills",
+        "Proven recovery techniques for foot health"
+      ],
+      "recommended_strategy": "Conduct a thorough web search to gather current information on foot health practices for runners and standing desk users. Then, synthesize this information into a comprehensive protocol with actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Foot Health Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, specific information about foot health practices for runners and standing desk users with citations.",
+          "prompt": "Search the web for current, specific information about foot health practices for runners and standing desk users. Include shoe selection science, arch support assessment, plantar fasciitis prevention, ankle mobility drills, and recovery techniques. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Foot Health Protocol",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report detailing a foot health protocol for runners and standing desk users.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive foot health protocol for runners and standing desk users. Include actionable recommendations on shoe selection, arch support, plantar fasciitis prevention, ankle mobility drills, and recovery techniques.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-foot-health-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2121
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsukvaxvm5a",
+    "title": "Create a comprehensive guide to pivoting careers into product management from en",
+    "raw_request": "Create a comprehensive guide to pivoting careers into product management from engineering. Include skills translation, PM interview preparation, case study frameworks, networking strategies, and first 90 days as a new PM.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:13:56.601Z",
+    "updated_at": "2026-03-16T07:17:40.334Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:14:27.105Z",
+      "interpreted_objective": "Create a comprehensive guide for engineers pivoting to product management, covering skills translation, interview preparation, case study frameworks, networking strategies, and the first 90 days in the role.",
+      "expected_outcome": "A detailed guide that provides actionable steps and resources for engineers transitioning to product management, enhancing their career strategy and professional development.",
+      "key_unknowns": [
+        "Specific skills engineers need to translate to product management",
+        "Effective PM interview preparation techniques",
+        "Popular case study frameworks for PM roles",
+        "Networking strategies specific to product management",
+        "Best practices for the first 90 days as a new PM"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on transitioning to product management from engineering. Synthesize findings to create a structured guide with actionable steps and resources. Ensure the guide is specific and tailored to engineers' needs.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Transition to Product Management",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on transitioning from engineering to product management, including skills translation, interview prep, case study frameworks, networking, and first 90 days strategies.",
+          "prompt": "Search the web for current, specific information about transitioning from engineering to product management. Include skills translation, PM interview preparation, case study frameworks, networking strategies, and best practices for the first 90 days as a new PM. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Engineers Pivoting to PM",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for engineers transitioning to product management, with actionable steps and resources.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for engineers pivoting to product management. Include specific skills translation, PM interview preparation techniques, case study frameworks, networking strategies, and best practices for the first 90 days. Provide concrete next steps and resources.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-2023-10-pivoting-to-pm.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2249
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsukv7lu112",
+    "title": "Research the best wireless earbuds for working out. Compare Jabra Elite 8 Active",
+    "raw_request": "Research the best wireless earbuds for working out. Compare Jabra Elite 8 Active, Beats Fit Pro 2, and Sony WF-1000XM5 with IP rating durability, secure fit assessment, heart rate monitoring, and multipoint connectivity.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:13:56.481Z",
+    "updated_at": "2026-03-16T07:17:30.186Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:14:21.347Z",
+      "interpreted_objective": "Research and compare the Jabra Elite 8 Active, Beats Fit Pro 2, and Sony WF-1000XM5 wireless earbuds for working out, focusing on IP rating, secure fit, heart rate monitoring, and multipoint connectivity.",
+      "expected_outcome": "A detailed comparison report of the three wireless earbuds, highlighting their strengths and weaknesses in the specified categories.",
+      "key_unknowns": [
+        "Current IP ratings for each model",
+        "Secure fit assessments for each model",
+        "Heart rate monitoring capabilities",
+        "Multipoint connectivity features"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current and specific information about the Jabra Elite 8 Active, Beats Fit Pro 2, and Sony WF-1000XM5. Focus on IP ratings, secure fit, heart rate monitoring, and multipoint connectivity. Then, synthesize this data into a comparative report that highlights the pros and cons of each model.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Wireless Earbuds Features",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on IP ratings, secure fit, heart rate monitoring, and multipoint connectivity for Jabra Elite 8 Active, Beats Fit Pro 2, and Sony WF-1000XM5.",
+          "prompt": "Search the web for current, specific information about Jabra Elite 8 Active, Beats Fit Pro 2, and Sony WF-1000XM5 wireless earbuds. Focus on IP ratings, secure fit assessments, heart rate monitoring capabilities, and multipoint connectivity. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Earbuds Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive comparison report of the three earbuds models, including pros and cons of each in the specified categories.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps for Jabra Elite 8 Active, Beats Fit Pro 2, and Sony WF-1000XM5, focusing on IP ratings, secure fit, heart rate monitoring, and multipoint connectivity.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-wireless-earbuds-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2275
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsukv4jcf4b",
+    "title": "Explain how DNS resolution works end-to-end including recursive resolvers, autho",
+    "raw_request": "Explain how DNS resolution works end-to-end including recursive resolvers, authoritative nameservers, DNSSEC validation, DNS over HTTPS/TLS, and common attack vectors (cache poisoning, DNS amplification, domain hijacking).",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:13:56.371Z",
+    "updated_at": "2026-03-16T07:17:20.755Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:14:14.692Z",
+      "interpreted_objective": "Explain DNS resolution end-to-end, including key components and attack vectors.",
+      "expected_outcome": "A comprehensive report detailing DNS resolution, components like recursive resolvers and DNSSEC, and common attack vectors.",
+      "key_unknowns": [
+        "Current best practices for DNSSEC validation",
+        "Recent statistics on DNS attack vectors"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on DNS resolution processes and security practices. Synthesize the findings into a detailed report that explains each component and highlights common attack vectors.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research DNS Resolution and Security",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on DNS resolution, DNSSEC, DNS over HTTPS/TLS, and common attack vectors.",
+          "prompt": "Search the web for current, specific information about DNS resolution, including recursive resolvers, authoritative nameservers, DNSSEC validation, DNS over HTTPS/TLS, and common attack vectors such as cache poisoning, DNS amplification, and domain hijacking. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize DNS Resolution Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining DNS resolution processes and security aspects.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed report explaining how DNS resolution works end-to-end, including recursive resolvers, authoritative nameservers, DNSSEC validation, DNS over HTTPS/TLS, and common attack vectors like cache poisoning, DNS amplification, and domain hijacking. Include specific names, numbers, and concrete examples.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-dns-resolution.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1922
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsukv42yd7q",
+    "title": "Create a guide to building a real estate investment trust (REIT) portfolio. Incl",
+    "raw_request": "Create a guide to building a real estate investment trust (REIT) portfolio. Include sector diversification (residential, industrial, data center, healthcare), dividend analysis, NAV discount identification, and REIT tax treatment nuances.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:13:56.354Z",
+    "updated_at": "2026-03-16T07:17:10.290Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:14:07.725Z",
+      "interpreted_objective": "Create a comprehensive guide for building a diversified REIT portfolio.",
+      "expected_outcome": "A detailed guide that includes sector diversification, dividend analysis, NAV discount identification, and tax treatment nuances for REITs.",
+      "key_unknowns": [
+        "Specific current market data for REIT sectors",
+        "Recent dividend yields and NAV discounts for major REITs",
+        "Latest tax treatment updates for REITs"
+      ],
+      "recommended_strategy": "Conduct research to gather current data on REIT sectors, dividend yields, NAV discounts, and tax treatment. Synthesize this information into a detailed guide with actionable insights and examples. Ensure the guide is specific and includes real-world data.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current REIT Market Data",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on REIT sectors, dividend yields, NAV discounts, and tax treatment.",
+          "prompt": "Search the web for current, specific information about REIT sector diversification, dividend yields, NAV discounts, and tax treatment nuances. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize REIT Portfolio Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide to building a diversified REIT portfolio with actionable insights.",
+          "prompt": "Based on the research results, synthesize a detailed guide for building a REIT portfolio. Include sector diversification, dividend analysis, NAV discount identification, and tax treatment nuances. Provide specific examples and actionable recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2380
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsukv3iv9pi",
+    "title": "Design a comprehensive blue-green deployment strategy for Kubernetes. Include na",
+    "raw_request": "Design a comprehensive blue-green deployment strategy for Kubernetes. Include namespace-based routing, database migration coordination, health check gates, automated rollback triggers, and DNS cutover vs ingress switching tradeoffs.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T07:13:56.334Z",
+    "updated_at": "2026-03-16T07:17:01.898Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T07:14:02.600Z",
+      "interpreted_objective": "Design a blue-green deployment strategy for Kubernetes in the health domain.",
+      "expected_outcome": "A detailed strategy document outlining the blue-green deployment process with specific focus on namespace-based routing, database migration coordination, health check gates, automated rollback triggers, and DNS cutover vs ingress switching.",
+      "key_unknowns": [
+        "Specific Kubernetes configurations in use",
+        "Current deployment processes and tools",
+        "Database technologies and migration processes",
+        "Health check and monitoring tools in place"
+      ],
+      "recommended_strategy": "Conduct research on blue-green deployment strategies specific to Kubernetes, focusing on namespace-based routing and database migration. Then, synthesize findings into a comprehensive strategy document. Evaluate tradeoffs between DNS cutover and ingress switching to provide actionable recommendations.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the deployment strategy document"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Kubernetes Blue-Green Deployment Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices and tools for blue-green deployments in Kubernetes.",
+          "prompt": "Search the web for current best practices and tools for implementing blue-green deployment strategies in Kubernetes. Focus on namespace-based routing, database migration coordination, health check gates, automated rollback triggers, and DNS cutover vs ingress switching. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Blue-Green Deployment Strategy Document",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive strategy document for blue-green deployment in Kubernetes, tailored for the health domain.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comprehensive blue-green deployment strategy for Kubernetes. Include details on namespace-based routing, database migration coordination, health check gates, automated rollback triggers, and analyze the tradeoffs between DNS cutover vs ingress switching. Provide actionable recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2084
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
     "task_id": "t_mmsudmjbiur4",
     "title": "Design a comprehensive system for managing information overload. Include RSS fee",
     "raw_request": "Design a comprehensive system for managing information overload. Include RSS feed curation, newsletter triage, social media time-boxing, read-later workflow, information diet principles, and weekly synthesis practice.",

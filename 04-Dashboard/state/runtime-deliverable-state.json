@@ -12897,5 +12897,157 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-16T07:09:17.346Z"
+  },
+  "t_mmsukv3iv9pi": {
+    "task_id": "t_mmsukv3iv9pi",
+    "deliverable_id": "dlv_rpgpo_tmmsukv3iv9pi_action_plan_75e62f4e",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:14:02.621Z"
+  },
+  "t_mmsukv42yd7q": {
+    "task_id": "t_mmsukv42yd7q",
+    "deliverable_id": "dlv_rpgpo_tmmsukv42yd7q_document_057edee8",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:14:07.757Z"
+  },
+  "t_mmsukv4jcf4b": {
+    "task_id": "t_mmsukv4jcf4b",
+    "deliverable_id": "dlv_rpgpo_tmmsukv4jcf4b_document_1c99fb21",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:14:14.727Z"
+  },
+  "t_mmsukv7lu112": {
+    "task_id": "t_mmsukv7lu112",
+    "deliverable_id": "dlv_rpgpo_tmmsukv7lu112_recommendation_b1ffdc63",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:14:21.381Z"
+  },
+  "t_mmsukvaxvm5a": {
+    "task_id": "t_mmsukvaxvm5a",
+    "deliverable_id": "dlv_rpgpo_tmmsukvaxvm5a_document_c2fc2e10",
+    "engine_id": "careeregine",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:14:27.120Z"
+  },
+  "t_mmsukvdytiia": {
+    "task_id": "t_mmsukvdytiia",
+    "deliverable_id": "dlv_rpgpo_tmmsukvdytiia_recommendation_594532b8",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:14:33.391Z"
+  },
+  "t_mmsukvfs5gk8": {
+    "task_id": "t_mmsukvfs5gk8",
+    "deliverable_id": "dlv_rpgpo_tmmsukvfs5gk8_shopping_486ff77b",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:14:38.616Z"
+  },
+  "t_mmsukvhmdyn6": {
+    "task_id": "t_mmsukvhmdyn6",
+    "deliverable_id": "dlv_rpgpo_tmmsukvhmdyn6_document_5a538040",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:14:45.336Z"
+  },
+  "t_mmsukvji81m1": {
+    "task_id": "t_mmsukvji81m1",
+    "deliverable_id": "dlv_rpgpo_tmmsukvji81m1_code_change_cfe04757",
+    "engine_id": "startup",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "diffs",
+      "implementation_plan",
+      "changed_files",
+      "diff_preview"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:14:50.649Z"
+  },
+  "t_mmsukvmi5x0i": {
+    "task_id": "t_mmsukvmi5x0i",
+    "deliverable_id": "dlv_rpgpo_tmmsukvmi5x0i_document_5679cfbb",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T07:14:57.781Z"
   }
 }
