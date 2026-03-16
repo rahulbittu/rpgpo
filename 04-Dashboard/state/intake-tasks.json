@@ -1,5 +1,693 @@
 [
   {
+    "task_id": "t_mmti385g3v87",
+    "title": "Design a comprehensive personal accountability system. Include commitment device",
+    "raw_request": "Design a comprehensive personal accountability system. Include commitment devices, progress tracking methods, accountability partner frameworks, streak management psychology, and recovering from accountability breaks.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:12:04.228Z",
+    "updated_at": "2026-03-16T18:18:39.123Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:13:22.785Z",
+      "interpreted_objective": "Design a personal accountability system with multiple components to enhance productivity and commitment.",
+      "expected_outcome": "A comprehensive report detailing a personal accountability system with commitment devices, progress tracking methods, accountability partner frameworks, streak management psychology, and recovery strategies.",
+      "key_unknowns": [
+        "Current best practices for personal accountability systems",
+        "Psychological principles behind streak management",
+        "Effective methods for recovering from accountability breaks"
+      ],
+      "recommended_strategy": "Conduct research on current best practices and psychological principles related to personal accountability systems. Synthesize findings into a comprehensive report, providing actionable recommendations and frameworks.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Personal Accountability Systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices, psychological principles, and effective methods for personal accountability systems.",
+          "prompt": "Search the web for current, specific information about personal accountability systems, including commitment devices, progress tracking methods, accountability partner frameworks, streak management psychology, and recovery strategies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Accountability System Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing a comprehensive personal accountability system.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a personal accountability system. Include specific names, numbers, and concrete next steps for commitment devices, progress tracking methods, accountability partner frameworks, streak management psychology, and recovery strategies.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-personal-accountability-system.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2439
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmti382txqe7",
+    "title": "Create a guide to building an energy-efficient home office. Include LED lighting",
+    "raw_request": "Create a guide to building an energy-efficient home office. Include LED lighting design, smart power strips, equipment energy ratings, heating/cooling zone optimization, and calculating carbon footprint of remote work vs commuting.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:12:04.133Z",
+    "updated_at": "2026-03-16T18:18:25.109Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:13:16.642Z",
+      "interpreted_objective": "Create a comprehensive guide to building an energy-efficient home office.",
+      "expected_outcome": "A detailed guide that includes LED lighting design, smart power strips, equipment energy ratings, heating/cooling zone optimization, and carbon footprint calculations for remote work vs commuting.",
+      "key_unknowns": [
+        "Specific energy ratings for home office equipment",
+        "Current best practices for LED lighting design in home offices",
+        "Methods for calculating carbon footprint of remote work vs commuting"
+      ],
+      "recommended_strategy": "Conduct research to gather the latest information on energy-efficient home office setups, focusing on LED lighting, smart power strips, and equipment energy ratings. Synthesize this information into a practical guide, including strategies for heating/cooling optimization and carbon footprint calculations. Ensure the guide is actionable and backed by current data.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Energy-Efficient Home Office Components",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on LED lighting design, smart power strips, and equipment energy ratings for home offices.",
+          "prompt": "Search the web for current, specific information about LED lighting design, smart power strips, and equipment energy ratings for building an energy-efficient home office. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Heating/Cooling Optimization and Carbon Footprint Calculation",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on heating/cooling zone optimization and methods for calculating the carbon footprint of remote work vs commuting.",
+          "prompt": "Search the web for current, specific information about heating/cooling zone optimization in home offices and methods for calculating the carbon footprint of remote work vs commuting. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide to Building an Energy-Efficient Home Office",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide to building an energy-efficient home office, including LED lighting design, smart power strips, equipment energy ratings, heating/cooling optimization, and carbon footprint calculations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide to building an energy-efficient home office. Include specific recommendations for LED lighting design, smart power strips, equipment energy ratings, heating/cooling zone optimization, and calculating the carbon footprint of remote work vs commuting.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2255
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmti37zrnupe",
+    "title": "Write a complete concept for a children book series about a robot who learns abo",
+    "raw_request": "Write a complete concept for a children book series about a robot who learns about emotions by helping different animals in a forest. Include first three book outlines, illustration style guide, and educational outcomes.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:12:04.023Z",
+    "updated_at": "2026-03-16T18:18:11.866Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:13:09.578Z",
+      "interpreted_objective": "Develop a concept for a children's book series about a robot learning emotions by helping animals.",
+      "expected_outcome": "A detailed concept for a children's book series with outlines for the first three books, an illustration style guide, and educational outcomes.",
+      "key_unknowns": [
+        "Preferred illustration style for the book series",
+        "Specific educational outcomes desired",
+        "Target age group for the book series"
+      ],
+      "recommended_strategy": "Research current popular children's book series to understand successful elements. Develop outlines for the first three books focusing on the robot's emotional learning journey. Create an illustration style guide and outline educational outcomes, ensuring alignment with the learning objectives.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Popular Children's Book Series",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Insights into successful elements of current children's book series.",
+          "prompt": "Search the web for current, specific information about popular children's book series. Include real names, themes, illustration styles, and educational outcomes.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Book Series Concept and Outlines",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "Concept for the book series, outlines for the first three books, illustration style guide, and educational outcomes.",
+          "prompt": "Based on the research results, create a concept for a children's book series about a robot learning emotions by helping animals in a forest. Include outlines for the first three books, an illustration style guide, and educational outcomes.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2028
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmti37yhp3hk",
+    "title": "Plan a 14-day Southeast Asia backpacking route from Singapore through Malaysia t",
+    "raw_request": "Plan a 14-day Southeast Asia backpacking route from Singapore through Malaysia to Indonesia. Include budget breakdown, border crossing logistics, island hopping in Raja Ampat, Kuala Lumpur street food, and Singapore hawker center guide.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:12:03.977Z",
+    "updated_at": "2026-03-16T18:17:58.267Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:13:02.430Z",
+      "interpreted_objective": "Create a comprehensive 14-day backpacking itinerary for Southeast Asia, including budget, logistics, and local guides.",
+      "expected_outcome": "A detailed travel plan with daily itinerary, budget breakdown, and travel tips for Singapore, Malaysia, and Indonesia.",
+      "key_unknowns": [
+        "Current travel restrictions and requirements for border crossings",
+        "Exact costs for accommodations, food, and transportation",
+        "Local recommendations for street food and hawker centers"
+      ],
+      "recommended_strategy": "Conduct research to gather the latest travel information and costs for Singapore, Malaysia, and Indonesia. Synthesize this data into a structured itinerary with specific recommendations for each location. Ensure the plan includes budget details, logistics for border crossings, and cultural highlights like street food and hawker centers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Southeast Asia Travel Information",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current travel information, costs, and recommendations for Singapore, Malaysia, and Indonesia.",
+          "prompt": "Search the web for current travel information about backpacking in Southeast Asia, focusing on Singapore, Malaysia, and Indonesia. Include details on border crossing logistics, budget estimates for accommodations, transportation, and food, as well as local guides for street food and hawker centers.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Southeast Asia Backpacking Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 14-day backpacking itinerary with budget breakdown and travel tips.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 14-day backpacking itinerary for Southeast Asia, including daily plans, budget breakdown, border crossing logistics, and guides for street food and hawker centers in Singapore, Malaysia, and Indonesia.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-11-03-southeast-asia-backpacking-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2509
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmti37vrliqe",
+    "title": "Design a comprehensive rotator cuff strengthening program for overhead athletes ",
+    "raw_request": "Design a comprehensive rotator cuff strengthening program for overhead athletes and desk workers. Include external rotation progressions, scapular stabilization drills, band pull-apart variations, and return-to-sport criteria.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:12:03.879Z",
+    "updated_at": "2026-03-16T18:17:46.206Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:12:53.127Z",
+      "interpreted_objective": "Design a comprehensive rotator cuff strengthening program tailored for overhead athletes and desk workers.",
+      "expected_outcome": "A detailed program including exercises, progressions, and return-to-sport criteria for rotator cuff strengthening.",
+      "key_unknowns": [
+        "Specific needs and limitations of overhead athletes and desk workers",
+        "Current best practices in rotator cuff rehabilitation",
+        "Return-to-sport criteria for different levels of athletes"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and guidelines for rotator cuff strengthening. Synthesize this information into a structured program with specific exercises and criteria. Ensure the program addresses the unique needs of both overhead athletes and desk workers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Rotator Cuff Strengthening Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and guidelines for rotator cuff strengthening.",
+          "prompt": "Search the web for current best practices and guidelines for rotator cuff strengthening programs, focusing on external rotation progressions, scapular stabilization drills, band pull-apart variations, and return-to-sport criteria. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Design Comprehensive Rotator Cuff Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured rotator cuff strengthening program for overhead athletes and desk workers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive rotator cuff strengthening program. Include specific exercises, progressions, and return-to-sport criteria tailored for overhead athletes and desk workers.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-rotator-cuff-program.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2471
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmti37t8zncu",
+    "title": "Create a guide to building a remote engineering team culture. Include virtual on",
+    "raw_request": "Create a guide to building a remote engineering team culture. Include virtual onboarding playbook, asynchronous communication norms, social connection activities, timezone-inclusive meeting design, and measuring team health remotely.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:12:03.788Z",
+    "updated_at": "2026-03-16T18:17:32.477Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:12:47.460Z",
+      "interpreted_objective": "Create a comprehensive guide for building and maintaining a remote engineering team culture.",
+      "expected_outcome": "A detailed guide that includes a virtual onboarding playbook, asynchronous communication norms, social connection activities, timezone-inclusive meeting design, and methods to measure team health remotely.",
+      "key_unknowns": [
+        "Specific tools and platforms currently used by the team for remote work",
+        "Existing team culture and practices",
+        "Preferred communication styles and time zones of team members"
+      ],
+      "recommended_strategy": "Research best practices and current trends in remote team management. Synthesize findings into actionable guidelines for each aspect of remote team culture, ensuring inclusivity and effectiveness. Emphasize evidence-based strategies and include safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Remote Team Culture Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and trends in remote engineering team culture.",
+          "prompt": "Search the web for current best practices and trends in building and maintaining a remote engineering team culture. Focus on virtual onboarding, asynchronous communication, social connection activities, timezone-inclusive meeting design, and measuring team health remotely. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Remote Engineering Team Culture",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on building a remote engineering team culture.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a guide for building a remote engineering team culture. Include sections on virtual onboarding playbook, asynchronous communication norms, social connection activities, timezone-inclusive meeting design, and measuring team health remotely. Ensure recommendations are specific, evidence-based, and actionable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2057
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmti37rq405w",
+    "title": "Research the best quality kitchen knives for home cooks. Compare Wusthof Classic",
+    "raw_request": "Research the best quality kitchen knives for home cooks. Compare Wusthof Classic, Victorinox Fibrox Pro, and MAC Professional with steel types, edge retention, maintenance requirements, and essential knife kit recommendations.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:12:03.734Z",
+    "updated_at": "2026-03-16T18:17:18.770Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:12:36.604Z",
+      "interpreted_objective": "Research and compare the best quality kitchen knives for home cooks, focusing on Wusthof Classic, Victorinox Fibrox Pro, and MAC Professional.",
+      "expected_outcome": "A detailed comparison report on the specified kitchen knives, including steel types, edge retention, maintenance requirements, and essential knife kit recommendations.",
+      "key_unknowns": [
+        "Current market prices of each knife",
+        "User reviews and professional opinions",
+        "Specific steel types used in each knife",
+        "Maintenance requirements for each knife"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on Wusthof Classic, Victorinox Fibrox Pro, and MAC Professional knives, focusing on steel types, edge retention, and maintenance requirements. Then, synthesize this information into a comprehensive report with recommendations for an essential knife kit.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Kitchen Knives",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on Wusthof Classic, Victorinox Fibrox Pro, and MAC Professional knives, including steel types, edge retention, maintenance requirements, and essential knife kit recommendations.",
+          "prompt": "Search the web for current, specific information about Wusthof Classic, Victorinox Fibrox Pro, and MAC Professional kitchen knives. Include details on steel types, edge retention, maintenance requirements, and essential knife kit recommendations. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Knife Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Wusthof Classic, Victorinox Fibrox Pro, and MAC Professional knives with actionable recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for Wusthof Classic, Victorinox Fibrox Pro, and MAC Professional kitchen knives. Include specific details on steel types, edge retention, maintenance requirements, and essential knife kit recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-kitchen-knives.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2212
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmti37qxg5py",
+    "title": "Explain how modern GPU computing works for non-graphics workloads. Cover CUDA pr",
+    "raw_request": "Explain how modern GPU computing works for non-graphics workloads. Cover CUDA programming model, thread blocks, shared memory, warp execution, memory coalescing, and when to use GPU vs CPU for parallel processing tasks.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:12:03.705Z",
+    "updated_at": "2026-03-16T18:17:04.643Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:12:26.820Z",
+      "interpreted_objective": "Explain how modern GPU computing works for non-graphics workloads, focusing on specific technical aspects.",
+      "expected_outcome": "A detailed, structured explanation of GPU computing for non-graphics workloads, covering CUDA, thread blocks, shared memory, warp execution, memory coalescing, and GPU vs CPU usage.",
+      "key_unknowns": [
+        "Latest advancements in GPU computing for non-graphics workloads",
+        "Specific examples of when to use GPU vs CPU"
+      ],
+      "recommended_strategy": "First, gather current information on GPU computing for non-graphics workloads, focusing on the CUDA programming model and related concepts. Then, synthesize this information into a clear and concise report that explains these concepts and provides guidance on when to use GPUs versus CPUs for parallel processing tasks.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research GPU Computing for Non-Graphics Workloads",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gathered data on GPU computing for non-graphics workloads, including CUDA, thread blocks, shared memory, warp execution, memory coalescing, and comparisons between GPU and CPU usage.",
+          "prompt": "Search the web for current, specific information about how modern GPU computing works for non-graphics workloads. Focus on the CUDA programming model, thread blocks, shared memory, warp execution, memory coalescing, and when to use GPU vs CPU for parallel processing tasks. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize GPU Computing Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining GPU computing for non-graphics workloads, covering the CUDA programming model, thread blocks, shared memory, warp execution, memory coalescing, and guidance on when to use GPU vs CPU.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed and structured explanation of GPU computing for non-graphics workloads. Cover the CUDA programming model, thread blocks, shared memory, warp execution, memory coalescing, and provide guidance on when to use GPU vs CPU for parallel processing tasks.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-gpu-computing.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2029
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmti37pvvbr0",
+    "title": "Create a guide to understanding and managing inherited retirement accounts under",
+    "raw_request": "Create a guide to understanding and managing inherited retirement accounts under SECURE Act 2.0. Include 10-year rule, eligible designated beneficiary exceptions, stretch IRA planning, and Roth conversion strategies for inherited traditional IRAs.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:12:03.667Z",
+    "updated_at": "2026-03-16T18:16:53.870Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:12:18.383Z",
+      "interpreted_objective": "Create a comprehensive guide on managing inherited retirement accounts under SECURE Act 2.0, focusing on key rules and strategies.",
+      "expected_outcome": "A detailed guide that explains the 10-year rule, exceptions for eligible designated beneficiaries, stretch IRA planning, and Roth conversion strategies for inherited traditional IRAs.",
+      "key_unknowns": [
+        "Current interpretations and updates on SECURE Act 2.0",
+        "Specific strategies for stretch IRA planning under the new rules",
+        "Viability and benefits of Roth conversion strategies for inherited IRAs"
+      ],
+      "recommended_strategy": "First, conduct thorough research to gather the latest information on SECURE Act 2.0 and its implications for inherited retirement accounts. Then, synthesize this information into a structured guide that highlights key rules and strategies, ensuring clarity and practical advice for beneficiaries.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research SECURE Act 2.0 and Inherited Retirement Accounts",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data on SECURE Act 2.0, focusing on inherited retirement accounts, 10-year rule, eligible beneficiary exceptions, stretch IRA planning, and Roth conversion strategies.",
+          "prompt": "Search the web for current, specific information about SECURE Act 2.0 and its impact on inherited retirement accounts. Include details on the 10-year rule, eligible designated beneficiary exceptions, stretch IRA planning, and Roth conversion strategies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Managing Inherited Retirement Accounts",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide explaining key rules and strategies for managing inherited retirement accounts under SECURE Act 2.0.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations into a guide. Include explanations of the 10-year rule, eligible designated beneficiary exceptions, stretch IRA planning, and Roth conversion strategies for inherited traditional IRAs.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-inherited-retirement-accounts-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2561
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmti37p5pvog",
+    "title": "Design a comprehensive event sourcing and CQRS architecture for a financial serv",
+    "raw_request": "Design a comprehensive event sourcing and CQRS architecture for a financial services application. Include event store design, projection building, snapshotting strategy, eventual consistency handling, and audit trail implementation.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:12:03.641Z",
+    "updated_at": "2026-03-16T18:16:38.915Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:12:11.006Z",
+      "interpreted_objective": "Design a comprehensive event sourcing and CQRS architecture for a financial services application.",
+      "expected_outcome": "A detailed architectural design document that includes event store design, projection building, snapshotting strategy, eventual consistency handling, and audit trail implementation.",
+      "key_unknowns": [
+        "Specific requirements of the financial services application",
+        "Existing system architecture",
+        "Technology stack being used"
+      ],
+      "recommended_strategy": "First, gather information on best practices and current trends in event sourcing and CQRS for financial services. Then, synthesize this information into a detailed architectural design, ensuring it addresses all specified components. Finally, review the design for alignment with the mission context and constraints.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the architectural design document by Rahul"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Event Sourcing and CQRS Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices and trends in event sourcing and CQRS, specifically for financial services applications.",
+          "prompt": "Search the web for current, specific information about event sourcing and CQRS best practices and trends in financial services applications. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Architectural Design",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive architectural design document for the financial services application, covering event store design, projection building, snapshotting strategy, eventual consistency handling, and audit trail implementation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive architectural design for a financial services application using event sourcing and CQRS. Include specific recommendations for event store design, projection building, snapshotting strategy, eventual consistency handling, and audit trail implementation.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2026
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
     "task_id": "t_mmthuhbwwlok",
     "title": "Design a comprehensive delegation framework for engineering managers. Include ta",
     "raw_request": "Design a comprehensive delegation framework for engineering managers. Include task categorization, capability assessment, accountability structures, feedback loops, and progressive responsibility expansion.",
