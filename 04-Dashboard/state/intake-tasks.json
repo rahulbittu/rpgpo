@@ -1,5 +1,931 @@
 [
   {
+    "task_id": "t_mmsfvnmz6cef",
+    "title": "Generate a step-by-step migration plan from Express 4 to Express 5. Include brea",
+    "raw_request": "Generate a step-by-step migration plan from Express 4 to Express 5. Include breaking changes, code patterns that need updating, rollback strategy, and testing approach.",
+    "domain": "newsroom",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:22:25.643Z",
+    "updated_at": "2026-03-16T00:27:26.920Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:23:59.579Z",
+      "interpreted_objective": "Create a detailed migration plan from Express 4 to Express 5.",
+      "expected_outcome": "A comprehensive migration plan that outlines necessary code changes, identifies breaking changes, provides a rollback strategy, and suggests a testing approach.",
+      "key_unknowns": [
+        "Specific breaking changes between Express 4 and Express 5",
+        "Code patterns that require updating",
+        "Testing strategies suitable for this migration",
+        "Rollback strategies specific to this migration"
+      ],
+      "recommended_strategy": "First, research the breaking changes and new features introduced in Express 5. Then, identify code patterns in Express 4 that need updating. Develop a rollback strategy in case of migration failure and propose a testing approach to ensure the migration is successful. Finally, compile these findings into a detailed migration plan.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Breaking Changes in Express 5",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of breaking changes and new features in Express 5.",
+          "prompt": "Search the web for current, specific information about breaking changes and new features in Express 5. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Identify Code Patterns Needing Updates",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A report detailing code patterns in Express 4 that need updating for Express 5.",
+          "prompt": "Based on the research results from prior subtasks, identify code patterns in Express 4 that need updating for Express 5. Include specific examples and recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Develop Rollback Strategy",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed rollback strategy for the migration from Express 4 to Express 5.",
+          "prompt": "Based on the identified changes and potential risks, develop a rollback strategy for the migration from Express 4 to Express 5. Include specific steps and considerations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            1
+          ]
+        },
+        {
+          "title": "Propose Testing Approach",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A proposed testing approach to ensure successful migration from Express 4 to Express 5.",
+          "prompt": "Propose a testing approach to ensure a successful migration from Express 4 to Express 5. Include specific testing methods and tools.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2741
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelm412"
+  },
+  {
+    "task_id": "t_mmsfvm26ledw",
+    "title": "Research the best ways to passively earn from a data engineering blog. Include m",
+    "raw_request": "Research the best ways to passively earn from a data engineering blog. Include monetization options like ads, sponsorships, courses, consulting leads. With realistic income estimates.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:22:23.598Z",
+    "updated_at": "2026-03-16T00:27:02.318Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:23:47.185Z",
+      "interpreted_objective": "Research and identify the best passive income strategies for monetizing a data engineering blog.",
+      "expected_outcome": "A detailed report outlining viable passive income strategies for a data engineering blog, including monetization options like ads, sponsorships, courses, consulting leads, with realistic income estimates.",
+      "key_unknowns": [
+        "Current best practices for blog monetization in the data engineering niche",
+        "Realistic income estimates for each monetization option",
+        "Specific companies or platforms that facilitate these monetization strategies"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on monetization strategies for blogs in the data engineering field. Then, synthesize the findings into a structured report with actionable recommendations and realistic income estimates.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Monetization Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A compilation of current monetization strategies for data engineering blogs, including ads, sponsorships, courses, and consulting leads, with realistic income estimates.",
+          "prompt": "Search the web for current, specific information about monetization strategies for data engineering blogs. Include options like ads, sponsorships, courses, consulting leads, and provide realistic income estimates. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Monetization Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with actionable recommendations for monetizing a data engineering blog, including specific strategies and realistic income estimates.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for monetizing a data engineering blog. Include specific strategies like ads, sponsorships, courses, consulting leads, and provide realistic income estimates. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-blog-monetization.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2372
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsfvkhew00y",
+    "title": "Create a 30-day journaling challenge with daily prompts. Focus on self-reflectio",
+    "raw_request": "Create a 30-day journaling challenge with daily prompts. Focus on self-reflection, goal setting, and gratitude. Include prompts for both morning and evening entries.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:22:21.554Z",
+    "updated_at": "2026-03-16T00:26:52.900Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:23:41.594Z",
+      "interpreted_objective": "Create a 30-day journaling challenge with daily prompts for self-reflection, goal setting, and gratitude.",
+      "expected_outcome": "A structured 30-day journaling plan with specific morning and evening prompts that encourage self-reflection, goal setting, and gratitude.",
+      "key_unknowns": [
+        "Specific themes or topics for each day's prompts",
+        "Balance between morning and evening prompts"
+      ],
+      "recommended_strategy": "First, research existing journaling challenges and effective prompts for self-reflection, goal setting, and gratitude. Then, synthesize this information to create a comprehensive 30-day journaling challenge with distinct morning and evening prompts.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Existing Journaling Challenges",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of effective journaling prompts and themes used in existing challenges.",
+          "prompt": "Search the web for current, specific information about existing journaling challenges focused on self-reflection, goal setting, and gratitude. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize 30-Day Journaling Challenge",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 30-day journaling challenge with daily morning and evening prompts.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a 30-day journaling challenge. Include specific morning and evening prompts focused on self-reflection, goal setting, and gratitude.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-journaling-challenge.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2456
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsfviwx3rtr",
+    "title": "Write a dialogue scene between a CEO and CTO disagreeing about technical debt vs",
+    "raw_request": "Write a dialogue scene between a CEO and CTO disagreeing about technical debt vs new features. Make it realistic with subtext and resolution.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:22:19.521Z",
+    "updated_at": "2026-03-16T00:26:46.370Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:23:36.589Z",
+      "interpreted_objective": "Write a realistic dialogue scene between a CEO and CTO about technical debt vs new features, incorporating subtext and resolution.",
+      "expected_outcome": "A compelling and realistic dialogue scene that effectively portrays the tension and resolution between a CEO and CTO on the topic of technical debt vs new features.",
+      "key_unknowns": [
+        "The specific industry or company context for the dialogue",
+        "The personalities and backgrounds of the CEO and CTO",
+        "The specific technical debt and new features being discussed"
+      ],
+      "recommended_strategy": "First, research common arguments and resolutions in discussions about technical debt versus new features in tech companies. Then, synthesize this information into a realistic dialogue scene, ensuring it includes subtext and a clear resolution. Use previous work on dialogue scenes to maintain consistency in style and tone.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research common arguments on technical debt vs new features",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of common arguments and resolutions in discussions about technical debt versus new features, with real-world examples.",
+          "prompt": "Search the web for current, specific information about common arguments and resolutions in discussions about technical debt versus new features in tech companies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write dialogue scene between CEO and CTO",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A realistic dialogue scene between a CEO and CTO discussing technical debt versus new features, with subtext and resolution.",
+          "prompt": "Based on the research results from prior subtasks, write a realistic dialogue scene between a CEO and CTO discussing technical debt versus new features. Ensure the dialogue includes subtext and a clear resolution.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-dialogue-scene.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1993
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsfvhcbt9n4",
+    "title": "Write a professional bio in 3 lengths: 1 sentence, 1 paragraph, and full page. F",
+    "raw_request": "Write a professional bio in 3 lengths: 1 sentence, 1 paragraph, and full page. For a senior data engineer who builds startups on the side.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:22:17.483Z",
+    "updated_at": "2026-03-16T00:26:36.273Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:23:30.939Z",
+      "interpreted_objective": "Create a professional bio for Rahul in three different lengths.",
+      "expected_outcome": "Rahul has a polished and versatile professional bio for various contexts.",
+      "key_unknowns": [
+        "Rahul's specific achievements and projects",
+        "Preferred tone and style for the bio"
+      ],
+      "recommended_strategy": "Research Rahul's professional background and achievements. Then, draft bios of varying lengths, ensuring each captures his dual role as a senior data engineer and entrepreneur. Tailor the tone and style to align with his professional image and career goals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Rahul's Professional Background",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of Rahul's professional achievements and projects.",
+          "prompt": "Search the web and available documents for detailed information about Rahul's career as a senior data engineer and his entrepreneurial ventures. Include specific achievements, projects, and any public profiles.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Draft Professional Bios",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "Three versions of Rahul's professional bio: one sentence, one paragraph, and a full page.",
+          "prompt": "Based on the research results, draft three versions of Rahul's professional bio. Ensure each version highlights his role as a senior data engineer and his experience in building startups. Use a tone that reflects his professional style and career goals.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2355
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsfvfrqfhrw",
+    "title": "Create a sustainable energy management plan for someone who works 12-hour days. ",
+    "raw_request": "Create a sustainable energy management plan for someone who works 12-hour days. Include nutrition timing, exercise placement, and cognitive peak optimization.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:22:15.446Z",
+    "updated_at": "2026-03-16T00:26:31.587Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:23:18.307Z",
+      "interpreted_objective": "Develop a comprehensive energy management plan for individuals with 12-hour workdays, focusing on nutrition, exercise, and cognitive performance.",
+      "expected_outcome": "A detailed, evidence-based plan that optimizes energy levels, cognitive function, and physical health for long workdays.",
+      "key_unknowns": [
+        "Specific dietary preferences or restrictions of the individual",
+        "Current fitness level and any physical limitations",
+        "Typical work schedule and breaks",
+        "Access to exercise facilities or equipment"
+      ],
+      "recommended_strategy": "Conduct research on sustainable energy management strategies for long workdays, focusing on nutrition timing, exercise placement, and cognitive optimization. Synthesize findings into a structured plan with practical recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Energy Management Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, evidence-based strategies for managing energy during long workdays, including nutrition, exercise, and cognitive optimization.",
+          "prompt": "Search the web for current, evidence-based strategies for managing energy during 12-hour workdays. Focus on nutrition timing, exercise placement, and cognitive peak optimization. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Energy Management Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable energy management plan for individuals working 12-hour days.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable energy management plan for individuals working 12-hour days. Include specific recommendations for nutrition timing, exercise placement, and cognitive peak optimization.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-energy-management-plan.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1892
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsfve7di9ea",
+    "title": "Write a comprehensive employee handbook section on remote work policies. Include",
+    "raw_request": "Write a comprehensive employee handbook section on remote work policies. Include communication expectations, equipment allowance, security requirements, and performance measurement.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:22:13.417Z",
+    "updated_at": "2026-03-16T00:26:25.345Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:23:12.462Z",
+      "interpreted_objective": "Create a detailed section on remote work policies for an employee handbook.",
+      "expected_outcome": "A comprehensive, clear, and actionable section on remote work policies that includes communication expectations, equipment allowance, security requirements, and performance measurement.",
+      "key_unknowns": [
+        "Specific company policies or preferences regarding remote work",
+        "Current communication tools and protocols used by the company",
+        "Budget or guidelines for equipment allowance",
+        "Existing security requirements and protocols",
+        "Metrics or methods currently used for performance measurement"
+      ],
+      "recommended_strategy": "First, research best practices and common elements in remote work policies across various industries to gather relevant information. Then, synthesize this information into a structured and tailored section for the employee handbook that aligns with the company's values and operational context.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Remote Work Policies",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed report on best practices and common elements in remote work policies.",
+          "prompt": "Search the web for current best practices and common elements in remote work policies, focusing on communication expectations, equipment allowance, security requirements, and performance measurement. Include real examples from companies and any relevant statistics or studies.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Remote Work Policies Section",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive and tailored section on remote work policies for the employee handbook.",
+          "prompt": "Based on the research results, synthesize a comprehensive section on remote work policies for an employee handbook. Include communication expectations, equipment allowance, security requirements, and performance measurement. Ensure the section is clear, actionable, and aligned with standard practices.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2053
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsfvcmyw8gc",
+    "title": "Teach me about WebAssembly for backend developers. Cover use cases, performance ",
+    "raw_request": "Teach me about WebAssembly for backend developers. Cover use cases, performance characteristics, language support, and when it makes sense to use.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:22:11.386Z",
+    "updated_at": "2026-03-16T00:26:18.533Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:22:50.049Z",
+      "interpreted_objective": "Educate backend developers about WebAssembly, focusing on its use cases, performance, language support, and appropriate usage scenarios.",
+      "expected_outcome": "A comprehensive report that provides backend developers with a clear understanding of WebAssembly's benefits and applications.",
+      "key_unknowns": [
+        "Current state of WebAssembly support across different languages",
+        "Specific performance benchmarks for WebAssembly in backend use cases",
+        "Common scenarios where WebAssembly is preferred over traditional technologies"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on WebAssembly's use cases, performance characteristics, and language support. Then, synthesize this information into a clear and concise report that highlights when and why backend developers should consider using WebAssembly.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research WebAssembly Use Cases and Performance",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on WebAssembly's use cases, performance characteristics, and language support.",
+          "prompt": "Search the web for current, specific information about WebAssembly's use cases in backend development, its performance characteristics, and language support. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Report on WebAssembly for Backend Developers",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A concise report that educates backend developers on WebAssembly, covering use cases, performance, language support, and appropriate usage scenarios.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for backend developers about WebAssembly. Include specific use cases, performance insights, language support details, and scenarios where it makes sense to use WebAssembly.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2045
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsfvb2i2on0",
+    "title": "Write a comprehensive guide to setting up Playwright for end-to-end testing of a",
+    "raw_request": "Write a comprehensive guide to setting up Playwright for end-to-end testing of a React application. Include page objects, CI integration, and visual regression testing.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:22:09.354Z",
+    "updated_at": "2026-03-16T00:26:12.206Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:22:46.179Z",
+      "interpreted_objective": "Create a detailed guide for setting up Playwright for React app testing.",
+      "expected_outcome": "A comprehensive, actionable guide covering Playwright setup, page objects, CI integration, and visual regression testing.",
+      "key_unknowns": [
+        "Specific CI tools to integrate with",
+        "Level of detail required for page objects",
+        "Preferred tools for visual regression testing"
+      ],
+      "recommended_strategy": "Research current best practices for setting up Playwright with React applications, focusing on page objects, CI integration, and visual regression testing. Synthesize this information into a clear, structured guide that is immediately usable by developers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Playwright Setup for React",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report detailing best practices and tools for setting up Playwright with React, including page objects, CI integration, and visual regression testing.",
+          "prompt": "Search the web for current best practices and tools for setting up Playwright for end-to-end testing of React applications. Focus on page objects, CI integration, and visual regression testing. Include specific tools, frameworks, and examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Playwright Setup",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for setting up Playwright for React applications, including detailed steps for page objects, CI integration, and visual regression testing.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for setting up Playwright for end-to-end testing of a React application. Include detailed instructions for implementing page objects, integrating with CI tools, and conducting visual regression testing.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2052
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsfv9i1zz22",
+    "title": "Research the best electric vehicle charging solutions for apartment dwellers. Co",
+    "raw_request": "Research the best electric vehicle charging solutions for apartment dwellers. Compare Level 1, portable Level 2, and local charging networks. Include costs.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:22:07.321Z",
+    "updated_at": "2026-03-16T00:26:03.604Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:22:40.323Z",
+      "interpreted_objective": "Research and compare the best electric vehicle charging solutions for apartment dwellers, focusing on Level 1, portable Level 2, and local charging networks, including cost analysis.",
+      "expected_outcome": "A comprehensive report detailing the pros and cons, costs, and suitability of different EV charging solutions for apartment dwellers.",
+      "key_unknowns": [
+        "Current market prices for Level 1 and portable Level 2 chargers",
+        "Availability and cost of local charging networks",
+        "Installation feasibility and requirements for apartment settings"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on Level 1, portable Level 2, and local charging networks, including costs and installation requirements. Then, synthesize this information into a structured report that compares these options, highlighting their advantages, disadvantages, and cost implications for apartment dwellers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research EV Charging Solutions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Level 1, portable Level 2, and local charging networks for apartment dwellers, including costs and installation requirements.",
+          "prompt": "Search the web for current, specific information about Level 1, portable Level 2, and local charging networks for electric vehicles, focusing on their suitability for apartment dwellers. Include costs, installation requirements, and any relevant pros and cons. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Charging Solutions Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Level 1, portable Level 2, and local charging networks for apartment dwellers, with cost analysis and recommendations.",
+          "prompt": "Based on the research results from the prior subtask, synthesize actionable recommendations for apartment dwellers considering Level 1, portable Level 2, and local charging networks for electric vehicles. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-ev-charging-solutions.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2213
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsfv7xo62uc",
+    "title": "Research the best project management tools for solo developers in 2026. Compare ",
+    "raw_request": "Research the best project management tools for solo developers in 2026. Compare Notion, Linear, Todoist, and ClickUp. Include free tier limitations.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:22:05.292Z",
+    "updated_at": "2026-03-16T00:25:19.029Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:22:17.138Z",
+      "interpreted_objective": "Research and compare the best project management tools for solo developers in 2026, focusing on Notion, Linear, Todoist, and ClickUp, including their free tier limitations.",
+      "expected_outcome": "A comprehensive report comparing Notion, Linear, Todoist, and ClickUp for solo developers in 2026, highlighting their features, free tier limitations, and suitability.",
+      "key_unknowns": [
+        "Current features and updates for Notion, Linear, Todoist, and ClickUp in 2026",
+        "Specific limitations of the free tiers for each tool",
+        "Overall suitability for solo developers"
+      ],
+      "recommended_strategy": "First, conduct a web search using Perplexity to gather the latest information on Notion, Linear, Todoist, and ClickUp, focusing on their features and free tier limitations in 2026. Then, use OpenAI to synthesize this data into a structured comparison report, highlighting key differences and recommendations for solo developers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Project Management Tools for Solo Developers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on features and free tier limitations of Notion, Linear, Todoist, and ClickUp in 2026.",
+          "prompt": "Search the web for current, specific information about Notion, Linear, Todoist, and ClickUp in 2026. Include details on their features, free tier limitations, and any updates relevant to solo developers. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed comparison report of Notion, Linear, Todoist, and ClickUp for solo developers, including features, free tier limitations, and recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Notion, Linear, Todoist, and ClickUp for solo developers in 2026. Include specific features, free tier limitations, and concrete next steps for selecting the best tool.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2026-project-management-tools.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2240
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmsfv6dhryuh",
+    "title": "Create a comprehensive comparison of Austin vs Portland for a tech worker. Inclu",
+    "raw_request": "Create a comprehensive comparison of Austin vs Portland for a tech worker. Include job market, cost of living, weather, culture, and outdoor activities.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:22:03.269Z",
+    "updated_at": "2026-03-16T00:24:55.379Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:22:11.836Z",
+      "interpreted_objective": "Compare Austin and Portland for a tech worker considering job market, cost of living, weather, culture, and outdoor activities.",
+      "expected_outcome": "A comprehensive report that helps a tech worker decide between relocating to Austin or Portland based on key factors.",
+      "key_unknowns": [
+        "Current job market conditions in Austin and Portland for tech workers",
+        "Cost of living differences between the two cities",
+        "Weather patterns and their impact on lifestyle",
+        "Cultural aspects and community engagement",
+        "Availability and variety of outdoor activities"
+      ],
+      "recommended_strategy": "Conduct a detailed web search to gather current data on job market, cost of living, weather, culture, and outdoor activities for Austin and Portland. Then, synthesize this information into a structured report to aid decision-making for tech workers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Austin and Portland Tech Job Markets",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on tech job markets in Austin and Portland, including job availability, major employers, and salary ranges.",
+          "prompt": "Search the web for current, specific information about the tech job markets in Austin and Portland. Include job availability, major employers, salary ranges, and any relevant trends. Provide sources and URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Cost of Living, Weather, Culture, and Outdoor Activities",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on cost of living, weather, culture, and outdoor activities in Austin and Portland.",
+          "prompt": "Search the web for current, specific information about the cost of living, weather, culture, and outdoor activities in Austin and Portland. Include real numbers, descriptions, and sources with URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Austin and Portland for tech workers, covering job market, cost of living, weather, culture, and outdoor activities.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive comparison report of Austin vs Portland for a tech worker. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-Austin_vs_Portland_Comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2444
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsfv4srk94c",
+    "title": "Write a guide to managing technical debt in a startup. Include identification, p",
+    "raw_request": "Write a guide to managing technical debt in a startup. Include identification, prioritization, and communication to non-technical stakeholders.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T00:22:01.227Z",
+    "updated_at": "2026-03-16T00:24:06.443Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T00:22:05.560Z",
+      "interpreted_objective": "Create a comprehensive guide on managing technical debt in startups.",
+      "expected_outcome": "A clear, actionable guide that helps startups identify, prioritize, and communicate technical debt issues effectively to non-technical stakeholders.",
+      "key_unknowns": [
+        "Specific audience details",
+        "Preferred format and length of the guide",
+        "Any specific examples or case studies to include"
+      ],
+      "recommended_strategy": "First, conduct research to gather current strategies and best practices for managing technical debt in startups. Then, synthesize this information into a structured guide that covers identification, prioritization, and communication aspects. Ensure the guide is tailored for non-technical stakeholders and includes practical examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Managing Technical Debt",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed report on current best practices for managing technical debt in startups.",
+          "prompt": "Search the web for current best practices and strategies for managing technical debt in startups. Include specific methods for identification, prioritization, and communication to non-technical stakeholders. Provide real-world examples and case studies if available.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Managing Technical Debt",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on managing technical debt, tailored for startup environments and non-technical stakeholders.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide on managing technical debt in startups. Include sections on identification, prioritization, and communication strategies. Ensure the guide is clear, actionable, and includes practical examples for non-technical stakeholders.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2036
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsfp5wwd10e",
     "title": "Research the best ways to automate personal finances. Compare tools like Monarch",
     "raw_request": "Research the best ways to automate personal finances. Compare tools like Monarch, YNAB, Copilot, and manual spreadsheet approaches. Include pricing and automation capabilities.",

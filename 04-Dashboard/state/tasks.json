@@ -1,5 +1,671 @@
 [
   {
+    "id": "mmsg1ru246l8",
+    "type": "execute-subtask",
+    "label": "Subtask: Propose Testing Approach",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfxo7ntb6h"
+    },
+    "createdAt": "2026-03-16T00:27:11.018Z",
+    "updatedAt": "2026-03-16T00:27:26.931Z",
+    "output": "Propose Testing Approach: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfxo7ntb6h.md"
+    ]
+  },
+  {
+    "id": "mmsg1rtqthr8",
+    "type": "execute-subtask",
+    "label": "Subtask: Develop Rollback Strategy",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfxo6y1mqe"
+    },
+    "createdAt": "2026-03-16T00:27:11.006Z",
+    "updatedAt": "2026-03-16T00:27:18.767Z",
+    "output": "Develop Rollback Strategy: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfxo6y1mqe.md"
+    ]
+  },
+  {
+    "id": "mmsg05bi6i6r",
+    "type": "execute-subtask",
+    "label": "Subtask: Identify Code Patterns Needing Updates",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfxo6655zl"
+    },
+    "createdAt": "2026-03-16T00:25:55.182Z",
+    "updatedAt": "2026-03-16T00:27:11.018Z",
+    "output": "Identify Code Patterns Needing Updates: ## Key Findings\n\nAuto-queued 2 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfxo6655zl.md"
+    ]
+  },
+  {
+    "id": "mmsg00lb12pj",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Monetization Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfxelpaigz"
+    },
+    "createdAt": "2026-03-16T00:25:49.055Z",
+    "updatedAt": "2026-03-16T00:27:02.328Z",
+    "output": "Synthesize Monetization Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/careeregine-{date}-blog-monetization.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfxelpaigz.md"
+    ]
+  },
+  {
+    "id": "mmsfzuonzu80",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize 30-Day Journaling Challenge",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfxaap5480"
+    },
+    "createdAt": "2026-03-16T00:25:41.399Z",
+    "updatedAt": "2026-03-16T00:26:52.910Z",
+    "output": "Synthesize 30-Day Journaling Challenge: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/general-{date}-journaling-challenge.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfxaap5480.md"
+    ]
+  },
+  {
+    "id": "mmsfzpshodnc",
+    "type": "execute-subtask",
+    "label": "Subtask: Write dialogue scene between CEO and CTO",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfx6fn6aox"
+    },
+    "createdAt": "2026-03-16T00:25:35.057Z",
+    "updatedAt": "2026-03-16T00:26:46.380Z",
+    "output": "Write dialogue scene between CEO and CTO: ## Dialogue Scene\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/screenwriting-{date}-dialogue-scene.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfx6fn6aox.md"
+    ]
+  },
+  {
+    "id": "mmsfzhv2xqn2",
+    "type": "execute-subtask",
+    "label": "Subtask: Draft Professional Bios",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfx22sck1p"
+    },
+    "createdAt": "2026-03-16T00:25:24.782Z",
+    "updatedAt": "2026-03-16T00:26:36.283Z",
+    "output": "Draft Professional Bios: ## Version 1: Technical Innovator and Entrepreneur\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfx22sck1p.md"
+    ]
+  },
+  {
+    "id": "mmsfz7rifyvb",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Energy Management Plan",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfwsbdqtcr"
+    },
+    "createdAt": "2026-03-16T00:25:11.694Z",
+    "updatedAt": "2026-03-16T00:26:31.597Z",
+    "output": "Synthesize Energy Management Plan: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/health-{date}-energy-management-plan.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfwsbdqtcr.md"
+    ]
+  },
+  {
+    "id": "mmsfz3gmkg6h",
+    "type": "execute-subtask",
+    "label": "Subtask: Write Remote Work Policies Section",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfwntdlcjj"
+    },
+    "createdAt": "2026-03-16T00:25:06.118Z",
+    "updatedAt": "2026-03-16T00:26:25.355Z",
+    "output": "Write Remote Work Policies Section: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfwntdlcjj.md"
+    ]
+  },
+  {
+    "id": "mmsfyny86q28",
+    "type": "execute-subtask",
+    "label": "Subtask: Compile Report on WebAssembly for Backend Developers",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfw6iu98nj"
+    },
+    "createdAt": "2026-03-16T00:24:46.016Z",
+    "updatedAt": "2026-03-16T00:26:18.544Z",
+    "output": "Compile Report on WebAssembly for Backend Developers: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfw6iu98nj.md"
+    ]
+  },
+  {
+    "id": "mmsfyhowcf6n",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Guide for Playwright Setup",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfw3ipd8dq"
+    },
+    "createdAt": "2026-03-16T00:24:37.904Z",
+    "updatedAt": "2026-03-16T00:26:12.217Z",
+    "output": "Synthesize Guide for Playwright Setup: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfw3ipd8dq.md"
+    ]
+  },
+  {
+    "id": "mmsfybrreaz9",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Charging Solutions Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfvz0u13ga"
+    },
+    "createdAt": "2026-03-16T00:24:30.231Z",
+    "updatedAt": "2026-03-16T00:26:03.615Z",
+    "output": "Synthesize Charging Solutions Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/research-2023-ev-charging-solutions.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfvz0u13ga.md"
+    ]
+  },
+  {
+    "id": "mmsfxo9jtocc",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Breaking Changes in Express 5",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfxo5ckhb8"
+    },
+    "createdAt": "2026-03-16T00:23:59.767Z",
+    "updatedAt": "2026-03-16T00:25:55.183Z",
+    "output": "Research Breaking Changes in Express 5: ## Finding 1: No Current Specific Information on Express 5 Breaking Changes or New Features Found in Recent Searches\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfxo5ckhb8.md"
+    ]
+  },
+  {
+    "id": "mmsfxenm46oc",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Monetization Strategies",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfxekw4mlz"
+    },
+    "createdAt": "2026-03-16T00:23:47.314Z",
+    "updatedAt": "2026-03-16T00:25:49.056Z",
+    "output": "Research Monetization Strategies: Display ads via networks like Google AdSense or Mediavine yield $5-20 per 1,000 pageviews for niche tech blogs, scaling to $10,000+ monthly at 500,000\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfxekw4mlz.md"
+    ]
+  },
+  {
+    "id": "mmsfxaclajmq",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Existing Journaling Challenges",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfxa9vxiwb"
+    },
+    "createdAt": "2026-03-16T00:23:41.733Z",
+    "updatedAt": "2026-03-16T00:25:41.399Z",
+    "output": "Research Existing Journaling Challenges: ## Finding 1: MyLifeNote.ai Self-Help Journal Guide (2026 Edition)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfxa9vxiwb.md"
+    ]
+  },
+  {
+    "id": "mmsfx6hi1647",
+    "type": "execute-subtask",
+    "label": "Subtask: Research common arguments on technical debt vs new features",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfx6etdjpg"
+    },
+    "createdAt": "2026-03-16T00:23:36.726Z",
+    "updatedAt": "2026-03-16T00:25:35.058Z",
+    "output": "Research common arguments on technical debt vs new features: ## Finding 1: Technical Debt as Business Cost vs. Feature Velocity Trade-off\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfx6etdjpg.md"
+    ]
+  },
+  {
+    "id": "mmsfx24nx004",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Rahul's Professional Background",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfx21vgkl9"
+    },
+    "createdAt": "2026-03-16T00:23:31.079Z",
+    "updatedAt": "2026-03-16T00:25:24.783Z",
+    "output": "Research Rahul's Professional Background: ## Finding 1: Rahul Thomas Jacob - Senior Satellite GNC Engineer at Amazon\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfx21vgkl9.md"
+    ]
+  },
+  {
+    "id": "mmsfwx9zki2y",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Comparison Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfvh4ow4zr"
+    },
+    "createdAt": "2026-03-16T00:23:24.791Z",
+    "updatedAt": "2026-03-16T00:25:19.046Z",
+    "output": "Synthesize Comparison Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/research-2026-project-management-tools.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfvh4ow4zr.md"
+    ]
+  },
+  {
+    "id": "mmsfwsd8lrsb",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Energy Management Strategies",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfwsano63r"
+    },
+    "createdAt": "2026-03-16T00:23:18.428Z",
+    "updatedAt": "2026-03-16T00:25:11.695Z",
+    "output": "Research Energy Management Strategies: ## Finding 1: 90-Minute Work Sprints Aligned with Ultradian Rhythms for Energy Management\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfwsano63r.md"
+    ]
+  },
+  {
+    "id": "mmsfwnv8w8ks",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Remote Work Policies",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfwnskyblu"
+    },
+    "createdAt": "2026-03-16T00:23:12.596Z",
+    "updatedAt": "2026-03-16T00:25:06.118Z",
+    "output": "Research Remote Work Policies: ## Communication Expectations\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfwnskyblu.md"
+    ]
+  },
+  {
+    "id": "mmsfwjoo6vzx",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Comparison Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfvd20aw3i"
+    },
+    "createdAt": "2026-03-16T00:23:07.176Z",
+    "updatedAt": "2026-03-16T00:24:55.390Z",
+    "output": "Synthesize Comparison Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/careeregine-{date}-Austin_vs_Portland_Comparison.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfvd20aw3i.md"
+    ]
+  },
+  {
+    "id": "mmsfw6krag0y",
+    "type": "execute-subtask",
+    "label": "Subtask: Research WebAssembly Use Cases and Performance",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfw6i1opnb"
+    },
+    "createdAt": "2026-03-16T00:22:50.187Z",
+    "updatedAt": "2026-03-16T00:24:46.016Z",
+    "output": "Research WebAssembly Use Cases and Performance: ## WebAssembly Use Cases in Backend Development\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfw6i1opnb.md"
+    ]
+  },
+  {
+    "id": "mmsfw3kjcfn3",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Playwright Setup for React",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfw3i0ejcb"
+    },
+    "createdAt": "2026-03-16T00:22:46.291Z",
+    "updatedAt": "2026-03-16T00:24:37.904Z",
+    "output": "Research Playwright Setup for React: ## Page Object Model (POM) Best Practices for Playwright in React Apps\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfw3i0ejcb.md"
+    ]
+  },
+  {
+    "id": "mmsfvz2qsi8o",
+    "type": "execute-subtask",
+    "label": "Subtask: Research EV Charging Solutions",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfvyzzlxsl"
+    },
+    "createdAt": "2026-03-16T00:22:40.466Z",
+    "updatedAt": "2026-03-16T00:24:30.232Z",
+    "output": "Research EV Charging Solutions: ## Level 1 Charging: Suitability for Apartment Dwellers\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfvyzzlxsl.md"
+    ]
+  },
+  {
+    "id": "mmsfvumpgnci",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Guide on Managing Technical Debt",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfv870m4sk"
+    },
+    "createdAt": "2026-03-16T00:22:34.705Z",
+    "updatedAt": "2026-03-16T00:24:06.454Z",
+    "output": "Synthesize Guide on Managing Technical Debt: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmsfv870m4sk.md"
+    ]
+  },
+  {
+    "id": "mmsfvnn616qq",
+    "type": "deliberate",
+    "label": "Deliberate: Generate a step-by-step migration plan from Express 4 to Express 5. Include brea",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsfvnmz6cef",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T00:22:25.650Z",
+    "updatedAt": "2026-03-16T00:23:59.767Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed migration plan from Express 4 to Express 5.\nStrategy: First, research the breaking changes and new features introduced in Express 5. Then, identify code patterns in Express 4 that need updating. Develop a rollback strategy in case of migration failure and propose a testing approach to ensure the migration is successful. Finally, compile these findings into a detailed migration plan.\nRisk: yellow\nSubtasks: 4\nTokens: 2741",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsfvm2d7gk7",
+    "type": "deliberate",
+    "label": "Deliberate: Research the best ways to passively earn from a data engineering blog. Include m",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsfvm26ledw",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T00:22:23.605Z",
+    "updatedAt": "2026-03-16T00:23:47.314Z",
+    "output": "Deliberation complete.\nObjective: Research and identify the best passive income strategies for monetizing a data engineering blog.\nStrategy: First, conduct web research to gather current information on monetization strategies for blogs in the data engineering field. Then, synthesize the findings into a structured report with actionable recommendations and realistic income estimates.\nRisk: green\nSubtasks: 2\nTokens: 2372",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsfvkhlice1",
+    "type": "deliberate",
+    "label": "Deliberate: Create a 30-day journaling challenge with daily prompts. Focus on self-reflectio",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsfvkhew00y",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T00:22:21.561Z",
+    "updatedAt": "2026-03-16T00:23:41.733Z",
+    "output": "Deliberation complete.\nObjective: Create a 30-day journaling challenge with daily prompts for self-reflection, goal setting, and gratitude.\nStrategy: First, research existing journaling challenges and effective prompts for self-reflection, goal setting, and gratitude. Then, synthesize this information to create a comprehensive 30-day journaling challenge with distinct morning and evening prompts.\nRisk: green\nSubtasks: 2\nTokens: 2456",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsfvix43kib",
+    "type": "deliberate",
+    "label": "Deliberate: Write a dialogue scene between a CEO and CTO disagreeing about technical debt vs",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsfviwx3rtr",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T00:22:19.528Z",
+    "updatedAt": "2026-03-16T00:23:36.727Z",
+    "output": "Deliberation complete.\nObjective: Write a realistic dialogue scene between a CEO and CTO about technical debt vs new features, incorporating subtext and resolution.\nStrategy: First, research common arguments and resolutions in discussions about technical debt versus new features in tech companies. Then, synthesize this information into a realistic dialogue scene, ensuring it includes subtext and a clear resolution. Use previous work on dialogue scenes to maintain consistency in style and tone.\nRisk: green\nSubtasks: 2\nTokens: 1993",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsfvhch3xn7",
+    "type": "deliberate",
+    "label": "Deliberate: Write a professional bio in 3 lengths: 1 sentence, 1 paragraph, and full page. F",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsfvhcbt9n4",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T00:22:17.489Z",
+    "updatedAt": "2026-03-16T00:23:31.080Z",
+    "output": "Deliberation complete.\nObjective: Create a professional bio for Rahul in three different lengths.\nStrategy: Research Rahul's professional background and achievements. Then, draft bios of varying lengths, ensuring each captures his dual role as a senior data engineer and entrepreneur. Tailor the tone and style to align with his professional image and career goals.\nRisk: green\nSubtasks: 2\nTokens: 2355",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsfvh6lvkmg",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Project Management Tools for Solo Developers",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfvh3tj63a"
+    },
+    "createdAt": "2026-03-16T00:22:17.277Z",
+    "updatedAt": "2026-03-16T00:23:24.791Z",
+    "output": "Research Project Management Tools for Solo Developers: Notion serves as an all-in-one workspace combining notes, tasks, databases, and wikis, ideal for solo developers building custom CRMs or project dashb\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfvh3tj63a.md"
+    ]
+  },
+  {
+    "id": "mmsfvfrwh69h",
+    "type": "deliberate",
+    "label": "Deliberate: Create a sustainable energy management plan for someone who works 12-hour days. ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsfvfrqfhrw",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T00:22:15.452Z",
+    "updatedAt": "2026-03-16T00:23:18.428Z",
+    "output": "Deliberation complete.\nObjective: Develop a comprehensive energy management plan for individuals with 12-hour workdays, focusing on nutrition, exercise, and cognitive performance.\nStrategy: Conduct research on sustainable energy management strategies for long workdays, focusing on nutrition timing, exercise placement, and cognitive optimization. Synthesize findings into a structured plan with practical recommendations.\nRisk: green\nSubtasks: 2\nTokens: 1892",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsfve7ifxz9",
+    "type": "deliberate",
+    "label": "Deliberate: Write a comprehensive employee handbook section on remote work policies. Include",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsfve7di9ea",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T00:22:13.422Z",
+    "updatedAt": "2026-03-16T00:23:12.597Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed section on remote work policies for an employee handbook.\nStrategy: First, research best practices and common elements in remote work policies across various industries to gather relevant information. Then, synthesize this information into a structured and tailored section for the employee handbook that aligns with the company's values and operational context.\nRisk: green\nSubtasks: 2\nTokens: 2053",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsfvd4xvl6v",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Cost of Living, Weather, Culture, and Outdoor Activities",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfvd1a1058"
+    },
+    "createdAt": "2026-03-16T00:22:12.033Z",
+    "updatedAt": "2026-03-16T00:23:07.177Z",
+    "output": "Research Cost of Living, Weather, Culture, and Outdoor Activities: ## Cost of Living\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfvd1a1058.md"
+    ]
+  },
+  {
+    "id": "mmsfvd4kt2nq",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Austin and Portland Tech Job Markets",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfvd0gffqx"
+    },
+    "createdAt": "2026-03-16T00:22:12.020Z",
+    "updatedAt": "2026-03-16T00:22:57.278Z",
+    "output": "Research Austin and Portland Tech Job Markets: ## Austin Tech Job Market\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfvd0gffqx.md"
+    ]
+  },
+  {
+    "id": "mmsfvcn3g9qc",
+    "type": "deliberate",
+    "label": "Deliberate: Teach me about WebAssembly for backend developers. Cover use cases, performance ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsfvcmyw8gc",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T00:22:11.391Z",
+    "updatedAt": "2026-03-16T00:22:50.188Z",
+    "output": "Deliberation complete.\nObjective: Educate backend developers about WebAssembly, focusing on its use cases, performance, language support, and appropriate usage scenarios.\nStrategy: Conduct research to gather current information on WebAssembly's use cases, performance characteristics, and language support. Then, synthesize this information into a clear and concise report that highlights when and why backend developers should consider using WebAssembly.\nRisk: green\nSubtasks: 2\nTokens: 2045",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsfvb2o3b3w",
+    "type": "deliberate",
+    "label": "Deliberate: Write a comprehensive guide to setting up Playwright for end-to-end testing of a",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsfvb2i2on0",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T00:22:09.360Z",
+    "updatedAt": "2026-03-16T00:22:46.292Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed guide for setting up Playwright for React app testing.\nStrategy: Research current best practices for setting up Playwright with React applications, focusing on page objects, CI integration, and visual regression testing. Synthesize this information into a clear, structured guide that is immediately usable by developers.\nRisk: green\nSubtasks: 2\nTokens: 2052",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsfv9i6031y",
+    "type": "deliberate",
+    "label": "Deliberate: Research the best electric vehicle charging solutions for apartment dwellers. Co",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsfv9i1zz22",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T00:22:07.326Z",
+    "updatedAt": "2026-03-16T00:22:40.467Z",
+    "output": "Deliberation complete.\nObjective: Research and compare the best electric vehicle charging solutions for apartment dwellers, focusing on Level 1, portable Level 2, and local charging networks, including cost analysis.\nStrategy: First, conduct web research to gather current data on Level 1, portable Level 2, and local charging networks, including costs and installation requirements. Then, synthesize this information into a structured report that compares these options, highlighting their advantages, disadvantages, and cost implications for apartment dwellers.\nRisk: green\nSubtasks: 2\nTokens: 2213",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsfv88w2s9q",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Best Practices for Managing Technical Debt",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmsfv866lv02"
+    },
+    "createdAt": "2026-03-16T00:22:05.696Z",
+    "updatedAt": "2026-03-16T00:22:34.706Z",
+    "output": "Research Best Practices for Managing Technical Debt: I need to conduct additional web searches to provide you with current best practices, specific methods, real-world examples, and case studies for mana\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmsfv866lv02.md"
+    ]
+  },
+  {
+    "id": "mmsfv7xtlc0z",
+    "type": "deliberate",
+    "label": "Deliberate: Research the best project management tools for solo developers in 2026. Compare ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsfv7xo62uc",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T00:22:05.297Z",
+    "updatedAt": "2026-03-16T00:22:17.277Z",
+    "output": "Deliberation complete.\nObjective: Research and compare the best project management tools for solo developers in 2026, focusing on Notion, Linear, Todoist, and ClickUp, including their free tier limitations.\nStrategy: First, conduct a web search using Perplexity to gather the latest information on Notion, Linear, Todoist, and ClickUp, focusing on their features and free tier limitations in 2026. Then, use OpenAI to synthesize this data into a structured comparison report, highlighting key differences and recommendations for solo developers.\nRisk: green\nSubtasks: 2\nTokens: 2240",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsfv6donru7",
+    "type": "deliberate",
+    "label": "Deliberate: Create a comprehensive comparison of Austin vs Portland for a tech worker. Inclu",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsfv6dhryuh",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T00:22:03.276Z",
+    "updatedAt": "2026-03-16T00:22:12.033Z",
+    "output": "Deliberation complete.\nObjective: Compare Austin and Portland for a tech worker considering job market, cost of living, weather, culture, and outdoor activities.\nStrategy: Conduct a detailed web search to gather current data on job market, cost of living, weather, culture, and outdoor activities for Austin and Portland. Then, synthesize this information into a structured report to aid decision-making for tech workers.\nRisk: green\nSubtasks: 3\nTokens: 2444",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmsfv4sw7yyg",
+    "type": "deliberate",
+    "label": "Deliberate: Write a guide to managing technical debt in a startup. Include identification, p",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmsfv4srk94c",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T00:22:01.232Z",
+    "updatedAt": "2026-03-16T00:22:05.696Z",
+    "output": "Deliberation complete.\nObjective: Create a comprehensive guide on managing technical debt in startups.\nStrategy: First, conduct research to gather current strategies and best practices for managing technical debt in startups. Then, synthesize this information into a structured guide that covers identification, prioritization, and communication aspects. Ensure the guide is tailored for non-technical stakeholders and includes practical examples.\nRisk: green\nSubtasks: 2\nTokens: 2036",
+    "error": null,
+    "filesWritten": []
+  },
+  {
     "id": "mmsfraqpbnee",
     "type": "execute-subtask",
     "label": "Subtask: Synthesize Comparison Report",
@@ -942,659 +1608,5 @@
     "filesWritten": [
       "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms71liwqo57.md"
     ]
-  },
-  {
-    "id": "mms71guuo0cy",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Affordable Home Gym Equipment",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms71gsb843r"
-    },
-    "createdAt": "2026-03-15T20:15:00.246Z",
-    "updatedAt": "2026-03-15T20:19:23.327Z",
-    "output": "Research Affordable Home Gym Equipment: ## Finding 1: RitFit PLC01 Leg Extension Curl Machine\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms71gsb843r.md"
-    ]
-  },
-  {
-    "id": "mms71c7b9si1",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Event-Driven Microservices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms71c4ql4bf"
-    },
-    "createdAt": "2026-03-15T20:14:54.215Z",
-    "updatedAt": "2026-03-15T20:19:14.466Z",
-    "output": "Research Event-Driven Microservices: # Event-Driven Microservices Patterns: Choreography, Orchestration, and Saga Patterns\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms71c4ql4bf.md"
-    ]
-  },
-  {
-    "id": "mms717522r1t",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Investment Tracker Features",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms7172ij7ef"
-    },
-    "createdAt": "2026-03-15T20:14:47.654Z",
-    "updatedAt": "2026-03-15T20:19:03.824Z",
-    "output": "Research Investment Tracker Features: # Investment Tracking Spreadsheet Best Practices (March 2026)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms7172ij7ef.md"
-    ]
-  },
-  {
-    "id": "mms713ebvv4y",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Technical Debt Management",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms713bq0rtm"
-    },
-    "createdAt": "2026-03-15T20:14:42.803Z",
-    "updatedAt": "2026-03-15T20:18:52.379Z",
-    "output": "Research Technical Debt Management: I need to conduct a web search to find current best practices for managing technical debt in startups, as the provided results are limited and don't f\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms713bq0rtm.md"
-    ]
-  },
-  {
-    "id": "mms710t0bihm",
-    "type": "execute-subtask",
-    "label": "Subtask: Research sit-stand desks",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms710qfkfok"
-    },
-    "createdAt": "2026-03-15T20:14:39.444Z",
-    "updatedAt": "2026-03-15T20:18:36.073Z",
-    "output": "Research sit-stand desks: # Sit-Stand Desks Under $700 for Dual Monitor Setups\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms710qfkfok.md"
-    ]
-  },
-  {
-    "id": "mms70wxtdvrn",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Distributed Tracing Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms6yr5g55xh"
-    },
-    "createdAt": "2026-03-15T20:14:34.433Z",
-    "updatedAt": "2026-03-15T20:18:24.006Z",
-    "output": "Synthesize Distributed Tracing Report: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/learning-{date}-distributed_tracing.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms6yr5g55xh.md"
-    ]
-  },
-  {
-    "id": "mms70ok34c0s",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Networking Tips for Introverts",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms70ohmlovx"
-    },
-    "createdAt": "2026-03-15T20:14:23.571Z",
-    "updatedAt": "2026-03-15T20:18:10.661Z",
-    "output": "Research Networking Tips for Introverts: ## Finding 1: Leverage Online Platforms and Thoughtful Direct Messages for Introverts\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms70ohmlovx.md"
-    ]
-  },
-  {
-    "id": "mms70k91u7q3",
-    "type": "execute-subtask",
-    "label": "Subtask: Research meal planning strategies",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms70k6ievd5"
-    },
-    "createdAt": "2026-03-15T20:14:17.989Z",
-    "updatedAt": "2026-03-15T20:18:02.640Z",
-    "output": "Research meal planning strategies: ## Finding 1: Meal Planning for Small Kitchens (2026) - 5-Day Plan with Ingredient Overlap and Batch Cooking\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms70k6ievd5.md"
-    ]
-  },
-  {
-    "id": "mms70fepjw2x",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Docker Swarm, Nomad, and ECS",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms70fc7r0l5"
-    },
-    "createdAt": "2026-03-15T20:14:11.713Z",
-    "updatedAt": "2026-03-15T20:17:52.763Z",
-    "output": "Research Docker Swarm, Nomad, and ECS: ## Docker Swarm\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms70fc7r0l5.md"
-    ]
-  },
-  {
-    "id": "mms70b2zf77r",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Dividend Stock Screening Criteria",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms70azq8h6c"
-    },
-    "createdAt": "2026-03-15T20:14:06.107Z",
-    "updatedAt": "2026-03-15T20:17:45.818Z",
-    "output": "Research Dividend Stock Screening Criteria: ## Finding 1: Dividend Aristocrats Criteria from ProShares (Updated March 2026)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms70azq8h6c.md"
-    ]
-  },
-  {
-    "id": "mms706ec1dud",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Best Practices for Post-Incident Reviews",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms706bthd0b"
-    },
-    "createdAt": "2026-03-15T20:14:00.036Z",
-    "updatedAt": "2026-03-15T20:17:29.892Z",
-    "output": "Research Best Practices for Post-Incident Reviews: # Post-Incident Review Best Practices: Learning-Focused Approach\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms706bthd0b.md"
-    ]
-  },
-  {
-    "id": "mms7004z9qtg",
-    "type": "execute-subtask",
-    "label": "Subtask: Research LED desk lamps",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms7002hv76i"
-    },
-    "createdAt": "2026-03-15T20:13:51.923Z",
-    "updatedAt": "2026-03-15T20:17:19.657Z",
-    "output": "Research LED desk lamps: ## Finding 1: TaoTronics LED Desk Lamp TT-DL16\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms7002hv76i.md"
-    ]
-  },
-  {
-    "id": "mms6zv7rddu6",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Charitable Giving Strategy",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms6ymdyx6ik"
-    },
-    "createdAt": "2026-03-15T20:13:45.543Z",
-    "updatedAt": "2026-03-15T20:17:12.677Z",
-    "output": "Synthesize Charitable Giving Strategy: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/wealthresearch-{date}-charitable-giving-strategy.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms6ymdyx6ik.md"
-    ]
-  },
-  {
-    "id": "mms6zp6nqyog",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Notion, Obsidian, and Logseq",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms6zp47bwrf"
-    },
-    "createdAt": "2026-03-15T20:13:37.727Z",
-    "updatedAt": "2026-03-15T20:17:05.672Z",
-    "output": "Research Notion, Obsidian, and Logseq: ## Notion Capabilities for Code Snippets and Technical Notes\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms6zp47bwrf.md"
-    ]
-  },
-  {
-    "id": "mms6zlc64wc3",
-    "type": "execute-subtask",
-    "label": "Subtask: Write Dialogue Scene",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms6zlahssba"
-    },
-    "createdAt": "2026-03-15T20:13:32.742Z",
-    "updatedAt": "2026-03-15T20:16:56.551Z",
-    "output": "Write Dialogue Scene: **Scene: A small, dimly lit office at the startup headquarters. The walls are adorned with motivational posters and whiteboards filled with brainstorm\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms6zlahssba.md"
-    ]
-  },
-  {
-    "id": "mms6zile5ox0",
-    "type": "execute-subtask",
-    "label": "Subtask: Research American Southwest Road Trip Options",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms6ziit6hcy"
-    },
-    "createdAt": "2026-03-15T20:13:29.186Z",
-    "updatedAt": "2026-03-15T20:16:49.471Z",
-    "output": "Research American Southwest Road Trip Options: ## Popular Road Trip Routes\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms6ziit6hcy.md"
-    ]
-  },
-  {
-    "id": "mms6zep9mvmc",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Effects of Dehydration on Cognitive Performance",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms6zelyuqy1"
-    },
-    "createdAt": "2026-03-15T20:13:24.141Z",
-    "updatedAt": "2026-03-15T20:16:39.872Z",
-    "output": "Research Effects of Dehydration on Cognitive Performance: ## Finding 1: 2011 Journal of Nutrition Study on 1.5% Dehydration in Men\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms6zelyuqy1.md"
-    ]
-  },
-  {
-    "id": "mms6zeoyta9w",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Hydration Needs",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms6zel67xmq"
-    },
-    "createdAt": "2026-03-15T20:13:24.130Z",
-    "updatedAt": "2026-03-15T20:16:33.146Z",
-    "output": "Research Hydration Needs: ## Finding 1: CDC Hydration Guidelines for Workers\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms6zel67xmq.md"
-    ]
-  },
-  {
-    "id": "mms6za2n222j",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Guide Content",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms6yj5g24pc"
-    },
-    "createdAt": "2026-03-15T20:13:18.143Z",
-    "updatedAt": "2026-03-15T20:16:27.040Z",
-    "output": "Synthesize Guide Content: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-15-st_mms6yj5g24pc.md"
-    ]
-  },
-  {
-    "id": "mms6z4h5t3r2",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Best Practices for Technical Conference Proposals",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms6z4elf90d"
-    },
-    "createdAt": "2026-03-15T20:13:10.889Z",
-    "updatedAt": "2026-03-15T20:16:18.345Z",
-    "output": "Research Best Practices for Technical Conference Proposals: ## Finding 1: NCME AIME-Con 2026 Call for Proposals - Specific Structure for AI/Measurement Sessions\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms6z4elf90d.md"
-    ]
-  },
-  {
-    "id": "mms6z36ezq75",
-    "type": "deliberate",
-    "label": "Deliberate: Create a weekly meal prep workflow that takes under 2 hours. Include shopping li",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6z369l0xj",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:13:09.206Z",
-    "updatedAt": "2026-03-15T20:16:09.792Z",
-    "output": "Deliberation complete.\nObjective: Develop a streamlined weekly meal prep workflow that can be completed in under 2 hours, including a shopping list template, prep order, and storage tips.\nStrategy: Research current best practices for quick meal prep workflows. Synthesize findings into a concise guide with a shopping list template, prep order, and storage tips. Ensure the guide is adaptable to various dietary needs and storage conditions.\nRisk: green\nSubtasks: 2\nTokens: 1852",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6z2dr4f3y",
-    "type": "deliberate",
-    "label": "Deliberate: Research the best cities for bootstrapped SaaS startups in 2026. Compare cost of",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6z2dndhfy",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:13:08.175Z",
-    "updatedAt": "2026-03-15T20:16:03.912Z",
-    "output": "Deliberation complete.\nObjective: Identify and compare the best cities for bootstrapped SaaS startups in 2026 based on cost of living, talent pool, and community.\nStrategy: First, conduct web research to gather current data on cities that are favorable for SaaS startups, focusing on cost of living, talent pool, and community. Then, synthesize this data into a comparative analysis to identify the top cities for bootstrapped SaaS startups in 2026.\nRisk: green\nSubtasks: 2\nTokens: 2299",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6z1l7oyix",
-    "type": "deliberate",
-    "label": "Deliberate: Write a guide to salary negotiation for engineers switching from big tech to sta",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6z1l3z0jb",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:13:07.147Z",
-    "updatedAt": "2026-03-15T20:15:58.011Z",
-    "output": "Deliberation complete.\nObjective: Create a detailed guide on salary negotiation for engineers transitioning from big tech to startups, focusing on equity valuation and risk assessment.\nStrategy: Research current practices in salary negotiation for engineers moving to startups, focusing on equity valuation and risk assessment. Synthesize findings into a practical guide with specific examples and recommendations. Ensure the guide is tailored to the needs of engineers with experience in big tech.\nRisk: green\nSubtasks: 2\nTokens: 2369",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6z0spozpr",
-    "type": "deliberate",
-    "label": "Deliberate: Create a technical blog launch checklist. Include platform selection, SEO setup,",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6z0slumwu",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:13:06.121Z",
-    "updatedAt": "2026-03-15T20:15:49.951Z",
-    "output": "Deliberation complete.\nObjective: Create a comprehensive checklist for launching a technical blog, covering platform selection, SEO setup, content calendar, and promotion strategy.\nStrategy: Conduct research to identify the best practices and tools for each component of the blog launch checklist. Synthesize findings into a structured document that can be directly used for launching a technical blog.\nRisk: green\nSubtasks: 5\nTokens: 2174",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6z0060pdk",
-    "type": "deliberate",
-    "label": "Deliberate: Design a sustainable work routine that prevents RSI for programmers. Include erg",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6z001a6xv",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:13:05.094Z",
-    "updatedAt": "2026-03-15T20:15:41.991Z",
-    "output": "Deliberation complete.\nObjective: Design a sustainable work routine to prevent RSI for programmers, including ergonomic setup, break schedule, and strengthening exercises.\nStrategy: Conduct research to identify current best practices for RSI prevention in programming. Synthesize this information into a structured guide that includes ergonomic setup, break schedules, and exercises. Ensure recommendations are evidence-based and actionable.\nRisk: green\nSubtasks: 2\nTokens: 1824",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6yz7lapa1",
-    "type": "deliberate",
-    "label": "Deliberate: Teach me about data lineage and data cataloging. Compare Datahub, Apache Atlas, ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6yz7hgv5v",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:13:04.065Z",
-    "updatedAt": "2026-03-15T20:15:35.929Z",
-    "output": "Deliberation complete.\nObjective: Provide an educational comparison of Datahub, Apache Atlas, and Amundsen, focusing on data lineage and data cataloging.\nStrategy: Conduct research on data lineage and cataloging to establish foundational knowledge. Then, perform a comparative analysis of Datahub, Apache Atlas, and Amundsen, focusing on their features, pros, cons, and implementation considerations. Finally, compile these findings into a detailed report.\nRisk: green\nSubtasks: 3\nTokens: 2124",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6yyf0qqek",
-    "type": "deliberate",
-    "label": "Deliberate: Create a guide to building an emergency fund as a freelancer with variable incom",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6yyetl4os",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:13:03.036Z",
-    "updatedAt": "2026-03-15T20:15:31.502Z",
-    "output": "Deliberation complete.\nObjective: Create a detailed guide for freelancers on building an emergency fund with strategies for managing variable income.\nStrategy: Research current strategies and tools used by freelancers to manage variable income and build emergency funds. Synthesize findings into a guide with actionable steps and real-world examples. Ensure the guide includes specific strategies for lean months to provide comprehensive support.\nRisk: green\nSubtasks: 2\nTokens: 2333",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6yxm1je3f",
-    "type": "deliberate",
-    "label": "Deliberate: Research the best travel credit cards for tech workers who fly domestically 4-6 ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6yxlt4fmu",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:13:01.993Z",
-    "updatedAt": "2026-03-15T20:15:25.650Z",
-    "output": "Deliberation complete.\nObjective: Research and compare the best travel credit cards for tech workers flying domestically 4-6 times per year from Chase, Amex, and Capital One.\nStrategy: Conduct web research to gather current information on travel credit cards from Chase, Amex, and Capital One. Analyze the data to compare benefits, costs, and suitability for tech workers who fly domestically. Compile findings into a concise report with specific recommendations.\nRisk: green\nSubtasks: 2\nTokens: 2088",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6ywtrw5b4",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Desk Organizer Systems",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms6ywr5e7es"
-    },
-    "createdAt": "2026-03-15T20:13:00.975Z",
-    "updatedAt": "2026-03-15T20:15:19.969Z",
-    "output": "Research Desk Organizer Systems: ## Finding 1: Delamu Cable Management Box (2-Pack)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms6ywr5e7es.md"
-    ]
-  },
-  {
-    "id": "mms6ywt1whsj",
-    "type": "deliberate",
-    "label": "Deliberate: Write a comedy sketch about a developer who uses AI to automate their entire job",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6ywsyjs5s",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:13:00.949Z",
-    "updatedAt": "2026-03-15T20:15:12.387Z",
-    "output": "Deliberation complete.\nObjective: Create a comedic sketch about a developer using AI to automate their job and getting promoted.\nStrategy: Research current trends and examples of AI automation in the workplace to gather relevant and relatable content. Then, synthesize this information into a comedic sketch that aligns with recent work and the operator's style. Ensure the sketch is original and builds on prior comedic themes explored in related tasks.\nRisk: green\nSubtasks: 2\nTokens: 1900",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6yw0gqo7h",
-    "type": "deliberate",
-    "label": "Deliberate: Plan the perfect work-from-home Friday. Balance productive work, learning, perso",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6yw096yp0",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:12:59.920Z",
-    "updatedAt": "2026-03-15T20:15:06.389Z",
-    "output": "Deliberation complete.\nObjective: Plan a balanced work-from-home Friday that includes productive work, learning, personal projects, and weekend preparation.\nStrategy: Research best practices for balancing work, learning, and personal projects in a work-from-home setting. Synthesize these insights into a specific, actionable Friday schedule. Consider Rahul's priorities and recent tasks to ensure alignment with his goals.\nRisk: green\nSubtasks: 2\nTokens: 1950",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6yv791qmx",
-    "type": "deliberate",
-    "label": "Deliberate: Design a home gym on a 500 dollar budget. Include essential equipment, floor pro",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6yv713jwt",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:12:58.869Z",
-    "updatedAt": "2026-03-15T20:15:00.247Z",
-    "output": "Deliberation complete.\nObjective: Design a cost-effective home gym setup with essential equipment and a workout program within a $500 budget.\nStrategy: Conduct research to identify affordable and essential gym equipment suitable for a home setup. Develop a full-body workout program that utilizes this equipment effectively. Ensure the total cost remains within the $500 budget. Include floor protection solutions to safeguard home surfaces.\nRisk: yellow\nSubtasks: 2\nTokens: 1852",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6yueciopp",
-    "type": "deliberate",
-    "label": "Deliberate: Teach me about event-driven microservices patterns. Cover choreography vs orches",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6yue50gn5",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:12:57.828Z",
-    "updatedAt": "2026-03-15T20:14:54.216Z",
-    "output": "Deliberation complete.\nObjective: Educate on event-driven microservices patterns, focusing on choreography vs orchestration, saga patterns, and eventual consistency.\nStrategy: Conduct a web search to gather the latest information and examples on event-driven microservices patterns. Synthesize this information into a structured report that explains the concepts clearly, using analogies and examples. Ensure the report is tailored to someone with a technical background.\nRisk: green\nSubtasks: 2\nTokens: 1870",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6ytl7nsfy",
-    "type": "deliberate",
-    "label": "Deliberate: Create a simple investment tracker spreadsheet design. Include portfolio allocat",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6ytl05vr1",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:12:56.779Z",
-    "updatedAt": "2026-03-15T20:14:47.654Z",
-    "output": "Deliberation complete.\nObjective: Design a simple investment tracker spreadsheet with features for portfolio allocation, returns tracking, rebalancing alerts, and tax lot tracking.\nStrategy: Research current best practices and features in investment tracking spreadsheets. Synthesize this information to design a comprehensive spreadsheet layout. Ensure the design includes specific methods for tracking returns, alerts for rebalancing, and tax lot tracking. Provide a detailed report with the design specifications.\nRisk: green\nSubtasks: 2\nTokens: 2187",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6yss3lq7k",
-    "type": "deliberate",
-    "label": "Deliberate: Write a guide to managing technical debt in a startup. Include identification, p",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6ysrvrqus",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:12:55.731Z",
-    "updatedAt": "2026-03-15T20:14:42.803Z",
-    "output": "Deliberation complete.\nObjective: Create a comprehensive guide on managing technical debt in startups.\nStrategy: Research current best practices for managing technical debt in startups. Synthesize this information into a structured guide that includes identification, prioritization, and communication strategies. Ensure the guide is clear and actionable for both technical and non-technical audiences.\nRisk: green\nSubtasks: 2\nTokens: 1943",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6yryxat58",
-    "type": "deliberate",
-    "label": "Deliberate: Research the best home office desks for dual monitor setups. Compare sit-stand o",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6yrypdyz5",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:12:54.681Z",
-    "updatedAt": "2026-03-15T20:14:39.444Z",
-    "output": "Deliberation complete.\nObjective: Identify and compare the best sit-stand home office desks for dual monitor setups under $700 from Uplift, Flexispot, and IKEA.\nStrategy: First, conduct web research to gather current information on sit-stand desks from Uplift, Flexispot, and IKEA, focusing on models suitable for dual monitor setups and priced under $700. Then, synthesize this data into a structured report with comparisons, pros/cons, and recommendations.\nRisk: green\nSubtasks: 2\nTokens: 2000",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6yr77p08u",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Distributed Tracing with OpenTelemetry",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mms6yr4qhpg3"
-    },
-    "createdAt": "2026-03-15T20:12:53.683Z",
-    "updatedAt": "2026-03-15T20:14:34.433Z",
-    "output": "Research Distributed Tracing with OpenTelemetry: ## Finding 1: OpenTelemetry Traces and Spans Structure\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-15-st_mms6yr4qhpg3.md"
-    ]
-  },
-  {
-    "id": "mms6yr5pmyl0",
-    "type": "deliberate",
-    "label": "Deliberate: Create a networking event survival guide for introverted engineers. Include conv",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6yr5k1q49",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:12:53.629Z",
-    "updatedAt": "2026-03-15T20:14:23.571Z",
-    "output": "Deliberation complete.\nObjective: Create a networking event survival guide tailored for introverted engineers.\nStrategy: Research current best practices and tips for introverted individuals attending networking events. Synthesize this information into a structured guide with actionable advice. Ensure the guide is tailored to the context of engineers, with specific examples and templates.\nRisk: green\nSubtasks: 2\nTokens: 2177",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6yqd4szv1",
-    "type": "deliberate",
-    "label": "Deliberate: Design a meal planning system for someone who hates cooking. Maximum 4 ingredien",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6yqcwffmp",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:12:52.600Z",
-    "updatedAt": "2026-03-15T20:14:17.989Z",
-    "output": "Deliberation complete.\nObjective: Design a meal planning system for individuals who dislike cooking, using a maximum of four ingredients per meal, and incorporating batch cooking strategies.\nStrategy: Research current meal planning strategies for individuals who dislike cooking, focusing on simplicity and efficiency. Synthesize these findings into a structured report that includes specific meal plans and batch cooking techniques. Ensure the plans are nutritionally balanced and provide safety disclaimers where necessary.\nRisk: green\nSubtasks: 2\nTokens: 1855",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6ypjwhsqi",
-    "type": "deliberate",
-    "label": "Deliberate: Teach me about container orchestration beyond Kubernetes. Compare Docker Swarm, ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6ypjo2sqk",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:12:51.548Z",
-    "updatedAt": "2026-03-15T20:14:11.713Z",
-    "output": "Deliberation complete.\nObjective: Compare Docker Swarm, Nomad, and ECS for container orchestration beyond Kubernetes.\nStrategy: Conduct a web search to gather current information on Docker Swarm, Nomad, and ECS. Synthesize this research into a comprehensive report comparing the three tools, highlighting their strengths, weaknesses, and appropriate use cases.\nRisk: green\nSubtasks: 2\nTokens: 1838",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6yoqnx4o2",
-    "type": "deliberate",
-    "label": "Deliberate: Create a dividend investing strategy for building passive income. Include stock ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6yoqgu6og",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:12:50.495Z",
-    "updatedAt": "2026-03-15T20:14:06.107Z",
-    "output": "Deliberation complete.\nObjective: Develop a comprehensive dividend investing strategy for building passive income.\nStrategy: Conduct research to identify effective stock screening criteria and current market conditions for dividend stocks. Develop a strategic plan for portfolio construction and DRIP implementation. Synthesize findings into a comprehensive report with actionable insights.\nRisk: green\nSubtasks: 3\nTokens: 2416",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mms6ynxslyhr",
-    "type": "deliberate",
-    "label": "Deliberate: Write a post-incident review template that promotes learning over blame. Include",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mms6ynxldoa3",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-15T20:12:49.456Z",
-    "updatedAt": "2026-03-15T20:14:00.037Z",
-    "output": "Deliberation complete.\nObjective: Create a post-incident review template that focuses on learning and improvement rather than assigning blame.\nStrategy: Research best practices for post-incident reviews that emphasize learning over blame. Synthesize findings into a structured template that includes a timeline, contributing factors, and action items. Ensure the template is clear, concise, and actionable.\nRisk: green\nSubtasks: 2\nTokens: 1865",
-    "error": null,
-    "filesWritten": []
   }
 ]

@@ -98,5 +98,20 @@
       "still_partial": 1,
       "note": "Re-runs are classified as retries, not counted toward canonical. But they validate that the fix works."
     }
+  },
+  {
+    "timestamp": "2026-03-16T00:28:10.760Z",
+    "batch": "re-run-13-more-partial-cases",
+    "canonical_cases": 361,
+    "pass_rate": 93.6,
+    "partial_rate": 6.4,
+    "avg_confidence": 89,
+    "changes": "Re-ran 13 more search-weak PARTIAL cases. 11/13 now clean. Combined with first batch: 15/18 search-weak cases improved (83% fix rate). 3 cases still have weak search data. Re-runs counted as retries, not canonical.",
+    "rerun_totals": {
+      "total_rerun": 18,
+      "improved": 15,
+      "still_weak": 3,
+      "fix_rate": "83%"
+    }
   }
 ]
