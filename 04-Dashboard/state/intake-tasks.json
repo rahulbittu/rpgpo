@@ -1,5 +1,681 @@
 [
   {
+    "task_id": "t_mmsoto85ygby",
+    "title": "Design a quarterly life design review system. Include career, health, relationsh",
+    "raw_request": "Design a quarterly life design review system. Include career, health, relationships, finances, and personal growth with scoring and action planning.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:32:49.637Z",
+    "updated_at": "2026-03-16T04:36:24.595Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:33:40.450Z",
+      "interpreted_objective": "Design a system for a quarterly review of life aspects including career, health, relationships, finances, and personal growth with scoring and action planning.",
+      "expected_outcome": "A structured, actionable quarterly review system that helps individuals assess and plan improvements across key life areas.",
+      "key_unknowns": [
+        "Specific scoring criteria for each life area",
+        "How to integrate action planning with scoring",
+        "Existing systems or frameworks that could be adapted"
+      ],
+      "recommended_strategy": "Conduct research on existing life review systems and frameworks to gather best practices and scoring methodologies. Synthesize this information into a comprehensive review system that includes scoring and action planning for each life area. Ensure the system is practical and easy to implement.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the designed review system"
+      ],
+      "subtasks": [
+        {
+          "title": "Research existing life review systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of existing life review systems and frameworks, including scoring methods and action planning integration.",
+          "prompt": "Search the web for current, specific information about existing life review systems that include scoring and action planning for career, health, relationships, finances, and personal growth. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize a quarterly review system",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed report outlining a quarterly review system with scoring and action planning for each life area.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable quarterly review system. Include specific scoring criteria and action planning steps for career, health, relationships, finances, and personal growth.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-quarterly-review-system.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2002
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsotnf0hidq",
+    "title": "Create a guide to building a productive home recording podcast studio. Include m",
+    "raw_request": "Create a guide to building a productive home recording podcast studio. Include microphone, interface, soundproofing, editing software, and hosting platform comparison.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:32:48.588Z",
+    "updated_at": "2026-03-16T04:36:17.291Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:33:35.081Z",
+      "interpreted_objective": "Create a comprehensive guide for setting up a productive home recording podcast studio.",
+      "expected_outcome": "A detailed guide that includes recommendations for microphones, interfaces, soundproofing, editing software, and hosting platforms.",
+      "key_unknowns": [
+        "Specific budget constraints for the podcast studio setup",
+        "Preferred podcasting style or genre",
+        "Level of technical expertise of the target audience"
+      ],
+      "recommended_strategy": "Conduct research to identify current best practices and equipment for home podcast studios. Compare and contrast available options for each component (microphone, interface, soundproofing, etc.) and compile the findings into a clear, actionable guide. Ensure the guide is accessible to beginners while providing depth for more advanced users.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Podcast Studio Components",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed research findings on microphones, interfaces, soundproofing, editing software, and hosting platforms.",
+          "prompt": "Search the web for current, specific information about the best microphones, interfaces, soundproofing methods, editing software, and hosting platforms for home podcast studios. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Podcast Studio Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide to building a productive home recording podcast studio.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for setting up a home recording podcast studio. Include specific equipment names, pros and cons, and concrete next steps for each component (microphone, interface, soundproofing, editing software, hosting platforms).",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2129
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsotmm22idv",
+    "title": "Write a complete pitch bible for a sci-fi comedy web series about customer suppo",
+    "raw_request": "Write a complete pitch bible for a sci-fi comedy web series about customer support agents for an interstellar delivery company. Include world, characters, and 6 episode loglines.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:32:47.546Z",
+    "updated_at": "2026-03-16T04:36:09.703Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:33:29.763Z",
+      "interpreted_objective": "Create a comprehensive pitch bible for a sci-fi comedy web series about interstellar delivery customer support.",
+      "expected_outcome": "A detailed pitch bible including world-building, character descriptions, and six episode loglines.",
+      "key_unknowns": [
+        "Specific tone and style preferences for the comedy",
+        "Any particular themes or messages to emphasize",
+        "Target audience demographics"
+      ],
+      "recommended_strategy": "Conduct research on successful sci-fi comedy series to identify common elements and trends. Then, synthesize this information to create a unique and engaging pitch bible that includes detailed world-building, character profiles, and episode loglines.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Successful Sci-Fi Comedy Series",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of successful sci-fi comedy series with elements that contribute to their success.",
+          "prompt": "Search the web for current, specific information about successful sci-fi comedy series. Include real names, common elements, audience reception, and any notable trends. Provide URLs and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Pitch Bible",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete pitch bible with world-building, character descriptions, and six episode loglines.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a complete pitch bible for a sci-fi comedy web series about customer support agents for an interstellar delivery company. Include detailed world-building, character profiles, and six episode loglines.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-pitch-bible.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1949
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsotlt9sgmd",
+    "title": "Plan a 3-day whiskey trail road trip through Kentucky. Include distillery tours,",
+    "raw_request": "Plan a 3-day whiskey trail road trip through Kentucky. Include distillery tours, bourbon tastings, local restaurants, and scenic drives. For 2 adults.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:32:46.509Z",
+    "updated_at": "2026-03-16T04:35:59.192Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:33:23.985Z",
+      "interpreted_objective": "Plan a detailed 3-day whiskey trail road trip itinerary in Kentucky for two adults.",
+      "expected_outcome": "A comprehensive itinerary including distillery tours, bourbon tastings, local restaurants, and scenic drives with specific options, dates, costs, and logistics.",
+      "key_unknowns": [
+        "Current availability and pricing for distillery tours and tastings",
+        "Local restaurant recommendations and availability",
+        "Scenic drive routes in Kentucky"
+      ],
+      "recommended_strategy": "First, research current options for distillery tours, tastings, and local restaurants in Kentucky using Perplexity to gather specific details including names, costs, and availability. Then, synthesize this information into a structured 3-day itinerary with detailed logistics and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Kentucky Distilleries and Tours",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on distillery tours, bourbon tastings, local restaurants, and scenic drives in Kentucky.",
+          "prompt": "Search the web for current, specific information about distillery tours, bourbon tastings, local restaurants, and scenic drives in Kentucky. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile 3-Day Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 3-day itinerary for a whiskey trail road trip in Kentucky including distillery tours, bourbon tastings, local restaurants, and scenic drives.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 3-day itinerary for a whiskey trail road trip in Kentucky for two adults. Include specific distillery tours, bourbon tastings, local restaurants, scenic drives, and logistics with names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-whiskey-trail-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1943
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsotl0lruty",
+    "title": "Design a comprehensive neck and shoulder tension relief program for desk workers",
+    "raw_request": "Design a comprehensive neck and shoulder tension relief program for desk workers. Include trigger point therapy, stretching, strengthening, and prevention.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:32:45.477Z",
+    "updated_at": "2026-03-16T04:35:50.615Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:33:09.979Z",
+      "interpreted_objective": "Design a neck and shoulder tension relief program for desk workers, incorporating trigger point therapy, stretching, strengthening, and prevention strategies.",
+      "expected_outcome": "A comprehensive, evidence-based program that desk workers can follow to relieve neck and shoulder tension, improve posture, and prevent future discomfort.",
+      "key_unknowns": [
+        "Specific exercises and techniques for trigger point therapy",
+        "Effectiveness of proposed strategies for desk workers",
+        "Potential contraindications or safety concerns"
+      ],
+      "recommended_strategy": "Conduct research to identify effective exercises and techniques for neck and shoulder tension relief. Synthesize findings into a structured program, ensuring it is evidence-based and includes safety disclaimers. Focus on practicality and ease of implementation for desk workers.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final review of the comprehensive program by Rahul"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Neck and Shoulder Tension Relief Techniques",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of effective exercises and techniques for neck and shoulder tension relief, including trigger point therapy, stretching, strengthening, and prevention strategies.",
+          "prompt": "Search the web for current, specific information about effective neck and shoulder tension relief techniques for desk workers. Include details on trigger point therapy, stretching exercises, strengthening routines, and prevention strategies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Neck and Shoulder Tension Relief Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, evidence-based neck and shoulder tension relief program for desk workers, including specific exercises, techniques, and safety disclaimers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive neck and shoulder tension relief program for desk workers. Include specific exercises for trigger point therapy, stretching, strengthening, and prevention. Ensure the program is evidence-based, actionable, and includes safety disclaimers.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-neck-shoulder-tension-relief.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1947
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsotk8300lr",
+    "title": "Create a guide to building a technical blog that generates consulting leads. Inc",
+    "raw_request": "Create a guide to building a technical blog that generates consulting leads. Include content strategy, lead magnets, and conversion optimization.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:32:44.451Z",
+    "updated_at": "2026-03-16T04:35:44.804Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:33:05.082Z",
+      "interpreted_objective": "Create a guide to building a technical blog that generates consulting leads.",
+      "expected_outcome": "A comprehensive guide detailing content strategy, lead magnets, and conversion optimization for a technical blog.",
+      "key_unknowns": [
+        "Specific audience for the blog",
+        "Preferred blogging platform",
+        "Existing content or resources Rahul may have"
+      ],
+      "recommended_strategy": "Research successful technical blogs and their strategies for generating consulting leads. Synthesize findings into a structured guide with actionable steps for content creation, lead magnet development, and conversion optimization.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Successful Technical Blogs",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of successful technical blogs with strategies for generating consulting leads.",
+          "prompt": "Search the web for current, specific information about successful technical blogs that effectively generate consulting leads. Include real names, strategies, and URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Blog Strategy Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide with actionable steps for building a technical blog to generate consulting leads.",
+          "prompt": "Based on the research results, synthesize a guide detailing content strategy, lead magnets, and conversion optimization for a technical blog. Include specific strategies and examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2234
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsotjfj507s",
+    "title": "Research the best home projectors for a movie room under 1000 dollars. Compare 4",
+    "raw_request": "Research the best home projectors for a movie room under 1000 dollars. Compare 4K laser, LED, and lamp projectors. Include throw distance and screen size recommendations.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:32:43.423Z",
+    "updated_at": "2026-03-16T04:35:37.904Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:32:59.659Z",
+      "interpreted_objective": "Identify and compare the best home projectors under $1000, focusing on 4K laser, LED, and lamp projectors for a movie room.",
+      "expected_outcome": "A comprehensive report detailing the top home projectors under $1000, including specific product recommendations, throw distance, and screen size recommendations.",
+      "key_unknowns": [
+        "Current top projectors under $1000",
+        "Differences between 4K laser, LED, and lamp projectors",
+        "Optimal throw distances and screen sizes for each type"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on top projectors under $1000, focusing on 4K laser, LED, and lamp types. Then, synthesize this information into a detailed comparison report, including specific product recommendations and technical specifications like throw distance and screen size.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Projector Options",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current top home projectors under $1000, including 4K laser, LED, and lamp types, with details on throw distance and screen size.",
+          "prompt": "Search the web for current information about the best home projectors under $1000, focusing on 4K laser, LED, and lamp projectors. Include specific products, prices, throw distances, screen sizes, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Projector Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed report comparing 4K laser, LED, and lamp projectors under $1000, with specific product recommendations, pros/cons, throw distances, and screen size recommendations.",
+          "prompt": "Based on the research results, synthesize a comparison report of 4K laser, LED, and lamp projectors under $1000. Include specific product recommendations, pros and cons, throw distance, and screen size recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-home-projectors.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2038
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsotimt9032",
+    "title": "Teach me about persistent data structures and their use in functional programmin",
+    "raw_request": "Teach me about persistent data structures and their use in functional programming. Cover immutable lists, trees, and hash maps. With examples in TypeScript.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:32:42.389Z",
+    "updated_at": "2026-03-16T04:35:30.121Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:32:55.310Z",
+      "interpreted_objective": "Educate Rahul on persistent data structures and their use in functional programming with examples in TypeScript.",
+      "expected_outcome": "A comprehensive report explaining persistent data structures, including immutable lists, trees, and hash maps, with TypeScript examples.",
+      "key_unknowns": [
+        "Rahul's current understanding of TypeScript",
+        "Specific examples required",
+        "Depth of explanation needed"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on persistent data structures and their application in functional programming. Synthesize this information into a structured report with TypeScript examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Persistent Data Structures",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, detailed information about persistent data structures, including immutable lists, trees, and hash maps, with citations.",
+          "prompt": "Search the web for current, specific information about persistent data structures and their use in functional programming. Include details on immutable lists, trees, and hash maps, with examples in TypeScript. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Report on Persistent Data Structures",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining persistent data structures with TypeScript examples, ready for Rahul's review.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report on persistent data structures, including immutable lists, trees, and hash maps. Provide clear explanations and examples in TypeScript.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-persistent-data-structures.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1890
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsothti5job",
+    "title": "Create a guide to understanding and maximizing Social Security benefits. Include",
+    "raw_request": "Create a guide to understanding and maximizing Social Security benefits. Include claiming strategies, spousal benefits, and working while receiving benefits.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:32:41.334Z",
+    "updated_at": "2026-03-16T04:35:24.068Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:32:50.168Z",
+      "interpreted_objective": "Create a comprehensive guide to understanding and maximizing Social Security benefits, including claiming strategies, spousal benefits, and working while receiving benefits.",
+      "expected_outcome": "A detailed guide that provides actionable strategies and insights for maximizing Social Security benefits, helping individuals make informed decisions.",
+      "key_unknowns": [
+        "Current Social Security benefit rules and regulations",
+        "Effective claiming strategies and their financial impact",
+        "Details on spousal benefits and how they can be optimized",
+        "Implications of working while receiving Social Security benefits"
+      ],
+      "recommended_strategy": "Conduct thorough research on current Social Security benefit rules and strategies using reliable sources. Synthesize the findings into a clear and actionable guide, ensuring it includes specific examples and scenarios to illustrate key points.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Social Security Benefits",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive data on Social Security benefits, claiming strategies, spousal benefits, and working while receiving benefits, with citations.",
+          "prompt": "Search the web for current, specific information about Social Security benefits, including claiming strategies, spousal benefits, and working while receiving benefits. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Social Security Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and actionable guide on maximizing Social Security benefits, including specific strategies, examples, and scenarios.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for maximizing Social Security benefits. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-social-security-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2255
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsoth0afu1r",
+    "title": "Write a comprehensive guide to implementing API gateway patterns. Cover rate lim",
+    "raw_request": "Write a comprehensive guide to implementing API gateway patterns. Cover rate limiting, authentication, request routing, and response caching with Kong or AWS API Gateway.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T04:32:40.282Z",
+    "updated_at": "2026-03-16T04:34:35.671Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T04:32:45.430Z",
+      "interpreted_objective": "Create a comprehensive guide on implementing API gateway patterns using Kong or AWS API Gateway.",
+      "expected_outcome": "A detailed, clear, and actionable guide covering rate limiting, authentication, request routing, and response caching with Kong or AWS API Gateway.",
+      "key_unknowns": [
+        "Specific audience for the guide",
+        "Preferred format or length of the guide",
+        "Any specific examples or case studies to include"
+      ],
+      "recommended_strategy": "First, gather detailed information on API gateway patterns, focusing on Kong and AWS API Gateway. Then, synthesize this information into a structured guide that covers rate limiting, authentication, request routing, and response caching. Ensure the guide is clear and actionable, suitable for the intended audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research API Gateway Patterns",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research on API gateway patterns, focusing on rate limiting, authentication, request routing, and response caching with Kong and AWS API Gateway.",
+          "prompt": "Search the web for current, specific information about API gateway patterns, focusing on rate limiting, authentication, request routing, and response caching with Kong and AWS API Gateway. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Guide on API Gateway Patterns",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on implementing API gateway patterns using Kong or AWS API Gateway.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on implementing API gateway patterns. Cover rate limiting, authentication, request routing, and response caching with Kong or AWS API Gateway. Ensure the guide is clear, detailed, and actionable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2065
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsomon4vt6b",
     "title": "Design a comprehensive habit stacking system for building 5 new habits simultane",
     "raw_request": "Design a comprehensive habit stacking system for building 5 new habits simultaneously. Include trigger identification, tracking, and recovery from broken chains.",
