@@ -427,6 +427,55 @@ function getGuidance(engine) {
     }
     return guidance;
 }
+// ─── Scoped Memory Retrieval ───────────────────────────
+/**
+ * Get context-relevant signals for a specific engine/project/workflow.
+ * Applies scope priority: global < engine < project < workflow
+ * Returns only active, high-confidence signals.
+ */
+function getScopedContext(opts) {
+    if (opts === void 0) { opts = {}; }
+    var signals = readSignals();
+    var active = signals.filter(function (s) { return s.active && s.confidence >= MIN_CONFIDENCE_FOR_ACTIVE; });
+    var globalSignals = active.filter(function (s) { return s.scope === 'global'; });
+    var engineSignals = opts.engine
+        ? active.filter(function (s) { return s.scope === 'engine' && s.scopeKey === opts.engine; })
+        : [];
+    // project/workflow scopes will be populated as those layers are built
+    // Build a human-readable summary for prompt injection
+    var parts = [];
+    // Communication style
+    var commStyle = globalSignals.find(function (s) { return s.name === 'communication_style'; });
+    if (commStyle)
+        parts.push("Operator communication style: ".concat(commStyle.value));
+    // Output preferences
+    var outPref = globalSignals.find(function (s) { return s.name === 'output_preferences'; });
+    if (outPref && typeof outPref.value === 'object') {
+        if (outPref.value.style)
+            parts.push("Output style: ".concat(outPref.value.style));
+        if (outPref.value.avoid)
+            parts.push("Avoid: ".concat(outPref.value.avoid));
+    }
+    // Risk tolerance
+    var riskTol = globalSignals.find(function (s) { return s.name === 'risk_tolerance'; });
+    if (riskTol)
+        parts.push("Risk tolerance: ".concat(riskTol.value));
+    // Engine-specific satisfaction
+    if (opts.engine) {
+        var engSat = engineSignals.find(function (s) { return s.name === 'output_satisfaction'; });
+        if (engSat)
+            parts.push("Engine ".concat(opts.engine, " satisfaction: ").concat(engSat.value));
+        var engVol = engineSignals.find(function (s) { return s.name === 'task_volume'; });
+        if (engVol && typeof engVol.value === 'object')
+            parts.push("Engine ".concat(opts.engine, " usage: ").concat(engVol.value.count, " tasks (").concat(engVol.value.share, ")"));
+    }
+    return {
+        global: globalSignals,
+        engine: engineSignals,
+        project: [],
+        summary: parts.length > 0 ? parts.join('. ') + '.' : 'No learned preferences available.',
+    };
+}
 // ─── Learning Log ──────────────────────────────────────
 /**
  * Append an entry to the behavior learning log.
@@ -459,6 +508,7 @@ module.exports = {
     persistSignals: persistSignals,
     readSignals: readSignals,
     getGuidance: getGuidance,
+    getScopedContext: getScopedContext,
     logLearning: logLearning,
     getStats: getStats,
 };

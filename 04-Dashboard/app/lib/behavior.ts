@@ -439,6 +439,62 @@ function getGuidance(engine?: string): ExecutionGuidance {
   return guidance;
 }
 
+// ─── Scoped Memory Retrieval ───────────────────────────
+
+/**
+ * Get context-relevant signals for a specific engine/project/workflow.
+ * Applies scope priority: global < engine < project < workflow
+ * Returns only active, high-confidence signals.
+ */
+function getScopedContext(opts: { engine?: string; project?: string; workflow?: string } = {}): {
+  global: BehaviorSignal[];
+  engine: BehaviorSignal[];
+  project: BehaviorSignal[];
+  summary: string;
+} {
+  const signals = readSignals();
+  const active = signals.filter(s => s.active && s.confidence >= MIN_CONFIDENCE_FOR_ACTIVE);
+
+  const globalSignals = active.filter(s => s.scope === 'global');
+  const engineSignals = opts.engine
+    ? active.filter(s => s.scope === 'engine' && s.scopeKey === opts.engine)
+    : [];
+  // project/workflow scopes will be populated as those layers are built
+
+  // Build a human-readable summary for prompt injection
+  const parts: string[] = [];
+
+  // Communication style
+  const commStyle = globalSignals.find(s => s.name === 'communication_style');
+  if (commStyle) parts.push(`Operator communication style: ${commStyle.value}`);
+
+  // Output preferences
+  const outPref = globalSignals.find(s => s.name === 'output_preferences');
+  if (outPref && typeof outPref.value === 'object') {
+    if (outPref.value.style) parts.push(`Output style: ${outPref.value.style}`);
+    if (outPref.value.avoid) parts.push(`Avoid: ${outPref.value.avoid}`);
+  }
+
+  // Risk tolerance
+  const riskTol = globalSignals.find(s => s.name === 'risk_tolerance');
+  if (riskTol) parts.push(`Risk tolerance: ${riskTol.value}`);
+
+  // Engine-specific satisfaction
+  if (opts.engine) {
+    const engSat = engineSignals.find(s => s.name === 'output_satisfaction');
+    if (engSat) parts.push(`Engine ${opts.engine} satisfaction: ${engSat.value}`);
+    const engVol = engineSignals.find(s => s.name === 'task_volume');
+    if (engVol && typeof engVol.value === 'object') parts.push(`Engine ${opts.engine} usage: ${engVol.value.count} tasks (${engVol.value.share})`);
+  }
+
+  return {
+    global: globalSignals,
+    engine: engineSignals,
+    project: [],
+    summary: parts.length > 0 ? parts.join('. ') + '.' : 'No learned preferences available.',
+  };
+}
+
 // ─── Learning Log ──────────────────────────────────────
 
 /**
@@ -475,6 +531,7 @@ module.exports = {
   persistSignals,
   readSignals,
   getGuidance,
+  getScopedContext,
   logLearning,
   getStats,
 };

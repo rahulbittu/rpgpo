@@ -773,6 +773,11 @@ const server = http.createServer(async (req, res) => {
     const allEvents = behavior.readEvents();
     return json(res, { total: allEvents.length, recent: allEvents.slice(-50) });
   }
+  if (req.url?.startsWith('/api/behavior/context') && req.method === 'GET') {
+    const params = new URL(req.url, 'http://x').searchParams;
+    const ctx = behavior.getScopedContext({ engine: params.get('engine') || undefined, project: params.get('project') || undefined });
+    return json(res, ctx);
+  }
 
   // Global pending approvals — subtasks + tasks waiting approval
   if (req.url === '/api/intake/pending-approvals') {
