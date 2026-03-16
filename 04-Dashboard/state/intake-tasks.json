@@ -1,5 +1,665 @@
 [
   {
+    "task_id": "t_mmsrecw8z83x",
+    "title": "Design a comprehensive system for managing personal knowledge and notes. Compare Obsidian, Notion, and Logseq workflows with templates for daily notes, project tracking, and literature reviews.",
+    "raw_request": "",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:44:53.960Z",
+    "updated_at": "2026-03-16T05:54:22.901Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:49:06.415Z",
+      "interpreted_objective": "Identify and detail top passive income opportunities for senior data engineers in 2025-2026.",
+      "expected_outcome": "A comprehensive report detailing the most viable passive income opportunities for senior data engineers, including feasibility, income potential, and startup costs.",
+      "key_unknowns": [
+        "Feasibility of opportunities in 2025-2026",
+        "Accurate estimates for income potential and startup costs",
+        "Current successful examples of passive income in specified areas"
+      ],
+      "recommended_strategy": "Conduct web research to gather current data on passive income opportunities relevant to senior data engineers. Synthesize this information into a structured report that includes feasibility analysis, income potential, and startup costs. Validate findings with real-world data and expert opinions.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Passive Income Opportunities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on passive income opportunities for senior data engineers, including successful examples, income potential, and startup costs.",
+          "prompt": "Search the web for current, specific information about passive income opportunities for senior data engineers in 2025-2026. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Research Findings",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing the most viable passive income opportunities for senior data engineers, including feasibility, income potential, and startup costs.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for passive income opportunities for senior data engineers in 2025-2026. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-10-25-passive-income-opportunities.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2450
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsrecvvvv23",
+    "title": "Create a guide to building a productive home office on a $1500 budget. Include desk, chair, lighting, cable management, acoustic treatment, and air quality recommendations.",
+    "raw_request": "",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:44:53.947Z",
+    "updated_at": "2026-03-16T05:54:28.990Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:49:10.530Z",
+      "interpreted_objective": "Identify and detail passive income opportunities for senior data engineers in 2025-2026.",
+      "expected_outcome": "A comprehensive report detailing top passive income opportunities for senior data engineers, including feasibility, income potential, and startup costs.",
+      "key_unknowns": [
+        "Feasibility of passive income opportunities in 2025-2026",
+        "Accurate estimates for income potential and startup costs",
+        "Current successful examples of passive income in specified areas"
+      ],
+      "recommended_strategy": "Conduct web research to gather current data on passive income opportunities for senior data engineers. Synthesize findings into a detailed report that includes feasibility analysis, income potential, and startup costs. Validate findings with real-world data and expert opinions.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Passive Income Opportunities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current data and examples of passive income opportunities for senior data engineers.",
+          "prompt": "Search the web for current, specific information about passive income opportunities for senior data engineers in 2025-2026. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Research Findings",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report detailing passive income opportunities for senior data engineers, including feasibility, income potential, and startup costs.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for passive income opportunities for senior data engineers in 2025-2026. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-passive-income-opportunities.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2434
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsrecvigeo9",
+    "title": "Write a complete pilot episode outline for a dark comedy about a therapist who starts taking advice from their most dysfunctional patient. Include character arcs, scene breakdowns, and dialogue samples.",
+    "raw_request": "",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:44:53.934Z",
+    "updated_at": "2026-03-16T05:54:35.365Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:49:14.790Z",
+      "interpreted_objective": "Identify and detail top passive income opportunities for senior data engineers in 2025-2026.",
+      "expected_outcome": "A comprehensive report detailing feasible passive income opportunities for senior data engineers, including income potential, startup costs, and examples.",
+      "key_unknowns": [
+        "Feasibility of opportunities in 2025-2026",
+        "Accurate estimates for income potential and startup costs",
+        "Current successful examples of passive income in specified areas"
+      ],
+      "recommended_strategy": "Conduct research to identify current trends and successful examples of passive income opportunities for senior data engineers. Analyze these examples to estimate future potential and develop actionable steps. Compile findings into a comprehensive report.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Passive Income Opportunities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current passive income opportunities for senior data engineers with citations.",
+          "prompt": "Search the web for current, specific information about passive income opportunities for senior data engineers in 2025-2026. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Research Findings",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing the top passive income opportunities for senior data engineers, including income potential, startup costs, and examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for passive income opportunities for senior data engineers in 2025-2026. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-passive-income-opportunities.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2425
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsrecv58dnz",
+    "title": "Plan a 7-day cultural immersion trip to Oaxaca Mexico. Include mezcal distillery tours, traditional cooking classes, archaeological sites, and local artisan markets.",
+    "raw_request": "",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:44:53.921Z",
+    "updated_at": "2026-03-16T05:54:40.866Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:49:18.750Z",
+      "interpreted_objective": "Identify and detail top passive income opportunities for senior data engineers in 2025-2026.",
+      "expected_outcome": "A comprehensive report detailing feasible passive income opportunities for senior data engineers, including income potential, startup costs, and current successful examples.",
+      "key_unknowns": [
+        "Feasibility of opportunities in 2025-2026",
+        "Accurate estimates for income potential and startup costs",
+        "Current successful examples of passive income in specified areas"
+      ],
+      "recommended_strategy": "Conduct web research to gather current data on passive income opportunities for data engineers. Analyze the data to estimate future potential and develop actionable steps. Compile the findings into a detailed report.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Passive Income Opportunities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on passive income opportunities for senior data engineers, including successful examples and trends.",
+          "prompt": "Search the web for current, specific information about passive income opportunities for senior data engineers in 2025-2026. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Research Findings",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing feasible passive income opportunities for senior data engineers, including income potential, startup costs, and examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for passive income opportunities for senior data engineers in 2025-2026. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-passive-income-opportunities.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2431
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsrecursjml",
+    "title": "Design a sleep optimization protocol backed by research. Include circadian rhythm management, supplement timing (magnesium, glycine, apigenin), light exposure schedule, and tracking metrics.",
+    "raw_request": "",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:44:53.907Z",
+    "updated_at": "2026-03-16T05:54:47.338Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:49:23.704Z",
+      "interpreted_objective": "Identify and detail top passive income opportunities for senior data engineers in 2025-2026.",
+      "expected_outcome": "A comprehensive report detailing feasible passive income opportunities for senior data engineers, including estimated income potential, startup costs, and current successful examples.",
+      "key_unknowns": [
+        "Feasibility of opportunities in 2025-2026",
+        "Accurate estimates for income potential and startup costs",
+        "Current successful examples of passive income in specified areas"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on passive income opportunities for senior data engineers. Analyze the findings to estimate future potential and develop actionable steps. Compile a comprehensive report with recommendations.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Passive Income Opportunities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on current passive income opportunities for senior data engineers, including citations.",
+          "prompt": "Search the web for current, specific information about passive income opportunities for senior data engineers in 2025-2026. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Research Findings",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report with actionable recommendations on passive income opportunities for senior data engineers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for passive income opportunities for senior data engineers in 2025-2026. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2025-passive-income-opportunities.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2418
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsrecue4nhs",
+    "title": "Create a 90-day plan for transitioning from individual contributor to engineering manager. Include 1:1 templates, team health metrics, and common first-time manager mistakes.",
+    "raw_request": "",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:44:53.894Z",
+    "updated_at": "2026-03-16T05:54:52.868Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:49:28.750Z",
+      "interpreted_objective": "Identify and detail top passive income opportunities for senior data engineers in 2025-2026.",
+      "expected_outcome": "A comprehensive report detailing viable passive income opportunities for senior data engineers, including feasibility, income potential, and startup costs.",
+      "key_unknowns": [
+        "Feasibility of opportunities in 2025-2026",
+        "Accurate estimates for income potential and startup costs",
+        "Current successful examples of passive income in specified areas"
+      ],
+      "recommended_strategy": "Conduct web-based research to gather current data on passive income opportunities for senior data engineers. Analyze this data to identify trends and successful examples, then synthesize findings into a structured report with actionable recommendations.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Passive Income Opportunities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on current passive income opportunities for senior data engineers with citations.",
+          "prompt": "Search the web for current, specific information about passive income opportunities for senior data engineers in 2025-2026. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Research Findings",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing passive income opportunities, feasibility, income potential, and startup costs.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for passive income opportunities for senior data engineers in 2025-2026. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-passive-income-opportunities.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2428
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsrecu1e5og",
+    "title": "Research the best standing desk converters under $400. Compare Flexispot, Vari, and UPLIFT models with ergonomic assessment, build quality, and monitor weight capacity.",
+    "raw_request": "",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:44:53.881Z",
+    "updated_at": "2026-03-16T05:54:59.783Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:49:32.338Z",
+      "interpreted_objective": "Identify and detail top passive income opportunities for senior data engineers in 2025-2026.",
+      "expected_outcome": "A comprehensive report detailing feasible passive income opportunities for senior data engineers, including potential income estimates and startup costs.",
+      "key_unknowns": [
+        "Feasibility of opportunities in 2025-2026",
+        "Accurate estimates for income potential and startup costs",
+        "Current successful examples of passive income in specified areas"
+      ],
+      "recommended_strategy": "Conduct web research to gather current data on passive income opportunities specifically for senior data engineers. Analyze this data to estimate future potential, including income and costs, and compile findings into a comprehensive report.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Passive Income Opportunities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on passive income opportunities for senior data engineers, including successful examples and potential estimates.",
+          "prompt": "Search the web for current, specific information about passive income opportunities for senior data engineers in 2025-2026. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Research Findings",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing passive income opportunities for senior data engineers, with potential income estimates and startup costs.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for passive income opportunities for senior data engineers. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-passive-income-opportunities.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2417
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsrecto0nb9",
+    "title": "Explain the internals of garbage collection algorithms — mark-sweep, generational, and concurrent collectors. Compare G1, ZGC, and Shenandoah with real-world pause time data.",
+    "raw_request": "",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:44:53.868Z",
+    "updated_at": "2026-03-16T05:55:08.575Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:49:36.583Z",
+      "interpreted_objective": "Identify and detail top passive income opportunities for senior data engineers in 2025-2026.",
+      "expected_outcome": "A comprehensive report detailing feasible passive income opportunities for senior data engineers, including income potential, startup costs, and current successful examples.",
+      "key_unknowns": [
+        "Feasibility of opportunities in 2025-2026",
+        "Accurate estimates for income potential and startup costs",
+        "Current successful examples of passive income in specified areas"
+      ],
+      "recommended_strategy": "Conduct research to identify current trends and successful examples of passive income opportunities for senior data engineers. Analyze these examples to estimate future potential and develop actionable steps. Validate findings with real-world data and expert opinions.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Passive Income Opportunities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current trends and successful examples of passive income opportunities for senior data engineers, with citations.",
+          "prompt": "Search the web for current, specific information about passive income opportunities for senior data engineers in 2025-2026. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Research Findings",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing passive income opportunities for senior data engineers, including feasibility, income potential, startup costs, and current successful examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for passive income opportunities for senior data engineers in 2025-2026. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-passive_income_opportunities.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2446
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsrectbuctu",
+    "title": "Create a comprehensive guide to Roth IRA conversion ladders for early retirees. Include tax bracket optimization, 5-year rule implications, and year-by-year modeling for a $2M portfolio.",
+    "raw_request": "",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:44:53.855Z",
+    "updated_at": "2026-03-16T05:55:15.944Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:49:41.243Z",
+      "interpreted_objective": "Identify and detail top passive income opportunities for senior data engineers in 2025-2026.",
+      "expected_outcome": "A comprehensive report detailing viable passive income opportunities for senior data engineers, including feasibility, income potential, and startup costs.",
+      "key_unknowns": [
+        "Feasibility of opportunities in 2025-2026",
+        "Accurate estimates for income potential and startup costs",
+        "Current successful examples of passive income in specified areas"
+      ],
+      "recommended_strategy": "Conduct web research to identify current passive income trends and successful examples relevant to senior data engineers. Analyze the findings to estimate future potential and develop actionable steps. Compile a detailed report with recommendations.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Passive Income Trends",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and insights on current passive income trends for senior data engineers with citations.",
+          "prompt": "Search the web for current, specific information about passive income opportunities for senior data engineers in 2025-2026. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Passive Income Opportunities",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing viable passive income opportunities for senior data engineers, including feasibility, income potential, and startup costs.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for passive income opportunities for senior data engineers in 2025-2026. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2025-passive-income-opportunities.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2427
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmsrecst01dx",
+    "title": "Design a microservices communication strategy comparing gRPC, REST, and message queues. Include latency benchmarks, failure handling patterns, and when to use each approach.",
+    "raw_request": "",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:44:53.837Z",
+    "updated_at": "2026-03-16T05:55:22.402Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:49:46.161Z",
+      "interpreted_objective": "Identify and detail the top passive income opportunities for senior data engineers in 2025-2026.",
+      "expected_outcome": "A comprehensive report detailing feasible passive income opportunities, including income potential, startup costs, and successful current examples.",
+      "key_unknowns": [
+        "Feasibility of opportunities in 2025-2026",
+        "Accurate estimates for income potential and startup costs",
+        "Current successful examples of passive income in specified areas"
+      ],
+      "recommended_strategy": "Conduct thorough research on current passive income opportunities for senior data engineers, focusing on trends and successful examples. Analyze the feasibility of these opportunities for 2025-2026, including income potential and startup costs. Synthesize findings into a comprehensive report.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Passive Income Opportunities",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on current passive income opportunities for senior data engineers with citations.",
+          "prompt": "Search the web for current, specific information about passive income opportunities for senior data engineers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Passive Income Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report detailing top passive income opportunities for senior data engineers, including feasibility, income potential, startup costs, and successful examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-passive_income_opportunities-2025-2026.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2420
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
     "task_id": "t_mmsr7ip7nels",
     "title": "Design a comprehensive work-life integration framework for founders who struggle",
     "raw_request": "Design a comprehensive work-life integration framework for founders who struggle to separate personal and professional time. Include boundary setting, energy management, and relationship maintenance.",
