@@ -148,12 +148,14 @@ function renderActivity() {
 function showToast(message, type = 'info') {
   const c = document.getElementById('toastContainer');
   if (!c) return;
+  // Limit to 3 visible toasts max — remove oldest if over limit
+  while (c.children.length >= 3) c.removeChild(c.firstChild);
   const icons = { success: '&#10003;', error: '&#10007;', info: '&#8505;' };
   const toast = document.createElement('div');
   toast.className = `toast toast-${type}`;
   toast.innerHTML = `<span class="toast-icon">${icons[type] || icons.info}</span><span>${esc(message)}</span>`;
   c.appendChild(toast);
-  setTimeout(() => { if (toast.parentNode) toast.parentNode.removeChild(toast); }, 4200);
+  setTimeout(() => { if (toast.parentNode) toast.parentNode.removeChild(toast); }, 2500);
 }
 
 // ═══════════════════════════════════════════
