@@ -1,5 +1,721 @@
 [
   {
+    "task_id": "t_mmsngu9gchmm",
+    "title": "Design a comprehensive goal-setting framework combining OKRs and habit tracking.",
+    "raw_request": "Design a comprehensive goal-setting framework combining OKRs and habit tracking. Include quarterly planning, weekly check-ins, and annual review.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:54:51.316Z",
+    "updated_at": "2026-03-16T03:59:29.808Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:56:10.188Z",
+      "interpreted_objective": "Design a goal-setting framework integrating OKRs and habit tracking with quarterly, weekly, and annual reviews.",
+      "expected_outcome": "A detailed framework document that outlines the integration of OKRs and habit tracking with specific timelines for quarterly planning, weekly check-ins, and annual reviews.",
+      "key_unknowns": [
+        "How to effectively integrate OKRs with habit tracking",
+        "Best practices for quarterly planning and weekly check-ins",
+        "Metrics for annual review"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices for integrating OKRs and habit tracking. Synthesize this information into a comprehensive framework that includes specific timelines and review processes. Ensure the framework aligns with Rahul's priorities for personal productivity and goal achievement.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final framework design"
+      ],
+      "subtasks": [
+        {
+          "title": "Research OKRs and habit tracking integration",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Gathered data on best practices for integrating OKRs with habit tracking.",
+          "prompt": "Search the web for current best practices on integrating OKRs with habit tracking. Include specific examples, timelines, and methodologies used in successful implementations. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize framework for goal-setting",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured framework document combining OKRs and habit tracking with quarterly, weekly, and annual review processes.",
+          "prompt": "Based on the research results, synthesize a comprehensive goal-setting framework that combines OKRs and habit tracking. Include detailed plans for quarterly planning, weekly check-ins, and annual reviews. Ensure the framework aligns with Rahul's priorities for personal productivity and goal achievement.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-goal-setting-framework.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1986
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsngtgharzb",
+    "title": "Create a guide to building a home media server. Compare Plex, Jellyfin, and Emby",
+    "raw_request": "Create a guide to building a home media server. Compare Plex, Jellyfin, and Emby. Include hardware requirements, storage, and remote access setup.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:54:50.273Z",
+    "updated_at": "2026-03-16T03:59:19.018Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:55:38.202Z",
+      "interpreted_objective": "Create a comprehensive guide comparing Plex, Jellyfin, and Emby for building a home media server.",
+      "expected_outcome": "A detailed guide that includes comparisons of Plex, Jellyfin, and Emby, covering hardware requirements, storage options, and remote access setup.",
+      "key_unknowns": [
+        "Specific hardware requirements for each media server option",
+        "Storage recommendations for different use cases",
+        "Steps for remote access setup for each option"
+      ],
+      "recommended_strategy": "Conduct research to gather detailed information about Plex, Jellyfin, and Emby, focusing on hardware requirements, storage, and remote access. Synthesize this information into a comprehensive guide with clear comparisons and actionable steps.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Media Server Options",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information about Plex, Jellyfin, and Emby, including hardware requirements, storage options, and remote access setup.",
+          "prompt": "Search the web for current, specific information about Plex, Jellyfin, and Emby as home media server options. Include details on hardware requirements, storage solutions, and remote access setup, along with real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Guide to Building a Home Media Server",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide comparing Plex, Jellyfin, and Emby, with detailed sections on hardware requirements, storage, and remote access setup.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide to building a home media server. Include comparisons of Plex, Jellyfin, and Emby, detailing hardware requirements, storage options, and remote access setup. Provide specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2145
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsngsnf14bg",
+    "title": "Write a pitch for a limited series about the founding of a controversial AI comp",
+    "raw_request": "Write a pitch for a limited series about the founding of a controversial AI company. Include character arcs, ethical tensions, and season structure.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:54:49.227Z",
+    "updated_at": "2026-03-16T03:59:11.716Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:55:33.284Z",
+      "interpreted_objective": "Create a pitch for a limited series about the founding of a controversial AI company, including character arcs, ethical tensions, and season structure.",
+      "expected_outcome": "A compelling and detailed pitch document that outlines the series concept, character development, ethical dilemmas, and episode structure.",
+      "key_unknowns": [
+        "Specific controversies surrounding the AI company",
+        "Character backgrounds and motivations",
+        "Overall tone and genre of the series"
+      ],
+      "recommended_strategy": "First, research recent controversies involving AI companies to gather relevant material. Then, synthesize this research into a creative pitch that includes character arcs, ethical tensions, and a structured season outline.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research AI Company Controversies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of recent controversies involving AI companies with sources.",
+          "prompt": "Search the web for current, specific information about recent controversies involving AI companies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Series Pitch",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed pitch for a limited series, including character arcs, ethical tensions, and season structure.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed pitch for a limited series about the founding of a controversial AI company. Include character arcs, ethical tensions, and a structured season outline.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-AI_series_pitch.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1939
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsngrutunte",
+    "title": "Plan a weekend getaway to Sedona Arizona from Austin. Include flights, red rock ",
+    "raw_request": "Plan a weekend getaway to Sedona Arizona from Austin. Include flights, red rock hikes by difficulty, spa recommendations, and stargazing spots.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:54:48.197Z",
+    "updated_at": "2026-03-16T03:59:01.696Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:55:28.473Z",
+      "interpreted_objective": "Plan a comprehensive weekend getaway to Sedona, Arizona from Austin, including flights, hiking, spa, and stargazing options.",
+      "expected_outcome": "A detailed itinerary with flight options, hiking trails by difficulty, spa recommendations, and stargazing spots.",
+      "key_unknowns": [
+        "Current flight availability and prices from Austin to Sedona",
+        "Hiking trail details and difficulty levels in Sedona",
+        "Spa services and availability in Sedona",
+        "Best stargazing locations in Sedona"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on flights, hiking trails, spas, and stargazing spots in Sedona. Synthesize this information into a structured itinerary for a weekend getaway, ensuring all aspects of the trip are covered comprehensively.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Flights and Prices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current flight options and prices from Austin to Sedona.",
+          "prompt": "Search the web for current flight options and prices from Austin, Texas to Sedona, Arizona for a weekend trip. Include airlines, flight times, and costs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Hiking Trails",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of hiking trails in Sedona categorized by difficulty.",
+          "prompt": "Search the web for hiking trails in Sedona, Arizona, categorized by difficulty level. Include trail names, difficulty ratings, and any notable features.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Spa Recommendations",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of recommended spas in Sedona with services offered.",
+          "prompt": "Search the web for spa recommendations in Sedona, Arizona. Include spa names, services offered, and any available reviews or ratings.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Stargazing Spots",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "List of best stargazing spots in Sedona.",
+          "prompt": "Search the web for the best stargazing spots in Sedona, Arizona. Include locations, accessibility, and any special features or events.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Weekend Getaway Itinerary",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured itinerary for a weekend getaway to Sedona, including flights, hikes, spa visits, and stargazing.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed itinerary for a weekend getaway to Sedona, Arizona from Austin. Include specific flight options, hiking trails by difficulty, spa recommendations, and stargazing spots.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-2023-10-19-sedona_getaway.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2289
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsngr22op1z",
+    "title": "Design a comprehensive back pain prevention and recovery program for desk worker",
+    "raw_request": "Design a comprehensive back pain prevention and recovery program for desk workers. Include strengthening, stretching, ergonomics, and when to see a specialist.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:54:47.162Z",
+    "updated_at": "2026-03-16T03:58:52.997Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:55:21.602Z",
+      "interpreted_objective": "Design a comprehensive back pain prevention and recovery program for desk workers.",
+      "expected_outcome": "A detailed, evidence-based program that includes exercises, ergonomic advice, and guidelines for when to seek professional help.",
+      "key_unknowns": [
+        "Current best practices for back pain prevention",
+        "Effective exercises for desk workers",
+        "Ergonomic guidelines",
+        "Signs that indicate the need for specialist consultation"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and evidence-based strategies for preventing and recovering from back pain among desk workers. Synthesize this information into a comprehensive program that includes specific exercises, ergonomic advice, and guidelines for when to see a specialist.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research current best practices for back pain prevention",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and evidence-based strategies for preventing and recovering from back pain among desk workers.",
+          "prompt": "Search the web for current, specific information about best practices for back pain prevention and recovery for desk workers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize back pain prevention program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive back pain prevention and recovery program for desk workers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive back pain prevention and recovery program for desk workers. Include specific exercises, ergonomic advice, and guidelines for when to see a specialist.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-back-pain-prevention.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1872
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsngq9d4fqz",
+    "title": "Create a guide to building executive presence as a senior engineer. Include comm",
+    "raw_request": "Create a guide to building executive presence as a senior engineer. Include communication style, meeting behavior, stakeholder management, and visibility.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:54:46.129Z",
+    "updated_at": "2026-03-16T03:58:45.526Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:55:17.206Z",
+      "interpreted_objective": "Create a guide for senior engineers to build executive presence, focusing on communication, meeting behavior, stakeholder management, and visibility.",
+      "expected_outcome": "A comprehensive guide that provides actionable strategies for senior engineers to enhance their executive presence, with specific techniques and examples.",
+      "key_unknowns": [
+        "Specific techniques that are most effective for senior engineers in building executive presence",
+        "Current trends or best practices in executive presence for technical leaders"
+      ],
+      "recommended_strategy": "First, research current best practices and techniques for building executive presence specifically tailored for senior engineers. Then, synthesize this information into a structured guide that includes communication style, meeting behavior, stakeholder management, and visibility strategies.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Executive Presence for Senior Engineers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices and techniques for building executive presence as a senior engineer.",
+          "prompt": "Search the web for current, specific information about building executive presence for senior engineers. Include real examples, techniques, and best practices.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Executive Presence",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide with actionable strategies for senior engineers to enhance their executive presence.",
+          "prompt": "Based on the research results, synthesize a guide for senior engineers to build executive presence. Include sections on communication style, meeting behavior, stakeholder management, and visibility, with specific techniques and examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2271
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsngpgvjwcg",
+    "title": "Research the best smart door locks for renters. Must be removable, no drilling. ",
+    "raw_request": "Research the best smart door locks for renters. Must be removable, no drilling. Compare August, Yale, and Level. Include smart home integration.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:54:45.103Z",
+    "updated_at": "2026-03-16T03:58:37.112Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:55:02.976Z",
+      "interpreted_objective": "Research and compare the best smart door locks for renters that are removable and require no drilling, focusing on August, Yale, and Level brands with smart home integration.",
+      "expected_outcome": "A detailed comparison report of smart door locks suitable for renters, including specific product recommendations, prices, pros/cons, and smart home integration capabilities.",
+      "key_unknowns": [
+        "Current prices of the smart locks",
+        "Specific features and compatibility with smart home systems",
+        "User reviews and ratings for each brand"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current information on August, Yale, and Level smart door locks, focusing on models that are removable and require no drilling. Then, synthesize the data into a comprehensive comparison report, highlighting features, prices, pros/cons, and smart home integration capabilities.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Smart Door Locks",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on August, Yale, and Level smart door locks, including prices, features, and smart home integration details.",
+          "prompt": "Search the web for current, specific information about August, Yale, and Level smart door locks that are suitable for renters, removable, and require no drilling. Include details on smart home integration, prices, user reviews, and ratings.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Smart Door Lock Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the smart door locks, including specific product recommendations, prices, pros/cons, and smart home integration capabilities.",
+          "prompt": "Based on the research results from the prior subtask, synthesize actionable recommendations for smart door locks suitable for renters. Include specific product names, prices, pros/cons, and smart home integration capabilities.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-smart-door-locks.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1999
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsngoo8c0ox",
+    "title": "Teach me about feature store architecture for machine learning. Cover offline vs",
+    "raw_request": "Teach me about feature store architecture for machine learning. Cover offline vs online stores, feature engineering, and versioning. Compare Feast and Tecton.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:54:44.072Z",
+    "updated_at": "2026-03-16T03:58:28.611Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:54:56.420Z",
+      "interpreted_objective": "Provide a comprehensive overview of feature store architecture for machine learning, including comparisons of Feast and Tecton.",
+      "expected_outcome": "A detailed report that explains feature store architecture, contrasts offline and online stores, covers feature engineering and versioning, and compares Feast and Tecton.",
+      "key_unknowns": [
+        "Current trends and updates in feature store technologies",
+        "Specific use cases for Feast and Tecton",
+        "Latest versioning practices in feature stores"
+      ],
+      "recommended_strategy": "Conduct web research to gather the latest information on feature store architecture and specific details about Feast and Tecton. Synthesize this information into a comprehensive report that covers all requested aspects. Ensure the report is structured to build understanding from basic concepts to detailed comparisons.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Feature Store Architecture",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data and insights about feature store architecture, offline vs online stores, feature engineering, and versioning, including details on Feast and Tecton.",
+          "prompt": "Search the web for current, specific information about feature store architecture for machine learning. Include details on offline vs online stores, feature engineering practices, versioning, and compare Feast and Tecton. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Feature Store Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing feature store architecture, differences between offline and online stores, feature engineering, versioning, and a comparison of Feast and Tecton.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comprehensive report on feature store architecture for machine learning. Include sections on offline vs online stores, feature engineering, versioning, and a detailed comparison of Feast and Tecton.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-feature_store_architecture.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1960
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsngnuv0rk0",
+    "title": "Create a guide to understanding and optimizing employee stock purchase plans. In",
+    "raw_request": "Create a guide to understanding and optimizing employee stock purchase plans. Include discount calculation, tax treatment, and optimal holding periods.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:54:43.015Z",
+    "updated_at": "2026-03-16T03:58:09.468Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:54:50.989Z",
+      "interpreted_objective": "Create a comprehensive guide on understanding and optimizing employee stock purchase plans, including discount calculation, tax treatment, and optimal holding periods.",
+      "expected_outcome": "A detailed guide that provides actionable insights on employee stock purchase plans, covering discount calculations, tax implications, and optimal holding periods.",
+      "key_unknowns": [
+        "Current tax laws related to employee stock purchase plans",
+        "Best practices for calculating discounts",
+        "Optimal holding periods for maximizing benefits"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on employee stock purchase plans, focusing on discount calculations, tax treatments, and holding periods. Synthesize this information into a comprehensive guide with actionable insights.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Employee Stock Purchase Plans",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, specific information about employee stock purchase plans, including discount calculations, tax treatment, and optimal holding periods.",
+          "prompt": "Search the web for current, specific information about employee stock purchase plans. Include details on discount calculations, tax treatment, and optimal holding periods. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Employee Stock Purchase Plans",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on employee stock purchase plans, including discount calculation, tax treatment, and optimal holding periods.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on employee stock purchase plans. Include sections on discount calculations, tax treatment, and optimal holding periods with specific examples and actionable insights.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-employee-stock-purchase-plans.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2241
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsngn1mztit",
+    "title": "Write a complete guide to implementing distributed caching with Redis. Include c",
+    "raw_request": "Write a complete guide to implementing distributed caching with Redis. Include cache invalidation strategies, cluster setup, and monitoring dashboards.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:54:41.962Z",
+    "updated_at": "2026-03-16T03:56:46.681Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:54:45.671Z",
+      "interpreted_objective": "Create a comprehensive guide on implementing distributed caching with Redis, covering cache invalidation, cluster setup, and monitoring.",
+      "expected_outcome": "A detailed, actionable guide that enables readers to implement distributed caching using Redis effectively.",
+      "key_unknowns": [
+        "Specific audience expertise level",
+        "Preferred format and length of the guide",
+        "Any specific tools or frameworks to be included"
+      ],
+      "recommended_strategy": "Conduct research to gather comprehensive information on distributed caching with Redis, including cache invalidation strategies, cluster setup, and monitoring. Then, synthesize this information into a structured guide tailored to a technical audience.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Redis Distributed Caching",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed report on Redis distributed caching, including cache invalidation strategies, cluster setup, and monitoring dashboards.",
+          "prompt": "Search the web for current, specific information about implementing distributed caching with Redis. Include cache invalidation strategies, cluster setup, and monitoring dashboards. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Redis Distributed Caching Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete guide on implementing distributed caching with Redis, including cache invalidation strategies, cluster setup, and monitoring dashboards.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comprehensive guide to implementing distributed caching with Redis. Include detailed sections on cache invalidation strategies, cluster setup, and monitoring dashboards.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2023
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsn99h8o495",
     "title": "Design a personal learning system for acquiring new technical skills efficiently",
     "raw_request": "Design a personal learning system for acquiring new technical skills efficiently. Include spaced repetition, project-based learning, and progress tracking.",
