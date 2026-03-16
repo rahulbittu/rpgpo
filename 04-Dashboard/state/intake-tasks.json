@@ -1,5 +1,655 @@
 [
   {
+    "task_id": "t_mmsm3nyz2r85",
+    "title": "Design a personal knowledge management workflow using Obsidian. Include daily no",
+    "raw_request": "Design a personal knowledge management workflow using Obsidian. Include daily notes, project notes, meeting notes, and book notes with linking strategy.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:16:37.019Z",
+    "updated_at": "2026-03-16T03:20:25.608Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:17:28.005Z",
+      "interpreted_objective": "Design a structured workflow for personal knowledge management using Obsidian.",
+      "expected_outcome": "A detailed workflow document outlining the use of Obsidian for daily notes, project notes, meeting notes, and book notes, including a linking strategy.",
+      "key_unknowns": [
+        "Specific features of Obsidian to leverage for linking notes",
+        "Best practices for organizing different types of notes in Obsidian",
+        "How to integrate this workflow with existing personal productivity systems"
+      ],
+      "recommended_strategy": "Research best practices and current strategies for using Obsidian as a personal knowledge management tool. Synthesize these findings into a comprehensive workflow document that includes specific note types and linking strategies. Ensure the workflow aligns with Rahul's productivity goals and existing systems.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Obsidian best practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of best practices and strategies for using Obsidian for personal knowledge management.",
+          "prompt": "Search the web for current best practices and strategies for using Obsidian for personal knowledge management. Focus on daily notes, project notes, meeting notes, and book notes, including effective linking strategies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Obsidian workflow",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed workflow document for using Obsidian, including note types and linking strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed workflow for using Obsidian for personal knowledge management. Include specific strategies for daily notes, project notes, meeting notes, and book notes with a focus on linking strategies.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-obsidian-workflow.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2006
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsm3n5mbit3",
+    "title": "Create a minimalist wardrobe guide for a tech professional. 25 items that cover ",
+    "raw_request": "Create a minimalist wardrobe guide for a tech professional. 25 items that cover work, casual, and exercise. Include brands and estimated costs.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:16:35.962Z",
+    "updated_at": "2026-03-16T03:20:20.182Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:17:22.983Z",
+      "interpreted_objective": "Create a minimalist wardrobe guide for a tech professional with 25 items covering work, casual, and exercise, including brands and estimated costs.",
+      "expected_outcome": "A comprehensive guide listing 25 wardrobe items with specific brands and estimated costs, suitable for a tech professional's work, casual, and exercise needs.",
+      "key_unknowns": [
+        "Current popular brands for tech professionals",
+        "Estimated costs for each item",
+        "Specific wardrobe needs for tech professionals"
+      ],
+      "recommended_strategy": "First, research current popular brands and estimated costs for wardrobe items suitable for work, casual, and exercise for tech professionals. Then, synthesize this information into a structured guide listing 25 items with specific recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research current wardrobe trends",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current popular brands and estimated costs for wardrobe items suitable for tech professionals.",
+          "prompt": "Search the web for current popular brands and estimated costs for wardrobe items suitable for tech professionals, covering work, casual, and exercise categories. Include real names, numbers, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize wardrobe guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide listing 25 wardrobe items with specific brands and estimated costs.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a minimalist wardrobe guide for a tech professional. Include 25 items covering work, casual, and exercise, with specific brands and estimated costs.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-minimalist-wardrobe-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1885
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsm3lkmbjz2",
+    "title": "Plan a working holiday in Bali for a remote tech worker. 2 weeks. Include cowork",
+    "raw_request": "Plan a working holiday in Bali for a remote tech worker. 2 weeks. Include coworking spaces, accommodation, visa, internet reliability, and budget.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:16:33.910Z",
+    "updated_at": "2026-03-16T03:20:12.009Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:17:08.901Z",
+      "interpreted_objective": "Plan a detailed two-week working holiday in Bali for a remote tech worker, including logistics and budget.",
+      "expected_outcome": "A comprehensive plan that includes coworking spaces, accommodation options, visa requirements, internet reliability, and a budget estimate for a two-week stay in Bali.",
+      "key_unknowns": [
+        "Current visa requirements for Bali",
+        "Reliable coworking spaces in Bali",
+        "Accommodation options suitable for a tech worker",
+        "Current internet reliability in Bali",
+        "Estimated budget for the stay"
+      ],
+      "recommended_strategy": "First, gather current information about coworking spaces, accommodation, visa requirements, internet reliability, and budget estimates for a two-week stay in Bali. Then, synthesize this information into a structured plan that includes specific recommendations and logistics.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Bali Working Holiday Logistics",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information about coworking spaces, accommodation, visa requirements, internet reliability, and budget estimates for a two-week stay in Bali.",
+          "prompt": "Search the web for current, specific information about coworking spaces, accommodation, visa requirements, internet reliability, and budget estimates for a two-week working holiday in Bali. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Bali Working Holiday Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured plan for a two-week working holiday in Bali, including coworking spaces, accommodation, visa requirements, internet reliability, and budget.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a detailed plan for a two-week working holiday in Bali. Include specific recommendations for coworking spaces, accommodation, visa requirements, internet reliability, and a budget estimate.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-bali-working-holiday.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1947
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsm3krmfuwh",
+    "title": "Design a comprehensive sleep optimization system. Include bedroom setup, pre-sle",
+    "raw_request": "Design a comprehensive sleep optimization system. Include bedroom setup, pre-sleep routine, wake optimization, and tracking metrics. Evidence-based.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:16:32.866Z",
+    "updated_at": "2026-03-16T03:20:02.621Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:17:01.854Z",
+      "interpreted_objective": "Design an evidence-based sleep optimization system covering bedroom setup, pre-sleep routine, wake optimization, and tracking metrics.",
+      "expected_outcome": "A comprehensive, actionable plan for optimizing sleep that can be implemented by users to improve their sleep quality.",
+      "key_unknowns": [
+        "Current evidence-based practices for sleep optimization",
+        "Specific metrics to track for sleep quality",
+        "Optimal bedroom setup for sleep"
+      ],
+      "recommended_strategy": "Conduct research to identify current evidence-based practices for sleep optimization. Synthesize findings into a structured report covering bedroom setup, pre-sleep routine, wake optimization, and tracking metrics. Ensure all recommendations are actionable and include safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Sleep Optimization Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current evidence-based practices for sleep optimization with citations.",
+          "prompt": "Search the web for current, specific information about evidence-based sleep optimization practices, including bedroom setup, pre-sleep routines, wake optimization, and tracking metrics. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Sleep Optimization Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing actionable sleep optimization strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a sleep optimization system. Include specific names, numbers, and concrete next steps for bedroom setup, pre-sleep routine, wake optimization, and tracking metrics. Ensure all recommendations are evidence-based and include safety disclaimers where appropriate.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-sleep-optimization.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1893
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsm3jyre0jc",
+    "title": "Create a technical interview question bank for senior data engineers. 20 questio",
+    "raw_request": "Create a technical interview question bank for senior data engineers. 20 questions across SQL, system design, data modeling, and behavioral categories.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:16:31.827Z",
+    "updated_at": "2026-03-16T03:19:54.982Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:16:57.033Z",
+      "interpreted_objective": "Create a bank of 20 technical interview questions for senior data engineers across SQL, system design, data modeling, and behavioral categories.",
+      "expected_outcome": "A comprehensive question bank that can be used for preparing senior data engineers for technical interviews.",
+      "key_unknowns": [
+        "Specific subtopics within SQL, system design, and data modeling that should be covered",
+        "Preferred difficulty level of questions",
+        "Any specific companies or industries to tailor the questions towards"
+      ],
+      "recommended_strategy": "Research current trends and common interview questions for senior data engineers in SQL, system design, data modeling, and behavioral categories. Synthesize this information into a structured question bank with a balanced mix of question types and difficulties.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Interview Trends",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current and common interview questions for senior data engineers across specified categories.",
+          "prompt": "Search the web for current, specific information about common interview questions for senior data engineers in SQL, system design, data modeling, and behavioral categories. Include real examples, sources, and any notable trends.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Interview Question Bank",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured question bank document containing 20 interview questions across the specified categories.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a structured question bank with 20 interview questions for senior data engineers. Include specific questions for SQL, system design, data modeling, and behavioral categories, ensuring a balance of question types and difficulties.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/careeregine-{date}-interview-question-bank.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2171
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsm3j63d593",
+    "title": "Research the best smart home hubs in 2026. Compare Apple HomeKit, Google Home, A",
+    "raw_request": "Research the best smart home hubs in 2026. Compare Apple HomeKit, Google Home, Amazon Alexa, and Home Assistant. Include Matter protocol support.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:16:30.795Z",
+    "updated_at": "2026-03-16T03:19:50.145Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:16:51.951Z",
+      "interpreted_objective": "Compare the best smart home hubs in 2026, focusing on Apple HomeKit, Google Home, Amazon Alexa, and Home Assistant, including Matter protocol support.",
+      "expected_outcome": "A detailed comparison report of smart home hubs in 2026, highlighting their features, pros and cons, and Matter protocol support.",
+      "key_unknowns": [
+        "Current features and updates of each smart home hub in 2026",
+        "Support for Matter protocol by each hub",
+        "User reviews and pricing in 2026"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current information on the smart home hubs Apple HomeKit, Google Home, Amazon Alexa, and Home Assistant, focusing on their features and Matter protocol support in 2026. Next, synthesize this information into a comprehensive report, comparing their pros and cons.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Smart Home Hubs",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on smart home hubs in 2026, including features, Matter protocol support, and user reviews.",
+          "prompt": "Search the web for current information about the best smart home hubs in 2026, focusing on Apple HomeKit, Google Home, Amazon Alexa, and Home Assistant. Include details on their features, Matter protocol support, user reviews, and pricing. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Smart Home Hub Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of smart home hubs in 2026, highlighting features, pros and cons, and Matter protocol support.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed comparison report of Apple HomeKit, Google Home, Amazon Alexa, and Home Assistant in 2026. Include specific features, pros and cons, Matter protocol support, and a clear recommendation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-2026-smart-home-hubs.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2032
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsm3idhpwj7",
+    "title": "Teach me about Kubernetes operators and custom resources. Cover CRDs, controller",
+    "raw_request": "Teach me about Kubernetes operators and custom resources. Cover CRDs, controller pattern, operator framework, and when to build vs use existing operators.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:16:29.765Z",
+    "updated_at": "2026-03-16T03:19:44.049Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:16:44.856Z",
+      "interpreted_objective": "Educate Rahul on Kubernetes operators, custom resources, CRDs, controller pattern, operator framework, and decision-making for building vs using existing operators.",
+      "expected_outcome": "Rahul gains a clear understanding of Kubernetes operators and related concepts, enabling informed decisions about using or creating operators.",
+      "key_unknowns": [
+        "Rahul's current knowledge level on Kubernetes",
+        "Specific use cases Rahul has in mind for Kubernetes operators",
+        "Preferred learning format (text, examples, diagrams)"
+      ],
+      "recommended_strategy": "Conduct research to gather comprehensive information on Kubernetes operators, CRDs, controller pattern, and operator framework. Synthesize this information into a concise, informative report that includes decision-making guidelines for building vs using existing operators.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Kubernetes Operators and Related Concepts",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on Kubernetes operators, CRDs, controller pattern, operator framework, and guidelines for building vs using existing operators.",
+          "prompt": "Search the web for current, specific information about Kubernetes operators, custom resource definitions (CRDs), the controller pattern, and the operator framework. Include decision-making guidelines for when to build vs use existing operators. Provide real examples, names, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Information on Kubernetes Operators",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A synthesized report explaining Kubernetes operators, CRDs, controller pattern, operator framework, and decision-making guidelines.",
+          "prompt": "Based on the research results, synthesize a clear and concise report that explains Kubernetes operators, custom resource definitions (CRDs), the controller pattern, and the operator framework. Include guidelines for deciding when to build vs use existing operators, using specific examples and recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2074
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsm3hj4omoz",
+    "title": "Create a guide to building a rental property portfolio. Include financing strate",
+    "raw_request": "Create a guide to building a rental property portfolio. Include financing strategies, property selection criteria, management options, and cash flow projections.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:16:28.672Z",
+    "updated_at": "2026-03-16T03:19:37.938Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:16:41.315Z",
+      "interpreted_objective": "Create a comprehensive guide on building a rental property portfolio.",
+      "expected_outcome": "A detailed guide covering financing strategies, property selection criteria, management options, and cash flow projections for rental properties.",
+      "key_unknowns": [
+        "Current trends in rental property financing",
+        "Criteria for selecting profitable rental properties",
+        "Effective management options for rental properties",
+        "Methods for projecting cash flow in rental property investments"
+      ],
+      "recommended_strategy": "Conduct research on current trends and best practices in rental property investment. Synthesize findings into a structured guide with actionable insights on financing, property selection, management, and cash flow projections.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Rental Property Financing Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current financing strategies for rental properties with real examples and data.",
+          "prompt": "Search the web for current information on financing strategies for rental properties. Include real examples, interest rates, loan types, and URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Property Selection Criteria",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Criteria for selecting profitable rental properties with examples and data.",
+          "prompt": "Search the web for criteria used to select profitable rental properties. Include location, property type, market trends, and URLs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Management Options for Rental Properties",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Management options for rental properties with pros and cons of each.",
+          "prompt": "Search the web for management options for rental properties. Include self-management, property management companies, and hybrid models with pros and cons.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Cash Flow Projection Methods",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Methods for projecting cash flow in rental property investments with examples.",
+          "prompt": "Search the web for methods to project cash flow in rental property investments. Include formulas, tools, and real examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Guide on Building a Rental Property Portfolio",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on building a rental property portfolio.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a guide on building a rental property portfolio. Include sections on financing strategies, property selection criteria, management options, and cash flow projections.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2723
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsm3gpkurdi",
+    "title": "Write a comprehensive data governance policy for a startup. Include data classif",
+    "raw_request": "Write a comprehensive data governance policy for a startup. Include data classification, access controls, retention, and compliance with GDPR and CCPA.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T03:16:27.608Z",
+    "updated_at": "2026-03-16T03:19:05.733Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T03:16:34.821Z",
+      "interpreted_objective": "Create a comprehensive data governance policy for a startup.",
+      "expected_outcome": "A well-structured data governance policy document that includes data classification, access controls, retention policies, and compliance with GDPR and CCPA.",
+      "key_unknowns": [
+        "Specific industry or sector of the startup",
+        "Current data handling practices of the startup",
+        "Existing data governance frameworks in use, if any"
+      ],
+      "recommended_strategy": "First, gather information on best practices for data governance, focusing on data classification, access controls, retention, and compliance with GDPR and CCPA. Then, synthesize this information into a comprehensive policy document tailored for a startup environment.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Data Governance Best Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Compilation of best practices for data governance, including data classification, access controls, retention, and compliance with GDPR and CCPA.",
+          "prompt": "Search the web for current best practices in data governance, focusing on data classification, access controls, retention policies, and compliance with GDPR and CCPA. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Draft Data Governance Policy",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive data governance policy document tailored for a startup, incorporating data classification, access controls, retention, and compliance with GDPR and CCPA.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comprehensive data governance policy for a startup. Include specific sections on data classification, access controls, data retention policies, and compliance with GDPR and CCPA.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2055
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmslvvwiojr9",
     "title": "Design a personal accountability system for achieving quarterly goals. Include w",
     "raw_request": "Design a personal accountability system for achieving quarterly goals. Include weekly check-ins, progress metrics, reward structures, and adjustment protocols.",

@@ -7112,5 +7112,143 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-16T03:11:39.884Z"
+  },
+  "t_mmsm3gpkurdi": {
+    "task_id": "t_mmsm3gpkurdi",
+    "deliverable_id": "dlv_rpgpo_tmmsm3gpkurdi_document_f5d66971",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:16:34.833Z"
+  },
+  "t_mmsm3hj4omoz": {
+    "task_id": "t_mmsm3hj4omoz",
+    "deliverable_id": "dlv_rpgpo_tmmsm3hj4omoz_document_3c89d8c9",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:16:41.341Z"
+  },
+  "t_mmsm3idhpwj7": {
+    "task_id": "t_mmsm3idhpwj7",
+    "deliverable_id": "dlv_rpgpo_tmmsm3idhpwj7_document_c830784a",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:16:44.882Z"
+  },
+  "t_mmsm3j63d593": {
+    "task_id": "t_mmsm3j63d593",
+    "deliverable_id": "dlv_rpgpo_tmmsm3j63d593_shopping_bab4d067",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:16:51.960Z"
+  },
+  "t_mmsm3jyre0jc": {
+    "task_id": "t_mmsm3jyre0jc",
+    "deliverable_id": "dlv_rpgpo_tmmsm3jyre0jc_document_894511b2",
+    "engine_id": "careeregine",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:16:57.046Z"
+  },
+  "t_mmsm3krmfuwh": {
+    "task_id": "t_mmsm3krmfuwh",
+    "deliverable_id": "dlv_rpgpo_tmmsm3krmfuwh_action_plan_f1ea86e3",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:17:01.866Z"
+  },
+  "t_mmsm3lkmbjz2": {
+    "task_id": "t_mmsm3lkmbjz2",
+    "deliverable_id": "dlv_rpgpo_tmmsm3lkmbjz2_action_plan_0fdc7f2e",
+    "engine_id": "travel",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "itinerary",
+      "options",
+      "cost_comparison"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:17:08.909Z"
+  },
+  "t_mmsm3n5mbit3": {
+    "task_id": "t_mmsm3n5mbit3",
+    "deliverable_id": "dlv_rpgpo_tmmsm3n5mbit3_shopping_da785034",
+    "engine_id": "shopping",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "items",
+      "comparisonKeys",
+      "ranked_products",
+      "price_vendor",
+      "pros_cons"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:17:22.991Z"
+  },
+  "t_mmsm3nyz2r85": {
+    "task_id": "t_mmsm3nyz2r85",
+    "deliverable_id": "dlv_rpgpo_tmmsm3nyz2r85_document_ecebd4ff",
+    "engine_id": "personalops",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T03:17:28.014Z"
   }
 }
