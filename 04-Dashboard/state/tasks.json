@@ -1,5 +1,690 @@
 [
   {
+    "id": "mmtsod1gx236",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Guide",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsnwtd59fj"
+    },
+    "createdAt": "2026-03-16T23:08:26.500Z",
+    "updatedAt": "2026-03-16T23:08:52.856Z",
+    "output": "Synthesize Guide: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/startup-{date}-architecture-review-guide.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtsnwtd59fj.md"
+    ]
+  },
+  {
+    "id": "mmtsob68cdmx",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Vietnam Tour Itinerary",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsnvcq8hlb"
+    },
+    "createdAt": "2026-03-16T23:08:24.080Z",
+    "updatedAt": "2026-03-16T23:08:55.707Z",
+    "output": "Synthesize Vietnam Tour Itinerary: ## Itinerary (Day-by-Day)\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/travel-{date}-vietnam-tour.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtsnvcq8hlb.md"
+    ]
+  },
+  {
+    "id": "mmtso6nxnufo",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Strength Training Program",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsnrpb2u88"
+    },
+    "createdAt": "2026-03-16T23:08:18.237Z",
+    "updatedAt": "2026-03-16T23:08:43.806Z",
+    "output": "Synthesize Strength Training Program: ## Plan (Week-by-Week)\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/health-{date}-strength-training-program.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtsnrpb2u88.md"
+    ]
+  },
+  {
+    "id": "mmtso3g5218g",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize RMD Guide",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsnpf2lbwg"
+    },
+    "createdAt": "2026-03-16T23:08:14.069Z",
+    "updatedAt": "2026-03-16T23:08:41.326Z",
+    "output": "Synthesize RMD Guide: ## Analysis\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/wealthresearch-2023-RMD-Guide.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtsnpf2lbwg.md"
+    ]
+  },
+  {
+    "id": "mmtso1sc4x2r",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Explanation of Linux Virtual Filesystem",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsnmrhezul"
+    },
+    "createdAt": "2026-03-16T23:08:11.916Z",
+    "updatedAt": "2026-03-16T23:08:35.134Z",
+    "output": "Synthesize Explanation of Linux Virtual Filesystem: ## Explanation\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/learning-{date}-linux-vfs.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtsnmrhezul.md"
+    ]
+  },
+  {
+    "id": "mmtsnwz2ca19",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Best Practices",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsnwrcm0o4"
+    },
+    "createdAt": "2026-03-16T23:08:05.678Z",
+    "updatedAt": "2026-03-16T23:08:26.500Z",
+    "output": "Research Best Practices: ## Best Practices in Architecture Review Boards (ARBs)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtsnwrcm0o4.md"
+    ]
+  },
+  {
+    "id": "mmtsnvi9au2t",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Vietnam Travel and Tour Options",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsnvapsssj"
+    },
+    "createdAt": "2026-03-16T23:08:03.777Z",
+    "updatedAt": "2026-03-16T23:08:24.080Z",
+    "output": "Research Vietnam Travel and Tour Options: ## Travel Conditions in Vietnam\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtsnvapsssj.md"
+    ]
+  },
+  {
+    "id": "mmtsnrv5t4lj",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Periodization Techniques",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsnrn7383i"
+    },
+    "createdAt": "2026-03-16T23:07:59.057Z",
+    "updatedAt": "2026-03-16T23:08:18.238Z",
+    "output": "Research Periodization Techniques: ## Finding 1: Extreme Specialization for Deadlift (8-Week Cycle)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtsnrn7383i.md"
+    ]
+  },
+  {
+    "id": "mmtsnpkta822",
+    "type": "execute-subtask",
+    "label": "Subtask: Research RMD Changes under SECURE Act 2.0",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsnpcxk5e5"
+    },
+    "createdAt": "2026-03-16T23:07:56.093Z",
+    "updatedAt": "2026-03-16T23:08:14.070Z",
+    "output": "Research RMD Changes under SECURE Act 2.0: ## Finding 1: IRS Announcement 2026-7 Delays RMD Regulations to No Earlier Than 2027\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtsnpcxk5e5.md"
+    ]
+  },
+  {
+    "id": "mmtsnmxjoe36",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Linux Virtual Filesystem",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsnmp4xyg1"
+    },
+    "createdAt": "2026-03-16T23:07:52.663Z",
+    "updatedAt": "2026-03-16T23:08:11.917Z",
+    "output": "Research Linux Virtual Filesystem: I need to search for more specific information about Linux inodes and dentries, as the provided results focus on broader VFS concepts but lack the det\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtsnmp4xyg1.md"
+    ]
+  },
+  {
+    "id": "mmtsni37imbd",
+    "type": "deliberate",
+    "label": "Deliberate: Create a guide to running effective architecture review boards without creating ",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtsni2tohy3",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T23:07:46.387Z",
+    "updatedAt": "2026-03-16T23:08:05.678Z",
+    "output": "Deliberation complete.\nObjective: Create a practical guide for running effective architecture review boards without causing delays.\nStrategy: Conduct research to identify current best practices and common issues in architecture review boards. Synthesize findings into a practical guide with actionable steps and recommendations to avoid bottlenecks.\nRisk: yellow\nSubtasks: 2\nTokens: 1890",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmtsnhxc7adc",
+    "type": "deliberate",
+    "label": "Deliberate: Plan a 10-day food and history tour through Vietnam from Hanoi to Ho Chi Minh Ci",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtsnhwxr35o",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T23:07:46.176Z",
+    "updatedAt": "2026-03-16T23:08:03.777Z",
+    "output": "Deliberation complete.\nObjective: Plan a detailed 10-day itinerary for a food and history tour through Vietnam from Hanoi to Ho Chi Minh City.\nStrategy: First, gather current information on travel conditions, historical sites, and food tours in Vietnam. Then, synthesize this data into a detailed itinerary with specific recommendations for each day, including costs and logistics.\nRisk: yellow\nSubtasks: 2\nTokens: 1963",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmtsnhvll5sm",
+    "type": "deliberate",
+    "label": "Deliberate: Design a comprehensive strength training program for recreational powerlifting w",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtsnhv6nuio",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T23:07:46.113Z",
+    "updatedAt": "2026-03-16T23:07:59.058Z",
+    "output": "Deliberation complete.\nObjective: Design a periodized strength training program for recreational powerlifting.\nStrategy: Conduct research on current periodization techniques and strength training practices for powerlifting. Synthesize findings into a comprehensive program with clear phases and safety guidelines.\nRisk: yellow\nSubtasks: 2\nTokens: 1917",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmtsnhuar7fv",
+    "type": "deliberate",
+    "label": "Deliberate: Explain how the Linux virtual filesystem layer works from inodes to dentries.",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtsnhtval2n",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T23:07:46.066Z",
+    "updatedAt": "2026-03-16T23:07:52.664Z",
+    "output": "Deliberation complete.\nObjective: Explain the Linux virtual filesystem layer, focusing on inodes and dentries.\nStrategy: Conduct web research to gather detailed information about the Linux virtual filesystem, focusing on inodes and dentries. Then, synthesize this information into a structured explanation that is clear and concise, suitable for someone with a strong technical background.\nRisk: green\nSubtasks: 2\nTokens: 1972",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmtsnhtdyq2p",
+    "type": "deliberate",
+    "label": "Deliberate: Create a guide to understanding required minimum distributions from retirement a",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtsnhsxnm7h",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T23:07:46.033Z",
+    "updatedAt": "2026-03-16T23:07:56.093Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed guide on required minimum distributions from retirement accounts under SECURE Act 2.0.\nStrategy: Conduct research to gather current information on RMDs under SECURE Act 2.0. Then, synthesize this information into a structured guide with practical examples and actionable steps for compliance.\nRisk: green\nSubtasks: 2\nTokens: 2369",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmtshtjxuvgx",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Kubernetes Scheduling Explanation",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsfrwuoaui"
+    },
+    "createdAt": "2026-03-16T23:03:21.309Z",
+    "updatedAt": "2026-03-16T23:05:05.945Z",
+    "output": "Synthesize Kubernetes Scheduling Explanation: ## Explanation\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/learning-{date}-kubernetes-scheduling.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtsfrwuoaui.md"
+    ]
+  },
+  {
+    "id": "mmtshlmdk2xu",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Morning Routine Plan",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsfkwn30ys"
+    },
+    "createdAt": "2026-03-16T23:03:11.029Z",
+    "updatedAt": "2026-03-16T23:04:54.547Z",
+    "output": "Synthesize Morning Routine Plan: ### Objective\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/personalops-{date}-morning-routine-optimization.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtsfkwn30ys.md"
+    ]
+  },
+  {
+    "id": "mmtshg5asie6",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Podcast Concept",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsfeqmoquc"
+    },
+    "createdAt": "2026-03-16T23:03:03.934Z",
+    "updatedAt": "2026-03-16T23:04:41.704Z",
+    "output": "Synthesize Podcast Concept: ## Narrative Mystery Podcast Concept: \"Digital Shadows\"\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/writing-{date}-mystery-podcast-concept.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtsfeqmoquc.md"
+    ]
+  },
+  {
+    "id": "mmtsh8ljul2n",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Guide for New Engineering Managers",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsf9cxnsft"
+    },
+    "createdAt": "2026-03-16T23:02:54.151Z",
+    "updatedAt": "2026-03-16T23:04:23.068Z",
+    "output": "Synthesize Guide for New Engineering Managers: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtsf9cxnsft.md"
+    ]
+  },
+  {
+    "id": "mmtsh2v06oxs",
+    "type": "execute-subtask",
+    "label": "Subtask: Compile Detailed Itinerary",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsf4peqmdv"
+    },
+    "createdAt": "2026-03-16T23:02:46.716Z",
+    "updatedAt": "2026-03-16T23:04:10.524Z",
+    "output": "Compile Detailed Itinerary: ## Itinerary\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/travel-{date}-piedmont-tour.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtsf4peqmdv.md"
+    ]
+  },
+  {
+    "id": "mmtsgv84z1xo",
+    "type": "execute-subtask",
+    "label": "Subtask: Compile Report on Standing Desk Converters",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtseyxl8rry"
+    },
+    "createdAt": "2026-03-16T23:02:36.820Z",
+    "updatedAt": "2026-03-16T23:03:59.847Z",
+    "output": "Compile Report on Standing Desk Converters: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/research-{date}-standing-desk-converters.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtseyxl8rry.md"
+    ]
+  },
+  {
+    "id": "mmtsglxmtgs8",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Ankle Mobility and Stability Program",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsesv9la2n"
+    },
+    "createdAt": "2026-03-16T23:02:24.778Z",
+    "updatedAt": "2026-03-16T23:03:51.075Z",
+    "output": "Synthesize Ankle Mobility and Stability Program: ## Ankle Mobility and Stability Program for Trail Runners Recovering from Sprains\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/health-{date}-ankle-mobility-stability-program.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtsesv9la2n.md"
+    ]
+  },
+  {
+    "id": "mmtsgct9nmvr",
+    "type": "execute-subtask",
+    "label": "Subtask: Explain Join Algorithm Selection",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsenpvxuac"
+    },
+    "createdAt": "2026-03-16T23:02:12.957Z",
+    "updatedAt": "2026-03-16T23:03:40.127Z",
+    "output": "Explain Join Algorithm Selection: ## Explanation\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtsenpvxuac.md"
+    ]
+  },
+  {
+    "id": "mmtsg530ikqn",
+    "type": "execute-subtask",
+    "label": "Subtask: Synthesize Roth Conversion Ladder Guide",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsegr60y3h"
+    },
+    "createdAt": "2026-03-16T23:02:02.940Z",
+    "updatedAt": "2026-03-16T23:03:33.543Z",
+    "output": "Synthesize Roth Conversion Ladder Guide: ## Analysis\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/wealthresearch-{date}-RothConversionLadderGuide.md",
+      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtsegr60y3h.md"
+    ]
+  },
+  {
+    "id": "mmtsfs2ap6df",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Kubernetes Scheduling",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsfruu54zg"
+    },
+    "createdAt": "2026-03-16T23:01:46.066Z",
+    "updatedAt": "2026-03-16T23:03:21.309Z",
+    "output": "Research Kubernetes Scheduling: ## Pod Affinity in Kubernetes Scheduling\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtsfruu54zg.md"
+    ]
+  },
+  {
+    "id": "mmtsfl22lcu9",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Circadian Rhythm Science",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsfkulcoc8"
+    },
+    "createdAt": "2026-03-16T23:01:36.986Z",
+    "updatedAt": "2026-03-16T23:03:11.030Z",
+    "output": "Research Circadian Rhythm Science: I need to conduct a fresh web search for current circadian rhythm science and morning routine optimization, as the provided search result focuses on a\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtsfkulcoc8.md"
+    ]
+  },
+  {
+    "id": "mmtsfew1ueh3",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Modern Forensic Techniques and Mystery Podcast Trends",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsfeoomynf"
+    },
+    "createdAt": "2026-03-16T23:01:28.993Z",
+    "updatedAt": "2026-03-16T23:03:03.935Z",
+    "output": "Research Modern Forensic Techniques and Mystery Podcast Trends: ## Modern Forensic Techniques\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtsfeoomynf.md"
+    ]
+  },
+  {
+    "id": "mmtsf9ie291r",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Challenges and Best Practices",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsf9ayybs0"
+    },
+    "createdAt": "2026-03-16T23:01:22.022Z",
+    "updatedAt": "2026-03-16T23:02:54.152Z",
+    "output": "Research Challenges and Best Practices: ## Challenges for New Engineering Managers in First 90 Days\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtsf9ayybs0.md"
+    ]
+  },
+  {
+    "id": "mmtsf4uu5jno",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Culinary and Wine Tours in Piedmont",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsf4nfs8nu"
+    },
+    "createdAt": "2026-03-16T23:01:15.990Z",
+    "updatedAt": "2026-03-16T23:02:46.717Z",
+    "output": "Research Culinary and Wine Tours in Piedmont: ## Piedmont Culinary and Wine Tours with Truffle Hunting (2026 Focus)\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtsf4nfs8nu.md"
+    ]
+  },
+  {
+    "id": "mmtsez339drn",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Budget Standing Desk Converters",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtseyvkke22"
+    },
+    "createdAt": "2026-03-16T23:01:08.511Z",
+    "updatedAt": "2026-03-16T23:02:36.820Z",
+    "output": "Research Budget Standing Desk Converters: # Budget Standing Desk Converters Under $300\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtseyvkke22.md"
+    ]
+  },
+  {
+    "id": "mmtset0voboz",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Ankle Rehabilitation Best Practices",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsest614wa"
+    },
+    "createdAt": "2026-03-16T23:01:00.655Z",
+    "updatedAt": "2026-03-16T23:02:24.779Z",
+    "output": "Research Ankle Rehabilitation Best Practices: ## Finding 1: Therapeutic Associates' 5 Bulletproof Ankle Exercises for Preventing Re-Sprains in Runners\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtsest614wa.md"
+    ]
+  },
+  {
+    "id": "mmtsenv9ngov",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Join Algorithm Cost Estimation",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsennwlst9"
+    },
+    "createdAt": "2026-03-16T23:00:53.973Z",
+    "updatedAt": "2026-03-16T23:02:12.957Z",
+    "output": "Research Join Algorithm Cost Estimation: I need to search for more specific information about how modern database query optimizers estimate costs for nested loop, hash join, and merge join al\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtsennwlst9.md"
+    ]
+  },
+  {
+    "id": "mmtsegwxyjd5",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Roth Conversion Ladder Strategies",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmtsegotqr3m"
+    },
+    "createdAt": "2026-03-16T23:00:44.961Z",
+    "updatedAt": "2026-03-16T23:02:02.941Z",
+    "output": "Research Roth Conversion Ladder Strategies: ## Roth Conversion Ladder Overview\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtsegotqr3m.md"
+    ]
+  },
+  {
+    "id": "mmtsebu34ip4",
+    "type": "deliberate",
+    "label": "Deliberate: Explain how container orchestration scheduling works in Kubernetes including pod",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtsebtpv18l",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T23:00:38.379Z",
+    "updatedAt": "2026-03-16T23:01:46.066Z",
+    "output": "Deliberation complete.\nObjective: Explain Kubernetes container orchestration scheduling, focusing on pod affinity and resource requests.\nStrategy: First, conduct web research to gather current information and examples on Kubernetes scheduling, pod affinity, and resource requests. Then, synthesize this information into a structured explanation with practical examples and citations.\nRisk: green\nSubtasks: 2\nTokens: 1947",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmtsebplp36w",
+    "type": "deliberate",
+    "label": "Deliberate: Create a guide to understanding umbrella insurance coverage gaps and when high-n",
+    "status": "failed",
+    "meta": {
+      "taskId": "t_mmtsebp7aqyz",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T23:00:38.217Z",
+    "updatedAt": "2026-03-16T23:01:38.540Z",
+    "output": null,
+    "error": "Intake task not found: t_mmtsebp7aqyz",
+    "filesWritten": []
+  },
+  {
+    "id": "mmtsebl0jmhk",
+    "type": "deliberate",
+    "label": "Deliberate: Design a comprehensive morning routine optimization system backed by circadian r",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtsebknom88",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T23:00:38.052Z",
+    "updatedAt": "2026-03-16T23:01:36.987Z",
+    "output": "Deliberation complete.\nObjective: Design a morning routine optimization system using circadian rhythm science.\nStrategy: Conduct research on circadian rhythm science related to morning routines. Synthesize findings into a practical and specific morning routine plan, ensuring alignment with the operator's preferences and prior work.\nRisk: yellow\nSubtasks: 2\nTokens: 2014",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmtsebifn79c",
+    "type": "deliberate",
+    "label": "Deliberate: Write a complete concept for a narrative mystery podcast about a retired detecti",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtsebi21neh",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T23:00:37.959Z",
+    "updatedAt": "2026-03-16T23:01:28.993Z",
+    "output": "Deliberation complete.\nObjective: Create a detailed concept for a narrative mystery podcast featuring a retired detective using modern forensics to solve cold cases.\nStrategy: First, research current trends in forensic science and popular mystery podcasts to gather relevant data. Then, synthesize this information into a detailed podcast concept that includes a plot outline, character profiles, and potential episode arcs.\nRisk: green\nSubtasks: 2\nTokens: 1983",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmtsebfi3snh",
+    "type": "deliberate",
+    "label": "Deliberate: Create a guide to effective delegation and influence building for new engineerin",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtsebf2pl2z",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T23:00:37.854Z",
+    "updatedAt": "2026-03-16T23:01:22.022Z",
+    "output": "Deliberation complete.\nObjective: Create a practical guide for new engineering managers on delegation and influence building in their first 90 days.\nStrategy: Conduct research to identify common challenges and best practices for new engineering managers. Synthesize findings into a comprehensive guide with actionable steps and examples tailored to the first 90 days in the role.\nRisk: green\nSubtasks: 2\nTokens: 2378",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmtsebavttff",
+    "type": "deliberate",
+    "label": "Deliberate: Plan a 9-day culinary and wine tour through the Piedmont region of northern Ital",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtsebahm9x6",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T23:00:37.687Z",
+    "updatedAt": "2026-03-16T23:01:15.990Z",
+    "output": "Deliberation complete.\nObjective: Plan a detailed 9-day culinary and wine tour in Piedmont, Italy, including truffle hunting.\nStrategy: Conduct research on current culinary tours, wine tastings, and truffle hunting experiences available in Piedmont. Compile a detailed itinerary with specific dates, activities, and costs. Ensure the itinerary aligns with the operator's preferences for specificity and actionable details.\nRisk: yellow\nSubtasks: 2\nTokens: 2000",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmtseb3w2dca",
+    "type": "deliberate",
+    "label": "Deliberate: Research the best budget standing desk converters under three hundred dollars fo",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtseb3itweg",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T23:00:37.436Z",
+    "updatedAt": "2026-03-16T23:01:08.511Z",
+    "output": "Deliberation complete.\nObjective: Identify the best budget standing desk converters under $300 for home office setups.\nStrategy: Conduct web research to gather data on top-rated budget standing desk converters under $300. Analyze features, pros/cons, and compile a report with actionable recommendations.\nRisk: green\nSubtasks: 2\nTokens: 2193",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmtseb2o0sqn",
+    "type": "deliberate",
+    "label": "Deliberate: Design a comprehensive ankle mobility and stability program for trail runners re",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtseb27cicw",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T23:00:37.392Z",
+    "updatedAt": "2026-03-16T23:01:00.655Z",
+    "output": "Deliberation complete.\nObjective: Design an evidence-based ankle mobility and stability program for trail runners recovering from sprains.\nStrategy: Conduct research to gather current best practices and evidence-based exercises for ankle rehabilitation. Synthesize this information into a structured program with clear guidelines and progressions, ensuring safety and efficacy.\nRisk: yellow\nSubtasks: 2\nTokens: 1991",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmtseb15eucp",
+    "type": "deliberate",
+    "label": "Deliberate: Explain how modern database query optimizers choose between nested loop, hash jo",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtseb0o8poq",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T23:00:37.337Z",
+    "updatedAt": "2026-03-16T23:00:53.973Z",
+    "output": "Deliberation complete.\nObjective: Explain how database query optimizers choose join algorithms using cost estimation.\nStrategy: Conduct research to gather detailed information on how query optimizers estimate costs for different join algorithms. Then, synthesize this information into a concise explanation suitable for a learning context.\nRisk: green\nSubtasks: 2\nTokens: 2114",
+    "error": null,
+    "filesWritten": []
+  },
+  {
+    "id": "mmtseb06wiqv",
+    "type": "deliberate",
+    "label": "Deliberate: Create a comprehensive guide to Roth conversion ladder strategies for early reti",
+    "status": "done",
+    "meta": {
+      "taskId": "t_mmtseazpzne3",
+      "autoApprove": true
+    },
+    "createdAt": "2026-03-16T23:00:37.302Z",
+    "updatedAt": "2026-03-16T23:00:44.961Z",
+    "output": "Deliberation complete.\nObjective: Create a comprehensive guide on Roth conversion ladder strategies for early retirees targeting financial independence by age 45.\nStrategy: Conduct web research to gather current information on Roth conversion ladders, including tax implications and real examples. Synthesize findings into a structured guide with actionable steps and revenue estimates for early retirees targeting financial independence by 45.\nRisk: green\nSubtasks: 2\nTokens: 2349",
+    "error": null,
+    "filesWritten": []
+  },
+  {
     "id": "mmtrxhqpckrj",
     "type": "execute-subtask",
     "label": "Subtask: Synthesize Documentation Debt Management System",
@@ -908,687 +1593,6 @@
     "createdAt": "2026-03-16T22:36:31.989Z",
     "updatedAt": "2026-03-16T22:37:38.789Z",
     "output": "Deliberation complete.\nObjective: Design a detailed home energy audit checklist covering key energy efficiency areas.\nStrategy: First, research current best practices and standards for home energy audits, focusing on insulation, HVAC efficiency, appliance energy ratings, phantom load identification, and ROI calculation. Then, synthesize this information into a structured, actionable checklist with clear steps and metrics.\nRisk: green\nSubtasks: 2\nTokens: 2175",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtrjbr3irw7",
-    "type": "deliberate",
-    "label": "Deliberate: Write a concept for a true crime documentary about a cold case solved by amateur",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtrjbqnf898",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:36:31.935Z",
-    "updatedAt": "2026-03-16T22:37:26.432Z",
-    "output": "Deliberation complete.\nObjective: Develop a concept for a true crime documentary focusing on a cold case solved by amateur genealogy researchers.\nStrategy: Conduct research to identify a compelling cold case solved through genealogy. Gather insights on narrative techniques and ethical considerations from existing documentaries. Synthesize findings into a structured concept document that includes narrative, interviews, ethics, and visuals.\nRisk: green\nSubtasks: 2\nTokens: 1997",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtrjbntscgd",
-    "type": "deliberate",
-    "label": "Deliberate: Plan a 10-day Silk Road history tour through Uzbekistan. Include Samarkand Regis",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtrjbngamrf",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:36:31.817Z",
-    "updatedAt": "2026-03-16T22:37:18.178Z",
-    "output": "Deliberation complete.\nObjective: Plan a detailed 10-day Silk Road history tour itinerary through Uzbekistan.\nStrategy: Conduct research to gather current information on each specified location and activity. Synthesize findings into a detailed itinerary that includes travel logistics, timing, and local recommendations. Ensure all activities are feasible within a 10-day period.\nRisk: green\nSubtasks: 2\nTokens: 2091",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtrjbky5id2",
-    "type": "deliberate",
-    "label": "Deliberate: Create a 12-week strength training program for intermediate lifters targeting a ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtrjbkk9uad",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:36:31.714Z",
-    "updatedAt": "2026-03-16T22:37:10.262Z",
-    "output": "Deliberation complete.\nObjective: Develop a comprehensive 12-week strength training program for intermediate lifters aiming for a 1000-pound total.\nStrategy: Conduct research to gather current best practices and evidence-based strategies for strength training programs targeting a 1000-pound total. Synthesize this information into a structured 12-week program with clear guidelines and protocols.\nRisk: yellow\nSubtasks: 2\nTokens: 2028",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtrjbdn2bpu",
-    "type": "deliberate",
-    "label": "Deliberate: Research the best home sous vide containers and accessories. Compare Cambro 12-q",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtrjbd91s9i",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:36:31.451Z",
-    "updatedAt": "2026-03-16T22:37:03.757Z",
-    "output": "Deliberation complete.\nObjective: Research and compare the best home sous vide containers and accessories, focusing on Cambro 12-quart, Lipavi C10, and Rubbermaid commercial options.\nStrategy: First, conduct web research to gather current information on Cambro 12-quart, Lipavi C10, and Rubbermaid commercial sous vide containers and their accessories. Then, synthesize the findings into a comprehensive report with specific recommendations and citations.\nRisk: green\nSubtasks: 2\nTokens: 2297",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtrjbcmi4dh",
-    "type": "deliberate",
-    "label": "Deliberate: Explain how event-driven architectures handle exactly-once processing. Cover ide",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtrjbc7zgcl",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:36:31.414Z",
-    "updatedAt": "2026-03-16T22:36:54.823Z",
-    "output": "Deliberation complete.\nObjective: Explain how event-driven architectures ensure exactly-once processing using specific patterns and strategies.\nStrategy: Conduct web research to gather the latest information on exactly-once processing in event-driven architectures. Then, synthesize the findings into a structured report, highlighting practical examples and citations.\nRisk: yellow\nSubtasks: 2\nTokens: 2037",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtrjbbb8qra",
-    "type": "deliberate",
-    "label": "Deliberate: Design a Staff engineer influence map template. Include stakeholder categorizati",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtrjbawrfqt",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:36:31.367Z",
-    "updatedAt": "2026-03-16T22:36:49.451Z",
-    "output": "Deliberation complete.\nObjective: Create a template for a Staff engineer influence map, including stakeholder categorization, communication strategies, and relationship management processes.\nStrategy: Research best practices for influence maps and stakeholder management in engineering roles, particularly within the shopping domain. Synthesize findings into a detailed template, ensuring practical applicability and alignment with Rahul's preferences for specificity and actionability.\nRisk: yellow\nSubtasks: 2\nTokens: 2131",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtrjbafviyi",
-    "type": "deliberate",
-    "label": "Deliberate: Create a comprehensive guide to building a personal financial independence numbe",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtrjba1se7i",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:36:31.335Z",
-    "updatedAt": "2026-03-16T22:36:43.328Z",
-    "output": "Deliberation complete.\nObjective: Create a detailed guide for calculating a personal financial independence number.\nStrategy: Conduct research on current best practices and tools for each component of financial independence calculation. Synthesize findings into a cohesive guide with actionable steps and real examples. Ensure the guide is practical and tailored to Rahul's preferences for specificity and actionability.\nRisk: green\nSubtasks: 4\nTokens: 2745",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtrawm11quz",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize PostgreSQL Query Execution Plan Insights",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtra9m7xbs9"
-    },
-    "createdAt": "2026-03-16T22:29:59.065Z",
-    "updatedAt": "2026-03-16T22:30:35.379Z",
-    "output": "Synthesize PostgreSQL Query Execution Plan Insights: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/research-2023-11-02-postgresql-query-execution-plans.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtra9m7xbs9.md"
-    ]
-  },
-  {
-    "id": "mmtrapjoq3iq",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Career Progression Roadmap",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtra3nb2xjl"
-    },
-    "createdAt": "2026-03-16T22:29:49.908Z",
-    "updatedAt": "2026-03-16T22:30:21.644Z",
-    "output": "Synthesize Career Progression Roadmap: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/careeregine-2023-10-25-data-engineering-roadmap.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtra3nb2xjl.md"
-    ]
-  },
-  {
-    "id": "mmtrafllwa32",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize ETF Comparison Guide",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtr9yl0f8j8"
-    },
-    "createdAt": "2026-03-16T22:29:37.017Z",
-    "updatedAt": "2026-03-16T22:30:10.382Z",
-    "output": "Synthesize ETF Comparison Guide: ## Analysis\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtr9yl0f8j8.md"
-    ]
-  },
-  {
-    "id": "mmtra9rouidt",
-    "type": "execute-subtask",
-    "label": "Subtask: Research PostgreSQL Query Execution Plans",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtra9k2j4mf"
-    },
-    "createdAt": "2026-03-16T22:29:29.460Z",
-    "updatedAt": "2026-03-16T22:29:59.066Z",
-    "output": "Research PostgreSQL Query Execution Plans: ## Sequential vs Index Scans\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtra9k2j4mf.md"
-    ]
-  },
-  {
-    "id": "mmtra3spgv9e",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Data Engineering Career Progression",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtra3l7y4tz"
-    },
-    "createdAt": "2026-03-16T22:29:21.721Z",
-    "updatedAt": "2026-03-16T22:29:49.908Z",
-    "output": "Research Data Engineering Career Progression: ## Junior Data Engineer (0-2 Years Experience)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtra3l7y4tz.md"
-    ]
-  },
-  {
-    "id": "mmtr9yqbz3id",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Dividend ETF Data",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtr9yiwqjgi"
-    },
-    "createdAt": "2026-03-16T22:29:15.155Z",
-    "updatedAt": "2026-03-16T22:29:37.018Z",
-    "output": "Research Dividend ETF Data: ## SCHD ETF (Schwab U.S. Dividend Equity ETF)\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtr9yiwqjgi.md"
-    ]
-  },
-  {
-    "id": "mmtr9st74wxm",
-    "type": "deliberate",
-    "label": "Deliberate: Explain how PostgreSQL query execution plans work. Cover sequential vs index sca",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtr9ssraz2z",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:29:07.483Z",
-    "updatedAt": "2026-03-16T22:29:29.461Z",
-    "output": "Deliberation complete.\nObjective: Explain PostgreSQL query execution plans and how to optimize them.\nStrategy: First, research the latest information on PostgreSQL query execution plans, focusing on sequential vs index scans, join algorithms, parallel execution, cost estimation, and EXPLAIN ANALYZE. Then, synthesize this information into a comprehensive report with actionable insights for optimization.\nRisk: green\nSubtasks: 2\nTokens: 2240",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtr9srtg22l",
-    "type": "deliberate",
-    "label": "Deliberate: Design a data engineering career progression roadmap from junior to staff level.",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtr9srg5j5c",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:29:07.433Z",
-    "updatedAt": "2026-03-16T22:29:21.722Z",
-    "output": "Deliberation complete.\nObjective: Create a detailed career progression roadmap for data engineers from junior to staff level, including skills, project expectations, and interview prep.\nStrategy: Conduct research to identify current trends and expectations in data engineering career progression. Synthesize this information into a structured roadmap with actionable steps and resources for each career level.\nRisk: yellow\nSubtasks: 2\nTokens: 2275",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtr9sr0nqcj",
-    "type": "deliberate",
-    "label": "Deliberate: Create a comprehensive guide to building passive income through dividend ETF inv",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtr9sqm6jvw",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:29:07.404Z",
-    "updatedAt": "2026-03-16T22:29:15.156Z",
-    "output": "Deliberation complete.\nObjective: Create a detailed guide for passive income through dividend ETF investing with a comparison of SCHD, VYM, and JEPI.\nStrategy: Conduct research to gather current data on SCHD, VYM, and JEPI. Analyze and compare their performance, yield, and tax efficiency. Synthesize this information into a detailed guide with specific portfolio allocation recommendations by age bracket.\nRisk: green\nSubtasks: 2\nTokens: 2527",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtr0q5ivymp",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize On-Call Management System Guide",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqyltz2nfd"
-    },
-    "createdAt": "2026-03-16T22:22:04.134Z",
-    "updatedAt": "2026-03-16T22:23:49.649Z",
-    "output": "Synthesize On-Call Management System Guide: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/careeregine-{date}-oncall-management.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtqyltz2nfd.md"
-    ]
-  },
-  {
-    "id": "mmtr0i0h2k20",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Meal Prep Guide",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqyfvx18j4"
-    },
-    "createdAt": "2026-03-16T22:21:53.585Z",
-    "updatedAt": "2026-03-16T22:23:36.232Z",
-    "output": "Synthesize Meal Prep Guide: ## Plan for Building an Efficient Meal Prep System\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtqyfvx18j4.md"
-    ]
-  },
-  {
-    "id": "mmtr0ca16h2w",
-    "type": "execute-subtask",
-    "label": "Subtask: Develop Mystery Novel Concept",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqy8zr2z7m"
-    },
-    "createdAt": "2026-03-16T22:21:46.153Z",
-    "updatedAt": "2026-03-16T22:23:25.827Z",
-    "output": "Develop Mystery Novel Concept: ## Mystery Novel Concept: \"The Icing on the Crime\"\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtqy8zr2z7m.md"
-    ]
-  },
-  {
-    "id": "mmtr04xmoduc",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Scottish Highlands Tour Itinerary",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqy33zzm9x"
-    },
-    "createdAt": "2026-03-16T22:21:36.634Z",
-    "updatedAt": "2026-03-16T22:23:14.565Z",
-    "output": "Synthesize Scottish Highlands Tour Itinerary: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/general-{date}-ScottishHighlandsTour.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtqy33zzm9x.md"
-    ]
-  },
-  {
-    "id": "mmtqzxc3a1p8",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Thoracic Spine Mobility Program",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqxxrbu868"
-    },
-    "createdAt": "2026-03-16T22:21:26.787Z",
-    "updatedAt": "2026-03-16T22:23:05.552Z",
-    "output": "Synthesize Thoracic Spine Mobility Program: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/general-{date}-thoracic-spine-mobility-program.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtqxxrbu868.md"
-    ]
-  },
-  {
-    "id": "mmtqzrp4bek3",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Interview Guide",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqxs2v5uh1"
-    },
-    "createdAt": "2026-03-16T22:21:19.480Z",
-    "updatedAt": "2026-03-16T22:22:56.303Z",
-    "output": "Synthesize Interview Guide: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/careeregine-{date}-technical-interview-guide.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtqxs2v5uh1.md"
-    ]
-  },
-  {
-    "id": "mmtqzdofhbpd",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Comparison Report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqxmb42dz9"
-    },
-    "createdAt": "2026-03-16T22:21:01.311Z",
-    "updatedAt": "2026-03-16T22:22:47.043Z",
-    "output": "Synthesize Comparison Report: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/research-2023-10-cold-brew-comparison.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtqxmb42dz9.md"
-    ]
-  },
-  {
-    "id": "mmtqz8151t7j",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize VFS research into report",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqxfddmjw1"
-    },
-    "createdAt": "2026-03-16T22:20:53.993Z",
-    "updatedAt": "2026-03-16T22:22:35.732Z",
-    "output": "Synthesize VFS research into report: ## Explanation\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/learning-{date}-linux-vfs.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtqxfddmjw1.md"
-    ]
-  },
-  {
-    "id": "mmtqz23377hr",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Guide on RMDs and Roth Conversions",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqxab17q7f"
-    },
-    "createdAt": "2026-03-16T22:20:46.287Z",
-    "updatedAt": "2026-03-16T22:22:25.180Z",
-    "output": "Synthesize Guide on RMDs and Roth Conversions: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/general-{date}-retirement-guide.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtqxab17q7f.md"
-    ]
-  },
-  {
-    "id": "mmtqysqnzndb",
-    "type": "execute-subtask",
-    "label": "Subtask: Synthesize Architecture and Feature Specification",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqx3rryxkx"
-    },
-    "createdAt": "2026-03-16T22:20:34.175Z",
-    "updatedAt": "2026-03-16T22:22:14.975Z",
-    "output": "Synthesize Architecture and Feature Specification: ## Key Findings\n\nNo more subtasks to queue",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/careeregine-{date}-distributed-job-scheduler-specification.md",
-      "03-Operations/Reports/Subtask-openai-2026-03-16-st_mmtqx3rryxkx.md"
-    ]
-  },
-  {
-    "id": "mmtqylzlxljo",
-    "type": "execute-subtask",
-    "label": "Subtask: Research On-Call Management Best Practices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqylrsiyl6"
-    },
-    "createdAt": "2026-03-16T22:20:25.425Z",
-    "updatedAt": "2026-03-16T22:22:04.134Z",
-    "output": "Research On-Call Management Best Practices: ## Shift Scheduling\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtqylrsiyl6.md"
-    ]
-  },
-  {
-    "id": "mmtqyg1pxwgi",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Best Practices in Meal Prep",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqyftn8fmx"
-    },
-    "createdAt": "2026-03-16T22:20:17.725Z",
-    "updatedAt": "2026-03-16T22:21:53.586Z",
-    "output": "Research Best Practices in Meal Prep: ## Batch Cooking\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtqyftn8fmx.md"
-    ]
-  },
-  {
-    "id": "mmtqy95hr8a1",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Mystery Novel Tropes",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqy8xoi767"
-    },
-    "createdAt": "2026-03-16T22:20:08.789Z",
-    "updatedAt": "2026-03-16T22:21:46.153Z",
-    "output": "Research Mystery Novel Tropes: ## Common Tropes in Mystery Novels Set in Competitive Cooking/Baking Environments\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtqy8xoi767.md"
-    ]
-  },
-  {
-    "id": "mmtqy39p5n4b",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Scottish Highlands Tour Components",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqy31ql3tu"
-    },
-    "createdAt": "2026-03-16T22:20:01.165Z",
-    "updatedAt": "2026-03-16T22:21:36.634Z",
-    "output": "Research Scottish Highlands Tour Components: ## Islay Distilleries\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtqy31ql3tu.md"
-    ]
-  },
-  {
-    "id": "mmtqxxx04p10",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Thoracic Spine Mobility Best Practices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqxxp6yhl9"
-    },
-    "createdAt": "2026-03-16T22:19:54.228Z",
-    "updatedAt": "2026-03-16T22:21:26.787Z",
-    "output": "Research Thoracic Spine Mobility Best Practices: ## Finding 1: Desk-Friendly Seated Shoulder Rolls for Upper Back Tension Release\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtqxxp6yhl9.md"
-    ]
-  },
-  {
-    "id": "mmtqxs9tgdx4",
-    "type": "execute-subtask",
-    "label": "Subtask: Research System Design and Leadership Interview Practices",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqxs065166"
-    },
-    "createdAt": "2026-03-16T22:19:46.913Z",
-    "updatedAt": "2026-03-16T22:21:19.480Z",
-    "output": "Research System Design and Leadership Interview Practices: # System Design Interview Preparation & Leadership Frameworks for Senior Roles\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtqxs065166.md"
-    ]
-  },
-  {
-    "id": "mmtqxmglhqwr",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Cold Brew Coffee Makers",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqxm965452"
-    },
-    "createdAt": "2026-03-16T22:19:39.381Z",
-    "updatedAt": "2026-03-16T22:21:01.312Z",
-    "output": "Research Cold Brew Coffee Makers: ## Toddy Cold Brew System\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtqxm965452.md"
-    ]
-  },
-  {
-    "id": "mmtqxfj6ni3x",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Linux VFS and its components",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqxfb8s18a"
-    },
-    "createdAt": "2026-03-16T22:19:30.402Z",
-    "updatedAt": "2026-03-16T22:20:53.994Z",
-    "output": "Research Linux VFS and its components: ## Linux VFS Layer Overview\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtqxfb8s18a.md"
-    ]
-  },
-  {
-    "id": "mmtqxagp3v3h",
-    "type": "execute-subtask",
-    "label": "Subtask: Research RMDs, Roth conversions, and SECURE Act 2.0",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqxa8xnskk"
-    },
-    "createdAt": "2026-03-16T22:19:23.833Z",
-    "updatedAt": "2026-03-16T22:20:46.287Z",
-    "output": "Research RMDs, Roth conversions, and SECURE Act 2.0: ## Finding 1: IRS Announcement 2026-7 Delays Final RMD Regulations to No Earlier Than 2027\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtqxa8xnskk.md"
-    ]
-  },
-  {
-    "id": "mmtqx3xdzxsi",
-    "type": "execute-subtask",
-    "label": "Subtask: Research Existing Distributed Job Schedulers",
-    "status": "done",
-    "meta": {
-      "subtaskId": "st_mmtqx3pff8d3"
-    },
-    "createdAt": "2026-03-16T22:19:15.361Z",
-    "updatedAt": "2026-03-16T22:20:34.176Z",
-    "output": "Research Existing Distributed Job Schedulers: ## Bull Queue: Redis-Based Job Scheduler for Node.js\n\nAuto-queued 1 subtask(s)",
-    "error": null,
-    "filesWritten": [
-      "03-Operations/Reports/Subtask-perplexity-2026-03-16-st_mmtqx3pff8d3.md"
-    ]
-  },
-  {
-    "id": "mmtqwyei3owy",
-    "type": "deliberate",
-    "label": "Deliberate: Design a comprehensive system for managing engineering on-call rotations. Includ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtqwye4xlvh",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:19:08.202Z",
-    "updatedAt": "2026-03-16T22:20:25.425Z",
-    "output": "Deliberation complete.\nObjective: Design a comprehensive system for managing engineering on-call rotations to improve work-life balance and operational efficiency.\nStrategy: Conduct research to gather current best practices and industry standards for managing engineering on-call rotations. Synthesize this information into a comprehensive guide that includes actionable steps and templates. Ensure the system aligns with Rahul's career strategy and work-life balance priorities.\nRisk: green\nSubtasks: 2\nTokens: 2211",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtqwyb685r0",
-    "type": "deliberate",
-    "label": "Deliberate: Create a guide to building an efficient meal prep system for busy professionals.",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtqwyar8tcp",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:19:08.082Z",
-    "updatedAt": "2026-03-16T22:20:17.725Z",
-    "output": "Deliberation complete.\nObjective: Create a comprehensive guide for meal prep systems tailored for busy professionals.\nStrategy: Conduct research on current best practices in meal prep for busy professionals. Synthesize findings into a structured guide that includes practical templates and tips. Ensure the guide is evidence-based and includes safety disclaimers where necessary.\nRisk: green\nSubtasks: 2\nTokens: 2040",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtqwy8pvg0r",
-    "type": "deliberate",
-    "label": "Deliberate: Write a complete concept for a mystery novel set in a competitive baking show wh",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtqwy8cvfnp",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:19:07.993Z",
-    "updatedAt": "2026-03-16T22:20:08.789Z",
-    "output": "Deliberation complete.\nObjective: Create a detailed concept for a mystery novel set in a baking show.\nStrategy: First, research common elements and tropes in mystery novels set in competitive environments. Then, synthesize this information to create a unique concept with detailed character profiles, red herrings, and a chapter outline.\nRisk: green\nSubtasks: 2\nTokens: 2005",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtqwy6e4otk",
-    "type": "deliberate",
-    "label": "Deliberate: Plan a 9-day whisky and wilderness tour through the Scottish Highlands and Islan",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtqwy601wig",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:19:07.910Z",
-    "updatedAt": "2026-03-16T22:20:01.165Z",
-    "output": "Deliberation complete.\nObjective: Plan a detailed 9-day whisky and wilderness tour through the Scottish Highlands and Islands.\nStrategy: Conduct web research to gather current information on each component of the tour. Synthesize these findings into a detailed, day-by-day itinerary that includes travel logistics, accommodation, and activity recommendations. Ensure all information is up-to-date and includes local cultural insights.\nRisk: green\nSubtasks: 2\nTokens: 2526",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtqwy47hsuq",
-    "type": "deliberate",
-    "label": "Deliberate: Design a comprehensive thoracic spine mobility program for desk workers. Include",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtqwy3th6b0",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:19:07.831Z",
-    "updatedAt": "2026-03-16T22:19:54.228Z",
-    "output": "Deliberation complete.\nObjective: Design a thoracic spine mobility program tailored for desk workers.\nStrategy: Conduct research to gather current best practices and effective exercises for thoracic spine mobility. Synthesize this information into a structured program that includes detailed exercise sequences and integration into daily routines for desk workers.\nRisk: green\nSubtasks: 2\nTokens: 2440",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtqwy1yf8hp",
-    "type": "deliberate",
-    "label": "Deliberate: Create a guide to managing technical interviews as a candidate at Staff+ level. ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtqwy1l7axh",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:19:07.750Z",
-    "updatedAt": "2026-03-16T22:19:46.914Z",
-    "output": "Deliberation complete.\nObjective: Create a comprehensive guide for managing technical interviews at the Staff+ level, focusing on system design, leadership behavior questions, and negotiation strategies.\nStrategy: First, conduct web research to gather current best practices and frameworks for system design interviews, leadership questions, and negotiation strategies at the Staff+ level. Then, synthesize this information into a structured guide with actionable steps and examples.\nRisk: green\nSubtasks: 2\nTokens: 2173",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtqwxwpv0p3",
-    "type": "deliberate",
-    "label": "Deliberate: Research the best home cold brew coffee makers. Compare Toddy Cold Brew System, ",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtqwxwc7hcd",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T22:19:07.561Z",
-    "updatedAt": "2026-03-16T22:19:39.381Z",
-    "output": "Deliberation complete.\nObjective: Compare three home cold brew coffee makers based on specific criteria.\nStrategy: First, conduct web research to gather current information and reviews on the Toddy Cold Brew System, OXO Good Grips, and Filtron. Then, synthesize the research into a structured comparison report, highlighting the pros and cons of each based on the specified criteria.\nRisk: green\nSubtasks: 2\nTokens: 2223",
     "error": null,
     "filesWritten": []
   }

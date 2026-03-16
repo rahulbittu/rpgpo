@@ -1,0 +1,28 @@
+# Subtask Output — Research RMD Changes under SECURE Act 2.0
+## Model: sonar
+## Stage: research
+## Date: 2026-03-16
+
+## Finding 1: IRS Announcement 2026-7 Delays RMD Regulations to No Earlier Than 2027
+IRS Announcement 2026-7, issued in early 2026, delays the effective date of certain proposed RMD regulations under SECURE 2.0 from the 2026 distribution calendar year to no earlier than six months after final regulations are published in the Federal Register, anticipated no earlier than 2027. This follows July 2024 proposed regulations with an initial applicability date of January 1, 2025, extended previously by Announcement 2025-2 due to industry feedback on implementation feasibility. Taxpayers must apply a reasonable, good-faith interpretation of SECURE 2.0 statutes until final rules take effect.[1][4][5]  
+**Source:** https://www.currentfederaltaxdevelopments.com/blog/2026/2/23/update-on-required-minimum-distribution-regulations-impact-of-irs-announcement-2026-7  
+**Source:** https://www.jdsupra.com/legalnews/the-ongoing-secure-saga-irs-grants-5051350/  
+**Source:** https://www.boutwellfay.com/post/new-rmd-regulations-delayed-until-2027
+
+## Finding 2: RMD Starting Age Changes
+SECURE 2.0 raised the RMD starting age from 72 to 73 for individuals reaching age 72 after December 31, 2022 (effective January 1, 2023), and further to 75 for those reaching age 74 after December 31, 2032 (effective 2033). First RMD is due by April 1 of the year following the applicable age, with subsequent RMDs by December 31 annually; delaying the first may trigger two distributions in one tax year.[2]  
+**Source:** https://www.irafinancial.com/blog/solo-401k-rmd-rules-secure-act-2-0/
+
+## Finding 3: Excise Tax Reduction for Missed RMDs
+SECURE 2.0 reduced the Section 4974 excise tax on missed RMDs from 25% to 10% if corrected within two years; proposed §1.401(a)(9)-5(g)(2)(iv) excludes corrective distributions from satisfying the current year's RMD, requiring separate calculation and distribution.[1]  
+**Source:** https://www.currentfederaltaxdevelopments.com/blog/2026/2/23/update-on-required-minimum-distribution-regulations-impact-of-irs-announcement-2026-7
+
+## Finding 4: Exclusion of Designated Roth Accounts from Lifetime RMDs
+Under SECURE 2.0, designated Roth accounts in employer plans (e.g., Solo 401(k)) are exempt from lifetime RMDs starting January 1, 2024; proposed §1.401(a)(9)-5(g)(2)(iii) states Roth distributions do not count toward overall RMD satisfaction, which must come from pre-tax balances, with Roth amounts rollover-eligible to Roth IRAs.[1][2]  
+**Source:** https://www.currentfederaltaxdevelopments.com/blog/2026/2/23/update-on-required-minimum-distribution-regulations-impact-of-irs-announcement-2026-7  
+**Source:** https://www.irafinancial.com/blog/solo-401k-rmd-rules-secure-act-2-0/
+
+## Finding 5: Inherited IRA/401(k) Rules for Non-Spouse Beneficiaries
+SECURE 2.0 enforces a 10-year full distribution rule for most non-spouse beneficiaries (e.g., adult children) starting 2026, with annual RMDs required during the window if the decedent had begun RMDs; eligible designated beneficiaries (minors until majority, disabled/chronically ill, or not more than 10 years younger than decedent) may use life expectancy payments. Penalties apply for non-compliance; spouses and certain others retain stretch options.[2][3]  
+**Source:** https://www.irafinancial.com/blog/solo-401k-rmd-rules-secure-act-2-0/  
+**Source:** https://gravislaw.com/tax-law/secure-2-0-inherited-ira-rules-2026/
