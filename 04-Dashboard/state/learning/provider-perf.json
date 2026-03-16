@@ -7,94 +7,14 @@
     },
     "providerId": "perplexity",
     "ewma": {
-      "n": 414,
-      "lastTimestamp": 1773698676728,
-      "latencyMsEwma": 673.0555116710333,
+      "n": 422,
+      "lastTimestamp": 1773699148865,
+      "latencyMsEwma": 717.6084825929546,
       "successRateEwma": 0.9999999999999998,
       "qualityEwma": 0.8000000000000002,
-      "costPerTokenEwma": 1.516979683594057e-30
+      "costPerTokenEwma": 2.5450695819269162e-31
     },
     "lastSamples": [
-      {
-        "timestamp": 1773688135335,
-        "providerId": "perplexity",
-        "latencyMs": 589,
-        "inputTokens": 499,
-        "outputTokens": 679,
-        "totalCostUsd": 0,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773688170133,
-        "providerId": "perplexity",
-        "latencyMs": 853,
-        "inputTokens": 515,
-        "outputTokens": 1191,
-        "totalCostUsd": 0,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773688183556,
-        "providerId": "perplexity",
-        "latencyMs": 631,
-        "inputTokens": 512,
-        "outputTokens": 750,
-        "totalCostUsd": 0,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773688240706,
-        "providerId": "perplexity",
-        "latencyMs": 779.5,
-        "inputTokens": 518,
-        "outputTokens": 1041,
-        "totalCostUsd": 0,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773688251021,
-        "providerId": "perplexity",
-        "latencyMs": 497,
-        "inputTokens": 543,
-        "outputTokens": 451,
-        "totalCostUsd": 0,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773688268733,
-        "providerId": "perplexity",
-        "latencyMs": 420,
-        "inputTokens": 498,
-        "outputTokens": 342,
-        "totalCostUsd": 0,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773688285919,
-        "providerId": "perplexity",
-        "latencyMs": 788,
-        "inputTokens": 529,
-        "outputTokens": 1047,
-        "totalCostUsd": 0,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773689217804,
-        "providerId": "perplexity",
-        "latencyMs": 1150.5,
-        "inputTokens": 547,
-        "outputTokens": 1754,
-        "totalCostUsd": 0,
-        "success": true,
-        "qualityScore": 0.8
-      },
       {
         "timestamp": 1773689265915,
         "providerId": "perplexity",
@@ -314,6 +234,86 @@
         "totalCostUsd": 0,
         "success": true,
         "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699032749,
+        "providerId": "perplexity",
+        "latencyMs": 562.5,
+        "inputTokens": 496,
+        "outputTokens": 629,
+        "totalCostUsd": 0,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699056539,
+        "providerId": "perplexity",
+        "latencyMs": 679.5,
+        "inputTokens": 513,
+        "outputTokens": 846,
+        "totalCostUsd": 0,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699086904,
+        "providerId": "perplexity",
+        "latencyMs": 798.5,
+        "inputTokens": 531,
+        "outputTokens": 1066,
+        "totalCostUsd": 0,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699094498,
+        "providerId": "perplexity",
+        "latencyMs": 571.5,
+        "inputTokens": 537,
+        "outputTokens": 606,
+        "totalCostUsd": 0,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699109516,
+        "providerId": "perplexity",
+        "latencyMs": 883.5,
+        "inputTokens": 525,
+        "outputTokens": 1242,
+        "totalCostUsd": 0,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699120117,
+        "providerId": "perplexity",
+        "latencyMs": 734,
+        "inputTokens": 499,
+        "outputTokens": 969,
+        "totalCostUsd": 0,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699129870,
+        "providerId": "perplexity",
+        "latencyMs": 570,
+        "inputTokens": 497,
+        "outputTokens": 643,
+        "totalCostUsd": 0,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699148865,
+        "providerId": "perplexity",
+        "latencyMs": 853.5,
+        "inputTokens": 498,
+        "outputTokens": 1209,
+        "totalCostUsd": 0,
+        "success": true,
+        "qualityScore": 0.8
       }
     ]
   },
@@ -325,34 +325,14 @@
     },
     "providerId": "openai",
     "ewma": {
-      "n": 314,
-      "lastTimestamp": 1773698721314,
-      "latencyMsEwma": 796.7937668544944,
+      "n": 316,
+      "lastTimestamp": 1773699191507,
+      "latencyMsEwma": 794.0280107868764,
       "successRateEwma": 0.9999999999999998,
       "qualityEwma": 0.8000000000000002,
-      "costPerTokenEwma": 0.000006099022799852827
+      "costPerTokenEwma": 0.000006149604384108879
     },
     "lastSamples": [
-      {
-        "timestamp": 1773686885941,
-        "providerId": "openai",
-        "latencyMs": 778,
-        "inputTokens": 732,
-        "outputTokens": 824,
-        "totalCostUsd": 0.010069999999999999,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773687306687,
-        "providerId": "openai",
-        "latencyMs": 807,
-        "inputTokens": 775,
-        "outputTokens": 839,
-        "totalCostUsd": 0.0103275,
-        "success": true,
-        "qualityScore": 0.8
-      },
       {
         "timestamp": 1773687347203,
         "providerId": "openai",
@@ -632,6 +612,26 @@
         "totalCostUsd": 0.0082775,
         "success": true,
         "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699161206,
+        "providerId": "openai",
+        "latencyMs": 820.5,
+        "inputTokens": 729,
+        "outputTokens": 912,
+        "totalCostUsd": 0.010942499999999999,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699191507,
+        "providerId": "openai",
+        "latencyMs": 764,
+        "inputTokens": 836,
+        "outputTokens": 692,
+        "totalCostUsd": 0.00901,
+        "success": true,
+        "qualityScore": 0.8
       }
     ]
   },
@@ -643,34 +643,14 @@
     },
     "providerId": "perplexity",
     "ewma": {
-      "n": 773,
-      "lastTimestamp": 1773698628181,
-      "latencyMsEwma": 719.5799489912596,
+      "n": 775,
+      "lastTimestamp": 1773699065175,
+      "latencyMsEwma": 657.9711673544061,
       "successRateEwma": 0.9999999999999998,
       "qualityEwma": 0.8000000000000002,
       "costPerTokenEwma": 0
     },
     "lastSamples": [
-      {
-        "timestamp": 1773689231485,
-        "providerId": "perplexity",
-        "latencyMs": 715.5,
-        "inputTokens": 530,
-        "outputTokens": 901,
-        "totalCostUsd": 0,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773689245768,
-        "providerId": "perplexity",
-        "latencyMs": 921.5,
-        "inputTokens": 562,
-        "outputTokens": 1281,
-        "totalCostUsd": 0,
-        "success": true,
-        "qualityScore": 0.8
-      },
       {
         "timestamp": 1773689310874,
         "providerId": "perplexity",
@@ -947,6 +927,26 @@
         "latencyMs": 550,
         "inputTokens": 547,
         "outputTokens": 553,
+        "totalCostUsd": 0,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699041523,
+        "providerId": "perplexity",
+        "latencyMs": 641.5,
+        "inputTokens": 535,
+        "outputTokens": 748,
+        "totalCostUsd": 0,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699065175,
+        "providerId": "perplexity",
+        "latencyMs": 474,
+        "inputTokens": 560,
+        "outputTokens": 388,
         "totalCostUsd": 0,
         "success": true,
         "qualityScore": 0.8
@@ -1631,94 +1631,14 @@
     },
     "providerId": "openai",
     "ewma": {
-      "n": 856,
-      "lastTimestamp": 1773698791383,
-      "latencyMsEwma": 777.7814017104339,
+      "n": 864,
+      "lastTimestamp": 1773699267332,
+      "latencyMsEwma": 819.0240843327874,
       "successRateEwma": 0.9999999999999998,
       "qualityEwma": 0.8000000000000002,
-      "costPerTokenEwma": 0.000006282518132515667
+      "costPerTokenEwma": 0.00000638536477582524
     },
     "lastSamples": [
-      {
-        "timestamp": 1773689835892,
-        "providerId": "openai",
-        "latencyMs": 708.5,
-        "inputTokens": 715,
-        "outputTokens": 702,
-        "totalCostUsd": 0.0088075,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773689845298,
-        "providerId": "openai",
-        "latencyMs": 729,
-        "inputTokens": 759,
-        "outputTokens": 699,
-        "totalCostUsd": 0.0088875,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773689859114,
-        "providerId": "openai",
-        "latencyMs": 853.5,
-        "inputTokens": 787,
-        "outputTokens": 920,
-        "totalCostUsd": 0.0111675,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773689875970,
-        "providerId": "openai",
-        "latencyMs": 731.5,
-        "inputTokens": 674,
-        "outputTokens": 789,
-        "totalCostUsd": 0.009575,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773689885993,
-        "providerId": "openai",
-        "latencyMs": 767.5,
-        "inputTokens": 754,
-        "outputTokens": 781,
-        "totalCostUsd": 0.009695,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773690280457,
-        "providerId": "openai",
-        "latencyMs": 690.5,
-        "inputTokens": 704,
-        "outputTokens": 677,
-        "totalCostUsd": 0.00853,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773690292711,
-        "providerId": "openai",
-        "latencyMs": 691.5,
-        "inputTokens": 714,
-        "outputTokens": 669,
-        "totalCostUsd": 0.008475,
-        "success": true,
-        "qualityScore": 0.8
-      },
-      {
-        "timestamp": 1773690320816,
-        "providerId": "openai",
-        "latencyMs": 754.5,
-        "inputTokens": 694,
-        "outputTokens": 815,
-        "totalCostUsd": 0.009885,
-        "success": true,
-        "qualityScore": 0.8
-      },
       {
         "timestamp": 1773690332986,
         "providerId": "openai",
@@ -1936,6 +1856,86 @@
         "inputTokens": 715,
         "outputTokens": 667,
         "totalCostUsd": 0.0084575,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699169629,
+        "providerId": "openai",
+        "latencyMs": 731.5,
+        "inputTokens": 824,
+        "outputTokens": 639,
+        "totalCostUsd": 0.00845,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699182655,
+        "providerId": "openai",
+        "latencyMs": 761,
+        "inputTokens": 771,
+        "outputTokens": 751,
+        "totalCostUsd": 0.0094375,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699202540,
+        "providerId": "openai",
+        "latencyMs": 903,
+        "inputTokens": 779,
+        "outputTokens": 1027,
+        "totalCostUsd": 0.0122175,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699213684,
+        "providerId": "openai",
+        "latencyMs": 855.5,
+        "inputTokens": 761,
+        "outputTokens": 950,
+        "totalCostUsd": 0.0114025,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699226387,
+        "providerId": "openai",
+        "latencyMs": 837,
+        "inputTokens": 888,
+        "outputTokens": 786,
+        "totalCostUsd": 0.01008,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699238413,
+        "providerId": "openai",
+        "latencyMs": 740.5,
+        "inputTokens": 717,
+        "outputTokens": 764,
+        "totalCostUsd": 0.0094325,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699250363,
+        "providerId": "openai",
+        "latencyMs": 852.5,
+        "inputTokens": 826,
+        "outputTokens": 879,
+        "totalCostUsd": 0.010855,
+        "success": true,
+        "qualityScore": 0.8
+      },
+      {
+        "timestamp": 1773699267332,
+        "providerId": "openai",
+        "latencyMs": 859,
+        "inputTokens": 774,
+        "outputTokens": 944,
+        "totalCostUsd": 0.011375,
         "success": true,
         "qualityScore": 0.8
       }
