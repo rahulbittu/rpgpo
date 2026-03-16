@@ -31,19 +31,19 @@ function uid() { return 't_' + Date.now().toString(36) + Math.random().toString(
 function stid() { return 'st_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
 var DOMAIN_KEYWORDS = {
     topranker: ['topranker', 'leaderboard', 'rankings', 'local business', 'expo', 'react native'],
-    careeregine: ['career', 'resume', 'job', 'salary', 'hiring', 'interview', 'data engineer', 'job search', 'job market', 'compensation'],
+    careeregine: ['career', 'resume', 'salary', 'hiring', 'interview', 'data engineer', 'job search', 'job market', 'compensation', 'engineering manager', 'staff engineer', 'promotion', 'personal brand', 'linkedin', 'mentoring'],
     founder2founder: ['founder', 'f2f', 'community'],
-    wealthresearch: ['wealth', 'investment', 'finance', 'portfolio', 'passive income', 'side hustle', 'side project', 'income ideas', 'money'],
+    wealthresearch: ['wealth', 'investment', 'finance', 'portfolio', 'passive income', 'side hustle', 'money', 'tax', 'retirement', 'insurance', 'savings', 'roth ira', '401k', 'estate planning', 'angel investing', 'dividend', 'financial plan', 'net worth'],
     newsroom: ['news', 'journalism', 'media', 'headline', 'trending', 'current events', 'breaking'],
-    writing: ['email', 'draft', 'write', 'memo', 'prd', 'spec', 'sop', 'runbook', 'document', 'proposal', 'letter', 'rewrite', 'summarize', 'executive summary'],
-    research: ['research', 'analyze', 'compare', 'investigate', 'deep dive', 'market analysis', 'competitive analysis', 'assessment'],
-    learning: ['teach', 'explain', 'tutor', 'learn', 'study plan', 'quiz', 'course', 'curriculum', 'master'],
-    shopping: ['buy', 'purchase', 'compare products', 'recommendation', 'shopping', 'best price', 'review products'],
-    travel: ['travel', 'trip', 'flight', 'hotel', 'itinerary', 'relocation', 'moving to'],
-    health: ['fitness', 'workout', 'diet', 'health', 'wellness', 'exercise', 'nutrition', 'sleep'],
-    screenwriting: ['screenplay', 'script', 'film', 'movie'],
-    music: ['music', 'song', 'album', 'production'],
-    personalops: ['plan my week', 'schedule', 'time block', 'calendar', 'routine', 'habit'],
+    writing: ['write a guide', 'write a complete', 'draft', 'memo', 'prd', 'spec', 'sop', 'runbook', 'document', 'proposal', 'letter', 'rewrite', 'summarize', 'executive summary', 'concept for a', 'outline for a', 'treatment for a', 'technical writing'],
+    research: ['research', 'analyze', 'compare', 'investigate', 'deep dive', 'market analysis', 'competitive analysis', 'assessment', 'best home', 'best budget', 'best portable', 'best smart'],
+    learning: ['teach', 'explain how', 'explain the', 'tutor', 'learn', 'study plan', 'quiz', 'course', 'curriculum', 'how does', 'how do', 'internals of', 'works under'],
+    shopping: ['buy', 'purchase', 'compare products', 'recommendation', 'shopping', 'best price'],
+    travel: ['travel', 'trip', 'flight', 'hotel', 'itinerary', 'relocation', 'moving to', 'tour through', 'road trip', 'safari'],
+    health: ['fitness', 'workout', 'diet', 'health protocol', 'wellness', 'exercise', 'nutrition', 'sleep', 'mobility', 'stretching', 'rehabilitation', 'prehab', 'posture', 'recovery protocol'],
+    screenwriting: ['screenplay', 'script', 'film', 'movie', 'series concept', 'pilot episode', 'narrative game', 'board game', 'podcast series', 'documentary'],
+    music: ['music', 'song', 'album', 'production', 'musical'],
+    personalops: ['plan my week', 'schedule', 'time block', 'calendar', 'routine', 'habit', 'morning routine', 'meal prep', 'productivity', 'deep work', 'goal setting'],
 };
 // Resolve domain aliases from the intake form (e.g., 'career' → 'careeregine')
 var INTAKE_ALIASES = {
