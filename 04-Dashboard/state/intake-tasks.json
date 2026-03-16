@@ -1,5 +1,674 @@
 [
   {
+    "task_id": "t_mmtf6mm8zpzm",
+    "title": "Design a comprehensive system for managing personal projects and side quests. In",
+    "raw_request": "Design a comprehensive system for managing personal projects and side quests. Include project intake criteria, energy-based prioritization, momentum tracking, graceful project parking, and annual project portfolio review.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:50:44.096Z",
+    "updated_at": "2026-03-16T16:57:04.596Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:52:09.607Z",
+      "interpreted_objective": "Design a system to manage personal projects with criteria for intake, prioritization, tracking, parking, and review.",
+      "expected_outcome": "A comprehensive report detailing a system for managing personal projects, including specific processes and criteria for each aspect.",
+      "key_unknowns": [
+        "Specific criteria for project intake",
+        "Methods for energy-based prioritization",
+        "Techniques for momentum tracking",
+        "Processes for graceful project parking",
+        "Criteria for annual project portfolio review"
+      ],
+      "recommended_strategy": "Conduct research to identify best practices and methodologies for managing personal projects. Synthesize findings into a structured system that addresses each aspect of the task request. Ensure the system aligns with Rahul's priorities and risk tolerance.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Project Management",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of best practices and methodologies for managing personal projects with citations.",
+          "prompt": "Search the web for current, specific information about best practices and methodologies for managing personal projects. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Project Management System",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report detailing a system for managing personal projects, including criteria for intake, prioritization, tracking, parking, and review.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a comprehensive system to manage personal projects. Include specific criteria and processes for project intake, energy-based prioritization, momentum tracking, graceful project parking, and annual project portfolio review.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-project-management-system.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2460
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtf6mjy8s5x",
+    "title": "Create a comprehensive guide to kitchen pantry meal planning. Include pantry sta",
+    "raw_request": "Create a comprehensive guide to kitchen pantry meal planning. Include pantry staples inventory, one-pot meal templates, batch cooking strategy, freezer meal prep, and emergency dinner solutions from shelf-stable ingredients.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:50:44.014Z",
+    "updated_at": "2026-03-16T16:56:48.571Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:52:03.871Z",
+      "interpreted_objective": "Create a comprehensive guide to kitchen pantry meal planning.",
+      "expected_outcome": "A detailed guide that includes pantry staples inventory, one-pot meal templates, batch cooking strategy, freezer meal prep, and emergency dinner solutions.",
+      "key_unknowns": [
+        "Current popular pantry staples",
+        "Effective one-pot meal templates",
+        "Best practices for batch cooking",
+        "Freezer meal prep techniques",
+        "Shelf-stable ingredients for emergency meals"
+      ],
+      "recommended_strategy": "First, conduct research to gather current information on pantry staples, meal templates, and cooking strategies. Then, synthesize this information into a comprehensive guide. The guide should be practical, with actionable steps for each section.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Pantry Meal Planning Components",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on pantry staples, meal templates, batch cooking, freezer prep, and emergency meals.",
+          "prompt": "Search the web for current, specific information about kitchen pantry meal planning. Include details on pantry staples inventory, one-pot meal templates, batch cooking strategies, freezer meal prep, and emergency dinner solutions from shelf-stable ingredients. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Pantry Meal Planning Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide to kitchen pantry meal planning, including actionable steps and strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide to kitchen pantry meal planning. Include sections on pantry staples inventory, one-pot meal templates, batch cooking strategy, freezer meal prep, and emergency dinner solutions from shelf-stable ingredients. Provide specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-kitchen-pantry-meal-planning-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2489
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtf6mh3mvnw",
+    "title": "Write a complete concept for a documentary about the hidden infrastructure that ",
+    "raw_request": "Write a complete concept for a documentary about the hidden infrastructure that keeps modern cities running. Include 8 episode topics (water, power, waste, data, transit, food, emergency, communication) with visual style guide.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:50:43.911Z",
+    "updated_at": "2026-03-16T16:56:34.419Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:51:57.344Z",
+      "interpreted_objective": "Create a detailed concept for a documentary series on the hidden infrastructure of modern cities.",
+      "expected_outcome": "A comprehensive document outlining the concept, episode topics, and visual style guide for the documentary.",
+      "key_unknowns": [
+        "Specific visual style preferences for the documentary",
+        "Target audience for the documentary",
+        "Distribution platform considerations"
+      ],
+      "recommended_strategy": "First, research existing documentaries and resources on urban infrastructure to gather insights and inspiration. Then, synthesize this information to outline eight episode topics, ensuring each is distinct and engaging. Finally, develop a visual style guide that aligns with the documentary's themes and objectives.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Existing Documentaries and Resources",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report summarizing insights and inspiration from existing documentaries and resources on urban infrastructure.",
+          "prompt": "Search the web for current information about documentaries and resources related to urban infrastructure. Include real names, dates, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Outline Episode Topics and Visual Style Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed document outlining eight episode topics and a visual style guide for the documentary.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed concept for a documentary series on urban infrastructure. Include eight episode topics (water, power, waste, data, transit, food, emergency, communication) and a visual style guide.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2037
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtf6mfh9anl",
+    "title": "Plan a 10-day art and architecture tour through Rome, Florence, and Venice. Incl",
+    "raw_request": "Plan a 10-day art and architecture tour through Rome, Florence, and Venice. Include Vatican Museums strategy, Uffizi Gallery timing, Venice Biennale access, hidden gem churches, and authentic neighborhood food walks.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:50:43.853Z",
+    "updated_at": "2026-03-16T16:56:18.333Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:51:49.461Z",
+      "interpreted_objective": "Plan a comprehensive 10-day art and architecture tour through Rome, Florence, and Venice, including key cultural sites and local experiences.",
+      "expected_outcome": "A detailed itinerary that includes strategic visits to major attractions, hidden gems, and authentic local experiences.",
+      "key_unknowns": [
+        "Optimal timing for visiting Uffizi Gallery and Vatican Museums",
+        "Access details for Venice Biennale",
+        "Locations of hidden gem churches",
+        "Authentic neighborhood food walk recommendations"
+      ],
+      "recommended_strategy": "First, gather current information on key attractions and local experiences in Rome, Florence, and Venice. Then, synthesize this data into a structured 10-day itinerary that balances major sites with local culture. Ensure the plan includes strategic timing and access details for popular attractions.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Key Attractions and Local Experiences",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on visiting Vatican Museums, Uffizi Gallery, Venice Biennale, hidden gem churches, and local food walks.",
+          "prompt": "Search the web for current, specific information about visiting the Vatican Museums, Uffizi Gallery, Venice Biennale, hidden gem churches, and authentic neighborhood food walks in Rome, Florence, and Venice. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize 10-Day Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 10-day itinerary for an art and architecture tour through Rome, Florence, and Venice.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a 10-day art and architecture tour itinerary through Rome, Florence, and Venice. Include strategic visits to the Vatican Museums, Uffizi Gallery, Venice Biennale, hidden gem churches, and authentic neighborhood food walks with specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-art-architecture-tour.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2519
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtf6mdwgpfp",
+    "title": "Design a comprehensive knee health and prehabilitation program for runners over ",
+    "raw_request": "Design a comprehensive knee health and prehabilitation program for runners over 35. Include VMO strengthening, IT band management, patellofemoral syndrome prevention, running form corrections, and cross-training integration.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:50:43.796Z",
+    "updated_at": "2026-03-16T16:55:59.421Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:51:40.753Z",
+      "interpreted_objective": "Create a detailed knee health and prehabilitation program for runners over 35, focusing on specific strengthening, management, and prevention strategies.",
+      "expected_outcome": "A comprehensive, evidence-based program document that includes exercises, preventive measures, and cross-training tips for knee health in older runners.",
+      "key_unknowns": [
+        "Specific exercises for VMO strengthening",
+        "Effective IT band management techniques",
+        "Patellofemoral syndrome prevention strategies",
+        "Optimal running form corrections",
+        "Cross-training methods suitable for runners over 35"
+      ],
+      "recommended_strategy": "Conduct research on current best practices in knee health for runners over 35. Synthesize findings into a structured program that includes specific exercises and preventive strategies. Ensure the program is actionable and includes safety disclaimers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Knee Health Strategies for Runners Over 35",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current, evidence-based strategies and exercises for knee health in older runners, with sources.",
+          "prompt": "Search the web for current, specific information about knee health and prehabilitation strategies for runners over 35. Focus on VMO strengthening, IT band management, patellofemoral syndrome prevention, running form corrections, and cross-training integration. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Knee Health Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable knee health and prehabilitation program document for runners over 35.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable knee health and prehabilitation program for runners over 35. Include specific exercises for VMO strengthening, IT band management techniques, patellofemoral syndrome prevention strategies, running form corrections, and cross-training methods. Ensure the program is evidence-based and includes safety disclaimers.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-knee-health-program.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1968
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmtf6mcg3qfo",
+    "title": "Create a guide to managing imposter syndrome in senior engineering roles. Includ",
+    "raw_request": "Create a guide to managing imposter syndrome in senior engineering roles. Include cognitive reframing techniques, evidence journaling, peer support structures, and distinguishing healthy humility from dysfunctional self-doubt.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:50:43.744Z",
+    "updated_at": "2026-03-16T16:55:42.441Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:51:29.803Z",
+      "interpreted_objective": "Create a comprehensive guide for managing imposter syndrome in senior engineering roles.",
+      "expected_outcome": "A detailed guide that includes cognitive reframing techniques, evidence journaling, peer support structures, and tips for distinguishing healthy humility from dysfunctional self-doubt.",
+      "key_unknowns": [
+        "Specific cognitive reframing techniques effective for engineers",
+        "Best practices for evidence journaling in a professional context",
+        "Effective peer support structures in engineering environments",
+        "How to clearly distinguish between healthy humility and dysfunctional self-doubt"
+      ],
+      "recommended_strategy": "Conduct research on managing imposter syndrome specifically in senior engineering roles, focusing on cognitive reframing, evidence journaling, peer support, and distinguishing humility from self-doubt. Synthesize findings into a structured guide with actionable strategies and examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Imposter Syndrome Management Techniques",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data on managing imposter syndrome in engineering roles, including cognitive reframing, evidence journaling, peer support, and distinguishing humility from self-doubt.",
+          "prompt": "Search the web for current, specific information about managing imposter syndrome in senior engineering roles. Focus on cognitive reframing techniques, evidence journaling, peer support structures, and distinguishing healthy humility from dysfunctional self-doubt. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Managing Imposter Syndrome",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and actionable guide on managing imposter syndrome in senior engineering roles, including specific techniques and strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for managing imposter syndrome in senior engineering roles. Include cognitive reframing techniques, evidence journaling, peer support structures, and tips for distinguishing healthy humility from dysfunctional self-doubt. Provide specific examples and strategies.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-imposter-syndrome-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1966
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmtf6m9s706h",
+    "title": "Research the best e-readers for avid readers. Compare Kindle Paperwhite Signatur",
+    "raw_request": "Research the best e-readers for avid readers. Compare Kindle Paperwhite Signature, Kobo Libra 2, and Boox Tab Mini C with library lending support, note-taking capability, PDF handling, and eye comfort features.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:50:43.648Z",
+    "updated_at": "2026-03-16T16:55:28.103Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:51:19.729Z",
+      "interpreted_objective": "Research and compare the Kindle Paperwhite Signature, Kobo Libra 2, and Boox Tab Mini C e-readers focusing on library lending support, note-taking capability, PDF handling, and eye comfort features.",
+      "expected_outcome": "A comprehensive report comparing the specified e-readers with detailed analysis on their features and capabilities.",
+      "key_unknowns": [
+        "Current specifications and features of each e-reader",
+        "User reviews and expert opinions on the e-readers",
+        "Comparative advantages and disadvantages of each model"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather detailed information and user reviews on the Kindle Paperwhite Signature, Kobo Libra 2, and Boox Tab Mini C, focusing on the specified features. Then, synthesize this information into a comparative report highlighting the strengths and weaknesses of each e-reader.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research E-Reader Features",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information and user reviews on the Kindle Paperwhite Signature, Kobo Libra 2, and Boox Tab Mini C.",
+          "prompt": "Search the web for current, specific information about the Kindle Paperwhite Signature, Kobo Libra 2, and Boox Tab Mini C. Focus on library lending support, note-taking capability, PDF handling, and eye comfort features. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize E-Reader Comparison Report",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the Kindle Paperwhite Signature, Kobo Libra 2, and Boox Tab Mini C with recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing the Kindle Paperwhite Signature, Kobo Libra 2, and Boox Tab Mini C. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-e-reader-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2216
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtf6m8csz07",
+    "title": "Explain how database indexes work internally. Cover B+ tree structure, hash inde",
+    "raw_request": "Explain how database indexes work internally. Cover B+ tree structure, hash indexes, composite index column ordering, covering indexes, partial indexes, and how to use EXPLAIN to diagnose slow queries in PostgreSQL.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:50:43.596Z",
+    "updated_at": "2026-03-16T16:55:17.735Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:51:11.644Z",
+      "interpreted_objective": "Explain the internal workings of database indexes with a focus on PostgreSQL.",
+      "expected_outcome": "A comprehensive report detailing B+ tree structures, hash indexes, composite index column ordering, covering indexes, partial indexes, and using EXPLAIN for diagnosing slow queries in PostgreSQL.",
+      "key_unknowns": [
+        "Current best practices for using EXPLAIN in PostgreSQL",
+        "Differences in performance between index types"
+      ],
+      "recommended_strategy": "Conduct research to gather detailed information on database indexing techniques and their internal workings. Then, synthesize this information into a clear, structured report that explains each concept with examples and practical insights, particularly focusing on PostgreSQL.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Database Indexing Techniques",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on B+ tree structures, hash indexes, composite index column ordering, covering indexes, partial indexes, and using EXPLAIN in PostgreSQL.",
+          "prompt": "Search the web for current, specific information about database indexing techniques including B+ tree structures, hash indexes, composite index column ordering, covering indexes, partial indexes, and how to use EXPLAIN to diagnose slow queries in PostgreSQL. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Indexing Concepts",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining database indexing concepts with examples and practical insights for PostgreSQL.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps. Explain B+ tree structures, hash indexes, composite index column ordering, covering indexes, partial indexes, and using EXPLAIN for diagnosing slow queries in PostgreSQL.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-database-indexes.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1959
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmtf6m73t4kh",
+    "title": "Create a guide to tax planning strategies for freelancers and self-employed. Inc",
+    "raw_request": "Create a guide to tax planning strategies for freelancers and self-employed. Include quarterly estimated tax calculation, business expense optimization, home office deduction, vehicle mileage tracking, and retirement account contribution timing.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:50:43.551Z",
+    "updated_at": "2026-03-16T16:55:04.569Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:51:00.357Z",
+      "interpreted_objective": "Create a comprehensive guide on tax planning strategies for freelancers and self-employed individuals.",
+      "expected_outcome": "A detailed report that includes strategies for quarterly estimated tax calculation, business expense optimization, home office deduction, vehicle mileage tracking, and retirement account contribution timing.",
+      "key_unknowns": [
+        "Current best practices and legal considerations for tax planning for freelancers",
+        "Specific tools and resources available for freelancers to optimize their tax planning"
+      ],
+      "recommended_strategy": "Conduct thorough research on current tax planning strategies for freelancers and self-employed individuals. Synthesize the findings into a structured guide that includes practical advice and actionable steps. Ensure the guide is up-to-date with current tax laws and tools.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Tax Planning Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data on tax planning strategies for freelancers, including citations.",
+          "prompt": "Search the web for current, specific information about tax planning strategies for freelancers and self-employed individuals. Include details on quarterly estimated tax calculation, business expense optimization, home office deduction, vehicle mileage tracking, and retirement account contribution timing. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Tax Planning Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on tax planning strategies for freelancers, including actionable recommendations and practical advice.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on tax planning strategies for freelancers and self-employed individuals. Include sections on quarterly estimated tax calculation, business expense optimization, home office deduction, vehicle mileage tracking, and retirement account contribution timing. Provide actionable recommendations and practical advice.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-tax-planning-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2474
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtf6m6frdqw",
+    "title": "Design a comprehensive Prometheus monitoring stack for Kubernetes. Include metri",
+    "raw_request": "Design a comprehensive Prometheus monitoring stack for Kubernetes. Include metric types, recording rules, alerting rules with severity tiers, Grafana dashboard design principles, and SLO-based alerting with burn rate windows.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:50:43.527Z",
+    "updated_at": "2026-03-16T16:54:49.051Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:50:51.198Z",
+      "interpreted_objective": "Design a comprehensive Prometheus monitoring stack for Kubernetes with detailed components and strategies.",
+      "expected_outcome": "A detailed report outlining the Prometheus monitoring stack design, including metric types, recording rules, alerting rules, Grafana dashboard design principles, and SLO-based alerting.",
+      "key_unknowns": [
+        "Specific Kubernetes environment requirements",
+        "Existing monitoring tools and integrations",
+        "Current best practices for Prometheus and Grafana"
+      ],
+      "recommended_strategy": "First, research the current best practices and components of a Prometheus monitoring stack for Kubernetes. Then, synthesize this information into a comprehensive report that includes metric types, recording rules, alerting rules with severity tiers, Grafana dashboard design principles, and SLO-based alerting strategies.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Prometheus Monitoring Stack",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and components for a Prometheus monitoring stack in Kubernetes.",
+          "prompt": "Search the web for current best practices and components for designing a Prometheus monitoring stack for Kubernetes. Include details on metric types, recording rules, alerting rules with severity tiers, Grafana dashboard design principles, and SLO-based alerting with burn rate windows. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Prometheus Monitoring Stack Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report on the Prometheus monitoring stack design for Kubernetes.",
+          "prompt": "Based on the research results, synthesize a comprehensive report detailing the design of a Prometheus monitoring stack for Kubernetes. Include metric types, recording rules, alerting rules with severity tiers, Grafana dashboard design principles, and SLO-based alerting with burn rate windows.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-prometheus-monitoring-stack.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2503
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
     "task_id": "t_mmtet51i7dpc",
     "title": "Design a comprehensive digital minimalism implementation plan. Include phone aud",
     "raw_request": "Design a comprehensive digital minimalism implementation plan. Include phone audit methodology, notification triage, app alternatives for common time sinks, social media boundaries, and attention restoration practices.",
