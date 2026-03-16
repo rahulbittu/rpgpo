@@ -1,5 +1,409 @@
 [
   {
+    "task_id": "t_mmsj8wz9261s",
+    "title": "Plan a 7-day healthy eating reset focused on whole foods. Include daily menus, g",
+    "raw_request": "Plan a 7-day healthy eating reset focused on whole foods. Include daily menus, grocery list, prep schedule, and expected benefits timeline.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:56:43.125Z",
+    "updated_at": "2026-03-16T01:58:52.489Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:57:12.118Z",
+      "interpreted_objective": "Create a 7-day whole foods eating plan with menus, grocery list, prep schedule, and benefits timeline.",
+      "expected_outcome": "A comprehensive, actionable plan that users can follow to reset their eating habits with whole foods.",
+      "key_unknowns": [
+        "Specific dietary preferences or restrictions of the target audience",
+        "Exact format and depth of detail expected for each component (menus, grocery list, etc.)"
+      ],
+      "recommended_strategy": "Conduct research to gather current, evidence-based information on whole foods diets and their benefits. Then, synthesize this information into a structured 7-day plan with specific menus, a grocery list, a prep schedule, and a timeline of expected benefits.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Whole Foods Diet",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, evidence-based information on whole foods diets, including benefits and meal ideas.",
+          "prompt": "Search the web for current, evidence-based information on whole foods diets. Include details on the benefits, meal ideas, and any relevant studies or expert opinions. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize 7-Day Whole Foods Eating Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 7-day whole foods eating plan including daily menus, a grocery list, a prep schedule, and a timeline of expected benefits.",
+          "prompt": "Based on the research results, synthesize a 7-day whole foods eating plan. Include specific daily menus, a comprehensive grocery list, a prep schedule, and a timeline of expected benefits. Ensure the plan is actionable and evidence-based.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-whole-foods-plan.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1907
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsj8vf0ehbr",
+    "title": "Create a technical writing style guide for API documentation. Include code examp",
+    "raw_request": "Create a technical writing style guide for API documentation. Include code examples formatting, error message writing, and changelog conventions.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:56:41.100Z",
+    "updated_at": "2026-03-16T01:58:43.064Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:57:07.690Z",
+      "interpreted_objective": "Create a comprehensive technical writing style guide for API documentation.",
+      "expected_outcome": "A detailed style guide that includes guidelines for code examples formatting, error message writing, and changelog conventions.",
+      "key_unknowns": [
+        "Specific formatting preferences for code examples",
+        "Preferred tone and style for error messages",
+        "Conventions for documenting changelogs"
+      ],
+      "recommended_strategy": "Research best practices in API documentation to gather insights on code examples formatting, error message writing, and changelog conventions. Synthesize these findings into a clear, actionable style guide tailored for technical writers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research API Documentation Best Practices",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices for API documentation, focusing on code examples, error messages, and changelogs.",
+          "prompt": "Search the web for current best practices in API documentation, specifically focusing on formatting code examples, writing error messages, and documenting changelogs. Include real examples, guidelines, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize API Documentation Style Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive style guide for API documentation including sections on code examples formatting, error message writing, and changelog conventions.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed style guide for API documentation. Include specific guidelines for formatting code examples, writing error messages, and documenting changelogs. Ensure the guide is clear and actionable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2021
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmsj8tutufix",
+    "title": "Teach me about distributed lock implementations. Compare Redis Redlock, ZooKeepe",
+    "raw_request": "Teach me about distributed lock implementations. Compare Redis Redlock, ZooKeeper, and etcd. Include failure modes and when each is appropriate.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:56:39.077Z",
+    "updated_at": "2026-03-16T01:58:33.311Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:56:48.137Z",
+      "interpreted_objective": "Provide a comparative analysis of distributed lock implementations: Redis Redlock, ZooKeeper, and etcd, including their failure modes and appropriate use cases.",
+      "expected_outcome": "A detailed report that compares Redis Redlock, ZooKeeper, and etcd, highlighting their failure modes and scenarios where each is most suitable.",
+      "key_unknowns": [
+        "Specific failure modes of each distributed lock implementation",
+        "Optimal use cases for each technology",
+        "Current industry trends regarding these technologies"
+      ],
+      "recommended_strategy": "Conduct research to gather detailed information on Redis Redlock, ZooKeeper, and etcd. Analyze the data to compare their features, failure modes, and use cases. Synthesize the findings into a comprehensive report.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Distributed Lock Implementations",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on Redis Redlock, ZooKeeper, and etcd, including failure modes and use cases.",
+          "prompt": "Search the web for current, specific information about distributed lock implementations: Redis Redlock, ZooKeeper, and etcd. Include details on their failure modes and scenarios where each is most appropriate. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparative Analysis",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive report comparing Redis Redlock, ZooKeeper, and etcd, detailing their failure modes and appropriate use cases.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comparative analysis of Redis Redlock, ZooKeeper, and etcd. Include their failure modes, scenarios where each is most appropriate, and any relevant industry trends.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2058
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsj8sagaudx",
+    "title": "Design a complete home office setup guide for under 1500 dollars. Include desk, ",
+    "raw_request": "Design a complete home office setup guide for under 1500 dollars. Include desk, chair, monitor, peripherals, and lighting. With specific product links and total budget.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:56:37.048Z",
+    "updated_at": "2026-03-16T01:58:26.563Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:56:43.961Z",
+      "interpreted_objective": "Create a comprehensive guide for setting up a home office under $1500, including specific product recommendations and links.",
+      "expected_outcome": "A detailed guide with specific product recommendations, links, and a total budget breakdown for a home office setup under $1500.",
+      "key_unknowns": [
+        "Current prices and availability of recommended products",
+        "Specific user preferences or constraints beyond budget"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current pricing and product information for desks, chairs, monitors, peripherals, and lighting suitable for a home office. Then, synthesize this information into a structured guide with product links and a total budget calculation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Office Products",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current product options, prices, and links for desks, chairs, monitors, peripherals, and lighting.",
+          "prompt": "Search the web for current, specific information about affordable desks, chairs, monitors, peripherals, and lighting suitable for a home office setup under $1500. Include real names, prices, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Home Office Setup Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide with specific product recommendations, links, and a total budget for a home office setup.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for setting up a home office under $1500. Include specific product names, prices, pros/cons, links, and a total budget calculation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/shopping-{date}-home-office-setup.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1901
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsj8qpkqjw3",
+    "title": "Create a comprehensive comparison of health insurance marketplace plans in Texas",
+    "raw_request": "Create a comprehensive comparison of health insurance marketplace plans in Texas for 2026. Include premium ranges, deductible tiers, and HSA eligibility.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:56:35.000Z",
+    "updated_at": "2026-03-16T01:57:56.846Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:56:40.359Z",
+      "interpreted_objective": "Create a detailed comparison of health insurance marketplace plans in Texas for 2026, focusing on premiums, deductibles, and HSA eligibility.",
+      "expected_outcome": "A comprehensive report detailing the premium ranges, deductible tiers, and HSA eligibility of health insurance marketplace plans in Texas for 2026.",
+      "key_unknowns": [
+        "Specific health insurance plans available in Texas for 2026",
+        "Premium ranges and deductible tiers for these plans",
+        "HSA eligibility criteria for these plans"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on health insurance marketplace plans in Texas for 2026, focusing on premium ranges, deductibles, and HSA eligibility. Then, synthesize this data into a structured report that provides a detailed comparison of the plans.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Health Insurance Plans in Texas for 2026",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on health insurance marketplace plans in Texas for 2026, including premium ranges, deductible tiers, and HSA eligibility.",
+          "prompt": "Search the web for current, specific information about health insurance marketplace plans in Texas for 2026. Include details on premium ranges, deductible tiers, and HSA eligibility. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Health Insurance Plan Comparison Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing health insurance marketplace plans in Texas for 2026, detailing premium ranges, deductible tiers, and HSA eligibility.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps for comparing health insurance marketplace plans in Texas for 2026, focusing on premium ranges, deductible tiers, and HSA eligibility.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-2026-texas-health-insurance-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2317
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsj6ndwnf5h",
+    "title": "Compare the top 3 database migration tools for PostgreSQL. Include Flyway, Liqui",
+    "raw_request": "Compare the top 3 database migration tools for PostgreSQL. Include Flyway, Liquibase, and golang-migrate. Cover pricing, community support, CI/CD integration, and rollback capabilities.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T01:54:57.380Z",
+    "updated_at": "2026-03-16T01:55:26.528Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T01:55:02.975Z",
+      "interpreted_objective": "Compare Flyway, Liquibase, and golang-migrate for PostgreSQL migrations.",
+      "expected_outcome": "A comprehensive comparison report covering pricing, community support, CI/CD integration, and rollback capabilities.",
+      "key_unknowns": [
+        "Current pricing models for Flyway, Liquibase, and golang-migrate",
+        "Community support metrics for each tool",
+        "CI/CD integration specifics for each tool",
+        "Rollback capabilities and limitations for each tool"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on each tool's pricing, community support, CI/CD integration, and rollback capabilities. Then, synthesize this information into a detailed comparison report with actionable insights.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Database Migration Tools",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on pricing, community support, CI/CD integration, and rollback capabilities for Flyway, Liquibase, and golang-migrate.",
+          "prompt": "Search the web for current, specific information about Flyway, Liquibase, and golang-migrate as PostgreSQL migration tools. Include details on pricing, community support, CI/CD integration, and rollback capabilities. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Comparison Report",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "openai",
+          "expected_output": "A detailed comparison report with actionable insights on Flyway, Liquibase, and golang-migrate.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing Flyway, Liquibase, and golang-migrate for PostgreSQL migrations. Include specific data on pricing, community support, CI/CD integration, and rollback capabilities, and provide concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2254
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
     "task_id": "t_mmsiuwncvv26",
     "title": "Write a 2-minute elevator pitch script for an AI-powered personal assistant prod",
     "raw_request": "Write a 2-minute elevator pitch script for an AI-powered personal assistant product. Include problem, solution, traction, and ask. For a tech-savvy investor audience.",

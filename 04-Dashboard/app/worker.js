@@ -760,12 +760,29 @@ SEARCH INSTRUCTIONS (YOU HAVE LIVE WEB SEARCH — USE IT):
 - If no search results are truly available, provide your best knowledge with a clear disclaimer that it is not from live search. Do NOT just say "no results found" — always provide useful information.
 - Today's date: ${new Date().toISOString().slice(0, 10)}. Focus on information from the last 30 days unless asked otherwise.`;
     } else if (model === 'openai') {
+      // Engine-specific output structure hints
+      const engineStructure = {
+        research: 'Structure: ## Key Findings → ## Detailed Analysis → ## Recommendations → ## Sources',
+        writing: 'Structure: produce the complete document/email/spec as requested. Include word count at end.',
+        learning: 'Structure: ## Explanation (simple to complex) → ## Examples → ## Practice Questions → ## Further Reading',
+        careeregine: 'Structure: ## Key Findings → ## Recommendations → ## Action Items (numbered with timeline) → ## Resources',
+        wealthresearch: 'Structure: ## Analysis (with specific numbers) → ## Comparison → ## Recommendation → ## Risks & Disclaimers',
+        shopping: 'Structure: ## Comparison Table → ## Top Pick & Why → ## Detailed Reviews → ## Current Pricing',
+        health: 'Structure: ## Plan (day-by-day or week-by-week) → ## Evidence Basis → ## Progression → ## Safety Notes',
+        travel: 'Structure: ## Itinerary (day-by-day) → ## Costs & Budget → ## Logistics → ## Tips',
+        personalops: 'Structure: ## Plan → ## Implementation Steps → ## Tools/Resources → ## Review Schedule',
+        screenwriting: 'Structure: produce the creative content as requested (scene, treatment, outline, dialogue)',
+        topranker: 'Structure: ## Analysis → ## Strategy → ## Action Plan → ## Success Metrics',
+      };
+      const domain = st.domain || task.meta?.domain || 'general';
+      const structureHint = engineStructure[domain] || 'Structure: ## Key Findings → ## Detailed Analysis → ## Recommended Actions';
+
       modelRules = `
 SYNTHESIS INSTRUCTIONS:
 - You MUST use the "Prior Subtask Results" data provided below as your PRIMARY source of information.
 - Do NOT invent, hallucinate, or make up data. ONLY synthesize what was found by prior research subtasks.
 - If prior subtask results are provided, base your entire response on that data — use specific names, numbers, and sources from the research.
-- Structure as: ## Key Findings (top 3-5 actionable items) → ## Detailed Analysis → ## Recommended Actions (numbered, specific)
+- ${structureHint}
 - Every recommendation must include: what to do, why, expected outcome, and first step.
 - If no prior results are provided, state that clearly and provide only general guidance.
 - NEVER say "I cannot access real-time data" if prior subtask results contain real data — USE that data.

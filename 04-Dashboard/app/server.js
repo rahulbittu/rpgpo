@@ -3868,16 +3868,28 @@ const server = http.createServer(async (req, res) => {
       const doneSubs = subtasks.filter(s => s.status === 'done' && s.output);
       const delib = task.board_deliberation;
 
+      // Engine display name mapping
+      const engineNames = {startup:'Code & Product Engineering',writing:'Writing & Documentation',research:'Research & Analysis',learning:'Learning & Tutoring',personalops:'Scheduling & Life Operations',health:'Health & Wellness Coach',shopping:'Shopping & Buying Advisor',travel:'Travel & Relocation Planner',wealthresearch:'Personal Finance & Investing',topranker:'Startup & Business Builder',careeregine:'Career & Job Search',screenwriting:'Screenwriting & Story Development',music:'Music & Audio Creation',newsroom:'News & Intelligence',founder2founder:'Filmmaking & Video Production',home:'Home & Lifestyle Design',general:'General'};
+      const engineDisplay = engineNames[task.domain] || task.domain;
+
       if (fmt === 'json') {
         const exportData = {
-          task_id: task.task_id, title: task.title, domain: task.domain,
+          task_id: task.task_id, title: task.title,
+          engine: engineDisplay, domain: task.domain,
           status: task.status, created_at: task.created_at, updated_at: task.updated_at,
-          objective: delib?.interpreted_objective,
-          strategy: delib?.recommended_strategy,
+          board_deliberation: {
+            objective: delib?.interpreted_objective,
+            strategy: delib?.recommended_strategy,
+            risk_level: delib?.risk_level,
+          },
           subtasks: doneSubs.map(s => ({
             title: s.title, stage: s.stage, model: s.assigned_model,
             output: s.output, what_done: s.what_done,
           })),
+          quality: {
+            subtask_count: doneSubs.length,
+            total_output_chars: doneSubs.reduce((sum, s) => sum + (s.output || '').length, 0),
+          },
         };
         res.writeHead(200, {
           'Content-Type': 'application/json',
@@ -3888,7 +3900,7 @@ const server = http.createServer(async (req, res) => {
 
       // Default: markdown
       let md = `# ${task.title}\n\n`;
-      md += `**Domain:** ${task.domain} | **Status:** ${task.status} | **Date:** ${(task.created_at || '').slice(0, 10)}\n\n`;
+      md += `**Engine:** ${engineDisplay} | **Status:** ${task.status} | **Date:** ${(task.created_at || '').slice(0, 10)}\n\n`;
       if (delib) {
         md += `## Objective\n${delib.interpreted_objective}\n\n`;
         md += `## Strategy\n${delib.recommended_strategy}\n\n`;
