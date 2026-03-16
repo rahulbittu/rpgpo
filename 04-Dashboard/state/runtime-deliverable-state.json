@@ -17198,5 +17198,152 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-16T19:04:30.847Z"
+  },
+  "t_mmtkotltgixu": {
+    "task_id": "t_mmtkotltgixu",
+    "deliverable_id": "dlv_rpgpo_tmmtkotltgixu_recommendation_d61b8f61",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T19:25:04.277Z"
+  },
+  "t_mmtkotmmnq1m": {
+    "task_id": "t_mmtkotmmnq1m",
+    "deliverable_id": "dlv_rpgpo_tmmtkotmmnq1m_document_31599897",
+    "engine_id": "general",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T19:25:15.028Z"
+  },
+  "t_mmtkotns5o80": {
+    "task_id": "t_mmtkotns5o80",
+    "deliverable_id": "dlv_rpgpo_tmmtkotns5o80_document_a4c35139",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T19:25:22.402Z"
+  },
+  "t_mmtkotorgpzy": {
+    "task_id": "t_mmtkotorgpzy",
+    "deliverable_id": "dlv_rpgpo_tmmtkotorgpzy_recommendation_0115ac8f",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T19:25:32.972Z"
+  },
+  "t_mmtkotqlp25r": {
+    "task_id": "t_mmtkotqlp25r",
+    "deliverable_id": "dlv_rpgpo_tmmtkotqlp25r_document_fb495929",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T19:25:41.412Z"
+  },
+  "t_mmtkottrcnlf": {
+    "task_id": "t_mmtkottrcnlf",
+    "deliverable_id": "dlv_rpgpo_tmmtkottrcnlf_document_17fe7a81",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T19:25:49.946Z"
+  },
+  "t_mmtkotvgbraf": {
+    "task_id": "t_mmtkotvgbraf",
+    "deliverable_id": "dlv_rpgpo_tmmtkotvgbraf_document_adf624c6",
+    "engine_id": "general",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T19:26:03.171Z"
+  },
+  "t_mmtkotxd8whl": {
+    "task_id": "t_mmtkotxd8whl",
+    "deliverable_id": "dlv_rpgpo_tmmtkotxd8whl_document_3cdf87a9",
+    "engine_id": "careeregine",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T19:26:11.353Z"
+  },
+  "t_mmtkotzsf4p7": {
+    "task_id": "t_mmtkotzsf4p7",
+    "deliverable_id": "dlv_rpgpo_tmmtkotzsf4p7_code_change_c0778148",
+    "engine_id": "startup",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "diffs",
+      "implementation_plan",
+      "changed_files",
+      "diff_preview"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T19:26:19.640Z"
+  },
+  "t_mmtkou3hpdcb": {
+    "task_id": "t_mmtkou3hpdcb",
+    "deliverable_id": "dlv_rpgpo_tmmtkou3hpdcb_document_ae0aaf4c",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T19:26:26.591Z"
   }
 }
