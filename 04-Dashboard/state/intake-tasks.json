@@ -1,5 +1,712 @@
 [
   {
+    "task_id": "t_mmtgsihmklrj",
+    "title": "Design a comprehensive focus and deep work protocol for knowledge workers. Inclu",
+    "raw_request": "Design a comprehensive focus and deep work protocol for knowledge workers. Include environment design, time-blocking methods, distraction elimination, cognitive warm-up routines, and measuring focus quality over time.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:35:44.794Z",
+    "updated_at": "2026-03-16T17:44:20.311Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:37:35.404Z",
+      "interpreted_objective": "Design a protocol for enhancing focus and deep work for knowledge workers.",
+      "expected_outcome": "A detailed guide that includes environment design, time-blocking methods, distraction elimination, cognitive warm-up routines, and methods to measure focus quality over time.",
+      "key_unknowns": [
+        "Specific environmental factors that enhance focus",
+        "Effective time-blocking methods for knowledge workers",
+        "Best practices for distraction elimination",
+        "Cognitive warm-up routines that improve focus",
+        "Metrics for measuring focus quality over time"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and scientific insights on focus and deep work. Synthesize this information into a comprehensive protocol tailored for knowledge workers. Ensure the protocol is actionable and includes specific techniques and tools.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Focus and Deep Work",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and scientific insights on focus and deep work for knowledge workers.",
+          "prompt": "Search the web for current, specific information about best practices for focus and deep work for knowledge workers. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Focus and Deep Work Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable protocol for focus and deep work tailored for knowledge workers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a focus and deep work protocol. Include specific techniques for environment design, time-blocking, distraction elimination, cognitive warm-up routines, and measuring focus quality over time.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-focus-deep-work-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2008
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmtgsiekihwu",
+    "title": "Create a comprehensive guide to home water quality testing and improvement. Incl",
+    "raw_request": "Create a comprehensive guide to home water quality testing and improvement. Include test kit selection, contaminant interpretation, filtration system comparison, whole-house vs point-of-use, and well water vs municipal considerations.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:35:44.684Z",
+    "updated_at": "2026-03-16T17:44:01.821Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:37:27.964Z",
+      "interpreted_objective": "Create a comprehensive guide to home water quality testing and improvement.",
+      "expected_outcome": "A detailed guide covering test kit selection, contaminant interpretation, filtration system comparison, and considerations for well vs municipal water.",
+      "key_unknowns": [
+        "Current best practices for home water quality testing",
+        "Latest technology in water filtration systems",
+        "Differences in water quality issues between well and municipal water"
+      ],
+      "recommended_strategy": "First, research the latest trends and technologies in home water quality testing and improvement. Then, synthesize this information into a comprehensive guide, ensuring it covers all specified topics. This will involve gathering detailed information on test kits, interpreting results, comparing filtration systems, and addressing well vs municipal water considerations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Water Quality Testing",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on current home water quality testing practices and technologies.",
+          "prompt": "Search the web for current, specific information about home water quality testing. Include details on test kit selection, contaminant interpretation, and any new technologies or practices. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Water Filtration Systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive data on different water filtration systems, including whole-house vs point-of-use options.",
+          "prompt": "Search the web for current, specific information about water filtration systems. Compare whole-house vs point-of-use systems and include pros/cons for each. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Water Quality Testing and Improvement",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on home water quality testing and improvement, including all specified topics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide to home water quality testing and improvement. Include sections on test kit selection, contaminant interpretation, filtration system comparison, whole-house vs point-of-use, and well water vs municipal considerations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2756
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtgsich1atv",
+    "title": "Write a complete concept for a thriller novel about an AI ethics researcher who ",
+    "raw_request": "Write a complete concept for a thriller novel about an AI ethics researcher who discovers her own research has been secretly weaponized. Include chapter outline, character arcs, and thematic exploration of dual-use technology.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:35:44.609Z",
+    "updated_at": "2026-03-16T17:43:34.730Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:37:15.576Z",
+      "interpreted_objective": "Create a detailed concept for a thriller novel involving AI ethics and dual-use technology.",
+      "expected_outcome": "A comprehensive novel concept including chapter outline, character arcs, and thematic exploration.",
+      "key_unknowns": [
+        "Specific setting and time period for the novel",
+        "Details of the protagonist's research",
+        "Nature of the weaponization"
+      ],
+      "recommended_strategy": "First, gather insights on dual-use technology and its implications in AI ethics through research. Then, synthesize this information into a structured novel concept, including a chapter outline and character development.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Dual-Use Technology in AI Ethics",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Research findings on dual-use technology and its ethical implications in AI.",
+          "prompt": "Search the web for current information about dual-use technology in AI ethics. Include real examples, ethical debates, and potential consequences of weaponization.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Novel Concept",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete concept for a thriller novel, including chapter outline, character arcs, and thematic exploration.",
+          "prompt": "Based on the research results, create a comprehensive concept for a thriller novel about an AI ethics researcher discovering her research's weaponization. Include a detailed chapter outline, character arcs, and thematic exploration of dual-use technology.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-thriller-novel-concept.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1882
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtgsib8e7bx",
+    "title": "Plan a 9-day whisky and hiking tour through Scotland. Include Speyside distiller",
+    "raw_request": "Plan a 9-day whisky and hiking tour through Scotland. Include Speyside distillery trail, Isle of Islay peat whisky tastings, West Highland Way sections, Edinburgh pub crawl, and Loch Ness scenic drive.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:35:44.564Z",
+    "updated_at": "2026-03-16T17:43:05.512Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:37:06.434Z",
+      "interpreted_objective": "Plan a detailed 9-day whisky and hiking tour through Scotland, incorporating specific activities and locations.",
+      "expected_outcome": "A comprehensive itinerary that includes whisky tastings, hiking trails, and cultural experiences in Scotland.",
+      "key_unknowns": [
+        "Current operational status of distilleries and trails",
+        "Accommodation and travel logistics",
+        "Local COVID-19 restrictions"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on the specified locations and activities. Synthesize this data into a detailed itinerary, ensuring it aligns with current travel guidelines and offers a balanced experience of whisky tasting and hiking. Consider logistical aspects like travel routes and accommodations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Scotland Whisky and Hiking Tour Options",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on whisky distilleries, hiking trails, and travel logistics in Scotland.",
+          "prompt": "Search the web for current, specific information about whisky distilleries in Speyside and Isle of Islay, hiking sections of the West Highland Way, Edinburgh pub crawls, and scenic drives around Loch Ness. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Tour Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 9-day itinerary for a whisky and hiking tour in Scotland.",
+          "prompt": "Based on the research results, synthesize a 9-day itinerary for a whisky and hiking tour in Scotland. Include specific activities, locations, and logistical details such as travel routes and accommodations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-scotland-whisky-hiking-tour.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2461
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtgsi92ls0v",
+    "title": "Design a comprehensive grip strength and forearm conditioning program. Include c",
+    "raw_request": "Design a comprehensive grip strength and forearm conditioning program. Include crush grip, pinch grip, and support grip training, progressive overload protocols, injury prevention for climbers and lifters, and recovery scheduling.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:35:44.486Z",
+    "updated_at": "2026-03-16T17:42:47.871Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:36:56.989Z",
+      "interpreted_objective": "Design a detailed grip strength and forearm conditioning program including various grip types, progressive overload, injury prevention, and recovery scheduling.",
+      "expected_outcome": "A comprehensive and actionable program document that outlines exercises, protocols, and schedules for grip strength and forearm conditioning.",
+      "key_unknowns": [
+        "Specific exercises for each grip type",
+        "Effective progressive overload techniques",
+        "Injury prevention strategies for climbers and lifters",
+        "Optimal recovery scheduling"
+      ],
+      "recommended_strategy": "First, research current best practices and exercises for grip strength and forearm conditioning, focusing on crush, pinch, and support grips. Then, synthesize this information into a structured program that includes progressive overload, injury prevention, and recovery scheduling.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Grip Strength and Conditioning",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices, exercises, and strategies for grip strength and forearm conditioning.",
+          "prompt": "Search the web for current, specific information about grip strength and forearm conditioning exercises, focusing on crush grip, pinch grip, and support grip. Include progressive overload techniques, injury prevention strategies for climbers and lifters, and recovery scheduling. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Grip Strength Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and comprehensive program for grip strength and forearm conditioning, including exercises, progressive overload protocols, injury prevention, and recovery scheduling.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive grip strength and forearm conditioning program. Include specific exercises for crush, pinch, and support grips, progressive overload protocols, injury prevention strategies, and recovery scheduling.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-grip-strength-program.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2504
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtgsi694i99",
+    "title": "Create a guide to building an engineering career development framework. Include ",
+    "raw_request": "Create a guide to building an engineering career development framework. Include level expectations, skills matrices, growth conversations, promotion calibration, and how to handle career path disagreements.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:35:44.385Z",
+    "updated_at": "2026-03-16T17:42:22.068Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:36:42.295Z",
+      "interpreted_objective": "Create a comprehensive guide for building an engineering career development framework.",
+      "expected_outcome": "A detailed guide that includes level expectations, skills matrices, growth conversations, promotion calibration, and handling career path disagreements.",
+      "key_unknowns": [
+        "Specific expectations for each engineering level",
+        "Common skills matrices used in the industry",
+        "Best practices for growth conversations",
+        "Effective methods for promotion calibration",
+        "Strategies for resolving career path disagreements"
+      ],
+      "recommended_strategy": "Research current best practices and frameworks used in engineering career development. Synthesize findings into a comprehensive guide tailored for data engineering leadership. Include actionable steps and real-world examples where possible.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Engineering Career Development Frameworks",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and frameworks for engineering career development.",
+          "prompt": "Search the web for current, specific information about engineering career development frameworks. Include level expectations, skills matrices, growth conversations, promotion calibration, and handling career path disagreements. Provide real examples, names, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Engineering Career Development Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for building an engineering career development framework.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building an engineering career development framework. Include level expectations, skills matrices, growth conversations, promotion calibration, and strategies for handling career path disagreements. Provide actionable steps and real-world examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2288
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmtgsi4qsm8k",
+    "title": "Research the best home projector screens for dedicated theater rooms. Compare Si",
+    "raw_request": "Research the best home projector screens for dedicated theater rooms. Compare Silver Ticket STR, Elite Screens Aeon, and Carl Ultramultiscreen with gain values, viewing angle, ambient light rejection, and mounting options.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:35:44.330Z",
+    "updated_at": "2026-03-16T17:42:04.383Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:36:34.720Z",
+      "interpreted_objective": "Research and compare the Silver Ticket STR, Elite Screens Aeon, and Carl Ultramultiscreen projector screens for dedicated theater rooms.",
+      "expected_outcome": "A detailed comparison report including gain values, viewing angle, ambient light rejection, and mounting options for the specified projector screens.",
+      "key_unknowns": [
+        "Current specifications and reviews of each projector screen",
+        "Specific gain values and viewing angles",
+        "Ambient light rejection capabilities",
+        "Mounting options available"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current data and specifications for each projector screen using Perplexity. Then, synthesize this information into a structured comparison report using OpenAI, highlighting key features and differences.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Projector Screens",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Silver Ticket STR, Elite Screens Aeon, and Carl Ultramultiscreen projector screens with gain values, viewing angles, ambient light rejection, and mounting options.",
+          "prompt": "Search the web for current, specific information about the Silver Ticket STR, Elite Screens Aeon, and Carl Ultramultiscreen projector screens. Include gain values, viewing angles, ambient light rejection, and mounting options. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the three projector screens, highlighting key features and differences.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comparison report of Silver Ticket STR, Elite Screens Aeon, and Carl Ultramultiscreen projector screens. Include gain values, viewing angles, ambient light rejection, and mounting options, with specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-projector-screens.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2197
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtgsi3yawa4",
+    "title": "Explain how the Linux networking stack processes a packet from NIC to applicatio",
+    "raw_request": "Explain how the Linux networking stack processes a packet from NIC to application. Cover interrupt handling, NAPI polling, sk_buff, Netfilter hooks, connection tracking, and performance tuning with eBPF and XDP.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:35:44.302Z",
+    "updated_at": "2026-03-16T17:41:53.015Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:36:15.975Z",
+      "interpreted_objective": "Explain the Linux networking stack's packet processing from NIC to application.",
+      "expected_outcome": "A detailed explanation covering interrupt handling, NAPI polling, sk_buff, Netfilter hooks, connection tracking, and performance tuning with eBPF and XDP.",
+      "key_unknowns": [
+        "Specific use cases or examples Rahul might be interested in",
+        "Level of detail or technical depth required",
+        "Any specific performance metrics or benchmarks to include"
+      ],
+      "recommended_strategy": "Research the Linux networking stack to gather detailed information on packet processing. Then synthesize this information into a comprehensive explanation that includes all specified components, ensuring clarity and technical accuracy. Highlight any recent advancements or tools relevant to performance tuning.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Linux Networking Stack",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on how the Linux networking stack processes packets, covering all specified components.",
+          "prompt": "Search the web for current, specific information about how the Linux networking stack processes a packet from NIC to application. Include details on interrupt handling, NAPI polling, sk_buff, Netfilter hooks, connection tracking, and performance tuning with eBPF and XDP. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Explanation of Linux Networking Stack",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive explanation of the Linux networking stack's packet processing, including all specified components.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed explanation of how the Linux networking stack processes a packet from NIC to application. Include specific details on interrupt handling, NAPI polling, sk_buff, Netfilter hooks, connection tracking, and performance tuning with eBPF and XDP. Ensure clarity and technical accuracy.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2359
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmtgsi2wgb4c",
+    "title": "Create a guide to building a diversified passive income portfolio from scratch. ",
+    "raw_request": "Create a guide to building a diversified passive income portfolio from scratch. Include high-yield savings, dividend stocks, REITs, bond ETFs, rental property considerations, and digital product creation with realistic timeline expectations.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:35:44.264Z",
+    "updated_at": "2026-03-16T17:41:28.128Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:36:06.251Z",
+      "interpreted_objective": "Create a comprehensive guide for building a diversified passive income portfolio from scratch.",
+      "expected_outcome": "A detailed guide with specific revenue estimates, examples, market data, and actionable steps for each passive income stream.",
+      "key_unknowns": [
+        "Current high-yield savings account rates",
+        "Top-performing dividend stocks",
+        "Best REITs and bond ETFs",
+        "Considerations for rental property investment",
+        "Effective digital product creation strategies"
+      ],
+      "recommended_strategy": "Conduct research to gather current data and examples for each passive income stream. Synthesize findings into a comprehensive guide with actionable steps and realistic timeline expectations. Ensure the guide includes specific revenue estimates and market data.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Passive Income Streams",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data and examples for high-yield savings, dividend stocks, REITs, bond ETFs, rental properties, and digital product creation.",
+          "prompt": "Search the web for current, specific information about high-yield savings accounts, dividend stocks, REITs, bond ETFs, rental property investment considerations, and digital product creation strategies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Diversified Passive Income Portfolio",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide with specific revenue estimates, examples, market data, and actionable steps for each passive income stream.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide for building a diversified passive income portfolio from scratch. Include specific revenue estimates, real examples, market data, and concrete first steps for high-yield savings, dividend stocks, REITs, bond ETFs, rental properties, and digital product creation. Provide realistic timeline expectations for each.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2447
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmtgsi28p554",
+    "title": "Design a comprehensive database backup and disaster recovery strategy for Postgr",
+    "raw_request": "Design a comprehensive database backup and disaster recovery strategy for PostgreSQL. Include WAL archiving, point-in-time recovery, pg_basebackup automation, cross-region replication, recovery testing schedule, and RTO/RPO target planning.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T17:35:44.240Z",
+    "updated_at": "2026-03-16T17:40:58.125Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T17:35:54.348Z",
+      "interpreted_objective": "Design a comprehensive PostgreSQL database backup and disaster recovery strategy.",
+      "expected_outcome": "A detailed plan outlining backup methods, recovery processes, replication, and testing schedules.",
+      "key_unknowns": [
+        "Current PostgreSQL setup and version",
+        "Existing backup and recovery procedures",
+        "Specific RTO/RPO targets",
+        "Infrastructure details for cross-region replication"
+      ],
+      "recommended_strategy": "Conduct research to gather best practices for PostgreSQL backup and disaster recovery. Synthesize a strategy that includes WAL archiving, point-in-time recovery, pg_basebackup automation, cross-region replication, and a recovery testing schedule. Define RTO/RPO targets based on industry standards.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Approval of the proposed RTO/RPO targets",
+        "Confirmation of infrastructure capabilities for cross-region replication"
+      ],
+      "subtasks": [
+        {
+          "title": "Research PostgreSQL Backup and Recovery Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices for PostgreSQL backup and disaster recovery.",
+          "prompt": "Search the web for current best practices in PostgreSQL backup and disaster recovery strategies, including WAL archiving, point-in-time recovery, pg_basebackup automation, and cross-region replication. Include specific techniques, tools, and industry standards.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comprehensive Strategy",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed disaster recovery strategy document for PostgreSQL.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive PostgreSQL backup and disaster recovery strategy. Include WAL archiving, point-in-time recovery, pg_basebackup automation, cross-region replication, a recovery testing schedule, and RTO/RPO target planning. Provide specific recommendations and steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2165
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
     "task_id": "t_mmtgfd9wuezq",
     "title": "Design a comprehensive email management and inbox zero system. Include processin",
     "raw_request": "Design a comprehensive email management and inbox zero system. Include processing workflow, folder/label structure, automation rules, batch processing schedule, and strategies for reducing incoming volume.",
