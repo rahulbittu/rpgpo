@@ -1,5 +1,727 @@
 [
   {
+    "task_id": "t_mmss1o9wddle",
+    "title": "Design a systematic approach to building a second brain for knowledge workers. I",
+    "raw_request": "Design a systematic approach to building a second brain for knowledge workers. Include capture workflows, progressive summarization, MOC structures, spaced repetition integration, and weekly review templates.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:03:01.796Z",
+    "updated_at": "2026-03-16T06:07:53.006Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:04:07.551Z",
+      "interpreted_objective": "Design a comprehensive system for knowledge workers to manage and optimize their information using digital tools.",
+      "expected_outcome": "A detailed plan outlining workflows for capturing, organizing, and reviewing information effectively, tailored for knowledge workers.",
+      "key_unknowns": [
+        "Specific tools or platforms to be used for the second brain system",
+        "Preferred formats for weekly review templates",
+        "Existing workflows or systems that might be integrated"
+      ],
+      "recommended_strategy": "Research existing methodologies for personal knowledge management, such as PARA and Zettelkasten, and synthesize a plan that incorporates capture workflows, progressive summarization, MOC structures, spaced repetition, and review templates. Ensure the plan is adaptable to various digital tools.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final approval of the proposed system design before implementation"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Existing Knowledge Management Systems",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current knowledge management systems and their components.",
+          "prompt": "Search the web for current, specific information about popular knowledge management systems like PARA, Zettelkasten, and GTD. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize System Design",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed plan for a second brain system including workflows, summarization techniques, MOC structures, and review templates.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for designing a second brain system for knowledge workers. Include specific workflows for capture, summarization, MOC structures, spaced repetition integration, and weekly review templates.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2014
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmss1o75kqn1",
+    "title": "Create a comprehensive guide to home acoustic treatment for a dedicated listenin",
+    "raw_request": "Create a comprehensive guide to home acoustic treatment for a dedicated listening room. Include room measurement tools, bass trap placement, diffuser vs absorber ratios, and budget tiers ($500/$1500/$5000).",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:03:01.697Z",
+    "updated_at": "2026-03-16T06:07:44.984Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:04:01.510Z",
+      "interpreted_objective": "Create a comprehensive guide to home acoustic treatment for a dedicated listening room, including practical advice on tools, placement, and budget considerations.",
+      "expected_outcome": "A detailed guide that provides actionable recommendations on room measurement tools, bass trap placement, diffuser vs absorber ratios, and budget options for acoustic treatment.",
+      "key_unknowns": [
+        "Specific tools and products available for room measurement",
+        "Optimal placement strategies for bass traps",
+        "Effective diffuser vs absorber ratios",
+        "Detailed budget breakdowns for $500, $1500, and $5000 tiers"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on acoustic treatment tools and techniques. Synthesize findings into a structured guide with practical recommendations for different budget tiers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Acoustic Treatment Tools and Techniques",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on room measurement tools, bass trap placement, diffuser vs absorber ratios, and budget options.",
+          "prompt": "Search the web for current, specific information about home acoustic treatment for dedicated listening rooms. Include real names, numbers, dates, URLs, and sources for room measurement tools, bass trap placement, diffuser vs absorber ratios, and budget tiers ($500, $1500, $5000).",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Acoustic Treatment Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide to home acoustic treatment, including tools, placement strategies, and budget tiers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on home acoustic treatment for a dedicated listening room. Include actionable recommendations on room measurement tools, bass trap placement, diffuser vs absorber ratios, and budget options for $500, $1500, and $5000 tiers.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-home-acoustic-treatment-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2521
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmss1o4oly6t",
+    "title": "Write a complete pitch deck narrative for a fictional AI-powered personal health",
+    "raw_request": "Write a complete pitch deck narrative for a fictional AI-powered personal health startup. Include market analysis, competitive moat, go-to-market strategy, financial projections, and investor objection handling.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:03:01.608Z",
+    "updated_at": "2026-03-16T06:07:34.733Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:03:54.171Z",
+      "interpreted_objective": "Create a comprehensive pitch deck narrative for a fictional AI-powered personal health startup.",
+      "expected_outcome": "A detailed narrative that includes market analysis, competitive moat, go-to-market strategy, financial projections, and investor objection handling.",
+      "key_unknowns": [
+        "Current market trends in AI-powered personal health",
+        "Existing competitors and their strengths",
+        "Potential financial projections for a startup in this sector",
+        "Common investor objections in the health tech industry"
+      ],
+      "recommended_strategy": "Conduct web research to gather current data on the AI-powered personal health market and competitors. Synthesize this information into a structured narrative covering all requested sections. Ensure the narrative is cohesive and addresses potential investor concerns.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research AI-powered personal health market",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on market trends, competitors, and financial projections in AI-powered personal health.",
+          "prompt": "Search the web for current, specific information about the AI-powered personal health market. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize pitch deck narrative",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A complete pitch deck narrative including market analysis, competitive moat, go-to-market strategy, financial projections, and investor objection handling.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive pitch deck narrative for a fictional AI-powered personal health startup. Include specific market analysis, competitive moat, go-to-market strategy, financial projections, and investor objection handling.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2214
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmss1o1jjrlq",
+    "title": "Plan a 2-week backpacking trip through Patagonia including Torres del Paine W Tr",
+    "raw_request": "Plan a 2-week backpacking trip through Patagonia including Torres del Paine W Trek and El Chalten. Include gear list, permit booking timeline, weather windows, and emergency evacuation options.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:03:01.495Z",
+    "updated_at": "2026-03-16T06:07:24.170Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:03:48.092Z",
+      "interpreted_objective": "Plan a comprehensive 2-week backpacking trip through Patagonia, focusing on the Torres del Paine W Trek and El Chalten, including logistics and safety measures.",
+      "expected_outcome": "A detailed travel itinerary with gear list, permit booking timeline, weather information, and emergency options for a Patagonia backpacking trip.",
+      "key_unknowns": [
+        "Current permit booking process for Torres del Paine W Trek",
+        "Optimal weather windows for trekking in Patagonia",
+        "Emergency evacuation options available in the region"
+      ],
+      "recommended_strategy": "Conduct thorough research on current travel conditions, requirements, and safety measures for Patagonia. Synthesize this information into a structured plan that includes all necessary logistics and safety precautions.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Patagonia Trekking Information",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive data on trekking in Patagonia, including gear list, permit booking, weather windows, and emergency options.",
+          "prompt": "Search the web for current, specific information about trekking in Patagonia, including the Torres del Paine W Trek and El Chalten. Include details on gear requirements, permit booking timelines, optimal weather windows, and available emergency evacuation options. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Patagonia Backpacking Plan",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured plan for a 2-week backpacking trip through Patagonia, including itinerary, gear list, permit timeline, weather windows, and emergency options.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a detailed backpacking plan for a 2-week trip through Patagonia. Include a day-by-day itinerary, gear list, permit booking timeline, optimal weather windows, and emergency evacuation options. Provide specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-2023-11-PatagoniaBackpackingPlan.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1968
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmss1ny3fw02",
+    "title": "Design a gut health optimization protocol. Include microbiome testing interpreta",
+    "raw_request": "Design a gut health optimization protocol. Include microbiome testing interpretation, prebiotic/probiotic food recommendations, elimination diet framework, and connection to mental health via gut-brain axis.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:03:01.371Z",
+    "updated_at": "2026-03-16T06:07:16.170Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:03:43.081Z",
+      "interpreted_objective": "Design a comprehensive gut health optimization protocol including microbiome testing interpretation, dietary recommendations, and mental health connections.",
+      "expected_outcome": "A detailed, evidence-based protocol for optimizing gut health with actionable steps and safety considerations.",
+      "key_unknowns": [
+        "Specific microbiome testing methods and interpretation guidelines",
+        "Current evidence on prebiotic and probiotic food effectiveness",
+        "Best practices for elimination diets",
+        "Scientific evidence linking gut health to mental health"
+      ],
+      "recommended_strategy": "Research current scientific literature on microbiome testing, prebiotic/probiotic foods, and elimination diets. Synthesize findings into a comprehensive protocol that includes safety disclaimers. Highlight connections between gut health and mental health based on the gut-brain axis.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research microbiome testing and interpretation",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current methods and guidelines for microbiome testing and interpretation.",
+          "prompt": "Search the web for current, specific information about microbiome testing methods and interpretation guidelines. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research prebiotic and probiotic food recommendations",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Evidence-based recommendations for prebiotic and probiotic foods.",
+          "prompt": "Search the web for current, specific information about effective prebiotic and probiotic foods. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research elimination diet frameworks",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Best practices and frameworks for implementing elimination diets.",
+          "prompt": "Search the web for current, specific information about elimination diet frameworks and best practices. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research gut-brain axis and mental health connection",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Scientific evidence linking gut health to mental health via the gut-brain axis.",
+          "prompt": "Search the web for current, specific information about the connection between gut health and mental health via the gut-brain axis. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize gut health optimization protocol",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive protocol for gut health optimization including microbiome testing interpretation, dietary recommendations, and mental health connections.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive gut health optimization protocol. Include microbiome testing interpretation, prebiotic/probiotic food recommendations, elimination diet framework, and the connection to mental health via the gut-brain axis. Ensure recommendations are specific, evidence-based, and actionable, with safety disclaimers where appropriate.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2458
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmss1nw7pdsd",
+    "title": "Create a framework for building an engineering career ladder from IC to Staff+ l",
+    "raw_request": "Create a framework for building an engineering career ladder from IC to Staff+ level. Include technical skills matrix, influence scope expectations, promotion packet templates, and mentorship strategies.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:03:01.303Z",
+    "updated_at": "2026-03-16T06:07:10.326Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:03:35.021Z",
+      "interpreted_objective": "Develop a framework for an engineering career ladder from IC to Staff+ level.",
+      "expected_outcome": "A comprehensive framework including a skills matrix, influence scope expectations, promotion packet templates, and mentorship strategies.",
+      "key_unknowns": [
+        "Specific technical skills relevant to each career level",
+        "Current industry standards for influence scope expectations",
+        "Best practices for promotion packet templates",
+        "Effective mentorship strategies for engineering roles"
+      ],
+      "recommended_strategy": "Research current industry standards and best practices for engineering career ladders. Synthesize findings into a structured framework that includes a skills matrix, influence scope expectations, promotion packet templates, and mentorship strategies. Ensure the framework aligns with data engineering leadership and career growth priorities.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Final review of the framework to ensure alignment with Rahul's career growth priorities"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Engineering Career Ladder Standards",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current industry standards and best practices for engineering career ladders.",
+          "prompt": "Search the web for current, specific information about engineering career ladders from IC to Staff+ level, including technical skills matrix, influence scope expectations, promotion packet templates, and mentorship strategies. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Framework for Engineering Career Ladder",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured framework for an engineering career ladder including a skills matrix, influence scope expectations, promotion packet templates, and mentorship strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive framework for an engineering career ladder from IC to Staff+ level. Include specific technical skills, influence scope expectations, promotion packet templates, and mentorship strategies. Provide actionable recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2343
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmss1nuhdar1",
+    "title": "Research the best ergonomic office chairs under $800 for people who sit 10+ hour",
+    "raw_request": "Research the best ergonomic office chairs under $800 for people who sit 10+ hours daily. Compare Herman Miller Aeron, Steelcase Leap V2, and Secretlab Titan with lumbar support analysis.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:03:01.241Z",
+    "updated_at": "2026-03-16T06:07:01.107Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:03:27.305Z",
+      "interpreted_objective": "Research and compare the best ergonomic office chairs under $800 for long-duration sitting, focusing on Herman Miller Aeron, Steelcase Leap V2, and Secretlab Titan with lumbar support analysis.",
+      "expected_outcome": "A detailed comparison report of the three specified office chairs, highlighting their ergonomic features, lumbar support, and suitability for prolonged use.",
+      "key_unknowns": [
+        "Current pricing and availability of each chair",
+        "Specific ergonomic features and lumbar support details",
+        "User reviews and expert opinions on comfort and durability"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current data on the specified chairs, focusing on ergonomic features, pricing, and user feedback. Then, synthesize this information into a structured comparison report that highlights the pros and cons of each chair, with a recommendation based on the findings.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Ergonomic Office Chairs",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on ergonomic features, pricing, and user reviews for Herman Miller Aeron, Steelcase Leap V2, and Secretlab Titan.",
+          "prompt": "Search the web for current, specific information about the Herman Miller Aeron, Steelcase Leap V2, and Secretlab Titan office chairs. Include details on ergonomic features, lumbar support, pricing under $800, user reviews, and expert opinions. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Chair Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the three office chairs, highlighting ergonomic features, pricing, and suitability for long-duration sitting.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comparison report of the Herman Miller Aeron, Steelcase Leap V2, and Secretlab Titan chairs. Include specific details on ergonomic features, lumbar support, pricing, and user feedback. Provide a recommendation on the best chair for prolonged use.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-ergonomic-office-chairs.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2231
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmss1nsfdu06",
+    "title": "Explain how container orchestration scheduling works in Kubernetes. Cover the sc",
+    "raw_request": "Explain how container orchestration scheduling works in Kubernetes. Cover the scheduler algorithm, resource requests vs limits, pod affinity/anti-affinity, taints/tolerations, and priority preemption.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:03:01.167Z",
+    "updated_at": "2026-03-16T06:06:52.591Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:03:20.852Z",
+      "interpreted_objective": "Explain how container orchestration scheduling works in Kubernetes, covering specific aspects like the scheduler algorithm, resource requests vs limits, pod affinity/anti-affinity, taints/tolerations, and priority preemption.",
+      "expected_outcome": "A comprehensive explanation of Kubernetes scheduling that is clear and informative, suitable for someone with a technical background in data engineering.",
+      "key_unknowns": [
+        "Current best practices in Kubernetes scheduling",
+        "Recent updates or changes in Kubernetes related to scheduling"
+      ],
+      "recommended_strategy": "Conduct initial research to gather current and detailed information on Kubernetes scheduling. Then, synthesize this information into a structured explanation that includes all specified aspects. Ensure clarity and technical accuracy.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Kubernetes Scheduling",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed and current information about Kubernetes scheduling, including the scheduler algorithm, resource requests vs limits, pod affinity/anti-affinity, taints/tolerations, and priority preemption.",
+          "prompt": "Search the web for current, specific information about Kubernetes scheduling. Include details on the scheduler algorithm, resource requests vs limits, pod affinity/anti-affinity, taints/tolerations, and priority preemption. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Kubernetes Scheduling Explanation",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and comprehensive explanation of Kubernetes scheduling, covering the scheduler algorithm, resource requests vs limits, pod affinity/anti-affinity, taints/tolerations, and priority preemption.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed explanation of Kubernetes scheduling. Include specifics on the scheduler algorithm, resource requests vs limits, pod affinity/anti-affinity, taints/tolerations, and priority preemption. Ensure clarity and technical accuracy.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-2023-10-20-kubernetes-scheduling.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1978
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmss1ns0mqxt",
+    "title": "Create a comprehensive estate planning guide for tech professionals with stock o",
+    "raw_request": "Create a comprehensive estate planning guide for tech professionals with stock options. Include trust structures, charitable giving strategies, generation-skipping transfers, and digital asset succession.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:03:01.152Z",
+    "updated_at": "2026-03-16T06:06:43.617Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:03:15.624Z",
+      "interpreted_objective": "Create a comprehensive estate planning guide for tech professionals with stock options.",
+      "expected_outcome": "A detailed guide that includes trust structures, charitable giving strategies, generation-skipping transfers, and digital asset succession, tailored for tech professionals.",
+      "key_unknowns": [
+        "Specific legal considerations for tech professionals with stock options",
+        "Current best practices in digital asset succession"
+      ],
+      "recommended_strategy": "Conduct research on estate planning strategies specific to tech professionals with stock options, focusing on trust structures, charitable giving, and digital assets. Synthesize this information into a comprehensive guide that addresses their unique needs and challenges.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Estate Planning Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current estate planning strategies and best practices for tech professionals with stock options.",
+          "prompt": "Search the web for current, specific information about estate planning strategies for tech professionals with stock options. Include trust structures, charitable giving strategies, generation-skipping transfers, and digital asset succession. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Estate Planning Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive estate planning guide for tech professionals with stock options.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for estate planning for tech professionals with stock options. Include trust structures, charitable giving strategies, generation-skipping transfers, and digital asset succession. Provide specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-estate-planning-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2459
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmss1nrg6ngb",
+    "title": "Design a distributed caching strategy using Redis Cluster. Include cache invalid",
+    "raw_request": "Design a distributed caching strategy using Redis Cluster. Include cache invalidation patterns, write-through vs write-behind, hot key mitigation, and memory management with eviction policies.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:03:01.132Z",
+    "updated_at": "2026-03-16T06:06:35.590Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:03:10.041Z",
+      "interpreted_objective": "Design a comprehensive distributed caching strategy using Redis Cluster.",
+      "expected_outcome": "A detailed report outlining a Redis Cluster caching strategy, including cache invalidation patterns, write-through vs write-behind strategies, hot key mitigation techniques, and memory management with eviction policies.",
+      "key_unknowns": [
+        "Specific use cases or scenarios to tailor the caching strategy",
+        "Current infrastructure and integration capabilities",
+        "Performance metrics or goals for the caching system"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and strategies for Redis Cluster caching. Synthesize findings into a structured report that addresses cache invalidation, write strategies, hot key mitigation, and memory management. Ensure the report is actionable and tailored to typical Redis use cases.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Redis Cluster Caching Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and strategies for Redis Cluster caching.",
+          "prompt": "Search the web for current, specific information about distributed caching strategies using Redis Cluster. Include cache invalidation patterns, write-through vs write-behind strategies, hot key mitigation techniques, and memory management with eviction policies. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Redis Caching Strategy Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing a Redis Cluster caching strategy with specific techniques and recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a Redis Cluster caching strategy. Include cache invalidation patterns, write-through vs write-behind strategies, hot key mitigation techniques, and memory management with eviction policies. Provide specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-redis-caching-strategy.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1953
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsrtjkt5r5s",
     "title": "Design a personal finance dashboard that tracks net worth, cash flow, and invest",
     "raw_request": "Design a personal finance dashboard that tracks net worth, cash flow, and investment performance. Include data sources, key metrics, visualization recommendations, and alert thresholds.",
