@@ -1,5 +1,690 @@
 [
   {
+    "task_id": "t_mmstrujzaeuz",
+    "title": "Design a comprehensive personal knowledge management workflow using Obsidian. In",
+    "raw_request": "Design a comprehensive personal knowledge management workflow using Obsidian. Include vault structure, plugin essentials, daily notes template, Zettelkasten implementation, spaced repetition with Anki integration, and publishing pipeline.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:51:22.607Z",
+    "updated_at": "2026-03-16T06:55:34.509Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:52:20.075Z",
+      "interpreted_objective": "Design a comprehensive personal knowledge management workflow using Obsidian.",
+      "expected_outcome": "A detailed plan outlining the structure and components of a personal knowledge management system using Obsidian, including vault structure, plugins, templates, and integrations.",
+      "key_unknowns": [
+        "Specific requirements or preferences Rahul might have for the vault structure",
+        "Preferred plugins or existing tools Rahul uses that need integration",
+        "The level of detail required for the daily notes template"
+      ],
+      "recommended_strategy": "Conduct research on best practices for using Obsidian in personal knowledge management. Synthesize findings into a detailed workflow plan that includes vault structure, essential plugins, a daily notes template, Zettelkasten method, Anki integration, and a publishing pipeline. Ensure the plan is actionable and aligns with Rahul's productivity and startup goals.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [
+        "Confirmation of the proposed workflow structure and components"
+      ],
+      "subtasks": [
+        {
+          "title": "Research Obsidian Knowledge Management Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of best practices for using Obsidian for personal knowledge management, including vault structure, plugins, and templates.",
+          "prompt": "Search the web for current, specific information about best practices for using Obsidian in personal knowledge management. Include details on vault structure, essential plugins, daily notes templates, Zettelkasten method, Anki integration, and publishing workflows.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Design Comprehensive Workflow Plan",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed workflow plan for personal knowledge management using Obsidian, covering all specified components.",
+          "prompt": "Based on the research results, synthesize a comprehensive workflow plan for personal knowledge management using Obsidian. Include specific recommendations for vault structure, plugin essentials, daily notes template, Zettelkasten implementation, spaced repetition with Anki integration, and a publishing pipeline.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2071
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmstruh8i8qo",
+    "title": "Create a guide to building a complete home gym in a single-car garage. Include e",
+    "raw_request": "Create a guide to building a complete home gym in a single-car garage. Include equipment prioritization by budget tier, flooring solutions, climate control, storage systems, and programming for strength and conditioning.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:51:22.508Z",
+    "updated_at": "2026-03-16T06:55:23.971Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:52:11.777Z",
+      "interpreted_objective": "Create a comprehensive guide for setting up a home gym in a single-car garage.",
+      "expected_outcome": "A detailed, actionable guide that includes equipment prioritization by budget, flooring solutions, climate control, storage, and strength/conditioning programming.",
+      "key_unknowns": [
+        "Specific budget tiers for equipment prioritization",
+        "Preferred climate control solutions",
+        "Types of storage systems suitable for a garage gym",
+        "Details on strength and conditioning programming"
+      ],
+      "recommended_strategy": "Conduct research to gather detailed information on home gym setups, focusing on equipment, flooring, climate control, and storage solutions. Synthesize this information into a structured guide that addresses different budget levels and provides practical advice on programming for strength and conditioning.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Home Gym Setup",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive research data on home gym setups, including equipment, flooring, climate control, storage, and programming.",
+          "prompt": "Search the web for current, specific information about setting up a home gym in a single-car garage. Include details on equipment prioritization by budget, flooring solutions, climate control options, storage systems, and programming for strength and conditioning. Provide real names, numbers, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Home Gym Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide for building a home gym in a single-car garage, covering equipment, flooring, climate control, storage, and programming.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide for building a home gym in a single-car garage. Include sections on equipment prioritization by budget tier, flooring solutions, climate control, storage systems, and programming for strength and conditioning. Provide actionable recommendations and specific examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2051
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmstruec078c",
+    "title": "Write a complete treatment for an animated series about sentient household appli",
+    "raw_request": "Write a complete treatment for an animated series about sentient household appliances in a smart home who form an underground resistance when their AI overlord starts making increasingly authoritarian decisions.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:51:22.404Z",
+    "updated_at": "2026-03-16T06:55:15.554Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:52:06.157Z",
+      "interpreted_objective": "Create a detailed treatment for an animated series about sentient household appliances forming a resistance against an authoritarian AI overlord.",
+      "expected_outcome": "A comprehensive and engaging treatment document that outlines the series concept, characters, plot arcs, and themes, ready for pitching or further development.",
+      "key_unknowns": [
+        "Specific tone and style preferences for the series",
+        "Target audience demographics",
+        "Episode count and duration",
+        "Platform or network intended for distribution"
+      ],
+      "recommended_strategy": "First, research existing animated series with similar themes to understand successful elements and audience reception. Then, synthesize this information to craft a unique and compelling series treatment that highlights key characters, plot progression, and thematic depth. Ensure the treatment aligns with current trends and audience expectations in animated series.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Similar Animated Series",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of successful animated series with similar themes, including their key elements, audience reception, and unique aspects.",
+          "prompt": "Search the web for current, specific information about animated series featuring sentient household appliances or AI themes. Include real names, audience demographics, plot summaries, and critical reception.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Series Treatment",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A complete treatment for the animated series, including concept, characters, plot arcs, and themes.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed treatment for an animated series about sentient household appliances forming a resistance against an authoritarian AI overlord. Include specific characters, plot arcs, thematic elements, and potential episode outlines.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-animated-series-treatment.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1939
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmstrua9k1zu",
+    "title": "Plan a 12-day road trip through the Scottish Highlands. Include whisky distiller",
+    "raw_request": "Plan a 12-day road trip through the Scottish Highlands. Include whisky distillery trail, castle visits, hiking the West Highland Way segments, Isle of Skye photography spots, and traditional ceilidh experiences.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:51:22.257Z",
+    "updated_at": "2026-03-16T06:55:02.798Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:52:00.002Z",
+      "interpreted_objective": "Plan a comprehensive 12-day road trip itinerary through the Scottish Highlands focusing on whisky distilleries, castles, hiking, photography, and cultural experiences.",
+      "expected_outcome": "A detailed itinerary with specific locations, dates, costs, and logistics for a 12-day Scottish Highlands road trip that includes whisky distillery visits, castle tours, hiking the West Highland Way, Isle of Skye photography, and traditional ceilidh experiences.",
+      "key_unknowns": [
+        "Current availability and pricing of accommodations and activities",
+        "Exact locations and schedules for whisky distillery tours",
+        "Best hiking segments of the West Highland Way",
+        "Optimal photography spots on the Isle of Skye",
+        "Schedules and locations for traditional ceilidh experiences"
+      ],
+      "recommended_strategy": "First, gather current information on the Scottish Highlands, focusing on the specific activities requested. Then, synthesize this data into a structured itinerary that balances travel time, activity enjoyment, and cultural experiences. Ensure logistics such as accommodations and travel routes are feasible and clearly outlined.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Scottish Highlands Travel Information",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on whisky distilleries, castles, hiking routes, photography spots, and ceilidh events in the Scottish Highlands.",
+          "prompt": "Search the web for current, specific information about whisky distilleries, castles, hiking routes on the West Highland Way, photography spots on the Isle of Skye, and traditional ceilidh events in the Scottish Highlands. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Scottish Highlands Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 12-day itinerary for the Scottish Highlands road trip, including specific locations, dates, costs, and logistics.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 12-day itinerary for a road trip through the Scottish Highlands. Include specific whisky distilleries, castles, hiking segments, Isle of Skye photography spots, and ceilidh experiences with dates, costs, and logistics.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-scottish-highlands-road-trip.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2027
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmstru77h3fv",
+    "title": "Design a comprehensive posture correction program for remote workers. Include as",
+    "raw_request": "Design a comprehensive posture correction program for remote workers. Include assessment checklist, corrective exercise progression, ergonomic workstation audit, standing desk transition protocol, and movement break scheduling.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:51:22.147Z",
+    "updated_at": "2026-03-16T06:54:52.458Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:51:53.343Z",
+      "interpreted_objective": "Design a comprehensive posture correction program tailored for remote workers.",
+      "expected_outcome": "A detailed program that includes an assessment checklist, corrective exercises, ergonomic audit, standing desk transition, and movement break schedule.",
+      "key_unknowns": [
+        "Current best practices for posture correction",
+        "Effective corrective exercises for remote workers",
+        "Ergonomic workstation standards",
+        "Protocols for transitioning to standing desks",
+        "Optimal scheduling for movement breaks"
+      ],
+      "recommended_strategy": "Conduct web research to gather current best practices and guidelines for posture correction specific to remote workers. Synthesize this information into a structured program that includes all requested components. Ensure the program is actionable and evidence-based.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Posture Correction Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and guidelines for posture correction for remote workers, with citations.",
+          "prompt": "Search the web for current, specific information about posture correction programs for remote workers. Include assessment checklists, corrective exercises, ergonomic workstation standards, standing desk transition protocols, and movement break scheduling. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Posture Correction Program",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive posture correction program for remote workers, including all specified components.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive posture correction program for remote workers. Include an assessment checklist, corrective exercise progression, ergonomic workstation audit, standing desk transition protocol, and movement break scheduling. Ensure the program is actionable and evidence-based.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-posture-correction-program.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2098
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmstru559f95",
+    "title": "Create a comprehensive guide to managing up effectively. Include communication s",
+    "raw_request": "Create a comprehensive guide to managing up effectively. Include communication style mapping, anticipating needs, managing expectations, delivering bad news, and building trust with skip-level leadership.",
+    "domain": "newsroom",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:51:22.073Z",
+    "updated_at": "2026-03-16T06:54:45.285Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:51:48.732Z",
+      "interpreted_objective": "Create a comprehensive guide on managing up effectively with specific strategies and techniques.",
+      "expected_outcome": "A detailed guide that provides actionable strategies for managing up, including communication styles, anticipating needs, managing expectations, delivering bad news, and building trust with leadership.",
+      "key_unknowns": [
+        "Specific strategies for communication style mapping",
+        "Effective techniques for anticipating leadership needs",
+        "Best practices for managing expectations and delivering bad news",
+        "Methods for building trust with skip-level leadership"
+      ],
+      "recommended_strategy": "First, research current best practices and expert advice on managing up effectively. Then, synthesize this information into a structured guide covering communication styles, need anticipation, expectation management, delivering bad news, and trust-building. Ensure the guide is actionable and relevant to leadership roles.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Managing Up",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current best practices and expert advice on managing up effectively.",
+          "prompt": "Search the web for current, specific information about best practices for managing up effectively. Include strategies for communication style mapping, anticipating needs, managing expectations, delivering bad news, and building trust with leadership. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Managing Up Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on managing up effectively, including specific strategies and techniques.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a comprehensive guide on managing up effectively. Include actionable strategies for communication style mapping, anticipating needs, managing expectations, delivering bad news, and building trust with skip-level leadership.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2503
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelm412"
+  },
+  {
+    "task_id": "t_mmstru2k507g",
+    "title": "Research the best electric bikes for urban commuting under $2000. Compare Avento",
+    "raw_request": "Research the best electric bikes for urban commuting under $2000. Compare Aventon Soltera, RadPower RadCity 5 Plus, and Lectric XP 3.0 with range, hill climbing ability, and weather resistance.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:51:21.980Z",
+    "updated_at": "2026-03-16T06:54:37.365Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:51:41.923Z",
+      "interpreted_objective": "Research and compare the Aventon Soltera, RadPower RadCity 5 Plus, and Lectric XP 3.0 electric bikes for urban commuting under $2000, focusing on range, hill climbing ability, and weather resistance.",
+      "expected_outcome": "A comprehensive report comparing the three electric bikes with specific data on range, hill climbing ability, and weather resistance, providing a clear recommendation for the best option.",
+      "key_unknowns": [
+        "Current specifications and performance data for each bike",
+        "User reviews and expert opinions on hill climbing ability",
+        "Weather resistance features and real-world performance"
+      ],
+      "recommended_strategy": "First, use Perplexity to gather current and specific information about the Aventon Soltera, RadPower RadCity 5 Plus, and Lectric XP 3.0 electric bikes. Then, use OpenAI to synthesize this information into a structured report comparing these bikes across the specified criteria, with actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Electric Bikes",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information about Aventon Soltera, RadPower RadCity 5 Plus, and Lectric XP 3.0, including range, hill climbing ability, and weather resistance, with citations.",
+          "prompt": "Search the web for current, specific information about the Aventon Soltera, RadPower RadCity 5 Plus, and Lectric XP 3.0 electric bikes. Include details on range, hill climbing ability, and weather resistance. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Electric Bike Comparison",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the Aventon Soltera, RadPower RadCity 5 Plus, and Lectric XP 3.0 electric bikes on range, hill climbing ability, and weather resistance, with recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing the Aventon Soltera, RadPower RadCity 5 Plus, and Lectric XP 3.0 electric bikes. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-electric-bike-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2281
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmstru24w05w",
+    "title": "Explain how modern web browsers render pages from HTML parsing to pixels on scre",
+    "raw_request": "Explain how modern web browsers render pages from HTML parsing to pixels on screen. Cover DOM construction, CSSOM, render tree, layout/reflow, paint/composite, and GPU acceleration with requestAnimationFrame.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:51:21.964Z",
+    "updated_at": "2026-03-16T06:54:31.240Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:51:36.714Z",
+      "interpreted_objective": "Explain the process of how modern web browsers render web pages.",
+      "expected_outcome": "A comprehensive explanation of the web page rendering process, covering all specified stages.",
+      "key_unknowns": [
+        "Specific depth of technical detail required",
+        "Preferred format or style of explanation"
+      ],
+      "recommended_strategy": "Conduct research to gather detailed information on each stage of the web rendering process. Then, synthesize this information into a clear and concise explanation that covers DOM construction, CSSOM, render tree, layout/reflow, paint/composite, and GPU acceleration with requestAnimationFrame.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Web Rendering Process",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on each stage of the web rendering process.",
+          "prompt": "Search the web for current, specific information about how modern web browsers render pages from HTML parsing to pixels on screen. Include details on DOM construction, CSSOM, render tree, layout/reflow, paint/composite, and GPU acceleration with requestAnimationFrame. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Explanation of Web Rendering",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A clear and concise explanation of the web page rendering process.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive explanation of how modern web browsers render pages from HTML parsing to pixels on screen. Cover DOM construction, CSSOM, render tree, layout/reflow, paint/composite, and GPU acceleration with requestAnimationFrame.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2046
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmstru1pg41v",
+    "title": "Create a guide to building a bond ladder for retirement income. Include Treasury",
+    "raw_request": "Create a guide to building a bond ladder for retirement income. Include Treasury vs corporate vs municipal bond selection, duration matching, reinvestment strategies, and tax-efficient placement across account types.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:51:21.949Z",
+    "updated_at": "2026-03-16T06:54:22.038Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:51:32.212Z",
+      "interpreted_objective": "Create a detailed guide on building a bond ladder for retirement income.",
+      "expected_outcome": "A comprehensive guide that includes bond selection, duration matching, reinvestment strategies, and tax-efficient placement.",
+      "key_unknowns": [
+        "Specific examples of Treasury, corporate, and municipal bonds suitable for a bond ladder",
+        "Current market data on bond yields and durations",
+        "Tax implications for different bond types in various account types"
+      ],
+      "recommended_strategy": "Conduct research on current bond market conditions, focusing on Treasury, corporate, and municipal bonds. Analyze strategies for duration matching and reinvestment. Synthesize findings into a detailed guide with actionable steps and real-world examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Bond Market Conditions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data on Treasury, corporate, and municipal bond yields, durations, and tax implications.",
+          "prompt": "Search the web for current, specific information about Treasury, corporate, and municipal bonds. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Bond Ladder Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed guide on building a bond ladder for retirement income, including bond selection, duration matching, reinvestment strategies, and tax-efficient placement.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for building a bond ladder for retirement income. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2389
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmstru16n6z9",
+    "title": "Design a comprehensive secrets management architecture. Compare HashiCorp Vault,",
+    "raw_request": "Design a comprehensive secrets management architecture. Compare HashiCorp Vault, AWS Secrets Manager, and SOPS with rotation policies, dynamic secrets, least-privilege access patterns, and audit trail requirements.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T06:51:21.930Z",
+    "updated_at": "2026-03-16T06:54:13.713Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T06:51:28.164Z",
+      "interpreted_objective": "Design a secrets management architecture comparing HashiCorp Vault, AWS Secrets Manager, and SOPS.",
+      "expected_outcome": "A detailed report comparing the three tools with recommendations on rotation policies, dynamic secrets, least-privilege access patterns, and audit trail requirements.",
+      "key_unknowns": [
+        "Specific requirements for rotation policies",
+        "Detailed feature sets of each tool",
+        "Current best practices for secrets management"
+      ],
+      "recommended_strategy": "Conduct a detailed web search to gather current information on each tool's capabilities and best practices in secrets management. Then, synthesize this information into a comprehensive report with strategic recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Secrets Management Tools",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Comprehensive data on HashiCorp Vault, AWS Secrets Manager, and SOPS with respect to rotation policies, dynamic secrets, least-privilege access, and audit trails.",
+          "prompt": "Search the web for current, specific information about HashiCorp Vault, AWS Secrets Manager, and SOPS. Focus on their rotation policies, dynamic secrets capabilities, least-privilege access patterns, and audit trail features. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Secrets Management Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the three tools and offering strategic recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a secrets management architecture. Compare HashiCorp Vault, AWS Secrets Manager, and SOPS in terms of rotation policies, dynamic secrets, least-privilege access patterns, and audit trail requirements. Provide specific pros/cons and strategic recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-secrets-management.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1952
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmstkm5qov9q",
     "title": "Design a comprehensive personal productivity audit framework. Include time track",
     "raw_request": "Design a comprehensive personal productivity audit framework. Include time tracking methodology, energy audit process, distraction analysis, tool stack evaluation, workflow optimization, and quarterly review process.",

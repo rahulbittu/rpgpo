@@ -1,86 +1,64 @@
-# Create a comprehensive guide to managing up as a senior engineer. Include stakeh
+# Create a comprehensive guide to managing up effectively. Include communication s
 
-**Domain:** careeregine | **Date:** 2026-03-16 | **Subtasks:** 2
+**Domain:** newsroom | **Date:** 2026-03-16 | **Subtasks:** 2
 
 
 
-## Research best practices for managing up
-## Finding 1: The Engineering Manager on Stakeholder Communication During Slow Phases
-Explicit practices for managing up include being transparent about project phases, inviting stakeholder input early, and sharing artifacts to build confidence. Key steps: (1) State the phase clearly, e.g., "We're in a 2-day requirements clarification before coding"; (2) Share updates on learnings like edge cases; (3) Timebox slow phases; (4) Demonstrate quick wins via prototypes. This approach, from February 2026 post, emphasizes visibility to avoid perceptions of stalling, with examples of teams shipping faster long-term by slowing deliberately.
-Source: https://www.theengineeringmanager.com
+## Research Best Practices for Managing Up
+## Finding 1: BCG 2026 AI Adoption Report Highlights Leadership Operating Model Redesign for Communications Leaders
+BCG's January 2026 report on AI Adoption in Corporate Affairs and Communications, based on a survey of over 200 leaders from Fortune 1000 and Forbes Global 2000 companies, identifies that the top 31% of leading functions succeed by redesigning operating models to integrate AI into workflows, upskilling teams, and allocating 10%+ of budgets to AI. These leaders are 1.7x more confident in articulating AI's value, emphasizing systematic process changes over tool layering—directly applicable to managing up by anticipating leadership needs through proactive AI-driven workflows like cross-referencing coaching rosters or generating proposals.  
+**Actionable Next Step:** Review your team's budget; commit 10% to AI tools for leadership comms (e.g., automate context pulls for exec proposals as in CraAI examples).  
+Source: https://craai.substack.com/p/confluence-for-31526
 
-## Finding 2: Xavor's Best Practices in Engineering Change Management for Stakeholder Alignment
-For progress reporting and escalation, establish a Change Control Board (CCB) with key stakeholders to review requests, prioritize based on impact, and approve/reject per rules. Conduct impact assessments covering functionality, cost, schedule; perform risk analysis with mitigation plans and contingencies. Foster cross-functional collaboration to ensure all know change effects and outcomes. Dated 2026 guide reports these reduce costs and speed market time via clear procedures.
-Source: https://www.xavor.com/blog/best-practices-in-engineering-change-management/
+## Finding 2: DiSC Workshop for Communication Style Mapping and Relationship Building
+The YOU Seminar (Eventbrite event ID 1985244704352) is a DiSC-based workshop focused on discovering personal strengths, mapping communication styles, and improving interactions to build better leadership relationships—explicitly targeting trust-building and results via style adaptation. DiSC profiles (Dominance, Influence, Steadiness, Conscientiousness) enable anticipating needs and managing expectations by tailoring updates to a leader's style (e.g., data-heavy for C-types, concise for D-types). No specific dates or pricing listed; ongoing virtual/in-person sessions available.  
+**Actionable Next Step:** Register for the seminar to map your boss's DiSC style; test by adapting one weekly update (e.g., add visuals for I-types) and track response improvements over 2 weeks.  
+Source: https://www.eventbrite.com/e/the-you-seminar-tickets-1985244704352
 
-## Finding 3: Project Management Conferences Highlighting Stakeholder and Escalation Topics
-2026 conferences like PMO Symposium (AI in PMOs, portfolio management) and others cover stakeholder management, project comms, risk management, and change management. Example: One event features case studies on complexity/risk, with breakout sessions on software dev and systems thinking for proactive escalation. Common topics include managing teams/stakeholders and connections to engineering; attendee quote: "Wealth of information" from Anthony McDonald. List updated for 2026 events.
-Source: https://thedigitalprojectmanager.com/career/project-management-conferences-2/
+## No Recent Specific Sources Found for Core Managing Up Strategies (Anticipating Needs, Bad News Delivery, Trust-Building)
+Live searches for "managing up best practices 2026 communication style mapping anticipating needs managing expectations delivering bad news building trust leadership" (and variants like "managing up strategies Harvard Business Review 2026", "executive managing up playbook recent") yielded no articles with real names, numbers, dates, or examples from the last 30 days (post-2026-02-14). Results recycled older generic org behavior courses (e.g., Marist ORG 302N on individual/group dynamics, no specifics[4]; Kellogg exec ed on AI strategy, no managing up focus[3]).  
+**Actionable Next Step:** Search HBR.org or LinkedIn for "managing up [your industry]" posts from Feb-Mar 2026; apply DiSC from Finding 2 immediately for style mapping.  
+Source: [no URL available; based on provided search results lacking recent specifics]
 
-No additional recent (post-February 2026) sources found via alternative searches on "senior engineer managing up best practices stakeholder communication 2026", "proactive problem escalation engineering leadership", or "progress reporting senior data engineer manager". Results focused on change management/tools rather than direct "managing up" for senior engineers; used top matches for relevance.
-
-## Synthesize guide on managing up
+## Synthesize Managing Up Guide
 ## Key Findings
 
-### Finding 1: Stakeholder Communication During Slow Phases
-- **Transparency and Early Input**: Clearly communicate project phases to stakeholders and invite their input early. Share relevant artifacts to build confidence and avoid the perception of stalling. Example: Clearly state, "We're in a 2-day requirements clarification before coding."
-- **Timeboxing and Quick Wins**: Timebox slow phases and demonstrate quick wins through prototypes to maintain momentum and stakeholder trust.
-- **Outcome**: Enhances visibility and trust, leading to faster long-term project delivery.
-- **Source**: The Engineering Manager (February 2026)
+1. **AI Integration for Anticipating Leadership Needs**: Leading companies are redesigning their operating models to integrate AI, which helps in anticipating leadership needs and improving communication workflows. This involves allocating at least 10% of budgets to AI tools, which enhances the ability to articulate AI's value and anticipate executive needs through automated workflows.
 
-### Finding 2: Change Management for Stakeholder Alignment
-- **Change Control Board (CCB)**: Establish a CCB with key stakeholders to review, prioritize, and approve change requests based on impact.
-- **Impact Assessments and Risk Analysis**: Conduct thorough assessments and risk analyses with mitigation plans to understand functionality, cost, and schedule impacts.
-- **Cross-Functional Collaboration**: Foster collaboration to ensure all stakeholders are aware of changes and their effects.
-- **Outcome**: Reduces costs and speeds up time to market through clear procedures.
-- **Source**: Xavor (2026)
+2. **Communication Style Mapping with DiSC**: Utilizing DiSC profiles to map communication styles can significantly improve interactions with leadership by tailoring communication to match their style. This approach helps in building trust and managing expectations effectively.
 
-### Finding 3: Project Management Conferences on Stakeholder and Escalation
-- **Conferences like PMO Symposium**: Highlight the importance of AI in PMOs and portfolio management, emphasizing stakeholder communication and proactive problem escalation.
-- **Outcome**: Provides insights into modern tools and techniques for effective stakeholder management and escalation processes.
+## Detailed Analysis
 
-## Recommendations
+### AI Integration for Anticipating Leadership Needs
 
-### 1. Enhance Visibility and Trust
-- **What to Do**: Communicate project phases clearly and share updates regularly.
-- **Why**: Builds stakeholder confidence and prevents perceptions of delays.
-- **Expected Outcome**: Improved stakeholder satisfaction and project alignment.
-- **First Step**: Implement regular status update meetings with stakeholders.
+- **Redesigning Operating Models**: Companies that succeed in integrating AI into their workflows are more confident in their ability to articulate the value of AI. This confidence stems from systematic process changes rather than merely adding new tools. For example, using AI to automate context pulls for executive proposals can streamline communication and better anticipate leadership needs.
 
-### 2. Establish a Change Control Board
-- **What to Do**: Form a CCB to manage changes effectively.
-- **Why**: Ensures changes are evaluated systematically, reducing unnecessary disruptions.
-- **Expected Outcome**: Streamlined change management and reduced project delays.
-- **First Step**: Identify key stakeholders and set up the initial CCB meeting.
+- **Budget Allocation**: Committing a portion of the budget (10% or more) to AI tools is crucial. This investment allows for the development of proactive workflows that can anticipate and meet leadership needs more effectively.
 
-### 3. Conduct Impact Assessments and Risk Analysis
-- **What to Do**: Perform detailed assessments and analyses for proposed changes.
-- **Why**: Helps in understanding potential impacts and preparing mitigation plans.
-- **Expected Outcome**: Minimized risks and informed decision-making.
-- **First Step**: Develop a template for impact assessments and risk analysis.
+### Communication Style Mapping with DiSC
 
-### 4. Leverage AI and Modern Tools
-- **What to Do**: Incorporate AI tools into project management for better insights and efficiency.
-- **Why**: Enhances decision-making and stakeholder communication.
-- **Expected Outcome**: Improved project outcomes and stakeholder engagement.
-- **First Step**: Research and select AI tools suitable for your project needs.
+- **DiSC Profiles**: Understanding and adapting to different communication styles (Dominance, Influence, Steadiness, Conscientiousness) can enhance relationships with leadership. By mapping these styles, you can tailor your communication to better align with leadership preferences, thus improving trust and managing expectations.
 
-## Action Items
+- **Workshop Participation**: Engaging in workshops like the YOU Seminar can provide practical insights into personal strengths and communication style mapping, which are essential for effective managing up.
 
-1. **Implement Regular Status Meetings** (1 week)
-   - Schedule weekly meetings with stakeholders to discuss project phases and updates.
+## Recommended Actions
 
-2. **Form a Change Control Board** (2 weeks)
-   - Identify stakeholders and conduct the first CCB meeting to establish procedures.
+### 1. Implement AI-Driven Workflows
+- **What to Do**: Allocate at least 10% of your budget to AI tools designed to enhance leadership communication workflows.
+- **Why**: To improve the ability to anticipate leadership needs and articulate the value of AI, thereby enhancing decision-making and strategic alignment.
+- **Expected Outcome**: More efficient communication processes and better alignment with leadership expectations.
+- **First Step**: Review current budget allocations and identify potential AI tools that can automate and enhance communication processes.
 
-3. **Develop Assessment Templates** (3 weeks)
-   - Create standardized templates for impact assessments and risk analysis.
+### 2. Engage in Communication Style Mapping
+- **What to Do**: Participate in DiSC-based workshops to map and adapt communication styles.
+- **Why**: To build stronger relationships with leadership by tailoring communication to their preferred styles, thus enhancing trust and managing expectations.
+- **Expected Outcome**: Improved interactions with leadership and a stronger ability to anticipate and meet their needs.
+- **First Step**: Register for a DiSC workshop such as the YOU Seminar to gain insights into personal and leadership communication styles.
 
-4. **Research AI Tools** (4 weeks)
-   - Evaluate AI tools for project management and integrate them into your workflow.
+### 3. Build Trust with Skip-Level Leadership
+- **What to Do**: Use insights from AI tools and communication style mapping to engage with skip-level leadership proactively.
+- **Why**: Building trust with higher-level leadership can open up opportunities for career growth and influence.
+- **Expected Outcome**: Enhanced visibility and credibility within the organization, leading to potential leadership opportunities.
+- **First Step**: Schedule regular check-ins with skip-level leaders to discuss insights and improvements driven by AI and communication strategies.
 
-## Resources
-
-- **The Engineering Manager**: [Stakeholder Communication Practices](https://www.theengineeringmanager.com)
-- **Xavor**: [Best Practices in Engineering Change Management](https://www.xavor.com/blog/best-practices-in-engineering-change-management/)
-- **PMO Symposium**: Insights on AI in Project Management (2026 Conference Highlights)
+By integrating AI into communication workflows and adapting communication styles through DiSC, you can effectively manage up, anticipate leadership needs, and build trust within your organization.

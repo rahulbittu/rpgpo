@@ -12294,5 +12294,160 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-16T06:46:49.148Z"
+  },
+  "t_mmstru16n6z9": {
+    "task_id": "t_mmstru16n6z9",
+    "deliverable_id": "dlv_rpgpo_tmmstru16n6z9_document_6a9aa1af",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T06:51:28.197Z"
+  },
+  "t_mmstru1pg41v": {
+    "task_id": "t_mmstru1pg41v",
+    "deliverable_id": "dlv_rpgpo_tmmstru1pg41v_document_14551c46",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T06:51:32.226Z"
+  },
+  "t_mmstru24w05w": {
+    "task_id": "t_mmstru24w05w",
+    "deliverable_id": "dlv_rpgpo_tmmstru24w05w_document_a7a3503c",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T06:51:36.743Z"
+  },
+  "t_mmstru2k507g": {
+    "task_id": "t_mmstru2k507g",
+    "deliverable_id": "dlv_rpgpo_tmmstru2k507g_recommendation_8df01755",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T06:51:41.948Z"
+  },
+  "t_mmstru559f95": {
+    "task_id": "t_mmstru559f95",
+    "deliverable_id": "dlv_rpgpo_tmmstru559f95_newsroom_958b5152",
+    "engine_id": "newsroom",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "rankedItems",
+      "summaries",
+      "source_links"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T06:51:48.768Z"
+  },
+  "t_mmstru77h3fv": {
+    "task_id": "t_mmstru77h3fv",
+    "deliverable_id": "dlv_rpgpo_tmmstru77h3fv_recommendation_7e3b231c",
+    "engine_id": "research",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "recommendations",
+      "thesis",
+      "evidence"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T06:51:53.374Z"
+  },
+  "t_mmstrua9k1zu": {
+    "task_id": "t_mmstrua9k1zu",
+    "deliverable_id": "dlv_rpgpo_tmmstrua9k1zu_action_plan_81b5130e",
+    "engine_id": "travel",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "itinerary",
+      "options",
+      "cost_comparison"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T06:52:00.032Z"
+  },
+  "t_mmstruec078c": {
+    "task_id": "t_mmstruec078c",
+    "deliverable_id": "dlv_rpgpo_tmmstruec078c_document_d81026dd",
+    "engine_id": "writing",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T06:52:06.189Z"
+  },
+  "t_mmstruh8i8qo": {
+    "task_id": "t_mmstruh8i8qo",
+    "deliverable_id": "dlv_rpgpo_tmmstruh8i8qo_code_change_bcebe76d",
+    "engine_id": "startup",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "diffs",
+      "implementation_plan",
+      "changed_files",
+      "diff_preview"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T06:52:11.800Z"
+  },
+  "t_mmstrujzaeuz": {
+    "task_id": "t_mmstrujzaeuz",
+    "deliverable_id": "dlv_rpgpo_tmmstrujzaeuz_code_change_dae6d895",
+    "engine_id": "startup",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "diffs",
+      "implementation_plan",
+      "changed_files",
+      "diff_preview"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-16T06:52:20.109Z"
   }
 }
