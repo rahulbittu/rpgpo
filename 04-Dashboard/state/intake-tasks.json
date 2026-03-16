@@ -1,5 +1,718 @@
 [
   {
+    "task_id": "t_mmsr7ip7nels",
+    "title": "Design a comprehensive work-life integration framework for founders who struggle",
+    "raw_request": "Design a comprehensive work-life integration framework for founders who struggle to separate personal and professional time. Include boundary setting, energy management, and relationship maintenance.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:39:34.891Z",
+    "updated_at": "2026-03-16T05:44:14.133Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:40:33.412Z",
+      "interpreted_objective": "Design a practical work-life integration framework for founders to balance personal and professional time effectively.",
+      "expected_outcome": "A detailed framework that founders can use to set boundaries, manage energy, and maintain relationships, enhancing their work-life integration.",
+      "key_unknowns": [
+        "Specific challenges founders face in separating personal and professional time",
+        "Effective strategies for energy management tailored to founders",
+        "Best practices for maintaining relationships while managing a startup"
+      ],
+      "recommended_strategy": "Conduct research on existing work-life integration strategies, focusing on boundary setting, energy management, and relationship maintenance. Synthesize findings into a comprehensive framework tailored for founders, considering their unique challenges and needs.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Work-Life Integration Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current strategies and best practices for work-life integration, with a focus on boundary setting, energy management, and relationship maintenance for founders.",
+          "prompt": "Search the web for current, specific information about work-life integration strategies for founders. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Work-Life Integration Framework",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing a comprehensive work-life integration framework for founders, including actionable steps for boundary setting, energy management, and relationship maintenance.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a work-life integration framework for founders. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-work-life-integration-framework.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1978
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsr7hvv8n94",
+    "title": "Create a guide to building a sustainable home cleaning supply system. Include DI",
+    "raw_request": "Create a guide to building a sustainable home cleaning supply system. Include DIY recipes, refillable options, cost comparison with commercial products, and effectiveness ratings.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:39:33.835Z",
+    "updated_at": "2026-03-16T05:44:07.234Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:40:27.050Z",
+      "interpreted_objective": "Create a comprehensive guide on building a sustainable home cleaning supply system.",
+      "expected_outcome": "A detailed guide that includes DIY cleaning recipes, refillable options, cost comparisons with commercial products, and effectiveness ratings.",
+      "key_unknowns": [
+        "Specific DIY recipes to include",
+        "Refillable options available in the market",
+        "Cost comparison data between DIY and commercial products",
+        "Effectiveness ratings of the DIY solutions"
+      ],
+      "recommended_strategy": "First, research current DIY cleaning recipes and refillable options available. Then, gather data on the cost and effectiveness of these DIY solutions compared to commercial products. Finally, synthesize this information into a comprehensive guide.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research DIY Cleaning Recipes and Refillable Options",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of popular DIY cleaning recipes and refillable options available in the market.",
+          "prompt": "Search the web for current, specific information about popular DIY home cleaning recipes and refillable cleaning product options. Include real names, ingredients, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Compile Cost and Effectiveness Data",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Data comparing the cost and effectiveness of DIY cleaning solutions versus commercial products.",
+          "prompt": "Search the web for data comparing the cost and effectiveness of DIY home cleaning solutions versus commercial cleaning products. Include specific numbers, brands, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Sustainable Home Cleaning Supply System",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide that includes DIY recipes, refillable options, cost comparisons, and effectiveness ratings.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on building a sustainable home cleaning supply system. Include DIY recipes, refillable options, cost comparisons with commercial products, and effectiveness ratings.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2236
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmsr7h2komp5",
+    "title": "Write a complete character study and backstory for a protagonist who is a reform",
+    "raw_request": "Write a complete character study and backstory for a protagonist who is a reformed hacker now working as a cybersecurity consultant, haunted by their past. For a thriller series.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:39:32.780Z",
+    "updated_at": "2026-03-16T05:43:59.443Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:40:20.605Z",
+      "interpreted_objective": "Create a detailed character study and backstory for a reformed hacker protagonist in a thriller series.",
+      "expected_outcome": "A compelling character profile and backstory that can be used as a foundation for a thriller series screenplay.",
+      "key_unknowns": [
+        "Specific details about the hacker's past activities",
+        "Motivations for reforming",
+        "Current challenges as a cybersecurity consultant",
+        "How their past haunts them"
+      ],
+      "recommended_strategy": "Conduct research on common traits and backgrounds of hackers who have reformed to become cybersecurity consultants. Then, synthesize this information into a detailed character study and backstory that fits within the thriller genre.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research reformed hackers and cybersecurity consultants",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of real-world examples and traits of reformed hackers who became cybersecurity consultants.",
+          "prompt": "Search the web for current, specific information about reformed hackers who have transitioned into cybersecurity consulting. Include real names, backgrounds, motivations for reforming, and how their past impacts their current work. Provide URLs and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize character study and backstory",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed character study and backstory for the protagonist, suitable for a thriller series.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a detailed character study and backstory for a reformed hacker now working as a cybersecurity consultant. Include specific traits, past activities, motivations for reforming, current challenges, and how their past haunts them.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-character-study.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1974
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmsr7g9h9pjn",
+    "title": "Plan a 4-day creative retreat in Santa Fe New Mexico. Include art galleries, Geo",
+    "raw_request": "Plan a 4-day creative retreat in Santa Fe New Mexico. Include art galleries, Georgia O Keeffe museum, pueblo architecture, local cuisine, and sunset viewing spots.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:39:31.733Z",
+    "updated_at": "2026-03-16T05:43:50.527Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:40:14.847Z",
+      "interpreted_objective": "Plan a detailed 4-day creative retreat itinerary in Santa Fe, New Mexico.",
+      "expected_outcome": "A comprehensive itinerary including art galleries, Georgia O'Keeffe Museum, pueblo architecture, local cuisine, and sunset viewing spots.",
+      "key_unknowns": [
+        "Current opening hours and ticket prices for the Georgia O'Keeffe Museum",
+        "Recommended art galleries in Santa Fe",
+        "Best local cuisine spots",
+        "Optimal locations for sunset viewing",
+        "Availability of accommodations"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on art galleries, museums, local cuisine, and sunset spots in Santa Fe. Then synthesize this information into a structured 4-day itinerary. Ensure to include specific names, addresses, and costs.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Santa Fe Attractions",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of art galleries, the Georgia O'Keeffe Museum details, pueblo architecture sites, local cuisine spots, and sunset viewing locations with current information.",
+          "prompt": "Search the web for current information about art galleries, the Georgia O'Keeffe Museum, pueblo architecture, local cuisine, and sunset viewing spots in Santa Fe, New Mexico. Include names, addresses, opening hours, ticket prices, and any special recommendations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Santa Fe Itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 4-day itinerary for a creative retreat in Santa Fe, including specific attractions, dining options, and sunset spots.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a detailed 4-day itinerary for a creative retreat in Santa Fe, New Mexico. Include specific art galleries, the Georgia O'Keeffe Museum, pueblo architecture, local cuisine spots, and sunset viewing locations with addresses, costs, and any relevant details.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-{date}-santa-fe-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1961
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmsr7fgoeg91",
+    "title": "Design a comprehensive dental wellness program for people who grind their teeth ",
+    "raw_request": "Design a comprehensive dental wellness program for people who grind their teeth at night. Include mouth guard options, jaw exercises, stress reduction, and sleep position optimization.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:39:30.696Z",
+    "updated_at": "2026-03-16T05:43:31.331Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:40:08.712Z",
+      "interpreted_objective": "Design a comprehensive dental wellness program for nocturnal teeth grinders, including mouth guard options, jaw exercises, stress reduction, and sleep position optimization.",
+      "expected_outcome": "A detailed, evidence-based program that provides actionable guidance for individuals who grind their teeth at night, improving their dental health and overall wellness.",
+      "key_unknowns": [
+        "Current best practices for treating nocturnal teeth grinding",
+        "Available mouth guard options and their effectiveness",
+        "Recommended jaw exercises for teeth grinders",
+        "Effective stress reduction techniques for this specific issue",
+        "Optimal sleep positions to minimize teeth grinding"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and evidence-based recommendations for managing nocturnal teeth grinding. Synthesize this information into a structured wellness program, ensuring all advice is actionable and includes safety disclaimers where necessary.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Teeth Grinding",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and evidence-based recommendations for managing nocturnal teeth grinding.",
+          "prompt": "Search the web for current, specific information about best practices for managing nocturnal teeth grinding. Include details on mouth guard options, jaw exercises, stress reduction techniques, and sleep position optimization. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Dental Wellness Program",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and comprehensive dental wellness program for people who grind their teeth at night, including actionable recommendations and safety disclaimers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive dental wellness program for people who grind their teeth at night. Include specific recommendations for mouth guard options, jaw exercises, stress reduction techniques, and sleep position optimization. Ensure all advice is actionable and includes safety disclaimers.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-dental-wellness-program.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1954
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmsr7enznvpv",
+    "title": "Create a guide to building a personal board of advisors for career and life deci",
+    "raw_request": "Create a guide to building a personal board of advisors for career and life decisions. Include recruitment strategy, meeting format, and maintaining relationships.",
+    "domain": "careeregine",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:39:29.663Z",
+    "updated_at": "2026-03-16T05:43:17.576Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:39:55.034Z",
+      "interpreted_objective": "Create a detailed guide for building a personal board of advisors for career and life decisions.",
+      "expected_outcome": "A comprehensive guide with strategies for recruitment, meeting formats, and relationship maintenance for a personal board of advisors.",
+      "key_unknowns": [
+        "Specific recruitment strategies for advisors",
+        "Effective meeting formats for board discussions",
+        "Best practices for maintaining long-term relationships with advisors"
+      ],
+      "recommended_strategy": "First, research effective recruitment strategies for personal advisors, meeting formats, and relationship maintenance. Then, synthesize this information into a detailed guide tailored for Rahul's career and life decisions. Ensure the guide aligns with Rahul's priorities and context.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Recruitment Strategies",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, specific information about recruitment strategies for personal advisors.",
+          "prompt": "Search the web for current, specific information about effective recruitment strategies for building a personal board of advisors. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Meeting Formats and Relationship Maintenance",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current, specific information about effective meeting formats and relationship maintenance for personal advisors.",
+          "prompt": "Search the web for current, specific information about effective meeting formats and best practices for maintaining long-term relationships with a personal board of advisors. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Personal Board of Advisors",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide with recruitment strategies, meeting formats, and relationship maintenance for a personal board of advisors.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed guide for building a personal board of advisors. Include specific recruitment strategies, effective meeting formats, and best practices for maintaining long-term relationships. Tailor the guide to align with Rahul's career and life decisions.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/CareerEngine",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2429
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelrmkm"
+  },
+  {
+    "task_id": "t_mmsr7dv9f5xr",
+    "title": "Research the best home coffee makers for pour-over style brewing. Compare Ratio ",
+    "raw_request": "Research the best home coffee makers for pour-over style brewing. Compare Ratio Eight, Breville Precision Brewer, and Technivorm Moccamaster. Include brew quality and temperature stability.",
+    "domain": "shopping",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:39:28.629Z",
+    "updated_at": "2026-03-16T05:43:10.760Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:39:48.548Z",
+      "interpreted_objective": "Research and compare the best home coffee makers for pour-over style brewing, focusing on Ratio Eight, Breville Precision Brewer, and Technivorm Moccamaster, with emphasis on brew quality and temperature stability.",
+      "expected_outcome": "A detailed comparison report of the three coffee makers, including specific pros and cons, current pricing, and a clear recommendation based on brew quality and temperature stability.",
+      "key_unknowns": [
+        "Current pricing and availability of each coffee maker",
+        "Detailed reviews and expert opinions on brew quality and temperature stability for each model"
+      ],
+      "recommended_strategy": "First, gather current information on the three coffee makers using Perplexity to ensure up-to-date pricing and reviews. Then, synthesize the findings into a comprehensive comparison report that highlights the strengths and weaknesses of each model, leading to a clear buying recommendation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research current information on coffee makers",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current pricing, reviews, and expert opinions on Ratio Eight, Breville Precision Brewer, and Technivorm Moccamaster.",
+          "prompt": "Search the web for current, specific information about the Ratio Eight, Breville Precision Brewer, and Technivorm Moccamaster coffee makers. Include real names, numbers, dates, URLs, and sources, focusing on brew quality and temperature stability.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize comparison report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive comparison report of the three coffee makers, including pros/cons and a buying recommendation.",
+          "prompt": "Based on the research results from the prior subtask, synthesize a detailed comparison of the Ratio Eight, Breville Precision Brewer, and Technivorm Moccamaster coffee makers. Include specific pros and cons, pricing, and a clear recommendation based on brew quality and temperature stability.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2159
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6put08hp"
+  },
+  {
+    "task_id": "t_mmsr7d2j7uai",
+    "title": "Teach me about the internals of B-tree and LSM-tree storage engines. Compare the",
+    "raw_request": "Teach me about the internals of B-tree and LSM-tree storage engines. Compare their read/write tradeoffs, space amplification, and use cases in PostgreSQL vs RocksDB.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:39:27.595Z",
+    "updated_at": "2026-03-16T05:43:05.989Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:39:42.798Z",
+      "interpreted_objective": "Provide a detailed comparison of B-tree and LSM-tree storage engines, focusing on their read/write tradeoffs, space amplification, and use cases in PostgreSQL and RocksDB.",
+      "expected_outcome": "A comprehensive report that explains the internals of B-tree and LSM-tree storage engines and compares their performance and use cases in PostgreSQL and RocksDB.",
+      "key_unknowns": [
+        "Specific technical details of B-tree and LSM-tree implementations",
+        "Current performance metrics in PostgreSQL and RocksDB",
+        "Recent developments or optimizations in these storage engines"
+      ],
+      "recommended_strategy": "First, conduct research to gather up-to-date information on B-tree and LSM-tree storage engines, focusing on their architecture, tradeoffs, and use cases. Then, synthesize this information into a structured report that compares their characteristics and applications in PostgreSQL and RocksDB.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research B-tree and LSM-tree storage engines",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on B-tree and LSM-tree storage engines, including their architecture, read/write tradeoffs, space amplification, and use cases in PostgreSQL and RocksDB.",
+          "prompt": "Search the web for current, specific information about B-tree and LSM-tree storage engines. Include details on their architecture, read/write tradeoffs, space amplification, and use cases in PostgreSQL and RocksDB. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize comparison report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing B-tree and LSM-tree storage engines, focusing on their read/write tradeoffs, space amplification, and use cases in PostgreSQL and RocksDB.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps. Compare B-tree and LSM-tree storage engines, focusing on their read/write tradeoffs, space amplification, and use cases in PostgreSQL and RocksDB.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-Btree-vs-LSMtree.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2015
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmsr7c9s5vq8",
+    "title": "Create a guide to understanding municipal bonds for high-income earners. Include",
+    "raw_request": "Create a guide to understanding municipal bonds for high-income earners. Include tax-equivalent yields, credit analysis, and building a muni bond ladder.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:39:26.560Z",
+    "updated_at": "2026-03-16T05:42:59.290Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:39:37.283Z",
+      "interpreted_objective": "Create a comprehensive guide on municipal bonds for high-income earners.",
+      "expected_outcome": "A detailed guide that explains municipal bonds, including tax-equivalent yields, credit analysis, and building a muni bond ladder, with actionable insights for high-income earners.",
+      "key_unknowns": [
+        "Specific examples of municipal bonds relevant to high-income earners",
+        "Current tax-equivalent yield data",
+        "Best practices for credit analysis of municipal bonds",
+        "Steps to build a municipal bond ladder"
+      ],
+      "recommended_strategy": "Conduct research to gather current data and examples related to municipal bonds, focusing on tax-equivalent yields and credit analysis. Synthesize findings into a comprehensive guide with actionable steps for building a muni bond ladder. Ensure the guide is tailored to high-income earners.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Municipal Bonds",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data and examples of municipal bonds, including tax-equivalent yields and credit analysis.",
+          "prompt": "Search the web for current, specific information about municipal bonds for high-income earners. Include tax-equivalent yields, credit analysis, and examples of building a muni bond ladder. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Municipal Bonds Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on municipal bonds for high-income earners, including tax-equivalent yields, credit analysis, and building a muni bond ladder.",
+          "prompt": "Based on the research results, synthesize a guide on understanding municipal bonds for high-income earners. Include explanations of tax-equivalent yields, credit analysis, and steps to build a muni bond ladder. Provide actionable insights and specific examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2424
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmsr7bgycpr8",
+    "title": "Write a comprehensive guide to implementing database connection resilience. Incl",
+    "raw_request": "Write a comprehensive guide to implementing database connection resilience. Include retry strategies, circuit breaker patterns, connection health checks, and failover handling in Node.js.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T05:39:25.522Z",
+    "updated_at": "2026-03-16T05:41:44.629Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T05:39:30.205Z",
+      "interpreted_objective": "Create a detailed guide on implementing database connection resilience in Node.js.",
+      "expected_outcome": "A comprehensive, clear guide that includes retry strategies, circuit breaker patterns, connection health checks, and failover handling.",
+      "key_unknowns": [
+        "Specific Node.js libraries or frameworks to focus on",
+        "Level of detail expected for each strategy",
+        "Any specific database systems to consider"
+      ],
+      "recommended_strategy": "First, research current best practices and tools in Node.js for database connection resilience. Then, synthesize this information into a structured guide, ensuring it covers all requested topics comprehensively and is tailored for developers. Use clear examples and code snippets where applicable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Node.js Database Resilience Strategies",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed report on current best practices and tools for database connection resilience in Node.js.",
+          "prompt": "Search the web for current best practices and tools for implementing database connection resilience in Node.js. Focus on retry strategies, circuit breaker patterns, connection health checks, and failover handling. Include specific libraries, frameworks, and examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Write Guide on Database Connection Resilience",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on implementing database connection resilience in Node.js.",
+          "prompt": "Based on the research results, synthesize a comprehensive guide on implementing database connection resilience in Node.js. Include sections on retry strategies, circuit breaker patterns, connection health checks, and failover handling. Use clear examples and code snippets where applicable.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2041
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
     "task_id": "t_mmsqzqaw4h52",
     "title": "Design a comprehensive personal API for life management. Include health endpoint",
     "raw_request": "Design a comprehensive personal API for life management. Include health endpoints, finance endpoints, productivity metrics, and dashboard design.",
