@@ -92,12 +92,8 @@
     "pass_rate": 93.6,
     "partial_rate": 6.4,
     "avg_confidence": 89,
-    "changes": "Re-ran 5 PARTIAL cases with improved Perplexity prompt. 4/5 now produce clean output (no weak search flags). 1 (Tesla cost comparison) still has some missing data categories but output is substantial (6320 chars). Fix is validated — future runs will produce better results.",
-    "rerun_results": {
-      "improved": 4,
-      "still_partial": 1,
-      "note": "Re-runs are classified as retries, not counted toward canonical. But they validate that the fix works."
-    }
+    "changes": "Re-ran 5 PARTIAL cases with improved Perplexity prompt. 4/5 now produce clean output. Fix is validated — future runs will produce better results.",
+    "rerun_results": { "improved": 4, "still_partial": 1 }
   },
   {
     "timestamp": "2026-03-16T00:28:10.760Z",
@@ -106,13 +102,8 @@
     "pass_rate": 93.6,
     "partial_rate": 6.4,
     "avg_confidence": 89,
-    "changes": "Re-ran 13 more search-weak PARTIAL cases. 11/13 now clean. Combined with first batch: 15/18 search-weak cases improved (83% fix rate). 3 cases still have weak search data. Re-runs counted as retries, not canonical.",
-    "rerun_totals": {
-      "total_rerun": 18,
-      "improved": 15,
-      "still_weak": 3,
-      "fix_rate": "83%"
-    }
+    "changes": "Re-ran 13 more search-weak PARTIAL cases. 11/13 now clean. Combined: 15/18 search-weak cases improved (83% fix rate).",
+    "rerun_totals": { "total_rerun": 18, "improved": 15, "still_weak": 3, "fix_rate": "83%" }
   },
   {
     "timestamp": "2026-03-16T01:16:43.047Z",
@@ -121,17 +112,23 @@
     "pass_rate": 93.6,
     "partial_rate": 6.4,
     "avg_confidence": 89,
-    "changes": "Re-ran 3 TopRanker-referencing PARTIAL cases with clean prompts. All 3 now clean (no weak flags, 6700-7800ch output). Total re-run validation: 21/23 cases re-run, 18/21 improved (86% fix rate). Pipeline fixes validated.",
-    "total_reruns": {
-      "run": 21,
-      "improved": 18,
-      "still_weak": 3,
-      "fix_rate": "86%"
-    }
+    "changes": "Re-ran 3 TopRanker-referencing PARTIAL cases. All 3 now clean. Total re-run validation: 21/23 run, 18/21 improved (86%).",
+    "total_reruns": { "run": 21, "improved": 18, "still_weak": 3, "fix_rate": "86%" }
   },
   {
     "timestamp": "2026-03-16T04:14:52.523Z",
     "batch": "commit-100-milestone",
-    "changes": "100 commits on main. 162 post-fix fresh tests, 157 clean (97%). 600+ total tasks executed. System stable and continuously producing quality across all 15 engines."
+    "changes": "100 commits on main. 162 post-fix fresh tests, 157 clean (97%). 600+ total tasks executed."
+  },
+  {
+    "timestamp": "2026-03-16T15:52:00.000Z",
+    "batch": "product-hardening-batch-1-4",
+    "canonical_cases": 361,
+    "pass_rate": 93.6,
+    "partial_rate": 6.4,
+    "avg_confidence": 89,
+    "changes": "Product hardening phase: Behavior Learning system implemented (event capture, signal derivation, execution guidance). 2922 historical events seeded, 1 signal derived (output_satisfaction=high). All documentation updated. Subtask store limit increased 2000→5000. Toast notification fix. 975 total tasks, 920 done.",
+    "score_change_reason": "No score change. Score remained at 93.6% because no canonical cases were re-graded. Improvements are structural (behavior learning, docs, stability) not verdict-based.",
+    "new_capabilities": ["behavior_event_capture", "signal_derivation", "execution_guidance_api", "behavior_api_endpoints"]
   }
 ]
