@@ -1,5 +1,719 @@
 [
   {
+    "task_id": "t_mmtj39pwhzii",
+    "title": "Design a comprehensive personal knowledge graph system. Include entity extractio",
+    "raw_request": "Design a comprehensive personal knowledge graph system. Include entity extraction from notes, relationship mapping, query interface design, visualization approaches, and integration with existing note-taking tools.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:40:05.876Z",
+    "updated_at": "2026-03-16T18:48:06.056Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:42:16.946Z",
+      "interpreted_objective": "Design a personal knowledge graph system with entity extraction, relationship mapping, query interface, visualization, and integration with note-taking tools.",
+      "expected_outcome": "A detailed report outlining a comprehensive design for a personal knowledge graph system, including technical specifications and integration strategies.",
+      "key_unknowns": [
+        "Current state of note-taking tools and their integration capabilities",
+        "Best practices for entity extraction and relationship mapping",
+        "Effective visualization techniques for knowledge graphs",
+        "User requirements for query interfaces"
+      ],
+      "recommended_strategy": "First, research current technologies and methods for entity extraction, relationship mapping, and visualization in knowledge graph systems. Then, synthesize these findings into a comprehensive design proposal that includes integration strategies with existing note-taking tools. Ensure the design addresses user needs for query interfaces.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Technologies for Knowledge Graphs",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A comprehensive list of current technologies and methodologies for entity extraction, relationship mapping, and visualization in knowledge graphs.",
+          "prompt": "Search the web for current, specific information about technologies and methodologies used in entity extraction, relationship mapping, and visualization for personal knowledge graph systems. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Design Proposal for Personal Knowledge Graph System",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed design proposal for a personal knowledge graph system, including entity extraction, relationship mapping, query interface design, visualization approaches, and integration with note-taking tools.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for designing a personal knowledge graph system. Include specific names, numbers, and concrete next steps for entity extraction, relationship mapping, query interface design, visualization approaches, and integration with existing note-taking tools.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-knowledge-graph-design.md"
+          ],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2509
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtj39nq5jej",
+    "title": "Create a guide to building an efficient home package receiving system. Include s",
+    "raw_request": "Create a guide to building an efficient home package receiving system. Include smart doorbell integration, secure package locker options, delivery instructions optimization, and theft prevention strategies.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:40:05.798Z",
+    "updated_at": "2026-03-16T18:47:42.373Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:42:04.297Z",
+      "interpreted_objective": "Create a comprehensive guide for an efficient home package receiving system.",
+      "expected_outcome": "A detailed guide that includes smart doorbell integration, secure package locker options, delivery instructions optimization, and theft prevention strategies.",
+      "key_unknowns": [
+        "Specific technologies for smart doorbell integration",
+        "Optimal secure package locker options",
+        "Effective delivery instruction strategies",
+        "Best practices for theft prevention"
+      ],
+      "recommended_strategy": "Research current technologies and strategies for each component of the package receiving system. Synthesize findings into a cohesive guide that provides actionable steps and recommendations for implementation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Smart Doorbell Integration",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current technologies and best practices for smart doorbell integration.",
+          "prompt": "Search the web for current, specific information about smart doorbell integration for home package receiving systems. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Secure Package Locker Options",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Overview of secure package locker options available in the market.",
+          "prompt": "Search the web for current, specific information about secure package locker options for home use. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Delivery Instructions Optimization",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Effective strategies for optimizing delivery instructions to ensure package safety.",
+          "prompt": "Search the web for current, specific information about optimizing delivery instructions for home package safety. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Research Theft Prevention Strategies",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Best practices and strategies for preventing package theft.",
+          "prompt": "Search the web for current, specific information about theft prevention strategies for home package deliveries. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Package Receiving System",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on building an efficient home package receiving system.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on building an efficient home package receiving system. Include smart doorbell integration, secure package locker options, delivery instructions optimization, and theft prevention strategies with specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2346
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmtj39m5waxw",
+    "title": "Write a complete concept for a graphic novel about an archivist in a post-apocal",
+    "raw_request": "Write a complete concept for a graphic novel about an archivist in a post-apocalyptic world who discovers that the stories in the surviving books are starting to become literally true. Include visual style and chapter outline.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:40:05.741Z",
+    "updated_at": "2026-03-16T18:47:23.108Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:41:29.842Z",
+      "interpreted_objective": "Develop a detailed concept for a graphic novel about an archivist in a post-apocalyptic world.",
+      "expected_outcome": "A comprehensive concept document including a storyline, visual style, and chapter outline.",
+      "key_unknowns": [
+        "Specific visual style preferences",
+        "Target audience for the graphic novel",
+        "Length and format of the graphic novel"
+      ],
+      "recommended_strategy": "Conduct research on popular post-apocalyptic themes and visual styles in graphic novels. Synthesize this research to create a unique storyline and visual concept. Outline the chapters to ensure a coherent narrative flow.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Post-Apocalyptic Graphic Novels",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A report on popular themes and visual styles in post-apocalyptic graphic novels.",
+          "prompt": "Search the web for current, specific information about popular themes and visual styles in post-apocalyptic graphic novels. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Develop Graphic Novel Concept",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed concept for the graphic novel including storyline, visual style, and chapter outline.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed concept for a graphic novel about an archivist in a post-apocalyptic world who discovers that the stories in the surviving books are becoming literally true. Include storyline, visual style, and chapter outline.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2034
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtj39kvuyw0",
+    "title": "Plan a 10-day medieval history and castle tour through the Czech Republic and Au",
+    "raw_request": "Plan a 10-day medieval history and castle tour through the Czech Republic and Austria. Include Prague Castle, Cesky Krumlov, Salzburg fortresses, Vienna museums, Wachau Valley vineyards, and traditional brewery visits.",
+    "domain": "screenwriting",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:40:05.695Z",
+    "updated_at": "2026-03-16T18:47:03.355Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:41:21.727Z",
+      "interpreted_objective": "Plan a detailed 10-day itinerary for a medieval history and castle tour through the Czech Republic and Austria.",
+      "expected_outcome": "A comprehensive itinerary that includes visits to Prague Castle, Cesky Krumlov, Salzburg fortresses, Vienna museums, Wachau Valley vineyards, and traditional breweries.",
+      "key_unknowns": [
+        "Specific historical sites and castles to include beyond those mentioned",
+        "Optimal travel routes and timing between locations",
+        "Availability and schedules for traditional brewery visits"
+      ],
+      "recommended_strategy": "Conduct research on each location to gather current information on historical significance, visitor access, and any special events or tours. Then, synthesize this information into a coherent and engaging 10-day itinerary that balances travel time with site visits.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Czech Republic and Austria medieval sites",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of key medieval sites, castles, and breweries with current visitor information and historical context.",
+          "prompt": "Search the web for current, specific information about medieval historical sites, castles, and traditional breweries in the Czech Republic and Austria. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize tour itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 10-day itinerary for a medieval history and castle tour through the Czech Republic and Austria.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 10-day itinerary for a medieval history and castle tour through the Czech Republic and Austria. Include specific site visits, travel routes, and timing.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/screenwriting-{date}-medieval-tour-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2000
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel3jhx"
+  },
+  {
+    "task_id": "t_mmtj39ilbwat",
+    "title": "Design a comprehensive swimming program for adults learning to swim for triathlo",
+    "raw_request": "Design a comprehensive swimming program for adults learning to swim for triathlon. Include water comfort progression, freestyle technique breakdown, breathing pattern training, open water adaptation, and training plan integration.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:40:05.613Z",
+    "updated_at": "2026-03-16T18:46:40.148Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:41:10.585Z",
+      "interpreted_objective": "Design a comprehensive swimming program for adults training for a triathlon.",
+      "expected_outcome": "A detailed swimming program that includes water comfort progression, freestyle technique, breathing patterns, open water adaptation, and integration into a training plan.",
+      "key_unknowns": [
+        "Specific skill level of the target audience",
+        "Preferred training duration and intensity",
+        "Access to open water environments"
+      ],
+      "recommended_strategy": "Research best practices for adult swimming training, particularly for triathlon preparation. Develop a structured program that includes progressive skill building and adaptation to open water conditions. Integrate this into a broader triathlon training plan to ensure comprehensive preparation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research adult swimming training for triathlons",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and guidelines for adult swimming training focused on triathlons.",
+          "prompt": "Search the web for current best practices and guidelines for adult swimming training, especially for triathlon preparation. Include information on water comfort progression, freestyle technique, breathing pattern training, and open water adaptation. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize swimming program for triathlon",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive swimming program for adults training for a triathlon.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive swimming program for adults learning to swim for triathlon. Include sections on water comfort progression, freestyle technique breakdown, breathing pattern training, open water adaptation, and integration into a training plan.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2052
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmtj39fof68d",
+    "title": "Create a guide to navigating performance improvement plans (PIPs) both as a mana",
+    "raw_request": "Create a guide to navigating performance improvement plans (PIPs) both as a manager and as an employee. Include root cause analysis, improvement plan design, documentation standards, legal considerations, and alternative paths.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:40:05.508Z",
+    "updated_at": "2026-03-16T18:46:16.190Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:41:01.936Z",
+      "interpreted_objective": "Create a comprehensive guide on navigating performance improvement plans (PIPs) for both managers and employees.",
+      "expected_outcome": "A detailed, actionable guide that includes root cause analysis, improvement plan design, documentation standards, legal considerations, and alternative paths.",
+      "key_unknowns": [
+        "Specific legal considerations related to PIPs",
+        "Industry-specific documentation standards",
+        "Alternative paths available in different organizational contexts"
+      ],
+      "recommended_strategy": "Conduct research to gather detailed information on PIPs, including legal and documentation standards. Synthesize this information into a structured guide that addresses both managerial and employee perspectives. Ensure the guide is clear, actionable, and tailored to the audience's needs.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research PIPs and Related Standards",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on PIPs, including legal considerations, documentation standards, and alternative paths.",
+          "prompt": "Search the web for current, specific information about performance improvement plans (PIPs), including root cause analysis, improvement plan design, documentation standards, legal considerations, and alternative paths. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Navigating PIPs",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on navigating PIPs for managers and employees.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on navigating performance improvement plans (PIPs) for both managers and employees. Include sections on root cause analysis, improvement plan design, documentation standards, legal considerations, and alternative paths. Ensure the guide is clear, actionable, and tailored to the audience's needs.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2075
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtj39dwr4k6",
+    "title": "Research the best outdoor security lighting systems. Compare Ring Floodlight Cam",
+    "raw_request": "Research the best outdoor security lighting systems. Compare Ring Floodlight Cam, Arlo Pro 4 Spotlight, and Blink Outdoor 4 with motion detection range, brightness, weather resistance, and smart home integration.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:40:05.444Z",
+    "updated_at": "2026-03-16T18:45:54.892Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:40:48.875Z",
+      "interpreted_objective": "Research and compare outdoor security lighting systems: Ring Floodlight Cam, Arlo Pro 4 Spotlight, and Blink Outdoor 4.",
+      "expected_outcome": "A detailed comparison report of the three outdoor security lighting systems based on motion detection range, brightness, weather resistance, and smart home integration.",
+      "key_unknowns": [
+        "Current specifications and features of each lighting system",
+        "Comparative performance data",
+        "User reviews and expert opinions"
+      ],
+      "recommended_strategy": "First, conduct web research using Perplexity to gather up-to-date information on the specifications and features of the Ring Floodlight Cam, Arlo Pro 4 Spotlight, and Blink Outdoor 4. Then, use OpenAI to synthesize this information into a comprehensive comparison report highlighting key differences and integration capabilities.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Outdoor Security Lighting Systems",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information and data on Ring Floodlight Cam, Arlo Pro 4 Spotlight, and Blink Outdoor 4, including motion detection range, brightness, weather resistance, and smart home integration.",
+          "prompt": "Search the web for current, specific information about Ring Floodlight Cam, Arlo Pro 4 Spotlight, and Blink Outdoor 4. Include details on motion detection range, brightness, weather resistance, and smart home integration. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing the three lighting systems, highlighting their strengths and weaknesses based on the gathered data.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-outdoor_security_lighting_comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2185
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtj39d12x5t",
+    "title": "Explain how Zig programming language memory management works compared to C and R",
+    "raw_request": "Explain how Zig programming language memory management works compared to C and Rust. Cover allocator patterns, comptime execution, error unions, no hidden control flow, and when to choose Zig over alternatives.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:40:05.413Z",
+    "updated_at": "2026-03-16T18:45:38.608Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:40:36.977Z",
+      "interpreted_objective": "Explain Zig's memory management compared to C and Rust, covering specific features and decision factors.",
+      "expected_outcome": "A detailed, structured report comparing Zig's memory management features with C and Rust, highlighting allocator patterns, comptime execution, error unions, and control flow.",
+      "key_unknowns": [
+        "Current trends in Zig's adoption",
+        "Specific use cases where Zig is preferred over C and Rust"
+      ],
+      "recommended_strategy": "Conduct web research to gather the latest information on Zig's memory management and compare it with C and Rust. Synthesize this data into a comprehensive report that includes specific features and decision-making criteria.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Zig, C, and Rust Memory Management",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on Zig's memory management, allocator patterns, comptime execution, error unions, and control flow compared to C and Rust.",
+          "prompt": "Search the web for current, specific information about Zig's memory management compared to C and Rust. Include details on allocator patterns, comptime execution, error unions, and control flow. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Zig Memory Management Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report comparing Zig's memory management features with C and Rust, highlighting specific features and decision factors.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed report explaining Zig's memory management compared to C and Rust. Cover allocator patterns, comptime execution, error unions, no hidden control flow, and when to choose Zig over alternatives. Include specific names, numbers, and concrete examples.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-Zig_Memory_Management_Comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1955
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtj39byjpa6",
+    "title": "Create a guide to understanding Series A fundraising from the founder perspectiv",
+    "raw_request": "Create a guide to understanding Series A fundraising from the founder perspective. Include valuation methodology, term sheet negotiation, board composition, liquidation preferences, and anti-dilution protection.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:40:05.374Z",
+    "updated_at": "2026-03-16T18:45:23.312Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:40:25.337Z",
+      "interpreted_objective": "Create a comprehensive guide on Series A fundraising from a founder's perspective.",
+      "expected_outcome": "A detailed, founder-focused guide covering valuation methodology, term sheet negotiation, board composition, liquidation preferences, and anti-dilution protection, ready for immediate use.",
+      "key_unknowns": [
+        "Specific founder experiences or anecdotes to include",
+        "Recent trends or changes in Series A fundraising practices"
+      ],
+      "recommended_strategy": "First, gather current information on Series A fundraising from credible sources, focusing on the specified topics. Then, synthesize this information into a structured guide, ensuring clarity and relevance to founders.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Series A Fundraising",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current data and insights on Series A fundraising, including valuation, term sheets, board composition, liquidation preferences, and anti-dilution protection.",
+          "prompt": "Search the web for current, specific information about Series A fundraising from a founder's perspective. Focus on valuation methodology, term sheet negotiation, board composition, liquidation preferences, and anti-dilution protection. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Series A Fundraising Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on Series A fundraising from a founder's perspective, ready for publication.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide to understanding Series A fundraising from a founder's perspective. Include sections on valuation methodology, term sheet negotiation, board composition, liquidation preferences, and anti-dilution protection. Ensure clarity, relevance, and immediate usability.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-SeriesA_Fundraising_Guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1945
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtj39b8cgg3",
+    "title": "Design a comprehensive PLG (product-led growth) analytics stack. Include activat",
+    "raw_request": "Design a comprehensive PLG (product-led growth) analytics stack. Include activation metrics, feature adoption tracking, expansion revenue signals, churn prediction indicators, and cohort analysis methodology.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T18:40:05.348Z",
+    "updated_at": "2026-03-16T18:45:08.595Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T18:40:15.284Z",
+      "interpreted_objective": "Design a comprehensive PLG analytics stack for wealth research.",
+      "expected_outcome": "A detailed report outlining a PLG analytics stack including specific metrics, tracking methods, and analysis methodologies.",
+      "key_unknowns": [
+        "Current best practices for PLG analytics in wealth research",
+        "Specific tools and technologies suitable for tracking PLG metrics",
+        "Market data on existing PLG solutions"
+      ],
+      "recommended_strategy": "Conduct web research to gather current information on PLG analytics stacks, focusing on activation metrics, feature adoption, expansion revenue signals, churn prediction, and cohort analysis. Synthesize findings into a comprehensive report with actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research PLG Analytics Best Practices",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current best practices and tools for PLG analytics with sources.",
+          "prompt": "Search the web for current best practices and tools for designing a product-led growth (PLG) analytics stack. Focus on activation metrics, feature adoption tracking, expansion revenue signals, churn prediction indicators, and cohort analysis methodology. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize PLG Analytics Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report detailing a comprehensive PLG analytics stack with actionable insights.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for designing a comprehensive PLG analytics stack. Include specific activation metrics, feature adoption tracking methods, expansion revenue signals, churn prediction indicators, and cohort analysis methodology. Provide concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/wealthresearch-{date}-PLG-Analytics-Stack.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2243
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
     "task_id": "t_mmtiqpcpkrwv",
     "title": "Design a comprehensive system for managing technical debt in a growing codebase.",
     "raw_request": "Design a comprehensive system for managing technical debt in a growing codebase. Include debt classification, impact scoring, prioritization framework, sprint allocation strategy, and organizational buy-in techniques.",
