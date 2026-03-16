@@ -1,5 +1,65 @@
 [
   {
+    "record_id": "ee_mmtpl1wd0plj",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmtphwj41xok",
+    "route": "careeregine",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T21:41:53.245Z"
+  },
+  {
+    "record_id": "ee_mmtpkt0j103o",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing recommendations, thesis",
+    "scope_type": "task",
+    "scope_id": "t_mmtphwdjh3vi",
+    "route": "research",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T21:41:41.731Z"
+  },
+  {
+    "record_id": "ee_mmtpknf67uae",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmtphwcehthi",
+    "route": "learning",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T21:41:34.482Z"
+  },
+  {
+    "record_id": "ee_mmtpkbz2hs9h",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing recommendations, thesis",
+    "scope_type": "task",
+    "scope_id": "t_mmtphwb8jsy5",
+    "route": "research",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T21:41:19.646Z"
+  },
+  {
+    "record_id": "ee_mmtpk1p4s77v",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmtphwaehjty",
+    "route": "wealthresearch",
+    "linked_path_id": "",
+    "created_at": "2026-03-16T21:41:06.328Z"
+  },
+  {
     "record_id": "ee_mmtlgt2qqbdt",
     "area": "runtime_deliverable",
     "middleware_ran": "runtime-deliverable-pipeline",
@@ -5938,65 +5998,5 @@
     "route": "health",
     "linked_path_id": "",
     "created_at": "2026-03-16T05:11:41.941Z"
-  },
-  {
-    "record_id": "ee_mmsq7hwplquu",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "partial",
-    "response_effect": "Partial: missing sections",
-    "scope_type": "task",
-    "scope_id": "t_mmsq3qj33mqk",
-    "route": "careeregine",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T05:11:34.249Z"
-  },
-  {
-    "record_id": "ee_mmsq7cevrxcz",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "violated",
-    "response_effect": "Contract violated: missing items, comparisonKeys, ",
-    "scope_type": "task",
-    "scope_id": "t_mmsq3pqf55lw",
-    "route": "shopping",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T05:11:27.127Z"
-  },
-  {
-    "record_id": "ee_mmsq76kjx71g",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "partial",
-    "response_effect": "Partial: missing sections",
-    "scope_type": "task",
-    "scope_id": "t_mmsq3oxoxwyg",
-    "route": "learning",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T05:11:19.555Z"
-  },
-  {
-    "record_id": "ee_mmsq6vv0g8dg",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "partial",
-    "response_effect": "Partial: missing sections",
-    "scope_type": "task",
-    "scope_id": "t_mmsq3o4pgg47",
-    "route": "wealthresearch",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T05:11:05.676Z"
-  },
-  {
-    "record_id": "ee_mmsq61iuz5wv",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "partial",
-    "response_effect": "Partial: missing sections",
-    "scope_type": "task",
-    "scope_id": "t_mmsq3nbt6vw9",
-    "route": "writing",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T05:10:26.358Z"
   }
 ]

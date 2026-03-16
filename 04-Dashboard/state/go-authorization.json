@@ -1,6 +1,6 @@
 {
-  "decision_id": "ga_mmshxwhjdb4q",
-  "decision": "conditional_go",
+  "decision_id": "ga_mmtpo6bzg6so",
+  "decision": "no_go",
   "confidence": {
     "overall": "fully_proven",
     "live_proof_cases": 8,
@@ -20,9 +20,9 @@
       "gate_id": "ga_blockers",
       "name": "Blocker reconciliation",
       "required_for_go": true,
-      "passed": true,
+      "passed": false,
       "proof_level": "live_network",
-      "detail": "7/7 closed"
+      "detail": "6/7 closed"
     },
     {
       "gate_id": "ga_workflows",
@@ -36,9 +36,9 @@
       "gate_id": "ga_middleware",
       "name": "Middleware truth",
       "required_for_go": true,
-      "passed": true,
+      "passed": false,
       "proof_level": "live_network",
-      "detail": "100%"
+      "detail": "57%"
     },
     {
       "gate_id": "ga_reliability",
@@ -75,11 +75,21 @@
   ],
   "proof_gaps": [
     {
+      "area": "blockers",
+      "gap_type": "failed_case",
+      "detail": "1 open blocker(s)"
+    },
+    {
+      "area": "middleware",
+      "gap_type": "failed_case",
+      "detail": "Truth score 57%"
+    },
+    {
       "area": "clean_state",
       "gap_type": "stale_evidence",
       "detail": "7 stale state file(s)"
     }
   ],
-  "overall_score": 88,
-  "created_at": "2026-03-16T01:20:09.655Z"
+  "overall_score": 63,
+  "created_at": "2026-03-16T21:44:18.959Z"
 }
