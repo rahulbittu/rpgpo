@@ -1,5 +1,667 @@
 [
   {
+    "task_id": "t_mmtdjz65e07j",
+    "title": "Design a personal disaster preparedness plan for a family of four. Include emerg",
+    "raw_request": "Design a personal disaster preparedness plan for a family of four. Include emergency supply lists, communication plans, evacuation routes, financial document protection, and 72-hour self-sufficiency protocols.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:05:07.661Z",
+    "updated_at": "2026-03-16T16:11:29.113Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:06:42.258Z",
+      "interpreted_objective": "Create a comprehensive disaster preparedness plan for a family of four, including supplies, communication, and self-sufficiency protocols.",
+      "expected_outcome": "A detailed, actionable disaster preparedness plan that ensures a family of four can maintain safety and self-sufficiency for 72 hours.",
+      "key_unknowns": [
+        "Specific geographic location of the family",
+        "Types of disasters most likely to occur",
+        "Existing resources or plans the family may have"
+      ],
+      "recommended_strategy": "Conduct research on best practices for disaster preparedness tailored to families. Synthesize findings into a structured plan covering supplies, communication, evacuation, and document protection. Ensure the plan is clear and actionable.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Disaster Preparedness Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A comprehensive list of best practices for disaster preparedness, including emergency supply lists, communication plans, evacuation routes, and financial document protection.",
+          "prompt": "Search the web for current best practices in disaster preparedness for families. Include information on emergency supply lists, communication plans, evacuation routes, financial document protection, and 72-hour self-sufficiency protocols. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Disaster Preparedness Plan",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured disaster preparedness plan for a family of four, ready for implementation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable disaster preparedness plan for a family of four. Include specific emergency supply lists, communication plans, evacuation routes, financial document protection strategies, and 72-hour self-sufficiency protocols.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-disaster-preparedness-plan.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1943
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtdjz5h1dxb",
+    "title": "Create a comprehensive guide to maximizing small closet space. Include vertical ",
+    "raw_request": "Create a comprehensive guide to maximizing small closet space. Include vertical organization systems, seasonal rotation strategies, capsule wardrobe integration, shoe storage solutions, and lighting improvements.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:05:07.637Z",
+    "updated_at": "2026-03-16T16:11:13.351Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:06:30.824Z",
+      "interpreted_objective": "Create a comprehensive guide to maximizing small closet space.",
+      "expected_outcome": "A detailed guide that includes strategies for vertical organization, seasonal rotation, capsule wardrobe integration, shoe storage, and lighting improvements.",
+      "key_unknowns": [
+        "Current best practices for closet organization",
+        "Innovative storage solutions",
+        "Effective lighting techniques for small spaces"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and innovative solutions for maximizing closet space. Then, synthesize this information into a comprehensive guide with actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Closet Organization Strategies",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and innovative solutions for maximizing small closet space.",
+          "prompt": "Search the web for current, specific information about maximizing small closet space. Include strategies for vertical organization systems, seasonal rotation, capsule wardrobe integration, shoe storage solutions, and lighting improvements. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Maximizing Closet Space",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide with actionable recommendations for maximizing small closet space.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide to maximizing small closet space. Include strategies for vertical organization systems, seasonal rotation, capsule wardrobe integration, shoe storage solutions, and lighting improvements. Provide specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-11-02-maximizing-closet-space.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2428
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmtdjz4tv7se",
+    "title": "Write a complete concept for a narrative video game about a park ranger who disc",
+    "raw_request": "Write a complete concept for a narrative video game about a park ranger who discovers time anomalies in a national park, each leading to a different era of the parks history. Include gameplay loops and story beats.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:05:07.613Z",
+    "updated_at": "2026-03-16T16:10:43.901Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:06:22.010Z",
+      "interpreted_objective": "Develop a detailed narrative and gameplay concept for a video game about a park ranger discovering time anomalies in a national park.",
+      "expected_outcome": "A comprehensive game concept document including narrative arcs, gameplay loops, and story beats.",
+      "key_unknowns": [
+        "Specific historical eras the park will feature",
+        "Core gameplay mechanics",
+        "Target audience for the game"
+      ],
+      "recommended_strategy": "First, gather information on successful narrative video games and historical time travel themes. Then, synthesize this research into a detailed game concept document, outlining the narrative structure, gameplay loops, and key story beats. Ensure the concept is engaging and feasible for development.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Narrative Video Games and Time Travel Themes",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Research data on successful narrative video games and time travel themes.",
+          "prompt": "Search the web for current, specific information about successful narrative video games and historical time travel themes. Include examples, gameplay mechanics, and narrative structures.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Game Concept Document",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed game concept document including narrative arcs, gameplay loops, and story beats.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed game concept document for a narrative video game about a park ranger discovering time anomalies in a national park. Include narrative arcs, gameplay loops, and key story beats.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-game-concept.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1899
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmtdjz44hrvf",
+    "title": "Plan an 8-day jazz and blues history tour through New Orleans and Memphis. Inclu",
+    "raw_request": "Plan an 8-day jazz and blues history tour through New Orleans and Memphis. Include Preservation Hall, Beale Street clubs, civil rights museum, plantation tours, Cajun food trail, and live music calendar.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:05:07.588Z",
+    "updated_at": "2026-03-16T16:10:28.009Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:06:13.823Z",
+      "interpreted_objective": "Plan a detailed 8-day jazz and blues history tour through New Orleans and Memphis.",
+      "expected_outcome": "A comprehensive itinerary covering key cultural and historical sites, live music events, and local cuisine experiences.",
+      "key_unknowns": [
+        "Specific dates for the tour",
+        "Availability of live music events during the tour dates",
+        "Exact locations and schedules for plantation tours and Cajun food trail"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on key attractions, events, and dining options in New Orleans and Memphis. Synthesize this information into a structured tour itinerary, ensuring a balance of historical, cultural, and culinary experiences.",
+      "risk_level": "yellow",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research New Orleans and Memphis attractions",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on key attractions, events, and dining options in New Orleans and Memphis with citations.",
+          "prompt": "Search the web for current, specific information about jazz and blues attractions, live music events, civil rights museum, plantation tours, and Cajun food trail in New Orleans and Memphis. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize tour itinerary",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured 8-day itinerary for a jazz and blues history tour through New Orleans and Memphis.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed 8-day itinerary for a jazz and blues history tour through New Orleans and Memphis. Include visits to Preservation Hall, Beale Street clubs, civil rights museum, plantation tours, Cajun food trail, and a live music calendar.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-jazz-blues-tour.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2016
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmtdjz3fcw92",
+    "title": "Design a comprehensive dental care routine for prevention-focused adults. Includ",
+    "raw_request": "Design a comprehensive dental care routine for prevention-focused adults. Include brushing technique science, interdental cleaning comparison, mouthwash evidence review, and professional cleaning frequency optimization.",
+    "domain": "personalops",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:05:07.563Z",
+    "updated_at": "2026-03-16T16:10:15.297Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:06:04.871Z",
+      "interpreted_objective": "Design a comprehensive dental care routine focused on prevention for adults.",
+      "expected_outcome": "A detailed guide on dental care routines including brushing techniques, interdental cleaning, mouthwash use, and professional cleaning frequency.",
+      "key_unknowns": [
+        "Current scientific consensus on optimal brushing techniques",
+        "Comparative effectiveness of different interdental cleaning methods",
+        "Evidence supporting various mouthwash products",
+        "Recommended frequency for professional dental cleanings"
+      ],
+      "recommended_strategy": "Conduct thorough research on each aspect of dental care routine using credible sources. Synthesize findings into a comprehensive guide that provides actionable recommendations for adults focused on preventive dental care.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Dental Care Techniques",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Research data on brushing techniques, interdental cleaning methods, mouthwash efficacy, and professional cleaning frequency.",
+          "prompt": "Search the web for current, specific information about optimal brushing techniques, interdental cleaning methods, mouthwash efficacy, and professional cleaning frequency for preventive dental care. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Dental Care Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide detailing a dental care routine for prevention-focused adults.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a comprehensive dental care routine. Include specific techniques, products, and frequency recommendations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/personalops-{date}-dental-care-routine.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1962
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelp1xs"
+  },
+  {
+    "task_id": "t_mmtdjz2ssus5",
+    "title": "Create a guide to building cross-functional influence as a tech lead without for",
+    "raw_request": "Create a guide to building cross-functional influence as a tech lead without formal authority. Include stakeholder mapping, RACI frameworks, persuasion techniques, and managing technical debt conversations.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:05:07.540Z",
+    "updated_at": "2026-03-16T16:10:04.134Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:05:57.539Z",
+      "interpreted_objective": "Create a comprehensive guide for tech leads to build cross-functional influence without formal authority.",
+      "expected_outcome": "A detailed guide that includes stakeholder mapping, RACI frameworks, persuasion techniques, and strategies for managing technical debt conversations.",
+      "key_unknowns": [
+        "Specific audience for the guide",
+        "Preferred format for the guide",
+        "Depth of detail required for each section"
+      ],
+      "recommended_strategy": "Conduct research on best practices for building influence in tech leadership roles. Synthesize findings into a structured guide that covers stakeholder mapping, RACI frameworks, persuasion techniques, and managing technical debt. Ensure the guide is actionable and aligns with the startup context.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Cross-Functional Influence Techniques",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Research findings on cross-functional influence techniques for tech leads.",
+          "prompt": "Search the web for current, specific information about building cross-functional influence as a tech lead without formal authority. Focus on stakeholder mapping, RACI frameworks, persuasion techniques, and managing technical debt conversations. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide for Building Influence",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for tech leads on building cross-functional influence.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations into a guide for building cross-functional influence as a tech lead without formal authority. Include sections on stakeholder mapping, RACI frameworks, persuasion techniques, and managing technical debt conversations.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1998
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmtdjz258bhz",
+    "title": "Research the best home office monitors for programming. Compare LG 27GP850-B, De",
+    "raw_request": "Research the best home office monitors for programming. Compare LG 27GP850-B, Dell U2723QE, and ASUS ProArt PA278QV with text clarity, USB-C hub capability, and multi-monitor daisy chaining.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:05:07.517Z",
+    "updated_at": "2026-03-16T16:09:48.054Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:05:47.782Z",
+      "interpreted_objective": "Research and compare the LG 27GP850-B, Dell U2723QE, and ASUS ProArt PA278QV monitors for programming, focusing on text clarity, USB-C hub capability, and multi-monitor daisy chaining.",
+      "expected_outcome": "A comprehensive comparison report of the three monitors with specific details on text clarity, USB-C hub capability, and multi-monitor daisy chaining, including pros, cons, and recommendations.",
+      "key_unknowns": [
+        "Current reviews and specifications of each monitor",
+        "Availability of USB-C hub capability and multi-monitor daisy chaining for each model",
+        "Performance comparison in terms of text clarity"
+      ],
+      "recommended_strategy": "First, conduct web research to gather current specifications and reviews for each monitor model using Perplexity. Then, synthesize the findings into a structured comparison report using OpenAI, highlighting key features, pros, cons, and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Monitor Specifications and Reviews",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current specifications and reviews for LG 27GP850-B, Dell U2723QE, and ASUS ProArt PA278QV, focusing on text clarity, USB-C hub capability, and multi-monitor daisy chaining.",
+          "prompt": "Search the web for current, specific information about the LG 27GP850-B, Dell U2723QE, and ASUS ProArt PA278QV monitors. Focus on text clarity, USB-C hub capability, and multi-monitor daisy chaining. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Monitor Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the three monitors with details on text clarity, USB-C hub capability, and multi-monitor daisy chaining, including pros, cons, and recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for the LG 27GP850-B, Dell U2723QE, and ASUS ProArt PA278QV monitors. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-2023-10-monitor-comparison.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2265
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmtdjz1h7mbf",
+    "title": "Explain how Linux process scheduling works from the kernel level. Cover the CFS ",
+    "raw_request": "Explain how Linux process scheduling works from the kernel level. Cover the CFS algorithm, nice values, real-time priorities, cgroups resource control, and how containers leverage namespaces and cgroups.",
+    "domain": "learning",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:05:07.493Z",
+    "updated_at": "2026-03-16T16:09:38.207Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:05:33.078Z",
+      "interpreted_objective": "Explain Linux process scheduling at the kernel level, focusing on CFS, nice values, real-time priorities, cgroups, and containerization.",
+      "expected_outcome": "A comprehensive report detailing Linux kernel process scheduling, including CFS, nice values, real-time priorities, cgroups, and containerization.",
+      "key_unknowns": [
+        "Current detailed implementation of CFS in the latest Linux kernel",
+        "Specifics on how containers utilize namespaces and cgroups in modern deployments"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current, detailed information on Linux process scheduling, focusing on the CFS algorithm, nice values, real-time priorities, cgroups, and containerization. Then, synthesize this information into a structured report that clearly explains each component and their interrelations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Linux Process Scheduling",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on Linux process scheduling, CFS, nice values, real-time priorities, cgroups, and containerization with citations.",
+          "prompt": "Search the web for current, specific information about Linux process scheduling at the kernel level. Focus on the Completely Fair Scheduler (CFS) algorithm, nice values, real-time priorities, cgroups resource control, and how containers leverage namespaces and cgroups. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Linux Scheduling Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured report explaining Linux process scheduling, including CFS, nice values, real-time priorities, cgroups, and containerization.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive report explaining Linux process scheduling at the kernel level. Cover the Completely Fair Scheduler (CFS) algorithm, nice values, real-time priorities, cgroups resource control, and how containers leverage namespaces and cgroups. Ensure clarity and logical flow from simple to complex concepts.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/learning-{date}-linux-scheduling.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1996
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrxfoasuq8h"
+  },
+  {
+    "task_id": "t_mmtdjz0se5sw",
+    "title": "Create a guide to optimizing health insurance selection during open enrollment. ",
+    "raw_request": "Create a guide to optimizing health insurance selection during open enrollment. Include HSA vs FSA analysis, in-network provider evaluation, prescription drug tier planning, and dependent coverage considerations.",
+    "domain": "health",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:05:07.468Z",
+    "updated_at": "2026-03-16T16:09:21.449Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:05:25.691Z",
+      "interpreted_objective": "Create a comprehensive guide to help individuals optimize their health insurance selection during open enrollment.",
+      "expected_outcome": "A detailed, actionable guide covering HSA vs FSA, in-network provider evaluation, prescription drug tier planning, and dependent coverage considerations.",
+      "key_unknowns": [
+        "Current trends and changes in health insurance policies",
+        "Specific needs and preferences of the target audience"
+      ],
+      "recommended_strategy": "Conduct thorough research on current health insurance options and trends. Synthesize the findings into a structured guide that addresses each aspect of health insurance selection. Ensure the guide is evidence-based and includes actionable recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Health Insurance Trends",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on current health insurance trends, HSA vs FSA benefits, in-network provider considerations, prescription drug tiers, and dependent coverage.",
+          "prompt": "Search the web for current, specific information about health insurance selection during open enrollment. Include details on HSA vs FSA, in-network provider evaluation, prescription drug tier planning, and dependent coverage considerations. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Health Insurance Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured, actionable guide for optimizing health insurance selection during open enrollment.",
+          "prompt": "Based on the research results from prior subtasks, synthesize an actionable guide for optimizing health insurance selection during open enrollment. Include analysis of HSA vs FSA, in-network provider evaluation, prescription drug tier planning, and dependent coverage considerations.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/health-{date}-insurance-guide.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1904
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrx6pusf2fv"
+  },
+  {
+    "task_id": "t_mmtdjyzzcdrs",
+    "title": "Design a comprehensive Terraform state management strategy for multi-team organi",
+    "raw_request": "Design a comprehensive Terraform state management strategy for multi-team organizations. Include remote backends, state locking, workspace isolation, drift detection, and import workflows for existing infrastructure.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:05:07.439Z",
+    "updated_at": "2026-03-16T16:09:07.401Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:05:17.419Z",
+      "interpreted_objective": "Design a Terraform state management strategy for multi-team organizations.",
+      "expected_outcome": "A comprehensive strategy document detailing Terraform state management including remote backends, state locking, workspace isolation, drift detection, and import workflows.",
+      "key_unknowns": [
+        "Current best practices for Terraform state management",
+        "Specific challenges faced by multi-team organizations in managing Terraform state",
+        "Tools and technologies available for drift detection and state locking"
+      ],
+      "recommended_strategy": "Conduct research to gather current best practices and tools for Terraform state management. Synthesize findings into a detailed strategy document that addresses the specific needs of multi-team organizations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Terraform State Management",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Research findings on current best practices and tools for Terraform state management.",
+          "prompt": "Search the web for current, specific information about Terraform state management strategies for multi-team organizations. Include details on remote backends, state locking, workspace isolation, drift detection, and import workflows. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Terraform Strategy Document",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A detailed strategy document outlining Terraform state management for multi-team organizations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive Terraform state management strategy for multi-team organizations. Include sections on remote backends, state locking, workspace isolation, drift detection, and import workflows. Provide actionable recommendations and specific implementation steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-{date}-TerraformStateManagement.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2441
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
     "task_id": "t_mmtd8j8mzzwq",
     "title": "Design a comprehensive personal data backup strategy. Include 3-2-1 backup rule ",
     "raw_request": "Design a comprehensive personal data backup strategy. Include 3-2-1 backup rule implementation, cloud vs local trade-offs, encryption, automated scheduling, and disaster recovery testing.",
