@@ -1,5 +1,718 @@
 [
   {
+    "task_id": "t_mmte5693ff3a",
+    "title": "Design a comprehensive personal cybersecurity audit checklist. Include password ",
+    "raw_request": "Design a comprehensive personal cybersecurity audit checklist. Include password manager migration, 2FA enforcement, email alias strategy, social media privacy hardening, device encryption, and breach monitoring setup.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:21:36.615Z",
+    "updated_at": "2026-03-16T16:28:02.912Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:23:28.790Z",
+      "interpreted_objective": "Create a detailed checklist for a personal cybersecurity audit.",
+      "expected_outcome": "A comprehensive and actionable checklist covering key areas of personal cybersecurity.",
+      "key_unknowns": [
+        "Specific tools or services to recommend for each checklist item",
+        "The level of detail required for each checklist item",
+        "Rahul's preferences for specific cybersecurity tools or practices"
+      ],
+      "recommended_strategy": "First, research current best practices and tools for each aspect of personal cybersecurity mentioned in the request. Then, synthesize this information into a structured and actionable checklist. Ensure the checklist is clear and concise, providing practical steps for implementation.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Cybersecurity Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A list of current best practices and recommended tools for each aspect of personal cybersecurity.",
+          "prompt": "Search the web for current best practices and recommended tools for personal cybersecurity, focusing on password manager migration, 2FA enforcement, email alias strategy, social media privacy hardening, device encryption, and breach monitoring setup. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Cybersecurity Audit Checklist",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured and actionable personal cybersecurity audit checklist.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive personal cybersecurity audit checklist. Include specific recommendations and practical steps for password manager migration, 2FA enforcement, email alias strategy, social media privacy hardening, device encryption, and breach monitoring setup.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2052
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmte568jwmgi",
+    "title": "Create a guide to building a productive balcony garden for apartment dwellers. I",
+    "raw_request": "Create a guide to building a productive balcony garden for apartment dwellers. Include container selection, vertical growing systems, wind-resistant plants, watering automation, and year-round herb production.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:21:36.595Z",
+    "updated_at": "2026-03-16T16:27:51.945Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:23:18.346Z",
+      "interpreted_objective": "Create a comprehensive guide for apartment dwellers to build a productive balcony garden.",
+      "expected_outcome": "A detailed guide covering container selection, vertical growing systems, wind-resistant plants, watering automation, and year-round herb production.",
+      "key_unknowns": [
+        "Specific preferences of the target audience",
+        "Current trends in balcony gardening",
+        "Availability of resources for apartment dwellers"
+      ],
+      "recommended_strategy": "Conduct research on current trends and best practices in balcony gardening. Synthesize findings into a structured guide that addresses all specified components. Ensure the guide is actionable and tailored to apartment dwellers.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Balcony Gardening Trends",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A summary of current trends and best practices in balcony gardening.",
+          "prompt": "Search the web for current, specific information about balcony gardening trends and best practices, including container selection, vertical growing systems, wind-resistant plants, watering automation, and year-round herb production. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Balcony Gardening Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide for building a productive balcony garden for apartment dwellers.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed guide for building a productive balcony garden. Include sections on container selection, vertical growing systems, wind-resistant plants, watering automation, and year-round herb production. Ensure the guide is actionable and tailored to apartment dwellers.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 1989
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
+    "task_id": "t_mmte567zf78z",
+    "title": "Write a complete series concept for an alternate history show where the Library ",
+    "raw_request": "Write a complete series concept for an alternate history show where the Library of Alexandria was never destroyed and accelerated human technology by 500 years. Include world-building document and pilot episode outline.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:21:36.575Z",
+    "updated_at": "2026-03-16T16:28:13.743Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:23:10.254Z",
+      "interpreted_objective": "Develop a detailed concept for an alternate history TV series where the Library of Alexandria was preserved and advanced technology by 500 years.",
+      "expected_outcome": "A comprehensive world-building document and a pilot episode outline for the series, providing a clear vision and structure for potential production.",
+      "key_unknowns": [
+        "Specific historical events altered by the preservation of the Library of Alexandria",
+        "Technological advancements resulting from this alternate history",
+        "Cultural and societal changes in this world",
+        "Character details and plot for the pilot episode"
+      ],
+      "recommended_strategy": "First, research the historical significance and potential impact of the Library of Alexandria's preservation on technology and society. Then, synthesize this research into a detailed world-building document that outlines the setting, key historical divergences, and technological advancements. Finally, draft a pilot episode outline that introduces the main characters and sets up the series' central conflict.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Historical Impact",
+          "stage": "report",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Detailed information on the potential impact of the Library of Alexandria's preservation on technology and society.",
+          "prompt": "Search the web for current, specific information about the historical significance of the Library of Alexandria and how its preservation could have accelerated technological and societal development. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize World-Building Document",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive world-building document detailing the alternate history setting, including technological advancements and societal changes.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed world-building document for an alternate history series where the Library of Alexandria was never destroyed. Include specific technological advancements, cultural shifts, and key historical divergences.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Draft Pilot Episode Outline",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "An outline for the pilot episode introducing main characters and the central conflict.",
+          "prompt": "Using the world-building document, draft an outline for the pilot episode of the series. Introduce the main characters, the setting, and the central conflict that will drive the series.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2234
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmte567fbu45",
+    "title": "Plan a 12-day wine country and national parks road trip through California. Incl",
+    "raw_request": "Plan a 12-day wine country and national parks road trip through California. Include Napa tastings, Sonoma farm-to-table dining, Yosemite hiking, Big Sur coastal drive, Santa Barbara wineries, and Joshua Tree stargazing.",
+    "domain": "travel",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:21:36.555Z",
+    "updated_at": "2026-03-16T16:27:33.445Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:22:56.327Z",
+      "interpreted_objective": "Plan a detailed 12-day road trip itinerary through California's wine country and national parks.",
+      "expected_outcome": "A comprehensive itinerary including activities, dining, and accommodations for each day, with specific options and costs.",
+      "key_unknowns": [
+        "Current availability and pricing for accommodations and activities",
+        "Specific dates for the trip",
+        "Traveler preferences and budget constraints"
+      ],
+      "recommended_strategy": "Conduct research to gather current information on accommodations, dining, and activities in the specified regions. Synthesize this data into a structured itinerary with specific recommendations and costs. Ensure all logistics are covered, including travel times and reservations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Current Availability and Pricing",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current information on accommodations, dining, and activities in Napa, Sonoma, Yosemite, Big Sur, Santa Barbara, and Joshua Tree, including prices and availability.",
+          "prompt": "Search the web for current availability and pricing for accommodations, dining, and activities in Napa, Sonoma, Yosemite, Big Sur, Santa Barbara, and Joshua Tree. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Itinerary and Recommendations",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed 12-day itinerary with specific recommendations for accommodations, dining, and activities, including costs and logistics.",
+          "prompt": "Based on the research results, synthesize a 12-day itinerary for a road trip through California's wine country and national parks. Include specific recommendations for accommodations, dining, and activities, with costs and logistics for each day.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/travel-2023-10-road-trip-itinerary.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 1929
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrzdcvqmpon"
+  },
+  {
+    "task_id": "t_mmte566u9ys6",
+    "title": "Design a comprehensive shoulder mobility and injury prevention protocol for peop",
+    "raw_request": "Design a comprehensive shoulder mobility and injury prevention protocol for people who lift weights. Include rotator cuff prehab, scapular stability drills, overhead mobility progressions, and programming deload strategies.",
+    "domain": "general",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:21:36.534Z",
+    "updated_at": "2026-03-16T16:27:20.310Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:22:46.510Z",
+      "interpreted_objective": "Design a comprehensive protocol for shoulder mobility and injury prevention for weightlifters.",
+      "expected_outcome": "A detailed report outlining exercises and strategies for shoulder health, including rotator cuff prehab, scapular stability drills, overhead mobility progressions, and deload strategies.",
+      "key_unknowns": [
+        "Current best practices for shoulder health in weightlifting",
+        "Specific exercises for rotator cuff prehab",
+        "Effective scapular stability drills",
+        "Overhead mobility progression techniques",
+        "Programming deload strategies"
+      ],
+      "recommended_strategy": "First, conduct research to gather current best practices and exercises for shoulder mobility and injury prevention in weightlifting. Then, synthesize this information into a structured protocol with actionable steps and recommendations.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Shoulder Health Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices and exercises for shoulder mobility and injury prevention in weightlifting, with citations.",
+          "prompt": "Search the web for current, specific information about shoulder mobility and injury prevention for weightlifters. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Shoulder Mobility Protocol",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive protocol for shoulder mobility and injury prevention, including rotator cuff prehab, scapular stability drills, overhead mobility progressions, and deload strategies.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations for a shoulder mobility and injury prevention protocol for weightlifters. Include specific exercises and programming strategies.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/general-2023-shoulder-mobility-protocol.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2473
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhelajyt"
+  },
+  {
+    "task_id": "t_mmte566ay7c2",
+    "title": "Create a guide to managing engineering team burnout. Include early warning indic",
+    "raw_request": "Create a guide to managing engineering team burnout. Include early warning indicators, workload assessment frameworks, sustainable pace metrics, recovery protocols, and organizational systemic fixes beyond individual interventions.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:21:36.514Z",
+    "updated_at": "2026-03-16T16:27:08.437Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:22:36.906Z",
+      "interpreted_objective": "Create a comprehensive guide for managing engineering team burnout, covering indicators, frameworks, metrics, protocols, and systemic fixes.",
+      "expected_outcome": "A detailed guide that helps organizations identify and manage burnout in engineering teams effectively.",
+      "key_unknowns": [
+        "Current best practices for managing team burnout",
+        "Specific workload assessment frameworks",
+        "Sustainable pace metrics",
+        "Recovery protocols",
+        "Organizational systemic fixes"
+      ],
+      "recommended_strategy": "First, research current best practices and frameworks related to managing engineering team burnout using Perplexity. Then, synthesize the findings into a structured guide using OpenAI, ensuring it includes actionable recommendations and evidence-based strategies.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Best Practices for Managing Engineering Team Burnout",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current best practices, frameworks, metrics, protocols, and systemic fixes for managing engineering team burnout, with citations.",
+          "prompt": "Search the web for current, specific information about managing engineering team burnout. Include early warning indicators, workload assessment frameworks, sustainable pace metrics, recovery protocols, and organizational systemic fixes. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Guide on Managing Engineering Team Burnout",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A structured guide on managing engineering team burnout, including actionable recommendations and evidence-based strategies.",
+          "prompt": "Based on the research results from the previous subtask, synthesize a comprehensive guide on managing engineering team burnout. Include early warning indicators, workload assessment frameworks, sustainable pace metrics, recovery protocols, and organizational systemic fixes. Provide actionable recommendations and evidence-based strategies.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-engineering-team-burnout.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2104
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmte565qt6e3",
+    "title": "Research the best portable power stations for home backup and camping. Compare E",
+    "raw_request": "Research the best portable power stations for home backup and camping. Compare EcoFlow Delta 2 Max, Bluetti AC200MAX, and Jackery Explorer 2000 Plus with solar charging speed, expansion capability, and UPS functionality.",
+    "domain": "research",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:21:36.494Z",
+    "updated_at": "2026-03-16T16:26:48.901Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:22:28.682Z",
+      "interpreted_objective": "Research and compare the EcoFlow Delta 2 Max, Bluetti AC200MAX, and Jackery Explorer 2000 Plus portable power stations focusing on solar charging speed, expansion capability, and UPS functionality.",
+      "expected_outcome": "A comprehensive comparison report detailing the strengths and weaknesses of each power station in terms of solar charging speed, expansion capability, and UPS functionality, with specific recommendations.",
+      "key_unknowns": [
+        "Current specifications and performance metrics for each power station",
+        "User reviews and expert opinions on these models",
+        "Pricing and availability of these power stations"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather the latest data on the EcoFlow Delta 2 Max, Bluetti AC200MAX, and Jackery Explorer 2000 Plus, focusing on solar charging speed, expansion capability, and UPS functionality. Then, synthesize this data into a structured comparison report with actionable insights.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Portable Power Stations",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Raw data on the EcoFlow Delta 2 Max, Bluetti AC200MAX, and Jackery Explorer 2000 Plus, including specifications, performance metrics, user reviews, and expert opinions.",
+          "prompt": "Search the web for current, specific information about the EcoFlow Delta 2 Max, Bluetti AC200MAX, and Jackery Explorer 2000 Plus portable power stations. Focus on solar charging speed, expansion capability, and UPS functionality. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Comparison Report",
+          "stage": "report",
+          "assigned_role": "strategy",
+          "assigned_model": "openai",
+          "expected_output": "A structured comparison report of the three power stations with recommendations.",
+          "prompt": "Based on the research results from prior subtasks, synthesize actionable recommendations comparing the EcoFlow Delta 2 Max, Bluetti AC200MAX, and Jackery Explorer 2000 Plus. Include specific names, numbers, and concrete next steps.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/research-{date}-portable-power-stations.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2239
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmr8utczkr9d"
+  },
+  {
+    "task_id": "t_mmte5654dzay",
+    "title": "Explain how virtual memory and page tables work in modern operating systems. Cov",
+    "raw_request": "Explain how virtual memory and page tables work in modern operating systems. Cover TLB caching, page fault handling, demand paging, copy-on-write, huge pages, and NUMA-aware memory allocation.",
+    "domain": "writing",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:21:36.472Z",
+    "updated_at": "2026-03-16T16:26:36.055Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:22:18.339Z",
+      "interpreted_objective": "Explain the workings of virtual memory and page tables in modern operating systems, covering specific advanced topics.",
+      "expected_outcome": "A comprehensive, well-structured explanation of virtual memory, including TLB caching, page fault handling, demand paging, copy-on-write, huge pages, and NUMA-aware memory allocation, tailored for a technical audience.",
+      "key_unknowns": [
+        "Current best practices in handling virtual memory in modern OS",
+        "Recent advancements in NUMA-aware memory allocation"
+      ],
+      "recommended_strategy": "First, conduct a web search to gather current and specific information on virtual memory and related topics using Perplexity. Then, synthesize the findings into a clear and concise report using OpenAI, ensuring the explanation is detailed and technical.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Virtual Memory Topics",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A collection of current information and data on virtual memory, TLB caching, page fault handling, demand paging, copy-on-write, huge pages, and NUMA-aware memory allocation, with citations.",
+          "prompt": "Search the web for current, specific information about virtual memory and page tables in modern operating systems, including TLB caching, page fault handling, demand paging, copy-on-write, huge pages, and NUMA-aware memory allocation. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Virtual Memory Report",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A detailed and structured report explaining virtual memory and page tables, covering TLB caching, page fault handling, demand paging, copy-on-write, huge pages, and NUMA-aware memory allocation.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a detailed and structured explanation of virtual memory and page tables in modern operating systems. Include sections on TLB caching, page fault handling, demand paging, copy-on-write, huge pages, and NUMA-aware memory allocation.",
+          "files_to_read": [],
+          "files_to_write": [
+            "03-Operations/Reports/writing-{date}-virtual_memory.md"
+          ],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": null,
+      "model_used": "gpt-4o",
+      "tokens_used": 2001
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmrwwk015vlu"
+  },
+  {
+    "task_id": "t_mmte564hy3t0",
+    "title": "Create a guide to building a real estate syndication investment strategy. Includ",
+    "raw_request": "Create a guide to building a real estate syndication investment strategy. Include GP vs LP roles, preferred return structures, waterfall distributions, K-1 tax implications, and due diligence checklist for sponsors.",
+    "domain": "wealthresearch",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "green",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:21:36.449Z",
+    "updated_at": "2026-03-16T16:25:58.898Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:22:05.283Z",
+      "interpreted_objective": "Create a detailed guide on building a real estate syndication investment strategy.",
+      "expected_outcome": "A comprehensive guide that includes GP vs LP roles, preferred return structures, waterfall distributions, K-1 tax implications, and a due diligence checklist for sponsors.",
+      "key_unknowns": [
+        "Current trends and data on real estate syndication",
+        "Specific examples of successful syndications",
+        "Detailed tax implications for investors"
+      ],
+      "recommended_strategy": "Conduct research on real estate syndication to gather current data and examples. Synthesize this information into a structured guide covering all specified topics. Ensure the guide is actionable with specific steps and real-world examples.",
+      "risk_level": "green",
+      "is_code_task": false,
+      "target_files_identified": [],
+      "approval_points": [],
+      "subtasks": [
+        {
+          "title": "Research Real Estate Syndication",
+          "stage": "research",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "Current data and examples of real estate syndication, including GP vs LP roles, preferred return structures, waterfall distributions, and K-1 tax implications.",
+          "prompt": "Search the web for current, specific information about real estate syndication investment strategies. Include details on GP vs LP roles, preferred return structures, waterfall distributions, K-1 tax implications, and due diligence checklists for sponsors. Provide real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Synthesize Real Estate Syndication Guide",
+          "stage": "report",
+          "assigned_role": "creative",
+          "assigned_model": "openai",
+          "expected_output": "A comprehensive guide on building a real estate syndication investment strategy with actionable insights and examples.",
+          "prompt": "Based on the research results from prior subtasks, synthesize a comprehensive guide on building a real estate syndication investment strategy. Include specific sections on GP vs LP roles, preferred return structures, waterfall distributions, K-1 tax implications, and a due diligence checklist for sponsors. Provide actionable recommendations and real-world examples.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": true,
+        "projectRelRoot": "02-Projects/WealthResearch",
+        "totalFiles": 0,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2430
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmplwhel73hc"
+  },
+  {
+    "task_id": "t_mmte563qvvkd",
+    "title": "Design a comprehensive OAuth 2.0 implementation with PKCE for a single-page appl",
+    "raw_request": "Design a comprehensive OAuth 2.0 implementation with PKCE for a single-page application. Include token storage strategies, refresh token rotation, silent renewal, logout propagation, and security headers configuration.",
+    "domain": "startup",
+    "desired_outcome": "",
+    "constraints": "",
+    "urgency": "normal",
+    "risk_level": "yellow",
+    "success_criteria": "",
+    "created_at": "2026-03-16T16:21:36.422Z",
+    "updated_at": "2026-03-16T16:25:42.986Z",
+    "status": "done",
+    "board_deliberation": {
+      "timestamp": "2026-03-16T16:21:54.224Z",
+      "interpreted_objective": "Implement OAuth 2.0 with PKCE for a single-page application, including security and token management features.",
+      "expected_outcome": "A secure and functional OAuth 2.0 implementation with PKCE, supporting token storage, refresh token rotation, silent renewal, logout propagation, and security headers.",
+      "key_unknowns": [
+        "Specific technology stack of the single-page application",
+        "Existing authentication mechanisms in place",
+        "Current security policies and infrastructure"
+      ],
+      "recommended_strategy": "First, research the best practices for implementing OAuth 2.0 with PKCE in single-page applications, focusing on security and token management. Then, locate the relevant files in the codebase to implement these features. Finally, implement the necessary code changes, ensuring all security protocols are adhered to.",
+      "risk_level": "yellow",
+      "is_code_task": true,
+      "target_files_identified": [],
+      "approval_points": [
+        "Decision on the specific libraries or frameworks to use for OAuth 2.0 implementation"
+      ],
+      "subtasks": [
+        {
+          "title": "Research OAuth 2.0 with PKCE Best Practices",
+          "stage": "audit",
+          "assigned_role": "research",
+          "assigned_model": "perplexity",
+          "expected_output": "A detailed report on best practices for OAuth 2.0 with PKCE in single-page applications.",
+          "prompt": "Search the web for current, specific information about best practices for implementing OAuth 2.0 with PKCE in single-page applications. Include real names, numbers, dates, URLs, and sources.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "green",
+          "approval_required": false,
+          "depends_on": []
+        },
+        {
+          "title": "Locate Relevant Files for Implementation",
+          "stage": "locate_files",
+          "assigned_role": "builder",
+          "assigned_model": "openai",
+          "expected_output": "Identification of specific files in the codebase where OAuth 2.0 with PKCE can be implemented.",
+          "prompt": "Identify the specific files in the codebase where OAuth 2.0 with PKCE should be implemented, focusing on areas related to authentication and security.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "yellow",
+          "approval_required": false,
+          "depends_on": [
+            0
+          ]
+        },
+        {
+          "title": "Implement OAuth 2.0 with PKCE",
+          "stage": "implement",
+          "assigned_role": "chief",
+          "assigned_model": "claude",
+          "expected_output": "Code changes implementing OAuth 2.0 with PKCE, including token storage, refresh token rotation, silent renewal, logout propagation, and security headers.",
+          "prompt": "Using the best practices identified and the files located, implement OAuth 2.0 with PKCE for the single-page application. Ensure token storage strategies, refresh token rotation, silent renewal, logout propagation, and security headers are configured.",
+          "files_to_read": [],
+          "files_to_write": [],
+          "risk_level": "red",
+          "approval_required": true,
+          "depends_on": [
+            1
+          ]
+        }
+      ],
+      "repo_grounding": {
+        "grounded": false,
+        "candidateCount": 0,
+        "targetAreas": [],
+        "candidates": []
+      },
+      "model_used": "gpt-4o",
+      "tokens_used": 2209
+    },
+    "execution_plan": null,
+    "project_id": "prj_mmss1o9w2mwr"
+  },
+  {
     "task_id": "t_mmtdvolnhfml",
     "title": "Create a guide to effective one-on-one meetings as an engineering manager. Inclu",
     "raw_request": "Create a guide to effective one-on-one meetings as an engineering manager. Include agenda templates, career conversation frameworks, difficult feedback delivery, remote 1:1 adaptations, and tracking development goals over time.",
