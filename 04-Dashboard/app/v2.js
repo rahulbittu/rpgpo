@@ -60,7 +60,7 @@ const ENG = {code:'Code',writing:'Writing',research:'Research',learning:'Learnin
   topranker:'Startup',careeregine:'Career',wealthresearch:'Finance',personalops:'Life Ops',newsroom:'News',founder2founder:'Film'};
 function engName(d) { return ENG[d] || (d || '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()); }
 // Prefer engine_display from backend when available
-function taskEngName(t) { return t.engine_display || taskEngName(t); }
+function taskEngName(t) { return t.engine_display || engName(t.engine || t.domain); }
 
 // Operator-facing status
 const STATUS = {intake:'Submitted',deliberating:'Planning',planned:'Ready',executing:'Working',waiting_approval:'Needs Review',done:'Complete',failed:'Issue',builder_running:'Working'};
@@ -68,6 +68,25 @@ function statusLabel(s) { return STATUS[s] || s; }
 function statusTag(s) {
   const cls = s === 'done' ? 'tag-ok' : s === 'failed' ? 'tag-err' : ['executing','deliberating','waiting_approval','builder_running'].includes(s) ? 'tag-warn' : 'tag-muted';
   return `<span class="tag ${cls}">${esc(statusLabel(s))}</span>`;
+}
+
+// Phase rail — shows Board of AI execution lifecycle
+const PHASES = [
+  { key: 'deliberating', label: 'Board Review' },
+  { key: 'planned', label: 'Plan Ready' },
+  { key: 'executing', label: 'Executing' },
+  { key: 'done', label: 'Complete' },
+];
+const PHASE_ORDER = { intake: 0, deliberating: 1, planned: 2, executing: 3, waiting_approval: 3, builder_running: 3, done: 4, failed: 4 };
+
+function renderPhaseRail(status) {
+  const current = PHASE_ORDER[status] || 0;
+  return `<div class="phase-rail">${PHASES.map((p, i) => {
+    const idx = i + 1;
+    const cls = idx < current ? 'done' : idx === current ? 'active' : 'pending';
+    const conn = i < PHASES.length - 1 ? `<div class="phase-conn ${idx < current ? 'done' : ''}"></div>` : '';
+    return `<div class="phase-node ${cls}"><span class="pn-dot"></span>${p.label}</div>${conn}`;
+  }).join('')}</div>`;
 }
 
 // Markdown to HTML (lightweight)
@@ -149,10 +168,13 @@ async function loadCommand() {
     // Running tasks
     const running = tasks.filter(t => ['executing', 'deliberating', 'builder_running'].includes(t.status));
     if (running.length) {
-      html += `<div style="font-size:11px;font-weight:600;color:var(--text-1);margin-bottom:6px">&#9679; ${running.length} Running</div>`;
-      html += running.map(t => `<div class="card card-accent card-click mb-12" style="padding:10px 14px" onclick="openWorkDetail('${t.task_id}')">
-        <div class="spread"><span style="font-size:12px;font-weight:500">${esc((t.title || '').slice(0, 55))}</span>${statusTag(t.status)}</div>
-        <div style="font-size:10px;color:var(--text-2);margin-top:3px"><span class="tag tag-muted">${taskEngName(t)}</span> &middot; ${timeAgo(t.created_at)}</div>
+      html += `<div style="font-size:11px;font-weight:600;color:var(--text-1);margin-bottom:6px">&#9679; ${running.length} Active</div>`;
+      html += running.map(t => `<div class="card card-accent card-click mb-12" style="padding:0" onclick="openWorkDetail('${t.task_id}')">
+        ${renderPhaseRail(t.status)}
+        <div style="padding:10px 14px">
+          <div class="spread"><span style="font-size:12px;font-weight:500">${esc((t.title || '').slice(0, 55))}</span><span class="tag tag-muted">${taskEngName(t)}</span></div>
+          <div style="font-size:10px;color:var(--text-2);margin-top:3px">${timeAgo(t.created_at)}${t.board_deliberation ? ' &middot; Board reviewed' : ''}</div>
+        </div>
       </div>`).join('');
     }
     attn.innerHTML = html;
@@ -340,7 +362,8 @@ function pollAskResult(taskId) {
         const progPct = Math.round(doneCount / totalCount * 100);
         if (!steps.length) steps = [`<div class="progress-step step-active"><div class="step-dot">&#9679;</div><div class="step-label">${statusLabel(task.status)}...</div><div class="step-time">${elapsed}s</div></div>`];
         const progressBar = totalCount > 1 ? `<div style="padding:0 14px 10px"><div style="height:3px;background:var(--border-1);border-radius:2px;overflow:hidden"><div style="height:100%;width:${progPct}%;background:var(--accent);border-radius:2px;transition:width .3s ease"></div></div><div style="font-size:9px;color:var(--text-2);margin-top:4px;text-align:right">${doneCount}/${totalCount} steps</div></div>` : '';
-        pp.innerHTML = `<div class="card"><div class="spread" style="padding:12px 14px;border-bottom:1px solid var(--border-0)"><span style="font-size:13px;font-weight:500">${esc((task.title || '').slice(0, 50))}</span><span class="tag tag-muted">${taskEngName(task)}</span></div><div class="progress-panel" style="padding:8px">${steps.join('')}</div>${progressBar}</div>`;
+        const boardNote = task.board_deliberation ? `<div style="padding:6px 14px;font-size:10px;color:var(--text-1);border-bottom:1px solid var(--border-0)"><span class="tag tag-accent" style="margin-right:6px">Board of AI</span>${esc((task.board_deliberation.recommended_strategy || '').slice(0, 80))}</div>` : '';
+        pp.innerHTML = `<div class="card" style="padding:0">${renderPhaseRail(task.status)}<div class="spread" style="padding:10px 14px;border-bottom:1px solid var(--border-0)"><span style="font-size:13px;font-weight:500">${esc((task.title || '').slice(0, 50))}</span><span class="tag tag-muted">${taskEngName(task)}</span></div>${boardNote}<div class="progress-panel" style="padding:8px">${steps.join('')}</div>${progressBar}</div>`;
       }
 
       if (task.status === 'done' || task.status === 'failed') {
@@ -481,13 +504,17 @@ function renderWorkList(tasks) {
     const isActive = ['executing', 'deliberating', 'builder_running', 'waiting_approval'].includes(t.status);
     const border = isActive ? 'card-accent' : t.status === 'failed' ? 'card-err' : '';
     const preview = t.board_deliberation?.interpreted_objective || '';
-    return `<div class="card card-click ${border}" style="padding:12px 14px;margin-bottom:6px" onclick="openWorkDetail('${t.task_id}')">
-      <div style="font-size:13px;font-weight:500;margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc((t.title || '').slice(0, 70))}</div>
-      ${preview ? `<div style="font-size:11px;color:var(--text-1);margin-bottom:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(preview.slice(0, 90))}</div>` : ''}
-      <div class="row gap-12" style="font-size:10px;color:var(--text-2)">
-        <span class="tag tag-muted">${taskEngName(t)}</span>
-        <span>${fmtDate(t.updated_at || t.created_at)}</span>
-        <span style="margin-left:auto">${statusTag(t.status)}</span>
+    const hasBoard = !!t.board_deliberation;
+    return `<div class="card card-click ${border}" style="padding:0;margin-bottom:6px" onclick="openWorkDetail('${t.task_id}')">
+      ${isActive ? renderPhaseRail(t.status) : ''}
+      <div style="padding:12px 14px">
+        <div style="font-size:13px;font-weight:500;margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc((t.title || '').slice(0, 70))}</div>
+        ${preview ? `<div style="font-size:11px;color:var(--text-1);margin-bottom:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(preview.slice(0, 90))}</div>` : ''}
+        <div class="row gap-12" style="font-size:10px;color:var(--text-2)">
+          <span class="tag tag-muted">${taskEngName(t)}</span>
+          ${hasBoard ? '<span class="tag tag-accent">Board reviewed</span>' : ''}
+          <span>${fmtDate(t.updated_at || t.created_at)}</span>
+          <span style="margin-left:auto">${statusTag(t.status)}</span>
       </div>
     </div>`;
   }).join('');
@@ -514,19 +541,35 @@ async function openWorkDetail(taskId) {
 
     let html = `<div style="margin-bottom:12px"><button class="b b-ghost b-sm" onclick="closeWorkDetail()">&#8592; Back to Work</button></div>`;
 
-    // Task metadata strip
-    const elapsed = task.created_at && task.updated_at ? Math.round((new Date(task.updated_at) - new Date(task.created_at)) / 1000) : null;
-    html += `<div class="row gap-12 mb-12" style="font-size:11px;color:var(--text-1);flex-wrap:wrap">
-      <span>${taskEngName(task)}</span>
-      <span>${statusTag(task.status)}</span>
-      <span>Created: ${fmtDate(task.created_at)}</span>
-      ${elapsed !== null ? `<span>Duration: ${elapsed < 60 ? elapsed + 's' : Math.floor(elapsed/60) + 'm ' + (elapsed%60) + 's'}</span>` : ''}
-      <span>${subs.length} step${subs.length !== 1 ? 's' : ''}</span>
+    // Phase rail — shows lifecycle stage
+    html += `<div class="card mb-16" style="padding:0">${renderPhaseRail(task.status)}
+      <div style="padding:12px 14px">
+        <div style="font-size:15px;font-weight:600;margin-bottom:6px">${esc((task.title || '').slice(0, 80))}</div>
+        <div class="row gap-12" style="font-size:11px;color:var(--text-1);flex-wrap:wrap">
+          <span class="tag tag-muted">${taskEngName(task)}</span>
+          ${statusTag(task.status)}
+          <span>${fmtDate(task.created_at)}</span>
+          ${(() => { const el = task.created_at && task.updated_at ? Math.round((new Date(task.updated_at) - new Date(task.created_at)) / 1000) : null; return el !== null ? `<span>${el < 60 ? el + 's' : Math.floor(el/60) + 'm ' + (el%60) + 's'}</span>` : ''; })()}
+          <span>${subs.length} step${subs.length !== 1 ? 's' : ''}</span>
+        </div>
+        ${task.raw_request && task.raw_request !== task.title ? `<div style="font-size:11px;color:var(--text-2);margin-top:6px">Request: ${esc(task.raw_request.slice(0, 120))}</div>` : ''}
+      </div>
     </div>`;
 
-    // Original request (if different from title)
-    if (task.raw_request && task.raw_request !== task.title) {
-      html += `<div class="inset mb-12" style="font-size:12px;color:var(--text-1)"><strong>Original request:</strong> ${esc(task.raw_request)}</div>`;
+    // Board of AI Deliberation — prominent card
+    if (delib) {
+      html += `<div class="card delib-card">
+        <div class="delib-header" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">
+          <span class="delib-label">Board of AI</span>
+          <span style="font-size:12px;font-weight:500;flex:1">${esc(delib.interpreted_objective || '')}</span>
+          <span class="tag tag-${delib.risk_level === 'green' ? 'ok' : delib.risk_level === 'red' ? 'err' : 'warn'}">${esc(delib.risk_level || 'green')}</span>
+        </div>
+        <div class="delib-body">
+          <div style="margin-bottom:8px"><strong>Strategy:</strong> ${esc(delib.recommended_strategy || '')}</div>
+          ${delib.expected_outcome ? `<div style="margin-bottom:8px"><strong>Expected outcome:</strong> ${esc(delib.expected_outcome)}</div>` : ''}
+          <div style="font-size:10px;color:var(--text-2)">Model: ${esc(delib.model_used || '')} &middot; ${delib.tokens_used || 0} tokens</div>
+        </div>
+      </div>`;
     }
 
     // Running task — show progress panel
@@ -573,34 +616,28 @@ async function openWorkDetail(taskId) {
       </div>`;
     }
 
-    // Board deliberation
-    if (delib) {
-      html += `<div class="card mb-16"><div class="hd"><h3>Board Deliberation</h3></div>
-        <div class="stack" style="font-size:12px;color:var(--text-1)">
-          <div><strong>Objective:</strong> ${esc(delib.interpreted_objective)}</div>
-          <div><strong>Strategy:</strong> ${esc(delib.recommended_strategy)}</div>
-          ${delib.expected_outcome ? `<div><strong>Expected:</strong> ${esc(delib.expected_outcome)}</div>` : ''}
-          <div class="row gap-12 mt-8"><span>Risk: ${statusTag(delib.risk_level || 'green')}</span><span style="font-size:10px;color:var(--text-2)">Model: ${esc(delib.model_used || '')} &middot; ${delib.tokens_used || 0} tokens</span></div>
-        </div>
-      </div>`;
-    }
-
-    // Execution chain
+    // Execution chain — richer with numbered steps and provider visibility
     if (subs.length) {
-      html += `<div class="card"><div class="hd"><h3>Execution Chain (${subs.filter(s => s.status === 'done').length}/${subs.length} steps)</h3></div>
-        <div class="stack">${subs.map((s, i) => {
-          const stag = s.status === 'done' ? 'tag-ok' : s.status === 'failed' ? 'tag-err' : 'tag-warn';
+      html += `<div class="card"><div class="hd"><h3>Execution Chain</h3><span style="font-size:10px;color:var(--text-2)">${subs.filter(s => s.status === 'done').length}/${subs.length} complete</span></div>
+        <div>${subs.map((s, i) => {
           const STEP = { research: 'Web Search', report: 'Synthesis', strategy: 'Analysis', implement: 'Code', audit: 'Review', locate_files: 'File Scan' };
+          const PROV = { perplexity: 'Perplexity', openai: 'OpenAI', gemini: 'Gemini', claude: 'Claude' };
           const stepName = STEP[s.stage] || s.stage;
-          const provName = s.assigned_model === 'perplexity' ? 'Perplexity' : s.assigned_model === 'openai' ? 'OpenAI' : s.assigned_model === 'gemini' ? 'Gemini' : s.assigned_model || '';
+          const provName = PROV[s.assigned_model] || s.assigned_model || '';
+          const stepCls = s.status === 'done' ? 'done' : (s.status === 'running' || s.status === 'builder_running') ? 'active' : 'pending';
           const hasOutput = s.output && s.output.length > 50;
           const outputId = 'sub-out-' + i;
-          return `<div style="padding:8px 0;border-bottom:1px solid var(--border-0)">
-            <div class="spread" style="font-size:12px">
-              <div class="row gap-4"><span style="font-weight:500">${esc(s.title || stepName)}</span></div>
-              <div class="row gap-4"><span class="tag tag-muted">${esc(provName)}</span><span class="tag tag-muted">${esc(stepName)}</span><span class="tag ${stag}">${statusLabel(s.status)}</span></div>
+          return `<div class="exec-step">
+            <div class="exec-step-num ${stepCls}">${s.status === 'done' ? '&#10003;' : i + 1}</div>
+            <div class="exec-step-content">
+              <div class="exec-step-title">${esc(s.title || stepName)}</div>
+              <div class="exec-step-meta">
+                <span class="tag tag-muted">${esc(provName)}</span>
+                <span class="tag tag-muted">${esc(stepName)}</span>
+                <span class="tag tag-${s.status === 'done' ? 'ok' : s.status === 'failed' ? 'err' : 'warn'}">${statusLabel(s.status)}</span>
+              </div>
+              ${hasOutput ? `<div style="margin-top:6px"><button class="b b-ghost b-xs" onclick="document.getElementById('${outputId}').style.display=document.getElementById('${outputId}').style.display==='none'?'block':'none'">View output (${Math.round(s.output.length/1000)}K chars)</button><div id="${outputId}" style="display:none;margin-top:6px" class="inset"><div class="result-body" style="font-size:11px;max-height:300px;overflow-y:auto">${md(s.output)}</div></div></div>` : ''}
             </div>
-            ${hasOutput ? `<div style="margin-top:4px"><button class="b b-ghost b-xs" onclick="document.getElementById('${outputId}').style.display=document.getElementById('${outputId}').style.display==='none'?'block':'none'">Toggle output (${Math.round(s.output.length/1000)}K chars)</button><div id="${outputId}" style="display:none;margin-top:6px" class="inset"><div class="result-body" style="font-size:11px;max-height:300px;overflow-y:auto">${md(s.output)}</div></div></div>` : ''}
           </div>`;
         }).join('')}</div>
       </div>`;

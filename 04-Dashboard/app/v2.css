@@ -78,6 +78,14 @@
 [data-theme="light"] .dot-err{background:#dc2626}
 [data-theme="light"] ::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.12)}
 [data-theme="light"] ::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,0.2)}
+[data-theme="light"] .delib-card{border-left-color:#3b6de6}
+[data-theme="light"] .delib-card .delib-header:hover{background:rgba(59,109,230,0.03)}
+[data-theme="light"] .delib-card .delib-perspective{background:#f8f9fb;border:1px solid rgba(0,0,0,0.04)}
+[data-theme="light"] .exec-step-num{border-color:rgba(0,0,0,0.12)}
+[data-theme="light"] .phase-node.done{background:rgba(22,163,74,0.06);color:#16a34a}
+[data-theme="light"] .phase-node.active{background:rgba(59,109,230,0.06);color:#3b6de6}
+[data-theme="light"] .phase-conn.done{background:#16a34a}
+[data-theme="light"] .v2-nav-section{color:#9ca4b6}
 [data-theme="light"] .metric-card{box-shadow:0 1px 3px rgba(0,0,0,0.06)}
 [data-theme="light"] .metric-card:hover{box-shadow:0 2px 6px rgba(0,0,0,0.08)}
 [data-theme="light"] .prov-row{border-bottom-color:rgba(0,0,0,0.06)}
@@ -268,6 +276,45 @@ input,select,textarea,button{font-family:inherit;font-size:inherit}
 .signal-name{font-weight:500;flex:1}
 .signal-val{font-weight:600}
 .signal-conf{font-size:10px;color:var(--text-2)}
+
+/* ═══ NAV SECTION ═══ */
+.v2-nav-section{padding:12px 16px 4px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-2)}
+@media(max-width:1024px){.v2-nav-section{display:none}}
+
+/* ═══ PHASE TIMELINE ═══ */
+.phase-rail{display:flex;align-items:center;gap:0;padding:10px 14px;font-size:11px;overflow-x:auto}
+.phase-node{display:flex;align-items:center;gap:6px;white-space:nowrap;padding:4px 10px;border-radius:12px;font-weight:500;color:var(--text-2);background:transparent;transition:all .2s ease}
+.phase-node.done{color:var(--ok);background:var(--ok-bg)}
+.phase-node.active{color:var(--accent);background:var(--accent-bg);font-weight:600}
+.phase-node.pending{color:var(--text-2)}
+.phase-node .pn-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.phase-node.done .pn-dot{background:var(--ok)}
+.phase-node.active .pn-dot{background:var(--accent);animation:pulse 1.5s ease-in-out infinite}
+.phase-node.pending .pn-dot{background:var(--border-1)}
+.phase-conn{width:20px;height:1px;background:var(--border-1);flex-shrink:0}
+.phase-conn.done{background:var(--ok)}
+
+/* ═══ DELIBERATION CARD ═══ */
+.delib-card{border-left:3px solid var(--accent);margin-bottom:16px}
+.delib-card .delib-header{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid var(--border-0);cursor:pointer}
+.delib-card .delib-header:hover{background:var(--bg-3)}
+.delib-card .delib-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--accent)}
+.delib-card .delib-body{padding:14px;font-size:12px;color:var(--text-1)}
+.delib-card .delib-perspectives{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:10px}
+.delib-card .delib-perspective{background:var(--bg-input);border-radius:6px;padding:10px;font-size:11px}
+.delib-card .delib-perspective .dp-role{font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px;color:var(--text-0)}
+@media(max-width:768px){.delib-card .delib-perspectives{grid-template-columns:1fr}}
+
+/* ═══ EXECUTION STEP (richer) ═══ */
+.exec-step{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--border-0)}
+.exec-step:last-child{border-bottom:none}
+.exec-step-num{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;border:1px solid var(--border-1)}
+.exec-step-num.done{background:var(--ok-bg);color:var(--ok);border-color:var(--ok)}
+.exec-step-num.active{background:var(--accent-bg);color:var(--accent);border-color:var(--accent);animation:pulse 1.5s ease-in-out infinite}
+.exec-step-num.pending{color:var(--text-2)}
+.exec-step-content{flex:1;min-width:0}
+.exec-step-title{font-size:12px;font-weight:500}
+.exec-step-meta{font-size:10px;color:var(--text-2);margin-top:2px;display:flex;gap:8px;align-items:center}
 
 /* ═══ ACCESSIBILITY ═══ */
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
