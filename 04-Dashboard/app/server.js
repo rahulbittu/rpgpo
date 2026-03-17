@@ -4340,8 +4340,11 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  // Static files
-  let filePath = req.url === '/' ? '/index.html' : req.url.split('?')[0];
+  // Static files — V2 frontend is the default, old frontend at /legacy
+  let filePath;
+  if (req.url === '/' || req.url === '/v2') filePath = '/v2.html';
+  else if (req.url === '/legacy') filePath = '/index.html';
+  else filePath = req.url.split('?')[0];
   const ext = path.extname(filePath);
   const mimeTypes = { '.html': 'text/html', '.js': 'application/javascript', '.css': 'text/css', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png' };
   const fullPath = path.join(__dirname, filePath);

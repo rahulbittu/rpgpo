@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090b12">
+  <title>GPO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="v2.css">
+  <script>
+    // Restore theme before paint
+    (function(){var t=localStorage.getItem('gpo-theme')||'dark';document.documentElement.setAttribute('data-theme',t);document.querySelector('meta[name=theme-color]').content=t==='light'?'#f5f6f8':'#090b12'})();
+  </script>
+</head>
+<body>
+<div class="v2">
+
+  <!-- SIDEBAR -->
+  <nav class="v2-side" role="navigation">
+    <div class="v2-logo">
+      <div class="v2-logo-mark">G</div>
+      <span class="v2-logo-text">GPO</span>
+    </div>
+    <div class="v2-nav">
+      <a class="v2-nav-item on" data-r="home"><span class="ni">&#9670;</span><span class="nl">Home</span></a>
+      <a class="v2-nav-item" data-r="ask"><span class="ni">&#9998;</span><span class="nl">Ask</span></a>
+      <a class="v2-nav-item" data-r="results"><span class="ni">&#9745;</span><span class="nl">Results</span></a>
+      <a class="v2-nav-item" data-r="evidence"><span class="ni">&#128270;</span><span class="nl">Evidence</span></a>
+      <a class="v2-nav-item" data-r="approvals"><span class="ni">&#9888;</span><span class="nl">Approvals</span><span class="nb" id="approvalCount" style="display:none">0</span></a>
+      <a class="v2-nav-item" data-r="activity"><span class="ni">&#9776;</span><span class="nl">Activity</span></a>
+      <a class="v2-nav-item" data-r="settings"><span class="ni">&#9881;</span><span class="nl">Settings</span></a>
+    </div>
+    <div class="v2-foot">
+      <div class="row gap-4"><span class="dot dot-ok dot-pulse" id="statusDot"></span><span id="statusText">Connecting...</span></div>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="v2-mob">
+    <div class="mob-tab on" data-r="home"><span class="mi">&#9670;</span>Home</div>
+    <div class="mob-tab" data-r="ask"><span class="mi">&#9998;</span>Ask</div>
+    <div class="mob-tab" data-r="results"><span class="mi">&#9745;</span>Results</div>
+    <div class="mob-tab" data-r="approvals"><span class="mi">&#9888;</span>Approvals</div>
+    <div class="mob-tab" data-r="settings"><span class="mi">&#9881;</span>More</div>
+  </div>
+
+  <!-- MAIN -->
+  <main class="v2-main">
+
+    <!-- HOME -->
+    <section class="v2-screen on" id="s-home">
+      <div class="v2-page">
+        <div class="spread" style="margin-bottom:24px">
+          <div>
+            <h1 id="greeting" style="font-size:22px;font-weight:700;letter-spacing:-.5px">GPO</h1>
+            <div class="row gap-12 mt-8">
+              <span id="dateText" style="font-size:11px;color:var(--text-1)"></span>
+              <span class="row gap-4"><span class="dot dot-ok dot-pulse" id="homeDot"></span><span style="font-size:10px;color:var(--text-2)" id="homeStatus">System ready</span></span>
+            </div>
+          </div>
+          <button class="b b-fill b-md" onclick="go('ask')">&#9998; New Request</button>
+        </div>
+
+        <!-- ATTENTION -->
+        <div id="homeAttention"></div>
+
+        <!-- RUNNING -->
+        <div id="homeRunning" class="mt-16"></div>
+
+        <!-- SUMMARY -->
+        <div class="g2 mt-20">
+          <div class="card card-ok">
+            <div class="hd"><h3>Today</h3></div>
+            <div id="homeTodayContent" style="font-size:12px;color:var(--text-1)">Loading...</div>
+          </div>
+          <div class="card">
+            <div class="hd"><h3>Cost</h3></div>
+            <div class="g4" id="homeCostGrid">
+              <div class="num"><span class="num-val" style="font-size:15px" id="hcToday">--</span><span class="num-label">Today</span></div>
+              <div class="num"><span class="num-val" style="font-size:15px" id="hcWeek">--</span><span class="num-label">Week</span></div>
+              <div class="num"><span class="num-val" style="font-size:15px" id="hcCalls">--</span><span class="num-label">Calls</span></div>
+              <div class="num"><span class="num-val" style="font-size:15px" id="hcDone">--</span><span class="num-label">Done</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DELIVERABLES -->
+        <div class="mt-24">
+          <div class="hd"><h3>Recent Results</h3><span class="hd-action" onclick="go('results')">View All</span></div>
+          <div id="homeResults">
+            <div class="nil"><span class="nil-icon">&#9671;</span><span class="nil-title">No results yet</span><span class="nil-desc">Ask GPO something to see results here</span></div>
+          </div>
+        </div>
+
+        <!-- ACTIVITY -->
+        <div class="mt-24">
+          <div class="hd"><h3>Activity</h3><span class="hd-action" onclick="go('activity')">View All</span></div>
+          <div id="homeActivity" style="max-height:200px;overflow-y:auto">
+            <div class="nil"><span class="nil-desc">No recent activity</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASK -->
+    <section class="v2-screen" id="s-ask">
+      <div class="v2-page">
+        <div class="v2-page-hd"><h1>Ask GPO</h1><p>Describe what you need — GPO will research, analyze, and deliver</p></div>
+        <div class="card card-accent" style="margin-bottom:20px">
+          <textarea id="askInput" class="inp" rows="3" placeholder="What do you need? e.g. 'Best waffle places in Hyderabad' or 'Create a Roth IRA conversion guide'"></textarea>
+          <div class="row mt-8" style="flex-wrap:wrap">
+            <select id="askEngine" class="sel"><option value="">Auto-detect</option></select>
+            <select id="askUrgency" class="sel"><option value="normal">Normal</option><option value="high">High</option><option value="low">Low</option></select>
+            <div style="flex:1"></div>
+            <button class="b b-fill b-md" onclick="submitAsk()" id="askBtn">Submit</button>
+          </div>
+        </div>
+        <div id="askProgress" style="display:none"></div>
+        <div id="askResult" style="display:none"></div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="v2-screen" id="s-results">
+      <div class="v2-page">
+        <div class="v2-page-hd spread"><div><h1>Results</h1><p>All completed outputs</p></div><button class="b-icon" onclick="loadResults()">&#8635;</button></div>
+        <div class="filters mb-12" id="resultFilters"></div>
+        <div id="resultsList" class="stack"></div>
+      </div>
+    </section>
+
+    <!-- EVIDENCE -->
+    <section class="v2-screen" id="s-evidence">
+      <div class="v2-page">
+        <div class="v2-page-hd"><h1>Evidence</h1><p>Trace how results were produced</p></div>
+        <div id="evidenceContent"><div class="nil"><span class="nil-icon">&#128270;</span><span class="nil-title">Select a result to view evidence</span><span class="nil-desc">Open a result and click "View Evidence" to see the full execution chain</span></div></div>
+      </div>
+    </section>
+
+    <!-- APPROVALS -->
+    <section class="v2-screen" id="s-approvals">
+      <div class="v2-page">
+        <div class="v2-page-hd"><h1>Approvals</h1><p>Decisions requiring your review</p></div>
+        <div id="approvalsList"><div class="nil"><span class="nil-icon">&#9745;</span><span class="nil-title">All clear</span><span class="nil-desc">No pending approvals. GPO is operating normally.</span></div></div>
+      </div>
+    </section>
+
+    <!-- ACTIVITY -->
+    <section class="v2-screen" id="s-activity">
+      <div class="v2-page">
+        <div class="v2-page-hd spread"><div><h1>Activity</h1><p>Execution history</p></div>
+          <div class="filters" id="actFilters"></div>
+        </div>
+        <div id="actList" class="stack"></div>
+      </div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="v2-screen" id="s-settings">
+      <div class="v2-page">
+        <div class="v2-page-hd"><h1>Settings</h1><p>Configuration and preferences</p></div>
+        <div class="card mb-16">
+          <div class="hd"><h3>Appearance</h3></div>
+          <div class="spread" style="font-size:12px">
+            <span style="color:var(--text-1)">Theme</span>
+            <div class="row gap-4">
+              <button class="b b-sm on" id="tDark" onclick="setTheme('dark')">Dark</button>
+              <button class="b b-ghost b-sm" id="tLight" onclick="setTheme('light')">Light</button>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-16">
+          <div class="hd"><h3>Providers</h3></div>
+          <div class="stack" id="settingsProviders">
+            <div class="spread" style="font-size:12px"><span>OpenAI</span><span class="tag tag-muted" id="spOpenAI">--</span></div>
+            <div class="spread" style="font-size:12px"><span>Perplexity</span><span class="tag tag-muted" id="spPerplexity">--</span></div>
+            <div class="spread" style="font-size:12px"><span>Gemini</span><span class="tag tag-muted" id="spGemini">--</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="hd"><h3>Engines</h3></div>
+          <div id="settingsEngines" class="stack"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- TOAST -->
+<div class="toasts" id="toastBox"></div>
+
+<script src="v2.js"></script>
+</body>
+</html>
