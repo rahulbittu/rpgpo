@@ -109,7 +109,7 @@ input,select,textarea,button{font-family:inherit;font-size:inherit}
 .v2-page-hd p{font-size:11px;color:var(--text-1);margin-top:3px}
 
 /* ═══ SURFACES ═══ */
-.card{background:var(--bg-2);border:1px solid var(--border-1);border-radius:8px;padding:16px;transition:border-color .15s ease}
+.card{background:var(--bg-2);border:1px solid var(--border-1);border-radius:8px;padding:16px;transition:border-color .15s ease;overflow:hidden}
 .card:hover{border-color:var(--border-2)}
 .card-accent{border-left:3px solid var(--accent)}
 .card-ok{border-left:3px solid var(--ok)}
@@ -175,7 +175,7 @@ input,select,textarea,button{font-family:inherit;font-size:inherit}
 .result{border-radius:8px;overflow:hidden}
 .result-head{display:flex;align-items:center;gap:8px;padding:14px 16px;border-bottom:1px solid var(--border-0)}
 .result-head h3{font-size:14px;font-weight:600;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.result-body{padding:16px;font-size:13px;line-height:1.7;color:var(--text-0)}
+.result-body{padding:16px;font-size:13px;line-height:1.7;color:var(--text-0);overflow-wrap:break-word;word-break:break-word}
 .result-body h1,.result-body h2,.result-body h3{margin:16px 0 6px;font-weight:600}
 .result-body h2{font-size:15px;border-bottom:1px solid var(--border-0);padding-bottom:4px}
 .result-body h3{font-size:13px}

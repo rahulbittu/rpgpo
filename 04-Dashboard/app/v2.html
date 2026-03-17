@@ -110,11 +110,10 @@
         <div class="v2-page-hd"><h1>Ask GPO</h1><p>Describe what you need — GPO will research, analyze, and deliver</p></div>
         <div class="card card-accent" style="margin-bottom:20px">
           <textarea id="askInput" class="inp" rows="3" placeholder="What do you need? e.g. 'Best waffle places in Hyderabad' or 'Create a Roth IRA conversion guide'"></textarea>
-          <div class="row mt-8" style="flex-wrap:wrap">
+          <div class="row mt-8" style="flex-wrap:wrap;gap:8px">
             <select id="askEngine" class="sel"><option value="">Auto-detect</option></select>
             <select id="askUrgency" class="sel"><option value="normal">Normal</option><option value="high">High</option><option value="low">Low</option></select>
-            <div style="flex:1"></div>
-            <button class="b b-fill b-md" onclick="submitAsk()" id="askBtn">Submit</button>
+            <button class="b b-fill b-md" style="margin-left:auto" onclick="submitAsk()" id="askBtn">Submit</button>
           </div>
         </div>
         <div id="askProgress" style="display:none"></div>
