@@ -1246,6 +1246,12 @@ document.addEventListener('keydown', e => {
     const askResult = document.getElementById('askResult');
     if (askResult && askResult.style.display !== 'none') { askResult.style.display = 'none'; return; }
     go('command');
+    return;
+  }
+  // Number keys 1-6 for quick screen navigation (when not in input)
+  if (!['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName) && !e.metaKey && !e.ctrlKey) {
+    const screenMap = { '1': 'command', '2': 'ask', '3': 'work', '4': 'activity', '5': 'ops', '6': 'settings' };
+    if (screenMap[e.key]) { e.preventDefault(); go(screenMap[e.key]); }
   }
 });
 
