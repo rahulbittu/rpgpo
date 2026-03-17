@@ -327,238 +327,158 @@
       </section>
 
       <!-- ENGINES -->
+      <!-- ENGINES — Capabilities & Status -->
       <section class="tab-panel" id="tab-missions">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-24)">
-          <div>
-            <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Engines</h1>
-            <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">15 AI engines across every domain</p>
-          </div>
-        </div>
-        <div id="missionSnapshotGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-12);margin-bottom:var(--sp-24)"></div>
-        <div id="missionStatementsPanel"></div>
-        <div id="missionCards" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-16);margin-top:var(--sp-16)"></div>
-      </section>
-
-      <!-- MEMORY -->
-      <section class="tab-panel" id="tab-memory">
-        <div style="margin-bottom:var(--sp-24)">
-          <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Memory</h1>
-          <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">Operator context, learned behavior, and engine knowledge</p>
-        </div>
-        <div id="memoryViewerPanel">
-          <div class="empty-state"><span class="empty-icon">&#9671;</span><span class="empty-title">Memory system active</span><span class="empty-desc">Behavior signals and operator preferences are tracked automatically</span></div>
+        <div class="gpo-page">
+          <div class="gpo-page-header"><h1>Engines</h1><p>15 AI engines powering GPO</p></div>
+          <div id="missionSnapshotGrid" class="grid-3" style="margin-bottom:var(--sp-24)"></div>
+          <div id="missionStatementsPanel"></div>
+          <div id="missionCards" class="grid-2" style="margin-top:var(--sp-16)"></div>
         </div>
       </section>
 
-      <!-- DOSSIERS -->
-      <!-- PROVIDERS -->
-      <section class="tab-panel" id="tab-providers">
-        <div class="section-hdr"><h2>Providers</h2></div>
-        <p class="subtitle" style="margin-bottom:var(--sp-16)">AI model capabilities, usage statistics, and configuration</p>
-        <div id="provGovSummary"></div>
-        <div id="providersPanel"></div>
-      </section>
-
-      <!-- Mission Statement Edit Modal (global) -->
+      <!-- Hidden: Memory + Providers data targets -->
+      <section class="tab-panel" id="tab-memory" style="display:none"></section>
+      <section class="tab-panel" id="tab-providers" style="display:none"></section>
       <div id="msEditModal"></div>
 
-      <!-- APPROVALS -->
+      <!-- APPROVALS — Governance & Trust Gate -->
       <section class="tab-panel" id="tab-approvals">
-        <div style="margin-bottom:var(--sp-24)">
-          <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Approvals</h1>
-          <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">Review and approve pending work items</p>
-        </div>
-        <div id="approvalsList">
-          <div class="empty-state"><span class="empty-icon">&#10003;</span><span class="empty-title">All clear</span><span class="empty-desc">No pending approvals</span></div>
+        <div class="gpo-page">
+          <div class="gpo-page-header"><h1>Approvals</h1><p>Decisions requiring your review</p></div>
+          <div id="approvalsList">
+            <div class="empty"><span class="empty-icon">&#9745;</span><span class="empty-title">All clear</span><span class="empty-desc">No pending approvals. GPO is operating normally.</span></div>
+          </div>
         </div>
       </section>
 
-      <!-- AI SPEND -->
+      <!-- COSTS — AI Spend & Trust -->
       <section class="tab-panel" id="tab-costs">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-24)">
-          <div>
-            <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">AI Spend</h1>
-            <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">Cost tracking by provider, model, and execution</p>
+        <div class="gpo-page">
+          <div class="gpo-page-header spread">
+            <div><h1>Costs</h1><p>AI spend tracking — all values are from the local cost ledger</p></div>
+            <button class="btn btn-icon" onclick="loadCosts()">&#8635;</button>
           </div>
-          <button class="btn btn-ghost btn-sm" onclick="loadCosts()">&#8635;</button>
-        </div>
-
-        <!-- Summary metrics -->
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-12);margin-bottom:var(--sp-24)" id="costSummaryCards">
-          <div class="surface" style="padding:var(--sp-12)">
-            <div class="metric-tile"><span class="metric-value" id="ccToday">--</span><span class="metric-label">Today</span></div>
-            <div style="font-size:10px;color:var(--text-faint);margin-top:var(--sp-4)" id="ccTodayCalls">--</div>
+          <div class="grid-4" style="margin-bottom:var(--sp-24)" id="costSummaryCards">
+            <div class="sf" style="padding:var(--sp-12)">
+              <div class="metric"><span class="metric-val" id="ccToday">--</span><span class="metric-label">Today</span></div>
+              <div style="font-size:10px;color:var(--text-faint);margin-top:var(--sp-4)" id="ccTodayCalls">--</div>
+            </div>
+            <div class="sf" style="padding:var(--sp-12)">
+              <div class="metric"><span class="metric-val" id="ccWeek">--</span><span class="metric-label">This Week</span></div>
+              <div style="font-size:10px;color:var(--text-faint);margin-top:var(--sp-4)" id="ccWeekCalls">--</div>
+            </div>
+            <div class="sf" style="padding:var(--sp-12)">
+              <div class="metric"><span class="metric-val" id="ccLastBoard">--</span><span class="metric-label">Last Board</span></div>
+              <div style="font-size:10px;color:var(--text-faint);margin-top:var(--sp-4)" id="ccLastBoardCalls">--</div>
+            </div>
+            <div class="sf" style="padding:var(--sp-12)">
+              <div class="metric"><span class="metric-val" id="ccTotalEntries">--</span><span class="metric-label">Total Records</span></div>
+              <div style="font-size:10px;color:var(--text-faint);margin-top:var(--sp-4)">in cost ledger</div>
+            </div>
           </div>
-          <div class="surface" style="padding:var(--sp-12)">
-            <div class="metric-tile"><span class="metric-value" id="ccWeek">--</span><span class="metric-label">This Week</span></div>
-            <div style="font-size:10px;color:var(--text-faint);margin-top:var(--sp-4)" id="ccWeekCalls">--</div>
+          <div class="grid-2" style="margin-bottom:var(--sp-16)">
+            <div class="sf"><div class="sh"><h3>By Provider (7 days)</h3></div><div id="ccByProvider"></div></div>
+            <div class="sf"><div class="sh"><h3>By Model (7 days)</h3></div><div id="ccByModel"></div></div>
           </div>
-          <div class="surface" style="padding:var(--sp-12)">
-            <div class="metric-tile"><span class="metric-value" id="ccLastBoard">--</span><span class="metric-label">Last Board</span></div>
-            <div style="font-size:10px;color:var(--text-faint);margin-top:var(--sp-4)" id="ccLastBoardCalls">--</div>
-          </div>
-          <div class="surface" style="padding:var(--sp-12)">
-            <div class="metric-tile"><span class="metric-value" id="ccTotalEntries">--</span><span class="metric-label">Total Entries</span></div>
-            <div style="font-size:10px;color:var(--text-faint);margin-top:var(--sp-4)">ledger records</div>
-          </div>
-        </div>
-
-        <!-- By Provider + Model -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-16);margin-bottom:var(--sp-16)">
-          <div class="surface">
-            <div class="section-hdr"><h3>By Provider (7d)</h3></div>
-            <div id="ccByProvider"></div>
-          </div>
-          <div class="surface">
-            <div class="section-hdr"><h3>By Model (7d)</h3></div>
-            <div id="ccByModel"></div>
-          </div>
-        </div>
-
-        <!-- By Day -->
-        <div class="surface">
-          <div class="section-hdr"><h3>By Day (7d)</h3></div>
-          <div id="ccByDay"></div>
+          <div class="sf"><div class="sh"><h3>By Day (7 days)</h3></div><div id="ccByDay"></div></div>
         </div>
       </section>
 
-      <!-- ACTIVITY -->
+      <!-- ACTIVITY — Timestamped Audit Trail -->
       <section class="tab-panel" id="tab-logs">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-16)">
-          <div>
-            <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Activity</h1>
-            <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">Task executions, board decisions, and system events</p>
+        <div class="gpo-page">
+          <div class="gpo-page-header spread">
+            <div><h1>Activity</h1><p>Execution history and system events</p></div>
+            <div class="filter-bar" id="logFilters">
+              <button class="btn btn-sm is-active" data-filter="all" onclick="filterLogs('all')">All</button>
+              <button class="btn btn-ghost btn-sm" data-filter="agent" onclick="filterLogs('agent')">Runs</button>
+              <button class="btn btn-ghost btn-sm" data-filter="decision" onclick="filterLogs('decision')">Decisions</button>
+              <button class="btn btn-ghost btn-sm" data-filter="brief" onclick="filterLogs('brief')">Briefs</button>
+            </div>
           </div>
-          <div style="display:flex;gap:var(--sp-4)" id="logFilters">
-            <button class="btn btn-sm filter-active" data-filter="all" onclick="filterLogs('all')">All</button>
-            <button class="btn btn-ghost btn-sm" data-filter="agent" onclick="filterLogs('agent')">Agent Runs</button>
-            <button class="btn btn-ghost btn-sm" data-filter="decision" onclick="filterLogs('decision')">Decisions</button>
-            <button class="btn btn-ghost btn-sm" data-filter="brief" onclick="filterLogs('brief')">Briefs</button>
-          </div>
+          <div id="logsList" class="stack"></div>
         </div>
-        <div id="logsList"></div>
       </section>
 
       <!-- OPERATIONS -->
+      <!-- OPERATIONS (hidden from primary nav — admin surface) -->
       <section class="tab-panel" id="tab-controls">
-        <div style="margin-bottom:var(--sp-24)">
-          <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Operations</h1>
-          <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">Board of AI, system loops, and task dispatch</p>
-        </div>
-
-        <!-- Primary action -->
-        <div style="margin-bottom:var(--sp-16)">
-          <button class="btn btn-primary btn-lg" style="width:100%" onclick="submitTask('board-run','Board of AI Run')" id="boardRunBtn">
-            &#9670; Run Board of AI
-          </button>
-        </div>
-
-        <!-- Operating loops -->
-        <div class="section-hdr"><h3>Operating Loops</h3></div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-8);margin-bottom:var(--sp-24)">
-          <button class="btn btn-secondary btn-md" onclick="submitTask('morning-loop','Morning Loop')">&#9728; Morning Loop</button>
-          <button class="btn btn-secondary btn-md" onclick="submitTask('evening-loop','Evening Loop')">&#9790; Evening Loop</button>
-          <button class="btn btn-secondary btn-md" onclick="submitTask('refresh-state','Refresh State')">&#8635; Refresh State</button>
-        </div>
-
-        <!-- AI actions -->
-        <div class="section-hdr"><h3>AI Actions</h3></div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-8);margin-bottom:var(--sp-24)">
-          <button class="btn btn-ghost btn-sm" onclick="launchClaude()">&#9654; Claude</button>
-          <button class="btn btn-ghost btn-sm" onclick="switchTab('intake')">&#9998; New Task</button>
-          <button class="btn btn-ghost btn-sm" onclick="runAiTask('openai-daily-brief')">&#9673; Brief</button>
-          <button class="btn btn-ghost btn-sm" onclick="runAiTask('perplexity-research')">&#8853; Research</button>
-        </div>
-
-        <!-- Output log -->
-        <div class="surface">
-          <div class="section-hdr"><h3>Output</h3></div>
-          <pre id="controlLog" style="font-size:11px;color:var(--text-dim);max-height:200px;overflow-y:auto;background:var(--bg-inset);padding:var(--sp-8);border-radius:var(--r-sm)">Ready.</pre>
+        <div class="gpo-page">
+          <div class="gpo-page-header"><h1>Operations</h1><p>System administration — Board of AI, loops, dispatch</p></div>
+          <div style="margin-bottom:var(--sp-16)">
+            <button class="btn btn-primary btn-lg" style="width:100%" onclick="submitTask('board-run','Board of AI Run')" id="boardRunBtn">&#9670; Run Board of AI</button>
+          </div>
+          <div class="grid-3" style="margin-bottom:var(--sp-24)">
+            <button class="btn btn-secondary btn-md" onclick="submitTask('morning-loop','Morning Loop')">&#9728; Morning</button>
+            <button class="btn btn-secondary btn-md" onclick="submitTask('evening-loop','Evening Loop')">&#9790; Evening</button>
+            <button class="btn btn-secondary btn-md" onclick="submitTask('refresh-state','Refresh State')">&#8635; Refresh</button>
+          </div>
+          <div class="sf"><div class="sh"><h3>Log</h3></div><pre id="controlLog" class="sf-inset" style="font-size:11px;color:var(--text-dim);max-height:200px;overflow-y:auto">Ready.</pre></div>
         </div>
       </section>
 
       <!-- SETTINGS -->
       <section class="tab-panel" id="tab-settings">
-        <div style="margin-bottom:var(--sp-24)">
-          <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Settings</h1>
-          <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">Operator profile, AI providers, budget controls</p>
-        </div>
+        <div class="gpo-page">
+          <div class="gpo-page-header"><h1>Settings</h1><p>Configuration, providers, and preferences</p></div>
 
-        <!-- Operator Profile -->
-        <div class="surface" style="margin-bottom:var(--sp-16)" id="operatorProfileCard">
-          <div class="section-hdr"><h3>Operator Profile</h3></div>
-          <div id="operatorProfileDisplay" style="font-size:12px;color:var(--text-dim)">Loading...</div>
-        </div>
-
-        <!-- Providers + Server -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-16);margin-bottom:var(--sp-16)">
-          <div class="surface">
-            <div class="section-hdr"><h3>AI Providers</h3></div>
-            <div id="settingsModels" style="display:flex;flex-direction:column;gap:var(--sp-8)">
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span>Claude</span><span class="badge badge-info">Local</span></div>
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span>OpenAI <span style="color:var(--text-faint)">gpt-4o</span></span><span class="badge badge-neutral" id="mOpenAI">--</span></div>
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span>Perplexity <span style="color:var(--text-faint)">sonar</span></span><span class="badge badge-neutral" id="mPerplexity">--</span></div>
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span>Gemini <span style="color:var(--text-faint)" id="mGeminiModel">gemini-2.5-flash-lite</span></span><span class="badge badge-neutral" id="mGemini">--</span></div>
-            </div>
+          <!-- Profile -->
+          <div class="sf" style="margin-bottom:var(--sp-16)" id="operatorProfileCard">
+            <div class="sh"><h3>Profile</h3></div>
+            <div id="operatorProfileDisplay" style="font-size:12px;color:var(--text-dim)">Loading...</div>
           </div>
-          <div class="surface">
-            <div class="section-hdr"><h3>Server</h3></div>
-            <div id="settingsServer"></div>
-          </div>
-        </div>
 
-        <!-- Budget + Builder + System -->
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--sp-16);margin-bottom:var(--sp-16)">
-          <div class="surface">
-            <div class="section-hdr"><h3>Budget</h3></div>
-            <div id="budgetSettings" style="display:flex;flex-direction:column;gap:var(--sp-8)">
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px">
-                <span style="color:var(--text-dim)">Gemini Model</span>
-                <select id="settGeminiModel" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-2) var(--sp-4);color:var(--text);font-size:11px" onchange="saveBudgetSettings()">
-                  <option value="gemini-2.5-flash-lite">flash-lite</option>
-                  <option value="gemini-2.5-flash">flash</option>
-                </select>
-              </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px">
-                <span style="color:var(--text-dim)">Daily Limit</span>
-                <input type="number" id="settBudgetLimit" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-2) var(--sp-4);color:var(--text);font-size:11px;width:60px;text-align:right" placeholder="1.00" step="0.01" min="0" onchange="saveBudgetSettings()" />
-              </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px">
-                <span style="color:var(--text-dim)">Warn at</span>
-                <input type="number" id="settWarnThreshold" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-2) var(--sp-4);color:var(--text);font-size:11px;width:60px;text-align:right" placeholder="0.50" step="0.01" min="0" onchange="saveBudgetSettings()" />
-              </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px">
-                <span style="color:var(--text-dim)">Auto-disable</span>
-                <input type="checkbox" id="settDisableAfter" onchange="saveBudgetSettings()" />
+          <!-- Providers + Server -->
+          <div class="grid-2" style="margin-bottom:var(--sp-16)">
+            <div class="sf">
+              <div class="sh"><h3>Providers</h3></div>
+              <div id="settingsModels" class="stack">
+                <div class="spread" style="font-size:12px"><span>Claude</span><span class="badge badge-blue">Local</span></div>
+                <div class="spread" style="font-size:12px"><span>OpenAI <span style="color:var(--text-faint)">gpt-4o</span></span><span class="badge badge-muted" id="mOpenAI">--</span></div>
+                <div class="spread" style="font-size:12px"><span>Perplexity <span style="color:var(--text-faint)">sonar</span></span><span class="badge badge-muted" id="mPerplexity">--</span></div>
+                <div class="spread" style="font-size:12px"><span>Gemini <span style="color:var(--text-faint)" id="mGeminiModel">gemini-2.5-flash-lite</span></span><span class="badge badge-muted" id="mGemini">--</span></div>
               </div>
             </div>
-          </div>
-          <div class="surface">
-            <div class="section-hdr"><h3>Builder</h3></div>
-            <div id="builderSettings" style="display:flex;flex-direction:column;gap:var(--sp-8)">
-              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px">
-                <span style="color:var(--text-dim)">Timeout (min)</span>
-                <input type="number" id="settBuilderTimeout" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-2) var(--sp-4);color:var(--text);font-size:11px;width:50px;text-align:right" placeholder="10" step="1" min="1" max="30" onchange="saveBudgetSettings()" />
-              </div>
-              <div style="font-size:10px;color:var(--text-faint)">Hard limit for Claude CLI. Default: 10 min.</div>
+            <div class="sf">
+              <div class="sh"><h3>System</h3></div>
+              <div id="settingsServer"></div>
             </div>
-            <div id="builderDiagnostics" style="margin-top:var(--sp-8)"></div>
           </div>
-          <div class="surface">
-            <div class="section-hdr"><h3>System</h3></div>
-            <div id="settingsSystem"></div>
-          </div>
-        </div>
 
-        <!-- Access Classes -->
-        <div class="surface">
-          <div class="section-hdr"><h3>Access Classes</h3></div>
-          <div style="display:flex;flex-direction:column;gap:var(--sp-4);font-size:12px">
-            <div style="display:flex;gap:var(--sp-8)"><span class="badge badge-success">A</span><span style="color:var(--text-dim)">Core Safe — governance, repos, dashboards</span></div>
-            <div style="display:flex;gap:var(--sp-8)"><span class="badge badge-info">B</span><span style="color:var(--text-dim)">Controlled — approved accounts, approved tools</span></div>
-            <div style="display:flex;gap:var(--sp-8)"><span class="badge badge-warning">C</span><span style="color:var(--text-dim)">Sensitive — selected threads, private docs</span></div>
-            <div style="display:flex;gap:var(--sp-8)"><span class="badge badge-danger">D</span><span style="color:var(--text-dim)">Forbidden — anything not explicitly approved</span></div>
+          <!-- Budget + Builder -->
+          <div class="grid-2" style="margin-bottom:var(--sp-16)">
+            <div class="sf">
+              <div class="sh"><h3>Budget</h3></div>
+              <div id="budgetSettings" class="stack">
+                <div class="spread" style="font-size:12px"><span style="color:var(--text-dim)">Gemini Model</span><select id="settGeminiModel" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-2) var(--sp-4);color:var(--text);font-size:11px" onchange="saveBudgetSettings()"><option value="gemini-2.5-flash-lite">flash-lite</option><option value="gemini-2.5-flash">flash</option></select></div>
+                <div class="spread" style="font-size:12px"><span style="color:var(--text-dim)">Daily Limit ($)</span><input type="number" id="settBudgetLimit" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-2) var(--sp-4);color:var(--text);font-size:11px;width:60px;text-align:right" placeholder="1.00" step="0.01" min="0" onchange="saveBudgetSettings()" /></div>
+                <div class="spread" style="font-size:12px"><span style="color:var(--text-dim)">Warn at ($)</span><input type="number" id="settWarnThreshold" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-2) var(--sp-4);color:var(--text);font-size:11px;width:60px;text-align:right" placeholder="0.50" step="0.01" min="0" onchange="saveBudgetSettings()" /></div>
+                <div class="spread" style="font-size:12px"><span style="color:var(--text-dim)">Auto-disable</span><input type="checkbox" id="settDisableAfter" onchange="saveBudgetSettings()" /></div>
+              </div>
+            </div>
+            <div class="sf">
+              <div class="sh"><h3>Builder</h3></div>
+              <div id="builderSettings" class="stack">
+                <div class="spread" style="font-size:12px"><span style="color:var(--text-dim)">Timeout (min)</span><input type="number" id="settBuilderTimeout" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-2) var(--sp-4);color:var(--text);font-size:11px;width:50px;text-align:right" placeholder="10" step="1" min="1" max="30" onchange="saveBudgetSettings()" /></div>
+                <div style="font-size:10px;color:var(--text-faint)">Hard limit for Claude CLI. Default: 10 min.</div>
+              </div>
+              <div id="builderDiagnostics" style="margin-top:var(--sp-8)"></div>
+              <div id="settingsSystem" style="margin-top:var(--sp-8)"></div>
+            </div>
           </div>
+
+          <!-- Access Classes -->
+          <div class="sf">
+            <div class="sh"><h3>Access Policy</h3></div>
+            <div class="stack" style="font-size:12px">
+              <div class="row"><span class="badge badge-green">A</span><span style="color:var(--text-dim)">Core Safe — governance, repos, dashboards</span></div>
+              <div class="row"><span class="badge badge-blue">B</span><span style="color:var(--text-dim)">Controlled — approved accounts, tools</span></div>
+              <div class="row"><span class="badge badge-yellow">C</span><span style="color:var(--text-dim)">Sensitive — private docs, restricted threads</span></div>
+              <div class="row"><span class="badge badge-red">D</span><span style="color:var(--text-dim)">Forbidden — not explicitly approved</span></div>
+            </div>
+          </div>
+
         </div>
       </section>
 
