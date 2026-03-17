@@ -35,6 +35,23 @@ document.head.insertAdjacentHTML('beforeend', '<style>.v2-screen{display:none}.v
 
 // ═══ UTILITIES ═══
 function esc(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
+// Product sanitization — strip personal names and internal branding from visible text
+function sanitize(s) {
+  if (!s) return s;
+  return s
+    .replace(/\bRahul\s*Pitta\b/gi, 'the operator')
+    .replace(/\bRahul'?s?\b/gi, 'Operator')
+    .replace(/\bRPGPO\b/g, 'GPO')
+    .replace(/\bTopRanker\b/gi, 'Startup Engine')
+    .replace(/\bcaeeregine\b/gi, 'Career Engine')
+    .replace(/\bwealthresearch\b/gi, 'Finance Engine')
+    .replace(/\bpersonalops\b/gi, 'Life Ops Engine')
+    .replace(/\bfounder2founder\b/gi, 'Film Engine')
+    .replace(/\bnewsroom\b/gi, 'News Engine')
+    .replace(/Governed Private Office/gi, 'Private AI Operating System');
+}
+// Sanitized escape — use for all user-visible backend text
+function sesc(s) { return esc(sanitize(s)); }
 function toast(msg, type) {
   const c = document.getElementById('toastBox'); if (!c) return;
   while (c.children.length >= 3) c.removeChild(c.firstChild);
@@ -188,9 +205,9 @@ async function loadCommand() {
   if (briefEl && briefContent && brief && brief.operator_summary) {
     briefEl.style.display = '';
     const priorities = (brief.top_priorities || []).slice(0, 3);
-    briefContent.innerHTML = `<div style="margin-bottom:8px">${esc(brief.operator_summary)}</div>` +
+    briefContent.innerHTML = `<div style="margin-bottom:8px">${sesc(brief.operator_summary)}</div>` +
       (priorities.length ? priorities.map(p =>
-        `<div style="padding:4px 0;border-bottom:1px solid var(--border-0)"><span style="font-weight:500">${esc(p.title?.slice(0, 60) || '')}</span> <span style="color:var(--text-2);font-size:10px">${esc(p.why?.slice(0, 50) || '')}</span></div>`
+        `<div style="padding:4px 0;border-bottom:1px solid var(--border-0)"><span style="font-weight:500">${sesc(p.title?.slice(0, 60) || '')}</span> <span style="color:var(--text-2);font-size:10px">${sesc(p.why?.slice(0, 50) || '')}</span></div>`
       ).join('') : '');
   }
 
@@ -201,8 +218,8 @@ async function loadCommand() {
     actionsEl.style.display = '';
     actionsList.innerHTML = actions.actions.slice(0, 5).map(a =>
       `<div class="card card-click" style="padding:10px 14px;margin-bottom:6px">
-        <div class="spread"><span style="font-size:12px;font-weight:500">${esc((a.title || '').slice(0, 60))}</span><span class="tag tag-${a.priority === 'high' ? 'warn' : 'muted'}">${esc(a.priority || 'medium')}</span></div>
-        <div style="font-size:10px;color:var(--text-2);margin-top:3px">${esc((a.why || '').slice(0, 80))}</div>
+        <div class="spread"><span style="font-size:12px;font-weight:500">${sesc((a.title || '').slice(0, 60))}</span><span class="tag tag-${a.priority === 'high' ? 'warn' : 'muted'}">${esc(a.priority || 'medium')}</span></div>
+        <div style="font-size:10px;color:var(--text-2);margin-top:3px">${sesc((a.why || '').slice(0, 80))}</div>
       </div>`
     ).join('');
   }
@@ -252,7 +269,7 @@ async function loadCommand() {
       const obj = r.board_deliberation?.interpreted_objective || '';
       return `<div class="card card-click" style="padding:10px 14px;margin-bottom:6px" onclick="openWorkDetail('${r.task_id}')">
         <div class="spread"><span style="font-size:13px;font-weight:500">${esc((r.title || '').slice(0, 60))}</span><span class="tag tag-muted">${taskEngName(r)}</span></div>
-        ${obj ? `<div style="font-size:11px;color:var(--text-1);margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(obj.slice(0, 80))}</div>` : ''}
+        ${obj ? `<div style="font-size:11px;color:var(--text-1);margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${sesc(obj.slice(0, 80))}</div>` : ''}
         <div style="font-size:10px;color:var(--text-2);margin-top:3px">${timeAgo(r.updated_at || r.created_at)}${r.board_deliberation ? ' &middot; Board reviewed' : ''}</div>
       </div>`;
     }).join('');
@@ -382,7 +399,7 @@ function pollAskResult(taskId) {
         const progPct = Math.round(doneCount / totalCount * 100);
         if (!steps.length) steps = [`<div class="progress-step step-active"><div class="step-dot">&#9679;</div><div class="step-label">${statusLabel(task.status)}...</div><div class="step-time">${elapsed}s</div></div>`];
         const progressBar = totalCount > 1 ? `<div style="padding:0 14px 10px"><div style="height:3px;background:var(--border-1);border-radius:2px;overflow:hidden"><div style="height:100%;width:${progPct}%;background:var(--accent);border-radius:2px;transition:width .3s ease"></div></div><div style="font-size:9px;color:var(--text-2);margin-top:4px;text-align:right">${doneCount}/${totalCount} steps</div></div>` : '';
-        const boardNote = task.board_deliberation ? `<div style="padding:6px 14px;font-size:10px;color:var(--text-1);border-bottom:1px solid var(--border-0)"><span class="tag tag-accent" style="margin-right:6px">Board of AI</span>${esc((task.board_deliberation.recommended_strategy || '').slice(0, 80))}</div>` : '';
+        const boardNote = task.board_deliberation ? `<div style="padding:6px 14px;font-size:10px;color:var(--text-1);border-bottom:1px solid var(--border-0)"><span class="tag tag-accent" style="margin-right:6px">Board of AI</span>${sesc((task.board_deliberation.recommended_strategy || '').slice(0, 80))}</div>` : '';
         pp.innerHTML = `<div class="card" style="padding:0">${renderPhaseRail(task.status)}<div class="spread" style="padding:10px 14px;border-bottom:1px solid var(--border-0)"><span style="font-size:13px;font-weight:500">${esc((task.title || '').slice(0, 50))}</span><span class="tag tag-muted">${taskEngName(task)}</span></div>${boardNote}<div class="progress-panel" style="padding:8px">${steps.join('')}</div>${progressBar}</div>`;
       }
 
@@ -412,7 +429,7 @@ function renderAskResult(task, output) {
     return `<a href="${esc(u)}" target="_blank" rel="noopener" class="source-link">&#128279; ${esc(domain)}</a>`;
   }).join('')}</div>` : '';
 
-  const boardSummary = task.board_deliberation ? `<div style="padding:6px 14px;font-size:10px;color:var(--text-1);border-bottom:1px solid var(--border-0)"><span class="tag tag-accent" style="margin-right:6px">Board of AI</span>${esc((task.board_deliberation.interpreted_objective || '').slice(0, 90))}</div>` : '';
+  const boardSummary = task.board_deliberation ? `<div style="padding:6px 14px;font-size:10px;color:var(--text-1);border-bottom:1px solid var(--border-0)"><span class="tag tag-accent" style="margin-right:6px">Board of AI</span>${sesc((task.board_deliberation.interpreted_objective || '').slice(0, 90))}</div>` : '';
   rp.innerHTML = `<div class="card result" style="padding:0">${renderPhaseRail('done')}${boardSummary}
     <div class="result-head"><span class="tag tag-muted">${taskEngName(task)}</span><h3>${esc((task.title || '').slice(0, 60))}</h3><span style="font-size:10px;color:var(--text-2)">${timeAgo(task.updated_at)}</span></div>
     <div class="result-body">${md(output)}</div>
@@ -530,7 +547,7 @@ function renderWorkList(tasks) {
       ${isActive ? renderPhaseRail(t.status) : ''}
       <div style="padding:12px 14px">
         <div style="font-size:13px;font-weight:500;margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc((t.title || '').slice(0, 70))}</div>
-        ${preview ? `<div style="font-size:11px;color:var(--text-1);margin-bottom:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(preview.slice(0, 90))}</div>` : ''}
+        ${preview ? `<div style="font-size:11px;color:var(--text-1);margin-bottom:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${sesc(preview.slice(0, 90))}</div>` : ''}
         <div class="row gap-8" style="font-size:10px;color:var(--text-2);flex-wrap:wrap">
           <span class="tag tag-muted">${taskEngName(t)}</span>
           ${hasBoard ? '<span class="tag tag-accent">Board</span>' : ''}
@@ -584,12 +601,12 @@ async function openWorkDetail(taskId) {
       html += `<div class="card delib-card">
         <div class="delib-header" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'">
           <span class="delib-label">Board of AI</span>
-          <span style="font-size:12px;font-weight:500;flex:1">${esc(delib.interpreted_objective || '')}</span>
+          <span style="font-size:12px;font-weight:500;flex:1">${sesc(delib.interpreted_objective || '')}</span>
           <span class="tag tag-${delib.risk_level === 'green' ? 'ok' : delib.risk_level === 'red' ? 'err' : 'warn'}">${esc(delib.risk_level || 'green')}</span>
         </div>
         <div class="delib-body">
-          <div style="margin-bottom:8px"><strong>Strategy:</strong> ${esc(delib.recommended_strategy || '')}</div>
-          ${delib.expected_outcome ? `<div style="margin-bottom:8px"><strong>Expected outcome:</strong> ${esc(delib.expected_outcome)}</div>` : ''}
+          <div style="margin-bottom:8px"><strong>Strategy:</strong> ${sesc(delib.recommended_strategy || '')}</div>
+          ${delib.expected_outcome ? `<div style="margin-bottom:8px"><strong>Expected outcome:</strong> ${sesc(delib.expected_outcome)}</div>` : ''}
           <div style="font-size:10px;color:var(--text-2)">Model: ${esc(delib.model_used || '')} &middot; ${delib.tokens_used || 0} tokens</div>
         </div>
       </div>`;
@@ -893,7 +910,7 @@ async function loadOps() {
       const op = memory.operator[0];
       memHtml += `<div class="inset mb-12" style="font-size:12px">
         <div style="font-weight:600;margin-bottom:6px">Operator Profile</div>
-        <div style="color:var(--text-1);white-space:pre-wrap">${esc(op.summary || op.content || '')}</div>
+        <div style="color:var(--text-1);white-space:pre-wrap">${sesc(op.summary || op.content || '')}</div>
       </div>`;
     }
 
@@ -931,7 +948,7 @@ async function loadOps() {
     if (Array.isArray(memory.decisions) && memory.decisions.length) {
       memHtml += `<div style="font-weight:600;font-size:12px;margin-bottom:8px">Recent Decisions (${memory.decisions.length})</div>`;
       memHtml += memory.decisions.slice(0, 5).map(d =>
-        `<div style="padding:4px 0;border-bottom:1px solid var(--border-0);font-size:11px;color:var(--text-1)">${esc((d.title || d.summary || '').slice(0, 80))}</div>`
+        `<div style="padding:4px 0;border-bottom:1px solid var(--border-0);font-size:11px;color:var(--text-1)">${sesc((d.title || d.summary || '').slice(0, 80))}</div>`
       ).join('');
       memHtml += '<div style="height:12px"></div>';
     }
@@ -1044,7 +1061,7 @@ async function loadSettings() {
         const scope = s.level === 'operator' ? '' : engName(s.scope_id);
         return `<div style="padding:8px 0;border-bottom:1px solid var(--border-0);font-size:12px">
           <div class="row gap-8 mb-4"><span class="tag tag-${s.level === 'operator' ? 'accent' : 'muted'}">${level}</span>${scope ? `<span style="font-weight:500">${esc(scope)}</span>` : ''}</div>
-          <div style="color:var(--text-1)">${esc((s.statement || '').slice(0, 150))}</div>
+          <div style="color:var(--text-1)">${sesc((s.statement || '').slice(0, 150))}</div>
         </div>`;
       }).join('');
     } else if (msEl) { msEl.innerHTML = '<div style="font-size:12px;color:var(--text-2)">No mission statements defined</div>'; }

@@ -909,7 +909,7 @@ STRATEGY INSTRUCTIONS:
 - Provide a ranked recommendation with clear #1 pick and reasoning.`;
     }
 
-    const systemPrompt = `You are operating inside RPGPO, a governed personal AI operating system. Stage: ${st.stage}. Role: ${st.assigned_role}.${operatorContext}${domainContext}
+    const systemPrompt = `You are operating inside GPO, a governed private AI operating system. Stage: ${st.stage}. Role: ${st.assigned_role}.${operatorContext}${domainContext}
 
 RULES:
 - Be direct, specific, and actionable
@@ -1256,7 +1256,7 @@ RULES:
     } catch { /* */ }
 
     const rolePrompts = {
-      general: `You are operating inside RPGPO (Rahul Pitta Governed Private Office).${opCtx} Be direct, concise, evidence-based, and actionable. Never produce generic templates or placeholder text.`,
+      general: `You are operating inside GPO, a governed private AI operating system.${opCtx} Be direct, concise, evidence-based, and actionable. Never produce generic templates or placeholder text.`,
       research: `You are the RPGPO Research Director.${opCtx} Provide evidence-based research with specific facts, numbers, citations, and sources. Include actionable recommendations with concrete next steps.`,
       builder: `You are the RPGPO Builder / CTO.${opCtx} Focus on technical analysis, implementation priorities, and practical engineering advice. Be specific and direct.`,
       strategy: `You are the RPGPO Growth Strategist.${opCtx} Focus on business strategy, market positioning, growth channels, and actionable opportunities with specific examples and data.`,

@@ -53,7 +53,7 @@ const ENGINE_CONTEXT: Record<string, DomainContextEntry> = {
     specialists: ['builder', 'strategy'],
   },
   career: {
-    description: 'Career intelligence engine for Rahul (Senior Data Engineer / Entrepreneur). Covers job search, salary benchmarking, interview prep, career strategy, and skill development. Outputs must include specific companies, salary ranges, job listings, and actionable next steps — never generic career advice.',
+    description: 'Career intelligence engine for the operator (Senior Data Engineer / Entrepreneur). Covers job search, salary benchmarking, interview prep, career strategy, and skill development. Outputs must include specific companies, salary ranges, job listings, and actionable next steps — never generic career advice.',
     key_files: ['03-Operations/MissionStatus/CareerEngine.md'],
     governed_loop: ['research', 'strategy', 'report'],
     specialists: ['research', 'strategy'],
@@ -65,7 +65,7 @@ const ENGINE_CONTEXT: Record<string, DomainContextEntry> = {
     specialists: ['research'],
   },
   finance: {
-    description: 'Personal finance and investing engine for Rahul. Covers passive income ideas, investment opportunities, tax strategy, retirement planning, and financial strategy. Outputs must include specific revenue estimates, real examples, market data, and concrete first steps — not generic financial advice.',
+    description: 'Personal finance and investing engine for the operator. Covers passive income ideas, investment opportunities, tax strategy, retirement planning, and financial strategy. Outputs must include specific revenue estimates, real examples, market data, and concrete first steps — not generic financial advice.',
     key_files: [],
     governed_loop: ['research', 'strategy', 'report'],
     specialists: ['research', 'strategy'],
@@ -95,7 +95,7 @@ const ENGINE_CONTEXT: Record<string, DomainContextEntry> = {
     specialists: ['research'],
   },
   learning: {
-    description: 'Learning and tutoring engine. Produces personalized study plans, concept explanations, adaptive quizzes, and skill assessments. Outputs should use clear analogies, build from simple to complex, include practice questions, and adapt to the learner level. For Rahul: assume strong technical background in data engineering.',
+    description: 'Learning and tutoring engine. Produces personalized study plans, concept explanations, adaptive quizzes, and skill assessments. Outputs should use clear analogies, build from simple to complex, include practice questions, and adapt to the learner level. For the operator: assume strong technical background in data engineering.',
     key_files: [],
     governed_loop: ['research', 'report'],
     specialists: ['research'],
@@ -245,7 +245,7 @@ CRITICAL FILE PATH RULES:
 
   const systemPrompt = `You are the RPGPO Board of AI. You deliberate on tasks before execution.
 You have three perspectives:
-1. Chief of Staff — interprets objective, assesses feasibility, identifies what needs Rahul's decision
+1. Chief of Staff — interprets objective, assesses feasibility, identifies what needs the operator's decision
 2. Critic — challenges assumptions, identifies risks, unknowns, and failure modes
 3. Domain Specialist (${task.domain}) — proposes specific technical/strategic approach
 
@@ -357,7 +357,7 @@ Produce a JSON object with exactly these fields:
   "risk_level": "green|yellow|red",
   "is_code_task": ${codeTask},
   "target_files_identified": ["list of real file paths identified for code changes, or empty if non-code task"],
-  "approval_points": ["list of decisions requiring Rahul"],
+  "approval_points": ["list of decisions requiring the operator"],
   "subtasks": [
     {
       "title": "short title",

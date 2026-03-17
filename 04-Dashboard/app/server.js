@@ -351,7 +351,7 @@ const server = http.createServer(async (req, res) => {
     if (!fs.existsSync(src)) return json(res, { ok: false, error: 'File not found' }, 404);
 
     fs.mkdirSync(destDir, { recursive: true });
-    const stamp = `\n\n---\n## Decision\n- **${decision}** by Rahul via RPGPO Dashboard\n- **Timestamp:** ${new Date().toISOString()}\n`;
+    const stamp = `\n\n---\n## Decision\n- **${decision}** by Operator via GPO\n- **Timestamp:** ${new Date().toISOString()}\n`;
     fs.appendFileSync(src, stamp);
     fs.renameSync(src, dest);
 
@@ -469,8 +469,8 @@ const server = http.createServer(async (req, res) => {
     const taskType = req.url.replace('/api/ai/', '');
     const prompt = readFile('03-Operations/Reports/Claude-TopRanker-Starter-Prompt.md');
     if (taskType === 'claude-topranker-review' && prompt) {
-      logAction('Claude TopRanker Review', 'Displayed', null);
-      return json(res, { ok: true, output: 'TopRanker Review Prompt:\n\n' + prompt });
+      logAction('Startup Engine Review', 'Displayed', null);
+      return json(res, { ok: true, output: 'Startup Engine Review Prompt:\n\n' + prompt });
     }
     if (taskType === 'openai-daily-brief' && !process.env.OPENAI_API_KEY) {
       return json(res, { ok: false, error: 'OPENAI_API_KEY not set. Configure it and restart.' });
@@ -654,7 +654,7 @@ const server = http.createServer(async (req, res) => {
       intake.updateSubtask(subtaskId, {
         status: 'done',
         builder_outcome: outcomeLabel,
-        output: (st.output || '') + `\n\n[Approved by Rahul at ${new Date().toISOString()}]`,
+        output: (st.output || '') + `\n\n[Approved by Operator at ${new Date().toISOString()}]`,
       });
 
       // Re-run dependency resolution and queue next eligible subtasks
@@ -738,7 +738,7 @@ const server = http.createServer(async (req, res) => {
     if (st.status !== 'waiting_approval') return json(res, { error: 'Subtask not awaiting approval' }, 400);
 
     const body = await parseBody(req);
-    const reason = body.reason || 'Rejected by Rahul';
+    const reason = body.reason || 'Rejected by Operator';
 
     // Revert changed files if code_applied
     if (st.builder_outcome === 'code_applied' && st.files_changed && st.files_changed.length) {
@@ -755,7 +755,7 @@ const server = http.createServer(async (req, res) => {
       status: 'failed',
       builder_outcome: 'rejected',
       error: `Rejected: ${reason}`,
-      output: (st.output || '') + `\n\n[Rejected by Rahul: ${reason}]`,
+      output: (st.output || '') + `\n\n[Rejected by Operator: ${reason}]`,
     });
     workflow.onSubtaskComplete(subtaskId);
 
