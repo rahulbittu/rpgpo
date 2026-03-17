@@ -23,7 +23,7 @@ function go(r) {
   if (r === 'approvals') loadApprovals();
   if (r === 'activity') loadActivity();
   if (r === 'settings') loadSettings();
-  if (r === 'ask') populateEngineSelect();
+  if (r === 'ask') { populateEngineSelect(); loadAskRecent(); }
 }
 // Nav click handlers
 document.querySelectorAll('.v2-nav-item,.mob-tab').forEach(n => n.addEventListener('click', e => { e.preventDefault(); go(n.dataset.r); }));
@@ -161,6 +161,23 @@ function populateEngineSelect() {
   if (!sel || sel.options.length > 1) return;
   const engines = ['code','writing','research','learning','ops','health','shopping','travel','finance','startup','career','screenwriting','film','music','news','general'];
   engines.forEach(e => { const o = document.createElement('option'); o.value = e; o.textContent = engName(e); sel.appendChild(o); });
+}
+
+async function loadAskRecent() {
+  const el = document.getElementById('askRecent');
+  if (!el) return;
+  try {
+    const tasks = await fetch('/api/intake/tasks').then(r => r.json());
+    const recent = tasks.filter(t => t.status === 'done').reverse().slice(0, 5);
+    if (recent.length) {
+      el.innerHTML = `<div class="hd"><h3>Recent</h3></div>` + recent.map(t =>
+        `<div class="card card-click" style="padding:10px 14px;margin-bottom:6px" onclick="viewResult('${t.task_id}')">
+          <div class="spread"><span style="font-size:12px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc((t.title || '').slice(0, 55))}</span><span class="tag tag-muted">${engName(t.engine || t.domain)}</span></div>
+          <div style="font-size:10px;color:var(--text-2);margin-top:2px">${timeAgo(t.updated_at || t.created_at)}</div>
+        </div>`
+      ).join('');
+    }
+  } catch {}
 }
 
 let _askPoll = null;
@@ -320,11 +337,13 @@ function applyResultFilters(query) {
   renderResults(filtered.slice(0, 50));
 }
 
+let _resultsShown = 30;
 function renderResults(tasks) {
   const el = document.getElementById('resultsList');
   if (!el) return;
   if (!tasks.length) { el.innerHTML = '<div class="nil"><span class="nil-icon">&#9671;</span><span class="nil-title">No results</span></div>'; return; }
-  el.innerHTML = tasks.map(t => {
+  const visible = tasks.slice(0, _resultsShown);
+  el.innerHTML = visible.map(t => {
     const preview = t.board_deliberation?.interpreted_objective || '';
     return `<div class="card card-click" style="padding:12px 14px;margin-bottom:8px" onclick="viewResult('${t.task_id}')">
       <div style="font-size:13px;font-weight:500;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc((t.title || '').slice(0, 70))}</div>
@@ -336,6 +355,9 @@ function renderResults(tasks) {
       </div>
     </div>`;
   }).join('');
+  if (tasks.length > _resultsShown) {
+    el.innerHTML += `<div style="text-align:center;padding:12px"><button class="b b-ghost b-sm" onclick="_resultsShown+=30;applyResultFilters()">Show more (${tasks.length - _resultsShown} remaining)</button></div>`;
+  }
 }
 
 async function viewResult(taskId) {
@@ -516,14 +538,34 @@ async function loadActivity() {
 }
 
 // ═══ SSE ═══
+let _activityRefreshTimer = null;
 function connectSSE() {
   const src = new EventSource('/api/events');
-  src.onopen = () => { const d = document.getElementById('statusDot'); if (d) d.className = 'dot dot-ok dot-pulse'; const t = document.getElementById('statusText'); if (t) t.textContent = 'Connected'; };
-  src.onerror = () => { const d = document.getElementById('statusDot'); if (d) d.className = 'dot dot-err'; const t = document.getElementById('statusText'); if (t) t.textContent = 'Disconnected'; };
-  src.addEventListener('activity', () => {}); // keep alive
+  src.onopen = () => {
+    const d = document.getElementById('statusDot'); if (d) d.className = 'dot dot-ok dot-pulse';
+    const t = document.getElementById('statusText'); if (t) t.textContent = 'Connected';
+  };
+  src.onerror = () => {
+    const d = document.getElementById('statusDot'); if (d) d.className = 'dot dot-err';
+    const t = document.getElementById('statusText'); if (t) t.textContent = 'Reconnecting...';
+    // Auto-reconnect after 5s
+    setTimeout(connectSSE, 5000);
+  };
+  // On any activity event, refresh activity and home if visible
+  src.addEventListener('activity', () => {
+    // Debounce: don't refresh more than once per 10 seconds
+    if (_activityRefreshTimer) return;
+    _activityRefreshTimer = setTimeout(() => {
+      _activityRefreshTimer = null;
+      const actScreen = document.getElementById('s-activity');
+      if (actScreen && actScreen.classList.contains('on')) loadActivity();
+      const homeScreen = document.getElementById('s-home');
+      if (homeScreen && homeScreen.classList.contains('on')) loadHome();
+    }, 10000);
+  });
 }
 
 // ═══ INIT ═══
 connectSSE();
 loadHome();
-loadActivity(); // pre-load for home widget
+loadActivity();
