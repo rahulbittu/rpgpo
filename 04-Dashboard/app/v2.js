@@ -23,7 +23,7 @@ function go(r) {
   if (r === 'activity') loadActivity();
   if (r === 'ops') loadOps();
   if (r === 'settings') loadSettings();
-  if (r === 'ask') { populateEngineSelect(); loadAskRecent(); }
+  if (r === 'ask') { populateEngineSelect(); renderTemplates(); loadAskRecent(); }
   // Reset work view when navigating
   if (r !== 'work') {
     const wd = document.getElementById('workDetail'); if (wd) wd.style.display = 'none';
@@ -149,9 +149,10 @@ async function loadCommand() {
     // Running tasks
     const running = tasks.filter(t => ['executing', 'deliberating', 'builder_running'].includes(t.status));
     if (running.length) {
-      html += running.map(t => `<div class="card card-accent mb-12" style="padding:10px 14px">
+      html += `<div style="font-size:11px;font-weight:600;color:var(--text-1);margin-bottom:6px">&#9679; ${running.length} Running</div>`;
+      html += running.map(t => `<div class="card card-accent card-click mb-12" style="padding:10px 14px" onclick="openWorkDetail('${t.task_id}')">
         <div class="spread"><span style="font-size:12px;font-weight:500">${esc((t.title || '').slice(0, 55))}</span>${statusTag(t.status)}</div>
-        <div style="font-size:10px;color:var(--text-2);margin-top:3px"><span class="tag tag-muted">${engName(t.domain)}</span> &middot; ${timeAgo(t.created_at)}</div>
+        <div style="font-size:10px;color:var(--text-2);margin-top:3px"><span class="tag tag-muted">${taskEngName(t)}</span> &middot; ${timeAgo(t.created_at)}</div>
       </div>`).join('');
     }
     attn.innerHTML = html;
@@ -229,6 +230,38 @@ async function loadCommand() {
 }
 
 // ═══ ASK ═══
+const TEMPLATES = [
+  { icon: '&#128200;', title: 'AI News Today', desc: 'Latest AI and tech headlines', prompt: "Compile today's most important AI and technology news with sources.", domain: 'news' },
+  { icon: '&#128176;', title: 'Income Ideas', desc: 'Passive income opportunities', prompt: 'Research the top 10 passive income opportunities for a tech professional with startup costs and first steps.', domain: 'finance' },
+  { icon: '&#128188;', title: 'Job Search', desc: 'Find roles in your field', prompt: 'Search for current high-paying remote job openings in my field. Include company, title, salary range, and where to apply.', domain: 'career' },
+  { icon: '&#128197;', title: 'Plan My Week', desc: 'Weekly schedule + priorities', prompt: 'Help me plan the upcoming week with day-by-day time blocks, priorities, and key decisions.', domain: 'ops' },
+  { icon: '&#127891;', title: 'Explain a Topic', desc: 'Deep dive into any subject', prompt: '', domain: 'learning' },
+  { icon: '&#128270;', title: 'Product Research', desc: 'Compare and recommend', prompt: '', domain: 'research' },
+];
+
+function renderTemplates() {
+  const qs = document.getElementById('askQuickStart');
+  if (qs) qs.style.display = '';
+  const el = document.getElementById('askTemplates');
+  if (!el) return;
+  el.innerHTML = TEMPLATES.map(t =>
+    `<div class="card card-click" style="padding:10px 12px" onclick="useTemplate('${esc(t.prompt)}','${t.domain}')">
+      <div class="row gap-8"><span style="font-size:16px">${t.icon}</span><div><div style="font-size:12px;font-weight:600">${esc(t.title)}</div><div style="font-size:10px;color:var(--text-2)">${esc(t.desc)}</div></div></div>
+    </div>`
+  ).join('');
+}
+
+function useTemplate(prompt, domain) {
+  const inp = document.getElementById('askInput');
+  if (inp && prompt) { inp.value = prompt; inp.focus(); }
+  else if (inp) { inp.focus(); }
+  const eng = document.getElementById('askEngine');
+  if (eng && domain) eng.value = domain;
+  // Hide quick start when using a template
+  const qs = document.getElementById('askQuickStart');
+  if (qs && prompt) qs.style.display = 'none';
+}
+
 function populateEngineSelect() {
   const sel = document.getElementById('askEngine');
   if (!sel || sel.options.length > 1) return;
@@ -265,6 +298,7 @@ async function submitAsk() {
   document.getElementById('askProgress').style.display = 'block';
   document.getElementById('askProgress').innerHTML = '<div class="card"><div class="progress-panel"><div class="progress-step step-active"><div class="step-dot">&#9679;</div><div class="step-label">Submitting request...</div></div></div></div>';
   document.getElementById('askResult').style.display = 'none';
+  const qs = document.getElementById('askQuickStart'); if (qs) qs.style.display = 'none';
 
   try {
     const body = { raw_request: raw, priority: urgency };
