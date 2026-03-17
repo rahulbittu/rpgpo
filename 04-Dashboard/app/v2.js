@@ -228,6 +228,22 @@ async function loadCommand() {
     }
   }
 
+  // Today's work breakdown by engine
+  const todayWrap = document.getElementById('cmdTodayWrap');
+  const todayBreak = document.getElementById('cmdTodayBreakdown');
+  if (todayWrap && todayBreak && todayTasks.length > 0) {
+    todayWrap.style.display = '';
+    const byEngine = {};
+    todayTasks.forEach(t => {
+      const eng = taskEngName(t);
+      byEngine[eng] = (byEngine[eng] || 0) + 1;
+    });
+    todayBreak.innerHTML = Object.entries(byEngine)
+      .sort((a, b) => b[1] - a[1])
+      .map(([eng, count]) => `<span class="tag tag-muted" style="padding:3px 10px;font-size:11px">${esc(eng)} <strong>${count}</strong></span>`)
+      .join('');
+  }
+
   // Recent Results — richer cards with Board info
   const recent = tasks.filter(x => x.status === 'done').slice(-5).reverse();
   const re = document.getElementById('cmdResults');
@@ -694,6 +710,9 @@ async function loadActivity(append) {
     const events = data.events || [];
     _actEvents = _actEvents.concat(events);
     _actOffset += events.length;
+    // Show total in header
+    const totalEl = document.getElementById('actTotal');
+    if (totalEl) totalEl.textContent = `${data.total || 0} events`;
     if (!_actEvents.length) { el.innerHTML = '<div class="nil"><span class="nil-desc">No activity yet</span></div>'; return; }
     el.innerHTML = _actEvents.map(e => renderEvent(e)).join('');
     if (_actOffset < data.total) {
@@ -735,13 +754,21 @@ function renderFilteredActivity(query) {
 function renderEvent(e) {
   const label = EVT_LABELS[e.type] || e.type.replace(/_/g, ' ');
   const engine = e.engine ? `<span class="tag tag-muted">${engName(e.engine)}</span>` : '';
-  const detail = e.metadata?.title ? esc(e.metadata.title.slice(0, 50)) : e.metadata?.rating ? `Rating: ${e.metadata.rating}` : e.metadata?.comment ? esc(e.metadata.comment.slice(0, 40)) : '';
+  const title = e.metadata?.taskTitle || e.metadata?.title || '';
+  const rating = e.metadata?.rating;
+  const format = e.metadata?.format;
+  let detail = '';
+  if (title) detail = esc(title.slice(0, 60));
+  else if (rating) detail = `Rating: <strong>${esc(rating)}</strong>`;
+  else if (e.metadata?.comment) detail = esc(e.metadata.comment.slice(0, 40));
+  if (format) detail += detail ? ` (${format})` : format;
   const ts = e.timestamp ? new Date(e.timestamp) : null;
   const timeStr = ts ? ts.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) : '';
   const dateStr = ts ? ts.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
   const taskId = e.taskId || e.metadata?.taskId;
-  const clickable = taskId ? ` style="cursor:pointer" onclick="openWorkDetail('${esc(taskId)}')"` : '';
-  return `<div class="ev"${clickable}><div class="ev-time">${dateStr}<br>${timeStr}</div>${evtIcon(e.type)}<div class="ev-text"><strong>${esc(label)}</strong>${detail ? ' — ' + detail : ''} ${engine}</div></div>`;
+  const clickCls = taskId ? ' ev-click' : '';
+  const clickAttr = taskId ? ` onclick="openWorkDetail('${esc(taskId)}')"` : '';
+  return `<div class="ev${clickCls}"${clickAttr}><div class="ev-time">${dateStr}<br>${timeStr}</div>${evtIcon(e.type)}<div class="ev-text"><strong>${esc(label)}</strong>${detail ? ' — ' + detail : ''} ${engine}</div></div>`;
 }
 
 // ═══ OPERATIONS ═══
@@ -884,6 +911,26 @@ async function loadOps() {
     if (Array.isArray(memory.mission_statements)) memStats.push(`${memory.mission_statements.length} missions`);
     if (memStats.length) {
       memHtml += `<div class="g3 mb-12">${memStats.slice(0, 6).map(s => `<div class="metric-card" style="padding:8px"><span class="metric-val" style="font-size:14px">${esc(s.split(' ')[0])}</span><span class="metric-label">${esc(s.split(' ').slice(1).join(' '))}</span></div>`).join('')}</div>`;
+    }
+
+    // Engine memory breakdown
+    if (memory.engines && typeof memory.engines === 'object') {
+      const engEntries = Object.entries(memory.engines).filter(([,v]) => Array.isArray(v) && v.length > 0);
+      if (engEntries.length) {
+        memHtml += `<div style="font-weight:600;font-size:12px;margin-bottom:8px">Engine Memory (${engEntries.length} engines)</div>`;
+        memHtml += `<div class="row gap-4 mb-12" style="flex-wrap:wrap">${engEntries.map(([eng, items]) =>
+          `<span class="tag tag-muted" style="cursor:default">${engName(eng)} <strong>${items.length}</strong></span>`
+        ).join('')}</div>`;
+      }
+    }
+
+    // Recent decisions (top 5)
+    if (Array.isArray(memory.decisions) && memory.decisions.length) {
+      memHtml += `<div style="font-weight:600;font-size:12px;margin-bottom:8px">Recent Decisions (${memory.decisions.length})</div>`;
+      memHtml += memory.decisions.slice(0, 5).map(d =>
+        `<div style="padding:4px 0;border-bottom:1px solid var(--border-0);font-size:11px;color:var(--text-1)">${esc((d.title || d.summary || '').slice(0, 80))}</div>`
+      ).join('');
+      memHtml += '<div style="height:12px"></div>';
     }
 
     // Active signals

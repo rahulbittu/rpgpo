@@ -102,6 +102,12 @@
           </div>
         </div>
 
+        <!-- TODAY'S WORK BREAKDOWN -->
+        <div class="mb-16" id="cmdTodayWrap" style="display:none">
+          <div class="hd"><h3>Today's Work</h3></div>
+          <div id="cmdTodayBreakdown" class="row gap-4" style="flex-wrap:wrap"></div>
+        </div>
+
         <!-- RECENT RESULTS -->
         <div class="mb-16">
           <div class="hd"><h3>Recent Results</h3><span class="hd-action" onclick="go('work')">View All</span></div>
@@ -163,7 +169,7 @@
     <!-- ═══ ACTIVITY ═══ -->
     <section class="v2-screen" id="s-activity">
       <div class="v2-page">
-        <div class="v2-page-hd spread"><div><h1>Activity</h1><p>Execution history and audit trail</p></div></div>
+        <div class="v2-page-hd spread"><div><h1>Activity</h1><p>Execution history and audit trail</p></div><span id="actTotal" style="font-size:11px;color:var(--text-2)"></span></div>
         <div style="margin-bottom:12px"><input id="actSearch" class="inp" style="padding:8px 12px" placeholder="Search events..." oninput="filterActivity(this.value)"></div>
         <div class="filters mb-12" id="actTypeFilter">
           <button class="b b-sm on" onclick="filterActivityType('')">All</button>
