@@ -605,19 +605,24 @@ function filterTasks(f) {
 function showTask(id) {
   const t = TASKS.find(x => x.id === id);
   if (!t) return;
-  let b = '';
-  b += `Task:      ${t.label}\n`;
-  b += `Type:      ${t.type}\n`;
-  b += `Status:    ${t.status.toUpperCase()}\n`;
-  if (t.meta?.model) b += `Model:     ${t.meta.model}\n`;
-  if (t.meta?.role) b += `Role:      ${t.meta.role}\n`;
-  b += `Created:   ${t.createdAt}\n`;
-  b += `Updated:   ${t.updatedAt}\n`;
-  if (t.filesWritten?.length) b += `\n--- Files Written ---\n${t.filesWritten.join('\n')}\n`;
-  if (t.error) b += `\n--- Error ---\n${t.error}\n`;
-  if (t.output) b += `\n--- Output ---\n${t.output}\n`;
-  document.getElementById('taskModalTitle').textContent = `${t.label} [${t.status.toUpperCase()}]`;
-  document.getElementById('taskModalBody').textContent = b;
+  const statusBadge = t.status === 'done' ? 'badge-success' : t.status === 'failed' ? 'badge-danger' : t.status === 'running' ? 'badge-warning' : 'badge-neutral';
+  let b = `<div style="margin-bottom:var(--sp-12)">
+    <div style="display:flex;align-items:center;gap:var(--sp-8);margin-bottom:var(--sp-8)">
+      <span class="badge ${statusBadge}">${t.status}</span>
+      <span class="badge badge-neutral">${esc(t.type)}</span>
+      ${t.meta?.model ? `<span style="font-size:11px;color:var(--text-faint);font-family:var(--mono)">${esc(t.meta.model)}</span>` : ''}
+    </div>
+    <div style="font-size:10px;color:var(--text-faint)">Created: ${t.createdAt} | Updated: ${t.updatedAt}</div>
+  </div>`;
+  if (t.filesWritten?.length) {
+    b += `<div style="margin-bottom:var(--sp-12)"><div style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--text-faint);margin-bottom:var(--sp-4)">Files Written</div>`;
+    b += t.filesWritten.map(f => `<div style="font-size:11px;font-family:var(--mono);color:var(--text-dim);padding:var(--sp-2) 0">${esc(f)}</div>`).join('');
+    b += '</div>';
+  }
+  if (t.error) b += `<div style="margin-bottom:var(--sp-12)"><div style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--red);margin-bottom:var(--sp-4)">Error</div><pre style="font-size:11px;color:var(--red);white-space:pre-wrap;background:var(--red-soft);padding:var(--sp-8);border-radius:var(--r-sm)">${esc(t.error)}</pre></div>`;
+  if (t.output) b += `<div><div style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--text-faint);margin-bottom:var(--sp-4)">Output</div><pre style="font-size:11px;color:var(--text-dim);white-space:pre-wrap;background:var(--bg-inset);padding:var(--sp-8);border-radius:var(--r-sm);max-height:400px;overflow-y:auto">${esc(t.output)}</pre></div>`;
+  document.getElementById('taskModalTitle').textContent = t.label;
+  document.getElementById('taskModalBody').innerHTML = b;
   document.getElementById('taskModal').classList.add('open');
 }
 
@@ -1761,7 +1766,7 @@ async function showIntakeDetail(taskId) {
   if (!panel) return;
 
   panel.style.display = 'block';
-  panel.innerHTML = '<div class="delib-panel"><div style="color:var(--text-dim)">Loading...</div></div>';
+  panel.innerHTML = '<div class="surface" style="padding:var(--sp-16)"><div class="loading-state">Loading task details...</div></div>';
 
   // Scroll detail into view
   panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1773,7 +1778,7 @@ async function showIntakeDetail(taskId) {
     renderIntakeDetail(data);
     startIntakeDetailPoll();
   } catch (e) {
-    panel.innerHTML = '<div class="delib-panel"><div style="color:var(--red)">Failed to load task</div></div>';
+    panel.innerHTML = '<div class="surface" style="padding:var(--sp-16)"><div class="empty-state"><span class="empty-icon" style="color:var(--red)">&#10007;</span><span class="empty-title">Failed to load task</span></div></div>';
   }
 }
 
@@ -1813,110 +1818,79 @@ function renderIntakeDetail(data) {
   if (!panel) return;
   const { task, subtasks, progress } = data;
   const delib = task.board_deliberation;
+  const statusBadge = task.status === 'done' ? 'badge-success' : task.status === 'failed' ? 'badge-danger' : ['executing','deliberating','waiting_approval'].includes(task.status) ? 'badge-warning' : 'badge-neutral';
+  const riskBadge = (task.risk_level === 'red') ? 'badge-danger' : (task.risk_level === 'yellow') ? 'badge-warning' : 'badge-success';
 
-  let html = '<div class="delib-panel">';
+  let html = '<div class="surface" style="padding:var(--sp-16);margin-bottom:var(--sp-16)">';
 
   // Close button
-  html += `<div style="display:flex;justify-content:flex-end;margin-bottom:-8px">
-    <button class="modal-close" onclick="closeIntakeDetail()" style="background:none;border:none;color:var(--text-faint);font-size:18px;cursor:pointer">&times;</button>
+  html += `<div style="display:flex;justify-content:flex-end;margin-bottom:var(--sp-4)">
+    <button class="btn btn-icon" onclick="closeIntakeDetail()" aria-label="Close">&times;</button>
   </div>`;
 
-  // Status banner
-  html += getStatusBanner(task.status);
-
   // Header
-  html += `<div style="margin-bottom:12px">
-    <div style="font-size:15px;font-weight:700;margin-bottom:4px">${esc(task.title)}</div>
-    <div class="intake-card-meta">
-      <span class="domain-tag">${domainLabel(task.domain)}</span>
-      <span class="intake-status-badge ${task.status}">${task.status.replace('_', ' ')}</span>
-      ${task.risk_level !== 'green' ? `<span class="risk-badge risk-${task.risk_level}">${task.risk_level}</span>` : ''}
+  html += `<div style="margin-bottom:var(--sp-12)">
+    <div style="font-size:15px;font-weight:700;margin-bottom:var(--sp-4)">${esc(task.title)}</div>
+    <div style="display:flex;align-items:center;gap:var(--sp-8);flex-wrap:wrap">
+      <span class="badge badge-neutral">${domainLabel(task.domain)}</span>
+      <span class="badge ${statusBadge}">${task.status.replace('_', ' ')}</span>
+      ${task.risk_level !== 'green' ? `<span class="badge ${riskBadge}">${task.risk_level}</span>` : ''}
       <span style="font-size:9px;color:var(--text-faint);font-family:var(--mono);margin-left:auto">${fmtTime(task.created_at)}</span>
     </div>
   </div>`;
 
-  // Primary action button (large, full-width, unmistakable)
+  // Primary action
   if (task.status === 'intake') {
-    html += `<button class="intake-hero-btn btn-deliberate" onclick="deliberateTask('${task.task_id}')" style="margin-bottom:14px">
-      <span class="btn-icon">&#9670;</span> Send to Board for Deliberation
+    html += `<button class="btn btn-primary btn-lg" style="width:100%;margin-bottom:var(--sp-12)" onclick="deliberateTask('${task.task_id}')">
+      &#9670; Send to Board for Deliberation
     </button>`;
   } else if (task.status === 'planned') {
-    html += `<button class="intake-hero-btn btn-approve-exec" onclick="approvePlan('${task.task_id}')" style="margin-bottom:14px">
-      <span class="btn-icon">&#9654;</span> Approve &amp; Execute Plan
+    html += `<button class="btn btn-success btn-lg" style="width:100%;margin-bottom:var(--sp-12)" onclick="approvePlan('${task.task_id}')">
+      &#9654; Approve &amp; Execute Plan
     </button>`;
   } else if (task.status === 'done' || task.status === 'failed') {
-    html += `<div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
-      <button class="cos-action-btn" onclick="quickRunTask('${esc(task.domain)}','${esc((task.raw_request || '').replace(/'/g, "\\'").slice(0, 500))}','${task.urgency || 'normal'}')" style="padding:8px 16px;font-size:12px">
-        <span>&#8635;</span> Run Again
-      </button>
-      ${task.status === 'done' ? `<a href="/api/intake/task/${task.task_id}/export?fmt=md" download class="cos-action-btn" style="padding:8px 16px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center">
-        <span>&#8681;</span> Download MD
-      </a>
-      <a href="/api/intake/task/${task.task_id}/export?fmt=json" download class="cos-action-btn" style="padding:8px 16px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;background:var(--bg-card);border:1px solid var(--border);color:var(--text)">
-        <span>&#8681;</span> Download JSON
-      </a>` : ''}
+    html += `<div style="display:flex;gap:var(--sp-8);margin-bottom:var(--sp-8);flex-wrap:wrap">
+      <button class="btn btn-secondary btn-sm" onclick="quickRunTask('${esc(task.domain)}','${esc((task.raw_request || '').replace(/'/g, "\\'").slice(0, 500))}','${task.urgency || 'normal'}')">&#8635; Run Again</button>
+      ${task.status === 'done' ? `<a href="/api/intake/task/${task.task_id}/export?fmt=md" download class="btn btn-secondary btn-sm" style="text-decoration:none">&#8681; MD</a>
+      <a href="/api/intake/task/${task.task_id}/export?fmt=json" download class="btn btn-ghost btn-sm" style="text-decoration:none">&#8681; JSON</a>` : ''}
     </div>`;
-    // Feedback buttons — low-friction quality rating
     if (task.status === 'done') {
-      html += `<div id="feedback-${task.task_id}" style="display:flex;gap:6px;align-items:center;margin-bottom:14px;padding:8px 0;border-top:1px solid var(--border-faint)">
-        <span style="font-size:11px;color:var(--text-dim);margin-right:4px">Rate this output:</span>
-        <button class="cos-action-btn" onclick="sendFeedback('${task.task_id}','good')" style="padding:5px 12px;font-size:11px;background:var(--green-bg,rgba(80,200,120,0.1));border-color:var(--green-border,rgba(80,200,120,0.3))">Good</button>
-        <button class="cos-action-btn" onclick="sendFeedback('${task.task_id}','needs_improvement')" style="padding:5px 12px;font-size:11px;background:var(--yellow-bg,rgba(240,180,40,0.1));border-color:var(--yellow-border,rgba(240,180,40,0.3))">Needs Work</button>
-        <button class="cos-action-btn" onclick="sendFeedback('${task.task_id}','bad')" style="padding:5px 12px;font-size:11px;background:var(--red-bg,rgba(220,80,60,0.1));border-color:var(--red-border,rgba(220,80,60,0.3))">Bad</button>
+      html += `<div id="feedback-${task.task_id}" class="feedback-bar">
+        <span class="feedback-label">Rate output:</span>
+        <button class="btn btn-success btn-sm" onclick="sendFeedback('${task.task_id}','good')">Good</button>
+        <button class="btn btn-sm" style="background:var(--yellow-soft);color:var(--yellow);border-color:var(--yellow-border)" onclick="sendFeedback('${task.task_id}','needs_improvement')">Needs Work</button>
+        <button class="btn btn-danger btn-sm" onclick="sendFeedback('${task.task_id}','bad')">Bad</button>
       </div>`;
     }
   }
 
-  // Raw request
-  html += `<div class="delib-section">
-    <div class="delib-section-title">Request</div>
-    <div class="delib-section-body">${esc(task.raw_request)}</div>
+  // Request
+  html += `<div style="margin-bottom:var(--sp-12)">
+    <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--text-faint);letter-spacing:0.5px;margin-bottom:var(--sp-4)">Request</div>
+    <div style="font-size:12px;color:var(--text-dim)">${esc(task.raw_request)}</div>
   </div>`;
 
-  // Deliberation results
+  // Deliberation
   if (delib) {
-    html += `<div class="delib-section">
-      <div class="delib-section-title">Interpreted Objective</div>
-      <div class="delib-section-body" style="font-weight:600">${esc(delib.interpreted_objective)}</div>
-    </div>`;
-
-    html += `<div class="delib-section">
-      <div class="delib-section-title">Recommended Strategy</div>
-      <div class="delib-section-body">${esc(delib.recommended_strategy)}</div>
-    </div>`;
-
-    if (delib.expected_outcome) {
-      html += `<div class="delib-section">
-        <div class="delib-section-title">Expected Outcome</div>
-        <div class="delib-section-body">${esc(delib.expected_outcome)}</div>
-      </div>`;
-    }
-
-    if (delib.key_unknowns && delib.key_unknowns.length) {
-      html += `<div class="delib-section">
-        <div class="delib-section-title">Key Unknowns</div>
-        <div class="delib-section-body"><ul style="list-style:disc;padding-left:14px;margin:0">${delib.key_unknowns.map(u => `<li style="font-size:12px;padding:2px 0;color:var(--text-secondary)">${esc(u)}</li>`).join('')}</ul></div>
-      </div>`;
-    }
-
-    if (delib.approval_points && delib.approval_points.length) {
-      html += `<div class="delib-section">
-        <div class="delib-section-title">Approval Points</div>
-        <div class="delib-section-body"><ul style="list-style:disc;padding-left:14px;margin:0">${delib.approval_points.map(a => `<li style="font-size:12px;padding:2px 0;color:var(--yellow)">${esc(a)}</li>`).join('')}</ul></div>
-      </div>`;
-    }
-
-    html += `<div class="delib-section" style="display:flex;gap:16px;flex-wrap:wrap">
-      <div><span class="delib-section-title">Risk</span> <span class="risk-badge risk-${delib.risk_level || 'green'}">${delib.risk_level || 'green'}</span></div>
-      <div><span class="delib-section-title">Model</span> <span style="font-size:11px;color:var(--text-dim);font-family:var(--mono)">${esc(delib.model_used || '')}</span></div>
-      <div><span class="delib-section-title">Tokens</span> <span style="font-size:11px;color:var(--text-dim);font-family:var(--mono)">${delib.tokens_used || '--'}</span></div>
+    html += `<div class="surface-inset" style="margin-bottom:var(--sp-12);padding:var(--sp-12)">
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--text-faint);letter-spacing:0.5px;margin-bottom:var(--sp-8)">Board Deliberation</div>
+      <div style="font-size:13px;font-weight:600;margin-bottom:var(--sp-8)">${esc(delib.interpreted_objective)}</div>
+      <div style="font-size:12px;color:var(--text-dim);margin-bottom:var(--sp-8)">${esc(delib.recommended_strategy)}</div>
+      ${delib.expected_outcome ? `<div style="font-size:11px;color:var(--text-dim);margin-bottom:var(--sp-8)"><strong style="color:var(--text-faint)">Outcome:</strong> ${esc(delib.expected_outcome)}</div>` : ''}
+      ${delib.key_unknowns && delib.key_unknowns.length ? `<div style="margin-bottom:var(--sp-8)"><strong style="font-size:10px;color:var(--text-faint);text-transform:uppercase">Unknowns</strong><ul style="list-style:disc;padding-left:14px;margin:var(--sp-4) 0 0">${delib.key_unknowns.map(u => `<li style="font-size:11px;color:var(--text-dim)">${esc(u)}</li>`).join('')}</ul></div>` : ''}
+      ${delib.approval_points && delib.approval_points.length ? `<div style="margin-bottom:var(--sp-8)"><strong style="font-size:10px;color:var(--text-faint);text-transform:uppercase">Approval Points</strong><ul style="list-style:disc;padding-left:14px;margin:var(--sp-4) 0 0">${delib.approval_points.map(a => `<li style="font-size:11px;color:var(--yellow)">${esc(a)}</li>`).join('')}</ul></div>` : ''}
+      <div style="display:flex;gap:var(--sp-16);font-size:11px;color:var(--text-faint)">
+        <span>Risk: <span class="badge ${riskBadge}">${delib.risk_level || 'green'}</span></span>
+        <span>Model: <span style="font-family:var(--mono)">${esc(delib.model_used || '')}</span></span>
+        <span>Tokens: <span style="font-family:var(--mono)">${delib.tokens_used || '--'}</span></span>
+      </div>
     </div>`;
   }
 
-  // Task Timeline — coherent vertical view
+  // Timeline
   if (subtasks && subtasks.length) {
-    html += `<div class="delib-section">
-      <div class="delib-section-title">Task Timeline (${progress.done}/${progress.total} complete)</div>
+    html += `<div style="margin-top:var(--sp-8)">
+      <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--text-faint);letter-spacing:0.5px;margin-bottom:var(--sp-8)">Timeline (${progress.done}/${progress.total})</div>
       ${renderTaskTimeline(task, subtasks)}
     </div>`;
   }
