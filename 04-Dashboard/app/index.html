@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="theme-color" content="#060810" />
   <meta name="mobile-web-app-capable" content="yes" />
-  <title>GPO Command Center</title>
+  <title>GPO</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="operator.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,131 +85,92 @@
     <!-- MAIN CONTENT -->
     <main class="content">
 
-      <!-- HOME — Dashboard -->
+      <!-- HOME — Dashboard (redesigned: focused layout, new design system) -->
       <section class="tab-panel active" id="tab-home">
-        <!-- Hero Header -->
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px">
+
+        <!-- Header: greeting + primary action -->
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-24)">
           <div>
-            <h1 id="homeGreeting" style="font-size:22px;font-weight:800;letter-spacing:-.5px;margin-bottom:2px">Command Center</h1>
-            <p class="subtitle" id="homeDate" style="font-size:11px"></p>
+            <h1 id="homeGreeting" style="font-size:18px;font-weight:700;letter-spacing:-.3px;margin-bottom:var(--sp-2)">GPO</h1>
+            <p id="homeDate" style="font-size:11px;color:var(--text-dim)"></p>
           </div>
-          <button class="send-btn" onclick="switchTab('intake')" style="font-size:13px;padding:10px 24px;border-radius:6px">
+          <button class="btn btn-primary btn-md" onclick="switchTab('intake')">
             <span>&#9998;</span> New Task
           </button>
         </div>
 
-        <!-- System Status Bar -->
-        <div class="status-strip" style="margin-bottom:12px">
-          <div class="status-cell"><span class="status-cell-label">Server</span><span class="status-cell-value" id="hsServer">--</span></div>
-          <div class="status-cell"><span class="status-cell-label">Worker</span><span class="status-cell-value" id="hsWorker">--</span></div>
-          <div class="status-cell"><span class="status-cell-label">Queue</span><span class="status-cell-value" id="hsQueue">--</span></div>
-          <div class="status-cell"><span class="status-cell-label">Models</span><span class="status-cell-value" id="hsModels">--</span></div>
-          <div class="status-cell"><span class="status-cell-label">Approvals</span><span class="status-cell-value" id="hsApprovals">--</span></div>
-          <div class="status-cell"><span class="status-cell-label">Completed</span><span class="status-cell-value" id="hsTasksDone">--</span></div>
+        <!-- System health strip (compact) -->
+        <div style="display:flex;gap:var(--sp-16);margin-bottom:var(--sp-16);padding:var(--sp-8) var(--sp-12);background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-sm);font-size:11px">
+          <span><span style="color:var(--text-faint)">Server</span> <span id="hsServer" style="color:var(--text);font-weight:500">--</span></span>
+          <span><span style="color:var(--text-faint)">Worker</span> <span id="hsWorker" style="color:var(--text);font-weight:500">--</span></span>
+          <span><span style="color:var(--text-faint)">Queue</span> <span id="hsQueue" style="color:var(--text);font-weight:500">--</span></span>
+          <span><span style="color:var(--text-faint)">Done</span> <span id="hsTasksDone" style="color:var(--text);font-weight:500">--</span></span>
+          <span id="hsModels" style="display:none">--</span>
+          <span id="hsApprovals" style="display:none">--</span>
+          <span class="heartbeat-dot" id="heartbeatDot" style="margin-left:auto"></span>
+          <span id="heartbeatLabel" style="color:var(--text-faint)">Worker idle</span>
+          <span id="heartbeatDetail" style="display:none">--</span>
         </div>
+        <div id="heartbeatBar" style="display:none"></div>
 
-        <!-- Worker Heartbeat -->
-        <div class="heartbeat-bar" id="heartbeatBar" style="margin-bottom:16px">
-          <span class="heartbeat-dot" id="heartbeatDot"></span>
-          <span class="heartbeat-label" id="heartbeatLabel">Worker idle</span>
-          <span class="heartbeat-detail" id="heartbeatDetail">--</span>
-        </div>
-
-        <!-- Priority: Operator Action Required -->
+        <!-- Priority: pending actions + approvals (important, at top) -->
         <div id="pendingActionHero"></div>
         <div id="globalApprovalInbox"></div>
-
-        <!-- Notifications -->
         <div id="homeNotifications"></div>
-
-        <!-- Chief of Staff -->
         <div id="chiefOfStaffPanel"></div>
 
-        <!-- Active Task -->
+        <!-- Active task focus -->
         <div id="currentTaskFocus"></div>
         <div id="homeRunningTask"></div>
 
-        <!-- Quick Actions -->
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0">
-          <button class="action-btn" onclick="switchTab('intake')"><span class="btn-icon">&#9998;</span>New Task</button>
-          <button class="action-btn" onclick="switchTab('channels')"><span class="btn-icon">&#9881;</span>Ask AI</button>
-          <button class="action-btn" onclick="switchTab('missions')"><span class="btn-icon">&#9673;</span>Engines</button>
-          <button class="action-btn" onclick="submitTask('refresh-state','Refresh')"><span class="btn-icon">&#8635;</span>Refresh</button>
-        </div>
-
-        <!-- Two-column: Today's Activity + Priorities -->
-        <div class="g2" style="margin-top:12px">
-          <div class="card" id="homeTodaySummary" style="border-left:3px solid var(--green)">
-            <h3 style="margin-bottom:8px">Today</h3>
-            <div id="homeTodayContent" style="font-size:12px;color:var(--text-secondary)">Loading...</div>
+        <!-- Two-column: Today + AI Spend -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-16);margin-top:var(--sp-16)">
+          <div class="surface surface-success" id="homeTodaySummary">
+            <div class="section-hdr"><h3>Today</h3></div>
+            <div id="homeTodayContent" style="font-size:12px;color:var(--text-dim)">Loading...</div>
           </div>
-          <div class="card">
-            <h3>Priorities</h3>
-            <ul id="homePriorities" style="font-size:12px"></ul>
-          </div>
-        </div>
-
-        <!-- Two-column: Engine Health + Cost Summary -->
-        <div class="g2 mt">
-          <div class="card">
-            <div class="card-top-row">
-              <h3 style="margin:0">Engine Health</h3>
-              <button class="link-btn" onclick="switchTab('missions')">All Engines</button>
+          <div class="surface">
+            <div class="section-hdr"><h3>AI Spend</h3></div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-8)">
+              <div class="metric-tile"><span class="metric-value" id="costToday" style="font-size:16px">--</span><span class="metric-label">Today</span></div>
+              <div class="metric-tile"><span class="metric-value" id="costWeek" style="font-size:16px">--</span><span class="metric-label">Week</span></div>
+              <div class="metric-tile"><span class="metric-value" id="costCallsToday" style="font-size:16px">--</span><span class="metric-label">Calls</span></div>
+              <div class="metric-tile"><span class="metric-value" id="costLastBoard" style="font-size:16px">--</span><span class="metric-label">Board</span></div>
             </div>
-            <div id="homeMissions" style="margin-top:8px"></div>
-          </div>
-          <div class="card">
-            <h3>AI Spend</h3>
-            <div class="cost-strip" id="homeCostStrip" style="flex-wrap:wrap;gap:12px;padding:0;background:none;border:none">
-              <div class="cost-strip-item"><span class="cost-strip-label">Today</span><span class="cost-strip-value" id="costToday">--</span></div>
-              <div class="cost-strip-item"><span class="cost-strip-label">Week</span><span class="cost-strip-value" id="costWeek">--</span></div>
-              <div class="cost-strip-item"><span class="cost-strip-label">Calls</span><span class="cost-strip-value" id="costCallsToday">--</span></div>
-              <div class="cost-strip-item"><span class="cost-strip-label">Board Run</span><span class="cost-strip-value" id="costLastBoard">--</span></div>
-            </div>
-            <div id="homeEngineStatus" class="card-body-text" style="font-size:11px;margin-top:8px;display:none"></div>
+            <div id="homeCostStrip" style="display:none"></div>
+            <div id="homeEngineStatus" style="display:none"></div>
           </div>
         </div>
 
-        <!-- Deliverables -->
-        <div class="mt" id="homeDeliverables">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-            <h3 style="margin:0">Recent Deliverables</h3>
-            <button class="link-btn" onclick="switchTab('intake');filterIntake('done')">View All</button>
+        <!-- Deliverables (primary output section) -->
+        <div style="margin-top:var(--sp-24)">
+          <div class="section-hdr">
+            <h3>Recent Deliverables</h3>
+            <span class="section-action" onclick="switchTab('intake');filterIntake('done')">View All</span>
           </div>
-          <div id="homeDeliverablesContent"><div class="task-empty">No deliverables yet</div></div>
+          <div id="homeDeliverablesContent"><div class="empty-state"><span class="empty-icon">&#9671;</span><span class="empty-title">No deliverables yet</span><span class="empty-desc">Submit a task to see completed deliverables here</span></div></div>
         </div>
 
-        <!-- Three-column: Completed + Reports + Live -->
-        <div class="g3 mt">
+        <!-- Two-column: Completed + Live Feed (secondary) -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-16);margin-top:var(--sp-24)">
           <div>
-            <h3>Completed</h3>
-            <div id="homeLatestTask"><div class="task-empty">No completed tasks yet</div></div>
+            <div class="section-hdr"><h3>Completed</h3></div>
+            <div id="homeLatestTask"><div class="empty-state"><span class="empty-desc">No completed tasks</span></div></div>
           </div>
           <div>
-            <h3>Reports</h3>
-            <div id="homeRecentReports" class="task-queue-list" style="max-height:200px">
-              <div class="task-empty">Loading...</div>
-            </div>
-          </div>
-          <div>
-            <h3>Live Feed</h3>
+            <div class="section-hdr"><h3>Activity</h3></div>
             <div class="activity-feed" id="activityFeed">
-              <div class="activity-empty">Waiting for events...</div>
+              <div class="empty-state"><span class="empty-desc">Waiting for events</span></div>
             </div>
           </div>
         </div>
 
-        <!-- Brief -->
-        <div class="card mt" id="homeBriefCard">
-          <div class="card-top-row">
-            <h3 style="margin-bottom:0">Latest Brief</h3>
-            <button class="link-btn" onclick="switchTab('logs');filterLogs('brief')">Full Brief</button>
-          </div>
-          <div id="homeBriefExcerpt" class="brief-excerpt md-content"></div>
-        </div>
-
-        <!-- Hidden: Pending Approvals card (data still rendered) -->
+        <!-- Hidden: data targets still needed by JS but not displayed as sections -->
         <div id="homeApprovals" style="display:none"></div>
+        <div id="homePriorities" style="display:none"></div>
+        <div id="homeMissions" style="display:none"></div>
+        <div id="homeRecentReports" style="display:none"></div>
+        <div id="homeBriefCard" style="display:none"><div id="homeBriefExcerpt"></div></div>
       </section>
 
       <!-- TASK STREAM -->
