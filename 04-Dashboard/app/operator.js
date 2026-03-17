@@ -7,36 +7,32 @@
 // ═══════════════════════════════════════════
 
 const MISSION_TEMPLATES = [
-  // HIGH VALUE — Research & Income
-  { domain: 'wealthresearch', title: 'Passive Income Ideas', desc: 'Research specific passive income opportunities', prompt: 'Research the top 10 passive income opportunities for a senior data engineer / entrepreneur in 2025-2026. Focus on: SaaS micro-products, API-as-a-service, data pipeline consulting, digital products, and automated tools. For each opportunity, provide: estimated monthly income potential, startup cost, time to first revenue, and 3 concrete first steps. Use real examples of people who have succeeded.', urgency: 'high', outcome: 'Specific, actionable passive income opportunities with real examples and concrete next steps' },
-  { domain: 'wealthresearch', title: 'Side Project Ideas', desc: 'Find profitable side project opportunities', prompt: 'Research profitable side project ideas for someone with expertise in data engineering, TypeScript/Python, PostgreSQL, and mobile app development (React Native/Expo). Focus on projects that can generate $1,000-$10,000/month with less than 20 hours/week. Include real examples, market size data, and competition analysis. Prioritize ideas that leverage existing skills.', urgency: 'normal', outcome: 'Ranked list of side project ideas with revenue potential, effort estimate, and competitive landscape' },
+  // Finance & Income
+  { domain: 'finance', title: 'Passive Income Research', desc: 'Research profitable passive income opportunities', prompt: 'Research the top 10 passive income opportunities for a tech professional. For each, include: estimated monthly revenue, startup cost, time to first revenue, and concrete first steps with real examples.', urgency: 'normal', outcome: 'Ranked passive income opportunities with real examples and next steps' },
 
-  // HIGH VALUE — Career
-  { domain: 'careeregine', title: 'Data Eng Jobs $180k+', desc: 'Find high-paying data engineering roles NOW', prompt: 'Search the web for current data engineering job openings paying $180,000+ per year. Focus on: remote-friendly roles at top companies (FAANG, unicorns, well-funded startups), Staff/Principal level positions, roles involving modern stack (Spark, Airflow, dbt, Snowflake/Databricks, Kafka). For each listing include: company name, exact role title, salary range, location/remote status, key requirements, and where to apply. Prioritize roles posted in the last 30 days.', urgency: 'high', outcome: 'Specific job listings with salary, company, requirements, and application links' },
-  { domain: 'careeregine', title: 'Career Growth Plan', desc: 'Strategic career development roadmap', prompt: 'Create a 12-month career growth roadmap for a senior data engineer who is also building a startup on the side. Focus on: skills to develop for Staff/Principal level, leadership opportunities, conference talks, open source contributions, and how to balance W2 career with entrepreneurship. Include specific certifications, communities, and networking strategies.', urgency: 'normal', outcome: 'Specific 12-month roadmap with quarterly milestones, skills to develop, and actionable steps' },
-  { domain: 'careeregine', title: 'Interview Prep', desc: 'Data engineering interview guide', prompt: 'Create a comprehensive data engineering interview preparation guide for Staff/Principal level roles. Include: common system design questions (with sketch answers), SQL optimization problems, data modeling scenarios, behavioral STAR examples for leadership, and questions to ask interviewers. Focus on real interview questions from companies like Google, Meta, Netflix, Databricks, and Snowflake.', urgency: 'normal', outcome: 'Interview prep guide with real questions, frameworks, and practice problems' },
-  { domain: 'careeregine', title: 'Salary Benchmark', desc: 'What should I be earning?', prompt: 'Research current salary benchmarks for senior/staff/principal data engineers in 2026. Include: base salary ranges by level and location (Austin TX, remote US, SF/NYC), total compensation (RSU, bonus, equity), how startup experience and side projects affect compensation, and negotiation tactics. Use real data from levels.fyi, Glassdoor, Blind, and similar sources.', urgency: 'normal', outcome: 'Detailed salary analysis with negotiation strategies and market positioning advice' },
+  // Career
+  { domain: 'career', title: 'Job Search', desc: 'Find high-paying roles in your field', prompt: 'Search for current high-paying job openings in my field. Focus on remote-friendly roles at top companies, senior/staff level positions. Include: company, title, salary range, requirements, and where to apply.', urgency: 'high', outcome: 'Specific job listings with salary, company, and application links' },
+  { domain: 'career', title: 'Career Roadmap', desc: '12-month growth plan', prompt: 'Create a 12-month career growth roadmap for advancing to the next level. Include: skills to develop, leadership opportunities, networking strategies, and quarterly milestones.', urgency: 'normal', outcome: '12-month roadmap with milestones and actionable steps' },
+  { domain: 'career', title: 'Interview Prep', desc: 'Prepare for technical interviews', prompt: 'Create an interview preparation guide for senior technical roles. Include: system design questions with answers, technical problems, behavioral examples, and questions to ask interviewers.', urgency: 'normal', outcome: 'Interview prep guide with real questions and frameworks' },
 
-  // HIGH VALUE — News & Trends
-  { domain: 'newsroom', title: 'AI News Today', desc: 'Current AI industry news and analysis', prompt: 'Search the web and compile today\'s most important AI and technology news. Include: major product launches, funding rounds, policy/regulation updates, research breakthroughs, and industry moves. For each item provide: headline, 2-3 sentence summary, source URL, and why it matters for a data engineer / startup founder. Focus on the last 48 hours.', urgency: 'high', outcome: 'Curated news digest with 10-15 items, sources, and relevance analysis' },
-  { domain: 'newsroom', title: 'Startup News', desc: 'Startup ecosystem updates', prompt: 'Search the web for this week\'s most notable startup news. Focus on: Series A-C fundraising rounds, notable launches, Y Combinator updates, startup failures/lessons, and emerging markets. Include specific companies, amounts, and trends.', urgency: 'normal', outcome: 'Weekly startup digest with funding data, launches, and trend analysis' },
-  { domain: 'newsroom', title: 'Tech Industry', desc: 'Technology industry analysis', prompt: 'Analyze the current state of the technology industry. Focus on: hiring trends, layoff updates, major company earnings/moves, emerging tech categories, and developer tool landscape. Include specific data points, company names, and market analysis. What should a data engineer / startup founder pay attention to this week?', urgency: 'normal', outcome: 'Industry analysis with specific data, trends, and actionable insights' },
+  // News
+  { domain: 'news', title: 'AI News Today', desc: 'Latest AI and tech news', prompt: 'Compile today\'s most important AI and technology news. Include: product launches, funding rounds, regulation updates, and research breakthroughs. For each: headline, summary, source URL, and significance.', urgency: 'high', outcome: 'Curated news digest with sources and analysis' },
+  { domain: 'news', title: 'Industry Analysis', desc: 'Technology industry trends', prompt: 'Analyze current technology industry trends. Include: hiring trends, major company moves, emerging categories, and developer tool landscape with specific data points.', urgency: 'normal', outcome: 'Industry analysis with data and trends' },
 
-  // STARTUP & BUSINESS
-  { domain: 'startup', title: 'Startup Strategy', desc: 'Competitive analysis and growth plan', prompt: 'Analyze my startup\'s competitive position in its market. Research similar products, their traction, and go-to-market strategies. Provide specific growth tactics with expected impact and timeline.', urgency: 'normal', outcome: 'Competitive analysis and growth strategy with specific tactics and timelines' },
-  { domain: 'startup', title: 'Business Model', desc: 'Validate or design a business model', prompt: 'Help me design or validate a business model for my startup. Include revenue model options, pricing strategy, customer segments, and unit economics estimates.', urgency: 'normal', outcome: 'Business model canvas with revenue projections and validation strategy' },
+  // Startup
+  { domain: 'startup', title: 'Competitive Analysis', desc: 'Analyze competitive landscape', prompt: 'Research the competitive landscape for my product area. Include: key competitors, their traction, pricing, and differentiation. Provide specific growth tactics with expected impact.', urgency: 'normal', outcome: 'Competitive analysis with growth tactics' },
 
-  // SCHEDULING & PLANNING
-  { domain: 'personalops', title: 'Weekly Plan', desc: 'Plan the week ahead', prompt: 'Help me plan the upcoming week. Consider my priorities: startup development, passive income research, career growth, and personal productivity. Create a day-by-day plan with specific time blocks, key decisions to make, and tasks to delegate to GPO.', urgency: 'normal', outcome: 'Day-by-day weekly plan with time blocks, priorities, and delegation suggestions' },
+  // Operations
+  { domain: 'ops', title: 'Weekly Plan', desc: 'Plan the week ahead', prompt: 'Help me plan the upcoming week. Create a day-by-day plan with time blocks, priorities, key decisions, and tasks to focus on.', urgency: 'normal', outcome: 'Day-by-day weekly plan with priorities' },
 
-  // LEARNING
-  { domain: 'learning', title: 'Learn a Topic', desc: 'Personalized study plan', prompt: '', urgency: 'normal', outcome: 'Structured learning path with resources and practice exercises' },
+  // Learning
+  { domain: 'learning', title: 'Explain a Topic', desc: 'Deep dive into any subject', prompt: '', urgency: 'normal', outcome: 'Clear explanation with examples' },
 
-  // HEALTH
-  { domain: 'health', title: 'Fitness Plan', desc: 'Create a workout or wellness plan', prompt: 'Create a personalized workout plan based on my goals and constraints. Include exercises, progression, and rest guidance.', urgency: 'normal', outcome: 'Actionable fitness plan with specific exercises and progression' },
+  // Health
+  { domain: 'health', title: 'Fitness Plan', desc: 'Workout or wellness protocol', prompt: 'Create a workout plan with exercises, progression, and recovery guidance.', urgency: 'normal', outcome: 'Actionable fitness plan with progression' },
 
-  // GENERAL
-  { domain: 'general', title: 'Quick Research', desc: 'Research any topic', prompt: '', urgency: 'normal', outcome: 'Specific, cited research with actionable recommendations' },
+  // Research
+  { domain: 'research', title: 'Quick Research', desc: 'Research any topic', prompt: '', urgency: 'normal', outcome: 'Cited research with recommendations' },
 ];
 
 function renderMissionTemplates() {

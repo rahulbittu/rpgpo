@@ -76,9 +76,10 @@ function connectSSE() {
     _intakeDebounce = setTimeout(() => {
       loadPendingApprovals();
       loadCurrentTaskFocus();
-      // Only refresh intake list if the intake tab is active
+      // Only refresh intake list if the intake tab is active AND detail is NOT open
+      // (refreshing the list while reading a detail view causes layout shift)
       const intakePanel = document.getElementById('tab-intake');
-      if (intakePanel && intakePanel.classList.contains('active')) {
+      if (intakePanel && intakePanel.classList.contains('active') && !selectedIntakeTaskId) {
         loadIntakeTasks();
       }
     }, 3000);
@@ -94,9 +95,11 @@ function connectSSE() {
         renderAllTasks();
         if (trackedTaskId === d.task.id) updateOutput(d.task);
 
-        // Deduplicate toasts — only show once per task completion
+        // Deduplicate toasts — only fire for worker queue tasks when intake detail is NOT active
+        // (intake detail poll handles its own completion toast)
         const toastKey = d.task.id + ':' + d.task.status;
-        if (d.task.status === 'done' && !_toastedTaskIds.has(toastKey)) {
+        const intakeDetailActive = !!selectedIntakeTaskId;
+        if (d.task.status === 'done' && !_toastedTaskIds.has(toastKey) && !intakeDetailActive) {
           _toastedTaskIds.add(toastKey);
           showToast(`Done: ${d.task.label}`, 'success');
           workerLastSeen = new Date();
@@ -1737,17 +1740,22 @@ function startIntakeDetailPoll() {
             await fetch('/api/intake/task/' + selectedIntakeTaskId + '/approve-plan', { method: 'POST' });
           }
         }
-        // Only refresh detail view when status changes (prevents scroll jump)
+        // Only refresh detail view when status ACTUALLY changes (prevents scroll jump)
         if (d.task?.status !== _lastKnownIntakeStatus) {
+          const wasComplete = ['done','failed'].includes(_lastKnownIntakeStatus);
           _lastKnownIntakeStatus = d.task?.status;
+          // Re-render detail in place WITHOUT scroll — preserves reading position
           renderIntakeDetail(d);
+          if ((d.task?.status === 'done' || d.task?.status === 'failed') && !wasComplete) {
+            stopIntakeDetailPoll();
+            showToast(d.task?.status === 'done' ? 'Task completed' : 'Task failed', d.task?.status === 'done' ? 'success' : 'error');
+            loadIntakeTasks(); // Refresh list once
+            // Do NOT call showIntakeDetail again — it would scroll and re-fetch
+          }
         }
-        if (d.task?.status === 'done' || d.task?.status === 'failed') {
+        // If already complete, stop polling silently (no toast, no re-render, no scroll)
+        if (['done','failed'].includes(d.task?.status)) {
           stopIntakeDetailPoll();
-          showToast(d.task?.status === 'done' ? 'Task completed!' : 'Task failed', d.task?.status === 'done' ? 'success' : 'error');
-          renderIntakeDetail(d);
-          loadIntakeTasks(); // Only reload list when task is finished
-          showIntakeDetail(selectedIntakeTaskId);
         }
       }
     } catch { /* polling error, continue */ }
@@ -1765,11 +1773,14 @@ async function showIntakeDetail(taskId) {
   const panel = document.getElementById('intakeDetailPanel');
   if (!panel) return;
 
+  const wasHidden = panel.style.display === 'none' || !panel.style.display;
   panel.style.display = 'block';
   panel.innerHTML = '<div class="surface" style="padding:var(--sp-16)"><div class="loading-state">Loading task details...</div></div>';
 
-  // Scroll detail into view
-  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  // Only scroll into view on FIRST open, not on re-fetch from polling
+  if (wasHidden) {
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
 
   try {
     const r = await fetch('/api/intake/task/' + taskId);
@@ -1855,11 +1866,11 @@ function renderIntakeDetail(data) {
       <a href="/api/intake/task/${task.task_id}/export?fmt=json" download class="btn btn-ghost btn-sm" style="text-decoration:none">&#8681; JSON</a>` : ''}
     </div>`;
     if (task.status === 'done') {
-      html += `<div id="feedback-${task.task_id}" class="feedback-bar">
-        <span class="feedback-label">Rate output:</span>
-        <button class="btn btn-success btn-sm" onclick="sendFeedback('${task.task_id}','good')">Good</button>
-        <button class="btn btn-sm" style="background:var(--yellow-soft);color:var(--yellow);border-color:var(--yellow-border)" onclick="sendFeedback('${task.task_id}','needs_improvement')">Needs Work</button>
-        <button class="btn btn-danger btn-sm" onclick="sendFeedback('${task.task_id}','bad')">Bad</button>
+      html += `<div id="feedback-${task.task_id}" class="feedback-bar" style="margin-top:var(--sp-8)">
+        <span class="feedback-label">Was this helpful?</span>
+        <button class="btn btn-success btn-sm" onclick="sendFeedback('${task.task_id}','good')">&#10003; Yes</button>
+        <button class="btn btn-sm" style="background:var(--yellow-soft);color:var(--yellow);border-color:var(--yellow-border)" onclick="sendFeedback('${task.task_id}','needs_improvement')">Could be better</button>
+        <button class="btn btn-danger btn-sm" onclick="sendFeedback('${task.task_id}','bad')">&#10007; No</button>
       </div>`;
     }
   }

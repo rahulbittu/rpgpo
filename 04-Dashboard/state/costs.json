@@ -1,44 +1,5 @@
 [
   {
-    "ts": "2026-03-16T04:53:52.557Z",
-    "date": "2026-03-16",
-    "provider": "openai",
-    "model": "gpt-4o",
-    "inputTokens": 742,
-    "outputTokens": 779,
-    "totalTokens": 1521,
-    "cost": 0.009645,
-    "taskId": "t_mmspgw2ccegt",
-    "taskType": "subtask",
-    "role": "creative"
-  },
-  {
-    "ts": "2026-03-16T04:54:00.506Z",
-    "date": "2026-03-16",
-    "provider": "openai",
-    "model": "gpt-4o",
-    "inputTokens": 802,
-    "outputTokens": 694,
-    "totalTokens": 1496,
-    "cost": 0.008945,
-    "taskId": "t_mmspgwv5e0yw",
-    "taskType": "subtask",
-    "role": "strategy"
-  },
-  {
-    "ts": "2026-03-16T04:54:09.922Z",
-    "date": "2026-03-16",
-    "provider": "openai",
-    "model": "gpt-4o",
-    "inputTokens": 778,
-    "outputTokens": 902,
-    "totalTokens": 1680,
-    "cost": 0.010965,
-    "taskId": "t_mmspgxnpzws3",
-    "taskType": "subtask",
-    "role": "creative"
-  },
-  {
     "ts": "2026-03-16T04:54:16.643Z",
     "date": "2026-03-16",
     "provider": "openai",
@@ -25998,5 +25959,44 @@
     "taskId": "mmu01vtmcp96",
     "taskType": "ai-channel",
     "role": "chief"
+  },
+  {
+    "ts": "2026-03-17T02:40:36.694Z",
+    "date": "2026-03-17",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 2077,
+    "outputTokens": 533,
+    "totalTokens": 2610,
+    "cost": 0.0105225,
+    "taskId": "t_mmu09264zea4",
+    "taskType": "deliberation",
+    "role": "board"
+  },
+  {
+    "ts": "2026-03-17T02:40:45.613Z",
+    "date": "2026-03-17",
+    "provider": "perplexity",
+    "model": "sonar",
+    "inputTokens": 622,
+    "outputTokens": 772,
+    "totalTokens": 1394,
+    "cost": 0,
+    "taskId": "t_mmu09264zea4",
+    "taskType": "subtask",
+    "role": "research"
+  },
+  {
+    "ts": "2026-03-17T02:40:55.861Z",
+    "date": "2026-03-17",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 928,
+    "outputTokens": 715,
+    "totalTokens": 1643,
+    "cost": 0.00947,
+    "taskId": "t_mmu09264zea4",
+    "taskType": "subtask",
+    "role": "creative"
   }
 ]

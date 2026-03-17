@@ -1,16 +1,48 @@
 [
   {
+    "id": "mmu09eujejs9",
+    "type": "execute-subtask",
+    "label": "Subtask: Compile Job Listings Report",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmu097v7qdva"
+    },
+    "createdAt": "2026-03-17T02:40:45.931Z",
+    "updatedAt": "2026-03-17T02:40:56.180Z",
+    "output": "Compile Job Listings Report: ## Key Findings\n\nNo more subtasks to queue",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-openai-2026-03-17-st_mmu097v7qdva.md"
+    ]
+  },
+  {
+    "id": "mmu0981jvj97",
+    "type": "execute-subtask",
+    "label": "Subtask: Research Current Data Engineering Job Openings",
+    "status": "done",
+    "meta": {
+      "subtaskId": "st_mmu097soasv4"
+    },
+    "createdAt": "2026-03-17T02:40:37.111Z",
+    "updatedAt": "2026-03-17T02:40:45.932Z",
+    "output": "Research Current Data Engineering Job Openings: ## No Exact Matches Found for Specified Criteria\n\nAuto-queued 1 subtask(s)",
+    "error": null,
+    "filesWritten": [
+      "03-Operations/Reports/Subtask-perplexity-2026-03-17-st_mmu097soasv4.md"
+    ]
+  },
+  {
     "id": "mmu0926ulukd",
     "type": "deliberate",
     "label": "Deliberate: Search the web for current data engineering job openings paying $180,000+ per ye",
-    "status": "running",
+    "status": "done",
     "meta": {
       "taskId": "t_mmu09264zea4",
       "autoApprove": true
     },
     "createdAt": "2026-03-17T02:40:29.526Z",
-    "updatedAt": "2026-03-17T02:40:30.642Z",
-    "output": "Deliberating...",
+    "updatedAt": "2026-03-17T02:40:37.112Z",
+    "output": "Deliberation complete.\nObjective: Identify and detail high-paying remote data engineering job openings at top companies.\nStrategy: Conduct a web search to identify relevant job openings posted in the last 30 days. Focus on roles at top companies that offer remote work and use a modern tech stack. Compile detailed information for each listing.\nRisk: green\nSubtasks: 2\nTokens: 2610",
     "error": null,
     "filesWritten": []
   },
@@ -1565,36 +1597,6 @@
     "createdAt": "2026-03-16T23:15:56.670Z",
     "updatedAt": "2026-03-16T23:16:20.600Z",
     "output": "Deliberation complete.\nObjective: Design a hip flexor recovery program for individuals who sit for extended periods.\nStrategy: Conduct research on effective hip flexor recovery exercises and routines, then synthesize this information into a structured program. Ensure the program is practical for individuals with sedentary lifestyles and includes clear instructions and precautions.\nRisk: green\nSubtasks: 2\nTokens: 2520",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtsy0dg0ed9",
-    "type": "deliberate",
-    "label": "Deliberate: Create a guide to tax-loss harvesting strategies for a taxable brokerage account",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtsy0d2jr4d",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T23:15:56.644Z",
-    "updatedAt": "2026-03-16T23:16:11.490Z",
-    "output": "Deliberation complete.\nObjective: Create a detailed guide on tax-loss harvesting strategies for taxable brokerage accounts, including navigation of the wash sale rule.\nStrategy: Conduct research on current tax-loss harvesting strategies and wash sale rules. Synthesize findings into a detailed guide with practical examples and steps. Ensure the guide is specific, actionable, and includes real numbers and sources.\nRisk: yellow\nSubtasks: 2\nTokens: 2349",
-    "error": null,
-    "filesWritten": []
-  },
-  {
-    "id": "mmtsy0cik45k",
-    "type": "deliberate",
-    "label": "Deliberate: Explain how modern garbage collectors handle concurrent collection without stop-",
-    "status": "done",
-    "meta": {
-      "taskId": "t_mmtsy0c3oqhq",
-      "autoApprove": true
-    },
-    "createdAt": "2026-03-16T23:15:56.610Z",
-    "updatedAt": "2026-03-16T23:16:03.236Z",
-    "output": "Deliberation complete.\nObjective: Explain how modern Java garbage collectors manage concurrent collection without stop-the-world pauses.\nStrategy: Conduct research to gather current information on modern Java garbage collectors and their techniques for concurrent collection. Synthesize this information into a concise report that explains the process and provides examples.\nRisk: green\nSubtasks: 2\nTokens: 1943",
     "error": null,
     "filesWritten": []
   }
