@@ -488,25 +488,43 @@ const server = http.createServer(async (req, res) => {
 
   // Submit a new intake task
   // Follow-up correction detection: check if new task overlaps with recent completed task
+  // Improved follow-up correction detection with reduced false positives
+  // Uses: same domain + high keyword overlap + recency (within 24h) + minimum word count
+  // Signal marked as advisory — precision needs validation before any execution influence
+  const STOPWORDS = new Set(['create','guide','comprehensive','design','system','include','explain','build','plan','research','best','home','using','works','complete','understanding']);
   function detectFollowupCorrection(newRequest, newDomain, newTaskId) {
     try {
       const allTasks = intake.getAllTasks();
+      const now = Date.now();
       const recentDone = allTasks
-        .filter(t => t.status === 'done' && t.domain === newDomain && t.task_id !== newTaskId)
+        .filter(t => {
+          if (t.status !== 'done' || t.domain !== newDomain || t.task_id === newTaskId) return false;
+          // Only check tasks completed in the last 24 hours
+          const completedAt = new Date(t.updated_at || t.created_at || 0).getTime();
+          return (now - completedAt) < 24 * 60 * 60 * 1000;
+        })
         .sort((a, b) => ((b.updated_at || b.created_at || '').localeCompare(a.updated_at || a.created_at || '')))
-        .slice(0, 5);
-      const newWords = new Set((newRequest || '').toLowerCase().split(/\s+/).filter(w => w.length > 4));
+        .slice(0, 3);
+      if (recentDone.length === 0) return false;
+      // Extract meaningful words (exclude stopwords and short words)
+      const extractWords = (text) => (text || '').toLowerCase().split(/\s+/).filter(w => w.length > 4 && !STOPWORDS.has(w));
+      const newWords = extractWords(newRequest);
+      if (newWords.length < 3) return false; // Too few meaningful words to compare
+      const newWordSet = new Set(newWords);
       for (const prior of recentDone) {
-        const priorWords = new Set(((prior.raw_request || prior.title || '')).toLowerCase().split(/\s+/).filter(w => w.length > 4));
+        const priorWordSet = new Set(extractWords(prior.raw_request || prior.title || ''));
         let overlap = 0;
-        for (const w of newWords) { if (priorWords.has(w)) overlap++; }
-        const overlapRatio = newWords.size > 0 ? overlap / newWords.size : 0;
-        if (overlapRatio > 0.4) {
+        for (const w of newWordSet) { if (priorWordSet.has(w)) overlap++; }
+        const overlapRatio = newWordSet.size > 0 ? overlap / newWordSet.size : 0;
+        // Higher threshold (50%) + minimum 3 overlapping meaningful words
+        if (overlapRatio > 0.5 && overlap >= 3) {
           behavior.recordEvent('followup_correction', {
-            source: 'topic_overlap_detection',
+            source: 'topic_overlap_detection_v2',
             overlap_ratio: Math.round(overlapRatio * 100) + '%',
+            overlapping_words: overlap,
             prior_task_id: prior.task_id,
             prior_title: (prior.title || '').substring(0, 80),
+            confidence: 'advisory',
           }, { taskId: newTaskId, engine: newDomain });
           return true;
         }

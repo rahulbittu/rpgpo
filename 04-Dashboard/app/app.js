@@ -1842,7 +1842,7 @@ function renderIntakeDetail(data) {
       <span class="btn-icon">&#9654;</span> Approve &amp; Execute Plan
     </button>`;
   } else if (task.status === 'done' || task.status === 'failed') {
-    html += `<div style="display:flex;gap:8px;margin-bottom:14px">
+    html += `<div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
       <button class="cos-action-btn" onclick="quickRunTask('${esc(task.domain)}','${esc((task.raw_request || '').replace(/'/g, "\\'").slice(0, 500))}','${task.urgency || 'normal'}')" style="padding:8px 16px;font-size:12px">
         <span>&#8635;</span> Run Again
       </button>
@@ -1853,6 +1853,15 @@ function renderIntakeDetail(data) {
         <span>&#8681;</span> Download JSON
       </a>` : ''}
     </div>`;
+    // Feedback buttons — low-friction quality rating
+    if (task.status === 'done') {
+      html += `<div id="feedback-${task.task_id}" style="display:flex;gap:6px;align-items:center;margin-bottom:14px;padding:8px 0;border-top:1px solid var(--border-faint)">
+        <span style="font-size:11px;color:var(--text-dim);margin-right:4px">Rate this output:</span>
+        <button class="cos-action-btn" onclick="sendFeedback('${task.task_id}','good')" style="padding:5px 12px;font-size:11px;background:var(--green-bg,rgba(80,200,120,0.1));border-color:var(--green-border,rgba(80,200,120,0.3))">Good</button>
+        <button class="cos-action-btn" onclick="sendFeedback('${task.task_id}','needs_improvement')" style="padding:5px 12px;font-size:11px;background:var(--yellow-bg,rgba(240,180,40,0.1));border-color:var(--yellow-border,rgba(240,180,40,0.3))">Needs Work</button>
+        <button class="cos-action-btn" onclick="sendFeedback('${task.task_id}','bad')" style="padding:5px 12px;font-size:11px;background:var(--red-bg,rgba(220,80,60,0.1));border-color:var(--red-border,rgba(220,80,60,0.3))">Bad</button>
+      </div>`;
+    }
   }
 
   // Raw request
@@ -1911,6 +1920,22 @@ function renderIntakeDetail(data) {
 
   html += '</div>';
   panel.innerHTML = html;
+}
+
+async function sendFeedback(taskId, rating) {
+  try {
+    const r = await fetch('/api/intake/task/' + taskId + '/feedback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ rating }),
+    });
+    const d = await r.json();
+    if (d.ok) {
+      const el = document.getElementById('feedback-' + taskId);
+      if (el) el.innerHTML = `<span style="font-size:11px;color:var(--text-dim)">Feedback recorded: <strong>${rating}</strong></span>`;
+      showToast('Feedback recorded', 'success');
+    }
+  } catch { showToast('Feedback failed', 'error'); }
 }
 
 async function deliberateTask(taskId) {
