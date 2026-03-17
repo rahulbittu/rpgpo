@@ -86,7 +86,9 @@
 [data-theme="light"] .phase-node.active{background:rgba(59,109,230,0.06);color:#3b6de6}
 [data-theme="light"] .phase-conn.done{background:#16a34a}
 [data-theme="light"] .v2-nav-section{color:#9ca4b6}
-[data-theme="light"] .metric-card{box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+[data-theme="light"] .v2-logo-mark{box-shadow:0 2px 6px rgba(59,109,230,.2)}
+[data-theme="light"] .result-head{background:#f8f9fb}
+[data-theme="light"] .metric-card{box-shadow:0 1px 3px rgba(0,0,0,0.06);border-top-color:#3b6de6}
 [data-theme="light"] .metric-card:hover{box-shadow:0 2px 6px rgba(0,0,0,0.08)}
 [data-theme="light"] .prov-row{border-bottom-color:rgba(0,0,0,0.06)}
 [data-theme="light"] .signal-row{border-bottom-color:rgba(0,0,0,0.06)}
