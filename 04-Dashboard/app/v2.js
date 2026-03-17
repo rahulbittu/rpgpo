@@ -608,7 +608,7 @@ async function openWorkDetail(taskId) {
     // Phase rail — shows lifecycle stage
     html += `<div class="card mb-16" style="padding:0">${renderPhaseRail(task.status)}
       <div style="padding:12px 14px">
-        <div style="font-size:15px;font-weight:600;margin-bottom:6px">${esc((task.title || '').slice(0, 80))}</div>
+        <div style="font-size:15px;font-weight:600;margin-bottom:6px">${sesc((task.title || '').slice(0, 80))}</div>
         <div class="row gap-12" style="font-size:11px;color:var(--text-1);flex-wrap:wrap">
           <span class="tag tag-muted">${taskEngName(task)}</span>
           ${statusTag(task.status)}
@@ -616,7 +616,7 @@ async function openWorkDetail(taskId) {
           ${(() => { const el = task.created_at && task.updated_at ? Math.round((new Date(task.updated_at) - new Date(task.created_at)) / 1000) : null; return el !== null ? `<span>${el < 60 ? el + 's' : Math.floor(el/60) + 'm ' + (el%60) + 's'}</span>` : ''; })()}
           <span>${subs.length} step${subs.length !== 1 ? 's' : ''}</span>
         </div>
-        ${task.raw_request && task.raw_request !== task.title ? `<div style="font-size:11px;color:var(--text-2);margin-top:6px">Request: ${esc(task.raw_request.slice(0, 120))}</div>` : ''}
+        ${task.raw_request && task.raw_request !== task.title ? `<div style="font-size:11px;color:var(--text-2);margin-top:6px">Request: ${sesc(task.raw_request.slice(0, 120))}</div>` : ''}
       </div>
     </div>`;
 
