@@ -55,7 +55,9 @@ function pct(n) { return typeof n === 'number' ? n + '%' : '--'; }
 // Engine display names
 const ENG = {code:'Code',writing:'Writing',research:'Research',learning:'Learning',ops:'Life Ops',health:'Health',shopping:'Shopping',travel:'Travel',finance:'Finance',startup:'Startup',career:'Career',screenwriting:'Creative',film:'Film',music:'Music',news:'News',general:'General',
   topranker:'Startup',careeregine:'Career',wealthresearch:'Finance',personalops:'Life Ops',newsroom:'News',founder2founder:'Film'};
-function engName(d) { return ENG[d] || d; }
+function engName(d) { return ENG[d] || (d || '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()); }
+// Prefer engine_display from backend when available
+function taskEngName(t) { return t.engine_display || taskEngName(t); }
 
 // Operator-facing status
 const STATUS = {intake:'Submitted',deliberating:'Planning',planned:'Ready',executing:'Working',waiting_approval:'Needs Review',done:'Complete',failed:'Issue',builder_running:'Working'};
@@ -204,7 +206,7 @@ async function loadCommand() {
   const re = document.getElementById('cmdResults');
   if (re && recent.length) {
     re.innerHTML = recent.map(r => `<div class="card card-click" style="padding:10px 14px;margin-bottom:6px" onclick="openWorkDetail('${r.task_id}')">
-      <div class="spread"><span style="font-size:13px;font-weight:500">${esc((r.title || '').slice(0, 60))}</span><span class="tag tag-muted">${engName(r.domain)}</span></div>
+      <div class="spread"><span style="font-size:13px;font-weight:500">${esc((r.title || '').slice(0, 60))}</span><span class="tag tag-muted">${taskEngName(r)}</span></div>
       <div style="font-size:10px;color:var(--text-2);margin-top:3px">${timeAgo(r.updated_at || r.created_at)}</div>
     </div>`).join('');
   }
@@ -239,7 +241,7 @@ async function loadAskRecent() {
     if (recent.length) {
       el.innerHTML = `<div class="hd"><h3>Recent</h3></div>` + recent.map(t =>
         `<div class="card card-click" style="padding:10px 14px;margin-bottom:6px" onclick="openWorkDetail('${t.task_id}')">
-          <div class="spread"><span style="font-size:12px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc((t.title || '').slice(0, 55))}</span><span class="tag tag-muted">${engName(t.engine || t.domain)}</span></div>
+          <div class="spread"><span style="font-size:12px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc((t.title || '').slice(0, 55))}</span><span class="tag tag-muted">${taskEngName(t)}</span></div>
           <div style="font-size:10px;color:var(--text-2);margin-top:2px">${timeAgo(t.updated_at || t.created_at)}</div>
         </div>`
       ).join('');
@@ -300,7 +302,7 @@ function pollAskResult(taskId) {
         const progPct = Math.round(doneCount / totalCount * 100);
         if (!steps.length) steps = [`<div class="progress-step step-active"><div class="step-dot">&#9679;</div><div class="step-label">${statusLabel(task.status)}...</div><div class="step-time">${elapsed}s</div></div>`];
         const progressBar = totalCount > 1 ? `<div style="padding:0 14px 10px"><div style="height:3px;background:var(--border-1);border-radius:2px;overflow:hidden"><div style="height:100%;width:${progPct}%;background:var(--accent);border-radius:2px;transition:width .3s ease"></div></div><div style="font-size:9px;color:var(--text-2);margin-top:4px;text-align:right">${doneCount}/${totalCount} steps</div></div>` : '';
-        pp.innerHTML = `<div class="card"><div class="spread" style="padding:12px 14px;border-bottom:1px solid var(--border-0)"><span style="font-size:13px;font-weight:500">${esc((task.title || '').slice(0, 50))}</span><span class="tag tag-muted">${engName(task.domain)}</span></div><div class="progress-panel" style="padding:8px">${steps.join('')}</div>${progressBar}</div>`;
+        pp.innerHTML = `<div class="card"><div class="spread" style="padding:12px 14px;border-bottom:1px solid var(--border-0)"><span style="font-size:13px;font-weight:500">${esc((task.title || '').slice(0, 50))}</span><span class="tag tag-muted">${taskEngName(task)}</span></div><div class="progress-panel" style="padding:8px">${steps.join('')}</div>${progressBar}</div>`;
       }
 
       if (task.status === 'done' || task.status === 'failed') {
@@ -330,7 +332,7 @@ function renderAskResult(task, output) {
   }).join('')}</div>` : '';
 
   rp.innerHTML = `<div class="card result">
-    <div class="result-head"><span class="tag tag-muted">${engName(task.domain)}</span><h3>${esc((task.title || '').slice(0, 60))}</h3><span style="font-size:10px;color:var(--text-2)">${timeAgo(task.updated_at)}</span></div>
+    <div class="result-head"><span class="tag tag-muted">${taskEngName(task)}</span><h3>${esc((task.title || '').slice(0, 60))}</h3><span style="font-size:10px;color:var(--text-2)">${timeAgo(task.updated_at)}</span></div>
     <div class="result-body">${md(output)}</div>
     ${sourcesHtml}
     <div class="result-actions">
@@ -385,6 +387,20 @@ async function loadWork() {
     const tasks = await fetch('/api/intake/tasks').then(r => r.json());
     _allWork = tasks.reverse(); // newest first
 
+    // Update status counts in the page header
+    const running = _allWork.filter(t => ['executing', 'deliberating', 'builder_running'].includes(t.status)).length;
+    const done = _allWork.filter(t => t.status === 'done').length;
+    const failed = _allWork.filter(t => t.status === 'failed').length;
+    const statusSel = document.getElementById('workStatus');
+    if (statusSel) {
+      statusSel.options[0].textContent = `All Status (${_allWork.length})`;
+      for (const opt of statusSel.options) {
+        if (opt.value === 'executing') opt.textContent = `Running (${running})`;
+        if (opt.value === 'done') opt.textContent = `Completed (${done})`;
+        if (opt.value === 'failed') opt.textContent = `Failed (${failed})`;
+      }
+    }
+
     // Build engine filter
     const ff = document.getElementById('workEngineFilter');
     const engines = [...new Set(_allWork.map(t => t.engine || t.domain))];
@@ -429,7 +445,7 @@ function renderWorkList(tasks) {
     return `<div class="card card-click ${border}" style="padding:12px 14px;margin-bottom:6px" onclick="openWorkDetail('${t.task_id}')">
       <div style="font-size:13px;font-weight:500;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc((t.title || '').slice(0, 70))}</div>
       <div class="row gap-12" style="font-size:10px;color:var(--text-2)">
-        <span class="tag tag-muted">${engName(t.engine || t.domain)}</span>
+        <span class="tag tag-muted">${taskEngName(t)}</span>
         <span>${fmtDate(t.updated_at || t.created_at)}</span>
         <span style="margin-left:auto">${statusTag(t.status)}</span>
       </div>
@@ -458,24 +474,64 @@ async function openWorkDetail(taskId) {
 
     let html = `<div style="margin-bottom:12px"><button class="b b-ghost b-sm" onclick="closeWorkDetail()">&#8592; Back to Work</button></div>`;
 
-    // Result card
-    html += `<div class="card result mb-16">
-      <div class="result-head"><span class="tag tag-muted">${engName(task.domain)}</span><h3>${esc((task.title || '').slice(0, 60))}</h3>${statusTag(task.status)}<span style="font-size:10px;color:var(--text-2);margin-left:8px">${fmtDate(task.updated_at || task.created_at)}</span></div>
-      <div class="result-body">${md(output)}</div>
-      ${sources.length ? `<div class="result-sources"><h4>Sources (${sources.length})</h4>${sources.map(u => `<a href="${esc(u)}" target="_blank" class="source-link">&#128279; ${esc(u.replace(/https?:\/\//,'').split('/')[0])}</a>`).join('')}</div>` : ''}
-      <div class="result-actions">
-        <button class="b b-line b-sm" onclick="rerunTask('${esc(task.raw_request || task.title)}','${esc(task.domain)}')">&#8635; Run Again</button>
-        <button class="b b-ghost b-sm" onclick="refineTask('${esc(task.raw_request || task.title)}')">&#9998; Refine</button>
-        <a href="/api/intake/task/${task.task_id}/export?fmt=md" download class="b b-ghost b-sm" style="text-decoration:none">&#128229; MD</a>
-        <a href="/api/intake/task/${task.task_id}/export?fmt=json" download class="b b-ghost b-sm" style="text-decoration:none">&#128229; JSON</a>
-      </div>
-      <div class="fb" id="fb-${task.task_id}">
-        <span class="fb-q">Was this helpful?</span>
-        <button class="b b-ok b-sm" onclick="sendFeedback('${task.task_id}','good',this)">Yes</button>
-        <button class="b b-ghost b-sm" onclick="sendFeedback('${task.task_id}','needs_improvement',this)">Could be better</button>
-        <button class="b b-err b-sm" onclick="sendFeedback('${task.task_id}','bad',this)">No</button>
-      </div>
+    // Task metadata strip
+    const elapsed = task.created_at && task.updated_at ? Math.round((new Date(task.updated_at) - new Date(task.created_at)) / 1000) : null;
+    html += `<div class="row gap-12 mb-12" style="font-size:11px;color:var(--text-1);flex-wrap:wrap">
+      <span>${taskEngName(task)}</span>
+      <span>${statusTag(task.status)}</span>
+      <span>Created: ${fmtDate(task.created_at)}</span>
+      ${elapsed !== null ? `<span>Duration: ${elapsed < 60 ? elapsed + 's' : Math.floor(elapsed/60) + 'm ' + (elapsed%60) + 's'}</span>` : ''}
+      <span>${subs.length} step${subs.length !== 1 ? 's' : ''}</span>
     </div>`;
+
+    // Original request (if different from title)
+    if (task.raw_request && task.raw_request !== task.title) {
+      html += `<div class="inset mb-12" style="font-size:12px;color:var(--text-1)"><strong>Original request:</strong> ${esc(task.raw_request)}</div>`;
+    }
+
+    // Running task — show progress panel
+    const isRunning = ['executing', 'deliberating', 'builder_running', 'waiting_approval', 'planned'].includes(task.status);
+    if (isRunning) {
+      const doneCount = subs.filter(s => s.status === 'done').length;
+      const totalCount = subs.length || 1;
+      const progPct = Math.round(doneCount / totalCount * 100);
+      const STEP_LABELS = { research: 'Searching the web', report: 'Writing response', strategy: 'Analyzing and comparing', implement: 'Making code changes', audit: 'Reviewing quality', locate_files: 'Finding relevant files' };
+      html += `<div class="card card-accent mb-16">
+        <div class="spread" style="padding:12px 14px;border-bottom:1px solid var(--border-0)"><span style="font-size:13px;font-weight:500">${esc((task.title || '').slice(0, 50))}</span>${statusTag(task.status)}</div>
+        <div class="progress-panel" style="padding:8px">${subs.map(s => {
+          const isDone = s.status === 'done';
+          const isActive = s.status === 'running' || s.status === 'builder_running';
+          const cls = isDone ? 'step-done' : isActive ? 'step-active' : 'step-pending';
+          const icon = isDone ? '&#10003;' : isActive ? '&#9679;' : '&#9675;';
+          const label = STEP_LABELS[s.stage] || s.title || 'Processing';
+          const provName = s.assigned_model === 'perplexity' ? 'Web search' : s.assigned_model === 'openai' ? 'AI synthesis' : s.assigned_model === 'gemini' ? 'Analysis' : '';
+          return `<div class="progress-step ${cls}"><div class="step-dot">${icon}</div><div class="step-label">${esc(label)}${provName && !isDone ? ' <span style="color:var(--text-2);font-size:10px">&middot; ' + provName + '</span>' : ''}</div></div>`;
+        }).join('')}</div>
+        ${totalCount > 1 ? `<div style="padding:0 14px 10px"><div style="height:3px;background:var(--border-1);border-radius:2px;overflow:hidden"><div style="height:100%;width:${progPct}%;background:var(--accent);border-radius:2px;transition:width .3s ease"></div></div><div style="font-size:9px;color:var(--text-2);margin-top:4px;text-align:right">${doneCount}/${totalCount} steps</div></div>` : ''}
+        <div style="padding:8px 14px;font-size:11px;color:var(--text-2)">This task is still running. Refresh to see latest progress.</div>
+      </div>`;
+    }
+
+    // Result card (for completed/failed tasks, or partial output for running)
+    if (output || task.status === 'done' || task.status === 'failed') {
+      html += `<div class="card result mb-16">
+        <div class="result-head"><span class="tag tag-muted">${taskEngName(task)}</span><h3>${esc((task.title || '').slice(0, 60))}</h3>${statusTag(task.status)}<span style="font-size:10px;color:var(--text-2);margin-left:8px">${fmtDate(task.updated_at || task.created_at)}</span></div>
+        ${output ? `<div class="result-body">${md(output)}</div>` : '<div class="result-body" style="color:var(--text-2)">No output yet</div>'}
+        ${sources.length ? `<div class="result-sources"><h4>Sources (${sources.length})</h4>${sources.map(u => `<a href="${esc(u)}" target="_blank" class="source-link">&#128279; ${esc(u.replace(/https?:\/\//,'').split('/')[0])}</a>`).join('')}</div>` : ''}
+        <div class="result-actions">
+          <button class="b b-line b-sm" onclick="rerunTask('${esc(task.raw_request || task.title)}','${esc(task.domain)}')">&#8635; Run Again</button>
+          <button class="b b-ghost b-sm" onclick="refineTask('${esc(task.raw_request || task.title)}')">&#9998; Refine</button>
+          <a href="/api/intake/task/${task.task_id}/export?fmt=md" download class="b b-ghost b-sm" style="text-decoration:none">&#128229; MD</a>
+          <a href="/api/intake/task/${task.task_id}/export?fmt=json" download class="b b-ghost b-sm" style="text-decoration:none">&#128229; JSON</a>
+        </div>
+        <div class="fb" id="fb-${task.task_id}">
+          <span class="fb-q">Was this helpful?</span>
+          <button class="b b-ok b-sm" onclick="sendFeedback('${task.task_id}','good',this)">Yes</button>
+          <button class="b b-ghost b-sm" onclick="sendFeedback('${task.task_id}','needs_improvement',this)">Could be better</button>
+          <button class="b b-err b-sm" onclick="sendFeedback('${task.task_id}','bad',this)">No</button>
+        </div>
+      </div>`;
+    }
 
     // Board deliberation
     if (delib) {
@@ -706,6 +762,18 @@ async function loadOps() {
     </div>`;
     if (guidance.confidenceNote) memHtml += `<div style="font-size:10px;color:var(--text-2);margin-bottom:12px">${esc(guidance.confidenceNote)}</div>`;
 
+    // Memory statistics
+    const memStats = [];
+    if (memory.total_count) memStats.push(`${memory.total_count} total items`);
+    if (Array.isArray(memory.projects)) memStats.push(`${memory.projects.length} projects`);
+    if (Array.isArray(memory.decisions)) memStats.push(`${memory.decisions.length} decisions`);
+    if (Array.isArray(memory.artifacts)) memStats.push(`${memory.artifacts.length} artifacts`);
+    if (Array.isArray(memory.reports)) memStats.push(`${memory.reports.length} reports`);
+    if (Array.isArray(memory.mission_statements)) memStats.push(`${memory.mission_statements.length} missions`);
+    if (memStats.length) {
+      memHtml += `<div class="g3 mb-12">${memStats.slice(0, 6).map(s => `<div class="metric-card" style="padding:8px"><span class="metric-val" style="font-size:14px">${esc(s.split(' ')[0])}</span><span class="metric-label">${esc(s.split(' ').slice(1).join(' '))}</span></div>`).join('')}</div>`;
+    }
+
     // Active signals
     const active = (Array.isArray(signals) ? signals : []).filter(s => s.active);
     if (active.length) {
@@ -806,7 +874,14 @@ async function loadSettings() {
         <div class="spread" style="font-size:12px;padding:4px 0"><span style="color:var(--text-1)">Gemini Model</span><span style="font-family:'SF Mono',monospace">${esc(cs.geminiModel || 'default')}</span></div>
         <div class="spread" style="font-size:12px;padding:4px 0"><span style="color:var(--text-1)">Budget Limit</span><span>${cs.geminibudgetLimit ? fmtCost(cs.geminibudgetLimit) : 'None'}</span></div>
         <div class="spread" style="font-size:12px;padding:4px 0"><span style="color:var(--text-1)">Warning Threshold</span><span>${cs.warningThreshold ? fmtCost(cs.warningThreshold) : 'None'}</span></div>
-        <div class="spread" style="font-size:12px;padding:4px 0"><span style="color:var(--text-1)">Builder Timeout</span><span>${cs.builderTimeoutMinutes || 10} min</span></div>
+        <div class="spread" style="font-size:12px;padding:4px 0">
+          <span style="color:var(--text-1)">Builder Timeout</span>
+          <div class="row gap-4">
+            <input id="settingsTimeout" type="number" class="sel" style="width:60px;text-align:center" value="${cs.builderTimeoutMinutes || 10}" min="1" max="60">
+            <span>min</span>
+            <button class="b b-ghost b-xs" onclick="saveCostSettings()">Save</button>
+          </div>
+        </div>
       `;
     }
   } catch {}
@@ -843,6 +918,16 @@ async function loadSettings() {
   const dk = document.getElementById('tDark'), lt = document.getElementById('tLight');
   if (dk) dk.className = theme === 'dark' ? 'b b-sm on' : 'b b-ghost b-sm';
   if (lt) lt.className = theme === 'light' ? 'b b-sm on' : 'b b-ghost b-sm';
+}
+
+async function saveCostSettings() {
+  const timeout = document.getElementById('settingsTimeout');
+  if (!timeout) return;
+  try {
+    const r = await fetch('/api/costs/settings', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ builderTimeoutMinutes: parseInt(timeout.value) || 10 }) });
+    const d = await r.json();
+    toast(d.ok ? 'Settings saved' : 'Error saving', d.ok ? 'ok' : 'err');
+  } catch { toast('Error saving settings', 'err'); }
 }
 
 // ═══ SSE ═══
