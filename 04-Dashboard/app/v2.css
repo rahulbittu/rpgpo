@@ -78,6 +78,10 @@
 [data-theme="light"] .dot-err{background:#dc2626}
 [data-theme="light"] ::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.12)}
 [data-theme="light"] ::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,0.2)}
+[data-theme="light"] .metric-card{box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+[data-theme="light"] .metric-card:hover{box-shadow:0 2px 6px rgba(0,0,0,0.08)}
+[data-theme="light"] .prov-row{border-bottom-color:rgba(0,0,0,0.06)}
+[data-theme="light"] .signal-row{border-bottom-color:rgba(0,0,0,0.06)}
 
 /* ═══ RESET ═══ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}

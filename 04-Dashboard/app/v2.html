@@ -139,12 +139,14 @@
     <section class="v2-screen" id="s-work">
       <div class="v2-page" style="max-width:960px">
         <div class="v2-page-hd spread"><div><h1>Work</h1><p>All tasks — running, completed, and failed</p></div><button class="b-icon" onclick="loadWork()">&#8635;</button></div>
-        <div class="row gap-8 mb-12">
-          <input id="workSearch" class="inp" style="padding:8px 12px;flex:1" placeholder="Search tasks..." oninput="applyWorkFilters()">
-          <select id="workStatus" class="sel" onchange="applyWorkFilters()"><option value="">All Status</option><option value="executing">Running</option><option value="done">Completed</option><option value="failed">Failed</option><option value="deliberating">Planning</option></select>
+        <div id="workListWrap">
+          <div class="row gap-8 mb-12">
+            <input id="workSearch" class="inp" style="padding:8px 12px;flex:1" placeholder="Search tasks..." oninput="applyWorkFilters()">
+            <select id="workStatus" class="sel" onchange="applyWorkFilters()"><option value="">All Status</option><option value="executing">Running</option><option value="done">Completed</option><option value="failed">Failed</option><option value="deliberating">Planning</option></select>
+          </div>
+          <div class="filters mb-12" id="workEngineFilter"></div>
+          <div id="workList" class="stack"></div>
         </div>
-        <div class="filters mb-12" id="workEngineFilter"></div>
-        <div id="workList" class="stack"></div>
         <!-- DETAIL PANEL -->
         <div id="workDetail" style="display:none"></div>
       </div>

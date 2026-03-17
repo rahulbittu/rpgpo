@@ -24,8 +24,11 @@ function go(r) {
   if (r === 'ops') loadOps();
   if (r === 'settings') loadSettings();
   if (r === 'ask') { populateEngineSelect(); loadAskRecent(); }
-  // Hide work detail when navigating away
-  if (r !== 'work') { const wd = document.getElementById('workDetail'); if (wd) wd.style.display = 'none'; }
+  // Reset work view when navigating
+  if (r !== 'work') {
+    const wd = document.getElementById('workDetail'); if (wd) wd.style.display = 'none';
+    const wl = document.getElementById('workListWrap'); if (wl) wl.style.display = '';
+  }
 }
 document.querySelectorAll('.v2-nav-item,.mob-tab').forEach(n => n.addEventListener('click', e => { e.preventDefault(); go(n.dataset.r); }));
 document.head.insertAdjacentHTML('beforeend', '<style>.v2-screen{display:none}.v2-screen.on{display:block}</style>');
@@ -460,9 +463,9 @@ function renderWorkList(tasks) {
 async function openWorkDetail(taskId) {
   go('work');
   const el = document.getElementById('workDetail');
-  const list = document.getElementById('workList');
+  const listWrap = document.getElementById('workListWrap');
   if (!el) return;
-  list.style.display = 'none';
+  if (listWrap) listWrap.style.display = 'none';
   el.style.display = 'block';
   el.innerHTML = '<div class="wait">Loading task details...</div>';
 
@@ -572,9 +575,9 @@ async function openWorkDetail(taskId) {
 
 function closeWorkDetail() {
   const el = document.getElementById('workDetail');
-  const list = document.getElementById('workList');
+  const listWrap = document.getElementById('workListWrap');
   if (el) el.style.display = 'none';
-  if (list) list.style.display = '';
+  if (listWrap) listWrap.style.display = '';
 }
 
 // ═══ ACTIVITY ═══
