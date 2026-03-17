@@ -396,11 +396,11 @@ function renderDeliverables() {
   if (!el) return;
   fetch('/api/task-outputs').then(r => r.ok ? r.json() : null).then(data => {
     const outputs = data?.outputs || [];
-    if (!outputs.length) { el.innerHTML = '<div class="empty-state"><span class="empty-icon">&#9671;</span><span class="empty-title">No deliverables yet</span><span class="empty-desc">Submit a task to see completed deliverables here</span></div>'; return; }
+    if (!outputs.length) { el.innerHTML = '<div class="empty"><span class="empty-icon">&#9671;</span><span class="empty-title">No deliverables yet</span><span class="empty-desc">Submit a task to see completed deliverables here</span></div>'; return; }
     el.innerHTML = outputs.slice(0, 5).map(o => {
       const ago = fmtTimeAgo(o.modified);
       const sizeKb = (o.size / 1024).toFixed(1);
-      return `<div class="surface" style="padding:var(--sp-12);cursor:pointer;margin-bottom:var(--sp-8)" onclick="window.open('/api/file/${encodeURIComponent(o.path)}','_blank')">
+      return `<div class="sf" style="padding:var(--sp-12);cursor:pointer;margin-bottom:var(--sp-8)" onclick="window.open('/api/file/${encodeURIComponent(o.path)}','_blank')">
         <div style="font-size:13px;font-weight:500;margin-bottom:var(--sp-4)">${esc(o.title.slice(0, 80))}</div>
         <div style="display:flex;gap:var(--sp-8);font-size:10px;color:var(--text-faint);margin-bottom:var(--sp-4)">
           <span>${sizeKb}KB</span>
@@ -409,7 +409,7 @@ function renderDeliverables() {
         <div style="font-size:11px;color:var(--text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc((o.preview || '').slice(0, 200))}</div>
       </div>`;
     }).join('');
-  }).catch(() => { el.innerHTML = '<div class="empty-state"><span class="empty-desc">Error loading deliverables</span></div>'; });
+  }).catch(() => { el.innerHTML = '<div class="empty"><span class="empty-desc">Error loading deliverables</span></div>'; });
 }
 
 function renderTaskQueue() {
@@ -431,7 +431,7 @@ function renderTaskQueue() {
 
   // Filtered task list
   const filtered = taskFilter === 'all' ? TASKS : TASKS.filter(t => t.status === taskFilter);
-  if (!filtered.length) { list.innerHTML = '<div class="empty-state"><span class="empty-desc">No tasks match filter</span></div>'; return; }
+  if (!filtered.length) { list.innerHTML = '<div class="empty"><span class="empty-desc">No tasks match filter</span></div>'; return; }
   list.innerHTML = filtered.slice(0, 50).map(taskCard).join('');
 }
 
@@ -444,11 +444,11 @@ function renderHomeRunning() {
 
 function renderRunningHero(t) {
   const modelTag = getModelTag(t);
-  return `<div class="surface surface-warning" style="padding:var(--sp-12);margin-bottom:var(--sp-16);cursor:pointer" onclick="showTask('${t.id}')">
+  return `<div class="sf sf-yellow" style="padding:var(--sp-12);margin-bottom:var(--sp-16);cursor:pointer" onclick="showTask('${t.id}')">
     <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--yellow);letter-spacing:0.5px;margin-bottom:var(--sp-4)">Currently Running</div>
     <div style="display:flex;align-items:center;gap:var(--sp-8)">
       <span style="font-size:13px;font-weight:500">${esc(t.label)}</span>
-      <span class="badge badge-neutral">${esc(t.type)}</span>
+      <span class="badge badge-muted">${esc(t.type)}</span>
       ${modelTag}
     </div>
     ${t.output ? '<pre style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-8);white-space:pre-wrap;max-height:80px;overflow:hidden">' + esc(t.output.slice(-300)) + '</pre>' : '<div style="font-size:11px;color:var(--text-faint);margin-top:var(--sp-4)">Executing...</div>'}
@@ -475,13 +475,13 @@ function taskCard(t) {
     filesHtml = `<div class="task-files">${t.filesWritten.map(f => `<span class="task-file-tag">${esc(f.split('/').pop())}</span>`).join('')}</div>`;
   }
 
-  const statusBadge = t.status === 'done' ? 'badge-success' : t.status === 'failed' ? 'badge-danger' : t.status === 'running' ? 'badge-warning' : 'badge-neutral';
-  return `<div class="surface" style="padding:var(--sp-8) var(--sp-12);cursor:pointer;display:flex;align-items:center;gap:var(--sp-12)" onclick="showTask('${t.id}')">
+  const statusBadge = t.status === 'done' ? 'badge-green' : t.status === 'failed' ? 'badge-red' : t.status === 'running' ? 'badge-yellow' : 'badge-muted';
+  return `<div class="sf" style="padding:var(--sp-8) var(--sp-12);cursor:pointer;display:flex;align-items:center;gap:var(--sp-12)" onclick="showTask('${t.id}')">
     <div style="width:6px;height:6px;border-radius:50%;background:var(${t.status === 'running' ? '--yellow' : t.status === 'done' ? '--green' : t.status === 'failed' ? '--red' : '--text-faint'});flex-shrink:0"></div>
     <div style="flex:1;min-width:0">
       <div style="font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(t.label)}</div>
       <div style="display:flex;align-items:center;gap:var(--sp-4);margin-top:var(--sp-2)">
-        <span class="badge badge-neutral">${esc(t.type)}</span>
+        <span class="badge badge-muted">${esc(t.type)}</span>
         ${modelTag}
       </div>
       ${summaryHtml ? `<div style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-4);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${summaryHtml.replace(/<[^>]+>/g, '')}</div>` : ''}
@@ -600,7 +600,7 @@ function renderNavBadges() {
 function filterTasks(f) {
   taskFilter = f;
   document.querySelectorAll('#taskFilters .btn').forEach(b => {
-    b.classList.toggle('filter-active', b.dataset.filter === f);
+    b.classList.toggle('is-active', b.dataset.filter === f);
   });
   renderTaskQueue();
 }
@@ -608,11 +608,11 @@ function filterTasks(f) {
 function showTask(id) {
   const t = TASKS.find(x => x.id === id);
   if (!t) return;
-  const statusBadge = t.status === 'done' ? 'badge-success' : t.status === 'failed' ? 'badge-danger' : t.status === 'running' ? 'badge-warning' : 'badge-neutral';
+  const statusBadge = t.status === 'done' ? 'badge-green' : t.status === 'failed' ? 'badge-red' : t.status === 'running' ? 'badge-yellow' : 'badge-muted';
   let b = `<div style="margin-bottom:var(--sp-12)">
     <div style="display:flex;align-items:center;gap:var(--sp-8);margin-bottom:var(--sp-8)">
       <span class="badge ${statusBadge}">${t.status}</span>
-      <span class="badge badge-neutral">${esc(t.type)}</span>
+      <span class="badge badge-muted">${esc(t.type)}</span>
       ${t.meta?.model ? `<span style="font-size:11px;color:var(--text-faint);font-family:var(--mono)">${esc(t.meta.model)}</span>` : ''}
     </div>
     <div style="font-size:10px;color:var(--text-faint)">Created: ${t.createdAt} | Updated: ${t.updatedAt}</div>
@@ -990,8 +990,8 @@ function renderMissions() {
     const statusLower = (m.status || '').toLowerCase();
     const isPlanned = statusLower === 'planned';
     const displayName = domainLabel(m.mission.toLowerCase().replace(/\s+/g, '').replace('engine','egine')) || m.mission;
-    const badgeCls = statusLower === 'active' ? 'badge-success' : statusLower === 'planned' ? 'badge-neutral' : 'badge-info';
-    return `<div class="surface${isPlanned ? '' : ' surface-accent'}" style="padding:var(--sp-12)">
+    const badgeCls = statusLower === 'active' ? 'badge-green' : statusLower === 'planned' ? 'badge-muted' : 'badge-blue';
+    return `<div class="sf${isPlanned ? '' : ' sf-accent'}" style="padding:var(--sp-12)">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--sp-8)">
         <span style="font-size:13px;font-weight:600;color:var(--text)">${esc(displayName)}</span>
         <span class="badge ${badgeCls}">${esc(m.status)}</span>
@@ -1016,8 +1016,8 @@ function renderApprovals() {
   // Show intake subtask approvals at top
   let intakeHtml = '';
   if (PENDING_APPROVALS.length) {
-    intakeHtml = `<div class="surface surface-warning" style="margin-bottom:var(--sp-16)">
-      <div class="section-hdr"><h3 style="color:var(--yellow)">&#9888; Subtask Approvals (${PENDING_APPROVALS.length})</h3></div>`;
+    intakeHtml = `<div class="sf sf-yellow" style="margin-bottom:var(--sp-16)">
+      <div class="sh"><h3 style="color:var(--yellow)">&#9888; Subtask Approvals (${PENDING_APPROVALS.length})</h3></div>`;
     for (const s of PENDING_APPROVALS) {
       const typeIcon = getSubtaskTypeIcon(s.stage);
       intakeHtml += `<div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-8) 0;border-bottom:1px solid var(--border)">
@@ -1026,7 +1026,7 @@ function renderApprovals() {
           <div>
             <div style="font-size:13px;font-weight:500">${esc(s.title)}</div>
             <div style="font-size:10px;color:var(--text-faint);margin-top:var(--sp-2)">
-              <span class="badge badge-neutral">${esc(s.stage)}</span>
+              <span class="badge badge-muted">${esc(s.stage)}</span>
               <span style="margin-left:var(--sp-4)">${esc(s.assigned_model)}</span>
               <span style="margin-left:var(--sp-4)">from: ${esc(s.parent_title)}</span>
             </div>
@@ -1041,7 +1041,7 @@ function renderApprovals() {
   }
 
   if (!DATA.approvals.length && !PENDING_APPROVALS.length) {
-    c.innerHTML = '<div class="empty-state"><span class="empty-icon">&#10003;</span><span class="empty-title">All clear</span><span class="empty-desc">No pending approvals</span></div>';
+    c.innerHTML = '<div class="empty"><span class="empty-icon">&#10003;</span><span class="empty-title">All clear</span><span class="empty-desc">No pending approvals</span></div>';
     return;
   }
   if (!DATA.approvals.length) {
@@ -1062,8 +1062,8 @@ function renderApprovals() {
     const reason = wm ? wm[1].trim().split('\n')[0] : '';
     const sid = a.name.replace(/[^a-zA-Z0-9]/g, '_');
 
-    const riskBadge = risk === 'red' ? 'badge-danger' : risk === 'yellow' ? 'badge-warning' : 'badge-success';
-    return `<div class="surface" id="ap-${sid}" style="margin-bottom:var(--sp-12)">
+    const riskBadge = risk === 'red' ? 'badge-red' : risk === 'yellow' ? 'badge-yellow' : 'badge-green';
+    return `<div class="sf" id="ap-${sid}" style="margin-bottom:var(--sp-12)">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:var(--sp-8);margin-bottom:var(--sp-8)">
         <div>
           <div style="font-size:14px;font-weight:600">${esc(action)}</div>
@@ -1078,7 +1078,7 @@ function renderApprovals() {
         <button class="btn btn-danger btn-sm" onclick="doApproval('${a.name}','reject','${sid}')">Reject</button>
         <button class="btn btn-ghost btn-sm" onclick="showApprovalDetail('${sid}')">Details</button>
       </div>
-      <div class="md-content surface-inset" id="detail-${sid}" style="display:none;margin-top:var(--sp-8);max-height:200px;overflow-y:auto">${md2html(a.content)}</div>
+      <div class="md-content sf-inset" id="detail-${sid}" style="display:none;margin-top:var(--sp-8);max-height:200px;overflow-y:auto">${md2html(a.content)}</div>
     </div>`;
   }).join('');
   c.innerHTML = intakeHtml + c.innerHTML;
@@ -1140,7 +1140,7 @@ function renderLogs() {
 function filterLogs(f) {
   logFilter = f;
   document.querySelectorAll('#logFilters .btn').forEach(b => {
-    b.classList.toggle('filter-active', b.dataset.filter === f);
+    b.classList.toggle('is-active', b.dataset.filter === f);
   });
   if (DATA) renderLogs();
 }
@@ -1656,9 +1656,9 @@ function renderIntakeTasks() {
     const isActive = !isCompleted && t.task_id === selectedIntakeTaskId;
     const extraCls = isCompleted ? ' is-completed' : isActive ? ' is-active' : '';
 
-    const statusBadge = t.status === 'done' ? 'badge-success' : t.status === 'failed' ? 'badge-danger' : ['executing','deliberating','waiting_approval'].includes(t.status) ? 'badge-warning' : 'badge-neutral';
-    const borderCls = t.status === 'done' ? ' surface-success' : t.status === 'failed' ? ' surface-danger' : ['executing','deliberating'].includes(t.status) ? ' surface-warning' : '';
-    return `<div class="surface${borderCls}${isActive ? ' surface-accent' : ''}" style="padding:var(--sp-12);cursor:pointer;margin-bottom:var(--sp-8)" onclick="showIntakeDetail('${t.task_id}')">
+    const statusBadge = t.status === 'done' ? 'badge-green' : t.status === 'failed' ? 'badge-red' : ['executing','deliberating','waiting_approval'].includes(t.status) ? 'badge-yellow' : 'badge-muted';
+    const borderCls = t.status === 'done' ? ' sf-green' : t.status === 'failed' ? ' sf-red' : ['executing','deliberating'].includes(t.status) ? ' sf-yellow' : '';
+    return `<div class="sf${borderCls}${isActive ? ' sf-accent' : ''}" style="padding:var(--sp-12);cursor:pointer;margin-bottom:var(--sp-8)" onclick="showIntakeDetail('${t.task_id}')">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:var(--sp-8)">
         <div style="min-width:0;flex:1">
           <div style="font-size:13px;font-weight:500;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(t.title)}</div>
@@ -1667,7 +1667,7 @@ function renderIntakeTasks() {
         <span class="badge ${statusBadge}">${t.status.replace('_', ' ')}</span>
       </div>
       <div style="display:flex;align-items:center;gap:var(--sp-8);margin-top:var(--sp-4)">
-        <span class="badge badge-neutral">${domainLabel(t.domain)}</span>
+        <span class="badge badge-muted">${domainLabel(t.domain)}</span>
         ${urgTag}${riskTag}
         <span style="font-size:9px;color:var(--text-faint);font-family:var(--mono);margin-left:auto">${fmtTime(t.created_at)}</span>
       </div>
@@ -1683,7 +1683,7 @@ function renderIntakeTasks() {
 function filterIntake(f) {
   intakeFilter = f;
   document.querySelectorAll('#intakeFilters .btn').forEach(b => {
-    b.classList.toggle('filter-active', b.dataset.filter === f);
+    b.classList.toggle('is-active', b.dataset.filter === f);
   });
   renderIntakeTasks();
 }
@@ -1779,7 +1779,7 @@ async function showIntakeDetail(taskId) {
   // Only show "Loading..." and scroll on FIRST open or task switch
   // If re-fetching the same task (after approve/reject), update silently
   if (isNewOpen) {
-    panel.innerHTML = '<div class="surface" style="padding:var(--sp-16)"><div class="loading-state">Loading...</div></div>';
+    panel.innerHTML = '<div class="sf" style="padding:var(--sp-16)"><div class="loading">Loading...</div></div>';
     panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
@@ -1793,7 +1793,7 @@ async function showIntakeDetail(taskId) {
       startIntakeDetailPoll();
     }
   } catch (e) {
-    panel.innerHTML = '<div class="surface" style="padding:var(--sp-16)"><div class="empty-state"><span class="empty-icon" style="color:var(--red)">&#10007;</span><span class="empty-title">Failed to load task</span></div></div>';
+    panel.innerHTML = '<div class="sf" style="padding:var(--sp-16)"><div class="empty"><span class="empty-icon" style="color:var(--red)">&#10007;</span><span class="empty-title">Failed to load task</span></div></div>';
   }
 }
 
@@ -1833,10 +1833,10 @@ function renderIntakeDetail(data) {
   if (!panel) return;
   const { task, subtasks, progress } = data;
   const delib = task.board_deliberation;
-  const statusBadge = task.status === 'done' ? 'badge-success' : task.status === 'failed' ? 'badge-danger' : ['executing','deliberating','waiting_approval'].includes(task.status) ? 'badge-warning' : 'badge-neutral';
-  const riskBadge = (task.risk_level === 'red') ? 'badge-danger' : (task.risk_level === 'yellow') ? 'badge-warning' : 'badge-success';
+  const statusBadge = task.status === 'done' ? 'badge-green' : task.status === 'failed' ? 'badge-red' : ['executing','deliberating','waiting_approval'].includes(task.status) ? 'badge-yellow' : 'badge-muted';
+  const riskBadge = (task.risk_level === 'red') ? 'badge-red' : (task.risk_level === 'yellow') ? 'badge-yellow' : 'badge-green';
 
-  let html = '<div class="surface" style="padding:var(--sp-16);margin-bottom:var(--sp-16)">';
+  let html = '<div class="sf" style="padding:var(--sp-16);margin-bottom:var(--sp-16)">';
 
   // Close button
   html += `<div style="display:flex;justify-content:flex-end;margin-bottom:var(--sp-4)">
@@ -1847,7 +1847,7 @@ function renderIntakeDetail(data) {
   html += `<div style="margin-bottom:var(--sp-12)">
     <div style="font-size:15px;font-weight:700;margin-bottom:var(--sp-4)">${esc(task.title)}</div>
     <div style="display:flex;align-items:center;gap:var(--sp-8);flex-wrap:wrap">
-      <span class="badge badge-neutral">${domainLabel(task.domain)}</span>
+      <span class="badge badge-muted">${domainLabel(task.domain)}</span>
       <span class="badge ${statusBadge}">${task.status.replace('_', ' ')}</span>
       ${task.risk_level !== 'green' ? `<span class="badge ${riskBadge}">${task.risk_level}</span>` : ''}
       <span style="font-size:9px;color:var(--text-faint);font-family:var(--mono);margin-left:auto">${fmtTime(task.created_at)}</span>
@@ -1887,7 +1887,7 @@ function renderIntakeDetail(data) {
 
   // Deliberation
   if (delib) {
-    html += `<div class="surface-inset" style="margin-bottom:var(--sp-12);padding:var(--sp-12)">
+    html += `<div class="sf-inset" style="margin-bottom:var(--sp-12);padding:var(--sp-12)">
       <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--text-faint);letter-spacing:0.5px;margin-bottom:var(--sp-8)">Board Deliberation</div>
       <div style="font-size:13px;font-weight:600;margin-bottom:var(--sp-8)">${esc(delib.interpreted_objective)}</div>
       <div style="font-size:12px;color:var(--text-dim);margin-bottom:var(--sp-8)">${esc(delib.recommended_strategy)}</div>

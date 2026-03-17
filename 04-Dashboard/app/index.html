@@ -164,118 +164,109 @@
       </section>
 
       <!-- TASK STREAM -->
+      <!-- QUEUE — Worker task stream (secondary, under "More") -->
       <section class="tab-panel" id="tab-tasks">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-24)">
-          <div>
-            <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Task Stream</h1>
-            <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">Worker queue — queued, running, and completed</p>
+        <div class="gpo-page">
+          <div class="gpo-page-header spread">
+            <div><h1>Queue</h1><p>Worker execution stream</p></div>
+            <div class="row"><span id="taskQueueCount" style="font-size:11px;color:var(--text-dim)">0 tasks</span><button class="btn btn-icon" onclick="loadTasks()">&#8635;</button></div>
           </div>
-          <div style="display:flex;align-items:center;gap:var(--sp-8)">
-            <span id="taskQueueCount" style="font-size:11px;color:var(--text-dim)">0 tasks</span>
-            <button class="btn btn-ghost btn-sm" onclick="loadTasks()">&#8635;</button>
+          <div id="tasksRunningHero"></div>
+          <div class="filter-bar" id="taskFilters">
+            <button class="btn btn-sm is-active" data-filter="all" onclick="filterTasks('all')">All</button>
+            <button class="btn btn-ghost btn-sm" data-filter="running" onclick="filterTasks('running')">Running</button>
+            <button class="btn btn-ghost btn-sm" data-filter="queued" onclick="filterTasks('queued')">Queued</button>
+            <button class="btn btn-ghost btn-sm" data-filter="done" onclick="filterTasks('done')">Done</button>
+            <button class="btn btn-ghost btn-sm" data-filter="failed" onclick="filterTasks('failed')">Failed</button>
           </div>
-        </div>
-
-        <div id="tasksRunningHero"></div>
-
-        <div style="display:flex;gap:var(--sp-4);margin-bottom:var(--sp-16)" id="taskFilters">
-          <button class="btn btn-sm filter-active" data-filter="all" onclick="filterTasks('all')">All</button>
-          <button class="btn btn-ghost btn-sm" data-filter="running" onclick="filterTasks('running')">Running</button>
-          <button class="btn btn-ghost btn-sm" data-filter="queued" onclick="filterTasks('queued')">Queued</button>
-          <button class="btn btn-ghost btn-sm" data-filter="done" onclick="filterTasks('done')">Done</button>
-          <button class="btn btn-ghost btn-sm" data-filter="failed" onclick="filterTasks('failed')">Failed</button>
-        </div>
-
-        <div id="taskQueueList" style="display:flex;flex-direction:column;gap:var(--sp-8)">
-          <div class="empty-state"><span class="empty-icon">&#9654;</span><span class="empty-title">No tasks in queue</span></div>
+          <div id="taskQueueList" class="stack">
+            <div class="empty"><span class="empty-icon">&#9654;</span><span class="empty-title">No tasks in queue</span></div>
+          </div>
         </div>
       </section>
 
-      <!-- INTAKE — Task Submission & Execution -->
+      <!-- WORK — Core workflow: submit, track, review, deliver -->
       <section class="tab-panel" id="tab-intake">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-16)">
-          <div>
-            <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Tasks</h1>
-            <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">Submit, track, and review task execution</p>
+        <div class="gpo-page">
+
+          <!-- Header -->
+          <div class="gpo-page-header spread">
+            <div><h1>Work</h1><p>Submit, track, and review tasks</p></div>
+            <button class="btn btn-icon" onclick="loadIntakeTasks()">&#8635;</button>
           </div>
-          <button class="btn btn-ghost btn-sm" onclick="loadIntakeTasks()">&#8635;</button>
-        </div>
 
-        <!-- Pipeline steps (compact) -->
-        <div class="flow-explainer" id="flowExplainer" style="margin-bottom:var(--sp-16)">
-          <div class="flow-step" data-step="intake"><span class="flow-step-num">1</span><span class="flow-step-label">Submit</span></div>
-          <div class="flow-arrow">&#8594;</div>
-          <div class="flow-step" data-step="deliberating"><span class="flow-step-num">2</span><span class="flow-step-label">Plan</span></div>
-          <div class="flow-arrow">&#8594;</div>
-          <div class="flow-step" data-step="planned"><span class="flow-step-num">3</span><span class="flow-step-label">Review</span></div>
-          <div class="flow-arrow">&#8594;</div>
-          <div class="flow-step" data-step="executing"><span class="flow-step-num">4</span><span class="flow-step-label">Execute</span></div>
-          <div class="flow-arrow">&#8594;</div>
-          <div class="flow-step" data-step="done"><span class="flow-step-num">5</span><span class="flow-step-label">Done</span></div>
-        </div>
-
-        <!-- Active task hero -->
-        <div id="intakeCurrentHero"></div>
-        <div id="intakeDetailPanel" style="display:none"></div>
-        <div id="executionGraphPanel"></div>
-
-        <!-- Task submission form -->
-        <div class="surface surface-accent" style="margin-bottom:var(--sp-16)" id="intakeFormCard">
-          <div class="section-hdr"><h3>Submit a Task</h3></div>
-          <textarea id="intakeRequest" style="width:100%;background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-12);color:var(--text);font-family:var(--font);font-size:13px;resize:vertical;min-height:72px" placeholder="What do you need? Describe your task in plain language..." rows="3"></textarea>
-          <div style="display:flex;gap:var(--sp-8);margin-top:var(--sp-8);flex-wrap:wrap;align-items:center">
-            <select id="intakeDomain" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-4) var(--sp-8);color:var(--text);font-size:12px">
-              <option value="">Auto-detect engine</option>
-              <option value="code">Code & Product Engineering</option>
-              <option value="writing">Writing & Documentation</option>
-              <option value="research">Research & Analysis</option>
-              <option value="learning">Learning & Tutoring</option>
-              <option value="ops">Scheduling & Life Operations</option>
-              <option value="health">Health & Wellness Coach</option>
-              <option value="shopping">Shopping & Buying Advisor</option>
-              <option value="travel">Travel & Relocation Planner</option>
-              <option value="finance">Personal Finance & Investing</option>
-              <option value="startup">Startup & Business Builder</option>
-              <option value="career">Career & Job Search</option>
-              <option value="screenwriting">Screenwriting & Story Development</option>
-              <option value="film">Filmmaking & Video Production</option>
-              <option value="music">Music & Audio Creation</option>
-              <option value="news">News & Intelligence</option>
-              <option value="general">General</option>
-            </select>
-            <select id="intakeUrgency" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-4) var(--sp-8);color:var(--text);font-size:12px">
-              <option value="normal">Normal</option>
-              <option value="low">Low</option>
-              <option value="high">High</option>
-              <option value="critical">Critical</option>
-            </select>
-            <input type="text" id="intakeOutcome" style="flex:1;min-width:140px;background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-4) var(--sp-8);color:var(--text);font-size:12px" placeholder="Desired outcome (optional)" />
-            <button class="btn btn-primary btn-md" onclick="submitIntakeTask()">
-              <span>&#9998;</span> Submit
-            </button>
+          <!-- Pipeline visualization -->
+          <div class="row" style="gap:var(--sp-8);margin-bottom:var(--sp-20);font-size:11px;color:var(--text-faint)" id="flowExplainer">
+            <span class="flow-step" data-step="intake" style="padding:var(--sp-2) var(--sp-8);border-radius:10px;border:1px solid var(--border)">Submit</span>
+            <span>→</span>
+            <span class="flow-step" data-step="deliberating" style="padding:var(--sp-2) var(--sp-8);border-radius:10px;border:1px solid var(--border)">Plan</span>
+            <span>→</span>
+            <span class="flow-step" data-step="planned" style="padding:var(--sp-2) var(--sp-8);border-radius:10px;border:1px solid var(--border)">Review</span>
+            <span>→</span>
+            <span class="flow-step" data-step="executing" style="padding:var(--sp-2) var(--sp-8);border-radius:10px;border:1px solid var(--border)">Execute</span>
+            <span>→</span>
+            <span class="flow-step" data-step="done" style="padding:var(--sp-2) var(--sp-8);border-radius:10px;border:1px solid var(--border)">Done</span>
           </div>
-          <div id="engineContractHint" style="font-size:11px;color:var(--text-faint);margin-top:var(--sp-4);display:none"></div>
-        </div>
 
-        <!-- Quick start templates -->
-        <div style="margin-bottom:var(--sp-16)">
-          <div class="section-hdr"><h3>Quick Start</h3></div>
-          <div id="missionTemplateGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--sp-8)"></div>
-        </div>
+          <!-- Active task + detail panel -->
+          <div id="intakeCurrentHero"></div>
+          <div id="intakeDetailPanel" style="display:none"></div>
+          <div id="executionGraphPanel"></div>
 
-        <!-- Filter row -->
-        <div style="display:flex;gap:var(--sp-4);margin-bottom:var(--sp-12)" id="intakeFilters">
-          <button class="btn btn-sm filter-active" data-filter="all" onclick="filterIntake('all')">All</button>
-          <button class="btn btn-ghost btn-sm" data-filter="intake" onclick="filterIntake('intake')">Intake</button>
-          <button class="btn btn-ghost btn-sm" data-filter="deliberating" onclick="filterIntake('deliberating')">Planning</button>
-          <button class="btn btn-ghost btn-sm" data-filter="planned" onclick="filterIntake('planned')">Planned</button>
-          <button class="btn btn-ghost btn-sm" data-filter="executing" onclick="filterIntake('executing')">Running</button>
-          <button class="btn btn-ghost btn-sm" data-filter="waiting_approval" onclick="filterIntake('waiting_approval')">Approval</button>
-          <button class="btn btn-ghost btn-sm" data-filter="done" onclick="filterIntake('done')">Done</button>
-        </div>
+          <!-- Task submission -->
+          <div class="sf sf-accent" style="margin-bottom:var(--sp-20)" id="intakeFormCard">
+            <div class="sh"><h3>New Request</h3></div>
+            <textarea id="intakeRequest" style="width:100%;background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-12);color:var(--text);font-family:var(--font);font-size:13px;resize:vertical;min-height:72px" placeholder="Describe what you need..." rows="3"></textarea>
+            <div class="row" style="margin-top:var(--sp-8);flex-wrap:wrap">
+              <select id="intakeDomain" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-4) var(--sp-8);color:var(--text);font-size:12px">
+                <option value="">Auto-detect engine</option>
+                <option value="code">Code & Product Engineering</option>
+                <option value="writing">Writing & Documentation</option>
+                <option value="research">Research & Analysis</option>
+                <option value="learning">Learning & Tutoring</option>
+                <option value="ops">Scheduling & Life Operations</option>
+                <option value="health">Health & Wellness Coach</option>
+                <option value="shopping">Shopping & Buying Advisor</option>
+                <option value="travel">Travel & Relocation Planner</option>
+                <option value="finance">Personal Finance & Investing</option>
+                <option value="startup">Startup & Business Builder</option>
+                <option value="career">Career & Job Search</option>
+                <option value="screenwriting">Screenwriting & Story Development</option>
+                <option value="film">Filmmaking & Video Production</option>
+                <option value="music">Music & Audio Creation</option>
+                <option value="news">News & Intelligence</option>
+                <option value="general">General</option>
+              </select>
+              <select id="intakeUrgency" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-4) var(--sp-8);color:var(--text);font-size:12px">
+                <option value="normal">Normal</option>
+                <option value="low">Low</option>
+                <option value="high">High</option>
+                <option value="critical">Critical</option>
+              </select>
+              <input type="text" id="intakeOutcome" style="flex:1;min-width:120px;background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-4) var(--sp-8);color:var(--text);font-size:12px" placeholder="Desired outcome (optional)" />
+              <button class="btn btn-primary btn-md" onclick="submitIntakeTask()">Submit</button>
+            </div>
+            <div id="engineContractHint" style="font-size:10px;color:var(--text-faint);margin-top:var(--sp-4);display:none"></div>
+          </div>
 
-        <!-- Task list -->
-        <div id="intakeTaskList"></div>
+          <!-- Templates -->
+          <div style="margin-bottom:var(--sp-20)">
+            <div class="sh"><h3>Quick Start</h3></div>
+            <div id="missionTemplateGrid" class="grid-3" style="grid-template-columns:repeat(auto-fill,minmax(180px,1fr))"></div>
+          </div>
+
+          <!-- Task list -->
+          <div class="filter-bar" id="intakeFilters">
+            <button class="btn btn-sm is-active" data-filter="all" onclick="filterIntake('all')">All</button>
+            <button class="btn btn-ghost btn-sm" data-filter="intake" onclick="filterIntake('intake')">Submitted</button>
+            <button class="btn btn-ghost btn-sm" data-filter="deliberating" onclick="filterIntake('deliberating')">Planning</button>
+            <button class="btn btn-ghost btn-sm" data-filter="executing" onclick="filterIntake('executing')">Running</button>
+            <button class="btn btn-ghost btn-sm" data-filter="waiting_approval" onclick="filterIntake('waiting_approval')">Approval</button>
+            <button class="btn btn-ghost btn-sm" data-filter="done" onclick="filterIntake('done')">Completed</button>
+          </div>
+          <div id="intakeTaskList" class="stack"></div>
+
+        </div>
       </section>
 
       <!-- ASK AI — Direct AI Interaction -->

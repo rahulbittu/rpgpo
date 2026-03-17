@@ -39,9 +39,9 @@ function renderMissionTemplates() {
   const el = document.getElementById('missionTemplateGrid');
   if (!el) return;
   el.innerHTML = MISSION_TEMPLATES.map((t, i) =>
-    `<div class="surface" style="padding:var(--sp-8) var(--sp-12);cursor:pointer" onclick="applyTemplateByIndex(${i})">
+    `<div class="sf" style="padding:var(--sp-8) var(--sp-12);cursor:pointer" onclick="applyTemplateByIndex(${i})">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-4)">
-        <span class="badge badge-neutral">${domainLabel(t.domain)}</span>
+        <span class="badge badge-muted">${domainLabel(t.domain)}</span>
         ${t.prompt ? '<button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();runTemplateByIndex(' + i + ')" title="Run now" style="padding:var(--sp-2) var(--sp-4);font-size:10px">&#9654;</button>' : ''}
       </div>
       <div style="font-size:12px;font-weight:500;margin-bottom:var(--sp-2)">${esc(t.title)}</div>
@@ -247,8 +247,8 @@ function renderEnhancedMissionSnapshot() {
     const progress = m.progress ? m.progress.split('\n').find(l => l.startsWith('- ')) : '';
     const progressText = progress ? progress.replace(/^-\s*/, '').slice(0, 50) : '';
 
-    const statusBadge = (m.status || '').toLowerCase() === 'active' ? 'badge-success' : (m.status || '').toLowerCase() === 'planned' ? 'badge-neutral' : 'badge-info';
-    return `<div class="surface" style="padding:var(--sp-8) var(--sp-12);cursor:pointer" onclick="switchTab('missions')">
+    const statusBadge = (m.status || '').toLowerCase() === 'active' ? 'badge-green' : (m.status || '').toLowerCase() === 'planned' ? 'badge-muted' : 'badge-blue';
+    return `<div class="sf" style="padding:var(--sp-8) var(--sp-12);cursor:pointer" onclick="switchTab('missions')">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-4)">
         <span style="font-size:12px;font-weight:600">${esc(displayName)}</span>
         <span class="badge ${statusBadge}">${esc(m.status)}</span>
@@ -299,8 +299,8 @@ function renderChiefOfStaffBrief(brief) {
     } else if (a.suggested_capability === 'research') {
       actionBtn = `<button class="cos-action-btn" onclick="event.stopPropagation();applyTemplate('${esc(a.domain || 'general')}','${esc(a.title.replace(/'/g, "\\'").slice(0, 100))}','normal','');switchTab('intake')">Submit Task</button>`;
     }
-    const prioBadge = a.priority === 'critical' ? 'badge-danger' : a.priority === 'high' ? 'badge-warning' : 'badge-neutral';
-    return `<div class="surface" style="padding:var(--sp-8) var(--sp-12);margin-bottom:var(--sp-8)">
+    const prioBadge = a.priority === 'critical' ? 'badge-danger' : a.priority === 'high' ? 'badge-warning' : 'badge-muted';
+    return `<div class="sf" style="padding:var(--sp-8) var(--sp-12);margin-bottom:var(--sp-8)">
       <div style="display:flex;align-items:center;gap:var(--sp-8);margin-bottom:var(--sp-4)">
         <span class="badge ${prioBadge}">${priorityIcon[a.priority] || '-'}</span>
         <span style="font-size:12px;font-weight:500;flex:1">${esc(a.title)}</span>
@@ -310,7 +310,7 @@ function renderChiefOfStaffBrief(brief) {
       </div>
       <div style="font-size:11px;color:var(--text-dim);margin-bottom:var(--sp-4)">${esc(a.why)}</div>
       <div style="display:flex;gap:var(--sp-8);font-size:10px;color:var(--text-faint)">
-        <span class="badge badge-neutral">${esc(typeof domainLabel === 'function' ? domainLabel(a.domain || a.scope_id) : (a.domain || a.scope_id))}</span>
+        <span class="badge badge-muted">${esc(typeof domainLabel === 'function' ? domainLabel(a.domain || a.scope_id) : (a.domain || a.scope_id))}</span>
         ${a.suggested_capability ? '<span>' + esc(a.suggested_capability) + '</span>' : ''}
       </div>
     </div>`;
@@ -344,7 +344,7 @@ function renderChiefOfStaffBrief(brief) {
   // REMOVED: "Mission Health" with raw states (drifting, no_statement — not product-grade)
   // KEPT: Next Best Actions (when actionable) + Blockers (when present)
 
-  el.innerHTML = `<div class="surface" style="margin-bottom:var(--sp-16);padding:var(--sp-12)">
+  el.innerHTML = `<div class="sf" style="margin-bottom:var(--sp-16);padding:var(--sp-12)">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-8)">
       <div style="font-size:13px;font-weight:600">Needs Attention</div>
       ${brief.focus_recommendation ? '<div style="font-size:11px;color:var(--text-dim)">' + esc(brief.focus_recommendation) + '</div>' : ''}
