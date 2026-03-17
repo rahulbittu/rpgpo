@@ -4,12 +4,12 @@
     "value": "high",
     "confidence": 1,
     "scope": "global",
-    "sourceEventCount": 1029,
-    "lastUpdated": "2026-03-17T00:47:55.283Z",
+    "sourceEventCount": 1031,
+    "lastUpdated": "2026-03-17T00:53:46.346Z",
     "active": true,
-    "explanation": "978 accepted, 51 abandoned, 1 downloaded",
+    "explanation": "980 accepted, 51 abandoned, 1 downloaded",
     "provenance": "seeded_historical",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "output_satisfaction",
@@ -18,11 +18,11 @@
     "scope": "engine",
     "scopeKey": "personalops",
     "sourceEventCount": 83,
-    "lastUpdated": "2026-03-17T00:47:55.283Z",
+    "lastUpdated": "2026-03-17T00:53:46.346Z",
     "active": true,
     "provenance": "live_observed",
     "explanation": "Engine personalops: 82 accepted, 1 abandoned (99% satisfaction)",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "output_satisfaction",
@@ -31,11 +31,11 @@
     "scope": "engine",
     "scopeKey": "general",
     "sourceEventCount": 606,
-    "lastUpdated": "2026-03-17T00:47:55.283Z",
+    "lastUpdated": "2026-03-17T00:53:46.346Z",
     "active": true,
     "provenance": "live_observed",
     "explanation": "Engine general: 566 accepted, 40 abandoned (93% satisfaction)",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "output_satisfaction",
@@ -44,11 +44,11 @@
     "scope": "engine",
     "scopeKey": "wealthresearch",
     "sourceEventCount": 111,
-    "lastUpdated": "2026-03-17T00:47:55.283Z",
+    "lastUpdated": "2026-03-17T00:53:46.346Z",
     "active": true,
     "provenance": "live_observed",
     "explanation": "Engine wealthresearch: 105 accepted, 6 abandoned (95% satisfaction)",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "output_satisfaction",
@@ -57,11 +57,11 @@
     "scope": "engine",
     "scopeKey": "careeregine",
     "sourceEventCount": 82,
-    "lastUpdated": "2026-03-17T00:47:55.283Z",
+    "lastUpdated": "2026-03-17T00:53:46.346Z",
     "active": true,
     "provenance": "live_observed",
     "explanation": "Engine careeregine: 81 accepted, 1 abandoned (99% satisfaction)",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "output_satisfaction",
@@ -70,11 +70,11 @@
     "scope": "engine",
     "scopeKey": "newsroom",
     "sourceEventCount": 16,
-    "lastUpdated": "2026-03-17T00:47:55.283Z",
+    "lastUpdated": "2026-03-17T00:53:46.346Z",
     "active": true,
     "provenance": "seeded_historical",
     "explanation": "Engine newsroom: 15 accepted, 1 abandoned (94% satisfaction)",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "output_satisfaction",
@@ -83,11 +83,11 @@
     "scope": "engine",
     "scopeKey": "screenwriting",
     "sourceEventCount": 63,
-    "lastUpdated": "2026-03-17T00:47:55.283Z",
+    "lastUpdated": "2026-03-17T00:53:46.346Z",
     "active": true,
     "provenance": "live_observed",
     "explanation": "Engine screenwriting: 62 accepted, 1 abandoned (98% satisfaction)",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "output_satisfaction",
@@ -96,11 +96,11 @@
     "scope": "engine",
     "scopeKey": "topranker",
     "sourceEventCount": 27,
-    "lastUpdated": "2026-03-17T00:47:55.283Z",
+    "lastUpdated": "2026-03-17T00:53:46.346Z",
     "active": true,
     "provenance": "seeded_historical",
     "explanation": "Engine topranker: 26 accepted, 1 abandoned (96% satisfaction)",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "output_satisfaction",
@@ -109,11 +109,11 @@
     "scope": "engine",
     "scopeKey": "research",
     "sourceEventCount": 6,
-    "lastUpdated": "2026-03-17T00:47:55.283Z",
+    "lastUpdated": "2026-03-17T00:53:46.346Z",
     "active": true,
     "provenance": "live_observed",
     "explanation": "Engine research: 6 accepted, 0 abandoned (100% satisfaction)",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "output_satisfaction",
@@ -122,24 +122,24 @@
     "scope": "engine",
     "scopeKey": "writing",
     "sourceEventCount": 7,
-    "lastUpdated": "2026-03-17T00:47:55.283Z",
+    "lastUpdated": "2026-03-17T00:53:46.346Z",
     "active": true,
     "provenance": "live_observed",
     "explanation": "Engine writing: 7 accepted, 0 abandoned (100% satisfaction)",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "output_satisfaction",
     "value": "high",
-    "confidence": 0.4,
+    "confidence": 0.4666666666666667,
     "scope": "engine",
     "scopeKey": "health",
-    "sourceEventCount": 6,
-    "lastUpdated": "2026-03-17T00:47:55.283Z",
+    "sourceEventCount": 7,
+    "lastUpdated": "2026-03-17T00:53:46.346Z",
     "active": true,
     "provenance": "live_observed",
-    "explanation": "Engine health: 6 accepted, 0 abandoned (100% satisfaction)",
-    "reinforced_count": 413
+    "explanation": "Engine health: 7 accepted, 0 abandoned (100% satisfaction)",
+    "reinforced_count": 421
   },
   {
     "name": "output_satisfaction",
@@ -148,11 +148,11 @@
     "scope": "engine",
     "scopeKey": "startup",
     "sourceEventCount": 4,
-    "lastUpdated": "2026-03-17T00:47:55.283Z",
+    "lastUpdated": "2026-03-17T00:53:46.346Z",
     "active": false,
     "provenance": "live_observed",
     "explanation": "Engine startup: 4 accepted, 0 abandoned (100% satisfaction)",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "output_satisfaction",
@@ -161,11 +161,11 @@
     "scope": "engine",
     "scopeKey": "learning",
     "sourceEventCount": 8,
-    "lastUpdated": "2026-03-17T00:47:55.283Z",
+    "lastUpdated": "2026-03-17T00:53:46.346Z",
     "active": true,
     "provenance": "live_observed",
     "explanation": "Engine learning: 8 accepted, 0 abandoned (100% satisfaction)",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "output_satisfaction",
@@ -174,11 +174,11 @@
     "scope": "engine",
     "scopeKey": "travel",
     "sourceEventCount": 4,
-    "lastUpdated": "2026-03-17T00:47:55.283Z",
+    "lastUpdated": "2026-03-17T00:53:46.346Z",
     "active": false,
     "provenance": "live_observed",
     "explanation": "Engine travel: 4 accepted, 0 abandoned (100% satisfaction)",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "task_volume",
@@ -190,11 +190,11 @@
     "scope": "engine",
     "scopeKey": "personalops",
     "sourceEventCount": 93,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "explanation": "Engine personalops: 93 tasks (7.0% of total)",
     "provenance": "seeded_historical",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "task_volume",
@@ -206,11 +206,11 @@
     "scope": "engine",
     "scopeKey": "general",
     "sourceEventCount": 665,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
-    "explanation": "Engine general: 665 tasks (49.8% of total)",
+    "explanation": "Engine general: 665 tasks (49.7% of total)",
     "provenance": "seeded_historical",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "task_volume",
@@ -222,11 +222,11 @@
     "scope": "engine",
     "scopeKey": "wealthresearch",
     "sourceEventCount": 123,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "explanation": "Engine wealthresearch: 123 tasks (9.2% of total)",
     "provenance": "seeded_historical",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "task_volume",
@@ -238,11 +238,11 @@
     "scope": "engine",
     "scopeKey": "newsroom",
     "sourceEventCount": 16,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "explanation": "Engine newsroom: 16 tasks (1.2% of total)",
     "provenance": "seeded_historical",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "task_volume",
@@ -254,11 +254,11 @@
     "scope": "engine",
     "scopeKey": "screenwriting",
     "sourceEventCount": 71,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "explanation": "Engine screenwriting: 71 tasks (5.3% of total)",
     "provenance": "seeded_historical",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "task_volume",
@@ -270,11 +270,11 @@
     "scope": "engine",
     "scopeKey": "careeregine",
     "sourceEventCount": 103,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "explanation": "Engine careeregine: 103 tasks (7.7% of total)",
     "provenance": "seeded_historical",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "task_volume",
@@ -286,11 +286,11 @@
     "scope": "engine",
     "scopeKey": "topranker",
     "sourceEventCount": 27,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "explanation": "Engine topranker: 27 tasks (2.0% of total)",
     "provenance": "seeded_historical",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "task_volume",
@@ -302,11 +302,11 @@
     "scope": "engine",
     "scopeKey": "music",
     "sourceEventCount": 5,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "explanation": "Engine music: 5 tasks (0.4% of total)",
     "provenance": "seeded_historical",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "task_volume",
@@ -318,11 +318,11 @@
     "scope": "engine",
     "scopeKey": "startup",
     "sourceEventCount": 36,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "explanation": "Engine startup: 36 tasks (2.7% of total)",
     "provenance": "seeded_historical",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "task_volume",
@@ -334,11 +334,11 @@
     "scope": "engine",
     "scopeKey": "learning",
     "sourceEventCount": 34,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "explanation": "Engine learning: 34 tasks (2.5% of total)",
     "provenance": "seeded_historical",
-    "reinforced_count": 399
+    "reinforced_count": 407
   },
   {
     "name": "task_volume",
@@ -350,11 +350,11 @@
     "scope": "engine",
     "scopeKey": "research",
     "sourceEventCount": 54,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "explanation": "Engine research: 54 tasks (4.0% of total)",
     "provenance": "seeded_historical",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "task_volume",
@@ -366,27 +366,27 @@
     "scope": "engine",
     "scopeKey": "writing",
     "sourceEventCount": 65,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "explanation": "Engine writing: 65 tasks (4.9% of total)",
     "provenance": "seeded_historical",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "task_volume",
     "value": {
-      "count": 26,
+      "count": 27,
       "share": "2%"
     },
     "confidence": 1,
     "scope": "engine",
     "scopeKey": "health",
-    "sourceEventCount": 26,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "sourceEventCount": 27,
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
-    "explanation": "Engine health: 26 tasks (1.9% of total)",
+    "explanation": "Engine health: 27 tasks (2.0% of total)",
     "provenance": "seeded_historical",
-    "reinforced_count": 399
+    "reinforced_count": 0
   },
   {
     "name": "task_volume",
@@ -398,11 +398,11 @@
     "scope": "engine",
     "scopeKey": "travel",
     "sourceEventCount": 10,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "explanation": "Engine travel: 10 tasks (0.7% of total)",
     "provenance": "seeded_historical",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "task_volume",
@@ -414,11 +414,11 @@
     "scope": "engine",
     "scopeKey": "shopping",
     "sourceEventCount": 4,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": false,
     "explanation": "Engine shopping: 4 tasks (0.3% of total)",
     "provenance": "seeded_historical",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "communication_style",
@@ -426,11 +426,11 @@
     "confidence": 1,
     "scope": "global",
     "sourceEventCount": 1,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "provenance": "explicit_profile",
     "explanation": "From operator profile: communication_style = terse",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "output_preferences",
@@ -442,11 +442,11 @@
     "confidence": 1,
     "scope": "global",
     "sourceEventCount": 1,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "provenance": "explicit_profile",
     "explanation": "From operator profile: stated output preferences",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "risk_tolerance",
@@ -454,27 +454,27 @@
     "confidence": 1,
     "scope": "global",
     "sourceEventCount": 1,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "provenance": "explicit_profile",
     "explanation": "From operator profile: risk_tolerance = yellow",
-    "reinforced_count": 413
+    "reinforced_count": 421
   },
   {
     "name": "first_pass_clean_rate",
     "value": {
       "rate": "100%",
-      "accepted": 55,
+      "accepted": 57,
       "failed": 0
     },
     "confidence": 1,
     "scope": "global",
-    "sourceEventCount": 55,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "sourceEventCount": 57,
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": true,
     "provenance": "live_observed",
-    "explanation": "Live verification: 55/55 tasks clean on first pass (100%). Avg output: 6686 chars, 100% structured.",
-    "reinforced_count": 362
+    "explanation": "Live verification: 57/57 tasks clean on first pass (100%). Avg output: 6890 chars, 100% structured.",
+    "reinforced_count": 0
   },
   {
     "name": "operator_satisfaction_explicit",
@@ -487,11 +487,11 @@
     "confidence": 0.2,
     "scope": "global",
     "sourceEventCount": 2,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": false,
     "provenance": "live_observed",
     "explanation": "Explicit operator ratings: 1 good, 1 negative out of 2 total. This is REAL feedback, not a proxy.",
-    "reinforced_count": 21
+    "reinforced_count": 29
   },
   {
     "name": "operator_satisfaction_explicit",
@@ -504,11 +504,11 @@
     "scope": "engine",
     "scopeKey": "health",
     "sourceEventCount": 1,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": false,
     "provenance": "live_observed",
     "explanation": "Engine health: 1 good, 0 negative (1 total explicit ratings)",
-    "reinforced_count": 21
+    "reinforced_count": 29
   },
   {
     "name": "operator_satisfaction_explicit",
@@ -521,11 +521,11 @@
     "scope": "engine",
     "scopeKey": "startup",
     "sourceEventCount": 1,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": false,
     "provenance": "live_observed",
     "explanation": "Engine startup: 0 good, 1 negative (1 total explicit ratings)",
-    "reinforced_count": 21
+    "reinforced_count": 29
   },
   {
     "name": "dissatisfaction_concentration",
@@ -539,10 +539,10 @@
     "confidence": 0.2,
     "scope": "global",
     "sourceEventCount": 1,
-    "lastUpdated": "2026-03-17T00:47:55.284Z",
+    "lastUpdated": "2026-03-17T00:53:46.347Z",
     "active": false,
     "provenance": "live_observed",
     "explanation": "1 dissatisfaction events. By engine: startup=1. Active only after 3+ complaints (currently advisory).",
-    "reinforced_count": 21
+    "reinforced_count": 29
   }
 ]

@@ -1,5 +1,29 @@
 [
   {
+    "record_id": "ee_mmtwa4ol2chm",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing steps, recommendations",
+    "scope_type": "task",
+    "scope_id": "t_mmtw8wc7m46g",
+    "route": "health",
+    "linked_path_id": "",
+    "created_at": "2026-03-17T00:49:20.949Z"
+  },
+  {
+    "record_id": "ee_mmtw9zgo8daw",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing diffs, implementation_p",
+    "scope_type": "task",
+    "scope_id": "t_mmtw8wb29tb1",
+    "route": "startup",
+    "linked_path_id": "",
+    "created_at": "2026-03-17T00:49:14.184Z"
+  },
+  {
     "record_id": "ee_mmtvrp3nwe1y",
     "area": "runtime_deliverable",
     "middleware_ran": "runtime-deliverable-pipeline",
@@ -5974,29 +5998,5 @@
     "route": "research",
     "linked_path_id": "",
     "created_at": "2026-03-16T06:19:15.900Z"
-  },
-  {
-    "record_id": "ee_mmssmd7p7nbm",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "partial",
-    "response_effect": "Partial: missing sections",
-    "scope_type": "task",
-    "scope_id": "t_mmsshr5mtdm2",
-    "route": "general",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T06:19:07.237Z"
-  },
-  {
-    "record_id": "ee_mmssm73hodoq",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "violated",
-    "response_effect": "Contract violated: missing diffs, implementation_p",
-    "scope_type": "task",
-    "scope_id": "t_mmsshr2to157",
-    "route": "startup",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T06:18:59.309Z"
   }
 ]

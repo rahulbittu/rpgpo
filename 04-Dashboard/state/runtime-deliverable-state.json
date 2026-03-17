@@ -19173,5 +19173,37 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-17T00:34:04.350Z"
+  },
+  "t_mmtw8wb29tb1": {
+    "task_id": "t_mmtw8wb29tb1",
+    "deliverable_id": "dlv_rpgpo_tmmtw8wb29tb1_code_change_4db5602c",
+    "engine_id": "startup",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "diffs",
+      "implementation_plan",
+      "changed_files",
+      "diff_preview"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-17T00:48:31.306Z"
+  },
+  "t_mmtw8wc7m46g": {
+    "task_id": "t_mmtw8wc7m46g",
+    "deliverable_id": "dlv_rpgpo_tmmtw8wc7m46g_action_plan_a27f37dc",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-17T00:48:38.156Z"
   }
 }
