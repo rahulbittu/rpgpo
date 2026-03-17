@@ -670,7 +670,7 @@ function renderEvent(e) {
 // ═══ OPERATIONS ═══
 async function loadOps() {
   // Parallel fetch
-  const [providers, reliability, latency, provCost, health, observability, memory, signals, guidance, approvals, costs] = await Promise.all([
+  const [providers, reliability, latency, provCost, health, observability, memory, signals, guidance, approvals, costs, costHistory] = await Promise.all([
     fetch('/api/provider-registry').then(r => r.json()).catch(() => ({})),
     fetch('/api/provider-reliability').then(r => r.json()).catch(() => ({})),
     fetch('/api/provider-latency').then(r => r.json()).catch(() => ({})),
@@ -682,6 +682,7 @@ async function loadOps() {
     fetch('/api/behavior/guidance').then(r => r.json()).catch(() => ({})),
     fetch('/api/intake/pending-approvals').then(r => r.json()).catch(() => []),
     fetch('/api/costs').then(r => r.json()).catch(() => ({})),
+    fetch('/api/costs/history').then(r => r.json()).catch(() => []),
   ]);
 
   // Approvals
@@ -815,6 +816,27 @@ async function loadOps() {
         </div>
       </div>`
     ).join('');
+    // Daily cost history
+    if (Array.isArray(costHistory) && costHistory.length) {
+      const dailyCosts = {};
+      costHistory.forEach(e => {
+        const d = e.date || (e.ts || '').slice(0, 10);
+        if (!d) return;
+        if (!dailyCosts[d]) dailyCosts[d] = { cost: 0, calls: 0 };
+        dailyCosts[d].cost += e.cost || 0;
+        dailyCosts[d].calls += 1;
+      });
+      const days = Object.entries(dailyCosts).sort((a, b) => b[0].localeCompare(a[0])).slice(0, 7);
+      if (days.length) {
+        costHtml += '<div style="font-weight:600;font-size:12px;margin-top:12px;margin-bottom:8px">Daily History</div>';
+        costHtml += days.map(([date, data]) =>
+          `<div class="spread" style="font-size:12px;padding:4px 0;border-bottom:1px solid var(--border-0)">
+            <span style="color:var(--text-1)">${date}</span>
+            <div class="row gap-12"><span style="color:var(--text-2)">${data.calls} calls</span><span style="font-weight:600">${fmtCost(data.cost)}</span></div>
+          </div>`
+        ).join('');
+      }
+    }
     costEl.innerHTML = costHtml;
   }
 }
