@@ -95,16 +95,17 @@
           </button>
         </div>
 
-        <!-- System health strip (compact) -->
-        <div style="display:flex;gap:var(--sp-16);margin-bottom:var(--sp-16);padding:var(--sp-8) var(--sp-12);background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-sm);font-size:11px">
-          <span><span style="color:var(--text-faint)">Server</span> <span id="hsServer" style="color:var(--text);font-weight:500">--</span></span>
-          <span><span style="color:var(--text-faint)">Worker</span> <span id="hsWorker" style="color:var(--text);font-weight:500">--</span></span>
-          <span><span style="color:var(--text-faint)">Queue</span> <span id="hsQueue" style="color:var(--text);font-weight:500">--</span></span>
-          <span><span style="color:var(--text-faint)">Done</span> <span id="hsTasksDone" style="color:var(--text);font-weight:500">--</span></span>
+        <!-- System status (minimal, not internal telemetry) -->
+        <div style="display:flex;align-items:center;gap:var(--sp-12);margin-bottom:var(--sp-16);font-size:11px;color:var(--text-faint)">
+          <span class="heartbeat-dot" id="heartbeatDot"></span>
+          <span id="heartbeatLabel">System ready</span>
+          <span style="margin-left:auto"><span id="hsTasksDone">--</span> tasks completed</span>
+          <!-- Hidden: data targets for status updates -->
+          <span id="hsServer" style="display:none">--</span>
+          <span id="hsWorker" style="display:none">--</span>
+          <span id="hsQueue" style="display:none">--</span>
           <span id="hsModels" style="display:none">--</span>
           <span id="hsApprovals" style="display:none">--</span>
-          <span class="heartbeat-dot" id="heartbeatDot" style="margin-left:auto"></span>
-          <span id="heartbeatLabel" style="color:var(--text-faint)">Worker idle</span>
           <span id="heartbeatDetail" style="display:none">--</span>
         </div>
         <div id="heartbeatBar" style="display:none"></div>
@@ -147,21 +148,19 @@
           <div id="homeDeliverablesContent"><div class="empty-state"><span class="empty-icon">&#9671;</span><span class="empty-title">No deliverables yet</span><span class="empty-desc">Submit a task to see completed deliverables here</span></div></div>
         </div>
 
-        <!-- Two-column: Completed + Live Feed (secondary) -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-16);margin-top:var(--sp-24)">
-          <div>
-            <div class="section-hdr"><h3>Completed</h3></div>
-            <div id="homeLatestTask"><div class="empty-state"><span class="empty-desc">No completed tasks</span></div></div>
+        <!-- Activity (single column, recent events) -->
+        <div style="margin-top:var(--sp-24)">
+          <div class="section-hdr">
+            <h3>Recent Activity</h3>
+            <span class="section-action" onclick="switchTab('logs')">View All</span>
           </div>
-          <div>
-            <div class="section-hdr"><h3>Activity</h3></div>
-            <div class="activity-feed" id="activityFeed">
-              <div class="empty-state"><span class="empty-desc">Waiting for events</span></div>
-            </div>
+          <div class="activity-feed" id="activityFeed" style="max-height:200px;overflow-y:auto">
+            <div class="empty-state"><span class="empty-desc">Waiting for events</span></div>
           </div>
         </div>
 
-        <!-- Hidden: data targets still needed by JS but not displayed as sections -->
+        <!-- Hidden: data targets still needed by JS -->
+        <div id="homeLatestTask" style="display:none"></div>
         <div id="homeApprovals" style="display:none"></div>
         <div id="homePriorities" style="display:none"></div>
         <div id="homeMissions" style="display:none"></div>

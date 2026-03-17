@@ -278,6 +278,10 @@ function renderChiefOfStaffBrief(brief) {
   const el = document.getElementById('chiefOfStaffPanel');
   if (!el) return;
   if (!brief) { el.innerHTML = ''; return; }
+  // Skip if no actionable content — don't show empty chrome
+  const hasActions = brief.top_priorities && brief.top_priorities.length > 0;
+  const hasBlockers = brief.blockers_summary && brief.blockers_summary.length > 0;
+  if (!hasActions && !hasBlockers) { el.innerHTML = ''; return; }
 
   const priorityIcon = { critical: '!!', high: '!', medium: '-', low: '.' };
   const priorityClass = { critical: 'cos-critical', high: 'cos-high', medium: 'cos-medium', low: 'cos-low' };
@@ -335,37 +339,18 @@ function renderChiefOfStaffBrief(brief) {
     </div>`;
   }).join('');
 
-  // Proactive suggestions when queue is clear
-  let proactiveSuggestionsHtml = '';
-  if (!actionsHtml) {
-    const proactiveSuggestions = [
-      { label: 'AI News', desc: 'Get today\'s AI headlines', domain: 'newsroom', prompt: 'Search the web for today\'s most important AI news. Include headlines, sources, and relevance.', urgency: 'high' },
-      { label: 'Job Market', desc: 'Data eng jobs $180k+ remote', domain: 'careeregine', prompt: 'Find the highest-paying remote data engineering jobs right now. Include salary, company, requirements, and application links.', urgency: 'normal' },
-      { label: 'Income Ideas', desc: 'Passive income for engineers', domain: 'wealthresearch', prompt: 'Research the top passive income opportunities for a senior data engineer in 2026. Include revenue estimates and concrete first steps.', urgency: 'normal' },
-      { label: 'Startup Strategy', desc: 'Competitive analysis & GTM', domain: 'startup', prompt: 'Analyze my startup competitive position. Include competitor data and growth tactics.', urgency: 'normal' },
-      { label: 'Weekly Plan', desc: 'Plan your week ahead', domain: 'personalops', prompt: 'Help me plan the upcoming week balancing startup development, career growth, and passive income research. Create a day-by-day plan.', urgency: 'normal' },
-    ];
-    proactiveSuggestionsHtml = `<div class="cos-section">
-      <div class="cos-section-title">Suggested Tasks</div>
-      <div class="cos-suggestions-grid">${proactiveSuggestions.map(s =>
-        `<button class="cos-suggestion-btn" onclick="quickRunTask('${s.domain}','${s.prompt.replace(/'/g, "\\'")}','${s.urgency}')">
-          <span class="cos-sug-label">${esc(s.label)}</span>
-          <span class="cos-sug-desc">${esc(s.desc)}</span>
-        </button>`
-      ).join('')}</div>
-    </div>`;
-  }
+  // REMOVED: proactive suggestions (legacy copy, user-specific prompts)
+  // REMOVED: "By Engine" section (duplicates Engines screen)
+  // REMOVED: "Mission Health" with raw states (drifting, no_statement — not product-grade)
+  // KEPT: Next Best Actions (when actionable) + Blockers (when present)
 
-  el.innerHTML = `<div class="chief-of-staff">
-    <div class="cos-header">
-      <div class="cos-title">Chief of Staff</div>
-      <div class="cos-focus">${esc(brief.focus_recommendation || '')}</div>
+  el.innerHTML = `<div class="surface" style="margin-bottom:var(--sp-16);padding:var(--sp-12)">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-8)">
+      <div style="font-size:13px;font-weight:600">Needs Attention</div>
+      ${brief.focus_recommendation ? '<div style="font-size:11px;color:var(--text-dim)">' + esc(brief.focus_recommendation) + '</div>' : ''}
     </div>
-    ${actionsHtml ? '<div class="cos-section"><div class="cos-section-title">Next Best Actions</div>' + actionsHtml + '</div>' : ''}
-    ${proactiveSuggestionsHtml}
-    ${enginesHtml ? '<div class="cos-section"><div class="cos-section-title">By Engine</div>' + enginesHtml + '</div>' : ''}
-    ${healthHtml ? '<div class="cos-section"><div class="cos-section-title">Mission Health</div><div class="cos-health-grid">' + healthHtml + '</div></div>' : ''}
-    ${brief.blockers_summary && brief.blockers_summary.length ? '<div class="cos-section"><div class="cos-section-title">Blockers</div>' + brief.blockers_summary.map(b => '<div class="cos-blocker">' + esc(b) + '</div>').join('') + '</div>' : ''}
+    ${actionsHtml || ''}
+    ${hasBlockers ? '<div style="margin-top:var(--sp-8)"><div style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--red);margin-bottom:var(--sp-4)">Blockers</div>' + brief.blockers_summary.map(b => '<div style="font-size:11px;color:var(--text-dim);padding:var(--sp-2) 0">' + esc(b) + '</div>').join('') + '</div>' : ''}
   </div>`;
 }
 

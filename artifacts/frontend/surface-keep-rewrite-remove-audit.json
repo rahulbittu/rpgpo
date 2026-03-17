@@ -1,0 +1,71 @@
+{
+  "audit_date": "2026-03-17",
+  "dashboard_surfaces": [
+    {
+      "surface": "Header (greeting + new task button)",
+      "decision": "keep",
+      "reason": "Clear primary action, clean"
+    },
+    {
+      "surface": "System health strip (Server/Worker/Queue/Done + heartbeat)",
+      "decision": "rewrite",
+      "action": "Reduced to minimal status line: heartbeat dot + 'System ready' + task count. Internal telemetry (Server online/Worker running) hidden. Operator doesn't need to monitor backend process state.",
+      "before": "6-item telemetry strip showing Server/Worker/Queue/Models/Approvals/Done",
+      "after": "Single line: status dot + 'System ready' + 'X tasks completed'"
+    },
+    {
+      "surface": "Pending actions + approvals",
+      "decision": "keep",
+      "reason": "Critical — shows what needs operator attention"
+    },
+    {
+      "surface": "Chief of Staff panel",
+      "decision": "rewrite",
+      "action": "Renamed to 'Needs Attention'. Removed: Mission Health (raw states), By Engine (duplicates Engines screen), Proactive Suggestions (legacy copy, user-specific). Kept: Next Best Actions + Blockers only when actionable. Panel hidden when nothing needs attention.",
+      "before": "5 sections: Next Actions, Suggested Tasks, By Engine, Mission Health, Blockers",
+      "after": "1-2 sections: Needs Attention actions + Blockers. Hidden when empty."
+    },
+    {
+      "surface": "Mission Health grid (drifting/stalled/no_statement)",
+      "decision": "remove",
+      "reason": "Raw internal state labels ('drifting', 'no statement') are not product-grade. This information belongs in the Engines screen if needed."
+    },
+    {
+      "surface": "By Engine section in Chief of Staff",
+      "decision": "remove",
+      "reason": "Duplicates the Engines screen. Dashboard should show actions, not architecture."
+    },
+    {
+      "surface": "Proactive Suggestions in Chief of Staff",
+      "decision": "remove",
+      "reason": "Used legacy domain IDs (careeregine, wealthresearch, newsroom), Rahul-specific copy. Quick Start templates on the Tasks screen serve this purpose."
+    },
+    {
+      "surface": "Active task focus",
+      "decision": "keep",
+      "reason": "Shows current running task"
+    },
+    {
+      "surface": "Today + AI Spend",
+      "decision": "keep",
+      "reason": "Relevant daily context and cost awareness"
+    },
+    {
+      "surface": "Recent Deliverables",
+      "decision": "keep",
+      "reason": "Primary output section — what completed recently"
+    },
+    {
+      "surface": "Completed (separate column)",
+      "decision": "remove",
+      "reason": "Redundant with Recent Deliverables. Moved to hidden data target."
+    },
+    {
+      "surface": "Activity feed",
+      "decision": "rewrite",
+      "action": "Now full-width single column with 'View All' link. Capped at 200px height with scroll.",
+      "before": "Half-width column competing with Completed",
+      "after": "Full-width secondary section with scroll containment"
+    }
+  ]
+}
