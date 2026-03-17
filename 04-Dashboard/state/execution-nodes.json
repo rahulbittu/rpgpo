@@ -1,5 +1,54 @@
 [
   {
+    "node_id": "en_mmu2w9l9veb3",
+    "graph_id": "eg_mmu2w9l7qyzp",
+    "title": "Report Frontend Testing Results",
+    "description": "A report detailing the results of the frontend testing, including any issues found.",
+    "stage": "report",
+    "assigned_agent": "openai",
+    "execution_mode": "sequential",
+    "depends_on": [
+      "en_mmu2w9l9t23w"
+    ],
+    "status": "pending",
+    "risk_level": "green",
+    "gate_ids": [],
+    "created_at": "2026-03-17T03:54:31.437Z",
+    "updated_at": "2026-03-17T03:54:31.437Z"
+  },
+  {
+    "node_id": "en_mmu2w9l9t23w",
+    "graph_id": "eg_mmu2w9l7qyzp",
+    "title": "Decide Testing Criteria",
+    "description": "Criteria and methods for testing frontend functionality.",
+    "stage": "decide",
+    "assigned_agent": "gemini",
+    "execution_mode": "sequential",
+    "depends_on": [
+      "en_mmu2w9l88osu"
+    ],
+    "status": "pending",
+    "risk_level": "yellow",
+    "gate_ids": [],
+    "created_at": "2026-03-17T03:54:31.437Z",
+    "updated_at": "2026-03-17T03:54:31.437Z"
+  },
+  {
+    "node_id": "en_mmu2w9l88osu",
+    "graph_id": "eg_mmu2w9l7qyzp",
+    "title": "Audit Frontend Codebase",
+    "description": "List of files and components involved in the frontend.",
+    "stage": "audit",
+    "assigned_agent": "openai",
+    "execution_mode": "sequential",
+    "depends_on": [],
+    "status": "pending",
+    "risk_level": "green",
+    "gate_ids": [],
+    "created_at": "2026-03-17T03:54:31.436Z",
+    "updated_at": "2026-03-17T03:54:31.436Z"
+  },
+  {
     "node_id": "en_mmu0uuaq43of",
     "graph_id": "eg_mmu0uuaprnxu",
     "title": "Compile Job Listings Report",

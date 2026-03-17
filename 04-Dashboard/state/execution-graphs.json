@@ -1,5 +1,32 @@
 [
   {
+    "graph_id": "eg_mmu2w9l7qyzp",
+    "task_id": "t_mmu2otkfzzll",
+    "domain": "general",
+    "project_id": "prj_mmplwhelajyt",
+    "lane": "dev",
+    "status": "draft",
+    "execution_mode": "mixed",
+    "title": "Test task for frontend verification",
+    "board_rationale": "Verify frontend functionality as part of a test task.. Conduct an audit to identify the specific files and components involved in the frontend. Then, decide on the criteria and methods for testing the frontend functionality. Finally, report the findings and any issues identified during the testing process.",
+    "chief_of_staff_plan": "Objective: Verify frontend functionality as part of a test task.\nStrategy: Conduct an audit to identify the specific files and components involved in the frontend. Then, decide on the criteria and methods for testing the frontend functionality. Finally, report the findings and any issues identified during the testing process.\nRoute: Code changes need review — builder execution with approval gates\nConcerns: Specific aspects of the frontend to be tested; Exact criteria for verification; Current state of the frontend code; Decision on specific testing criteria and methods\nRisk: yellow",
+    "nodes": [
+      "en_mmu2w9l88osu",
+      "en_mmu2w9l9t23w",
+      "en_mmu2w9l9veb3"
+    ],
+    "approval_gates": [
+      "ag_mmu2w9llqy4a"
+    ],
+    "review_contracts": [
+      "rc_mmu2w9lxh43a",
+      "rc_mmu2w9lxflu6",
+      "rc_mmu2w9lxj4pf"
+    ],
+    "created_at": "2026-03-17T03:54:31.435Z",
+    "updated_at": "2026-03-17T03:54:31.461Z"
+  },
+  {
     "graph_id": "eg_mmu0uuaprnxu",
     "task_id": "t_mmu09264zea4",
     "domain": "careeregine",

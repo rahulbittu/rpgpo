@@ -1,5 +1,29 @@
 [
   {
+    "record_id": "ee_mmu2yo5f1pfp",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmu2y8xybsf7",
+    "route": "general",
+    "linked_path_id": "",
+    "created_at": "2026-03-17T03:56:23.619Z"
+  },
+  {
+    "record_id": "ee_mmu2wlw8z2qq",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmu2otkfzzll",
+    "route": "general",
+    "linked_path_id": "",
+    "created_at": "2026-03-17T03:54:47.384Z"
+  },
+  {
     "record_id": "ee_mmu09mpkwarv",
     "area": "runtime_deliverable",
     "middleware_ran": "runtime-deliverable-pipeline",
@@ -5974,29 +5998,5 @@
     "route": "general",
     "linked_path_id": "",
     "created_at": "2026-03-16T06:30:15.668Z"
-  },
-  {
-    "record_id": "ee_mmst0h80fius",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "partial",
-    "response_effect": "Partial: missing sections",
-    "scope_type": "task",
-    "scope_id": "t_mmsswbfmbjh3",
-    "route": "wealthresearch",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T06:30:05.616Z"
-  },
-  {
-    "record_id": "ee_mmssunc7pieu",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "violated",
-    "response_effect": "Contract violated: missing recommendations, thesis",
-    "scope_type": "task",
-    "scope_id": "t_mmssozp1n5nx",
-    "route": "research",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T06:25:33.607Z"
   }
 ]

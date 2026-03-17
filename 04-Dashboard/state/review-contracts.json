@@ -1,5 +1,105 @@
 [
   {
+    "review_id": "rc_mmu2w9lxj4pf",
+    "graph_id": "eg_mmu2w9l7qyzp",
+    "review_type": "architecture",
+    "title": "architecture review",
+    "description": "architecture review for execution graph",
+    "checklist": [
+      {
+        "item_id": "ci_mmu2w9lxylf6",
+        "label": "Changes follow existing patterns and conventions",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmu2w9lxmhsd",
+        "label": "No unnecessary abstractions or premature generalizations",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmu2w9lx33wi",
+        "label": "Module boundaries are respected",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmu2w9lxtolp",
+        "label": "State management is consistent",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmu2w9lxb02c",
+        "label": "Error handling is appropriate",
+        "checked": false
+      }
+    ],
+    "created_at": "2026-03-17T03:54:31.461Z"
+  },
+  {
+    "review_id": "rc_mmu2w9lxflu6",
+    "graph_id": "eg_mmu2w9l7qyzp",
+    "review_type": "quality",
+    "title": "quality review",
+    "description": "quality review for execution graph",
+    "checklist": [
+      {
+        "item_id": "ci_mmu2w9lxyugk",
+        "label": "Output meets expected quality standard",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmu2w9lxstzy",
+        "label": "No regressions introduced",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmu2w9lx8dq2",
+        "label": "Tests pass (where applicable)",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmu2w9lxyu62",
+        "label": "Code is readable and maintainable",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmu2w9lxt4ra",
+        "label": "Performance is acceptable",
+        "checked": false
+      }
+    ],
+    "created_at": "2026-03-17T03:54:31.461Z"
+  },
+  {
+    "review_id": "rc_mmu2w9lxh43a",
+    "graph_id": "eg_mmu2w9l7qyzp",
+    "review_type": "mission_alignment",
+    "title": "mission alignment review",
+    "description": "mission_alignment review for execution graph",
+    "checklist": [
+      {
+        "item_id": "ci_mmu2w9lxiw9c",
+        "label": "Work directly supports stated mission objectives",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmu2w9lx6fqh",
+        "label": "No scope creep beyond original task",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmu2w9lxzohv",
+        "label": "Outputs match expected outcome from deliberation",
+        "checked": false
+      },
+      {
+        "item_id": "ci_mmu2w9lxp44y",
+        "label": "Success criteria from mission statement are addressed",
+        "checked": false
+      }
+    ],
+    "created_at": "2026-03-17T03:54:31.461Z"
+  },
+  {
     "review_id": "rc_mmu0uubf5ax0",
     "graph_id": "eg_mmu0uuaprnxu",
     "review_type": "quality",
