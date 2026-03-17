@@ -461,16 +461,18 @@ function deriveSignals(): BehaviorSignal[] {
     const good = feedbackEvents.filter(e => e.metadata?.rating === 'good').length;
     const bad = feedbackEvents.filter(e => e.metadata?.rating === 'bad' || e.metadata?.rating === 'needs_improvement').length;
     const total = good + bad;
+    // Human feedback is sparse and valuable — confidence should scale conservatively
+    // 10 events = 0.33 confidence, 20 = 0.67, 30+ = 1.0
     signals.push({
       name: 'operator_satisfaction_explicit',
       value: { good, negative: bad, total, rate: total > 0 ? Math.round(good / total * 100) + '%' : 'N/A' },
-      confidence: Math.min(1.0, total / 10),
+      confidence: Math.min(1.0, total / 30),
       scope: 'global' as SignalScope,
       sourceEventCount: total,
       lastUpdated: new Date().toISOString(),
-      active: total >= 3,
+      active: total >= 5,
       provenance: 'live_observed' as SignalProvenance,
-      explanation: `Explicit operator ratings: ${good} good, ${bad} negative out of ${total} total. This is REAL feedback, not a proxy.`,
+      explanation: `Explicit operator ratings: ${good} good, ${bad} negative out of ${total} total. Confidence scales conservatively (requires 30+ for full trust). This is REAL feedback, not a proxy.`,
     });
 
     // Per-engine feedback breakdown
@@ -487,14 +489,14 @@ function deriveSignals(): BehaviorSignal[] {
         signals.push({
           name: 'operator_satisfaction_explicit',
           value: { good: counts.good, negative: counts.negative, total },
-          confidence: Math.min(1.0, total / 5),
+          confidence: Math.min(1.0, total / 10),
           scope: 'engine' as SignalScope,
           scopeKey: engine,
           sourceEventCount: total,
           lastUpdated: new Date().toISOString(),
           active: total >= 3,
           provenance: 'live_observed' as SignalProvenance,
-          explanation: `Engine ${engine}: ${counts.good} good, ${counts.negative} negative (${total} total explicit ratings)`,
+          explanation: `Engine ${engine}: ${counts.good} good, ${counts.negative} negative (${total} total explicit ratings). Confidence requires 10+ per-engine ratings.`,
         });
       }
     }
@@ -511,7 +513,7 @@ function deriveSignals(): BehaviorSignal[] {
     signals.push({
       name: 'dissatisfaction_concentration',
       value: { by_engine: complaints, highest: topEngine ? topEngine[0] : 'none', total: dissatisfactionEvents.length },
-      confidence: Math.min(1.0, dissatisfactionEvents.length / 5),
+      confidence: Math.min(1.0, dissatisfactionEvents.length / 10),
       scope: 'global' as SignalScope,
       sourceEventCount: dissatisfactionEvents.length,
       lastUpdated: new Date().toISOString(),

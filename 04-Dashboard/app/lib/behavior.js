@@ -456,16 +456,18 @@ function deriveSignals() {
         var good = feedbackEvents.filter(function (e) { var _a; return ((_a = e.metadata) === null || _a === void 0 ? void 0 : _a.rating) === 'good'; }).length;
         var bad = feedbackEvents.filter(function (e) { var _a, _b; return ((_a = e.metadata) === null || _a === void 0 ? void 0 : _a.rating) === 'bad' || ((_b = e.metadata) === null || _b === void 0 ? void 0 : _b.rating) === 'needs_improvement'; }).length;
         var total = good + bad;
+        // Human feedback is sparse and valuable — confidence should scale conservatively
+        // 10 events = 0.33 confidence, 20 = 0.67, 30+ = 1.0
         signals.push({
             name: 'operator_satisfaction_explicit',
             value: { good: good, negative: bad, total: total, rate: total > 0 ? Math.round(good / total * 100) + '%' : 'N/A' },
-            confidence: Math.min(1.0, total / 10),
+            confidence: Math.min(1.0, total / 30),
             scope: 'global',
             sourceEventCount: total,
             lastUpdated: new Date().toISOString(),
-            active: total >= 3,
+            active: total >= 5,
             provenance: 'live_observed',
-            explanation: "Explicit operator ratings: ".concat(good, " good, ").concat(bad, " negative out of ").concat(total, " total. This is REAL feedback, not a proxy."),
+            explanation: "Explicit operator ratings: ".concat(good, " good, ").concat(bad, " negative out of ").concat(total, " total. Confidence scales conservatively (requires 30+ for full trust). This is REAL feedback, not a proxy."),
         });
         // Per-engine feedback breakdown
         var byEngine_1 = {};
@@ -486,14 +488,14 @@ function deriveSignals() {
                 signals.push({
                     name: 'operator_satisfaction_explicit',
                     value: { good: counts.good, negative: counts.negative, total: total_1 },
-                    confidence: Math.min(1.0, total_1 / 5),
+                    confidence: Math.min(1.0, total_1 / 10),
                     scope: 'engine',
                     scopeKey: engine,
                     sourceEventCount: total_1,
                     lastUpdated: new Date().toISOString(),
                     active: total_1 >= 3,
                     provenance: 'live_observed',
-                    explanation: "Engine ".concat(engine, ": ").concat(counts.good, " good, ").concat(counts.negative, " negative (").concat(total_1, " total explicit ratings)"),
+                    explanation: "Engine ".concat(engine, ": ").concat(counts.good, " good, ").concat(counts.negative, " negative (").concat(total_1, " total explicit ratings). Confidence requires 10+ per-engine ratings."),
                 });
             }
         }
@@ -509,7 +511,7 @@ function deriveSignals() {
         signals.push({
             name: 'dissatisfaction_concentration',
             value: { by_engine: complaints_1, highest: topEngine ? topEngine[0] : 'none', total: dissatisfactionEvents.length },
-            confidence: Math.min(1.0, dissatisfactionEvents.length / 5),
+            confidence: Math.min(1.0, dissatisfactionEvents.length / 10),
             scope: 'global',
             sourceEventCount: dissatisfactionEvents.length,
             lastUpdated: new Date().toISOString(),
