@@ -166,13 +166,13 @@ function showToast(message, type = 'info') {
 // NAVIGATION
 // ═══════════════════════════════════════════
 
-document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', e => { e.preventDefault(); switchTab(l.dataset.tab); }));
+// Tab navigation — supports both old .nav-link and new .gpo-nav-item
+document.querySelectorAll('.nav-link, .gpo-nav-item, .mob-item').forEach(l => l.addEventListener('click', e => { e.preventDefault(); switchTab(l.dataset.tab); }));
 
 function switchTab(tab) {
-  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+  document.querySelectorAll('.nav-link, .gpo-nav-item, .mob-item').forEach(l => l.classList.remove('active'));
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  const link = document.querySelector(`.nav-link[data-tab="${tab}"]`);
-  if (link) link.classList.add('active');
+  document.querySelectorAll(`[data-tab="${tab}"]`).forEach(l => l.classList.add('active'));
   const panel = document.getElementById('tab-' + tab);
   if (panel) panel.classList.add('active');
   if (tab === 'costs') loadCosts();

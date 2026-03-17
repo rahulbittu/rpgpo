@@ -8,164 +8,159 @@
   <meta name="theme-color" content="#060810" />
   <meta name="mobile-web-app-capable" content="yes" />
   <title>GPO</title>
+  <link rel="stylesheet" href="gpo.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="operator.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-  <div class="shell">
+<body data-theme="dark">
+  <div class="gpo-shell">
 
-    <!-- SIDEBAR -->
-    <nav class="sidebar" role="navigation" aria-label="Main navigation">
-      <div class="logo">
+    <!-- SIDEBAR — New navigation model -->
+    <nav class="gpo-sidebar" role="navigation" aria-label="Main navigation">
+      <div class="gpo-sidebar-logo">
         <div class="logo-mark">G</div>
         <span class="logo-text">GPO</span>
-        <span class="logo-live" id="liveDot"></span>
+        <span class="logo-live" id="liveDot" style="width:6px;height:6px;border-radius:50%;margin-left:auto"></span>
       </div>
-      <div class="nav-links">
-        <div class="nav-role-label">Command</div>
-        <a href="#" class="nav-link active" data-tab="home" aria-label="Dashboard">
-          <span class="nav-icon">&#9670;</span><span class="nav-label">Dashboard</span>
+      <div class="gpo-sidebar-nav">
+        <a href="#" class="gpo-nav-item active" data-tab="home">
+          <span class="nav-icon">&#9670;</span><span class="nav-label">Home</span>
         </a>
-        <a href="#" class="nav-link" data-tab="intake" aria-label="Tasks">
-          <span class="nav-icon">&#9998;</span><span class="nav-label">Tasks</span>
+        <a href="#" class="gpo-nav-item" data-tab="intake">
+          <span class="nav-icon">&#9998;</span><span class="nav-label">Work</span>
           <span class="nav-badge" id="navIntakeBadge" style="display:none">0</span>
         </a>
-        <a href="#" class="nav-link" data-tab="tasks" aria-label="Queue">
-          <span class="nav-icon">&#9654;</span><span class="nav-label">Queue</span>
-          <span class="nav-badge" id="navTaskBadge" style="display:none">0</span>
-        </a>
-        <a href="#" class="nav-link" data-tab="approvals" aria-label="Approvals">
+        <a href="#" class="gpo-nav-item" data-tab="approvals">
           <span class="nav-icon">&#9888;</span><span class="nav-label">Approvals</span>
           <span class="nav-badge" id="navApprovalBadge" style="display:none">0</span>
         </a>
-        <div class="nav-role-label">Intelligence</div>
-        <a href="#" class="nav-link" data-tab="missions" aria-label="Engines">
+        <a href="#" class="gpo-nav-item" data-tab="missions">
           <span class="nav-icon">&#9673;</span><span class="nav-label">Engines</span>
         </a>
-        <a href="#" class="nav-link" data-tab="memory" aria-label="Memory">
-          <span class="nav-icon">&#9671;</span><span class="nav-label">Memory</span>
-        </a>
-        <a href="#" class="nav-link" data-tab="channels" aria-label="Ask AI">
-          <span class="nav-icon">&#9881;</span><span class="nav-label">Ask AI</span>
-        </a>
-        <div class="nav-role-label">System</div>
-        <a href="#" class="nav-link" data-tab="providers" aria-label="Providers">
-          <span class="nav-icon">&#9677;</span><span class="nav-label">Providers</span>
-        </a>
-        <a href="#" class="nav-link" data-tab="costs" aria-label="Costs">
-          <span class="nav-icon">&#36;</span><span class="nav-label">Costs</span>
-        </a>
-        <a href="#" class="nav-link" data-tab="logs" aria-label="Activity">
+        <a href="#" class="gpo-nav-item" data-tab="logs">
           <span class="nav-icon">&#9776;</span><span class="nav-label">Activity</span>
         </a>
-        <a href="#" class="nav-link" data-tab="settings" aria-label="Settings">
+        <a href="#" class="gpo-nav-item" data-tab="settings">
           <span class="nav-icon">&#8943;</span><span class="nav-label">Settings</span>
         </a>
+
+        <div class="gpo-nav-section">More</div>
+        <a href="#" class="gpo-nav-item" data-tab="tasks">
+          <span class="nav-icon">&#9654;</span><span class="nav-label">Queue</span>
+          <span class="nav-badge" id="navTaskBadge" style="display:none">0</span>
+        </a>
+        <a href="#" class="gpo-nav-item" data-tab="channels">
+          <span class="nav-icon">&#9881;</span><span class="nav-label">Ask AI</span>
+        </a>
+        <a href="#" class="gpo-nav-item" data-tab="costs">
+          <span class="nav-icon">&#36;</span><span class="nav-label">Costs</span>
+        </a>
       </div>
-      <div class="sidebar-footer">
-        <div class="status-pills">
-          <span class="pill" id="serverPill">SRV</span>
-          <span class="pill" id="workerPill">WKR</span>
-          <span class="pill" id="ssePill">SSE</span>
-        </div>
-        <div class="sys-status" id="sysStatus">--</div>
-        <div style="font-size:9px;color:var(--text-faint);margin-top:4px">
-          <kbd style="background:var(--bg-card);padding:1px 4px;border-radius:3px;border:1px solid var(--border)">/</kbd> new task
-          <kbd style="background:var(--bg-card);padding:1px 4px;border-radius:3px;border:1px solid var(--border);margin-left:4px">&#8984;K</kbd> search
+      <div class="gpo-sidebar-footer">
+        <div class="row" style="gap:var(--sp-4)">
+          <span class="dot" id="serverPill"></span>
+          <span class="dot" id="workerPill"></span>
+          <span class="dot" id="ssePill"></span>
+          <span id="sysStatus" style="margin-left:var(--sp-4);font-size:10px">--</span>
         </div>
       </div>
     </nav>
 
+    <!-- MOBILE BOTTOM NAV -->
+    <div class="gpo-mobile-nav">
+      <div class="mob-item active" data-tab="home"><span class="mob-icon">&#9670;</span>Home</div>
+      <div class="mob-item" data-tab="intake"><span class="mob-icon">&#9998;</span>Work</div>
+      <div class="mob-item" data-tab="approvals"><span class="mob-icon">&#9888;</span>Approvals</div>
+      <div class="mob-item" data-tab="missions"><span class="mob-icon">&#9673;</span>Engines</div>
+      <div class="mob-item" data-tab="settings"><span class="mob-icon">&#8943;</span>More</div>
+    </div>
+
     <!-- MAIN CONTENT -->
-    <main class="content">
+    <main class="gpo-main">
+      <!-- Hidden data targets for backward compat -->
+      <div id="homeMissions" style="display:none"></div>
+      <div id="homeRecentReports" style="display:none"></div>
+      <div id="homeBriefCard" style="display:none"><div id="homeBriefExcerpt"></div></div>
+      <div id="homeApprovals" style="display:none"></div>
+      <div id="homePriorities" style="display:none"></div>
+      <div id="homeEngineStatus" style="display:none"></div>
+      <div id="homeCostStrip" style="display:none"></div>
+      <div id="hsModels" style="display:none"></div>
+      <div id="hsApprovals" style="display:none"></div>
+      <div id="heartbeatBar" style="display:none"></div>
+      <div id="heartbeatDetail" style="display:none"></div>
+      <div id="memory" style="display:none"><div id="memoryViewerPanel"></div></div>
+      <div id="providers-data" style="display:none"><div id="provGovSummary"></div><div id="providersPanel"></div></div>
 
-      <!-- HOME — Dashboard (redesigned: focused layout, new design system) -->
+      <!-- HOME — Command Center -->
       <section class="tab-panel active" id="tab-home">
+        <div class="gpo-page">
 
-        <!-- Header: greeting + primary action -->
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-24)">
-          <div>
-            <h1 id="homeGreeting" style="font-size:18px;font-weight:700;letter-spacing:-.3px;margin-bottom:var(--sp-2)">GPO</h1>
-            <p id="homeDate" style="font-size:11px;color:var(--text-dim)"></p>
-          </div>
-          <button class="btn btn-primary btn-md" onclick="switchTab('intake')">
-            <span>&#9998;</span> New Task
-          </button>
-        </div>
-
-        <!-- System status (minimal, not internal telemetry) -->
-        <div style="display:flex;align-items:center;gap:var(--sp-12);margin-bottom:var(--sp-16);font-size:11px;color:var(--text-faint)">
-          <span class="heartbeat-dot" id="heartbeatDot"></span>
-          <span id="heartbeatLabel">System ready</span>
-          <span style="margin-left:auto"><span id="hsTasksDone">--</span> tasks completed</span>
-          <!-- Hidden: data targets for status updates -->
-          <span id="hsServer" style="display:none">--</span>
-          <span id="hsWorker" style="display:none">--</span>
-          <span id="hsQueue" style="display:none">--</span>
-          <span id="hsModels" style="display:none">--</span>
-          <span id="hsApprovals" style="display:none">--</span>
-          <span id="heartbeatDetail" style="display:none">--</span>
-        </div>
-        <div id="heartbeatBar" style="display:none"></div>
-
-        <!-- Priority: pending actions + approvals (important, at top) -->
-        <div id="pendingActionHero"></div>
-        <div id="globalApprovalInbox"></div>
-        <div id="homeNotifications"></div>
-        <div id="chiefOfStaffPanel"></div>
-
-        <!-- Active task focus -->
-        <div id="currentTaskFocus"></div>
-        <div id="homeRunningTask"></div>
-
-        <!-- Two-column: Today + AI Spend -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-16);margin-top:var(--sp-16)">
-          <div class="surface surface-success" id="homeTodaySummary">
-            <div class="section-hdr"><h3>Today</h3></div>
-            <div id="homeTodayContent" style="font-size:12px;color:var(--text-dim)">Loading...</div>
-          </div>
-          <div class="surface">
-            <div class="section-hdr"><h3>AI Spend</h3></div>
-            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-8)">
-              <div class="metric-tile"><span class="metric-value" id="costToday" style="font-size:16px">--</span><span class="metric-label">Today</span></div>
-              <div class="metric-tile"><span class="metric-value" id="costWeek" style="font-size:16px">--</span><span class="metric-label">Week</span></div>
-              <div class="metric-tile"><span class="metric-value" id="costCallsToday" style="font-size:16px">--</span><span class="metric-label">Calls</span></div>
-              <div class="metric-tile"><span class="metric-value" id="costLastBoard" style="font-size:16px">--</span><span class="metric-label">Board</span></div>
+          <!-- Header -->
+          <div class="spread" style="margin-bottom:var(--sp-20)">
+            <div>
+              <h1 id="homeGreeting" style="font-size:20px;font-weight:700;letter-spacing:-0.5px">GPO</h1>
+              <div class="row" style="margin-top:var(--sp-4);gap:var(--sp-12)">
+                <span id="homeDate" style="font-size:11px;color:var(--text-dim)"></span>
+                <span class="row" style="gap:var(--sp-4)"><span class="dot dot-green dot-pulse" id="heartbeatDot"></span><span id="heartbeatLabel" style="font-size:10px;color:var(--text-faint)">System ready</span></span>
+              </div>
             </div>
-            <div id="homeCostStrip" style="display:none"></div>
-            <div id="homeEngineStatus" style="display:none"></div>
+            <button class="btn btn-primary btn-md" onclick="switchTab('intake')">&#9998; New Task</button>
           </div>
-        </div>
 
-        <!-- Deliverables (primary output section) -->
-        <div style="margin-top:var(--sp-24)">
-          <div class="section-hdr">
-            <h3>Recent Deliverables</h3>
-            <span class="section-action" onclick="switchTab('intake');filterIntake('done')">View All</span>
-          </div>
-          <div id="homeDeliverablesContent"><div class="empty-state"><span class="empty-icon">&#9671;</span><span class="empty-title">No deliverables yet</span><span class="empty-desc">Submit a task to see completed deliverables here</span></div></div>
-        </div>
+          <!-- ATTENTION — what needs action now (approvals, blockers, notifications) -->
+          <div id="pendingActionHero"></div>
+          <div id="globalApprovalInbox"></div>
+          <div id="homeNotifications"></div>
+          <div id="chiefOfStaffPanel"></div>
 
-        <!-- Activity (single column, recent events) -->
-        <div style="margin-top:var(--sp-24)">
-          <div class="section-hdr">
-            <h3>Recent Activity</h3>
-            <span class="section-action" onclick="switchTab('logs')">View All</span>
-          </div>
-          <div class="activity-feed" id="activityFeed" style="max-height:200px;overflow-y:auto">
-            <div class="empty-state"><span class="empty-desc">Waiting for events</span></div>
-          </div>
-        </div>
+          <!-- RUNNING — current active work -->
+          <div id="currentTaskFocus"></div>
+          <div id="homeRunningTask"></div>
 
-        <!-- Hidden: data targets still needed by JS -->
-        <div id="homeLatestTask" style="display:none"></div>
-        <div id="homeApprovals" style="display:none"></div>
-        <div id="homePriorities" style="display:none"></div>
-        <div id="homeMissions" style="display:none"></div>
-        <div id="homeRecentReports" style="display:none"></div>
-        <div id="homeBriefCard" style="display:none"><div id="homeBriefExcerpt"></div></div>
+          <!-- SUMMARY — today + cost overview -->
+          <div class="grid-2" style="margin-top:var(--sp-16)">
+            <div class="sf sf-green" id="homeTodaySummary">
+              <div class="sh"><h3>Today</h3></div>
+              <div id="homeTodayContent" style="font-size:12px;color:var(--text-dim)">Loading...</div>
+            </div>
+            <div class="sf">
+              <div class="sh"><h3>Cost</h3></div>
+              <div class="grid-4">
+                <div class="metric"><span class="metric-val" id="costToday" style="font-size:15px">--</span><span class="metric-label">Today</span></div>
+                <div class="metric"><span class="metric-val" id="costWeek" style="font-size:15px">--</span><span class="metric-label">Week</span></div>
+                <div class="metric"><span class="metric-val" id="costCallsToday" style="font-size:15px">--</span><span class="metric-label">Calls</span></div>
+                <div class="metric"><span class="metric-val" id="costLastBoard" style="font-size:15px">--</span><span class="metric-label">Board</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COMPLETED — recent deliverables -->
+          <div style="margin-top:var(--sp-24)">
+            <div class="sh"><h3>Recent Deliverables</h3><span class="sh-action" onclick="switchTab('intake');filterIntake('done')">View All</span></div>
+            <div id="homeDeliverablesContent">
+              <div class="empty"><span class="empty-icon">&#9671;</span><span class="empty-title">No deliverables yet</span><span class="empty-desc">Submit a task to see results here</span></div>
+            </div>
+          </div>
+
+          <!-- ACTIVITY — recent events -->
+          <div style="margin-top:var(--sp-24)">
+            <div class="sh"><h3>Activity</h3><span class="sh-action" onclick="switchTab('logs')">View All</span></div>
+            <div id="activityFeed" style="max-height:220px;overflow-y:auto">
+              <div class="empty"><span class="empty-desc">Waiting for events</span></div>
+            </div>
+          </div>
+
+          <!-- Hidden status targets for JS compat -->
+          <div id="homeLatestTask" style="display:none"></div>
+          <div id="hsServer" style="display:none">--</div>
+          <div id="hsWorker" style="display:none">--</div>
+          <div id="hsQueue" style="display:none">--</div>
+          <div id="hsTasksDone" style="display:none">--</div>
+
+        </div>
       </section>
 
       <!-- TASK STREAM -->
@@ -584,10 +579,10 @@
 
   <!-- Modal -->
   <div class="modal-overlay" id="taskModal" onclick="closeTaskModal(event)">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span id="taskModalTitle">Task</span>
-        <button class="modal-close" onclick="document.getElementById('taskModal').classList.remove('open')">&times;</button>
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 id="taskModalTitle">Task</h2>
+        <button class="btn btn-icon" onclick="document.getElementById('taskModal').classList.remove('open')">&times;</button>
       </div>
       <div class="modal-body" id="taskModalBody"></div>
     </div>
