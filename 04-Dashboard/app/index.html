@@ -286,69 +286,57 @@
 
       <!-- ASK AI — Direct AI Interaction -->
       <section class="tab-panel" id="tab-channels">
-        <div style="margin-bottom:16px">
-          <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Ask AI</h1>
-          <p class="subtitle">Direct conversation with AI models across all engines</p>
+        <div style="margin-bottom:var(--sp-16)">
+          <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Ask AI</h1>
+          <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">Direct conversation with AI models</p>
         </div>
 
-        <div class="channel-selector" id="channelSelector">
-          <button class="channel-tab active" data-ch="claude" onclick="switchChannel('claude')">
-            <span class="ch-dot ch-claude"></span>Claude
-            <span class="ch-status" id="chStatusClaude">Local</span>
-          </button>
-          <button class="channel-tab" data-ch="openai" onclick="switchChannel('openai')">
-            <span class="ch-dot ch-openai"></span>OpenAI
-            <span class="ch-status" id="chStatusOpenAI">--</span>
-          </button>
-          <button class="channel-tab" data-ch="perplexity" onclick="switchChannel('perplexity')">
-            <span class="ch-dot ch-perplexity"></span>Perplexity
-            <span class="ch-status" id="chStatusPerplexity">--</span>
-          </button>
-          <button class="channel-tab" data-ch="gemini" onclick="switchChannel('gemini')">
-            <span class="ch-dot ch-gemini"></span>Gemini
-            <span class="ch-status" id="chStatusGemini">--</span>
-          </button>
+        <!-- Provider selector -->
+        <div style="display:flex;gap:var(--sp-4);margin-bottom:var(--sp-12)" id="channelSelector">
+          <button class="btn btn-sm filter-active" data-ch="claude" onclick="switchChannel('claude')">Claude <span class="badge badge-info" style="margin-left:var(--sp-4)" id="chStatusClaude">Local</span></button>
+          <button class="btn btn-ghost btn-sm" data-ch="openai" onclick="switchChannel('openai')">OpenAI <span class="badge badge-neutral" style="margin-left:var(--sp-4)" id="chStatusOpenAI">--</span></button>
+          <button class="btn btn-ghost btn-sm" data-ch="perplexity" onclick="switchChannel('perplexity')">Perplexity <span class="badge badge-neutral" style="margin-left:var(--sp-4)" id="chStatusPerplexity">--</span></button>
+          <button class="btn btn-ghost btn-sm" data-ch="gemini" onclick="switchChannel('gemini')">Gemini <span class="badge badge-neutral" style="margin-left:var(--sp-4)" id="chStatusGemini">--</span></button>
         </div>
 
         <!-- Quick prompts -->
-        <div style="display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap">
-          <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='What are the top AI news stories from the last 24 hours?';document.getElementById('channelPrompt').focus()" style="font-size:10px">AI News</button>
-          <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='Research passive income ideas for data engineers with specific revenue estimates';document.getElementById('channelPrompt').focus()" style="font-size:10px">Income Ideas</button>
-          <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='What are the highest paying data engineering jobs available right now?';document.getElementById('channelPrompt').focus()" style="font-size:10px">Job Search</button>
-          <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='Analyze my startup competitive landscape and suggest growth strategies';document.getElementById('channelPrompt').focus()" style="font-size:10px">Startup</button>
-          <button class="filter-btn" onclick="document.getElementById('channelPrompt').value='Create a weekly plan for balancing startup work and career growth';document.getElementById('channelPrompt').focus()" style="font-size:10px">Weekly Plan</button>
+        <div style="display:flex;gap:var(--sp-4);margin-bottom:var(--sp-12);flex-wrap:wrap">
+          <button class="btn btn-ghost btn-sm" onclick="document.getElementById('channelPrompt').value='What are the top AI news stories from the last 24 hours?';document.getElementById('channelPrompt').focus()">AI News</button>
+          <button class="btn btn-ghost btn-sm" onclick="document.getElementById('channelPrompt').value='Research passive income ideas with specific revenue estimates';document.getElementById('channelPrompt').focus()">Income Ideas</button>
+          <button class="btn btn-ghost btn-sm" onclick="document.getElementById('channelPrompt').value='What are the highest paying data engineering jobs available right now?';document.getElementById('channelPrompt').focus()">Job Search</button>
+          <button class="btn btn-ghost btn-sm" onclick="document.getElementById('channelPrompt').value='Create a weekly plan for balancing startup work and career growth';document.getElementById('channelPrompt').focus()">Weekly Plan</button>
         </div>
 
-        <div class="channel-panel">
-          <div class="channel-input-area">
-            <textarea id="channelPrompt" class="channel-textarea" placeholder="Ask anything — research, analysis, strategy, news, career advice..." rows="4"></textarea>
-            <div class="channel-input-bar">
-              <select id="channelRole" class="channel-select">
-                <option value="general">General</option>
-                <option value="research">Research Director</option>
-                <option value="builder">Builder / CTO</option>
-                <option value="strategy">Growth Strategist</option>
-                <option value="chief">Chief of Staff</option>
-                <option value="creative">Creative Director</option>
-              </select>
-              <button class="send-btn" onclick="sendChannelTask()" id="channelSendBtn">
-                <span>&#9654;</span> Send Task
-              </button>
+        <!-- Input area -->
+        <div class="surface surface-accent" style="margin-bottom:var(--sp-16)">
+          <textarea id="channelPrompt" style="width:100%;background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-12);color:var(--text);font-family:var(--font);font-size:13px;resize:vertical;min-height:80px" placeholder="Ask anything — research, analysis, strategy, news, career advice..." rows="4"></textarea>
+          <div style="display:flex;gap:var(--sp-8);margin-top:var(--sp-8);align-items:center">
+            <select id="channelRole" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-4) var(--sp-8);color:var(--text);font-size:12px">
+              <option value="general">General</option>
+              <option value="research">Research</option>
+              <option value="builder">Builder</option>
+              <option value="strategy">Strategy</option>
+              <option value="chief">Chief of Staff</option>
+              <option value="creative">Creative</option>
+            </select>
+            <button class="btn btn-primary btn-md" onclick="sendChannelTask()" id="channelSendBtn">
+              <span>&#9654;</span> Send
+            </button>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-16)">
+          <div>
+            <div class="section-hdr"><h3>Recent Tasks</h3></div>
+            <div id="channelTasks">
+              <div class="empty-state"><span class="empty-desc">No tasks for this channel yet</span></div>
             </div>
           </div>
-
-          <div class="channel-body">
-            <div class="channel-section">
-              <h3>Recent Tasks</h3>
-              <div id="channelTasks" class="task-queue-list" style="max-height:220px">
-                <div class="task-empty">No tasks for this channel yet</div>
-              </div>
-            </div>
-            <div class="channel-section">
-              <h3>Latest Output</h3>
-              <div id="channelOutput" class="channel-output-area">
-                <div class="task-empty">Send a task to see output</div>
-              </div>
+          <div>
+            <div class="section-hdr"><h3>Latest Output</h3></div>
+            <div id="channelOutput">
+              <div class="empty-state"><span class="empty-desc">Send a task to see output</span></div>
             </div>
           </div>
         </div>
@@ -469,148 +457,123 @@
 
       <!-- OPERATIONS -->
       <section class="tab-panel" id="tab-controls">
-        <div style="margin-bottom:16px">
-          <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Operations</h1>
-          <p class="subtitle">System operations, Board of AI, and task dispatch</p>
+        <div style="margin-bottom:var(--sp-24)">
+          <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Operations</h1>
+          <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">Board of AI, system loops, and task dispatch</p>
         </div>
 
-        <div style="margin-bottom:14px">
-          <button class="ctrl-btn board-btn" onclick="submitTask('board-run','Board of AI Run')" id="boardRunBtn">
-            <span class="ctrl-icon">&#9670;&#9670;&#9670;&#9670;</span>
-            Run Board of AI
-            <span class="ctrl-desc">Claude + OpenAI + Perplexity + Gemini orchestration</span>
+        <!-- Primary action -->
+        <div style="margin-bottom:var(--sp-16)">
+          <button class="btn btn-primary btn-lg" style="width:100%" onclick="submitTask('board-run','Board of AI Run')" id="boardRunBtn">
+            &#9670; Run Board of AI
           </button>
         </div>
 
-        <h3>Operating Loops</h3>
-        <div class="g3">
-          <button class="ctrl-btn" onclick="submitTask('morning-loop','Morning Loop')">
-            <span class="ctrl-icon">&#9728;</span>Morning Loop
-            <span class="ctrl-desc">Refresh + daily brief</span>
-          </button>
-          <button class="ctrl-btn" onclick="submitTask('evening-loop','Evening Loop')">
-            <span class="ctrl-icon">&#9790;</span>Evening Loop
-            <span class="ctrl-desc">Day summary + state</span>
-          </button>
-          <button class="ctrl-btn" onclick="submitTask('refresh-state','Refresh State')">
-            <span class="ctrl-icon">&#8635;</span>Refresh State
-            <span class="ctrl-desc">Rebuild state JSON</span>
-          </button>
+        <!-- Operating loops -->
+        <div class="section-hdr"><h3>Operating Loops</h3></div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-8);margin-bottom:var(--sp-24)">
+          <button class="btn btn-secondary btn-md" onclick="submitTask('morning-loop','Morning Loop')">&#9728; Morning Loop</button>
+          <button class="btn btn-secondary btn-md" onclick="submitTask('evening-loop','Evening Loop')">&#9790; Evening Loop</button>
+          <button class="btn btn-secondary btn-md" onclick="submitTask('refresh-state','Refresh State')">&#8635; Refresh State</button>
         </div>
 
-        <h3 class="mt">Claude + AI</h3>
-        <div class="g4">
-          <button class="ctrl-btn" onclick="launchClaude()"><span class="ctrl-icon">&#9654;</span>Launch Claude</button>
-          <button class="ctrl-btn" onclick="switchTab('intake')"><span class="ctrl-icon">&#9998;</span>New Task</button>
-          <button class="ctrl-btn" onclick="runAiTask('openai-daily-brief')"><span class="ctrl-icon">&#9673;</span>OpenAI Brief</button>
-          <button class="ctrl-btn" onclick="runAiTask('perplexity-research')"><span class="ctrl-icon">&#8853;</span>PPX Research</button>
+        <!-- AI actions -->
+        <div class="section-hdr"><h3>AI Actions</h3></div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-8);margin-bottom:var(--sp-24)">
+          <button class="btn btn-ghost btn-sm" onclick="launchClaude()">&#9654; Claude</button>
+          <button class="btn btn-ghost btn-sm" onclick="switchTab('intake')">&#9998; New Task</button>
+          <button class="btn btn-ghost btn-sm" onclick="runAiTask('openai-daily-brief')">&#9673; Brief</button>
+          <button class="btn btn-ghost btn-sm" onclick="runAiTask('perplexity-research')">&#8853; Research</button>
         </div>
 
-        <h3 class="mt">Quick Nav</h3>
-        <div class="g4">
-          <button class="filter-btn" onclick="switchTab('intake')">New Task</button>
-          <button class="filter-btn" onclick="switchTab('channels')">Ask AI</button>
-          <button class="filter-btn" onclick="switchTab('missions')">Engines</button>
-          <button class="filter-btn" onclick="switchTab('tasks')">Task Stream</button>
-        </div>
-
-        <h3 class="mt">System Panels</h3>
-        <div class="g4">
-          <button class="filter-btn" onclick="switchTab('governance')">Governance</button>
-          <button class="filter-btn" onclick="switchTab('releases')">Releases</button>
-          <button class="filter-btn" onclick="switchTab('audit')">Audit</button>
-          <button class="filter-btn" onclick="switchTab('admin')">Admin</button>
-        </div>
-
-        <div class="card mt">
-          <h3>Output</h3>
-          <pre id="controlLog">Ready.</pre>
+        <!-- Output log -->
+        <div class="surface">
+          <div class="section-hdr"><h3>Output</h3></div>
+          <pre id="controlLog" style="font-size:11px;color:var(--text-dim);max-height:200px;overflow-y:auto;background:var(--bg-inset);padding:var(--sp-8);border-radius:var(--r-sm)">Ready.</pre>
         </div>
       </section>
 
       <!-- SETTINGS -->
       <section class="tab-panel" id="tab-settings">
-        <div style="margin-bottom:16px">
-          <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Settings</h1>
-          <p class="subtitle">Operator profile, AI providers, budget controls, and system configuration</p>
+        <div style="margin-bottom:var(--sp-24)">
+          <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Settings</h1>
+          <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">Operator profile, AI providers, budget controls</p>
         </div>
 
-        <div class="card" style="margin-bottom:14px" id="operatorProfileCard">
-          <h3>Operator Profile</h3>
-          <div id="operatorProfileDisplay" style="font-size:12px;color:var(--text-secondary)">Loading...</div>
+        <!-- Operator Profile -->
+        <div class="surface" style="margin-bottom:var(--sp-16)" id="operatorProfileCard">
+          <div class="section-hdr"><h3>Operator Profile</h3></div>
+          <div id="operatorProfileDisplay" style="font-size:12px;color:var(--text-dim)">Loading...</div>
         </div>
 
-        <div class="g2">
-          <div class="card">
-            <h3>AI Providers</h3>
-            <div id="settingsModels">
-              <div class="model-row"><span class="model-name">Claude</span><span class="model-tag local">Local</span></div>
-              <div class="model-row"><span class="model-name">OpenAI</span><span class="model-detail">gpt-4o</span><span class="model-tag" id="mOpenAI">--</span></div>
-              <div class="model-row"><span class="model-name">Perplexity</span><span class="model-detail">sonar</span><span class="model-tag" id="mPerplexity">--</span></div>
-              <div class="model-row"><span class="model-name">Gemini</span><span class="model-detail" id="mGeminiModel">gemini-2.5-flash-lite</span><span class="model-tag" id="mGemini">--</span></div>
+        <!-- Providers + Server -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-16);margin-bottom:var(--sp-16)">
+          <div class="surface">
+            <div class="section-hdr"><h3>AI Providers</h3></div>
+            <div id="settingsModels" style="display:flex;flex-direction:column;gap:var(--sp-8)">
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span>Claude</span><span class="badge badge-info">Local</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span>OpenAI <span style="color:var(--text-faint)">gpt-4o</span></span><span class="badge badge-neutral" id="mOpenAI">--</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span>Perplexity <span style="color:var(--text-faint)">sonar</span></span><span class="badge badge-neutral" id="mPerplexity">--</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span>Gemini <span style="color:var(--text-faint)" id="mGeminiModel">gemini-2.5-flash-lite</span></span><span class="badge badge-neutral" id="mGemini">--</span></div>
             </div>
           </div>
-          <div class="card">
-            <h3>Server</h3>
+          <div class="surface">
+            <div class="section-hdr"><h3>Server</h3></div>
             <div id="settingsServer"></div>
           </div>
         </div>
 
-        <div class="g2 mt">
-          <div class="card">
-            <h3>Budget Settings</h3>
-            <div id="budgetSettings">
-              <div class="settings-row">
-                <span class="settings-label">Gemini Model</span>
-                <select id="settGeminiModel" class="settings-select" onchange="saveBudgetSettings()">
-                  <option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (cheapest)</option>
-                  <option value="gemini-2.5-flash">gemini-2.5-flash (faster)</option>
+        <!-- Budget + Builder + System -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--sp-16);margin-bottom:var(--sp-16)">
+          <div class="surface">
+            <div class="section-hdr"><h3>Budget</h3></div>
+            <div id="budgetSettings" style="display:flex;flex-direction:column;gap:var(--sp-8)">
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px">
+                <span style="color:var(--text-dim)">Gemini Model</span>
+                <select id="settGeminiModel" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-2) var(--sp-4);color:var(--text);font-size:11px" onchange="saveBudgetSettings()">
+                  <option value="gemini-2.5-flash-lite">flash-lite</option>
+                  <option value="gemini-2.5-flash">flash</option>
                 </select>
               </div>
-              <div class="settings-row">
-                <span class="settings-label">Daily Limit ($)</span>
-                <input type="number" id="settBudgetLimit" class="settings-input" placeholder="e.g. 1.00" step="0.01" min="0" onchange="saveBudgetSettings()" />
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px">
+                <span style="color:var(--text-dim)">Daily Limit</span>
+                <input type="number" id="settBudgetLimit" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-2) var(--sp-4);color:var(--text);font-size:11px;width:60px;text-align:right" placeholder="1.00" step="0.01" min="0" onchange="saveBudgetSettings()" />
               </div>
-              <div class="settings-row">
-                <span class="settings-label">Warn at ($)</span>
-                <input type="number" id="settWarnThreshold" class="settings-input" placeholder="e.g. 0.50" step="0.01" min="0" onchange="saveBudgetSettings()" />
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px">
+                <span style="color:var(--text-dim)">Warn at</span>
+                <input type="number" id="settWarnThreshold" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-2) var(--sp-4);color:var(--text);font-size:11px;width:60px;text-align:right" placeholder="0.50" step="0.01" min="0" onchange="saveBudgetSettings()" />
               </div>
-              <div class="settings-row">
-                <span class="settings-label">Auto-disable</span>
-                <label class="settings-toggle">
-                  <input type="checkbox" id="settDisableAfter" onchange="saveBudgetSettings()" />
-                  <span>Stop Gemini after limit</span>
-                </label>
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px">
+                <span style="color:var(--text-dim)">Auto-disable</span>
+                <input type="checkbox" id="settDisableAfter" onchange="saveBudgetSettings()" />
               </div>
             </div>
           </div>
-          <div class="card">
-            <h3>Builder Settings</h3>
-            <div id="builderSettings">
-              <div class="settings-row">
-                <span class="settings-label">Timeout (min)</span>
-                <input type="number" id="settBuilderTimeout" class="settings-input" placeholder="10" step="1" min="1" max="30" onchange="saveBudgetSettings()" />
+          <div class="surface">
+            <div class="section-hdr"><h3>Builder</h3></div>
+            <div id="builderSettings" style="display:flex;flex-direction:column;gap:var(--sp-8)">
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px">
+                <span style="color:var(--text-dim)">Timeout (min)</span>
+                <input type="number" id="settBuilderTimeout" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-2) var(--sp-4);color:var(--text);font-size:11px;width:50px;text-align:right" placeholder="10" step="1" min="1" max="30" onchange="saveBudgetSettings()" />
               </div>
-              <div style="font-size:11px;color:var(--muted);margin-top:4px;padding:0 4px">
-                Hard limit for Claude CLI. Active tasks extend via inactivity detection (3min idle = kill).
-                Default: 10 min. Increase for large code tasks.
-              </div>
+              <div style="font-size:10px;color:var(--text-faint)">Hard limit for Claude CLI. Default: 10 min.</div>
             </div>
-            <div id="builderDiagnostics" style="margin-top:10px"></div>
+            <div id="builderDiagnostics" style="margin-top:var(--sp-8)"></div>
           </div>
-          <div class="card">
-            <h3>System</h3>
+          <div class="surface">
+            <div class="section-hdr"><h3>System</h3></div>
             <div id="settingsSystem"></div>
           </div>
         </div>
 
-        <div class="card mt">
-          <h3>GPO Access Classes</h3>
-          <div style="font-size:12px">
-            <div class="settings-row"><span class="settings-label">Class A</span> Core Safe — governance, repos, dashboards</div>
-            <div class="settings-row"><span class="settings-label">Class B</span> Controlled — approved accounts, approved tools</div>
-            <div class="settings-row"><span class="settings-label">Class C</span> Sensitive — selected threads, private docs</div>
-            <div class="settings-row"><span class="settings-label">Class D</span> Forbidden — anything not explicitly approved</div>
+        <!-- Access Classes -->
+        <div class="surface">
+          <div class="section-hdr"><h3>Access Classes</h3></div>
+          <div style="display:flex;flex-direction:column;gap:var(--sp-4);font-size:12px">
+            <div style="display:flex;gap:var(--sp-8)"><span class="badge badge-success">A</span><span style="color:var(--text-dim)">Core Safe — governance, repos, dashboards</span></div>
+            <div style="display:flex;gap:var(--sp-8)"><span class="badge badge-info">B</span><span style="color:var(--text-dim)">Controlled — approved accounts, approved tools</span></div>
+            <div style="display:flex;gap:var(--sp-8)"><span class="badge badge-warning">C</span><span style="color:var(--text-dim)">Sensitive — selected threads, private docs</span></div>
+            <div style="display:flex;gap:var(--sp-8)"><span class="badge badge-danger">D</span><span style="color:var(--text-dim)">Forbidden — anything not explicitly approved</span></div>
           </div>
         </div>
       </section>
