@@ -953,19 +953,34 @@ async function loadOps() {
       memHtml += '<div style="height:12px"></div>';
     }
 
-    // Active signals
+    // Active signals — grouped by scope
     const active = (Array.isArray(signals) ? signals : []).filter(s => s.active);
     if (active.length) {
-      memHtml += `<div style="font-weight:600;font-size:12px;margin-bottom:8px">Active Signals (${active.length})</div>`;
-      memHtml += active.slice(0, 12).map(s => {
-        const confPct = Math.round((s.confidence || 0) * 100);
-        return `<div class="signal-row">
-          <span class="signal-name">${esc(s.name.replace(/_/g, ' '))}</span>
-          <span class="signal-val">${esc(String(s.value))}</span>
-          <span class="signal-conf">${confPct}% conf</span>
-          <span style="font-size:10px;color:var(--text-2)">${s.sourceEventCount || 0} events</span>
-        </div>`;
-      }).join('');
+      const globalSigs = active.filter(s => s.scope === 'global');
+      const engineSigs = active.filter(s => s.scope === 'engine');
+
+      // Global signals — compact summary
+      if (globalSigs.length) {
+        memHtml += `<div style="font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--text-1);margin-bottom:8px">System Signals (${globalSigs.length})</div>`;
+        memHtml += globalSigs.map(s => {
+          const confPct = Math.round((s.confidence || 0) * 100);
+          return `<div class="signal-row">
+            <span class="signal-name">${sesc(s.name.replace(/_/g, ' '))}</span>
+            <span class="signal-val">${sesc(String(s.value))}</span>
+            <span class="signal-conf">${confPct}%</span>
+          </div>`;
+        }).join('');
+      }
+
+      // Engine signals — grouped by engine, collapsible
+      if (engineSigs.length) {
+        const byEngine = {};
+        engineSigs.forEach(s => { const e = s.scope_id || 'unknown'; (byEngine[e] = byEngine[e] || []).push(s); });
+        memHtml += `<div style="font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--text-1);margin-top:12px;margin-bottom:8px">Engine Signals (${Object.keys(byEngine).length} engines)</div>`;
+        memHtml += `<div class="row gap-4 mb-12" style="flex-wrap:wrap">${Object.entries(byEngine).map(([eng, sigs]) =>
+          `<span class="tag tag-muted" style="cursor:default">${engName(eng)} ${sigs.length}</span>`
+        ).join('')}</div>`;
+      }
     }
 
     memEl.innerHTML = memHtml || '<div style="font-size:12px;color:var(--text-2)">No memory data available</div>';
@@ -1072,12 +1087,13 @@ async function loadSettings() {
     const engines = await fetch('/api/engines').then(r => r.json());
     const el = document.getElementById('settingsEngines');
     if (el && engines.engines) {
-      el.innerHTML = engines.engines.map(e =>
-        `<div class="spread" style="font-size:12px;padding:4px 0;border-bottom:1px solid var(--border-0)">
-          <div><span style="font-weight:500">${esc(e.displayName)}</span><div style="font-size:10px;color:var(--text-2)">${esc(e.description || '')}</div></div>
-          <span class="tag tag-muted">${esc(e.id)}</span>
-        </div>`
-      ).join('');
+      el.innerHTML = `<div style="font-size:11px;color:var(--text-2);margin-bottom:10px">${engines.engines.length} engines available</div>` +
+        engines.engines.map(e =>
+          `<div style="padding:8px 0;border-bottom:1px solid var(--border-0)">
+            <div class="spread"><span style="font-size:12px;font-weight:600">${sesc(e.displayName)}</span><span class="tag tag-muted">${esc(e.id)}</span></div>
+            ${e.description ? `<div style="font-size:11px;color:var(--text-2);margin-top:3px">${sesc(e.description.slice(0, 100))}</div>` : ''}
+          </div>`
+        ).join('');
     }
   } catch {}
 
@@ -1115,17 +1131,18 @@ async function loadSettings() {
     const done = tasks.filter(t => t.status === 'done').length;
     const total = tasks.length;
     const uptime = status.server?.uptime ? Math.floor(status.server.uptime / 3600) + 'h ' + Math.floor((status.server.uptime % 3600) / 60) + 'm' : '--';
+    const sysRow = (label, value, mono) => `<div class="spread" style="padding:5px 0;border-bottom:1px solid var(--border-0)"><span style="color:var(--text-1)">${label}</span><span style="${mono ? "font-family:'SF Mono',monospace;font-size:11px" : 'font-weight:600'}">${value}</span></div>`;
     sys.innerHTML = `
-      <div class="spread"><span>Version</span><span style="font-family:monospace">GPO v2.0</span></div>
-      <div class="spread"><span>Tasks</span><span>${done} completed / ${total} total</span></div>
-      <div class="spread"><span>Cost today</span><span>${fmtCost(costs.today?.cost)}</span></div>
-      <div class="spread"><span>Cost this week</span><span>${fmtCost(costs.week?.cost)}</span></div>
-      <div class="spread"><span>Behavior events</span><span>${behavior.totalEvents || 0}</span></div>
-      <div class="spread"><span>Active signals</span><span>${behavior.activeSignalCount || 0} of ${behavior.signalCount || 0}</span></div>
-      <div class="spread"><span>Feedback ratings</span><span>${(behavior.eventsByType?.quality_feedback || 0)}</span></div>
-      <div class="spread"><span>Server uptime</span><span>${uptime}</span></div>
-      <div class="spread"><span>Node</span><span style="font-family:monospace">${esc(status.node || '--')}</span></div>
-      <div class="spread"><span>Worker</span><span class="tag tag-${status.worker?.running ? 'ok' : 'err'}">${status.worker?.running ? 'Running' : 'Stopped'}</span></div>
+      ${sysRow('Version', 'GPO v2.0', true)}
+      ${sysRow('Tasks', `${done} completed / ${total} total`)}
+      ${sysRow('Cost today', fmtCost(costs.today?.cost))}
+      ${sysRow('Cost this week', fmtCost(costs.week?.cost))}
+      ${sysRow('Behavior events', behavior.totalEvents || 0)}
+      ${sysRow('Active signals', `${behavior.activeSignalCount || 0} of ${behavior.signalCount || 0}`)}
+      ${sysRow('Feedback ratings', behavior.eventsByType?.quality_feedback || 0)}
+      ${sysRow('Server uptime', uptime, true)}
+      ${sysRow('Runtime', esc(status.node || '--'), true)}
+      <div class="spread" style="padding:5px 0"><span style="color:var(--text-1)">Worker</span><span class="tag tag-${status.worker?.running ? 'ok' : 'err'}">${status.worker?.running ? 'Running' : 'Stopped'}</span></div>
     `;
   } catch {}
 
