@@ -1,5 +1,65 @@
 [
   {
+    "record_id": "ee_mmtusqousf2r",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmtuozo2935u",
+    "route": "careeregine",
+    "linked_path_id": "",
+    "created_at": "2026-03-17T00:07:50.046Z"
+  },
+  {
+    "record_id": "ee_mmtusiatg3lm",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "violated",
+    "response_effect": "Contract violated: missing steps, itinerary, optio",
+    "scope_type": "task",
+    "scope_id": "t_mmtuozlz6ggy",
+    "route": "travel",
+    "linked_path_id": "",
+    "created_at": "2026-03-17T00:07:39.173Z"
+  },
+  {
+    "record_id": "ee_mmtus8a6b6el",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing steps, recommendations",
+    "scope_type": "task",
+    "scope_id": "t_mmtuozkvyckn",
+    "route": "health",
+    "linked_path_id": "",
+    "created_at": "2026-03-17T00:07:26.190Z"
+  },
+  {
+    "record_id": "ee_mmturw3wwnk1",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmtuozjmb191",
+    "route": "learning",
+    "linked_path_id": "",
+    "created_at": "2026-03-17T00:07:10.412Z"
+  },
+  {
+    "record_id": "ee_mmturnbhuj3a",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmtuozir91es",
+    "route": "wealthresearch",
+    "linked_path_id": "",
+    "created_at": "2026-03-17T00:06:59.021Z"
+  },
+  {
     "record_id": "ee_mmtt4af44ax0",
     "area": "runtime_deliverable",
     "middleware_ran": "runtime-deliverable-pipeline",
@@ -5938,65 +5998,5 @@
     "route": "general",
     "linked_path_id": "",
     "created_at": "2026-03-16T06:18:31.250Z"
-  },
-  {
-    "record_id": "ee_mmsslel2dntl",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "violated",
-    "response_effect": "Contract violated: missing diffs, implementation_p",
-    "scope_type": "task",
-    "scope_id": "t_mmsshqvkxbpx",
-    "route": "startup",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T06:18:22.358Z"
-  },
-  {
-    "record_id": "ee_mmssg7btu4oj",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "partial",
-    "response_effect": "Partial: missing sections",
-    "scope_type": "task",
-    "scope_id": "t_mmssammea0oy",
-    "route": "careeregine",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T06:14:19.673Z"
-  },
-  {
-    "record_id": "ee_mmssg1s62q9t",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "violated",
-    "response_effect": "Contract violated: missing diffs, implementation_p",
-    "scope_type": "task",
-    "scope_id": "t_mmssamkk330h",
-    "route": "startup",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T06:14:12.486Z"
-  },
-  {
-    "record_id": "ee_mmssfvl7pzky",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "partial",
-    "response_effect": "Partial: missing sections",
-    "scope_type": "task",
-    "scope_id": "t_mmssamiux9pe",
-    "route": "writing",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T06:14:04.459Z"
-  },
-  {
-    "record_id": "ee_mmssfnve50zx",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "partial",
-    "response_effect": "Partial: missing sections",
-    "scope_type": "task",
-    "scope_id": "t_mmssamgvohz7",
-    "route": "general",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T06:13:54.458Z"
   }
 ]

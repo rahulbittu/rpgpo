@@ -19056,5 +19056,79 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-16T23:17:06.282Z"
+  },
+  "t_mmtuozir91es": {
+    "task_id": "t_mmtuozir91es",
+    "deliverable_id": "dlv_rpgpo_tmmtuozir91es_document_256f1481",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-17T00:05:03.062Z"
+  },
+  "t_mmtuozjmb191": {
+    "task_id": "t_mmtuozjmb191",
+    "deliverable_id": "dlv_rpgpo_tmmtuozjmb191_document_2c8b4ecc",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-17T00:05:10.389Z"
+  },
+  "t_mmtuozkvyckn": {
+    "task_id": "t_mmtuozkvyckn",
+    "deliverable_id": "dlv_rpgpo_tmmtuozkvyckn_action_plan_7157df06",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-17T00:05:18.198Z"
+  },
+  "t_mmtuozlz6ggy": {
+    "task_id": "t_mmtuozlz6ggy",
+    "deliverable_id": "dlv_rpgpo_tmmtuozlz6ggy_action_plan_9004d5e9",
+    "engine_id": "travel",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "itinerary",
+      "options",
+      "cost_comparison"
+    ],
+    "contract_status": "violated",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-17T00:05:24.920Z"
+  },
+  "t_mmtuozo2935u": {
+    "task_id": "t_mmtuozo2935u",
+    "deliverable_id": "dlv_rpgpo_tmmtuozo2935u_document_72f84cb8",
+    "engine_id": "careeregine",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-17T00:05:31.414Z"
   }
 }

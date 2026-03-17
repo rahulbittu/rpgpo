@@ -67,15 +67,25 @@ ECC is a pattern library, not a product identity. GPO borrows infrastructure dis
 | 5 | Docs + regression validation | Low | — |
 | 6+ | Only if proven valuable | — | — |
 
+## Implementation Status
+
+| Pattern | Batch | Status | Result |
+|---|---|---|---|
+| Session lifecycle persistence | 3 | **Done** | Saves/restores on SIGTERM/SIGINT + periodic 5-min save |
+| Verification metrics (pass@1) | 3 | **Done** | first_pass_clean_rate signal: 47/47 = 100% (live_observed) |
+| Pre-execution safety | 4 | **Done** | API key + length validation before every provider call |
+| Signal reinforcement | 4 | **Done** | reinforced_count field added to BehaviorSignal |
+| Workflow pattern extraction | — | Deferred | Planned for next phase |
+
 ## Success Criteria
 
-GPO becomes stronger in:
-- Session continuity (context survives restarts)
-- Quality measurement (automated scoring beyond "clean/dirty")
-- Safety (prompt validation before API calls)
-- Learning (workflow patterns update automatically)
+GPO became stronger in:
+- Session continuity — context survives restarts (session-cache.json)
+- Quality measurement — first_pass_clean_rate signal with quality metadata
+- Safety — prompt validation catches API keys and excessive length
+- Signal maturity — reinforcement tracking for instinct-like confidence evolution
 
-GPO does NOT become:
+GPO did NOT become:
 - A developer harness toolkit
 - A command-line IDE extension
 - A multi-agent orchestration platform
