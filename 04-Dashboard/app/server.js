@@ -4372,7 +4372,18 @@ function loadSessionState() {
   try {
     if (fs.existsSync(SESSION_CACHE_PATH)) {
       const data = JSON.parse(fs.readFileSync(SESSION_CACHE_PATH, 'utf-8'));
-      console.log(`[server] Restored session: ${data.total_signals} signals, ${data.task_count} tasks (saved ${data.saved_at})`);
+      const savedAt = new Date(data.saved_at);
+      const gapHours = Math.round((Date.now() - savedAt.getTime()) / (1000 * 60 * 60));
+      console.log(`[server] Restored session: ${data.total_signals} signals, ${data.task_count} tasks (saved ${data.saved_at}, ${gapHours}h ago)`);
+      if (gapHours > 24) {
+        console.log(`[server] ⚠ Session gap > 24h — behavior signals may be stale`);
+      }
+      // Pre-warm: trigger signal re-derivation to ensure signals are fresh
+      try {
+        const freshSignals = behavior.deriveSignals();
+        behavior.persistSignals(freshSignals);
+        console.log(`[server] Pre-warmed ${freshSignals.length} signals (${freshSignals.filter(s => s.active).length} active, ${freshSignals.filter(s => s.provenance === 'live_observed').length} live_observed)`);
+      } catch (e) { console.log(`[server] Signal pre-warm warning: ${e.message}`); }
       return data;
     }
   } catch { /* no prior session */ }
