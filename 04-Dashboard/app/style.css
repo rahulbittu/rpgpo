@@ -124,6 +124,9 @@
 .feedback-bar .feedback-label { font-size: 11px; color: var(--text-dim); margin-right: var(--sp-4); }
 .feedback-bar .feedback-done { font-size: 11px; color: var(--text-dim); }
 
+/* ═══ DESIGN SYSTEM: Filter Active State ═══ */
+.filter-active { background: var(--accent-soft) !important; color: var(--accent-text) !important; border-color: var(--accent) !important; }
+
 /* ═══ DESIGN SYSTEM: Accessibility ═══ */
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) {

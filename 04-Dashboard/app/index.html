@@ -17,7 +17,7 @@
   <div class="shell">
 
     <!-- SIDEBAR -->
-    <nav class="sidebar">
+    <nav class="sidebar" role="navigation" aria-label="Main navigation">
       <div class="logo">
         <div class="logo-mark">G</div>
         <span class="logo-text">GPO</span>
@@ -25,46 +25,42 @@
       </div>
       <div class="nav-links">
         <div class="nav-role-label">Command</div>
-        <a href="#" class="nav-link active" data-tab="home">
+        <a href="#" class="nav-link active" data-tab="home" aria-label="Dashboard">
           <span class="nav-icon">&#9670;</span><span class="nav-label">Dashboard</span>
         </a>
-        <a href="#" class="nav-link" data-tab="intake">
-          <span class="nav-icon">&#9998;</span><span class="nav-label">New Task</span>
+        <a href="#" class="nav-link" data-tab="intake" aria-label="Tasks">
+          <span class="nav-icon">&#9998;</span><span class="nav-label">Tasks</span>
           <span class="nav-badge" id="navIntakeBadge" style="display:none">0</span>
         </a>
-        <a href="#" class="nav-link" data-tab="tasks">
-          <span class="nav-icon">&#9654;</span><span class="nav-label">Tasks</span>
+        <a href="#" class="nav-link" data-tab="tasks" aria-label="Queue">
+          <span class="nav-icon">&#9654;</span><span class="nav-label">Queue</span>
           <span class="nav-badge" id="navTaskBadge" style="display:none">0</span>
         </a>
-        <a href="#" class="nav-link" data-tab="approvals">
+        <a href="#" class="nav-link" data-tab="approvals" aria-label="Approvals">
           <span class="nav-icon">&#9888;</span><span class="nav-label">Approvals</span>
           <span class="nav-badge" id="navApprovalBadge" style="display:none">0</span>
         </a>
-        <a href="#" class="nav-link" data-tab="channels">
-          <span class="nav-icon">&#9881;</span><span class="nav-label">Ask AI</span>
-        </a>
-        <div class="nav-role-label">Engines</div>
-        <a href="#" class="nav-link" data-tab="missions">
+        <div class="nav-role-label">Intelligence</div>
+        <a href="#" class="nav-link" data-tab="missions" aria-label="Engines">
           <span class="nav-icon">&#9673;</span><span class="nav-label">Engines</span>
         </a>
-        <div class="nav-role-label">Intelligence</div>
-        <a href="#" class="nav-link" data-tab="memory">
+        <a href="#" class="nav-link" data-tab="memory" aria-label="Memory">
           <span class="nav-icon">&#9671;</span><span class="nav-label">Memory</span>
         </a>
-        <a href="#" class="nav-link" data-tab="providers">
-          <span class="nav-icon">&#9677;</span><span class="nav-label">Providers</span>
-        </a>
-        <a href="#" class="nav-link" data-tab="costs">
-          <span class="nav-icon">&#36;</span><span class="nav-label">Costs</span>
-        </a>
-        <a href="#" class="nav-link" data-tab="logs">
-          <span class="nav-icon">&#9776;</span><span class="nav-label">Activity</span>
+        <a href="#" class="nav-link" data-tab="channels" aria-label="Ask AI">
+          <span class="nav-icon">&#9881;</span><span class="nav-label">Ask AI</span>
         </a>
         <div class="nav-role-label">System</div>
-        <a href="#" class="nav-link" data-tab="controls">
-          <span class="nav-icon">&#9654;</span><span class="nav-label">Operations</span>
+        <a href="#" class="nav-link" data-tab="providers" aria-label="Providers">
+          <span class="nav-icon">&#9677;</span><span class="nav-label">Providers</span>
         </a>
-        <a href="#" class="nav-link" data-tab="settings">
+        <a href="#" class="nav-link" data-tab="costs" aria-label="Costs">
+          <span class="nav-icon">&#36;</span><span class="nav-label">Costs</span>
+        </a>
+        <a href="#" class="nav-link" data-tab="logs" aria-label="Activity">
+          <span class="nav-icon">&#9776;</span><span class="nav-label">Activity</span>
+        </a>
+        <a href="#" class="nav-link" data-tab="settings" aria-label="Settings">
           <span class="nav-icon">&#8943;</span><span class="nav-label">Settings</span>
         </a>
       </div>
@@ -175,46 +171,44 @@
 
       <!-- TASK STREAM -->
       <section class="tab-panel" id="tab-tasks">
-        <div class="page-header">
-          <div class="header-row">
-            <div>
-              <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Task Stream</h1>
-              <p class="subtitle">Worker queue — queued, running, and completed operations</p>
-            </div>
-            <div class="header-actions">
-              <button class="refresh-btn" onclick="loadTasks()">&#8635;</button>
-              <span class="task-count" id="taskQueueCount">0 tasks</span>
-            </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-24)">
+          <div>
+            <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Task Stream</h1>
+            <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">Worker queue — queued, running, and completed</p>
+          </div>
+          <div style="display:flex;align-items:center;gap:var(--sp-8)">
+            <span id="taskQueueCount" style="font-size:11px;color:var(--text-dim)">0 tasks</span>
+            <button class="btn btn-ghost btn-sm" onclick="loadTasks()">&#8635;</button>
           </div>
         </div>
 
         <div id="tasksRunningHero"></div>
 
-        <div class="filter-row" id="taskFilters">
-          <button class="filter-btn active-filter" data-filter="all" onclick="filterTasks('all')">All</button>
-          <button class="filter-btn" data-filter="running" onclick="filterTasks('running')">Running</button>
-          <button class="filter-btn" data-filter="queued" onclick="filterTasks('queued')">Queued</button>
-          <button class="filter-btn" data-filter="done" onclick="filterTasks('done')">Done</button>
-          <button class="filter-btn" data-filter="failed" onclick="filterTasks('failed')">Failed</button>
+        <div style="display:flex;gap:var(--sp-4);margin-bottom:var(--sp-16)" id="taskFilters">
+          <button class="btn btn-sm filter-active" data-filter="all" onclick="filterTasks('all')">All</button>
+          <button class="btn btn-ghost btn-sm" data-filter="running" onclick="filterTasks('running')">Running</button>
+          <button class="btn btn-ghost btn-sm" data-filter="queued" onclick="filterTasks('queued')">Queued</button>
+          <button class="btn btn-ghost btn-sm" data-filter="done" onclick="filterTasks('done')">Done</button>
+          <button class="btn btn-ghost btn-sm" data-filter="failed" onclick="filterTasks('failed')">Failed</button>
         </div>
 
-        <div id="taskQueueList" class="task-queue-list" style="max-height:none">
-          <div class="task-empty">No tasks in queue</div>
+        <div id="taskQueueList" style="display:flex;flex-direction:column;gap:var(--sp-8)">
+          <div class="empty-state"><span class="empty-icon">&#9654;</span><span class="empty-title">No tasks in queue</span></div>
         </div>
       </section>
 
       <!-- INTAKE — Task Submission & Execution -->
       <section class="tab-panel" id="tab-intake">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-16)">
           <div>
-            <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Tasks</h1>
-            <p class="subtitle">Submit, track, and review AI-powered task execution</p>
+            <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Tasks</h1>
+            <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">Submit, track, and review task execution</p>
           </div>
-          <button class="refresh-btn" onclick="loadIntakeTasks()" style="opacity:0.6">&#8635;</button>
+          <button class="btn btn-ghost btn-sm" onclick="loadIntakeTasks()">&#8635;</button>
         </div>
 
-        <!-- Pipeline Steps -->
-        <div class="flow-explainer" id="flowExplainer" style="margin-bottom:16px">
+        <!-- Pipeline steps (compact) -->
+        <div class="flow-explainer" id="flowExplainer" style="margin-bottom:var(--sp-16)">
           <div class="flow-step" data-step="intake"><span class="flow-step-num">1</span><span class="flow-step-label">Submit</span></div>
           <div class="flow-arrow">&#8594;</div>
           <div class="flow-step" data-step="deliberating"><span class="flow-step-num">2</span><span class="flow-step-label">Plan</span></div>
@@ -226,78 +220,67 @@
           <div class="flow-step" data-step="done"><span class="flow-step-num">5</span><span class="flow-step-label">Done</span></div>
         </div>
 
-        <!-- Current Task Hero (active task at top) -->
+        <!-- Active task hero -->
         <div id="intakeCurrentHero"></div>
-
-        <!-- Deliberation Detail Panel (shown when a task is selected) -->
         <div id="intakeDetailPanel" style="display:none"></div>
-
-        <!-- Execution Graph Panel (shown for tasks with graphs) -->
         <div id="executionGraphPanel"></div>
 
-        <!-- Quick Start Templates -->
-        <h3 style="margin-bottom:8px">Quick Start</h3>
-        <div id="missionTemplateGrid" class="template-grid" style="margin-bottom:16px"></div>
-
-        <!-- Task Submission -->
-        <div class="card" style="margin-bottom:16px;border-left:3px solid var(--accent)" id="intakeFormCard">
-          <h3 style="margin-bottom:8px">Submit a Task</h3>
-          <div class="intake-form">
-            <textarea id="intakeRequest" class="channel-textarea" placeholder="What do you need? (e.g., 'Research top passive income ideas for a data engineer', 'Summarize today's AI news', 'Find data engineering jobs $180k+ remote')" rows="3"></textarea>
-            <div class="intake-form-row">
-              <select id="intakeDomain" class="channel-select">
-                <option value="">Auto-detect engine</option>
-                <optgroup label="Core Engines">
-                  <option value="startup">Code & Product Engineering</option>
-                  <option value="writing">Writing & Documentation</option>
-                  <option value="research">Research & Analysis</option>
-                  <option value="learning">Learning & Tutoring</option>
-                  <option value="personalops">Scheduling & Life Operations</option>
-                </optgroup>
-                <optgroup label="Specialized">
-                  <option value="shopping">Shopping & Buying Advisor</option>
-                  <option value="travel">Travel & Relocation Planner</option>
-                  <option value="careeregine">Career & Job Search</option>
-                  <option value="wealthresearch">Personal Finance & Investing</option>
-                  <option value="health">Health & Wellness Coach</option>
-                </optgroup>
-                <optgroup label="Business">
-                  <option value="startup">Startup & Business Builder</option>
-                </optgroup>
-                <optgroup label="Creative">
-                  <option value="screenwriting">Screenwriting & Story Development</option>
-                  <option value="music">Music & Audio Creation</option>
-                  <option value="personalops">Home & Lifestyle Design</option>
-                </optgroup>
-                <option value="general">General</option>
-              </select>
-              <select id="intakeUrgency" class="channel-select">
-                <option value="normal">Normal</option>
-                <option value="low">Low</option>
-                <option value="high">High</option>
-                <option value="critical">Critical</option>
-              </select>
-              <input type="text" id="intakeOutcome" class="settings-input" style="flex:1;width:auto" placeholder="Desired outcome (optional)" />
-              <button class="send-btn" onclick="submitIntakeTask()">
-                <span>&#9998;</span> Submit
-              </button>
-            </div>
-            <div id="engineContractHint" style="font-size:11px;color:var(--text-faint);margin-top:6px;display:none"></div>
+        <!-- Task submission form -->
+        <div class="surface surface-accent" style="margin-bottom:var(--sp-16)" id="intakeFormCard">
+          <div class="section-hdr"><h3>Submit a Task</h3></div>
+          <textarea id="intakeRequest" style="width:100%;background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-12);color:var(--text);font-family:var(--font);font-size:13px;resize:vertical;min-height:72px" placeholder="What do you need? Describe your task in plain language..." rows="3"></textarea>
+          <div style="display:flex;gap:var(--sp-8);margin-top:var(--sp-8);flex-wrap:wrap;align-items:center">
+            <select id="intakeDomain" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-4) var(--sp-8);color:var(--text);font-size:12px">
+              <option value="">Auto-detect engine</option>
+              <option value="code">Code & Product Engineering</option>
+              <option value="writing">Writing & Documentation</option>
+              <option value="research">Research & Analysis</option>
+              <option value="learning">Learning & Tutoring</option>
+              <option value="ops">Scheduling & Life Operations</option>
+              <option value="health">Health & Wellness Coach</option>
+              <option value="shopping">Shopping & Buying Advisor</option>
+              <option value="travel">Travel & Relocation Planner</option>
+              <option value="finance">Personal Finance & Investing</option>
+              <option value="startup">Startup & Business Builder</option>
+              <option value="career">Career & Job Search</option>
+              <option value="screenwriting">Screenwriting & Story Development</option>
+              <option value="film">Filmmaking & Video Production</option>
+              <option value="music">Music & Audio Creation</option>
+              <option value="news">News & Intelligence</option>
+              <option value="general">General</option>
+            </select>
+            <select id="intakeUrgency" style="background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-4) var(--sp-8);color:var(--text);font-size:12px">
+              <option value="normal">Normal</option>
+              <option value="low">Low</option>
+              <option value="high">High</option>
+              <option value="critical">Critical</option>
+            </select>
+            <input type="text" id="intakeOutcome" style="flex:1;min-width:140px;background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-sm);padding:var(--sp-4) var(--sp-8);color:var(--text);font-size:12px" placeholder="Desired outcome (optional)" />
+            <button class="btn btn-primary btn-md" onclick="submitIntakeTask()">
+              <span>&#9998;</span> Submit
+            </button>
           </div>
+          <div id="engineContractHint" style="font-size:11px;color:var(--text-faint);margin-top:var(--sp-4);display:none"></div>
         </div>
 
-        <!-- Filter Row -->
-        <div class="filter-row" id="intakeFilters">
-          <button class="filter-btn active-filter" data-filter="all" onclick="filterIntake('all')">All</button>
-          <button class="filter-btn" data-filter="intake" onclick="filterIntake('intake')">Intake</button>
-          <button class="filter-btn" data-filter="deliberating" onclick="filterIntake('deliberating')">Deliberating</button>
-          <button class="filter-btn" data-filter="planned" onclick="filterIntake('planned')">Planned</button>
-          <button class="filter-btn" data-filter="executing" onclick="filterIntake('executing')">Executing</button>
-          <button class="filter-btn" data-filter="waiting_approval" onclick="filterIntake('waiting_approval')">Approval</button>
-          <button class="filter-btn" data-filter="done" onclick="filterIntake('done')">Done</button>
+        <!-- Quick start templates -->
+        <div style="margin-bottom:var(--sp-16)">
+          <div class="section-hdr"><h3>Quick Start</h3></div>
+          <div id="missionTemplateGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:var(--sp-8)"></div>
         </div>
 
-        <!-- Task List (past tasks) -->
+        <!-- Filter row -->
+        <div style="display:flex;gap:var(--sp-4);margin-bottom:var(--sp-12)" id="intakeFilters">
+          <button class="btn btn-sm filter-active" data-filter="all" onclick="filterIntake('all')">All</button>
+          <button class="btn btn-ghost btn-sm" data-filter="intake" onclick="filterIntake('intake')">Intake</button>
+          <button class="btn btn-ghost btn-sm" data-filter="deliberating" onclick="filterIntake('deliberating')">Planning</button>
+          <button class="btn btn-ghost btn-sm" data-filter="planned" onclick="filterIntake('planned')">Planned</button>
+          <button class="btn btn-ghost btn-sm" data-filter="executing" onclick="filterIntake('executing')">Running</button>
+          <button class="btn btn-ghost btn-sm" data-filter="waiting_approval" onclick="filterIntake('waiting_approval')">Approval</button>
+          <button class="btn btn-ghost btn-sm" data-filter="done" onclick="filterIntake('done')">Done</button>
+        </div>
+
+        <!-- Task list -->
         <div id="intakeTaskList"></div>
       </section>
 

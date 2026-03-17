@@ -1,5 +1,131 @@
 [
   {
+    "alert_id": "al_mmtyl1hv1jn1",
+    "rule_id": "slo_approval_time",
+    "severity": "warning",
+    "detail": "SLO breach: Approval Response Time — current 36 hours, target 24",
+    "created_at": "2026-03-17T01:53:49.267Z"
+  },
+  {
+    "alert_id": "al_mmtyl1huwseq",
+    "rule_id": "slo_execution_success",
+    "severity": "warning",
+    "detail": "SLO breach: Execution Success Rate — current 22 %, target 90",
+    "created_at": "2026-03-17T01:53:49.266Z"
+  },
+  {
+    "alert_id": "al_mmtyl0sh6fj0",
+    "rule_id": "slo_approval_time",
+    "severity": "warning",
+    "detail": "SLO breach: Approval Response Time — current 36 hours, target 24",
+    "created_at": "2026-03-17T01:53:48.353Z"
+  },
+  {
+    "alert_id": "al_mmtyl0sh5kbu",
+    "rule_id": "slo_execution_success",
+    "severity": "warning",
+    "detail": "SLO breach: Execution Success Rate — current 22 %, target 90",
+    "created_at": "2026-03-17T01:53:48.353Z"
+  },
+  {
+    "alert_id": "al_mmtyl0s7fop4",
+    "rule_id": "slo_approval_time",
+    "severity": "warning",
+    "detail": "SLO breach: Approval Response Time — current 36 hours, target 24",
+    "created_at": "2026-03-17T01:53:48.343Z"
+  },
+  {
+    "alert_id": "al_mmtyl0s76p6g",
+    "rule_id": "slo_execution_success",
+    "severity": "warning",
+    "detail": "SLO breach: Execution Success Rate — current 22 %, target 90",
+    "created_at": "2026-03-17T01:53:48.343Z"
+  },
+  {
+    "alert_id": "al_mmtyl0s48956",
+    "rule_id": "slo_approval_time",
+    "severity": "warning",
+    "detail": "SLO breach: Approval Response Time — current 36 hours, target 24",
+    "created_at": "2026-03-17T01:53:48.340Z"
+  },
+  {
+    "alert_id": "al_mmtyl0s33skx",
+    "rule_id": "slo_execution_success",
+    "severity": "warning",
+    "detail": "SLO breach: Execution Success Rate — current 22 %, target 90",
+    "created_at": "2026-03-17T01:53:48.339Z"
+  },
+  {
+    "alert_id": "al_mmtyl0s0cjao",
+    "rule_id": "slo_approval_time",
+    "severity": "warning",
+    "detail": "SLO breach: Approval Response Time — current 36 hours, target 24",
+    "created_at": "2026-03-17T01:53:48.336Z"
+  },
+  {
+    "alert_id": "al_mmtyl0s0gx7q",
+    "rule_id": "slo_execution_success",
+    "severity": "warning",
+    "detail": "SLO breach: Execution Success Rate — current 22 %, target 90",
+    "created_at": "2026-03-17T01:53:48.336Z"
+  },
+  {
+    "alert_id": "al_mmtyl0rr8y9s",
+    "rule_id": "slo_approval_time",
+    "severity": "warning",
+    "detail": "SLO breach: Approval Response Time — current 36 hours, target 24",
+    "created_at": "2026-03-17T01:53:48.327Z"
+  },
+  {
+    "alert_id": "al_mmtyl0rqiuef",
+    "rule_id": "slo_execution_success",
+    "severity": "warning",
+    "detail": "SLO breach: Execution Success Rate — current 22 %, target 90",
+    "created_at": "2026-03-17T01:53:48.326Z"
+  },
+  {
+    "alert_id": "al_mmtyl0riyekc",
+    "rule_id": "slo_approval_time",
+    "severity": "warning",
+    "detail": "SLO breach: Approval Response Time — current 36 hours, target 24",
+    "created_at": "2026-03-17T01:53:48.318Z"
+  },
+  {
+    "alert_id": "al_mmtyl0rik59z",
+    "rule_id": "slo_execution_success",
+    "severity": "warning",
+    "detail": "SLO breach: Execution Success Rate — current 22 %, target 90",
+    "created_at": "2026-03-17T01:53:48.318Z"
+  },
+  {
+    "alert_id": "al_mmtyl0rgijij",
+    "rule_id": "slo_approval_time",
+    "severity": "warning",
+    "detail": "SLO breach: Approval Response Time — current 36 hours, target 24",
+    "created_at": "2026-03-17T01:53:48.316Z"
+  },
+  {
+    "alert_id": "al_mmtyl0rgqnr5",
+    "rule_id": "slo_execution_success",
+    "severity": "warning",
+    "detail": "SLO breach: Execution Success Rate — current 22 %, target 90",
+    "created_at": "2026-03-17T01:53:48.316Z"
+  },
+  {
+    "alert_id": "al_mmtyl0rfa1dg",
+    "rule_id": "slo_approval_time",
+    "severity": "warning",
+    "detail": "SLO breach: Approval Response Time — current 36 hours, target 24",
+    "created_at": "2026-03-17T01:53:48.315Z"
+  },
+  {
+    "alert_id": "al_mmtyl0re2gzx",
+    "rule_id": "slo_execution_success",
+    "severity": "warning",
+    "detail": "SLO breach: Execution Success Rate — current 22 %, target 90",
+    "created_at": "2026-03-17T01:53:48.314Z"
+  },
+  {
     "alert_id": "al_mmtxfbiokrck",
     "rule_id": "slo_approval_time",
     "severity": "warning",

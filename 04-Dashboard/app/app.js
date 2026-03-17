@@ -596,8 +596,8 @@ function renderNavBadges() {
 
 function filterTasks(f) {
   taskFilter = f;
-  document.querySelectorAll('#taskFilters .filter-btn').forEach(b => {
-    b.classList.toggle('active-filter', b.dataset.filter === f);
+  document.querySelectorAll('#taskFilters .btn').forEach(b => {
+    b.classList.toggle('filter-active', b.dataset.filter === f);
   });
   renderTaskQueue();
 }
@@ -1131,8 +1131,8 @@ function renderLogs() {
 
 function filterLogs(f) {
   logFilter = f;
-  document.querySelectorAll('#logFilters .filter-btn').forEach(b => {
-    b.classList.toggle('active-filter', b.dataset.filter === f);
+  document.querySelectorAll('#logFilters .btn').forEach(b => {
+    b.classList.toggle('filter-active', b.dataset.filter === f);
   });
   if (DATA) renderLogs();
 }
@@ -1603,7 +1603,7 @@ function renderIntakeTasks() {
   // Update filter badges with counts
   const counts = { all: INTAKE_TASKS.length };
   INTAKE_TASKS.forEach(t => { counts[t.status] = (counts[t.status] || 0) + 1; });
-  document.querySelectorAll('#intakeFilters .filter-btn').forEach(b => {
+  document.querySelectorAll('#intakeFilters .btn').forEach(b => {
     const f = b.dataset.filter;
     const c = counts[f] || 0;
     const existing = b.querySelector('.filter-count');
@@ -1672,8 +1672,8 @@ function renderIntakeTasks() {
 
 function filterIntake(f) {
   intakeFilter = f;
-  document.querySelectorAll('#intakeFilters .filter-btn').forEach(b => {
-    b.classList.toggle('active-filter', b.dataset.filter === f);
+  document.querySelectorAll('#intakeFilters .btn').forEach(b => {
+    b.classList.toggle('filter-active', b.dataset.filter === f);
   });
   renderIntakeTasks();
 }

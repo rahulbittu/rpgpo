@@ -1,5 +1,5 @@
 {
-  "decision_id": "ga_mmtxfbir64zz",
+  "decision_id": "ga_mmtyl1hyi9xo",
   "decision": "no_go",
   "confidence": {
     "overall": "fully_proven",
@@ -54,7 +54,7 @@
       "required_for_go": true,
       "passed": false,
       "proof_level": "live_network",
-      "detail": "7 stale file(s)"
+      "detail": "8 stale file(s)"
     },
     {
       "gate_id": "ga_acceptance",
@@ -87,9 +87,9 @@
     {
       "area": "clean_state",
       "gap_type": "stale_evidence",
-      "detail": "7 stale state file(s)"
+      "detail": "8 stale state file(s)"
     }
   ],
   "overall_score": 63,
-  "created_at": "2026-03-17T01:21:22.707Z"
+  "created_at": "2026-03-17T01:53:49.270Z"
 }
