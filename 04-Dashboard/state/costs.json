@@ -1,44 +1,5 @@
 [
   {
-    "ts": "2026-03-16T04:53:29.014Z",
-    "date": "2026-03-16",
-    "provider": "perplexity",
-    "model": "sonar",
-    "inputTokens": 516,
-    "outputTokens": 867,
-    "totalTokens": 1383,
-    "cost": 0,
-    "taskId": "t_mmsph0vbdzb4",
-    "taskType": "subtask",
-    "role": "research"
-  },
-  {
-    "ts": "2026-03-16T04:53:37.094Z",
-    "date": "2026-03-16",
-    "provider": "perplexity",
-    "model": "sonar",
-    "inputTokens": 504,
-    "outputTokens": 823,
-    "totalTokens": 1327,
-    "cost": 0,
-    "taskId": "t_mmsph1oqml51",
-    "taskType": "subtask",
-    "role": "research"
-  },
-  {
-    "ts": "2026-03-16T04:53:43.884Z",
-    "date": "2026-03-16",
-    "provider": "openai",
-    "model": "gpt-4o",
-    "inputTokens": 1224,
-    "outputTokens": 908,
-    "totalTokens": 2132,
-    "cost": 0.01214,
-    "taskId": "t_mmspgv8qetrb",
-    "taskType": "subtask",
-    "role": "creative"
-  },
-  {
     "ts": "2026-03-16T04:53:52.557Z",
     "date": "2026-03-16",
     "provider": "openai",
@@ -25998,5 +25959,44 @@
     "taskId": "t_mmtx3oe5bi6m",
     "taskType": "subtask",
     "role": "strategy"
+  },
+  {
+    "ts": "2026-03-17T02:33:55.755Z",
+    "date": "2026-03-17",
+    "provider": "perplexity",
+    "model": "sonar",
+    "inputTokens": 119,
+    "outputTokens": 129,
+    "totalTokens": 248,
+    "cost": 0,
+    "taskId": "mmu00e1uapyq",
+    "taskType": "ai-channel",
+    "role": "general"
+  },
+  {
+    "ts": "2026-03-17T02:34:16.554Z",
+    "date": "2026-03-17",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 120,
+    "outputTokens": 89,
+    "totalTokens": 209,
+    "cost": 0.00119,
+    "taskId": "mmu0101p7onl",
+    "taskType": "ai-channel",
+    "role": "builder"
+  },
+  {
+    "ts": "2026-03-17T02:34:57.869Z",
+    "date": "2026-03-17",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 123,
+    "outputTokens": 62,
+    "totalTokens": 185,
+    "cost": 0.0009275,
+    "taskId": "mmu01vtmcp96",
+    "taskType": "ai-channel",
+    "role": "chief"
   }
 ]

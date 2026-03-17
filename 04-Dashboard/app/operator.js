@@ -43,11 +43,13 @@ function renderMissionTemplates() {
   const el = document.getElementById('missionTemplateGrid');
   if (!el) return;
   el.innerHTML = MISSION_TEMPLATES.map((t, i) =>
-    `<div class="template-card" data-idx="${i}">
-      <div class="tc-domain">${esc(t.domain)}</div>
-      <div class="tc-title" onclick="applyTemplateByIndex(${i})">${esc(t.title)}</div>
-      <div class="tc-desc">${esc(t.desc)}</div>
-      ${t.prompt ? '<button class="tc-run-btn" onclick="event.stopPropagation();runTemplateByIndex(' + i + ')" title="Submit & run immediately">Run</button>' : ''}
+    `<div class="surface" style="padding:var(--sp-8) var(--sp-12);cursor:pointer" onclick="applyTemplateByIndex(${i})">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-4)">
+        <span class="badge badge-neutral">${domainLabel(t.domain)}</span>
+        ${t.prompt ? '<button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();runTemplateByIndex(' + i + ')" title="Run now" style="padding:var(--sp-2) var(--sp-4);font-size:10px">&#9654;</button>' : ''}
+      </div>
+      <div style="font-size:12px;font-weight:500;margin-bottom:var(--sp-2)">${esc(t.title)}</div>
+      <div style="font-size:10px;color:var(--text-faint)">${esc(t.desc)}</div>
     </div>`
   ).join('');
 }
@@ -249,16 +251,16 @@ function renderEnhancedMissionSnapshot() {
     const progress = m.progress ? m.progress.split('\n').find(l => l.startsWith('- ')) : '';
     const progressText = progress ? progress.replace(/^-\s*/, '').slice(0, 50) : '';
 
-    return `<div class="mission-card-enhanced" onclick="switchTab('missions')">
-      <div class="mce-header">
-        <span class="mce-name">${esc(displayName)}</span>
-        <span class="mission-badge ${badgeClass(m.status)}">${esc(m.status)}</span>
+    const statusBadge = (m.status || '').toLowerCase() === 'active' ? 'badge-success' : (m.status || '').toLowerCase() === 'planned' ? 'badge-neutral' : 'badge-info';
+    return `<div class="surface" style="padding:var(--sp-8) var(--sp-12);cursor:pointer" onclick="switchTab('missions')">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-4)">
+        <span style="font-size:12px;font-weight:600">${esc(displayName)}</span>
+        <span class="badge ${statusBadge}">${esc(m.status)}</span>
       </div>
-      ${m.objective ? `<div class="mce-objective">${esc(m.objective.slice(0, 80))}</div>` : ''}
-      <div class="mce-meta">
-        ${blocker ? `<span class="mce-blocker">Blocker: ${esc(blocker)}</span>` : ''}
-        ${progressText ? `<span class="mce-progress">${esc(progressText)}</span>` : ''}
-        ${nextText ? `<span class="mce-next">Next: ${esc(nextText)}</span>` : ''}
+      ${m.objective ? `<div style="font-size:10px;color:var(--text-dim);margin-bottom:var(--sp-4)">${esc(m.objective.slice(0, 80))}</div>` : ''}
+      <div style="font-size:9px;color:var(--text-faint)">
+        ${blocker ? `<div style="color:var(--red)">Blocker: ${esc(blocker)}</div>` : ''}
+        ${nextText ? `<div>Next: ${esc(nextText)}</div>` : ''}
       </div>
     </div>`;
   }).join('');
@@ -297,19 +299,19 @@ function renderChiefOfStaffBrief(brief) {
     } else if (a.suggested_capability === 'research') {
       actionBtn = `<button class="cos-action-btn" onclick="event.stopPropagation();applyTemplate('${esc(a.domain || 'general')}','${esc(a.title.replace(/'/g, "\\'").slice(0, 100))}','normal','');switchTab('intake')">Submit Task</button>`;
     }
-    return `<div class="cos-action ${priorityClass[a.priority] || ''}">
-      <div class="cos-action-header">
-        <span class="cos-priority">${priorityIcon[a.priority] || '-'}</span>
-        <span class="cos-action-title">${esc(a.title)}</span>
-        ${a.needs_approval ? '<span class="cos-badge cos-approval">approval</span>' : ''}
-        ${a.blocked ? '<span class="cos-badge cos-blocked">blocked</span>' : ''}
-        ${actionBtn}
+    const prioBadge = a.priority === 'critical' ? 'badge-danger' : a.priority === 'high' ? 'badge-warning' : 'badge-neutral';
+    return `<div class="surface" style="padding:var(--sp-8) var(--sp-12);margin-bottom:var(--sp-8)">
+      <div style="display:flex;align-items:center;gap:var(--sp-8);margin-bottom:var(--sp-4)">
+        <span class="badge ${prioBadge}">${priorityIcon[a.priority] || '-'}</span>
+        <span style="font-size:12px;font-weight:500;flex:1">${esc(a.title)}</span>
+        ${a.needs_approval ? '<span class="badge badge-warning">approval</span>' : ''}
+        ${a.blocked ? '<span class="badge badge-danger">blocked</span>' : ''}
+        ${actionBtn ? actionBtn.replace('cos-action-btn', 'btn btn-ghost btn-sm') : ''}
       </div>
-      <div class="cos-action-why">${esc(a.why)}</div>
-      <div class="cos-action-meta">
-        <span class="cos-scope">${esc(typeof domainLabel === 'function' ? domainLabel(a.domain || a.scope_id) : (a.domain || a.scope_id))}</span>
-        <span class="cos-alignment">${esc(a.mission_alignment)}</span>
-        ${a.suggested_capability ? '<span class="cos-cap">' + esc(a.suggested_capability) + '</span>' : ''}
+      <div style="font-size:11px;color:var(--text-dim);margin-bottom:var(--sp-4)">${esc(a.why)}</div>
+      <div style="display:flex;gap:var(--sp-8);font-size:10px;color:var(--text-faint)">
+        <span class="badge badge-neutral">${esc(typeof domainLabel === 'function' ? domainLabel(a.domain || a.scope_id) : (a.domain || a.scope_id))}</span>
+        ${a.suggested_capability ? '<span>' + esc(a.suggested_capability) + '</span>' : ''}
       </div>
     </div>`;
   }).join('');
