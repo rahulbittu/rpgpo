@@ -1,4 +1,22 @@
-// GPO Command Center — Premium Private Operations Console
+// GPO — Private AI Command Center
+
+// Theme system
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('gpo-theme', theme);
+  // Update toggle buttons
+  const dark = document.getElementById('themeToggleDark');
+  const light = document.getElementById('themeToggleLight');
+  if (dark && light) {
+    dark.className = theme === 'dark' ? 'btn btn-sm is-active' : 'btn btn-ghost btn-sm';
+    light.className = theme === 'light' ? 'btn btn-sm is-active' : 'btn btn-ghost btn-sm';
+  }
+}
+// Restore saved theme
+(function() {
+  const saved = localStorage.getItem('gpo-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', saved);
+})();
 
 // Domain name display mapping — aligned to 15-engine harness model
 // Canonical-first engine labels. Legacy IDs mapped for reading historical tasks.
@@ -506,7 +524,7 @@ function getModelTag(t) {
 function renderHomeRecent() {
   const hr = document.getElementById('homeRecentTasks');
   if (!hr) return;
-  if (!TASKS.length) { hr.innerHTML = '<div class="task-empty">No tasks yet</div>'; return; }
+  if (!TASKS.length) { hr.innerHTML = '<div class="empty">No tasks yet</div>'; return; }
   hr.innerHTML = TASKS.slice(0, 8).map(t => {
     const tm = fmtTime(t.updatedAt || t.createdAt);
     return `<div class="task-card" onclick="showTask('${t.id}')" style="padding:7px 10px;margin-bottom:2px">
@@ -548,14 +566,14 @@ function renderLatest() {
     }
     // Fall back to queue tasks
     const done = TASKS.filter(t => t.status === 'done' || t.status === 'failed');
-    if (!done.length) { el.innerHTML = '<div class="task-empty">No completed tasks yet</div>'; return; }
+    if (!done.length) { el.innerHTML = '<div class="empty">No completed tasks yet</div>'; return; }
     const qt = done[0];
     el.innerHTML = `<div class="deliverable-card" onclick="showTask('${qt.id}')">
       <div class="deliverable-card-title">${qt.status === 'failed' ? 'Failed' : 'Completed'}: ${esc(qt.label)}</div>
       ${qt.output ? '<div class="deliverable-card-output">' + esc(qt.output.slice(0, 300)) + '</div>' : ''}
     </div>`;
   }).catch(() => {
-    el.innerHTML = '<div class="task-empty">No completed tasks yet</div>';
+    el.innerHTML = '<div class="empty">No completed tasks yet</div>';
   });
 }
 
@@ -563,7 +581,7 @@ function renderRecentReports() {
   const el = document.getElementById('homeRecentReports');
   if (!el) return;
   fetch('/api/reports').then(r => r.ok ? r.json() : null).then(data => {
-    if (!data?.reports?.length) { el.innerHTML = '<div class="task-empty">No reports yet</div>'; return; }
+    if (!data?.reports?.length) { el.innerHTML = '<div class="empty">No reports yet</div>'; return; }
     el.innerHTML = data.reports.slice(0, 8).map(r => {
       const name = r.name.replace(/^Subtask-/, '').replace(/\.md$|\.json$|\.txt$/, '');
       const sizeKb = (r.size / 1024).toFixed(1);
@@ -575,7 +593,7 @@ function renderRecentReports() {
         </div>
       </div>`;
     }).join('');
-  }).catch(() => { el.innerHTML = '<div class="task-empty">Error loading reports</div>'; });
+  }).catch(() => { el.innerHTML = '<div class="empty">Error loading reports</div>'; });
 }
 
 function fmtTimeAgo(ts) {
@@ -852,7 +870,7 @@ function renderCostCenter() {
   const providers = COSTS.byProvider;
   const provNames = Object.keys(providers);
   if (!provNames.length) {
-    bp.innerHTML = '<div class="task-empty">No cost data yet</div>';
+    bp.innerHTML = '<div class="empty">No cost data yet</div>';
   } else {
     const maxCost = Math.max(...provNames.map(p => providers[p].cost), 0.001);
     bp.innerHTML = provNames.map(p => {
@@ -874,7 +892,7 @@ function renderCostCenter() {
   const models = COSTS.byModel;
   const modNames = Object.keys(models);
   if (!modNames.length) {
-    bm.innerHTML = '<div class="task-empty">No cost data yet</div>';
+    bm.innerHTML = '<div class="empty">No cost data yet</div>';
   } else {
     bm.innerHTML = modNames.map(m => {
       const d = models[m];
@@ -891,7 +909,7 @@ function renderCostCenter() {
   const days = COSTS.byDay;
   const dayNames = Object.keys(days).sort().reverse();
   if (!dayNames.length) {
-    bd.innerHTML = '<div class="task-empty">No cost data yet</div>';
+    bd.innerHTML = '<div class="empty">No cost data yet</div>';
   } else {
     const maxDayCost = Math.max(...dayNames.map(d => days[d].cost), 0.001);
     bd.innerHTML = dayNames.map(d => {
@@ -1224,7 +1242,7 @@ function renderChannelTasks() {
   });
 
   if (!chTasks.length) {
-    ct.innerHTML = '<div class="task-empty">No tasks for this channel yet</div>';
+    ct.innerHTML = '<div class="empty">No tasks for this channel yet</div>';
   } else {
     ct.innerHTML = chTasks.slice(0, 10).map(taskCard).join('');
   }
@@ -1243,7 +1261,7 @@ function renderChannelTasks() {
       }
     } else {
       co.className = 'channel-output-area';
-      co.innerHTML = '<div class="task-empty">Send a task to see output</div>';
+      co.innerHTML = '<div class="empty">Send a task to see output</div>';
     }
   }
 }
@@ -1632,7 +1650,7 @@ function renderIntakeTasks() {
   }
 
   if (!tasks.length && !activeTask) {
-    list.innerHTML = '<div class="task-empty" style="padding:12px">No tasks yet. Submit one above to get started.</div>';
+    list.innerHTML = '<div class="empty" style="padding:12px">No tasks yet. Submit one above to get started.</div>';
     return;
   }
 

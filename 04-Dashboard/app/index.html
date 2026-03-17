@@ -9,6 +9,7 @@
   <meta name="mobile-web-app-capable" content="yes" />
   <title>GPO</title>
   <link rel="stylesheet" href="gpo.css" />
+  <!-- Old CSS kept as fallback — can be removed once gpo.css covers all cases -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="operator.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -465,6 +466,18 @@
               </div>
               <div id="builderDiagnostics" style="margin-top:var(--sp-8)"></div>
               <div id="settingsSystem" style="margin-top:var(--sp-8)"></div>
+            </div>
+          </div>
+
+          <!-- Theme -->
+          <div class="sf" style="margin-bottom:var(--sp-16)">
+            <div class="sh"><h3>Appearance</h3></div>
+            <div class="spread" style="font-size:12px">
+              <span style="color:var(--text-dim)">Theme</span>
+              <div class="row" style="gap:var(--sp-4)">
+                <button class="btn btn-sm" id="themeToggleDark" onclick="setTheme('dark')">Dark</button>
+                <button class="btn btn-ghost btn-sm" id="themeToggleLight" onclick="setTheme('light')">Light</button>
+              </div>
             </div>
           </div>
 

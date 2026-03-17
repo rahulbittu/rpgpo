@@ -209,6 +209,25 @@ a:hover { text-decoration: underline; }
 .gpo-mobile-nav .mob-item.active { color: var(--accent); }
 .gpo-mobile-nav .mob-item .mob-icon { font-size: 18px; }
 
+/* ═══ TAB PANEL SYSTEM ═══ */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ═══ COMPATIBILITY — old classes needed by JS render output ═══ */
+.task-empty { color: var(--text-faint); font-size: 12px; padding: var(--sp-16) 0; text-align: center; }
+.md-content { font-size: 12px; color: var(--text-dim); line-height: 1.6; }
+.md-content h1, .md-content h2, .md-content h3 { color: var(--text); margin: var(--sp-12) 0 var(--sp-4); }
+.md-content pre { background: var(--bg-inset); padding: var(--sp-8); border-radius: var(--r-sm); overflow-x: auto; font-size: 11px; }
+.md-content code { background: var(--bg-inset); padding: 1px 4px; border-radius: 3px; font-size: 11px; }
+.md-content ul, .md-content ol { padding-left: var(--sp-16); }
+.current-task-focus { cursor: pointer; }
+.flow-step { transition: all var(--dur) var(--ease); }
+.flow-step.is-current { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+.nav-badge { background: var(--red); color: white; font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 8px; margin-left: auto; }
+.activity-feed { font-size: 12px; }
+.live-feed-item { padding: var(--sp-4) 0; border-bottom: 1px solid var(--border); font-size: 11px; color: var(--text-dim); }
+.heartbeat-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+
 /* ═══ GRID HELPERS ═══ */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-16); }
 .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--sp-16); }
