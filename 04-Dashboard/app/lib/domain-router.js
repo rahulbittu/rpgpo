@@ -8,12 +8,12 @@ exports.toCanonical = toCanonical;
 exports.toLegacy = toLegacy;
 exports.resolveAlias = resolveAlias;
 // Canonical engine ID → keyword list
-var ENGINE_KEYWORDS = {
+const ENGINE_KEYWORDS = {
     news: ['news', 'headline', 'trending', 'current events', 'journalism', 'breaking', 'today\'s news'],
     finance: ['passive income', 'investment', 'wealth', 'money', 'side hustle', 'revenue', 'profit', 'side project', 'income ideas', 'income stream', 'financial plan', 'tax', 'retirement', 'insurance', 'savings', 'portfolio', 'roth ira', '401k', 'estate planning', 'angel investing', 'angel deal', 'capital gains', 'dividend', 'bonds', 'reit', 'hsa', 'net worth', 'budgeting', 'debt payoff', 'wealth building', 'financial independence', 'social security', 'medicare', 'pension', 'annuity', 'minimum distribution', 'rmd', 'fiduciary'],
     career: ['career', 'salary', 'hiring', 'resume', 'interview', 'promotion', 'data engineer', 'job market', 'skill gap', 'professional development', 'job search', 'compensation', 'engineering manager', 'staff engineer', 'principal engineer', 'performance review', 'one-on-one', 'skip-level', 'managing up', 'personal brand', 'linkedin', 'career pivot', 'negotiation', 'imposter syndrome', 'mentoring', 'onboarding new', 'hiring pipeline', 'tech lead', 'engineering ladder', 'technical leadership', 'sprint demo', 'stakeholder trust', 'cross-functional influence', 'retrospective', 'team health', 'executive presence', 'executive communication', 'delegation framework', 'building influence'],
     writing: ['write a guide', 'write a complete', 'draft a', 'memo', 'prd', 'spec', 'sop', 'runbook', 'proposal', 'letter', 'rewrite', 'executive summary', 'summarize this', 'technical writing', 'documentation culture', 'documentation debt', 'rfc', 'design document', 'concept for a', 'treatment for a', 'series bible', 'character bible', 'world-building', 'outline for a', 'pitch deck', 'concept for an'],
-    research: ['research the best', 'analyze', 'investigate', 'evaluate', 'assessment', 'deep-dive', 'deep dive', 'market analysis', 'competitive analysis', 'compare', 'latest evidence', 'benchmark', 'best home', 'best budget', 'best portable', 'best smart', 'best wireless', 'best ergonomic', 'best indoor', 'best outdoor', 'best noise', 'under $', 'under five hundred', 'under three hundred', 'under four hundred', 'under two hundred', 'under one hundred', 'what are the best', 'recommend', 'top 10', 'top 5', 'top 3', 'where to find', 'find me', 'suggest', 'best places', 'best restaurants', 'best coffee', 'best bars', 'best tools', 'best apps', 'best software', 'pros and cons', 'which is better', 'alternatives to'],
+    research: ['research the best', 'analyze', 'investigate', 'evaluate', 'assessment', 'deep-dive', 'deep dive', 'market analysis', 'competitive analysis', 'compare', 'latest evidence', 'benchmark', 'best home', 'best budget', 'best portable', 'best smart', 'best wireless', 'best ergonomic', 'best indoor', 'best outdoor', 'best noise', 'under $', 'under five hundred', 'under three hundred', 'under four hundred', 'under two hundred', 'under one hundred', 'what are the best', 'recommend', 'top 10', 'top 5', 'top 3', 'where to find', 'find me', 'suggest', 'best places', 'best restaurants', 'best coffee', 'best bars', 'best tools', 'best apps', 'best software', 'pros and cons', 'which is better', 'alternatives to', 'best food', 'best pizza', 'best tacos', 'best sushi', 'best brunch', 'best bakery', 'best dessert', 'best ice cream', 'best steak', 'best seafood', 'best vegetarian', 'best vegan', 'best biryani', 'best haleem', 'best dosa', 'best chai', 'best street food', 'best fine dining', 'best cheap eats', 'best hidden gem', 'best rated', 'highest rated', 'most popular'],
     learning: ['teach me', 'explain how', 'explain the', 'tutor', 'study plan', 'quiz me', 'course', 'curriculum', 'how does', 'how do', 'works under the hood', 'works end-to-end', 'works from', 'internals of', 'works in modern', 'works compared to', 'how modern', 'how the linux', 'how container', 'how database', 'how compiler', 'how garbage', 'how virtual', 'how async', 'how tcp', 'how http', 'how dns', 'how tls', 'how web'],
     shopping: ['buy', 'purchase', 'compare products', 'shopping', 'best price', 'product comparison'],
     travel: ['travel', 'trip', 'flight', 'hotel', 'itinerary', 'relocation', 'moving to', 'tour through', 'road trip', 'tour of', 'safari', 'backpacking', 'immersion trip', 'cultural tour', 'food tour', 'wine tour', 'history tour', 'adventure tour', 'visit', 'vacation', 'holiday', 'places to see', 'things to do in', 'weekend getaway', 'day trip'],
@@ -24,7 +24,7 @@ var ENGINE_KEYWORDS = {
     music: ['music', 'song', 'composition', 'lyrics', 'melody', 'album', 'audio production', 'musical'],
 };
 // Canonical → legacy mapping (for backward compat with stored tasks and types.ts)
-var CANONICAL_TO_LEGACY = {
+const CANONICAL_TO_LEGACY = {
     career: 'careeregine',
     finance: 'wealthresearch',
     ops: 'personalops',
@@ -34,7 +34,7 @@ var CANONICAL_TO_LEGACY = {
     // 'code' has no legacy equivalent — it's a new canonical ID
 };
 // Legacy → canonical (for reading old data)
-var LEGACY_TO_CANONICAL = {
+const LEGACY_TO_CANONICAL = {
     careeregine: 'career',
     wealthresearch: 'finance',
     personalops: 'ops',
@@ -43,35 +43,33 @@ var LEGACY_TO_CANONICAL = {
     founder2founder: 'film',
 };
 function routeRequest(rawRequest) {
-    var lower = rawRequest.toLowerCase();
-    var scores = [];
-    for (var _i = 0, _a = Object.entries(ENGINE_KEYWORDS); _i < _a.length; _i++) {
-        var _b = _a[_i], engine = _b[0], keywords = _b[1];
-        var score = 0;
-        for (var _c = 0, keywords_1 = keywords; _c < keywords_1.length; _c++) {
-            var kw = keywords_1[_c];
+    const lower = rawRequest.toLowerCase();
+    const scores = [];
+    for (const [engine, keywords] of Object.entries(ENGINE_KEYWORDS)) {
+        let score = 0;
+        for (const kw of keywords) {
             if (lower.includes(kw))
                 score += kw.split(' ').length;
         }
         if (score > 0)
-            scores.push({ domain: engine, score: score });
+            scores.push({ domain: engine, score });
     }
-    scores.sort(function (a, b) { return b.score - a.score; });
+    scores.sort((a, b) => b.score - a.score);
     if (scores.length === 0) {
         return { domain: 'general', legacyDomain: 'general', confidence: 0.3, alternates: [], reason: 'No keyword matches — defaulting to general' };
     }
-    var best = scores[0];
-    var confidence = Math.min(1, best.score / 3);
-    var legacyDomain = CANONICAL_TO_LEGACY[best.domain] || best.domain;
+    const best = scores[0];
+    const confidence = Math.min(1, best.score / 3);
+    const legacyDomain = CANONICAL_TO_LEGACY[best.domain] || best.domain;
     return {
         domain: best.domain,
-        legacyDomain: legacyDomain,
-        confidence: confidence,
-        alternates: scores.slice(1, 4).map(function (s) { return ({
+        legacyDomain,
+        confidence,
+        alternates: scores.slice(1, 4).map(s => ({
             domain: s.domain,
             confidence: Math.min(1, s.score / 3),
-        }); }),
-        reason: "Matched ".concat(best.score, " keywords for ").concat(best.domain),
+        })),
+        reason: `Matched ${best.score} keywords for ${best.domain}`,
     };
 }
 /** Convert legacy domain ID to canonical */
@@ -85,11 +83,11 @@ function toLegacy(canonical) {
 /** Resolve any alias to the legacy domain ID (for backward compat with current type system) */
 function resolveAlias(domain) {
     // If it's a canonical ID, convert to legacy for current type compat
-    var legacy = CANONICAL_TO_LEGACY[domain];
+    const legacy = CANONICAL_TO_LEGACY[domain];
     if (legacy)
         return legacy;
     // Common form aliases
-    var FORM_ALIASES = {
+    const FORM_ALIASES = {
         career: 'careeregine',
         finance: 'wealthresearch',
         home: 'personalops',
@@ -98,4 +96,4 @@ function resolveAlias(domain) {
     };
     return FORM_ALIASES[domain] || domain;
 }
-module.exports = { routeRequest: routeRequest, resolveAlias: resolveAlias, toCanonical: toCanonical, toLegacy: toLegacy };
+module.exports = { routeRequest, resolveAlias, toCanonical, toLegacy };
