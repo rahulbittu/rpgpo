@@ -253,7 +253,7 @@ function renderAskResult(task, output) {
     ${sourcesHtml}
     <div class="result-actions">
       <a href="/api/intake/task/${task.task_id}/export?fmt=md" download class="b b-line b-sm" style="text-decoration:none">&#128229; Download</a>
-      <button class="b b-ghost b-sm" onclick="go('evidence');viewEvidence('${task.task_id}')">&#128270; Evidence</button>
+      <button class="b b-ghost b-sm" onclick="viewResult('${task.task_id}')">&#128270; Evidence</button>
     </div>
     <div class="fb" id="fb-${task.task_id}">
       <span class="fb-q">Was this helpful?</span>
@@ -301,10 +301,22 @@ async function loadResults() {
   } catch { el.innerHTML = '<div class="nil"><span class="nil-desc">Error loading results</span></div>'; }
 }
 
+let _resultFilter = '';
 function filterResults(engine) {
+  _resultFilter = engine;
   const ff = document.getElementById('resultFilters');
   if (ff) ff.querySelectorAll('.b').forEach(b => b.classList.toggle('on', b.textContent.startsWith(engine ? engName(engine) : 'All')));
-  const filtered = engine ? _allResults.filter(t => (t.engine || t.domain) === engine) : _allResults;
+  applyResultFilters();
+}
+
+function searchResults(query) {
+  applyResultFilters(query);
+}
+
+function applyResultFilters(query) {
+  const q = (query || document.getElementById('resultSearch')?.value || '').toLowerCase().trim();
+  let filtered = _resultFilter ? _allResults.filter(t => (t.engine || t.domain) === _resultFilter) : _allResults;
+  if (q) filtered = filtered.filter(t => (t.title || '').toLowerCase().includes(q) || (t.raw_request || '').toLowerCase().includes(q) || (t.board_deliberation?.interpreted_objective || '').toLowerCase().includes(q));
   renderResults(filtered.slice(0, 50));
 }
 
@@ -327,8 +339,11 @@ function renderResults(tasks) {
 }
 
 async function viewResult(taskId) {
+  // Show loading immediately on evidence screen, then load
+  const el = document.getElementById('evidenceContent');
+  if (el) el.innerHTML = '<div class="wait">Loading...</div>';
   go('evidence');
-  viewEvidence(taskId);
+  await viewEvidence(taskId);
 }
 
 // ═══ EVIDENCE ═══
@@ -342,8 +357,9 @@ async function viewEvidence(taskId) {
     const output = subs.filter(s => s.output).map(s => s.output).join('\n\n');
     const sources = extractSources(output);
 
-    let html = `<div class="card result" style="margin-bottom:16px">
-      <div class="result-head"><span class="tag tag-muted">${engName(task.domain)}</span><h3>${esc((task.title || '').slice(0, 60))}</h3>${statusTag(task.status)}</div>
+    let html = `<div style="margin-bottom:12px"><button class="b b-ghost b-sm" onclick="go('results')">&#8592; Back to Results</button></div>
+    <div class="card result" style="margin-bottom:16px">
+      <div class="result-head"><span class="tag tag-muted">${engName(task.domain)}</span><h3>${esc((task.title || '').slice(0, 60))}</h3>${statusTag(task.status)}<span style="font-size:10px;color:var(--text-2);margin-left:8px">${fmtDate(task.updated_at || task.created_at)}</span></div>
       <div class="result-body">${md(output)}</div>
       ${sources.length ? `<div class="result-sources"><h4>Sources (${sources.length})</h4>${sources.map(u => `<a href="${esc(u)}" target="_blank" class="source-link">&#128279; ${esc(u.replace(/https?:\/\//,'').split('/')[0])}</a>`).join('')}</div>` : ''}
       <div class="result-actions">

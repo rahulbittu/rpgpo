@@ -125,7 +125,8 @@
     <section class="v2-screen" id="s-results">
       <div class="v2-page">
         <div class="v2-page-hd spread"><div><h1>Results</h1><p>All completed outputs</p></div><button class="b-icon" onclick="loadResults()">&#8635;</button></div>
-        <div class="filters mb-12" id="resultFilters"></div>
+        <div style="margin-bottom:12px"><input id="resultSearch" class="inp" style="padding:8px 12px" placeholder="Search results..." oninput="searchResults(this.value)"></div>
+        <div class="filters" style="margin-bottom:12px" id="resultFilters"></div>
         <div id="resultsList" class="stack"></div>
       </div>
     </section>

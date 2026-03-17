@@ -1,5 +1,17 @@
 [
   {
+    "record_id": "ee_mmu4hhld71wi",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmu4h1zsbb2y",
+    "route": "general",
+    "linked_path_id": "",
+    "created_at": "2026-03-17T04:39:01.201Z"
+  },
+  {
     "record_id": "ee_mmu2yo5f1pfp",
     "area": "runtime_deliverable",
     "middleware_ran": "runtime-deliverable-pipeline",
@@ -5986,17 +5998,5 @@
     "route": "learning",
     "linked_path_id": "",
     "created_at": "2026-03-16T06:30:25.487Z"
-  },
-  {
-    "record_id": "ee_mmst0oz872or",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "partial",
-    "response_effect": "Partial: missing sections",
-    "scope_type": "task",
-    "scope_id": "t_mmsswbg5gba4",
-    "route": "general",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T06:30:15.668Z"
   }
 ]
