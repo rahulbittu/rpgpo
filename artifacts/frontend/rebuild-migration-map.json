@@ -1,0 +1,38 @@
+{
+  "current_tabs": {
+    "tab-home": { "new_nav": "home", "action": "rebuild" },
+    "tab-intake": { "new_nav": "work", "action": "rebuild" },
+    "tab-tasks": { "new_nav": "work (queue view)", "action": "merge into work" },
+    "tab-channels": { "new_nav": "work (direct AI)", "action": "merge into work" },
+    "tab-missions": { "new_nav": "engines", "action": "rebuild" },
+    "tab-memory": { "new_nav": "settings (or engines)", "action": "merge" },
+    "tab-providers": { "new_nav": "engines", "action": "merge into engines" },
+    "tab-approvals": { "new_nav": "approvals", "action": "rebuild" },
+    "tab-costs": { "new_nav": "settings (budget)", "action": "merge into settings" },
+    "tab-logs": { "new_nav": "activity", "action": "rebuild" },
+    "tab-controls": { "new_nav": "admin (hidden)", "action": "move to admin" },
+    "tab-settings": { "new_nav": "settings", "action": "rebuild" }
+  },
+  "new_navigation": [
+    { "id": "home", "label": "Home", "icon": "grid", "primary": true },
+    { "id": "work", "label": "Work", "icon": "layers", "primary": true },
+    { "id": "approvals", "label": "Approvals", "icon": "shield", "primary": true, "badge": true },
+    { "id": "engines", "label": "Engines", "icon": "cpu", "primary": true },
+    { "id": "activity", "label": "Activity", "icon": "clock", "primary": true },
+    { "id": "settings", "label": "Settings", "icon": "settings", "primary": true }
+  ],
+  "removed_from_nav": [
+    { "id": "channels", "reason": "merged into Work" },
+    { "id": "memory", "reason": "merged into Settings or Engines" },
+    { "id": "providers", "reason": "merged into Engines" },
+    { "id": "costs", "reason": "merged into Settings" },
+    { "id": "controls", "reason": "moved to admin — not operator-facing" },
+    { "id": "tasks", "reason": "merged into Work as queue view" }
+  ],
+  "legacy_cleanup": [
+    { "item": "renderTopRanker()", "file": "app.js:1152", "action": "delete" },
+    { "item": "renderNeedsRahul alias", "file": "operator.js:1538", "action": "delete" },
+    { "item": "TopRanker mission check", "file": "app.js:794", "action": "simplify" },
+    { "item": "Legacy engine IDs in config", "file": "operator.js:396-405", "action": "migrate to canonical" }
+  ]
+}
