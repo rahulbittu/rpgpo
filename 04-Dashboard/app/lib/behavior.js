@@ -402,9 +402,33 @@ function deriveSignals() {
         }
     }
     catch ( /* profile not available */_k) { /* profile not available */ }
+    // 11. Verification metrics — first-pass clean rate (ECC-inspired eval pattern)
+    var liveAccepted = events.filter(function (e) { var _a; return e.type === 'output_accepted' && ((_a = e.metadata) === null || _a === void 0 ? void 0 : _a.source) === 'workflow_completion'; });
+    var liveAbandoned = events.filter(function (e) { var _a; return e.type === 'output_abandoned' && ((_a = e.metadata) === null || _a === void 0 ? void 0 : _a.source) === 'workflow_completion'; });
+    var liveTotal = liveAccepted.length + liveAbandoned.length;
+    if (liveTotal >= 5) {
+        var cleanRate = liveAccepted.length / liveTotal;
+        // Average quality metrics from live events
+        var withQuality = liveAccepted.filter(function (e) { var _a; return (_a = e.metadata) === null || _a === void 0 ? void 0 : _a.quality; });
+        var avgLength = withQuality.length > 0
+            ? Math.round(withQuality.reduce(function (s, e) { return s + (e.metadata.quality.output_length || 0); }, 0) / withQuality.length)
+            : 0;
+        var structuredPct = withQuality.length > 0
+            ? Math.round(withQuality.filter(function (e) { return e.metadata.quality.has_structure; }).length / withQuality.length * 100)
+            : 0;
+        signals.push({
+            name: 'first_pass_clean_rate',
+            value: { rate: Math.round(cleanRate * 100) + '%', accepted: liveAccepted.length, failed: liveAbandoned.length },
+            confidence: Math.min(1.0, liveTotal / 30),
+            scope: 'global',
+            sourceEventCount: liveTotal,
+            lastUpdated: new Date().toISOString(),
+            active: liveTotal >= 10,
+            provenance: 'live_observed',
+            explanation: "Live verification: ".concat(liveAccepted.length, "/").concat(liveTotal, " tasks clean on first pass (").concat((cleanRate * 100).toFixed(0), "%). Avg output: ").concat(avgLength, " chars, ").concat(structuredPct, "% structured."),
+        });
+    }
     // Post-process: ensure all signals have provenance
-    // Event-based signals without explicit provenance default to seeded_historical
-    // (all current events are from historical seeding)
     for (var _l = 0, signals_1 = signals; _l < signals_1.length; _l++) {
         var sig = signals_1[_l];
         if (!sig.provenance) {

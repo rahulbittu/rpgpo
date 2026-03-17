@@ -4299,10 +4299,62 @@ function keyDiag(name) {
   return `OK (${v.slice(0, 6)}...)`;
 }
 
+// ── Session Lifecycle Persistence (ECC-inspired pattern) ──
+const SESSION_CACHE_PATH = path.resolve(__dirname, '..', '..', 'artifacts', 'behavior', 'session-cache.json');
+
+function saveSessionState() {
+  try {
+    const stats = behavior.getStats();
+    const signals = behavior.readSignals();
+    const routingStats = intake.getRoutingStats ? intake.getRoutingStats() : {};
+    const sessionData = {
+      saved_at: new Date().toISOString(),
+      uptime_ms: Date.now() - startTime,
+      total_events: stats.totalEvents,
+      total_signals: signals.length,
+      active_signals: signals.filter(s => s.active).length,
+      live_observed: signals.filter(s => s.provenance === 'live_observed').length,
+      routing_stats: routingStats,
+      task_count: intake.getAllTasks().length,
+      done_count: intake.getAllTasks().filter(t => t.status === 'done').length,
+    };
+    fs.writeFileSync(SESSION_CACHE_PATH, JSON.stringify(sessionData, null, 2));
+    console.log(`[server] Session state saved (${sessionData.total_signals} signals, ${sessionData.task_count} tasks)`);
+  } catch (e) { console.log(`[server] Session save warning: ${e.message}`); }
+}
+
+function loadSessionState() {
+  try {
+    if (fs.existsSync(SESSION_CACHE_PATH)) {
+      const data = JSON.parse(fs.readFileSync(SESSION_CACHE_PATH, 'utf-8'));
+      console.log(`[server] Restored session: ${data.total_signals} signals, ${data.task_count} tasks (saved ${data.saved_at})`);
+      return data;
+    }
+  } catch { /* no prior session */ }
+  return null;
+}
+
+// Restore previous session on startup
+const priorSession = loadSessionState();
+
+// Graceful shutdown — save session state
+function gracefulShutdown(signal) {
+  console.log(`[server] ${signal} received — saving session state...`);
+  saveSessionState();
+  process.exit(0);
+}
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));
+
+// Periodic session save (every 5 minutes as safety net)
+setInterval(saveSessionState, 5 * 60 * 1000);
+
 server.listen(PORT, '0.0.0.0', () => {
   console.log(`\n  RPGPO Command Center v6 running at http://localhost:${PORT}`);
   console.log(`  Binding 0.0.0.0 for remote access`);
-  console.log(`  Keys: OpenAI=${keyDiag('OPENAI_API_KEY')} Perplexity=${keyDiag('PERPLEXITY_API_KEY')} Gemini=${keyDiag('GEMINI_API_KEY')}\n`);
+  console.log(`  Keys: OpenAI=${keyDiag('OPENAI_API_KEY')} Perplexity=${keyDiag('PERPLEXITY_API_KEY')} Gemini=${keyDiag('GEMINI_API_KEY')}`);
+  if (priorSession) console.log(`  Prior session: ${priorSession.total_signals} signals, ${priorSession.task_count} tasks`);
+  console.log('');
 });
 
   // Parts 126-128 batch routes injected at EOF

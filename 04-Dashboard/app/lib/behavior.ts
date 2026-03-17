@@ -399,9 +399,35 @@ function deriveSignals(): BehaviorSignal[] {
     }
   } catch { /* profile not available */ }
 
+  // 11. Verification metrics — first-pass clean rate (ECC-inspired eval pattern)
+  const liveAccepted = events.filter(e => e.type === 'output_accepted' && e.metadata?.source === 'workflow_completion');
+  const liveAbandoned = events.filter(e => e.type === 'output_abandoned' && e.metadata?.source === 'workflow_completion');
+  const liveTotal = liveAccepted.length + liveAbandoned.length;
+  if (liveTotal >= 5) {
+    const cleanRate = liveAccepted.length / liveTotal;
+    // Average quality metrics from live events
+    const withQuality = liveAccepted.filter(e => e.metadata?.quality);
+    const avgLength = withQuality.length > 0
+      ? Math.round(withQuality.reduce((s, e) => s + (e.metadata.quality.output_length || 0), 0) / withQuality.length)
+      : 0;
+    const structuredPct = withQuality.length > 0
+      ? Math.round(withQuality.filter(e => e.metadata.quality.has_structure).length / withQuality.length * 100)
+      : 0;
+
+    signals.push({
+      name: 'first_pass_clean_rate',
+      value: { rate: Math.round(cleanRate * 100) + '%', accepted: liveAccepted.length, failed: liveAbandoned.length },
+      confidence: Math.min(1.0, liveTotal / 30),
+      scope: 'global' as SignalScope,
+      sourceEventCount: liveTotal,
+      lastUpdated: new Date().toISOString(),
+      active: liveTotal >= 10,
+      provenance: 'live_observed' as SignalProvenance,
+      explanation: `Live verification: ${liveAccepted.length}/${liveTotal} tasks clean on first pass (${(cleanRate * 100).toFixed(0)}%). Avg output: ${avgLength} chars, ${structuredPct}% structured.`,
+    });
+  }
+
   // Post-process: ensure all signals have provenance
-  // Event-based signals without explicit provenance default to seeded_historical
-  // (all current events are from historical seeding)
   for (const sig of signals) {
     if (!sig.provenance) {
       sig.provenance = 'seeded_historical';

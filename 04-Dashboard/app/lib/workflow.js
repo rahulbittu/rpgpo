@@ -199,14 +199,27 @@ function checkTaskCompletion(taskId, allSubs) {
     }
     intake.updateTask(taskId, { status: anyFailed ? 'failed' : 'done' });
     // Behavior learning: record task outcome event (live_observed)
+    // Verification metrics: score output quality (ECC-inspired eval pattern)
     try {
         var behaviorMod = require('./behavior');
         var intakeTask2 = intake.getTask(taskId);
+        // Quality scoring for verification metrics
+        var completedSubs = refreshedSubs.filter(function (s) { return s.status === 'done' && s.output; });
+        var totalOutputLength = completedSubs.reduce(function (sum, s) { return sum + (s.output || '').length; }, 0);
+        var hasStructuredSections = completedSubs.some(function (s) { return (s.output || '').includes('##'); });
+        var hasSources = completedSubs.some(function (s) { return /https?:\/\/|Source:|source:/i.test(s.output || ''); });
+        var qualityScore = {
+            output_length: totalOutputLength,
+            has_structure: hasStructuredSections,
+            has_sources: hasSources,
+            subtask_count: completedSubs.length,
+            length_adequate: totalOutputLength > 500,
+        };
         if (anyFailed) {
-            behaviorMod.recordEvent('output_abandoned', { reason: 'task_failed', source: 'workflow_completion' }, { taskId: taskId, engine: intakeTask2 === null || intakeTask2 === void 0 ? void 0 : intakeTask2.domain });
+            behaviorMod.recordEvent('output_abandoned', { reason: 'task_failed', source: 'workflow_completion', quality: qualityScore }, { taskId: taskId, engine: intakeTask2 === null || intakeTask2 === void 0 ? void 0 : intakeTask2.domain });
         }
         else {
-            behaviorMod.recordEvent('output_accepted', { source: 'workflow_completion' }, { taskId: taskId, engine: intakeTask2 === null || intakeTask2 === void 0 ? void 0 : intakeTask2.domain });
+            behaviorMod.recordEvent('output_accepted', { source: 'workflow_completion', quality: qualityScore }, { taskId: taskId, engine: intakeTask2 === null || intakeTask2 === void 0 ? void 0 : intakeTask2.domain });
         }
     }
     catch ( /* behavior module non-fatal */_b) { /* behavior module non-fatal */ }

@@ -214,13 +214,28 @@ export function checkTaskCompletion(taskId: string, allSubs?: Subtask[]): void {
   intake.updateTask(taskId, { status: anyFailed ? 'failed' : 'done' });
 
   // Behavior learning: record task outcome event (live_observed)
+  // Verification metrics: score output quality (ECC-inspired eval pattern)
   try {
     const behaviorMod = require('./behavior') as { recordEvent(type: string, meta: Record<string, any>, ctx: Record<string, any>): void };
     const intakeTask2 = intake.getTask(taskId) as unknown as { domain?: string; title?: string } | null;
+
+    // Quality scoring for verification metrics
+    const completedSubs = refreshedSubs.filter(s => s.status === 'done' && s.output);
+    const totalOutputLength = completedSubs.reduce((sum, s) => sum + ((s.output as string) || '').length, 0);
+    const hasStructuredSections = completedSubs.some(s => ((s.output as string) || '').includes('##'));
+    const hasSources = completedSubs.some(s => /https?:\/\/|Source:|source:/i.test((s.output as string) || ''));
+    const qualityScore = {
+      output_length: totalOutputLength,
+      has_structure: hasStructuredSections,
+      has_sources: hasSources,
+      subtask_count: completedSubs.length,
+      length_adequate: totalOutputLength > 500,
+    };
+
     if (anyFailed) {
-      behaviorMod.recordEvent('output_abandoned', { reason: 'task_failed', source: 'workflow_completion' }, { taskId, engine: intakeTask2?.domain });
+      behaviorMod.recordEvent('output_abandoned', { reason: 'task_failed', source: 'workflow_completion', quality: qualityScore }, { taskId, engine: intakeTask2?.domain });
     } else {
-      behaviorMod.recordEvent('output_accepted', { source: 'workflow_completion' }, { taskId, engine: intakeTask2?.domain });
+      behaviorMod.recordEvent('output_accepted', { source: 'workflow_completion', quality: qualityScore }, { taskId, engine: intakeTask2?.domain });
     }
   } catch { /* behavior module non-fatal */ }
 
