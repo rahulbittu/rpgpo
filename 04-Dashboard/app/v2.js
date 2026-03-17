@@ -18,6 +18,9 @@ function go(r) {
     if (el) el.classList.toggle('on', s === r);
   });
   document.querySelectorAll('.v2-nav-item,.mob-tab').forEach(n => n.classList.toggle('on', n.dataset.r === r));
+  // Update browser tab title
+  const titles = { command: 'Command', ask: 'Ask', work: 'Work', activity: 'Activity', ops: 'Operations', settings: 'Settings' };
+  document.title = (titles[r] || 'GPO') + ' — GPO';
   if (r === 'command') loadCommand();
   if (r === 'work') loadWork();
   if (r === 'activity') loadActivity();
@@ -234,12 +237,13 @@ async function loadCommand() {
   const actionsList = document.getElementById('cmdActionsList');
   if (actionsEl && actionsList && actions?.actions?.length) {
     actionsEl.style.display = '';
-    actionsList.innerHTML = actions.actions.slice(0, 5).map(a =>
-      `<div class="card card-click" style="padding:10px 14px;margin-bottom:6px">
-        <div class="spread"><span style="font-size:12px;font-weight:500">${sesc((a.title || '').slice(0, 60))}</span><span class="tag tag-${a.priority === 'high' ? 'warn' : 'muted'}">${esc(a.priority || 'medium')}</span></div>
-        <div style="font-size:10px;color:var(--text-2);margin-top:3px">${sesc((a.why || '').slice(0, 80))}</div>
-      </div>`
-    ).join('');
+    actionsList.innerHTML = actions.actions.slice(0, 5).map(a => {
+      const actionTitle = sanitize((a.title || '').slice(0, 60));
+      return `<div class="card card-click" style="padding:10px 14px;margin-bottom:6px" onclick="useTemplate('${esc(actionTitle)}','${esc(a.domain || '')}')">
+        <div class="spread"><span style="font-size:12px;font-weight:500">${esc(actionTitle)}</span><span class="tag tag-${a.priority === 'high' ? 'warn' : 'muted'}">${esc(a.priority || 'medium')}</span></div>
+        <div class="row gap-8" style="font-size:10px;color:var(--text-2);margin-top:3px">${a.domain ? `<span class="tag tag-muted">${engName(a.domain)}</span>` : ''}${sesc((a.why || '').slice(0, 70))}</div>
+      </div>`;
+    }).join('');
   }
 
   // System Health
