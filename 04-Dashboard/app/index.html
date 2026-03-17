@@ -373,22 +373,26 @@
 
       <!-- ENGINES -->
       <section class="tab-panel" id="tab-missions">
-        <div style="margin-bottom:20px">
-          <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Engines</h1>
-          <p class="subtitle">15 AI engines powering your GPO across every domain</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-24)">
+          <div>
+            <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Engines</h1>
+            <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">15 AI engines across every domain</p>
+          </div>
         </div>
-        <div id="missionSnapshotGrid" class="g2" style="margin-bottom:20px"></div>
+        <div id="missionSnapshotGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-12);margin-bottom:var(--sp-24)"></div>
         <div id="missionStatementsPanel"></div>
-        <div id="missionCards" class="g2" style="margin-top:20px"></div>
+        <div id="missionCards" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-16);margin-top:var(--sp-16)"></div>
       </section>
 
-      <!-- MEMORY & DOCUMENTS -->
+      <!-- MEMORY -->
       <section class="tab-panel" id="tab-memory">
-        <div style="margin-bottom:20px">
-          <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Memory</h1>
-          <p class="subtitle">Operator context, engine knowledge, decisions, and artifacts</p>
+        <div style="margin-bottom:var(--sp-24)">
+          <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Memory</h1>
+          <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">Operator context, learned behavior, and engine knowledge</p>
         </div>
-        <div id="memoryViewerPanel"></div>
+        <div id="memoryViewerPanel">
+          <div class="empty-state"><span class="empty-icon">&#9671;</span><span class="empty-title">Memory system active</span><span class="empty-desc">Behavior signals and operator preferences are tracked automatically</span></div>
+        </div>
       </section>
 
       <!-- DOSSIERS -->
@@ -405,12 +409,12 @@
 
       <!-- APPROVALS -->
       <section class="tab-panel" id="tab-approvals">
-        <div style="margin-bottom:16px">
-          <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Approvals</h1>
-          <p class="subtitle">Review and approve pending work items</p>
+        <div style="margin-bottom:var(--sp-24)">
+          <h1 style="font-size:18px;font-weight:700;letter-spacing:-.3px">Approvals</h1>
+          <p style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2)">Review and approve pending work items</p>
         </div>
         <div id="approvalsList">
-          <div class="task-empty" style="padding:32px 0">No pending approvals. All clear.</div>
+          <div class="empty-state"><span class="empty-icon">&#10003;</span><span class="empty-title">All clear</span><span class="empty-desc">No pending approvals</span></div>
         </div>
       </section>
 

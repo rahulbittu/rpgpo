@@ -976,23 +976,24 @@ async function saveBudgetSettings() {
 // ═══════════════════════════════════════════
 
 function renderMissions() {
-  document.getElementById('missionCards').innerHTML = DATA.missions.map(m => {
-    const bc = badgeClass(m.status);
-    const isPlanned = (m.status || '').toLowerCase() === 'planned';
-    // Map old mission names to 15-engine display names
+  const el = document.getElementById('missionCards');
+  if (!el) return;
+  el.innerHTML = DATA.missions.map(m => {
+    const statusLower = (m.status || '').toLowerCase();
+    const isPlanned = statusLower === 'planned';
     const displayName = domainLabel(m.mission.toLowerCase().replace(/\s+/g, '').replace('engine','egine')) || m.mission;
-    return `<div class="mission-card ${isPlanned ? 'planned' : ''}">
-      <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
-        <span class="mission-name">${esc(displayName)}</span>
+    const badgeCls = statusLower === 'active' ? 'badge-success' : statusLower === 'planned' ? 'badge-neutral' : 'badge-info';
+    return `<div class="surface${isPlanned ? '' : ' surface-accent'}" style="padding:var(--sp-12)">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--sp-8)">
+        <span style="font-size:13px;font-weight:600;color:var(--text)">${esc(displayName)}</span>
+        <span class="badge ${badgeCls}">${esc(m.status)}</span>
       </div>
-      <span class="mission-badge ${bc}">${esc(m.status)}</span>
-      <div class="mission-section"><strong>Objective</strong>${esc(m.objective)}</div>
+      <div style="font-size:12px;color:var(--text-dim);margin-bottom:var(--sp-4)">${esc(m.objective)}</div>
       ${!isPlanned ? `
-        <div class="mission-section"><strong>Progress</strong>${fmtList(m.progress)}</div>
-        <div class="mission-section"><strong>Blockers</strong>${fmtList(m.blockers)}</div>
-        <div class="mission-section"><strong>Next</strong>${fmtList(m.nextActions)}</div>
+        <div style="font-size:11px;color:var(--text-faint);margin-top:var(--sp-8)">
+          ${m.nextActions && m.nextActions.length ? '<strong style="color:var(--text-dim)">Next:</strong> ' + esc(m.nextActions[0]) : ''}
+        </div>
       ` : ''}
-      <div class="mission-section"><strong>Owner</strong>${esc(m.owner)}</div>
     </div>`;
   }).join('');
 }
@@ -1007,25 +1008,24 @@ function renderApprovals() {
   // Show intake subtask approvals at top
   let intakeHtml = '';
   if (PENDING_APPROVALS.length) {
-    intakeHtml = `<div class="card" style="margin-bottom:14px;border:1px solid var(--yellow-border);background:var(--yellow-soft)">
-      <h3 style="color:var(--yellow);margin-bottom:8px">&#9888; Subtask Approvals (${PENDING_APPROVALS.length})</h3>`;
+    intakeHtml = `<div class="surface surface-warning" style="margin-bottom:var(--sp-16)">
+      <div class="section-hdr"><h3 style="color:var(--yellow)">&#9888; Subtask Approvals (${PENDING_APPROVALS.length})</h3></div>`;
     for (const s of PENDING_APPROVALS) {
       const typeIcon = getSubtaskTypeIcon(s.stage);
-      intakeHtml += `<div class="approval-inbox-item" style="margin-bottom:6px">
-        <div class="approval-inbox-item-info">
+      intakeHtml += `<div style="display:flex;justify-content:space-between;align-items:center;padding:var(--sp-8) 0;border-bottom:1px solid var(--border)">
+        <div style="display:flex;align-items:center;gap:var(--sp-8)">
           <span class="subtask-type-icon ${s.stage}">${typeIcon}</span>
           <div>
-            <div class="approval-inbox-item-title">${esc(s.title)}</div>
-            <div class="approval-inbox-item-meta">
-              <span class="stage-tag ${s.stage}">${esc(s.stage)}</span>
-              <span class="task-model-tag ${s.assigned_model}">${esc(s.assigned_model)}</span>
-              <span style="color:var(--text-faint);font-size:9px">from: ${esc(s.parent_title)}</span>
+            <div style="font-size:13px;font-weight:500">${esc(s.title)}</div>
+            <div style="font-size:10px;color:var(--text-faint);margin-top:var(--sp-2)">
+              <span class="badge badge-neutral">${esc(s.stage)}</span>
+              <span style="margin-left:var(--sp-4)">${esc(s.assigned_model)}</span>
+              <span style="margin-left:var(--sp-4)">from: ${esc(s.parent_title)}</span>
             </div>
-            ${s.files_changed && s.files_changed.length ? `<div class="approval-files-changed">${s.files_changed.map(f => '<span class="file-badge">' + esc(f) + '</span>').join('')}</div>` : ''}
           </div>
         </div>
-        <button class="btn-approve-global" onclick="event.stopPropagation();approveSubtaskGlobal('${s.subtask_id}', this)">
-          <span>&#10003;</span> Approve & Continue
+        <button class="btn btn-success btn-sm" onclick="event.stopPropagation();approveSubtaskGlobal('${s.subtask_id}', this)">
+          &#10003; Approve
         </button>
       </div>`;
     }
@@ -1033,7 +1033,7 @@ function renderApprovals() {
   }
 
   if (!DATA.approvals.length && !PENDING_APPROVALS.length) {
-    c.innerHTML = '<div class="card"><p style="color:var(--text-faint)">No pending approvals</p></div>';
+    c.innerHTML = '<div class="empty-state"><span class="empty-icon">&#10003;</span><span class="empty-title">All clear</span><span class="empty-desc">No pending approvals</span></div>';
     return;
   }
   if (!DATA.approvals.length) {
@@ -1054,22 +1054,23 @@ function renderApprovals() {
     const reason = wm ? wm[1].trim().split('\n')[0] : '';
     const sid = a.name.replace(/[^a-zA-Z0-9]/g, '_');
 
-    return `<div class="approval-card" id="ap-${sid}">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px">
+    const riskBadge = risk === 'red' ? 'badge-danger' : risk === 'yellow' ? 'badge-warning' : 'badge-success';
+    return `<div class="surface" id="ap-${sid}" style="margin-bottom:var(--sp-12)">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:var(--sp-8);margin-bottom:var(--sp-8)">
         <div>
-          <h4>${esc(action)}</h4>
+          <div style="font-size:14px;font-weight:600">${esc(action)}</div>
           ${domain ? '<span style="font-size:11px;color:var(--text-dim)">' + domainLabel(domain) + '</span>' : ''}
         </div>
-        <span class="risk-badge risk-${risk}">${risk}</span>
+        <span class="badge ${riskBadge}">${risk}</span>
       </div>
-      ${reason ? '<div class="approval-summary"><strong style="color:var(--text-faint);font-size:9px;text-transform:uppercase">Why:</strong> ' + esc(reason) + '</div>' : ''}
-      ${upside ? '<div class="approval-summary"><strong style="color:var(--text-faint);font-size:9px;text-transform:uppercase">Upside:</strong> ' + esc(upside) + '</div>' : ''}
-      <div class="approval-actions" id="act-${sid}">
-        <button class="btn-approve" onclick="doApproval('${a.name}','approve','${sid}')">Approve</button>
-        <button class="btn-reject" onclick="doApproval('${a.name}','reject','${sid}')">Reject</button>
-        <button class="btn-detail" onclick="showApprovalDetail('${sid}')">Details</button>
+      ${reason ? '<div style="font-size:12px;color:var(--text-dim);margin-bottom:var(--sp-4)"><strong style="color:var(--text-faint);font-size:10px;text-transform:uppercase">Why:</strong> ' + esc(reason) + '</div>' : ''}
+      ${upside ? '<div style="font-size:12px;color:var(--text-dim);margin-bottom:var(--sp-8)"><strong style="color:var(--text-faint);font-size:10px;text-transform:uppercase">Upside:</strong> ' + esc(upside) + '</div>' : ''}
+      <div style="display:flex;gap:var(--sp-8)" id="act-${sid}">
+        <button class="btn btn-success btn-sm" onclick="doApproval('${a.name}','approve','${sid}')">Approve</button>
+        <button class="btn btn-danger btn-sm" onclick="doApproval('${a.name}','reject','${sid}')">Reject</button>
+        <button class="btn btn-ghost btn-sm" onclick="showApprovalDetail('${sid}')">Details</button>
       </div>
-      <div class="md-content" id="detail-${sid}" style="display:none;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);max-height:200px;overflow-y:auto">${md2html(a.content)}</div>
+      <div class="md-content surface-inset" id="detail-${sid}" style="display:none;margin-top:var(--sp-8);max-height:200px;overflow-y:auto">${md2html(a.content)}</div>
     </div>`;
   }).join('');
   c.innerHTML = intakeHtml + c.innerHTML;
