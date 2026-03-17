@@ -453,6 +453,74 @@ function deriveSignals(): BehaviorSignal[] {
     });
   }
 
+  // 12. Operator feedback signals — derived from real human ratings
+  const feedbackEvents = events.filter(e => e.type === 'quality_feedback');
+  const dissatisfactionEvents = events.filter(e => e.type === 'dissatisfaction_expressed');
+  if (feedbackEvents.length >= 1) {
+    // Global satisfaction from explicit feedback
+    const good = feedbackEvents.filter(e => e.metadata?.rating === 'good').length;
+    const bad = feedbackEvents.filter(e => e.metadata?.rating === 'bad' || e.metadata?.rating === 'needs_improvement').length;
+    const total = good + bad;
+    signals.push({
+      name: 'operator_satisfaction_explicit',
+      value: { good, negative: bad, total, rate: total > 0 ? Math.round(good / total * 100) + '%' : 'N/A' },
+      confidence: Math.min(1.0, total / 10),
+      scope: 'global' as SignalScope,
+      sourceEventCount: total,
+      lastUpdated: new Date().toISOString(),
+      active: total >= 3,
+      provenance: 'live_observed' as SignalProvenance,
+      explanation: `Explicit operator ratings: ${good} good, ${bad} negative out of ${total} total. This is REAL feedback, not a proxy.`,
+    });
+
+    // Per-engine feedback breakdown
+    const byEngine: Record<string, { good: number; negative: number }> = {};
+    feedbackEvents.forEach(e => {
+      const eng = e.engine || 'unknown';
+      if (!byEngine[eng]) byEngine[eng] = { good: 0, negative: 0 };
+      if (e.metadata?.rating === 'good') byEngine[eng].good++;
+      else byEngine[eng].negative++;
+    });
+    for (const [engine, counts] of Object.entries(byEngine)) {
+      const total = counts.good + counts.negative;
+      if (total >= 1) {
+        signals.push({
+          name: 'operator_satisfaction_explicit',
+          value: { good: counts.good, negative: counts.negative, total },
+          confidence: Math.min(1.0, total / 5),
+          scope: 'engine' as SignalScope,
+          scopeKey: engine,
+          sourceEventCount: total,
+          lastUpdated: new Date().toISOString(),
+          active: total >= 3,
+          provenance: 'live_observed' as SignalProvenance,
+          explanation: `Engine ${engine}: ${counts.good} good, ${counts.negative} negative (${total} total explicit ratings)`,
+        });
+      }
+    }
+  }
+
+  // 13. Dissatisfaction patterns — what the operator complained about
+  if (dissatisfactionEvents.length >= 1) {
+    const complaints: Record<string, number> = {};
+    dissatisfactionEvents.forEach(e => {
+      const eng = e.engine || 'unknown';
+      complaints[eng] = (complaints[eng] || 0) + 1;
+    });
+    const topEngine = Object.entries(complaints).sort((a, b) => b[1] - a[1])[0];
+    signals.push({
+      name: 'dissatisfaction_concentration',
+      value: { by_engine: complaints, highest: topEngine ? topEngine[0] : 'none', total: dissatisfactionEvents.length },
+      confidence: Math.min(1.0, dissatisfactionEvents.length / 5),
+      scope: 'global' as SignalScope,
+      sourceEventCount: dissatisfactionEvents.length,
+      lastUpdated: new Date().toISOString(),
+      active: dissatisfactionEvents.length >= 3,
+      provenance: 'live_observed' as SignalProvenance,
+      explanation: `${dissatisfactionEvents.length} dissatisfaction events. By engine: ${Object.entries(complaints).map(([e, c]) => `${e}=${c}`).join(', ')}. Active only after 3+ complaints (currently advisory).`,
+    });
+  }
+
   // Post-process: ensure all signals have provenance
   for (const sig of signals) {
     if (!sig.provenance) {
@@ -643,6 +711,33 @@ function getScopedContext(opts: { engine?: string; project?: string; workflow?: 
     const engVol = engineSignals.find(s => s.name === 'task_volume');
     if (engVol && typeof engVol.value === 'object') parts.push(`Engine ${opts.engine} usage: ${engVol.value.count} tasks (${engVol.value.share})`);
   }
+
+  // Feedback-driven learning loop: inject recent complaints into context
+  // This closes the loop: negative feedback → future outputs adapt
+  try {
+    const allSignals = readSignals(); // read all signals, not just active
+    // Check for engine-specific dissatisfaction
+    if (canonicalEngine) {
+      const engFeedback = allSignals.find(s => s.name === 'operator_satisfaction_explicit' && s.scope === 'engine' && s.scopeKey === canonicalEngine);
+      if (engFeedback && typeof engFeedback.value === 'object' && engFeedback.value.negative > 0) {
+        parts.push(`IMPORTANT: The operator has given ${engFeedback.value.negative} negative rating(s) for this engine. Review prior complaints and improve output quality.`);
+      }
+    }
+    // Check for recent dissatisfaction comments
+    const events = readEvents();
+    const recentComplaints = events
+      .filter(e => e.type === 'dissatisfaction_expressed' && (canonicalEngine ? e.engine === canonicalEngine : true))
+      .slice(-3);
+    if (recentComplaints.length > 0) {
+      const complaints = recentComplaints
+        .filter(e => e.metadata?.comment)
+        .map(e => e.metadata.comment)
+        .filter(Boolean);
+      if (complaints.length > 0) {
+        parts.push(`Recent operator complaints: ${complaints.join('; ')}. Address these issues in this output.`);
+      }
+    }
+  } catch { /* feedback injection non-fatal */ }
 
   return {
     global: globalSignals,

@@ -448,9 +448,82 @@ function deriveSignals() {
             explanation: "Live verification: ".concat(liveAccepted.length, "/").concat(liveTotal, " tasks clean on first pass (").concat((cleanRate * 100).toFixed(0), "%). Avg output: ").concat(avgLength, " chars, ").concat(structuredPct, "% structured."),
         });
     }
+    // 12. Operator feedback signals — derived from real human ratings
+    var feedbackEvents = events.filter(function (e) { return e.type === 'quality_feedback'; });
+    var dissatisfactionEvents = events.filter(function (e) { return e.type === 'dissatisfaction_expressed'; });
+    if (feedbackEvents.length >= 1) {
+        // Global satisfaction from explicit feedback
+        var good = feedbackEvents.filter(function (e) { var _a; return ((_a = e.metadata) === null || _a === void 0 ? void 0 : _a.rating) === 'good'; }).length;
+        var bad = feedbackEvents.filter(function (e) { var _a, _b; return ((_a = e.metadata) === null || _a === void 0 ? void 0 : _a.rating) === 'bad' || ((_b = e.metadata) === null || _b === void 0 ? void 0 : _b.rating) === 'needs_improvement'; }).length;
+        var total = good + bad;
+        signals.push({
+            name: 'operator_satisfaction_explicit',
+            value: { good: good, negative: bad, total: total, rate: total > 0 ? Math.round(good / total * 100) + '%' : 'N/A' },
+            confidence: Math.min(1.0, total / 10),
+            scope: 'global',
+            sourceEventCount: total,
+            lastUpdated: new Date().toISOString(),
+            active: total >= 3,
+            provenance: 'live_observed',
+            explanation: "Explicit operator ratings: ".concat(good, " good, ").concat(bad, " negative out of ").concat(total, " total. This is REAL feedback, not a proxy."),
+        });
+        // Per-engine feedback breakdown
+        var byEngine_1 = {};
+        feedbackEvents.forEach(function (e) {
+            var _a;
+            var eng = e.engine || 'unknown';
+            if (!byEngine_1[eng])
+                byEngine_1[eng] = { good: 0, negative: 0 };
+            if (((_a = e.metadata) === null || _a === void 0 ? void 0 : _a.rating) === 'good')
+                byEngine_1[eng].good++;
+            else
+                byEngine_1[eng].negative++;
+        });
+        for (var _l = 0, _m = Object.entries(byEngine_1); _l < _m.length; _l++) {
+            var _o = _m[_l], engine = _o[0], counts = _o[1];
+            var total_1 = counts.good + counts.negative;
+            if (total_1 >= 1) {
+                signals.push({
+                    name: 'operator_satisfaction_explicit',
+                    value: { good: counts.good, negative: counts.negative, total: total_1 },
+                    confidence: Math.min(1.0, total_1 / 5),
+                    scope: 'engine',
+                    scopeKey: engine,
+                    sourceEventCount: total_1,
+                    lastUpdated: new Date().toISOString(),
+                    active: total_1 >= 3,
+                    provenance: 'live_observed',
+                    explanation: "Engine ".concat(engine, ": ").concat(counts.good, " good, ").concat(counts.negative, " negative (").concat(total_1, " total explicit ratings)"),
+                });
+            }
+        }
+    }
+    // 13. Dissatisfaction patterns — what the operator complained about
+    if (dissatisfactionEvents.length >= 1) {
+        var complaints_1 = {};
+        dissatisfactionEvents.forEach(function (e) {
+            var eng = e.engine || 'unknown';
+            complaints_1[eng] = (complaints_1[eng] || 0) + 1;
+        });
+        var topEngine = Object.entries(complaints_1).sort(function (a, b) { return b[1] - a[1]; })[0];
+        signals.push({
+            name: 'dissatisfaction_concentration',
+            value: { by_engine: complaints_1, highest: topEngine ? topEngine[0] : 'none', total: dissatisfactionEvents.length },
+            confidence: Math.min(1.0, dissatisfactionEvents.length / 5),
+            scope: 'global',
+            sourceEventCount: dissatisfactionEvents.length,
+            lastUpdated: new Date().toISOString(),
+            active: dissatisfactionEvents.length >= 3,
+            provenance: 'live_observed',
+            explanation: "".concat(dissatisfactionEvents.length, " dissatisfaction events. By engine: ").concat(Object.entries(complaints_1).map(function (_a) {
+                var e = _a[0], c = _a[1];
+                return "".concat(e, "=").concat(c);
+            }).join(', '), ". Active only after 3+ complaints (currently advisory)."),
+        });
+    }
     // Post-process: ensure all signals have provenance
-    for (var _l = 0, signals_1 = signals; _l < signals_1.length; _l++) {
-        var sig = signals_1[_l];
+    for (var _p = 0, signals_1 = signals; _p < signals_1.length; _p++) {
+        var sig = signals_1[_p];
         if (!sig.provenance) {
             sig.provenance = 'seeded_historical';
         }
@@ -478,12 +551,12 @@ function deriveSignals() {
                 sig.reinforced_count = 0; // new signal, no prior
             }
         };
-        for (var _m = 0, signals_2 = signals; _m < signals_2.length; _m++) {
-            var sig = signals_2[_m];
+        for (var _q = 0, signals_2 = signals; _q < signals_2.length; _q++) {
+            var sig = signals_2[_q];
             _loop_1(sig);
         }
     }
-    catch ( /* reinforcement comparison non-fatal */_o) { /* reinforcement comparison non-fatal */ }
+    catch ( /* reinforcement comparison non-fatal */_r) { /* reinforcement comparison non-fatal */ }
     return signals;
 }
 /**
@@ -612,6 +685,33 @@ function getScopedContext(opts) {
         if (engVol && typeof engVol.value === 'object')
             parts.push("Engine ".concat(opts.engine, " usage: ").concat(engVol.value.count, " tasks (").concat(engVol.value.share, ")"));
     }
+    // Feedback-driven learning loop: inject recent complaints into context
+    // This closes the loop: negative feedback → future outputs adapt
+    try {
+        var allSignals = readSignals(); // read all signals, not just active
+        // Check for engine-specific dissatisfaction
+        if (canonicalEngine) {
+            var engFeedback = allSignals.find(function (s) { return s.name === 'operator_satisfaction_explicit' && s.scope === 'engine' && s.scopeKey === canonicalEngine; });
+            if (engFeedback && typeof engFeedback.value === 'object' && engFeedback.value.negative > 0) {
+                parts.push("IMPORTANT: The operator has given ".concat(engFeedback.value.negative, " negative rating(s) for this engine. Review prior complaints and improve output quality."));
+            }
+        }
+        // Check for recent dissatisfaction comments
+        var events = readEvents();
+        var recentComplaints = events
+            .filter(function (e) { return e.type === 'dissatisfaction_expressed' && (canonicalEngine ? e.engine === canonicalEngine : true); })
+            .slice(-3);
+        if (recentComplaints.length > 0) {
+            var complaints = recentComplaints
+                .filter(function (e) { var _a; return (_a = e.metadata) === null || _a === void 0 ? void 0 : _a.comment; })
+                .map(function (e) { return e.metadata.comment; })
+                .filter(Boolean);
+            if (complaints.length > 0) {
+                parts.push("Recent operator complaints: ".concat(complaints.join('; '), ". Address these issues in this output."));
+            }
+        }
+    }
+    catch ( /* feedback injection non-fatal */_a) { /* feedback injection non-fatal */ }
     return {
         global: globalSignals,
         engine: engineSignals,
