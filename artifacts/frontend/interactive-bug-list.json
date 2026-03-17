@@ -1,0 +1,50 @@
+{
+  "audit_date": "2026-03-17",
+  "bugs": [
+    {
+      "id": "BUG-001",
+      "title": "Repeated task completed toast",
+      "severity": "high",
+      "root_cause": "Two separate systems fire completion toasts: (1) intake detail poll at 3s intervals, (2) SSE task event handler. Poll had no guard against re-firing after initial completion.",
+      "fix": "Added wasComplete guard in poll handler. SSE toast suppressed when intake detail is active.",
+      "status": "fixed",
+      "files": ["app.js lines 1744-1758"]
+    },
+    {
+      "id": "BUG-002",
+      "title": "Scroll hijack on task completion",
+      "severity": "high",
+      "root_cause": "showIntakeDetail() always called scrollIntoView(). Poll completion handler called showIntakeDetail() which re-scrolled. Multiple approve/reject/deliberate handlers also call showIntakeDetail().",
+      "fix": "showIntakeDetail() now detects same-task re-fetch (isNewOpen check). Only scrolls and shows 'Loading...' on first open or task switch. Re-fetches for same task update silently in-place.",
+      "status": "fixed",
+      "files": ["app.js lines 1770-1794"]
+    },
+    {
+      "id": "BUG-003",
+      "title": "Deliverable links return 404",
+      "severity": "medium",
+      "root_cause": "/api/task-outputs returned paths as 'state/deliverables/file.md' but /api/file/ resolves from RPGPO_ROOT. Correct path is '04-Dashboard/state/deliverables/file.md'.",
+      "fix": "Prefixed path with '04-Dashboard/' in task-outputs API response.",
+      "status": "fixed",
+      "files": ["server.js line 4059"]
+    },
+    {
+      "id": "BUG-004",
+      "title": "SSE intake list refresh causes layout shift during reading",
+      "severity": "medium",
+      "root_cause": "SSE debounced loadIntakeTasks() fires every 3s when intake tab is active, re-rendering the list while operator reads detail panel.",
+      "fix": "Skip list refresh when selectedIntakeTaskId is set (detail panel open).",
+      "status": "fixed",
+      "files": ["app.js line 82-84"]
+    },
+    {
+      "id": "BUG-005",
+      "title": "Poll starts on already-complete tasks",
+      "severity": "low",
+      "root_cause": "showIntakeDetail() always called startIntakeDetailPoll() including for done/failed tasks, causing unnecessary polling.",
+      "fix": "Only start poll if task status is not done/failed/canceled.",
+      "status": "fixed",
+      "files": ["app.js line 1790"]
+    }
+  ]
+}

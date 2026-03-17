@@ -1,5 +1,37 @@
 [
   {
+    "node_id": "en_mmu0uuaq43of",
+    "graph_id": "eg_mmu0uuaprnxu",
+    "title": "Compile Job Listings Report",
+    "description": "A detailed report of job listings with specific information on each role.",
+    "stage": "report",
+    "assigned_agent": "openai",
+    "execution_mode": "sequential",
+    "depends_on": [
+      "en_mmu0uuaq25gv"
+    ],
+    "status": "pending",
+    "risk_level": "green",
+    "gate_ids": [],
+    "created_at": "2026-03-17T02:57:25.730Z",
+    "updated_at": "2026-03-17T02:57:25.730Z"
+  },
+  {
+    "node_id": "en_mmu0uuaq25gv",
+    "graph_id": "eg_mmu0uuaprnxu",
+    "title": "Research Current Data Engineering Job Openings",
+    "description": "A list of current job openings with details on company, role, salary, location, and application links.",
+    "stage": "research",
+    "assigned_agent": "perplexity",
+    "execution_mode": "sequential",
+    "depends_on": [],
+    "status": "pending",
+    "risk_level": "green",
+    "gate_ids": [],
+    "created_at": "2026-03-17T02:57:25.730Z",
+    "updated_at": "2026-03-17T02:57:25.730Z"
+  },
+  {
     "node_id": "en_mmsqmrxysowu",
     "graph_id": "eg_mmsqmrxwjyrm",
     "title": "Synthesize 7-Day Whole Foods Eating Plan",

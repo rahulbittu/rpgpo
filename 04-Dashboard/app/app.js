@@ -1768,17 +1768,18 @@ function stopIntakeDetailPoll() {
 }
 
 async function showIntakeDetail(taskId) {
-  selectedIntakeTaskId = taskId;
-  updateFlowExplainer();
   const panel = document.getElementById('intakeDetailPanel');
   if (!panel) return;
 
-  const wasHidden = panel.style.display === 'none' || !panel.style.display;
+  const isNewOpen = panel.style.display === 'none' || !panel.style.display || selectedIntakeTaskId !== taskId;
+  selectedIntakeTaskId = taskId;
+  updateFlowExplainer();
   panel.style.display = 'block';
-  panel.innerHTML = '<div class="surface" style="padding:var(--sp-16)"><div class="loading-state">Loading task details...</div></div>';
 
-  // Only scroll into view on FIRST open, not on re-fetch from polling
-  if (wasHidden) {
+  // Only show "Loading..." and scroll on FIRST open or task switch
+  // If re-fetching the same task (after approve/reject), update silently
+  if (isNewOpen) {
+    panel.innerHTML = '<div class="surface" style="padding:var(--sp-16)"><div class="loading-state">Loading...</div></div>';
     panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
@@ -1787,7 +1788,10 @@ async function showIntakeDetail(taskId) {
     const data = await r.json();
     _lastKnownIntakeStatus = data.task.status;
     renderIntakeDetail(data);
-    startIntakeDetailPoll();
+    // Only start poll if task is still executing
+    if (!['done','failed','canceled'].includes(data.task.status)) {
+      startIntakeDetailPoll();
+    }
   } catch (e) {
     panel.innerHTML = '<div class="surface" style="padding:var(--sp-16)"><div class="empty-state"><span class="empty-icon" style="color:var(--red)">&#10007;</span><span class="empty-title">Failed to load task</span></div></div>';
   }

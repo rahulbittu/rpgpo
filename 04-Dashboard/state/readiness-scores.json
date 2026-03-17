@@ -1,0 +1,102 @@
+[
+  {
+    "score_id": "rr_mmu0vmkas33j",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "overall_score": 47,
+    "category_scores": {
+      "policy_compliance": {
+        "score": 9,
+        "max": 15,
+        "details": "Warnings: "
+      },
+      "review_health": {
+        "score": 0,
+        "max": 20,
+        "details": "0/2 reviews passed"
+      },
+      "documentation": {
+        "score": 0,
+        "max": 15,
+        "details": "Missing: graph_summary"
+      },
+      "escalation_stability": {
+        "score": 10,
+        "max": 10,
+        "details": "No unresolved escalations"
+      },
+      "provider_confidence": {
+        "score": 5,
+        "max": 10,
+        "details": "Avg provider confidence: 50%"
+      },
+      "mission_alignment": {
+        "score": 15,
+        "max": 15,
+        "details": "Partially aligned with mission"
+      },
+      "risk_resolution": {
+        "score": 8,
+        "max": 15,
+        "details": "No dossier available"
+      }
+    },
+    "blockers": [],
+    "warnings": [
+      "Some reviews pending",
+      "Docs missing: graph_summary"
+    ],
+    "recommendation": "conditional",
+    "created_at": "2026-03-17T02:58:02.362Z"
+  },
+  {
+    "score_id": "rr_mmu0v9sp5bcn",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "overall_score": 47,
+    "category_scores": {
+      "policy_compliance": {
+        "score": 9,
+        "max": 15,
+        "details": "Warnings: "
+      },
+      "review_health": {
+        "score": 0,
+        "max": 20,
+        "details": "0/2 reviews passed"
+      },
+      "documentation": {
+        "score": 0,
+        "max": 15,
+        "details": "Missing: graph_summary"
+      },
+      "escalation_stability": {
+        "score": 10,
+        "max": 10,
+        "details": "No unresolved escalations"
+      },
+      "provider_confidence": {
+        "score": 5,
+        "max": 10,
+        "details": "Avg provider confidence: 50%"
+      },
+      "mission_alignment": {
+        "score": 15,
+        "max": 15,
+        "details": "Partially aligned with mission"
+      },
+      "risk_resolution": {
+        "score": 8,
+        "max": 15,
+        "details": "No dossier available"
+      }
+    },
+    "blockers": [],
+    "warnings": [
+      "Some reviews pending",
+      "Docs missing: graph_summary"
+    ],
+    "recommendation": "conditional",
+    "created_at": "2026-03-17T02:57:45.817Z"
+  }
+]

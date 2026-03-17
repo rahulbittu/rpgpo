@@ -4056,7 +4056,7 @@ const server = http.createServer(async (req, res) => {
           const stat = fs.statSync(path.join(delivDir, f));
           const content = fs.readFileSync(path.join(delivDir, f), 'utf-8');
           const title = content.split('\n')[0]?.replace(/^#\s*/, '') || f;
-          return { name: f, title, path: 'state/deliverables/' + f, size: stat.size, modified: stat.mtimeMs, preview: content.slice(0, 500) };
+          return { name: f, title, path: '04-Dashboard/state/deliverables/' + f, size: stat.size, modified: stat.mtimeMs, preview: content.slice(0, 500) };
         } catch { return null; }
       }).filter(Boolean).sort((a, b) => b.modified - a.modified).slice(0, 20);
       return json(res, { outputs });

@@ -1,0 +1,316 @@
+[
+  {
+    "result_id": "sr_mmu0vmkm13dx",
+    "scenario_id": "ss_mmu0vmkm7rln",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "dev",
+    "outcome": "warn",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [],
+    "missing_docs": [
+      "graph_summary"
+    ],
+    "blocked_actions": [],
+    "warnings": [],
+    "summary": "Simulation passed with 0 warning(s)",
+    "created_at": "2026-03-17T02:58:02.374Z"
+  },
+  {
+    "result_id": "sr_mmu0vmkk7awz",
+    "scenario_id": "ss_mmu0vmkjn8fu",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "beta",
+    "outcome": "block",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [],
+    "missing_docs": [
+      "graph_summary"
+    ],
+    "blocked_actions": [
+      "Failed reviews block beta: quality"
+    ],
+    "warnings": [
+      "1 review(s) failed"
+    ],
+    "summary": "Simulation blocked: Failed reviews block beta: quality",
+    "created_at": "2026-03-17T02:58:02.372Z"
+  },
+  {
+    "result_id": "sr_mmu0vmkjxnsl",
+    "scenario_id": "ss_mmu0vmkig4te",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "dev",
+    "outcome": "warn",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [],
+    "missing_docs": [
+      "graph_summary"
+    ],
+    "blocked_actions": [],
+    "warnings": [],
+    "summary": "Simulation passed with 0 warning(s)",
+    "created_at": "2026-03-17T02:58:02.371Z"
+  },
+  {
+    "result_id": "sr_mmu0vmkipzkk",
+    "scenario_id": "ss_mmu0vmkhtmrh",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "dev",
+    "outcome": "warn",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [
+      "low_confidence → notify_operator: confidence 30% < 50%"
+    ],
+    "missing_docs": [
+      "graph_summary"
+    ],
+    "blocked_actions": [],
+    "warnings": [],
+    "summary": "Simulation passed with 1 warning(s)",
+    "created_at": "2026-03-17T02:58:02.370Z"
+  },
+  {
+    "result_id": "sr_mmu0vmkg45s9",
+    "scenario_id": "ss_mmu0vmkfhoqb",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "prod",
+    "outcome": "warn",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [],
+    "missing_docs": [
+      "architecture_doc",
+      "runbook"
+    ],
+    "blocked_actions": [],
+    "warnings": [
+      "Documentation strictness should be strict/enforced for prod"
+    ],
+    "summary": "Simulation passed with 1 warning(s)",
+    "created_at": "2026-03-17T02:58:02.368Z"
+  },
+  {
+    "result_id": "sr_mmu0vmkep8li",
+    "scenario_id": "ss_mmu0vmkdw0q2",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "prod",
+    "outcome": "block",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [],
+    "missing_docs": [
+      "graph_summary"
+    ],
+    "blocked_actions": [
+      "Documentation blocks prod: graph_summary"
+    ],
+    "warnings": [
+      "Documentation strictness should be strict/enforced for prod"
+    ],
+    "summary": "Simulation blocked: Documentation blocks prod: graph_summary",
+    "created_at": "2026-03-17T02:58:02.366Z"
+  },
+  {
+    "result_id": "sr_mmu0vmkcm5bd",
+    "scenario_id": "ss_mmu0vmkbabk7",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "beta",
+    "outcome": "warn",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [],
+    "missing_docs": [
+      "graph_summary"
+    ],
+    "blocked_actions": [],
+    "warnings": [],
+    "summary": "Simulation passed with 0 warning(s)",
+    "created_at": "2026-03-17T02:58:02.364Z"
+  },
+  {
+    "result_id": "sr_mmu0vmk89oua",
+    "scenario_id": "ss_mmu0vmk7tl4b",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "dev",
+    "outcome": "warn",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [],
+    "missing_docs": [
+      "graph_summary"
+    ],
+    "blocked_actions": [],
+    "warnings": [],
+    "summary": "Simulation passed with 0 warning(s)",
+    "created_at": "2026-03-17T02:58:02.360Z"
+  },
+  {
+    "result_id": "sr_mmu0v9sx6zrh",
+    "scenario_id": "ss_mmu0v9swrij0",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "dev",
+    "outcome": "warn",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [],
+    "missing_docs": [
+      "graph_summary"
+    ],
+    "blocked_actions": [],
+    "warnings": [],
+    "summary": "Simulation passed with 0 warning(s)",
+    "created_at": "2026-03-17T02:57:45.825Z"
+  },
+  {
+    "result_id": "sr_mmu0v9svwdp0",
+    "scenario_id": "ss_mmu0v9su358q",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "beta",
+    "outcome": "block",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [],
+    "missing_docs": [
+      "graph_summary"
+    ],
+    "blocked_actions": [
+      "Failed reviews block beta: quality"
+    ],
+    "warnings": [
+      "1 review(s) failed"
+    ],
+    "summary": "Simulation blocked: Failed reviews block beta: quality",
+    "created_at": "2026-03-17T02:57:45.823Z"
+  },
+  {
+    "result_id": "sr_mmu0v9suqolr",
+    "scenario_id": "ss_mmu0v9sukw5p",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "dev",
+    "outcome": "warn",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [],
+    "missing_docs": [
+      "graph_summary"
+    ],
+    "blocked_actions": [],
+    "warnings": [],
+    "summary": "Simulation passed with 0 warning(s)",
+    "created_at": "2026-03-17T02:57:45.822Z"
+  },
+  {
+    "result_id": "sr_mmu0v9su6673",
+    "scenario_id": "ss_mmu0v9stx63n",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "dev",
+    "outcome": "warn",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [
+      "low_confidence → notify_operator: confidence 30% < 50%"
+    ],
+    "missing_docs": [
+      "graph_summary"
+    ],
+    "blocked_actions": [],
+    "warnings": [],
+    "summary": "Simulation passed with 1 warning(s)",
+    "created_at": "2026-03-17T02:57:45.822Z"
+  },
+  {
+    "result_id": "sr_mmu0v9st0in0",
+    "scenario_id": "ss_mmu0v9strb3n",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "prod",
+    "outcome": "warn",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [],
+    "missing_docs": [
+      "architecture_doc",
+      "runbook"
+    ],
+    "blocked_actions": [],
+    "warnings": [
+      "Documentation strictness should be strict/enforced for prod"
+    ],
+    "summary": "Simulation passed with 1 warning(s)",
+    "created_at": "2026-03-17T02:57:45.821Z"
+  },
+  {
+    "result_id": "sr_mmu0v9sskb19",
+    "scenario_id": "ss_mmu0v9ss9uwv",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "prod",
+    "outcome": "block",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [],
+    "missing_docs": [
+      "graph_summary"
+    ],
+    "blocked_actions": [
+      "Documentation blocks prod: graph_summary"
+    ],
+    "warnings": [
+      "Documentation strictness should be strict/enforced for prod"
+    ],
+    "summary": "Simulation blocked: Documentation blocks prod: graph_summary",
+    "created_at": "2026-03-17T02:57:45.820Z"
+  },
+  {
+    "result_id": "sr_mmu0v9ss0uwk",
+    "scenario_id": "ss_mmu0v9sr8eld",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "beta",
+    "outcome": "warn",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [],
+    "missing_docs": [
+      "graph_summary"
+    ],
+    "blocked_actions": [],
+    "warnings": [],
+    "summary": "Simulation passed with 0 warning(s)",
+    "created_at": "2026-03-17T02:57:45.820Z"
+  },
+  {
+    "result_id": "sr_mmu0v9slqkgz",
+    "scenario_id": "ss_mmu0v9sfwpkq",
+    "related_type": "graph",
+    "related_id": "eg_mmu0uuaprnxu",
+    "lane": "dev",
+    "outcome": "warn",
+    "policy_violations": [],
+    "budget_violations": [],
+    "escalation_triggers": [],
+    "missing_docs": [
+      "graph_summary"
+    ],
+    "blocked_actions": [],
+    "warnings": [],
+    "summary": "Simulation passed with 0 warning(s)",
+    "created_at": "2026-03-17T02:57:45.813Z"
+  }
+]
