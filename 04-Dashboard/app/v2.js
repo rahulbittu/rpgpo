@@ -913,6 +913,22 @@ async function loadSettings() {
     }
   } catch {}
 
+  // Mission statements
+  try {
+    const ms = await fetch('/api/mission-statements').then(r => r.json());
+    const msEl = document.getElementById('settingsMissions');
+    if (msEl && ms.statements?.length) {
+      msEl.innerHTML = ms.statements.map(s => {
+        const level = s.level === 'operator' ? 'System' : 'Engine';
+        const scope = s.level === 'operator' ? '' : engName(s.scope_id);
+        return `<div style="padding:8px 0;border-bottom:1px solid var(--border-0);font-size:12px">
+          <div class="row gap-8 mb-4"><span class="tag tag-${s.level === 'operator' ? 'accent' : 'muted'}">${level}</span>${scope ? `<span style="font-weight:500">${esc(scope)}</span>` : ''}</div>
+          <div style="color:var(--text-1)">${esc((s.statement || '').slice(0, 150))}</div>
+        </div>`;
+      }).join('');
+    } else if (msEl) { msEl.innerHTML = '<div style="font-size:12px;color:var(--text-2)">No mission statements defined</div>'; }
+  } catch {}
+
   // Engines
   try {
     const engines = await fetch('/api/engines').then(r => r.json());
