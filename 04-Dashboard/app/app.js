@@ -648,7 +648,7 @@ function render() {
   renderMissions();
   renderApprovals();
   renderLogs();
-  renderTopRanker();
+  // renderTopRanker() — removed (legacy screen)
   renderNavBadges();
   renderHomeCosts();
   renderHomeNotifications();
@@ -734,7 +734,7 @@ function renderHome() {
   const hour = new Date().getHours();
   const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
   const greetingEl = document.getElementById('homeGreeting');
-  if (greetingEl) greetingEl.textContent = `${greeting}, Rahul`;
+  if (greetingEl) greetingEl.textContent = `${greeting}. Welcome back`;
   document.getElementById('homeDate').textContent =
     new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
@@ -783,7 +783,7 @@ function renderHome() {
   const activeMissions = DATA.missions.filter(m => (m.status || '').toLowerCase() !== 'planned');
   md.innerHTML = activeMissions.map(m => {
     const bc = badgeClass(m.status);
-    const isTR = m.mission === 'TopRanker';
+    const isTR = m.mission === 'Startup & Business Builder' || m.mission === 'TopRanker';
     return `<div class="home-mission">
       <span>${isTR ? '<strong style="color:var(--accent-text)">' + esc(m.mission) + '</strong>' : esc(m.mission)}</span>
       <span class="mission-badge ${bc}">${esc(m.status)}</span>
@@ -1521,7 +1521,7 @@ function getStatusBanner(status) {
     builder_running:   { dot: 'var(--purple)',     text: 'Claude Builder is executing — writing code in your repo...', pulse: true },
     waiting_approval:  { dot: 'var(--yellow)',     text: 'Waiting for your approval on one or more subtasks', pulse: true },
     builder_fallback:  { dot: 'var(--red)',        text: 'Builder could not execute — manual Claude session required', pulse: true },
-    waiting_human:     { dot: 'var(--yellow)',     text: 'Waiting for manual action from Rahul', pulse: true },
+    waiting_human:     { dot: 'var(--yellow)',     text: 'Waiting for operator action', pulse: true },
     executing:         { dot: 'var(--green)',      text: 'Executing subtasks...', pulse: true },
     done:              { dot: 'var(--green)',      text: 'All subtasks completed', pulse: false },
     failed:            { dot: 'var(--red)',        text: 'One or more subtasks failed', pulse: false },
@@ -2329,7 +2329,7 @@ function renderCurrentTaskFocus(data) {
     </div>`;
   }
 
-  // Next action from Rahul
+  // Next action needed from operator
   if (t.status === 'intake') {
     html += `<div class="ctf-next-action">Your action: Send to Board for Deliberation</div>`;
   } else if (t.status === 'planned') {
@@ -2471,10 +2471,10 @@ function renderTaskTimeline(task, subtasks) {
         html += `<div class="tl-what-done-text">${esc(wdText)}</div>`;
       }
 
-      // Show file scope if available (RPGPO vs TopRanker)
+      // Show file scope if available (GPO infra vs project)
       if (ev.file_scope) {
         if (ev.file_scope.onlyRpgpo) {
-          html += `<div class="tl-scope-warning">Changed only RPGPO infra files — no TopRanker project files modified</div>`;
+          html += `<div class="tl-scope-warning">Changed only GPO infra files — no project files modified</div>`;
         } else if (ev.file_scope.summary) {
           html += `<div class="tl-scope-detail">${esc(ev.file_scope.summary)}</div>`;
         }

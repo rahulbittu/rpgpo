@@ -116,7 +116,7 @@
         </div>
 
         <!-- Priority: Operator Action Required -->
-        <div id="needsRahulHero"></div>
+        <div id="pendingActionHero"></div>
         <div id="globalApprovalInbox"></div>
 
         <!-- Notifications -->
@@ -301,7 +301,7 @@
                   <option value="health">Health & Wellness Coach</option>
                 </optgroup>
                 <optgroup label="Business">
-                  <option value="topranker">Startup & Business Builder</option>
+                  <option value="startup">Startup & Business Builder</option>
                 </optgroup>
                 <optgroup label="Creative">
                   <option value="screenwriting">Screenwriting & Story Development</option>
@@ -431,108 +431,16 @@
       </section>
 
       <!-- DOSSIERS -->
-      <section class="tab-panel" id="tab-dossiers">
-        <div class="page-header">
-          <h1>Promotion Dossiers</h1>
-          <p class="subtitle">Review completed work for promotion across lanes</p>
-        </div>
-        <div id="dossiersPanel">
-          <div class="tab-empty-state">
-            <h3>No Promotion Dossiers Yet</h3>
-            <p>When tasks complete and produce promotable artifacts, they appear here for review before promotion across dev/beta/prod lanes.</p>
-          </div>
-        </div>
-      </section>
-
       <!-- PROVIDERS -->
       <section class="tab-panel" id="tab-providers">
-        <div style="margin-bottom:20px">
-          <h1 style="font-size:20px;font-weight:800;letter-spacing:-.3px">Providers</h1>
-          <p class="subtitle">AI model capabilities, usage statistics, and configuration</p>
-        </div>
+        <div class="section-hdr"><h2>Providers</h2></div>
+        <p class="subtitle" style="margin-bottom:var(--sp-16)">AI model capabilities, usage statistics, and configuration</p>
         <div id="provGovSummary"></div>
         <div id="providersPanel"></div>
       </section>
 
-      <!-- GOVERNANCE -->
-      <section class="tab-panel" id="tab-governance">
-        <div class="page-header">
-          <h1>Governance</h1>
-          <p class="subtitle">Policies, budgets, escalation, and system health</p>
-        </div>
-        <div id="govOpsCards"></div>
-        <div id="runtimeSummarySlot"></div>
-        <div id="overrideOpsSlot"></div>
-        <div id="isolationPatternSlot"></div>
-        <div id="traceabilitySlot"></div>
-        <div id="middlewareTruthSlot"></div>
-        <div id="protectionCoverageSlot"></div>
-        <div id="govHealthPanel"></div>
-        <div id="governancePanel"></div>
-      </section>
-
-      <!-- AUDIT -->
-      <section class="tab-panel" id="tab-audit">
-        <div class="page-header">
-          <h1>Audit Hub</h1>
-          <p class="subtitle">Enterprise audit, compliance export, policy history</p>
-        </div>
-        <div id="auditHubPanel"></div>
-        <div id="policyHistoryPanel"></div>
-      </section>
-
-      <!-- RELEASES -->
-      <section class="tab-panel" id="tab-releases">
-        <div class="page-header">
-          <h1>Release Workspace</h1>
-          <p class="subtitle">Release plans, environment pipeline, rollback control</p>
-        </div>
-        <div id="releaseWorkspacePanel"></div>
-        <div id="deliverablesPanel"></div>
-      </section>
-
-      <!-- STRUCTURED I/O -->
-      <section class="tab-panel" id="tab-structured-io">
-        <div class="page-header">
-          <h1>Structured I/O Health</h1>
-          <p class="subtitle">Metrics, provider learning, evidence lifecycle, alerts</p>
-        </div>
-        <div id="structuredIoPanel"></div>
-      </section>
-
-      <!-- ADMIN -->
-      <section class="tab-panel" id="tab-admin">
-        <div class="page-header">
-          <h1>System Admin</h1>
-          <p class="subtitle">Security, deployment readiness, extensions, and system health</p>
-        </div>
-        <div id="adminPanel"></div>
-        <div id="deploymentReadinessPanel"></div>
-        <div id="securityPanel"></div>
-      </section>
-
       <!-- Mission Statement Edit Modal (global) -->
       <div id="msEditModal"></div>
-
-      <!-- STARTUP ENGINE (was TopRanker) -->
-      <section class="tab-panel" id="tab-topranker">
-        <div class="page-header">
-          <h1>Startup & Business Builder</h1>
-          <p class="subtitle">Build, launch, and grow your startup with AI-powered strategy and execution</p>
-        </div>
-
-        <div class="g4 mt-sm">
-          <button class="action-btn" onclick="switchTab('intake');document.getElementById('intakeRequest').value='Analyze my startup competitive landscape and suggest growth strategies';document.getElementById('intakeRequest').focus()"><span class="btn-icon">&#9733;</span>Competitive Analysis</button>
-          <button class="action-btn" onclick="switchTab('intake');document.getElementById('intakeRequest').value='Create a go-to-market plan for my startup launch';document.getElementById('intakeRequest').focus()"><span class="btn-icon">&#9670;</span>GTM Plan</button>
-          <button class="action-btn" onclick="switchTab('intake');document.getElementById('intakeRequest').value='Design the architecture for a new feature';document.getElementById('intakeRequest').focus()"><span class="btn-icon">&#9881;</span>Architecture</button>
-          <button class="action-btn" onclick="switchTab('tasks')"><span class="btn-icon">&#9776;</span>Tasks</button>
-        </div>
-
-        <div class="g2 mt">
-          <div class="card" id="trStatus"><h3>Status</h3><div style="color:var(--text-faint);font-size:12px">Submit a startup task to see status here</div></div>
-          <div class="card" id="trProgress"><h3>Recent Progress</h3><div style="color:var(--text-faint);font-size:12px">No recent startup tasks</div></div>
-        </div>
-      </section>
 
       <!-- APPROVALS -->
       <section class="tab-panel" id="tab-approvals">

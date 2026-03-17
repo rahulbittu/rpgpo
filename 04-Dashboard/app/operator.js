@@ -23,8 +23,8 @@ const MISSION_TEMPLATES = [
   { domain: 'newsroom', title: 'Tech Industry', desc: 'Technology industry analysis', prompt: 'Analyze the current state of the technology industry. Focus on: hiring trends, layoff updates, major company earnings/moves, emerging tech categories, and developer tool landscape. Include specific data points, company names, and market analysis. What should a data engineer / startup founder pay attention to this week?', urgency: 'normal', outcome: 'Industry analysis with specific data, trends, and actionable insights' },
 
   // STARTUP & BUSINESS
-  { domain: 'topranker', title: 'Startup Strategy', desc: 'Competitive analysis and growth plan', prompt: 'Analyze my startup\'s competitive position in its market. Research similar products, their traction, and go-to-market strategies. Provide specific growth tactics with expected impact and timeline.', urgency: 'normal', outcome: 'Competitive analysis and growth strategy with specific tactics and timelines' },
-  { domain: 'topranker', title: 'Business Model', desc: 'Validate or design a business model', prompt: 'Help me design or validate a business model for my startup. Include revenue model options, pricing strategy, customer segments, and unit economics estimates.', urgency: 'normal', outcome: 'Business model canvas with revenue projections and validation strategy' },
+  { domain: 'startup', title: 'Startup Strategy', desc: 'Competitive analysis and growth plan', prompt: 'Analyze my startup\'s competitive position in its market. Research similar products, their traction, and go-to-market strategies. Provide specific growth tactics with expected impact and timeline.', urgency: 'normal', outcome: 'Competitive analysis and growth strategy with specific tactics and timelines' },
+  { domain: 'startup', title: 'Business Model', desc: 'Validate or design a business model', prompt: 'Help me design or validate a business model for my startup. Include revenue model options, pricing strategy, customer segments, and unit economics estimates.', urgency: 'normal', outcome: 'Business model canvas with revenue projections and validation strategy' },
 
   // SCHEDULING & PLANNING
   { domain: 'personalops', title: 'Weekly Plan', desc: 'Plan the week ahead', prompt: 'Help me plan the upcoming week. Consider my priorities: startup development, passive income research, career growth, and personal productivity. Create a day-by-day plan with specific time blocks, key decisions to make, and tasks to delegate to GPO.', urgency: 'normal', outcome: 'Day-by-day weekly plan with time blocks, priorities, and delegation suggestions' },
@@ -104,7 +104,7 @@ function applyTemplate(domain, prompt, urgency, outcome) {
 // ═══════════════════════════════════════════
 
 function renderNeedsOperator() {
-  const el = document.getElementById('needsRahulHero');
+  const el = document.getElementById('pendingActionHero');
   if (!el) return;
 
   // Collect all items needing operator action
@@ -344,7 +344,7 @@ function renderChiefOfStaffBrief(brief) {
       { label: 'AI News', desc: 'Get today\'s AI headlines', domain: 'newsroom', prompt: 'Search the web for today\'s most important AI news. Include headlines, sources, and relevance.', urgency: 'high' },
       { label: 'Job Market', desc: 'Data eng jobs $180k+ remote', domain: 'careeregine', prompt: 'Find the highest-paying remote data engineering jobs right now. Include salary, company, requirements, and application links.', urgency: 'normal' },
       { label: 'Income Ideas', desc: 'Passive income for engineers', domain: 'wealthresearch', prompt: 'Research the top passive income opportunities for a senior data engineer in 2026. Include revenue estimates and concrete first steps.', urgency: 'normal' },
-      { label: 'Startup Strategy', desc: 'Competitive analysis & GTM', domain: 'topranker', prompt: 'Analyze my startup competitive position. Include competitor data and growth tactics.', urgency: 'normal' },
+      { label: 'Startup Strategy', desc: 'Competitive analysis & GTM', domain: 'startup', prompt: 'Analyze my startup competitive position. Include competitor data and growth tactics.', urgency: 'normal' },
       { label: 'Weekly Plan', desc: 'Plan your week ahead', domain: 'personalops', prompt: 'Help me plan the upcoming week balancing startup development, career growth, and passive income research. Create a day-by-day plan.', urgency: 'normal' },
     ];
     proactiveSuggestionsHtml = `<div class="cos-section">
@@ -416,7 +416,7 @@ function renderMissionStatements(statements) {
     { id: 'travel', name: 'Travel & Relocation Planner' },
     { id: 'careeregine', name: 'Career & Job Search' },
     { id: 'wealthresearch', name: 'Personal Finance & Investing' },
-    { id: 'topranker', name: 'Startup & Business Builder' },
+    { id: 'startup', name: 'Startup & Business Builder' },
     { id: 'screenwriting', name: 'Screenwriting & Story Development' },
     { id: 'music', name: 'Music & Audio Creation' },
     { id: 'newsroom', name: 'News & Intelligence' },
@@ -1551,7 +1551,7 @@ if (typeof pushLiveFeed === 'function') {
 // WIRING — Override/extend existing render functions
 // ═══════════════════════════════════════════
 
-// Replace renderNeedsRahul with the enhanced version
+// Legacy alias — kept for backward compat with any code that calls renderNeedsRahul
 if (typeof renderNeedsRahul === 'function') {
   window.renderNeedsRahul = renderNeedsOperator;
 }
