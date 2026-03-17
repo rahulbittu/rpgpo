@@ -393,20 +393,20 @@ function renderDeliverables() {
   if (!el) return;
   fetch('/api/task-outputs').then(r => r.ok ? r.json() : null).then(data => {
     const outputs = data?.outputs || [];
-    if (!outputs.length) { el.innerHTML = '<div class="task-empty">No deliverables yet. Submit a task to get started.</div>'; return; }
+    if (!outputs.length) { el.innerHTML = '<div class="empty-state"><span class="empty-icon">&#9671;</span><span class="empty-title">No deliverables yet</span><span class="empty-desc">Submit a task to see completed deliverables here</span></div>'; return; }
     el.innerHTML = outputs.slice(0, 5).map(o => {
       const ago = fmtTimeAgo(o.modified);
       const sizeKb = (o.size / 1024).toFixed(1);
-      return `<div class="deliverable-card" onclick="window.open('/api/file/${encodeURIComponent(o.path)}','_blank')">
-        <div class="deliverable-card-title">${esc(o.title.slice(0, 80))}</div>
-        <div class="deliverable-card-meta">
+      return `<div class="surface" style="padding:var(--sp-12);cursor:pointer;margin-bottom:var(--sp-8)" onclick="window.open('/api/file/${encodeURIComponent(o.path)}','_blank')">
+        <div style="font-size:13px;font-weight:500;margin-bottom:var(--sp-4)">${esc(o.title.slice(0, 80))}</div>
+        <div style="display:flex;gap:var(--sp-8);font-size:10px;color:var(--text-faint);margin-bottom:var(--sp-4)">
           <span>${sizeKb}KB</span>
           <span>${ago}</span>
         </div>
-        <div class="deliverable-card-output">${esc((o.preview || '').slice(0, 300))}</div>
+        <div style="font-size:11px;color:var(--text-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc((o.preview || '').slice(0, 200))}</div>
       </div>`;
     }).join('');
-  }).catch(() => { el.innerHTML = '<div class="task-empty">Error loading deliverables</div>'; });
+  }).catch(() => { el.innerHTML = '<div class="empty-state"><span class="empty-desc">Error loading deliverables</span></div>'; });
 }
 
 function renderTaskQueue() {
@@ -428,7 +428,7 @@ function renderTaskQueue() {
 
   // Filtered task list
   const filtered = taskFilter === 'all' ? TASKS : TASKS.filter(t => t.status === taskFilter);
-  if (!filtered.length) { list.innerHTML = '<div class="task-empty">No tasks match filter</div>'; return; }
+  if (!filtered.length) { list.innerHTML = '<div class="empty-state"><span class="empty-desc">No tasks match filter</span></div>'; return; }
   list.innerHTML = filtered.slice(0, 50).map(taskCard).join('');
 }
 
@@ -441,14 +441,14 @@ function renderHomeRunning() {
 
 function renderRunningHero(t) {
   const modelTag = getModelTag(t);
-  return `<div class="running-task-hero" onclick="showTask('${t.id}')">
-    <div class="running-label">Currently Running</div>
-    <div style="display:flex;align-items:center;gap:8px">
-      <span class="task-title">${esc(t.label)}</span>
-      <span class="task-type-tag">${esc(t.type)}</span>
+  return `<div class="surface surface-warning" style="padding:var(--sp-12);margin-bottom:var(--sp-16);cursor:pointer" onclick="showTask('${t.id}')">
+    <div style="font-size:10px;font-weight:600;text-transform:uppercase;color:var(--yellow);letter-spacing:0.5px;margin-bottom:var(--sp-4)">Currently Running</div>
+    <div style="display:flex;align-items:center;gap:var(--sp-8)">
+      <span style="font-size:13px;font-weight:500">${esc(t.label)}</span>
+      <span class="badge badge-neutral">${esc(t.type)}</span>
       ${modelTag}
     </div>
-    ${t.output ? '<pre>' + esc(t.output.slice(-300)) + '</pre>' : '<pre style="color:var(--text-faint)">Executing...</pre>'}
+    ${t.output ? '<pre style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-8);white-space:pre-wrap;max-height:80px;overflow:hidden">' + esc(t.output.slice(-300)) + '</pre>' : '<div style="font-size:11px;color:var(--text-faint);margin-top:var(--sp-4)">Executing...</div>'}
   </div>`;
 }
 
@@ -472,20 +472,20 @@ function taskCard(t) {
     filesHtml = `<div class="task-files">${t.filesWritten.map(f => `<span class="task-file-tag">${esc(f.split('/').pop())}</span>`).join('')}</div>`;
   }
 
-  return `<div class="task-card${extra}" onclick="showTask('${t.id}')">
-    <span class="task-indicator ${t.status}"></span>
-    <div class="task-body">
-      <div class="task-title">${esc(t.label)}</div>
-      <div class="task-meta">
-        <span class="task-type-tag">${esc(t.type)}</span>
+  const statusBadge = t.status === 'done' ? 'badge-success' : t.status === 'failed' ? 'badge-danger' : t.status === 'running' ? 'badge-warning' : 'badge-neutral';
+  return `<div class="surface" style="padding:var(--sp-8) var(--sp-12);cursor:pointer;display:flex;align-items:center;gap:var(--sp-12)" onclick="showTask('${t.id}')">
+    <div style="width:6px;height:6px;border-radius:50%;background:var(${t.status === 'running' ? '--yellow' : t.status === 'done' ? '--green' : t.status === 'failed' ? '--red' : '--text-faint'});flex-shrink:0"></div>
+    <div style="flex:1;min-width:0">
+      <div style="font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(t.label)}</div>
+      <div style="display:flex;align-items:center;gap:var(--sp-4);margin-top:var(--sp-2)">
+        <span class="badge badge-neutral">${esc(t.type)}</span>
         ${modelTag}
       </div>
-      ${summaryHtml}
-      ${filesHtml}
+      ${summaryHtml ? `<div style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-4);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${summaryHtml.replace(/<[^>]+>/g, '')}</div>` : ''}
     </div>
-    <div class="task-right">
-      <span class="task-status-badge ${t.status}">${t.status}</span>
-      <span class="task-time">${tm}</span>
+    <div style="text-align:right;flex-shrink:0">
+      <span class="badge ${statusBadge}">${t.status}</span>
+      <div style="font-size:9px;color:var(--text-faint);margin-top:var(--sp-2)">${tm}</div>
     </div>
   </div>`;
 }
@@ -1648,16 +1648,18 @@ function renderIntakeTasks() {
     const isActive = !isCompleted && t.task_id === selectedIntakeTaskId;
     const extraCls = isCompleted ? ' is-completed' : isActive ? ' is-active' : '';
 
-    return `<div class="intake-card status-${t.status}${extraCls}" onclick="showIntakeDetail('${t.task_id}')">
-      <div class="intake-card-header">
-        <div>
-          <div class="intake-card-title">${esc(t.title)}</div>
-          ${objective ? `<div style="font-size:11px;color:var(--text-dim);margin-top:2px">${esc(objective)}</div>` : ''}
+    const statusBadge = t.status === 'done' ? 'badge-success' : t.status === 'failed' ? 'badge-danger' : ['executing','deliberating','waiting_approval'].includes(t.status) ? 'badge-warning' : 'badge-neutral';
+    const borderCls = t.status === 'done' ? ' surface-success' : t.status === 'failed' ? ' surface-danger' : ['executing','deliberating'].includes(t.status) ? ' surface-warning' : '';
+    return `<div class="surface${borderCls}${isActive ? ' surface-accent' : ''}" style="padding:var(--sp-12);cursor:pointer;margin-bottom:var(--sp-8)" onclick="showIntakeDetail('${t.task_id}')">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:var(--sp-8)">
+        <div style="min-width:0;flex:1">
+          <div style="font-size:13px;font-weight:500;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(t.title)}</div>
+          ${objective ? `<div style="font-size:11px;color:var(--text-dim);margin-top:var(--sp-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(objective)}</div>` : ''}
         </div>
-        <span class="intake-status-badge ${t.status}">${t.status.replace('_', ' ')}</span>
+        <span class="badge ${statusBadge}">${t.status.replace('_', ' ')}</span>
       </div>
-      <div class="intake-card-meta">
-        <span class="domain-tag">${domainLabel(t.domain)}</span>
+      <div style="display:flex;align-items:center;gap:var(--sp-8);margin-top:var(--sp-4)">
+        <span class="badge badge-neutral">${domainLabel(t.domain)}</span>
         ${urgTag}${riskTag}
         <span style="font-size:9px;color:var(--text-faint);font-family:var(--mono);margin-left:auto">${fmtTime(t.created_at)}</span>
       </div>
