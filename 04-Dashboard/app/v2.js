@@ -136,6 +136,7 @@ async function loadCommand() {
   el('mcTasks', todayTasks.length);
   el('mcDone', allDone);
   el('mcCost', fmtCost(costs.today?.cost));
+  el('mcWeek', fmtCost(costs.week?.cost));
   el('mcCalls', costs.today?.calls || 0);
 
   // Attention — pending approvals
@@ -433,7 +434,7 @@ function applyWorkFilters() {
   let filtered = _allWork;
   if (_workEngineFilter) filtered = filtered.filter(t => (t.engine || t.domain) === _workEngineFilter);
   if (statusFilter) filtered = filtered.filter(t => t.status === statusFilter);
-  if (q) filtered = filtered.filter(t => (t.title || '').toLowerCase().includes(q) || (t.raw_request || '').toLowerCase().includes(q));
+  if (q) filtered = filtered.filter(t => (t.title || '').toLowerCase().includes(q) || (t.raw_request || '').toLowerCase().includes(q) || (t.board_deliberation?.interpreted_objective || '').toLowerCase().includes(q));
   renderWorkList(filtered);
 }
 
@@ -445,8 +446,10 @@ function renderWorkList(tasks) {
   el.innerHTML = visible.map(t => {
     const isActive = ['executing', 'deliberating', 'builder_running', 'waiting_approval'].includes(t.status);
     const border = isActive ? 'card-accent' : t.status === 'failed' ? 'card-err' : '';
+    const preview = t.board_deliberation?.interpreted_objective || '';
     return `<div class="card card-click ${border}" style="padding:12px 14px;margin-bottom:6px" onclick="openWorkDetail('${t.task_id}')">
-      <div style="font-size:13px;font-weight:500;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc((t.title || '').slice(0, 70))}</div>
+      <div style="font-size:13px;font-weight:500;margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc((t.title || '').slice(0, 70))}</div>
+      ${preview ? `<div style="font-size:11px;color:var(--text-1);margin-bottom:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(preview.slice(0, 90))}</div>` : ''}
       <div class="row gap-12" style="font-size:10px;color:var(--text-2)">
         <span class="tag tag-muted">${taskEngName(t)}</span>
         <span>${fmtDate(t.updated_at || t.created_at)}</span>
@@ -955,6 +958,22 @@ function connectSSE() {
       const cmdScreen = document.getElementById('s-command');
       if (cmdScreen && cmdScreen.classList.contains('on')) loadCommand();
     }, 10000);
+  });
+  // Live task updates — refresh work list and command when tasks change
+  let _intakeRefreshTimer = null;
+  src.addEventListener('intake-update', () => {
+    if (_intakeRefreshTimer) return;
+    _intakeRefreshTimer = setTimeout(() => {
+      _intakeRefreshTimer = null;
+      const workScreen = document.getElementById('s-work');
+      const workDetail = document.getElementById('workDetail');
+      // Only refresh work list if on work page and not viewing detail
+      if (workScreen && workScreen.classList.contains('on') && (!workDetail || workDetail.style.display === 'none')) {
+        loadWork();
+      }
+      const cmdScreen = document.getElementById('s-command');
+      if (cmdScreen && cmdScreen.classList.contains('on')) loadCommand();
+    }, 5000);
   });
 }
 

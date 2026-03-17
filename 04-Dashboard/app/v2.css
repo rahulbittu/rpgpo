@@ -247,10 +247,13 @@ input,select,textarea,button{font-family:inherit;font-size:inherit}
 .mb-12{margin-bottom:12px}.mb-16{margin-bottom:16px}.mb-20{margin-bottom:20px}.mb-24{margin-bottom:24px}
 
 /* ═══ METRIC CARDS ═══ */
+.metrics-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .metric-card{background:var(--bg-2);border:1px solid var(--border-1);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:2px;transition:border-color .15s ease}
 .metric-card:hover{border-color:var(--border-2)}
 .metric-val{font-size:20px;font-weight:700;letter-spacing:-.5px}
 .metric-label{font-size:10px;color:var(--text-2);text-transform:uppercase;letter-spacing:.5px}
+@media(max-width:1024px){.metrics-strip{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.metrics-strip{grid-template-columns:repeat(2,1fr)}}
 
 /* ═══ PROVIDER ROW ═══ */
 .prov-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border-0);font-size:12px}
