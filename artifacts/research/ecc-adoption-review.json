@@ -1,0 +1,138 @@
+{
+  "review_date": "2026-03-17",
+  "adopted_patterns": [
+    {
+      "id": "session-persistence",
+      "files_changed": ["04-Dashboard/app/server.js"],
+      "status": "working_but_shallow",
+      "real_value": "Server saves state on shutdown, restores on startup",
+      "limitation": "loadSessionState() only logs — does not pre-warm caches",
+      "metric_type": "real",
+      "affects": {
+        "behavior_learning": false,
+        "continuity": true,
+        "safety": false,
+        "evaluation": false,
+        "operator_trust": "moderate"
+      }
+    },
+    {
+      "id": "verification-metrics",
+      "files_changed": ["04-Dashboard/app/lib/workflow.ts", "04-Dashboard/app/lib/behavior.ts"],
+      "status": "working_and_valuable",
+      "real_value": "First automated quality measurement: length, structure, sources",
+      "limitation": "Measures completion quality, not semantic quality. 100% rate is proxy (tasks rarely fail outright). Needs human feedback to become real quality signal.",
+      "metric_type": "proxy_for_quality",
+      "current_data": {
+        "first_pass_clean_rate": "100%",
+        "avg_output_length": 7008,
+        "structured_pct": "100%",
+        "live_events_with_quality": 5
+      },
+      "affects": {
+        "behavior_learning": true,
+        "continuity": false,
+        "safety": false,
+        "evaluation": true,
+        "operator_trust": "low_currently"
+      }
+    },
+    {
+      "id": "pre-execution-safety",
+      "files_changed": ["04-Dashboard/app/worker.js"],
+      "status": "working_but_untested_against_real_threats",
+      "real_value": "Regex-based credential leak detection before every API call",
+      "limitation": "Warn-only (does not block). Regex patterns may be too narrow. Not tested with injected credentials.",
+      "metric_type": "real_but_untested",
+      "current_data": {
+        "warnings_triggered": 0,
+        "note": "Zero warnings means either no leaks or insufficient detection"
+      },
+      "affects": {
+        "behavior_learning": false,
+        "continuity": false,
+        "safety": true,
+        "evaluation": false,
+        "operator_trust": "moderate"
+      }
+    },
+    {
+      "id": "signal-reinforcement",
+      "files_changed": ["04-Dashboard/app/lib/behavior.ts"],
+      "status": "scaffolding_only",
+      "real_value": "None yet — field defined but not populated",
+      "limitation": "No logic to count reinforcements or detect contradictions",
+      "metric_type": "not_yet_measurable",
+      "affects": {
+        "behavior_learning": false,
+        "continuity": false,
+        "safety": false,
+        "evaluation": false,
+        "operator_trust": "none"
+      }
+    }
+  ],
+  "rejected_patterns": [
+    {
+      "id": "command-sprawl",
+      "reason": "GPO uses natural language tasks, not slash commands",
+      "principle_violated": "Product simplicity — operator should not need to learn 52 commands",
+      "permanent_or_deferred": "permanent"
+    },
+    {
+      "id": "multi-agent",
+      "reason": "GPO's sequential pipeline is simpler and more reliable",
+      "principle_violated": "Reliability beats autonomy theater",
+      "permanent_or_deferred": "permanent"
+    },
+    {
+      "id": "language-rules",
+      "reason": "14 of 15 GPO engines don't write code",
+      "principle_violated": "Only automate what is understood",
+      "permanent_or_deferred": "permanent"
+    },
+    {
+      "id": "insaits-python",
+      "reason": "Cross-language dependency in Node.js system",
+      "principle_violated": "Minimal dependency footprint",
+      "permanent_or_deferred": "permanent"
+    },
+    {
+      "id": "mcp-configs",
+      "reason": "GPO has its own provider chain; MCP is for IDE integration",
+      "principle_violated": "No plugin marketplace behavior (yet)",
+      "permanent_or_deferred": "deferred"
+    },
+    {
+      "id": "hook-registry",
+      "reason": "GPO's event system covers the core need already",
+      "principle_violated": "None — just lower priority",
+      "permanent_or_deferred": "deferred"
+    },
+    {
+      "id": "ci-validation",
+      "reason": "GPO doesn't have CI pipeline yet",
+      "principle_violated": "None — just premature",
+      "permanent_or_deferred": "deferred"
+    },
+    {
+      "id": "cost-hooks",
+      "reason": "GPO already has costs.json",
+      "principle_violated": "None — redundant",
+      "permanent_or_deferred": "deferred"
+    }
+  ],
+  "honest_assessment": {
+    "highest_value_adoption": "verification-metrics — first automated quality measurement",
+    "mostly_scaffolding": "signal-reinforcement — field defined but no logic yet",
+    "proxy_metrics": ["first_pass_clean_rate (completion rate, not quality)"],
+    "real_metrics": ["output_length", "has_structure", "has_sources", "live_observed_signal_count"],
+    "next_priorities": [
+      "Make verification metrics meaningful with human feedback events",
+      "Implement signal reinforcement logic",
+      "Make session restore actually pre-warm caches",
+      "Test safety checks with injected credentials",
+      "Add engine-specific quality thresholds"
+    ]
+  }
+}
