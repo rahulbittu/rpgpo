@@ -501,19 +501,24 @@ async function loadSettings() {
   try {
     const sys = document.getElementById('settingsSystem');
     if (!sys) return;
-    const [status, behavior, tasks] = await Promise.all([
+    const [status, behavior, tasks, costs] = await Promise.all([
       fetch('/api/status').then(r => r.json()).catch(() => ({})),
       fetch('/api/behavior/stats').then(r => r.json()).catch(() => ({})),
       fetch('/api/intake/tasks').then(r => r.json()).catch(() => []),
+      fetch('/api/costs').then(r => r.json()).catch(() => ({})),
     ]);
     const done = tasks.filter(t => t.status === 'done').length;
     const total = tasks.length;
+    const todayCost = costs.today?.cost ? '$' + costs.today.cost.toFixed(2) : '--';
+    const weekCost = costs.week?.cost ? '$' + costs.week.cost.toFixed(2) : '--';
     sys.innerHTML = `
       <div class="spread"><span>Version</span><span style="font-family:monospace">GPO V2</span></div>
       <div class="spread"><span>Tasks</span><span>${done} completed / ${total} total</span></div>
+      <div class="spread"><span>AI spend today</span><span>${todayCost}</span></div>
+      <div class="spread"><span>AI spend this week</span><span>${weekCost}</span></div>
       <div class="spread"><span>Behavior events</span><span>${behavior.totalEvents || 0}</span></div>
       <div class="spread"><span>Active signals</span><span>${behavior.activeSignalCount || 0} of ${behavior.signalCount || 0}</span></div>
-      <div class="spread"><span>Feedback events</span><span>${(behavior.eventsByType?.quality_feedback || 0)}</span></div>
+      <div class="spread"><span>Feedback</span><span>${(behavior.eventsByType?.quality_feedback || 0)} ratings</span></div>
       <div class="spread"><span>Server</span><span>${status.server || '--'}</span></div>
       <div class="spread"><span>Worker</span><span>${status.worker || '--'}</span></div>
     `;
@@ -581,6 +586,34 @@ async function loadActivity(append) {
   } catch { if (!append) el.innerHTML = '<div class="nil"><span class="nil-desc">Error loading activity</span></div>'; }
 }
 
+let _actTypeFilter = '';
+function filterActivityType(type) {
+  _actTypeFilter = type;
+  document.querySelectorAll('#actTypeFilter .b').forEach(b => b.classList.toggle('on', !type ? b.textContent === 'All' : b.getAttribute('onclick')?.includes(type)));
+  renderFilteredActivity();
+}
+
+function filterActivity(query) {
+  renderFilteredActivity(query);
+}
+
+function renderFilteredActivity(query) {
+  const q = (query || document.getElementById('actSearch')?.value || '').toLowerCase().trim();
+  const el = document.getElementById('actList');
+  if (!el) return;
+  let filtered = _actEvents;
+  if (_actTypeFilter) filtered = filtered.filter(e => e.type.includes(_actTypeFilter));
+  if (q) filtered = filtered.filter(e => {
+    const label = (EVT_LABELS[e.type] || e.type).toLowerCase();
+    const detail = (e.metadata?.title || e.metadata?.comment || e.metadata?.rating || '').toLowerCase();
+    const engine = (e.engine || '').toLowerCase();
+    return label.includes(q) || detail.includes(q) || engine.includes(q);
+  });
+  if (!filtered.length) { el.innerHTML = '<div class="nil"><span class="nil-desc">No matching events</span></div>'; return; }
+  el.innerHTML = filtered.slice(0, 100).map(e => renderEvent(e)).join('');
+  if (filtered.length > 100) el.innerHTML += `<div style="text-align:center;padding:8px;font-size:10px;color:var(--text-2)">Showing 100 of ${filtered.length} matches</div>`;
+}
+
 function renderEvent(e) {
   const label = EVT_LABELS[e.type] || e.type.replace(/_/g, ' ');
   const engine = e.engine ? `<span class="tag tag-muted">${engName(e.engine)}</span>` : '';
@@ -618,6 +651,32 @@ function connectSSE() {
     }, 10000);
   });
 }
+
+// ═══ KEYBOARD SHORTCUTS ═══
+document.addEventListener('keydown', e => {
+  // Cmd/Ctrl+K → focus Ask input (from any screen)
+  if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+    e.preventDefault();
+    go('ask');
+    const inp = document.getElementById('askInput');
+    if (inp) inp.focus();
+    return;
+  }
+  // / → focus Ask input (only when not in an input/textarea)
+  if (e.key === '/' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)) {
+    e.preventDefault();
+    go('ask');
+    const inp = document.getElementById('askInput');
+    if (inp) inp.focus();
+    return;
+  }
+  // Escape → close any result/evidence and go home
+  if (e.key === 'Escape') {
+    const askResult = document.getElementById('askResult');
+    if (askResult && askResult.style.display !== 'none') { askResult.style.display = 'none'; return; }
+    go('home');
+  }
+});
 
 // ═══ INIT ═══
 connectSSE();

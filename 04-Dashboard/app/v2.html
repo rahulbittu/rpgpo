@@ -33,6 +33,7 @@
     </div>
     <div class="v2-foot">
       <div class="row gap-4"><span class="dot dot-ok dot-pulse" id="statusDot"></span><span id="statusText">Connecting...</span></div>
+      <div style="margin-top:6px;font-size:9px;color:var(--text-2)"><kbd style="padding:1px 4px;border:1px solid var(--border-1);border-radius:3px;font-size:8px">⌘K</kbd> Ask &nbsp; <kbd style="padding:1px 4px;border:1px solid var(--border-1);border-radius:3px;font-size:8px">/</kbd> Focus</div>
     </div>
   </nav>
 
@@ -151,8 +152,14 @@
     <!-- ACTIVITY -->
     <section class="v2-screen" id="s-activity">
       <div class="v2-page">
-        <div class="v2-page-hd spread"><div><h1>Activity</h1><p>Execution history</p></div>
-          <div class="filters" id="actFilters"></div>
+        <div class="v2-page-hd spread"><div><h1>Activity</h1><p>Execution history</p></div></div>
+        <div style="margin-bottom:12px"><input id="actSearch" class="inp" style="padding:8px 12px" placeholder="Search events..." oninput="filterActivity(this.value)"></div>
+        <div class="filters" style="margin-bottom:12px" id="actTypeFilter">
+          <button class="b b-sm on" onclick="filterActivityType('')">All</button>
+          <button class="b b-ghost b-sm" onclick="filterActivityType('output_accepted')">Completed</button>
+          <button class="b b-ghost b-sm" onclick="filterActivityType('quality_feedback')">Feedback</button>
+          <button class="b b-ghost b-sm" onclick="filterActivityType('approval')">Approvals</button>
+          <button class="b b-ghost b-sm" onclick="filterActivityType('task_created')">Submitted</button>
         </div>
         <div id="actList" class="stack"></div>
       </div>
