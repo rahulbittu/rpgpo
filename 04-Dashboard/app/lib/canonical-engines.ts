@@ -14,7 +14,7 @@ export interface CanonicalEngine {
 }
 
 const ENGINES: CanonicalEngine[] = [
-  { id: 'code', displayName: 'Code & Product Engineering', legacyIds: ['startup'], description: 'Architecture, deployment, infrastructure, code implementation' },
+  { id: 'code', displayName: 'Code & Product Engineering', legacyIds: [], description: 'Architecture, deployment, infrastructure, code implementation' },
   { id: 'writing', displayName: 'Writing & Documentation', legacyIds: [], description: 'Guides, specs, SOPs, technical writing, creative writing' },
   { id: 'research', displayName: 'Research & Analysis', legacyIds: [], description: 'Product comparisons, market analysis, deep dives' },
   { id: 'learning', displayName: 'Learning & Tutoring', legacyIds: [], description: 'Technical explanations, how things work, tutorials' },

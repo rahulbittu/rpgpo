@@ -32,10 +32,10 @@ const CANONICAL_TO_LEGACY: Record<string, string> = {
   career: 'careeregine',
   finance: 'wealthresearch',
   ops: 'personalops',
-  startup: 'topranker',  // Note: 'startup' was used as keyword key before, topranker is the original legacy
+  startup: 'topranker',
   news: 'newsroom',
   film: 'founder2founder',
-  code: 'startup',       // 'code' canonical maps to 'startup' legacy (which was used in old DOMAIN_KEYWORDS)
+  // 'code' has no legacy equivalent — it's a new canonical ID
 };
 
 // Legacy → canonical (for reading old data)
