@@ -1,5 +1,41 @@
 [
   {
+    "record_id": "ee_mmtvrp3nwe1y",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing steps, recommendations",
+    "scope_type": "task",
+    "scope_id": "t_mmtvq15qzbyi",
+    "route": "health",
+    "linked_path_id": "",
+    "created_at": "2026-03-17T00:35:00.947Z"
+  },
+  {
+    "record_id": "ee_mmtvrhq2v57m",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmtvq146y7tp",
+    "route": "learning",
+    "linked_path_id": "",
+    "created_at": "2026-03-17T00:34:51.386Z"
+  },
+  {
+    "record_id": "ee_mmtvrckbmpve",
+    "area": "runtime_deliverable",
+    "middleware_ran": "runtime-deliverable-pipeline",
+    "decision_made": "partial",
+    "response_effect": "Partial: missing sections",
+    "scope_type": "task",
+    "scope_id": "t_mmtvq12tul2q",
+    "route": "wealthresearch",
+    "linked_path_id": "",
+    "created_at": "2026-03-17T00:34:44.699Z"
+  },
+  {
     "record_id": "ee_mmtusqousf2r",
     "area": "runtime_deliverable",
     "middleware_ran": "runtime-deliverable-pipeline",
@@ -5962,41 +5998,5 @@
     "route": "startup",
     "linked_path_id": "",
     "created_at": "2026-03-16T06:18:59.309Z"
-  },
-  {
-    "record_id": "ee_mmsslyk36gvh",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "violated",
-    "response_effect": "Contract violated: missing recommendations, thesis",
-    "scope_type": "task",
-    "scope_id": "t_mmsshr00d2l4",
-    "route": "research",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T06:18:48.243Z"
-  },
-  {
-    "record_id": "ee_mmsslsf0gih7",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "violated",
-    "response_effect": "Contract violated: missing recommendations, thesis",
-    "scope_type": "task",
-    "scope_id": "t_mmsshqyahfnu",
-    "route": "research",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T06:18:40.284Z"
-  },
-  {
-    "record_id": "ee_mmssllg2rxho",
-    "area": "runtime_deliverable",
-    "middleware_ran": "runtime-deliverable-pipeline",
-    "decision_made": "partial",
-    "response_effect": "Partial: missing sections",
-    "scope_type": "task",
-    "scope_id": "t_mmsshqw3plgo",
-    "route": "general",
-    "linked_path_id": "",
-    "created_at": "2026-03-16T06:18:31.250Z"
   }
 ]

@@ -19130,5 +19130,48 @@
     "merge_count": 0,
     "last_merge_at": null,
     "created_at": "2026-03-17T00:05:31.414Z"
+  },
+  "t_mmtvq12tul2q": {
+    "task_id": "t_mmtvq12tul2q",
+    "deliverable_id": "dlv_rpgpo_tmmtvq12tul2q_document_413f75fa",
+    "engine_id": "wealthresearch",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-17T00:33:51.284Z"
+  },
+  "t_mmtvq146y7tp": {
+    "task_id": "t_mmtvq146y7tp",
+    "deliverable_id": "dlv_rpgpo_tmmtvq146y7tp_document_22610208",
+    "engine_id": "learning",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "sections"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-17T00:33:56.582Z"
+  },
+  "t_mmtvq15qzbyi": {
+    "task_id": "t_mmtvq15qzbyi",
+    "deliverable_id": "dlv_rpgpo_tmmtvq15qzbyi_action_plan_b0c054be",
+    "engine_id": "health",
+    "scaffold_created": true,
+    "fields_populated": [],
+    "fields_missing": [
+      "steps",
+      "recommendations"
+    ],
+    "contract_status": "partial",
+    "merge_count": 0,
+    "last_merge_at": null,
+    "created_at": "2026-03-17T00:34:04.350Z"
   }
 }
