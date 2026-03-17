@@ -81,6 +81,7 @@ export interface BehaviorSignal {
   lastUpdated: string;
   active: boolean;           // false = advisory only
   provenance?: SignalProvenance; // where this signal came from — set by post-processing if not explicit
+  reinforced_count?: number; // how many times this signal has been re-derived with consistent value (ECC instinct-inspired)
   explanation: string;
 }
 

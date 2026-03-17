@@ -38,6 +38,27 @@ try { behavior = require('./lib/behavior'); } catch { behavior = { recordEvent: 
 const POLL_INTERVAL = 2000;
 let running = false;
 
+// Pre-execution safety validator (ECC-inspired security pattern)
+// Checks prompts before sending to providers. Warns only, does not block.
+const API_KEY_PATTERNS = /sk-[a-zA-Z0-9]{20,}|pplx-[a-zA-Z0-9]{20,}|AIza[a-zA-Z0-9]{30,}|ghp_[a-zA-Z0-9]{30,}/;
+const MAX_PROMPT_LENGTH = 50000;
+let _safetyWarnings = 0;
+
+function validatePromptSafety(prompt, provider) {
+  const warnings = [];
+  if (API_KEY_PATTERNS.test(prompt)) {
+    warnings.push(`[SAFETY] Possible API key detected in ${provider} prompt`);
+  }
+  if (prompt.length > MAX_PROMPT_LENGTH) {
+    warnings.push(`[SAFETY] ${provider} prompt exceeds ${MAX_PROMPT_LENGTH} chars (${prompt.length})`);
+  }
+  if (warnings.length > 0) {
+    _safetyWarnings += warnings.length;
+    warnings.forEach(w => console.log(`[worker]${w}`));
+  }
+  return warnings.length === 0;
+}
+
 console.log(`[worker] RPGPO Task Worker v6 started at ${new Date().toISOString()}`);
 console.log(`[worker] Root: ${RPGPO_ROOT}`);
 
@@ -845,6 +866,9 @@ RULES:
     }
 
     const userPrompt = `${st.prompt}${priorOutputs}${fileContext ? '\n\n## Reference Files\n' + fileContext : ''}`;
+
+    // Pre-execution safety check (ECC-inspired)
+    validatePromptSafety(systemPrompt + userPrompt, model);
 
     let result;
     try {
