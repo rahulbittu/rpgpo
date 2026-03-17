@@ -34,6 +34,7 @@
     <div class="v2-foot">
       <div class="row gap-4"><span class="dot dot-ok dot-pulse" id="statusDot"></span><span id="statusText">Connecting...</span></div>
       <div style="margin-top:6px;font-size:9px;color:var(--text-2)"><kbd style="padding:1px 4px;border:1px solid var(--border-1);border-radius:3px;font-size:8px">&#8984;K</kbd> Ask &nbsp; <kbd style="padding:1px 4px;border:1px solid var(--border-1);border-radius:3px;font-size:8px">/</kbd> Focus</div>
+      <div style="margin-top:8px;font-size:8px;color:var(--border-2);letter-spacing:.3px">GPO v2.0</div>
     </div>
   </nav>
 
@@ -76,8 +77,8 @@
         </div>
 
         <!-- CHIEF OF STAFF BRIEF -->
-        <div class="card mb-16" id="cmdBrief" style="display:none">
-          <div class="hd"><h3>&#128161; Operational Brief</h3></div>
+        <div class="card card-accent mb-16" id="cmdBrief" style="display:none">
+          <div class="hd"><h3>Operational Brief</h3></div>
           <div id="cmdBriefContent" style="font-size:12px;color:var(--text-1)"></div>
         </div>
 
@@ -152,7 +153,7 @@
     <!-- ═══ WORK ═══ -->
     <section class="v2-screen" id="s-work">
       <div class="v2-page" style="max-width:960px">
-        <div class="v2-page-hd spread"><div><h1>Work</h1><p>All tasks — running, completed, and failed</p></div><button class="b-icon" onclick="loadWork()">&#8635;</button></div>
+        <div class="v2-page-hd spread"><div><h1>Work</h1><p>Task queue, results, and execution history</p></div><button class="b-icon" onclick="loadWork()" title="Refresh">&#8635;</button></div>
         <div id="workListWrap">
           <div class="row gap-8 mb-12">
             <input id="workSearch" class="inp" style="padding:8px 12px;flex:1" placeholder="Search tasks..." oninput="applyWorkFilters()">
@@ -186,7 +187,7 @@
     <!-- ═══ OPERATIONS ═══ -->
     <section class="v2-screen" id="s-ops">
       <div class="v2-page" style="max-width:960px">
-        <div class="v2-page-hd"><h1>Operations</h1><p>Providers, health, memory, and governance</p></div>
+        <div class="v2-page-hd"><h1>Operations</h1><p>System observability, provider health, and learned behavior</p></div>
 
         <!-- PENDING APPROVALS -->
         <div id="opsApprovals" class="mb-16" style="display:none">
@@ -234,7 +235,7 @@
     <!-- ═══ SETTINGS ═══ -->
     <section class="v2-screen" id="s-settings">
       <div class="v2-page">
-        <div class="v2-page-hd"><h1>Settings</h1><p>Configuration and preferences</p></div>
+        <div class="v2-page-hd"><h1>Settings</h1><p>System configuration, engines, and operator preferences</p></div>
         <div class="card mb-16">
           <div class="hd"><h3>Appearance</h3></div>
           <div class="spread" style="font-size:12px">
