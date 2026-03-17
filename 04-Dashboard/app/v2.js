@@ -228,14 +228,18 @@ async function loadCommand() {
     }
   }
 
-  // Recent Results
+  // Recent Results — richer cards with Board info
   const recent = tasks.filter(x => x.status === 'done').slice(-5).reverse();
   const re = document.getElementById('cmdResults');
   if (re && recent.length) {
-    re.innerHTML = recent.map(r => `<div class="card card-click" style="padding:10px 14px;margin-bottom:6px" onclick="openWorkDetail('${r.task_id}')">
-      <div class="spread"><span style="font-size:13px;font-weight:500">${esc((r.title || '').slice(0, 60))}</span><span class="tag tag-muted">${taskEngName(r)}</span></div>
-      <div style="font-size:10px;color:var(--text-2);margin-top:3px">${timeAgo(r.updated_at || r.created_at)}</div>
-    </div>`).join('');
+    re.innerHTML = recent.map(r => {
+      const obj = r.board_deliberation?.interpreted_objective || '';
+      return `<div class="card card-click" style="padding:10px 14px;margin-bottom:6px" onclick="openWorkDetail('${r.task_id}')">
+        <div class="spread"><span style="font-size:13px;font-weight:500">${esc((r.title || '').slice(0, 60))}</span><span class="tag tag-muted">${taskEngName(r)}</span></div>
+        ${obj ? `<div style="font-size:11px;color:var(--text-1);margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(obj.slice(0, 80))}</div>` : ''}
+        <div style="font-size:10px;color:var(--text-2);margin-top:3px">${timeAgo(r.updated_at || r.created_at)}${r.board_deliberation ? ' &middot; Board reviewed' : ''}</div>
+      </div>`;
+    }).join('');
   }
 
   // Activity feed
@@ -735,13 +739,15 @@ function renderEvent(e) {
   const ts = e.timestamp ? new Date(e.timestamp) : null;
   const timeStr = ts ? ts.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) : '';
   const dateStr = ts ? ts.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
-  return `<div class="ev"><div class="ev-time">${dateStr}<br>${timeStr}</div>${evtIcon(e.type)}<div class="ev-text"><strong>${esc(label)}</strong>${detail ? ' — ' + detail : ''} ${engine}</div></div>`;
+  const taskId = e.taskId || e.metadata?.taskId;
+  const clickable = taskId ? ` style="cursor:pointer" onclick="openWorkDetail('${esc(taskId)}')"` : '';
+  return `<div class="ev"${clickable}><div class="ev-time">${dateStr}<br>${timeStr}</div>${evtIcon(e.type)}<div class="ev-text"><strong>${esc(label)}</strong>${detail ? ' — ' + detail : ''} ${engine}</div></div>`;
 }
 
 // ═══ OPERATIONS ═══
 async function loadOps() {
   // Parallel fetch
-  const [providers, reliability, latency, provCost, health, observability, memory, signals, guidance, approvals, costs, costHistory, govHealth] = await Promise.all([
+  const [providers, reliability, latency, provCost, health, observability, memory, signals, guidance, approvals, costs, costHistory, govHealth, allTasks] = await Promise.all([
     fetch('/api/provider-registry').then(r => r.json()).catch(() => ({})),
     fetch('/api/provider-reliability').then(r => r.json()).catch(() => ({})),
     fetch('/api/provider-latency').then(r => r.json()).catch(() => ({})),
@@ -755,6 +761,7 @@ async function loadOps() {
     fetch('/api/costs').then(r => r.json()).catch(() => ({})),
     fetch('/api/costs/history').then(r => r.json()).catch(() => []),
     fetch('/api/governance-health').then(r => r.json()).catch(() => ({})),
+    fetch('/api/intake/tasks').then(r => r.json()).catch(() => []),
   ]);
 
   // Approvals
@@ -772,6 +779,22 @@ async function loadOps() {
       </div>
     </div>`).join('');
   } else if (appEl) { appEl.style.display = 'none'; }
+
+  // Queue depth metrics
+  const queueEl = document.getElementById('opsQueueStrip');
+  if (queueEl && Array.isArray(allTasks)) {
+    const running = allTasks.filter(t => ['executing', 'deliberating', 'builder_running'].includes(t.status)).length;
+    const pending = allTasks.filter(t => ['intake', 'planned', 'waiting_approval'].includes(t.status)).length;
+    const done = allTasks.filter(t => t.status === 'done').length;
+    const failed = allTasks.filter(t => t.status === 'failed').length;
+    const total = allTasks.length;
+    queueEl.innerHTML = `
+      <div class="metric-card"><span class="metric-val">${running}</span><span class="metric-label">Running</span></div>
+      <div class="metric-card"><span class="metric-val">${pending}</span><span class="metric-label">Pending</span></div>
+      <div class="metric-card"><span class="metric-val">${done}</span><span class="metric-label">Completed</span></div>
+      <div class="metric-card"><span class="metric-val">${failed}</span><span class="metric-label">Failed</span></div>
+      <div class="metric-card"><span class="metric-val">${total}</span><span class="metric-label">Total</span></div>`;
+  }
 
   // Providers — rich view with reliability, latency, cost
   const provEl = document.getElementById('opsProviders');
