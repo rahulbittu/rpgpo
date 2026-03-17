@@ -285,6 +285,22 @@ function renderAskResult(task, output) {
   if (pp) pp.style.display = 'none';
 }
 
+function rerunTask(request, domain) {
+  go('ask');
+  const inp = document.getElementById('askInput');
+  if (inp) inp.value = request;
+  const eng = document.getElementById('askEngine');
+  if (eng) eng.value = domain || '';
+  toast('Request loaded — submit when ready', 'ok');
+}
+
+function refineTask(request) {
+  go('ask');
+  const inp = document.getElementById('askInput');
+  if (inp) { inp.value = request + '\n\n[Refine: please improve the previous result — '; inp.focus(); inp.setSelectionRange(inp.value.length, inp.value.length); }
+  toast('Add your refinement notes and submit', 'ok');
+}
+
 async function sendFeedback(taskId, rating, btn) {
   try {
     await fetch('/api/intake/task/' + taskId + '/feedback', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ rating }) });
@@ -385,7 +401,9 @@ async function viewEvidence(taskId) {
       <div class="result-body">${md(output)}</div>
       ${sources.length ? `<div class="result-sources"><h4>Sources (${sources.length})</h4>${sources.map(u => `<a href="${esc(u)}" target="_blank" class="source-link">&#128279; ${esc(u.replace(/https?:\/\//,'').split('/')[0])}</a>`).join('')}</div>` : ''}
       <div class="result-actions">
-        <a href="/api/intake/task/${task.task_id}/export?fmt=md" download class="b b-line b-sm" style="text-decoration:none">&#128229; Download MD</a>
+        <button class="b b-line b-sm" onclick="rerunTask('${esc(task.raw_request || task.title)}','${esc(task.domain)}')">&#8635; Run Again</button>
+        <button class="b b-ghost b-sm" onclick="refineTask('${esc(task.raw_request || task.title)}')">&#9998; Refine</button>
+        <a href="/api/intake/task/${task.task_id}/export?fmt=md" download class="b b-ghost b-sm" style="text-decoration:none">&#128229; MD</a>
         <a href="/api/intake/task/${task.task_id}/export?fmt=json" download class="b b-ghost b-sm" style="text-decoration:none">&#128229; JSON</a>
       </div>
       <div class="fb" id="fb-${task.task_id}">
@@ -460,6 +478,7 @@ async function approveSubtask(id) {
 
 // ═══ SETTINGS ═══
 async function loadSettings() {
+  // Engines
   try {
     const engines = await fetch('/api/engines').then(r => r.json());
     const el = document.getElementById('settingsEngines');
@@ -467,6 +486,7 @@ async function loadSettings() {
       el.innerHTML = engines.engines.map(e => `<div class="spread" style="font-size:12px"><span>${esc(e.displayName)}</span><span class="tag tag-muted">${esc(e.id)}</span></div>`).join('');
     }
   } catch {}
+  // Provider keys
   try {
     const keys = await fetch('/api/diag/keys').then(r => r.json());
     if (keys) {
@@ -477,6 +497,32 @@ async function loadSettings() {
       });
     }
   } catch {}
+  // System info
+  try {
+    const sys = document.getElementById('settingsSystem');
+    if (!sys) return;
+    const [status, behavior, tasks] = await Promise.all([
+      fetch('/api/status').then(r => r.json()).catch(() => ({})),
+      fetch('/api/behavior/stats').then(r => r.json()).catch(() => ({})),
+      fetch('/api/intake/tasks').then(r => r.json()).catch(() => []),
+    ]);
+    const done = tasks.filter(t => t.status === 'done').length;
+    const total = tasks.length;
+    sys.innerHTML = `
+      <div class="spread"><span>Version</span><span style="font-family:monospace">GPO V2</span></div>
+      <div class="spread"><span>Tasks</span><span>${done} completed / ${total} total</span></div>
+      <div class="spread"><span>Behavior events</span><span>${behavior.totalEvents || 0}</span></div>
+      <div class="spread"><span>Active signals</span><span>${behavior.activeSignalCount || 0} of ${behavior.signalCount || 0}</span></div>
+      <div class="spread"><span>Feedback events</span><span>${(behavior.eventsByType?.quality_feedback || 0)}</span></div>
+      <div class="spread"><span>Server</span><span>${status.server || '--'}</span></div>
+      <div class="spread"><span>Worker</span><span>${status.worker || '--'}</span></div>
+    `;
+  } catch {}
+  // Theme buttons
+  const theme = localStorage.getItem('gpo-theme') || 'dark';
+  const dk = document.getElementById('tDark'), lt = document.getElementById('tLight');
+  if (dk) dk.className = theme === 'dark' ? 'b b-sm on' : 'b b-ghost b-sm';
+  if (lt) lt.className = theme === 'light' ? 'b b-sm on' : 'b b-ghost b-sm';
 }
 
 // ═══ ACTIVITY ═══
@@ -504,37 +550,45 @@ function evtIcon(type) {
   return '<span class="dot dot-off"></span>';
 }
 
-async function loadActivity() {
+let _actOffset = 0;
+let _actEvents = [];
+async function loadActivity(append) {
   const el = document.getElementById('actList');
   if (!el) return;
-  el.innerHTML = '<div class="wait">Loading activity...</div>';
+  if (!append) { _actOffset = 0; _actEvents = []; el.innerHTML = '<div class="wait">Loading activity...</div>'; }
   try {
-    const data = await fetch('/api/behavior/events').then(r => r.json());
-    const events = (data.recent || []).reverse();
-    if (!events.length) { el.innerHTML = '<div class="nil"><span class="nil-desc">No activity yet</span></div>'; return; }
-    el.innerHTML = events.map(e => {
-      const label = EVT_LABELS[e.type] || e.type.replace(/_/g, ' ');
-      const engine = e.engine ? `<span class="tag tag-muted">${engName(e.engine)}</span>` : '';
-      const detail = e.metadata?.title ? esc(e.metadata.title.slice(0, 50)) : e.metadata?.rating ? `Rating: ${e.metadata.rating}` : e.metadata?.comment ? esc(e.metadata.comment.slice(0, 40)) : '';
-      const ts = e.timestamp ? new Date(e.timestamp) : null;
-      const timeStr = ts ? ts.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) : '';
-      const dateStr = ts ? ts.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
-      return `<div class="ev">
-        <div class="ev-time">${dateStr}<br>${timeStr}</div>
-        ${evtIcon(e.type)}
-        <div class="ev-text"><strong>${esc(label)}</strong>${detail ? ' — ' + detail : ''} ${engine}</div>
-      </div>`;
-    }).join('');
-
-    // Also populate home activity
-    const homeAct = document.getElementById('homeActivity');
-    if (homeAct && events.length) {
-      homeAct.innerHTML = events.slice(0, 8).map(e => {
-        const label = EVT_LABELS[e.type] || e.type.replace(/_/g, ' ');
-        return `<div class="ev"><div class="ev-time">${timeAgo(e.timestamp)}</div>${evtIcon(e.type)}<div class="ev-text">${esc(label)}${e.engine ? ' · ' + engName(e.engine) : ''}</div></div>`;
-      }).join('');
+    const data = await fetch(`/api/behavior/events?limit=50&offset=${_actOffset}`).then(r => r.json());
+    const events = data.events || [];
+    _actEvents = _actEvents.concat(events);
+    _actOffset += events.length;
+    if (!_actEvents.length) { el.innerHTML = '<div class="nil"><span class="nil-desc">No activity yet</span></div>'; return; }
+    el.innerHTML = _actEvents.map(e => renderEvent(e)).join('');
+    if (_actOffset < data.total) {
+      el.innerHTML += `<div style="text-align:center;padding:12px"><button class="b b-ghost b-sm" onclick="loadActivity(true)">Load more (${data.total - _actOffset} remaining)</button></div>`;
+    } else {
+      el.innerHTML += `<div style="text-align:center;padding:8px;font-size:10px;color:var(--text-2)">${data.total} total events</div>`;
     }
-  } catch { el.innerHTML = '<div class="nil"><span class="nil-desc">Error loading activity</span></div>'; }
+    // Populate home activity widget
+    if (!append) {
+      const homeAct = document.getElementById('homeActivity');
+      if (homeAct && _actEvents.length) {
+        homeAct.innerHTML = _actEvents.slice(0, 8).map(e => {
+          const label = EVT_LABELS[e.type] || e.type.replace(/_/g, ' ');
+          return `<div class="ev"><div class="ev-time">${timeAgo(e.timestamp)}</div>${evtIcon(e.type)}<div class="ev-text">${esc(label)}${e.engine ? ' · ' + engName(e.engine) : ''}</div></div>`;
+        }).join('');
+      }
+    }
+  } catch { if (!append) el.innerHTML = '<div class="nil"><span class="nil-desc">Error loading activity</span></div>'; }
+}
+
+function renderEvent(e) {
+  const label = EVT_LABELS[e.type] || e.type.replace(/_/g, ' ');
+  const engine = e.engine ? `<span class="tag tag-muted">${engName(e.engine)}</span>` : '';
+  const detail = e.metadata?.title ? esc(e.metadata.title.slice(0, 50)) : e.metadata?.rating ? `Rating: ${e.metadata.rating}` : e.metadata?.comment ? esc(e.metadata.comment.slice(0, 40)) : '';
+  const ts = e.timestamp ? new Date(e.timestamp) : null;
+  const timeStr = ts ? ts.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) : '';
+  const dateStr = ts ? ts.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
+  return `<div class="ev"><div class="ev-time">${dateStr}<br>${timeStr}</div>${evtIcon(e.type)}<div class="ev-text"><strong>${esc(label)}</strong>${detail ? ' — ' + detail : ''} ${engine}</div></div>`;
 }
 
 // ═══ SSE ═══

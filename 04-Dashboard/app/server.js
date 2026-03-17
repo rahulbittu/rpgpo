@@ -831,9 +831,13 @@ const server = http.createServer(async (req, res) => {
     behavior.logLearning(`Derived ${signals.length} signals (${signals.filter(s => s.active).length} active)`);
     return json(res, { ok: true, signals: signals.length, active: signals.filter(s => s.active).length });
   }
-  if (req.url === '/api/behavior/events' && req.method === 'GET') {
+  if (req.url?.startsWith('/api/behavior/events') && req.method === 'GET') {
+    const params = new URL(req.url, 'http://x').searchParams;
+    const limit = Math.min(parseInt(params.get('limit') || '50'), 200);
+    const offset = parseInt(params.get('offset') || '0');
     const allEvents = behavior.readEvents();
-    return json(res, { total: allEvents.length, recent: allEvents.slice(-50) });
+    const reversed = allEvents.slice().reverse();
+    return json(res, { total: allEvents.length, events: reversed.slice(offset, offset + limit), offset, limit });
   }
   if (req.url?.startsWith('/api/behavior/context') && req.method === 'GET') {
     const params = new URL(req.url, 'http://x').searchParams;
