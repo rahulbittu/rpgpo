@@ -106,26 +106,44 @@ function renderPhaseRail(status) {
   }).join('')}</div>`;
 }
 
-// Markdown to HTML (lightweight)
+// Markdown to HTML (production-grade)
 function md(text) {
   if (!text) return '';
   let h = esc(text);
+  // Code blocks (triple backtick) — must process BEFORE inline code
+  h = h.replace(/```(\w*)\n([\s\S]*?)```/g, (_, lang, code) => `<pre><code${lang ? ' class="lang-' + lang + '"' : ''}>${code.trim()}</code></pre>`);
+  // Headings
   h = h.replace(/^### (.+)$/gm, '<h3>$1</h3>');
   h = h.replace(/^## (.+)$/gm, '<h2>$1</h2>');
   h = h.replace(/^# (.+)$/gm, '<h1>$1</h1>');
+  // Horizontal rules
+  h = h.replace(/^---+$/gm, '<hr>');
+  // Bold + italic
   h = h.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
   h = h.replace(/\*(.+?)\*/g, '<em>$1</em>');
+  // Inline code (after code blocks to avoid conflicts)
   h = h.replace(/`([^`]+)`/g, '<code>$1</code>');
+  // Links (markdown syntax first, then bare URLs not already in tags)
   h = h.replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
-  h = h.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+  h = h.replace(/(?<!["=])(https?:\/\/[^\s<)]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+  // Unordered lists
   h = h.replace(/^- (.+)$/gm, '<li>$1</li>');
-  h = h.replace(/(<li>.*<\/li>\n?)+/g, m => '<ul>' + m + '</ul>');
-  h = h.replace(/^\d+\. (.+)$/gm, '<li>$1</li>');
+  h = h.replace(/((?:<li>.*<\/li>\n?)+)/g, m => {
+    // Check if preceded by a number — if so, it's already handled
+    return '<ul>' + m + '</ul>';
+  });
+  // Ordered lists
+  h = h.replace(/^\d+\.\s+(.+)$/gm, '<oli>$1</oli>');
+  h = h.replace(/((?:<oli>.*<\/oli>\n?)+)/g, m => '<ol>' + m.replace(/oli>/g, 'li>') + '</ol>');
+  // Blockquotes
   h = h.replace(/^&gt; (.+)$/gm, '<blockquote>$1</blockquote>');
+  // Paragraphs
   h = h.replace(/\n{2,}/g, '</p><p>');
   h = '<p>' + h + '</p>';
-  h = h.replace(/<p><(h[123]|ul|ol|blockquote|pre)/g, '<$1');
-  h = h.replace(/<\/(h[123]|ul|ol|blockquote|pre)><\/p>/g, '</$1>');
+  // Clean up paragraph wrapping around block elements
+  h = h.replace(/<p><(h[123]|ul|ol|blockquote|pre|hr)/g, '<$1');
+  h = h.replace(/<\/(h[123]|ul|ol|blockquote|pre|hr)><\/p>/g, '</$1>');
+  h = h.replace(/<p><\/p>/g, '');
   return h;
 }
 
@@ -572,6 +590,7 @@ async function openWorkDetail(taskId) {
   if (listWrap) listWrap.style.display = 'none';
   el.style.display = 'block';
   el.innerHTML = '<div class="wait">Loading task details...</div>';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 
   try {
     const d = await fetch('/api/intake/task/' + taskId).then(r => r.json());
