@@ -412,7 +412,8 @@ function renderAskResult(task, output) {
     return `<a href="${esc(u)}" target="_blank" rel="noopener" class="source-link">&#128279; ${esc(domain)}</a>`;
   }).join('')}</div>` : '';
 
-  rp.innerHTML = `<div class="card result">
+  const boardSummary = task.board_deliberation ? `<div style="padding:6px 14px;font-size:10px;color:var(--text-1);border-bottom:1px solid var(--border-0)"><span class="tag tag-accent" style="margin-right:6px">Board of AI</span>${esc((task.board_deliberation.interpreted_objective || '').slice(0, 90))}</div>` : '';
+  rp.innerHTML = `<div class="card result" style="padding:0">${renderPhaseRail('done')}${boardSummary}
     <div class="result-head"><span class="tag tag-muted">${taskEngName(task)}</span><h3>${esc((task.title || '').slice(0, 60))}</h3><span style="font-size:10px;color:var(--text-2)">${timeAgo(task.updated_at)}</span></div>
     <div class="result-body">${md(output)}</div>
     ${sourcesHtml}
@@ -530,11 +531,13 @@ function renderWorkList(tasks) {
       <div style="padding:12px 14px">
         <div style="font-size:13px;font-weight:500;margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc((t.title || '').slice(0, 70))}</div>
         ${preview ? `<div style="font-size:11px;color:var(--text-1);margin-bottom:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(preview.slice(0, 90))}</div>` : ''}
-        <div class="row gap-12" style="font-size:10px;color:var(--text-2)">
+        <div class="row gap-8" style="font-size:10px;color:var(--text-2);flex-wrap:wrap">
           <span class="tag tag-muted">${taskEngName(t)}</span>
-          ${hasBoard ? '<span class="tag tag-accent">Board reviewed</span>' : ''}
+          ${hasBoard ? '<span class="tag tag-accent">Board</span>' : ''}
+          ${t.board_deliberation?.risk_level && t.board_deliberation.risk_level !== 'green' ? `<span class="tag tag-${t.board_deliberation.risk_level === 'red' ? 'err' : 'warn'}">${t.board_deliberation.risk_level}</span>` : ''}
           <span>${fmtDate(t.updated_at || t.created_at)}</span>
           <span style="margin-left:auto">${statusTag(t.status)}</span>
+        </div>
       </div>
     </div>`;
   }).join('');
