@@ -1,5 +1,726 @@
 [
   {
+    "report_id": "sp_mmtxfbirapob",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall": "strong",
+    "controls": [
+      {
+        "control_id": "c_iso",
+        "name": "Tenant Isolation",
+        "category": "isolation",
+        "status": "implemented",
+        "details": "Project-level isolation with boundary enforcement"
+      },
+      {
+        "control_id": "c_ent",
+        "name": "API Entitlement Checks",
+        "category": "access",
+        "status": "partial",
+        "details": "Entitlement evaluation available but not enforced at API layer"
+      },
+      {
+        "control_id": "c_red",
+        "name": "Sensitive Artifact Redaction",
+        "category": "privacy",
+        "status": "implemented",
+        "details": "Pattern exchange redaction, shared governance boundaries"
+      },
+      {
+        "control_id": "c_aud",
+        "name": "Audit Coverage",
+        "category": "audit",
+        "status": "implemented",
+        "details": "Artifact registry, evidence chain, traceability ledger, audit hub"
+      },
+      {
+        "control_id": "c_rb",
+        "name": "Rollback Safety",
+        "category": "resilience",
+        "status": "implemented",
+        "details": "Rollback control, tuning rollback available"
+      },
+      {
+        "control_id": "c_env",
+        "name": "Environment Separation",
+        "category": "isolation",
+        "status": "implemented",
+        "details": "Dev/beta/prod lanes with lane-aware governance"
+      },
+      {
+        "control_id": "c_sec",
+        "name": "Secret Governance",
+        "category": "secrets",
+        "status": "partial",
+        "details": "3 secrets tracked, 3 expired"
+      },
+      {
+        "control_id": "c_rte",
+        "name": "Runtime Enforcement",
+        "category": "enforcement",
+        "status": "implemented",
+        "details": "Wired into execution graph transitions"
+      },
+      {
+        "control_id": "c_apv",
+        "name": "Approval Visibility",
+        "category": "governance",
+        "status": "implemented",
+        "details": "Approval workspace, escalation inbox active"
+      }
+    ],
+    "findings": [
+      {
+        "finding_id": "sp_mmtxfbirbrot",
+        "severity": "medium",
+        "category": "access",
+        "title": "API entitlement enforcement not active",
+        "remediation": "Wire entitlement checks into API route handlers",
+        "affected_scope": "platform",
+        "evidence_refs": [],
+        "created_at": "2026-03-17T01:21:22.707Z"
+      },
+      {
+        "finding_id": "sp_mmtxfbirj7t7",
+        "severity": "high",
+        "category": "secrets",
+        "title": "3 expired/missing secret(s)",
+        "remediation": "Configure missing API keys in .env",
+        "affected_scope": "provider",
+        "evidence_refs": [],
+        "created_at": "2026-03-17T01:21:22.707Z"
+      }
+    ],
+    "secret_health": {
+      "total": 3,
+      "stale": 0,
+      "expired": 3
+    },
+    "boundary_health": {
+      "violations": 0,
+      "enforced": true
+    },
+    "created_at": "2026-03-17T01:21:22.707Z"
+  },
+  {
+    "report_id": "sp_mmtxfatnjngo",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall": "strong",
+    "controls": [
+      {
+        "control_id": "c_iso",
+        "name": "Tenant Isolation",
+        "category": "isolation",
+        "status": "implemented",
+        "details": "Project-level isolation with boundary enforcement"
+      },
+      {
+        "control_id": "c_ent",
+        "name": "API Entitlement Checks",
+        "category": "access",
+        "status": "partial",
+        "details": "Entitlement evaluation available but not enforced at API layer"
+      },
+      {
+        "control_id": "c_red",
+        "name": "Sensitive Artifact Redaction",
+        "category": "privacy",
+        "status": "implemented",
+        "details": "Pattern exchange redaction, shared governance boundaries"
+      },
+      {
+        "control_id": "c_aud",
+        "name": "Audit Coverage",
+        "category": "audit",
+        "status": "implemented",
+        "details": "Artifact registry, evidence chain, traceability ledger, audit hub"
+      },
+      {
+        "control_id": "c_rb",
+        "name": "Rollback Safety",
+        "category": "resilience",
+        "status": "implemented",
+        "details": "Rollback control, tuning rollback available"
+      },
+      {
+        "control_id": "c_env",
+        "name": "Environment Separation",
+        "category": "isolation",
+        "status": "implemented",
+        "details": "Dev/beta/prod lanes with lane-aware governance"
+      },
+      {
+        "control_id": "c_sec",
+        "name": "Secret Governance",
+        "category": "secrets",
+        "status": "partial",
+        "details": "3 secrets tracked, 3 expired"
+      },
+      {
+        "control_id": "c_rte",
+        "name": "Runtime Enforcement",
+        "category": "enforcement",
+        "status": "implemented",
+        "details": "Wired into execution graph transitions"
+      },
+      {
+        "control_id": "c_apv",
+        "name": "Approval Visibility",
+        "category": "governance",
+        "status": "implemented",
+        "details": "Approval workspace, escalation inbox active"
+      }
+    ],
+    "findings": [
+      {
+        "finding_id": "sp_mmtxfatnp22m",
+        "severity": "medium",
+        "category": "access",
+        "title": "API entitlement enforcement not active",
+        "remediation": "Wire entitlement checks into API route handlers",
+        "affected_scope": "platform",
+        "evidence_refs": [],
+        "created_at": "2026-03-17T01:21:21.803Z"
+      },
+      {
+        "finding_id": "sp_mmtxfatn5hvz",
+        "severity": "high",
+        "category": "secrets",
+        "title": "3 expired/missing secret(s)",
+        "remediation": "Configure missing API keys in .env",
+        "affected_scope": "provider",
+        "evidence_refs": [],
+        "created_at": "2026-03-17T01:21:21.803Z"
+      }
+    ],
+    "secret_health": {
+      "total": 3,
+      "stale": 0,
+      "expired": 3
+    },
+    "boundary_health": {
+      "violations": 0,
+      "enforced": true
+    },
+    "created_at": "2026-03-17T01:21:21.803Z"
+  },
+  {
+    "report_id": "sp_mmtxfat6zyo4",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall": "strong",
+    "controls": [
+      {
+        "control_id": "c_iso",
+        "name": "Tenant Isolation",
+        "category": "isolation",
+        "status": "implemented",
+        "details": "Project-level isolation with boundary enforcement"
+      },
+      {
+        "control_id": "c_ent",
+        "name": "API Entitlement Checks",
+        "category": "access",
+        "status": "partial",
+        "details": "Entitlement evaluation available but not enforced at API layer"
+      },
+      {
+        "control_id": "c_red",
+        "name": "Sensitive Artifact Redaction",
+        "category": "privacy",
+        "status": "implemented",
+        "details": "Pattern exchange redaction, shared governance boundaries"
+      },
+      {
+        "control_id": "c_aud",
+        "name": "Audit Coverage",
+        "category": "audit",
+        "status": "implemented",
+        "details": "Artifact registry, evidence chain, traceability ledger, audit hub"
+      },
+      {
+        "control_id": "c_rb",
+        "name": "Rollback Safety",
+        "category": "resilience",
+        "status": "implemented",
+        "details": "Rollback control, tuning rollback available"
+      },
+      {
+        "control_id": "c_env",
+        "name": "Environment Separation",
+        "category": "isolation",
+        "status": "implemented",
+        "details": "Dev/beta/prod lanes with lane-aware governance"
+      },
+      {
+        "control_id": "c_sec",
+        "name": "Secret Governance",
+        "category": "secrets",
+        "status": "partial",
+        "details": "3 secrets tracked, 3 expired"
+      },
+      {
+        "control_id": "c_rte",
+        "name": "Runtime Enforcement",
+        "category": "enforcement",
+        "status": "implemented",
+        "details": "Wired into execution graph transitions"
+      },
+      {
+        "control_id": "c_apv",
+        "name": "Approval Visibility",
+        "category": "governance",
+        "status": "implemented",
+        "details": "Approval workspace, escalation inbox active"
+      }
+    ],
+    "findings": [
+      {
+        "finding_id": "sp_mmtxfat6aqe7",
+        "severity": "medium",
+        "category": "access",
+        "title": "API entitlement enforcement not active",
+        "remediation": "Wire entitlement checks into API route handlers",
+        "affected_scope": "platform",
+        "evidence_refs": [],
+        "created_at": "2026-03-17T01:21:21.786Z"
+      },
+      {
+        "finding_id": "sp_mmtxfat6fhp9",
+        "severity": "high",
+        "category": "secrets",
+        "title": "3 expired/missing secret(s)",
+        "remediation": "Configure missing API keys in .env",
+        "affected_scope": "provider",
+        "evidence_refs": [],
+        "created_at": "2026-03-17T01:21:21.786Z"
+      }
+    ],
+    "secret_health": {
+      "total": 3,
+      "stale": 0,
+      "expired": 3
+    },
+    "boundary_health": {
+      "violations": 0,
+      "enforced": true
+    },
+    "created_at": "2026-03-17T01:21:21.786Z"
+  },
+  {
+    "report_id": "sp_mmtxfasy4a51",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall": "strong",
+    "controls": [
+      {
+        "control_id": "c_iso",
+        "name": "Tenant Isolation",
+        "category": "isolation",
+        "status": "implemented",
+        "details": "Project-level isolation with boundary enforcement"
+      },
+      {
+        "control_id": "c_ent",
+        "name": "API Entitlement Checks",
+        "category": "access",
+        "status": "partial",
+        "details": "Entitlement evaluation available but not enforced at API layer"
+      },
+      {
+        "control_id": "c_red",
+        "name": "Sensitive Artifact Redaction",
+        "category": "privacy",
+        "status": "implemented",
+        "details": "Pattern exchange redaction, shared governance boundaries"
+      },
+      {
+        "control_id": "c_aud",
+        "name": "Audit Coverage",
+        "category": "audit",
+        "status": "implemented",
+        "details": "Artifact registry, evidence chain, traceability ledger, audit hub"
+      },
+      {
+        "control_id": "c_rb",
+        "name": "Rollback Safety",
+        "category": "resilience",
+        "status": "implemented",
+        "details": "Rollback control, tuning rollback available"
+      },
+      {
+        "control_id": "c_env",
+        "name": "Environment Separation",
+        "category": "isolation",
+        "status": "implemented",
+        "details": "Dev/beta/prod lanes with lane-aware governance"
+      },
+      {
+        "control_id": "c_sec",
+        "name": "Secret Governance",
+        "category": "secrets",
+        "status": "partial",
+        "details": "3 secrets tracked, 3 expired"
+      },
+      {
+        "control_id": "c_rte",
+        "name": "Runtime Enforcement",
+        "category": "enforcement",
+        "status": "implemented",
+        "details": "Wired into execution graph transitions"
+      },
+      {
+        "control_id": "c_apv",
+        "name": "Approval Visibility",
+        "category": "governance",
+        "status": "implemented",
+        "details": "Approval workspace, escalation inbox active"
+      }
+    ],
+    "findings": [
+      {
+        "finding_id": "sp_mmtxfasye6ej",
+        "severity": "medium",
+        "category": "access",
+        "title": "API entitlement enforcement not active",
+        "remediation": "Wire entitlement checks into API route handlers",
+        "affected_scope": "platform",
+        "evidence_refs": [],
+        "created_at": "2026-03-17T01:21:21.778Z"
+      },
+      {
+        "finding_id": "sp_mmtxfasynphs",
+        "severity": "high",
+        "category": "secrets",
+        "title": "3 expired/missing secret(s)",
+        "remediation": "Configure missing API keys in .env",
+        "affected_scope": "provider",
+        "evidence_refs": [],
+        "created_at": "2026-03-17T01:21:21.778Z"
+      }
+    ],
+    "secret_health": {
+      "total": 3,
+      "stale": 0,
+      "expired": 3
+    },
+    "boundary_health": {
+      "violations": 0,
+      "enforced": true
+    },
+    "created_at": "2026-03-17T01:21:21.778Z"
+  },
+  {
+    "report_id": "sp_mmtxfasxmmal",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall": "strong",
+    "controls": [
+      {
+        "control_id": "c_iso",
+        "name": "Tenant Isolation",
+        "category": "isolation",
+        "status": "implemented",
+        "details": "Project-level isolation with boundary enforcement"
+      },
+      {
+        "control_id": "c_ent",
+        "name": "API Entitlement Checks",
+        "category": "access",
+        "status": "partial",
+        "details": "Entitlement evaluation available but not enforced at API layer"
+      },
+      {
+        "control_id": "c_red",
+        "name": "Sensitive Artifact Redaction",
+        "category": "privacy",
+        "status": "implemented",
+        "details": "Pattern exchange redaction, shared governance boundaries"
+      },
+      {
+        "control_id": "c_aud",
+        "name": "Audit Coverage",
+        "category": "audit",
+        "status": "implemented",
+        "details": "Artifact registry, evidence chain, traceability ledger, audit hub"
+      },
+      {
+        "control_id": "c_rb",
+        "name": "Rollback Safety",
+        "category": "resilience",
+        "status": "implemented",
+        "details": "Rollback control, tuning rollback available"
+      },
+      {
+        "control_id": "c_env",
+        "name": "Environment Separation",
+        "category": "isolation",
+        "status": "implemented",
+        "details": "Dev/beta/prod lanes with lane-aware governance"
+      },
+      {
+        "control_id": "c_sec",
+        "name": "Secret Governance",
+        "category": "secrets",
+        "status": "partial",
+        "details": "3 secrets tracked, 3 expired"
+      },
+      {
+        "control_id": "c_rte",
+        "name": "Runtime Enforcement",
+        "category": "enforcement",
+        "status": "implemented",
+        "details": "Wired into execution graph transitions"
+      },
+      {
+        "control_id": "c_apv",
+        "name": "Approval Visibility",
+        "category": "governance",
+        "status": "implemented",
+        "details": "Approval workspace, escalation inbox active"
+      }
+    ],
+    "findings": [
+      {
+        "finding_id": "sp_mmtxfasxo7el",
+        "severity": "medium",
+        "category": "access",
+        "title": "API entitlement enforcement not active",
+        "remediation": "Wire entitlement checks into API route handlers",
+        "affected_scope": "platform",
+        "evidence_refs": [],
+        "created_at": "2026-03-17T01:21:21.777Z"
+      },
+      {
+        "finding_id": "sp_mmtxfasxau8k",
+        "severity": "high",
+        "category": "secrets",
+        "title": "3 expired/missing secret(s)",
+        "remediation": "Configure missing API keys in .env",
+        "affected_scope": "provider",
+        "evidence_refs": [],
+        "created_at": "2026-03-17T01:21:21.777Z"
+      }
+    ],
+    "secret_health": {
+      "total": 3,
+      "stale": 0,
+      "expired": 3
+    },
+    "boundary_health": {
+      "violations": 0,
+      "enforced": true
+    },
+    "created_at": "2026-03-17T01:21:21.777Z"
+  },
+  {
+    "report_id": "sp_mmtxfaso1oiw",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall": "strong",
+    "controls": [
+      {
+        "control_id": "c_iso",
+        "name": "Tenant Isolation",
+        "category": "isolation",
+        "status": "implemented",
+        "details": "Project-level isolation with boundary enforcement"
+      },
+      {
+        "control_id": "c_ent",
+        "name": "API Entitlement Checks",
+        "category": "access",
+        "status": "partial",
+        "details": "Entitlement evaluation available but not enforced at API layer"
+      },
+      {
+        "control_id": "c_red",
+        "name": "Sensitive Artifact Redaction",
+        "category": "privacy",
+        "status": "implemented",
+        "details": "Pattern exchange redaction, shared governance boundaries"
+      },
+      {
+        "control_id": "c_aud",
+        "name": "Audit Coverage",
+        "category": "audit",
+        "status": "implemented",
+        "details": "Artifact registry, evidence chain, traceability ledger, audit hub"
+      },
+      {
+        "control_id": "c_rb",
+        "name": "Rollback Safety",
+        "category": "resilience",
+        "status": "implemented",
+        "details": "Rollback control, tuning rollback available"
+      },
+      {
+        "control_id": "c_env",
+        "name": "Environment Separation",
+        "category": "isolation",
+        "status": "implemented",
+        "details": "Dev/beta/prod lanes with lane-aware governance"
+      },
+      {
+        "control_id": "c_sec",
+        "name": "Secret Governance",
+        "category": "secrets",
+        "status": "partial",
+        "details": "3 secrets tracked, 3 expired"
+      },
+      {
+        "control_id": "c_rte",
+        "name": "Runtime Enforcement",
+        "category": "enforcement",
+        "status": "implemented",
+        "details": "Wired into execution graph transitions"
+      },
+      {
+        "control_id": "c_apv",
+        "name": "Approval Visibility",
+        "category": "governance",
+        "status": "implemented",
+        "details": "Approval workspace, escalation inbox active"
+      }
+    ],
+    "findings": [
+      {
+        "finding_id": "sp_mmtxfaso9esq",
+        "severity": "medium",
+        "category": "access",
+        "title": "API entitlement enforcement not active",
+        "remediation": "Wire entitlement checks into API route handlers",
+        "affected_scope": "platform",
+        "evidence_refs": [],
+        "created_at": "2026-03-17T01:21:21.768Z"
+      },
+      {
+        "finding_id": "sp_mmtxfasoj4gz",
+        "severity": "high",
+        "category": "secrets",
+        "title": "3 expired/missing secret(s)",
+        "remediation": "Configure missing API keys in .env",
+        "affected_scope": "provider",
+        "evidence_refs": [],
+        "created_at": "2026-03-17T01:21:21.768Z"
+      }
+    ],
+    "secret_health": {
+      "total": 3,
+      "stale": 0,
+      "expired": 3
+    },
+    "boundary_health": {
+      "violations": 0,
+      "enforced": true
+    },
+    "created_at": "2026-03-17T01:21:21.768Z"
+  },
+  {
+    "report_id": "sp_mmtxfaslgvgn",
+    "scope_type": "platform",
+    "scope_id": "gpo",
+    "overall": "strong",
+    "controls": [
+      {
+        "control_id": "c_iso",
+        "name": "Tenant Isolation",
+        "category": "isolation",
+        "status": "implemented",
+        "details": "Project-level isolation with boundary enforcement"
+      },
+      {
+        "control_id": "c_ent",
+        "name": "API Entitlement Checks",
+        "category": "access",
+        "status": "partial",
+        "details": "Entitlement evaluation available but not enforced at API layer"
+      },
+      {
+        "control_id": "c_red",
+        "name": "Sensitive Artifact Redaction",
+        "category": "privacy",
+        "status": "implemented",
+        "details": "Pattern exchange redaction, shared governance boundaries"
+      },
+      {
+        "control_id": "c_aud",
+        "name": "Audit Coverage",
+        "category": "audit",
+        "status": "implemented",
+        "details": "Artifact registry, evidence chain, traceability ledger, audit hub"
+      },
+      {
+        "control_id": "c_rb",
+        "name": "Rollback Safety",
+        "category": "resilience",
+        "status": "implemented",
+        "details": "Rollback control, tuning rollback available"
+      },
+      {
+        "control_id": "c_env",
+        "name": "Environment Separation",
+        "category": "isolation",
+        "status": "implemented",
+        "details": "Dev/beta/prod lanes with lane-aware governance"
+      },
+      {
+        "control_id": "c_sec",
+        "name": "Secret Governance",
+        "category": "secrets",
+        "status": "partial",
+        "details": "3 secrets tracked, 3 expired"
+      },
+      {
+        "control_id": "c_rte",
+        "name": "Runtime Enforcement",
+        "category": "enforcement",
+        "status": "implemented",
+        "details": "Wired into execution graph transitions"
+      },
+      {
+        "control_id": "c_apv",
+        "name": "Approval Visibility",
+        "category": "governance",
+        "status": "implemented",
+        "details": "Approval workspace, escalation inbox active"
+      }
+    ],
+    "findings": [
+      {
+        "finding_id": "sp_mmtxfaskhcy5",
+        "severity": "medium",
+        "category": "access",
+        "title": "API entitlement enforcement not active",
+        "remediation": "Wire entitlement checks into API route handlers",
+        "affected_scope": "platform",
+        "evidence_refs": [],
+        "created_at": "2026-03-17T01:21:21.764Z"
+      },
+      {
+        "finding_id": "sp_mmtxfaslxqfu",
+        "severity": "high",
+        "category": "secrets",
+        "title": "3 expired/missing secret(s)",
+        "remediation": "Configure missing API keys in .env",
+        "affected_scope": "provider",
+        "evidence_refs": [],
+        "created_at": "2026-03-17T01:21:21.765Z"
+      }
+    ],
+    "secret_health": {
+      "total": 3,
+      "stale": 0,
+      "expired": 3
+    },
+    "boundary_health": {
+      "violations": 0,
+      "enforced": true
+    },
+    "created_at": "2026-03-17T01:21:21.765Z"
+  },
+  {
     "report_id": "sp_mmtvxbw41fw4",
     "scope_type": "platform",
     "scope_id": "gpo",
@@ -2367,726 +3088,5 @@
       "enforced": true
     },
     "created_at": "2026-03-16T01:19:48.176Z"
-  },
-  {
-    "report_id": "sp_mmshxfwh79vq",
-    "scope_type": "platform",
-    "scope_id": "gpo",
-    "overall": "strong",
-    "controls": [
-      {
-        "control_id": "c_iso",
-        "name": "Tenant Isolation",
-        "category": "isolation",
-        "status": "implemented",
-        "details": "Project-level isolation with boundary enforcement"
-      },
-      {
-        "control_id": "c_ent",
-        "name": "API Entitlement Checks",
-        "category": "access",
-        "status": "partial",
-        "details": "Entitlement evaluation available but not enforced at API layer"
-      },
-      {
-        "control_id": "c_red",
-        "name": "Sensitive Artifact Redaction",
-        "category": "privacy",
-        "status": "implemented",
-        "details": "Pattern exchange redaction, shared governance boundaries"
-      },
-      {
-        "control_id": "c_aud",
-        "name": "Audit Coverage",
-        "category": "audit",
-        "status": "implemented",
-        "details": "Artifact registry, evidence chain, traceability ledger, audit hub"
-      },
-      {
-        "control_id": "c_rb",
-        "name": "Rollback Safety",
-        "category": "resilience",
-        "status": "implemented",
-        "details": "Rollback control, tuning rollback available"
-      },
-      {
-        "control_id": "c_env",
-        "name": "Environment Separation",
-        "category": "isolation",
-        "status": "implemented",
-        "details": "Dev/beta/prod lanes with lane-aware governance"
-      },
-      {
-        "control_id": "c_sec",
-        "name": "Secret Governance",
-        "category": "secrets",
-        "status": "partial",
-        "details": "3 secrets tracked, 3 expired"
-      },
-      {
-        "control_id": "c_rte",
-        "name": "Runtime Enforcement",
-        "category": "enforcement",
-        "status": "implemented",
-        "details": "Wired into execution graph transitions"
-      },
-      {
-        "control_id": "c_apv",
-        "name": "Approval Visibility",
-        "category": "governance",
-        "status": "implemented",
-        "details": "Approval workspace, escalation inbox active"
-      }
-    ],
-    "findings": [
-      {
-        "finding_id": "sp_mmshxfwh70he",
-        "severity": "medium",
-        "category": "access",
-        "title": "API entitlement enforcement not active",
-        "remediation": "Wire entitlement checks into API route handlers",
-        "affected_scope": "platform",
-        "evidence_refs": [],
-        "created_at": "2026-03-16T01:19:48.161Z"
-      },
-      {
-        "finding_id": "sp_mmshxfwh2mof",
-        "severity": "high",
-        "category": "secrets",
-        "title": "3 expired/missing secret(s)",
-        "remediation": "Configure missing API keys in .env",
-        "affected_scope": "provider",
-        "evidence_refs": [],
-        "created_at": "2026-03-16T01:19:48.161Z"
-      }
-    ],
-    "secret_health": {
-      "total": 3,
-      "stale": 0,
-      "expired": 3
-    },
-    "boundary_health": {
-      "violations": 0,
-      "enforced": true
-    },
-    "created_at": "2026-03-16T01:19:48.161Z"
-  },
-  {
-    "report_id": "sp_mmshxfw7od70",
-    "scope_type": "platform",
-    "scope_id": "gpo",
-    "overall": "strong",
-    "controls": [
-      {
-        "control_id": "c_iso",
-        "name": "Tenant Isolation",
-        "category": "isolation",
-        "status": "implemented",
-        "details": "Project-level isolation with boundary enforcement"
-      },
-      {
-        "control_id": "c_ent",
-        "name": "API Entitlement Checks",
-        "category": "access",
-        "status": "partial",
-        "details": "Entitlement evaluation available but not enforced at API layer"
-      },
-      {
-        "control_id": "c_red",
-        "name": "Sensitive Artifact Redaction",
-        "category": "privacy",
-        "status": "implemented",
-        "details": "Pattern exchange redaction, shared governance boundaries"
-      },
-      {
-        "control_id": "c_aud",
-        "name": "Audit Coverage",
-        "category": "audit",
-        "status": "implemented",
-        "details": "Artifact registry, evidence chain, traceability ledger, audit hub"
-      },
-      {
-        "control_id": "c_rb",
-        "name": "Rollback Safety",
-        "category": "resilience",
-        "status": "implemented",
-        "details": "Rollback control, tuning rollback available"
-      },
-      {
-        "control_id": "c_env",
-        "name": "Environment Separation",
-        "category": "isolation",
-        "status": "implemented",
-        "details": "Dev/beta/prod lanes with lane-aware governance"
-      },
-      {
-        "control_id": "c_sec",
-        "name": "Secret Governance",
-        "category": "secrets",
-        "status": "partial",
-        "details": "3 secrets tracked, 3 expired"
-      },
-      {
-        "control_id": "c_rte",
-        "name": "Runtime Enforcement",
-        "category": "enforcement",
-        "status": "implemented",
-        "details": "Wired into execution graph transitions"
-      },
-      {
-        "control_id": "c_apv",
-        "name": "Approval Visibility",
-        "category": "governance",
-        "status": "implemented",
-        "details": "Approval workspace, escalation inbox active"
-      }
-    ],
-    "findings": [
-      {
-        "finding_id": "sp_mmshxfw7ig12",
-        "severity": "medium",
-        "category": "access",
-        "title": "API entitlement enforcement not active",
-        "remediation": "Wire entitlement checks into API route handlers",
-        "affected_scope": "platform",
-        "evidence_refs": [],
-        "created_at": "2026-03-16T01:19:48.151Z"
-      },
-      {
-        "finding_id": "sp_mmshxfw7jncc",
-        "severity": "high",
-        "category": "secrets",
-        "title": "3 expired/missing secret(s)",
-        "remediation": "Configure missing API keys in .env",
-        "affected_scope": "provider",
-        "evidence_refs": [],
-        "created_at": "2026-03-16T01:19:48.151Z"
-      }
-    ],
-    "secret_health": {
-      "total": 3,
-      "stale": 0,
-      "expired": 3
-    },
-    "boundary_health": {
-      "violations": 0,
-      "enforced": true
-    },
-    "created_at": "2026-03-16T01:19:48.151Z"
-  },
-  {
-    "report_id": "sp_mmshxfw6czc7",
-    "scope_type": "platform",
-    "scope_id": "gpo",
-    "overall": "strong",
-    "controls": [
-      {
-        "control_id": "c_iso",
-        "name": "Tenant Isolation",
-        "category": "isolation",
-        "status": "implemented",
-        "details": "Project-level isolation with boundary enforcement"
-      },
-      {
-        "control_id": "c_ent",
-        "name": "API Entitlement Checks",
-        "category": "access",
-        "status": "partial",
-        "details": "Entitlement evaluation available but not enforced at API layer"
-      },
-      {
-        "control_id": "c_red",
-        "name": "Sensitive Artifact Redaction",
-        "category": "privacy",
-        "status": "implemented",
-        "details": "Pattern exchange redaction, shared governance boundaries"
-      },
-      {
-        "control_id": "c_aud",
-        "name": "Audit Coverage",
-        "category": "audit",
-        "status": "implemented",
-        "details": "Artifact registry, evidence chain, traceability ledger, audit hub"
-      },
-      {
-        "control_id": "c_rb",
-        "name": "Rollback Safety",
-        "category": "resilience",
-        "status": "implemented",
-        "details": "Rollback control, tuning rollback available"
-      },
-      {
-        "control_id": "c_env",
-        "name": "Environment Separation",
-        "category": "isolation",
-        "status": "implemented",
-        "details": "Dev/beta/prod lanes with lane-aware governance"
-      },
-      {
-        "control_id": "c_sec",
-        "name": "Secret Governance",
-        "category": "secrets",
-        "status": "partial",
-        "details": "3 secrets tracked, 3 expired"
-      },
-      {
-        "control_id": "c_rte",
-        "name": "Runtime Enforcement",
-        "category": "enforcement",
-        "status": "implemented",
-        "details": "Wired into execution graph transitions"
-      },
-      {
-        "control_id": "c_apv",
-        "name": "Approval Visibility",
-        "category": "governance",
-        "status": "implemented",
-        "details": "Approval workspace, escalation inbox active"
-      }
-    ],
-    "findings": [
-      {
-        "finding_id": "sp_mmshxfw6ynlk",
-        "severity": "medium",
-        "category": "access",
-        "title": "API entitlement enforcement not active",
-        "remediation": "Wire entitlement checks into API route handlers",
-        "affected_scope": "platform",
-        "evidence_refs": [],
-        "created_at": "2026-03-16T01:19:48.150Z"
-      },
-      {
-        "finding_id": "sp_mmshxfw62ok1",
-        "severity": "high",
-        "category": "secrets",
-        "title": "3 expired/missing secret(s)",
-        "remediation": "Configure missing API keys in .env",
-        "affected_scope": "provider",
-        "evidence_refs": [],
-        "created_at": "2026-03-16T01:19:48.150Z"
-      }
-    ],
-    "secret_health": {
-      "total": 3,
-      "stale": 0,
-      "expired": 3
-    },
-    "boundary_health": {
-      "violations": 0,
-      "enforced": true
-    },
-    "created_at": "2026-03-16T01:19:48.150Z"
-  },
-  {
-    "report_id": "sp_mmshxfvwdqn5",
-    "scope_type": "platform",
-    "scope_id": "gpo",
-    "overall": "strong",
-    "controls": [
-      {
-        "control_id": "c_iso",
-        "name": "Tenant Isolation",
-        "category": "isolation",
-        "status": "implemented",
-        "details": "Project-level isolation with boundary enforcement"
-      },
-      {
-        "control_id": "c_ent",
-        "name": "API Entitlement Checks",
-        "category": "access",
-        "status": "partial",
-        "details": "Entitlement evaluation available but not enforced at API layer"
-      },
-      {
-        "control_id": "c_red",
-        "name": "Sensitive Artifact Redaction",
-        "category": "privacy",
-        "status": "implemented",
-        "details": "Pattern exchange redaction, shared governance boundaries"
-      },
-      {
-        "control_id": "c_aud",
-        "name": "Audit Coverage",
-        "category": "audit",
-        "status": "implemented",
-        "details": "Artifact registry, evidence chain, traceability ledger, audit hub"
-      },
-      {
-        "control_id": "c_rb",
-        "name": "Rollback Safety",
-        "category": "resilience",
-        "status": "implemented",
-        "details": "Rollback control, tuning rollback available"
-      },
-      {
-        "control_id": "c_env",
-        "name": "Environment Separation",
-        "category": "isolation",
-        "status": "implemented",
-        "details": "Dev/beta/prod lanes with lane-aware governance"
-      },
-      {
-        "control_id": "c_sec",
-        "name": "Secret Governance",
-        "category": "secrets",
-        "status": "partial",
-        "details": "3 secrets tracked, 3 expired"
-      },
-      {
-        "control_id": "c_rte",
-        "name": "Runtime Enforcement",
-        "category": "enforcement",
-        "status": "implemented",
-        "details": "Wired into execution graph transitions"
-      },
-      {
-        "control_id": "c_apv",
-        "name": "Approval Visibility",
-        "category": "governance",
-        "status": "implemented",
-        "details": "Approval workspace, escalation inbox active"
-      }
-    ],
-    "findings": [
-      {
-        "finding_id": "sp_mmshxfvwnmtt",
-        "severity": "medium",
-        "category": "access",
-        "title": "API entitlement enforcement not active",
-        "remediation": "Wire entitlement checks into API route handlers",
-        "affected_scope": "platform",
-        "evidence_refs": [],
-        "created_at": "2026-03-16T01:19:48.140Z"
-      },
-      {
-        "finding_id": "sp_mmshxfvwemzq",
-        "severity": "high",
-        "category": "secrets",
-        "title": "3 expired/missing secret(s)",
-        "remediation": "Configure missing API keys in .env",
-        "affected_scope": "provider",
-        "evidence_refs": [],
-        "created_at": "2026-03-16T01:19:48.140Z"
-      }
-    ],
-    "secret_health": {
-      "total": 3,
-      "stale": 0,
-      "expired": 3
-    },
-    "boundary_health": {
-      "violations": 0,
-      "enforced": true
-    },
-    "created_at": "2026-03-16T01:19:48.140Z"
-  },
-  {
-    "report_id": "sp_mmshxfvs8wrm",
-    "scope_type": "platform",
-    "scope_id": "gpo",
-    "overall": "strong",
-    "controls": [
-      {
-        "control_id": "c_iso",
-        "name": "Tenant Isolation",
-        "category": "isolation",
-        "status": "implemented",
-        "details": "Project-level isolation with boundary enforcement"
-      },
-      {
-        "control_id": "c_ent",
-        "name": "API Entitlement Checks",
-        "category": "access",
-        "status": "partial",
-        "details": "Entitlement evaluation available but not enforced at API layer"
-      },
-      {
-        "control_id": "c_red",
-        "name": "Sensitive Artifact Redaction",
-        "category": "privacy",
-        "status": "implemented",
-        "details": "Pattern exchange redaction, shared governance boundaries"
-      },
-      {
-        "control_id": "c_aud",
-        "name": "Audit Coverage",
-        "category": "audit",
-        "status": "implemented",
-        "details": "Artifact registry, evidence chain, traceability ledger, audit hub"
-      },
-      {
-        "control_id": "c_rb",
-        "name": "Rollback Safety",
-        "category": "resilience",
-        "status": "implemented",
-        "details": "Rollback control, tuning rollback available"
-      },
-      {
-        "control_id": "c_env",
-        "name": "Environment Separation",
-        "category": "isolation",
-        "status": "implemented",
-        "details": "Dev/beta/prod lanes with lane-aware governance"
-      },
-      {
-        "control_id": "c_sec",
-        "name": "Secret Governance",
-        "category": "secrets",
-        "status": "partial",
-        "details": "3 secrets tracked, 3 expired"
-      },
-      {
-        "control_id": "c_rte",
-        "name": "Runtime Enforcement",
-        "category": "enforcement",
-        "status": "implemented",
-        "details": "Wired into execution graph transitions"
-      },
-      {
-        "control_id": "c_apv",
-        "name": "Approval Visibility",
-        "category": "governance",
-        "status": "implemented",
-        "details": "Approval workspace, escalation inbox active"
-      }
-    ],
-    "findings": [
-      {
-        "finding_id": "sp_mmshxfvre36w",
-        "severity": "medium",
-        "category": "access",
-        "title": "API entitlement enforcement not active",
-        "remediation": "Wire entitlement checks into API route handlers",
-        "affected_scope": "platform",
-        "evidence_refs": [],
-        "created_at": "2026-03-16T01:19:48.135Z"
-      },
-      {
-        "finding_id": "sp_mmshxfvsokii",
-        "severity": "high",
-        "category": "secrets",
-        "title": "3 expired/missing secret(s)",
-        "remediation": "Configure missing API keys in .env",
-        "affected_scope": "provider",
-        "evidence_refs": [],
-        "created_at": "2026-03-16T01:19:48.136Z"
-      }
-    ],
-    "secret_health": {
-      "total": 3,
-      "stale": 0,
-      "expired": 3
-    },
-    "boundary_health": {
-      "violations": 0,
-      "enforced": true
-    },
-    "created_at": "2026-03-16T01:19:48.136Z"
-  },
-  {
-    "report_id": "sp_mms7kwpnkq9y",
-    "scope_type": "platform",
-    "scope_id": "gpo",
-    "overall": "strong",
-    "controls": [
-      {
-        "control_id": "c_iso",
-        "name": "Tenant Isolation",
-        "category": "isolation",
-        "status": "implemented",
-        "details": "Project-level isolation with boundary enforcement"
-      },
-      {
-        "control_id": "c_ent",
-        "name": "API Entitlement Checks",
-        "category": "access",
-        "status": "partial",
-        "details": "Entitlement evaluation available but not enforced at API layer"
-      },
-      {
-        "control_id": "c_red",
-        "name": "Sensitive Artifact Redaction",
-        "category": "privacy",
-        "status": "implemented",
-        "details": "Pattern exchange redaction, shared governance boundaries"
-      },
-      {
-        "control_id": "c_aud",
-        "name": "Audit Coverage",
-        "category": "audit",
-        "status": "implemented",
-        "details": "Artifact registry, evidence chain, traceability ledger, audit hub"
-      },
-      {
-        "control_id": "c_rb",
-        "name": "Rollback Safety",
-        "category": "resilience",
-        "status": "implemented",
-        "details": "Rollback control, tuning rollback available"
-      },
-      {
-        "control_id": "c_env",
-        "name": "Environment Separation",
-        "category": "isolation",
-        "status": "implemented",
-        "details": "Dev/beta/prod lanes with lane-aware governance"
-      },
-      {
-        "control_id": "c_sec",
-        "name": "Secret Governance",
-        "category": "secrets",
-        "status": "partial",
-        "details": "3 secrets tracked, 3 expired"
-      },
-      {
-        "control_id": "c_rte",
-        "name": "Runtime Enforcement",
-        "category": "enforcement",
-        "status": "implemented",
-        "details": "Wired into execution graph transitions"
-      },
-      {
-        "control_id": "c_apv",
-        "name": "Approval Visibility",
-        "category": "governance",
-        "status": "implemented",
-        "details": "Approval workspace, escalation inbox active"
-      }
-    ],
-    "findings": [
-      {
-        "finding_id": "sp_mms7kwpny645",
-        "severity": "medium",
-        "category": "access",
-        "title": "API entitlement enforcement not active",
-        "remediation": "Wire entitlement checks into API route handlers",
-        "affected_scope": "platform",
-        "evidence_refs": [],
-        "created_at": "2026-03-15T20:30:07.259Z"
-      },
-      {
-        "finding_id": "sp_mms7kwpnt8v3",
-        "severity": "high",
-        "category": "secrets",
-        "title": "3 expired/missing secret(s)",
-        "remediation": "Configure missing API keys in .env",
-        "affected_scope": "provider",
-        "evidence_refs": [],
-        "created_at": "2026-03-15T20:30:07.259Z"
-      }
-    ],
-    "secret_health": {
-      "total": 3,
-      "stale": 0,
-      "expired": 3
-    },
-    "boundary_health": {
-      "violations": 0,
-      "enforced": true
-    },
-    "created_at": "2026-03-15T20:30:07.259Z"
-  },
-  {
-    "report_id": "sp_mms7kwhh5yg5",
-    "scope_type": "platform",
-    "scope_id": "gpo",
-    "overall": "strong",
-    "controls": [
-      {
-        "control_id": "c_iso",
-        "name": "Tenant Isolation",
-        "category": "isolation",
-        "status": "implemented",
-        "details": "Project-level isolation with boundary enforcement"
-      },
-      {
-        "control_id": "c_ent",
-        "name": "API Entitlement Checks",
-        "category": "access",
-        "status": "partial",
-        "details": "Entitlement evaluation available but not enforced at API layer"
-      },
-      {
-        "control_id": "c_red",
-        "name": "Sensitive Artifact Redaction",
-        "category": "privacy",
-        "status": "implemented",
-        "details": "Pattern exchange redaction, shared governance boundaries"
-      },
-      {
-        "control_id": "c_aud",
-        "name": "Audit Coverage",
-        "category": "audit",
-        "status": "implemented",
-        "details": "Artifact registry, evidence chain, traceability ledger, audit hub"
-      },
-      {
-        "control_id": "c_rb",
-        "name": "Rollback Safety",
-        "category": "resilience",
-        "status": "implemented",
-        "details": "Rollback control, tuning rollback available"
-      },
-      {
-        "control_id": "c_env",
-        "name": "Environment Separation",
-        "category": "isolation",
-        "status": "implemented",
-        "details": "Dev/beta/prod lanes with lane-aware governance"
-      },
-      {
-        "control_id": "c_sec",
-        "name": "Secret Governance",
-        "category": "secrets",
-        "status": "partial",
-        "details": "3 secrets tracked, 3 expired"
-      },
-      {
-        "control_id": "c_rte",
-        "name": "Runtime Enforcement",
-        "category": "enforcement",
-        "status": "implemented",
-        "details": "Wired into execution graph transitions"
-      },
-      {
-        "control_id": "c_apv",
-        "name": "Approval Visibility",
-        "category": "governance",
-        "status": "implemented",
-        "details": "Approval workspace, escalation inbox active"
-      }
-    ],
-    "findings": [
-      {
-        "finding_id": "sp_mms7kwhhnveq",
-        "severity": "medium",
-        "category": "access",
-        "title": "API entitlement enforcement not active",
-        "remediation": "Wire entitlement checks into API route handlers",
-        "affected_scope": "platform",
-        "evidence_refs": [],
-        "created_at": "2026-03-15T20:30:06.965Z"
-      },
-      {
-        "finding_id": "sp_mms7kwhhyrwt",
-        "severity": "high",
-        "category": "secrets",
-        "title": "3 expired/missing secret(s)",
-        "remediation": "Configure missing API keys in .env",
-        "affected_scope": "provider",
-        "evidence_refs": [],
-        "created_at": "2026-03-15T20:30:06.965Z"
-      }
-    ],
-    "secret_health": {
-      "total": 3,
-      "stale": 0,
-      "expired": 3
-    },
-    "boundary_health": {
-      "violations": 0,
-      "enforced": true
-    },
-    "created_at": "2026-03-15T20:30:06.965Z"
   }
 ]
