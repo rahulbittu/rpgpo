@@ -21,6 +21,7 @@ function go(r) {
   if (r === 'home') loadHome();
   if (r === 'results') loadResults();
   if (r === 'approvals') loadApprovals();
+  if (r === 'activity') loadActivity();
   if (r === 'settings') loadSettings();
   if (r === 'ask') populateEngineSelect();
 }
@@ -206,11 +207,17 @@ function pollAskResult(taskId) {
           const isRunning = s.status === 'running' || s.status === 'builder_running';
           const cls = isDone ? 'step-done' : isRunning ? 'step-active' : 'step-pending';
           const icon = isDone ? '✓' : isRunning ? '●' : '○';
-          const label = s.stage === 'research' ? 'Searching the web' : s.stage === 'report' ? 'Writing response' : s.stage === 'strategy' ? 'Analyzing' : s.title || 'Processing';
-          return `<div class="progress-step ${cls}"><div class="step-dot">${icon}</div><div class="step-label">${esc(label)}</div><div class="step-time">${isDone ? '✓' : elapsed + 's'}</div></div>`;
+          const STEP_LABELS = { research: 'Searching the web', report: 'Writing response', strategy: 'Analyzing and comparing', implement: 'Making code changes', audit: 'Reviewing quality', locate_files: 'Finding relevant files' };
+          const label = STEP_LABELS[s.stage] || s.title || 'Processing';
+          const provider = s.assigned_model === 'perplexity' ? 'Web search' : s.assigned_model === 'openai' ? 'AI synthesis' : s.assigned_model === 'gemini' ? 'Analysis' : '';
+          return `<div class="progress-step ${cls}"><div class="step-dot">${icon}</div><div class="step-label">${esc(label)}${provider && !isDone ? ' <span style="color:var(--text-2);font-size:10px">· ' + provider + '</span>' : ''}</div><div class="step-time">${isDone ? '✓' : elapsed + 's'}</div></div>`;
         });
+        const doneCount = subs.filter(s => s.status === 'done').length;
+        const totalCount = subs.length || 1;
+        const pct = Math.round(doneCount / totalCount * 100);
         if (!steps.length) steps = [`<div class="progress-step step-active"><div class="step-dot">●</div><div class="step-label">${statusLabel(task.status)}...</div><div class="step-time">${elapsed}s</div></div>`];
-        pp.innerHTML = `<div class="card"><div class="spread" style="padding:12px 14px;border-bottom:1px solid var(--border-0)"><span style="font-size:12px;font-weight:500">${esc((task.title || '').slice(0, 50))}</span><span class="tag tag-muted">${engName(task.domain)}</span></div><div class="progress-panel" style="padding:8px">${steps.join('')}</div></div>`;
+        const progressBar = totalCount > 1 ? `<div style="padding:0 14px 10px"><div style="height:3px;background:var(--border-1);border-radius:2px;overflow:hidden"><div style="height:100%;width:${pct}%;background:var(--accent);border-radius:2px;transition:width .3s ease"></div></div><div style="font-size:9px;color:var(--text-2);margin-top:4px;text-align:right">${doneCount}/${totalCount} steps</div></div>` : '';
+        pp.innerHTML = `<div class="card"><div class="spread" style="padding:12px 14px;border-bottom:1px solid var(--border-0)"><span style="font-size:13px;font-weight:500">${esc((task.title || '').slice(0, 50))}</span><span class="tag tag-muted">${engName(task.domain)}</span></div><div class="progress-panel" style="padding:8px">${steps.join('')}</div>${progressBar}</div>`;
       }
 
       // Done?
@@ -271,19 +278,52 @@ async function sendFeedback(taskId, rating, btn) {
 }
 
 // ═══ RESULTS ═══
+let _allResults = [];
 async function loadResults() {
   const el = document.getElementById('resultsList');
+  const ff = document.getElementById('resultFilters');
   if (!el) return;
   el.innerHTML = '<div class="wait">Loading results...</div>';
   try {
     const tasks = await fetch('/api/intake/tasks').then(r => r.json());
-    const done = tasks.filter(t => t.status === 'done').reverse().slice(0, 50);
-    if (!done.length) { el.innerHTML = '<div class="nil"><span class="nil-icon">&#9671;</span><span class="nil-title">No results yet</span></div>'; return; }
-    el.innerHTML = done.map(t => `<div class="card card-click" style="padding:12px 14px;margin-bottom:6px" onclick="viewResult('${t.task_id}')">
-      <div class="spread"><span style="font-size:13px;font-weight:500;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc((t.title || '').slice(0, 70))}</span>${statusTag(t.status)}</div>
-      <div class="row gap-12 mt-8" style="font-size:10px;color:var(--text-2)"><span class="tag tag-muted">${engName(t.domain)}</span><span>${fmtDate(t.updated_at || t.created_at)}</span></div>
-    </div>`).join('');
+    _allResults = tasks.filter(t => t.status === 'done').reverse();
+
+    // Build engine filter
+    const engines = [...new Set(_allResults.map(t => t.engine || t.domain))];
+    if (ff) {
+      ff.innerHTML = `<button class="b b-sm on" onclick="filterResults('')">All (${_allResults.length})</button>` +
+        engines.slice(0, 8).map(e => {
+          const count = _allResults.filter(t => (t.engine || t.domain) === e).length;
+          return `<button class="b b-ghost b-sm" onclick="filterResults('${e}')">${engName(e)} (${count})</button>`;
+        }).join('');
+    }
+    renderResults(_allResults.slice(0, 50));
   } catch { el.innerHTML = '<div class="nil"><span class="nil-desc">Error loading results</span></div>'; }
+}
+
+function filterResults(engine) {
+  const ff = document.getElementById('resultFilters');
+  if (ff) ff.querySelectorAll('.b').forEach(b => b.classList.toggle('on', b.textContent.startsWith(engine ? engName(engine) : 'All')));
+  const filtered = engine ? _allResults.filter(t => (t.engine || t.domain) === engine) : _allResults;
+  renderResults(filtered.slice(0, 50));
+}
+
+function renderResults(tasks) {
+  const el = document.getElementById('resultsList');
+  if (!el) return;
+  if (!tasks.length) { el.innerHTML = '<div class="nil"><span class="nil-icon">&#9671;</span><span class="nil-title">No results</span></div>'; return; }
+  el.innerHTML = tasks.map(t => {
+    const preview = t.board_deliberation?.interpreted_objective || '';
+    return `<div class="card card-click" style="padding:12px 14px;margin-bottom:8px" onclick="viewResult('${t.task_id}')">
+      <div style="font-size:13px;font-weight:500;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc((t.title || '').slice(0, 70))}</div>
+      ${preview ? `<div style="font-size:11px;color:var(--text-1);margin-bottom:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(preview.slice(0, 90))}</div>` : ''}
+      <div class="row gap-12" style="font-size:10px;color:var(--text-2)">
+        <span class="tag tag-muted">${engName(t.engine || t.domain)}</span>
+        <span>${fmtDate(t.updated_at || t.created_at)}</span>
+        <span style="margin-left:auto">${statusTag(t.status)}</span>
+      </div>
+    </div>`;
+  }).join('');
 }
 
 async function viewResult(taskId) {
@@ -330,14 +370,22 @@ async function viewEvidence(taskId) {
       </div>`;
     }
 
-    // Subtask timeline
+    // Subtask execution chain
     if (subs.length) {
-      html += `<div class="card"><div class="hd"><h3>Execution Chain (${subs.filter(s => s.status === 'done').length}/${subs.length})</h3></div>
-        <div class="stack">${subs.map(s => {
+      html += `<div class="card"><div class="hd"><h3>Execution Chain (${subs.filter(s => s.status === 'done').length}/${subs.length} steps)</h3></div>
+        <div class="stack">${subs.map((s, i) => {
           const stag = s.status === 'done' ? 'tag-ok' : s.status === 'failed' ? 'tag-err' : 'tag-muted';
-          return `<div class="spread" style="font-size:12px;padding:4px 0;border-bottom:1px solid var(--border-0)">
-            <span>${esc(s.title || s.stage)}</span>
-            <div class="row gap-4"><span class="tag tag-muted">${esc(s.assigned_model || '')}</span><span class="tag ${stag}">${statusLabel(s.status)}</span></div>
+          const STEP = { research: 'Web Search', report: 'Synthesis', strategy: 'Analysis', implement: 'Code', audit: 'Review', locate_files: 'File Scan' };
+          const stepName = STEP[s.stage] || s.stage;
+          const provName = s.assigned_model === 'perplexity' ? 'Perplexity' : s.assigned_model === 'openai' ? 'OpenAI' : s.assigned_model === 'gemini' ? 'Gemini' : s.assigned_model || '';
+          const hasOutput = s.output && s.output.length > 50;
+          const outputId = 'sub-out-' + i;
+          return `<div style="padding:8px 0;border-bottom:1px solid var(--border-0)">
+            <div class="spread" style="font-size:12px">
+              <div class="row gap-4"><span style="font-weight:500">${esc(s.title || stepName)}</span></div>
+              <div class="row gap-4"><span class="tag tag-muted">${esc(provName)}</span><span class="tag tag-muted">${esc(stepName)}</span><span class="tag ${stag}">${statusLabel(s.status)}</span></div>
+            </div>
+            ${hasOutput ? `<div style="margin-top:4px"><button class="b b-ghost b-xs" onclick="document.getElementById('${outputId}').style.display=document.getElementById('${outputId}').style.display==='none'?'block':'none'">Toggle output (${Math.round(s.output.length/1000)}K chars)</button><div id="${outputId}" style="display:none;margin-top:6px" class="inset"><div class="result-body" style="font-size:11px;max-height:300px;overflow-y:auto">${md(s.output)}</div></div></div>` : ''}
           </div>`;
         }).join('')}</div>
       </div>`;
@@ -393,6 +441,64 @@ async function loadSettings() {
   } catch {}
 }
 
+// ═══ ACTIVITY ═══
+const EVT_LABELS = {
+  task_created: 'Task submitted',
+  task_routed: 'Routed to engine',
+  output_accepted: 'Task completed',
+  output_abandoned: 'Task failed',
+  approval_granted: 'Approved',
+  approval_denied: 'Rejected',
+  rewrite_requested: 'Revision requested',
+  quality_feedback: 'Feedback recorded',
+  dissatisfaction_expressed: 'Quality concern',
+  deliverable_downloaded: 'Downloaded',
+  export_generated: 'Export created',
+  followup_correction: 'Follow-up detected',
+  engine_overridden: 'Engine changed',
+};
+
+function evtIcon(type) {
+  if (type === 'output_accepted') return '<span class="dot dot-ok"></span>';
+  if (type === 'output_abandoned') return '<span class="dot dot-err"></span>';
+  if (type.includes('approval')) return '<span class="dot dot-warn"></span>';
+  if (type === 'quality_feedback' || type === 'dissatisfaction_expressed') return '<span class="dot dot-warn"></span>';
+  return '<span class="dot dot-off"></span>';
+}
+
+async function loadActivity() {
+  const el = document.getElementById('actList');
+  if (!el) return;
+  el.innerHTML = '<div class="wait">Loading activity...</div>';
+  try {
+    const data = await fetch('/api/behavior/events').then(r => r.json());
+    const events = (data.recent || []).reverse();
+    if (!events.length) { el.innerHTML = '<div class="nil"><span class="nil-desc">No activity yet</span></div>'; return; }
+    el.innerHTML = events.map(e => {
+      const label = EVT_LABELS[e.type] || e.type.replace(/_/g, ' ');
+      const engine = e.engine ? `<span class="tag tag-muted">${engName(e.engine)}</span>` : '';
+      const detail = e.metadata?.title ? esc(e.metadata.title.slice(0, 50)) : e.metadata?.rating ? `Rating: ${e.metadata.rating}` : e.metadata?.comment ? esc(e.metadata.comment.slice(0, 40)) : '';
+      const ts = e.timestamp ? new Date(e.timestamp) : null;
+      const timeStr = ts ? ts.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }) : '';
+      const dateStr = ts ? ts.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '';
+      return `<div class="ev">
+        <div class="ev-time">${dateStr}<br>${timeStr}</div>
+        ${evtIcon(e.type)}
+        <div class="ev-text"><strong>${esc(label)}</strong>${detail ? ' — ' + detail : ''} ${engine}</div>
+      </div>`;
+    }).join('');
+
+    // Also populate home activity
+    const homeAct = document.getElementById('homeActivity');
+    if (homeAct && events.length) {
+      homeAct.innerHTML = events.slice(0, 8).map(e => {
+        const label = EVT_LABELS[e.type] || e.type.replace(/_/g, ' ');
+        return `<div class="ev"><div class="ev-time">${timeAgo(e.timestamp)}</div>${evtIcon(e.type)}<div class="ev-text">${esc(label)}${e.engine ? ' · ' + engName(e.engine) : ''}</div></div>`;
+      }).join('');
+    }
+  } catch { el.innerHTML = '<div class="nil"><span class="nil-desc">Error loading activity</span></div>'; }
+}
+
 // ═══ SSE ═══
 function connectSSE() {
   const src = new EventSource('/api/events');
@@ -404,3 +510,4 @@ function connectSSE() {
 // ═══ INIT ═══
 connectSSE();
 loadHome();
+loadActivity(); // pre-load for home widget
