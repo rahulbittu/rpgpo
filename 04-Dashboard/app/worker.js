@@ -817,16 +817,89 @@ SEARCH INSTRUCTIONS (YOU HAVE LIVE WEB SEARCH — USE IT):
         }
       } catch { /* non-fatal */ }
 
+      // ── Response Contract: detect task type from raw request and enforce output shape ──
+      // When a contract fires, it OVERRIDES the generic structureHint to prevent conflicting format instructions.
+      let responseContract = '';
+      let contractOverridesStructure = false;
+      try {
+        const parentId = st.parent_task_id || st.parent_task;
+        const parentTask = parentId ? intake.getTask(parentId) : null;
+        const rawReq = (parentTask?.raw_request || st.prompt || '').toLowerCase();
+
+        // Task type detection
+        const isRecommendation = /\bbest\b|\btop\s?\d|\branking|\brecommend|\bfavorite|\bwhere (to|should)|places for\b/i.test(rawReq);
+        const isComparison = /\bcompare\b|\bvs\b|\bversus\b|\bdifference between|\bwhich is better|\bpros and cons/i.test(rawReq);
+        const isShopping = /\bbuy\b|\bpurchase\b|\bunder \$|\bbudget\b|\bprice\b|\bcheapest|\bworth it/i.test(rawReq);
+        const isActionPlan = /\bplan\b|\bstrategy\b|\broadmap\b|\bstep.?by.?step|\bhow (to|do|can)|create a plan/i.test(rawReq);
+        const isWritingDraft = /\bwrite\b|\bdraft\b|\bcompose\b|\bcreate a (guide|letter|email|memo|spec|sop)/i.test(rawReq);
+        const isResearchBrief = /\bresearch\b|\banalyze\b|\binvestigate\b|\bassessment\b|\bdeep.?dive/i.test(rawReq);
+
+        if (isRecommendation || isShopping) {
+          contractOverridesStructure = true;
+          responseContract = `
+RESPONSE CONTRACT — RECOMMENDATION/RANKING:
+Your output MUST follow this contract. The user asked for recommendations. User intent outranks source narrative.
+
+1. DIRECT ANSWER FIRST: Start with a clear 1-2 sentence answer to the user's question.
+2. RANKED LIST: Provide a Top 5 ranked list (unless user specified a different number). Each item MUST include:
+   - Name (bold)
+   - Short reason why it's ranked here (1-2 sentences)
+   - Location/area/context if relevant
+   - Price range or key detail if available
+   - "Best for:" tag if useful (e.g., "Best for families", "Best value")
+3. SYNTHESIS OVER SOURCE: Do NOT just summarize one source. Synthesize across ALL research data to form your own ranked judgment.
+4. CAVEATS: Note any caveats briefly (seasonal, recent changes, etc.)
+5. SOURCES: End with a brief source note listing key references.
+6. CONFIDENCE: Add one line: "Confidence: high/medium/low — [brief reason]"
+
+CRITICAL: The user wants a DIRECT, PRACTICAL answer they can act on. Not a research summary. Not a source walkthrough.`;
+        } else if (isComparison) {
+          contractOverridesStructure = true;
+          responseContract = `
+RESPONSE CONTRACT — COMPARISON:
+1. DIRECT VERDICT: Start with a 1-2 sentence verdict answering the comparison question.
+2. COMPARISON TABLE: Present a clear comparison with key dimensions as rows.
+3. DETAILED ANALYSIS: 2-3 paragraphs analyzing the key differences.
+4. RECOMMENDATION: Clear recommendation based on common use cases.
+5. SOURCES at end.`;
+        } else if (isActionPlan) {
+          contractOverridesStructure = true;
+          responseContract = `
+RESPONSE CONTRACT — ACTION PLAN:
+1. OBJECTIVE: 1-sentence restatement of what the plan achieves.
+2. NUMBERED STEPS: Concrete, ordered steps with timeline estimates.
+3. Each step: what to do, why, expected outcome, tools/resources needed.
+4. QUICK WINS: Call out any steps that can be done immediately.
+5. MILESTONES: Key checkpoints to measure progress.`;
+        } else if (isWritingDraft) {
+          contractOverridesStructure = true;
+          responseContract = `
+RESPONSE CONTRACT — WRITING DRAFT:
+1. Produce the COMPLETE requested document — not an outline, not bullet points.
+2. Match the appropriate tone and format for the document type.
+3. Include specific details from research data, not placeholders.
+4. Word count at end.`;
+        } else if (isResearchBrief) {
+          contractOverridesStructure = true;
+          responseContract = `
+RESPONSE CONTRACT — RESEARCH BRIEF:
+1. EXECUTIVE SUMMARY: 2-3 sentence overview of findings.
+2. KEY FINDINGS: Numbered list of the most important discoveries.
+3. DETAILED ANALYSIS: Supporting evidence and data.
+4. IMPLICATIONS: What this means for the operator.
+5. SOURCES with URLs.`;
+        }
+      } catch { /* non-fatal — contract detection failure doesn't block execution */ }
+
       modelRules = `
 SYNTHESIS INSTRUCTIONS:
 - You MUST use the "Prior Subtask Results" data provided below as your PRIMARY source of information.
 - Do NOT invent, hallucinate, or make up data. ONLY synthesize what was found by prior research subtasks.
 - If prior subtask results are provided, base your entire response on that data — use specific names, numbers, and sources from the research.
-- ${structureHint}
-- Every recommendation must include: what to do, why, expected outcome, and first step.
+${contractOverridesStructure ? '- IGNORE any default structure hints below — follow the RESPONSE CONTRACT instead.' : '- ' + structureHint}
 - If no prior results are provided, state that clearly and provide only general guidance.${behaviorHint}
 - NEVER say "I cannot access real-time data" if prior subtask results contain real data — USE that data.
-- NEVER produce placeholder text like "[Insert Title]" or "[Company Name]" — use the actual data.`;
+- NEVER produce placeholder text like "[Insert Title]" or "[Company Name]" — use the actual data.${responseContract}`;
     } else if (model === 'gemini') {
       modelRules = `
 STRATEGY INSTRUCTIONS:
