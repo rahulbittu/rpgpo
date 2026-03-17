@@ -1,44 +1,5 @@
 [
   {
-    "ts": "2026-03-16T04:57:07.341Z",
-    "date": "2026-03-16",
-    "provider": "openai",
-    "model": "gpt-4o",
-    "inputTokens": 1390,
-    "outputTokens": 871,
-    "totalTokens": 2261,
-    "cost": 0.012185000000000001,
-    "taskId": "t_mmspoaxgasqa",
-    "taskType": "deliberation",
-    "role": "board"
-  },
-  {
-    "ts": "2026-03-16T04:57:12.715Z",
-    "date": "2026-03-16",
-    "provider": "openai",
-    "model": "gpt-4o",
-    "inputTokens": 1407,
-    "outputTokens": 528,
-    "totalTokens": 1935,
-    "cost": 0.0087975,
-    "taskId": "t_mmspobq993xv",
-    "taskType": "deliberation",
-    "role": "board"
-  },
-  {
-    "ts": "2026-03-16T04:57:17.939Z",
-    "date": "2026-03-16",
-    "provider": "openai",
-    "model": "gpt-4o",
-    "inputTokens": 1476,
-    "outputTokens": 498,
-    "totalTokens": 1974,
-    "cost": 0.00867,
-    "taskId": "t_mmspocj53oa7",
-    "taskType": "deliberation",
-    "role": "board"
-  },
-  {
     "ts": "2026-03-16T04:57:21.540Z",
     "date": "2026-03-16",
     "provider": "openai",
@@ -25996,6 +25957,45 @@
     "totalTokens": 1498,
     "cost": 0.0081625,
     "taskId": "t_mmu4h1zsbb2y",
+    "taskType": "subtask",
+    "role": "creative"
+  },
+  {
+    "ts": "2026-03-17T04:47:42.603Z",
+    "date": "2026-03-17",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 2025,
+    "outputTokens": 533,
+    "totalTokens": 2558,
+    "cost": 0.010392499999999999,
+    "taskId": "t_mmu4sg4wmb1b",
+    "taskType": "deliberation",
+    "role": "board"
+  },
+  {
+    "ts": "2026-03-17T04:47:55.192Z",
+    "date": "2026-03-17",
+    "provider": "perplexity",
+    "model": "sonar",
+    "inputTokens": 531,
+    "outputTokens": 309,
+    "totalTokens": 840,
+    "cost": 0,
+    "taskId": "t_mmu4sg4wmb1b",
+    "taskType": "subtask",
+    "role": "research"
+  },
+  {
+    "ts": "2026-03-17T04:48:01.848Z",
+    "date": "2026-03-17",
+    "provider": "openai",
+    "model": "gpt-4o",
+    "inputTokens": 811,
+    "outputTokens": 586,
+    "totalTokens": 1397,
+    "cost": 0.0078875,
+    "taskId": "t_mmu4sg4wmb1b",
     "taskType": "subtask",
     "role": "creative"
   }

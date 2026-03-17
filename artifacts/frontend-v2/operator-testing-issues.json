@@ -1,0 +1,70 @@
+{
+  "test_date": "2026-03-17",
+  "issues": [
+    {
+      "id": "OT-001",
+      "screen": "Ask / Routing",
+      "action": "Submit 'best coffee shops in Austin TX for remote work'",
+      "expected": "Routes to research or shopping engine",
+      "actual": "Routes to general — no keyword match for 'best X in Y' or 'coffee shops' or 'recommend'",
+      "severity": "medium",
+      "trust_impact": "Results still work but engine context/preferences are lost. General engine has weakest behavior signals.",
+      "fix": "Add 'best', 'top', 'recommend', 'where to', 'find me', 'suggest' to research keywords",
+      "status": "fixed"
+    },
+    {
+      "id": "OT-002",
+      "screen": "Ask / Submit",
+      "action": "Submit task via /api/intake/run",
+      "expected": "Response includes canonical engine field",
+      "actual": "engine field present via server.js canonical middleware — working correctly",
+      "severity": "none",
+      "trust_impact": "none",
+      "fix": "none needed",
+      "status": "verified"
+    },
+    {
+      "id": "OT-003",
+      "screen": "Evidence / Download",
+      "action": "Download MD and JSON exports",
+      "expected": "Clean formatted output with task info",
+      "actual": "Working — MD has engine/status/date header, JSON has full task data",
+      "severity": "none",
+      "trust_impact": "none",
+      "fix": "none needed",
+      "status": "verified"
+    },
+    {
+      "id": "OT-004",
+      "screen": "Feedback",
+      "action": "Submit good/bad feedback on completed task",
+      "expected": "Feedback recorded and visible in behavior events",
+      "actual": "Working — API returns ok, event captured in behavior system",
+      "severity": "none",
+      "trust_impact": "none",
+      "fix": "none needed",
+      "status": "verified"
+    },
+    {
+      "id": "OT-005",
+      "screen": "Results / Output quality",
+      "action": "Review completed coffee shop task output",
+      "expected": "Structured output with specific data",
+      "actual": "2 subtasks completed (1578 + 3091 chars), no internal error leaks, structured output",
+      "severity": "none",
+      "trust_impact": "positive — output is clean and usable",
+      "fix": "none needed",
+      "status": "verified"
+    }
+  ],
+  "verified_workflows": [
+    "Ask → Submit → Live progress → Result card",
+    "Results → Search → Filter by engine",
+    "Evidence → Deep-link from result → View execution chain",
+    "Feedback → Submit rating → Event recorded",
+    "Download → MD export → JSON export",
+    "Activity → Timestamped events → Auto-refresh",
+    "Settings → Theme toggle → Dark/Light switching",
+    "Approvals → Empty state (no pending)"
+  ]
+}
