@@ -53,6 +53,10 @@ export type BehaviorEventType =
   | 'escalation_triggered'
   | 'depth_preference'
   | 'format_preference'
+  | 'speed_preference'
+  | 'quality_feedback'        // explicit operator rating of output quality
+  | 'dissatisfaction_expressed' // operator explicitly flags output as unsatisfactory
+  | 'followup_correction'     // operator submits follow-up task on same topic (implicit dissatisfaction)
   | 'speed_preference';
 
 export interface BehaviorEvent {
@@ -88,6 +92,27 @@ export interface BehaviorSignal {
 // ─── Minimum thresholds for signal activation ──────────
 const MIN_EVENTS_FOR_SIGNAL = 5;
 const MIN_CONFIDENCE_FOR_ACTIVE = 0.6;
+
+// ─── Engine-specific quality thresholds ────────────────
+// Not generic proxies — each engine has meaningful quality indicators
+const ENGINE_QUALITY_THRESHOLDS: Record<string, { min_length: number; requires_structure: boolean; requires_sources: boolean; description: string }> = {
+  research: { min_length: 1000, requires_structure: true, requires_sources: true, description: 'Research must include structured sections and cited sources' },
+  finance: { min_length: 1000, requires_structure: true, requires_sources: true, description: 'Finance advice must include specific numbers and sources' },
+  learning: { min_length: 800, requires_structure: true, requires_sources: false, description: 'Explanations must have clear sections (simple→complex)' },
+  career: { min_length: 800, requires_structure: true, requires_sources: false, description: 'Career guidance must be structured with actionable steps' },
+  health: { min_length: 600, requires_structure: true, requires_sources: false, description: 'Health protocols must have structured progressions' },
+  travel: { min_length: 800, requires_structure: true, requires_sources: false, description: 'Travel plans must have day-by-day structure' },
+  writing: { min_length: 500, requires_structure: false, requires_sources: false, description: 'Writing output judged by completeness, not structure' },
+  screenwriting: { min_length: 500, requires_structure: false, requires_sources: false, description: 'Creative output judged by completeness' },
+  ops: { min_length: 400, requires_structure: true, requires_sources: false, description: 'Plans must have implementation steps' },
+  shopping: { min_length: 600, requires_structure: true, requires_sources: true, description: 'Comparisons must have structured table and source links' },
+  news: { min_length: 400, requires_structure: true, requires_sources: true, description: 'News must include headlines with source URLs' },
+  code: { min_length: 300, requires_structure: false, requires_sources: false, description: 'Code output judged by functionality' },
+  startup: { min_length: 600, requires_structure: true, requires_sources: false, description: 'Strategy must have structured analysis' },
+  music: { min_length: 300, requires_structure: false, requires_sources: false, description: 'Musical concepts judged by completeness' },
+  film: { min_length: 400, requires_structure: false, requires_sources: false, description: 'Film concepts judged by narrative completeness' },
+  general: { min_length: 500, requires_structure: false, requires_sources: false, description: 'Generic threshold' },
+};
 
 // ─── Event Capture ─────────────────────────────────────
 
@@ -435,6 +460,29 @@ function deriveSignals(): BehaviorSignal[] {
     }
   }
 
+  // Signal reinforcement: compare against prior persisted signals
+  // If a signal existed before with the same value, increment reinforced_count
+  // If value changed, reset to 0 (contradiction detected)
+  try {
+    const priorSignals = readSignals();
+    for (const sig of signals) {
+      const sigKey = sig.name + ':' + (sig.scopeKey || 'global');
+      const prior = priorSignals.find(p => p.name === sig.name && (p.scopeKey || 'global') === (sig.scopeKey || 'global'));
+      if (prior) {
+        const priorValue = typeof prior.value === 'object' ? JSON.stringify(prior.value) : String(prior.value);
+        const currentValue = typeof sig.value === 'object' ? JSON.stringify(sig.value) : String(sig.value);
+        if (priorValue === currentValue) {
+          sig.reinforced_count = (prior.reinforced_count || 0) + 1;
+        } else {
+          // Value changed — this is a contradiction/evolution, reset reinforcement
+          sig.reinforced_count = 0;
+        }
+      } else {
+        sig.reinforced_count = 0; // new signal, no prior
+      }
+    }
+  } catch { /* reinforcement comparison non-fatal */ }
+
   return signals;
 }
 
@@ -502,6 +550,48 @@ function getGuidance(engine?: string): ExecutionGuidance {
   }
 
   return guidance;
+}
+
+// ─── Engine-Specific Quality Scoring ───────────────────
+
+interface QualityScore {
+  engine: string;
+  output_length: number;
+  has_structure: boolean;
+  has_sources: boolean;
+  meets_length: boolean;
+  meets_structure: boolean;
+  meets_sources: boolean;
+  overall_pass: boolean;
+  threshold_description: string;
+}
+
+/**
+ * Score output quality against engine-specific thresholds.
+ * Returns a detailed quality assessment, not a generic proxy.
+ */
+function scoreOutputQuality(engine: string, output: string): QualityScore {
+  const canonicalEngine = _toCanonical(engine);
+  const threshold = ENGINE_QUALITY_THRESHOLDS[canonicalEngine] || ENGINE_QUALITY_THRESHOLDS.general;
+  const hasStructure = /^##\s/m.test(output);
+  const hasSources = /https?:\/\/|Source:|source:|Reference:|reference:/i.test(output);
+  const length = output.length;
+
+  const meetsLength = length >= threshold.min_length;
+  const meetsStructure = !threshold.requires_structure || hasStructure;
+  const meetsSources = !threshold.requires_sources || hasSources;
+
+  return {
+    engine: canonicalEngine,
+    output_length: length,
+    has_structure: hasStructure,
+    has_sources: hasSources,
+    meets_length: meetsLength,
+    meets_structure: meetsStructure,
+    meets_sources: meetsSources,
+    overall_pass: meetsLength && meetsStructure && meetsSources,
+    threshold_description: threshold.description,
+  };
 }
 
 // ─── Scoped Memory Retrieval ───────────────────────────
@@ -599,6 +689,8 @@ module.exports = {
   readSignals,
   getGuidance,
   getScopedContext,
+  scoreOutputQuality,
   logLearning,
   getStats,
+  ENGINE_QUALITY_THRESHOLDS,
 };

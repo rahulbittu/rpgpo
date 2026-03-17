@@ -487,6 +487,34 @@ const server = http.createServer(async (req, res) => {
   // ── Intake API ──
 
   // Submit a new intake task
+  // Follow-up correction detection: check if new task overlaps with recent completed task
+  function detectFollowupCorrection(newRequest, newDomain, newTaskId) {
+    try {
+      const allTasks = intake.getAllTasks();
+      const recentDone = allTasks
+        .filter(t => t.status === 'done' && t.domain === newDomain && t.task_id !== newTaskId)
+        .sort((a, b) => ((b.updated_at || b.created_at || '').localeCompare(a.updated_at || a.created_at || '')))
+        .slice(0, 5);
+      const newWords = new Set((newRequest || '').toLowerCase().split(/\s+/).filter(w => w.length > 4));
+      for (const prior of recentDone) {
+        const priorWords = new Set(((prior.raw_request || prior.title || '')).toLowerCase().split(/\s+/).filter(w => w.length > 4));
+        let overlap = 0;
+        for (const w of newWords) { if (priorWords.has(w)) overlap++; }
+        const overlapRatio = newWords.size > 0 ? overlap / newWords.size : 0;
+        if (overlapRatio > 0.4) {
+          behavior.recordEvent('followup_correction', {
+            source: 'topic_overlap_detection',
+            overlap_ratio: Math.round(overlapRatio * 100) + '%',
+            prior_task_id: prior.task_id,
+            prior_title: (prior.title || '').substring(0, 80),
+          }, { taskId: newTaskId, engine: newDomain });
+          return true;
+        }
+      }
+    } catch { /* non-fatal */ }
+    return false;
+  }
+
   // Quick run — submit + auto-deliberate + auto-approve in one step
   if (req.url === '/api/intake/run' && req.method === 'POST') {
     const body = await parseBody(req);
@@ -496,6 +524,7 @@ const server = http.createServer(async (req, res) => {
       events.broadcast('activity', { action: `Quick run: ${task.title}`, ts: new Date().toISOString() });
       behavior.recordEvent('task_created', { title: task.title, source: 'quick_run' }, { taskId: task.task_id, engine: task.domain });
       behavior.recordEvent('task_routed', { engine: task.domain, autoRouted: true }, { taskId: task.task_id, engine: task.domain });
+      detectFollowupCorrection(body.raw_request, task.domain, task.task_id);
       // Queue deliberation
       queue.addTask('deliberate', `Deliberate: ${task.title}`, { taskId: task.task_id, autoApprove: true });
       return json(res, { ok: true, task, message: 'Task submitted — auto-deliberation and execution started' });
@@ -511,6 +540,7 @@ const server = http.createServer(async (req, res) => {
     behavior.recordEvent('task_created', { title: task.title, source: 'submit' }, { taskId: task.task_id, engine: task.domain });
     behavior.recordEvent('task_routed', { engine: task.domain, autoRouted: !body.domain }, { taskId: task.task_id, engine: task.domain });
     if (body.domain) behavior.recordEvent('engine_overridden', { selectedEngine: body.domain, autoDetected: task.domain !== body.domain ? intake.detectDomain(body.raw_request || '') : body.domain }, { taskId: task.task_id, engine: body.domain });
+    detectFollowupCorrection(body.raw_request, task.domain, task.task_id);
     // Auto-queue deliberation with auto-approve so task runs without clicks
     try {
       queue.addTask('deliberate', `Deliberate: ${task.title}`, { taskId: task.task_id, autoApprove: true });
@@ -791,6 +821,21 @@ const server = http.createServer(async (req, res) => {
     const params = new URL(req.url, 'http://x').searchParams;
     const ctx = behavior.getScopedContext({ engine: params.get('engine') || undefined, project: params.get('project') || undefined });
     return json(res, ctx);
+  }
+  // ── Human feedback endpoints ──
+  if (req.url?.match(/^\/api\/intake\/task\/([^/]+)\/feedback$/) && req.method === 'POST') {
+    const taskId = req.url.match(/^\/api\/intake\/task\/([^/]+)\/feedback$/)[1];
+    const task = intake.getTask(taskId);
+    if (!task) return json(res, { error: 'Not found' }, 404);
+    const body = await parseBody(req);
+    const rating = body.rating; // 'good', 'bad', 'needs_improvement'
+    const comment = body.comment || '';
+    if (rating === 'bad' || rating === 'needs_improvement') {
+      behavior.recordEvent('dissatisfaction_expressed', { rating, comment, taskTitle: task.title }, { taskId, engine: task.domain });
+    }
+    behavior.recordEvent('quality_feedback', { rating, comment, taskTitle: task.title }, { taskId, engine: task.domain });
+    logAction('Quality feedback', taskId, `${rating}: ${comment.slice(0, 100)}`);
+    return json(res, { ok: true, recorded: rating });
   }
 
   // Global pending approvals — subtasks + tasks waiting approval

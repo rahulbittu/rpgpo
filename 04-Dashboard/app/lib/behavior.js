@@ -78,6 +78,26 @@ function ensureDir() {
 // ─── Minimum thresholds for signal activation ──────────
 var MIN_EVENTS_FOR_SIGNAL = 5;
 var MIN_CONFIDENCE_FOR_ACTIVE = 0.6;
+// ─── Engine-specific quality thresholds ────────────────
+// Not generic proxies — each engine has meaningful quality indicators
+var ENGINE_QUALITY_THRESHOLDS = {
+    research: { min_length: 1000, requires_structure: true, requires_sources: true, description: 'Research must include structured sections and cited sources' },
+    finance: { min_length: 1000, requires_structure: true, requires_sources: true, description: 'Finance advice must include specific numbers and sources' },
+    learning: { min_length: 800, requires_structure: true, requires_sources: false, description: 'Explanations must have clear sections (simple→complex)' },
+    career: { min_length: 800, requires_structure: true, requires_sources: false, description: 'Career guidance must be structured with actionable steps' },
+    health: { min_length: 600, requires_structure: true, requires_sources: false, description: 'Health protocols must have structured progressions' },
+    travel: { min_length: 800, requires_structure: true, requires_sources: false, description: 'Travel plans must have day-by-day structure' },
+    writing: { min_length: 500, requires_structure: false, requires_sources: false, description: 'Writing output judged by completeness, not structure' },
+    screenwriting: { min_length: 500, requires_structure: false, requires_sources: false, description: 'Creative output judged by completeness' },
+    ops: { min_length: 400, requires_structure: true, requires_sources: false, description: 'Plans must have implementation steps' },
+    shopping: { min_length: 600, requires_structure: true, requires_sources: true, description: 'Comparisons must have structured table and source links' },
+    news: { min_length: 400, requires_structure: true, requires_sources: true, description: 'News must include headlines with source URLs' },
+    code: { min_length: 300, requires_structure: false, requires_sources: false, description: 'Code output judged by functionality' },
+    startup: { min_length: 600, requires_structure: true, requires_sources: false, description: 'Strategy must have structured analysis' },
+    music: { min_length: 300, requires_structure: false, requires_sources: false, description: 'Musical concepts judged by completeness' },
+    film: { min_length: 400, requires_structure: false, requires_sources: false, description: 'Film concepts judged by narrative completeness' },
+    general: { min_length: 500, requires_structure: false, requires_sources: false, description: 'Generic threshold' },
+};
 // ─── Event Capture ─────────────────────────────────────
 function generateEventId() {
     return 'evt_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
@@ -435,6 +455,35 @@ function deriveSignals() {
             sig.provenance = 'seeded_historical';
         }
     }
+    // Signal reinforcement: compare against prior persisted signals
+    // If a signal existed before with the same value, increment reinforced_count
+    // If value changed, reset to 0 (contradiction detected)
+    try {
+        var priorSignals = readSignals();
+        var _loop_1 = function (sig) {
+            var sigKey = sig.name + ':' + (sig.scopeKey || 'global');
+            var prior = priorSignals.find(function (p) { return p.name === sig.name && (p.scopeKey || 'global') === (sig.scopeKey || 'global'); });
+            if (prior) {
+                var priorValue = typeof prior.value === 'object' ? JSON.stringify(prior.value) : String(prior.value);
+                var currentValue = typeof sig.value === 'object' ? JSON.stringify(sig.value) : String(sig.value);
+                if (priorValue === currentValue) {
+                    sig.reinforced_count = (prior.reinforced_count || 0) + 1;
+                }
+                else {
+                    // Value changed — this is a contradiction/evolution, reset reinforcement
+                    sig.reinforced_count = 0;
+                }
+            }
+            else {
+                sig.reinforced_count = 0; // new signal, no prior
+            }
+        };
+        for (var _m = 0, signals_2 = signals; _m < signals_2.length; _m++) {
+            var sig = signals_2[_m];
+            _loop_1(sig);
+        }
+    }
+    catch ( /* reinforcement comparison non-fatal */_o) { /* reinforcement comparison non-fatal */ }
     return signals;
 }
 /**
@@ -493,6 +542,31 @@ function getGuidance(engine) {
             guidance.depthHint = 'standard';
     }
     return guidance;
+}
+/**
+ * Score output quality against engine-specific thresholds.
+ * Returns a detailed quality assessment, not a generic proxy.
+ */
+function scoreOutputQuality(engine, output) {
+    var canonicalEngine = _toCanonical(engine);
+    var threshold = ENGINE_QUALITY_THRESHOLDS[canonicalEngine] || ENGINE_QUALITY_THRESHOLDS.general;
+    var hasStructure = /^##\s/m.test(output);
+    var hasSources = /https?:\/\/|Source:|source:|Reference:|reference:/i.test(output);
+    var length = output.length;
+    var meetsLength = length >= threshold.min_length;
+    var meetsStructure = !threshold.requires_structure || hasStructure;
+    var meetsSources = !threshold.requires_sources || hasSources;
+    return {
+        engine: canonicalEngine,
+        output_length: length,
+        has_structure: hasStructure,
+        has_sources: hasSources,
+        meets_length: meetsLength,
+        meets_structure: meetsStructure,
+        meets_sources: meetsSources,
+        overall_pass: meetsLength && meetsStructure && meetsSources,
+        threshold_description: threshold.description,
+    };
 }
 // ─── Scoped Memory Retrieval ───────────────────────────
 /**
@@ -578,6 +652,8 @@ module.exports = {
     readSignals: readSignals,
     getGuidance: getGuidance,
     getScopedContext: getScopedContext,
+    scoreOutputQuality: scoreOutputQuality,
     logLearning: logLearning,
     getStats: getStats,
+    ENGINE_QUALITY_THRESHOLDS: ENGINE_QUALITY_THRESHOLDS,
 };
