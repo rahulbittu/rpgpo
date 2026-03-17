@@ -704,7 +704,7 @@ function renderEvent(e) {
 // ═══ OPERATIONS ═══
 async function loadOps() {
   // Parallel fetch
-  const [providers, reliability, latency, provCost, health, observability, memory, signals, guidance, approvals, costs, costHistory] = await Promise.all([
+  const [providers, reliability, latency, provCost, health, observability, memory, signals, guidance, approvals, costs, costHistory, govHealth] = await Promise.all([
     fetch('/api/provider-registry').then(r => r.json()).catch(() => ({})),
     fetch('/api/provider-reliability').then(r => r.json()).catch(() => ({})),
     fetch('/api/provider-latency').then(r => r.json()).catch(() => ({})),
@@ -717,6 +717,7 @@ async function loadOps() {
     fetch('/api/intake/pending-approvals').then(r => r.json()).catch(() => []),
     fetch('/api/costs').then(r => r.json()).catch(() => ({})),
     fetch('/api/costs/history').then(r => r.json()).catch(() => []),
+    fetch('/api/governance-health').then(r => r.json()).catch(() => ({})),
   ]);
 
   // Approvals
@@ -771,6 +772,16 @@ async function loadOps() {
         const label = s.subsystem.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
         return `<div class="prov-row"><span class="dot ${dot}"></span><span style="flex:1">${esc(label)}</span><span class="tag tag-${s.status === 'healthy' ? 'ok' : 'warn'}">${esc(s.status)}</span></div>`;
       }).join('');
+  }
+
+  // Governance health
+  if (sysEl && govHealth.health) {
+    const gh = govHealth.health;
+    const govDot = gh.health === 'healthy' ? 'dot-ok' : gh.health === 'drifting' ? 'dot-warn' : 'dot-err';
+    sysEl.innerHTML += `<div class="prov-row" style="margin-top:4px"><span class="dot ${govDot}"></span><span style="flex:1">Governance</span><span class="tag tag-${gh.health === 'healthy' ? 'ok' : 'warn'}">${esc(gh.health)}</span></div>`;
+    if (gh.exception_count > 0 || gh.drift_signal_count > 0) {
+      sysEl.innerHTML += `<div style="font-size:10px;color:var(--text-2);padding-left:19px">${gh.exception_count} exceptions &middot; ${gh.drift_signal_count} drift signals</div>`;
+    }
   }
 
   // Observability
