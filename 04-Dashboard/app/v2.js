@@ -322,8 +322,9 @@ function renderTemplates() {
   const el = document.getElementById('askTemplates');
   if (!el) return;
   el.innerHTML = TEMPLATES.map(t =>
-    `<div class="card card-click" style="padding:10px 12px" onclick="useTemplate('${esc(t.prompt)}','${t.domain}')">
-      <div class="row gap-8"><span style="font-size:16px">${t.icon}</span><div><div style="font-size:12px;font-weight:600">${esc(t.title)}</div><div style="font-size:10px;color:var(--text-2)">${esc(t.desc)}</div></div></div>
+    `<div class="card card-click" style="padding:12px 14px;display:flex;align-items:center;gap:12px" onclick="useTemplate('${esc(t.prompt)}','${t.domain}')">
+      <div style="width:36px;height:36px;border-radius:8px;background:var(--accent-bg);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">${t.icon}</div>
+      <div><div style="font-size:12px;font-weight:700">${esc(t.title)}</div><div style="font-size:10px;color:var(--text-2);margin-top:1px">${esc(t.desc)}</div></div>
     </div>`
   ).join('');
 }
