@@ -223,7 +223,7 @@ input,select,textarea,button{font-family:inherit;font-size:inherit}
 /* ═══ EVENT ROW ═══ */
 .ev{display:flex;align-items:flex-start;gap:12px;padding:10px 4px;border-bottom:1px solid var(--border-0);font-size:12px;border-radius:4px;transition:background .15s ease}
 .ev:last-child{border-bottom:none}
-.ev-time{color:var(--text-2);font-family:'SF Mono',monospace;font-size:10px;white-space:nowrap;min-width:55px;padding-top:2px;line-height:1.4}
+.ev-time{color:var(--text-2);font-family:var(--mono);font-size:10px;white-space:nowrap;min-width:55px;padding-top:2px;line-height:1.4}
 .ev-text{color:var(--text-1);flex:1;line-height:1.5}
 .ev-text strong{color:var(--text-0);font-weight:600}
 .ev-click{cursor:pointer}.ev-click:hover{background:var(--bg-3)}
@@ -278,15 +278,17 @@ input,select,textarea,button{font-family:inherit;font-size:inherit}
 @media(max-width:768px){.metrics-strip{grid-template-columns:repeat(2,1fr)}}
 
 /* ═══ PROVIDER ROW ═══ */
-.prov-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border-0);font-size:12px}
+.prov-row{display:flex;align-items:center;gap:12px;padding:10px 4px;border-bottom:1px solid var(--border-0);font-size:12px;border-radius:4px;transition:background .15s ease}
 .prov-row:last-child{border-bottom:none}
-.prov-name{font-weight:600;min-width:80px}
-.prov-model{color:var(--text-1);font-family:'SF Mono',monospace;font-size:11px}
+.prov-row:hover{background:var(--bg-3)}
+.prov-name{font-weight:700;min-width:80px}
+.prov-model{color:var(--text-1);font-family:var(--mono);font-size:11px}
 .prov-meta{margin-left:auto;display:flex;gap:8px;align-items:center}
 
 /* ═══ SIGNAL ROW ═══ */
-.signal-row{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border-0);font-size:12px}
+.signal-row{display:flex;align-items:center;gap:10px;padding:8px 4px;border-bottom:1px solid var(--border-0);font-size:12px;border-radius:4px;transition:background .15s ease}
 .signal-row:last-child{border-bottom:none}
+.signal-row:hover{background:var(--bg-3)}
 .signal-name{font-weight:500;flex:1}
 .signal-val{font-weight:600}
 .signal-conf{font-size:10px;color:var(--text-2)}
