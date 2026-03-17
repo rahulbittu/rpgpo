@@ -560,6 +560,9 @@ function renderWorkList(tasks) {
   const el = document.getElementById('workList');
   if (!el) return;
   if (!tasks.length) { el.innerHTML = '<div class="nil"><span class="nil-icon">&#9671;</span><span class="nil-title">No matching tasks</span></div>'; return; }
+  const runCount = tasks.filter(t => ['executing','deliberating','builder_running'].includes(t.status)).length;
+  const doneCount = tasks.filter(t => t.status === 'done').length;
+  el.innerHTML = `<div style="font-size:11px;color:var(--text-2);margin-bottom:8px;padding:0 4px">${tasks.length} tasks${runCount ? ` &middot; ${runCount} running` : ''} &middot; ${doneCount} complete</div>`;
   const visible = tasks.slice(0, _workShown);
   el.innerHTML = visible.map(t => {
     const isActive = ['executing', 'deliberating', 'builder_running', 'waiting_approval'].includes(t.status);
