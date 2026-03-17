@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="v2.css">
   <script>
-    // Restore theme before paint
     (function(){var t=localStorage.getItem('gpo-theme')||'dark';document.documentElement.setAttribute('data-theme',t);document.querySelector('meta[name=theme-color]').content=t==='light'?'#f5f6f8':'#090b12'})();
   </script>
 </head>
@@ -23,36 +22,35 @@
       <span class="v2-logo-text">GPO</span>
     </div>
     <div class="v2-nav">
-      <a class="v2-nav-item on" data-r="home"><span class="ni">&#9670;</span><span class="nl">Home</span></a>
+      <a class="v2-nav-item on" data-r="command"><span class="ni">&#9670;</span><span class="nl">Command</span></a>
       <a class="v2-nav-item" data-r="ask"><span class="ni">&#9998;</span><span class="nl">Ask</span></a>
-      <a class="v2-nav-item" data-r="results"><span class="ni">&#9745;</span><span class="nl">Results</span></a>
-      <a class="v2-nav-item" data-r="evidence"><span class="ni">&#128270;</span><span class="nl">Evidence</span></a>
-      <a class="v2-nav-item" data-r="approvals"><span class="ni">&#9888;</span><span class="nl">Approvals</span><span class="nb" id="approvalCount" style="display:none">0</span></a>
+      <a class="v2-nav-item" data-r="work"><span class="ni">&#9745;</span><span class="nl">Work</span></a>
       <a class="v2-nav-item" data-r="activity"><span class="ni">&#9776;</span><span class="nl">Activity</span></a>
+      <a class="v2-nav-item" data-r="ops"><span class="ni">&#9888;</span><span class="nl">Operations</span><span class="nb" id="approvalCount" style="display:none">0</span></a>
       <a class="v2-nav-item" data-r="settings"><span class="ni">&#9881;</span><span class="nl">Settings</span></a>
     </div>
     <div class="v2-foot">
       <div class="row gap-4"><span class="dot dot-ok dot-pulse" id="statusDot"></span><span id="statusText">Connecting...</span></div>
-      <div style="margin-top:6px;font-size:9px;color:var(--text-2)"><kbd style="padding:1px 4px;border:1px solid var(--border-1);border-radius:3px;font-size:8px">⌘K</kbd> Ask &nbsp; <kbd style="padding:1px 4px;border:1px solid var(--border-1);border-radius:3px;font-size:8px">/</kbd> Focus</div>
+      <div style="margin-top:6px;font-size:9px;color:var(--text-2)"><kbd style="padding:1px 4px;border:1px solid var(--border-1);border-radius:3px;font-size:8px">&#8984;K</kbd> Ask &nbsp; <kbd style="padding:1px 4px;border:1px solid var(--border-1);border-radius:3px;font-size:8px">/</kbd> Focus</div>
     </div>
   </nav>
 
   <!-- MOBILE NAV -->
   <div class="v2-mob">
-    <div class="mob-tab on" data-r="home"><span class="mi">&#9670;</span>Home</div>
+    <div class="mob-tab on" data-r="command"><span class="mi">&#9670;</span>Command</div>
     <div class="mob-tab" data-r="ask"><span class="mi">&#9998;</span>Ask</div>
-    <div class="mob-tab" data-r="results"><span class="mi">&#9745;</span>Results</div>
-    <div class="mob-tab" data-r="approvals"><span class="mi">&#9888;</span>Approvals</div>
+    <div class="mob-tab" data-r="work"><span class="mi">&#9745;</span>Work</div>
+    <div class="mob-tab" data-r="ops"><span class="mi">&#9881;</span>Ops</div>
     <div class="mob-tab" data-r="settings"><span class="mi">&#9881;</span>More</div>
   </div>
 
   <!-- MAIN -->
   <main class="v2-main">
 
-    <!-- HOME -->
-    <section class="v2-screen on" id="s-home">
+    <!-- ═══ COMMAND ═══ -->
+    <section class="v2-screen on" id="s-command">
       <div class="v2-page">
-        <div class="spread" style="margin-bottom:24px">
+        <div class="spread" style="margin-bottom:20px">
           <div>
             <h1 id="greeting" style="font-size:22px;font-weight:700;letter-spacing:-.5px">GPO</h1>
             <div class="row gap-12 mt-8">
@@ -64,47 +62,62 @@
         </div>
 
         <!-- ATTENTION -->
-        <div id="homeAttention"></div>
+        <div id="cmdAttention"></div>
 
-        <!-- RUNNING -->
-        <div id="homeRunning" class="mt-16"></div>
+        <!-- METRICS STRIP -->
+        <div class="g4 mb-16" id="cmdMetrics">
+          <div class="metric-card"><span class="metric-val" id="mcTasks">--</span><span class="metric-label">Tasks Today</span></div>
+          <div class="metric-card"><span class="metric-val" id="mcDone">--</span><span class="metric-label">Completed</span></div>
+          <div class="metric-card"><span class="metric-val" id="mcCost">--</span><span class="metric-label">Cost Today</span></div>
+          <div class="metric-card"><span class="metric-val" id="mcCalls">--</span><span class="metric-label">API Calls</span></div>
+        </div>
 
-        <!-- SUMMARY -->
-        <div class="g2 mt-20">
-          <div class="card card-ok">
-            <div class="hd"><h3>Today</h3></div>
-            <div id="homeTodayContent" style="font-size:12px;color:var(--text-1)">Loading...</div>
+        <!-- CHIEF OF STAFF BRIEF -->
+        <div class="card mb-16" id="cmdBrief" style="display:none">
+          <div class="hd"><h3>&#128161; Operational Brief</h3></div>
+          <div id="cmdBriefContent" style="font-size:12px;color:var(--text-1)"></div>
+        </div>
+
+        <!-- RECOMMENDED ACTIONS -->
+        <div id="cmdActions" class="mb-16" style="display:none">
+          <div class="hd"><h3>Recommended Actions</h3></div>
+          <div id="cmdActionsList" class="stack"></div>
+        </div>
+
+        <!-- RUNNING WORK -->
+        <div id="cmdRunning" class="mb-16"></div>
+
+        <!-- SYSTEM HEALTH -->
+        <div class="g2 mb-16" id="cmdHealth" style="display:none">
+          <div class="card">
+            <div class="hd"><h3>Providers</h3></div>
+            <div id="cmdProviders" class="stack"></div>
           </div>
           <div class="card">
-            <div class="hd"><h3>Cost</h3></div>
-            <div class="g4" id="homeCostGrid">
-              <div class="num"><span class="num-val" style="font-size:15px" id="hcToday">--</span><span class="num-label">Today</span></div>
-              <div class="num"><span class="num-val" style="font-size:15px" id="hcWeek">--</span><span class="num-label">Week</span></div>
-              <div class="num"><span class="num-val" style="font-size:15px" id="hcCalls">--</span><span class="num-label">Calls</span></div>
-              <div class="num"><span class="num-val" style="font-size:15px" id="hcDone">--</span><span class="num-label">Done</span></div>
-            </div>
+            <div class="hd"><h3>System Health</h3></div>
+            <div id="cmdSysHealth" class="stack"></div>
           </div>
         </div>
 
-        <!-- DELIVERABLES -->
-        <div class="mt-24">
-          <div class="hd"><h3>Recent Results</h3><span class="hd-action" onclick="go('results')">View All</span></div>
-          <div id="homeResults">
+        <!-- RECENT RESULTS -->
+        <div class="mb-16">
+          <div class="hd"><h3>Recent Results</h3><span class="hd-action" onclick="go('work')">View All</span></div>
+          <div id="cmdResults">
             <div class="nil"><span class="nil-icon">&#9671;</span><span class="nil-title">No results yet</span><span class="nil-desc">Ask GPO something to see results here</span></div>
           </div>
         </div>
 
-        <!-- ACTIVITY -->
-        <div class="mt-24">
+        <!-- RECENT ACTIVITY -->
+        <div>
           <div class="hd"><h3>Activity</h3><span class="hd-action" onclick="go('activity')">View All</span></div>
-          <div id="homeActivity" style="max-height:200px;overflow-y:auto">
+          <div id="cmdActivity" style="max-height:200px;overflow-y:auto">
             <div class="nil"><span class="nil-desc">No recent activity</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ASK -->
+    <!-- ═══ ASK ═══ -->
     <section class="v2-screen" id="s-ask">
       <div class="v2-page">
         <div class="v2-page-hd"><h1>Ask GPO</h1><p>Describe what you need — GPO will research, analyze, and deliver</p></div>
@@ -122,49 +135,84 @@
       </div>
     </section>
 
-    <!-- RESULTS -->
-    <section class="v2-screen" id="s-results">
-      <div class="v2-page">
-        <div class="v2-page-hd spread"><div><h1>Results</h1><p>All completed outputs</p></div><button class="b-icon" onclick="loadResults()">&#8635;</button></div>
-        <div style="margin-bottom:12px"><input id="resultSearch" class="inp" style="padding:8px 12px" placeholder="Search results..." oninput="searchResults(this.value)"></div>
-        <div class="filters" style="margin-bottom:12px" id="resultFilters"></div>
-        <div id="resultsList" class="stack"></div>
+    <!-- ═══ WORK ═══ -->
+    <section class="v2-screen" id="s-work">
+      <div class="v2-page" style="max-width:960px">
+        <div class="v2-page-hd spread"><div><h1>Work</h1><p>All tasks — running, completed, and failed</p></div><button class="b-icon" onclick="loadWork()">&#8635;</button></div>
+        <div class="row gap-8 mb-12">
+          <input id="workSearch" class="inp" style="padding:8px 12px;flex:1" placeholder="Search tasks..." oninput="applyWorkFilters()">
+          <select id="workStatus" class="sel" onchange="applyWorkFilters()"><option value="">All Status</option><option value="executing">Running</option><option value="done">Completed</option><option value="failed">Failed</option><option value="deliberating">Planning</option></select>
+        </div>
+        <div class="filters mb-12" id="workEngineFilter"></div>
+        <div id="workList" class="stack"></div>
+        <!-- DETAIL PANEL -->
+        <div id="workDetail" style="display:none"></div>
       </div>
     </section>
 
-    <!-- EVIDENCE -->
-    <section class="v2-screen" id="s-evidence">
-      <div class="v2-page">
-        <div class="v2-page-hd"><h1>Evidence</h1><p>Trace how results were produced</p></div>
-        <div id="evidenceContent"><div class="nil"><span class="nil-icon">&#128270;</span><span class="nil-title">Select a result to view evidence</span><span class="nil-desc">Open a result and click "View Evidence" to see the full execution chain</span></div></div>
-      </div>
-    </section>
-
-    <!-- APPROVALS -->
-    <section class="v2-screen" id="s-approvals">
-      <div class="v2-page">
-        <div class="v2-page-hd"><h1>Approvals</h1><p>Decisions requiring your review</p></div>
-        <div id="approvalsList"><div class="nil"><span class="nil-icon">&#9745;</span><span class="nil-title">All clear</span><span class="nil-desc">No pending approvals. GPO is operating normally.</span></div></div>
-      </div>
-    </section>
-
-    <!-- ACTIVITY -->
+    <!-- ═══ ACTIVITY ═══ -->
     <section class="v2-screen" id="s-activity">
       <div class="v2-page">
-        <div class="v2-page-hd spread"><div><h1>Activity</h1><p>Execution history</p></div></div>
+        <div class="v2-page-hd spread"><div><h1>Activity</h1><p>Execution history and audit trail</p></div></div>
         <div style="margin-bottom:12px"><input id="actSearch" class="inp" style="padding:8px 12px" placeholder="Search events..." oninput="filterActivity(this.value)"></div>
-        <div class="filters" style="margin-bottom:12px" id="actTypeFilter">
+        <div class="filters mb-12" id="actTypeFilter">
           <button class="b b-sm on" onclick="filterActivityType('')">All</button>
           <button class="b b-ghost b-sm" onclick="filterActivityType('output_accepted')">Completed</button>
           <button class="b b-ghost b-sm" onclick="filterActivityType('quality_feedback')">Feedback</button>
           <button class="b b-ghost b-sm" onclick="filterActivityType('approval')">Approvals</button>
           <button class="b b-ghost b-sm" onclick="filterActivityType('task_created')">Submitted</button>
+          <button class="b b-ghost b-sm" onclick="filterActivityType('deliverable_downloaded')">Downloads</button>
         </div>
         <div id="actList" class="stack"></div>
       </div>
     </section>
 
-    <!-- SETTINGS -->
+    <!-- ═══ OPERATIONS ═══ -->
+    <section class="v2-screen" id="s-ops">
+      <div class="v2-page" style="max-width:960px">
+        <div class="v2-page-hd"><h1>Operations</h1><p>Providers, health, memory, and governance</p></div>
+
+        <!-- PENDING APPROVALS -->
+        <div id="opsApprovals" class="mb-16" style="display:none">
+          <div class="hd"><h3>&#9888; Pending Approvals</h3></div>
+          <div id="opsApprovalsList" class="stack"></div>
+        </div>
+
+        <!-- PROVIDERS -->
+        <div class="card mb-16">
+          <div class="hd"><h3>Providers</h3></div>
+          <div id="opsProviders" class="stack">
+            <div class="wait">Loading providers...</div>
+          </div>
+        </div>
+
+        <!-- SYSTEM HEALTH -->
+        <div class="g2 mb-16">
+          <div class="card">
+            <div class="hd"><h3>System Health</h3></div>
+            <div id="opsSysHealth" class="stack"></div>
+          </div>
+          <div class="card">
+            <div class="hd"><h3>Observability</h3></div>
+            <div id="opsObservability" class="stack"></div>
+          </div>
+        </div>
+
+        <!-- MEMORY & SIGNALS -->
+        <div class="card mb-16">
+          <div class="hd"><h3>Memory &amp; Learned Behavior</h3></div>
+          <div id="opsMemory" class="stack"></div>
+        </div>
+
+        <!-- COST BREAKDOWN -->
+        <div class="card mb-16">
+          <div class="hd"><h3>Cost Breakdown</h3></div>
+          <div id="opsCostBreakdown" class="stack"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SETTINGS ═══ -->
     <section class="v2-screen" id="s-settings">
       <div class="v2-page">
         <div class="v2-page-hd"><h1>Settings</h1><p>Configuration and preferences</p></div>
@@ -179,16 +227,18 @@
           </div>
         </div>
         <div class="card mb-16">
-          <div class="hd"><h3>Providers</h3></div>
-          <div class="stack" id="settingsProviders">
-            <div class="spread" style="font-size:12px"><span>OpenAI</span><span class="tag tag-muted" id="spOpenAI">--</span></div>
-            <div class="spread" style="font-size:12px"><span>Perplexity</span><span class="tag tag-muted" id="spPerplexity">--</span></div>
-            <div class="spread" style="font-size:12px"><span>Gemini</span><span class="tag tag-muted" id="spGemini">--</span></div>
+          <div class="hd"><h3>API Keys</h3></div>
+          <div class="stack" id="settingsKeys">
+            <div class="wait">Loading...</div>
           </div>
         </div>
         <div class="card mb-16">
           <div class="hd"><h3>Engines</h3></div>
           <div id="settingsEngines" class="stack"></div>
+        </div>
+        <div class="card mb-16">
+          <div class="hd"><h3>Cost Configuration</h3></div>
+          <div id="settingsCostConfig" class="stack"></div>
         </div>
         <div class="card">
           <div class="hd"><h3>System</h3></div>

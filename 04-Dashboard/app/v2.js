@@ -11,23 +11,23 @@ function setTheme(t) {
 }
 
 // ═══ ROUTING ═══
-const SCREENS = ['home', 'ask', 'results', 'evidence', 'approvals', 'activity', 'settings'];
+const SCREENS = ['command', 'ask', 'work', 'activity', 'ops', 'settings'];
 function go(r) {
   SCREENS.forEach(s => {
     const el = document.getElementById('s-' + s);
     if (el) el.classList.toggle('on', s === r);
   });
   document.querySelectorAll('.v2-nav-item,.mob-tab').forEach(n => n.classList.toggle('on', n.dataset.r === r));
-  if (r === 'home') loadHome();
-  if (r === 'results') loadResults();
-  if (r === 'approvals') loadApprovals();
+  if (r === 'command') loadCommand();
+  if (r === 'work') loadWork();
   if (r === 'activity') loadActivity();
+  if (r === 'ops') loadOps();
   if (r === 'settings') loadSettings();
   if (r === 'ask') { populateEngineSelect(); loadAskRecent(); }
+  // Hide work detail when navigating away
+  if (r !== 'work') { const wd = document.getElementById('workDetail'); if (wd) wd.style.display = 'none'; }
 }
-// Nav click handlers
 document.querySelectorAll('.v2-nav-item,.mob-tab').forEach(n => n.addEventListener('click', e => { e.preventDefault(); go(n.dataset.r); }));
-// Screen visibility
 document.head.insertAdjacentHTML('beforeend', '<style>.v2-screen{display:none}.v2-screen.on{display:block}</style>');
 
 // ═══ UTILITIES ═══
@@ -49,6 +49,8 @@ function timeAgo(ts) {
   return Math.floor(h / 24) + 'd ago';
 }
 function fmtDate(ts) { return ts ? new Date(ts).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : ''; }
+function fmtCost(n) { return typeof n === 'number' ? '$' + n.toFixed(2) : '--'; }
+function pct(n) { return typeof n === 'number' ? n + '%' : '--'; }
 
 // Engine display names
 const ENG = {code:'Code',writing:'Writing',research:'Research',learning:'Learning',ops:'Life Ops',health:'Health',shopping:'Shopping',travel:'Travel',finance:'Finance',startup:'Startup',career:'Career',screenwriting:'Creative',film:'Film',music:'Music',news:'News',general:'General',
@@ -56,10 +58,10 @@ const ENG = {code:'Code',writing:'Writing',research:'Research',learning:'Learnin
 function engName(d) { return ENG[d] || d; }
 
 // Operator-facing status
-const STATUS = {intake:'Submitted',deliberating:'Planning',planned:'Ready',executing:'Working',waiting_approval:'Needs Review',done:'Complete',failed:'Issue'};
+const STATUS = {intake:'Submitted',deliberating:'Planning',planned:'Ready',executing:'Working',waiting_approval:'Needs Review',done:'Complete',failed:'Issue',builder_running:'Working'};
 function statusLabel(s) { return STATUS[s] || s; }
 function statusTag(s) {
-  const cls = s === 'done' ? 'tag-ok' : s === 'failed' ? 'tag-err' : ['executing','deliberating','waiting_approval'].includes(s) ? 'tag-warn' : 'tag-muted';
+  const cls = s === 'done' ? 'tag-ok' : s === 'failed' ? 'tag-err' : ['executing','deliberating','waiting_approval','builder_running'].includes(s) ? 'tag-warn' : 'tag-muted';
   return `<span class="tag ${cls}">${esc(statusLabel(s))}</span>`;
 }
 
@@ -86,15 +88,14 @@ function md(text) {
   return h;
 }
 
-// Extract sources from text
 function extractSources(text) {
   if (!text) return [];
   const urls = text.match(/https?:\/\/[^\s)>\]"]+/g) || [];
   return [...new Set(urls)].slice(0, 10);
 }
 
-// ═══ HOME ═══
-async function loadHome() {
+// ═══ COMMAND (Home) ═══
+async function loadCommand() {
   // Greeting
   const hour = new Date().getHours();
   const g = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
@@ -103,55 +104,121 @@ async function loadHome() {
   const de = document.getElementById('dateText');
   if (de) de.textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 
+  // Parallel fetch all command data
+  const [status, costs, tasks, approvals, brief, actions, health] = await Promise.all([
+    fetch('/api/status').then(r => r.json()).catch(() => ({})),
+    fetch('/api/costs').then(r => r.json()).catch(() => ({})),
+    fetch('/api/intake/tasks').then(r => r.json()).catch(() => []),
+    fetch('/api/intake/pending-approvals').then(r => r.json()).catch(() => []),
+    fetch('/api/chief-of-staff/brief').then(r => r.json()).catch(() => null),
+    fetch('/api/chief-of-staff/actions').then(r => r.json()).catch(() => null),
+    fetch('/api/service-health').then(r => r.json()).catch(() => null),
+  ]);
+
   // Status
-  try {
-    const st = await fetch('/api/status').then(r => r.json());
-    const se = document.getElementById('homeStatus');
-    if (se && st.worker) se.textContent = st.worker === 'idle' ? 'System ready' : 'Working...';
-  } catch {}
+  const se = document.getElementById('homeStatus');
+  if (se) {
+    const running = tasks.filter(t => ['executing', 'deliberating', 'builder_running'].includes(t.status));
+    se.textContent = running.length ? running.length + ' task' + (running.length > 1 ? 's' : '') + ' running' : 'System ready';
+  }
 
-  // Costs
-  try {
-    const c = await fetch('/api/costs').then(r => r.json());
-    if (c.today) { const el = document.getElementById('hcToday'); if (el) el.textContent = '$' + (c.today.cost || 0).toFixed(2); }
-    if (c.week) { const el = document.getElementById('hcWeek'); if (el) el.textContent = '$' + (c.week.cost || 0).toFixed(2); }
-    if (c.today) { const el = document.getElementById('hcCalls'); if (el) el.textContent = c.today.calls || 0; }
-  } catch {}
+  // Metrics
+  const today = new Date().toISOString().slice(0, 10);
+  const todayTasks = tasks.filter(t => (t.created_at || '').startsWith(today));
+  const todayDone = todayTasks.filter(t => t.status === 'done').length;
+  const allDone = tasks.filter(t => t.status === 'done').length;
+  const el = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
+  el('mcTasks', todayTasks.length);
+  el('mcDone', allDone);
+  el('mcCost', fmtCost(costs.today?.cost));
+  el('mcCalls', costs.today?.calls || 0);
 
-  // Task count
-  try {
-    const t = await fetch('/api/intake/tasks').then(r => r.json());
-    const done = t.filter(x => x.status === 'done').length;
-    const el = document.getElementById('hcDone'); if (el) el.textContent = done;
-    // Recent results
-    const recent = t.filter(x => x.status === 'done').slice(-5).reverse();
-    const re = document.getElementById('homeResults');
-    if (re && recent.length) {
-      re.innerHTML = recent.map(r => `<div class="card card-click" style="padding:10px 14px;margin-bottom:6px" onclick="viewResult('${r.task_id}')">
-        <div class="spread"><span style="font-size:13px;font-weight:500">${esc((r.title || '').slice(0, 60))}</span><span class="tag tag-muted">${engName(r.domain)}</span></div>
-        <div style="font-size:10px;color:var(--text-2);margin-top:3px">${timeAgo(r.updated_at || r.created_at)}</div>
+  // Attention — pending approvals
+  const attn = document.getElementById('cmdAttention');
+  if (attn) {
+    let html = '';
+    if (approvals.length > 0) {
+      html += `<div class="card card-warn mb-16"><div class="spread"><strong style="color:var(--warn)">&#9888; ${approvals.length} pending approval${approvals.length > 1 ? 's' : ''}</strong><button class="b b-sm b-ok" onclick="go('ops')">Review</button></div></div>`;
+    }
+    // Running tasks
+    const running = tasks.filter(t => ['executing', 'deliberating', 'builder_running'].includes(t.status));
+    if (running.length) {
+      html += running.map(t => `<div class="card card-accent mb-12" style="padding:10px 14px">
+        <div class="spread"><span style="font-size:12px;font-weight:500">${esc((t.title || '').slice(0, 55))}</span>${statusTag(t.status)}</div>
+        <div style="font-size:10px;color:var(--text-2);margin-top:3px"><span class="tag tag-muted">${engName(t.domain)}</span> &middot; ${timeAgo(t.created_at)}</div>
       </div>`).join('');
     }
-    // Today summary
-    const today = new Date().toISOString().slice(0, 10);
-    const todayTasks = t.filter(x => (x.created_at || '').startsWith(today));
-    const todayDone = todayTasks.filter(x => x.status === 'done').length;
-    const todayRunning = todayTasks.filter(x => ['executing', 'deliberating'].includes(x.status)).length;
-    const tc = document.getElementById('homeTodayContent');
-    if (tc) tc.innerHTML = `<div>${todayDone} completed${todayRunning ? ', ' + todayRunning + ' running' : ''}</div><div style="color:var(--text-2);margin-top:4px">${todayTasks.length} tasks today</div>`;
-  } catch {}
+    attn.innerHTML = html;
+  }
+  const badge = document.getElementById('approvalCount');
+  if (badge) { badge.textContent = approvals.length; badge.style.display = approvals.length > 0 ? '' : 'none'; }
 
-  // Pending approvals
+  // Chief of Staff Brief
+  const briefEl = document.getElementById('cmdBrief');
+  const briefContent = document.getElementById('cmdBriefContent');
+  if (briefEl && briefContent && brief && brief.operator_summary) {
+    briefEl.style.display = '';
+    const priorities = (brief.top_priorities || []).slice(0, 3);
+    briefContent.innerHTML = `<div style="margin-bottom:8px">${esc(brief.operator_summary)}</div>` +
+      (priorities.length ? priorities.map(p =>
+        `<div style="padding:4px 0;border-bottom:1px solid var(--border-0)"><span style="font-weight:500">${esc(p.title?.slice(0, 60) || '')}</span> <span style="color:var(--text-2);font-size:10px">${esc(p.why?.slice(0, 50) || '')}</span></div>`
+      ).join('') : '');
+  }
+
+  // Recommended Actions
+  const actionsEl = document.getElementById('cmdActions');
+  const actionsList = document.getElementById('cmdActionsList');
+  if (actionsEl && actionsList && actions?.actions?.length) {
+    actionsEl.style.display = '';
+    actionsList.innerHTML = actions.actions.slice(0, 5).map(a =>
+      `<div class="card card-click" style="padding:10px 14px;margin-bottom:6px">
+        <div class="spread"><span style="font-size:12px;font-weight:500">${esc((a.title || '').slice(0, 60))}</span><span class="tag tag-${a.priority === 'high' ? 'warn' : 'muted'}">${esc(a.priority || 'medium')}</span></div>
+        <div style="font-size:10px;color:var(--text-2);margin-top:3px">${esc((a.why || '').slice(0, 80))}</div>
+      </div>`
+    ).join('');
+  }
+
+  // System Health
+  const healthEl = document.getElementById('cmdHealth');
+  const provEl = document.getElementById('cmdProviders');
+  const sysEl = document.getElementById('cmdSysHealth');
+  if (healthEl && status.providers) {
+    healthEl.style.display = '';
+    if (provEl) {
+      provEl.innerHTML = Object.entries(status.providers).map(([name, p]) => {
+        const dot = p.state === 'ready' ? 'dot-ok' : p.state === 'missing' ? 'dot-err' : 'dot-warn';
+        return `<div class="prov-row"><span class="dot ${dot}"></span><span class="prov-name">${esc(name)}</span><span class="prov-model">${esc(p.model || p.type || '')}</span></div>`;
+      }).join('');
+    }
+    if (sysEl && health?.subsystems) {
+      sysEl.innerHTML = health.subsystems.slice(0, 5).map(s => {
+        const dot = s.status === 'healthy' ? 'dot-ok' : s.status === 'degraded' ? 'dot-warn' : 'dot-err';
+        const label = s.subsystem.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        return `<div class="prov-row"><span class="dot ${dot}"></span><span style="flex:1">${esc(label)}</span><span class="tag tag-${s.status === 'healthy' ? 'ok' : 'warn'}">${esc(s.status)}</span></div>`;
+      }).join('');
+    }
+  }
+
+  // Recent Results
+  const recent = tasks.filter(x => x.status === 'done').slice(-5).reverse();
+  const re = document.getElementById('cmdResults');
+  if (re && recent.length) {
+    re.innerHTML = recent.map(r => `<div class="card card-click" style="padding:10px 14px;margin-bottom:6px" onclick="openWorkDetail('${r.task_id}')">
+      <div class="spread"><span style="font-size:13px;font-weight:500">${esc((r.title || '').slice(0, 60))}</span><span class="tag tag-muted">${engName(r.domain)}</span></div>
+      <div style="font-size:10px;color:var(--text-2);margin-top:3px">${timeAgo(r.updated_at || r.created_at)}</div>
+    </div>`).join('');
+  }
+
+  // Activity feed
   try {
-    const ap = await fetch('/api/intake/pending-approvals').then(r => r.json());
-    const attn = document.getElementById('homeAttention');
-    if (attn && ap.length > 0) {
-      attn.innerHTML = `<div class="card card-warn" style="margin-bottom:16px">
-        <div class="spread"><strong style="color:var(--warn)">${ap.length} pending approval${ap.length > 1 ? 's' : ''}</strong><button class="b b-sm b-ok" onclick="go('approvals')">Review</button></div>
-      </div>`;
-    } else if (attn) { attn.innerHTML = ''; }
-    const badge = document.getElementById('approvalCount');
-    if (badge) { badge.textContent = ap.length; badge.style.display = ap.length > 0 ? '' : 'none'; }
+    const data = await fetch('/api/behavior/events?limit=8&offset=0').then(r => r.json());
+    const homeAct = document.getElementById('cmdActivity');
+    if (homeAct && data.events?.length) {
+      homeAct.innerHTML = data.events.map(e => {
+        const label = EVT_LABELS[e.type] || e.type.replace(/_/g, ' ');
+        return `<div class="ev"><div class="ev-time">${timeAgo(e.timestamp)}</div>${evtIcon(e.type)}<div class="ev-text">${esc(label)}${e.engine ? ' · ' + engName(e.engine) : ''}</div></div>`;
+      }).join('');
+    }
   } catch {}
 }
 
@@ -171,7 +238,7 @@ async function loadAskRecent() {
     const recent = tasks.filter(t => t.status === 'done').reverse().slice(0, 5);
     if (recent.length) {
       el.innerHTML = `<div class="hd"><h3>Recent</h3></div>` + recent.map(t =>
-        `<div class="card card-click" style="padding:10px 14px;margin-bottom:6px" onclick="viewResult('${t.task_id}')">
+        `<div class="card card-click" style="padding:10px 14px;margin-bottom:6px" onclick="openWorkDetail('${t.task_id}')">
           <div class="spread"><span style="font-size:12px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc((t.title || '').slice(0, 55))}</span><span class="tag tag-muted">${engName(t.engine || t.domain)}</span></div>
           <div style="font-size:10px;color:var(--text-2);margin-top:2px">${timeAgo(t.updated_at || t.created_at)}</div>
         </div>`
@@ -190,7 +257,7 @@ async function submitAsk() {
 
   document.getElementById('askBtn').disabled = true;
   document.getElementById('askProgress').style.display = 'block';
-  document.getElementById('askProgress').innerHTML = '<div class="card"><div class="progress-panel"><div class="progress-step step-active"><div class="step-dot">●</div><div class="step-label">Submitting request...</div></div></div></div>';
+  document.getElementById('askProgress').innerHTML = '<div class="card"><div class="progress-panel"><div class="progress-step step-active"><div class="step-dot">&#9679;</div><div class="step-label">Submitting request...</div></div></div></div>';
   document.getElementById('askResult').style.display = 'none';
 
   try {
@@ -216,33 +283,31 @@ function pollAskResult(taskId) {
       const subs = d.subtasks || [];
       const elapsed = Math.floor((Date.now() - startTime) / 1000);
 
-      // Progress panel
       const pp = document.getElementById('askProgress');
       if (pp) {
         let steps = subs.map((s, i) => {
           const isDone = s.status === 'done';
           const isRunning = s.status === 'running' || s.status === 'builder_running';
           const cls = isDone ? 'step-done' : isRunning ? 'step-active' : 'step-pending';
-          const icon = isDone ? '✓' : isRunning ? '●' : '○';
+          const icon = isDone ? '&#10003;' : isRunning ? '&#9679;' : '&#9675;';
           const STEP_LABELS = { research: 'Searching the web', report: 'Writing response', strategy: 'Analyzing and comparing', implement: 'Making code changes', audit: 'Reviewing quality', locate_files: 'Finding relevant files' };
           const label = STEP_LABELS[s.stage] || s.title || 'Processing';
           const provider = s.assigned_model === 'perplexity' ? 'Web search' : s.assigned_model === 'openai' ? 'AI synthesis' : s.assigned_model === 'gemini' ? 'Analysis' : '';
-          return `<div class="progress-step ${cls}"><div class="step-dot">${icon}</div><div class="step-label">${esc(label)}${provider && !isDone ? ' <span style="color:var(--text-2);font-size:10px">· ' + provider + '</span>' : ''}</div><div class="step-time">${isDone ? '✓' : elapsed + 's'}</div></div>`;
+          return `<div class="progress-step ${cls}"><div class="step-dot">${icon}</div><div class="step-label">${esc(label)}${provider && !isDone ? ' <span style="color:var(--text-2);font-size:10px">&middot; ' + provider + '</span>' : ''}</div><div class="step-time">${isDone ? '&#10003;' : elapsed + 's'}</div></div>`;
         });
         const doneCount = subs.filter(s => s.status === 'done').length;
         const totalCount = subs.length || 1;
-        const pct = Math.round(doneCount / totalCount * 100);
-        if (!steps.length) steps = [`<div class="progress-step step-active"><div class="step-dot">●</div><div class="step-label">${statusLabel(task.status)}...</div><div class="step-time">${elapsed}s</div></div>`];
-        const progressBar = totalCount > 1 ? `<div style="padding:0 14px 10px"><div style="height:3px;background:var(--border-1);border-radius:2px;overflow:hidden"><div style="height:100%;width:${pct}%;background:var(--accent);border-radius:2px;transition:width .3s ease"></div></div><div style="font-size:9px;color:var(--text-2);margin-top:4px;text-align:right">${doneCount}/${totalCount} steps</div></div>` : '';
+        const progPct = Math.round(doneCount / totalCount * 100);
+        if (!steps.length) steps = [`<div class="progress-step step-active"><div class="step-dot">&#9679;</div><div class="step-label">${statusLabel(task.status)}...</div><div class="step-time">${elapsed}s</div></div>`];
+        const progressBar = totalCount > 1 ? `<div style="padding:0 14px 10px"><div style="height:3px;background:var(--border-1);border-radius:2px;overflow:hidden"><div style="height:100%;width:${progPct}%;background:var(--accent);border-radius:2px;transition:width .3s ease"></div></div><div style="font-size:9px;color:var(--text-2);margin-top:4px;text-align:right">${doneCount}/${totalCount} steps</div></div>` : '';
         pp.innerHTML = `<div class="card"><div class="spread" style="padding:12px 14px;border-bottom:1px solid var(--border-0)"><span style="font-size:13px;font-weight:500">${esc((task.title || '').slice(0, 50))}</span><span class="tag tag-muted">${engName(task.domain)}</span></div><div class="progress-panel" style="padding:8px">${steps.join('')}</div>${progressBar}</div>`;
       }
 
-      // Done?
       if (task.status === 'done' || task.status === 'failed') {
         clearInterval(_askPoll); _askPoll = null;
         document.getElementById('askBtn').disabled = false;
         if (task.status === 'done') {
-          toast('Done ✓', 'ok');
+          toast('Complete', 'ok');
           const output = subs.filter(s => s.output).map(s => s.output).join('\n\n');
           renderAskResult(task, output);
         } else {
@@ -269,8 +334,9 @@ function renderAskResult(task, output) {
     <div class="result-body">${md(output)}</div>
     ${sourcesHtml}
     <div class="result-actions">
-      <a href="/api/intake/task/${task.task_id}/export?fmt=md" download class="b b-line b-sm" style="text-decoration:none">&#128229; Download</a>
-      <button class="b b-ghost b-sm" onclick="viewResult('${task.task_id}')">&#128270; Evidence</button>
+      <a href="/api/intake/task/${task.task_id}/export?fmt=md" download class="b b-line b-sm" style="text-decoration:none">&#128229; Download MD</a>
+      <a href="/api/intake/task/${task.task_id}/export?fmt=json" download class="b b-ghost b-sm" style="text-decoration:none">&#128229; JSON</a>
+      <button class="b b-ghost b-sm" onclick="openWorkDetail('${task.task_id}')">&#128270; Full Details</button>
     </div>
     <div class="fb" id="fb-${task.task_id}">
       <span class="fb-q">Was this helpful?</span>
@@ -280,7 +346,6 @@ function renderAskResult(task, output) {
     </div>
   </div>`;
 
-  // Hide progress
   const pp = document.getElementById('askProgress');
   if (pp) pp.style.display = 'none';
 }
@@ -310,60 +375,59 @@ async function sendFeedback(taskId, rating, btn) {
   } catch { toast('Feedback failed', 'err'); }
 }
 
-// ═══ RESULTS ═══
-let _allResults = [];
-async function loadResults() {
-  const el = document.getElementById('resultsList');
-  const ff = document.getElementById('resultFilters');
+// ═══ WORK (unified tasks + detail view) ═══
+let _allWork = [];
+async function loadWork() {
+  const el = document.getElementById('workList');
   if (!el) return;
-  el.innerHTML = '<div class="wait">Loading results...</div>';
+  el.innerHTML = '<div class="wait">Loading tasks...</div>';
   try {
     const tasks = await fetch('/api/intake/tasks').then(r => r.json());
-    _allResults = tasks.filter(t => t.status === 'done').reverse();
+    _allWork = tasks.reverse(); // newest first
 
     // Build engine filter
-    const engines = [...new Set(_allResults.map(t => t.engine || t.domain))];
+    const ff = document.getElementById('workEngineFilter');
+    const engines = [...new Set(_allWork.map(t => t.engine || t.domain))];
     if (ff) {
-      ff.innerHTML = `<button class="b b-sm on" onclick="filterResults('')">All (${_allResults.length})</button>` +
-        engines.slice(0, 8).map(e => {
-          const count = _allResults.filter(t => (t.engine || t.domain) === e).length;
-          return `<button class="b b-ghost b-sm" onclick="filterResults('${e}')">${engName(e)} (${count})</button>`;
+      ff.innerHTML = `<button class="b b-sm on" onclick="filterWorkEngine('')">All (${_allWork.length})</button>` +
+        engines.slice(0, 10).map(e => {
+          const count = _allWork.filter(t => (t.engine || t.domain) === e).length;
+          return `<button class="b b-ghost b-sm" onclick="filterWorkEngine('${e}')">${engName(e)} (${count})</button>`;
         }).join('');
     }
-    renderResults(_allResults.slice(0, 50));
-  } catch { el.innerHTML = '<div class="nil"><span class="nil-desc">Error loading results</span></div>'; }
+    applyWorkFilters();
+  } catch { el.innerHTML = '<div class="nil"><span class="nil-desc">Error loading tasks</span></div>'; }
 }
 
-let _resultFilter = '';
-function filterResults(engine) {
-  _resultFilter = engine;
-  const ff = document.getElementById('resultFilters');
-  if (ff) ff.querySelectorAll('.b').forEach(b => b.classList.toggle('on', b.textContent.startsWith(engine ? engName(engine) : 'All')));
-  applyResultFilters();
+let _workEngineFilter = '';
+function filterWorkEngine(engine) {
+  _workEngineFilter = engine;
+  const ff = document.getElementById('workEngineFilter');
+  if (ff) ff.querySelectorAll('.b').forEach(b => b.classList.toggle('on', !engine ? b.textContent.startsWith('All') : b.textContent.startsWith(engName(engine))));
+  applyWorkFilters();
 }
 
-function searchResults(query) {
-  applyResultFilters(query);
+let _workShown = 40;
+function applyWorkFilters() {
+  const q = (document.getElementById('workSearch')?.value || '').toLowerCase().trim();
+  const statusFilter = document.getElementById('workStatus')?.value || '';
+  let filtered = _allWork;
+  if (_workEngineFilter) filtered = filtered.filter(t => (t.engine || t.domain) === _workEngineFilter);
+  if (statusFilter) filtered = filtered.filter(t => t.status === statusFilter);
+  if (q) filtered = filtered.filter(t => (t.title || '').toLowerCase().includes(q) || (t.raw_request || '').toLowerCase().includes(q));
+  renderWorkList(filtered);
 }
 
-function applyResultFilters(query) {
-  const q = (query || document.getElementById('resultSearch')?.value || '').toLowerCase().trim();
-  let filtered = _resultFilter ? _allResults.filter(t => (t.engine || t.domain) === _resultFilter) : _allResults;
-  if (q) filtered = filtered.filter(t => (t.title || '').toLowerCase().includes(q) || (t.raw_request || '').toLowerCase().includes(q) || (t.board_deliberation?.interpreted_objective || '').toLowerCase().includes(q));
-  renderResults(filtered.slice(0, 50));
-}
-
-let _resultsShown = 30;
-function renderResults(tasks) {
-  const el = document.getElementById('resultsList');
+function renderWorkList(tasks) {
+  const el = document.getElementById('workList');
   if (!el) return;
-  if (!tasks.length) { el.innerHTML = '<div class="nil"><span class="nil-icon">&#9671;</span><span class="nil-title">No results</span></div>'; return; }
-  const visible = tasks.slice(0, _resultsShown);
+  if (!tasks.length) { el.innerHTML = '<div class="nil"><span class="nil-icon">&#9671;</span><span class="nil-title">No matching tasks</span></div>'; return; }
+  const visible = tasks.slice(0, _workShown);
   el.innerHTML = visible.map(t => {
-    const preview = t.board_deliberation?.interpreted_objective || '';
-    return `<div class="card card-click" style="padding:12px 14px;margin-bottom:8px" onclick="viewResult('${t.task_id}')">
+    const isActive = ['executing', 'deliberating', 'builder_running', 'waiting_approval'].includes(t.status);
+    const border = isActive ? 'card-accent' : t.status === 'failed' ? 'card-err' : '';
+    return `<div class="card card-click ${border}" style="padding:12px 14px;margin-bottom:6px" onclick="openWorkDetail('${t.task_id}')">
       <div style="font-size:13px;font-weight:500;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc((t.title || '').slice(0, 70))}</div>
-      ${preview ? `<div style="font-size:11px;color:var(--text-1);margin-bottom:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(preview.slice(0, 90))}</div>` : ''}
       <div class="row gap-12" style="font-size:10px;color:var(--text-2)">
         <span class="tag tag-muted">${engName(t.engine || t.domain)}</span>
         <span>${fmtDate(t.updated_at || t.created_at)}</span>
@@ -371,32 +435,31 @@ function renderResults(tasks) {
       </div>
     </div>`;
   }).join('');
-  if (tasks.length > _resultsShown) {
-    el.innerHTML += `<div style="text-align:center;padding:12px"><button class="b b-ghost b-sm" onclick="_resultsShown+=30;applyResultFilters()">Show more (${tasks.length - _resultsShown} remaining)</button></div>`;
+  if (tasks.length > _workShown) {
+    el.innerHTML += `<div style="text-align:center;padding:12px"><button class="b b-ghost b-sm" onclick="_workShown+=40;applyWorkFilters()">Show more (${tasks.length - _workShown} remaining)</button></div>`;
   }
 }
 
-async function viewResult(taskId) {
-  // Show loading immediately on evidence screen, then load
-  const el = document.getElementById('evidenceContent');
-  if (el) el.innerHTML = '<div class="wait">Loading...</div>';
-  go('evidence');
-  await viewEvidence(taskId);
-}
-
-// ═══ EVIDENCE ═══
-async function viewEvidence(taskId) {
-  const el = document.getElementById('evidenceContent');
+// Work Detail (replaces old Evidence page)
+async function openWorkDetail(taskId) {
+  go('work');
+  const el = document.getElementById('workDetail');
+  const list = document.getElementById('workList');
   if (!el) return;
-  el.innerHTML = '<div class="wait">Loading evidence...</div>';
+  list.style.display = 'none';
+  el.style.display = 'block';
+  el.innerHTML = '<div class="wait">Loading task details...</div>';
+
   try {
     const d = await fetch('/api/intake/task/' + taskId).then(r => r.json());
     const task = d.task, subs = d.subtasks || [], delib = task.board_deliberation;
     const output = subs.filter(s => s.output).map(s => s.output).join('\n\n');
     const sources = extractSources(output);
 
-    let html = `<div style="margin-bottom:12px"><button class="b b-ghost b-sm" onclick="go('results')">&#8592; Back to Results</button></div>
-    <div class="card result" style="margin-bottom:16px">
+    let html = `<div style="margin-bottom:12px"><button class="b b-ghost b-sm" onclick="closeWorkDetail()">&#8592; Back to Work</button></div>`;
+
+    // Result card
+    html += `<div class="card result mb-16">
       <div class="result-head"><span class="tag tag-muted">${engName(task.domain)}</span><h3>${esc((task.title || '').slice(0, 60))}</h3>${statusTag(task.status)}<span style="font-size:10px;color:var(--text-2);margin-left:8px">${fmtDate(task.updated_at || task.created_at)}</span></div>
       <div class="result-body">${md(output)}</div>
       ${sources.length ? `<div class="result-sources"><h4>Sources (${sources.length})</h4>${sources.map(u => `<a href="${esc(u)}" target="_blank" class="source-link">&#128279; ${esc(u.replace(/https?:\/\//,'').split('/')[0])}</a>`).join('')}</div>` : ''}
@@ -416,21 +479,21 @@ async function viewEvidence(taskId) {
 
     // Board deliberation
     if (delib) {
-      html += `<div class="card" style="margin-bottom:16px"><div class="hd"><h3>Board Deliberation</h3></div>
+      html += `<div class="card mb-16"><div class="hd"><h3>Board Deliberation</h3></div>
         <div class="stack" style="font-size:12px;color:var(--text-1)">
           <div><strong>Objective:</strong> ${esc(delib.interpreted_objective)}</div>
           <div><strong>Strategy:</strong> ${esc(delib.recommended_strategy)}</div>
           ${delib.expected_outcome ? `<div><strong>Expected:</strong> ${esc(delib.expected_outcome)}</div>` : ''}
-          <div class="row gap-12 mt-8"><span>Risk: ${statusTag(delib.risk_level || 'green')}</span><span style="font-size:10px;color:var(--text-2)">Model: ${esc(delib.model_used || '')} · ${delib.tokens_used || 0} tokens</span></div>
+          <div class="row gap-12 mt-8"><span>Risk: ${statusTag(delib.risk_level || 'green')}</span><span style="font-size:10px;color:var(--text-2)">Model: ${esc(delib.model_used || '')} &middot; ${delib.tokens_used || 0} tokens</span></div>
         </div>
       </div>`;
     }
 
-    // Subtask execution chain
+    // Execution chain
     if (subs.length) {
       html += `<div class="card"><div class="hd"><h3>Execution Chain (${subs.filter(s => s.status === 'done').length}/${subs.length} steps)</h3></div>
         <div class="stack">${subs.map((s, i) => {
-          const stag = s.status === 'done' ? 'tag-ok' : s.status === 'failed' ? 'tag-err' : 'tag-muted';
+          const stag = s.status === 'done' ? 'tag-ok' : s.status === 'failed' ? 'tag-err' : 'tag-warn';
           const STEP = { research: 'Web Search', report: 'Synthesis', strategy: 'Analysis', implement: 'Code', audit: 'Review', locate_files: 'File Scan' };
           const stepName = STEP[s.stage] || s.stage;
           const provName = s.assigned_model === 'perplexity' ? 'Perplexity' : s.assigned_model === 'openai' ? 'OpenAI' : s.assigned_model === 'gemini' ? 'Gemini' : s.assigned_model || '';
@@ -448,86 +511,14 @@ async function viewEvidence(taskId) {
     }
 
     el.innerHTML = html;
-  } catch { el.innerHTML = '<div class="nil"><span class="nil-desc">Error loading evidence</span></div>'; }
+  } catch { el.innerHTML = '<div class="nil"><span class="nil-desc">Error loading task details</span></div>'; }
 }
 
-// ═══ APPROVALS ═══
-async function loadApprovals() {
-  const el = document.getElementById('approvalsList');
-  if (!el) return;
-  try {
-    const ap = await fetch('/api/intake/pending-approvals').then(r => r.json());
-    if (!ap.length) { el.innerHTML = '<div class="nil"><span class="nil-icon">&#9745;</span><span class="nil-title">All clear</span><span class="nil-desc">No pending approvals</span></div>'; return; }
-    el.innerHTML = ap.map(s => `<div class="card card-warn" style="padding:12px;margin-bottom:8px">
-      <div class="spread"><span style="font-size:13px;font-weight:500">${esc(s.title)}</span><span class="tag tag-warn">${esc(s.stage)}</span></div>
-      <div style="font-size:11px;color:var(--text-1);margin-top:4px">from: ${esc(s.parent_title || '')}</div>
-      <div class="row gap-4 mt-8"><button class="b b-ok b-sm" onclick="approveSubtask('${s.subtask_id}')">Approve</button><button class="b b-ghost b-sm" onclick="viewEvidence('${s.parent_task_id}')">Details</button></div>
-    </div>`).join('');
-  } catch { el.innerHTML = '<div class="nil"><span class="nil-desc">Error loading approvals</span></div>'; }
-}
-
-async function approveSubtask(id) {
-  try {
-    const r = await fetch('/api/subtask/' + id + '/approve', { method: 'POST' });
-    const d = await r.json();
-    toast(d.ok ? 'Approved' : 'Error', d.ok ? 'ok' : 'err');
-    loadApprovals();
-    loadHome();
-  } catch { toast('Error', 'err'); }
-}
-
-// ═══ SETTINGS ═══
-async function loadSettings() {
-  // Engines
-  try {
-    const engines = await fetch('/api/engines').then(r => r.json());
-    const el = document.getElementById('settingsEngines');
-    if (el && engines.engines) {
-      el.innerHTML = engines.engines.map(e => `<div class="spread" style="font-size:12px"><span>${esc(e.displayName)}</span><span class="tag tag-muted">${esc(e.id)}</span></div>`).join('');
-    }
-  } catch {}
-  // Provider keys
-  try {
-    const keys = await fetch('/api/diag/keys').then(r => r.json());
-    if (keys) {
-      ['OpenAI', 'Perplexity', 'Gemini'].forEach(p => {
-        const el = document.getElementById('sp' + p);
-        const k = keys[p.toLowerCase()] || keys[p];
-        if (el && k) { el.textContent = k.status || '--'; el.className = 'tag ' + (k.status === 'OK' ? 'tag-ok' : 'tag-err'); }
-      });
-    }
-  } catch {}
-  // System info
-  try {
-    const sys = document.getElementById('settingsSystem');
-    if (!sys) return;
-    const [status, behavior, tasks, costs] = await Promise.all([
-      fetch('/api/status').then(r => r.json()).catch(() => ({})),
-      fetch('/api/behavior/stats').then(r => r.json()).catch(() => ({})),
-      fetch('/api/intake/tasks').then(r => r.json()).catch(() => []),
-      fetch('/api/costs').then(r => r.json()).catch(() => ({})),
-    ]);
-    const done = tasks.filter(t => t.status === 'done').length;
-    const total = tasks.length;
-    const todayCost = costs.today?.cost ? '$' + costs.today.cost.toFixed(2) : '--';
-    const weekCost = costs.week?.cost ? '$' + costs.week.cost.toFixed(2) : '--';
-    sys.innerHTML = `
-      <div class="spread"><span>Version</span><span style="font-family:monospace">GPO V2</span></div>
-      <div class="spread"><span>Tasks</span><span>${done} completed / ${total} total</span></div>
-      <div class="spread"><span>AI spend today</span><span>${todayCost}</span></div>
-      <div class="spread"><span>AI spend this week</span><span>${weekCost}</span></div>
-      <div class="spread"><span>Behavior events</span><span>${behavior.totalEvents || 0}</span></div>
-      <div class="spread"><span>Active signals</span><span>${behavior.activeSignalCount || 0} of ${behavior.signalCount || 0}</span></div>
-      <div class="spread"><span>Feedback</span><span>${(behavior.eventsByType?.quality_feedback || 0)} ratings</span></div>
-      <div class="spread"><span>Server</span><span>${status.server || '--'}</span></div>
-      <div class="spread"><span>Worker</span><span>${status.worker || '--'}</span></div>
-    `;
-  } catch {}
-  // Theme buttons
-  const theme = localStorage.getItem('gpo-theme') || 'dark';
-  const dk = document.getElementById('tDark'), lt = document.getElementById('tLight');
-  if (dk) dk.className = theme === 'dark' ? 'b b-sm on' : 'b b-ghost b-sm';
-  if (lt) lt.className = theme === 'light' ? 'b b-sm on' : 'b b-ghost b-sm';
+function closeWorkDetail() {
+  const el = document.getElementById('workDetail');
+  const list = document.getElementById('workList');
+  if (el) el.style.display = 'none';
+  if (list) list.style.display = '';
 }
 
 // ═══ ACTIVITY ═══
@@ -573,16 +564,6 @@ async function loadActivity(append) {
     } else {
       el.innerHTML += `<div style="text-align:center;padding:8px;font-size:10px;color:var(--text-2)">${data.total} total events</div>`;
     }
-    // Populate home activity widget
-    if (!append) {
-      const homeAct = document.getElementById('homeActivity');
-      if (homeAct && _actEvents.length) {
-        homeAct.innerHTML = _actEvents.slice(0, 8).map(e => {
-          const label = EVT_LABELS[e.type] || e.type.replace(/_/g, ' ');
-          return `<div class="ev"><div class="ev-time">${timeAgo(e.timestamp)}</div>${evtIcon(e.type)}<div class="ev-text">${esc(label)}${e.engine ? ' · ' + engName(e.engine) : ''}</div></div>`;
-        }).join('');
-      }
-    }
   } catch { if (!append) el.innerHTML = '<div class="nil"><span class="nil-desc">Error loading activity</span></div>'; }
 }
 
@@ -624,6 +605,246 @@ function renderEvent(e) {
   return `<div class="ev"><div class="ev-time">${dateStr}<br>${timeStr}</div>${evtIcon(e.type)}<div class="ev-text"><strong>${esc(label)}</strong>${detail ? ' — ' + detail : ''} ${engine}</div></div>`;
 }
 
+// ═══ OPERATIONS ═══
+async function loadOps() {
+  // Parallel fetch
+  const [providers, reliability, latency, provCost, health, observability, memory, signals, guidance, approvals, costs] = await Promise.all([
+    fetch('/api/provider-registry').then(r => r.json()).catch(() => ({})),
+    fetch('/api/provider-reliability').then(r => r.json()).catch(() => ({})),
+    fetch('/api/provider-latency').then(r => r.json()).catch(() => ({})),
+    fetch('/api/provider-cost').then(r => r.json()).catch(() => ({})),
+    fetch('/api/service-health').then(r => r.json()).catch(() => ({})),
+    fetch('/api/observability').then(r => r.json()).catch(() => ({})),
+    fetch('/api/memory-viewer').then(r => r.json()).catch(() => ({})),
+    fetch('/api/behavior/signals').then(r => r.json()).catch(() => []),
+    fetch('/api/behavior/guidance').then(r => r.json()).catch(() => ({})),
+    fetch('/api/intake/pending-approvals').then(r => r.json()).catch(() => []),
+    fetch('/api/costs').then(r => r.json()).catch(() => ({})),
+  ]);
+
+  // Approvals
+  const appEl = document.getElementById('opsApprovals');
+  const appList = document.getElementById('opsApprovalsList');
+  if (appEl && approvals.length > 0) {
+    appEl.style.display = '';
+    appList.innerHTML = approvals.map(s => `<div class="card card-warn" style="padding:12px;margin-bottom:8px">
+      <div class="spread"><span style="font-size:13px;font-weight:500">${esc(s.title)}</span><span class="tag tag-warn">${esc(s.stage)}</span></div>
+      <div style="font-size:11px;color:var(--text-1);margin-top:4px">from: ${esc(s.parent_title || '')}</div>
+      <div class="row gap-4 mt-8">
+        <button class="b b-ok b-sm" onclick="approveSubtask('${s.subtask_id}')">Approve</button>
+        <button class="b b-err b-sm" onclick="rejectSubtask('${s.subtask_id}')">Reject</button>
+        <button class="b b-ghost b-sm" onclick="openWorkDetail('${s.parent_task_id}')">Details</button>
+      </div>
+    </div>`).join('');
+  } else if (appEl) { appEl.style.display = 'none'; }
+
+  // Providers — rich view with reliability, latency, cost
+  const provEl = document.getElementById('opsProviders');
+  if (provEl && providers.providers?.length) {
+    const reliMap = {}; (reliability.snapshots || []).forEach(s => reliMap[s.provider_id] = s);
+    const latMap = {}; (latency.profiles || []).forEach(p => latMap[p.provider_id] = p);
+    const costMap = {}; (provCost.profiles || []).forEach(p => costMap[p.provider_id] = p);
+
+    provEl.innerHTML = providers.providers.map(p => {
+      const r = reliMap[p.provider_id] || {};
+      const l = latMap[p.provider_id] || {};
+      const c = costMap[p.provider_id] || {};
+      const healthDot = r.health === 'healthy' ? 'dot-ok' : r.health === 'degraded' ? 'dot-warn' : 'dot-err';
+      return `<div style="padding:10px 0;border-bottom:1px solid var(--border-0)">
+        <div class="spread">
+          <div class="row gap-8"><span class="dot ${healthDot}"></span><span style="font-weight:600">${esc(p.display_name)}</span></div>
+          <span class="tag tag-${r.health === 'healthy' ? 'ok' : 'warn'}">${esc(r.health || 'unknown')}</span>
+        </div>
+        <div class="row gap-16 mt-8" style="font-size:11px;color:var(--text-1)">
+          <span>Latency: <strong style="color:var(--text-0)">${l.avg_latency_ms || '--'}ms</strong> avg / ${l.p95_latency_ms || '--'}ms p95</span>
+          <span>Cost: <strong style="color:var(--text-0)">${c.cost_tier || '--'}</strong></span>
+          <span>Success: <strong style="color:var(--text-0)">${pct(r.success_rate)}</strong></span>
+        </div>
+        <div style="font-size:10px;color:var(--text-2);margin-top:4px">${(p.strengths || []).slice(0, 3).join(' · ')}</div>
+      </div>`;
+    }).join('');
+  }
+
+  // System Health
+  const sysEl = document.getElementById('opsSysHealth');
+  if (sysEl && health.subsystems) {
+    sysEl.innerHTML = `<div class="spread mb-12"><span style="font-weight:600">Overall</span><span class="tag tag-${health.overall === 'healthy' ? 'ok' : 'warn'}">${esc(health.overall)}</span></div>` +
+      health.subsystems.map(s => {
+        const dot = s.status === 'healthy' ? 'dot-ok' : s.status === 'degraded' ? 'dot-warn' : 'dot-err';
+        const label = s.subsystem.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        return `<div class="prov-row"><span class="dot ${dot}"></span><span style="flex:1">${esc(label)}</span><span class="tag tag-${s.status === 'healthy' ? 'ok' : 'warn'}">${esc(s.status)}</span></div>`;
+      }).join('');
+  }
+
+  // Observability
+  const obsEl = document.getElementById('opsObservability');
+  if (obsEl && observability.metrics) {
+    obsEl.innerHTML = observability.metrics.map(m => {
+      const label = m.metric.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      return `<div class="spread" style="font-size:12px;padding:4px 0"><span style="color:var(--text-1)">${esc(label)}</span><span style="font-weight:600">${m.value}${m.unit === '%' ? '%' : ' ' + m.unit}</span></div>`;
+    }).join('');
+  }
+
+  // Memory & Signals
+  const memEl = document.getElementById('opsMemory');
+  if (memEl) {
+    let memHtml = '';
+
+    // Operator profile
+    if (memory.operator?.length) {
+      const op = memory.operator[0];
+      memHtml += `<div class="inset mb-12" style="font-size:12px">
+        <div style="font-weight:600;margin-bottom:6px">Operator Profile</div>
+        <div style="color:var(--text-1);white-space:pre-wrap">${esc(op.summary || op.content || '')}</div>
+      </div>`;
+    }
+
+    // Guidance
+    memHtml += `<div class="spread mb-12" style="font-size:12px">
+      <span style="color:var(--text-1)">Auto-approve recommendation</span>
+      <span class="tag tag-${guidance.autoApproveRecommended ? 'ok' : 'warn'}">${guidance.autoApproveRecommended ? 'Recommended' : 'Not recommended'}</span>
+    </div>`;
+    if (guidance.confidenceNote) memHtml += `<div style="font-size:10px;color:var(--text-2);margin-bottom:12px">${esc(guidance.confidenceNote)}</div>`;
+
+    // Active signals
+    const active = (Array.isArray(signals) ? signals : []).filter(s => s.active);
+    if (active.length) {
+      memHtml += `<div style="font-weight:600;font-size:12px;margin-bottom:8px">Active Signals (${active.length})</div>`;
+      memHtml += active.slice(0, 12).map(s => {
+        const confPct = Math.round((s.confidence || 0) * 100);
+        return `<div class="signal-row">
+          <span class="signal-name">${esc(s.name.replace(/_/g, ' '))}</span>
+          <span class="signal-val">${esc(String(s.value))}</span>
+          <span class="signal-conf">${confPct}% conf</span>
+          <span style="font-size:10px;color:var(--text-2)">${s.sourceEventCount || 0} events</span>
+        </div>`;
+      }).join('');
+    }
+
+    memEl.innerHTML = memHtml || '<div style="font-size:12px;color:var(--text-2)">No memory data available</div>';
+  }
+
+  // Cost Breakdown
+  const costEl = document.getElementById('opsCostBreakdown');
+  if (costEl && costs.byProvider) {
+    let costHtml = `<div class="g2 mb-12">
+      <div class="metric-card"><span class="metric-val">${fmtCost(costs.today?.cost)}</span><span class="metric-label">Today</span></div>
+      <div class="metric-card"><span class="metric-val">${fmtCost(costs.week?.cost)}</span><span class="metric-label">This Week</span></div>
+    </div>`;
+    costHtml += '<div style="font-weight:600;font-size:12px;margin-bottom:8px">By Provider</div>';
+    costHtml += Object.entries(costs.byProvider).map(([name, data]) =>
+      `<div class="spread" style="font-size:12px;padding:4px 0;border-bottom:1px solid var(--border-0)">
+        <span style="font-weight:500">${esc(name)}</span>
+        <div class="row gap-12">
+          <span style="color:var(--text-1)">${data.calls || 0} calls</span>
+          <span style="font-weight:600">${fmtCost(data.cost)}</span>
+        </div>
+      </div>`
+    ).join('');
+    costEl.innerHTML = costHtml;
+  }
+}
+
+async function approveSubtask(id) {
+  try {
+    const r = await fetch('/api/subtask/' + id + '/approve', { method: 'POST' });
+    const d = await r.json();
+    toast(d.ok ? 'Approved' : 'Error', d.ok ? 'ok' : 'err');
+    loadOps();
+    loadCommand();
+  } catch { toast('Error', 'err'); }
+}
+
+async function rejectSubtask(id) {
+  try {
+    const r = await fetch('/api/subtask/' + id + '/reject', { method: 'POST' });
+    const d = await r.json();
+    toast(d.ok ? 'Rejected' : 'Error', d.ok ? 'ok' : 'err');
+    loadOps();
+  } catch { toast('Error', 'err'); }
+}
+
+// ═══ SETTINGS ═══
+async function loadSettings() {
+  // API Keys
+  try {
+    const keys = await fetch('/api/diag/keys').then(r => r.json());
+    const el = document.getElementById('settingsKeys');
+    if (el && keys) {
+      el.innerHTML = Object.entries(keys).filter(([k]) => k !== 'envFile').map(([name, info]) => {
+        const status = info.status === 'ok' ? 'Configured' : 'Missing';
+        const tagCls = info.status === 'ok' ? 'tag-ok' : 'tag-err';
+        const prefix = info.prefix ? `<span style="font-family:'SF Mono',monospace;font-size:10px;color:var(--text-2)">${esc(info.prefix)}</span>` : '';
+        return `<div class="spread" style="font-size:12px;padding:4px 0"><span style="font-weight:500">${esc(name.toUpperCase())}</span><div class="row gap-8">${prefix}<span class="tag ${tagCls}">${status}</span></div></div>`;
+      }).join('');
+      if (keys.envFile) {
+        el.innerHTML += `<div style="font-size:10px;color:var(--text-2);margin-top:8px;border-top:1px solid var(--border-0);padding-top:8px">.env file: ${keys.envFile}</div>`;
+      }
+    }
+  } catch {}
+
+  // Engines
+  try {
+    const engines = await fetch('/api/engines').then(r => r.json());
+    const el = document.getElementById('settingsEngines');
+    if (el && engines.engines) {
+      el.innerHTML = engines.engines.map(e =>
+        `<div class="spread" style="font-size:12px;padding:4px 0;border-bottom:1px solid var(--border-0)">
+          <div><span style="font-weight:500">${esc(e.displayName)}</span><div style="font-size:10px;color:var(--text-2)">${esc(e.description || '')}</div></div>
+          <span class="tag tag-muted">${esc(e.id)}</span>
+        </div>`
+      ).join('');
+    }
+  } catch {}
+
+  // Cost settings
+  try {
+    const cs = await fetch('/api/costs/settings').then(r => r.json());
+    const el = document.getElementById('settingsCostConfig');
+    if (el && cs) {
+      el.innerHTML = `
+        <div class="spread" style="font-size:12px;padding:4px 0"><span style="color:var(--text-1)">Gemini Model</span><span style="font-family:'SF Mono',monospace">${esc(cs.geminiModel || 'default')}</span></div>
+        <div class="spread" style="font-size:12px;padding:4px 0"><span style="color:var(--text-1)">Budget Limit</span><span>${cs.geminibudgetLimit ? fmtCost(cs.geminibudgetLimit) : 'None'}</span></div>
+        <div class="spread" style="font-size:12px;padding:4px 0"><span style="color:var(--text-1)">Warning Threshold</span><span>${cs.warningThreshold ? fmtCost(cs.warningThreshold) : 'None'}</span></div>
+        <div class="spread" style="font-size:12px;padding:4px 0"><span style="color:var(--text-1)">Builder Timeout</span><span>${cs.builderTimeoutMinutes || 10} min</span></div>
+      `;
+    }
+  } catch {}
+
+  // System info
+  try {
+    const sys = document.getElementById('settingsSystem');
+    if (!sys) return;
+    const [status, behavior, tasks, costs] = await Promise.all([
+      fetch('/api/status').then(r => r.json()).catch(() => ({})),
+      fetch('/api/behavior/stats').then(r => r.json()).catch(() => ({})),
+      fetch('/api/intake/tasks').then(r => r.json()).catch(() => []),
+      fetch('/api/costs').then(r => r.json()).catch(() => ({})),
+    ]);
+    const done = tasks.filter(t => t.status === 'done').length;
+    const total = tasks.length;
+    const uptime = status.server?.uptime ? Math.floor(status.server.uptime / 3600) + 'h ' + Math.floor((status.server.uptime % 3600) / 60) + 'm' : '--';
+    sys.innerHTML = `
+      <div class="spread"><span>Version</span><span style="font-family:monospace">GPO v2.0</span></div>
+      <div class="spread"><span>Tasks</span><span>${done} completed / ${total} total</span></div>
+      <div class="spread"><span>Cost today</span><span>${fmtCost(costs.today?.cost)}</span></div>
+      <div class="spread"><span>Cost this week</span><span>${fmtCost(costs.week?.cost)}</span></div>
+      <div class="spread"><span>Behavior events</span><span>${behavior.totalEvents || 0}</span></div>
+      <div class="spread"><span>Active signals</span><span>${behavior.activeSignalCount || 0} of ${behavior.signalCount || 0}</span></div>
+      <div class="spread"><span>Feedback ratings</span><span>${(behavior.eventsByType?.quality_feedback || 0)}</span></div>
+      <div class="spread"><span>Server uptime</span><span>${uptime}</span></div>
+      <div class="spread"><span>Node</span><span style="font-family:monospace">${esc(status.node || '--')}</span></div>
+      <div class="spread"><span>Worker</span><span class="tag tag-${status.worker?.running ? 'ok' : 'err'}">${status.worker?.running ? 'Running' : 'Stopped'}</span></div>
+    `;
+  } catch {}
+
+  // Theme
+  const theme = localStorage.getItem('gpo-theme') || 'dark';
+  const dk = document.getElementById('tDark'), lt = document.getElementById('tLight');
+  if (dk) dk.className = theme === 'dark' ? 'b b-sm on' : 'b b-ghost b-sm';
+  if (lt) lt.className = theme === 'light' ? 'b b-sm on' : 'b b-ghost b-sm';
+}
+
 // ═══ SSE ═══
 let _activityRefreshTimer = null;
 function connectSSE() {
@@ -635,26 +856,22 @@ function connectSSE() {
   src.onerror = () => {
     const d = document.getElementById('statusDot'); if (d) d.className = 'dot dot-err';
     const t = document.getElementById('statusText'); if (t) t.textContent = 'Reconnecting...';
-    // Auto-reconnect after 5s
     setTimeout(connectSSE, 5000);
   };
-  // On any activity event, refresh activity and home if visible
   src.addEventListener('activity', () => {
-    // Debounce: don't refresh more than once per 10 seconds
     if (_activityRefreshTimer) return;
     _activityRefreshTimer = setTimeout(() => {
       _activityRefreshTimer = null;
       const actScreen = document.getElementById('s-activity');
       if (actScreen && actScreen.classList.contains('on')) loadActivity();
-      const homeScreen = document.getElementById('s-home');
-      if (homeScreen && homeScreen.classList.contains('on')) loadHome();
+      const cmdScreen = document.getElementById('s-command');
+      if (cmdScreen && cmdScreen.classList.contains('on')) loadCommand();
     }, 10000);
   });
 }
 
 // ═══ KEYBOARD SHORTCUTS ═══
 document.addEventListener('keydown', e => {
-  // Cmd/Ctrl+K → focus Ask input (from any screen)
   if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
     e.preventDefault();
     go('ask');
@@ -662,7 +879,6 @@ document.addEventListener('keydown', e => {
     if (inp) inp.focus();
     return;
   }
-  // / → focus Ask input (only when not in an input/textarea)
   if (e.key === '/' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)) {
     e.preventDefault();
     go('ask');
@@ -670,15 +886,16 @@ document.addEventListener('keydown', e => {
     if (inp) inp.focus();
     return;
   }
-  // Escape → close any result/evidence and go home
   if (e.key === 'Escape') {
+    const wd = document.getElementById('workDetail');
+    if (wd && wd.style.display !== 'none') { closeWorkDetail(); return; }
     const askResult = document.getElementById('askResult');
     if (askResult && askResult.style.display !== 'none') { askResult.style.display = 'none'; return; }
-    go('home');
+    go('command');
   }
 });
 
 // ═══ INIT ═══
 connectSSE();
-loadHome();
+loadCommand();
 loadActivity();
