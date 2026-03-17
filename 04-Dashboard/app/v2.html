@@ -52,15 +52,15 @@
     <!-- ═══ COMMAND ═══ -->
     <section class="v2-screen on" id="s-command">
       <div class="v2-page">
-        <div class="spread" style="margin-bottom:20px">
+        <div class="spread" style="margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border-0)">
           <div>
-            <h1 id="greeting" style="font-size:22px;font-weight:700;letter-spacing:-.5px">GPO</h1>
-            <div class="row gap-12 mt-8">
-              <span id="dateText" style="font-size:11px;color:var(--text-1)"></span>
-              <span class="row gap-4"><span class="dot dot-ok dot-pulse" id="homeDot"></span><span style="font-size:10px;color:var(--text-2)" id="homeStatus">System ready</span></span>
+            <h1 id="greeting" style="font-size:24px;font-weight:800;letter-spacing:-.6px">GPO</h1>
+            <div class="row gap-16 mt-8">
+              <span id="dateText" style="font-size:11px;color:var(--text-1);font-weight:500"></span>
+              <span class="row gap-4"><span class="dot dot-ok dot-pulse" id="homeDot"></span><span style="font-size:10px;color:var(--text-2);font-weight:500" id="homeStatus">System ready</span></span>
             </div>
           </div>
-          <button class="b b-fill b-md" onclick="go('ask')">&#9998; New Request</button>
+          <button class="b b-fill b-md" onclick="go('ask')" style="font-size:13px;padding:10px 20px">&#9998; New Request</button>
         </div>
 
         <!-- ATTENTION -->
@@ -129,9 +129,9 @@
     <!-- ═══ ASK ═══ -->
     <section class="v2-screen" id="s-ask">
       <div class="v2-page">
-        <div class="v2-page-hd"><h1>Ask GPO</h1><p>Describe what you need — GPO will research, analyze, and deliver</p></div>
-        <div class="card card-accent" style="margin-bottom:20px">
-          <textarea id="askInput" class="inp" rows="3" placeholder="What do you need? e.g. 'Best waffle places in Hyderabad' or 'Create a Roth IRA conversion guide'"></textarea>
+        <div class="v2-page-hd"><h1>Ask GPO</h1><p>Describe what you need — GPO will research, analyze, and deliver a structured result</p></div>
+        <div class="card card-accent" style="margin-bottom:24px;border-left-width:3px;padding:20px">
+          <textarea id="askInput" class="inp" rows="3" style="font-size:14px;padding:14px 16px" placeholder="What do you need? e.g. 'Best waffle places in Hyderabad' or 'Create a Roth IRA conversion guide'"></textarea>
           <div class="row mt-8" style="flex-wrap:wrap;gap:8px">
             <select id="askEngine" class="sel"><option value="">Auto-detect</option></select>
             <select id="askUrgency" class="sel"><option value="normal">Normal</option><option value="high">High</option><option value="low">Low</option></select>
